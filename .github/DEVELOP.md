@@ -1,6 +1,7 @@
 # Developer guide
 
 - [Technical preconditions](#technical-preconditions)
+- [Embed the OUDS iOS library](#embed-the-ouds-ios-library)
 - [Build Design System Toolbox](#build-design-system-toolbox)
 - [Documentation](#documentation)
 - [Run tests](#run-tests)
@@ -90,6 +91,10 @@ We use also for our GitLab CI runners **Xcode 16.3**, we suggest you use this ve
 
 **Xcode 16.3** and **Swift 6** are used for this project. You must use this configuration.
 
+## Embed the OUDS iOS library
+
+*To be defined soon. Yup, that's a TODO #187*
+
 ## Build Design System Toolbox
 
 To build the demo application follow those steps:
@@ -121,7 +126,7 @@ To run these unit tests follow some steps:
 4. Select *DesignToolbox* scheme
 5. Run tests (Product -> Test)
 
-Unit tests care have been implemented for several reasons. 
+Unit tests case have been implemented for several reasons. 
 
 First, we don't have too much control on the raw tokens values. We rely on the _Figma_ design tool which outputs the tokens in a JSON file. 
 And this file will be parsed to as to generate Swift files. But if there are inconsistencies in the _Figma_ side or in the parser side, the inconsistencies will be spread in our code base. 
@@ -424,9 +429,9 @@ Do not forget if possible to enable the warnings in the end of the file to reduc
 
 We use *GitHub Actions* so as to define a workflow with some actions to build demo application and test the library.
 It will help us to ensure code on pull requests or being merged compiles and has all tests green.
-This workflow is defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml), and makes build, unit tests and UI tests.
+This workflow is defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/build-and-test.yml), and makes build, unit tests and UI tests.
 
-We have also a *gitleaks* workflow making some scans on the code to look fo secrets leaks, defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks-action.yml).
+We have also a *gitleaks* workflow making some scans on the code to look fo secrets leaks, defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/gitleaks-action.yml).
 
 A dedicated workflow has been defined so as to run checks on localizables to find is some wording is missing (thanks to [SwiftPolyglot](https://github.com/appdecostudio/SwiftPolyglot)).
 
@@ -441,6 +446,6 @@ We use *GitLab CI*for CI/CD with our own runners so as to keep private our sensi
 Our current plan does not allow to make GitHub mirroring, so we use GitHub HTTP REST API to download sources, before using Xcode to build and sign.
 However of course you will have to define all the variables, secrets and have the mandatory files.
 
-You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/51-%E2%80%90-About-continuous-integration-and-delivery).
+You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/wiki/51-%E2%80%90-About-continuous-integration-and-delivery).
 
 In few words, there is a pipeline containing some stages and jobs to build alpha, nightly/beta and production releases.
