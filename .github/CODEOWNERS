@@ -1,0 +1,51 @@
+#
+# Software Name: OUDS iOS
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+# Items ordered with the same order as used in GitHub web UI
+# Items splitted by owners groups
+
+# Project folders
+
+/.github/ @pylapp
+
+/OUDS/ @pylapp @ludovic35
+/DesignToolbox/ @pylapp @ludovic35
+
+/docs_release/ @pylapp @ludovic35
+
+# Utility files
+
+.gitattributes @pylapp @ludovic35
+.gitignore @pylapp @ludovic35
+
+.gitleaks.toml @pylapp
+.swiftformat @pylapp
+
+.swiftlint.yml @pylapp @ludovic35
+
+CHANGELOG.md @ludovic35 @pylapp
+
+Gemfile @pylapp @ludovic35
+Gemfile.lock @pylapp @ludovic35
+
+LICENSE @pylapp
+
+NOTICE.txt @pylapp @ludovic35
+Package.resolved @pylapp @ludovic35
+Package.swift @pylapp @ludovic35
+
+README.md @ludovic35 @pylapp
+
+THIRD_PARTY.md @pylapp
+renovate.json @pylapp
+generateWebDocumentation.sh @pylapp
