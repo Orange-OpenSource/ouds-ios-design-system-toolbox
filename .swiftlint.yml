@@ -21,7 +21,6 @@ strict: true
 # ========
 
 included:
-- OUDS
 - DesignToolbox
 
 # ========
