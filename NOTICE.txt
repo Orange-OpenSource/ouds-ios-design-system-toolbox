@@ -14,13 +14,6 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./docs_release/docs_assets/favicon-32x32.png
 ./docs_release/docs_assets/favicon.ico
 
-# OUDS / OUDSComponents
-
-./OUDS/Core/Components/Sources/Resources/Media.xcassets/Link/ic_form_chevron_left.imageset/ic_form_chevron_left.svg
-./OUDS/Core/Components/Sources/Resources/Media.xcassets/Checkbox/ic_form_tick.imageset/ic_form_tick.svg
-./OUDS/Core/Components/Sources/Resources/Media.xcassets/Checkbox/ic_form_dash.imageset/ic_form_dash.svg
-./OUDS/Core/Components/Sources/Resources/Media.xcassets/Radio/ic_radio_selected.imageset/ic_radio_selected.svg
-
 # Design Toolbox
 
 ./DesignToolbox/DesignToolbox/Resources/accessibilityStatement/favicon.ico
