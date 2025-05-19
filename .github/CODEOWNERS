@@ -18,10 +18,7 @@
 
 /.github/ @pylapp
 
-/OUDS/ @pylapp @ludovic35
 /DesignToolbox/ @pylapp @ludovic35
-
-/docs_release/ @pylapp @ludovic35
 
 # Utility files
 
@@ -41,11 +38,8 @@ Gemfile.lock @pylapp @ludovic35
 LICENSE @pylapp
 
 NOTICE.txt @pylapp @ludovic35
-Package.resolved @pylapp @ludovic35
-Package.swift @pylapp @ludovic35
 
 README.md @ludovic35 @pylapp
 
 THIRD_PARTY.md @pylapp
 renovate.json @pylapp
-generateWebDocumentation.sh @pylapp
