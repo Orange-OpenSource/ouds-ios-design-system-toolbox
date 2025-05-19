@@ -31,13 +31,13 @@ RUN PERIPHERY FOR DEAD CODE ANALYSIS
 
 UPDATE BUILD NUMBER WITH TIMESTAMP
 
-### ios test
+### ios test_snapshots
 
 ```sh
-[bundle exec] fastlane ios test
+[bundle exec] fastlane ios test_snapshots
 ```
 
-RUN TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT
+RUN SNAPSHOTS TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT
 
 ### ios test_ui
 
