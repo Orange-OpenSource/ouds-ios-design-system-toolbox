@@ -80,20 +80,6 @@ struct AboutPage: View {
                 Button("app_about_appSettings_label") {
                     UIApplication.shared.open(appSettingsUrl)
                 }.accessibilityHint("app_about_appSettings_hint_a11y")
-
-                Button("Open a11y settings") {
-                    Task {
-                        do {
-                            if #available(iOS 18.0, *) {
-                                try await AccessibilitySettings.openSettings(for: .)
-                            } else {
-                                // Fallback on earlier versions
-                            }
-                        } catch {
-                            print("Error: \(error)")
-                        }
-                    }
-                }.accessibilityHint("Open a11y settings")
             }
             .navigationTitle("app_bottomBar_about_label")
         }
