@@ -5,7 +5,23 @@ This document contains the list of Third Party Softwares along with the license 
 Third Party Software may impose additional restrictions and it is the user's responsibility to ensure that they have met the licensing
 requirements of the relevant license of the Third Party Software they are using.
 
-For further details about versions, please refer to files *Gemfile*, *Gemfile.lock*, *Package.swift*, *Package.resolved* or *Podfile* for examples/
+For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *Package.swift*, *Package.resolved* and *Podfile* files.
+
+## In Design System Toolbox
+
+#### DeclarationAccessibility
+
+Copyright 2021-2023 Orange SA
+
+*DeclarationAccessibility* is distributed under the terms and conditions of the [Apache License](https://opensource.org/license/apache-2-0).
+You may download the source code on the [following website](https://github.com/Orange-OpenSource/accessibility-statement-lib-ios).
+
+### swift-snapshot-testing
+
+Copyright 2019 Point-Free, Inc.
+
+*swift-snapshot-testing* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
+You may download the source code on the [following website](https://github.com/pointfreeco/swift-snapshot-testing).
 
 ## In Project
 
