@@ -20,7 +20,6 @@
 
 # Please keep the list sorted.
 
-Julien DERAMOND <julien.deramond@orange.com>
 Pierre-Yves LAPERSONNE <pierreyves.lapersonne@orange.com>
 Ludovic PINEL <ludovic.pinel@orange.com>
-Tayeb SEDRAIA <tayeb.sedraia@orange.com>
+Benoit SUZANNE <benoit.suzanne@orange.com>
