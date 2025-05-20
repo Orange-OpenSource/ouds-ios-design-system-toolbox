@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDS
@@ -32,22 +32,22 @@ final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
         selectedColor = NamedColorMode.modeOnBrandPrimary
     }
 
-    deinit { }
+    deinit {}
 
     // MARK: Component Configuration
 
     override func updateCode() {
         code =
-        """
-       OUDSColoredSurface(color: theme.colorModes.\(selectedColor.description)) {
-          Text("\(selectedColor.formattedName)")
-          .oudsForegroundColor(theme.colors.colorContentDefault)
+            """
+            OUDSColoredSurface(color: theme.colorModes.\(selectedColor.description)) {
+               Text("\(selectedColor.formattedName)")
+               .oudsForegroundColor(theme.colors.colorContentDefault)
 
-          OUDSButton(text: "\("app_components_button_label".localized())") {}
+               OUDSButton(text: "\("app_components_button_label".localized())") {}
 
-          OUDSLink(text: "\("app_components_link_label".localized())", indicator: .next) {}
-       }
-       """
+               OUDSLink(text: "\("app_components_link_label".localized())", indicator: .next) {}
+            }
+            """
     }
 }
 

@@ -33,29 +33,29 @@ extension Bundle {
     /// - BETA for develop CI/CD builds
     /// - PROD for main releases (CI/CD builds)
     var buildType: String? {
-#if DEBUG
+        #if DEBUG
         "DEBUG"
-#else
+        #else
         string(forInfoDictionaryKey: "OUDSBuildType")
-#endif
+        #endif
     }
 
     /// A value filled outside the app (e.g. by the CI/CD chain) for debug purposes to help to match the current app codebase to some CI/CD build tag
     var buildTag: String? {
-#if DEBUG
+        #if DEBUG
         nil
-#else
+        #else
         string(forInfoDictionaryKey: "OUDSBuildTag")
-#endif
+        #endif
     }
 
     /// A value filled outside the app (e.g. by the CI/CD chain) for debug purposes to help to match the current app codebase to some issues to test
     var buildDetails: String? {
-#if DEBUG
+        #if DEBUG
         nil
-#else
+        #else
         string(forInfoDictionaryKey: "OUDSBuildDetails")
-#endif
+        #endif
     }
 
     var fullBuildType: String {

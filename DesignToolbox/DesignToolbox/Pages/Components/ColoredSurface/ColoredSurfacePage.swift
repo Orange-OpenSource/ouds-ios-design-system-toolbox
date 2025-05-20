@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDS
@@ -26,8 +26,7 @@ struct ColoredSurfacePage: View {
         ComponentConfigurationView(
             configuration: configuration,
             componentView: componentView,
-            configurationView: configurationView
-        ).modifier(DebugWCAG21RatiosModifier())
+            configurationView: configurationView).modifier(DebugWCAG21RatiosModifier())
     }
 
     @ViewBuilder
@@ -78,11 +77,9 @@ private struct ColoredSurfaceDemo: View {
 
                     OUDSButton(text: "app_components_button_label".localized(),
                                hierarchy: .default,
-                               style: .default) {
-                    }
+                               style: .default) {}
 
-                    OUDSLink(text: "app_components_link_label".localized(), indicator: .next) {
-                    }
+                    OUDSLink(text: "app_components_link_label".localized(), indicator: .next) {}
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.all, theme.spaces.spaceFixedMedium)

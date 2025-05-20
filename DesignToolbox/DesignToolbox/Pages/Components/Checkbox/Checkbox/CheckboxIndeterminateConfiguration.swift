@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSComponents
@@ -42,16 +42,16 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
         enabled = true
     }
 
-    deinit { }
+    deinit {}
 
     // MARK: Component Configuration
 
     override func updateCode() {
         code =
-          """
-          OUDSCheckboxInterminate(selection: $selection\(isErrorPattern))
-          \(disableCode)
-          """
+            """
+            OUDSCheckboxInterminate(selection: $selection\(isErrorPattern))
+            \(disableCode)
+            """
     }
 
     private var disableCode: String {
@@ -87,7 +87,8 @@ struct CheckboxIndeterminateConfiguration: View {
 
             DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label",
                                       selection: $model.indicatorState,
-                                      style: .segmented) {
+                                      style: .segmented)
+            {
                 ForEach(OUDSCheckboxIndicatorState.allCases, id: \.id) { state in
                     Text(LocalizedStringKey(state.description)).tag(state)
                 }

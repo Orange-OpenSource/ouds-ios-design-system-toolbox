@@ -155,8 +155,7 @@ struct ColorTokenPage: View {
                         style: theme.borders.borderStyleDefault,
                         width: theme.borders.borderWidthThin,
                         radius: theme.borders.borderRadiusNone,
-                        color: theme.colors.colorBorderDefault
-                    )
+                        color: theme.colors.colorBorderDefault)
             }
         }
     }

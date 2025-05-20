@@ -37,7 +37,7 @@ struct AboutPage: View {
             OL.fatal("Unable to find app settings URL")
         }
 
-        self.privacyPolicyUrl = privacyNoticeUrl
+        privacyPolicyUrl = privacyNoticeUrl
         self.legalInformationUrl = legalInformationUrl
         self.appSettingsUrl = appSettingsUrl
     }

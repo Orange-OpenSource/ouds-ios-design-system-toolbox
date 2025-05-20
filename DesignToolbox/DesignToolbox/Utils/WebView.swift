@@ -28,7 +28,7 @@ struct WebView: UIViewRepresentable {
     // MARK: Initializer
 
     init(from url: URL) {
-        self.source = .url(url)
+        source = .url(url)
     }
 
     // MARK: UIViewRepresentable

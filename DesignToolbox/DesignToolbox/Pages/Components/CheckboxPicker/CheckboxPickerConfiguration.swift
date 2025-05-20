@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSComponents
@@ -56,28 +56,29 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
         isEnabled = true
     }
 
-    deinit { }
+    deinit {}
 
     // MARK: - Component Configuration
 
     // swiftlint:disable line_length
     override func updateCode() {
         code =
-          """
-        OUDSCheckboxPicker(selections: $selections, checkboxes: someCheckboxData, placement: \(pickerPlacementPattern)\(hasDividerPattern)\(isReadOnlyPattern)\(isErrorPattern)\(isReversedPattern))\(isEnabledPattern)
-        """
+            """
+            OUDSCheckboxPicker(selections: $selections, checkboxes: someCheckboxData, placement: \(pickerPlacementPattern)\(hasDividerPattern)\(isReadOnlyPattern)\(isErrorPattern)\(isReversedPattern))\(isEnabledPattern)
+            """
     }
+
     // swiftlint:enable line_length
 
     private var pickerPlacementPattern: String {
         switch pickerPlacement {
         case .vertical:
             return ".vertical"
-        case .horizontal(let showsIndicator) where showsIndicator == true:
+        case let .horizontal(showsIndicator) where showsIndicator == true:
             return ".horizontal(true)"
-        case .horizontal(let showsIndicator) where showsIndicator == false:
+        case let .horizontal(showsIndicator) where showsIndicator == false:
             return ".horizontal(false)"
-        case .verticalRooted(_, let type):
+        case let .verticalRooted(_, type):
             return ".verticalRooted(label, .\(type))"
         default:
             return "🥜"
@@ -149,7 +150,8 @@ struct CheckboxPickerConfiguration: View {
 
             DesignToolboxChoicePicker(title: "app_components_common_orientation_label",
                                       selection: $model.pickerPlacement,
-                                      style: .menu) {
+                                      style: .menu)
+            {
                 ForEach(OUDSCheckboxPickerPlacement.allCases, id: \.id) { placement in
                     Text(placement.description).tag(placement)
                 }
@@ -183,13 +185,13 @@ extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive C
 
     public var description: String {
         switch self {
-        case .horizontal(let showIndicator) where showIndicator == true:
+        case let .horizontal(showIndicator) where showIndicator == true:
             return "Horizontal with indicator"
-        case .horizontal(let showIndicator) where showIndicator == false:
+        case let .horizontal(showIndicator) where showIndicator == false:
             return "Horizontal without indicator"
         case .vertical:
             return "Vertical without root"
-        case .verticalRooted(_, let type):
+        case let .verticalRooted(_, type):
             return "Vertical with root item (\(type))"
         default:
             return "🥜"
