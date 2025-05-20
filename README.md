@@ -24,14 +24,10 @@
 
 ## Status
 
-[![MIT license](https://img.shields.io/github/license/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE)
+[![MIT license](https://img.shields.io/github/license/Orange-OpenSource/ouds-ios-design-system-toolbox?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/main/LICENSE)
 
-[![Versions](https://img.shields.io/github/v/release/Orange-OpenSource/ouds-ios?label=Last%20version&style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/releases)
-[![Still maintained](https://img.shields.io/maintenance/yes/2025?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues?q=is%3Aissue+is%3Aclosed)
-
-[![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)](https://developer.apple.com/support/app-store "iOS 15 supports")
-[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FOrange-OpenSource%2Fouds-ios%2Fbadge%3Ftype%3Dswift-versions&style=for-the-badge)](https://swiftpackageindex.com/Orange-OpenSource/ouds-ios)
-[![Xcode 16.3](https://img.shields.io/badge/Xcode-16.3-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_3-release-notes)
+[![Versions](https://img.shields.io/github/v/release/Orange-OpenSource/ouds-ios-design-system-toolbox?label=Last%20version&style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases)
+[![Still maintained](https://img.shields.io/maintenance/yes/2025?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/issues?q=is%3Aissue+is%3Aclosed)
 
 [![AppStore](https://img.shields.io/itunes/v/6743708286?style=for-the-badge&label=AppStore)](https://apps.apple.com/fr/app/design-system-toolbox/id6743708286)
 
