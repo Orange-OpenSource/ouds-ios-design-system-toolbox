@@ -1235,6 +1235,7 @@
 				07FDCD8D2C296A500009AA13 /* Sources */,
 				07FDCD8E2C296A500009AA13 /* Frameworks */,
 				07FDCD8F2C296A500009AA13 /* Resources */,
+				51B4005F2DDCC51E00B69CDC /* Run SwiftFormat */,
 			);
 			buildRules = (
 			);
@@ -1394,7 +1395,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which \"swiftlint\" >/dev/null; then\n    swiftlint --config ../.swiftlint.yml DesignToolbox/*\n    swiftlint --config ../.swiftlint.yml OUDS/*\nelse\n    echo \"warning: SwiftLint not installed, download from CocoaPods (see https://github.com/realm/SwiftLint)\"\nfi\n";
+			shellScript = "if which \"swiftlint\" >/dev/null; then\n    swiftlint --config ../.swiftlint.yml DesignToolbox/*\nelse\n    echo \"warning: SwiftLint not installed, download from CocoaPods (see https://github.com/realm/SwiftLint)\"\nfi\n";
 		};
 		2A5B2E6765E57E6A6B13CBA1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1435,6 +1436,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Periphery action to look for dead code\nperiphery scan --strict --workspace DesignToolbox.xcworkspace --schemes DesignToolbox --targets DesignToolbox --format xcode\n";
+		};
+		51B4005F2DDCC51E00B69CDC /* Run SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftFormat";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
