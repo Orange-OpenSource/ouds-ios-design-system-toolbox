@@ -8,6 +8,7 @@ requirements of the relevant license of the Third Party Software they are using.
 For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *Package.swift*, *Package.resolved* and *Podfile* files.
 
 ## In Design System Toolbox
+<!-- Inside application and for tests -->
 
 #### DeclarationAccessibility
 
@@ -33,6 +34,7 @@ You may download the source code on the [following website](https://github.com/p
 ## In Project
 
 ### Ruby gems
+<!-- Fastlane and CocoaPods dependencies for CI/CD -->
 
 #### CocoaPods
 
@@ -80,6 +82,7 @@ You may download the source code on the [following website](https://github.com/x
 ### Other tools
 
 #### Gitleaks
+<!-- GitHub Action workflow -->
 
 Copyright (c) 2019 Zachary Rice
 
@@ -87,20 +90,15 @@ Copyright (c) 2019 Zachary Rice
 You may download the source code on the [following website](https://github.com/gitleaks/gitleaks).
 
 #### Periphery
+<!-- Xcode target -->
 
 Copyright (c) 2019 Ian Leitch
 
 *Periphery* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/peripheryapp/periphery).
 
-### swift-docc-plugin
-
-Copyright (c) 2022 Apple Inc. and the Swift project authors
-
-*swift-docc-plugin* is distributed under the terms and conditions of the [Apache 2.0 License](https://opensource.org/license/apache-2-0).
-You may download the source code on the [following website](https://github.com/swiftlang/swift-docc-plugin).
-
 #### SwiftFormat
+<!-- Xcode build phase -->
 
 Copyright 2016 Nick Lockwood
 
@@ -108,6 +106,7 @@ Copyright 2016 Nick Lockwood
 You may download the source code on the [following website](https://github.com/nicklockwood/SwiftFormat).
 
 #### SwiftLint
+<!-- GitHub Action workflow -->
 
 Copyright 2020 Realm Inc.
 
@@ -115,6 +114,7 @@ Copyright 2020 Realm Inc.
 You may download the source code on the [following website](https://github.com/realm/SwiftLint).
 
 #### SwiftPolyglot
+<!-- GitHub Action workflow -->
 
 Copyright 2024 App Deco Studio Inc.
 
