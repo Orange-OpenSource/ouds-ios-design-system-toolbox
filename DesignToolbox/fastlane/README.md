@@ -47,14 +47,6 @@ RUN SNAPSHOTS TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT
 
 RUN UI TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT
 
-### ios prepare_release
-
-```sh
-[bundle exec] fastlane ios prepare_release
-```
-
-READ AND SET NEXT RELEASE NOTE IN CHANGELOG
-
 ### ios buildDebugApp
 
 ```sh

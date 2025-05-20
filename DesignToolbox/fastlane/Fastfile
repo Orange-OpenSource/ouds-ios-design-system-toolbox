@@ -24,7 +24,7 @@ require 'json'
 
 # TestFlight
 # Configuration for App Store Connect API (https://appstoreconnect.apple.com/access/integrations/api)
-#   OUDS_APPLE_ISSUER_ID = Issuer identifier (unique to group)
+#   OUDS_APPLE_ISSUER_ID = issuer identifier (unique to group)
 #   OUDS_APPLE_KEY_ID = key identifier (for the app)
 #   OUDS_APPLE_KEY_CONTENT = private key associated to the key identifier
 APPLE_ISSUER_ID = ENV["OUDS_APPLE_ISSUER_ID"]
@@ -47,10 +47,14 @@ MATTERMOST_HOOK_BOT_ICON_URL = ENV["OUDS_MATTERMOST_HOOK_BOT_ICON_URL"]
 # GitHub
 # ------
 
-# Repository of OUDS iOS
-GITHUB_ORG_REPO = "Orange-OpenSource/ouds-ios"
+# Repository of OUDS iOS library
+GITHUB_ORG_LIB_REPO = "Orange-OpenSource/ouds-ios"
 
-# Fine grained personal access token with enough permissions for the suitable GitHub project
+# Repository of OUDS iOS Design System Toolbox app
+GITHUB_ORG_APP_REPO = "Orange-OpenSource/ouds-ios-design-system-toolbox"
+
+# Fine grained personal access token with enough permissions for the suitable GitHub projects
+# Must be configured for both GITHUB_ORG_LIB_REPO and GITHUB_ORG_APP_REPO
 GITHUB_ACCESS_TOKEN = ENV['GITHUB_ACCESS_TOKEN']
 
 # Project configuration
@@ -59,11 +63,16 @@ GITHUB_ACCESS_TOKEN = ENV['GITHUB_ACCESS_TOKEN']
 OUDS_WORKSPACE = "DesignToolbox.xcworkspace"
 OUDS_PROJECT = "DesignToolbox.xcodeproj"
 OUDS_SCHEME = "DesignToolbox"
-OUDS_TEST_SCHEME = "DesignToolbox"
+OUDS_TARGET = "DesignToolbox"
 OUDS_SNAPSHOTS_SNAPSHOTS_TEST_SCHEME = "DesignToolboxSnapshotsTests"
 OUDS_SNAPSHOTS_UI_TEST_SCHEME = "DesignToolboxUITests"
 OUDS_PROJECT_NAME = "DesignToolbox" # Root for Info.plist, etc.
 OUDS_APP_DISPLAY_NAME = "Design System Toolbox"
+
+# Devices configuration
+# ---------------------
+
+OUDS_SNAPSHOTS_TEST_DEVICE = "iPhone 16 Pro (18.0)"
 
 # Lanes
 # ------
@@ -86,7 +95,7 @@ platform :ios do
     lane :check_dead_code do
         puts "👉 Check dead code with Periphery"
 
-        sh "periphery scan --strict --workspace ../DesignToolbox.xcworkspace --schemes DesignToolbox --targets DesignToolbox --format xcode"
+        sh "periphery scan --strict --workspace ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME} --targets #{OUDS_TARGET} --format xcode"
     end
 
     # ------------------------------------------------------------
@@ -116,9 +125,8 @@ platform :ios do
         # Check the available devices using `xcrun xctrace list devices`
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
-            device = "iPhone 16 Pro (18.0)"
             scan(scheme: OUDS_SNAPSHOTS_SNAPSHOTS_TEST_SCHEME,
-                device: device,
+                device: OUDS_SNAPSHOTS_TEST_DEVICE,
                 skip_build: true
             )
 
@@ -148,9 +156,8 @@ platform :ios do
         # Check the available devices using `xcrun xctrace list devices`
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
-            device = "iPhone 16 Pro (18.0)"
             scan(scheme: OUDS_SNAPSHOTS_UI_TEST_SCHEME,
-                device: device,
+                device: OUDS_SNAPSHOTS_TEST_DEVICE,
                 skip_build: true
             )
 
@@ -167,25 +174,6 @@ platform :ios do
             end
             raise error
         end
-    end
-
-    # ------------------------------------------------------------
-    # READ AND SET NEXT RELEASE NOTE IN CHANGELOG
-    # ------------------------------------------------------------
-    # TODO Maybe this lane should be removed or updated if we have several changelogs or if we use git-cliff
-    desc "READ AND SET NEXT RELEASE NOTE IN CHANGELOG"
-    lane :prepare_release do
-        puts "👉 Prepare release"
-
-        version = get_app_version
-
-        stamp_changelog(
-            changelog_path: '../CHANGELOG.md',
-            section_identifier: version,
-            git_tag: version,
-            should_stamp_date: true,
-            stamp_datetime_format: '%F'
-        )
     end
 
     # ------------------------------------------------------------
@@ -421,9 +409,9 @@ platform :ios do
                 issues_numbers = params[:issues_numbers]
                 puts "ℹ️ Upload type: '#{uploadType}'"
                 if uploadType == "alpha"
-                    news = "Warning: this is alpha build for issues '#{issues_numbers}'\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
+                    news = "⚠️ Warning: this is alpha build for issues '#{issues_numbers}'\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
                 else
-                    news = "Warning: this is #{uploadType} build\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
+                    news = "ℹ️ #{uploadType} build\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
                 end
             end
 
@@ -535,7 +523,7 @@ platform :ios do
             tag = "#{prefix}/" + commitHash[0,7]
             puts "ℹ️ Check if '#{tag}' exists yet"
 
-            uri = URI("https://api.github.com/repos/#{GITHUB_ORG_REPO}/tags")
+            uri = URI("https://api.github.com/repos/#{GITHUB_ORG_APP_REPO}/tags")
             http = Net::HTTP.new(uri.host, uri.port)
             http.use_ssl = true
             
@@ -555,7 +543,7 @@ platform :ios do
             else
                 puts "ℹ️ Commit SHA to tag is '#{commitHash}'"
 
-                uri = URI("https://api.github.com/repos/#{GITHUB_ORG_REPO}/git/refs")
+                uri = URI("https://api.github.com/repos/#{GITHUB_ORG_APP_REPO}/git/refs")
                 http = Net::HTTP.new(uri.host, uri.port)
                 http.use_ssl = true
                 
@@ -600,7 +588,7 @@ platform :ios do
         build_issues_numbers = build_details.scan(/\d+/).map(&:to_i)
         
         build_issues_numbers.each do |issue_number|
-            uri = URI("https://api.github.com/repos/#{GITHUB_ORG_REPO}/issues/#{issue_number}")
+            uri = URI("https://api.github.com/repos/#{GITHUB_ORG_LIB_REPO}/issues/#{issue_number}")
             response = Net::HTTP.get(uri)
             issue = JSON.parse(response)
         
@@ -626,17 +614,16 @@ Please, get the new build from *TestFlight* app, or contact the project maintain
 @ludovic35 - Ludovic PINEL - iOS developer, OUDS iOS maintainer
 @MaximeTonnerre - Maxime TONNERRE - lead designer
 @mccart77 - Stephen McCARTHY - designer
-@iassab - Iman Assabah - designer
 @TonyAntonyHello - Anton ASTAFEV - designer
 -->
 cc @B3nz01d (product owner)
 cc @pylapp @ludovic35 (dev team)
-cc @MaximeTonnerre @mccart77 @iassab @TonyAntonyHello (design team)
+cc @MaximeTonnerre @mccart77 @TonyAntonyHello (design team)
 
 _This is an automated message sent with love thanks to *Fastlane* from our CI/CD pipeline 🤘_
 EOF
 
-                uri = URI("https://api.github.com/repos/#{GITHUB_ORG_REPO}/issues/#{issue_number}/comments")
+                uri = URI("https://api.github.com/repos/#{GITHUB_ORG_LIB_REPO}/issues/#{issue_number}/comments")
                 http = Net::HTTP.new(uri.host, uri.port)
                 http.use_ssl = true
           
