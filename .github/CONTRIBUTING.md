@@ -3,6 +3,7 @@
 - [Using the Issue Tracker](#using-the-issue-tracker)
 - [Using the Discussion Tracker](#using-the-issue-tracker)
 - [Issues and Labels](#issues-and-labels)
+- [Cross repositories mentions](#cross-repositories-mentions)
 - [Bug Reports](#bug-reports)
 - [Feature Requests](#feature-requests)
 - [Pull Requests](#pull-requests)
@@ -21,7 +22,7 @@ In return, they should reciprocate that respect in addressing your issue or asse
 
 You should also have a look on the wiki if you are looking for information about how the project is managed, the releases and tests done, and how to do some actions.
 [The wiki define the way to work anyone must agree](https://github.com/Orange-OpenSource/ouds-ios/wiki).
-[The Code of Conduct](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/CODE_OF_CONDUCT.md) defines how we should interact together.
+[The Code of Conduct](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/CODE_OF_CONDUCT.md) defines how we should interact together.
 
 ## Using the Issue Tracker
 
@@ -32,6 +33,15 @@ The [issue tracker](https://github.com/Orange-OpenSource/ouds-ios/issues) is the
 - Please **do not** derail or troll issues. Keep the discussion on topic and respect the opinions of others.
 
 - Please **do not** post comments consisting solely of "+1" or ":thumbsup:". Use [GitHub's "reactions" feature](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) instead. We reserve the right to delete comments which violate this rule.
+
+## Cross repositories mentions
+
+The OUDS project contains two repositories: one for the [Swift Package library](https://github.com/Orange-OpenSource/ouds-ios), and [another (this one)](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox) for the design system toolbox app showcasing the library.
+
+Because today we want to have [one board for both repositories](https://github.com/orgs/Orange-OpenSource/projects/40/views/4), there is no board no issues tracker for this app GitHub project, and anything is centralized in the library GitHub project.
+
+Thus, if you want to refer to an issue in the other project in commits, CHANGELOG, issues, pull requests or discussions, you msut use the [GitHub dedicated convention](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls) about issues references.
+In few words, if you are on an issue n°42 in [ouds-ios](https://github.com/Orange-OpenSource/ouds-ios), do not mention `#42` in your messages, but `Orange-OpenSource/ouds-iOS#42`.
 
 ## Using the Discussion Tracker
 
@@ -102,11 +112,11 @@ Adhering to the following process is the best way to get your work included in t
 
    ```bash
    # Clone your fork of the repo into the current directory (use either SSH or HTTPS)
-   git clone https://github.com/<your-username>/ouds-ios.git
+   git clone https://github.com/<your-username>/ouds-ios-design-system-toolbox.git
    # Navigate to the newly cloned directory
-   cd ouds-ios
+   cd ouds-ios-design-system-toolbox
    # Assign the original repo to a remote called "upstream" (use either SSH or HTTPS)
-   git remote add upstream https://github.com/Orange-OpenSource/ouds-ios.git
+   git remote add upstream https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox.git
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
@@ -139,7 +149,7 @@ Adhering to the following process is the best way to get your work included in t
 
 7. [Open a Pull Request](https://help.github.com/articles/about-pull-requests/) with a clear title and description against the `develop` branch.
 
-**IMPORTANT**: By submitting a patch, you agree to allow the project owners to license your work under the terms of the [MIT License](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/LICENSE).
+**IMPORTANT**: By submitting a patch, you agree to allow the project owners to license your work under the terms of the [MIT License](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/LICENSE).
 
 Note that a ruleset based [on task-list-completed tool](https://github.com/marketplace/task-list-completed) is applied on `develop` branch: if any prerequisites are not futfilled in the pull request ticket the merge won't be done. 
 
@@ -167,7 +177,7 @@ Co-authored-by: Author firstname and lastname <author email>
 Signed-off-by: Author firstname and lastname <first author email>
 ```
 
-If the commut embeds work of several authors, use the *Co-authored-by* tag (in use in GitHub):
+If the commit embeds work of several authors, use the *Co-authored-by* tag (in use in GitHub):
 
 ```text
 fix: title of your commit (#43)
@@ -228,7 +238,7 @@ Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Finaly, if you want to note somewhere you used *generative AI* tool, you can add the field "Assisted-by" in your commit with the model in use and in parenthsies some commercial name.
 
 ```text
-feat: add thousands of tokens (#666))
+feat: add thousands of tokens (#666)
 
 Add thousands of tokens and hundreds of tests.
 
@@ -273,8 +283,8 @@ flowchart TD
 
 Pull requests will be merged if no conditions / prerequisites / checks are red (except DCO which is not - yet - mandatory, but we must at least outside contributors to apply it). Some _GitHub Actions_ workflows are defined:
 - [task-list-completed GitHub app](https://github.com/apps/task-list-completed) prevents pull requests to be merged if some mandatory / not optional prerequisites are not filled ;
-- another [workflow YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml) building and testing the app / lib;
-- another [using GitLeaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks-action.yml) ensuring no screts are leaked ;
+- another [workflow YAML](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/build-and-test.yml) building and testing the app / lib;
+- another [using GitLeaks](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/gitleaks-action.yml) ensuring no screts are leaked ;
 - the almost-optional-one checking [DCO is applied](https://probot.github.io/apps/dco/) ;
 - and the one [for the linter warnings](https://github.com/cirruslabs/swiftlint-action).
 
