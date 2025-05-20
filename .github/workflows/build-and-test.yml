@@ -60,6 +60,7 @@ jobs:
       - name: Look for dead code
         run: |
           cd DesignToolbox
+          bundle exec pod install
           bundle exec fastlane check_dead_code
 
       - name: Build demo app
