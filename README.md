@@ -3,7 +3,7 @@
 <p align="center">
   Demo application of the OUDS iOS library.
   <br>
-  <a href="https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/issues/new?template=bug_report.yml" title="Open an issue on GitHub">Report bug</a>
+  <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=bug_report.yml" title="Open an issue on GitHub">Report bug</a>
   ·
   <a href="https://ios.unified-design-system.orange.com/documentation" title="Swift library technical documentation on GitHub Pages">Swift documentation</a>
   ·
@@ -50,9 +50,9 @@ The source code of the [Swift Package is on GitHub](https://github.com/Orange-Op
 
 ## Bugs, feature requests and discussions
 
-Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/issues/new/choose).
+So as to help management team and have in one board all issues related to OUDS iOS, and because the design system toolbox app is just a mirror of the library, any discussions and issues about this app, and in the end, content of this repository, must remain in the [library project](https://github.com/Orange-OpenSource/ouds-ios).
 
-Any topics, discussions, requests or bugs about the library must be done on the [library project](https://github.com/Orange-OpenSource/ouds-ios).
+Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/Orange-OpenSource/ouds-ios/issues/new/choose).
 
 ## Contributing
 
