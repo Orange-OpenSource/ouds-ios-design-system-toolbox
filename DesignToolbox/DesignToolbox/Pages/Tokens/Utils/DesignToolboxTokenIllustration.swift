@@ -29,7 +29,8 @@ struct DesignToolboxTokenIllustration<TokenIllustration>: View where TokenIllust
 
     init(tokenName: String,
          tokenValue: String? = nil,
-         tokenIllustration: @escaping () -> TokenIllustration) {
+         tokenIllustration: @escaping () -> TokenIllustration)
+    {
         self.tokenIllustration = tokenIllustration
         self.tokenName = tokenName
         self.tokenValue = tokenValue

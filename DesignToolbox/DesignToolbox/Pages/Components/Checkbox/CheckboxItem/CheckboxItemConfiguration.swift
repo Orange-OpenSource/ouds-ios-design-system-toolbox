@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSComponents
@@ -77,18 +77,19 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         helperText = String(localized: "app_components_controlItem_helperText_label")
     }
 
-    deinit { }
+    deinit {}
 
     // MARK: - Component Configuration
 
     // swiftlint:disable line_length
     override func updateCode() {
         code =
-          """
-        OUDSCheckboxItem(isOn: $isOn, label: \"\(labelText)\"\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
-        \(disableCode)
-        """
+            """
+            OUDSCheckboxItem(isOn: $isOn, label: \"\(labelText)\"\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
+            \(disableCode)
+            """
     }
+
     // swiftlint:enable line_length
 
     private var disableCode: String {

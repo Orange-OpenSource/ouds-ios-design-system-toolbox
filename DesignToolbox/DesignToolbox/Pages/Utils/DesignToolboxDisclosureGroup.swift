@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSTokensSemantic
@@ -37,7 +37,7 @@ struct DesignToolboxDisclosureGroup<Label, Content>: View where Label: View, Con
     ///   - content: The content shown when the disclosure group expands.
     ///   - label: A view that describes the content of the disclosure group.
     init(isExpanded: Binding<Bool>, accessibilityLabel: String, @ViewBuilder content: @escaping () -> Content, @ViewBuilder label: @escaping () -> Label) {
-        self._isExpanded = isExpanded
+        _isExpanded = isExpanded
         self.content = content
         self.label = label
         self.accessibilityLabel = accessibilityLabel
@@ -86,7 +86,7 @@ struct InternalDisclosure<Label, Content>: View where Label: View, Content: View
         self.label = label
         self.content = content
         self.accessibilityLabel = accessibilityLabel
-        self._isExpanded = isExpanded
+        _isExpanded = isExpanded
     }
 
     // MARK: Body

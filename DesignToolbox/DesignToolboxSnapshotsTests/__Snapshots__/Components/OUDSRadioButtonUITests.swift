@@ -108,13 +108,14 @@ final class OUDSRadioUITests: XCTestCase {
                                             interfaceStyle: UIUserInterfaceStyle,
                                             layout: RadioTest.Layout,
                                             indicatorState: Bool,
-                                            isDisabled: Bool) {
+                                            isDisabled: Bool)
+    {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             RadioTest(layout: layout,
                       indicatorState: indicatorState,
                       isDisabled: isDisabled)
-            .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
         // Create a unique snapshot name based on the current configuration :
@@ -200,9 +201,9 @@ private struct RadioTest: View {
             case let .indicatorOnly(isError):
                 return "layout-indicatorOnly-\(isError ? "error" : "")"
             case let .default(_, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
-                    return "layout-default-label-\(additionalLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
+                return "layout-default-label-\(additionalLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
             case let .reversed(_, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
-                    return "layout-inverse-label-\(additionalLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
+                return "layout-inverse-label-\(additionalLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
             }
         }
         // swiftlint:enable line_length
@@ -223,7 +224,7 @@ private struct RadioTest: View {
             OUDSRadio(isOn: .constant(indicatorState),
                       accessibilityLabel: "Bazinga!",
                       isError: isError)
-            .disabled(isDisabled)
+                .disabled(isDisabled)
         case let .default(labelText, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
             OUDSRadioItem(isOn: .constant(indicatorState),
                           label: labelText,
@@ -234,7 +235,7 @@ private struct RadioTest: View {
                           isError: isError,
                           isReadOnly: isReadOnly,
                           hasDivider: hasDivider)
-            .disabled(isDisabled)
+                .disabled(isDisabled)
         case let .reversed(labelText, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
             OUDSRadioItem(isOn: .constant(indicatorState),
                           label: labelText,
@@ -245,7 +246,7 @@ private struct RadioTest: View {
                           isError: isError,
                           isReadOnly: isReadOnly,
                           hasDivider: hasDivider)
-            .disabled(isDisabled)
+                .disabled(isDisabled)
         }
     }
 }

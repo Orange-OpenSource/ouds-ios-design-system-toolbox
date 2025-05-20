@@ -254,4 +254,5 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         }
     }
 }
+
 // swiftlint:enable required_deinit

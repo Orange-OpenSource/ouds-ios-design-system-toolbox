@@ -25,7 +25,7 @@ extension NamedSpace {
         case spacePaddingBlockTaller
         case spacePaddingBlockTallest
 
-        var name: String { self.rawValue }
+        var name: String { rawValue }
 
         func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {

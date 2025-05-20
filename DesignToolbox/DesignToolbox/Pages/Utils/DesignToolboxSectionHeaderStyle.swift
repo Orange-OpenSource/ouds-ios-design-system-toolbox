@@ -28,6 +28,6 @@ struct DesignToolboxSectionHeaderModifier: ViewModifier {
 
 extension Text {
     func designToolboxSectionHeaderStyle() -> some View {
-        self.modifier(DesignToolboxSectionHeaderModifier())
+        modifier(DesignToolboxSectionHeaderModifier())
     }
 }

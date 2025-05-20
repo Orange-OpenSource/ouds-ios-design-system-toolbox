@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSComponents
@@ -61,26 +61,27 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
         isEnabled = true
     }
 
-    deinit { }
+    deinit {}
 
     // MARK: - Component Configuration
 
     // swiftlint:disable line_length
     override func updateCode() {
         code =
-          """
-        OUDSRadioPicker(selection: $selection, radios: someRadiosData, placement: \(pickerPlacementPattern)\(hasDividerPattern)\(isReadOnlyPattern)\(isErrorPattern)\(isReversedPattern)\(isOutlinedPattern))\(isEnabledPattern)
-        """
+            """
+            OUDSRadioPicker(selection: $selection, radios: someRadiosData, placement: \(pickerPlacementPattern)\(hasDividerPattern)\(isReadOnlyPattern)\(isErrorPattern)\(isReversedPattern)\(isOutlinedPattern))\(isEnabledPattern)
+            """
     }
+
     // swiftlint:enable line_length
 
     private var pickerPlacementPattern: String {
         switch pickerPlacement {
         case .vertical:
             return ".vertical"
-        case .horizontal(let showsIndicator) where showsIndicator == true:
+        case let .horizontal(showsIndicator) where showsIndicator == true:
             return ".horizontal(true)"
-        case .horizontal(let showsIndicator) where showsIndicator == false:
+        case let .horizontal(showsIndicator) where showsIndicator == false:
             return ".horizontal(false)"
         default:
             return "🥜"
@@ -160,7 +161,8 @@ struct RadioPickerConfiguration: View {
 
             DesignToolboxChoicePicker(title: "app_components_common_orientation_label",
                                       selection: $model.pickerPlacement,
-                                      style: .menu) {
+                                      style: .menu)
+            {
                 ForEach(OUDSRadioPickerPlacement.allCases, id: \.id) { placement in
                     Text(placement.description).tag(placement)
                 }
@@ -187,9 +189,9 @@ extension OUDSRadioPickerPlacement: @retroactive CaseIterable, @retroactive Cust
 
     public var description: String {
         switch self {
-        case .horizontal(let showIndicator) where showIndicator == true:
+        case let .horizontal(showIndicator) where showIndicator == true:
             return "Horizontal with indicator"
-        case .horizontal(let showIndicator) where showIndicator == false:
+        case let .horizontal(showIndicator) where showIndicator == false:
             return "Horizontal without indicator"
         case .vertical:
             return "Vertical"

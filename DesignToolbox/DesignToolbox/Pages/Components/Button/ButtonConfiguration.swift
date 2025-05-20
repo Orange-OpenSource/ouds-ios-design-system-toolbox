@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSComponents
@@ -51,15 +51,15 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         text = String(localized: "app_components_button_label")
         layout = .textOnly
         hierarchy = .default
-        style = .`default`
+        style = .default
     }
 
-    deinit { }
+    deinit {}
 
     // MARK: Component Configuration
 
     private var disableCode: String {
-        if case .`default` = style {
+        if case .default = style {
             ".disabled(\(enabled ? "false" : "true"))"
         } else {
             ""
@@ -74,25 +74,25 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         switch layout {
         case .textOnly:
             code =
-            """
-          OUDSButton(text: \"Button\", hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
-          \(disableCode)
-          \(coloredSurfaceCodeModifier)
-          """
+                """
+                OUDSButton(text: \"Button\", hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
+                \(disableCode)
+                \(coloredSurfaceCodeModifier)
+                """
         case .iconOnly:
             code =
-            """
-          OUDSButton(icon: Image(\"ic_heart\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
-          \(disableCode)
-          \(coloredSurfaceCodeModifier)
-          """
+                """
+                OUDSButton(icon: Image(\"ic_heart\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
+                \(disableCode)
+                \(coloredSurfaceCodeModifier)
+                """
         case .iconAndText:
             code =
-            """
-          OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
-          \(disableCode)
-          \(coloredSurfaceCodeModifier)
-          """
+                """
+                OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
+                \(disableCode)
+                \(coloredSurfaceCodeModifier)
+                """
         }
     }
 }
@@ -122,11 +122,11 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
 
 extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSButton.Style] = [.`default`, .loading]
+    public nonisolated(unsafe) static let allCases: [OUDSButton.Style] = [.default, .loading]
 
     public var description: String {
         switch self {
-        case .`default`:
+        case .default:
             "Default"
         case .loading:
             "Loading"
@@ -139,7 +139,7 @@ extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomString
 // MARK: Button hierarchy extension
 
 extension OUDSButton.Hierarchy: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    nonisolated(unsafe) public static let allCases: [OUDSButton.Hierarchy] = [.default, .strong, .minimal, .negative]
+    public nonisolated(unsafe) static let allCases: [OUDSButton.Hierarchy] = [.default, .strong, .minimal, .negative]
 
     // Note: Not localized because it is a technical name
     public var description: String {
@@ -170,14 +170,15 @@ struct ButtonConfiguration: View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
-                    .disabled(model.style != .`default`)
+                    .disabled(model.style != .default)
 
                 OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $model.onColoredSurface)
             }
 
             DesignToolboxChoicePicker(title: "app_components_button_hierarchy_label",
                                       selection: $model.hierarchy,
-                                      style: .segmented) {
+                                      style: .segmented)
+            {
                 ForEach(OUDSButton.Hierarchy.allCases, id: \.id) { hierarchy in
                     Text(LocalizedStringKey(hierarchy.description)).tag(hierarchy)
                 }
@@ -185,7 +186,8 @@ struct ButtonConfiguration: View {
 
             DesignToolboxChoicePicker(title: "app_components_common_style_label",
                                       selection: $model.style,
-                                      style: .segmented) {
+                                      style: .segmented)
+            {
                 ForEach(OUDSButton.Style.allCases, id: \.id) { style in
                     Text(LocalizedStringKey(style.description)).tag(style)
                 }
@@ -193,7 +195,8 @@ struct ButtonConfiguration: View {
 
             DesignToolboxChoicePicker(title: "app_components_common_layout_label",
                                       selection: $model.layout,
-                                      style: .segmented) {
+                                      style: .segmented)
+            {
                 ForEach(ButtonLayout.allCases, id: \.id) { layout in
                     Text(LocalizedStringKey(layout.description)).tag(layout)
                 }

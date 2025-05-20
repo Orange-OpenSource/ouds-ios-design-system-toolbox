@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSComponents
@@ -46,10 +46,10 @@ final class LinkConfigurationModel: ComponentConfiguration {
         enabled = true
         text = String(localized: "app_components_link_label")
         layout = .textOnly
-        size = .`default`
+        size = .default
     }
 
-    deinit { }
+    deinit {}
 
     // MARK: Component Configuration
 
@@ -65,32 +65,32 @@ final class LinkConfigurationModel: ComponentConfiguration {
         switch layout {
         case .textOnly:
             code =
-            """
-          OUDSLink(text: \"Link\", size: \(size.description.lowercased())) {}
-          \(disableCode)
-          \(coloredSurfaceCodeModifier)
-          """
+                """
+                OUDSLink(text: \"Link\", size: \(size.description.lowercased())) {}
+                \(disableCode)
+                \(coloredSurfaceCodeModifier)
+                """
         case .iconAndText:
             code =
-            """
-          OUDSLink(text: \"Link\", icon: Image(\"ic_heart\"), size: \(size.description.lowercased())) {}
-          \(disableCode)
-          \(coloredSurfaceCodeModifier)
-          """
+                """
+                OUDSLink(text: \"Link\", icon: Image(\"ic_heart\"), size: \(size.description.lowercased())) {}
+                \(disableCode)
+                \(coloredSurfaceCodeModifier)
+                """
         case .indicatorNext:
             code =
-            """
-          OUDSLink(text: \"Link\", indicator: .next, size: \(size.description.lowercased())) {}
-          \(disableCode)
-          \(coloredSurfaceCodeModifier)
-          """
+                """
+                OUDSLink(text: \"Link\", indicator: .next, size: \(size.description.lowercased())) {}
+                \(disableCode)
+                \(coloredSurfaceCodeModifier)
+                """
         case .indicatorBack:
             code =
-            """
-          OUDSLink(text: \"Link\", indicator: .back, size: \(size.description.lowercased())) {}
-          \(disableCode)
-          \(coloredSurfaceCodeModifier)
-          """
+                """
+                OUDSLink(text: \"Link\", indicator: .back, size: \(size.description.lowercased())) {}
+                \(disableCode)
+                \(coloredSurfaceCodeModifier)
+                """
         }
     }
 }
@@ -122,11 +122,11 @@ enum LinkLayout: CaseIterable, CustomStringConvertible {
 // MARK: Link size extension
 
 extension OUDSLink.Size: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    nonisolated(unsafe) public static let allCases: [OUDSLink.Size] = [.`default`, .small]
+    public nonisolated(unsafe) static let allCases: [OUDSLink.Size] = [.default, .small]
 
     public var description: String {
         switch self {
-        case .`default`:
+        case .default:
             "Default"
         case .small:
             "Small"
@@ -154,7 +154,8 @@ struct LinkConfiguration: View {
 
             DesignToolboxChoicePicker(title: "app_components_link_size_label",
                                       selection: $model.size,
-                                      style: .segmented) {
+                                      style: .segmented)
+            {
                 ForEach(OUDSLink.Size.allCases, id: \.id) { size in
                     Text(LocalizedStringKey(size.description)).tag(size)
                 }
@@ -162,7 +163,8 @@ struct LinkConfiguration: View {
 
             DesignToolboxChoicePicker(title: "app_components_common_layout_label",
                                       selection: $model.layout,
-                                      style: .segmented) {
+                                      style: .segmented)
+            {
                 ForEach(LinkLayout.allCases, id: \.id) { layout in
                     Text(LocalizedStringKey(layout.description)).tag(layout)
                 }

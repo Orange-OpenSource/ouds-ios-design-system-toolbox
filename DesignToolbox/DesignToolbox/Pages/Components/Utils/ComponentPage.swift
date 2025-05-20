@@ -21,7 +21,7 @@ open class ComponentConfiguration: ObservableObject {
     @Published var code: String = ""
 
     init() {
-        self.updateCode()
+        updateCode()
     }
 
     deinit {}

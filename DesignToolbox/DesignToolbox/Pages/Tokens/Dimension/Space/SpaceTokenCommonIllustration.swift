@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDS
@@ -36,7 +36,8 @@ struct SpaceTokenProperty<HeaderDescription, TokenIllustration>: View where Head
 
     init(namedTokens: [NamedSpaceToken],
          @ViewBuilder header: @escaping () -> HeaderDescription,
-         @ViewBuilder illustration: @escaping (SpaceSemanticToken) -> TokenIllustration) {
+         @ViewBuilder illustration: @escaping (SpaceSemanticToken) -> TokenIllustration)
+    {
         self.namedTokens = namedTokens
         self.header = header
         self.illustration = illustration
@@ -109,20 +110,20 @@ struct SpaceCommonIllustration: View {
             DesignToolboxTokenIllustrationBackground()
 
             switch padding {
-            case .topLeading:  // ZStack topleading
+            case .topLeading: // ZStack topleading
                 SpaceIllustrationRectangle(width: dimension)
                 SpaceIllustrationRectangle(height: dimension)
-            case .leading(let asset): // ZStack alignment leading
+            case let .leading(asset): // ZStack alignment leading
                 HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     SpaceIllustrationRectangle(width: dimension)
                     SpaceIllustrationIcon(asset: asset)
                 }
-            case .bottom(let asset): // ZStack alignment bottom
+            case let .bottom(asset): // ZStack alignment bottom
                 VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     SpaceIllustrationIcon(asset: asset)
                     SpaceIllustrationRectangle(height: dimension)
                 }
-            case .top(let asset): // ZStack alignment top
+            case let .top(asset): // ZStack alignment top
                 VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     SpaceIllustrationRectangle(height: dimension)
                     SpaceIllustrationIcon(asset: asset)
@@ -242,13 +243,13 @@ private struct SpaceIllustrationRectangle: View {
     let height: CGFloat?
 
     init(width: DimensionRawToken) {
-        self.height = nil
+        height = nil
         self.width = Double(width)
     }
 
     init(height: DimensionRawToken) {
         self.height = Double(height)
-        self.width = nil
+        width = nil
     }
 
     var body: some View {
@@ -287,9 +288,9 @@ struct SpaceHeaderDescription: View {
     }
 
     init(text: LocalizedStringKey, paddings: EdgeInsets) {
-        self.firstText = text
-        self.secondText = nil
-        self.layout = .text(paddings)
+        firstText = text
+        secondText = nil
+        layout = .text(paddings)
     }
 
     var body: some View {
@@ -301,9 +302,9 @@ struct SpaceHeaderDescription: View {
 
     @ViewBuilder private var content: some View {
         switch layout {
-        case .text(let paddings):
+        case let .text(paddings):
             text(paddings)
-        case .texts(let orientation):
+        case let .texts(orientation):
             texts(orientation)
         }
     }

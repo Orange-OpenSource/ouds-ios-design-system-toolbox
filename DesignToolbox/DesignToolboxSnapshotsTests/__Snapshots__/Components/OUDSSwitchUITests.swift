@@ -108,13 +108,14 @@ final class OUDSSwitchUITests: XCTestCase {
                                        interfaceStyle: UIUserInterfaceStyle,
                                        layout: SwitchTest.Layout,
                                        indicatorState: Bool,
-                                       isDisabled: Bool) {
+                                       isDisabled: Bool)
+    {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             SwitchTest(layout: layout,
                        indicatorState: indicatorState,
                        isDisabled: isDisabled)
-            .background(theme.colors.colorBgPrimary.color(for: interfaceStyle.colorScheme))
+                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle.colorScheme))
         }
 
         // Create a unique snapshot name based on the current configuration :
@@ -225,7 +226,7 @@ private struct SwitchTest: View {
                            isError: isError,
                            isReadOnly: isReadOnly,
                            hasDivider: hasDivider)
-            .disabled(isDisabled)
+                .disabled(isDisabled)
         case let .inverse(label, helper, icon, isError, hasDivider, isReadOnly):
             OUDSSwitchItem(label,
                            isOn: .constant(indicatorState),
@@ -235,7 +236,7 @@ private struct SwitchTest: View {
                            isError: isError,
                            isReadOnly: isReadOnly,
                            hasDivider: hasDivider)
-            .disabled(isDisabled)
+                .disabled(isDisabled)
         }
     }
 }

@@ -106,7 +106,8 @@ final class OUDSButtonUITests: XCTestCase {
                                        layout: ButtonTest.Layout,
                                        hierarchy: OUDSButton.Hierarchy,
                                        disabled: Bool,
-                                       onColoredSurface: Bool = false) {
+                                       onColoredSurface: Bool = false)
+    {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             ButtonTest(layout: layout, hierarchy: hierarchy, style: .default, onColoredSurface: onColoredSurface)
@@ -135,13 +136,13 @@ final class OUDSButtonUITests: XCTestCase {
 
 private struct ButtonTest: View {
 
-    enum `Layout`: String, CaseIterable {
+    enum Layout: String, CaseIterable {
         case text
         case textAndIcon
         case icon
     }
 
-    let layout: `Layout`
+    let layout: Layout
     let hierarchy: OUDSButton.Hierarchy
     let style: OUDSButton.Style
     let onColoredSurface: Bool

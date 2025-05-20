@@ -106,7 +106,8 @@ final class OUDSLinkUITests: XCTestCase {
                                      layout: LinkLayout,
                                      size: OUDSLink.Size,
                                      disabled: Bool,
-                                     onColoredSurface: Bool = false) {
+                                     onColoredSurface: Bool = false)
+    {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             LinkTest(layout: layout, size: size, onColoredSurface: onColoredSurface)
@@ -130,6 +131,7 @@ final class OUDSLinkUITests: XCTestCase {
                            testName: testName)
     }
 }
+
 // swiftlint:enable required_deinit
 
 // MARK: - Link Test
@@ -168,7 +170,7 @@ extension OUDSLink.Size: @retroactive CustomDebugStringConvertible {
         switch self {
         case .small:
             "Small"
-        case .`default`:
+        case .default:
             "Medium"
         }
     }
