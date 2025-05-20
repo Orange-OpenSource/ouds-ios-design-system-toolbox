@@ -43,11 +43,6 @@ You can find the [detailed technical documentation online](https://ios.unified-d
 
 The source code of the [Swift Package is on GitHub](https://github.com/Orange-OpenSource/ouds-ios).
 
-```
-⚠️ This release should not be used as is. 
-⚠️ This is only an incremental version of OUDS iOS library.
-```
-
 ## Bugs, feature requests and discussions
 
 So as to help management team and have in one board all issues related to OUDS iOS, and because the design system toolbox app is just a mirror of the library, any discussions and issues about this app, and in the end, content of this repository, must remain in the [library project](https://github.com/Orange-OpenSource/ouds-ios).
