@@ -81,6 +81,14 @@ You may download the source code on the [following website](https://github.com/x
 
 ### Other tools
 
+#### GitHub Task List Completed
+<!-- GitHub PR tool -->
+
+Copyright (c) 2023 Andrew Stilliard
+
+*github-task-list-completed* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
+You may download the source code on the [following website](https://github.com/stilliard/github-task-list-completed).
+
 #### Gitleaks
 <!-- GitHub Action workflow -->
 
