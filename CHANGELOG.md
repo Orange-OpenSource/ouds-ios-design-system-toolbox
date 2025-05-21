@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] Update `fastlane` RubyGem from v2.227.1 to v2.227.2 ([#1](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/pull/1))
 - [Tool] Update `json` RubyGem from v2.11.3 to v2.12.0 ([#2](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/pull/2))
 - Various cleanings and split of design system toolbox app from independant repository ([Orange-OpenSource/ouds-ios#187](https://github.com/Orange-OpenSource/ouds-ios/issues/187))
 - Udpate wordings to avoid traduction for components and tokens names ([Orange-OpenSource/ouds-ios#654](https://github.com/Orange-OpenSource/ouds-ios/issues/654))
