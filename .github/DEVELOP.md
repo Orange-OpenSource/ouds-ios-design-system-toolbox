@@ -2,6 +2,8 @@
 
 - [Technical preconditions](#technical-preconditions)
 - [Embed the OUDS iOS library](#embed-the-ouds-ios-library)
+  * [Use as dependency](#use-as-dependency)
+  * [Use local reference](#use-local-reference)
 - [Build Design System Toolbox](#build-design-system-toolbox)
 - [Documentation](#documentation)
 - [Run tests](#run-tests)
@@ -95,7 +97,20 @@ We use also for our GitLab CI runners **Xcode 16.3**, we suggest you use this ve
 
 ## Embed the OUDS iOS library
 
-*To be defined soon. Yup, that's a TODO #187*
+### Use as dependency
+
+You can refer in your project to the OUDS iOS Swift Package by adding a package dependency.
+Use the GitHub project Orange-OpenSource/ouds-ios (e.g. from URL https://github.com/Orange-OpenSource/ouds-ios/).
+Then use the dependency rule you want (branch, versions, etc). If you want a specific release tag, [have a look on the releases list](https://github.com/Orange-OpenSource/ouds-ios/releases).
+Do not forget to add the package products in your target.
+
+### Use local reference
+
+For debugging purposes, you can also use an Xcode local reference of the project.
+First, clone the OUDS iOS Swift Package repistory.
+Then, select your folder from *Finder* and move to the project in Xcode in your project pane, choosing *Reference files in place*.
+You will have then the project stored elsewhere reference in your project and which can be easily debugged.
+You should not add in your VCS tool the *{$PROJET}.xcworkspace/contents.xcworkspacedata* file containing the local references.
 
 ## Build Design System Toolbox
 
@@ -119,25 +134,8 @@ the online version based on [_GitHub Pages_](https://pages.github.com/), this ve
 
 ### Unit tests for OUDS Swift package
 
-The unit tests are here to ensure there are no regressions in core features, tokens management, etc.
-
-To run these unit tests follow some steps:
-1. `cd DesignToolbox`
-2. `bundle exec pod install`
-3. Open *DesignToolbox.xcworkspace*
-4. Select *DesignToolbox* scheme
-5. Run tests (Product -> Test)
-
-Unit tests case have been implemented for several reasons. 
-
-First, we don't have too much control on the raw tokens values. We rely on the _Figma_ design tool which outputs the tokens in a JSON file. 
-And this file will be parsed to as to generate Swift files. But if there are inconsistencies in the _Figma_ side or in the parser side, the inconsistencies will be spread in our code base. 
-It is not useful to define unit tests for raw tokens to test their values ; in fact they exist here to be updated.
-But we wan still check other things like the relationship between them. For example a _grid100_ should always be less or equal than a _grid100_. Some _color100_ should be always lighter than a _color200_, etc, etc. A small typo should be always smaller or with the sale size has a one-step-bigger typo.
-
-Then, we want to know when tokens have been removed so as to warn our users and keep release notes and changelog clean. If we don't spot such changes, maybe some users will be impacted.
-
-Finally, we ensure our themes can override any semantic tokens. Themes are in fact a set of values for the whole universe of semantic tokens, and if a theme cannot override a semantic token, there could be an issue. Unit tests also help us to find if some tokens have been removed before releasing the library.
+You can, from the design system toolbox project, if you referenced the OUDS package with a local repository reference before, run the unit tests of the OUDS package.
+To do that, select the scheme *OUDS-Package* and in the tests navigator run the tests.
 
 ### Snapshots tests in demo app
 
