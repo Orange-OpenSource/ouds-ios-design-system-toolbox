@@ -10,9 +10,10 @@ This file lists all the steps to follow when releasing a new version of Design S
 
 ## Release OUDS iOS Swift Package
 
-You must make a release of the OUDS iOS Swift Package library before release the Design System Toolbox app.
+You must make a release of the OUDS iOS Swift Package library before releasing the Design System Toolbox app.
 
 When the release is done according to the [process described in its project](https://github.com/Orange-OpenSource/ouds-ios/tree/develop/docs_release), change the package dependency of the app and use the suitable tag as version.
+Keep in mind the internal GitLab runners use tricks to check if things evolved to make builds ; so if you don't version any dependency or files changes nothing will be done.
 
 ## Prepare release
 
@@ -53,30 +54,31 @@ When the release is done according to the [process described in its project](htt
 Below is an example of what should be a merge commit in `main` branch for a release (ignore of course // lines, see [this commit for example](https://github.com/Orange-OpenSource/ouds-ios/commit/98640b4b63037c2780128f41ceba5b896763b94f)). You can also precise the tokens library version and the OUDS iOS Swift Package version:
 
 ```text
-Version 0.15.0 (#666) // <--- Commit title, #666 is PR nummber
+Version 0.15.0 (#666) // <--- Commit title, #666 is PR nummber for the design toolbox project
 
-// Below is commit body, keep an empty line
+// [DO NOT ADD THIS LINE] Below is commit body, keep an empty line
 Release of version 0.15.0
 Embeds token library v0.14.0
 Embeds OUDS iOS Swift Package v0.14.0
 See below the full CHANGELOG details.
 
-// Keep also an empty line above
-// And copy/paste changelog without # for the sections entries
+// [DO NOT ADD THIS LINE] Keep also an empty line above
+// [DO NOT ADD THIS LINE] And copy/paste changelog without # for the sections entries
+// [DO NOT ADD THIS LINE] Do not forget to reference properly the issues in ouds-ios
 Added:
-- Add UI regression tests using snapshot comparisons with *swift-snapshot-testing* tool ([#78](#78))
+- Add UI regression tests using snapshot comparisons with *swift-snapshot-testing* tool (Orange-OpenSource/ouds-ios#42)
 - Display fake components for elevation rendering tests
 
 Changed:
-- Improve translations ([#11] [#12])
+- Improve translations (Orange-OpenSource/ouds-ios#118)
 
 Removed:
-- Remove some screen ([#109](#109))
+- Remove some screen (Orange-OpenSource/ouds-ios#712)
 
 Fixed:
-- About menu item ([#89](#89))
+- About menu item (Orange-OpenSource/ouds-ios#218)
 
-// Add in co authors anyone working on the commits being merged, add the ones who contributed (copy-paste if too lazy, use the ones you need)
+// [DO NOT ADD THIS LINE] Add in co authors anyone working on the commits being merged, add the ones who contributed (copy-paste if too lazy, use the ones you need)
 Co-authored-by: Benoit Suzanne <benoit.suzanne@orange.com>
 Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Co-authored-by: Ludovic Pinel <ludovic.pinel@orange.com>
@@ -138,7 +140,7 @@ Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
 
 - From the GitLab CI pipeline job which made the production release, get the artifacts and put it in the release.
 
-- Update, from previous release, the artefact for the AppStore (i.e. containing both dSYM and app ZIP, but also screehshots)
+- Update, from previous release, the artefact for the AppStore (i.e. containing both dSYM and app ZIP, and also screehshots)
 
 ## Prepare Next Release
 
