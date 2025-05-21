@@ -11,7 +11,7 @@
 # Software description: A SwiftUI components library with code examples for Orange Design System
 #
 
-name: gitleaks
+name: Check secrets leaks
 on: [pull_request, push, workflow_dispatch]
 jobs:
   scan:
