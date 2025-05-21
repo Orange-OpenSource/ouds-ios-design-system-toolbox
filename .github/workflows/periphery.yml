@@ -35,8 +35,7 @@ on:
       - reopened
 
 jobs:
-  # Build the app (if there are linter errors or compiler issues, it will fail)
-  build:
+  deadcode:
     runs-on: macos-15
     steps:
       - name: Checkout code
