@@ -16,8 +16,10 @@
 - [Commits, changelog, release note, versioning](#commits-changelog-release-note-versioning)
   * [About commits](#about-commits)
   * [About release note and changelog](#about-release-note-and-changelog)
-- [Use of Gitleaks](#use-of-gitleaks)
+- [Secret leaks](#secret-leaks)
 - [Linter](#linter)
+- [Formater](#formater)
+- [Dead code](#dead-code)
 - [CI/CD](#cicd)
 
 ## Technical preconditions
@@ -361,7 +363,7 @@ brew install git-cliff
 git-cliff --config .github/cliff.toml --output RELEASE_NOTE.md X..Y
 ```
 
-## Use of Gitleaks
+## Secrets leaks
 
 [Gitleaks](https://gitleaks.io/) can be used to check if secrets can be leaked or not.
 A [GitHub Action](https://github.com/gitleaks/gitleaks-action) has been integrated to the repository with a configuration file defined in _/github/workflows_ named _gitleaks-action.yaml_.
@@ -396,7 +398,13 @@ Remember _Gitleaks_ is also used in GitHub project side thanks to the [dedicated
 ## Linter
 
 We use [SwiftLint](https://github.com/realm/SwiftLint) in this project so as to be sure the source code follows defined guidelines for the syntax and other points.
-You must run _SwiftLint_ in CLI or using _Xcode_ to be sure you don't keep and submit warnings.
+There is a build phase in _Xcode_ to be sure you don't keep and submit warnings.
+You can also run *SwiftLint* in CLI in the DesignToolbox folder:
+
+```shell
+swiftlint --config ../.swiftlint.yml DesignToolbox/* DesignToolboxSnapshotsTests/* DesignToolboxUITests/*
+```
+
 **In most of cases you must fix warnings, or explain why in your commits and pull request comments you choose to disable them.**
 
 Today, only in very few cases some _SwiftLint_ warnings are disabled at files (or lower) level:
@@ -423,6 +431,15 @@ The warnings which can be disabled for test classes files and mocks files:
 
 Do not forget if possible to enable the warnings in the end of the file to reduce as much as possible the scope of the disabled warnings. Disable warnings only if needed.
 
+## Formater
+
+We use [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) to format sources and keep them clean. This tool is use in Xcode build phase.
+You can run *SwiftFormat* in CLI:
+
+```shell
+swiftformat .
+```
+
 ## Dead code
 
 We use [Periphery](https://github.com/peripheryapp/periphery) to look for dead code and help developers to track it and remove it.
@@ -444,11 +461,12 @@ bundle exec fastlane check_dead_code
 
 We use *GitHub Actions* so as to define a workflow with some actions to build demo application and test the library.
 It will help us to ensure code on pull requests or being merged compiles and has all tests green.
-This workflow is defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/build-and-test.yml), and makes build, unit tests and UI tests.
-
-We have also a *gitleaks* workflow making some scans on the code to look fo secrets leaks, defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/gitleaks-action.yml).
-
-A dedicated workflow has been defined so as to run checks on localizables to find is some wording is missing (thanks to [SwiftPolyglot](https://github.com/appdecostudio/SwiftPolyglot)).
+Workflows are the following:
+- [build and run UI and snapshots tests](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/build-and-test.yml)
+- [check if there are secrets leaks](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/gitleaks.yml).
+- [check if there are localizations troubles](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/swiftpolyglot.yml)
+- [check if there is dead code](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/periphery.yml)
+- [run linter](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/swiftlint.yml)
 
 We use also two GitHub apps making controls on pull requests and defining wether or not prerequisites are filled or not.
 There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
@@ -457,7 +475,7 @@ Finaly we have [this *GitHub Action*](https://github.com/cirruslabs/swiftlint-ac
 
 ### GitLab CI (internal)
 
-We use *GitLab CI*for CI/CD with our own runners so as to keep private our sensitive files likes certificates and provisioning profiles.
+We use *GitLab CI*,for CI/CD with our own runners so as to keep private our sensitive files likes certificates and provisioning profiles.
 Our current plan does not allow to make GitHub mirroring, so we use GitHub HTTP REST API to download sources, before using Xcode to build and sign.
 However of course you will have to define all the variables, secrets and have the mandatory files.
 
