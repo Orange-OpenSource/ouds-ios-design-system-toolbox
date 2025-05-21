@@ -2146,7 +2146,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios/";
 			requirement = {
-				branch = "187-tooling-repository-split";
+				branch = develop;
 				kind = branch;
 			};
 		};
