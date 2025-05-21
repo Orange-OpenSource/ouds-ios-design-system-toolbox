@@ -20,6 +20,8 @@
 <a href="https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/actions/workflows/gitleaks-action.yml" title="Gitleaks status"><img src="https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/actions/workflows/gitleaks-action.yml/badge.svg" alt="Gitleaks status"></a>
 &nbsp;
 <a href="https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/actions/workflows/swiftlint.yml" title="SwiftLint status"><img src="https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/actions/workflows/swiftlint.yml/badge.svg" alt="SwiftLint status"></a>
+&nbsp;
+<a href="https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/actions/workflows/periphery.yml" title="Periphery status"><img src="https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/actions/workflows/periphery.yml/badge.svg" alt="Periphery status"></a>
 </p>
 
 ## Status
