@@ -395,7 +395,7 @@ Remember _Gitleaks_ is also used in GitHub project side thanks to the [dedicated
 
 ## Linter
 
-We use _SwiftLint_ in this project so as to be sure the source code follows defined guidelines for the syntax and other points.
+We use [SwiftLint](https://github.com/realm/SwiftLint) in this project so as to be sure the source code follows defined guidelines for the syntax and other points.
 You must run _SwiftLint_ in CLI or using _Xcode_ to be sure you don't keep and submit warnings.
 **In most of cases you must fix warnings, or explain why in your commits and pull request comments you choose to disable them.**
 
@@ -422,6 +422,21 @@ The warnings which can be disabled for test classes files and mocks files:
 - *implicitly_unwrapped_optional*: because for declaration of themes to test we bang!
 
 Do not forget if possible to enable the warnings in the end of the file to reduce as much as possible the scope of the disabled warnings. Disable warnings only if needed.
+
+## Dead code
+
+We use [Periphery](https://github.com/peripheryapp/periphery) to look for dead code and help developers to track it and remove it.
+This tool is run in CI/CD side and can be run localy using *Fastlane*:
+
+Install *Periphery*:
+```shell
+brew install peripheryapp/periphery/periphery
+```
+
+And run:
+```shell
+bundle exec fastlane check_dead_code
+```
 
 ## CI/CD
 
