@@ -40,43 +40,43 @@ extension NamedColor {
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorActionDisabled:
-                return theme.colors.colorActionDisabled
+                theme.colors.colorActionDisabled
             case .colorActionEnabled:
-                return theme.colors.colorActionEnabled
+                theme.colors.colorActionEnabled
             case .colorActionFocus:
-                return theme.colors.colorActionFocus
+                theme.colors.colorActionFocus
             case .colorActionHighlighted:
-                return theme.colors.colorActionHighlighted
+                theme.colors.colorActionHighlighted
             case .colorActionHover:
-                return theme.colors.colorActionHover
+                theme.colors.colorActionHover
             case .colorActionLoading:
-                return theme.colors.colorActionLoading
+                theme.colors.colorActionLoading
             case .colorActionNegativeEnabled:
-                return theme.colors.colorActionNegativeEnabled
+                theme.colors.colorActionNegativeEnabled
             case .colorActionNegativeFocus:
-                return theme.colors.colorActionNegativeFocus
+                theme.colors.colorActionNegativeFocus
             case .colorActionNegativeHover:
-                return theme.colors.colorActionNegativeHover
+                theme.colors.colorActionNegativeHover
             case .colorActionNegativeLoading:
-                return theme.colors.colorActionNegativeLoading
+                theme.colors.colorActionNegativeLoading
             case .colorActionNegativePressed:
-                return theme.colors.colorActionNegativePressed
+                theme.colors.colorActionNegativePressed
             case .colorActionPressed:
-                return theme.colors.colorActionPressed
+                theme.colors.colorActionPressed
             case .colorActionSelected:
-                return theme.colors.colorActionSelected
+                theme.colors.colorActionSelected
             case .colorActionSupportEnabled:
-                return theme.colors.colorActionSupportEnabled
+                theme.colors.colorActionSupportEnabled
             case .colorActionSupportFocus:
-                return theme.colors.colorActionSupportFocus
+                theme.colors.colorActionSupportFocus
             case .colorActionSupportHover:
-                return theme.colors.colorActionSupportHover
+                theme.colors.colorActionSupportHover
             case .colorActionSupportLoading:
-                return theme.colors.colorActionSupportLoading
+                theme.colors.colorActionSupportLoading
             case .colorActionSupportPressed:
-                return theme.colors.colorActionSupportPressed
+                theme.colors.colorActionSupportPressed
             case .colorActionVisited:
-                return theme.colors.colorActionVisited
+                theme.colors.colorActionVisited
             }
         }
     }

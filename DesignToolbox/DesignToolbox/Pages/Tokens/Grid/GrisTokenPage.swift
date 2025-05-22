@@ -83,13 +83,13 @@ private enum NamedGrid: String, CaseIterable {
     func token(from theme: OUDSTheme, for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
         switch self {
         case .gridMinWidth:
-            return theme.gridMinWidth(for: sizeClass)
+            theme.gridMinWidth(for: sizeClass)
         case .gridMaxWidth:
-            return theme.gridMaxWidth(for: sizeClass)
+            theme.gridMaxWidth(for: sizeClass)
         case .gridMargin:
-            return theme.gridMargin(for: sizeClass)
+            theme.gridMargin(for: sizeClass)
         case .gridColumnGap:
-            return theme.gridColumnGap(for: sizeClass)
+            theme.gridColumnGap(for: sizeClass)
         }
     }
 }

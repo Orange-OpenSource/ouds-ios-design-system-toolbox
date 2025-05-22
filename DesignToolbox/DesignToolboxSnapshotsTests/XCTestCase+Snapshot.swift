@@ -36,12 +36,12 @@ extension XCTestCase {
     ///    - illustration: A value to compare against a reference,  embeded inside a `UIHostingControler` as a root view
     ///    - uiStyle: The UI style to apply in `UITraitCollection` to compute the image
     ///    - named: Some description for the test
-    @MainActor func assertIllustration<Content: View>(_ illustration: Content,
-                                                      on uiStyle: UIUserInterfaceStyle,
-                                                      named: String,
-                                                      testName: String,
-                                                      fileID: StaticString = #fileID,
-                                                      file: StaticString = #filePath)
+    @MainActor func assertIllustration(_ illustration: some View,
+                                       on uiStyle: UIUserInterfaceStyle,
+                                       named: String,
+                                       testName: String,
+                                       fileID: StaticString = #fileID,
+                                       file: StaticString = #filePath)
     {
         let hostingViewController = UIHostingController(rootView: illustration)
         assertSnapshot(of: hostingViewController,
@@ -64,14 +64,14 @@ extension XCTestCase {
     ///    - named: Some description for the test
     ///    - precision: Percentage of pixels that must match exactly
     ///    - percptualPrecision: Percentage if pixels but adjusted for minor visual difference
-    @MainActor static func assertIllustration<Content: View>(_ illustration: Content,
-                                                             on uiStyle: UIUserInterfaceStyle,
-                                                             named: String,
-                                                             precision: Float,
-                                                             perceptualPrecision: Float,
-                                                             testName: String,
-                                                             fileID: StaticString = #fileID,
-                                                             file: StaticString = #filePath)
+    @MainActor static func assertIllustration(_ illustration: some View,
+                                              on uiStyle: UIUserInterfaceStyle,
+                                              named: String,
+                                              precision: Float,
+                                              perceptualPrecision: Float,
+                                              testName: String,
+                                              fileID: StaticString = #fileID,
+                                              file: StaticString = #filePath)
     {
         let hostingViewController = UIHostingController(rootView: illustration)
         assertSnapshot(of: hostingViewController,

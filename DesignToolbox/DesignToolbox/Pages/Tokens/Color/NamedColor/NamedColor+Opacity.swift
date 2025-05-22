@@ -24,11 +24,11 @@ extension NamedColor {
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorOpacityLowest:
-                return theme.colors.colorOpacityLowest
+                theme.colors.colorOpacityLowest
             case .colorOpacityLower:
-                return theme.colors.colorOpacityLower
+                theme.colors.colorOpacityLower
             case .colorOpacityTransparent:
-                return theme.colors.colorOpacityTransparent
+                theme.colors.colorOpacityTransparent
             }
         }
     }

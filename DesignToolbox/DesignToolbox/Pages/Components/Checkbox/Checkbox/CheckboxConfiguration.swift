@@ -59,10 +59,10 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
     }
 
     private var isErrorPattern: String {
-        if isError && enabled {
-            return ", isError: true"
+        if isError, enabled {
+            ", isError: true"
         } else {
-            return ""
+            ""
         }
     }
 }
