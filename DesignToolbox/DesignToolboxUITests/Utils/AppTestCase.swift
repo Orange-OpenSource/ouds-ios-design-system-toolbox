@@ -47,13 +47,6 @@ open class AppTestCase: XCTestCase {
 
     // MARK: - Button
 
-    /// Tap on a UI element seen as a button (cf *Accessibility Inspector* with the given string as text
-    @MainActor func tapButton(withText text: String, _ app: XCUIApplication) {
-        let buttonToTap = app.buttons[text]
-        XCTAssertTrue(buttonToTap.exists, "The button with text '\(text)' does not exist")
-        buttonToTap.tap()
-    }
-
     /// Tap on a UI element seen as a button (cf *Accessibility Inspector* with the given string as  wording key
     @MainActor func tapButton(withWording key: String, _ app: XCUIApplication) {
         let wording = wording(for: key)
@@ -70,13 +63,6 @@ open class AppTestCase: XCTestCase {
         XCTAssertTrue(text.exists, "The expected text content '\(content)' does not exist")
     }
 
-    // MARK: - Swipe
-
-    @MainActor
-    func swipeFromDownToUp(_ app: XCUIApplication) {
-        app.swipeUp()
-    }
-
     // MARK: - Images
 
     /// Tap on a UI element seen as a image with the given name
@@ -84,31 +70,6 @@ open class AppTestCase: XCTestCase {
         let imageToTap = app.images[name]
         XCTAssertTrue(imageToTap.exists, "The image with name '\(name)' does not exist")
         imageToTap.tap()
-    }
-
-    // MARK: - Assertions
-
-    @MainActor
-    func assertText(_ id: String, at index: Int, contains text: String, _ app: XCUIApplication) {
-        let elements = app.staticTexts.matching(identifier: id)
-        XCTAssertTrue(elements.count >= index, "Not enough items with id '\(id)'")
-        let element = elements.element(boundBy: index)
-        let value = element.label
-        XCTAssertTrue(value == text, "The value is not the expected one. Got '\(String(describing: value))' and expected: '\(text)'")
-    }
-
-    @MainActor
-    func assertText(_ id: String, contains text: String, _ app: XCUIApplication) {
-        let staticText = app.staticTexts[id]
-        XCTAssertTrue(staticText.exists, "The static text with id '\([id])' does not exist")
-        let value = staticText.label
-        XCTAssertTrue(value == text, "The value is not the expected one. Got '\(String(describing: value))' and expected: '\(text)'")
-    }
-
-    @MainActor
-    func assertTextExists(_ id: String, _ app: XCUIApplication) {
-        let text = app.textFields[id]
-        XCTAssertTrue(text.exists, "The element with id '\(id)' does not exist")
     }
 
     // MARK: - Navigations helpers
