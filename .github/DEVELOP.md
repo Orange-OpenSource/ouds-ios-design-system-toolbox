@@ -435,7 +435,7 @@ We use [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) to format sour
 You can run *SwiftFormat* in CLI:
 
 ```shell
-swiftformat .
+bundle exec fastlane format
 ```
 
 A *Git pre-commit hook* is also defined in the project. It will run *SwifFormat* before the commit so as to be sure the sources will be well formatted before being pushed.

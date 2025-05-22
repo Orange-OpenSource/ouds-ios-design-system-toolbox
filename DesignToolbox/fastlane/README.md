@@ -23,6 +23,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 RUN PERIPHERY FOR DEAD CODE ANALYSIS
 
+### ios format
+
+```sh
+[bundle exec] fastlane ios format
+```
+
+RUN SWIFT FORMAT TO FORMAT SOURCES
+
 ### ios update_build_number
 
 ```sh
