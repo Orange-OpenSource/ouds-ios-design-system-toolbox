@@ -152,6 +152,14 @@
 		51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
 		510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CCF2C5679A300430620 /* OUDSComponents */; };
 		510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* XCTestCase+Snapshot.swift */; };
+		5115A1662DDF39AC0025A760 /* OUDS in Frameworks */ = {isa = PBXBuildFile; productRef = 5115A1652DDF39AC0025A760 /* OUDS */; };
+		5115A1682DDF39AC0025A760 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 5115A1672DDF39AC0025A760 /* OUDSComponents */; };
+		5115A16A2DDF39AC0025A760 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 5115A1692DDF39AC0025A760 /* OUDSFoundations */; };
+		5115A16C2DDF39AC0025A760 /* OUDSModules in Frameworks */ = {isa = PBXBuildFile; productRef = 5115A16B2DDF39AC0025A760 /* OUDSModules */; };
+		5115A16E2DDF39AC0025A760 /* OUDSThemesOrange in Frameworks */ = {isa = PBXBuildFile; productRef = 5115A16D2DDF39AC0025A760 /* OUDSThemesOrange */; };
+		5115A1702DDF39AC0025A760 /* OUDSTokensComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 5115A16F2DDF39AC0025A760 /* OUDSTokensComponent */; };
+		5115A1722DDF39AC0025A760 /* OUDSTokensRaw in Frameworks */ = {isa = PBXBuildFile; productRef = 5115A1712DDF39AC0025A760 /* OUDSTokensRaw */; };
+		5115A1742DDF39AC0025A760 /* OUDSTokensSemantic in Frameworks */ = {isa = PBXBuildFile; productRef = 5115A1732DDF39AC0025A760 /* OUDSTokensSemantic */; };
 		5122E0282D65D18E00CD2857 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5122E0272D65D18E00CD2857 /* Localizable.xcstrings */; };
 		5122E02A2D65E7AC00CD2857 /* String+L10N.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+L10N.swift */; };
 		5122E02B2D65FEBA00CD2857 /* String+L10N.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+L10N.swift */; };
@@ -251,14 +259,6 @@
 		51D6D5952D888159009CD879 /* CheckboxItemIndeterminateConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5932D888159009CD879 /* CheckboxItemIndeterminateConfiguration.swift */; };
 		51D6D5972D8881A6009CD879 /* CheckboxLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5962D8881A0009CD879 /* CheckboxLayouts.swift */; };
 		51D6D5982D8881A6009CD879 /* CheckboxLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5962D8881A0009CD879 /* CheckboxLayouts.swift */; };
-		51E18F892DDB79C00067DCBD /* OUDS in Frameworks */ = {isa = PBXBuildFile; productRef = 51E18F882DDB79C00067DCBD /* OUDS */; };
-		51E18F8B2DDB79C00067DCBD /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 51E18F8A2DDB79C00067DCBD /* OUDSComponents */; };
-		51E18F8D2DDB79C00067DCBD /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 51E18F8C2DDB79C00067DCBD /* OUDSFoundations */; };
-		51E18F8F2DDB79C00067DCBD /* OUDSModules in Frameworks */ = {isa = PBXBuildFile; productRef = 51E18F8E2DDB79C00067DCBD /* OUDSModules */; };
-		51E18F912DDB79C00067DCBD /* OUDSThemesOrange in Frameworks */ = {isa = PBXBuildFile; productRef = 51E18F902DDB79C00067DCBD /* OUDSThemesOrange */; };
-		51E18F932DDB79C00067DCBD /* OUDSTokensComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 51E18F922DDB79C00067DCBD /* OUDSTokensComponent */; };
-		51E18F952DDB79C00067DCBD /* OUDSTokensRaw in Frameworks */ = {isa = PBXBuildFile; productRef = 51E18F942DDB79C00067DCBD /* OUDSTokensRaw */; };
-		51E18F972DDB79C00067DCBD /* OUDSTokensSemantic in Frameworks */ = {isa = PBXBuildFile; productRef = 51E18F962DDB79C00067DCBD /* OUDSTokensSemantic */; };
 		51EB73952DBFDDF600F37FEC /* CheckboxPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */; };
 		51EB73962DBFDDF600F37FEC /* AppTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737B2DBFD26000F37FEC /* AppTestCase.swift */; };
 		51EB73982DBFE3FD00F37FEC /* String+L10N.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+L10N.swift */; };
@@ -525,19 +525,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */,
-				51E18F8B2DDB79C00067DCBD /* OUDSComponents in Frameworks */,
+				5115A1682DDF39AC0025A760 /* OUDSComponents in Frameworks */,
 				51EE2C682C5BF5DE00F634EC /* OUDSThemesOrange in Frameworks */,
 				070C35622C75EB1C0029C6A8 /* OUDS in Frameworks */,
-				51E18F8D2DDB79C00067DCBD /* OUDSFoundations in Frameworks */,
-				51E18F972DDB79C00067DCBD /* OUDSTokensSemantic in Frameworks */,
+				5115A16A2DDF39AC0025A760 /* OUDSFoundations in Frameworks */,
+				5115A1742DDF39AC0025A760 /* OUDSTokensSemantic in Frameworks */,
 				513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */,
 				510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */,
-				51E18F952DDB79C00067DCBD /* OUDSTokensRaw in Frameworks */,
-				51E18F8F2DDB79C00067DCBD /* OUDSModules in Frameworks */,
+				5115A1722DDF39AC0025A760 /* OUDSTokensRaw in Frameworks */,
+				5115A16C2DDF39AC0025A760 /* OUDSModules in Frameworks */,
 				6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */,
-				51E18F932DDB79C00067DCBD /* OUDSTokensComponent in Frameworks */,
-				51E18F892DDB79C00067DCBD /* OUDS in Frameworks */,
-				51E18F912DDB79C00067DCBD /* OUDSThemesOrange in Frameworks */,
+				5115A1702DDF39AC0025A760 /* OUDSTokensComponent in Frameworks */,
+				5115A1662DDF39AC0025A760 /* OUDS in Frameworks */,
+				5115A16E2DDF39AC0025A760 /* OUDSThemesOrange in Frameworks */,
 				070C35662C7762B90029C6A8 /* OUDSModules in Frameworks */,
 				A5E69629240B3A88C139F084 /* Pods_DesignToolbox.framework in Frameworks */,
 			);
@@ -1250,14 +1250,14 @@
 				070C35612C75EB1C0029C6A8 /* OUDS */,
 				070C35652C7762B90029C6A8 /* OUDSModules */,
 				6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */,
-				51E18F882DDB79C00067DCBD /* OUDS */,
-				51E18F8A2DDB79C00067DCBD /* OUDSComponents */,
-				51E18F8C2DDB79C00067DCBD /* OUDSFoundations */,
-				51E18F8E2DDB79C00067DCBD /* OUDSModules */,
-				51E18F902DDB79C00067DCBD /* OUDSThemesOrange */,
-				51E18F922DDB79C00067DCBD /* OUDSTokensComponent */,
-				51E18F942DDB79C00067DCBD /* OUDSTokensRaw */,
-				51E18F962DDB79C00067DCBD /* OUDSTokensSemantic */,
+				5115A1652DDF39AC0025A760 /* OUDS */,
+				5115A1672DDF39AC0025A760 /* OUDSComponents */,
+				5115A1692DDF39AC0025A760 /* OUDSFoundations */,
+				5115A16B2DDF39AC0025A760 /* OUDSModules */,
+				5115A16D2DDF39AC0025A760 /* OUDSThemesOrange */,
+				5115A16F2DDF39AC0025A760 /* OUDSTokensComponent */,
+				5115A1712DDF39AC0025A760 /* OUDSTokensRaw */,
+				5115A1732DDF39AC0025A760 /* OUDSTokensSemantic */,
 			);
 			productName = DemoApp;
 			productReference = 07FDCD912C296A500009AA13 /* Design System Toolbox.app */;
@@ -1323,7 +1323,7 @@
 			packageReferences = (
 				0740080F2C94256C006B8729 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 				6DFC20C32CE3D9AE00F2EC33 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */,
-				51E18F872DDB79C00067DCBD /* XCRemoteSwiftPackageReference "ouds-ios" */,
+				5115A1642DDF39AC0025A760 /* XCRemoteSwiftPackageReference "ouds-ios" */,
 			);
 			productRefGroup = 07FDCD922C296A500009AA13 /* Products */;
 			projectDirPath = "";
@@ -2142,9 +2142,9 @@
 				version = 1.18.1;
 			};
 		};
-		51E18F872DDB79C00067DCBD /* XCRemoteSwiftPackageReference "ouds-ios" */ = {
+		5115A1642DDF39AC0025A760 /* XCRemoteSwiftPackageReference "ouds-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios/";
+			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
 				branch = develop;
 				kind = branch;
@@ -2178,6 +2178,46 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSComponents;
 		};
+		5115A1652DDF39AC0025A760 /* OUDS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5115A1642DDF39AC0025A760 /* XCRemoteSwiftPackageReference "ouds-ios" */;
+			productName = OUDS;
+		};
+		5115A1672DDF39AC0025A760 /* OUDSComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5115A1642DDF39AC0025A760 /* XCRemoteSwiftPackageReference "ouds-ios" */;
+			productName = OUDSComponents;
+		};
+		5115A1692DDF39AC0025A760 /* OUDSFoundations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5115A1642DDF39AC0025A760 /* XCRemoteSwiftPackageReference "ouds-ios" */;
+			productName = OUDSFoundations;
+		};
+		5115A16B2DDF39AC0025A760 /* OUDSModules */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5115A1642DDF39AC0025A760 /* XCRemoteSwiftPackageReference "ouds-ios" */;
+			productName = OUDSModules;
+		};
+		5115A16D2DDF39AC0025A760 /* OUDSThemesOrange */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5115A1642DDF39AC0025A760 /* XCRemoteSwiftPackageReference "ouds-ios" */;
+			productName = OUDSThemesOrange;
+		};
+		5115A16F2DDF39AC0025A760 /* OUDSTokensComponent */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5115A1642DDF39AC0025A760 /* XCRemoteSwiftPackageReference "ouds-ios" */;
+			productName = OUDSTokensComponent;
+		};
+		5115A1712DDF39AC0025A760 /* OUDSTokensRaw */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5115A1642DDF39AC0025A760 /* XCRemoteSwiftPackageReference "ouds-ios" */;
+			productName = OUDSTokensRaw;
+		};
+		5115A1732DDF39AC0025A760 /* OUDSTokensSemantic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5115A1642DDF39AC0025A760 /* XCRemoteSwiftPackageReference "ouds-ios" */;
+			productName = OUDSTokensSemantic;
+		};
 		513AD93F2C5AAADE0003253B /* OUDSTokensComponent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSTokensComponent;
@@ -2185,46 +2225,6 @@
 		51BC9DE62C6513F200EB2A11 /* OUDSFoundations */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSFoundations;
-		};
-		51E18F882DDB79C00067DCBD /* OUDS */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 51E18F872DDB79C00067DCBD /* XCRemoteSwiftPackageReference "ouds-ios" */;
-			productName = OUDS;
-		};
-		51E18F8A2DDB79C00067DCBD /* OUDSComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 51E18F872DDB79C00067DCBD /* XCRemoteSwiftPackageReference "ouds-ios" */;
-			productName = OUDSComponents;
-		};
-		51E18F8C2DDB79C00067DCBD /* OUDSFoundations */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 51E18F872DDB79C00067DCBD /* XCRemoteSwiftPackageReference "ouds-ios" */;
-			productName = OUDSFoundations;
-		};
-		51E18F8E2DDB79C00067DCBD /* OUDSModules */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 51E18F872DDB79C00067DCBD /* XCRemoteSwiftPackageReference "ouds-ios" */;
-			productName = OUDSModules;
-		};
-		51E18F902DDB79C00067DCBD /* OUDSThemesOrange */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 51E18F872DDB79C00067DCBD /* XCRemoteSwiftPackageReference "ouds-ios" */;
-			productName = OUDSThemesOrange;
-		};
-		51E18F922DDB79C00067DCBD /* OUDSTokensComponent */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 51E18F872DDB79C00067DCBD /* XCRemoteSwiftPackageReference "ouds-ios" */;
-			productName = OUDSTokensComponent;
-		};
-		51E18F942DDB79C00067DCBD /* OUDSTokensRaw */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 51E18F872DDB79C00067DCBD /* XCRemoteSwiftPackageReference "ouds-ios" */;
-			productName = OUDSTokensRaw;
-		};
-		51E18F962DDB79C00067DCBD /* OUDSTokensSemantic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 51E18F872DDB79C00067DCBD /* XCRemoteSwiftPackageReference "ouds-ios" */;
-			productName = OUDSTokensSemantic;
 		};
 		51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */ = {
 			isa = XCSwiftPackageProductDependency;
