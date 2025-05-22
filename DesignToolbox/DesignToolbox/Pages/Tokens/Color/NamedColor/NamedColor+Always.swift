@@ -25,13 +25,13 @@ extension NamedColor {
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorAlwaysBlack:
-                return theme.colors.colorAlwaysBlack
+                theme.colors.colorAlwaysBlack
             case .colorAlwaysOnBlack:
-                return theme.colors.colorAlwaysOnBlack
+                theme.colors.colorAlwaysOnBlack
             case .colorAlwaysOnWhite:
-                return theme.colors.colorAlwaysOnWhite
+                theme.colors.colorAlwaysOnWhite
             case .colorAlwaysWhite:
-                return theme.colors.colorAlwaysWhite
+                theme.colors.colorAlwaysWhite
             }
         }
     }
