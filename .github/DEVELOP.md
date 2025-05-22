@@ -397,6 +397,11 @@ Remember _Gitleaks_ is also used in GitHub project side thanks to the [dedicated
 
 We use [SwiftLint](https://github.com/realm/SwiftLint) in this project so as to be sure the source code follows defined guidelines for the syntax and other points.
 There is a build phase in _Xcode_ to be sure you don't keep and submit warnings.
+
+We provide a command to run _SwiftLint_:
+```shell
+bundle exec fastlane lint
+```
 You can also run *SwiftLint* in CLI in the DesignToolbox folder:
 
 ```shell
