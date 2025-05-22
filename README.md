@@ -35,17 +35,19 @@
 
 ## Content
 
-This repository contains the design system toolbox app which contains the OUDS iOS Swift Package and displays its features.
-
-You can find the [detailed technical documentation online](https://ios.unified-design-system.orange.com/documentation), and also the [whole design system](https://unified-design-system.orange.com/).
-
-The source code of the [Swift Package is on GitHub](https://github.com/Orange-OpenSource/ouds-ios).
+> [!NOTE]
+> This repository contains the design system toolbox app which contains the OUDS iOS Swift Package and displays its features.
+> You can find the [detailed technical documentation online](https://ios.unified-design-system.orange.com/documentation), 
+> and also the [whole design system](https://unified-design-system.orange.com/).
+> The source code of the [Swift Package is on Orange-OpenSource/ouds-ios](https://github.com/Orange-OpenSource/ouds-ios).
 
 ## Bugs, feature requests and discussions
 
-So as to help management team and have in one board all issues related to OUDS iOS, and because the design system toolbox app is just a mirror of the library, any discussions and issues about this app, and in the end, content of this repository, must remain in the [library project](https://github.com/Orange-OpenSource/ouds-ios).
-
-Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/Orange-OpenSource/ouds-ios/issues/new/choose).
+> [!IMPORTANT]
+> So as to help management team and have in one board all issues related to OUDS iOS, 
+> and because the design system toolbox app is just a mirror of the library, 
+> any discussions and issues about this app, and in the end, content of this repository, 
+> must remain in the [library project](https://github.com/Orange-OpenSource/ouds-ios).
 
 ## Contributing
 
