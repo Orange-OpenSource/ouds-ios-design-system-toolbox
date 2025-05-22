@@ -28,19 +28,19 @@ extension NamedColor {
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorBorderBrandPrimary:
-                return theme.colors.colorBorderBrandPrimary
+                theme.colors.colorBorderBrandPrimary
             case .colorBorderDefault:
-                return theme.colors.colorBorderDefault
+                theme.colors.colorBorderDefault
             case .colorBorderEmphasized:
-                return theme.colors.colorBorderEmphasized
+                theme.colors.colorBorderEmphasized
             case .colorBorderMuted:
-                return theme.colors.colorBorderMuted
+                theme.colors.colorBorderMuted
             case .colorBorderFocus:
-                return theme.colors.colorBorderFocus
+                theme.colors.colorBorderFocus
             case .colorBorderFocusInset:
-                return theme.colors.colorBorderFocusInset
+                theme.colors.colorBorderFocusInset
             case .colorBorderOnBrandPrimary:
-                return theme.colors.colorBorderOnBrandPrimary
+                theme.colors.colorBorderOnBrandPrimary
             }
         }
     }

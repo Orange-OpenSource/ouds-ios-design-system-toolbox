@@ -41,45 +41,45 @@ extension NamedColor {
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorContentBrandPrimary:
-                return theme.colors.colorContentBrandPrimary
+                theme.colors.colorContentBrandPrimary
             case .colorContentDefault:
-                return theme.colors.colorContentDefault
+                theme.colors.colorContentDefault
             case .colorContentDisabled:
-                return theme.colors.colorContentDisabled
+                theme.colors.colorContentDisabled
             case .colorContentMuted:
-                return theme.colors.colorContentMuted
+                theme.colors.colorContentMuted
             case .colorContentOnActionDisabled:
-                return theme.colors.colorContentOnActionDisabled
+                theme.colors.colorContentOnActionDisabled
             case .colorContentOnActionEnabled:
-                return theme.colors.colorContentOnActionEnabled
+                theme.colors.colorContentOnActionEnabled
             case .colorContentOnActionFocus:
-                return theme.colors.colorContentOnActionFocus
+                theme.colors.colorContentOnActionFocus
             case .colorContentOnActionHighlighted:
-                return theme.colors.colorContentOnActionHighlighted
+                theme.colors.colorContentOnActionHighlighted
             case .colorContentOnActionHover:
-                return theme.colors.colorContentOnActionHover
+                theme.colors.colorContentOnActionHover
             case .colorContentOnActionLoading:
-                return theme.colors.colorContentOnActionLoading
+                theme.colors.colorContentOnActionLoading
             case .colorContentOnActionPressed:
-                return theme.colors.colorContentOnActionPressed
+                theme.colors.colorContentOnActionPressed
             case .colorContentOnBrandPrimary:
-                return theme.colors.colorContentOnBrandPrimary
+                theme.colors.colorContentOnBrandPrimary
             case .colorContentOnOverlayEmphasized:
-                return theme.colors.colorContentOnOverlayEmphasized
+                theme.colors.colorContentOnOverlayEmphasized
             case .colorContentOnStatusEmphasized:
-                return theme.colors.colorContentOnStatusEmphasized
+                theme.colors.colorContentOnStatusEmphasized
             case .colorContentOnStatusEmphasizedAlt:
-                return theme.colors.colorContentOnStatusEmphasizedAlt
+                theme.colors.colorContentOnStatusEmphasizedAlt
             case .colorContentOnStatusMuted:
-                return theme.colors.colorContentOnStatusMuted
+                theme.colors.colorContentOnStatusMuted
             case .colorContentStatusInfo:
-                return theme.colors.colorContentStatusInfo
+                theme.colors.colorContentStatusInfo
             case .colorContentStatusNegative:
-                return theme.colors.colorContentStatusNegative
+                theme.colors.colorContentStatusNegative
             case .colorContentStatusPositive:
-                return theme.colors.colorContentStatusPositive
+                theme.colors.colorContentStatusPositive
             case .colorContentStatusWarning:
-                return theme.colors.colorContentStatusWarning
+                theme.colors.colorContentStatusWarning
             }
         }
     }

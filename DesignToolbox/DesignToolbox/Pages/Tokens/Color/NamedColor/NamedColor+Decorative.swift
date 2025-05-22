@@ -61,81 +61,81 @@ extension NamedColor {
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorDecorativeAccent1Default:
-                return theme.colors.colorDecorativeAccent1Default
+                theme.colors.colorDecorativeAccent1Default
             case .colorDecorativeAccent1Emphasized:
-                return theme.colors.colorDecorativeAccent1Emphasized
+                theme.colors.colorDecorativeAccent1Emphasized
             case .colorDecorativeAccent1Muted:
-                return theme.colors.colorDecorativeAccent1Muted
+                theme.colors.colorDecorativeAccent1Muted
             case .colorDecorativeAccent2Default:
-                return theme.colors.colorDecorativeAccent2Default
+                theme.colors.colorDecorativeAccent2Default
             case .colorDecorativeAccent2Emphasized:
-                return theme.colors.colorDecorativeAccent2Emphasized
+                theme.colors.colorDecorativeAccent2Emphasized
             case .colorDecorativeAccent2Muted:
-                return theme.colors.colorDecorativeAccent2Muted
+                theme.colors.colorDecorativeAccent2Muted
             case .colorDecorativeAccent3Default:
-                return theme.colors.colorDecorativeAccent3Default
+                theme.colors.colorDecorativeAccent3Default
             case .colorDecorativeAccent3Emphasized:
-                return theme.colors.colorDecorativeAccent3Emphasized
+                theme.colors.colorDecorativeAccent3Emphasized
             case .colorDecorativeAccent3Muted:
-                return theme.colors.colorDecorativeAccent3Muted
+                theme.colors.colorDecorativeAccent3Muted
             case .colorDecorativeAccent4Default:
-                return theme.colors.colorDecorativeAccent4Default
+                theme.colors.colorDecorativeAccent4Default
             case .colorDecorativeAccent4Emphasized:
-                return theme.colors.colorDecorativeAccent4Emphasized
+                theme.colors.colorDecorativeAccent4Emphasized
             case .colorDecorativeAccent4Muted:
-                return theme.colors.colorDecorativeAccent4Muted
+                theme.colors.colorDecorativeAccent4Muted
             case .colorDecorativeAccent5Default:
-                return theme.colors.colorDecorativeAccent5Default
+                theme.colors.colorDecorativeAccent5Default
             case .colorDecorativeAccent5Emphasized:
-                return theme.colors.colorDecorativeAccent5Emphasized
+                theme.colors.colorDecorativeAccent5Emphasized
             case .colorDecorativeAccent5Muted:
-                return theme.colors.colorDecorativeAccent5Muted
+                theme.colors.colorDecorativeAccent5Muted
             case .colorDecorativeBrandPrimary:
-                return theme.colors.colorDecorativeBrandPrimary
+                theme.colors.colorDecorativeBrandPrimary
             case .colorDecorativeBrandSecondary:
-                return theme.colors.colorDecorativeBrandSecondary
+                theme.colors.colorDecorativeBrandSecondary
             case .colorDecorativeBrandTertiary:
-                return theme.colors.colorDecorativeBrandTertiary
+                theme.colors.colorDecorativeBrandTertiary
             case .colorDecorativeSkinTint100:
-                return theme.colors.colorDecorativeSkinTint100
+                theme.colors.colorDecorativeSkinTint100
             case .colorDecorativeSkinTint200:
-                return theme.colors.colorDecorativeSkinTint200
+                theme.colors.colorDecorativeSkinTint200
             case .colorDecorativeSkinTint300:
-                return theme.colors.colorDecorativeSkinTint300
+                theme.colors.colorDecorativeSkinTint300
             case .colorDecorativeSkinTint400:
-                return theme.colors.colorDecorativeSkinTint400
+                theme.colors.colorDecorativeSkinTint400
             case .colorDecorativeSkinTint500:
-                return theme.colors.colorDecorativeSkinTint500
+                theme.colors.colorDecorativeSkinTint500
             case .colorDecorativeSkinTint600:
-                return theme.colors.colorDecorativeSkinTint600
+                theme.colors.colorDecorativeSkinTint600
             case .colorDecorativeSkinTint700:
-                return theme.colors.colorDecorativeSkinTint700
+                theme.colors.colorDecorativeSkinTint700
             case .colorDecorativeSkinTint800:
-                return theme.colors.colorDecorativeSkinTint800
+                theme.colors.colorDecorativeSkinTint800
             case .colorDecorativeSkinTint900:
-                return theme.colors.colorDecorativeSkinTint900
+                theme.colors.colorDecorativeSkinTint900
             case .colorDecorativeNeutralEmphasizedHigher:
-                return theme.colors.colorDecorativeNeutralEmphasizedHigher
+                theme.colors.colorDecorativeNeutralEmphasizedHigher
             case .colorDecorativeNeutralEmphasizedLow:
-                return theme.colors.colorDecorativeNeutralEmphasizedLow
+                theme.colors.colorDecorativeNeutralEmphasizedLow
             case .colorDecorativeNeutralEmphasizedLower:
-                return theme.colors.colorDecorativeNeutralEmphasizedLower
+                theme.colors.colorDecorativeNeutralEmphasizedLower
             case .colorDecorativeNeutralEmphasizedLowest:
-                return theme.colors.colorDecorativeNeutralEmphasizedLowest
+                theme.colors.colorDecorativeNeutralEmphasizedLowest
             case .colorDecorativeNeutralMutedHigh:
-                return theme.colors.colorDecorativeNeutralMutedHigh
+                theme.colors.colorDecorativeNeutralMutedHigh
             case .colorDecorativeNeutralMutedHigher:
-                return theme.colors.colorDecorativeNeutralMutedHigher
+                theme.colors.colorDecorativeNeutralMutedHigher
             case .colorDecorativeNeutralMutedHighest:
-                return theme.colors.colorDecorativeNeutralMutedHighest
+                theme.colors.colorDecorativeNeutralMutedHighest
             case .colorDecorativeNeutralMutedLow:
-                return theme.colors.colorDecorativeNeutralMutedLow
+                theme.colors.colorDecorativeNeutralMutedLow
             case .colorDecorativeNeutralMutedLower:
-                return theme.colors.colorDecorativeNeutralMutedLower
+                theme.colors.colorDecorativeNeutralMutedLower
             case .colorDecorativeNeutralMutedLowest:
-                return theme.colors.colorDecorativeNeutralMutedLowest
+                theme.colors.colorDecorativeNeutralMutedLowest
             case .colorDecorativeNeutralMutedMedium:
-                return theme.colors.colorDecorativeNeutralMutedMedium
+                theme.colors.colorDecorativeNeutralMutedMedium
             }
         }
     }

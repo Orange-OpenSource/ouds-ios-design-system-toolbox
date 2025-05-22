@@ -73,15 +73,15 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
     private var pickerPlacementPattern: String {
         switch pickerPlacement {
         case .vertical:
-            return ".vertical"
+            ".vertical"
         case let .horizontal(showsIndicator) where showsIndicator == true:
-            return ".horizontal(true)"
+            ".horizontal(true)"
         case let .horizontal(showsIndicator) where showsIndicator == false:
-            return ".horizontal(false)"
+            ".horizontal(false)"
         case let .verticalRooted(_, type):
-            return ".verticalRooted(label, .\(type))"
+            ".verticalRooted(label, .\(type))"
         default:
-            return "🥜"
+            "🥜"
         }
     }
 
@@ -185,15 +185,15 @@ extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive C
     public var description: String {
         switch self {
         case let .horizontal(showIndicator) where showIndicator == true:
-            return "Horizontal with indicator"
+            "Horizontal with indicator"
         case let .horizontal(showIndicator) where showIndicator == false:
-            return "Horizontal without indicator"
+            "Horizontal without indicator"
         case .vertical:
-            return "Vertical without root"
+            "Vertical without root"
         case let .verticalRooted(_, type):
-            return "Vertical with root item (\(type))"
+            "Vertical with root item (\(type))"
         default:
-            return "🥜"
+            "🥜"
         }
     }
 
