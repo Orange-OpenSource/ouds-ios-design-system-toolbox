@@ -12,7 +12,7 @@
 //
 
 import DeclarationAccessibility
-import OUDSFoundations
+import OUDSFoundations // NOTE: Seen as "unused" for Periphery (https://github.com/peripheryapp/periphery/issues/942)
 import SwiftUI
 
 struct AccessibilityStatementPage: View {
