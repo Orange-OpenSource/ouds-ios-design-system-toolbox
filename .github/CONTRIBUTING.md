@@ -153,6 +153,8 @@ Adhering to the following process is the best way to get your work included in t
 
 Note that a ruleset based [on task-list-completed tool](https://github.com/marketplace/task-list-completed) is applied on `develop` branch: if any prerequisites are not futfilled in the pull request ticket the merge won't be done. 
 
+8. If your evolutions are bout the [Swift package](https://github.com/Orange-OpenSource/ouds-ios/), add in your pull request the details about it (branch to test, associated pull request, etc.). **Copy/paste the Swift pakcage changelog line in the app changelog with cross-linked issues** ; thus for alpha, beta and production builds the changelog of the app will mirror the changelog of the package
+
 ## Code Guidelines
 
 Format your code before committing to ensure your changes follow our coding standards.
