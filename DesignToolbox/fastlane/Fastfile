@@ -109,6 +109,17 @@ platform :ios do
     end
 
     # ------------------------------------------------------------
+    # RUN SWIFT LINT TO CHECK SMELLS
+    # ------------------------------------------------------------
+    desc "RUN SWIFT LINT TO CHECK SMELLS"
+    lane :lint do
+        puts "👉 Run Swift Lint for smells"
+
+        # If there are violations, error 2 will be returned by swiftlint, making Fastlane fail (expected)
+        sh "cd .. && swiftlint --strict --config ../.swiftlint.yml DesignToolbox/* DesignToolboxSnapshotsTests/* DesignToolboxUITests/*"
+    end
+
+    # ------------------------------------------------------------
     # UPDATE BUILD NUMBER WITH TIMESTAMP
     # ------------------------------------------------------------
     desc "UPDATE BUILD NUMBER WITH TIMESTAMP"
