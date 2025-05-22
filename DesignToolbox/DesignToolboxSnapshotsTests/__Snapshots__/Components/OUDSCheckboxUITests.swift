@@ -187,11 +187,11 @@ private struct CheckboxIndeterminateTest: View {
         var description: String {
             switch self {
             case let .indicatorOnly(isError):
-                return "layout-indicatorOnly-\(isError ? "error" : "")"
+                "layout-indicatorOnly-\(isError ? "error" : "")"
             case let .default(_, helperText, icon, isError, hasDivider, isReadOnly):
-                return "layout-default-label-\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
+                "layout-default-label-\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
             case let .reversed(_, helperText, icon, isError, hasDivider, isReadOnly):
-                return "layout-inverse-label-\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
+                "layout-inverse-label-\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
             }
         }
         // swiftlint:enable line_length

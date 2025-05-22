@@ -87,17 +87,17 @@ enum NamedOpacity: String, CaseIterable {
     func token(from theme: OUDSTheme) -> OpacitySemanticToken {
         switch self {
         case .opacityInvisible:
-            return theme.opacities.opacityInvisible
+            theme.opacities.opacityInvisible
         case .opacityWeaker:
-            return theme.opacities.opacityWeaker
+            theme.opacities.opacityWeaker
         case .opacityWeak:
-            return theme.opacities.opacityWeak
+            theme.opacities.opacityWeak
         case .opacityMedium:
-            return theme.opacities.opacityMedium
+            theme.opacities.opacityMedium
         case .opacityStrong:
-            return theme.opacities.opacityStrong
+            theme.opacities.opacityStrong
         case .opacityOpaque:
-            return theme.opacities.opacityOpaque
+            theme.opacities.opacityOpaque
         }
     }
 }

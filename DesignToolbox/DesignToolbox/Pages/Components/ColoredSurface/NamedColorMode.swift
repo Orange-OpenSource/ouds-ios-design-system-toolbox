@@ -36,35 +36,35 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
     func toSurfaceColor(from theme: OUDSTheme) -> OUDSColoredSurface.SurfaceColor {
         switch self {
         case .modeOnBrandPrimary:
-            return theme.colorModes.modeOnBrandPrimary
+            theme.colorModes.modeOnBrandPrimary
         case .modeOnBrandSecondary:
-            return theme.colorModes.modeOnBrandSecondary
+            theme.colorModes.modeOnBrandSecondary
         case .modeOnBrandTertiary:
-            return theme.colorModes.modeOnBrandTertiary
+            theme.colorModes.modeOnBrandTertiary
         case .modeOnStatusAccentEmphasized:
-            return theme.colorModes.modeOnStatusAccentEmphasized
+            theme.colorModes.modeOnStatusAccentEmphasized
         case .modeOnStatusAccentMuted:
-            return theme.colorModes.modeOnStatusAccentMuted
+            theme.colorModes.modeOnStatusAccentMuted
         case .modeOnStatusInfoEmphasized:
-            return theme.colorModes.modeOnStatusInfoEmphasized
+            theme.colorModes.modeOnStatusInfoEmphasized
         case .modeOnStatusInfoMuted:
-            return theme.colorModes.modeOnStatusInfoMuted
+            theme.colorModes.modeOnStatusInfoMuted
         case .modeOnStatusNegativeEmphasized:
-            return theme.colorModes.modeOnStatusNegativeEmphasized
+            theme.colorModes.modeOnStatusNegativeEmphasized
         case .modeOnStatusNegativeMuted:
-            return theme.colorModes.modeOnStatusNegativeMuted
+            theme.colorModes.modeOnStatusNegativeMuted
         case .modeOnStatusNeutralEmphasized:
-            return theme.colorModes.modeOnStatusNeutralEmphasized
+            theme.colorModes.modeOnStatusNeutralEmphasized
         case .modeOnStatusNeutralMuted:
-            return theme.colorModes.modeOnStatusNeutralMuted
+            theme.colorModes.modeOnStatusNeutralMuted
         case .modeOnStatusPositiveEmphasized:
-            return theme.colorModes.modeOnStatusPositiveEmphasized
+            theme.colorModes.modeOnStatusPositiveEmphasized
         case .modeOnStatusPositiveMuted:
-            return theme.colorModes.modeOnStatusPositiveMuted
+            theme.colorModes.modeOnStatusPositiveMuted
         case .modeOnStatusWarningEmphasized:
-            return theme.colorModes.modeOnStatusWarningEmphasized
+            theme.colorModes.modeOnStatusWarningEmphasized
         case .modeOnStatusWarningMuted:
-            return theme.colorModes.modeOnStatusWarningMuted
+            theme.colorModes.modeOnStatusWarningMuted
         }
     }
 
@@ -72,70 +72,70 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
     var formattedName: String {
         switch self {
         case .modeOnBrandPrimary:
-            return "Brand Primary"
+            "Brand Primary"
         case .modeOnBrandSecondary:
-            return "Brand Secondary"
+            "Brand Secondary"
         case .modeOnBrandTertiary:
-            return "Brand Tertiary"
+            "Brand Tertiary"
         case .modeOnStatusAccentEmphasized:
-            return "Status Accent Emphasized"
+            "Status Accent Emphasized"
         case .modeOnStatusAccentMuted:
-            return "Status Accent Muted"
+            "Status Accent Muted"
         case .modeOnStatusInfoEmphasized:
-            return "Status Info Emphasized"
+            "Status Info Emphasized"
         case .modeOnStatusInfoMuted:
-            return "Status Info Muted"
+            "Status Info Muted"
         case .modeOnStatusNegativeEmphasized:
-            return "Status Negative Emphasized"
+            "Status Negative Emphasized"
         case .modeOnStatusNegativeMuted:
-            return "Status Negative Muted"
+            "Status Negative Muted"
         case .modeOnStatusNeutralEmphasized:
-            return "Status Neutral Emphasized"
+            "Status Neutral Emphasized"
         case .modeOnStatusNeutralMuted:
-            return "Status Neutral Muted"
+            "Status Neutral Muted"
         case .modeOnStatusPositiveEmphasized:
-            return "Status Positive Emphasized"
+            "Status Positive Emphasized"
         case .modeOnStatusPositiveMuted:
-            return "Status Positive Muted"
+            "Status Positive Muted"
         case .modeOnStatusWarningEmphasized:
-            return "Status Warning Emphasized"
+            "Status Warning Emphasized"
         case .modeOnStatusWarningMuted:
-            return "Status Warning Muted"
+            "Status Warning Muted"
         }
     }
 
     public var description: String {
         switch self {
         case .modeOnBrandPrimary:
-            return "modeOnBrandPrimary"
+            "modeOnBrandPrimary"
         case .modeOnBrandSecondary:
-            return "modeOnBrandSecondary"
+            "modeOnBrandSecondary"
         case .modeOnBrandTertiary:
-            return "modeOnBrandTertiary"
+            "modeOnBrandTertiary"
         case .modeOnStatusAccentEmphasized:
-            return "modeOnStatusAccentEmphasized"
+            "modeOnStatusAccentEmphasized"
         case .modeOnStatusAccentMuted:
-            return "modeOnStatusAccentMuted"
+            "modeOnStatusAccentMuted"
         case .modeOnStatusInfoEmphasized:
-            return "modeOnStatusInfoEmphasized"
+            "modeOnStatusInfoEmphasized"
         case .modeOnStatusInfoMuted:
-            return "modeOnStatusInfoMuted"
+            "modeOnStatusInfoMuted"
         case .modeOnStatusNegativeEmphasized:
-            return "modeOnStatusNegativeEmphasized"
+            "modeOnStatusNegativeEmphasized"
         case .modeOnStatusNegativeMuted:
-            return "modeOnStatusNegativeMuted"
+            "modeOnStatusNegativeMuted"
         case .modeOnStatusNeutralEmphasized:
-            return "modeOnStatusNeutralEmphasized"
+            "modeOnStatusNeutralEmphasized"
         case .modeOnStatusNeutralMuted:
-            return "modeOnStatusNeutralMuted"
+            "modeOnStatusNeutralMuted"
         case .modeOnStatusPositiveEmphasized:
-            return "modeOnStatusPositiveEmphasized"
+            "modeOnStatusPositiveEmphasized"
         case .modeOnStatusPositiveMuted:
-            return "modeOnStatusPositiveMuted"
+            "modeOnStatusPositiveMuted"
         case .modeOnStatusWarningEmphasized:
-            return "modeOnStatusWarningEmphasized"
+            "modeOnStatusWarningEmphasized"
         case .modeOnStatusWarningMuted:
-            return "modeOnStatusWarningMuted"
+            "modeOnStatusWarningMuted"
         }
     }
 

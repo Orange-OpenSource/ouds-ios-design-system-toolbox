@@ -78,13 +78,13 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
     private var pickerPlacementPattern: String {
         switch pickerPlacement {
         case .vertical:
-            return ".vertical"
+            ".vertical"
         case let .horizontal(showsIndicator) where showsIndicator == true:
-            return ".horizontal(true)"
+            ".horizontal(true)"
         case let .horizontal(showsIndicator) where showsIndicator == false:
-            return ".horizontal(false)"
+            ".horizontal(false)"
         default:
-            return "🥜"
+            "🥜"
         }
     }
 
@@ -190,13 +190,13 @@ extension OUDSRadioPickerPlacement: @retroactive CaseIterable, @retroactive Cust
     public var description: String {
         switch self {
         case let .horizontal(showIndicator) where showIndicator == true:
-            return "Horizontal with indicator"
+            "Horizontal with indicator"
         case let .horizontal(showIndicator) where showIndicator == false:
-            return "Horizontal without indicator"
+            "Horizontal without indicator"
         case .vertical:
-            return "Vertical"
+            "Vertical"
         default:
-            return "🥜"
+            "🥜"
         }
     }
 

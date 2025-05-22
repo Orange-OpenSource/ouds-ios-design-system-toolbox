@@ -25,13 +25,13 @@ extension NamedColor {
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorOverlayDefault:
-                return theme.colors.colorOverlayDefault
+                theme.colors.colorOverlayDefault
             case .colorOverlayDrag:
-                return theme.colors.colorOverlayDrag
+                theme.colors.colorOverlayDrag
             case .colorOverlayEmphasized:
-                return theme.colors.colorOverlayEmphasized
+                theme.colors.colorOverlayEmphasized
             case .colorOverlayModal:
-                return theme.colors.colorOverlayModal
+                theme.colors.colorOverlayModal
             }
         }
     }

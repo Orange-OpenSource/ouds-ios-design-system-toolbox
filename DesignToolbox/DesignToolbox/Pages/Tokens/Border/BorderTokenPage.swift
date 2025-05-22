@@ -151,17 +151,17 @@ enum NamedBorderRadius: String, CaseIterable {
     func token(from theme: OUDSTheme) -> BorderRadiusSemanticToken {
         switch self {
         case .borderRadiusNone:
-            return theme.borders.borderRadiusNone
+            theme.borders.borderRadiusNone
         case .borderRadiusDefault:
-            return theme.borders.borderRadiusDefault
+            theme.borders.borderRadiusDefault
         case .borderRadiusShort:
-            return theme.borders.borderRadiusShort
+            theme.borders.borderRadiusShort
         case .borderRadiusMedium:
-            return theme.borders.borderRadiusMedium
+            theme.borders.borderRadiusMedium
         case .borderRadiusTall:
-            return theme.borders.borderRadiusTall
+            theme.borders.borderRadiusTall
         case .borderRadiusPill:
-            return theme.borders.borderRadiusPill
+            theme.borders.borderRadiusPill
         }
     }
 }
@@ -179,21 +179,21 @@ enum NamedBorderWidth: String, CaseIterable {
     func token(from theme: OUDSTheme) -> BorderWidthSemanticToken {
         switch self {
         case .borderWidthNone:
-            return theme.borders.borderWidthNone
+            theme.borders.borderWidthNone
         case .borderWidthDefault:
-            return theme.borders.borderWidthDefault
+            theme.borders.borderWidthDefault
         case .borderWidthThin:
-            return theme.borders.borderWidthThin
+            theme.borders.borderWidthThin
         case .borderWidthMedium:
-            return theme.borders.borderWidthMedium
+            theme.borders.borderWidthMedium
         case .borderWidthThick:
-            return theme.borders.borderWidthThick
+            theme.borders.borderWidthThick
         case .borderWidthThicker:
-            return theme.borders.borderWidthThicker
+            theme.borders.borderWidthThicker
         case .borderWidthFocus:
-            return theme.borders.borderWidthFocus
+            theme.borders.borderWidthFocus
         case .borderWidthFocusInset:
-            return theme.borders.borderWidthFocusInset
+            theme.borders.borderWidthFocusInset
         }
     }
 }
@@ -205,9 +205,9 @@ enum NamedBorderStyle: String, CaseIterable {
     func token(from theme: OUDSTheme) -> BorderStyleSemanticToken {
         switch self {
         case .borderStyleDefault:
-            return theme.borders.borderStyleDefault
+            theme.borders.borderStyleDefault
         case .borderStyleDrag:
-            return theme.borders.borderStyleDrag
+            theme.borders.borderStyleDrag
         }
     }
 }
