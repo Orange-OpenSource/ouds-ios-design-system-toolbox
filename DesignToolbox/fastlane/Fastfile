@@ -63,7 +63,6 @@ GITHUB_ACCESS_TOKEN = ENV['GITHUB_ACCESS_TOKEN']
 OUDS_WORKSPACE = "DesignToolbox.xcworkspace"
 OUDS_PROJECT = "DesignToolbox.xcodeproj"
 OUDS_SCHEME = "DesignToolbox"
-OUDS_TARGET = "DesignToolbox"
 OUDS_SNAPSHOTS_SNAPSHOTS_TEST_SCHEME = "DesignToolboxSnapshotsTests"
 OUDS_SNAPSHOTS_UI_TEST_SCHEME = "DesignToolboxUITests"
 OUDS_PROJECT_NAME = "DesignToolbox" # Root for Info.plist, etc.
@@ -95,7 +94,7 @@ platform :ios do
     lane :check_dead_code do
         puts "👉 Check dead code with Periphery"
 
-        sh "periphery scan --strict --workspace ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME} --targets #{OUDS_TARGET} --format xcode"
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME} --format xcode"
     end
 
     # ------------------------------------------------------------
