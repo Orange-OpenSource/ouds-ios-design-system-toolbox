@@ -99,6 +99,16 @@ platform :ios do
     end
 
     # ------------------------------------------------------------
+    # RUN SWIFT FORMAT TO FORMAT SOURCES
+    # ------------------------------------------------------------
+    desc "RUN SWIFT FORMAT TO FORMAT SOURCES"
+    lane :format do
+        puts "👉 Run Swift Format to format sources"
+
+        sh "cd .. && swiftformat ."
+    end
+
+    # ------------------------------------------------------------
     # UPDATE BUILD NUMBER WITH TIMESTAMP
     # ------------------------------------------------------------
     desc "UPDATE BUILD NUMBER WITH TIMESTAMP"
