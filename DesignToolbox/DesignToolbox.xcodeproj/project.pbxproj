@@ -1435,7 +1435,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Periphery action to look for dead code\nperiphery scan --strict --workspace DesignToolbox.xcworkspace --schemes DesignToolbox --targets DesignToolbox --format xcode\n";
+			shellScript = "# Periphery action to look for dead code\nperiphery scan --project DesignToolbox.xcworkspace --schemes DesignToolbox --format xcode\n";
 		};
 		51B4005F2DDCC51E00B69CDC /* Run SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
