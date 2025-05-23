@@ -20,6 +20,9 @@ set -euo pipefail
 TEMPLATE_TO_LOOK_FOR="Tokens version: "
 
 FILES_TO_PROCESS=(
+    # For README
+    "../README.md"
+    
      # For Design Toolbox app
     "../DesignToolbox/DesignToolbox/Utils/Bundle+extension.swift"
 )
