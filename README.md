@@ -41,9 +41,12 @@
 > and also the [whole design system](https://unified-design-system.orange.com/).
 > The source code of the [Swift Package is on Orange-OpenSource/ouds-ios](https://github.com/Orange-OpenSource/ouds-ios).
 
+> [!IMPORTANT]
+> Tokens version: 0.11.0
+
 ## Bugs, feature requests and discussions
 
-> [!IMPORTANT]
+> [!CAUTION]
 > So as to help management team and have in one board all issues related to OUDS iOS, 
 > and because the design system toolbox app is just a mirror of the library, 
 > any discussions and issues about this app, and in the end, content of this repository, 
