@@ -260,7 +260,7 @@ platform :ios do
             sdk_version = ouds_swift_package_version
             set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKVersion", value: "#{sdk_version}")
         rescue => error
-            puts "🚨 Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for alpha build"
+            puts "❌ Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for alpha build"
         end
 
         build_and_upload(isAlpha: true, upload: true, issues: issues_numbers)
@@ -289,10 +289,16 @@ platform :ios do
             sdk_version = ouds_swift_package_version
             set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKVersion", value: "#{sdk_version}")
         rescue => error
-            puts "🚨 Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for beta build"
+            puts "❌ Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for beta build"
         end
 
-        build_and_upload(isAlpha: false, upload: true, detailSymbol: params[:commitHash])
+        # Beta app must point to OUDS iOS develop branch
+        if check_package_version_for_beta_app
+            build_and_upload(isAlpha: false, upload: true, detailSymbol: params[:commitHash])
+        else
+            puts "❌ Error: The beta code base of the app does not point to an OUDS iOS Swfit Package develop branch"
+            publish_mattermost_notification("📦 🚨 @channel The beta code base of the app does not point to an OUDS iOS Swfit Package develop branch (:beta)")
+        end
     end
 
     # ------------------------------------------------------------
@@ -314,16 +320,22 @@ platform :ios do
             sdk_version = ouds_swift_package_version
             set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKVersion", value: "#{sdk_version}")
         rescue => error
-            puts "🚨 Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for stable build"
+            puts "❌ Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for stable build"
         end
 
-        build
+        # Stable app must point to OUDS iOS version
+        if check_package_version_for_stable_app
+            build
 
-        if params[:upload]
-            puts "Upload to store requested"
-            upload_2_store()
+            if params[:upload]
+                puts "Upload to store requested"
+                upload_2_store()
+            else
+                puts "Upload to store not requested"
+            end
         else
-            puts "Upload to store not requested"
+            puts "❌ Error: The stable code base of the app does not point to an OUDS iOS Swfit Package version tag"
+            publish_mattermost_notification("📦 🚨 @channel The stable code base of the app does not point to an OUDS iOS Swfit Package version tag (:stable)")
         end
     end
 
@@ -506,6 +518,29 @@ platform :ios do
     # Helpers
     # -------
 
+    # Checks if beta build of the design system toolbox app points to develop branch of Swift Package
+    def check_package_version_for_beta_app()
+        puts "👉 Check package version for OUDS iOS Swift package (beta)"
+    
+        package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
+        package_resolved_json_content = JSON.parse(package_resolved_content)
+        ouds_ios_obj = package_resolved_json_content.find { |item| item["identity"] == "ouds-ios" }
+        
+        return ouds_ios_obj.dig("state", "branch") == "develop"
+
+    end
+
+    # Checks if the current version of the OUDS Swift Package is the expected one for stable builds of the app
+    def check_package_version_for_stable_app()
+        puts "👉 Check package version for OUDS iOS Swift package (stable)"
+
+        package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
+        package_resolved_json_content = JSON.parse(package_resolved_content)
+        ouds_ios_obj = package_resolved_json_content.find { |item| item["identity"] == "ouds-ios" }
+        
+        return ouds_ios_obj.dig("state", "version").nil?
+    end
+
     # Extract from Package.resolved details about the version in use of the OUDS iOS Swift Package
     def ouds_swift_package_version()
         puts "👉 Extract version of OUDS iOS Swift package"
@@ -513,9 +548,9 @@ platform :ios do
         package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
         package_resolved_json_content = JSON.parse(package_resolved_content)
         ouds_ios_obj = package_resolved_json_content.find { |item| item["identity"] == "ouds-ios" }
-        ouds_ios_branch = ouds_ios_obj.dig("state", "branch")
-        ouds_ios_revision = ouds_ios_obj.dig("state", "revision")
-        ouds_ios_version = ouds_ios_obj.dig("state", "version")
+        ouds_ios_branch = ouds_ios_obj.dig("state", "branch") # Git branch
+        ouds_ios_revision = ouds_ios_obj.dig("state", "revision") # Commit hash
+        ouds_ios_version = ouds_ios_obj.dig("state", "version") # Git tag
 
         if ouds_ios_branch && ouds_ios_revision
             return "#{ouds_ios_branch} (#{ouds_ios_revision})"
