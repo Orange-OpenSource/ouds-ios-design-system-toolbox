@@ -206,6 +206,12 @@
             "state" : "translated",
             "value" : "SDK version: %@"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version du SDK : %@"
+          }
         }
       }
     },
