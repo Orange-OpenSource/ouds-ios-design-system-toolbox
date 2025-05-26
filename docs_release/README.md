@@ -116,7 +116,7 @@ Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
     # Variables for internal portal upload (for in the end App Store)
     export OUDS_UPLOAD_STORE_URL=<URL_wih_details_for_upload>
 
-    bundle exec fastlane prod upload:true
+    bundle exec fastlane stable upload:true
     # set "upload" to true if you want to upload app to internal portal, false otherwise.
     ```
 
@@ -138,7 +138,7 @@ Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
 
 - Optionally check `Set as a pre-release` and click `Publish release`.
 
-- From the GitLab CI pipeline job which made the production release, get the artifacts and put it in the release.
+- From the GitLab CI pipeline job which made the stable release, get the artifacts and put it in the release.
 
 - Update, from previous release, the artefact for the AppStore (i.e. containing both dSYM and app ZIP, and also screehshots)
 
