@@ -14,6 +14,7 @@
 import OUDSFoundations // NOTE: Seen as "unused" for Periphery (https://github.com/peripheryapp/periphery/issues/942)
 import SwiftUI
 
+// swiftlint:disable force_unwrapping
 struct AboutPage: View {
 
     // MARK: Stored properties
@@ -69,16 +70,19 @@ struct AboutPage: View {
                 }
 
                 // TODO: Only for debug purposes, should be displayed in another way
-                DesignToolboxCopyableText("app_about_details_appVersion" <- Bundle.main.marketingVersion)
-                DesignToolboxCopyableText("app_about_details_buildNumber" <- Bundle.main.buildNumber)
-                DesignToolboxCopyableText("app_about_details_buildType" <- Bundle.main.fullBuildType)
+                DesignToolboxCopyableText("app_about_details_appVersion" <- Bundle.main.marketingVersion, Bundle.main.marketingVersion)
+                DesignToolboxCopyableText("app_about_details_buildNumber" <- Bundle.main.buildNumber, Bundle.main.buildNumber)
+                DesignToolboxCopyableText("app_about_details_buildType" <- Bundle.main.fullBuildType, Bundle.main.fullBuildType)
                 if let buildDetails = Bundle.main.buildDetails {
-                    DesignToolboxCopyableText("app_about_details_githubBuildDetails" <- buildDetails)
+                    DesignToolboxCopyableText("app_about_details_githubBuildDetails" <- buildDetails,
+                                              buildDetails.components(separatedBy: ":").last!.trimmingCharacters(in: .whitespacesAndNewlines))
                 }
                 if let sdkVersion = Bundle.main.sdkVersion, !sdkVersion.isEmpty {
-                    DesignToolboxCopyableText(sdkVersion)
+                    DesignToolboxCopyableText(sdkVersion, sdkVersion)
                 }
-                DesignToolboxCopyableText("\(Bundle.main.tokensLibraryVersion)")
+                DesignToolboxCopyableText("\(Bundle.main.tokensLibraryVersion)",
+                                          Bundle.main.tokensLibraryVersion
+                                              .components(separatedBy: ":").last!.trimmingCharacters(in: .whitespacesAndNewlines))
 
                 Button("app_about_appSettings_label") {
                     UIApplication.shared.open(appSettingsUrl)
@@ -90,3 +94,5 @@ struct AboutPage: View {
         .navigationViewStyle(.stack)
     }
 }
+
+// swiftlint:enable force_unwrapping
