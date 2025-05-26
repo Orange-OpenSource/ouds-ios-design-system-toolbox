@@ -67,6 +67,7 @@ OUDS_SNAPSHOTS_SNAPSHOTS_TEST_SCHEME = "DesignToolboxSnapshotsTests"
 OUDS_SNAPSHOTS_UI_TEST_SCHEME = "DesignToolboxUITests"
 OUDS_PROJECT_NAME = "DesignToolbox" # Root for Info.plist, etc.
 OUDS_APP_DISPLAY_NAME = "Design System Toolbox"
+OUDS_PACKAGE_RESOLVED_PATH = "#{OUDS_WORKSPACE}/xcshareddata/swiftpm/Package.resolved"
 
 # Devices configuration
 # ---------------------
@@ -251,9 +252,16 @@ platform :ios do
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
 
         # Details for the GUI in the app
-        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "ALPHA")
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "alpha")
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildDetails", value: "#{issues_numbers}")
+
+        begin
+            sdk_version = ouds_swift_package_version
+            set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKVersion", value: "#{sdk_version}")
+        rescue => error
+            puts "❌ Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for alpha build"
+        end
 
         build_and_upload(isAlpha: true, upload: true, issues: issues_numbers)
     end
@@ -274,18 +282,31 @@ platform :ios do
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
 
         # Details for the GUI in the app
-        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "BETA")
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "beta (nightly)")
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
         
-        build_and_upload(isAlpha: false, upload: true, detailSymbol: params[:commitHash])
+        begin
+            sdk_version = ouds_swift_package_version
+            set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKVersion", value: "#{sdk_version}")
+        rescue => error
+            puts "❌ Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for beta build"
+        end
+
+        # Beta app must point to OUDS iOS develop branch
+        if check_package_version_for_beta_app
+            build_and_upload(isAlpha: false, upload: true, detailSymbol: params[:commitHash])
+        else
+            puts "❌ Error: The beta code base of the app does not point to an OUDS iOS Swfit Package develop branch"
+            publish_mattermost_notification("📦 🚨 @channel The beta code base of the app does not point to an OUDS iOS Swfit Package develop branch (:beta)")
+        end
     end
 
     # ------------------------------------------------------------
-    # BUILD & UPLOAD TO STORE PROD APP
+    # BUILD & UPLOAD TO STORE STABLE APP
     # ------------------------------------------------------------
-    desc "BUILD & UPLOAD TO STORE (if set in options: upload) PROD APP"
-    lane :prod do |params|
-        puts "👉 Prod"
+    desc "BUILD & UPLOAD TO STORE (if set in options: upload) STABLE APP"
+    lane :stable do |params|
+        puts "👉 Stable"
         update_build_number
 
         new_display_name = "#{OUDS_APP_DISPLAY_NAME}"
@@ -293,15 +314,28 @@ platform :ios do
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
 
         # Details for the GUI in the app
-        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "PROD")
-        
-        build
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "stable")
 
-        if params[:upload]
-            puts "Upload to store requested"
-            upload_2_store()
+        begin
+            sdk_version = ouds_swift_package_version
+            set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKVersion", value: "#{sdk_version}")
+        rescue => error
+            puts "❌ Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for stable build"
+        end
+
+        # Stable app must point to OUDS iOS version
+        if check_package_version_for_stable_app
+            build
+
+            if params[:upload]
+                puts "Upload to store requested"
+                upload_2_store()
+            else
+                puts "Upload to store not requested"
+            end
         else
-            puts "Upload to store not requested"
+            puts "❌ Error: The stable code base of the app does not point to an OUDS iOS Swfit Package version tag"
+            publish_mattermost_notification("📦 🚨 @channel The stable code base of the app does not point to an OUDS iOS Swfit Package version tag (:stable)")
         end
     end
 
@@ -350,9 +384,9 @@ platform :ios do
     end
 
     # -----------------------------------------------------------------------
-    # PRIVATE LANE BUILD (ALPHA / BETA / PROD is set by main lane)
+    # PRIVATE LANE BUILD (ALPHA / BETA / STABLE is set by main lane)
     # -----------------------------------------------------------------------
-    desc "PRIVATE LANE BUILD (ALPHA / BETA / PROD is set by main lane)"
+    desc "PRIVATE LANE BUILD (ALPHA / BETA / STABLE is set by main lane)"
     private_lane :build do
         puts "👉 Build"
 
@@ -483,6 +517,49 @@ platform :ios do
     # -------
     # Helpers
     # -------
+
+    # Checks if beta build of the design system toolbox app points to develop branch of Swift Package
+    def check_package_version_for_beta_app()
+        puts "👉 Check package version for OUDS iOS Swift package (beta)"
+    
+        package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
+        package_resolved_json_content = JSON.parse(package_resolved_content)
+        ouds_ios_obj = package_resolved_json_content.find { |item| item["identity"] == "ouds-ios" }
+        
+        return ouds_ios_obj.dig("state", "branch") == "develop"
+
+    end
+
+    # Checks if the current version of the OUDS Swift Package is the expected one for stable builds of the app
+    def check_package_version_for_stable_app()
+        puts "👉 Check package version for OUDS iOS Swift package (stable)"
+
+        package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
+        package_resolved_json_content = JSON.parse(package_resolved_content)
+        ouds_ios_obj = package_resolved_json_content.find { |item| item["identity"] == "ouds-ios" }
+        
+        return ouds_ios_obj.dig("state", "version").nil?
+    end
+
+    # Extract from Package.resolved details about the version in use of the OUDS iOS Swift Package
+    def ouds_swift_package_version()
+        puts "👉 Extract version of OUDS iOS Swift package"
+
+        package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
+        package_resolved_json_content = JSON.parse(package_resolved_content)
+        ouds_ios_obj = package_resolved_json_content.find { |item| item["identity"] == "ouds-ios" }
+        ouds_ios_branch = ouds_ios_obj.dig("state", "branch") # Git branch
+        ouds_ios_revision = ouds_ios_obj.dig("state", "revision") # Commit hash
+        ouds_ios_version = ouds_ios_obj.dig("state", "version") # Git tag
+
+        if ouds_ios_branch && ouds_ios_revision
+            return "#{ouds_ios_branch} (#{ouds_ios_revision})"
+        elsif ouds_ios_revision && ouds_ios_version
+            return "#{ouds_ios_version} (#{ouds_ios_revision})"
+        else
+            raise error
+        end
+    end
 
     # Add a Git tag dedicated to CI/CD builds with for some commit hash used to compute tag suffix
     def tag_ci_build(commitHash)
