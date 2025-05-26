@@ -186,7 +186,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Détails du build (GItHub) : %@"
+            "value" : "Détails du build (GitHub) : %@"
           }
         }
       }

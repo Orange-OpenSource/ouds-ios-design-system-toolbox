@@ -32,7 +32,7 @@ for_lane :beta do
   ENV["TESTFLIGHT_GROUPS"] = "beta-team"
 end
 
-for_lane :prod do
+for_lane :stable do
   app_identifier(ENV["OUDS_DEVELOPER_BUNDLE_IDENTIFIER"])
   ENV["TESTFLIGHT_GROUPS"] = "public-access"
 end
