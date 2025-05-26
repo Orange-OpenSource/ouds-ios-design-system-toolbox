@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.14.0...develop)
 
+### Added
+
+- [DesignToolbox] Copy/paste build details from about page (Orange-OpenSource/ouds-ios#677)
+
 ### Changed
 
 - [DesignToolbox] Add title in Component and Token screens (Orange-OpenSource/ouds-ios#662)
