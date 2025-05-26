@@ -74,8 +74,12 @@ struct AboutPage: View {
                 DesignToolboxCopyableText("app_about_details_buildNumber" <- Bundle.main.buildNumber)
                 DesignToolboxCopyableText("app_about_details_buildType" <- Bundle.main.fullBuildType)
                 if let buildDetails = Bundle.main.buildDetails {
-                    DesignToolboxCopyableText("app_about_githubBuildDetails" <- buildDetails)
+                    DesignToolboxCopyableText("app_about_details_githubBuildDetails" <- buildDetails)
                 }
+                if let sdkVersion = Bundle.main.sdkVersion {
+                    DesignToolboxCopyableText("app_about_details_sdkVersion" <- sdkVersion)
+                }
+                DesignToolboxCopyableText("\(Bundle.main.tokensLibraryVersion)")
 
                 Button("app_about_appSettings_label") {
                     UIApplication.shared.open(appSettingsUrl)
