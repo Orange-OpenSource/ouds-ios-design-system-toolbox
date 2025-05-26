@@ -69,15 +69,14 @@ struct AboutPage: View {
                 }
 
                 // TODO: Only for debug purposes, should be displayed in another way
-                DesignToolboxCopyableText("\(Bundle.main.tokensLibraryVersion)")
                 DesignToolboxCopyableText("app_about_details_appVersion" <- Bundle.main.marketingVersion)
                 DesignToolboxCopyableText("app_about_details_buildNumber" <- Bundle.main.buildNumber)
                 DesignToolboxCopyableText("app_about_details_buildType" <- Bundle.main.fullBuildType)
                 if let buildDetails = Bundle.main.buildDetails {
                     DesignToolboxCopyableText("app_about_details_githubBuildDetails" <- buildDetails)
                 }
-                if let sdkVersion = Bundle.main.sdkVersion {
-                    DesignToolboxCopyableText("app_about_details_sdkVersion" <- sdkVersion)
+                if let sdkVersion = Bundle.main.sdkVersion, !sdkVersion.isEmpty {
+                    DesignToolboxCopyableText(sdkVersion)
                 }
                 DesignToolboxCopyableText("\(Bundle.main.tokensLibraryVersion)")
 
