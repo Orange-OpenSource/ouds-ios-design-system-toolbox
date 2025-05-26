@@ -20,10 +20,6 @@ struct DesignToolboxCopyableText: View {
     let title: String
     let copyable: String
 
-    init(_ copyableTitle: String) {
-        self.init(copyableTitle, copyableTitle)
-    }
-
     init(_ title: String, _ copyable: String) {
         self.title = title
         self.copyable = copyable

@@ -87,13 +87,13 @@ BUILD & UPLOAD TO TESTFLIGHT ALPHA APP
 
 BUILD & UPLOAD TO TESTFLIGHT BETA APP
 
-### ios prod
+### ios stable
 
 ```sh
-[bundle exec] fastlane ios prod
+[bundle exec] fastlane ios stable
 ```
 
-BUILD & UPLOAD TO STORE (if set in options: upload) PROD APP
+BUILD & UPLOAD TO STORE (if set in options: upload) STABLE APP
 
 ----
 
