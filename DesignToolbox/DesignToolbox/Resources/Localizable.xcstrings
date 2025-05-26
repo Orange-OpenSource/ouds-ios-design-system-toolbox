@@ -186,7 +186,25 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Détails du build (GItHub) : %@"
+            "value" : "Détails du build (GitHub) : %@"
+          }
+        }
+      }
+    },
+    "app_about_details_sdkVersion" : {
+      "comment" : "About screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار SDK: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDK version: %@"
           }
         }
       }
