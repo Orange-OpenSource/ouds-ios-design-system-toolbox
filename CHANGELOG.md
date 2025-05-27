@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [DesignToolbox] Copy/paste build details from about page (Orange-OpenSource/ouds-ios#677)
 
+### Fixed
+
+- [Library] Set border as inner stroke (Orange-OpenSource/ouds-ios#680)
+
 ### Changed
 
 - [Tool] Update `json` RubyGem from v2.12.0 to v2.12.2
