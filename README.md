@@ -7,9 +7,9 @@
   ·
   <a href="https://ios.unified-design-system.orange.com/" title="Swift library technical documentation on GitHub Pages">Swift documentation</a>
   ·
-  <a href="https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/wiki" title="OUDS iOS library">Swift Package library</a>
-  ·
   <a href="https://unified-design-system.orange.com/" title="Design system global website">Design system</a>
+  ·  
+  <a href="https://github.com/Orange-OpenSource/ouds-ios/" title="OUDS iOS library">Swift Package library</a>
 </p>
 
 <p align="center">
