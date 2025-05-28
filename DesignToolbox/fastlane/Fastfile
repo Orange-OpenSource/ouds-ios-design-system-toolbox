@@ -325,6 +325,7 @@ platform :ios do
     desc "BUILD & UPLOAD TO STORE (if set in options: upload) STABLE APP"
     lane :stable do |params|
         puts "👉 Stable"
+
         update_build_number
 
         new_display_name = "#{OUDS_APP_DISPLAY_NAME}"
@@ -558,7 +559,7 @@ platform :ios do
         package_resolved_json_content = JSON.parse(package_resolved_content)
         ouds_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "ouds-ios" }
         
-        return ouds_ios_obj.dig("state", "version").nil?
+        return !ouds_ios_obj.dig("state", "version").nil?
     end
 
     # Extract from Package.resolved details about the version in use of the OUDS iOS Swift Package.
