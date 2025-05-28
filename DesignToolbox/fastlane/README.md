@@ -47,6 +47,14 @@ RUN SWIFT LINT TO CHECK SMELLS
 
 RUN LICENSEPLIST TO UPDATE LIST OF THIRD PARTIES
 
+### ios check_leaks
+
+```sh
+[bundle exec] fastlane ios check_leaks
+```
+
+RUN GITLEAKS FOR SECET LEAKS SCAN
+
 ### ios update_build_number
 
 ```sh
