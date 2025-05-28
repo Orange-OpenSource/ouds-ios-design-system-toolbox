@@ -39,6 +39,14 @@ Keep in mind the internal GitLab runners use tricks to check if things evolved t
 
     - Ensure the marketing version defined in Xcode is updated with the new X.Y.Z
 
+- Check the app points to the suitable tag for OUDS iOS dependency (e.g. supposed to be some X.Y.Z exact version) ; if not, fix it
+
+- Update the list of third-party components embeded in the app to keep up-to-date the list of the versions in use
+
+```shell
+bundle exec fastlane update_3rd_parties
+```
+
 - Verify the changes mentioned above, then commit and push.
 
 - Create a new pull request named `Prepare release X.Y.Z` on GitHub to merge your branch into `develop`.

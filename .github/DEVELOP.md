@@ -23,6 +23,7 @@
 - [Formater](#formater)
 - [Dead code](#dead-code)
 - [CI/CD](#cicd)
+- [Update 3rd parties](#update-3rd-parties)
 
 ## Technical preconditions
 
@@ -69,6 +70,9 @@ brew install swiftformat
 # For xcodes (at least 1.5.0)
 brew install xcodesorg/made/xcodes
 # or `brew reinstall xcodesorg/made/xcodes` to get updates if old version installed
+
+# For LicensePlist (at least 3.27.1)
+brew install licenseplist
 ```
 
 Ensure you have the suitable _Ruby_ version. We recommend the use of [rbenv](https://github.com/rbenv/rbenv) to load the suitable version of ruby.
@@ -502,4 +506,14 @@ However of course you will have to define all the variables, secrets and have th
 
 You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/wiki/51-%E2%80%90-About-continuous-integration-and-delivery).
 
-In few words, there is a pipeline containing some stages and jobs to build alpha, nightly/beta and production releases.
+In few words, there is a pipeline containing some stages and HIRDjobs to build alpha, nightly/beta and production releases.
+
+## Update 3rd parties
+
+The design ssytem toolbox application relies on some third-party components. Due to legal obligations we must or only should list the licenses and credits of such components. In fact, it is a best practice to list all open source components in use.
+To do that, we use [LicensePlist](https://github.com/mono0926/LicensePlist) project which can forge for a *Settings bundle* the assets with the list of detected third-party components, theirs licences and source-code reference.
+
+To generate the files to copy/paste, run:
+```shell
+bundle exec fastlane update_3rd_parties
+```

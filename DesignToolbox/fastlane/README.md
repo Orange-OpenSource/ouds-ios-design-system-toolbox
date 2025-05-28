@@ -39,6 +39,14 @@ RUN SWIFT FORMAT TO FORMAT SOURCES
 
 RUN SWIFT LINT TO CHECK SMELLS
 
+### ios update_3rd_parties
+
+```sh
+[bundle exec] fastlane ios update_3rd_parties
+```
+
+RUN LICENSEPLIST TO UPDATE LIST OF THIRD PARTIES
+
 ### ios update_build_number
 
 ```sh

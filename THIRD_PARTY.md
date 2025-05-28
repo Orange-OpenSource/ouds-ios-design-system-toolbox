@@ -10,14 +10,21 @@ For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *
 ## In Design System Toolbox
 <!-- Inside application and for tests -->
 
-#### DeclarationAccessibility
+### DeclarationAccessibility
 
 Copyright 2021-2023 Orange SA
 
 *DeclarationAccessibility* is distributed under the terms and conditions of the [Apache License](https://opensource.org/license/apache-2-0).
 You may download the source code on the [following website](https://github.com/Orange-OpenSource/accessibility-statement-lib-ios).
 
-#### ouds-ios
+### LicensePlist
+
+Copyright (c) 2017 Masayuki Ono
+
+*LicensePlist* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
+You may download the source code on the [following website](https://github.com/mono0926/LicensePlist).
+
+### ouds-ios
 
 Copyright Orange SA
 

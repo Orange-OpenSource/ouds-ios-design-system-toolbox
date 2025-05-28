@@ -121,6 +121,24 @@ platform :ios do
     end
 
     # ------------------------------------------------------------
+    # RUN LICENSE-PLSIT FOR 3RD PARTIES UPDATES
+    # ------------------------------------------------------------
+    desc "RUN LICENSEPLIST TO UPDATE LIST OF THIRD PARTIES"
+    lane :update_3rd_parties do
+        puts "👉 Run LicensePlist to update list of third-parties"
+
+        Dir.chdir ".." do
+            # Run the command to generate assets
+            sh "license-plist --add-version-numbers --add-sources --force --suppress-opening-directory"
+
+            # Copy assets and delete temporary folders
+            sh "rm -rf Settings.bundle/com.mono0926.LicensePlist &&  mv -f com.mono0926.LicensePlist.Output/com.mono0926.LicensePlist Settings.bundle"
+            sh "rm -rf Settings.bundle/com.mono0926.LicensePlist.plist && mv com.mono0926.LicensePlist.Output/com.mono0926.LicensePlist.plist Settings.bundle"
+            sh "rm -rf com.mono0926.LicensePlist.Output"
+        end
+    end
+
+    # ------------------------------------------------------------
     # UPDATE BUILD NUMBER WITH TIMESTAMP
     # ------------------------------------------------------------
     desc "UPDATE BUILD NUMBER WITH TIMESTAMP"
