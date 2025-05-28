@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] Adjust typography modifier to be coform with line height token by adding line spacing and paddings (Orange-OpenSource/ouds-ios#594)
 - [Library] Set border as inner stroke (Orange-OpenSource/ouds-ios#680)
 
 ### Changed
