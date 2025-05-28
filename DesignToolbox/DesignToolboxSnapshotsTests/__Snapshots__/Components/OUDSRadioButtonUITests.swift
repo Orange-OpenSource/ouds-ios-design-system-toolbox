@@ -137,6 +137,7 @@ final class OUDSRadioUITests: XCTestCase {
         [
             RadioTest.Layout.indicatorOnly(isError: isError),
 
+            RadioTest.Layout.default(longLabelText: true, labelText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", additionalLabelText: nil, helperText: nil, icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
             RadioTest.Layout.default(labelText: "Takoyaki", additionalLabelText: nil, helperText: nil, icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
             RadioTest.Layout.default(labelText: "Takoyaki", additionalLabelText: nil, helperText: nil, icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
             RadioTest.Layout.default(labelText: "Patatas", additionalLabelText: nil, helperText: "Bravas", icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
@@ -180,7 +181,8 @@ private struct RadioTest: View {
 
     enum Layout { // ControlItemLabel.LayoutData is not accessible, need to fake it here
         case indicatorOnly(isError: Bool)
-        case `default`(labelText: String,
+        case `default`(longLabelText: Bool = false,
+                       labelText: String,
                        additionalLabelText: String?,
                        helperText: String?,
                        icon: Image?,
@@ -200,8 +202,8 @@ private struct RadioTest: View {
             switch self {
             case let .indicatorOnly(isError):
                 "layout-indicatorOnly-\(isError ? "error" : "")"
-            case let .default(_, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
-                "layout-default-label-\(additionalLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
+            case let .default(longLabelText, _, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
+                "layout-default-\(longLabelText ? "longLabel-" : "label-")\(additionalLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
             case let .reversed(_, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
                 "layout-inverse-label-\(additionalLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
             }
@@ -225,7 +227,7 @@ private struct RadioTest: View {
                       accessibilityLabel: "Bazinga!",
                       isError: isError)
                 .disabled(isDisabled)
-        case let .default(labelText, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
+        case let .default(_, labelText, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
             OUDSRadioItem(isOn: .constant(indicatorState),
                           label: labelText,
                           additionalLabel: additionalLabelText,
