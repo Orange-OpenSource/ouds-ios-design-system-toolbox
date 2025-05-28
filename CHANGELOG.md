@@ -10,10 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [DesignToolbox] Hyperlinks to design system, source code and issues board in about page
 - [DesignToolbox] Copy/paste build details from about page (Orange-OpenSource/ouds-ios#677)
-
-### Fixed
-
-- [Library] Set border as inner stroke (Orange-OpenSource/ouds-ios#680)
+- [Library] API and tools to check contrast ratio of colors (Orange-OpenSource/ouds-ios#656)
 
 ### Changed
 
@@ -26,3 +23,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Various cleanings and split of design system toolbox app from independant repository (Orange-OpenSource/ouds-ios#187)
 - [DesignToolbox] Udpate wordings to avoid traduction for components and tokens names (Orange-OpenSource/ouds-ios#654)
 - [DesignToolbox] Use the new Switch component in all screens of the application (Orange-OpenSource/ouds-ios#431)
+- [Library] Debug warnings for link and button components for WCAG 2.1 3:1 and 4.5:1 ratios on colored surface (Orange-OpenSource/ouds-ios#656)
+
+### Fixed
+
+- [Library] Set border as inner stroke (Orange-OpenSource/ouds-ios#680)
+- [Library] Bad wording key for accessibility label of switch item (Orange-OpenSource/ouds-ios#642)
+- [Library] Missing accessibility hint for switch (Orange-OpenSource/ouds-ios#642)
+- [Library] Missing token `colorBorderMuted` (Orange-OpenSource/ouds-ios#643)
