@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "6af190abc59aab3976489d62610f6e9cbda2caa8"
+        "branch" : "594-bug-typography-interline-is-wrong",
+        "revision" : "47ec1d2baecc5aec8d0743e371105ad0cadcbf65"
       }
     },
     {
