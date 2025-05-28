@@ -10,12 +10,17 @@ This file lists all the steps to follow when releasing a new version of Design S
 
 ## Release OUDS iOS Swift Package
 
-You must make a release of the OUDS iOS Swift Package library before releasing the Design System Toolbox app.
+> [!IMPORTANT]
+> You must make a release of the OUDS iOS Swift Package library before releasing the Design System Toolbox app.
 
-When the release is done according to the [process described in its project](https://github.com/Orange-OpenSource/ouds-ios/tree/develop/docs_release), change the package dependency of the app and use the suitable tag as version.
+When the release is done according to the [process described in its project](https://github.com/Orange-OpenSource/ouds-ios/tree/develop/docs_release), change the package dependency of the app and use the suitable tag as version, i.e. point to the tag / version and not the branch. Update the package using Xcode to be sure the *Package.resolved* is updated.
+
 Keep in mind the internal GitLab runners use tricks to check if things evolved to make builds ; so if you don't version any dependency or files changes nothing will be done.
 
 ## Prepare release
+
+> [!TIP]
+> We use here CLI for Git operations, but of course you are free to use GUI tools
 
 - Create a branch named `prepare-release` to prepare the new release for Design System Toolbox iOS version X.Y.Z.
 
@@ -32,7 +37,7 @@ Keep in mind the internal GitLab runners use tricks to check if things evolved t
     ```
      to
 
-     ```
+    ```
      \## [X.Y.Z]\(https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/P.Q.R...X.Y.Z) - YYYY-MM-dd
     ```
     where P.Q.R is the previous version tag, X.Y.Z the version we are releasing, and YYYY-MM-dd the date.
@@ -41,7 +46,7 @@ Keep in mind the internal GitLab runners use tricks to check if things evolved t
 
 - Check the app points to the suitable tag for OUDS iOS dependency (e.g. supposed to be some X.Y.Z exact version) ; if not, fix it
 
-- Update the list of third-party components embeded in the app to keep up-to-date the list of the versions in use
+- Update the list of third-party components embeded in the app to keep up-to-date the list of the versions in use ; you must see changed in the *Settings.bundle*
 
 ```shell
 bundle exec fastlane update_3rd_parties
@@ -57,12 +62,17 @@ bundle exec fastlane update_3rd_parties
 
 - Create a new pull request named `Release X.Y.Z` on GitHub to merge `develop` into `main`. Add in the description the CHANGELOG for this new version. Thus GitHub will automatically make the links and display the PR in the mentioned issues.
 
-- Review and merge this pull request on GitHub. The merge strategy must be a **simple merge without squash of commits**, i.e. "create a merge commit". In fact rebase should be used to align feature branches with default one, and squash should be used when needed for work branches. In the _merge commit_ message add the changelog, the authors and the details. Thus GitHub makes links automatically between commits, PR and GitHub issues. To do that, copy/paste the content of the changelog (after the version line) and uncomment (i.e. remove # symbols) lines. Thus if in the commit message body any issue is referenced, it will appear in the associated issue. Do not forget also to add people as co-authors if needed. **Remember, do not squash nor rebase but only merge commit**.
+- Review and merge this pull request on GitHub. The merge strategy must be a **simple merge without squash of commits**, i.e. "create a merge commit". 
 
-Below is an example of what should be a merge commit in `main` branch for a release (ignore of course // lines, see [this commit for example](https://github.com/Orange-OpenSource/ouds-ios/commit/98640b4b63037c2780128f41ceba5b896763b94f)). You can also precise the tokens library version and the OUDS iOS Swift Package version:
+> [!NOTE]
+> In fact rebase should be used to align feature branches with default one, and squash should be used when needed for work branches. 
+
+In the _merge commit_ message add the changelog, the authors and the details. Thus GitHub makes links automatically between commits, PR and GitHub issues. To do that, copy/paste the content of the changelog (after the version line) and uncomment (i.e. remove # symbols) lines. Thus if in the commit message body any issue is referenced, it will appear in the associated issue. Do not forget also to add people as co-authors if needed. **Remember, do not squash nor rebase but only merge commit**.
+
+Below is an example of what should be a merge commit in `main` branch for a release (ignore of course // lines, see [this commit for example](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/commit/b43d4c70453fd1606e8f526d9e59d70a34654419)). You can also precise the tokens library version and the OUDS iOS Swift Package version:
 
 ```text
-Version 0.15.0 (#666) // <--- Commit title, #666 is PR nummber for the design toolbox project
+Version 0.15.0 (#666) // [DO NOT ADD THIS COMMENT] <--- Commit title, #666 is PR nummber for the design toolbox project, GitHub suggests it
 
 // [DO NOT ADD THIS LINE] Below is commit body, keep an empty line
 Release of version 0.15.0
@@ -91,6 +101,7 @@ Co-authored-by: Benoit Suzanne <benoit.suzanne@orange.com>
 Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Co-authored-by: Ludovic Pinel <ludovic.pinel@orange.com>
 Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
 ```
     
 - Launch a job on your runner to build the demo application
@@ -128,6 +139,9 @@ Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
     # set "upload" to true if you want to upload app to internal portal, false otherwise.
     ```
 
+> [!TIP]
+> Of course this build operation will be successful if and ony if you have the suitable certificates and provisoning profile son your computer
+
 ### Publish release to GitHub
 
 - Go to [GitHub Releases](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases).
@@ -139,16 +153,19 @@ Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
 - Add release notes and verify using the preview tab. Use *git-cliff* to build the release note to copy/paste in the release description
 
     ```shell
-    # Where X is the previous tag and Y the new freshly created tag or HEAD
-    # Run in main branch of course.
     git-cliff --config .github/cliff.toml --output RELEASE_NOTE.md X..Y
     ```
 
+> [!TIP]
+> X can be a commit hash or the last tag for example.
+> Y should be HEAD.
+> Run this comman on main branch.
+
 - Optionally check `Set as a pre-release` and click `Publish release`.
 
-- From the GitLab CI pipeline job which made the stable release, get the artifacts and put it in the release.
+- From your internal runner (e.g. in our side GitLab CI) pipeline job (or locally if Fastlane used) which made the stable release, get the artifacts (app zip, dSYm zip, IPA)
 
-- Update, from previous release, the artefact for the AppStore (i.e. containing both dSYM and app ZIP, and also screehshots)
+- For the archive with the build artefacts and copypaste from previous release (and if needed update) the store screenshots
 
 ## Prepare Next Release
 
@@ -164,7 +181,13 @@ Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
     ```
     
     - Update in Xcode the version of DesignToolbox target to U.V.W (the new version you suppose it will be) and increment build number
+
+    - Point to the devleop branch of the OUDS Swift Package
+
     - Commit your modifications
+
     - Push them to the repository
+
     - Create a new pull request named `Update release U.V.W` on GitHub to merge your branch into `develop` 
+    
     - Review and merge this pull request on GitHub **using merge + squash strategy**<br /><br />
