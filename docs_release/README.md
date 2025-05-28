@@ -39,6 +39,14 @@ Keep in mind the internal GitLab runners use tricks to check if things evolved t
 
     - Ensure the marketing version defined in Xcode is updated with the new X.Y.Z
 
+- Check the app points to the suitable tag for OUDS iOS dependency (e.g. supposed to be some X.Y.Z exact version) ; if not, fix it
+
+- Update the list of third-party components embeded in the app to keep up-to-date the list of the versions in use
+
+```shell
+bundle exec fastlane update_3rd_parties
+```
+
 - Verify the changes mentioned above, then commit and push.
 
 - Create a new pull request named `Prepare release X.Y.Z` on GitHub to merge your branch into `develop`.
@@ -116,7 +124,7 @@ Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
     # Variables for internal portal upload (for in the end App Store)
     export OUDS_UPLOAD_STORE_URL=<URL_wih_details_for_upload>
 
-    bundle exec fastlane prod upload:true
+    bundle exec fastlane stable upload:true
     # set "upload" to true if you want to upload app to internal portal, false otherwise.
     ```
 
@@ -138,7 +146,7 @@ Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
 
 - Optionally check `Set as a pre-release` and click `Publish release`.
 
-- From the GitLab CI pipeline job which made the production release, get the artifacts and put it in the release.
+- From the GitLab CI pipeline job which made the stable release, get the artifacts and put it in the release.
 
 - Update, from previous release, the artefact for the AppStore (i.e. containing both dSYM and app ZIP, and also screehshots)
 
