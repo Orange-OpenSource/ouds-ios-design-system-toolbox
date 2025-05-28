@@ -184,6 +184,7 @@
 		514D02FC2D75F45F00622692 /* OUDSCheckboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514D02FB2D75F45F00622692 /* OUDSCheckboxUITests.swift */; };
 		5152DA1D2DE0BD440078B9F1 /* DesignToolboxCopyableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5152DA1C2DE0BD3B0078B9F1 /* DesignToolboxCopyableText.swift */; };
 		5152DA1E2DE0BD440078B9F1 /* DesignToolboxCopyableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5152DA1C2DE0BD3B0078B9F1 /* DesignToolboxCopyableText.swift */; };
+		515439232DE734E600B25D13 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 515439222DE734E600B25D13 /* Settings.bundle */; };
 		5180FE6E2DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */; };
 		5180FE6F2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */; };
 		5180FE702DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */; };
@@ -456,6 +457,7 @@
 		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		514D02FB2D75F45F00622692 /* OUDSCheckboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSCheckboxUITests.swift; sourceTree = "<group>"; };
 		5152DA1C2DE0BD3B0078B9F1 /* DesignToolboxCopyableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxCopyableText.swift; sourceTree = "<group>"; };
+		515439222DE734E600B25D13 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerConfiguration.swift; sourceTree = "<group>"; };
 		5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerElement.swift; sourceTree = "<group>"; };
 		5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerPage.swift; sourceTree = "<group>"; };
@@ -885,6 +887,7 @@
 		07FDCD882C296A500009AA13 = {
 			isa = PBXGroup;
 			children = (
+				515439222DE734E600B25D13 /* Settings.bundle */,
 				07FDCDA32C296B170009AA13 /* 🛠 */,
 				51BD76202C466FCF0033365D /* DesignToolbox */,
 				51EB73792DBFD24400F37FEC /* DesignToolboxUITests */,
@@ -1361,6 +1364,7 @@
 				5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */,
 				51BD76262C466FCF0033365D /* about_privacy_policy.html in Resources */,
 				07CF42722CA31AC3000BD03E /* Assets.xcassets in Resources */,
+				515439232DE734E600B25D13 /* Settings.bundle in Resources */,
 				5122E0282D65D18E00CD2857 /* Localizable.xcstrings in Resources */,
 				6DFC20B52CE3AF1500F2EC33 /* boosted-grid.min.css in Resources */,
 				6DFC20B62CE3AF1500F2EC33 /* favicon.ico in Resources */,
