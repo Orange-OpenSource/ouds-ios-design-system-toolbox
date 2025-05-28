@@ -95,6 +95,150 @@
         }
       }
     },
+    "app_about_appSources_hint_a11y" : {
+      "comment" : "About screen - App sources (hint)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر مرتين للانتقال إلى الكود المصدري لهذا التطبيق على GitHub"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap twice to go to the source code of this application on GitHub"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez deux fois pour accéder au code source de l’application disponible sur GitHub"
+          }
+        }
+      }
+    },
+    "app_about_appSources_label" : {
+      "comment" : "About screen - App sources",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الكود المصدري للتطبيق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Source code of the app"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code source de l’app"
+          }
+        }
+      }
+    },
+    "app_about_bugReport_hint_a11y" : {
+      "comment" : "About screen - Bug reports (a11y)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر مرتين للإبلاغ عن خطأ وإرسال طلب تحسين للتطبيق أو SDK"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap twice to report a bug and send an improvement request for the app or the SDK"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez deux fois pour envoyer un rapport de bug ou une demande d’amélioration de l’application ou du SDK"
+          }
+        }
+      }
+    },
+    "app_about_bugReport_label" : {
+      "comment" : "About screen - Bug report",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الإبلاغ عن خطأ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Report a bug"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signaler un bug"
+          }
+        }
+      }
+    },
+    "app_about_designSystem_hint_a11y" : {
+      "comment" : "About screen - Design system (a11y)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر مرتين للانتقال إلى موقع نظام التصميم على الويب"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap twice to go to the design system website"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez deux fois pour accéder aux spécifications du système de design"
+          }
+        }
+      }
+    },
+    "app_about_designSystem_label" : {
+      "comment" : "About screen - Design system",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إرشادات نظام التصميم"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Design system guidelines"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spécifications du design system"
+          }
+        }
+      }
+    },
     "app_about_details_appVersion" : {
       "comment" : "About screen - App details",
       "extractionState" : "manual",
@@ -186,7 +330,31 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Détails du build (GItHub) : %@"
+            "value" : "Détails du build (GitHub) : %@"
+          }
+        }
+      }
+    },
+    "app_about_details_sdkVersion" : {
+      "comment" : "About screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار SDK: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDK version: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version du SDK : %@"
           }
         }
       }
@@ -331,6 +499,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Configuration"
+          }
+        }
+      }
+    },
+    "app_common_copy" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نسخ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copier"
           }
         }
       }

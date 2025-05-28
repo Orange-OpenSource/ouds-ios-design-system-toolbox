@@ -1,5 +1,5 @@
 {
-  "originHash" : "184f30a3eb79b85a8569b7322bbf70a1315c40b067c95447bef93d3c73f5d2e6",
+  "originHash" : "6ea3d37f1306824a57aceca4318954b015df152cccfd354b173dfe326870c15b",
   "pins" : [
     {
       "identity" : "accessibility-statement-lib-ios",
@@ -13,10 +13,10 @@
     {
       "identity" : "ouds-ios",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Orange-OpenSource/ouds-ios/",
+      "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "b70378150e5af272c064caf062689a222aa8c9c3"
+        "revision" : "4b68bdb021c426d5e001b6c4fc3e200e2a19db28",
+        "version" : "0.15.0"
       }
     },
     {

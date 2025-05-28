@@ -15,7 +15,6 @@ import Foundation
 
 // MARK: - Operators
 
-prefix operator °°
 infix operator <-
 
 // MARK: - String extension
@@ -23,6 +22,15 @@ infix operator <-
 extension String {
 
     // MARK: - Sugar
+
+    // swiftlint:disable force_unwrapping
+    var leadingColumnFragment: String {
+        components(separatedBy: ":").last!.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    // swiftlint:enable force_unwrapping
+
+    // MARK: - L10N
 
     /// Just an operator to inject as `String` one argument in a localizable
     /// - Parameters:
