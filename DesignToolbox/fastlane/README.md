@@ -21,7 +21,7 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 [bundle exec] fastlane ios check_dead_code
 ```
 
-RUN PERIPHERY FOR DEAD CODE ANALYSIS
+Run Periphery to look dor dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned.
 
 ### ios format
 
@@ -29,7 +29,7 @@ RUN PERIPHERY FOR DEAD CODE ANALYSIS
 [bundle exec] fastlane ios format
 ```
 
-RUN SWIFT FORMAT TO FORMAT SOURCES
+Run SwiftFormat to format Swift source files according to the local configuration.
 
 ### ios lint
 
@@ -37,7 +37,7 @@ RUN SWIFT FORMAT TO FORMAT SOURCES
 [bundle exec] fastlane ios lint
 ```
 
-RUN SWIFT LINT TO CHECK SMELLS
+Run SwiftLint in strict mode to detect code smells
 
 ### ios update_3rd_parties
 
@@ -45,7 +45,7 @@ RUN SWIFT LINT TO CHECK SMELLS
 [bundle exec] fastlane ios update_3rd_parties
 ```
 
-RUN LICENSEPLIST TO UPDATE LIST OF THIRD PARTIES
+Run LicensePlist to update list of third-parties
 
 ### ios check_leaks
 
@@ -53,7 +53,15 @@ RUN LICENSEPLIST TO UPDATE LIST OF THIRD PARTIES
 [bundle exec] fastlane ios check_leaks
 ```
 
-RUN GITLEAKS FOR SECET LEAKS SCAN
+Run GitLeaks to look for leaks of secrets in project and Git history
+
+### ios update_sbom
+
+```sh
+[bundle exec] fastlane ios update_sbom
+```
+
+Generates a SBOM (Software Bill Of Materials) in SPDX JSON format with Syft and analyse it with Grype to as to check for vulnerabilities
 
 ### ios update_build_number
 
@@ -69,7 +77,7 @@ UPDATE BUILD NUMBER WITH TIMESTAMP
 [bundle exec] fastlane ios test_snapshots
 ```
 
-RUN SNAPSHOTS TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT
+Run snapshots tests in the demo app to look for visual regressions of components defined in OUDS package
 
 ### ios test_ui
 
@@ -77,7 +85,7 @@ RUN SNAPSHOTS TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT
 [bundle exec] fastlane ios test_ui
 ```
 
-RUN UI TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT
+Run UI tests in the demo app to check some specific components behaviors
 
 ### ios buildDebugApp
 
@@ -85,7 +93,7 @@ RUN UI TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT
 [bundle exec] fastlane ios buildDebugApp
 ```
 
-BUILD DEBUG APP
+Build locally the demo app in debug mode without upload
 
 ### ios alpha
 
@@ -93,7 +101,7 @@ BUILD DEBUG APP
 [bundle exec] fastlane ios alpha
 ```
 
-BUILD & UPLOAD TO TESTFLIGHT ALPHA APP
+Build the demo app in alpha mode and upload to TestFlight
 
 ### ios beta
 
@@ -101,7 +109,7 @@ BUILD & UPLOAD TO TESTFLIGHT ALPHA APP
 [bundle exec] fastlane ios beta
 ```
 
-BUILD & UPLOAD TO TESTFLIGHT BETA APP
+Build the demo app in neta mode and upload to TestFlight
 
 ### ios stable
 
@@ -109,7 +117,7 @@ BUILD & UPLOAD TO TESTFLIGHT BETA APP
 [bundle exec] fastlane ios stable
 ```
 
-BUILD & UPLOAD TO STORE (if set in options: upload) STABLE APP
+Build the demo app in stable mode and, if defined, upload to internal portal for App Store publication
 
 ----
 
