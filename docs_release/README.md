@@ -52,6 +52,15 @@ Keep in mind the internal GitLab runners use tricks to check if things evolved t
 bundle exec fastlane update_3rd_parties
 ```
 
+- Update the SBOM
+
+```shell
+bundle exec fastlane update_sbom
+```
+
+>[!IMPORTANT]
+> Keeping up-to-date the SBOM and check for vulnerabilities is important for both software quality, users trust and legal obligations like the Cyber Resilience Act or NIS2.
+
 - Verify the changes mentioned above, then commit and push.
 
 - Create a new pull request named `Prepare release X.Y.Z` on GitHub to merge your branch into `develop`.
