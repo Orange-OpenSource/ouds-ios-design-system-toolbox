@@ -319,6 +319,7 @@ platform :ios do
             set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKVersion", value: "#{sdk_version}")
         rescue => error
             puts "❌ Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for beta build"
+            raise Exception.new "Undefined OUDS SDK package version"
         end
 
         # Beta app must point to OUDS iOS develop branch
@@ -327,6 +328,7 @@ platform :ios do
         else
             puts "❌ Error: The beta code base of the app does not point to an OUDS iOS Swfit Package develop branch"
             publish_mattermost_notification("📦 🚨 @channel The beta code base of the app does not point to an OUDS iOS Swfit Package develop branch (:beta)")
+            raise Exception.new "Not suitable OUDS SDK package version"
         end
     end
 
@@ -351,6 +353,7 @@ platform :ios do
             set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKVersion", value: "#{sdk_version}")
         rescue => error
             puts "❌ Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for stable build"
+            raise Exception.new "Undefined OUDS SDK package version"
         end
 
         # Stable app must point to OUDS iOS version
@@ -366,6 +369,7 @@ platform :ios do
         else
             puts "❌ Error: The stable code base of the app does not point to an OUDS iOS Swfit Package version tag"
             publish_mattermost_notification("📦 🚨 @channel The stable code base of the app does not point to an OUDS iOS Swfit Package version tag (:stable)")
+            raise Exception.new "Not suitable OUDS SDK package version"
         end
     end
 
