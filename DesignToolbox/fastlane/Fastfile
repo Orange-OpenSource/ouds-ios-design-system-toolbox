@@ -91,7 +91,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN PERIPHERY FOR DEAD CODE ANALYSIS
     # ------------------------------------------------------------
-    desc "RUN PERIPHERY FOR DEAD CODE ANALYSIS"
+    desc "Run Periphery to look dor dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned."
     lane :check_dead_code do
         puts "👉 Check dead code with Periphery"
 
@@ -101,7 +101,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN SWIFT FORMAT TO FORMAT SOURCES
     # ------------------------------------------------------------
-    desc "RUN SWIFT FORMAT TO FORMAT SOURCES"
+    desc "Run SwiftFormat to format Swift source files according to the local configuration."
     lane :format do
         puts "👉 Run Swift Format to format sources"
 
@@ -112,7 +112,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN SWIFT LINT TO CHECK SMELLS
     # ------------------------------------------------------------
-    desc "RUN SWIFT LINT TO CHECK SMELLS"
+    desc "Run SwiftLint in strict mode to detect code smells"
     lane :lint do
         puts "👉 Run Swift Lint for smells"
 
@@ -123,7 +123,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN LICENSE-PLSIT FOR 3RD PARTIES UPDATES
     # ------------------------------------------------------------
-    desc "RUN LICENSEPLIST TO UPDATE LIST OF THIRD PARTIES"
+    desc "Run LicensePlist to update list of third-parties"
     lane :update_3rd_parties do
         puts "👉 Run LicensePlist to update list of third-parties"
 
@@ -141,12 +141,32 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN GITLEAKS FOR SECET LEAKS SCAN
     # ------------------------------------------------------------
-    desc "RUN GITLEAKS FOR SECET LEAKS SCAN"
+    desc "Run GitLeaks to look for leaks of secrets in project and Git history"
     lane :check_leaks do
         puts "👉 Run Gitleaks for leaks scan"
 
         # If there are violations, non 0 error be returned by swiftlint, making Fastlane fail (expected)
         sh "cd .. && gitleaks detect -v -l debug --source ."
+    end
+
+    # ------------------------------------------------------------
+    # RUN SYFT AND GRYPE TO BUILD AND ANALYSE SBOM
+    # ------------------------------------------------------------
+    desc "Generates a SBOM (Software Bill Of Materials) in CycloneDX format with Syft and analsye it with Grype to as to check for vulnerabilities"
+    lane :update_sbom do
+        puts "👉 Run Syft to generate the SBOM"
+
+        sbomFormat = "cyclonedx-json"
+        # In { negligible, low, medium, high, critical }
+        vulnerabilitiesTolerance = "negligible"
+
+        Dir.chdir "../.." do
+            # Run the command to generate SBOM
+            sh "syft . -o #{sbomFormat} > SBOM.json"
+
+            # Process the SBOM
+            sh "grype sbom:./SBOM.json --fail-on #{vulnerabilitiesTolerance}"
+        end
     end
 
     # ------------------------------------------------------------
@@ -168,7 +188,7 @@ platform :ios do
     # -------------------
     # RUN SNAPSHOTS TESTS
     # -------------------
-    desc "RUN SNAPSHOTS TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT"
+    desc "Run snapshots tests in the demo app to look for visual regressions of components defined in OUDS package"
     lane :test_snapshots do
         puts "👉 Run UI tests"
 
@@ -199,7 +219,7 @@ platform :ios do
     # ------------
     # RUN UI TESTS
     # ------------
-    desc "RUN UI TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT"
+    desc "Run UI tests in the demo app to check some specific components behaviors"
     lane :test_ui do
         puts "👉 Run UI tests"
 
@@ -230,7 +250,7 @@ platform :ios do
     # ------------------------------------------------------------
     # BUILD DEBUG APP
     # ------------------------------------------------------------
-    desc "BUILD DEBUG APP"
+    desc "Build locally the demo app in debug mode without upload"
     lane :buildDebugApp do
         puts "👉 Build debug app"
 
@@ -258,7 +278,7 @@ platform :ios do
     # ------------------------------------------------------------
     # BUILD & UPLOAD TO TESTFLIGHT ALPHA APP
     # ------------------------------------------------------------
-    desc "BUILD & UPLOAD TO TESTFLIGHT ALPHA APP"
+    desc "Build the demo app in alpha mode and upload to TestFlight"
     lane :alpha do |params|
         issues_numbers = params[:issueNumber]
         puts "👉 Alpha (commit hash = '#{params[:commitHash]}', issue number = '#{issues_numbers}')"
@@ -298,7 +318,7 @@ platform :ios do
     # ------------------------------------------------------------
     # BUILD & UPLOAD TO TESTFLIGHT BETA APP
     # ------------------------------------------------------------
-    desc "BUILD & UPLOAD TO TESTFLIGHT BETA APP"
+    desc "Build the demo app in neta mode and upload to TestFlight"
     lane :beta do |params|
         puts "👉 Beta (commit hash = '#{params[:commitHash]}')"
         Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
@@ -335,7 +355,7 @@ platform :ios do
     # ------------------------------------------------------------
     # BUILD & UPLOAD TO STORE STABLE APP
     # ------------------------------------------------------------
-    desc "BUILD & UPLOAD TO STORE (if set in options: upload) STABLE APP"
+    desc "Build the demo app in stable mode and, if defined, upload to internal portal for App Store publication"
     lane :stable do |params|
         puts "👉 Stable"
 
@@ -376,6 +396,7 @@ platform :ios do
     # -----------------------------------------------------------------------
     # PRIVATE LANE BUILD & UPLOAD (ALPHA / BETA is set by main lane)
     # -----------------------------------------------------------------------
+    desc "Build the demo app in a defined mode and upload if needed to TestFlight or internal portal for App Store publication"
     private_lane :build_and_upload do |params|
         isAlpha = params[:isAlpha]
 
@@ -420,7 +441,7 @@ platform :ios do
     # -----------------------------------------------------------------------
     # PRIVATE LANE BUILD (ALPHA / BETA / STABLE is set by main lane)
     # -----------------------------------------------------------------------
-    desc "PRIVATE LANE BUILD (ALPHA / BETA / STABLE is set by main lane)"
+    desc "Build the demo app"
     private_lane :build do
         puts "👉 Build"
 
@@ -472,7 +493,7 @@ platform :ios do
     # --------------------------------------------------------------------------
     # PRIVATE LANE UPLOAD TO TESTFLIGHT (ALPHA / BETA is set by main lane)
     # ---------------------------------------------------------------------------
-    desc "PRIVATE LANE UPLOAD TO TESTFLIGHT"
+    desc "Upload the demo app to TestFlight"
     private_lane :upload_2_testflight do |params|
         puts "👉 Upload"
 
@@ -525,7 +546,7 @@ platform :ios do
     # ----------------------------
     # PRIVATE LANE UPLOAD TO STORE
     # ----------------------------
-    desc "PRIVATE LANE UPLOAD TO STORE"
+    desc "Upload the demo app to the internal portal for the App Store publication"
     private_lane :upload_2_store do |params|
         puts "👉 Upload to store"
 
