@@ -191,6 +191,54 @@
         }
       }
     },
+    "app_about_changelog_hint_a11y" : {
+      "comment" : "About screen - Changelog hint",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر مرتين للانتقال إلى سجل التغيير عبر الإنترنت للمشروع"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap twice to go the the changelog of the project"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tappez deux fois pour accéder en ligne aux notes de versions"
+          }
+        }
+      }
+    },
+    "app_about_changelog_label" : {
+      "comment" : "About screen - Changelog URL",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انظر ملاحظات الإصدار"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "See changelog"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir les notes de version"
+          }
+        }
+      }
+    },
     "app_about_designSystem_hint_a11y" : {
       "comment" : "About screen - Design system (a11y)",
       "extractionState" : "manual",

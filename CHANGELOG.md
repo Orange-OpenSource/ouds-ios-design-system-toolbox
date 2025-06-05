@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.15.0...develop)
 
+### Added
+
+- [DesignToolbox] Add in about page link to online CHANGELOG (Orange-OpenSource/ouds-ios#678)
+
 ### Changed
 
 - [Tool] Update `SwiftFormat/CLI` pod from v0.56.1 to v0.56.2
