@@ -18,7 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Library] Update `SwiftFormat/CLI` pod from v0.56.4 to v0.57.2
+- [DesignToolbox] Update `fastlane` gem from v2.227.2 to v2.228.0
+- [DesignToolbox] Update `SwiftFormat/CLI` pod from v0.56.4 to v0.57.2
 - [Library] Swift package `swift-docc-plugin` from v1.4.3 to v1.4.5
 - [Library] Update `fastlane` gem from v2.227.2 to v2.228.0
 - [Library] Swift package `SwifFormat` from v0.56.4 to v0.57.2
