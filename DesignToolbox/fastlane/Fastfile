@@ -282,6 +282,7 @@ platform :ios do
     # ------------------------------------------------------------
     desc "Build the demo app in alpha mode and upload to TestFlight"
     lane :alpha do |params|
+
         issues_numbers = params[:issueNumber]
         puts "👉 Alpha (commit hash = '#{params[:commitHash]}', issue number = '#{issues_numbers}')"
 
@@ -306,6 +307,10 @@ platform :ios do
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "alpha")
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildDetails", value: "#{issues_numbers}")
+
+        sdk_branch = ouds_swift_package_git_branch
+        changelog_url = "https://github.com/Orange-OpenSource/ouds-ios/blob/#{sdk_branch}/CHANGELOG.md"
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKChangelog", value: "#{changelog_url}")
 
         begin
             sdk_version = ouds_swift_package_version
@@ -335,6 +340,7 @@ platform :ios do
         # Details for the GUI in the app
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "beta (nightly)")
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKChangelog", value: "https://github.com/Orange-OpenSource/ouds-ios/blob/develop/CHANGELOG.md")
         
         begin
             sdk_version = ouds_swift_package_version
@@ -369,6 +375,7 @@ platform :ios do
 
         # Details for the GUI in the app
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "stable")
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKChangelog", value: "https://github.com/Orange-OpenSource/ouds-ios/blob/main/CHANGELOG.md")
 
         begin
             sdk_version = ouds_swift_package_version
@@ -616,6 +623,24 @@ platform :ios do
             return "#{ouds_ios_branch} (#{ouds_ios_revision[0,7]})"
         elsif ouds_ios_revision && ouds_ios_version
             return "#{ouds_ios_version} (#{ouds_ios_revision[0,7]})"
+        else
+            raise error
+        end
+    end
+
+    # Extract from Package.resolved details about the Git branch in use for the OUDS iOS Swift Package.
+    # Returns the branch if defined or raises an error.
+    # Supposes the OUDS iOS package is defined and used; if a local reference is used instead the branch won't be retrieved
+    def ouds_swift_package_git_branch()
+        puts "👉 Extract Git branch of OUDS iOS Swift package"
+
+        package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
+        package_resolved_json_content = JSON.parse(package_resolved_content)
+        ouds_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "ouds-ios" }
+        ouds_ios_branch = ouds_ios_obj.dig("state", "branch")
+
+        if ouds_ios_branch
+            return "#{ouds_ios_branch}"
         else
             raise error
         end
