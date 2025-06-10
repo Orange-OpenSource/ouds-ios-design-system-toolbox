@@ -132,6 +132,9 @@ struct AboutPage: View {
             }
         }.accessibilityHint("app_about_appSettings_hint_a11y")
 
+        if let changelogURL = Bundle.main.changelogURL {
+            link(changelogURL, label: "app_about_changelog_label", hint: "app_about_changelog_hint_a11y")
+        }
         link(appSourcesUrl, label: "app_about_appSources_label", hint: "app_about_appSources_hint_a11y")
         link(bugReportUrl, label: "app_about_bugReport_label", hint: "app_about_bugReport_hint_a11y")
         link(designSystemUrl, label: "app_about_designSystem_label", hint: "app_about_designSystem_hint_a11y")
