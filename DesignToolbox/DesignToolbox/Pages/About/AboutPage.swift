@@ -24,7 +24,6 @@ struct AboutPage: View {
     private let appSourcesUrl: URL
     private let bugReportUrl: URL
     private let designSystemUrl: URL
-    private let changelogURL: URL
 
     @Environment(\.layoutDirection) private var layoutDirection
 
@@ -55,17 +54,12 @@ struct AboutPage: View {
             OL.fatal("Unable to forge design system URL")
         }
 
-        guard let changelogURL = URL(string: "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/CHANGELOG.md") else {
-            OL.fatal("Unable to forge changelog URL")
-        }
-
         privacyPolicyUrl = privacyNoticeUrl
         self.legalInformationUrl = legalInformationUrl
         self.appSettingsUrl = appSettingsUrl
         self.appSourcesUrl = appSourcesUrl
         self.bugReportUrl = bugReportUrl
         self.designSystemUrl = designSystemUrl
-        self.changelogURL = changelogURL
     }
 
     // MARK: Body
@@ -138,7 +132,9 @@ struct AboutPage: View {
             }
         }.accessibilityHint("app_about_appSettings_hint_a11y")
 
-        link(changelogURL, label: "app_about_changelog_label", hint: "app_about_changelog_hint_a11y")
+        if let changelogURL = Bundle.main.changelogURL {
+            link(changelogURL, label: "app_about_changelog_label", hint: "app_about_changelog_hint_a11y")
+        }
         link(appSourcesUrl, label: "app_about_appSources_label", hint: "app_about_appSources_hint_a11y")
         link(bugReportUrl, label: "app_about_bugReport_label", hint: "app_about_bugReport_hint_a11y")
         link(designSystemUrl, label: "app_about_designSystem_label", hint: "app_about_designSystem_hint_a11y")

@@ -34,7 +34,7 @@ extension Bundle {
     /// - "alpha" for features tests (CI/CD builds)
     /// - "beta" for develop branch (CI/CD builds nightly builds)
     /// - "stable" for main releases (CI/CD builds)
-    var buildType: String? {
+    var buildType: String {
         #if DEBUG
         "debug"
         #else
@@ -73,17 +73,25 @@ extension Bundle {
     }
 
     var fullBuildType: String {
-        let type = buildType ?? ""
         var tag = ""
         if let buildTag, !buildTag.isEmpty {
             tag = " (\(buildTag))"
         }
-        return "\(type)\(tag)"
+        return "\(buildType)\(tag)"
     }
 
     // WARNING: Do not change this value below as automatically parsed by script
     var tokensLibraryVersion: String {
         "Tokens version: 0.11.0"
+    }
+
+    /// URL to the CHANGELOG to open depending to what the CI/CD defines
+    var changelogURL: URL? {
+        #if DEBUG
+        nil
+        #else
+        URL(string: string(forInfoDictionaryKey: "OUDSSDKChangelog"))
+        #endif
     }
 
     // MARK: Private Implementation
