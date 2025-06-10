@@ -43,6 +43,7 @@ final class OUDSRadioUITests: XCTestCase {
 
     // MARK: - Helpers
 
+    // swiftlint:disable function_body_length
     /// This function tests all radio buttons configuration for the given theme and color scheme on a standard surface.
     ///
     /// **/!\ It does not test the hover and pressed states.**
@@ -57,12 +58,28 @@ final class OUDSRadioUITests: XCTestCase {
             for someLayout in availableLayouts(isError: false, isReadOnly: false) {
                 testRadioButton(theme: theme,
                                 interfaceStyle: interfaceStyle,
+                                a11yContrast: .normal,
                                 layout: someLayout,
                                 indicatorState: indicatorState,
                                 isDisabled: false)
 
                 testRadioButton(theme: theme,
                                 interfaceStyle: interfaceStyle,
+                                a11yContrast: .normal,
+                                layout: someLayout,
+                                indicatorState: indicatorState,
+                                isDisabled: true)
+
+                testRadioButton(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .high,
+                                layout: someLayout,
+                                indicatorState: indicatorState,
+                                isDisabled: false)
+
+                testRadioButton(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .high,
                                 layout: someLayout,
                                 indicatorState: indicatorState,
                                 isDisabled: true)
@@ -73,6 +90,14 @@ final class OUDSRadioUITests: XCTestCase {
             for someLayout in availableLayouts(isError: true, isReadOnly: false) {
                 testRadioButton(theme: theme,
                                 interfaceStyle: interfaceStyle,
+                                a11yContrast: .normal,
+                                layout: someLayout,
+                                indicatorState: indicatorState,
+                                isDisabled: false)
+
+                testRadioButton(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .high,
                                 layout: someLayout,
                                 indicatorState: indicatorState,
                                 isDisabled: false)
@@ -83,6 +108,14 @@ final class OUDSRadioUITests: XCTestCase {
             for someLayout in availableLayouts(isError: false, isReadOnly: true) {
                 testRadioButton(theme: theme,
                                 interfaceStyle: interfaceStyle,
+                                a11yContrast: .normal,
+                                layout: someLayout,
+                                indicatorState: indicatorState,
+                                isDisabled: false)
+
+                testRadioButton(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .high,
                                 layout: someLayout,
                                 indicatorState: indicatorState,
                                 isDisabled: false)
@@ -90,22 +123,25 @@ final class OUDSRadioUITests: XCTestCase {
         }
     }
 
+    // swiftlint:enable function_body_length
+
     /// This function tests radio button according to all parameters of the configuration available on a `OUDSRadio`
     /// or `OUDSRadioItem` for the given theme and color schemes.
     ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
-    ///    "test_<themeName>_<colorScheme>.<layout>_<indicatorState>_<disabledPatern>"
+    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
     ///
     /// **/!\ It does not test the hover and pressed states.**
     ///
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
+    ///   - a11yContrast:Contrast mode (high or not)
     ///   - layout: the layout of the radio button
     ///   - indicatorState: the indicator state of the radio button (`true` if selected, `false` if not)
     ///   - isDisabled: the disabled flag
     @MainActor private func testRadioButton(theme: OUDSTheme,
                                             interfaceStyle: UIUserInterfaceStyle,
+                                            a11yContrast: UIAccessibilityContrast,
                                             layout: RadioTest.Layout,
                                             indicatorState: Bool,
                                             isDisabled: Bool)
@@ -118,16 +154,15 @@ final class OUDSRadioUITests: XCTestCase {
                 .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
-        // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>.<layout>_<indicatorState>_<disabledPatern> where:
-        // - `disabledPatern` is empty if not disabled
-        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        // Create a unique snapshot name based on the current configuration
+        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")_\(a11yContrast == .high ? "HighContrast" : "")"
         let disabledPatern = isDisabled ? "_Disabled" : ""
         let name = "\(layout.description.camelCase)_\(indicatorState ? "on" : "off")_\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
+                           a11yContrast: a11yContrast,
                            named: name,
                            testName: testName)
     }
