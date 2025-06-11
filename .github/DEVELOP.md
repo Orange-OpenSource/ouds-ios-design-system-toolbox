@@ -492,6 +492,11 @@ And run:
 bundle exec fastlane check_dead_code
 ```
 
+You can also in Xcode run from the *Periphery* scheme so as to make a scan.
+
+> [!CAUTION]
+> Use a real device and not a simulator. In addition, do not use local reference of OUDS iOS Swift Package as many false-positive warnings can rise; us branch version instead.
+
 ## Software Bill of Materials
 
 For software quality reasons, intellectual property compliance, users trust and legal oblgitations with Cyber Resilience Act (CRA) and NIS2, it it interesing or mandatory to keep updated a Software Bill Of Materials (SBOM). And with such file listing dependencies in several levels we are able to make scans of them and check if there are known vulnerabilities.
