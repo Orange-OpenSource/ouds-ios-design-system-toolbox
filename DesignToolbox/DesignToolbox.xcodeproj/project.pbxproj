@@ -2156,7 +2156,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "437-buga11y-insufficient-contrast-of-the-orange-spinner-for-button-in-loading-state";
 				kind = branch;
 			};
 		};
