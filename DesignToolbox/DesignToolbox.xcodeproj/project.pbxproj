@@ -2156,7 +2156,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "645-update-high-contrast-setup-for-checkbox-and-radio-button";
+				branch = develop;
 				kind = branch;
 			};
 		};
