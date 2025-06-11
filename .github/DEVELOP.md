@@ -149,6 +149,12 @@ To build the demo application follow those steps:
 4. Select *DesignToolbox* scheme
 5. Build and run the Application on your device ou simulator
 
+> [!TIP]
+> You can also move the folder containing a clone of the [Swift package repository](https://github.com/Orange-OpenSource/ouds-ios) from the *Finder* to the design system toolbox Xcode project so as to have a local reference of the package in this demo app.
+
+> [!TIP]
+> For consistancy reasons, when you work on a dedicated branch on the Swift Package repository and need to have a dedicated branch in the design system toolbox app, you should create a branch from the issue in GitHub and (creating then a branch in the package repository) and create a branch with the same name in the design system toolbox app repositoy. Thus with two repositories we will be able to find easily the suitable branches because the names are the same. Because issues are disabled in the design system toolbox repository, there is no wories to have to refer to issues numbers in the branch names.
+
 ## Documentation
 
 The documentation is based on the Swift documentation with [DocC](https://www.swift.org/documentation/docc/).
