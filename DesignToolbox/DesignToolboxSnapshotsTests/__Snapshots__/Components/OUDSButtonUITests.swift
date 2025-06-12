@@ -58,8 +58,10 @@ final class OUDSButtonUITests: XCTestCase {
     @MainActor private func testAllButtons(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for hierarchy in OUDSButton.Hierarchy.allCases {
             for layout in ButtonTest.Layout.allCases {
-                testButton(theme: theme, interfaceStyle: interfaceStyle, layout: layout, hierarchy: hierarchy, disabled: false, onColoredSurface: false)
-                testButton(theme: theme, interfaceStyle: interfaceStyle, layout: layout, hierarchy: hierarchy, disabled: true, onColoredSurface: false)
+                testButton(theme: theme, interfaceStyle: interfaceStyle, a11yContrast: .normal, layout: layout, hierarchy: hierarchy, disabled: false, onColoredSurface: false)
+                testButton(theme: theme, interfaceStyle: interfaceStyle, a11yContrast: .normal, layout: layout, hierarchy: hierarchy, disabled: true, onColoredSurface: false)
+                testButton(theme: theme, interfaceStyle: interfaceStyle, a11yContrast: .high, layout: layout, hierarchy: hierarchy, disabled: false, onColoredSurface: false)
+                testButton(theme: theme, interfaceStyle: interfaceStyle, a11yContrast: .high, layout: layout, hierarchy: hierarchy, disabled: true, onColoredSurface: false)
             }
         }
     }
@@ -79,8 +81,10 @@ final class OUDSButtonUITests: XCTestCase {
         // Skip test for negative hierarchy because it is not allowed on colored surface
         for hierarchy in OUDSButton.Hierarchy.allCases where hierarchy != .negative {
             for layout in ButtonTest.Layout.allCases {
-                testButton(theme: theme, interfaceStyle: interfaceStyle, layout: layout, hierarchy: hierarchy, disabled: false, onColoredSurface: true)
-                testButton(theme: theme, interfaceStyle: interfaceStyle, layout: layout, hierarchy: hierarchy, disabled: true, onColoredSurface: true)
+                testButton(theme: theme, interfaceStyle: interfaceStyle, a11yContrast: .normal, layout: layout, hierarchy: hierarchy, disabled: false, onColoredSurface: true)
+                testButton(theme: theme, interfaceStyle: interfaceStyle, a11yContrast: .normal, layout: layout, hierarchy: hierarchy, disabled: true, onColoredSurface: true)
+                testButton(theme: theme, interfaceStyle: interfaceStyle, a11yContrast: .high, layout: layout, hierarchy: hierarchy, disabled: false, onColoredSurface: true)
+                testButton(theme: theme, interfaceStyle: interfaceStyle, a11yContrast: .high, layout: layout, hierarchy: hierarchy, disabled: true, onColoredSurface: true)
             }
         }
     }
@@ -88,8 +92,7 @@ final class OUDSButtonUITests: XCTestCase {
     /// This function tests button according to all parameters of the configutation available on a `OUDButton`
     /// for the given theme and color schemes and on a colored surface or not.
     ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
-    ///    test_<themeName>_<colorScheme>.<coloreSurface>_<layout>_<hierarchy>_<style>_<disabled>
+    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
     ///
     /// **/!\ It does not text the hover and pressed states.**
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
@@ -97,12 +100,14 @@ final class OUDSButtonUITests: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
+    ///   - a11yContrast:Contrast mode (high or not)
     ///   - layout: the layout of the button
     ///   - hierarchy; the hierarchy of the button
     ///   - disabled: the disabled flag
     ///   - onColoredSurface: a flag to know if button is on a colored surface or not
     @MainActor private func testButton(theme: OUDSTheme,
                                        interfaceStyle: UIUserInterfaceStyle,
+                                       a11yContrast: UIAccessibilityContrast,
                                        layout: ButtonTest.Layout,
                                        hierarchy: OUDSButton.Hierarchy,
                                        disabled: Bool,
@@ -115,11 +120,8 @@ final class OUDSButtonUITests: XCTestCase {
                 .disabled(disabled)
         }
 
-        // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<hierarchy>_<style><disapledPatern> where:
-        // - `coloredSurfacePatern` is empty if not on colored surface
-        // - `disabledPatern` is empty if not disabled
-        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        // Create a unique snapshot name based on the current configuration
+        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")_\(a11yContrast == .high ? "HighContrast" : "")"
         let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
         let disabledPatern = disabled ? "_Disabled" : ""
         let name = "\(coloredSurfacePatern)\(layout.rawValue.camelCase)_\(hierarchy.description)_\(OUDSButton.Style.default.description)\(disabledPatern)"
@@ -127,6 +129,7 @@ final class OUDSButtonUITests: XCTestCase {
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
+                           a11yContrast: a11yContrast,
                            named: name,
                            testName: testName)
     }
