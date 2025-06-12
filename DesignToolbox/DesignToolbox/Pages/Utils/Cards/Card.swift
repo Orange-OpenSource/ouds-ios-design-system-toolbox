@@ -38,7 +38,7 @@ struct Card: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
         }
-        .oudsBackground(theme.colors.colorBgPrimary)
+        .oudsBackground(theme.colors.colorOverlayDefault)
         .oudsShadow(theme.elevations.elevationRaised)
         .padding(.all, 4)
     }
