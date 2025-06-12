@@ -45,6 +45,7 @@ final class OUDSCheckboxUITests: XCTestCase {
 
     // MARK: - Helpers
 
+    // swiftlint:disable function_body_length
     /// This function tests all checkboxes configuration for the given theme and color scheme on a standard surface.
     ///
     /// **/!\ It does not test the hover and pressed states.**
@@ -59,12 +60,28 @@ final class OUDSCheckboxUITests: XCTestCase {
             for someLayout in availableLayouts(isError: false, isReadOnly: false) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
+                             a11yContrast: .normal,
                              layout: someLayout,
                              indicatorState: indicatorState,
                              isDisabled: false)
 
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
+                             a11yContrast: .normal,
+                             layout: someLayout,
+                             indicatorState: indicatorState,
+                             isDisabled: true)
+
+                testCheckbox(theme: theme,
+                             interfaceStyle: interfaceStyle,
+                             a11yContrast: .high,
+                             layout: someLayout,
+                             indicatorState: indicatorState,
+                             isDisabled: false)
+
+                testCheckbox(theme: theme,
+                             interfaceStyle: interfaceStyle,
+                             a11yContrast: .high,
                              layout: someLayout,
                              indicatorState: indicatorState,
                              isDisabled: true)
@@ -75,6 +92,14 @@ final class OUDSCheckboxUITests: XCTestCase {
             for someLayout in availableLayouts(isError: true, isReadOnly: false) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
+                             a11yContrast: .normal,
+                             layout: someLayout,
+                             indicatorState: indicatorState,
+                             isDisabled: false)
+
+                testCheckbox(theme: theme,
+                             interfaceStyle: interfaceStyle,
+                             a11yContrast: .high,
                              layout: someLayout,
                              indicatorState: indicatorState,
                              isDisabled: false)
@@ -85,6 +110,14 @@ final class OUDSCheckboxUITests: XCTestCase {
             for someLayout in availableLayouts(isError: false, isReadOnly: true) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
+                             a11yContrast: .normal,
+                             layout: someLayout,
+                             indicatorState: indicatorState,
+                             isDisabled: false)
+
+                testCheckbox(theme: theme,
+                             interfaceStyle: interfaceStyle,
+                             a11yContrast: .high,
                              layout: someLayout,
                              indicatorState: indicatorState,
                              isDisabled: false)
@@ -92,22 +125,25 @@ final class OUDSCheckboxUITests: XCTestCase {
         }
     }
 
+    // swiftlint:enable function_body_length
+
     /// This function tests checkbox according to all parameters of the configuration available on a `OUDSCheckbox`
     /// of `OUDSCheckboxItem` for the given theme and color schemes.
     ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
-    ///    "test_<themeName>_<colorScheme>.<layout>_<indicatorState>_<disabledPatern>"
+    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
     ///
     /// **/!\ It does not test the hover and pressed states.**
     ///
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
+    ///   - a11yContrast: The constrat to apply (high or not)
     ///   - layout: the layout of the checkbox
     ///   - indicatorState: the indicator state of the checkbox
     ///   - isDisabled: the disabled flag
     @MainActor private func testCheckbox(theme: OUDSTheme,
                                          interfaceStyle: UIUserInterfaceStyle,
+                                         a11yContrast: UIAccessibilityContrast,
                                          layout: CheckboxIndeterminateTest.Layout,
                                          indicatorState: OUDSCheckboxIndicatorState,
                                          isDisabled: Bool)
@@ -130,6 +166,7 @@ final class OUDSCheckboxUITests: XCTestCase {
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
+                           a11yContrast: a11yContrast,
                            named: name,
                            testName: testName)
     }
