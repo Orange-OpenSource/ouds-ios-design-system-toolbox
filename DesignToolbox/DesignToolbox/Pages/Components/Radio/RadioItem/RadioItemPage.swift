@@ -78,6 +78,7 @@ private struct RadioItemDemo: View {
                       additionalLabel: model.additionalLabelText,
                       helper: model.helperText,
                       icon: icon,
+                      flipIcon: model.flipIcon,
                       isOutlined: model.outlined,
                       isReversed: model.isReversed,
                       isError: model.isError,

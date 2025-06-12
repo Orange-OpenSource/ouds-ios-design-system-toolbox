@@ -132,6 +132,7 @@ final class OUDSSwitchUITests: XCTestCase {
                            testName: testName)
     }
 
+    // swiftlint:disable line_length
     private func availableLayouts(isError: Bool, isReadOnly: Bool) -> [SwitchTest.Layout] {
         [
             SwitchTest.Layout.indicatorOnly,
@@ -144,12 +145,20 @@ final class OUDSSwitchUITests: XCTestCase {
             SwitchTest.Layout.default(label: "Patatas", helper: nil, icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
             SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
             SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Kammthaar", helper: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Kammthaar", helper: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+
+            SwitchTest.Layout.default(label: "Kammthaar", helper: nil, icon: Image(systemName: "figure.handball"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Kammthaar", helper: nil, icon: Image(systemName: "figure.handball"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+
+            SwitchTest.Layout.default(label: "Kammthaar", helper: nil, icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Kammthaar", helper: nil, icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
 
             SwitchTest.Layout.inverse(label: "Takoyaki", helper: nil, icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
             SwitchTest.Layout.inverse(label: "Takoyaki", helper: nil, icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
@@ -159,14 +168,23 @@ final class OUDSSwitchUITests: XCTestCase {
             SwitchTest.Layout.inverse(label: "Patatas", helper: nil, icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
             SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
             SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Kammthaar", helper: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Kammthaar", helper: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+
+            SwitchTest.Layout.inverse(label: "Kammthaar", helper: nil, icon: Image(systemName: "figure.handball"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Kammthaar", helper: nil, icon: Image(systemName: "figure.handball"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+
+            SwitchTest.Layout.inverse(label: "Kammthaar", helper: nil, icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Kammthaar", helper: nil, icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
         ]
     }
+    // swiftlint:enable line_length
 }
 
 // swiftlint:enable required_deinit
@@ -181,12 +199,14 @@ private struct SwitchTest: View {
         case `default`(label: String,
                        helper: String?,
                        icon: Image?,
+                       flipIcon: Bool = false,
                        isError: Bool,
                        hasDivider: Bool,
                        isReadOnly: Bool)
         case inverse(label: String,
                      helper: String?,
                      icon: Image?,
+                     flipIcon: Bool = false,
                      isError: Bool,
                      hasDivider: Bool,
                      isReadOnly: Bool)
@@ -196,10 +216,10 @@ private struct SwitchTest: View {
             switch self {
             case .indicatorOnly:
                 "layout-indicatorOnly"
-            case let .default(_, helper, icon, isError, hasDivider, isReadOnly):
-                "layout-default-label-\(helper != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
-            case let .inverse(_, helper, icon, isError, hasDivider, isReadOnly):
-                "layout-inverse-label-\(helper != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
+            case let .default(_, helper, icon, flipIcon, isError, hasDivider, isReadOnly):
+                "layout-default-label-\(helper != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(flipIcon ? "flipIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
+            case let .inverse(_, helper, icon, flipIcon, isError, hasDivider, isReadOnly):
+                "layout-inverse-label-\(helper != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(flipIcon ? "flipIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
             }
         }
         // swiftlint:enable line_length
@@ -217,21 +237,23 @@ private struct SwitchTest: View {
         case .indicatorOnly:
             OUDSSwitch(isOn: .constant(indicatorState), accessibilityLabel: "Bazinga!")
                 .disabled(isDisabled)
-        case let .default(label, helper, icon, isError, hasDivider, isReadOnly):
+        case let .default(label, helper, icon, flipIcon, isError, hasDivider, isReadOnly):
             OUDSSwitchItem(label,
                            isOn: .constant(indicatorState),
                            helper: helper,
                            icon: icon,
+                           flipIcon: flipIcon,
                            isReversed: false,
                            isError: isError,
                            isReadOnly: isReadOnly,
                            hasDivider: hasDivider)
                 .disabled(isDisabled)
-        case let .inverse(label, helper, icon, isError, hasDivider, isReadOnly):
+        case let .inverse(label, helper, icon, flipIcon, isError, hasDivider, isReadOnly):
             OUDSSwitchItem(label,
                            isOn: .constant(indicatorState),
                            helper: helper,
                            icon: icon,
+                           flipIcon: flipIcon,
                            isReversed: true,
                            isError: isError,
                            isReadOnly: isReadOnly,
