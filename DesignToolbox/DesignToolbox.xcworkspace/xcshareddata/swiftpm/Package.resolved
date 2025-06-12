@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "437-buga11y-insufficient-contrast-of-the-orange-spinner-for-button-in-loading-state",
-        "revision" : "81afec8ebce000c5ad233a48f2c118038a28c1cf"
+        "branch" : "develop",
+        "revision" : "0ddc2b577788beb6a6c6aa9d0659bf05d3b18b19"
       }
     },
     {
