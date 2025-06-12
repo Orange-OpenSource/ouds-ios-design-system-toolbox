@@ -12,12 +12,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] In low power mode, stop animations of loading button (Orange-OpenSource/ouds-ios#661)
 - [Tool] Update `SwiftFormat/CLI` pod from v0.56.1 to v0.56.2
 
 ### Fixed
 
 - Change color of button loader in high contrast light mode (Orange-OpenSource/ouds-ios#437)
 - Change color of indicator and borders in high contrast mode (light scheme) for radio and checkbox components (Orange-OpenSource/ouds-ios#645)
+- [Library] Change color of indicator and borders in high contrast mode (light scheme) for radio and checkbox components (Orange-OpenSource/ouds-ios#645)
 
 ## [0.15.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases/tag/0.15.0) - 2025-05-28
 
