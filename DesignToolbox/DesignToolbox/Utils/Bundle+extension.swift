@@ -38,7 +38,7 @@ extension Bundle {
         #if DEBUG
         "debug"
         #else
-        string(forInfoDictionaryKey: "OUDSBuildType")
+        string(forInfoDictionaryKey: "OUDSBuildType") ?? "NotFound"
         #endif
     }
 
