@@ -38,7 +38,7 @@ extension Bundle {
         #if DEBUG
         "debug"
         #else
-        string(forInfoDictionaryKey: "OUDSBuildType")
+        string(forInfoDictionaryKey: "OUDSBuildType") ?? "NotFound"
         #endif
     }
 
@@ -90,7 +90,11 @@ extension Bundle {
         #if DEBUG
         nil
         #else
-        URL(string: string(forInfoDictionaryKey: "OUDSSDKChangelog"))
+        if let string = string(forInfoDictionaryKey: "OUDSSDKChangelog") {
+            return URL(string: string)
+        } else {
+            return nil
+        }
         #endif
     }
 
