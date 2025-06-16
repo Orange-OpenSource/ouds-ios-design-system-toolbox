@@ -2156,7 +2156,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "661-bug-animations-not-disabled-in-case-of-low-energy-mode";
+				branch = develop;
 				kind = branch;
 			};
 		};
