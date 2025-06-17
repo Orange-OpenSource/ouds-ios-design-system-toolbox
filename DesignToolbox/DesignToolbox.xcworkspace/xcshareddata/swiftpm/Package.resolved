@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "932f07fc57db44eadcb764aecfb4419b25fa31d4"
+        "branch" : "712-bug-update-color-order-in-the-divider-illustration-in-designtoolbox",
+        "revision" : "8d440e6d6d498973455b0bf80e6bd5823c6e35d8"
       }
     },
     {
