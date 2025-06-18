@@ -35,7 +35,7 @@ final class DividerConfigurationModel: ComponentConfiguration {
 
     // MARK: Initializer
 
-    init(orientation: Orientation, selectedColor: OUDSDividerColor = .borderDefault) {
+    init(orientation: Orientation, selectedColor: OUDSDividerColor = .default) {
         self.selectedColor = selectedColor
         self.orientation = orientation
     }
@@ -86,10 +86,11 @@ private struct ColorEntry: View {
 
     let dividerColor: OUDSDividerColor
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         DesignToolboxColorEntry(colorName: dividerColor.formattedName) {
-            Rectangle().oudsBackground(dividerColor.colorToken(in: theme))
+            Rectangle().fill(dividerColor.colorToken(in: theme).color(for: colorScheme))
         }
     }
 }
@@ -97,53 +98,53 @@ private struct ColorEntry: View {
 extension OUDSDividerColor: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
     public nonisolated(unsafe) static var allCases: [OUDSDividerColor] = [
-        .borderDefault,
-        .borderMuted,
-        .borderEmphasized,
-        .borderBrandPrimary,
-        .borderOnBrandPrimary,
+        .default,
+        .muted,
+        .emphasized,
+        .brandPrimary,
+        .onBrandPrimary,
         .alwaysBlack,
-        .alwaysOnBlack,
         .alwaysWhite,
+        .alwaysOnBlack,
         .alwaysOnWhite,
     ]
 
     // No l10n, tehchnical names
     var formattedName: String {
         switch self {
-        case .borderDefault:
-            "Border Default"
-        case .borderMuted:
-            "Border Muted"
-        case .borderEmphasized:
-            "Border Emphasized"
-        case .borderBrandPrimary:
-            "Border Brand Primary"
-        case .borderOnBrandPrimary:
-            "Border Brand On Primary"
+        case .default:
+            "Default"
+        case .muted:
+            "Muted"
+        case .emphasized:
+            "Emphasized"
+        case .brandPrimary:
+            "Brand primary"
+        case .onBrandPrimary:
+            "On brand primary"
         case .alwaysBlack:
-            "Always Black"
+            "Always black"
         case .alwaysWhite:
-            "Always White"
+            "Always white"
         case .alwaysOnBlack:
-            "Always On Black"
+            "Always on black"
         case .alwaysOnWhite:
-            "Always On White"
+            "Always on white"
         }
     }
 
     public var description: String {
         switch self {
-        case .borderDefault:
-            "borderDefault"
-        case .borderMuted:
-            "borderMuted"
-        case .borderEmphasized:
-            "borderEmphasized"
-        case .borderBrandPrimary:
-            "borderBrandPrimary"
-        case .borderOnBrandPrimary:
-            "borderOnBrandPrimary"
+        case .default:
+            "default"
+        case .muted:
+            "muted"
+        case .emphasized:
+            "emphasized"
+        case .brandPrimary:
+            "brandPrimary"
+        case .onBrandPrimary:
+            "onBrandPrimary"
         case .alwaysBlack:
             "alwaysBlack"
         case .alwaysWhite:
