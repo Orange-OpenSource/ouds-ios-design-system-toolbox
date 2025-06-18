@@ -2156,7 +2156,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "712-bug-update-color-order-in-the-divider-illustration-in-designtoolbox";
+				branch = develop;
 				kind = branch;
 			};
 		};
