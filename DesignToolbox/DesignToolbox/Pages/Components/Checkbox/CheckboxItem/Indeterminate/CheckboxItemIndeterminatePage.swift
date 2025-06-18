@@ -19,47 +19,11 @@ import SwiftUI
 
 struct CheckboxItemIndeterminatePage: View {
 
-    @StateObject private var configuration: CheckboxItemIndeterminateConfigurationModel
-
-    init() {
-        _configuration = StateObject(wrappedValue: CheckboxItemIndeterminateConfigurationModel())
-    }
+    let model = ControlItemConfigurationModelMultiple(componentInitCode: "OUDSCheckboxItemIndeterminate(selection: $selection,")
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configuration,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxItemIndeterminateConfigurationModel {
-            CheckboxItemIndeterminateIllustration(model: model)
-        }
-    }
-
-    @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxItemIndeterminateConfigurationModel {
-            CheckboxItemIndeterminateConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: - Checkbox Item Indeterminate Illustration
-
-private struct CheckboxItemIndeterminateIllustration: View {
-
-    let model: CheckboxItemIndeterminateConfigurationModel
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center) {
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
+        ControlItemElementPage(model: model) {
             CheckboxItemIndeterminateDemo(model: model)
-            CheckboxItemIndeterminateDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
 }
@@ -68,11 +32,11 @@ private struct CheckboxItemIndeterminateIllustration: View {
 
 private struct CheckboxItemIndeterminateDemo: View {
 
-    @ObservedObject var model: CheckboxItemIndeterminateConfigurationModel
+    @ObservedObject var model: ControlItemConfigurationModelMultiple
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSCheckboxItemIndeterminate(selection: $model.indicatorState,
+        OUDSCheckboxItemIndeterminate(selection: $model.selection,
                                       label: model.labelText,
                                       helper: model.helperText,
                                       icon: icon,

@@ -72,7 +72,7 @@ struct RadioConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            OUDSSwitchItem("app_components_radioButton_selection_label", isOn: $model.selection)
+            OUDSSwitchItem("app_components_controlItem_selection_label", isOn: $model.selection)
                 .disabled(!model.enabled || model.isError)
 
             OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
