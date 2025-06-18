@@ -85,7 +85,7 @@ struct CheckboxIndeterminateConfiguration: View {
                     .disabled(!model.enabled)
             }
 
-            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label",
+            DesignToolboxChoicePicker(title: "app_components_controlItem_selection_label",
                                       selection: $model.indicatorState,
                                       style: .segmented)
             {
