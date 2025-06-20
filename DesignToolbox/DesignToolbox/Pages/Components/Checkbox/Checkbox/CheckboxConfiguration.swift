@@ -50,12 +50,12 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         code =
             """
             OUDSCheckbox(isOn: $isOn\(isErrorPattern))
-            \(disableCode)
+            \(disableCodePattern)
             """
     }
 
-    private var disableCode: String {
-        ".disabled(\(enabled ? "false" : "true"))"
+    private var disableCodePattern: String {
+        !enabled ? ".disabled(true)" : ""
     }
 
     private var isErrorPattern: String {

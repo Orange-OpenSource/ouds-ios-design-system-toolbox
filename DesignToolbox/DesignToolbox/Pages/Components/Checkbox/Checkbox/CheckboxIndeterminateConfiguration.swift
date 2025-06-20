@@ -50,14 +50,13 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
         code =
             """
             OUDSCheckboxInterminate(selection: $selection\(isErrorPattern))
-            \(disableCode)
+            \(disableCodePattern)
             """
     }
 
-    private var disableCode: String {
-        ".disabled(\(enabled ? "false" : "true"))"
+    private var disableCodePattern: String {
+        !enabled ? ".disabled(true)" : ""
     }
-
     private var isErrorPattern: String {
         if isError, enabled {
             ", isError: true"
