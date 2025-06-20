@@ -105,6 +105,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
             \(disableCodePattern)
             """
     }
+
     // swiftlint:enable line_length
 
     private var disableCodePattern: String {
@@ -158,7 +159,7 @@ final class BooleanControlItemConfigurationModel: ControlItemConfigurationModel 
 
 // MARK: - ControlItem Configuration View (Indeterminate checkbox selection)
 
-final class IndicatorStateControlItemConfigurationModel: ControlItemConfigurationModel {
+final class IndicatorControlItemConfigurationModel: ControlItemConfigurationModel {
     @Published var selection: OUDSCheckboxIndicatorState = .indeterminate
 
     deinit {}
