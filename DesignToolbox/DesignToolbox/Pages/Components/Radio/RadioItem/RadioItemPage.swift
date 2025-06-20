@@ -19,13 +19,13 @@ import SwiftUI
 
 struct RadioItemPage: View {
 
-    private let model: ControlItemConfigurationModelBoolean
+    private let model: BooleanControlItemConfigurationModel
 
     init() {
         let outlinedLabelKey = "app_components_radioButton_radioButtonItem_outlined_label"
         let additionalLabelkey = "app_components_radioButton_radioButtonItem_additionalLabel_label"
 
-        model = ControlItemConfigurationModelBoolean(componentInitCode: "OUDSRadioItem(isOn: $isOn",
+        model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSRadioItem(isOn: $isOn",
                                                      outlinedConfiguration: (value: false, outlinedConfigurationLabel: outlinedLabelKey),
                                                      additionalLabelConfiguration: additionalLabelkey)
     }
@@ -41,7 +41,7 @@ struct RadioItemPage: View {
 
 private struct RadioItemDemo: View {
 
-    @ObservedObject var model: ControlItemConfigurationModelBoolean
+    @ObservedObject var model: BooleanControlItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
