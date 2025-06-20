@@ -19,7 +19,7 @@ import SwiftUI
 
 struct CheckboxItemIndeterminatePage: View {
 
-    let model = IndicatorStateControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItemIndeterminate(selection: $selection,")
+    let model = IndicatorControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItemIndeterminate(selection: $selection,")
 
     var body: some View {
         ControlItemElementPage(model: model) {
@@ -32,7 +32,7 @@ struct CheckboxItemIndeterminatePage: View {
 
 private struct CheckboxItemIndeterminateDemo: View {
 
-    @ObservedObject var model: IndicatorStateControlItemConfigurationModel
+    @ObservedObject var model: IndicatorControlItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {

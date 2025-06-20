@@ -57,6 +57,7 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
     private var disableCodePattern: String {
         !enabled ? ".disabled(true)" : ""
     }
+
     private var isErrorPattern: String {
         if isError, enabled {
             ", isError: true"

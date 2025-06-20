@@ -108,12 +108,12 @@ private struct ControlItemConfiguration: View {
 
     @ViewBuilder
     var selection: some View {
-        if let modelBoolean = model as? BooleanControlItemConfigurationModel {
-            BooleanSelectionView(model: modelBoolean)
+        if let booleanModel = model as? BooleanControlItemConfigurationModel {
+            BooleanSelectionView(model: booleanModel)
         }
 
-        if let modelMultiple = model as? IndicatorStateControlItemConfigurationModel {
-            IndeterminateSelectionView(model: modelMultiple)
+        if let indeterminateModel = model as? IndicatorControlItemConfigurationModel {
+            IndeterminateSelectionView(model: indeterminateModel)
         }
     }
 }
@@ -129,10 +129,10 @@ private struct BooleanSelectionView: View {
     }
 }
 
-// MARK: Indeterminate Selection 
+// MARK: Indeterminate Selection
 
 private struct IndeterminateSelectionView: View {
-    @ObservedObject var model: IndicatorStateControlItemConfigurationModel
+    @ObservedObject var model: IndicatorControlItemConfigurationModel
 
     var body: some View {
         DesignToolboxChoicePicker(title: "app_components_controlItem_selection_label",
