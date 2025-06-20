@@ -44,12 +44,12 @@ final class SwitchConfigurationModel: ComponentConfiguration {
         code =
             """
             OUDSSwitch(isOn: $isOn, accessibilityLabel: "A label for accessibility")
-            \(disableCode)
+            \(disableCodePattern)
             """
     }
 
-    private var disableCode: String {
-        ".disabled(\(enabled ? "false" : "true"))"
+    private var disableCodePattern: String {
+        !enabled ? ".disabled(true)" : ""
     }
 }
 
