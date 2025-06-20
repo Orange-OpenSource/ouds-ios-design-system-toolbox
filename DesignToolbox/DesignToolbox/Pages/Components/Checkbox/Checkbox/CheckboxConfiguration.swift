@@ -50,12 +50,12 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         code =
             """
             OUDSCheckbox(isOn: $isOn\(isErrorPattern))
-            \(disableCode)
+            \(disableCodePattern)
             """
     }
 
-    private var disableCode: String {
-        ".disabled(\(enabled ? "false" : "true"))"
+    private var disableCodePattern: String {
+        !enabled ? ".disabled(true)" : ""
     }
 
     private var isErrorPattern: String {
@@ -83,7 +83,7 @@ struct CheckboxConfiguration: View {
             OUDSSwitchItem("app_components_common_error_label", isOn: $model.isError)
                 .disabled(!model.enabled)
 
-            OUDSSwitchItem("app_components_checkbox_selection_label", isOn: $model.indicatorState)
+            OUDSSwitchItem("app_components_controlItem_selection_label", isOn: $model.indicatorState)
                 .disabled(!model.enabled)
         }
     }

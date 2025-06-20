@@ -1111,31 +1111,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_checkbox_selection_label" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_checkboxPicker_description_text" : {
       "comment" : "Component - Checkbox Picker",
       "extractionState" : "manual",
@@ -1703,6 +1678,30 @@
         }
       }
     },
+    "app_components_controlItem_selection_label" : {
+      "comment" : "Component - ControlItem",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        }
+      }
+    },
     "app_components_divider_description_text" : {
       "comment" : "Component - Divider",
       "extractionState" : "manual",
@@ -2171,31 +2170,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_radioButton_selection_label" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_radioPicker_description_text" : {
       "comment" : "Component - Radio Picker",
       "extractionState" : "manual",
@@ -2313,31 +2287,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Switch"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_switch_selection_label" : {
-      "comment" : "Component - Switch",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
           }
         }
       },

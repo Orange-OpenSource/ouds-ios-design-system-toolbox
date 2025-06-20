@@ -44,12 +44,12 @@ final class SwitchConfigurationModel: ComponentConfiguration {
         code =
             """
             OUDSSwitch(isOn: $isOn, accessibilityLabel: "A label for accessibility")
-            \(disableCode)
+            \(disableCodePattern)
             """
     }
 
-    private var disableCode: String {
-        ".disabled(\(enabled ? "false" : "true"))"
+    private var disableCodePattern: String {
+        !enabled ? ".disabled(true)" : ""
     }
 }
 
@@ -63,7 +63,7 @@ struct SwitchConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            OUDSSwitchItem("app_components_switch_selection_label", isOn: $model.selection)
+            OUDSSwitchItem("app_components_controlItem_selection_label", isOn: $model.selection)
                 .disabled(!model.enabled)
 
             OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
