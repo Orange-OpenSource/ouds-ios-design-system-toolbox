@@ -20,8 +20,12 @@ import SwiftUI
 class ControlItemConfigurationModel: ComponentConfiguration {
 
     // MARK: - Properties
+    typealias OutlinedConfiguration = (value: Bool, outlinedConfigurationLabel: String)
+    typealias AdditionalLabelConfiguration = String
 
     var componentInitCode: String = ""
+    var additionalLabelConfiguration: AdditionalLabelConfiguration?
+    var outlinedConfiguration: OutlinedConfiguration?
 
     @Published var enabled: Bool {
         didSet { updateCode() }
@@ -59,11 +63,6 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    typealias OutlinedConfiguration = (value: Bool, outlinedConfigurationLabel: String)
-    typealias AdditionalLabelConfiguration = String
-
-    var additionalLabelConfiguration: AdditionalLabelConfiguration?
-    var outlinedConfiguration: OutlinedConfiguration?
     @Published var outlined: Bool {
         didSet { updateCode() }
     }
@@ -103,14 +102,13 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         code =
             """
             \(componentInitCode), label: "\(labelText)"\(additionalLabelTextPattern)\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
-            \(disableCode)
+            \(disableCodePattern)
             """
     }
-
     // swiftlint:enable line_length
 
-    private var disableCode: String {
-        ".disabled(\(enabled ? "false" : "true"))"
+    private var disableCodePattern: String {
+        !enabled ? ".disabled(true)" : ""
     }
 
     private var helperTextPattern: String {
@@ -126,7 +124,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     }
 
     private var isReversedPattern: String {
-        ", isReversed: \(isReversed)"
+        isReversed ? ", isReversed: true" : ""
     }
 
     private var isErrorPattern: String {
@@ -141,7 +139,6 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         divider ? ", divider: true" : ""
     }
 
-    // Extra configuration
     private var additionalLabelTextPattern: String {
         !additionalLabelText.isEmpty ? ", additionalLabel: \"\(additionalLabelText)\"" : ""
     }
@@ -153,15 +150,15 @@ class ControlItemConfigurationModel: ComponentConfiguration {
 
 // MARK: - ControlItem Configuration View (Bool selection)
 
-final class ControlItemConfigurationModelBoolean: ControlItemConfigurationModel {
+final class BooleanControlItemConfigurationModel: ControlItemConfigurationModel {
     @Published var isOn: Bool = true
 
     deinit {}
 }
 
-// MARK: - ControlItem Configuration View (Indeterminate checkbox selction)
+// MARK: - ControlItem Configuration View (Indeterminate checkbox selection)
 
-final class ControlItemConfigurationModelMultiple: ControlItemConfigurationModel {
+final class IndicatorStateControlItemConfigurationModel: ControlItemConfigurationModel {
     @Published var selection: OUDSCheckboxIndicatorState = .indeterminate
 
     deinit {}

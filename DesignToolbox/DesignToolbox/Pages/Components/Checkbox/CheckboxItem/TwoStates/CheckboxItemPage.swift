@@ -19,7 +19,7 @@ import SwiftUI
 
 struct CheckboxItemPage: View {
 
-    let model = ControlItemConfigurationModelBoolean(componentInitCode: "OUDSCheckboxItem(isOn: $isOn,")
+    let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItem(isOn: $isOn,")
 
     var body: some View {
         ControlItemElementPage(model: model) {
@@ -32,7 +32,7 @@ struct CheckboxItemPage: View {
 
 private struct CheckboxItemDemo: View {
 
-    @ObservedObject var model: ControlItemConfigurationModelBoolean
+    @ObservedObject var model: BooleanControlItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {

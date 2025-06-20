@@ -19,7 +19,7 @@ import SwiftUI
 
 struct SwitchItemPage: View {
 
-    let model = ControlItemConfigurationModelBoolean(componentInitCode: "OUDSSwitchItem(isOn: $isOn")
+    let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSSwitchItem(isOn: $isOn")
 
     var body: some View {
         ControlItemElementPage(model: model) {
@@ -32,7 +32,7 @@ struct SwitchItemPage: View {
 
 private struct SwitchItemDemo: View {
 
-    @ObservedObject var model: ControlItemConfigurationModelBoolean
+    @ObservedObject var model: BooleanControlItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
