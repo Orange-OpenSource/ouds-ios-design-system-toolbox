@@ -19,48 +19,18 @@ import SwiftUI
 
 struct RadioItemPage: View {
 
-    @StateObject private var configuration: RadioItemConfigurationModel
+    private let model: BooleanControlItemConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: RadioItemConfigurationModel())
+        model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSRadioItem(isOn: $isOn",
+                                                     outlinedConfiguration: (value: false,
+                                                                             outlinedConfigurationLabel: "app_components_radioButton_radioButtonItem_outlined_label"),
+                                                     additionalLabelConfiguration: "app_components_radioButton_radioButtonItem_additionalLabel_label".localized())
     }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configuration,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? RadioItemConfigurationModel {
-            RadioItemIllustration(model: model)
-        }
-    }
-
-    @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? RadioItemConfigurationModel {
-            RadioItemConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: - Radio Item Illustration
-
-private struct RadioItemIllustration: View {
-
-    let model: RadioItemConfigurationModel
-
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center) {
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
+        ControlItemElementPage(model: model) {
             RadioItemDemo(model: model)
-            RadioItemDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
 }
@@ -69,11 +39,11 @@ private struct RadioItemIllustration: View {
 
 private struct RadioItemDemo: View {
 
-    @ObservedObject var model: RadioItemConfigurationModel
+    @ObservedObject var model: BooleanControlItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSRadioItem(isOn: $model.selection,
+        OUDSRadioItem(isOn: $model.isOn,
                       label: model.labelText,
                       additionalLabel: model.additionalLabelText,
                       helper: model.helperText,

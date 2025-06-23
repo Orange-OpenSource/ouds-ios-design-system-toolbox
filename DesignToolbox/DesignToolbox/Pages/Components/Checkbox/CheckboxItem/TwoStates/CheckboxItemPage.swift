@@ -19,47 +19,11 @@ import SwiftUI
 
 struct CheckboxItemPage: View {
 
-    @StateObject private var configuration: CheckboxItemConfigurationModel
-
-    init() {
-        _configuration = StateObject(wrappedValue: CheckboxItemConfigurationModel())
-    }
+    let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItem(isOn: $isOn,")
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configuration,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxItemConfigurationModel {
-            CheckboxItemIllustration(model: model)
-        }
-    }
-
-    @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxItemConfigurationModel {
-            CheckboxItemConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: - Checkbox Item Illustration
-
-private struct CheckboxItemIllustration: View {
-
-    let model: CheckboxItemConfigurationModel
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center) {
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
+        ControlItemElementPage(model: model) {
             CheckboxItemDemo(model: model)
-            CheckboxItemDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
 }
@@ -68,11 +32,11 @@ private struct CheckboxItemIllustration: View {
 
 private struct CheckboxItemDemo: View {
 
-    @ObservedObject var model: CheckboxItemConfigurationModel
+    @ObservedObject var model: BooleanControlItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSCheckboxItem(isOn: $model.indicatorState,
+        OUDSCheckboxItem(isOn: $model.isOn,
                          label: model.labelText,
                          helper: model.helperText,
                          icon: icon,

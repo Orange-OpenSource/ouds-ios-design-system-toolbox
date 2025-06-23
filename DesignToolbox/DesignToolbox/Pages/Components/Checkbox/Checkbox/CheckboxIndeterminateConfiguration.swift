@@ -50,12 +50,12 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
         code =
             """
             OUDSCheckboxInterminate(selection: $selection\(isErrorPattern))
-            \(disableCode)
+            \(disableCodePattern)
             """
     }
 
-    private var disableCode: String {
-        ".disabled(\(enabled ? "false" : "true"))"
+    private var disableCodePattern: String {
+        !enabled ? ".disabled(true)" : ""
     }
 
     private var isErrorPattern: String {
@@ -85,7 +85,7 @@ struct CheckboxIndeterminateConfiguration: View {
                     .disabled(!model.enabled)
             }
 
-            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label",
+            DesignToolboxChoicePicker(title: "app_components_controlItem_selection_label",
                                       selection: $model.indicatorState,
                                       style: .segmented)
             {
