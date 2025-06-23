@@ -35,7 +35,9 @@ struct SwitchPage: View {
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? SwitchConfigurationModel {
-            SwitchIllustration(model: model)
+            ComponentIllustration {
+                SwitchDemo(model: model)
+            }
         }
     }
 
@@ -43,23 +45,6 @@ struct SwitchPage: View {
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? SwitchConfigurationModel {
             SwitchConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: - Switch Illustration
-
-private struct SwitchIllustration: View {
-
-    let model: SwitchConfigurationModel
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center) {
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            SwitchDemo(model: model)
-            SwitchDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
 }

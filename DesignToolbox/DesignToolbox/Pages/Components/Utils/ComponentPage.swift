@@ -67,3 +67,36 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
         .padding(.bottom, theme.spaces.spaceFixedMedium)
     }
 }
+
+/// Used to show the Demo of the `Component` on a colored surface or on
+/// standard background (color background primary)
+
+struct ComponentIllustration<ComponentDemo>: View where ComponentDemo: View {
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    // MARK: Stored properties
+
+    /// Flag to indicates if component is demonstrated on a colored surface
+    var onColoredSurface: Bool = false
+
+    /// The view of the component in the desired configuration.
+    @ViewBuilder
+    var componentDemo: () -> ComponentDemo
+
+    // MARK: Body
+
+    var body: some View {
+        VStack(alignment: .center) {
+            if onColoredSurface {
+                componentDemo()
+            } else {
+                componentDemo()
+                // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
+                componentDemo()
+                    .colorScheme(colorScheme == .dark ? .light : .dark)
+            }
+        }
+        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: onColoredSurface))
+    }
+}

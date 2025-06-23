@@ -36,7 +36,9 @@ struct CheckboxIndeterminatePage: View {
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? CheckboxIndeterminateConfigurationModel {
-            CheckboxIndeterminateIllustration(model: model)
+            ComponentIllustration {
+                CheckboxIndeterminateDemo(model: model)
+            }
         }
     }
 
@@ -44,23 +46,6 @@ struct CheckboxIndeterminatePage: View {
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? CheckboxIndeterminateConfigurationModel {
             CheckboxIndeterminateConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: - Checkbox Indeterminate Illustration
-
-struct CheckboxIndeterminateIllustration: View {
-
-    let model: CheckboxIndeterminateConfigurationModel
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center) {
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            CheckboxIndeterminateDemo(model: model)
-            CheckboxIndeterminateDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
 }

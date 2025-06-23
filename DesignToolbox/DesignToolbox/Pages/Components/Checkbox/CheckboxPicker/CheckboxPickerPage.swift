@@ -35,7 +35,7 @@ struct CheckboxPickerPage: View {
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? CheckboxPickerConfigurationModel {
-            CheckboxPickerIllustration(model: model)
+            CheckboxPickerDemo(model: model)
         }
     }
 
@@ -47,9 +47,9 @@ struct CheckboxPickerPage: View {
     }
 }
 
-// MARK: - Checkbox Picker Illustration
+// MARK: - Checkbox Picker Demo
 
-private struct CheckboxPickerIllustration: View {
+private struct CheckboxPickerDemo: View {
 
     @State private var selections: [String] = ["Choice_1"] // cf model.populate()
     @ObservedObject var model: CheckboxPickerConfigurationModel

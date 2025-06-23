@@ -31,7 +31,9 @@ struct LinkPage: View {
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? LinkConfigurationModel {
-            LinkIllustration(model: model)
+            ComponentIllustration {
+                LinkDemo(model: model)
+            }
         }
     }
 
@@ -39,25 +41,6 @@ struct LinkPage: View {
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? LinkConfigurationModel {
             LinkConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: Link Illustration
-
-struct LinkIllustration: View {
-
-    @Environment(\.colorScheme) private var colorScheme
-    @StateObject var model: LinkConfigurationModel
-
-    var body: some View {
-        VStack(alignment: .center) {
-            if model.onColoredSurface {
-                LinkDemo(model: model)
-            } else {
-                LinkDemo(model: model)
-                LinkDemo(model: model).colorScheme(colorScheme == .dark ? .light : .dark)
-            }
         }
     }
 }

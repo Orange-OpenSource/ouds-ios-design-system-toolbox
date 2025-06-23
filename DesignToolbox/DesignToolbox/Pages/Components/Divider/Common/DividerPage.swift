@@ -35,7 +35,9 @@ struct DividerPage: View {
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? DividerConfigurationModel {
-            DividerIllustration(model: model)
+            ComponentIllustration {
+                DividerDemo(model: model)
+            }
         }
     }
 
@@ -43,21 +45,6 @@ struct DividerPage: View {
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? DividerConfigurationModel {
             DividerConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: Divider Illustration
-
-struct DividerIllustration: View {
-
-    @StateObject var model: DividerConfigurationModel
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center) {
-            DividerDemo(model: model)
-            DividerDemo(model: model).colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
 }

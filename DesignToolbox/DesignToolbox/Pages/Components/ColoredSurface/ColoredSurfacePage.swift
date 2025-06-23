@@ -31,7 +31,9 @@ struct ColoredSurfacePage: View {
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? ColoredSurfaceConfigurationModel {
-            ColoredSurfaceIllustration(model: model)
+            ComponentIllustration {
+                ColoredSurfaceDemo(model: model)
+            }
         }
     }
 
@@ -39,23 +41,6 @@ struct ColoredSurfacePage: View {
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? ColoredSurfaceConfigurationModel {
             ColoredSurfaceConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: Colored Surface Illustration
-
-struct ColoredSurfaceIllustration: View {
-
-    @ObservedObject var model: ColoredSurfaceConfigurationModel
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center, spacing: 0) {
-            ColoredSurfaceDemo(model: model)
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            ColoredSurfaceDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
 }

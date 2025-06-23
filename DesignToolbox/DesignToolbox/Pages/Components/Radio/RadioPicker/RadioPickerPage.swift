@@ -35,7 +35,7 @@ struct RadioPickerPage: View {
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? RadioPickerConfigurationModel {
-            RadioPickerIllustration(model: model)
+            RadioPickerDemo(model: model)
         }
     }
 
@@ -47,9 +47,9 @@ struct RadioPickerPage: View {
     }
 }
 
-// MARK: - Radio Picker Illustration
+// MARK: - Radio Picker Demo
 
-private struct RadioPickerIllustration: View {
+private struct RadioPickerDemo: View {
 
     @State private var selection: String = "Choice_1" // cf model.populate()
     @ObservedObject var model: RadioPickerConfigurationModel

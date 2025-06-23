@@ -35,7 +35,9 @@ struct RadioPage: View {
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? RadioConfigurationModel {
-            RadioIllustration(model: model)
+            ComponentIllustration {
+                RadioDemo(model: model)
+            }
         }
     }
 
@@ -43,23 +45,6 @@ struct RadioPage: View {
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? RadioConfigurationModel {
             RadioConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: - Radio Illustration
-
-private struct RadioIllustration: View {
-
-    let model: RadioConfigurationModel
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center) {
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            RadioDemo(model: model)
-            RadioDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
 }

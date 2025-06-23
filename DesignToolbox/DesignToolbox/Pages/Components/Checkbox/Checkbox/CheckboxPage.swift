@@ -36,7 +36,9 @@ struct CheckboxPage: View {
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? CheckboxConfigurationModel {
-            CheckboxIllustration(model: model)
+            ComponentIllustration {
+                CheckboxDemo(model: model)
+            }
         }
     }
 
@@ -44,23 +46,6 @@ struct CheckboxPage: View {
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? CheckboxConfigurationModel {
             CheckboxConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: - Checkbox Illustration
-
-struct CheckboxIllustration: View {
-
-    let model: CheckboxConfigurationModel
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center) {
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            CheckboxDemo(model: model)
-            CheckboxDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
 }

@@ -19,11 +19,16 @@ import SwiftUI
 
 struct CheckboxItemIndeterminatePage: View {
 
-    let model = IndicatorControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItemIndeterminate(selection: $selection,")
+    @StateObject private var configurationModel: IndicatorControlItemConfigurationModel
+
+    init() {
+        let model = IndicatorControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItemIndeterminate(selection: $selection,")
+        _configurationModel = StateObject(wrappedValue: model)
+    }
 
     var body: some View {
-        ControlItemElementPage(model: model) {
-            CheckboxItemIndeterminateDemo(model: model)
+        ControlItemElementPage(configurationModel: configurationModel) {
+            CheckboxItemIndeterminateDemo(configurationModel: configurationModel)
         }
     }
 }
@@ -32,20 +37,20 @@ struct CheckboxItemIndeterminatePage: View {
 
 private struct CheckboxItemIndeterminateDemo: View {
 
-    @ObservedObject var model: IndicatorControlItemConfigurationModel
+    @ObservedObject var configurationModel: IndicatorControlItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSCheckboxItemIndeterminate(selection: $model.selection,
-                                      label: model.labelText,
-                                      helper: model.helperText,
+        OUDSCheckboxItemIndeterminate(selection: $configurationModel.selection,
+                                      label: configurationModel.labelText,
+                                      helper: configurationModel.helperText,
                                       icon: icon,
-                                      flipIcon: model.flipIcon,
-                                      isReversed: model.isReversed,
-                                      isError: model.isError,
-                                      isReadOnly: model.isReadOnly,
-                                      hasDivider: model.divider)
-            .disabled(!model.enabled)
+                                      flipIcon: configurationModel.flipIcon,
+                                      isReversed: configurationModel.isReversed,
+                                      isError: configurationModel.isError,
+                                      isReadOnly: configurationModel.isReadOnly,
+                                      hasDivider: configurationModel.divider)
+            .disabled(!configurationModel.enabled)
             .padding(.all, theme.spaces.spaceFixedMedium)
             .designToolboxColoredSurface(false)
     }
@@ -53,7 +58,7 @@ private struct CheckboxItemIndeterminateDemo: View {
     // Need here that system name, a11y managed in component
     // swiftlint:disable accessibility_label_for_image
     private var icon: Image? {
-        model.icon ? Image(systemName: "figure.handball") : nil
+        configurationModel.icon ? Image(systemName: "figure.handball") : nil
     }
     // swiftlint:enable accessibility_label_for_image
 }

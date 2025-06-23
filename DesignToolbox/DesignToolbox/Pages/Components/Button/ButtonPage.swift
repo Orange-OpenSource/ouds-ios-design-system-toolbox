@@ -31,7 +31,9 @@ struct ButtonPage: View {
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? ButtonConfigurationModel {
-            ButtonIllustration(model: model)
+            ComponentIllustration {
+                ButtonDemo(model: model)
+            }
         }
     }
 
@@ -39,27 +41,6 @@ struct ButtonPage: View {
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? ButtonConfigurationModel {
             ButtonConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: Button Illustration
-
-struct ButtonIllustration: View {
-
-    @Environment(\.colorScheme) private var colorScheme
-    @ObservedObject var model: ButtonConfigurationModel
-
-    var body: some View {
-        VStack(alignment: .center) {
-            if model.onColoredSurface {
-                ButtonDemo(model: model)
-            } else {
-                ButtonDemo(model: model)
-                // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-                ButtonDemo(model: model)
-                    .colorScheme(colorScheme == .dark ? .light : .dark)
-            }
         }
     }
 }
