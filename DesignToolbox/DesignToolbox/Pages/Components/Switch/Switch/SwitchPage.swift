@@ -34,9 +34,7 @@ struct SwitchPage: View {
 
     @ViewBuilder
     private func componentView() -> some View {
-        ComponentIllustration {
-            SwitchDemo(configurationModel: configurationModel)
-        }
+        SwitchDemo(configurationModel: configurationModel)
     }
 
     @ViewBuilder

@@ -34,9 +34,7 @@ struct DividerPage: View {
 
     @ViewBuilder
     private func componentView() -> some View {
-        ComponentIllustration {
-            DividerDemo(configurationModel: configurationModel)
-        }
+        DividerDemo(configurationModel: configurationModel)
     }
 
     @ViewBuilder
@@ -71,6 +69,5 @@ struct DividerDemo: View {
         }
         .frame(height: 44)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
     }
 }

@@ -30,9 +30,7 @@ struct ColoredSurfacePage: View {
 
     @ViewBuilder
     private func componentView() -> some View {
-        ComponentIllustration {
-            ColoredSurfaceDemo(configurationModel: configurationModel)
-        }
+        ColoredSurfaceDemo(configurationModel: configurationModel)
     }
 
     @ViewBuilder

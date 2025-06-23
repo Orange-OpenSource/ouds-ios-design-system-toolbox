@@ -30,9 +30,7 @@ struct LinkPage: View {
 
     @ViewBuilder
     private func componentView() -> some View {
-        ComponentIllustration {
-            LinkDemo(configurationModel: configurationModel)
-        }
+        LinkDemo(configurationModel: configurationModel)
     }
 
     @ViewBuilder
@@ -67,6 +65,6 @@ private struct LinkDemo: View {
         }
         .disabled(!configurationModel.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: configurationModel.onColoredSurface))
+        // TODO: .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: configurationModel.onColoredSurface))
     }
 }

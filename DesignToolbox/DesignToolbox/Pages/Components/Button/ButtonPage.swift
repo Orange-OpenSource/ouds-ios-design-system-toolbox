@@ -30,9 +30,7 @@ struct ButtonPage: View {
 
     @ViewBuilder
     private func componentView() -> some View {
-        ComponentIllustration {
-            ButtonDemo(configurationModel: configurationModel)
-        }
+        ButtonDemo(configurationModel: configurationModel)
     }
 
     @ViewBuilder
@@ -79,6 +77,6 @@ private struct ButtonDemo: View {
         }
         .disabled(!configurationModel.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: configurationModel.onColoredSurface))
+        // TODO: .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: configurationModel.onColoredSurface))
     }
 }

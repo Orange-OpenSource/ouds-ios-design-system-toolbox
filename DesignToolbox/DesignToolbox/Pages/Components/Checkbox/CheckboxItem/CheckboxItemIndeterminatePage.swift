@@ -34,9 +34,7 @@ struct CheckboxItemIndeterminatePage: View {
 
     @ViewBuilder
     private func componentView() -> some View {
-        ComponentIllustration {
-            CheckboxItemIndeterminateDemo(configurationModel: configurationModel)
-        }
+        CheckboxItemIndeterminateDemo(configurationModel: configurationModel)
     }
 
     @ViewBuilder

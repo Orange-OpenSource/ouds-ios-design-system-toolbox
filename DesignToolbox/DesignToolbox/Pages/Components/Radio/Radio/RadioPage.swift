@@ -34,9 +34,7 @@ struct RadioPage: View {
 
     @ViewBuilder
     private func componentView() -> some View {
-        ComponentIllustration {
-            RadioDemo(configurationModel: configurationModel)
-        }
+        RadioDemo(configurationModel: configurationModel)
     }
 
     @ViewBuilder

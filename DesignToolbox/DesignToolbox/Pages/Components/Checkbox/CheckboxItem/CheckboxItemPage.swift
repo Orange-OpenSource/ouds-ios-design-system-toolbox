@@ -34,9 +34,7 @@ struct CheckboxItemPage: View {
 
     @ViewBuilder
     private func componentView() -> some View {
-        ComponentIllustration {
-            CheckboxItemDemo(configurationModel: configurationModel)
-        }
+        CheckboxItemDemo(configurationModel: configurationModel)
     }
 
     @ViewBuilder

@@ -53,7 +53,7 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            componentView()
+            ComponentIllustration(onColoredSurface: false, componentDemo: componentView)
             // No padding here, the component area keeps all the frame horizontaly
 
             DesignToolboxConfiguration {
@@ -71,14 +71,14 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
 /// Used to show the Demo of the `Component` on a colored surface or on
 /// standard background (color background primary)
 
-struct ComponentIllustration<ComponentDemo>: View where ComponentDemo: View {
+private struct ComponentIllustration<ComponentDemo>: View where ComponentDemo: View {
 
     @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Stored properties
 
     /// Flag to indicates if component is demonstrated on a colored surface
-    var onColoredSurface: Bool = false
+    var onColoredSurface: Bool
 
     /// The view of the component in the desired configuration.
     @ViewBuilder
@@ -90,13 +90,16 @@ struct ComponentIllustration<ComponentDemo>: View where ComponentDemo: View {
         VStack(alignment: .center) {
             if onColoredSurface {
                 componentDemo()
+                    .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: true))
             } else {
                 componentDemo()
+                    .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
+
                 // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
                 componentDemo()
+                    .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
                     .colorScheme(colorScheme == .dark ? .light : .dark)
             }
         }
-        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: onColoredSurface))
     }
 }
