@@ -60,6 +60,5 @@ private struct LinkDemo: View {
         }
         .disabled(!configurationModel.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        // TODO: .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: configurationModel.onColoredSurface))
     }
 }

@@ -52,7 +52,6 @@ private struct SwitchItemDemo: View {
                        hasDivider: configurationModel.divider)
             .disabled(!configurationModel.enabled)
             .padding(.all, theme.spaces.spaceFixedMedium)
-            .designToolboxColoredSurface(false)
     }
 
     // Need here that system name, a11y managed in component

@@ -52,6 +52,5 @@ private struct CheckboxIndeterminateDemo: View {
             Spacer()
         }
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .designToolboxColoredSurface(false)
     }
 }
