@@ -12,10 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Mutualize configuration of `control items` demos (`switch`, `radio button`, `checkbox`) (Orange-OpenSource/ouds-ios#621) 
 - [Library] Color raw tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] Dimension raw tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] Update the names and the order of the divider colors (Orange-OpenSource/ouds-io#712)
 - [Library] In low power mode, stop animations of loading button (Orange-OpenSource/ouds-ios#661)
+- [Library] Update the names and the order of the divider colors (Orange-OpenSource/ouds-ios#712)
+- [Library] In low power mode, stop animations of loading button (Orange-OpenSource/ouds-ios#661) 
 - [DesignToolbox] Update cards backgrounds token (Orange-OpenSource/ouds-ios#695)
 - [Tool] Update `SwiftFormat/CLI` pod from v0.56.1 to v0.56.2
 

@@ -49,12 +49,12 @@ final class RadioConfigurationModel: ComponentConfiguration {
         code =
             """
             OUDSRadio(isOn: $isOn, accessibilityLabel: "A label for accessibility"\(isErrorPattern))
-            \(disableCode)
+            \(disableCodePattern)
             """
     }
 
-    private var disableCode: String {
-        ".disabled(\(enabled ? "false" : "true"))"
+    private var disableCodePattern: String {
+        !enabled ? ".disabled(true)" : ""
     }
 
     private var isErrorPattern: String {
@@ -72,7 +72,7 @@ struct RadioConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            OUDSSwitchItem("app_components_radioButton_selection_label", isOn: $model.selection)
+            OUDSSwitchItem("app_components_controlItem_selection_label", isOn: $model.selection)
                 .disabled(!model.enabled || model.isError)
 
             OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
