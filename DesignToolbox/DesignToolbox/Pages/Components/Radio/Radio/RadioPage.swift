@@ -19,33 +19,29 @@ import SwiftUI
 
 struct RadioPage: View {
 
-    @StateObject private var configuration: RadioConfigurationModel
+    @StateObject private var configurationModel: RadioConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: RadioConfigurationModel())
+        _configurationModel = StateObject(wrappedValue: RadioConfigurationModel())
     }
 
     var body: some View {
         ComponentConfigurationView(
-            configuration: configuration,
+            configuration: configurationModel,
             componentView: componentView,
             configurationView: configurationView)
     }
 
     @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? RadioConfigurationModel {
-            ComponentIllustration {
-                RadioDemo(model: model)
-            }
+    private func componentView() -> some View {
+        ComponentIllustration {
+            RadioDemo(configurationModel: configurationModel)
         }
     }
 
     @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? RadioConfigurationModel {
-            RadioConfiguration(model: model)
-        }
+    private func configurationView() -> some View {
+        RadioConfiguration(configurationModel: configurationModel)
     }
 }
 
@@ -53,16 +49,16 @@ struct RadioPage: View {
 
 private struct RadioDemo: View {
 
-    @ObservedObject var model: RadioConfigurationModel
+    @ObservedObject var configurationModel: RadioConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
-            OUDSRadio(isOn: $model.selection,
+            OUDSRadio(isOn: $configurationModel.selection,
                       accessibilityLabel: "app_components_radioButton_hint_a11y".localized(), // No LocalizedStringKey type inference in the component
-                      isError: model.isError)
-                .disabled(!model.enabled)
+                      isError: configurationModel.isError)
+                .disabled(!configurationModel.enabled)
             Spacer()
         }
         .padding(.all, theme.spaces.spaceFixedMedium)

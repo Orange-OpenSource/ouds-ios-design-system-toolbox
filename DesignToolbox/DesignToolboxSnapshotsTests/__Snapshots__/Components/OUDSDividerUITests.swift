@@ -75,7 +75,7 @@ final class OUDSDividerUITests: XCTestCase {
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
-            DividerDemo(model: DividerConfigurationModel(orientation: orientation, selectedColor: dividerColor))
+            DividerDemo(configurationModel: DividerConfigurationModel(orientation: orientation, selectedColor: dividerColor))
         }
 
         // Create a unique snapshot name based on the current configuration :

@@ -19,29 +19,25 @@ import SwiftUI
 
 struct LinkPage: View {
 
-    private let configuration = LinkConfigurationModel()
+    private let configurationModel = LinkConfigurationModel()
 
     var body: some View {
         ComponentConfigurationView(
-            configuration: configuration,
+            configuration: configurationModel,
             componentView: componentView,
             configurationView: configurationView)
     }
 
     @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? LinkConfigurationModel {
-            ComponentIllustration {
-                LinkDemo(model: model)
-            }
+    private func componentView() -> some View {
+        ComponentIllustration {
+            LinkDemo(configurationModel: configurationModel)
         }
     }
 
     @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? LinkConfigurationModel {
-            LinkConfiguration(model: model)
-        }
+    private func configurationView() -> some View {
+        LinkConfiguration(configurationModel: configurationModel)
     }
 }
 
@@ -50,27 +46,27 @@ struct LinkPage: View {
 private struct LinkDemo: View {
 
     @Environment(\.theme) private var theme
-    @StateObject var model: LinkConfigurationModel
+    @StateObject var configurationModel: LinkConfigurationModel
 
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
 
-            switch model.layout {
+            switch configurationModel.layout {
             case .textOnly:
-                OUDSLink(text: model.text, size: model.size) {}
+                OUDSLink(text: configurationModel.text, size: configurationModel.size) {}
             case .iconAndText:
-                OUDSLink(text: model.text, icon: Image(decorative: "ic_heart"), size: model.size) {}
+                OUDSLink(text: configurationModel.text, icon: Image(decorative: "ic_heart"), size: configurationModel.size) {}
             case .indicatorBack:
-                OUDSLink(text: model.text, indicator: .back, size: model.size) {}
+                OUDSLink(text: configurationModel.text, indicator: .back, size: configurationModel.size) {}
             case .indicatorNext:
-                OUDSLink(text: model.text, indicator: .next, size: model.size) {}
+                OUDSLink(text: configurationModel.text, indicator: .next, size: configurationModel.size) {}
             }
 
             Spacer()
         }
-        .disabled(!model.enabled)
+        .disabled(!configurationModel.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: model.onColoredSurface))
+        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: configurationModel.onColoredSurface))
     }
 }

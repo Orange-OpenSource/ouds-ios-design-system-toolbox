@@ -19,29 +19,25 @@ import SwiftUI
 
 struct ButtonPage: View {
 
-    private let configuration = ButtonConfigurationModel()
+    private let configurationModel = ButtonConfigurationModel()
 
     var body: some View {
         ComponentConfigurationView(
-            configuration: configuration,
+            configuration: configurationModel,
             componentView: componentView,
             configurationView: configurationView)
     }
 
     @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? ButtonConfigurationModel {
-            ComponentIllustration {
-                ButtonDemo(model: model)
-            }
+    private func componentView() -> some View {
+        ComponentIllustration {
+            ButtonDemo(configurationModel: configurationModel)
         }
     }
 
     @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? ButtonConfigurationModel {
-            ButtonConfiguration(model: model)
-        }
+    private func configurationView() -> some View {
+        ButtonConfiguration(configurationModel: configurationModel)
     }
 }
 
@@ -51,38 +47,38 @@ private struct ButtonDemo: View {
 
     @Environment(\.theme) private var theme
 
-    @StateObject var model: ButtonConfigurationModel
+    @StateObject var configurationModel: ButtonConfigurationModel
 
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
 
             // It is not allowed to place a Negative button on colored surface
-            if model.hierarchy == .negative, model.onColoredSurface {
+            if configurationModel.hierarchy == .negative, configurationModel.onColoredSurface {
                 Text("app_components_button_negative_hierary_notAllowed_text")
             } else {
-                switch model.layout {
+                switch configurationModel.layout {
                 case .iconOnly:
                     OUDSButton(icon: Image(decorative: "ic_heart"),
                                accessibilityLabel: "app_components_button_icon_a11y".localized(),
-                               hierarchy: model.hierarchy,
-                               style: model.style) {}
+                               hierarchy: configurationModel.hierarchy,
+                               style: configurationModel.style) {}
                 case .textOnly:
-                    OUDSButton(text: model.text,
-                               hierarchy: model.hierarchy,
-                               style: model.style) {}
+                    OUDSButton(text: configurationModel.text,
+                               hierarchy: configurationModel.hierarchy,
+                               style: configurationModel.style) {}
                 case .iconAndText:
                     OUDSButton(icon: Image(decorative: "ic_heart"),
-                               text: model.text,
-                               hierarchy: model.hierarchy,
-                               style: model.style) {}
+                               text: configurationModel.text,
+                               hierarchy: configurationModel.hierarchy,
+                               style: configurationModel.style) {}
                 }
             }
 
             Spacer()
         }
-        .disabled(!model.enabled)
+        .disabled(!configurationModel.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: model.onColoredSurface))
+        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: configurationModel.onColoredSurface))
     }
 }

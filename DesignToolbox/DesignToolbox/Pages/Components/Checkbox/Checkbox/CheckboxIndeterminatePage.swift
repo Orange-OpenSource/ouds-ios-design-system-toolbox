@@ -20,33 +20,29 @@ import SwiftUI
 /// Related to `OUDSCheckboxIndeterminate` (i.e. with 3 available values).
 struct CheckboxIndeterminatePage: View {
 
-    @StateObject private var configuration: CheckboxIndeterminateConfigurationModel
+    @StateObject private var configurationModel: CheckboxIndeterminateConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: CheckboxIndeterminateConfigurationModel())
+        _configurationModel = StateObject(wrappedValue: CheckboxIndeterminateConfigurationModel())
     }
 
     var body: some View {
         ComponentConfigurationView(
-            configuration: configuration,
+            configuration: configurationModel,
             componentView: componentView,
             configurationView: configurationView)
     }
 
     @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxIndeterminateConfigurationModel {
-            ComponentIllustration {
-                CheckboxIndeterminateDemo(model: model)
-            }
+    private func componentView() -> some View {
+        ComponentIllustration {
+            CheckboxIndeterminateDemo(configurationModel: configurationModel)
         }
     }
 
     @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxIndeterminateConfigurationModel {
-            CheckboxIndeterminateConfiguration(model: model)
-        }
+    private func configurationView() -> some View {
+        CheckboxIndeterminateConfiguration(configurationModel: configurationModel)
     }
 }
 
@@ -54,16 +50,16 @@ struct CheckboxIndeterminatePage: View {
 
 private struct CheckboxIndeterminateDemo: View {
 
-    @ObservedObject var model: CheckboxIndeterminateConfigurationModel
+    @ObservedObject var configurationModel: CheckboxIndeterminateConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
-            OUDSCheckboxIndeterminate(selection: $model.indicatorState,
+            OUDSCheckboxIndeterminate(selection: $configurationModel.indicatorState,
                                       accessibilityLabel: "app_components_checkbox_hint_a11y".localized(), // No LocalizedStringKey inference in the component
-                                      isError: model.isError)
-                .disabled(!model.enabled)
+                                      isError: configurationModel.isError)
+                .disabled(!configurationModel.enabled)
             Spacer()
         }
         .padding(.all, theme.spaces.spaceFixedMedium)

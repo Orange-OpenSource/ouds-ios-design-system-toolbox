@@ -138,29 +138,29 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
 
 struct RadioPickerConfiguration: View {
 
-    @ObservedObject var model: RadioPickerConfigurationModel
+    @ObservedObject var configurationModel: RadioPickerConfigurationModel
 
     @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-                OUDSSwitchItem("app_common_enabled_label", isOn: $model.isEnabled)
-                    .disabled(model.isError || model.isReadOnly)
+                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.isEnabled)
+                    .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
-                OUDSSwitchItem("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
-                    .disabled(!model.isEnabled || model.isError)
+                OUDSSwitchItem("app_components_controlItem_readOnly_label", isOn: $configurationModel.isReadOnly)
+                    .disabled(!configurationModel.isEnabled || configurationModel.isError)
 
-                OUDSSwitchItem("app_components_common_error_label", isOn: $model.isError)
-                    .disabled(!model.isEnabled || model.isReadOnly)
+                OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
+                    .disabled(!configurationModel.isEnabled || configurationModel.isReadOnly)
 
-                OUDSSwitchItem("app_components_radioButton_radioButtonItem_outlined_label", isOn: $model.isOutlined)
+                OUDSSwitchItem("app_components_radioButton_radioButtonItem_outlined_label", isOn: $configurationModel.isOutlined)
 
-                OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $model.hasDivider)
+                OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $configurationModel.hasDivider)
             }
 
             DesignToolboxChoicePicker(title: "app_components_common_orientation_label",
-                                      selection: $model.pickerPlacement,
+                                      selection: $configurationModel.pickerPlacement,
                                       style: .menu)
             {
                 ForEach(OUDSRadioPickerPlacement.allCases, id: \.id) { placement in

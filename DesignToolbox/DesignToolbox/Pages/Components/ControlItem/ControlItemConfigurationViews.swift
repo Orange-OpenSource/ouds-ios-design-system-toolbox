@@ -22,7 +22,6 @@ struct ControlItemElementPage<Demo>: View where Demo: View {
 
     @StateObject private var configurationModel: ControlItemConfigurationModel
     @ViewBuilder private var demo: () -> Demo
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Initializer
 
@@ -34,12 +33,8 @@ struct ControlItemElementPage<Demo>: View where Demo: View {
     // MARK: Body
 
     var body: some View {
-        ComponentConfigurationView(configuration: configurationModel) { _ in
-            demo()
-        } configurationView: { configuration in
-            if let model = configuration as? ControlItemConfigurationModel {
-                ControlItemConfiguration(configurationModel: model)
-            }
+        ComponentConfigurationView(configuration: configurationModel, componentView: demo) {
+            ControlItemConfiguration(configurationModel: configurationModel)
         }
     }
 }

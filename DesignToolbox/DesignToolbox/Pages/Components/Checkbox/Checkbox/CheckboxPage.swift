@@ -20,33 +20,29 @@ import SwiftUI
 /// Related to `OUDSCheckbox` (i.e. with 2 available values).
 struct CheckboxPage: View {
 
-    @StateObject private var configuration: CheckboxConfigurationModel
+    @StateObject private var configurationModel: CheckboxConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: CheckboxConfigurationModel())
+        _configurationModel = StateObject(wrappedValue: CheckboxConfigurationModel())
     }
 
     var body: some View {
         ComponentConfigurationView(
-            configuration: configuration,
+            configuration: configurationModel,
             componentView: componentView,
             configurationView: configurationView)
     }
 
     @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxConfigurationModel {
-            ComponentIllustration {
-                CheckboxDemo(model: model)
-            }
+    private func componentView() -> some View {
+        ComponentIllustration {
+            CheckboxDemo(configurationModel: configurationModel)
         }
     }
 
     @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxConfigurationModel {
-            CheckboxConfiguration(model: model)
-        }
+    private func configurationView() -> some View {
+        CheckboxConfiguration(configurationModel: configurationModel)
     }
 }
 
@@ -54,16 +50,16 @@ struct CheckboxPage: View {
 
 private struct CheckboxDemo: View {
 
-    @ObservedObject var model: CheckboxConfigurationModel
+    @ObservedObject var configurationModel: CheckboxConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
-            OUDSCheckbox(isOn: $model.indicatorState,
+            OUDSCheckbox(isOn: $configurationModel.indicatorState,
                          accessibilityLabel: "app_components_checkbox_hint_a11y".localized(), // No LocalizedStringKey inference in the component
-                         isError: model.isError)
-                .disabled(!model.enabled)
+                         isError: configurationModel.isError)
+                .disabled(!configurationModel.enabled)
             Spacer()
         }
         .padding(.all, theme.spaces.spaceFixedMedium)

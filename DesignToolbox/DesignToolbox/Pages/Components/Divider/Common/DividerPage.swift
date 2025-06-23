@@ -19,33 +19,29 @@ import SwiftUI
 
 struct DividerPage: View {
 
-    private let configuration: DividerConfigurationModel
+    private let configurationModel: DividerConfigurationModel
 
     init(orientation: DividerConfigurationModel.Orientation) {
-        configuration = DividerConfigurationModel(orientation: orientation)
+        configurationModel = DividerConfigurationModel(orientation: orientation)
     }
 
     var body: some View {
         ComponentConfigurationView(
-            configuration: configuration,
+            configuration: configurationModel,
             componentView: componentView,
             configurationView: configurationView)
     }
 
     @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? DividerConfigurationModel {
-            ComponentIllustration {
-                DividerDemo(model: model)
-            }
+    private func componentView() -> some View {
+        ComponentIllustration {
+            DividerDemo(configurationModel: configurationModel)
         }
     }
 
     @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? DividerConfigurationModel {
-            DividerConfiguration(model: model)
-        }
+    private func configurationView() -> some View {
+        DividerConfiguration(configurationModel: configurationModel)
     }
 }
 
@@ -53,22 +49,22 @@ struct DividerPage: View {
 
 struct DividerDemo: View {
 
-    @StateObject var model: DividerConfigurationModel
+    @StateObject var configurationModel: DividerConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         Group {
-            switch model.orientation {
+            switch configurationModel.orientation {
             case .horizontal:
                 VStack(alignment: .center) {
                     Spacer()
-                    OUDSHorizontalDivider(color: model.selectedColor)
+                    OUDSHorizontalDivider(color: configurationModel.selectedColor)
                     Spacer()
                 }
             case .vertical:
                 HStack(alignment: .center) {
                     Spacer()
-                    OUDSVerticalDivider(color: model.selectedColor)
+                    OUDSVerticalDivider(color: configurationModel.selectedColor)
                     Spacer()
                 }
             }

@@ -19,29 +19,25 @@ import SwiftUI
 
 struct ColoredSurfacePage: View {
 
-    private let configuration = ColoredSurfaceConfigurationModel()
+    private let configurationModel = ColoredSurfaceConfigurationModel()
 
     var body: some View {
         ComponentConfigurationView(
-            configuration: configuration,
+            configuration: configurationModel,
             componentView: componentView,
             configurationView: configurationView).modifier(DebugWCAG21RatiosModifier())
     }
 
     @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? ColoredSurfaceConfigurationModel {
-            ComponentIllustration {
-                ColoredSurfaceDemo(model: model)
-            }
+    private func componentView() -> some View {
+        ComponentIllustration {
+            ColoredSurfaceDemo(configurationModel: configurationModel)
         }
     }
 
     @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? ColoredSurfaceConfigurationModel {
-            ColoredSurfaceConfiguration(model: model)
-        }
+    private func configurationView() -> some View {
+        ColoredSurfaceConfiguration(configurationModel: configurationModel)
     }
 }
 
@@ -49,14 +45,14 @@ struct ColoredSurfacePage: View {
 
 private struct ColoredSurfaceDemo: View {
 
-    @ObservedObject var model: ColoredSurfaceConfigurationModel
+    @ObservedObject var configurationModel: ColoredSurfaceConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {
-            OUDSColoredSurface(color: model.selectedColor.toSurfaceColor(from: theme)) {
+            OUDSColoredSurface(color: configurationModel.selectedColor.toSurfaceColor(from: theme)) {
                 VStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {
-                    Text(model.selectedColor.formattedName)
+                    Text(configurationModel.selectedColor.formattedName)
                         .oudsForegroundColor(theme.colors.colorContentDefault)
 
                     OUDSButton(text: "app_components_button_label".localized(),

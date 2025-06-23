@@ -43,21 +43,21 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
 
     /// The illustration displaying the component according to the configuration.
     @ViewBuilder
-    let componentView: (_ configuration: ComponentConfiguration) -> Component
+    let componentView: () -> Component
 
     /// The view used to change the configuration.
     @ViewBuilder
-    let configurationView: (_ configuration: ComponentConfiguration) -> Configuration
+    let configurationView: () -> Configuration
 
     // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            componentView(configuration)
+            componentView()
             // No padding here, the component area keeps all the frame horizontaly
 
             DesignToolboxConfiguration {
-                configurationView(configuration)
+                configurationView()
             }
             .padding(.horizontal, theme.spaces.spaceFixedMedium)
 

@@ -19,31 +19,27 @@ import SwiftUI
 
 struct RadioPickerPage: View {
 
-    @StateObject private var configuration: RadioPickerConfigurationModel
+    @StateObject private var configurationModel: RadioPickerConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: RadioPickerConfigurationModel())
+        _configurationModel = StateObject(wrappedValue: RadioPickerConfigurationModel())
     }
 
     var body: some View {
         ComponentConfigurationView(
-            configuration: configuration,
+            configuration: configurationModel,
             componentView: componentView,
             configurationView: configurationView)
     }
 
     @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? RadioPickerConfigurationModel {
-            RadioPickerDemo(model: model)
-        }
+    private func componentView() -> some View {
+        RadioPickerDemo(configurationModel: configurationModel)
     }
 
     @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? RadioPickerConfigurationModel {
-            RadioPickerConfiguration(model: model)
-        }
+    private func configurationView() -> some View {
+        RadioPickerConfiguration(configurationModel: configurationModel)
     }
 }
 
@@ -51,22 +47,22 @@ struct RadioPickerPage: View {
 
 private struct RadioPickerDemo: View {
 
-    @State private var selection: String = "Choice_1" // cf model.populate()
-    @ObservedObject var model: RadioPickerConfigurationModel
+    @State private var selection: String = "Choice_1" // cf configurationModel.populate()
+    @ObservedObject var configurationModel: RadioPickerConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .center) {
             OUDSRadioPicker(selection: $selection,
-                            radios: model.populate(),
-                            placement: model.pickerPlacement,
-                            isOutlined: model.isOutlined,
-                            isReversed: model.isReversed,
-                            isError: model.isError,
-                            isReadOnly: model.isReadOnly,
-                            hasDivider: model.hasDivider)
+                            radios: configurationModel.populate(),
+                            placement: configurationModel.pickerPlacement,
+                            isOutlined: configurationModel.isOutlined,
+                            isReversed: configurationModel.isReversed,
+                            isError: configurationModel.isError,
+                            isReadOnly: configurationModel.isReadOnly,
+                            hasDivider: configurationModel.hasDivider)
                 .padding([.trailing, .leading], theme.spaces.spacePaddingInlineShort)
-                .disabled(!model.isEnabled)
+                .disabled(!configurationModel.isEnabled)
         }
     }
 }

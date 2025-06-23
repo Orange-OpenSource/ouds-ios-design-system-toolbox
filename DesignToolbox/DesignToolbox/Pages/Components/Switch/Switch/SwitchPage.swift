@@ -19,33 +19,29 @@ import SwiftUI
 
 struct SwitchPage: View {
 
-    @StateObject private var configuration: SwitchConfigurationModel
+    @StateObject private var configurationModel: SwitchConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: SwitchConfigurationModel())
+        _configurationModel = StateObject(wrappedValue: SwitchConfigurationModel())
     }
 
     var body: some View {
         ComponentConfigurationView(
-            configuration: configuration,
+            configuration: configurationModel,
             componentView: componentView,
             configurationView: configurationView)
     }
 
     @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? SwitchConfigurationModel {
-            ComponentIllustration {
-                SwitchDemo(model: model)
-            }
+    private func componentView() -> some View {
+        ComponentIllustration {
+            SwitchDemo(configurationModel: configurationModel)
         }
     }
 
     @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? SwitchConfigurationModel {
-            SwitchConfiguration(model: model)
-        }
+    private func configurationView() -> some View {
+        SwitchConfiguration(configurationModel: configurationModel)
     }
 }
 
@@ -53,15 +49,15 @@ struct SwitchPage: View {
 
 private struct SwitchDemo: View {
 
-    @ObservedObject var model: SwitchConfigurationModel
+    @ObservedObject var configurationModel: SwitchConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
-            OUDSSwitch(isOn: $model.selection,
+            OUDSSwitch(isOn: $configurationModel.selection,
                        accessibilityLabel: "app_components_switch_hint_a11y".localized()) // No LocalizedStringKey type inference in the component
-                .disabled(!model.enabled)
+                .disabled(!configurationModel.enabled)
             Spacer()
         }
         .padding(.all, theme.spaces.spaceFixedMedium)

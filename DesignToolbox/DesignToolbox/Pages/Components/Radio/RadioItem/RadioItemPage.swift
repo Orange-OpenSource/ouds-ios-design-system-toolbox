@@ -18,7 +18,6 @@ import SwiftUI
 // MARK: - Radio Item Page
 
 struct RadioItemPage: View {
-
     @StateObject private var configurationModel: BooleanControlItemConfigurationModel
 
     init() {
