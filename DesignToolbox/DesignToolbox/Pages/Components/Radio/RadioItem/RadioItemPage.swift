@@ -22,12 +22,10 @@ struct RadioItemPage: View {
     private let model: BooleanControlItemConfigurationModel
 
     init() {
-        let outlinedLabelKey = "app_components_radioButton_radioButtonItem_outlined_label"
-        let additionalLabelkey = "app_components_radioButton_radioButtonItem_additionalLabel_label"
-
         model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSRadioItem(isOn: $isOn",
-                                                     outlinedConfiguration: (value: false, outlinedConfigurationLabel: outlinedLabelKey),
-                                                     additionalLabelConfiguration: additionalLabelkey)
+                                                     outlinedConfiguration: (value: false,
+                                                                             outlinedConfigurationLabel: "app_components_radioButton_radioButtonItem_outlined_label"),
+                                                     additionalLabelConfiguration: "app_components_radioButton_radioButtonItem_additionalLabel_label".localized())
     }
 
     var body: some View {

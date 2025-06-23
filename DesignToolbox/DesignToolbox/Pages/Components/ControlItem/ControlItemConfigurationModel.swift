@@ -19,9 +19,10 @@ import SwiftUI
 /// The model shared between `ControlItemConfigurationModel` view and `ControlItemConfiguration` view.
 class ControlItemConfigurationModel: ComponentConfiguration {
 
-    // MARK: - Properties
     typealias OutlinedConfiguration = (value: Bool, outlinedConfigurationLabel: String)
     typealias AdditionalLabelConfiguration = String
+
+    // MARK: - Properties
 
     var componentInitCode: String = ""
     var additionalLabelConfiguration: AdditionalLabelConfiguration?

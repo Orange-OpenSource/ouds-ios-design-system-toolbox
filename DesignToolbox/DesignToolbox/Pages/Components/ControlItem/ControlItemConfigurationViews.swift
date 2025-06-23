@@ -59,12 +59,12 @@ struct ControlItemElementPage<Demo>: View where Demo: View {
 
 private struct ControlItemConfiguration: View {
 
-    // MARK: - Stored properties
+    // MARK: Stored properties
 
     @ObservedObject var model: ControlItemConfigurationModel
     @Environment(\.theme) private var theme
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
@@ -118,7 +118,7 @@ private struct ControlItemConfiguration: View {
     }
 }
 
-// MARK: Boolean Selection
+// MARK: - Boolean Selection
 
 private struct BooleanSelectionView: View {
 
@@ -129,9 +129,10 @@ private struct BooleanSelectionView: View {
     }
 }
 
-// MARK: Indeterminate Selection
+// MARK: - Indeterminate Selection
 
 private struct IndeterminateSelectionView: View {
+
     @ObservedObject var model: IndicatorControlItemConfigurationModel
 
     var body: some View {
