@@ -27,20 +27,11 @@ struct CheckboxPage: View {
     }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configurationModel,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView() -> some View {
-        CheckboxDemo(configurationModel: configurationModel)
-    }
-
-    @ViewBuilder
-    private func configurationView() -> some View {
-        CheckboxConfiguration(configurationModel: configurationModel)
+        ComponentConfigurationView(configuration: configurationModel) {
+            CheckboxDemo(configurationModel: configurationModel)
+        } configurationView: {
+            CheckboxConfiguration(configurationModel: configurationModel)
+        }
     }
 }
 

@@ -19,23 +19,18 @@ import SwiftUI
 
 struct LinkPage: View {
 
-    private let configurationModel = LinkConfigurationModel()
+    @StateObject private var configurationModel: LinkConfigurationModel
+
+    init() {
+        _configurationModel = StateObject(wrappedValue: LinkConfigurationModel())
+    }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configurationModel,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView() -> some View {
-        LinkDemo(configurationModel: configurationModel)
-    }
-
-    @ViewBuilder
-    private func configurationView() -> some View {
-        LinkConfiguration(configurationModel: configurationModel)
+        ComponentConfigurationView(configuration: configurationModel) {
+            LinkDemo(configurationModel: configurationModel)
+        } configurationView: {
+            LinkConfiguration(configurationModel: configurationModel)
+        }
     }
 }
 

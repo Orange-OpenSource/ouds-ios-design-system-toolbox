@@ -26,20 +26,11 @@ struct RadioPage: View {
     }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configurationModel,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView() -> some View {
-        RadioDemo(configurationModel: configurationModel)
-    }
-
-    @ViewBuilder
-    private func configurationView() -> some View {
-        RadioConfiguration(configurationModel: configurationModel)
+        ComponentConfigurationView(configuration: configurationModel) {
+            RadioDemo(configurationModel: configurationModel)
+        } configurationView: {
+            RadioConfiguration(configurationModel: configurationModel)
+        }
     }
 }
 

@@ -19,23 +19,18 @@ import SwiftUI
 
 struct ButtonPage: View {
 
-    private let configurationModel = ButtonConfigurationModel()
+    @StateObject private var configurationModel: ButtonConfigurationModel
+
+    init() {
+        _configurationModel = StateObject(wrappedValue: ButtonConfigurationModel())
+    }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configurationModel,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView() -> some View {
-        ButtonDemo(configurationModel: configurationModel)
-    }
-
-    @ViewBuilder
-    private func configurationView() -> some View {
-        ButtonConfiguration(configurationModel: configurationModel)
+        ComponentConfigurationView(configuration: configurationModel) {
+            ButtonDemo(configurationModel: configurationModel)
+        } configurationView: {
+            ButtonConfiguration(configurationModel: configurationModel)
+        }
     }
 }
 
@@ -77,6 +72,5 @@ private struct ButtonDemo: View {
         }
         .disabled(!configurationModel.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        // TODO: .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: configurationModel.onColoredSurface))
     }
 }

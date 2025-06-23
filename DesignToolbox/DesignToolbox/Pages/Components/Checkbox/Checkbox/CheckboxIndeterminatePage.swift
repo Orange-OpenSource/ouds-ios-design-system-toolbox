@@ -27,20 +27,11 @@ struct CheckboxIndeterminatePage: View {
     }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configurationModel,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView() -> some View {
-        CheckboxIndeterminateDemo(configurationModel: configurationModel)
-    }
-
-    @ViewBuilder
-    private func configurationView() -> some View {
-        CheckboxIndeterminateConfiguration(configurationModel: configurationModel)
+        ComponentConfigurationView(configuration: configurationModel) {
+            CheckboxIndeterminateDemo(configurationModel: configurationModel)
+        } configurationView: {
+            CheckboxIndeterminateConfiguration(configurationModel: configurationModel)
+        }
     }
 }
 

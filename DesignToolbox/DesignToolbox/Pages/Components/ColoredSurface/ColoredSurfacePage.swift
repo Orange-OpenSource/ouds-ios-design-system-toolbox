@@ -19,23 +19,18 @@ import SwiftUI
 
 struct ColoredSurfacePage: View {
 
-    private let configurationModel = ColoredSurfaceConfigurationModel()
+    @StateObject private var configurationModel: ColoredSurfaceConfigurationModel
+
+    init() {
+        _configurationModel = StateObject(wrappedValue: ColoredSurfaceConfigurationModel())
+    }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configurationModel,
-            componentView: componentView,
-            configurationView: configurationView).modifier(DebugWCAG21RatiosModifier())
-    }
-
-    @ViewBuilder
-    private func componentView() -> some View {
-        ColoredSurfaceDemo(configurationModel: configurationModel)
-    }
-
-    @ViewBuilder
-    private func configurationView() -> some View {
-        ColoredSurfaceConfiguration(configurationModel: configurationModel)
+        ComponentConfigurationView(configuration: configurationModel) {
+            ColoredSurfaceDemo(configurationModel: configurationModel)
+        } configurationView: {
+            ColoredSurfaceConfiguration(configurationModel: configurationModel)
+        }
     }
 }
 

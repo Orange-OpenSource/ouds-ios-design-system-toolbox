@@ -19,27 +19,18 @@ import SwiftUI
 
 struct DividerPage: View {
 
-    private let configurationModel: DividerConfigurationModel
+    @StateObject private var configurationModel: DividerConfigurationModel
 
     init(orientation: DividerConfigurationModel.Orientation) {
-        configurationModel = DividerConfigurationModel(orientation: orientation)
+        _configurationModel = StateObject(wrappedValue: DividerConfigurationModel(orientation: orientation))
     }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configurationModel,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView() -> some View {
-        DividerDemo(configurationModel: configurationModel)
-    }
-
-    @ViewBuilder
-    private func configurationView() -> some View {
-        DividerConfiguration(configurationModel: configurationModel)
+        ComponentConfigurationView(configuration: configurationModel) {
+            DividerDemo(configurationModel: configurationModel)
+        } configurationView: {
+            DividerConfiguration(configurationModel: configurationModel)
+        }
     }
 }
 

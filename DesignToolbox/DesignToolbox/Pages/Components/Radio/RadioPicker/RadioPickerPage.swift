@@ -26,20 +26,11 @@ struct RadioPickerPage: View {
     }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configurationModel,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView() -> some View {
-        RadioPickerDemo(configurationModel: configurationModel)
-    }
-
-    @ViewBuilder
-    private func configurationView() -> some View {
-        RadioPickerConfiguration(configurationModel: configurationModel)
+        ComponentConfigurationView(configuration: configurationModel) {
+            RadioPickerDemo(configurationModel: configurationModel)
+        } configurationView: {
+            RadioPickerConfiguration(configurationModel: configurationModel)
+        }
     }
 }
 

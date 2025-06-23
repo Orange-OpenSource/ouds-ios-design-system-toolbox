@@ -26,20 +26,11 @@ struct SwitchPage: View {
     }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configurationModel,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView() -> some View {
-        SwitchDemo(configurationModel: configurationModel)
-    }
-
-    @ViewBuilder
-    private func configurationView() -> some View {
-        SwitchConfiguration(configurationModel: configurationModel)
+        ComponentConfigurationView(configuration: configurationModel) {
+            SwitchDemo(configurationModel: configurationModel)
+        } configurationView: {
+            SwitchConfiguration(configurationModel: configurationModel)
+        }
     }
 }
 
