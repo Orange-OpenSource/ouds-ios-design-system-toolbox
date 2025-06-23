@@ -21,10 +21,6 @@ final class LinkConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
-    @Published var onColoredSurface: Bool = true {
-        didSet { updateCode() }
-    }
-
     @Published var enabled: Bool = true {
         didSet { updateCode() }
     }
@@ -42,7 +38,6 @@ final class LinkConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        onColoredSurface = false
         enabled = true
         text = String(localized: "app_components_link_label")
         layout = .textOnly

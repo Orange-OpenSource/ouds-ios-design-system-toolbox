@@ -64,6 +64,5 @@ private struct ColoredSurfaceDemo: View {
             }
         }
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
     }
 }

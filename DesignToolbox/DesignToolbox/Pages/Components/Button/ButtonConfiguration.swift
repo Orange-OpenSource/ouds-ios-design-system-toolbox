@@ -25,10 +25,6 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var onColoredSurface: Bool {
-        didSet { updateCode() }
-    }
-
     @Published var text: String
 
     @Published var layout: ButtonLayout {
@@ -47,7 +43,6 @@ final class ButtonConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        onColoredSurface = false
         text = String(localized: "app_components_button_label")
         layout = .textOnly
         hierarchy = .default

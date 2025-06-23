@@ -20,6 +20,10 @@ import SwiftUI
 open class ComponentConfiguration: ObservableObject {
     @Published var code: String = ""
 
+    @Published var onColoredSurface: Bool = false {
+        didSet { updateCode() }
+    }
+
     init() {
         updateCode()
     }
@@ -53,7 +57,7 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            ComponentIllustration(onColoredSurface: false, componentDemo: componentView)
+            ComponentIllustration(onColoredSurface: configuration.onColoredSurface, componentDemo: componentView)
             // No padding here, the component area keeps all the frame horizontaly
 
             DesignToolboxConfiguration {
