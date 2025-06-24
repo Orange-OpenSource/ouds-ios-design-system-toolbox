@@ -39,7 +39,7 @@ struct ColorTokenPage: View {
             Section { illustrationForRepository() } header: { header("Repository") }
             Section { illustrationForSurface() } header: { header("Surface") }
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMd)
     }
 
     // MARK: Private helpers

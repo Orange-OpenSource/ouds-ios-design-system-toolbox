@@ -80,7 +80,7 @@ private struct RadioDemo: View {
                 .disabled(!model.enabled)
             Spacer()
         }
-        .padding(.all, theme.spaces.spaceFixedMedium)
+        .padding(.all, theme.spaces.spaceFixedMd)
         .designToolboxColoredSurface(false)
     }
 }

@@ -87,7 +87,7 @@ struct DividerDemo: View {
             }
         }
         .frame(height: 44)
-        .padding(.all, theme.spaces.spaceFixedMedium)
+        .padding(.all, theme.spaces.spaceFixedMd)
         .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
     }
 }

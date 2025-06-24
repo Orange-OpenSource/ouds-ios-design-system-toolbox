@@ -68,9 +68,9 @@ private struct ColoredSurfaceDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {
+        HStack(alignment: .center, spacing: theme.spaces.spaceFixedMd) {
             OUDSColoredSurface(color: model.selectedColor.toSurfaceColor(from: theme)) {
-                VStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {
+                VStack(alignment: .center, spacing: theme.spaces.spaceFixedMd) {
                     Text(model.selectedColor.formattedName)
                         .oudsForegroundColor(theme.colors.colorContentDefault)
 
@@ -81,10 +81,10 @@ private struct ColoredSurfaceDemo: View {
                     OUDSLink(text: "app_components_link_label".localized(), indicator: .next) {}
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.all, theme.spaces.spaceFixedMedium)
+                .padding(.all, theme.spaces.spaceFixedMd)
             }
         }
-        .padding(.all, theme.spaces.spaceFixedMedium)
+        .padding(.all, theme.spaces.spaceFixedMd)
         .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
     }
 }

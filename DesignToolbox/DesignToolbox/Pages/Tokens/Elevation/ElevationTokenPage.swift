@@ -28,14 +28,14 @@ struct ElevationTokenPage: View {
                 DesignToolboxCode(code: "theme.elevations.elevationNone.elevation(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
 
-            Spacer().frame(height: theme.spaces.spaceFixedMedium)
+            Spacer().frame(height: theme.spaces.spaceFixedMd)
 
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
                 IllustrationElevation(namedElevation: elevationName)
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMd)
     }
 
     struct IllustrationElevation: View {

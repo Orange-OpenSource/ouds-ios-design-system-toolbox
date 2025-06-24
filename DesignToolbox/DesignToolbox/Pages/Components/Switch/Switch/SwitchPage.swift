@@ -79,7 +79,7 @@ private struct SwitchDemo: View {
                 .disabled(!model.enabled)
             Spacer()
         }
-        .padding(.all, theme.spaces.spaceFixedMedium)
+        .padding(.all, theme.spaces.spaceFixedMd)
         .designToolboxColoredSurface(false)
     }
 }

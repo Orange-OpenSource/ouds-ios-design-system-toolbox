@@ -52,18 +52,18 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
             componentView(configuration)
             // No padding here, the component area keeps all the frame horizontaly
 
             DesignToolboxConfiguration {
                 configurationView(configuration)
             }
-            .padding(.horizontal, theme.spaces.spaceFixedMedium)
+            .padding(.horizontal, theme.spaces.spaceFixedMd)
 
             DesignToolboxCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
-                .padding(.horizontal, theme.spaces.spaceFixedMedium)
+                .padding(.horizontal, theme.spaces.spaceFixedMd)
         }
-        .padding(.bottom, theme.spaces.spaceFixedMedium)
+        .padding(.bottom, theme.spaces.spaceFixedMd)
     }
 }

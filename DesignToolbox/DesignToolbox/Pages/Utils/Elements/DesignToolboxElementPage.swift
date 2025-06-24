@@ -36,7 +36,7 @@ struct DesignToolboxElementPage: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
                 if let image {
                     CardIllustration(icon: image)
                         .accessibilityHidden(true)
@@ -47,18 +47,18 @@ struct DesignToolboxElementPage: View {
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .accessibilityFocused($requestFocus)
-                    .padding(.horizontal, theme.spaces.spaceFixedMedium)
+                    .padding(.horizontal, theme.spaces.spaceFixedMd)
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)
             .padding(.horizontal, theme.spaces.spaceFixedNone)
-            .padding(.bottom, theme.spaces.spaceFixedMedium)
+            .padding(.bottom, theme.spaces.spaceFixedMd)
             .oudsBackground(theme.colors.colorBgPrimary)
 
             illustration
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
-                .padding(.bottom, theme.spaces.spaceFixedMedium)
+                .padding(.bottom, theme.spaces.spaceFixedMd)
                 .oudsBackground(theme.colors.colorBgPrimary)
         }
         .listStyle(.plain)

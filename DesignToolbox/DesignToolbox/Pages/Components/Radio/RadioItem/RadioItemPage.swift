@@ -55,7 +55,7 @@ private struct RadioItemDemo: View {
                       isReadOnly: model.isReadOnly,
                       hasDivider: model.divider)
             .disabled(!model.enabled)
-            .padding(.all, theme.spaces.spaceFixedMedium)
+            .padding(.all, theme.spaces.spaceFixedMd)
             .designToolboxColoredSurface(false)
     }
 
