@@ -38,6 +38,7 @@ struct CheckboxItemPage: View {
 private struct CheckboxItemDemo: View {
 
     @ObservedObject var configurationModel: BooleanControlItemConfigurationModel
+
     @Environment(\.theme) private var theme
 
     var body: some View {

@@ -29,7 +29,7 @@ struct ButtonPage: View {
         ComponentConfigurationView(configuration: configurationModel) {
             ButtonDemo(configurationModel: configurationModel)
         } configurationView: {
-            ButtonConfiguration(configurationModel: configurationModel)
+            ButtonConfigurationView(configurationModel: configurationModel)
         }
     }
 }
@@ -38,9 +38,9 @@ struct ButtonPage: View {
 
 private struct ButtonDemo: View {
 
-    @Environment(\.theme) private var theme
-
     @StateObject var configurationModel: ButtonConfigurationModel
+
+    @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center) {

@@ -155,11 +155,11 @@ extension OUDSButton.Hierarchy: @retroactive CaseIterable, @retroactive CustomSt
 
 // MARK: - Button Configuration View
 
-struct ButtonConfiguration: View {
-
-    @Environment(\.theme) private var theme
+struct ButtonConfigurationView: View {
 
     @StateObject var configurationModel: ButtonConfigurationModel
+
+    @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {

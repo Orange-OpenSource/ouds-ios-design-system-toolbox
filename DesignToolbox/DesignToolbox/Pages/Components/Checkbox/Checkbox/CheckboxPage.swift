@@ -40,6 +40,7 @@ struct CheckboxPage: View {
 private struct CheckboxDemo: View {
 
     @ObservedObject var configurationModel: CheckboxConfigurationModel
+
     @Environment(\.theme) private var theme
 
     var body: some View {

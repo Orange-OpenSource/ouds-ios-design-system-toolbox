@@ -15,9 +15,11 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-/// The common protocol used to define the configuration of each component.
+// MARK: - Component Configuration
 
+/// The common class used to define the configuration of each component.
 open class ComponentConfiguration: ObservableObject {
+
     @Published var code: String = ""
 
     @Published var onColoredSurface: Bool = false {
@@ -34,6 +36,8 @@ open class ComponentConfiguration: ObservableObject {
     func updateCode() {}
 }
 
+// MARK: - Component Configuration View
+
 /// Used to create an area with `Component` updated according to the `configuration`
 /// modified by user using elements presented in `Configuration` view.
 struct ComponentConfigurationView<Component, Configuration>: View where Component: View, Configuration: View {
@@ -46,18 +50,16 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
     @ObservedObject var configuration: ComponentConfiguration
 
     /// The illustration displaying the component according to the configuration.
-    @ViewBuilder
-    let componentView: () -> Component
+    @ViewBuilder let componentView: () -> Component
 
     /// The view used to change the configuration.
-    @ViewBuilder
-    let configurationView: () -> Configuration
+    @ViewBuilder let configurationView: () -> Configuration
 
     // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            ComponentIllustration(onColoredSurface: configuration.onColoredSurface, componentDemo: componentView)
+            ComponentShowcases(onColoredSurface: configuration.onColoredSurface, componentDemo: componentView)
             // No padding here, the component area keeps all the frame horizontaly
 
             DesignToolboxConfiguration {
@@ -72,10 +74,11 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
     }
 }
 
+// MARK: - Component Illustration
+
 /// Used to show the Demo of the `Component` on a colored surface or on
 /// standard background (color background primary)
-
-private struct ComponentIllustration<ComponentDemo>: View where ComponentDemo: View {
+private struct ComponentShowcases<ComponentDemo>: View where ComponentDemo: View {
 
     @Environment(\.colorScheme) private var colorScheme
 
@@ -85,8 +88,7 @@ private struct ComponentIllustration<ComponentDemo>: View where ComponentDemo: V
     var onColoredSurface: Bool
 
     /// The view of the component in the desired configuration.
-    @ViewBuilder
-    var componentDemo: () -> ComponentDemo
+    @ViewBuilder var componentDemo: () -> ComponentDemo
 
     // MARK: Body
 

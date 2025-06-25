@@ -40,6 +40,7 @@ struct CheckboxIndeterminatePage: View {
 private struct CheckboxIndeterminateDemo: View {
 
     @ObservedObject var configurationModel: CheckboxIndeterminateConfigurationModel
+
     @Environment(\.theme) private var theme
 
     var body: some View {
