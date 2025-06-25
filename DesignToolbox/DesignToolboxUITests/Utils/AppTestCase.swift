@@ -67,7 +67,7 @@ open class AppTestCase: XCTestCase {
 
     /// Tap on a UI element seen as a image with the given name
     @MainActor func tapImage(withName name: String, _ app: XCUIApplication) {
-        let imageToTap = app.images[name]
+        let imageToTap = app.images[name].firstMatch
         XCTAssertTrue(imageToTap.exists, "The image with name '\(name)' does not exist")
         imageToTap.tap()
     }

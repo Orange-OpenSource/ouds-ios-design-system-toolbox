@@ -18,19 +18,19 @@ import SwiftUI
 // MARK: - Radio Item Page
 
 struct RadioItemPage: View {
-
-    private let model: BooleanControlItemConfigurationModel
+    @StateObject private var configurationModel: BooleanControlItemConfigurationModel
 
     init() {
-        model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSRadioItem(isOn: $isOn",
-                                                     outlinedConfiguration: (value: false,
-                                                                             outlinedConfigurationLabel: "app_components_radioButton_radioButtonItem_outlined_label"),
-                                                     additionalLabelConfiguration: "app_components_radioButton_radioButtonItem_additionalLabel_label".localized())
+        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSRadioItem(isOn: $isOn",
+                                                         outlinedConfiguration: (value: false,
+                                                                                 outlinedConfigurationLabel: "app_components_radioButton_radioButtonItem_outlined_label"),
+                                                         additionalLabelConfiguration: "app_components_radioButton_radioButtonItem_additionalLabel_label".localized())
+        _configurationModel = StateObject(wrappedValue: model)
     }
 
     var body: some View {
-        ControlItemElementPage(model: model) {
-            RadioItemDemo(model: model)
+        ControlItemElementPage(configurationModel: configurationModel) {
+            RadioItemDemo(configurationModel: configurationModel)
         }
     }
 }
@@ -39,30 +39,29 @@ struct RadioItemPage: View {
 
 private struct RadioItemDemo: View {
 
-    @ObservedObject var model: BooleanControlItemConfigurationModel
+    @ObservedObject var configurationModel: BooleanControlItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSRadioItem(isOn: $model.isOn,
-                      label: model.labelText,
-                      additionalLabel: model.additionalLabelText,
-                      helper: model.helperText,
+        OUDSRadioItem(isOn: $configurationModel.isOn,
+                      label: configurationModel.labelText,
+                      additionalLabel: configurationModel.additionalLabelText,
+                      helper: configurationModel.helperText,
                       icon: icon,
-                      flipIcon: model.flipIcon,
-                      isOutlined: model.outlined,
-                      isReversed: model.isReversed,
-                      isError: model.isError,
-                      isReadOnly: model.isReadOnly,
-                      hasDivider: model.divider)
-            .disabled(!model.enabled)
+                      flipIcon: configurationModel.flipIcon,
+                      isOutlined: configurationModel.outlined,
+                      isReversed: configurationModel.isReversed,
+                      isError: configurationModel.isError,
+                      isReadOnly: configurationModel.isReadOnly,
+                      hasDivider: configurationModel.divider)
+            .disabled(!configurationModel.enabled)
             .padding(.all, theme.spaces.spaceFixedMedium)
-            .designToolboxColoredSurface(false)
     }
 
     // Need here that system name, a11y managed in component
     // swiftlint:disable accessibility_label_for_image
     private var icon: Image? {
-        model.icon ? Image(systemName: "figure.handball") : nil
+        configurationModel.icon ? Image(systemName: "figure.handball") : nil
     }
     // swiftlint:enable accessibility_label_for_image
 }

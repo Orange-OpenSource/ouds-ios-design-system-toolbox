@@ -15,10 +15,16 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-/// The common protocol used to define the configuration of each component.
+// MARK: - Component Configuration
 
+/// The common class used to define the configuration of each component.
 open class ComponentConfiguration: ObservableObject {
+
     @Published var code: String = ""
+
+    @Published var onColoredSurface: Bool = false {
+        didSet { updateCode() }
+    }
 
     init() {
         updateCode()
@@ -29,6 +35,8 @@ open class ComponentConfiguration: ObservableObject {
     // Overwride this function and update code when configuration changed
     func updateCode() {}
 }
+
+// MARK: - Component Configuration View
 
 /// Used to create an area with `Component` updated according to the `configuration`
 /// modified by user using elements presented in `Configuration` view.
@@ -42,22 +50,20 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
     @ObservedObject var configuration: ComponentConfiguration
 
     /// The illustration displaying the component according to the configuration.
-    @ViewBuilder
-    let componentView: (_ configuration: ComponentConfiguration) -> Component
+    @ViewBuilder let componentView: () -> Component
 
     /// The view used to change the configuration.
-    @ViewBuilder
-    let configurationView: (_ configuration: ComponentConfiguration) -> Configuration
+    @ViewBuilder let configurationView: () -> Configuration
 
     // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            componentView(configuration)
+            ComponentShowcases(onColoredSurface: configuration.onColoredSurface, componentDemo: componentView)
             // No padding here, the component area keeps all the frame horizontaly
 
             DesignToolboxConfiguration {
-                configurationView(configuration)
+                configurationView()
             }
             .padding(.horizontal, theme.spaces.spaceFixedMedium)
 
@@ -65,5 +71,41 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
                 .padding(.horizontal, theme.spaces.spaceFixedMedium)
         }
         .padding(.bottom, theme.spaces.spaceFixedMedium)
+    }
+}
+
+// MARK: - Component Illustration
+
+/// Used to show the Demo of the `Component` on a colored surface or on
+/// standard background (color background primary)
+private struct ComponentShowcases<ComponentDemo>: View where ComponentDemo: View {
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    // MARK: Stored properties
+
+    /// Flag to indicates if component is demonstrated on a colored surface
+    var onColoredSurface: Bool
+
+    /// The view of the component in the desired configuration.
+    @ViewBuilder var componentDemo: () -> ComponentDemo
+
+    // MARK: Body
+
+    var body: some View {
+        VStack(alignment: .center) {
+            if onColoredSurface {
+                componentDemo()
+                    .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: true))
+            } else {
+                componentDemo()
+                    .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
+
+                // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
+                componentDemo()
+                    .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
+                    .colorScheme(colorScheme == .dark ? .light : .dark)
+            }
+        }
     }
 }

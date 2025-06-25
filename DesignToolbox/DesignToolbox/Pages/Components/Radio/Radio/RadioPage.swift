@@ -19,47 +19,17 @@ import SwiftUI
 
 struct RadioPage: View {
 
-    @StateObject private var configuration: RadioConfigurationModel
+    @StateObject private var configurationModel: RadioConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: RadioConfigurationModel())
+        _configurationModel = StateObject(wrappedValue: RadioConfigurationModel())
     }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configuration,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? RadioConfigurationModel {
-            RadioIllustration(model: model)
-        }
-    }
-
-    @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? RadioConfigurationModel {
-            RadioConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: - Radio Illustration
-
-private struct RadioIllustration: View {
-
-    let model: RadioConfigurationModel
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center) {
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            RadioDemo(model: model)
-            RadioDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
+        ComponentConfigurationView(configuration: configurationModel) {
+            RadioDemo(configurationModel: configurationModel)
+        } configurationView: {
+            RadioConfiguration(configurationModel: configurationModel)
         }
     }
 }
@@ -68,19 +38,18 @@ private struct RadioIllustration: View {
 
 private struct RadioDemo: View {
 
-    @ObservedObject var model: RadioConfigurationModel
+    @ObservedObject var configurationModel: RadioConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
-            OUDSRadio(isOn: $model.selection,
+            OUDSRadio(isOn: $configurationModel.selection,
                       accessibilityLabel: "app_components_radioButton_hint_a11y".localized(), // No LocalizedStringKey type inference in the component
-                      isError: model.isError)
-                .disabled(!model.enabled)
+                      isError: configurationModel.isError)
+                .disabled(!configurationModel.enabled)
             Spacer()
         }
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .designToolboxColoredSurface(false)
     }
 }

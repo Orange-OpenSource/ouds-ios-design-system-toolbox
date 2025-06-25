@@ -71,20 +71,20 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
 
 struct CheckboxConfiguration: View {
 
-    @ObservedObject var model: CheckboxConfigurationModel
+    @ObservedObject var configurationModel: CheckboxConfigurationModel
 
     @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
-                .disabled(model.isError)
+            OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+                .disabled(configurationModel.isError)
 
-            OUDSSwitchItem("app_components_common_error_label", isOn: $model.isError)
-                .disabled(!model.enabled)
+            OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
+                .disabled(!configurationModel.enabled)
 
-            OUDSSwitchItem("app_components_controlItem_selection_label", isOn: $model.indicatorState)
-                .disabled(!model.enabled)
+            OUDSSwitchItem("app_components_controlItem_selection_label", isOn: $configurationModel.indicatorState)
+                .disabled(!configurationModel.enabled)
         }
     }
 }

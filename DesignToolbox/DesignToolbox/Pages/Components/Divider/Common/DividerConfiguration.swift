@@ -63,7 +63,7 @@ struct DividerConfiguration: View {
 
     // MARK: Stored properties
 
-    @StateObject var model: DividerConfigurationModel
+    @StateObject var configurationModel: DividerConfigurationModel
 
     // MARK: Body
 
@@ -71,13 +71,13 @@ struct DividerConfiguration: View {
         DesignToolboxColorPicker {
             ForEach(OUDSDividerColor.allCases, id: \.id) { dividerColor in
                 Button {
-                    model.selectedColor = dividerColor
+                    configurationModel.selectedColor = dividerColor
                 } label: {
                     ColorEntry(dividerColor: dividerColor)
                 }
             }
         } selectedColor: {
-            ColorEntry(dividerColor: model.selectedColor)
+            ColorEntry(dividerColor: configurationModel.selectedColor)
         }
     }
 }

@@ -26,7 +26,7 @@ struct RadioPickerElement: DesignToolboxElement {
         image = Image(decorative: "il_component_radio").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: Image(decorative: "il_component_radio").renderingMode(.original),
+            image: nil,
             description: "app_components_radioPicker_description_text",
             illustration: AnyView(RadioPickerPage())))
     }

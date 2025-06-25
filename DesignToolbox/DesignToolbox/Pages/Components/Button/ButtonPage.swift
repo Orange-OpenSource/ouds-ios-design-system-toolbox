@@ -19,47 +19,17 @@ import SwiftUI
 
 struct ButtonPage: View {
 
-    private let configuration = ButtonConfigurationModel()
+    @StateObject private var configurationModel: ButtonConfigurationModel
+
+    init() {
+        _configurationModel = StateObject(wrappedValue: ButtonConfigurationModel())
+    }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configuration,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? ButtonConfigurationModel {
-            ButtonIllustration(model: model)
-        }
-    }
-
-    @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? ButtonConfigurationModel {
-            ButtonConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: Button Illustration
-
-struct ButtonIllustration: View {
-
-    @Environment(\.colorScheme) private var colorScheme
-    @ObservedObject var model: ButtonConfigurationModel
-
-    var body: some View {
-        VStack(alignment: .center) {
-            if model.onColoredSurface {
-                ButtonDemo(model: model)
-            } else {
-                ButtonDemo(model: model)
-                // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-                ButtonDemo(model: model)
-                    .colorScheme(colorScheme == .dark ? .light : .dark)
-            }
+        ComponentConfigurationView(configuration: configurationModel) {
+            ButtonDemo(configurationModel: configurationModel)
+        } configurationView: {
+            ButtonConfigurationView(configurationModel: configurationModel)
         }
     }
 }
@@ -68,40 +38,39 @@ struct ButtonIllustration: View {
 
 private struct ButtonDemo: View {
 
-    @Environment(\.theme) private var theme
+    @StateObject var configurationModel: ButtonConfigurationModel
 
-    @StateObject var model: ButtonConfigurationModel
+    @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
 
             // It is not allowed to place a Negative button on colored surface
-            if model.hierarchy == .negative, model.onColoredSurface {
+            if configurationModel.hierarchy == .negative, configurationModel.onColoredSurface {
                 Text("app_components_button_negative_hierary_notAllowed_text")
             } else {
-                switch model.layout {
+                switch configurationModel.layout {
                 case .iconOnly:
                     OUDSButton(icon: Image(decorative: "ic_heart"),
                                accessibilityLabel: "app_components_button_icon_a11y".localized(),
-                               hierarchy: model.hierarchy,
-                               style: model.style) {}
+                               hierarchy: configurationModel.hierarchy,
+                               style: configurationModel.style) {}
                 case .textOnly:
-                    OUDSButton(text: model.text,
-                               hierarchy: model.hierarchy,
-                               style: model.style) {}
+                    OUDSButton(text: configurationModel.text,
+                               hierarchy: configurationModel.hierarchy,
+                               style: configurationModel.style) {}
                 case .iconAndText:
                     OUDSButton(icon: Image(decorative: "ic_heart"),
-                               text: model.text,
-                               hierarchy: model.hierarchy,
-                               style: model.style) {}
+                               text: configurationModel.text,
+                               hierarchy: configurationModel.hierarchy,
+                               style: configurationModel.style) {}
                 }
             }
 
             Spacer()
         }
-        .disabled(!model.enabled)
+        .disabled(!configurationModel.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: model.onColoredSurface))
     }
 }
