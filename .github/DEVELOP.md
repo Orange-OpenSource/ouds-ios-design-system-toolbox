@@ -10,6 +10,7 @@
   * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
   * [Snapshots tests in demo app](#snapshots-tests-in-demo-app)
   * [UI tests in demo app](#ui-tests-in-demo-app)
+  * [Manual tests using demo app](#manual-tests-using-demo-app)
 - [Build phases](#build-phases)
 - [Targets](#targets)
 - [Certificates, profiles and identifiers](#certificates-profiles-and-identifiers)
@@ -259,6 +260,12 @@ To run these UI tests follow some steps:
 4. Select *DesignToolboxUITests* scheme
 5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
+
+### Manual tests using demo app
+
+Do not forget to make manual tests of the library using the design system toolbox app!
+Indeed some features like *Voice Over*, *dynamic fonts*, high contrast and motion managements, or color contrasts, are hardly testable automatically.
+These types of tests should be done manualy with for example the help of the [Accessibility Inspector](https://developer.apple.com/documentation/accessibility/accessibility-inspector).
 
 ## Build phases
 
