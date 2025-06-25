@@ -120,16 +120,19 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
                                         label: "Virgin Holy Lava",
                                         additionalLabel: "Very spicy",
                                         helper: "No alcohol, only tasty flavors",
-                                        icon: Image(systemName: "flame")),
+                                        icon: Image(systemName: "flame"),
+                                        accessibilityIdentifier: "Virgin Holy Lava"),
 
             OUDSRadioPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
                                         helper: "From Brewdog company",
-                                        icon: Image(systemName: "dog.fill")),
+                                        icon: Image(systemName: "dog.fill"),
+                                        accessibilityIdentifier: "IPA beer"),
 
             OUDSRadioPickerData<String>(tag: "Choice_3",
                                         label: "Mineral water",
-                                        icon: Image(systemName: "waterbottle.fill")),
+                                        icon: Image(systemName: "waterbottle.fill"),
+                                        accessibilityIdentifier: "Mineral water"),
         ]
     }
 }

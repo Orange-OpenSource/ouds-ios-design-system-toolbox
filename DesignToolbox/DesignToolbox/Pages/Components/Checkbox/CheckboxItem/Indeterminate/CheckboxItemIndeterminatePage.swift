@@ -54,6 +54,7 @@ private struct CheckboxItemIndeterminateDemo: View {
             .disabled(!configurationModel.enabled)
             .padding(.all, theme.spaces.spaceFixedMedium)
             .designToolboxColoredSurface(false)
+            .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItemIndeterminate)
     }
 
     // Need here that system name, a11y managed in component

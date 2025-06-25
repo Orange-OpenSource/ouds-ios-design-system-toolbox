@@ -47,6 +47,7 @@ private struct SwitchDemo: View {
             OUDSSwitch(isOn: $configurationModel.selection,
                        accessibilityLabel: "app_components_switch_hint_a11y".localized()) // No LocalizedStringKey type inference in the component
                 .disabled(!configurationModel.enabled)
+                .accessibilityIdentifier(A11YIdentifiers.componentSwitch)
             Spacer()
         }
         .padding(.all, theme.spaces.spaceFixedMedium)

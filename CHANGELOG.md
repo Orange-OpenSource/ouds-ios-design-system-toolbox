@@ -8,10 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [DesignToolbox] More UI tests for a11Y configurations
 - [DesignToolbox] Add in about page link to online CHANGELOG (Orange-OpenSource/ouds-ios#678)
 
 ### Changed
 
+- [Library] Optional accessibility identifiers for items of radio picker and checkbox picker components
 - [DesignToolbox] Simplify component demo Screen (Orange-OpenSource/ouds-ios#721)
 - [DesignToolbox] Mutualize configuration of `control items` demos (`switch`, `radio button`, `checkbox`) (Orange-OpenSource/ouds-ios#621) 
 - [Library] Color raw tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
