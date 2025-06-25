@@ -48,6 +48,7 @@ private struct RadioDemo: View {
                       accessibilityLabel: "app_components_radioButton_hint_a11y".localized(), // No LocalizedStringKey type inference in the component
                       isError: configurationModel.isError)
                 .disabled(!configurationModel.enabled)
+                .accessibilityIdentifier(A11YIdentifiers.componentRadio)
             Spacer()
         }
         .padding(.all, theme.spaces.spaceFixedMedium)

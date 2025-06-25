@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSComponents
 import XCTest
 
 // swiftlint:disable nslocalizedstring_key
@@ -25,7 +26,12 @@ open class AppTestCase: XCTestCase {
     private let testBundle = Bundle(for: AppTestCase.self)
 
     func wording(for key: String) -> String {
-        key.localized(bundle: testBundle)
+        let wording = key.localized(bundle: testBundle)
+        if wording != key {
+            return wording
+        } else { // If wording and key are the same, possible to have a key and not a wording, check the other bundle
+            return key.localized(bundle: Bundle.OUDSComponents)
+        }
     }
 
     // MARK: - Tuning
@@ -57,8 +63,7 @@ open class AppTestCase: XCTestCase {
 
     // MARK: - Texts
 
-    @MainActor
-    func assertStaticTextExists(_ content: String, _ app: XCUIApplication) {
+    @MainActor func assertStaticTextExists(_ content: String, _ app: XCUIApplication) {
         let text = app.staticTexts[content]
         XCTAssertTrue(text.exists, "The expected text content '\(content)' does not exist")
     }
@@ -72,11 +77,101 @@ open class AppTestCase: XCTestCase {
         imageToTap.tap()
     }
 
+    // MARK: - Other elements
+
+    /// Returns buttons with the given accessiiblity identifier
+    @MainActor func buttons(withA11yIdentifier id: String, _ app: XCUIApplication) -> XCUIElementQuery {
+        let elements = app.buttons.matching(identifier: id)
+        XCTAssertTrue(elements.containsElements(), "No matching button with accessibility identifier '\(id)'")
+        return elements
+    }
+
+    /// Returns elements with the given accessiiblity identifier
+    @MainActor func otherElements(withA11yIdentifier id: String, _ app: XCUIApplication) -> XCUIElementQuery {
+        let elements = app.otherElements.matching(identifier: id)
+        XCTAssertTrue(elements.containsElements(), "No matching element with accessibility identifier '\(id)'")
+        return elements
+    }
+
+    /// Returns element with the given accessiiblity label
+    @MainActor func otherElement(withA11yLabel label: String, _ app: XCUIApplication) -> XCUIElement {
+        let element = app.otherElements[label]
+        XCTAssertTrue(element.exists, "No matching element with accessibility label '\(label)'")
+        return element
+    }
+
     // MARK: - Navigations helpers
 
     /// Opens the page of the components, i.e. tap on the 2nd of the tab bar
     @MainActor func goToComponentsSheet(_ app: XCUIApplication) {
         app.tabBars.buttons.element(boundBy: 1).tap()
+    }
+
+    @MainActor
+    func swipeFromDownToUp(_ app: XCUIApplication) {
+        app.swipeUp()
+    }
+
+    // MARK: - Helpers
+
+    /// Checks if the first element with this a11y identifier exists and has the wording with the given value as key
+    @MainActor func check(value: String, ofElementWithIdentifier identifier: String, _ app: XCUIApplication) {
+        let element = otherElements(withA11yIdentifier: identifier, app).firstMatch
+        let expectedValue = wording(for: value)
+        if element.exists {
+            if let currentValue = element.value as? String {
+                XCTAssertTrue(currentValue == expectedValue,
+                              "The expected accessible value for the element is '\(expectedValue)' and not '\(currentValue)'")
+            } else {
+                XCTFail("The value to comapre does not exist!")
+            }
+        } else {
+            XCTFail("The element does not exists or the demo has been changed since!")
+        }
+    }
+
+    /// Checks if the first element with this a11y label exists and has the wording with the given value as key
+    @MainActor func check(value: String, ofElementWithLabel label: String, _ app: XCUIApplication) {
+        let element = otherElement(withA11yLabel: label, app).firstMatch
+        if element.exists, let currentValue = element.value as? String {
+            let expectedValue = wording(for: value)
+            XCTAssertTrue(currentValue == expectedValue,
+                          "The expected accessible value for the element is '\(expectedValue)' and not '\(currentValue)'")
+        } else {
+            XCTFail("The element is not the expected one or does not exist or has no value, or the demo has been changed since!")
+        }
+    }
+
+    /// Checks fior the given element the value and a11y hint and a11y label
+    @MainActor func assert(element: XCUIElement, value: String? = nil, a11yHint: String? = nil) {
+        // Element must exist
+        XCTAssertTrue(element.exists)
+
+        // If a value is under test, check
+        if let value {
+            if let elementValue = element.value, let elementValueAsString = elementValue as? String {
+                XCTAssertTrue(value == elementValueAsString, "'\(elementValueAsString)' is not equal to '\(value)'")
+            } else {
+                XCTFail("Element value is not the expected one")
+            }
+        } else {
+            if let elementValue = element.value, let elementValueAsString = elementValue as? String {
+                XCTAssertTrue(elementValueAsString.isEmpty, "'\(elementValueAsString)' is not empty value")
+            } else {
+                XCTFail("Element value is not in the expected state (nil or not empty or not convertible to String")
+            }
+        }
+
+        // If an A11Y hint is under test, check
+        if let a11yHint {
+            if let elementA11YHint = element.accessibilityHint {
+                XCTAssertTrue(a11yHint == elementA11YHint, "'\(elementA11YHint)' is not equal to '\(a11yHint)'")
+            } else {
+                XCTFail("Element a11y hint is not defined")
+            }
+        } else {
+            XCTAssertNil(element.accessibilityHint)
+        }
     }
 }
 
@@ -90,6 +185,20 @@ extension String {
     func localized(bundle: Bundle) -> String {
         NSLocalizedString(self, bundle: bundle, comment: "")
     }
+}
+
+// MARK: - Extension of XCUIElementQuery
+
+extension XCUIElementQuery {
+
+    // Ok, I know, this is crappy, but the SwiftFormat formatter
+    // converts 'count > 0' to '!isEmpty' even if API not available
+    // (┛❍ᴥ❍﻿)┛彡┻━┻
+    // swiftlint:disable empty_count
+    func containsElements() -> Bool {
+        count > 0
+    }
+    // swiftlint:enable empty_count
 }
 
 // swiftlint:enable nslocalizedstring_key
