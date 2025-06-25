@@ -26,7 +26,7 @@ struct CheckboxPickerElement: DesignToolboxElement {
         image = Image(decorative: "il_component_checkbox").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: Image(decorative: "il_component_checkbox").renderingMode(.original),
+            image: nil,
             description: "app_components_checkboxPicker_description_text",
             illustration: AnyView(CheckboxPickerPage())))
     }

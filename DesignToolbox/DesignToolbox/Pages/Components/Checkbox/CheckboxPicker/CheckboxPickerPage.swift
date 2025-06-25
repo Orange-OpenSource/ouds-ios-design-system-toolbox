@@ -19,53 +19,40 @@ import SwiftUI
 
 struct CheckboxPickerPage: View {
 
-    @StateObject private var configuration: CheckboxPickerConfigurationModel
+    @StateObject private var configurationModel: CheckboxPickerConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: CheckboxPickerConfigurationModel())
+        _configurationModel = StateObject(wrappedValue: CheckboxPickerConfigurationModel())
     }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configuration,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxPickerConfigurationModel {
-            CheckboxPickerIllustration(model: model)
-        }
-    }
-
-    @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxPickerConfigurationModel {
-            CheckboxPickerConfiguration(model: model)
+        ComponentConfigurationView(configuration: configurationModel) {
+            CheckboxPickerDemo(configurationModel: configurationModel)
+        } configurationView: {
+            CheckboxPickerConfiguration(configurationModel: configurationModel)
         }
     }
 }
 
-// MARK: - Checkbox Picker Illustration
+// MARK: - Checkbox Picker Demo
 
-private struct CheckboxPickerIllustration: View {
+private struct CheckboxPickerDemo: View {
 
-    @State private var selections: [String] = ["Choice_1"] // cf model.populate()
-    @ObservedObject var model: CheckboxPickerConfigurationModel
+    @State private var selections: [String] = ["Choice_1"] // cf configurationModel.populate()
+    @ObservedObject var configurationModel: CheckboxPickerConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .center) {
             OUDSCheckboxPicker(selections: $selections,
-                               checkboxes: model.populate(),
-                               placement: model.pickerPlacement,
-                               isReversed: model.isReversed,
-                               isError: model.isError,
-                               isReadOnly: model.isReadOnly,
-                               hasDivider: model.hasDivider)
+                               checkboxes: configurationModel.populate(),
+                               placement: configurationModel.pickerPlacement,
+                               isReversed: configurationModel.isReversed,
+                               isError: configurationModel.isError,
+                               isReadOnly: configurationModel.isReadOnly,
+                               hasDivider: configurationModel.hasDivider)
                 .padding([.trailing, .leading], theme.spaces.spacePaddingInlineShort)
-                .disabled(!model.isEnabled)
+                .disabled(!configurationModel.isEnabled)
         }
     }
 }

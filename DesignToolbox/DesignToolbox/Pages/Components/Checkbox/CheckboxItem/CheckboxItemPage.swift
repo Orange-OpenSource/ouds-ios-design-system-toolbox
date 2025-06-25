@@ -19,16 +19,17 @@ import SwiftUI
 
 struct CheckboxItemPage: View {
 
-    @StateObject private var configurationModel: BooleanControlItemConfigurationModel
+    @StateObject private var configurationModel: CheckboxItemConfigurationModel
 
     init() {
-        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItem(isOn: $isOn")
-        _configurationModel = StateObject(wrappedValue: model)
+        _configurationModel = StateObject(wrappedValue: CheckboxItemConfigurationModel())
     }
 
     var body: some View {
-        ControlItemElementPage(configurationModel: configurationModel) {
+        ComponentConfigurationView(configuration: configurationModel) {
             CheckboxItemDemo(configurationModel: configurationModel)
+        } configurationView: {
+            CheckboxItemConfiguration(configurationModel: configurationModel)
         }
     }
 }
@@ -37,12 +38,11 @@ struct CheckboxItemPage: View {
 
 private struct CheckboxItemDemo: View {
 
-    @ObservedObject var configurationModel: BooleanControlItemConfigurationModel
-
+    @ObservedObject var configurationModel: CheckboxItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSCheckboxItem(isOn: $configurationModel.isOn,
+        OUDSCheckboxItem(isOn: $configurationModel.indicatorState,
                          label: configurationModel.labelText,
                          helper: configurationModel.helperText,
                          icon: icon,
@@ -53,7 +53,6 @@ private struct CheckboxItemDemo: View {
                          hasDivider: configurationModel.divider)
             .disabled(!configurationModel.enabled)
             .padding(.all, theme.spaces.spaceFixedMedium)
-            .designToolboxColoredSurface(false)
     }
 
     // Need here that system name, a11y managed in component

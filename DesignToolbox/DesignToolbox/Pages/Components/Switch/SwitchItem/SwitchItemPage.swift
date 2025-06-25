@@ -15,45 +15,43 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-// MARK: - Checkbox Item Page
+// MARK: - Switch Item Page
 
-struct CheckboxItemPage: View {
+struct SwitchItemPage: View {
 
     @StateObject private var configurationModel: BooleanControlItemConfigurationModel
 
     init() {
-        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItem(isOn: $isOn")
+        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSRadioItem(isOn: $isOn")
         _configurationModel = StateObject(wrappedValue: model)
     }
 
     var body: some View {
         ControlItemElementPage(configurationModel: configurationModel) {
-            CheckboxItemDemo(configurationModel: configurationModel)
+            SwitchItemDemo(configurationModel: configurationModel)
         }
     }
 }
 
-// MARK: - Checkbox Item Demo
+// MARK: - Switch Item Demo
 
-private struct CheckboxItemDemo: View {
+private struct SwitchItemDemo: View {
 
     @ObservedObject var configurationModel: BooleanControlItemConfigurationModel
-
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSCheckboxItem(isOn: $configurationModel.isOn,
-                         label: configurationModel.labelText,
-                         helper: configurationModel.helperText,
-                         icon: icon,
-                         flipIcon: configurationModel.flipIcon,
-                         isReversed: configurationModel.isReversed,
-                         isError: configurationModel.isError,
-                         isReadOnly: configurationModel.isReadOnly,
-                         hasDivider: configurationModel.divider)
+        OUDSSwitchItem(configurationModel.labelText,
+                       isOn: $configurationModel.isOn,
+                       helper: configurationModel.helperText,
+                       icon: icon,
+                       flipIcon: configurationModel.flipIcon,
+                       isReversed: configurationModel.isReversed,
+                       isError: configurationModel.isError,
+                       isReadOnly: configurationModel.isReadOnly,
+                       hasDivider: configurationModel.divider)
             .disabled(!configurationModel.enabled)
             .padding(.all, theme.spaces.spaceFixedMedium)
-            .designToolboxColoredSurface(false)
     }
 
     // Need here that system name, a11y managed in component

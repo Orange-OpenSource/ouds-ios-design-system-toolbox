@@ -19,16 +19,17 @@ import SwiftUI
 
 struct CheckboxItemIndeterminatePage: View {
 
-    @StateObject private var configurationModel: IndicatorControlItemConfigurationModel
+    @StateObject private var configurationModel: CheckboxItemIndeterminateConfigurationModel
 
     init() {
-        let model = IndicatorControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItemIndeterminate(selection: $selection,")
-        _configurationModel = StateObject(wrappedValue: model)
+        _configurationModel = StateObject(wrappedValue: CheckboxItemIndeterminateConfigurationModel())
     }
 
     var body: some View {
-        ControlItemElementPage(configurationModel: configurationModel) {
+        ComponentConfigurationView(configuration: configurationModel) {
             CheckboxItemIndeterminateDemo(configurationModel: configurationModel)
+        } configurationView: {
+            CheckboxItemIndeterminateConfiguration(configurationModel: configurationModel)
         }
     }
 }
@@ -37,12 +38,11 @@ struct CheckboxItemIndeterminatePage: View {
 
 private struct CheckboxItemIndeterminateDemo: View {
 
-    @ObservedObject var configurationModel: IndicatorControlItemConfigurationModel
-
+    @ObservedObject var configurationModel: CheckboxItemIndeterminateConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSCheckboxItemIndeterminate(selection: $configurationModel.selection,
+        OUDSCheckboxItemIndeterminate(selection: $configurationModel.indicatorState,
                                       label: configurationModel.labelText,
                                       helper: configurationModel.helperText,
                                       icon: icon,
@@ -53,7 +53,6 @@ private struct CheckboxItemIndeterminateDemo: View {
                                       hasDivider: configurationModel.divider)
             .disabled(!configurationModel.enabled)
             .padding(.all, theme.spaces.spaceFixedMedium)
-            .designToolboxColoredSurface(false)
     }
 
     // Need here that system name, a11y managed in component

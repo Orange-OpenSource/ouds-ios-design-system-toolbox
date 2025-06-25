@@ -21,10 +21,6 @@ final class LinkConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
-    @Published var onColoredSurface: Bool = true {
-        didSet { updateCode() }
-    }
-
     @Published var enabled: Bool = true {
         didSet { updateCode() }
     }
@@ -42,7 +38,6 @@ final class LinkConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        onColoredSurface = false
         enabled = true
         text = String(localized: "app_components_link_label")
         layout = .textOnly
@@ -142,18 +137,18 @@ struct LinkConfiguration: View {
 
     @Environment(\.theme) private var theme
 
-    @StateObject var model: LinkConfigurationModel
+    @StateObject var configurationModel: LinkConfigurationModel
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-                OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
+                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
 
-                OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $model.onColoredSurface)
+                OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $configurationModel.onColoredSurface)
             }
 
             DesignToolboxChoicePicker(title: "app_components_link_size_label",
-                                      selection: $model.size,
+                                      selection: $configurationModel.size,
                                       style: .segmented)
             {
                 ForEach(OUDSLink.Size.allCases, id: \.id) { size in
@@ -162,7 +157,7 @@ struct LinkConfiguration: View {
             }
 
             DesignToolboxChoicePicker(title: "app_components_common_layout_label",
-                                      selection: $model.layout,
+                                      selection: $configurationModel.layout,
                                       style: .segmented)
             {
                 ForEach(LinkLayout.allCases, id: \.id) { layout in
@@ -171,7 +166,7 @@ struct LinkConfiguration: View {
             }
 
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $model.text)
+                DesignToolboxTextField(text: $configurationModel.text)
             }
         }
     }
