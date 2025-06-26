@@ -49,6 +49,14 @@ final class SwitchItemUITests: AppTestCase {
         // THEN
 
         check(value: "core_common_selected_a11y", ofElementWithIdentifier: A11YIdentifiers.componentSwitchItem, app)
+
+        // WHEN
+
+        switchItem.tap()
+
+        // THEN
+
+        check(value: "core_common_unselected_a11y", ofElementWithIdentifier: A11YIdentifiers.componentSwitchItem, app)
     }
 
     // TODO: Test hints and labels
