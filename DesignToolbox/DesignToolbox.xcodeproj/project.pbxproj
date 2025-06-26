@@ -2432,7 +2432,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "525-component-update-a-divider-in-a-component-should-not-increase-the-size-of-this-component \n";
 				kind = branch;
 			};
 		};
