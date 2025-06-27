@@ -79,19 +79,22 @@ open class AppTestCase: XCTestCase {
 
     // MARK: - Other elements
 
+    // swiftlint:disable empty_count
     /// Returns buttons with the given accessiiblity identifier
     @MainActor func buttons(withA11yIdentifier id: String, _ app: XCUIApplication) -> XCUIElementQuery {
         let elements = app.buttons.matching(identifier: id)
-        XCTAssertTrue(elements.containsElements(), "No matching button with accessibility identifier '\(id)'")
+        XCTAssertTrue(elements.count > 0, "No matching button with accessibility identifier '\(id)'")
         return elements
     }
 
     /// Returns elements with the given accessiiblity identifier
     @MainActor func otherElements(withA11yIdentifier id: String, _ app: XCUIApplication) -> XCUIElementQuery {
         let elements = app.otherElements.matching(identifier: id)
-        XCTAssertTrue(elements.containsElements(), "No matching element with accessibility identifier '\(id)'")
+        XCTAssertTrue(elements.count > 0, "No matching element with accessibility identifier '\(id)'")
         return elements
     }
+
+    // swiftlint:enable empty_count
 
     /// Returns element with the given accessiiblity label
     @MainActor func otherElement(withA11yLabel label: String, _ app: XCUIApplication) -> XCUIElement {
@@ -185,21 +188,6 @@ extension String {
     func localized(bundle: Bundle) -> String {
         NSLocalizedString(self, bundle: bundle, comment: "")
     }
-}
-
-// MARK: - Extension of XCUIElementQuery
-
-extension XCUIElementQuery {
-
-    // Ok, I know, this is crappy, but the SwiftFormat formatter
-    // converts 'count > 0' to '!isEmpty' even if API not available
-    // (┛❍ᴥ❍﻿)┛彡┻━┻
-    // See: https://github.com/nicklockwood/SwiftFormat/issues/2109
-    // swiftlint:disable empty_count
-    func containsElements() -> Bool {
-        count > 0
-    }
-    // swiftlint:enable empty_count
 }
 
 // swiftlint:enable nslocalizedstring_key
