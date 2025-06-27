@@ -56,6 +56,14 @@
 		0751CEEB2E0E8ABA006BF8FC /* SuggestionChipPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEE52E0E8ABA006BF8FC /* SuggestionChipPage.swift */; };
 		0751CEEE2E0E8B0C006BF8FC /* ChipElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEED2E0E8B0C006BF8FC /* ChipElements.swift */; };
 		0751CEEF2E0E8B0C006BF8FC /* ChipElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEED2E0E8B0C006BF8FC /* ChipElements.swift */; };
+		0751CEF42E0EC752006BF8FC /* FilterChipPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEF32E0EC752006BF8FC /* FilterChipPage.swift */; };
+		0751CEF52E0EC752006BF8FC /* FilterChipElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEF22E0EC752006BF8FC /* FilterChipElement.swift */; };
+		0751CEF62E0EC752006BF8FC /* FilterChipConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEF12E0EC752006BF8FC /* FilterChipConfigurationView.swift */; };
+		0751CEF72E0EC752006BF8FC /* FilterChipPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEF32E0EC752006BF8FC /* FilterChipPage.swift */; };
+		0751CEF82E0EC752006BF8FC /* FilterChipElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEF22E0EC752006BF8FC /* FilterChipElement.swift */; };
+		0751CEF92E0EC752006BF8FC /* FilterChipConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEF12E0EC752006BF8FC /* FilterChipConfigurationView.swift */; };
+		0751CEFC2E0ECD4C006BF8FC /* ChipLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEFB2E0ECD4C006BF8FC /* ChipLayout.swift */; };
+		0751CEFD2E0ECD4C006BF8FC /* ChipLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEFB2E0ECD4C006BF8FC /* ChipLayout.swift */; };
 		07523E7E2E00173D00A7C87C /* ControlItemConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07523E7D2E00173D00A7C87C /* ControlItemConfigurationModel.swift */; };
 		07523E7F2E00173D00A7C87C /* ControlItemConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07523E7D2E00173D00A7C87C /* ControlItemConfigurationModel.swift */; };
 		075BC9452DC01D2C00CB2573 /* DesignToolboxEditContentDisclosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075BC9442DC01D2C00CB2573 /* DesignToolboxEditContentDisclosure.swift */; };
@@ -408,6 +416,10 @@
 		0751CEE42E0E8ABA006BF8FC /* SuggestionChipElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionChipElement.swift; sourceTree = "<group>"; };
 		0751CEE52E0E8ABA006BF8FC /* SuggestionChipPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionChipPage.swift; sourceTree = "<group>"; };
 		0751CEED2E0E8B0C006BF8FC /* ChipElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipElements.swift; sourceTree = "<group>"; };
+		0751CEF12E0EC752006BF8FC /* FilterChipConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChipConfigurationView.swift; sourceTree = "<group>"; };
+		0751CEF22E0EC752006BF8FC /* FilterChipElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChipElement.swift; sourceTree = "<group>"; };
+		0751CEF32E0EC752006BF8FC /* FilterChipPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChipPage.swift; sourceTree = "<group>"; };
+		0751CEFB2E0ECD4C006BF8FC /* ChipLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipLayout.swift; sourceTree = "<group>"; };
 		07523E7D2E00173D00A7C87C /* ControlItemConfigurationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlItemConfigurationModel.swift; sourceTree = "<group>"; };
 		075BC9442DC01D2C00CB2573 /* DesignToolboxEditContentDisclosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxEditContentDisclosure.swift; sourceTree = "<group>"; };
 		075C71322CEB743300B93FC3 /* SpaceTokenCommonIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceTokenCommonIllustration.swift; sourceTree = "<group>"; };
@@ -788,6 +800,7 @@
 		0751CEE22E0E8A69006BF8FC /* Chips */ = {
 			isa = PBXGroup;
 			children = (
+				0751CEFA2E0EC7B7006BF8FC /* Common */,
 				0751CEF02E0E9893006BF8FC /* Filter */,
 				0751CEEC2E0E8AC1006BF8FC /* Suggestion */,
 				0751CEED2E0E8B0C006BF8FC /* ChipElements.swift */,
@@ -808,8 +821,19 @@
 		0751CEF02E0E9893006BF8FC /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				0751CEF12E0EC752006BF8FC /* FilterChipConfigurationView.swift */,
+				0751CEF22E0EC752006BF8FC /* FilterChipElement.swift */,
+				0751CEF32E0EC752006BF8FC /* FilterChipPage.swift */,
 			);
 			path = Filter;
+			sourceTree = "<group>";
+		};
+		0751CEFA2E0EC7B7006BF8FC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0751CEFB2E0ECD4C006BF8FC /* ChipLayout.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		07523E7C2E0016FE00A7C87C /* ControlItem */ = {
@@ -1758,6 +1782,9 @@
 				518EC07A2E1FF23800FC77E4 /* OrangeTheme+SwitchUITests.swift in Sources */,
 				5122E02B2D65FEBA00CD2857 /* String+extension.swift in Sources */,
 				510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */,
+				0751CEF72E0EC752006BF8FC /* FilterChipPage.swift in Sources */,
+				0751CEF82E0EC752006BF8FC /* FilterChipElement.swift in Sources */,
+				0751CEF92E0EC752006BF8FC /* FilterChipConfigurationView.swift in Sources */,
 				51952AA52D3FA3440068B807 /* Card.swift in Sources */,
 				51952A942D3FA32E0068B807 /* DesignToolboxElementsPage.swift in Sources */,
 				51952A952D3FA32E0068B807 /* DesignToolboxVariantElement.swift in Sources */,
@@ -1841,6 +1868,7 @@
 				076227632DA90C65009C3632 /* DividerConfiguration.swift in Sources */,
 				51417C232E1BF5D1000266C8 /* TokensSpaceUITestsTestCase.swift in Sources */,
 				076227642DA90C65009C3632 /* DividerElement.swift in Sources */,
+				0751CEFD2E0ECD4C006BF8FC /* ChipLayout.swift in Sources */,
 				0786A9DD2E0AAB4A00976098 /* CheckboxItemElement.swift in Sources */,
 				0786A9DE2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
 				076227652DA90C65009C3632 /* DividerElements.swift in Sources */,
@@ -1970,6 +1998,9 @@
 				07CF42792CA3F4BE000BD03E /* ElevationTokenPage.swift in Sources */,
 				51D6D5912D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift in Sources */,
 				075114E12CB7FDC200B8B759 /* ColorTokenPage.swift in Sources */,
+				0751CEF42E0EC752006BF8FC /* FilterChipPage.swift in Sources */,
+				0751CEF52E0EC752006BF8FC /* FilterChipElement.swift in Sources */,
+				0751CEF62E0EC752006BF8FC /* FilterChipConfigurationView.swift in Sources */,
 				07F7533B2CC785620007450D /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				07F0AFDE2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */,
 				07AB45882D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */,
@@ -2006,6 +2037,7 @@
 				07F75A412CC653EB0004F1AD /* NameSpace+RowGap.swift in Sources */,
 				5122E02A2D65E7AC00CD2857 /* String+extension.swift in Sources */,
 				07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */,
+				0751CEFC2E0ECD4C006BF8FC /* ChipLayout.swift in Sources */,
 				07CF427F2CA41325000BD03E /* OpacityTokenElement.swift in Sources */,
 				07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */,
 				07F75A372CC644C80004F1AD /* NamedSpace+Scaled.swift in Sources */,

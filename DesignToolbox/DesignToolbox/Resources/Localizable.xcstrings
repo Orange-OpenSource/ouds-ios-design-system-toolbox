@@ -1130,31 +1130,6 @@
         }
       }
     },
-    "app_components_button_iconOnlyLayout_label" : {
-      "comment" : "Component screen - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon only"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon only"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon only"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_button_label" : {
       "comment" : "Component - Button",
       "extractionState" : "manual",
@@ -1521,6 +1496,31 @@
         }
       }
     },
+    "app_components_chip_filterChip_label" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter chip"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter chip"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter chip"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_chip_label" : {
       "comment" : "Component - Chip",
       "extractionState" : "manual",
@@ -1736,6 +1736,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Icon + text"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_iconOnlyLayout_label" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon only"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon only"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon only"
           }
         }
       },

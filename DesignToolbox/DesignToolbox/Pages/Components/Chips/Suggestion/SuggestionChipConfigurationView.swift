@@ -71,27 +71,6 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
     }
 }
 
-// MARK: - Chip Layout
-
-enum ChipLayout: CaseIterable, CustomStringConvertible {
-    case textOnly
-    case iconAndText
-    case iconOnly
-
-    var description: String {
-        switch self {
-        case .textOnly:
-            "app_components_common_textOnlyLayout_label"
-        case .iconAndText:
-            "app_components_common_iconAndTextLayout_label"
-        case .iconOnly:
-            "app_components_common_iconOnlyLayout_label"
-        }
-    }
-
-    var id: String { description }
-}
-
 // MARK: - SuggestionChip Configuration View
 
 struct SuggestionChipConfigurationView: View {
