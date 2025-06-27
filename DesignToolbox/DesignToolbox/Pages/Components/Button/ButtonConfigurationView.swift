@@ -106,7 +106,7 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
         case .iconAndText:
             "app_components_common_iconAndTextLayout_label"
         case .iconOnly:
-            "app_components_button_iconOnlyLayout_label"
+            "app_components_common_iconOnlyLayout_label"
         }
     }
 

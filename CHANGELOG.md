@@ -74,6 +74,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] Divider in a ControlItem should not increase the size of this component (Orange-OpenSource/ouds-ios#525)
 - [Library] Background color in pressed and hover states for Radio button and Checkbox components (Orange-OpenSource/ouds-ios#720)
 - [DesignToolbox] Update background color in component illustration view (Orange-OpenSource/ouds-ios#723)
 - [DesignToolbox] In radio item page icons never flipped when flip option toggled (Orange-OpenSource/ouds-ios#675)
