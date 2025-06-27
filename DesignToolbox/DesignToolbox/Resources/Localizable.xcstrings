@@ -897,19 +897,19 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Checkbox Item"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Checkbox item"
+            "value" : "Checkbox Item"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Checkbox Item"
           }
         }
@@ -2347,23 +2347,24 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Switch Item"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Switch item"
+            "value" : "Switch Item"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Switch Item"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_border_description_text" : {
       "comment" : "Tokens - Border",
