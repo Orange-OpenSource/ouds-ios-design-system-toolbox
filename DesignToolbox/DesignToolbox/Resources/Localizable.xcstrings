@@ -1131,7 +1131,7 @@
       }
     },
     "app_components_button_iconOnlyLayout_label" : {
-      "comment" : "Component - Button",
+      "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -1493,6 +1493,104 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Votre sélection"
+          }
+        }
+      }
+    },
+    "app_components_chip_description_text" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تساعد الشرائح الأشخاص على إدخال المعلومات، أو إجراء التحديدات، أو تصفية المحتوى، أو تشغيل الإجراءات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chips help people enter information, make selections, filter content, or trigger actions."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les Chips aident les utilisateurs à saisir des informations, à effectuer des sélections, à filtrer le contenu ou à déclencher des actions."
+          }
+        }
+      }
+    },
+    "app_components_chip_label" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chip"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chip"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chip"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_chip_suggestionChip_label" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion chip"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion chip"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion chip"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_chip_suggestionChip_suggestionChip_label" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion %d"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion %d"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion %d"
           }
         }
       }
