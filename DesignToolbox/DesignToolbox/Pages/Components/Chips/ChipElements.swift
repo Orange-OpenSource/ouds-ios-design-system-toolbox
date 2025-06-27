@@ -21,8 +21,11 @@ struct ChipElements: DesignToolboxElement {
     init() {
         let variants: [DesignToolboxElement] = [
             SuggestionChipElement(),
+<<<<<<< HEAD
             FilterChipElement(),
             ChipPickerElement(),
+=======
+>>>>>>> 2e42ea7 (feat: Add SuggestionChip demo)
         ]
 
         name = "app_components_chip_label".localized()
