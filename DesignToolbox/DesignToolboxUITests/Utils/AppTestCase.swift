@@ -117,6 +117,13 @@ open class AppTestCase: XCTestCase {
 
     // MARK: - Helpers
 
+    @MainActor func waitForButtonToAppear(withWording key: String, _ app: XCUIApplication, _ timeout: TimeInterval = 5) {
+        let wording = wording(for: key)
+        let buttonToWaitFor = app.buttons[wording]
+        let doesButtonExist = buttonToWaitFor.waitForExistence(timeout: timeout)
+        XCTAssertTrue(doesButtonExist, "The button with wording '\(wording)' did not appear after \(timeout) seconds")
+    }
+
     /// Checks if the first element with this a11y identifier exists and has the wording with the given value as key
     @MainActor func check(value: String, ofElementWithIdentifier identifier: String, _ app: XCUIApplication) {
         let element = otherElements(withA11yIdentifier: identifier, app).firstMatch
@@ -126,7 +133,7 @@ open class AppTestCase: XCTestCase {
                 XCTAssertTrue(currentValue == expectedValue,
                               "The expected accessible value for the element is '\(expectedValue)' and not '\(currentValue)'")
             } else {
-                XCTFail("The value to comapre does not exist!")
+                XCTFail("The value to compare does not exist!")
             }
         } else {
             XCTFail("The element does not exists or the demo has been changed since!")

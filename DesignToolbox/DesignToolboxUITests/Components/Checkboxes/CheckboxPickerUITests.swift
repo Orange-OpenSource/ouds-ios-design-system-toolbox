@@ -19,7 +19,8 @@ import XCTest
 /// Tests the accessibility identifiers, labels or values of the items depending to their states and user actions.
 final class CheckboxPickerUITests: AppTestCase {
 
-    /// Select several items and checks if the counter in the root item is updated with the suitable value
+    /// Select several items and checks if the counter in the root item is updated with the suitable values.
+    /// beware, we test the accessiiblity value here as until now label is not dynamically updated with count.
     @MainActor func testCheckboxPickerRootItemCount() throws {
 
         // GIVEN
@@ -29,27 +30,23 @@ final class CheckboxPickerUITests: AppTestCase {
         tapButton(withWording: "app_components_checkbox_label", app)
         tapButton(withWording: "app_components_checkboxPicker_label", app)
 
-        // By default, one element is selected in the picker, wording cannot be used as is
-        var expectedPickerRootItemString = wording(for: "app_components_checkboxPicker_root") + " (1)"
-        assertStaticTextExists(expectedPickerRootItemString, app)
+        // By default, no element is selected in the picker, wording cannot be used as is
+        check(value: pickerRootItemA11yValue(with: 0), ofElementWithIdentifier: pickerRootItemA11yIdentifier(with: 0), app)
 
         // WHEN, THEN
 
-        // Select all
         tapImage(withName: "dog.fill", app)
         tapImage(withName: "waterbottle.fill", app)
-        expectedPickerRootItemString = wording(for: "app_components_checkboxPicker_root") + " (3)"
-        assertStaticTextExists(expectedPickerRootItemString, app)
+        check(value: pickerRootItemA11yValue(with: 2), ofElementWithIdentifier: pickerRootItemA11yIdentifier(with: 2), app)
 
-        // Unselect some
         tapImage(withName: "dog.fill", app)
-        expectedPickerRootItemString = wording(for: "app_components_checkboxPicker_root") + " (2)"
-        assertStaticTextExists(expectedPickerRootItemString, app)
+        check(value: pickerRootItemA11yValue(with: 1), ofElementWithIdentifier: pickerRootItemA11yIdentifier(with: 1), app)
 
-        // Unselect all
         tapImage(withName: "flame", app)
-        tapImage(withName: "waterbottle.fill", app)
-        expectedPickerRootItemString = wording(for: "app_components_checkboxPicker_root")
+        check(value: pickerRootItemA11yValue(with: 2), ofElementWithIdentifier: pickerRootItemA11yIdentifier(with: 2), app)
+
+        tapImage(withName: "dog.fill", app)
+        check(value: pickerRootItemA11yValue(with: 3), ofElementWithIdentifier: pickerRootItemA11yIdentifier(with: 3), app)
     }
 
     /// Given the checkbox picker of the demo app,
@@ -71,25 +68,13 @@ final class CheckboxPickerUITests: AppTestCase {
         tapButton(withWording: "app_components_checkbox_label", app)
         tapButton(withWording: "app_components_checkboxPicker_label", app)
 
-        check(value: selectedA11Yvalue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
-
-        // WHEN
-
-        var itemToSelect = otherElements(withA11yIdentifier: firstItemA11YIdentifier, app).firstMatch
-        itemToSelect.tap()
-
-        // THEN
-
-        check(value: pickerRootItemA11yValue(with: 0), ofElementWithLabel: rootItemA11YLabel, app)
         check(value: unselectedA11Yvalue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
         check(value: unselectedA11Yvalue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
         check(value: unselectedA11Yvalue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
 
         // WHEN
 
-        itemToSelect = otherElements(withA11yIdentifier: firstItemA11YIdentifier, app).firstMatch
+        var itemToSelect = otherElements(withA11yIdentifier: firstItemA11YIdentifier, app).firstMatch
         itemToSelect.tap()
 
         // THEN

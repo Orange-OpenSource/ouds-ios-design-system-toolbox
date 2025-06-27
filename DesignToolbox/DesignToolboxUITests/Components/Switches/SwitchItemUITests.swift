@@ -28,6 +28,7 @@ final class SwitchItemUITests: AppTestCase {
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
         tapButton(withWording: "app_components_switch_label", app)
+        waitForButtonToAppear(withWording: "Switch Item", app)
         tapButton(withWording: "Switch Item", app)
 
         let switchItem = otherElements(withA11yIdentifier: A11YIdentifiers.componentSwitchItem, app).firstMatch

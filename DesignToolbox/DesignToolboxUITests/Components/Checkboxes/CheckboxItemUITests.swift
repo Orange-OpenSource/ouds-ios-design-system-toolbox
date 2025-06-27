@@ -26,6 +26,7 @@ final class CheckboxItemUITests: AppTestCase {
         let app = launchApp()
         goToComponentsSheet(app)
         tapButton(withWording: "app_components_checkbox_label", app)
+        waitForButtonToAppear(withWording: "Checkbox Item", app)
         tapButton(withWording: "Checkbox Item", app)
 
         let checkbox = otherElements(withA11yIdentifier: A11YIdentifiers.componentCheckboxItem, app).firstMatch

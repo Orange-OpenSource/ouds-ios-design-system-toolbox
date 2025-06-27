@@ -38,7 +38,7 @@ struct CheckboxPickerPage: View {
 
 private struct CheckboxPickerDemo: View {
 
-    @State private var selections: [String] = ["Choice_1"] // cf configurationModel.populate()
+    @State private var selections: [String] = []
     @ObservedObject var configurationModel: CheckboxPickerConfigurationModel
     @Environment(\.theme) private var theme
 
