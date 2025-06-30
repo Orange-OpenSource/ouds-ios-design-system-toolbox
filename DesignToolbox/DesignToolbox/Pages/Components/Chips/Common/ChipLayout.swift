@@ -15,15 +15,15 @@
 
 enum ChipLayout: CaseIterable, CustomStringConvertible {
     case textOnly
-    case iconAndText
+    case textAndIcon
     case iconOnly
 
     var description: String {
         switch self {
         case .textOnly:
             "app_components_common_textOnlyLayout_label"
-        case .iconAndText:
-            "app_components_common_iconAndTextLayout_label"
+        case .textAndIcon:
+            "app_components_common_textAndIconLayout_label"
         case .iconOnly:
             "app_components_common_iconOnlyLayout_label"
         }

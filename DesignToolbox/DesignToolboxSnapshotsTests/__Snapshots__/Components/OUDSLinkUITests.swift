@@ -155,7 +155,7 @@ private struct LinkTest: View {
         switch layout {
         case .textOnly:
             OUDSLink(text: "Link", size: size) {}
-        case .iconAndText:
+        case .textAndIcon:
             OUDSLink(text: "Link", icon: Image(decorative: "ic_heart"), size: size) {}
         case .indicatorNext:
             OUDSLink(text: "Next", indicator: .next, size: size) {}
@@ -181,7 +181,7 @@ extension LinkLayout: CustomDebugStringConvertible {
         switch self {
         case .textOnly:
             "TextOnly"
-        case .iconAndText:
+        case .textAndIcon:
             "IconAndText"
         case .indicatorBack:
             "IndicatorBack"
