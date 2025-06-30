@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Badge component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] Space semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] Border semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] Size semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
