@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Space semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] Border semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] Size semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Tool] Update `SwiftFormat/CLI` pod from v0.56.2 to v0.56.4
+- [Library] Optional accessibility identifiers for items of radio picker and checkbox picker components
+- [DesignToolbox] Simplify component demo Screen (Orange-OpenSource/ouds-ios#721)
 - [DesignToolbox] Mutualize configuration of `control items` demos (`switch`, `radio button`, `checkbox`) (Orange-OpenSource/ouds-ios#621) 
 - [Library] Color raw tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] Dimension raw tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)

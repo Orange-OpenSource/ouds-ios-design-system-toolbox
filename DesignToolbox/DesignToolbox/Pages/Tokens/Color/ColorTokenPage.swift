@@ -138,14 +138,27 @@ struct ColorTokenPage: View {
 
     struct Illustration: View {
 
+        private let lightValue: ColorSemanticToken
+        private let darkValue: ColorSemanticToken
+        private let name: String
+
         @Environment(\.theme) private var theme
         @Environment(\.colorScheme) private var colorScheme
 
-        var token: MultipleColorSemanticTokens
-        var name: String
+        init(token: ColorSemanticToken, name: String) {
+            lightValue = token
+            darkValue = token
+            self.name = name
+        }
+
+        init(token: MultipleColorSemanticTokens, name: String) {
+            lightValue = token.light
+            darkValue = token.dark
+            self.name = name
+        }
 
         var body: some View {
-            let colorRawToken = colorScheme == .dark ? token.dark : token.light
+            let colorRawToken = colorScheme == .dark ? lightValue : darkValue
 
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: colorRawToken) {
                 Rectangle()
