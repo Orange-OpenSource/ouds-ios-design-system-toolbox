@@ -52,23 +52,19 @@ private struct ButtonDemo: View {
             } else {
                 switch configurationModel.layout {
                 case .iconOnly:
-                    OUDSChip(icon: Image(decorative: "ic_heart"),
-                             accessibilityLabel: "app_components_button_icon_a11y".localized()) {}
-//                    OUDSButton(icon: Image(decorative: "ic_heart"),
-//                               accessibilityLabel: "app_components_button_icon_a11y".localized(),
-//                               hierarchy: configurationModel.hierarchy,
-//                               style: configurationModel.style) {}
+                    OUDSButton(icon: Image(decorative: "ic_heart"),
+                               accessibilityLabel: "app_components_button_icon_a11y".localized(),
+                               hierarchy: configurationModel.hierarchy,
+                               style: configurationModel.style) {}
                 case .textOnly:
-                    OUDSChip(text: configurationModel.text) {}
-//                    OUDSButton(text: configurationModel.text,
-//                               hierarchy: configurationModel.hierarchy,
-//                               style: configurationModel.style) {}
-                case .iconAndText:
-                    OUDSChip(icon: Image(decorative: "ic_heart"), text: configurationModel.text) {}
-//                    OUDSButton(icon: Image(decorative: "ic_heart"),
-//                               text: configurationModel.text,
-//                               hierarchy: configurationModel.hierarchy,
-//                               style: configurationModel.style) {}
+                    OUDSButton(text: configurationModel.text,
+                               hierarchy: configurationModel.hierarchy,
+                               style: configurationModel.style) {}
+                case .textAndIcon:
+                    OUDSButton(icon: Image(decorative: "ic_heart"),
+                               text: configurationModel.text,
+                               hierarchy: configurationModel.hierarchy,
+                               style: configurationModel.style) {}
                 }
             }
 

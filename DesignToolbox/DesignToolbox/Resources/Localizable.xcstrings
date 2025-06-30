@@ -1716,31 +1716,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_iconAndTextLayout_label" : {
-      "comment" : "Component screen - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon + text"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon + text"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon + text"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_common_iconOnlyLayout_label" : {
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
@@ -1911,6 +1886,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Style"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_textAndIconLayout_label" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text + icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Text + icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text + icon"
           }
         }
       },
@@ -2115,7 +2115,7 @@
       }
     },
     "app_components_controlItem_selection_label" : {
-      "comment" : "Component - ControlItem",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {

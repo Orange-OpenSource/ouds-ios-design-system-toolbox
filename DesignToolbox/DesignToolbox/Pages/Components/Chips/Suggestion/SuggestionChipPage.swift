@@ -48,12 +48,12 @@ private struct SuggestionChipDemo: View {
 
             switch configurationModel.layout {
             case .iconOnly:
-                OUDSChip(icon: Image(decorative: "ic_heart"),
-                         accessibilityLabel: "app_components_button_icon_a11y".localized()) {}
+                OUDSSuggestionChip(icon: Image(decorative: "ic_heart"),
+                                   accessibilityLabel: "app_components_button_icon_a11y".localized()) {}
             case .textOnly:
-                OUDSChip(text: configurationModel.text) {}
-            case .iconAndText:
-                OUDSChip(icon: Image(decorative: "ic_heart"), text: configurationModel.text) {}
+                OUDSSuggestionChip(text: configurationModel.text) {}
+            case .textAndIcon:
+                OUDSSuggestionChip(icon: Image(decorative: "ic_heart"), text: configurationModel.text) {}
             }
 
             Spacer()

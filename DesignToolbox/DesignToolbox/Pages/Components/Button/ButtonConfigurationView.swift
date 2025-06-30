@@ -81,7 +81,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
                 \(disableCode)
                 \(coloredSurfaceCodeModifier)
                 """
-        case .iconAndText:
+        case .textAndIcon:
             code =
                 """
                 OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
@@ -96,15 +96,15 @@ final class ButtonConfigurationModel: ComponentConfiguration {
 
 enum ButtonLayout: CaseIterable, CustomStringConvertible {
     case textOnly
-    case iconAndText
+    case textAndIcon
     case iconOnly
 
     var description: String {
         switch self {
         case .textOnly:
             "app_components_common_textOnlyLayout_label"
-        case .iconAndText:
-            "app_components_common_iconAndTextLayout_label"
+        case .textAndIcon:
+            "app_components_common_textAndIconLayout_label"
         case .iconOnly:
             "app_components_common_iconOnlyLayout_label"
         }
@@ -197,7 +197,7 @@ struct ButtonConfigurationView: View {
                 }
             }
 
-            if configurationModel.layout == .iconAndText || configurationModel.layout == .textOnly {
+            if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.text)
                 }

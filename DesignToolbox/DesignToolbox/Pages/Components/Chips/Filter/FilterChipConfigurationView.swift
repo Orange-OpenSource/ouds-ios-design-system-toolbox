@@ -14,14 +14,18 @@
 import OUDSComponents
 import SwiftUI
 
-// MARK: - SuggestionChip Configuration Model
+// MARK: - FilterChip Configuration Model
 
-/// The model shared between `SuggestionChipPageConfiguration` view and `SuggestionChipPageComponent` view.
-final class SuggestionChipConfigurationModel: ComponentConfiguration {
+/// The model shared between `FilterChipPageConfiguration` view and `FilterChipPageComponent` view.
+final class FilterChipConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
     @Published var enabled: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var selection: Bool {
         didSet { updateCode() }
     }
 
@@ -35,7 +39,8 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        text = "app_components_chip_suggestionChip_suggestionChip_label".localized(with: 1)
+        selection = false
+        text = "app_components_chip_filterChip_label".localized(with: 1)
         layout = .textOnly
     }
 
@@ -52,30 +57,30 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
                 """
-                OUDSChip(text: \"Chip\") {}
+                OUDSFilterChip(text: \"Chip\", selected: \(selection)) {}
                 \(disableCode)
                 """
         case .iconOnly:
             code =
                 """
-                OUDSChip(icon: Image(\"ic_heart\")) {}
+                OUDSFilterChip(icon: Image(\"ic_heart\"), selected: \(selection)) {}
                 \(disableCode)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSChip(icon: Image(\"ic_heart\", text: \"Chip\")) {}
+                OUDSFilterChip(icon: Image(\"ic_heart\", text: \"Chip\"), selected: \(selection)) {}
                 \(disableCode)
                 """
         }
     }
 }
 
-// MARK: - SuggestionChip Configuration View
+// MARK: - FilterChip Configuration View
 
-struct SuggestionChipConfigurationView: View {
+struct FilterChipConfigurationView: View {
 
-    @StateObject var configurationModel: SuggestionChipConfigurationModel
+    @StateObject var configurationModel: FilterChipConfigurationModel
 
     @Environment(\.theme) private var theme
 
@@ -83,6 +88,9 @@ struct SuggestionChipConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+
+                OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.selection)
+                    .disabled(!configurationModel.enabled)
             }
 
             DesignToolboxChoicePicker(title: "app_components_common_layout_label",
