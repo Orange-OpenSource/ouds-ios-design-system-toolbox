@@ -36,7 +36,7 @@ struct SuggestionChipPage: View {
 
 // MARK: - SuggestionChip Demo
 
-private struct SuggestionChipDemo: View {
+struct SuggestionChipDemo: View {
 
     @StateObject var configurationModel: SuggestionChipConfigurationModel
 
