@@ -18,6 +18,7 @@ extension NamedSpace {
 
     enum PaddingInset: String, CaseIterable, NamedSpaceToken {
         case spaceInsetNone
+        case spaceInset4xs
         case spaceInset3xs
         case spaceInset2xs
         case spaceInsetXs
@@ -34,6 +35,8 @@ extension NamedSpace {
             switch self {
             case .spaceInsetNone:
                 theme.spaces.spaceInsetNone
+            case .spaceInset4xs:
+                theme.spaces.spaceInset4xs
             case .spaceInset3xs:
                 theme.spaces.spaceInset3xs
             case .spaceInset2xs:
