@@ -64,6 +64,7 @@
 		0751CEF92E0EC752006BF8FC /* FilterChipConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEF12E0EC752006BF8FC /* FilterChipConfigurationView.swift */; };
 		0751CEFC2E0ECD4C006BF8FC /* ChipLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEFB2E0ECD4C006BF8FC /* ChipLayout.swift */; };
 		0751CEFD2E0ECD4C006BF8FC /* ChipLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEFB2E0ECD4C006BF8FC /* ChipLayout.swift */; };
+		0751CEFF2E12B857006BF8FC /* OUDSChipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CEFE2E12B857006BF8FC /* OUDSChipsUITests.swift */; };
 		07523E7E2E00173D00A7C87C /* ControlItemConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07523E7D2E00173D00A7C87C /* ControlItemConfigurationModel.swift */; };
 		07523E7F2E00173D00A7C87C /* ControlItemConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07523E7D2E00173D00A7C87C /* ControlItemConfigurationModel.swift */; };
 		075BC9452DC01D2C00CB2573 /* DesignToolboxEditContentDisclosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075BC9442DC01D2C00CB2573 /* DesignToolboxEditContentDisclosure.swift */; };
@@ -420,6 +421,7 @@
 		0751CEF22E0EC752006BF8FC /* FilterChipElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChipElement.swift; sourceTree = "<group>"; };
 		0751CEF32E0EC752006BF8FC /* FilterChipPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChipPage.swift; sourceTree = "<group>"; };
 		0751CEFB2E0ECD4C006BF8FC /* ChipLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipLayout.swift; sourceTree = "<group>"; };
+		0751CEFE2E12B857006BF8FC /* OUDSChipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSChipsUITests.swift; sourceTree = "<group>"; };
 		07523E7D2E00173D00A7C87C /* ControlItemConfigurationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlItemConfigurationModel.swift; sourceTree = "<group>"; };
 		075BC9442DC01D2C00CB2573 /* DesignToolboxEditContentDisclosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxEditContentDisclosure.swift; sourceTree = "<group>"; };
 		075C71322CEB743300B93FC3 /* SpaceTokenCommonIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceTokenCommonIllustration.swift; sourceTree = "<group>"; };
@@ -1785,6 +1787,7 @@
 				0751CEF72E0EC752006BF8FC /* FilterChipPage.swift in Sources */,
 				0751CEF82E0EC752006BF8FC /* FilterChipElement.swift in Sources */,
 				0751CEF92E0EC752006BF8FC /* FilterChipConfigurationView.swift in Sources */,
+				0751CEFF2E12B857006BF8FC /* OUDSChipsUITests.swift in Sources */,
 				51952AA52D3FA3440068B807 /* Card.swift in Sources */,
 				51952A942D3FA32E0068B807 /* DesignToolboxElementsPage.swift in Sources */,
 				51952A952D3FA32E0068B807 /* DesignToolboxVariantElement.swift in Sources */,
