@@ -36,7 +36,7 @@ struct FilterChipPage: View {
 
 // MARK: - FilterChip Demo
 
-private struct FilterChipDemo: View {
+struct FilterChipDemo: View {
 
     @StateObject var configurationModel: FilterChipConfigurationModel
     @Environment(\.theme) private var theme
