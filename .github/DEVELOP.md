@@ -10,6 +10,7 @@
   * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
   * [Snapshots tests in demo app](#snapshots-tests-in-demo-app)
   * [UI tests in demo app](#ui-tests-in-demo-app)
+  * [Manual tests using demo app](#manual-tests-using-demo-app)
 - [Build phases](#build-phases)
 - [Targets](#targets)
 - [Certificates, profiles and identifiers](#certificates-profiles-and-identifiers)
@@ -260,6 +261,12 @@ To run these UI tests follow some steps:
 5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
 
+### Manual tests using demo app
+
+Do not forget to make manual tests of the library using the design system toolbox app!
+Indeed some features like *Voice Over*, *dynamic fonts*, high contrast and motion managements, or color contrasts, are hardly testable automatically.
+These types of tests should be done manualy with for example the help of the [Accessibility Inspector](https://developer.apple.com/documentation/accessibility/accessibility-inspector).
+
 ## Build phases
 
 The project contains several custom build phases so as to automatize several steps:
@@ -345,7 +352,7 @@ We can add metafields picked from [this good guideline](https://git.kernel.org/p
 This is not mandatory (yet) but a good practice and quite interesting to know who reviewed and validated what.
 You must mention *co-authors* (*Co-authored-by*). You should add who are code reviewers (*Reviewed-by*), evolutions testers (*Tested-by*) and if needed ackers (*Acked-by*).
 
-For example, for issue n°123 and its pull request n°456, tested by Anton, Maxime, Pierre-Yves and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Stephen:
+For example, for issue n°123 and its pull request n°456, tested by Anton, Maxime, Jérôme and Pierre-Yves and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Stephen:
 ```text
 refactor: update some things colors and design of the demo app (#123) (#456)
 
@@ -354,6 +361,7 @@ Some things have been refactored to make incredible things.
 Tested-by: Anton Astafev <anton.astafev@orange.com>
 Tested-by: Benoit Suzanne <benoit.suzanne@orange.com>
 Tested-by: Maxime Tonnerre <maxime.tonnerre@orange.com>
+Tested-by: Jérôme Régnier <jerome.regnier@orange.com>
 Tested-by: Pierre-Yves Ayoul <pierre-yves.ayoul@orange.com>
 Reviewed-by: Ludovic Pinel <ludovic.pinel@orange.com>
 Acked-by: Stephen McCarthy <stephen.mccarthy@orange.com>

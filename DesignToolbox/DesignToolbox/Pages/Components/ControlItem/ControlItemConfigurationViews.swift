@@ -20,38 +20,22 @@ struct ControlItemElementPage<Demo>: View where Demo: View {
 
     // MARK: Stored properties
 
-    @StateObject private var model: ControlItemConfigurationModel
+    @StateObject private var configurationModel: ControlItemConfigurationModel
     @ViewBuilder private var demo: () -> Demo
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Initializer
 
-    init(model: ControlItemConfigurationModel, demo: @escaping () -> Demo) {
-        _model = StateObject(wrappedValue: model)
+    init(configurationModel: ControlItemConfigurationModel, demo: @escaping () -> Demo) {
+        _configurationModel = StateObject(wrappedValue: configurationModel)
         self.demo = demo
     }
 
     // MARK: Body
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: model,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        VStack(alignment: .center) {
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            demo()
-            demo().colorScheme(colorScheme == .dark ? .light : .dark)
+        ComponentConfigurationView(configuration: configurationModel, componentView: demo) {
+            ControlItemConfiguration(configurationModel: configurationModel)
         }
-    }
-
-    @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        ControlItemConfiguration(model: model)
     }
 }
 
@@ -61,7 +45,7 @@ private struct ControlItemConfiguration: View {
 
     // MARK: Stored properties
 
-    @ObservedObject var model: ControlItemConfigurationModel
+    @ObservedObject var configurationModel: ControlItemConfigurationModel
     @Environment(\.theme) private var theme
 
     // MARK: Body
@@ -69,50 +53,50 @@ private struct ControlItemConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
             selection
-                .disabled(model.isError || model.isReadOnly)
+                .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
 
-                OUDSSwitchItem("app_components_controlItem_icon_label", isOn: $model.icon)
+                OUDSSwitchItem("app_components_controlItem_icon_label", isOn: $configurationModel.icon)
 
-                OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $model.flipIcon)
-                    .disabled(!model.icon)
+                OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
+                    .disabled(!configurationModel.icon)
 
-                if let outlinedConfiguration = model.outlinedConfiguration {
-                    OUDSSwitchItem(outlinedConfiguration.outlinedConfigurationLabel, isOn: $model.outlined)
+                if let outlinedConfiguration = configurationModel.outlinedConfiguration {
+                    OUDSSwitchItem(outlinedConfiguration.outlinedConfigurationLabel, isOn: $configurationModel.outlined)
                 }
 
-                OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $model.divider)
+                OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $configurationModel.divider)
 
-                OUDSSwitchItem("app_components_controlItem_reversed_label", isOn: $model.isReversed)
+                OUDSSwitchItem("app_components_controlItem_reversed_label", isOn: $configurationModel.isReversed)
 
-                OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
-                    .disabled(model.isError || model.isReadOnly)
+                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+                    .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
-                OUDSSwitchItem("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
-                    .disabled(!model.enabled || model.isError)
+                OUDSSwitchItem("app_components_controlItem_readOnly_label", isOn: $configurationModel.isReadOnly)
+                    .disabled(!configurationModel.enabled || configurationModel.isError)
 
-                OUDSSwitchItem("app_components_common_error_label", isOn: $model.isError)
-                    .disabled(!model.enabled || model.isReadOnly)
+                OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
+                    .disabled(!configurationModel.enabled || configurationModel.isReadOnly)
             }
 
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $model.labelText)
-                if model.additionalLabelConfiguration != nil {
-                    DesignToolboxTextField(text: $model.additionalLabelText)
+                DesignToolboxTextField(text: $configurationModel.labelText)
+                if configurationModel.additionalLabelConfiguration != nil {
+                    DesignToolboxTextField(text: $configurationModel.additionalLabelText)
                 }
-                DesignToolboxTextField(text: $model.helperText)
+                DesignToolboxTextField(text: $configurationModel.helperText)
             }
         }
     }
 
     @ViewBuilder
     var selection: some View {
-        if let booleanModel = model as? BooleanControlItemConfigurationModel {
+        if let booleanModel = configurationModel as? BooleanControlItemConfigurationModel {
             BooleanSelectionView(model: booleanModel)
         }
 
-        if let indeterminateModel = model as? IndicatorControlItemConfigurationModel {
+        if let indeterminateModel = configurationModel as? IndicatorControlItemConfigurationModel {
             IndeterminateSelectionView(model: indeterminateModel)
         }
     }

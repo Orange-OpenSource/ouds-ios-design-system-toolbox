@@ -112,16 +112,19 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
             OUDSCheckboxPickerData<String>(tag: "Choice_1",
                                            label: "Virgin Holy Lava",
                                            helper: "No alcohol, only tasty flavors",
-                                           icon: Image(systemName: "flame")),
+                                           icon: Image(systemName: "flame"),
+                                           accessibilityIdentifier: "Virgin Holy Lava"),
 
             OUDSCheckboxPickerData<String>(tag: "Choice_2",
                                            label: "IPA beer",
                                            helper: "From Brewdog company",
-                                           icon: Image(systemName: "dog.fill")),
+                                           icon: Image(systemName: "dog.fill"),
+                                           accessibilityIdentifier: "IPA beer"),
 
             OUDSCheckboxPickerData<String>(tag: "Choice_3",
                                            label: "Mineral water",
-                                           icon: Image(systemName: "waterbottle.fill")),
+                                           icon: Image(systemName: "waterbottle.fill"),
+                                           accessibilityIdentifier: "Mineral water"),
         ]
     }
 }
@@ -130,27 +133,27 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
 
 struct CheckboxPickerConfiguration: View {
 
-    @ObservedObject var model: CheckboxPickerConfigurationModel
+    @ObservedObject var configurationModel: CheckboxPickerConfigurationModel
 
     @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-                OUDSSwitchItem("app_common_enabled_label", isOn: $model.isEnabled)
-                    .disabled(model.isError || model.isReadOnly)
+                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.isEnabled)
+                    .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
-                OUDSSwitchItem("app_components_common_error_label", isOn: $model.isError)
-                    .disabled(!model.isEnabled || model.isReadOnly)
+                OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
+                    .disabled(!configurationModel.isEnabled || configurationModel.isReadOnly)
 
-                OUDSSwitchItem("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
-                    .disabled(!model.isEnabled || model.isError)
+                OUDSSwitchItem("app_components_controlItem_readOnly_label", isOn: $configurationModel.isReadOnly)
+                    .disabled(!configurationModel.isEnabled || configurationModel.isError)
 
-                OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $model.hasDivider)
+                OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $configurationModel.hasDivider)
             }
 
             DesignToolboxChoicePicker(title: "app_components_common_orientation_label",
-                                      selection: $model.pickerPlacement,
+                                      selection: $configurationModel.pickerPlacement,
                                       style: .menu)
             {
                 ForEach(OUDSCheckboxPickerPlacement.allCases, id: \.id) { placement in

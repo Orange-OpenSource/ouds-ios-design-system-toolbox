@@ -23,7 +23,7 @@ extension NamedSpace {
         case spaceFixed2xs
         case spaceFixedXs
         case spaceFixedSm
-        case spaceFixedMedium
+        case spaceFixedMd
         case spaceFixedLg
         case spaceFixedXl
         case spaceFixed2xl
@@ -45,7 +45,7 @@ extension NamedSpace {
                 theme.spaces.spaceFixedXs
             case .spaceFixedSm:
                 theme.spaces.spaceFixedSm
-            case .spaceFixedMedium:
+            case .spaceFixedMd:
                 theme.spaces.spaceFixedMd
             case .spaceFixedLg:
                 theme.spaces.spaceFixedLg

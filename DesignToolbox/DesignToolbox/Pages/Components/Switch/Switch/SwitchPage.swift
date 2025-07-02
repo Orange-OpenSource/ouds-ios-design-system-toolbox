@@ -19,47 +19,17 @@ import SwiftUI
 
 struct SwitchPage: View {
 
-    @StateObject private var configuration: SwitchConfigurationModel
+    @StateObject private var configurationModel: SwitchConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: SwitchConfigurationModel())
+        _configurationModel = StateObject(wrappedValue: SwitchConfigurationModel())
     }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configuration,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? SwitchConfigurationModel {
-            SwitchIllustration(model: model)
-        }
-    }
-
-    @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? SwitchConfigurationModel {
-            SwitchConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: - Switch Illustration
-
-private struct SwitchIllustration: View {
-
-    let model: SwitchConfigurationModel
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center) {
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            SwitchDemo(model: model)
-            SwitchDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
+        ComponentConfigurationView(configuration: configurationModel) {
+            SwitchDemo(configurationModel: configurationModel)
+        } configurationView: {
+            SwitchConfiguration(configurationModel: configurationModel)
         }
     }
 }
@@ -68,18 +38,18 @@ private struct SwitchIllustration: View {
 
 private struct SwitchDemo: View {
 
-    @ObservedObject var model: SwitchConfigurationModel
+    @ObservedObject var configurationModel: SwitchConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
-            OUDSSwitch(isOn: $model.selection,
+            OUDSSwitch(isOn: $configurationModel.selection,
                        accessibilityLabel: "app_components_switch_hint_a11y".localized()) // No LocalizedStringKey type inference in the component
-                .disabled(!model.enabled)
+                .disabled(!configurationModel.enabled)
+                .accessibilityIdentifier(A11YIdentifiers.componentSwitch)
             Spacer()
         }
         .padding(.all, theme.spaces.spaceFixedMd)
-        .designToolboxColoredSurface(false)
     }
 }

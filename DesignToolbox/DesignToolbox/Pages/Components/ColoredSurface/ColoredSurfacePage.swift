@@ -19,43 +19,17 @@ import SwiftUI
 
 struct ColoredSurfacePage: View {
 
-    private let configuration = ColoredSurfaceConfigurationModel()
+    @StateObject private var configurationModel: ColoredSurfaceConfigurationModel
+
+    init() {
+        _configurationModel = StateObject(wrappedValue: ColoredSurfaceConfigurationModel())
+    }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configuration,
-            componentView: componentView,
-            configurationView: configurationView).modifier(DebugWCAG21RatiosModifier())
-    }
-
-    @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? ColoredSurfaceConfigurationModel {
-            ColoredSurfaceIllustration(model: model)
-        }
-    }
-
-    @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? ColoredSurfaceConfigurationModel {
-            ColoredSurfaceConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: Colored Surface Illustration
-
-struct ColoredSurfaceIllustration: View {
-
-    @ObservedObject var model: ColoredSurfaceConfigurationModel
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center, spacing: 0) {
-            ColoredSurfaceDemo(model: model)
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            ColoredSurfaceDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
+        ComponentConfigurationView(configuration: configurationModel) {
+            ColoredSurfaceDemo(configurationModel: configurationModel)
+        } configurationView: {
+            ColoredSurfaceConfiguration(configurationModel: configurationModel)
         }
     }
 }
@@ -64,14 +38,14 @@ struct ColoredSurfaceIllustration: View {
 
 private struct ColoredSurfaceDemo: View {
 
-    @ObservedObject var model: ColoredSurfaceConfigurationModel
+    @ObservedObject var configurationModel: ColoredSurfaceConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.spaces.spaceFixedMd) {
-            OUDSColoredSurface(color: model.selectedColor.toSurfaceColor(from: theme)) {
+            OUDSColoredSurface(color: configurationModel.selectedColor.toSurfaceColor(from: theme)) {
                 VStack(alignment: .center, spacing: theme.spaces.spaceFixedMd) {
-                    Text(model.selectedColor.formattedName)
+                    Text(configurationModel.selectedColor.formattedName)
                         .oudsForegroundColor(theme.colors.colorContentDefault)
 
                     OUDSButton(text: "app_components_button_label".localized(),
@@ -85,6 +59,5 @@ private struct ColoredSurfaceDemo: View {
             }
         }
         .padding(.all, theme.spaces.spaceFixedMd)
-        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
     }
 }
