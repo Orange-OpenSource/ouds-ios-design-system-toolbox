@@ -53,6 +53,6 @@ private struct CheckboxIndeterminateDemo: View {
                 .accessibilityIdentifier(A11YIdentifiers.componentCheckboxIndeterminate)
             Spacer()
         }
-        .padding(.all, theme.spaces.spaceFixedMedium)
+        .padding(.all, theme.spaces.spaceFixedMd)
     }
 }

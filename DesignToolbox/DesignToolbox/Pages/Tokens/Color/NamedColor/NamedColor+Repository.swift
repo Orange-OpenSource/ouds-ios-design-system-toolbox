@@ -65,6 +65,13 @@ extension NamedColor {
         case colorRepositoryOpacityWhiteLower
         case colorRepositoryOpacityWhiteLowest
         case colorRepositoryOpacityWhiteTransparent
+        case colorRepositoryOpacityPrimaryLow
+        case colorRepositoryOpacityPrimaryLower
+        case colorRepositoryOpacityPrimaryLowest
+        case colorRepositoryOpacityPrimaryMedium
+        case colorRepositoryOpacityPrimaryHigh
+        case colorRepositoryOpacityPrimaryHigher
+        case colorRepositoryOpacityPrimaryHighest
         case colorRepositoryPositiveDefault
         case colorRepositoryPositiveHigh
         case colorRepositoryPositiveHighest
@@ -77,7 +84,7 @@ extension NamedColor {
         case colorRepositoryWarningLow
         case colorRepositoryWarningLowest
 
-        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
+        func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
             case .colorRepositoryAccentDefault:
                 theme.colors.colorRepositoryAccentDefault
@@ -171,6 +178,20 @@ extension NamedColor {
                 theme.colors.colorRepositoryOpacityWhiteLowest
             case .colorRepositoryOpacityWhiteTransparent:
                 theme.colors.colorRepositoryOpacityWhiteTransparent
+            case .colorRepositoryOpacityPrimaryLow:
+                theme.colors.colorRepositoryOpacityPrimaryLow
+            case .colorRepositoryOpacityPrimaryLower:
+                theme.colors.colorRepositoryOpacityPrimaryLower
+            case .colorRepositoryOpacityPrimaryLowest:
+                theme.colors.colorRepositoryOpacityPrimaryLowest
+            case .colorRepositoryOpacityPrimaryMedium:
+                theme.colors.colorRepositoryOpacityPrimaryMedium
+            case .colorRepositoryOpacityPrimaryHigh:
+                theme.colors.colorRepositoryOpacityPrimaryHigh
+            case .colorRepositoryOpacityPrimaryHigher:
+                theme.colors.colorRepositoryOpacityPrimaryHigher
+            case .colorRepositoryOpacityPrimaryHighest:
+                theme.colors.colorRepositoryOpacityPrimaryHighest
             case .colorRepositoryPositiveDefault:
                 theme.colors.colorRepositoryPositiveDefault
             case .colorRepositoryPositiveHigh:

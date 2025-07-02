@@ -80,11 +80,6 @@ extension Bundle {
         return "\(buildType)\(tag)"
     }
 
-    // WARNING: Do not change this value below as automatically parsed by script
-    var tokensLibraryVersion: String {
-        "Tokens version: 0.11.0"
-    }
-
     /// URL to the CHANGELOG to open depending to what the CI/CD defines
     var changelogURL: URL? {
         #if DEBUG

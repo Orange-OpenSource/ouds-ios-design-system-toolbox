@@ -29,7 +29,7 @@ struct DesignToolboxConfiguration<Configuration>: View where Configuration: View
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
             Group {
                 Text("app_common_configuration_label")
                     .typeHeadingMedium(theme)
@@ -38,11 +38,11 @@ struct DesignToolboxConfiguration<Configuration>: View where Configuration: View
 
                 OUDSHorizontalDivider()
             }
-            .padding(.horizontal, theme.spaces.spaceFixedMedium)
+            .padding(.horizontal, theme.spaces.spaceFixedMd)
 
             configuration()
         }
-        .padding(.vertical, theme.spaces.spaceFixedMedium)
+        .padding(.vertical, theme.spaces.spaceFixedMd)
         .oudsBorder(style: theme.borders.borderStyleDefault,
                     width: theme.borders.borderWidthThin,
                     radius: theme.borders.borderRadiusMedium,

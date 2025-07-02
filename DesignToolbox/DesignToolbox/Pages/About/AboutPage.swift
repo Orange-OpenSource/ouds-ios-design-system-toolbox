@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import OUDSFoundations // NOTE: Seen as "unused" for Periphery (https://github.com/peripheryapp/periphery/issues/942)
 import SwiftUI
 
@@ -116,8 +117,9 @@ struct AboutPage: View {
         if let sdkVersion = Bundle.main.sdkVersion, !sdkVersion.isEmpty {
             DesignToolboxCopyableText("app_about_details_sdkVersion" <- sdkVersion, sdkVersion)
         }
-        DesignToolboxCopyableText("\(Bundle.main.tokensLibraryVersion.replacingOccurrences(of: ":", with: ""))",
-                                  Bundle.main.tokensLibraryVersion.leadingColumnFragment)
+
+        DesignToolboxCopyableText("app_about_details_themeCoreVersion" <- OUDSVersions.themeCoreVersion, OUDSVersions.themeCoreVersion)
+        DesignToolboxCopyableText("app_about_details_themeOrangeVersion" <- OUDSVersions.themeOrangeVersion, OUDSVersions.themeOrangeVersion)
     }
 
     @ViewBuilder

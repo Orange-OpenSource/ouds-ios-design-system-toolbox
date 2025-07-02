@@ -51,7 +51,7 @@ private struct CheckboxPickerDemo: View {
                                isError: configurationModel.isError,
                                isReadOnly: configurationModel.isReadOnly,
                                hasDivider: configurationModel.hasDivider)
-                .padding([.trailing, .leading], theme.spaces.spacePaddingInlineShort)
+                .padding([.trailing, .leading], theme.spaces.spacePaddingInlineSm)
                 .disabled(!configurationModel.isEnabled)
         }
     }

@@ -50,6 +50,6 @@ private struct SwitchDemo: View {
                 .accessibilityIdentifier(A11YIdentifiers.componentSwitch)
             Spacer()
         }
-        .padding(.all, theme.spaces.spaceFixedMedium)
+        .padding(.all, theme.spaces.spaceFixedMd)
     }
 }
