@@ -1,30 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@" : {
-      "comment" : "About screen - Tokens library version",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@"
-          }
-        }
-      }
-    },
     "app_about_accessibilityStatement_label" : {
       "comment" : "About screen",
       "extractionState" : "manual",
@@ -403,6 +379,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version du SDK : %@"
+          }
+        }
+      }
+    },
+    "app_about_details_themeCoreVersion" : {
+      "comment" : "About screen - Tokens library version (Core)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار الرمز المميز الأساسي: ٪ @"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Core tokens library version: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version des tokens Core : %@"
+          }
+        }
+      }
+    },
+    "app_about_details_themeOrangeVersion" : {
+      "comment" : "About screen - Tokens library version (Orange)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار مكتبة الرموز البرتقالية: ٪ @"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orange tokens library version: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version des tokens Orange : %@"
           }
         }
       }
