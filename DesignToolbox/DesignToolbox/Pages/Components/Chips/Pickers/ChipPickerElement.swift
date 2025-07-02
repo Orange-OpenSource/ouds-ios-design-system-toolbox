@@ -13,24 +13,19 @@
 
 import SwiftUI
 
-struct ChipElements: DesignToolboxElement {
+struct ChipPickerElement: DesignToolboxElement {
     let name: String
     let image: Image
     let pageDescription: AnyView
 
     init() {
-        let variants: [DesignToolboxElement] = [
-            ChipPickerElement(),
-            SuggestionChipElement(),
-            FilterChipElement(),
-        ]
-
-        name = "app_components_chip_label".localized()
+        name = "app_components_chip_chipPicker_label".localized()
         image = Image(decorative: "il_component_chip").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: Image(decorative: "il_component_chip").renderingMode(.original),
-            description: "app_components_chip_description_text",
-            illustration: AnyView(DesignToolboxVariantElement(elements: variants))))
+            image: nil,
+            description: "app_components_chipsPicker_description_text",
+            illustration: AnyView(ChipPickerPage()))
+        )
     }
 }

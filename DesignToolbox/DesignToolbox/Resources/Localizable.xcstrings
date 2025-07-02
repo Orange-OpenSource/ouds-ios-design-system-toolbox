@@ -1472,6 +1472,31 @@
         }
       }
     },
+    "app_components_chip_chipPicker_label" : {
+      "comment" : "Component - ChipPicker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chips picker"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chips picker"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chips picker"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_chip_description_text" : {
       "comment" : "Component - Chip",
       "extractionState" : "manual",
@@ -1591,6 +1616,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suggestion %d"
+          }
+        }
+      }
+    },
+    "app_components_chipsPicker_description_text" : {
+      "comment" : "Component - Chip Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتيح لك أداة اختيار الرقائق إمكانية تحديد عنصر موجود في القائمة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A chips picker makes the user able to select an item provided in a list"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Le composant Chip picker permet à l'utilisateur de sélectionner un élément fourni dans une liste"
           }
         }
       }
@@ -1866,6 +1915,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_selection_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        }
+      }
+    },
     "app_components_common_style_label" : {
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
@@ -2110,30 +2183,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reversed"
-          }
-        }
-      }
-    },
-    "app_components_controlItem_selection_label" : {
-      "comment" : "Component - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
           }
         }
       }
