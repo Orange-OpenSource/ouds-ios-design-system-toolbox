@@ -51,6 +51,6 @@ private struct RadioDemo: View {
                 .accessibilityIdentifier(A11YIdentifiers.componentRadio)
             Spacer()
         }
-        .padding(.all, theme.spaces.spaceFixedMedium)
+        .padding(.all, theme.spaces.spaceFixedMd)
     }
 }

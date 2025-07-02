@@ -18,8 +18,8 @@ extension NamedSpace {
 
     enum ColumnGap: String, CaseIterable, NamedSpaceToken {
         case spaceColumnGapNone
-        case spaceColumnGapShorter
-        case spaceColumnGapShort
+        case spaceColumnGapXs
+        case spaceColumnGapSm
         case spaceColumnGapMedium
         case spaceColumnGapTall
         case spaceColumnGapTaller
@@ -30,16 +30,16 @@ extension NamedSpace {
             switch self {
             case .spaceColumnGapNone:
                 theme.spaces.spaceColumnGapNone
-            case .spaceColumnGapShorter:
-                theme.spaces.spaceColumnGapShorter
-            case .spaceColumnGapShort:
-                theme.spaces.spaceColumnGapShort
+            case .spaceColumnGapXs:
+                theme.spaces.spaceColumnGapXs
+            case .spaceColumnGapSm:
+                theme.spaces.spaceColumnGapSm
             case .spaceColumnGapMedium:
-                theme.spaces.spaceColumnGapMedium
+                theme.spaces.spaceColumnGapMd
             case .spaceColumnGapTall:
-                theme.spaces.spaceColumnGapTall
+                theme.spaces.spaceColumnGapLg
             case .spaceColumnGapTaller:
-                theme.spaces.spaceColumnGapTaller
+                theme.spaces.spaceColumnGapXl
             }
         }
     }

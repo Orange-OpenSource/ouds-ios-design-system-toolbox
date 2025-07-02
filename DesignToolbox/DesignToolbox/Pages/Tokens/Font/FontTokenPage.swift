@@ -34,7 +34,7 @@ struct FontTokenPage: View {
                 IllustrationFont(namedFont: fontName)
             }
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMd)
         .navigationTitle(LocalizedStringKey("app_tokens_typography_label"))
     }
 
@@ -68,7 +68,7 @@ struct FontTokenPage: View {
                 .oudsForegroundStyle(theme.colors.colorContentMuted)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.vertical, theme.spaces.spaceFixedShorter)
+            .padding(.vertical, theme.spaces.spaceFixedXs)
             .accessibilityElement(children: .combine)
         }
 

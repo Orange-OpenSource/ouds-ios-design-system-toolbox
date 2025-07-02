@@ -8,11 +8,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] New content-on color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] New repository color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Dimension semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Size semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [DesignToolbox] More UI tests for a11Y configurations
 - [DesignToolbox] Add in about page link to online CHANGELOG (Orange-OpenSource/ouds-ios#678)
 
 ### Changed
 
+- [Library] Button component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Switch component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Checkbox component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Control item component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Link component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Tag component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Chip component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Badge component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Space semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Border semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Size semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Tool] Update `SwiftFormat/CLI` pod from v0.56.2 to v0.56.4
 - [Library] Optional accessibility identifiers for items of radio picker and checkbox picker components
 - [DesignToolbox] Simplify component demo Screen (Orange-OpenSource/ouds-ios#721)

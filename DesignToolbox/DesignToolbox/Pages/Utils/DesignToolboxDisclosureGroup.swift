@@ -107,13 +107,13 @@ struct InternalDisclosure<Label, Content>: View where Label: View, Content: View
                         .rotationEffect(Angle.degrees(isExpanded ? 0 : 180))
                         .oudsForegroundColor(theme.colors.colorSurfaceBrandPrimary)
                         .frame(width: 20, height: 20)
-                        .padding(.trailing, theme.spaces.spacePaddingInlineMedium)
+                        .padding(.trailing, theme.spaces.spacePaddingInlineMd)
                         .accessibilityLabel(accessibilityLabel.localized())
                 }
             }
             .buttonStyle(.plain)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.bottom, theme.spaces.spacePaddingBlockShort)
+            .padding(.bottom, theme.spaces.spacePaddingBlockSm)
 
             if isExpanded {
                 content()

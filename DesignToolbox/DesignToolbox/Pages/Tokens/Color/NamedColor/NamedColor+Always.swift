@@ -22,7 +22,7 @@ extension NamedColor {
         case colorAlwaysOnWhite
         case colorAlwaysWhite
 
-        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
+        func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
             case .colorAlwaysBlack:
                 theme.colors.colorAlwaysBlack
