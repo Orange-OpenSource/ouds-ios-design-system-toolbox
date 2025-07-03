@@ -2068,7 +2068,6 @@
 				07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */,
 				07F75A372CC644C80004F1AD /* NamedSpace+Scaled.swift in Sources */,
 				0765B4A62CC15C9D00E69359 /* NamedColor.swift in Sources */,
-				07CC9AF32DB0F7DD001BC929 /* SwitchItemPage.swift in Sources */,
 				0751CEEF2E0E8B0C006BF8FC /* ChipElements.swift in Sources */,
 				07CC9AF42DB0F7DD001BC929 /* SwitchElement.swift in Sources */,
 				07CC9AF52DB0F7DD001BC929 /* SwitchElements.swift in Sources */,
