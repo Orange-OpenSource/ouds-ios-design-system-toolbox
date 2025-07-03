@@ -1603,19 +1603,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suggestion %d"
+            "value" : "Suggestion"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suggestion %d"
+            "value" : "Suggestion"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suggestion %d"
+            "value" : "Suggestion"
           }
         }
       }
