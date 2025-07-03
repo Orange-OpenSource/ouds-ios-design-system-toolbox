@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import SwiftUI
 
 /// Related to `OUDSCheckbox` (i.e. with 2 available values).
@@ -26,6 +27,7 @@ struct CheckboxElement: DesignToolboxElement {
             name: name,
             image: nil,
             description: "app_components_checkbox_description_text",
+            version: OUDSVersions.componentCheckboxVersion,
             illustration: AnyView(CheckboxPage())))
     }
 }
