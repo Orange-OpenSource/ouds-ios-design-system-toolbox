@@ -30,7 +30,19 @@ struct DesignToolboxElementPage: View {
     let name: String
     let image: Image?
     let description: String
+    let version: String?
     let illustration: AnyView
+
+    // swiftlint:disable function_default_parameter_at_end
+    init(name: String, image: Image? = nil, description: String, version: String? = nil, illustration: AnyView) {
+        self.name = name
+        self.image = image
+        self.description = description
+        self.version = version
+        self.illustration = illustration
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 
@@ -48,6 +60,17 @@ struct DesignToolboxElementPage: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .accessibilityFocused($requestFocus)
                     .padding(.horizontal, theme.spaces.spaceFixedMd)
+
+                if let version {
+                    HStack {
+                        Spacer()
+
+                        Text("app_common_version" <- version)
+                            .typeLabelStrongLarge(theme)
+
+                        Spacer()
+                    }
+                }
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)

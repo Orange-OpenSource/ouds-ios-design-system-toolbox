@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import SwiftUI
 
 struct LinkElement: DesignToolboxElement {
@@ -25,6 +26,7 @@ struct LinkElement: DesignToolboxElement {
             name: name,
             image: nil,
             description: "app_components_link_description_text",
+            version: OUDSVersions.componentLinkVersion,
             illustration: AnyView(LinkPage()))
         )
     }

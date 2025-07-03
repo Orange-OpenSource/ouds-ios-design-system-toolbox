@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import SwiftUI
 
 /// Related to `OUDSCheckboxItemIndeterminate` (i.e. with 3 available values).
@@ -26,6 +27,7 @@ struct CheckboxItemIndeterminateElement: DesignToolboxElement {
             name: name,
             image: nil,
             description: "app_components_checkbox_indeterminateCheckboxItem_description_text",
+            version: OUDSVersions.componentCheckboxVersion,
             illustration: AnyView(CheckboxItemIndeterminatePage())))
     }
 }

@@ -1,4 +1,4 @@
-# OUDS iOS library changelog
+# OUDS iOS design system toolbox changelog
 
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [DesignToolbox] Versions of components in pages (Orange-OpenSource/ouds-ios#760)
+- [Library] Versions of components in package
 - [Library] New content-on color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] New repository color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] Dimension semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
@@ -17,6 +19,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Button component tokens (tokens library v1.2.0)
+- [Library] Link component tokens (tokens library v1.2.0)
+- [Library] Checkbox component tokens (tokens library v1.2.0)
+- [Library] Radio button component tokens (tokens library v1.2.0)
+- [Library] Button component tokens (tokens library v1.2.0)
+- [Library] Tag component tokens (tokens library v1.2.0)
+- [Library] Tag component tokens (tokens library v1.2.0)
 - [Library] Button component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] Switch component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] Checkbox component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)

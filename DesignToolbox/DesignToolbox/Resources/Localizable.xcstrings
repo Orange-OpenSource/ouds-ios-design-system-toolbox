@@ -720,6 +720,30 @@
         }
       }
     },
+    "app_common_version" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "إصدار:%@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version : %@"
+          }
+        }
+      }
+    },
     "app_component_emptyContent_description_text" : {
       "comment" : "Common",
       "extractionState" : "manual",

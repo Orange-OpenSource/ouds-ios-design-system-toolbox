@@ -20,6 +20,8 @@ extension NamedColor {
 
     enum Repository: String, CaseIterable {
         case colorRepositoryAccentDefault
+        case colorRepositoryAccentHigh
+        case colorRepositoryAccentHigher
         case colorRepositoryAccentHighest
         case colorRepositoryAccentLow
         case colorRepositoryAccentLowest
@@ -53,6 +55,7 @@ extension NamedColor {
         case colorRepositoryOpacityBlackMediumHigh
         case colorRepositoryOpacityBlackTransparent
         case colorRepositoryOpacityInfo
+        case colorRepositoryOpacityAccent
         case colorRepositoryOpacityNegative
         case colorRepositoryOpacityPositive
         case colorRepositoryOpacityWarning
@@ -88,6 +91,10 @@ extension NamedColor {
             switch self {
             case .colorRepositoryAccentDefault:
                 theme.colors.colorRepositoryAccentDefault
+            case .colorRepositoryAccentHigh:
+                theme.colors.colorRepositoryAccentHigh
+            case .colorRepositoryAccentHigher:
+                theme.colors.colorRepositoryAccentHigher
             case .colorRepositoryAccentHighest:
                 theme.colors.colorRepositoryAccentHighest
             case .colorRepositoryAccentLow:
@@ -154,6 +161,8 @@ extension NamedColor {
                 theme.colors.colorRepositoryOpacityBlackTransparent
             case .colorRepositoryOpacityInfo:
                 theme.colors.colorRepositoryOpacityInfo
+            case .colorRepositoryOpacityAccent:
+                theme.colors.colorRepositoryOpacityAccent
             case .colorRepositoryOpacityNegative:
                 theme.colors.colorRepositoryOpacityNegative
             case .colorRepositoryOpacityPositive:
