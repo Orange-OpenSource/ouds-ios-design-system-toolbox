@@ -35,7 +35,7 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        text = "app_components_chip_suggestionChip_suggestionChip_label".localized(with: 1)
+        text = "app_components_chip_suggestionChip_suggestionChip_label".localized()
         layout = .textOnly
     }
 

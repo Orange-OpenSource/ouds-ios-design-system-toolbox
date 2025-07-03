@@ -108,10 +108,10 @@ final class OUDSChipsUITests: XCTestCase {
         // test_<themeName>_<colorScheme>.<layout>_<selectionPattern>_<disabledPattern> where:
         // - `disabledPattern` is empty if not disabled
         // - `selectionPattern` is empty if not selected
-        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let testName = "testFilter_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let disabledPattern = !model.enabled ? "_Disabled" : ""
         let selectedPattern = model.selection ? "_Selected" : ""
-        let name = "\(model.layout.description.camelCase)\(selectedPattern)\(disabledPattern)"
+        let name = "\(model.layout.debugDescription)\(selectedPattern)\(disabledPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
@@ -144,15 +144,28 @@ final class OUDSChipsUITests: XCTestCase {
         // Create a unique snapshot name based on the current configuration :
         // test_<themeName>_<colorScheme>.<layout><disabledPattern> where:
         // - `disabledPattern` is empty if not disabled
-        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let testName = "testSuggestion_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let disabledPattern = !model.enabled ? "_Disabled" : ""
-        let name = "\(model.layout.description.camelCase)\(disabledPattern)"
+        let name = "\(model.layout.debugDescription)\(disabledPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
                            named: name,
                            testName: testName)
+    }
+}
+
+extension ChipLayout: CustomDebugStringConvertible {
+    var debugDescription: String {
+        switch self {
+        case .textOnly:
+            "TextOnly"
+        case .textAndIcon:
+            "TextAndIcon"
+        case .iconOnly:
+            "IconOnly"
+        }
     }
 }
 
