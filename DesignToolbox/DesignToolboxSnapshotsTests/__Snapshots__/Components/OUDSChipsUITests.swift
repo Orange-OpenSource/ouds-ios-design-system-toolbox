@@ -57,14 +57,12 @@ final class OUDSChipsUITests: XCTestCase {
 
         // Test OUDSFilterChips
         for layout in ChipLayout.allCases {
-            for selection in [true, false] {
-                for enabled in [true, false] {
-                    var model = SuggestionChipConfigurationModel()
-                    model.layout = layout
-                    model.enabled = enabled
-
-                    testSuggestionChips(theme: theme, interfaceStyle: interfaceStyle, model: model)
-                }
+            for enabled in [true, false] {
+                var model = SuggestionChipConfigurationModel()
+                model.layout = layout
+                model.enabled = enabled
+                
+                testSuggestionChips(theme: theme, interfaceStyle: interfaceStyle, model: model)
             }
         }
 
