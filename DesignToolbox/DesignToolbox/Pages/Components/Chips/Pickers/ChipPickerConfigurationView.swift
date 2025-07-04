@@ -78,7 +78,7 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        selected = .mineralWater
+        selected = .virginHolyLava
         layout = .textAndIcon
     }
 
