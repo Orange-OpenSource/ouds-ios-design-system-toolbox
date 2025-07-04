@@ -31,12 +31,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [DesignToolbox] Versions of components in pages (Orange-OpenSource/ouds-ios#760)
 - [Library] Versions of components in package
+- [DesignToolBox] Add demo screens and ui tests for chips components (Orange-OpenSource/ouds-ios#407)
 - [Library] New content-on color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] New repository color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] Dimension semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] Size semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [DesignToolbox] More UI tests for a11Y configurations
-- [DesignToolBox] Add demo screens and ui tests for chips components (Orange-OpenSource/ouds-ios#407)
 - [DesignToolbox] Add in about page link to online CHANGELOG (Orange-OpenSource/ouds-ios#678)
 
 ### Changed
