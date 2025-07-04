@@ -248,6 +248,7 @@
 		51952AA32D3FA32E0068B807 /* GrisTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AF2CDD07F20043D558 /* GrisTokenPage.swift */; };
 		51952AA42D3FA32E0068B807 /* TokensPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF426A2CA30728000BD03E /* TokensPage.swift */; };
 		51952AA52D3FA3440068B807 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543102CA154DE001187EA /* Card.swift */; };
+		51ABCD182E182D7C006CD6C0 /* OUDSThemesSosh in Frameworks */ = {isa = PBXBuildFile; productRef = 51ABCD172E182D7C006CD6C0 /* OUDSThemesSosh */; };
 		51B8D5A12DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
 		51B8D5A22DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
 		51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 51BC9DE62C6513F200EB2A11 /* OUDSFoundations */; };
@@ -568,6 +569,7 @@
 				5115A1722DDF39AC0025A760 /* OUDSTokensRaw in Frameworks */,
 				5115A16C2DDF39AC0025A760 /* OUDSModules in Frameworks */,
 				6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */,
+				51ABCD182E182D7C006CD6C0 /* OUDSThemesSosh in Frameworks */,
 				5115A1702DDF39AC0025A760 /* OUDSTokensComponent in Frameworks */,
 				5115A1662DDF39AC0025A760 /* OUDS in Frameworks */,
 				5115A16E2DDF39AC0025A760 /* OUDSThemesOrange in Frameworks */,
@@ -1362,6 +1364,7 @@
 				5115A16F2DDF39AC0025A760 /* OUDSTokensComponent */,
 				5115A1712DDF39AC0025A760 /* OUDSTokensRaw */,
 				5115A1732DDF39AC0025A760 /* OUDSTokensSemantic */,
+				51ABCD172E182D7C006CD6C0 /* OUDSThemesSosh */,
 			);
 			productName = DemoApp;
 			productReference = 07FDCD912C296A500009AA13 /* Design System Toolbox.app */;
@@ -2344,6 +2347,10 @@
 		513AD93F2C5AAADE0003253B /* OUDSTokensComponent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSTokensComponent;
+		};
+		51ABCD172E182D7C006CD6C0 /* OUDSThemesSosh */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OUDSThemesSosh;
 		};
 		51BC9DE62C6513F200EB2A11 /* OUDSFoundations */ = {
 			isa = XCSwiftPackageProductDependency;
