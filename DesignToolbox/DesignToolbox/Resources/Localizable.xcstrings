@@ -1521,6 +1521,30 @@
         }
       }
     },
+    "app_components_chip_filterChip_chipContent_label" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فلتر"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtre"
+          }
+        }
+      }
+    },
     "app_components_chip_filterChip_label" : {
       "comment" : "Component - Chip",
       "extractionState" : "manual",
@@ -1570,6 +1594,30 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_chip_suggestionChip_chipContent_label" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اقتراح"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion"
+          }
+        }
+      }
     },
     "app_components_chip_suggestionChip_label" : {
       "comment" : "Component - Chip",
@@ -1638,7 +1686,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Le composant Chip picker permet à l'utilisateur de sélectionner un élément fourni dans une liste"
           }
         }
@@ -3226,20 +3274,20 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "تتضمن فجوة العمود المسافة الرأسية بين الكائنات."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Column gap includes the vertical spacing between objects."
+            "value" : "Column gap includes the horizontal spacing between objects."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les tokens Column Gap correspondent à l'espacement vertical entre les objets."
+            "value" : "Les tokens Column Gap correspondent à l'espacement horizontal entre les objets."
           }
         }
       }
@@ -3520,20 +3568,20 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "تتضمن فجوة الصفوف المسافة الأفقية بين الكائنات."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Row gap includes the horizontal spacing between objects."
+            "value" : "Row gap includes the vertical spacing between objects."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les tokens Raw Gap correspondent à l'espacement horizontal entre les objets."
+            "value" : "Les tokens Raw Gap correspondent à l'espacement verticaux entre les objets."
           }
         }
       }
