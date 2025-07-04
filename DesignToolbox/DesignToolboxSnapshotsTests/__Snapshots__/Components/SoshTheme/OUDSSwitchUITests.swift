@@ -13,7 +13,7 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesOrange
+import OUDSThemesSosh
 import OUDSTokensRaw
 import OUDSTokensSemantic
 import SnapshotTesting
@@ -25,18 +25,18 @@ import XCTest
 // MARK: - Test Cases
 
 /// Tests the UI rendering of the `OUDSSwitch` and `OUDSSwitchItem` for each parameter
-final class OUDSSwitchUITests: XCTestCase {
+final class SoshThemeSwitchUITests: XCTestCase {
 
-    /// Tests all switches configuration in the `OrangeTheme` with the `light` color schemes.
-    @MainActor func testAllSwitchesOrangeThemeLight() {
-        let theme = OrangeTheme()
+    /// Tests all switches configuration in the `SoshTheme` with the `light` color schemes.
+    @MainActor func testAllSwitchesSoshThemeLight() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all switches configuration in the `OrangeTheme` with the `dark` color schemes.
-    @MainActor func testAllSwitchesOrangeThemeDark() {
-        let theme = OrangeTheme()
+    /// Tests all switches configuration in the `SoshTheme` with the `dark` color schemes.
+    @MainActor func testAllSwitchesSoshThemeDark() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
     }

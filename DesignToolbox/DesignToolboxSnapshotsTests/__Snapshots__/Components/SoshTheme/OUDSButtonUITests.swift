@@ -13,7 +13,7 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesOrange
+import OUDSThemesSosh
 import OUDSTokensSemantic
 import SnapshotTesting
 import SwiftUI
@@ -24,19 +24,19 @@ import XCTest
 // MARK: - Test Cases
 
 /// Tests the UI rendering of the `OUDSButton` for each parameter
-final class OUDSButtonUITests: XCTestCase {
+final class SoshThemeButtonUITests: XCTestCase {
 
-    /// Tests all buttons configuration in the `OrangeTheme` with the `light` color schemes.
-    @MainActor func testAllButtonsOrangeThemeLight() {
-        let theme = OrangeTheme()
+    /// Tests all buttons configuration in the `SoshTheme` with the `light` color schemes.
+    @MainActor func testAllButtonsSoshThemeLight() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
         testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
-    @MainActor func testAllButtonsOrangeThemeDark() {
-        let theme = OrangeTheme()
+    /// Tests all buttons configuration in the `SoshTheme` with the `dark` color schemes.
+    @MainActor func testAllButtonsSoshThemeDark() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
         testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)

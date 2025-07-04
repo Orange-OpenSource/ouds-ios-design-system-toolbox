@@ -21,7 +21,9 @@ import XCTest
 // swiftlint:disable required_deinit
 
 /// Tests the UI rendering of each **opacity token** using reference images
-final class OUDSTokensOpacityUITests: XCTestCase {
+final class OrangeThemeTokensOpacityUITests: XCTestCase {
+
+    private let theme: OUDSTheme = OrangeTheme()
 
     // MARK: - Orange Theme Light Mode Opacity Tests
 
@@ -29,7 +31,6 @@ final class OUDSTokensOpacityUITests: XCTestCase {
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllOpacitiesOrangeThemeLight() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testOpacities(for: theme, in: interfaceStyle)
     }
@@ -40,7 +41,6 @@ final class OUDSTokensOpacityUITests: XCTestCase {
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllOpacitiesOrangeThemeDark() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testOpacities(for: theme, in: interfaceStyle)
     }

@@ -12,7 +12,7 @@
 //
 
 import OUDS
-import OUDSThemesOrange
+import OUDSThemesSosh
 import OUDSTokensSemantic
 import SnapshotTesting
 import SwiftUI
@@ -21,24 +21,24 @@ import XCTest
 // swiftlint:disable required_deinit
 
 /// Tests the UI rendering of each **border token** using reference images
-final class OUDSTokensBorderUITests: XCTestCase {
+final class SoshThemeTokensBorderUITests: XCTestCase {
 
-    /// This function tests all border tokens in the `OrangeTheme` with the `light` color schemes.
+    /// This function tests all border tokens in the `SoshTheme` with the `light` color schemes.
     /// It iterates through all `NamedBorderWidth`, `NamedBorderRafius`, and`NamedBorderStyle` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
-    @MainActor func testAllBorderOrangeThemeLight() {
-        let theme = OrangeTheme()
+    @MainActor func testAllBorderSoshThemeLight() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testBorderWidth(for: theme, in: interfaceStyle)
         testBorderRadius(for: theme, in: interfaceStyle)
         testBorderStyle(for: theme, in: interfaceStyle)
     }
 
-    /// This function tests all border tokens in the `OrangeTheme` with  the `dark` color schemes.
+    /// This function tests all border tokens in the `SoshTheme` with  the `dark` color schemes.
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
-    @MainActor func testAllBorderOrangeThemeDark() {
-        let theme = OrangeTheme()
+    @MainActor func testAllBorderSoshThemeDark() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testBorderWidth(for: theme, in: interfaceStyle)
         testBorderRadius(for: theme, in: interfaceStyle)
@@ -49,7 +49,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
     /// Tests all border width properties by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
+    ///   - theme: Theme used for rendering tokens (e.g., `SoshTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testBorderWidth(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 
@@ -75,7 +75,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
     /// Tests all border radius properties by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
+    ///   - theme: Theme used for rendering tokens (e.g., `SoshTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testBorderRadius(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 
@@ -101,7 +101,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
     /// Tests all border style properties by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
+    ///   - theme: Theme used for rendering tokens (e.g., `SoshTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testBorderStyle(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 

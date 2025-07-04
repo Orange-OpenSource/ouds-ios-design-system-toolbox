@@ -13,7 +13,7 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesOrange
+import OUDSThemesSosh
 import OUDSTokensRaw
 import OUDSTokensSemantic
 import SnapshotTesting
@@ -27,18 +27,18 @@ import XCTest
 /// Tests the UI rendering of the `OUDSCheckboxIndeterminate` and `OUDSCheckboxItemIndeterminate` for each parameter.
 /// `OUDSCheckbox` and `OUDSCheckboxItem` won't be tested as, until today, are based on the same layouts and look and feels, and the only difference
 /// is in the management of the states.
-final class OUDSCheckboxUITests: XCTestCase {
+final class SoshThemeCheckboxUITests: XCTestCase {
 
-    /// Tests all buttons configuration in the `OrangeTheme` with the `light` color schemes.
-    @MainActor func testAllCheckboxesOrangeThemeLight() {
-        let theme = OrangeTheme()
+    /// Tests all buttons configuration in the `SoshTheme` with the `light` color schemes.
+    @MainActor func testAllCheckboxesSoshThemeLight() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
-    @MainActor func testAllCheckboxesOrangeThemeDark() {
-        let theme = OrangeTheme()
+    /// Tests all buttons configuration in the `SoshTheme` with the `dark` color schemes.
+    @MainActor func testAllCheckboxesSoshThemeDark() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
     }

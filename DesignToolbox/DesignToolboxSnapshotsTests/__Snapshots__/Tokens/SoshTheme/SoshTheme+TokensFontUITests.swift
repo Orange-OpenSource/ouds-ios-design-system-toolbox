@@ -12,7 +12,7 @@
 //
 
 import OUDS
-import OUDSThemesOrange
+import OUDSThemesSosh
 import OUDSTokensSemantic
 import SnapshotTesting
 import SwiftUI
@@ -20,44 +20,44 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// Tests the UI rendering of each **elevation token** using reference images
-final class OUDSTokensElevationUITests: XCTestCase {
+/// Tests the UI rendering of each **font token** using reference images
+final class SoshThemeTokensFontUITests: XCTestCase {
 
-    // MARK: - Orange Theme Light Mode Elevation Tests
+    // MARK: - Orange Theme Light Mode Typography Tests
 
-    /// This function tests all elevation tokens in the `OrangeTheme` with the `light` color scheme.
-    /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
-    @MainActor func testAllElevationsOrangeThemeLight() {
-        let theme = OrangeTheme()
+    /// This function tests all font tokens in the `SoshTheme` with the `light` color scheme.
+    /// It iterates through all `NamedFont` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. The snapshot is saved with a name indicating the font, theme, color scheme and horizontalSizeClass.
+    @MainActor func testAllFontsSoshThemeLight() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
-        testElevations(for: theme, in: interfaceStyle)
+        testAllFonts(for: theme, in: interfaceStyle)
     }
 
-    // MARK: - Orange Theme Dark Mode Elevation Tests
+    // MARK: - Orange Theme Dark Mode Typography Tests
 
-    /// This function tests all elevation tokens in the `OrangeTheme` with the `dark` color scheme.
-    /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
-    @MainActor func testAllElevationsOrangeThemeDark() {
-        let theme = OrangeTheme()
+    /// This function tests all font tokens in the `SoshTheme` with the `dark` color scheme.
+    /// It iterates through all `NamedFont` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. The snapshot is saved with a name indicating the font, theme, color scheme horizontalSizeClass.
+    @MainActor func testAllFontsSoshThemeDark() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testElevations(for: theme, in: interfaceStyle)
+        testAllFonts(for: theme, in: interfaceStyle)
     }
 
-    // MARK: Private test functions for all properties of elevation token
+    // MARK: Private test functions for all typography properties of typography token
 
-    /// Tests all elevation properties by capturing their snapshots.
+    /// Tests all fonts properties by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g. `OrangeTheme`).
+    ///   - theme: Theme used for rendering tokens (e.g., `SoshTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testElevations(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
+    @MainActor private func testAllFonts(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 
         // Iterate through all named tokens
-        for namedToken in NamedElevation.allCases {
+        for namedToken in NamedFont.allCases {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
-                ElevationTokenPage.IllustrationElevation(namedElevation: namedToken)
+                FontTokenPage.IllustrationFont(namedFont: namedToken)
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 

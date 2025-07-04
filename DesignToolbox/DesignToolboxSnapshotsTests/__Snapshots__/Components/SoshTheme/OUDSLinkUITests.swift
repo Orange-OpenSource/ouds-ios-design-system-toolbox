@@ -13,7 +13,7 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesOrange
+import OUDSThemesSosh
 import OUDSTokensSemantic
 import SnapshotTesting
 import SwiftUI
@@ -24,19 +24,19 @@ import XCTest
 // MARK: - Test Cases
 
 /// Tests the UI rendering of the `OUDSLink` for each parameter
-final class OUDSLinkUITests: XCTestCase {
+final class SoshThemeLinkUITests: XCTestCase {
 
-    /// Tests all link configuration in the `OrangeTheme` with the `light` color schemes.
-    @MainActor func testAllLinksOrangeThemeLight() {
-        let theme = OrangeTheme()
+    /// Tests all link configuration in the `SoshTheme` with the `light` color schemes.
+    @MainActor func testAllLinksSoshThemeLight() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
         testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all link configuration in the `OrangeTheme` with the `dark` color schemes.
-    @MainActor func testAllLinksOrangeThemeDark() {
-        let theme = OrangeTheme()
+    /// Tests all link configuration in the `SoshTheme` with the `dark` color schemes.
+    @MainActor func testAllLinksSoshThemeDark() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
         testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)

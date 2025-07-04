@@ -24,7 +24,7 @@ import XCTest
 // MARK: - Test Cases
 
 /// Tests the UI rendering of the `OUDSDivider` for each parameter
-final class OUDSDividerUITests: XCTestCase {
+final class OrangeThemeDividerUITests: XCTestCase {
 
     /// Tests all divider configuration in the `OrangeTheme` with the `light` color schemes.
     @MainActor func testAllDividerOrangeThemeLight() {

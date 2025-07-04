@@ -21,7 +21,9 @@ import XCTest
 // swiftlint:disable required_deinit
 
 /// Tests the UI rendering of each **space token** using reference images
-final class OUDSTokensSpaceUITests: XCTestCase {
+final class OrangeThemeTokensSpaceUITests: XCTestCase {
+
+    private let theme: OUDSTheme = OrangeTheme()
 
     // MARK: - Orange Theme Light Mode Space Tests
 
@@ -30,7 +32,6 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
     @MainActor func testAllSpacesOrangeThemeLight() {
         // Testing for different types of spacing for light mode
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testScaledProperty(theme: theme, interfaceStyle: interfaceStyle)
         testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)
@@ -48,7 +49,6 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     /// and captures a snapshot. The snapshot is saved with a name indicating the space type, theme, and interfaceStyle (i.e color scheme).
     @MainActor func testAllSpacesOrangeThemeDark() {
         // Testing for different types of spacing for dark mode
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testScaledProperty(theme: theme, interfaceStyle: interfaceStyle)
         testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)

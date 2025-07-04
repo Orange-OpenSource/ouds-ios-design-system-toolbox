@@ -13,7 +13,7 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesOrange
+import OUDSThemesSosh
 import OUDSTokensRaw
 import OUDSTokensSemantic
 import SnapshotTesting
@@ -25,18 +25,18 @@ import XCTest
 // MARK: - Test Cases
 
 /// Tests the UI rendering of the `OUDSRadio` and `OUDSRadioItem` for each parameter
-final class OUDSRadioUITests: XCTestCase {
+final class SoshThemeRadioUITests: XCTestCase {
 
-    /// Tests all buttons configuration in the `OrangeTheme` with the `light` color schemes.
-    @MainActor func testAllRadioButtonsOrangeThemeLight() {
-        let theme = OrangeTheme()
+    /// Tests all buttons configuration in the `SoshTheme` with the `light` color schemes.
+    @MainActor func testAllRadioButtonsSoshThemeLight() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllRadioButtons(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
-    @MainActor func testAllRadioButtonsOrangeThemeDark() {
-        let theme = OrangeTheme()
+    /// Tests all buttons configuration in the `SoshTheme` with the `dark` color schemes.
+    @MainActor func testAllRadioButtonsSoshThemeDark() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllRadioButtons(theme: theme, interfaceStyle: interfaceStyle)
     }

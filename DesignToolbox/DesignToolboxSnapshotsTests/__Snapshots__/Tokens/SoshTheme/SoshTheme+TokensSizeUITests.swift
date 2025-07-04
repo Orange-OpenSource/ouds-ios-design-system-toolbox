@@ -12,7 +12,7 @@
 //
 
 import OUDS
-import OUDSThemesOrange
+import OUDSThemesSosh
 import OUDSTokensSemantic
 import SnapshotTesting
 import SwiftUI
@@ -21,15 +21,15 @@ import XCTest
 // swiftlint:disable required_deinit
 
 /// Tests the UI rendering of each **size token** using reference images
-final class OUDSTokensSizeUITests: XCTestCase {
+final class SoshThemeTokensSizeUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Size Tests
 
-    /// This function tests all size tokens in the `OrangeTheme` with the `light` color scheme.
+    /// This function tests all size tokens in the `SoshTheme` with the `light` color scheme.
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
-    @MainActor func testAllSizesOrangeThemeLight() {
-        let theme = OrangeTheme()
+    @MainActor func testAllSizesSoshThemeLight() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testSizeIconDecorative(for: theme, in: interfaceStyle)
         testSizeIconWithTypography(for: theme, in: interfaceStyle)
@@ -37,11 +37,11 @@ final class OUDSTokensSizeUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Size Tests
 
-    /// This function tests all size tokens in the `OrangeTheme` with the `dark` color scheme.
+    /// This function tests all size tokens in the `SoshTheme` with the `dark` color scheme.
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
-    @MainActor func testAllSizesOrangeThemeDark() {
-        let theme = OrangeTheme()
+    @MainActor func testAllSizesSoshThemeDark() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testSizeIconDecorative(for: theme, in: interfaceStyle)
         testSizeIconWithTypography(for: theme, in: interfaceStyle)
@@ -51,7 +51,7 @@ final class OUDSTokensSizeUITests: XCTestCase {
 
     /// Tests all icon decorative properties by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
+    ///   - theme: Theme used for rendering tokens (e.g., `SoshTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testSizeIconDecorative(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 
@@ -77,7 +77,7 @@ final class OUDSTokensSizeUITests: XCTestCase {
 
     /// Tests all icon with typography properties by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
+    ///   - theme: Theme used for rendering tokens (e.g., `SoshTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testSizeIconWithTypography(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 

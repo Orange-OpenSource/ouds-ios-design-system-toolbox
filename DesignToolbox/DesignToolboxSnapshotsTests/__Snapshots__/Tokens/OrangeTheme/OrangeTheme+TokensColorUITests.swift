@@ -21,7 +21,9 @@ import XCTest
 // swiftlint:disable required_deinit
 
 /// Tests the UI rendering of each **color token** using reference images
-final class OUDSTokensColorUITests: XCTestCase {
+final class OrangeThemeTokensColorUITests: XCTestCase {
+
+    private let theme: OUDSTheme = OrangeTheme()
 
     // MARK: - Orange Theme Light Mode Color Tests
 
@@ -29,7 +31,6 @@ final class OUDSTokensColorUITests: XCTestCase {
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
     @MainActor func testAllColorsOrangeThemeLight() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
 
         // Test all color sections individually for light mode
@@ -52,7 +53,6 @@ final class OUDSTokensColorUITests: XCTestCase {
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
     @MainActor func testAllColorsOrangeThemeDark() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
 
         // Test all color sections individually for dark mode
