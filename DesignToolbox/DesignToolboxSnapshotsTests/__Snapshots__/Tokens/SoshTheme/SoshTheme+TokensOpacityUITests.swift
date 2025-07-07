@@ -23,11 +23,18 @@ import XCTest
 /// Tests the UI rendering of each **opacity token** using reference images for `SoshTheme`.
 final class SoshThemeTokensOpacityUITests: TokensOpacityUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = SoshTheme()
+    }
+
     /// This function tests all opacity tokens in the `SoshTheme` with the `light` color scheme.
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllOpacitiesSoshThemeLight() {
-        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testOpacities(for: theme, in: interfaceStyle)
     }
@@ -36,7 +43,6 @@ final class SoshThemeTokensOpacityUITests: TokensOpacityUITestsTestCase {
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllOpacitiesSoshThemeDark() {
-        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testOpacities(for: theme, in: interfaceStyle)
     }

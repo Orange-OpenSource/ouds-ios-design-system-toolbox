@@ -23,14 +23,19 @@ import XCTest
 /// Tests the UI rendering of each **color token** using reference images for `SoshTheme`
 final class SoshThemeTokensColorUITests: TokensColorUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = SoshTheme()
+    }
+
     /// This function tests all color tokens in the `SoshTheme` with the `light` color schemes.
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
     @MainActor func testAllColorsSoshThemeLight() {
-        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
-
-        // Test all color sections individually for light mode
         testActionColors(theme: theme, interfaceStyle: interfaceStyle)
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
         testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
@@ -48,10 +53,7 @@ final class SoshThemeTokensColorUITests: TokensColorUITestsTestCase {
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
     @MainActor func testAllColorsSoshThemeDark() {
-        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
-
-        // Test all color sections individually for dark mode
         testActionColors(theme: theme, interfaceStyle: interfaceStyle)
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
         testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)

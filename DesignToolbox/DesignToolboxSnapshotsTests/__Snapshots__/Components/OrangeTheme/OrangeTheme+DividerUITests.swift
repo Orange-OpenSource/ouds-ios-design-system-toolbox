@@ -26,16 +26,22 @@ import XCTest
 /// Tests the UI rendering of the `OUDSDivider` for each parameter  for `OrangeTheme`.
 final class OrangeThemeDividerUITests: DividerUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = OrangeTheme()
+    }
+
     /// Tests all divider configuration in the `OrangeTheme` with the `light` color schemes.
     @MainActor func testAllDividerOrangeThemeLight() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllDividers(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllDividerOrangeThemeDark() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllDividers(theme: theme, interfaceStyle: interfaceStyle)
     }

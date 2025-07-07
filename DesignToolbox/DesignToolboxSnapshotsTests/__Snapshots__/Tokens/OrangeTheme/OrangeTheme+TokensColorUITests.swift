@@ -23,11 +23,18 @@ import XCTest
 /// Tests the UI rendering of each **color token** using reference images for `OrangeTheme`
 final class OrangeThemeTokensColorUITests: TokensColorUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = OrangeTheme()
+    }
+
     /// This function tests all color tokens in the `OrangeTheme` with the `light` color schemes.
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
     @MainActor func testAllColorsOrangeThemeLight() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testActionColors(theme: theme, interfaceStyle: interfaceStyle)
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
@@ -46,7 +53,6 @@ final class OrangeThemeTokensColorUITests: TokensColorUITestsTestCase {
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
     @MainActor func testAllColorsOrangeThemeDark() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testActionColors(theme: theme, interfaceStyle: interfaceStyle)
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)

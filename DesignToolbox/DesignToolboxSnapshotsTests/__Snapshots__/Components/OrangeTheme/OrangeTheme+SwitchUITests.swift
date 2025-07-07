@@ -27,16 +27,22 @@ import XCTest
 /// Tests the UI rendering of the `OUDSSwitch` and `OUDSSwitchItem` for each parameter  for `OrangeTheme`.
 final class OrangeThemeSwitchUITests: SwitchUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = OrangeTheme()
+    }
+
     /// Tests all switches configuration in the `OrangeTheme` with the `light` color schemes.
     @MainActor func testAllSwitchesOrangeThemeLight() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// Tests all switches configuration in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllSwitchesOrangeThemeDark() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
     }

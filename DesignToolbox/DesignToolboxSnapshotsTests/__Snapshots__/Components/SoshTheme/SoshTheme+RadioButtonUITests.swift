@@ -14,6 +14,7 @@
 import OUDS
 import OUDSComponents
 import OUDSThemesSosh
+import OUDSTokensRaw
 import OUDSTokensSemantic
 import SnapshotTesting
 import SwiftUI
@@ -23,21 +24,27 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSDivider` for each parameter with `SoshTheme`
-final class SoshThemeDividerUITests: DividerUITestsTestCase {
+/// Tests the UI rendering of the `OUDSRadio` and `OUDSRadioItem` for each parameter for `SoshTheme`.
+final class SoshThemeRadioUITests: RadioButtonUITestsTestCase {
 
-    /// Tests all divider configuration in the `SoshTheme` with the `light` color schemes.
-    @MainActor func testAllDividerSoshThemeLight() {
-        let theme = SoshTheme()
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = SoshTheme()
+    }
+
+    /// Tests all buttons configuration in the `SoshTheme` with the `light` color schemes.
+    @MainActor func testAllRadioButtonsSoshThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
-        testAllDividers(theme: theme, interfaceStyle: interfaceStyle)
+        testAllRadioButtons(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// Tests all buttons configuration in the `SoshTheme` with the `dark` color schemes.
-    @MainActor func testAllDividerSoshThemeDark() {
-        let theme = SoshTheme()
+    @MainActor func testAllRadioButtonsSoshThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllDividers(theme: theme, interfaceStyle: interfaceStyle)
+        testAllRadioButtons(theme: theme, interfaceStyle: interfaceStyle)
     }
 }
 

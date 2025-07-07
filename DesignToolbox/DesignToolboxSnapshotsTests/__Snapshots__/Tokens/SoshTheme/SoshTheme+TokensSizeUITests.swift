@@ -23,11 +23,18 @@ import XCTest
 /// Tests the UI rendering of each **size token** using reference images
 final class SoshThemeTokensSizeUITests: TokensSizeUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = SoshTheme()
+    }
+
     /// This function tests all size tokens in the `SoshTheme` with the `light` color scheme.
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllSizesSoshThemeLight() {
-        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testSizeIconDecorative(for: theme, in: interfaceStyle)
         testSizeIconWithTypography(for: theme, in: interfaceStyle)
@@ -37,7 +44,6 @@ final class SoshThemeTokensSizeUITests: TokensSizeUITestsTestCase {
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllSizesSoshThemeDark() {
-        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testSizeIconDecorative(for: theme, in: interfaceStyle)
         testSizeIconWithTypography(for: theme, in: interfaceStyle)

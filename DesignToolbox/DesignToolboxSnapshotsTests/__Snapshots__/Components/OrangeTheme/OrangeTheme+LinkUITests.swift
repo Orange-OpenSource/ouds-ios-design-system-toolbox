@@ -26,9 +26,16 @@ import XCTest
 /// Tests the UI rendering of the `OUDSLink` for each parameter  for `OrangeTheme`.
 final class OrangeThemeLinkUITests: LinkUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = OrangeTheme()
+    }
+
     /// Tests all link configuration in the `OrangeTheme` with the `light` color schemes.
     @MainActor func testAllLinksOrangeThemeLight() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
         testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
@@ -36,7 +43,6 @@ final class OrangeThemeLinkUITests: LinkUITestsTestCase {
 
     /// Tests all link configuration in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllLinksOrangeThemeDark() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
         testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)

@@ -23,11 +23,18 @@ import XCTest
 /// Tests the UI rendering of each **elevation token** using reference images for `OrangeTheme`
 final class OrangeThemeTokensElevationUITests: TokensElevationUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = OrangeTheme()
+    }
+
     /// This function tests all elevation tokens in the `OrangeTheme` with the `light` color scheme.
     /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllElevationsOrangeThemeLight() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testElevations(for: theme, in: interfaceStyle)
     }
@@ -36,7 +43,6 @@ final class OrangeThemeTokensElevationUITests: TokensElevationUITestsTestCase {
     /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllElevationsOrangeThemeDark() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testElevations(for: theme, in: interfaceStyle)
     }

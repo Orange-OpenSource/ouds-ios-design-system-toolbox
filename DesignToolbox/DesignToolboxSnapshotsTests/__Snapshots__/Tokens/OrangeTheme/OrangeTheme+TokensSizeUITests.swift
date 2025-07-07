@@ -23,11 +23,18 @@ import XCTest
 /// Tests the UI rendering of each **size token** using reference images for `OrangeTheme`
 final class OrangeThemeTokensSizeUITests: TokensSizeUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = OrangeTheme()
+    }
+
     /// This function tests all size tokens in the `OrangeTheme` with the `light` color scheme.
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllSizesOrangeThemeLight() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testSizeIconDecorative(for: theme, in: interfaceStyle)
         testSizeIconWithTypography(for: theme, in: interfaceStyle)
@@ -37,7 +44,6 @@ final class OrangeThemeTokensSizeUITests: TokensSizeUITestsTestCase {
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllSizesOrangeThemeDark() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testSizeIconDecorative(for: theme, in: interfaceStyle)
         testSizeIconWithTypography(for: theme, in: interfaceStyle)

@@ -29,16 +29,22 @@ import XCTest
 /// is in the management of the states. Uses `OrangeTheme`.
 final class OrangeThemeCheckboxUITests: CheckboxUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = OrangeTheme()
+    }
+
     /// Tests all buttons configuration in the `OrangeTheme` with the `light` color schemes.
     @MainActor func testAllCheckboxesOrangeThemeLight() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllCheckboxesOrangeThemeDark() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
     }

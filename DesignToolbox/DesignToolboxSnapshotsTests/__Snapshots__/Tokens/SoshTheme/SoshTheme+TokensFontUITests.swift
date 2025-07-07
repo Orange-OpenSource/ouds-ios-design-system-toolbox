@@ -23,11 +23,18 @@ import XCTest
 /// Tests the UI rendering of each **font token** using reference images for `SoshTheme`
 final class SoshThemeTokensFontUITests: TokensFontUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = SoshTheme()
+    }
+
     /// This function tests all font tokens in the `SoshTheme` with the `light` color scheme.
     /// It iterates through all `NamedFont` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the font, theme, color scheme and horizontalSizeClass.
     @MainActor func testAllFontsSoshThemeLight() {
-        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllFonts(for: theme, in: interfaceStyle)
     }
@@ -36,7 +43,6 @@ final class SoshThemeTokensFontUITests: TokensFontUITestsTestCase {
     /// It iterates through all `NamedFont` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the font, theme, color scheme horizontalSizeClass.
     @MainActor func testAllFontsSoshThemeDark() {
-        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllFonts(for: theme, in: interfaceStyle)
     }

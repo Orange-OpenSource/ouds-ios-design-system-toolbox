@@ -27,16 +27,22 @@ import XCTest
 /// Tests the UI rendering of the `OUDSRadio` and `OUDSRadioItem` for each parameter  for `OrangeTheme`.
 final class OrangeThemeRadioUITests: RadioButtonUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = OrangeTheme()
+    }
+
     /// Tests all buttons configuration in the `OrangeTheme` with the `light` color schemes.
     @MainActor func testAllRadioButtonsOrangeThemeLight() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllRadioButtons(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllRadioButtonsOrangeThemeDark() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllRadioButtons(theme: theme, interfaceStyle: interfaceStyle)
     }

@@ -14,6 +14,7 @@
 import OUDS
 import OUDSComponents
 import OUDSThemesSosh
+import OUDSTokensRaw
 import OUDSTokensSemantic
 import SnapshotTesting
 import SwiftUI
@@ -23,23 +24,29 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSButton` components for each parameter with `SoshTheme`
-final class SoshThemeButtonUITests: ButtonUITestsTestCase {
+/// Tests the UI rendering of the `OUDSCheckboxIndeterminate` and `OUDSCheckboxItemIndeterminate` for each parameter.
+/// `OUDSCheckbox` and `OUDSCheckboxItem` won't be tested as, until today, are based on the same layouts and look and feels, and the only difference
+/// is in the management of the states. Uses `SoshTheme`.
+final class SoshThemeCheckboxUITests: CheckboxUITestsTestCase {
+
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = SoshTheme()
+    }
 
     /// Tests all buttons configuration in the `SoshTheme` with the `light` color schemes.
-    @MainActor func testAllButtonsSoshThemeLight() {
-        let theme = SoshTheme()
+    @MainActor func testAllCheckboxesSoshThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
-        testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
-        testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
+        testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// Tests all buttons configuration in the `SoshTheme` with the `dark` color schemes.
-    @MainActor func testAllButtonsSoshThemeDark() {
-        let theme = SoshTheme()
+    @MainActor func testAllCheckboxesSoshThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
-        testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
+        testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
     }
 }
 

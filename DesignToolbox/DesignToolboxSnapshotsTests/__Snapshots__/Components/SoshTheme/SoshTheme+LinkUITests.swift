@@ -13,7 +13,7 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesOrange
+import OUDSThemesSosh
 import OUDSTokensSemantic
 import SnapshotTesting
 import SwiftUI
@@ -23,29 +23,29 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSButton` for each parameter for `OrangeTheme`.
-final class OrangeThemeButtonUITests: ButtonUITestsTestCase {
+/// Tests the UI rendering of the `OUDSLink` for each paramete with `SoshTheme`.
+final class SoshThemeLinkUITests: LinkUITestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
     private var theme: OUDSTheme!
     // swiftlint:enable implicitly_unwrapped_optional
 
     override func setUp() {
-        theme = OrangeTheme()
+        theme = SoshTheme()
     }
 
-    /// Tests all buttons configuration in the `OrangeTheme` with the `light` color schemes.
-    @MainActor func testAllButtonsOrangeThemeLight() {
+    /// Tests all link configuration in the `SoshTheme` with the `light` color schemes.
+    @MainActor func testAllLinksSoshThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
-        testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
-        testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
+        testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
+        testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
-    @MainActor func testAllButtonsOrangeThemeDark() {
+    /// Tests all link configuration in the `SoshTheme` with the `dark` color schemes.
+    @MainActor func testAllLinksSoshThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
-        testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
+        testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
+        testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
 }
 

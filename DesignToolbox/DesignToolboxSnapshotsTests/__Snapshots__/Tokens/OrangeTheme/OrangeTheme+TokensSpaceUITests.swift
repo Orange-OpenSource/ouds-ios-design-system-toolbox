@@ -23,11 +23,18 @@ import XCTest
 /// Tests the UI rendering of each **space token** using reference images  for `OrangeTheme`
 final class OrangeThemeTokensSpaceUITests: TokensSpaceUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = OrangeTheme()
+    }
+
     /// This function tests all dimension tokens in the `OrangeTheme` with  the `light` color schemes.
     /// It iterates through all `NamedSpace` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
     @MainActor func testAllSpacesOrangeThemeLight() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testScaledProperty(theme: theme, interfaceStyle: interfaceStyle)
         testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)
@@ -42,7 +49,6 @@ final class OrangeThemeTokensSpaceUITests: TokensSpaceUITestsTestCase {
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the space type, theme, and interfaceStyle (i.e color scheme).
     @MainActor func testAllSpacesOrangeThemeDark() {
-        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testScaledProperty(theme: theme, interfaceStyle: interfaceStyle)
         testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)

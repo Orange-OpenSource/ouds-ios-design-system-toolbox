@@ -23,23 +23,27 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSLink` for each paramete with `SoshTheme`.
-final class SoshThemeLinkUITests: LinkUITestsTestCase {
+/// Tests the UI rendering of the `OUDSDivider` for each parameter with `SoshTheme`
+final class SoshThemeDividerUITests: DividerUITestsTestCase {
 
-    /// Tests all link configuration in the `SoshTheme` with the `light` color schemes.
-    @MainActor func testAllLinksSoshThemeLight() {
-        let theme = SoshTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
-        testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = SoshTheme()
     }
 
-    /// Tests all link configuration in the `SoshTheme` with the `dark` color schemes.
-    @MainActor func testAllLinksSoshThemeDark() {
-        let theme = SoshTheme()
+    /// Tests all divider configuration in the `SoshTheme` with the `light` color schemes.
+    @MainActor func testAllDividerSoshThemeLight() {
+        let interfaceStyle = UIUserInterfaceStyle.light
+        testAllDividers(theme: theme, interfaceStyle: interfaceStyle)
+    }
+
+    /// Tests all buttons configuration in the `SoshTheme` with the `dark` color schemes.
+    @MainActor func testAllDividerSoshThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
-        testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
+        testAllDividers(theme: theme, interfaceStyle: interfaceStyle)
     }
 }
 

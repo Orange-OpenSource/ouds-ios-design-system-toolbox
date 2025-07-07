@@ -27,16 +27,22 @@ import XCTest
 /// Tests the UI rendering of the `OUDSSwitch` and `OUDSSwitchItem` for each parameter with `SoshTheme`.
 final class SoshThemeSwitchUITests: SwitchUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = SoshTheme()
+    }
+
     /// Tests all switches configuration in the `SoshTheme` with the `light` color schemes.
     @MainActor func testAllSwitchesSoshThemeLight() {
-        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// Tests all switches configuration in the `SoshTheme` with the `dark` color schemes.
     @MainActor func testAllSwitchesSoshThemeDark() {
-        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
     }

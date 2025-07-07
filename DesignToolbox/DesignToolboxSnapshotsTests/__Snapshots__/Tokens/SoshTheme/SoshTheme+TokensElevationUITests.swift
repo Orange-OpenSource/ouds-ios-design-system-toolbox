@@ -23,22 +23,26 @@ import XCTest
 /// Tests the UI rendering of each **elevation token** using reference images for `SoshTheme`
 final class SoshThemeTokensElevationUITests: TokensElevationUITestsTestCase {
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var theme: OUDSTheme!
+    // swiftlint:enable implicitly_unwrapped_optional
+
+    override func setUp() {
+        theme = SoshTheme()
+    }
+
     /// This function tests all elevation tokens in the `SoshTheme` with the `light` color scheme.
     /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllElevationsSoshThemeLight() {
-        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testElevations(for: theme, in: interfaceStyle)
     }
-
-    // MARK: - Orange Theme Dark Mode Elevation Tests
 
     /// This function tests all elevation tokens in the `SoshTheme` with the `dark` color scheme.
     /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllElevationsSoshThemeDark() {
-        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testElevations(for: theme, in: interfaceStyle)
     }
