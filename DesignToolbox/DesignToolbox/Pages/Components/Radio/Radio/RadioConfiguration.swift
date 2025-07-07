@@ -49,12 +49,12 @@ final class RadioConfigurationModel: ComponentConfiguration {
         code =
             """
             OUDSRadio(isOn: $isOn, accessibilityLabel: "A label for accessibility"\(isErrorPattern))
-            \(disableCode)
+            \(disableCodePattern)
             """
     }
 
-    private var disableCode: String {
-        ".disabled(\(enabled ? "false" : "true"))"
+    private var disableCodePattern: String {
+        !enabled ? ".disabled(true)" : ""
     }
 
     private var isErrorPattern: String {
@@ -66,20 +66,20 @@ final class RadioConfigurationModel: ComponentConfiguration {
 
 struct RadioConfiguration: View {
 
-    @ObservedObject var model: RadioConfigurationModel
+    @ObservedObject var configurationModel: RadioConfigurationModel
 
     @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            OUDSSwitchItem("app_components_radioButton_selection_label", isOn: $model.selection)
-                .disabled(!model.enabled || model.isError)
+            OUDSSwitchItem("app_components_controlItem_selection_label", isOn: $configurationModel.selection)
+                .disabled(!configurationModel.enabled || configurationModel.isError)
 
-            OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
-                .disabled(model.isError)
+            OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+                .disabled(configurationModel.isError)
 
-            OUDSSwitchItem("app_components_common_error_label", isOn: $model.isError)
-                .disabled(!model.enabled)
+            OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
+                .disabled(!configurationModel.enabled)
         }
     }
 }

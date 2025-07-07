@@ -55,19 +55,19 @@ final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
 
 struct ColoredSurfaceConfiguration: View {
 
-    @StateObject var model: ColoredSurfaceConfigurationModel
+    @StateObject var configurationModel: ColoredSurfaceConfigurationModel
 
     var body: some View {
         DesignToolboxColorPicker {
             ForEach(NamedColorMode.allCases, id: \.id) { color in
                 Button {
-                    model.selectedColor = color
+                    configurationModel.selectedColor = color
                 } label: {
                     ColorEntry(color: color)
                 }
             }
         } selectedColor: {
-            ColorEntry(color: model.selectedColor)
+            ColorEntry(color: configurationModel.selectedColor)
         }
     }
 }

@@ -1,30 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@" : {
-      "comment" : "About screen - Tokens library version",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@"
-          }
-        }
-      }
-    },
     "app_about_accessibilityStatement_label" : {
       "comment" : "About screen",
       "extractionState" : "manual",
@@ -187,6 +163,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Signaler un bug"
+          }
+        }
+      }
+    },
+    "app_about_changelog_hint_a11y" : {
+      "comment" : "About screen - Changelog hint",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر مرتين للانتقال إلى سجل التغيير عبر الإنترنت للمشروع"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap twice to go the the changelog of the project"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tappez deux fois pour accéder en ligne aux notes de versions"
+          }
+        }
+      }
+    },
+    "app_about_changelog_label" : {
+      "comment" : "About screen - Changelog URL",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انظر ملاحظات الإصدار"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "See changelog"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir les notes de version"
           }
         }
       }
@@ -355,6 +379,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version du SDK : %@"
+          }
+        }
+      }
+    },
+    "app_about_details_themeCoreVersion" : {
+      "comment" : "About screen - Tokens library version (Core)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار الرمز المميز الأساسي: ٪ @"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Core tokens library version: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version des tokens Core : %@"
+          }
+        }
+      }
+    },
+    "app_about_details_themeOrangeVersion" : {
+      "comment" : "About screen - Tokens library version (Orange)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار مكتبة الرموز البرتقالية: ٪ @"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orange tokens library version: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version des tokens Orange : %@"
           }
         }
       }
@@ -648,6 +720,30 @@
         }
       }
     },
+    "app_common_version" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "إصدار:%@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version : %@"
+          }
+        }
+      }
+    },
     "app_component_emptyContent_description_text" : {
       "comment" : "Common",
       "extractionState" : "manual",
@@ -849,19 +945,19 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Checkbox Item"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Checkbox item"
+            "value" : "Checkbox Item"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Checkbox Item"
           }
         }
@@ -1058,31 +1154,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Checkbox"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_checkbox_selection_label" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
           }
         }
       },
@@ -1655,6 +1726,30 @@
         }
       }
     },
+    "app_components_controlItem_selection_label" : {
+      "comment" : "Component - ControlItem",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        }
+      }
+    },
     "app_components_divider_description_text" : {
       "comment" : "Component - Divider",
       "extractionState" : "manual",
@@ -2123,31 +2218,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_radioButton_selection_label" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_radioPicker_description_text" : {
       "comment" : "Component - Radio Picker",
       "extractionState" : "manual",
@@ -2270,31 +2340,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_switch_selection_label" : {
-      "comment" : "Component - Switch",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_switch_switch_label" : {
       "comment" : "Component - Switch",
       "extractionState" : "manual",
@@ -2350,23 +2395,24 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Switch Item"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Switch item"
+            "value" : "Switch Item"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Switch Item"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_border_description_text" : {
       "comment" : "Tokens - Border",

@@ -14,24 +14,30 @@
 # About runners: https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners
 # Runners details: https://github.com/actions/runner-images/tree/main/images/macos
 
+# Rules for this GitHub Actions workflow
+# - workflow can be triggered manually if needed (workflow_dispatch)
+# - use "almost" frozen version of macOS
+# - is for branches main, develop and all
+# - automatically triggered when pull request is opened and has new commits (synchronize)
+# But beware, triggered on commit push, so do not be a push-machine-gun!
+
 name: Build and Test
 
 on:
-  # For protected and most important branches
   push:
     branches:
       - main
       - develop
+      - '*'
 
-  # To trigger manually
-  workflow_dispatch:
-
-  # Pull request events
   pull_request:
     types:
       - opened
-      - synchronize
-      - reopened
+      - synchronize 
+    branches:
+      - main
+      - develop
+      - '*'   
 
 jobs:
   # Build the app (if there are linter errors or compiler issues, it will fail)

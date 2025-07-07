@@ -11,21 +11,23 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
+import OUDSComponents
+import OUDSThemesOrange
 import SwiftUI
 
-/// Related to `OUDSCheckboxItem` (i.e. with 2 available values).
-struct CheckboxItemElement: DesignToolboxElement {
+struct RadioPickerElement: DesignToolboxElement {
     let name: String
     let image: Image
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_checkbox_checkboxItem_label".localized()
-        image = Image(decorative: "il_component_checkbox_controlItem").renderingMode(.original)
+        name = "app_components_radioPicker_label".localized()
+        image = Image(decorative: "il_component_radio").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             image: nil,
-            description: "app_components_checkbox_controlItem_description_text",
-            illustration: AnyView(CheckboxItemPage())))
+            description: "app_components_radioPicker_description_text",
+            illustration: AnyView(RadioPickerPage())))
     }
 }

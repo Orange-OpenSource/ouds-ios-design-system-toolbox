@@ -30,13 +30,25 @@ struct DesignToolboxElementPage: View {
     let name: String
     let image: Image?
     let description: String
+    let version: String?
     let illustration: AnyView
+
+    // swiftlint:disable function_default_parameter_at_end
+    init(name: String, image: Image? = nil, description: String, version: String? = nil, illustration: AnyView) {
+        self.name = name
+        self.image = image
+        self.description = description
+        self.version = version
+        self.illustration = illustration
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
                 if let image {
                     CardIllustration(icon: image)
                         .accessibilityHidden(true)
@@ -47,18 +59,29 @@ struct DesignToolboxElementPage: View {
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .accessibilityFocused($requestFocus)
-                    .padding(.horizontal, theme.spaces.spaceFixedMedium)
+                    .padding(.horizontal, theme.spaces.spaceFixedMd)
+
+                if let version {
+                    HStack {
+                        Spacer()
+
+                        Text("app_common_version" <- version)
+                            .typeLabelStrongLarge(theme)
+
+                        Spacer()
+                    }
+                }
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)
             .padding(.horizontal, theme.spaces.spaceFixedNone)
-            .padding(.bottom, theme.spaces.spaceFixedMedium)
+            .padding(.bottom, theme.spaces.spaceFixedMd)
             .oudsBackground(theme.colors.colorBgPrimary)
 
             illustration
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
-                .padding(.bottom, theme.spaces.spaceFixedMedium)
+                .padding(.bottom, theme.spaces.spaceFixedMd)
                 .oudsBackground(theme.colors.colorBgPrimary)
         }
         .listStyle(.plain)

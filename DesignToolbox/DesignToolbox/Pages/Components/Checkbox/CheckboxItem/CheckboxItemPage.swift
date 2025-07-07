@@ -19,47 +19,17 @@ import SwiftUI
 
 struct CheckboxItemPage: View {
 
-    @StateObject private var configuration: CheckboxItemConfigurationModel
+    @StateObject private var configurationModel: CheckboxItemConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: CheckboxItemConfigurationModel())
+        _configurationModel = StateObject(wrappedValue: CheckboxItemConfigurationModel())
     }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configuration,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxItemConfigurationModel {
-            CheckboxItemIllustration(model: model)
-        }
-    }
-
-    @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxItemConfigurationModel {
-            CheckboxItemConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: - Checkbox Item Illustration
-
-private struct CheckboxItemIllustration: View {
-
-    let model: CheckboxItemConfigurationModel
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center) {
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            CheckboxItemDemo(model: model)
-            CheckboxItemDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
+        ComponentConfigurationView(configuration: configurationModel) {
+            CheckboxItemDemo(configurationModel: configurationModel)
+        } configurationView: {
+            CheckboxItemConfiguration(configurationModel: configurationModel)
         }
     }
 }
@@ -68,28 +38,27 @@ private struct CheckboxItemIllustration: View {
 
 private struct CheckboxItemDemo: View {
 
-    @ObservedObject var model: CheckboxItemConfigurationModel
+    @ObservedObject var configurationModel: CheckboxItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSCheckboxItem(isOn: $model.indicatorState,
-                         label: model.labelText,
-                         helper: model.helperText,
+        OUDSCheckboxItem(isOn: $configurationModel.indicatorState,
+                         label: configurationModel.labelText,
+                         helper: configurationModel.helperText,
                          icon: icon,
-                         flipIcon: model.flipIcon,
-                         isReversed: model.isReversed,
-                         isError: model.isError,
-                         isReadOnly: model.isReadOnly,
-                         hasDivider: model.divider)
-            .disabled(!model.enabled)
+                         flipIcon: configurationModel.flipIcon,
+                         isReversed: configurationModel.isReversed,
+                         isError: configurationModel.isError,
+                         isReadOnly: configurationModel.isReadOnly,
+                         hasDivider: configurationModel.divider)
+            .disabled(!configurationModel.enabled)
             .padding(.all, theme.spaces.spaceFixedMedium)
-            .designToolboxColoredSurface(false)
     }
 
     // Need here that system name, a11y managed in component
     // swiftlint:disable accessibility_label_for_image
     private var icon: Image? {
-        model.icon ? Image(systemName: "figure.handball") : nil
+        configurationModel.icon ? Image(systemName: "figure.handball") : nil
     }
     // swiftlint:enable accessibility_label_for_image
 }

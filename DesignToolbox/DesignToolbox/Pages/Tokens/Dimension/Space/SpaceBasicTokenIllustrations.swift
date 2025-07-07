@@ -46,7 +46,7 @@ struct ScaledSpaceProperty: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_scaledHeader_text", paddings: EdgeInsets(top: 4, leading: 8, bottom: 0, trailing: 0))
-                .padding(.bottom, theme.spaces.spaceFixedMedium)
+                .padding(.bottom, theme.spaces.spaceFixedMd)
 
             ForEach(NamedSpace.Scaled.allCases, id: \.rawValue) { namedSpaceToken in
                 Illustration(for: namedSpaceToken)

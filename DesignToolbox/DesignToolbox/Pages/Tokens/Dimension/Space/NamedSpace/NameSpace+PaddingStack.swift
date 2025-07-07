@@ -18,8 +18,8 @@ extension NamedSpace {
 
     enum PaddingStack: String, CaseIterable, NamedSpaceToken {
         case spacePaddingBlockNone
-        case spacePaddingBlockShorter
-        case spacePaddingBlockShort
+        case spacePaddingBlockXs
+        case spacePaddingBlockSm
         case spacePaddingBlockMedium
         case spacePaddingBlockTall
         case spacePaddingBlockTaller
@@ -31,18 +31,18 @@ extension NamedSpace {
             switch self {
             case .spacePaddingBlockNone:
                 theme.spaces.spacePaddingBlockNone
-            case .spacePaddingBlockShorter:
-                theme.spaces.spacePaddingBlockShorter
-            case .spacePaddingBlockShort:
-                theme.spaces.spacePaddingBlockShort
+            case .spacePaddingBlockXs:
+                theme.spaces.spacePaddingBlockXs
+            case .spacePaddingBlockSm:
+                theme.spaces.spacePaddingBlockSm
             case .spacePaddingBlockMedium:
-                theme.spaces.spacePaddingBlockMedium
+                theme.spaces.spacePaddingBlockMd
             case .spacePaddingBlockTall:
-                theme.spaces.spacePaddingBlockTall
+                theme.spaces.spacePaddingBlockLg
             case .spacePaddingBlockTaller:
-                theme.spaces.spacePaddingBlockTaller
+                theme.spaces.spacePaddingBlockXl
             case .spacePaddingBlockTallest:
-                theme.spaces.spacePaddingBlockTallest
+                theme.spaces.spacePaddingBlock2xl
             }
         }
     }

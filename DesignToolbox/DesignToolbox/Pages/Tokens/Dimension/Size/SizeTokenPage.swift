@@ -24,7 +24,7 @@ struct SizeTokenPage: View {
     var body: some View {
         Group {
             Section {
-                DesignToolboxCode(code: "theme.sizeIconWithHeadingXLargeShort.dimension(for: horizontalSizeClass ?? .regular)",
+                DesignToolboxCode(code: "theme.sizeIconWithHeadingXLargeSm.dimension(for: horizontalSizeClass ?? .regular)",
                                   titleText: "app_tokens_common_viewCodeExample_label")
             }
             Section {
@@ -38,7 +38,7 @@ struct SizeTokenPage: View {
             }
 
             Section {
-                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
                     ForEach(NamedSize.iconSizeByTypographyCategories, id: \.namedFont) { category in
                         IllustrationSizeIconByTypographyCategory(category: category)
                     }
@@ -47,7 +47,7 @@ struct SizeTokenPage: View {
                 sectionHeader("app_tokens_dimension_size_iconWith_label")
             }
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMd)
     }
 
     // MARK: Illustration Icon Decorative
@@ -126,7 +126,7 @@ struct SizeTokenPage: View {
                 TypographyCategoryHeader(namedFont: category.namedFont, namedSize: lastSize)
             }
 
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
                 ForEach(category.sizes, id: \.sizeDescription) { namedSize in
                     IllustrationIconWithTypography(namedSize: namedSize)
                 }
@@ -149,7 +149,7 @@ struct SizeTokenPage: View {
         }
 
         var body: some View {
-            HStack(alignment: .center, spacing: theme.spaces.spaceFixedShort) {
+            HStack(alignment: .center, spacing: theme.spaces.spaceFixedSm) {
                 HStack(alignment: .center, spacing: 1) {
                     Image(decorative: "ic_token")
                         .resizable()
@@ -163,7 +163,7 @@ struct SizeTokenPage: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .oudsForegroundStyle(theme.colors.colorContentDefault)
             }
-            .padding(.all, theme.spaces.spaceFixedMedium)
+            .padding(.all, theme.spaces.spaceFixedMd)
             .oudsBackground(theme.colors.colorSurfaceStatusNeutralMuted)
         }
     }

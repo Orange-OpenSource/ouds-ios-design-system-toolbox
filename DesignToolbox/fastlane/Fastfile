@@ -91,7 +91,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN PERIPHERY FOR DEAD CODE ANALYSIS
     # ------------------------------------------------------------
-    desc "RUN PERIPHERY FOR DEAD CODE ANALYSIS"
+    desc "Run Periphery to look dor dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned."
     lane :check_dead_code do
         puts "👉 Check dead code with Periphery"
 
@@ -101,7 +101,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN SWIFT FORMAT TO FORMAT SOURCES
     # ------------------------------------------------------------
-    desc "RUN SWIFT FORMAT TO FORMAT SOURCES"
+    desc "Run SwiftFormat to format Swift source files according to the local configuration."
     lane :format do
         puts "👉 Run Swift Format to format sources"
 
@@ -112,7 +112,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN SWIFT LINT TO CHECK SMELLS
     # ------------------------------------------------------------
-    desc "RUN SWIFT LINT TO CHECK SMELLS"
+    desc "Run SwiftLint in strict mode to detect code smells"
     lane :lint do
         puts "👉 Run Swift Lint for smells"
 
@@ -123,7 +123,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN LICENSE-PLSIT FOR 3RD PARTIES UPDATES
     # ------------------------------------------------------------
-    desc "RUN LICENSEPLIST TO UPDATE LIST OF THIRD PARTIES"
+    desc "Run LicensePlist to update list of third-parties"
     lane :update_3rd_parties do
         puts "👉 Run LicensePlist to update list of third-parties"
 
@@ -135,6 +135,39 @@ platform :ios do
             sh "rm -rf Settings.bundle/com.mono0926.LicensePlist &&  mv -f com.mono0926.LicensePlist.Output/com.mono0926.LicensePlist Settings.bundle"
             sh "rm -rf Settings.bundle/com.mono0926.LicensePlist.plist && mv com.mono0926.LicensePlist.Output/com.mono0926.LicensePlist.plist Settings.bundle"
             sh "rm -rf com.mono0926.LicensePlist.Output"
+        end
+    end
+
+    # ------------------------------------------------------------
+    # RUN GITLEAKS FOR SECET LEAKS SCAN
+    # ------------------------------------------------------------
+    desc "Run GitLeaks to look for leaks of secrets in project and Git history"
+    lane :check_leaks do
+        puts "👉 Run Gitleaks for leaks scan"
+
+        # If there are violations, non 0 error be returned by swiftlint, making Fastlane fail (expected)
+        sh "cd .. && gitleaks detect -v -l debug --source ."
+    end
+
+    # ------------------------------------------------------------
+    # RUN SYFT AND GRYPE TO BUILD AND ANALYSE SBOM
+    # ------------------------------------------------------------
+    desc "Generates a SBOM (Software Bill Of Materials) in SPDX JSON format with Syft and analyse it with Grype to as to check for vulnerabilities"
+    lane :update_sbom do
+        puts "👉 Run Syft to generate the SBOM"
+
+        # Or also cyclonedx-json
+        sbomFormat = "spdx-json"
+
+        # In { negligible, low, medium, high, critical }
+        vulnerabilitiesTolerance = "negligible"
+
+        Dir.chdir "../.." do
+            # Run the command to generate SBOM
+            sh "syft . -o #{sbomFormat} > SBOM.json"
+
+            # Process the SBOM
+            sh "grype sbom:./SBOM.json --fail-on #{vulnerabilitiesTolerance}"
         end
     end
 
@@ -157,7 +190,7 @@ platform :ios do
     # -------------------
     # RUN SNAPSHOTS TESTS
     # -------------------
-    desc "RUN SNAPSHOTS TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT"
+    desc "Run snapshots tests in the demo app to look for visual regressions of components defined in OUDS package"
     lane :test_snapshots do
         puts "👉 Run UI tests"
 
@@ -188,7 +221,7 @@ platform :ios do
     # ------------
     # RUN UI TESTS
     # ------------
-    desc "RUN UI TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT"
+    desc "Run UI tests in the demo app to check some specific components behaviors"
     lane :test_ui do
         puts "👉 Run UI tests"
 
@@ -219,7 +252,7 @@ platform :ios do
     # ------------------------------------------------------------
     # BUILD DEBUG APP
     # ------------------------------------------------------------
-    desc "BUILD DEBUG APP"
+    desc "Build locally the demo app in debug mode without upload"
     lane :buildDebugApp do
         puts "👉 Build debug app"
 
@@ -247,8 +280,9 @@ platform :ios do
     # ------------------------------------------------------------
     # BUILD & UPLOAD TO TESTFLIGHT ALPHA APP
     # ------------------------------------------------------------
-    desc "BUILD & UPLOAD TO TESTFLIGHT ALPHA APP"
+    desc "Build the demo app in alpha mode and upload to TestFlight"
     lane :alpha do |params|
+
         issues_numbers = params[:issueNumber]
         puts "👉 Alpha (commit hash = '#{params[:commitHash]}', issue number = '#{issues_numbers}')"
 
@@ -274,6 +308,10 @@ platform :ios do
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildDetails", value: "#{issues_numbers}")
 
+        sdk_branch = ouds_swift_package_git_branch
+        changelog_url = "https://github.com/Orange-OpenSource/ouds-ios/blob/#{sdk_branch}/CHANGELOG.md"
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKChangelog", value: "#{changelog_url}")
+
         begin
             sdk_version = ouds_swift_package_version
             set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKVersion", value: "#{sdk_version}")
@@ -287,7 +325,7 @@ platform :ios do
     # ------------------------------------------------------------
     # BUILD & UPLOAD TO TESTFLIGHT BETA APP
     # ------------------------------------------------------------
-    desc "BUILD & UPLOAD TO TESTFLIGHT BETA APP"
+    desc "Build the demo app in neta mode and upload to TestFlight"
     lane :beta do |params|
         puts "👉 Beta (commit hash = '#{params[:commitHash]}')"
         Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
@@ -302,12 +340,14 @@ platform :ios do
         # Details for the GUI in the app
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "beta (nightly)")
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKChangelog", value: "https://github.com/Orange-OpenSource/ouds-ios/blob/develop/CHANGELOG.md")
         
         begin
             sdk_version = ouds_swift_package_version
             set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKVersion", value: "#{sdk_version}")
         rescue => error
             puts "❌ Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for beta build"
+            raise Exception.new "Undefined OUDS SDK package version"
         end
 
         # Beta app must point to OUDS iOS develop branch
@@ -316,13 +356,14 @@ platform :ios do
         else
             puts "❌ Error: The beta code base of the app does not point to an OUDS iOS Swfit Package develop branch"
             publish_mattermost_notification("📦 🚨 @channel The beta code base of the app does not point to an OUDS iOS Swfit Package develop branch (:beta)")
+            raise Exception.new "Not suitable OUDS SDK package version"
         end
     end
 
     # ------------------------------------------------------------
     # BUILD & UPLOAD TO STORE STABLE APP
     # ------------------------------------------------------------
-    desc "BUILD & UPLOAD TO STORE (if set in options: upload) STABLE APP"
+    desc "Build the demo app in stable mode and, if defined, upload to internal portal for App Store publication"
     lane :stable do |params|
         puts "👉 Stable"
 
@@ -334,12 +375,14 @@ platform :ios do
 
         # Details for the GUI in the app
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "stable")
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKChangelog", value: "https://github.com/Orange-OpenSource/ouds-ios/blob/main/CHANGELOG.md")
 
         begin
             sdk_version = ouds_swift_package_version
             set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSSDKVersion", value: "#{sdk_version}")
         rescue => error
             puts "❌ Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for stable build"
+            raise Exception.new "Undefined OUDS SDK package version"
         end
 
         # Stable app must point to OUDS iOS version
@@ -355,12 +398,14 @@ platform :ios do
         else
             puts "❌ Error: The stable code base of the app does not point to an OUDS iOS Swfit Package version tag"
             publish_mattermost_notification("📦 🚨 @channel The stable code base of the app does not point to an OUDS iOS Swfit Package version tag (:stable)")
+            raise Exception.new "Not suitable OUDS SDK package version"
         end
     end
 
     # -----------------------------------------------------------------------
     # PRIVATE LANE BUILD & UPLOAD (ALPHA / BETA is set by main lane)
     # -----------------------------------------------------------------------
+    desc "Build the demo app in a defined mode and upload if needed to TestFlight or internal portal for App Store publication"
     private_lane :build_and_upload do |params|
         isAlpha = params[:isAlpha]
 
@@ -405,7 +450,7 @@ platform :ios do
     # -----------------------------------------------------------------------
     # PRIVATE LANE BUILD (ALPHA / BETA / STABLE is set by main lane)
     # -----------------------------------------------------------------------
-    desc "PRIVATE LANE BUILD (ALPHA / BETA / STABLE is set by main lane)"
+    desc "Build the demo app"
     private_lane :build do
         puts "👉 Build"
 
@@ -457,7 +502,7 @@ platform :ios do
     # --------------------------------------------------------------------------
     # PRIVATE LANE UPLOAD TO TESTFLIGHT (ALPHA / BETA is set by main lane)
     # ---------------------------------------------------------------------------
-    desc "PRIVATE LANE UPLOAD TO TESTFLIGHT"
+    desc "Upload the demo app to TestFlight"
     private_lane :upload_2_testflight do |params|
         puts "👉 Upload"
 
@@ -510,7 +555,7 @@ platform :ios do
     # ----------------------------
     # PRIVATE LANE UPLOAD TO STORE
     # ----------------------------
-    desc "PRIVATE LANE UPLOAD TO STORE"
+    desc "Upload the demo app to the internal portal for the App Store publication"
     private_lane :upload_2_store do |params|
         puts "👉 Upload to store"
 
@@ -578,6 +623,24 @@ platform :ios do
             return "#{ouds_ios_branch} (#{ouds_ios_revision[0,7]})"
         elsif ouds_ios_revision && ouds_ios_version
             return "#{ouds_ios_version} (#{ouds_ios_revision[0,7]})"
+        else
+            raise error
+        end
+    end
+
+    # Extract from Package.resolved details about the Git branch in use for the OUDS iOS Swift Package.
+    # Returns the branch if defined or raises an error.
+    # Supposes the OUDS iOS package is defined and used; if a local reference is used instead the branch won't be retrieved
+    def ouds_swift_package_git_branch()
+        puts "👉 Extract Git branch of OUDS iOS Swift package"
+
+        package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
+        package_resolved_json_content = JSON.parse(package_resolved_content)
+        ouds_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "ouds-ios" }
+        ouds_ios_branch = ouds_ios_obj.dig("state", "branch")
+
+        if ouds_ios_branch
+            return "#{ouds_ios_branch}"
         else
             raise error
         end
@@ -732,13 +795,13 @@ Please, get the new build from *TestFlight* app, or contact the project maintain
 @B3nz01d - Benoît SUZANNE - Product Owner
 @pylapp - Pierre-Yves LAPERSONNE - iOS developer, OUDS iOS maintainer
 @ludovic35 - Ludovic PINEL - iOS developer, OUDS iOS maintainer
-@MaximeTonnerre - Maxime TONNERRE - lead designer
-@mccart77 - Stephen McCARTHY - designer
-@TonyAntonyHello - Anton ASTAFEV - designer
+@jerome-regnier - Jérôme RÉGNIER - designer
+@pya35 - Pierre-Yves AYOUL - a11y expert
 -->
 cc @B3nz01d (product owner)
 cc @pylapp @ludovic35 (dev team)
-cc @MaximeTonnerre @mccart77 @TonyAntonyHello (design team)
+cc @jerome-regnier (design team)
+cc @pya35 (a11y team)
 
 _This is an automated message sent with love thanks to *Fastlane* from our CI/CD pipeline 🤘_
 EOF

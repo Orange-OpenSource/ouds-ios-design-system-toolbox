@@ -11,20 +11,23 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
+import OUDSComponents
+import OUDSThemesOrange
 import SwiftUI
 
-struct SwitchItemElement: DesignToolboxElement {
+struct CheckboxPickerElement: DesignToolboxElement {
     let name: String
     let image: Image
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_switch_switchItem_label".localized()
-        image = Image(decorative: "il_component_switch_controlItem").renderingMode(.original)
+        name = "app_components_checkboxPicker_label".localized()
+        image = Image(decorative: "il_component_checkbox").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             image: nil,
-            description: "app_components_switch_switchItem_description_text",
-            illustration: AnyView(SwitchItemPage())))
+            description: "app_components_checkboxPicker_description_text",
+            illustration: AnyView(CheckboxPickerPage())))
     }
 }

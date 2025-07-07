@@ -18,38 +18,38 @@ extension NamedSpace {
 
     enum Scaled: String, CaseIterable {
         case spaceScaledNone
-        case spaceScaledSmash
-        case spaceScaledShortest
-        case spaceScaledShorter
-        case spaceScaledShort
-        case spaceScaledMedium
-        case spaceScaledTall
-        case spaceScaledTaller
-        case spaceScaledTallest
-        case spaceScaledSpacious
+        case spaceScaled3xs
+        case spaceScaled2xs
+        case spaceScaledXs
+        case spaceScaledSm
+        case spaceScaledMd
+        case spaceScaledLg
+        case spaceScaledXl
+        case spaceScaled2xl
+        case spaceScaled3xl
 
         func token(from theme: OUDSTheme) -> MultipleSpaceSemanticTokens {
             switch self {
             case .spaceScaledNone:
                 theme.spaces.spaceScaledNone
-            case .spaceScaledSmash:
-                theme.spaces.spaceScaledSmash
-            case .spaceScaledShortest:
-                theme.spaces.spaceScaledShortest
-            case .spaceScaledShorter:
-                theme.spaces.spaceScaledShorter
-            case .spaceScaledShort:
-                theme.spaces.spaceScaledShort
-            case .spaceScaledMedium:
-                theme.spaces.spaceScaledMedium
-            case .spaceScaledTall:
-                theme.spaces.spaceScaledTall
-            case .spaceScaledTaller:
-                theme.spaces.spaceScaledTaller
-            case .spaceScaledTallest:
-                theme.spaces.spaceScaledTallest
-            case .spaceScaledSpacious:
-                theme.spaces.spaceScaledSpacious
+            case .spaceScaled3xs:
+                theme.spaces.spaceScaled3xs
+            case .spaceScaled2xs:
+                theme.spaces.spaceScaled2xs
+            case .spaceScaledXs:
+                theme.spaces.spaceScaledXs
+            case .spaceScaledSm:
+                theme.spaces.spaceScaledSm
+            case .spaceScaledMd:
+                theme.spaces.spaceScaledMd
+            case .spaceScaledLg:
+                theme.spaces.spaceScaledLg
+            case .spaceScaledXl:
+                theme.spaces.spaceScaledXl
+            case .spaceScaled2xl:
+                theme.spaces.spaceScaled2xl
+            case .spaceScaled3xl:
+                theme.spaces.spaceScaled3xl
             }
         }
     }

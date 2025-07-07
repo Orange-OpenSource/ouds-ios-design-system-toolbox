@@ -12,22 +12,22 @@
 //
 
 import OUDS
-import OUDSComponents
-import OUDSThemesOrange
 import SwiftUI
 
-struct CheckboxPickerElement: DesignToolboxElement {
+/// Related to `OUDSCheckboxItemIndeterminate` (i.e. with 3 available values).
+struct CheckboxItemIndeterminateElement: DesignToolboxElement {
     let name: String
     let image: Image
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_checkboxPicker_label".localized()
-        image = Image(decorative: "il_component_checkbox").renderingMode(.original)
+        name = "app_components_checkbox_indeterminateCheckboxItem_label".localized()
+        image = Image(decorative: "il_component_checkbox_controlItem").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: Image(decorative: "il_component_checkbox").renderingMode(.original),
-            description: "app_components_checkboxPicker_description_text",
-            illustration: AnyView(CheckboxPickerPage())))
+            image: nil,
+            description: "app_components_checkbox_indeterminateCheckboxItem_description_text",
+            version: OUDSVersions.componentCheckboxVersion,
+            illustration: AnyView(CheckboxItemIndeterminatePage())))
     }
 }

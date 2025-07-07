@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import SwiftUI
 
 struct ButtonElement: DesignToolboxElement {
@@ -25,6 +26,7 @@ struct ButtonElement: DesignToolboxElement {
             name: name,
             image: nil,
             description: "app_components_button_description_text",
+            version: OUDSVersions.componentButtonVersion,
             illustration: AnyView(ButtonPage()))
         )
     }
