@@ -44,7 +44,7 @@
 > The source code of the [Swift Package is on Orange-OpenSource/ouds-ios](https://github.com/Orange-OpenSource/ouds-ios).
 
 > [!IMPORTANT]
-> Tokens version: 0.11.0
+> Tokens version: 1.2.0
 
 ## Bugs, feature requests and discussions
 
