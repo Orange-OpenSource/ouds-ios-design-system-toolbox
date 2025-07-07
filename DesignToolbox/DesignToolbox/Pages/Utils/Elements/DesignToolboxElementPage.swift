@@ -65,7 +65,7 @@ struct DesignToolboxElementPage: View {
                     HStack {
                         Spacer()
 
-                        Text("app_common_version" <- version)
+                        Text("app_common_design_version" <- version)
                             .typeLabelStrongLarge(theme)
 
                         Spacer()

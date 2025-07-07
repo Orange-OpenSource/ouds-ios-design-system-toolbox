@@ -647,6 +647,30 @@
         }
       }
     },
+    "app_common_design_version" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار التصميم المرجعي: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reference design version: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version du design de référence : %@"
+          }
+        }
+      }
+    },
     "app_common_enabled_label" : {
       "comment" : "Common",
       "extractionState" : "manual",
@@ -716,30 +740,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Basculer la visibilité du code"
-          }
-        }
-      }
-    },
-    "app_common_version" : {
-      "comment" : "Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "إصدار:%@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version: %@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version : %@"
           }
         }
       }
