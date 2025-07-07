@@ -150,6 +150,7 @@
 		07EB47032E1801D000B94EC2 /* BadgePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FF2E1801D000B94EC2 /* BadgePage.swift */; };
 		07EB47042E1801D000B94EC2 /* BadgeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FE2E1801D000B94EC2 /* BadgeElement.swift */; };
 		07EB47052E1801D000B94EC2 /* BadgeConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FD2E1801D000B94EC2 /* BadgeConfigurationView.swift */; };
+		07EB47072E1BEEC100B94EC2 /* OUDSBadgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB47062E1BEEC100B94EC2 /* OUDSBadgeUITests.swift */; };
 		07F0AFD72CFDB3CC00D334DD /* ComponentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */; };
 		07F0AFD82CFDB3CC00D334DD /* ComponentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */; };
 		07F0AFDE2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */; };
@@ -440,6 +441,7 @@
 		07EB46FD2E1801D000B94EC2 /* BadgeConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeConfigurationView.swift; sourceTree = "<group>"; };
 		07EB46FE2E1801D000B94EC2 /* BadgeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeElement.swift; sourceTree = "<group>"; };
 		07EB46FF2E1801D000B94EC2 /* BadgePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgePage.swift; sourceTree = "<group>"; };
+		07EB47062E1BEEC100B94EC2 /* OUDSBadgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSBadgeUITests.swift; sourceTree = "<group>"; };
 		07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentPage.swift; sourceTree = "<group>"; };
 		07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsPage.swift; sourceTree = "<group>"; };
 		07F0AFE72CFE0FBD00D334DD /* DesignToolboxConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxConfiguration.swift; sourceTree = "<group>"; };
@@ -1092,6 +1094,7 @@
 		51952A902D3FA25F0068B807 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				07EB47062E1BEEC100B94EC2 /* OUDSBadgeUITests.swift */,
 				51952A912D3FA26B0068B807 /* OUDSButtonUITests.swift */,
 				514D02FB2D75F45F00622692 /* OUDSCheckboxUITests.swift */,
 				07304A4A2D427146009320BA /* OUDSLinkUITests.swift */,
@@ -1572,6 +1575,7 @@
 				51952A942D3FA32E0068B807 /* DesignToolboxElementsPage.swift in Sources */,
 				51952A952D3FA32E0068B807 /* DesignToolboxVariantElement.swift in Sources */,
 				51952A962D3FA32E0068B807 /* View+Illustration.swift in Sources */,
+				07EB47072E1BEEC100B94EC2 /* OUDSBadgeUITests.swift in Sources */,
 				51D6D5832D883D50009CD879 /* OUDSRadioButtonUITests.swift in Sources */,
 				51952A972D3FA32E0068B807 /* FontTokenElement.swift in Sources */,
 				518B26672DAE9DE1003A6ED3 /* RadioPickerPage.swift in Sources */,

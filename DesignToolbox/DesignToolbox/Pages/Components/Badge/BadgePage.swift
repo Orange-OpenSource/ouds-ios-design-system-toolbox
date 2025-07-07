@@ -36,7 +36,7 @@ struct BadgePage: View {
 
 // MARK: - Badge Demo
 
-private struct BadgeDemo: View {
+struct BadgeDemo: View {
 
     @StateObject var configurationModel: BadgeConfigurationModel
 
