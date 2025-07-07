@@ -18,6 +18,7 @@ import SwiftUI
 struct ComponentsPage: View {
 
     let componentElements: [DesignToolboxElement] = [
+        BadgeElement(),
         ButtonElement(),
         ColoredSurfaceElement(),
         CheckboxElements(),

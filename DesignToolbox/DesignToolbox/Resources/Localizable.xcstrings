@@ -792,6 +792,55 @@
         }
       }
     },
+    "app_components_badge_description_text" : {
+      "comment" : "Component - Badge",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الشارة عنصر واجهة مستخدم صغير يُستخدم لتسليط الضوء على الحالة أو الإشعارات أو التصنيفات داخل واجهة المستخدم. غالبًا ما تُعرض كعلامة أو مؤشر بلون خلفية ونص مميزين."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The badge is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composant Badge est un petit élément d'interface utilisateur permettant de mettre en évidence un statut, des notifications ou une catégorisation au sein d'une interface. Il est souvent affiché sous forme d'étiquette ou d'indicateur avec une couleur d'arrière-plan et un texte distincts."
+          }
+        }
+      }
+    },
+    "app_components_badge_label" : {
+      "comment" : "Component - Badge",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_button_description_text" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",
