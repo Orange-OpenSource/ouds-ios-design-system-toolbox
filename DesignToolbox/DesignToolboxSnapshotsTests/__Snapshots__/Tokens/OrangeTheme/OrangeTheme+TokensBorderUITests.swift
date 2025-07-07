@@ -20,15 +20,14 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// Tests the UI rendering of each **border token** using reference images
-final class OrangeThemeTokensBorderUITests: XCTestCase {
-
-    private let theme: OUDSTheme = OrangeTheme()
+/// Tests the UI rendering of each **border token** using reference images for`OrangeTheme`
+final class OrangeThemeTokensBorderUITests: TokensBorderUITestsTestCase {
 
     /// This function tests all border tokens in the `OrangeTheme` with the `light` color schemes.
     /// It iterates through all `NamedBorderWidth`, `NamedBorderRafius`, and`NamedBorderStyle` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
     @MainActor func testAllBorderOrangeThemeLight() {
+        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testBorderWidth(for: theme, in: interfaceStyle)
         testBorderRadius(for: theme, in: interfaceStyle)
@@ -39,90 +38,11 @@ final class OrangeThemeTokensBorderUITests: XCTestCase {
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
     @MainActor func testAllBorderOrangeThemeDark() {
+        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testBorderWidth(for: theme, in: interfaceStyle)
         testBorderRadius(for: theme, in: interfaceStyle)
         testBorderStyle(for: theme, in: interfaceStyle)
-    }
-
-    // MARK: Private test functions for all properties of border token
-
-    /// Tests all border width properties by capturing their snapshots.
-    /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testBorderWidth(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
-
-        // Iterate through all named tokens
-        for namedToken in NamedBorderWidth.allCases {
-            // Use the `IllustrationWidth` struct to test a single illustration
-            let illustration = OUDSThemeableView(theme: theme) {
-                BorderTokenPage.IllustrationWidth(namedWidth: namedToken)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-            }
-
-            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-            let name = namedToken.rawValue
-
-            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertIllustration(illustration,
-                               on: interfaceStyle,
-                               named: name,
-                               testName: testName)
-        }
-    }
-
-    /// Tests all border radius properties by capturing their snapshots.
-    /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testBorderRadius(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
-
-        // Iterate through all named tokens
-        for namedToken in NamedBorderRadius.allCases {
-            // Use the `IllustrationWidth` struct to test a single illustration
-            let illustration = OUDSThemeableView(theme: theme) {
-                BorderTokenPage.IllustrationRadius(namedRadius: namedToken)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-            }
-
-            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-            let name = namedToken.rawValue
-
-            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertIllustration(illustration,
-                               on: interfaceStyle,
-                               named: name,
-                               testName: testName)
-        }
-    }
-
-    /// Tests all border style properties by capturing their snapshots.
-    /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testBorderStyle(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
-
-        // Iterate through all named tokens
-        for namedToken in NamedBorderStyle.allCases {
-            // Use the `IllustrationWidth` struct to test a single illustration
-            let illustration = OUDSThemeableView(theme: theme) {
-                BorderTokenPage.IllustrationStyle(namedStyle: namedToken)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-            }
-
-            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-            let name = namedToken.rawValue
-
-            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertIllustration(illustration,
-                               on: interfaceStyle,
-                               named: name,
-                               testName: testName)
-        }
     }
 }
 

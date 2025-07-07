@@ -20,57 +20,25 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// Tests the UI rendering of each **opacity token** using reference images
-final class OrangeThemeTokensOpacityUITests: XCTestCase {
-
-    private let theme: OUDSTheme = OrangeTheme()
-
-    // MARK: - Orange Theme Light Mode Opacity Tests
+/// Tests the UI rendering of each **opacity token** using reference images for `OrangeTheme`
+final class OrangeThemeTokensOpacityUITests: TokensOpacityUITestsTestCase {
 
     /// This function tests all opacity tokens in the `OrangeTheme` with the `light` color scheme.
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllOpacitiesOrangeThemeLight() {
+        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testOpacities(for: theme, in: interfaceStyle)
     }
-
-    // MARK: - Orange Theme Light Mode Opacity Tests
 
     /// This function tests all opacity tokens in the `OrangeTheme` with the `dark` color scheme.
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllOpacitiesOrangeThemeDark() {
+        let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testOpacities(for: theme, in: interfaceStyle)
-    }
-
-    // MARK: Private test functions for all properties of opacity token
-
-    /// Tests all opacity properties by capturing their snapshots.
-    /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testOpacities(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
-
-        // Iterate through all named tokens
-        for namedToken in NamedOpacity.allCases {
-            // Use the `IllustrationWidth` struct to test a single illustration
-            let illustration = OUDSThemeableView(theme: theme) {
-                OpacityTokenPage.IllustrationOpacity(opacityName: namedToken)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-            }
-
-            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-            let name = namedToken.rawValue
-
-            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertIllustration(illustration,
-                               on: interfaceStyle,
-                               named: name,
-                               testName: testName)
-        }
     }
 }
 

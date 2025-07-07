@@ -20,22 +20,14 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// Tests the UI rendering of each **elevation token** using reference images
-final class SoshThemeTokensElevationUITests: XCTestCase {
-
-    private var theme: OUDSTheme
-
-    override init() {
-        theme = SoshTheme()
-        super.init()
-    }
-
-    // MARK: - Orange Theme Light Mode Elevation Tests
+/// Tests the UI rendering of each **elevation token** using reference images for `SoshTheme`
+final class SoshThemeTokensElevationUITests: TokensElevationUITestsTestCase {
 
     /// This function tests all elevation tokens in the `SoshTheme` with the `light` color scheme.
     /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllElevationsSoshThemeLight() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testElevations(for: theme, in: interfaceStyle)
     }
@@ -46,36 +38,9 @@ final class SoshThemeTokensElevationUITests: XCTestCase {
     /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllElevationsSoshThemeDark() {
+        let theme = SoshTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testElevations(for: theme, in: interfaceStyle)
-    }
-
-    // MARK: Private test functions for all properties of elevation token
-
-    /// Tests all elevation properties by capturing their snapshots.
-    /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g. `SoshTheme`).
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testElevations(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
-
-        // Iterate through all named tokens
-        for namedToken in NamedElevation.allCases {
-            // Use the `IllustrationWidth` struct to test a single illustration
-            let illustration = OUDSThemeableView(theme: theme) {
-                ElevationTokenPage.IllustrationElevation(namedElevation: namedToken)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-            }
-
-            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-            let name = namedToken.rawValue
-
-            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertIllustration(illustration,
-                               on: interfaceStyle,
-                               named: name,
-                               testName: testName)
-        }
     }
 }
 

@@ -23,8 +23,8 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSDivider` for each parameter
-final class OrangeThemeDividerUITests: XCTestCase {
+/// Tests the UI rendering of the `OUDSDivider` for each parameter  for `OrangeTheme`.
+final class OrangeThemeDividerUITests: DividerUITestsTestCase {
 
     /// Tests all divider configuration in the `OrangeTheme` with the `light` color schemes.
     @MainActor func testAllDividerOrangeThemeLight() {
@@ -38,59 +38,6 @@ final class OrangeThemeDividerUITests: XCTestCase {
         let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllDividers(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    // MARK: - Helpers
-
-    /// This function tests all Divider configuration for the given theme and color schemes on a standard surface.
-    ///
-    /// It iterates through all colors `OUDSDividerColor`, for both layout `orientations`.
-    ///
-    /// - Parameters:
-    ///   - theme: The theme (`OUDSTheme`).
-    ///   - interfaceStyle: The user interface style (light or dark).
-    @MainActor private func testAllDividers(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        for orientation: DividerConfigurationModel.Orientation in [.horizontal, .vertical] {
-            for dividerColor in OUDSDividerColor.allCases {
-                testDivider(theme: theme, interfaceStyle: interfaceStyle, dividerColor: dividerColor, orientation: orientation)
-            }
-        }
-    }
-
-    /// This function tests divider according to all parameters of the configutation available on a `OUDSDivider`
-    /// for the given theme and color schemes.
-    ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
-    ///    test_<themeName>_<colorScheme>.<orientation>.<dividerColor>
-    ///
-    /// - Parameters:
-    ///   - theme: The theme (OUDSTheme)
-    ///   - interfaceStyle: The user interface style (light or dark)
-    ///   - dividerColor: the color of the divider
-    ///   - orientation; the oriention of the divider (i.e. OUDSHorizontalDivider or OUDSVerticalDivider)
-    @MainActor private func testDivider(theme: OUDSTheme,
-                                        interfaceStyle: UIUserInterfaceStyle,
-                                        dividerColor: OUDSDividerColor,
-                                        orientation: DividerConfigurationModel.Orientation)
-    {
-        // Generate the illustration for the specified configuration
-        let illustration = OUDSThemeableView(theme: theme) {
-            DividerDemo(configurationModel: DividerConfigurationModel(orientation: orientation, selectedColor: dividerColor))
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-        }
-
-        // Create a unique snapshot name based on the current configuration :
-        //    test_<themeName>_<colorScheme>.<orientation>.<dividerColor>
-        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let dividerColorPatern = dividerColor.description
-        let orientationPatern = orientation == .horizontal ? "Horizontal" : "Vertical"
-        let name = "\(orientationPatern).\(dividerColorPatern)"
-
-        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-        assertIllustration(illustration,
-                           on: interfaceStyle,
-                           named: name,
-                           testName: testName)
     }
 }
 

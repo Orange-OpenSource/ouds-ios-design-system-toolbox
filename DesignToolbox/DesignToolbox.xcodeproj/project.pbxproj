@@ -191,6 +191,19 @@
 		513442122D75B880000B5DE4 /* CheckboxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513441FD2D75B880000B5DE4 /* CheckboxConfiguration.swift */; };
 		513442132D75B880000B5DE4 /* CheckboxElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513442052D75B880000B5DE4 /* CheckboxElements.swift */; };
 		513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93F2C5AAADE0003253B /* OUDSTokensComponent */; };
+		51417C102E1BEE11000266C8 /* ButtonUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C0F2E1BEE11000266C8 /* ButtonUITestsTestCase.swift */; };
+		51417C142E1BEE7B000266C8 /* CheckboxUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C132E1BEE7B000266C8 /* CheckboxUITestsTestCase.swift */; };
+		51417C162E1BEF3E000266C8 /* LinkUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C152E1BEF3E000266C8 /* LinkUITestsTestCase.swift */; };
+		51417C182E1BEF97000266C8 /* DividerUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C172E1BEF97000266C8 /* DividerUITestsTestCase.swift */; };
+		51417C1A2E1BEFD0000266C8 /* RadioButtonUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C192E1BEFD0000266C8 /* RadioButtonUITestsTestCase.swift */; };
+		51417C1C2E1BF014000266C8 /* SwitchUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C1B2E1BF014000266C8 /* SwitchUITestsTestCase.swift */; };
+		51417C1F2E1BF4FB000266C8 /* TokensElevationUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C1E2E1BF4FB000266C8 /* TokensElevationUITestsTestCase.swift */; };
+		51417C212E1BF57F000266C8 /* TokensSizeUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C202E1BF57F000266C8 /* TokensSizeUITestsTestCase.swift */; };
+		51417C232E1BF5D1000266C8 /* TokensSpaceUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C222E1BF5D1000266C8 /* TokensSpaceUITestsTestCase.swift */; };
+		51417C252E1BF661000266C8 /* TokensBorderUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C242E1BF661000266C8 /* TokensBorderUITestsTestCase.swift */; };
+		51417C272E1BF6B8000266C8 /* TokensOpacityUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C262E1BF6B8000266C8 /* TokensOpacityUITestsTestCase.swift */; };
+		51417C292E1BF70F000266C8 /* TokensColorUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C282E1BF70F000266C8 /* TokensColorUITestsTestCase.swift */; };
+		51417C2B2E1BF7B2000266C8 /* TokensFontUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C2A2E1BF7B2000266C8 /* TokensFontUITestsTestCase.swift */; };
 		5149BADB2C3D6F4F000FA4BF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5149BADA2C3D6F4F000FA4BF /* Podfile */; };
 		514D02FC2D75F45F00622692 /* OrangeTheme+CheckboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514D02FB2D75F45F00622692 /* OrangeTheme+CheckboxUITests.swift */; };
 		5152DA1D2DE0BD440078B9F1 /* DesignToolboxCopyableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5152DA1C2DE0BD3B0078B9F1 /* DesignToolboxCopyableText.swift */; };
@@ -256,12 +269,12 @@
 		51ABCD2B2E183226006CD6C0 /* SoshTheme+TokensSizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD202E183226006CD6C0 /* SoshTheme+TokensSizeUITests.swift */; };
 		51ABCD2C2E183226006CD6C0 /* SoshTheme+TokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD1F2E183226006CD6C0 /* SoshTheme+TokensElevationUITests.swift */; };
 		51ABCD2D2E183226006CD6C0 /* SoshTheme+TokensOpacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD232E183226006CD6C0 /* SoshTheme+TokensOpacityUITests.swift */; };
-		51ABCD362E183364006CD6C0 /* OUDSLinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD322E183364006CD6C0 /* OUDSLinkUITests.swift */; };
-		51ABCD372E183364006CD6C0 /* OUDSDividerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD332E183364006CD6C0 /* OUDSDividerUITests.swift */; };
-		51ABCD382E183364006CD6C0 /* OUDSButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD302E183364006CD6C0 /* OUDSButtonUITests.swift */; };
-		51ABCD392E183364006CD6C0 /* OUDSCheckboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD312E183364006CD6C0 /* OUDSCheckboxUITests.swift */; };
-		51ABCD3A2E183364006CD6C0 /* OUDSRadioButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD342E183364006CD6C0 /* OUDSRadioButtonUITests.swift */; };
-		51ABCD3B2E183364006CD6C0 /* OUDSSwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD352E183364006CD6C0 /* OUDSSwitchUITests.swift */; };
+		51ABCD362E183364006CD6C0 /* SoshLinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD322E183364006CD6C0 /* SoshLinkUITests.swift */; };
+		51ABCD372E183364006CD6C0 /* SoshDividerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD332E183364006CD6C0 /* SoshDividerUITests.swift */; };
+		51ABCD382E183364006CD6C0 /* SoshButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD302E183364006CD6C0 /* SoshButtonUITests.swift */; };
+		51ABCD392E183364006CD6C0 /* SoshCheckboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD312E183364006CD6C0 /* SoshCheckboxUITests.swift */; };
+		51ABCD3A2E183364006CD6C0 /* SoshRadioButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD342E183364006CD6C0 /* SoshRadioButtonUITests.swift */; };
+		51ABCD3B2E183364006CD6C0 /* SoshSwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD352E183364006CD6C0 /* SoshSwitchUITests.swift */; };
 		51B8D5A12DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
 		51B8D5A22DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
 		51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 51BC9DE62C6513F200EB2A11 /* OUDSFoundations */; };
@@ -490,6 +503,19 @@
 		513441FE2D75B880000B5DE4 /* CheckboxElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxElement.swift; sourceTree = "<group>"; };
 		513441FF2D75B880000B5DE4 /* CheckboxPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPage.swift; sourceTree = "<group>"; };
 		513442052D75B880000B5DE4 /* CheckboxElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxElements.swift; sourceTree = "<group>"; };
+		51417C0F2E1BEE11000266C8 /* ButtonUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C132E1BEE7B000266C8 /* CheckboxUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C152E1BEF3E000266C8 /* LinkUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C172E1BEF97000266C8 /* DividerUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C192E1BEFD0000266C8 /* RadioButtonUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C1B2E1BF014000266C8 /* SwitchUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C1E2E1BF4FB000266C8 /* TokensElevationUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensElevationUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C202E1BF57F000266C8 /* TokensSizeUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensSizeUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C222E1BF5D1000266C8 /* TokensSpaceUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensSpaceUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C242E1BF661000266C8 /* TokensBorderUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensBorderUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C262E1BF6B8000266C8 /* TokensOpacityUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensOpacityUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C282E1BF70F000266C8 /* TokensColorUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensColorUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C2A2E1BF7B2000266C8 /* TokensFontUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensFontUITestsTestCase.swift; sourceTree = "<group>"; };
 		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		514D02FB2D75F45F00622692 /* OrangeTheme+CheckboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+CheckboxUITests.swift"; sourceTree = "<group>"; };
 		5152DA1C2DE0BD3B0078B9F1 /* DesignToolboxCopyableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxCopyableText.swift; sourceTree = "<group>"; };
@@ -518,12 +544,12 @@
 		51ABCD232E183226006CD6C0 /* SoshTheme+TokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensOpacityUITests.swift"; sourceTree = "<group>"; };
 		51ABCD242E183226006CD6C0 /* SoshTheme+TokensColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensColorUITests.swift"; sourceTree = "<group>"; };
 		51ABCD252E183226006CD6C0 /* SoshTheme+TokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensFontUITests.swift"; sourceTree = "<group>"; };
-		51ABCD302E183364006CD6C0 /* OUDSButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSButtonUITests.swift; sourceTree = "<group>"; };
-		51ABCD312E183364006CD6C0 /* OUDSCheckboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSCheckboxUITests.swift; sourceTree = "<group>"; };
-		51ABCD322E183364006CD6C0 /* OUDSLinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSLinkUITests.swift; sourceTree = "<group>"; };
-		51ABCD332E183364006CD6C0 /* OUDSDividerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSDividerUITests.swift; sourceTree = "<group>"; };
-		51ABCD342E183364006CD6C0 /* OUDSRadioButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSRadioButtonUITests.swift; sourceTree = "<group>"; };
-		51ABCD352E183364006CD6C0 /* OUDSSwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSSwitchUITests.swift; sourceTree = "<group>"; };
+		51ABCD302E183364006CD6C0 /* SoshButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoshButtonUITests.swift; sourceTree = "<group>"; };
+		51ABCD312E183364006CD6C0 /* SoshCheckboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoshCheckboxUITests.swift; sourceTree = "<group>"; };
+		51ABCD322E183364006CD6C0 /* SoshLinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoshLinkUITests.swift; sourceTree = "<group>"; };
+		51ABCD332E183364006CD6C0 /* SoshDividerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoshDividerUITests.swift; sourceTree = "<group>"; };
+		51ABCD342E183364006CD6C0 /* SoshRadioButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoshRadioButtonUITests.swift; sourceTree = "<group>"; };
+		51ABCD352E183364006CD6C0 /* SoshSwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoshSwitchUITests.swift; sourceTree = "<group>"; };
 		51B842BB2D93FF45000382F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/about_legal_information.html; sourceTree = "<group>"; };
 		51B842BC2D93FF45000382F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/about_privacy_policy.html; sourceTree = "<group>"; };
 		51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColorMode.swift; sourceTree = "<group>"; };
@@ -1067,6 +1093,33 @@
 			path = Checkbox;
 			sourceTree = "<group>";
 		};
+		51417C0E2E1BEE06000266C8 /* Test Cases */ = {
+			isa = PBXGroup;
+			children = (
+				51417C1B2E1BF014000266C8 /* SwitchUITestsTestCase.swift */,
+				51417C192E1BEFD0000266C8 /* RadioButtonUITestsTestCase.swift */,
+				51417C172E1BEF97000266C8 /* DividerUITestsTestCase.swift */,
+				51417C152E1BEF3E000266C8 /* LinkUITestsTestCase.swift */,
+				51417C0F2E1BEE11000266C8 /* ButtonUITestsTestCase.swift */,
+				51417C132E1BEE7B000266C8 /* CheckboxUITestsTestCase.swift */,
+			);
+			path = "Test Cases";
+			sourceTree = "<group>";
+		};
+		51417C1D2E1BF4EC000266C8 /* Test Cases */ = {
+			isa = PBXGroup;
+			children = (
+				51417C2A2E1BF7B2000266C8 /* TokensFontUITestsTestCase.swift */,
+				51417C282E1BF70F000266C8 /* TokensColorUITestsTestCase.swift */,
+				51417C262E1BF6B8000266C8 /* TokensOpacityUITestsTestCase.swift */,
+				51417C242E1BF661000266C8 /* TokensBorderUITestsTestCase.swift */,
+				51417C222E1BF5D1000266C8 /* TokensSpaceUITestsTestCase.swift */,
+				51417C202E1BF57F000266C8 /* TokensSizeUITestsTestCase.swift */,
+				51417C1E2E1BF4FB000266C8 /* TokensElevationUITestsTestCase.swift */,
+			);
+			path = "Test Cases";
+			sourceTree = "<group>";
+		};
 		5180FE6D2DBBC2FA0062E489 /* CheckboxPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1108,6 +1161,7 @@
 		51952A792D3FA1260068B807 /* Tokens */ = {
 			isa = PBXGroup;
 			children = (
+				51417C1D2E1BF4EC000266C8 /* Test Cases */,
 				51ABCD1B2E1830BB006CD6C0 /* OrangeTheme */,
 				51ABCD262E183226006CD6C0 /* SoshTheme */,
 			);
@@ -1124,6 +1178,7 @@
 				0762276E2DA9489C009C3632 /* OUDSDividerUITests.swift */,
 				51D6D5822D883D50009CD879 /* OUDSRadioButtonUITests.swift */,
 				0794FCD62D914DC400A9373A /* OUDSSwitchUITests.swift */,
+				51417C0E2E1BEE06000266C8 /* Test Cases */,
 				51ABCD2F2E18335D006CD6C0 /* SoshTheme */,
 				51ABCD2E2E183350006CD6C0 /* OrangeTheme */,
 			);
@@ -1174,12 +1229,12 @@
 		51ABCD2F2E18335D006CD6C0 /* SoshTheme */ = {
 			isa = PBXGroup;
 			children = (
-				51ABCD302E183364006CD6C0 /* OUDSButtonUITests.swift */,
-				51ABCD312E183364006CD6C0 /* OUDSCheckboxUITests.swift */,
-				51ABCD322E183364006CD6C0 /* OUDSLinkUITests.swift */,
-				51ABCD332E183364006CD6C0 /* OUDSDividerUITests.swift */,
-				51ABCD342E183364006CD6C0 /* OUDSRadioButtonUITests.swift */,
-				51ABCD352E183364006CD6C0 /* OUDSSwitchUITests.swift */,
+				51ABCD302E183364006CD6C0 /* SoshButtonUITests.swift */,
+				51ABCD312E183364006CD6C0 /* SoshCheckboxUITests.swift */,
+				51ABCD322E183364006CD6C0 /* SoshLinkUITests.swift */,
+				51ABCD332E183364006CD6C0 /* SoshDividerUITests.swift */,
+				51ABCD342E183364006CD6C0 /* SoshRadioButtonUITests.swift */,
+				51ABCD352E183364006CD6C0 /* SoshSwitchUITests.swift */,
 			);
 			path = SoshTheme;
 			sourceTree = "<group>";
@@ -1650,10 +1705,12 @@
 			files = (
 				51FD65222E0D8DB20084B982 /* A11YIdentifiers.swift in Sources */,
 				5122E02B2D65FEBA00CD2857 /* String+extension.swift in Sources */,
+				51417C1C2E1BF014000266C8 /* SwitchUITestsTestCase.swift in Sources */,
 				510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */,
 				51952AA52D3FA3440068B807 /* Card.swift in Sources */,
 				51952A942D3FA32E0068B807 /* DesignToolboxElementsPage.swift in Sources */,
 				51952A952D3FA32E0068B807 /* DesignToolboxVariantElement.swift in Sources */,
+				51417C182E1BEF97000266C8 /* DividerUITestsTestCase.swift in Sources */,
 				51952A962D3FA32E0068B807 /* View+Illustration.swift in Sources */,
 				07EB47072E1BEEC100B94EC2 /* OUDSBadgeUITests.swift in Sources */,
 				51D6D5832D883D50009CD879 /* OUDSRadioButtonUITests.swift in Sources */,
@@ -1670,6 +1727,7 @@
 				51952A9A2D3FA32E0068B807 /* NamedColor+Opacity.swift in Sources */,
 				51952A9B2D3FA32E0068B807 /* NamedColor+Overlay.swift in Sources */,
 				51952A9C2D3FA32E0068B807 /* NamedColor+Repository.swift in Sources */,
+				51417C212E1BF57F000266C8 /* TokensSizeUITestsTestCase.swift in Sources */,
 				51952A9D2D3FA32E0068B807 /* NamedColor+Surface.swift in Sources */,
 				51952A9E2D3FA32E0068B807 /* ColorTokenElement.swift in Sources */,
 				51952A9F2D3FA32E0068B807 /* SpaceTokenElement.swift in Sources */,
@@ -1697,14 +1755,15 @@
 				51D6D5862D887E36009CD879 /* CheckboxIndeterminateElement.swift in Sources */,
 				6DED17EF2CD25B2200584BC9 /* SizeTokenElement.swift in Sources */,
 				6DED17EE2CD23E5400584BC9 /* CardIllustration.swift in Sources */,
-				51ABCD362E183364006CD6C0 /* OUDSLinkUITests.swift in Sources */,
-				51ABCD372E183364006CD6C0 /* OUDSDividerUITests.swift in Sources */,
-				51ABCD382E183364006CD6C0 /* OUDSButtonUITests.swift in Sources */,
-				51ABCD392E183364006CD6C0 /* OUDSCheckboxUITests.swift in Sources */,
-				51ABCD3A2E183364006CD6C0 /* OUDSRadioButtonUITests.swift in Sources */,
-				51ABCD3B2E183364006CD6C0 /* OUDSSwitchUITests.swift in Sources */,
+				51ABCD362E183364006CD6C0 /* SoshLinkUITests.swift in Sources */,
+				51ABCD372E183364006CD6C0 /* SoshDividerUITests.swift in Sources */,
+				51ABCD382E183364006CD6C0 /* SoshButtonUITests.swift in Sources */,
+				51ABCD392E183364006CD6C0 /* SoshCheckboxUITests.swift in Sources */,
+				51ABCD3A2E183364006CD6C0 /* SoshRadioButtonUITests.swift in Sources */,
+				51ABCD3B2E183364006CD6C0 /* SoshSwitchUITests.swift in Sources */,
 				6DED17ED2CD23D5200584BC9 /* DesignToolboxElementPage.swift in Sources */,
 				6DED17EC2CD23D3A00584BC9 /* DesignToolboxElement.swift in Sources */,
+				51417C102E1BEE11000266C8 /* ButtonUITestsTestCase.swift in Sources */,
 				51ABCD2A2E183226006CD6C0 /* SoshTheme+TokensSpaceUITests.swift in Sources */,
 				07F0AFE82CFE0FBD00D334DD /* DesignToolboxConfiguration.swift in Sources */,
 				6DB260DF2CD0F0520091F72E /* NamedSpace+Fixed.swift in Sources */,
@@ -1715,6 +1774,7 @@
 				6DB260E12CD0F0520091F72E /* NameSpace+PaddingInset.swift in Sources */,
 				5152DA1D2DE0BD440078B9F1 /* DesignToolboxCopyableText.swift in Sources */,
 				51952A752D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
+				51417C272E1BF6B8000266C8 /* TokensOpacityUITestsTestCase.swift in Sources */,
 				6DB260E22CD0F0520091F72E /* NameSpace+PaddingStack.swift in Sources */,
 				6DB260E32CD0F0520091F72E /* NameSpace+ColumnGap.swift in Sources */,
 				07CC9AED2DB0F7DD001BC929 /* SwitchElement.swift in Sources */,
@@ -1735,11 +1795,14 @@
 				6DB260DB2CD0EFD90091F72E /* NamedSize+IconWithTypography.swift in Sources */,
 				076227632DA90C65009C3632 /* DividerConfiguration.swift in Sources */,
 				0762276F2DA9489C009C3632 /* OrangeTheme+DividerUITests.swift in Sources */,
+				51417C1A2E1BEFD0000266C8 /* RadioButtonUITestsTestCase.swift in Sources */,
+				51417C232E1BF5D1000266C8 /* TokensSpaceUITestsTestCase.swift in Sources */,
 				076227642DA90C65009C3632 /* DividerElement.swift in Sources */,
 				0786A9DD2E0AAB4A00976098 /* CheckboxItemElement.swift in Sources */,
 				0786A9DE2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
 				076227652DA90C65009C3632 /* DividerElements.swift in Sources */,
 				076227662DA90C65009C3632 /* DividerPage.swift in Sources */,
+				51417C142E1BEE7B000266C8 /* CheckboxUITestsTestCase.swift in Sources */,
 				6DB260DA2CD0EF9D0091F72E /* NamedSize+IconDecorative.swift in Sources */,
 				07AB458A2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */,
 				51952A8C2D3FA22A0068B807 /* OrangeTheme+TokensFontUITests.swift in Sources */,
@@ -1752,6 +1815,7 @@
 				07D3DBF12DA5084500D8A57F /* ColoredSurfaceConfiguration.swift in Sources */,
 				07D3DBF22DA5084500D8A57F /* ColoredSurfacePage.swift in Sources */,
 				07D3DBF32DA5084500D8A57F /* ColoredSurfaceElement.swift in Sources */,
+				51417C292E1BF70F000266C8 /* TokensColorUITestsTestCase.swift in Sources */,
 				51952A7F2D3FA17E0068B807 /* OrangeTheme+TokensColorUITests.swift in Sources */,
 				07CAE76A2CEE20B200D6C5D1 /* SpacePaddingTokenIllustrations.swift in Sources */,
 				07CAE76B2CEE20B200D6C5D1 /* SpaceBasicTokenIllustrations.swift in Sources */,
@@ -1759,13 +1823,16 @@
 				6D17A22F2CCBF12B00C00512 /* NamedColor+Border.swift in Sources */,
 				6D17A2302CCBF12B00C00512 /* NamedColor+Chart.swift in Sources */,
 				6D17A2312CCBF12B00C00512 /* NamedColor+Content.swift in Sources */,
+				51417C2B2E1BF7B2000266C8 /* TokensFontUITestsTestCase.swift in Sources */,
 				511C96B52E157D3200F9D156 /* SwitchItemPage.swift in Sources */,
 				0786A9E52E0AAB6600976098 /* CheckboxItemIndeterminatePage.swift in Sources */,
 				0786A9E62E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				0786A9E72E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
+				51417C252E1BF661000266C8 /* TokensBorderUITestsTestCase.swift in Sources */,
 				07B3CCB52D40F37000DBB10A /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				6D17A2332CCBF12B00C00512 /* NamedColor+Decorative.swift in Sources */,
 				51952A862D3FA1DB0068B807 /* OrangeTheme+TokensSpaceUITests.swift in Sources */,
+				51417C1F2E1BF4FB000266C8 /* TokensElevationUITestsTestCase.swift in Sources */,
 				51952A832D3FA1AC0068B807 /* OrangeTheme+TokensSizeUITests.swift in Sources */,
 				51952A712D3F9D720068B807 /* DesignToolboxTokenIllustration.swift in Sources */,
 				51952A892D3FA20D0068B807 /* OrangeTheme+TokensElevationUITests.swift in Sources */,
@@ -1780,6 +1847,7 @@
 				51ABCD282E183226006CD6C0 /* SoshTheme+TokensFontUITests.swift in Sources */,
 				5180FE712DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */,
 				5180FE722DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */,
+				51417C162E1BEF3E000266C8 /* LinkUITestsTestCase.swift in Sources */,
 				51ABCD2C2E183226006CD6C0 /* SoshTheme+TokensElevationUITests.swift in Sources */,
 				5180FE732DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */,
 				07304A6C2D429F9F009320BA /* LinkPage.swift in Sources */,

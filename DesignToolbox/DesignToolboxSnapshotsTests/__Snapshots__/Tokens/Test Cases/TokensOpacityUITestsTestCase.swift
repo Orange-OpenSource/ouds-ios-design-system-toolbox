@@ -26,7 +26,7 @@ open class TokensOpacityUITestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: Theme used for rendering tokens (e.g., `SoshTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testOpacities(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
+    @MainActor func testOpacities(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 
         // Iterate through all named tokens
         for namedToken in NamedOpacity.allCases {
