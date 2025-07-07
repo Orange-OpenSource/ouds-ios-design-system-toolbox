@@ -46,16 +46,19 @@ private struct BadgeDemo: View {
         HStack(alignment: .center) {
             Spacer()
 
-            OUDSBadge(status: configurationModel.status,
-                      size: configurationModel.size)
-
-            OUDSBadge(count: 1,
-                      status: configurationModel.status,
-                      size: configurationModel.size)
-
-            OUDSBadge(icon: Image(decorative: "ic_heart"),
-                      status: configurationModel.status,
-                      size: configurationModel.size)
+            switch configurationModel.badgeType {
+            case .standard:
+                OUDSBadge(status: configurationModel.status,
+                          size: configurationModel.size)
+            case .count:
+                OUDSBadge(count: configurationModel.count,
+                          status: configurationModel.status,
+                          size: configurationModel.size)
+            case .icon:
+                OUDSBadge(icon: Image(decorative: "ic_heart"),
+                          status: configurationModel.status,
+                          size: configurationModel.size)
+            }
 
             Spacer()
         }

@@ -21,7 +21,6 @@ final class BadgeConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
-    @Published var text: String
     @Published var size: OUDSBadge.Size {
         didSet { updateCode() }
     }
@@ -30,12 +29,31 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    enum BadgeType: String, CaseIterable {
+        case standard = "app_components_badge_standardType_label"
+        case count = "app_components_badge_countType_label"
+        case icon = "app_components_badge_iconType_label"
+    }
+
+    @Published var badgeType: BadgeType {
+        didSet { updateCode() }
+    }
+
+    @Published var countText: String {
+        didSet { updateCode() }
+    }
+
+    var count: UInt {
+        UInt(countText) ?? 1
+    }
+
     // MARK: Initializer
 
     override init() {
         size = .medium
         status = .accent
-        text = String(localized: "app_components_badge_label")
+        badgeType = .standard
+        countText = "1"
     }
 
     deinit {}
@@ -43,7 +61,22 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     override func updateCode() {
-        code = ""
+        switch badgeType {
+        case .standard:
+            code = "OUDSBadge(\(statusPattern), \(sizePattern))"
+        case .count:
+            code = "OUDSBadge(count: \(count), \(statusPattern), \(sizePattern))"
+        case .icon:
+            code = "OUDSBadge(icon: Image(\"ic_heart\", \(statusPattern), \(sizePattern))"
+        }
+    }
+
+    private var statusPattern: String {
+        "status: \(status.technicalDescription)"
+    }
+
+    private var sizePattern: String {
+        "size: \(size.technicalDescription)"
     }
 }
 
@@ -51,13 +84,25 @@ final class BadgeConfigurationModel: ComponentConfiguration {
 
 struct BadgeConfigurationView: View {
 
-    @StateObject var configurationModel: BadgeConfigurationModel
+    // MARK: Stored properties
 
+    @StateObject var configurationModel: BadgeConfigurationModel
     @Environment(\.theme) private var theme
+
+    // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
-            DesignToolboxChoicePicker(title: "Select size",
+            DesignToolboxChoicePicker(title: "app_components_badge_type_label",
+                                      selection: $configurationModel.badgeType,
+                                      style: .segmented)
+            {
+                ForEach(BadgeConfigurationModel.BadgeType.allCases, id: \.rawValue) { type in
+                    Text(type.rawValue.localized()).tag(type)
+                }
+            }
+
+            DesignToolboxChoicePicker(title: "app_components_badge_size_label",
                                       selection: $configurationModel.size,
                                       style: .segmented)
             {
@@ -66,13 +111,18 @@ struct BadgeConfigurationView: View {
                 }
             }
 
-            DesignToolboxChoicePicker(title: "Select Status",
+            DesignToolboxChoicePicker(title: "app_components_badge_status_label",
                                       selection: $configurationModel.status,
                                       style: .segmented)
             {
                 ForEach(OUDSBadge.Status.allCases, id: \.id) { status in
                     Text(status.description).tag(status)
                 }
+            }
+
+            if configurationModel.badgeType == .count {
+                DesignToolboxTextField(text: $configurationModel.countText, title: "app_components_badge_count_label")
+                    .keyboardType(.decimalPad)
             }
         }
     }
@@ -92,6 +142,19 @@ extension OUDSBadge.Size: @retroactive CaseIterable, @retroactive CustomStringCo
             "Medium"
         case .large:
             "Large"
+        }
+    }
+
+    public var technicalDescription: String {
+        switch self {
+        case .extraSmall:
+            ".extarSmall"
+        case .small:
+            ".small"
+        case .medium:
+            ".medium"
+        case .large:
+            ".large"
         }
     }
 
@@ -119,6 +182,10 @@ extension OUDSBadge.Status: @retroactive CaseIterable, @retroactive CustomString
         case .disabled:
             "Disabled"
         }
+    }
+
+    public var technicalDescription: String {
+        ".\(description.lowercased())"
     }
 
     var id: String { description }
