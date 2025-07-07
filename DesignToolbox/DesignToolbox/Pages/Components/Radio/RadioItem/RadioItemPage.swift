@@ -18,49 +18,19 @@ import SwiftUI
 // MARK: - Radio Item Page
 
 struct RadioItemPage: View {
-
-    @StateObject private var configuration: RadioItemConfigurationModel
+    @StateObject private var configurationModel: BooleanControlItemConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: RadioItemConfigurationModel())
+        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSRadioItem(isOn: $isOn",
+                                                         outlinedConfiguration: (value: false,
+                                                                                 outlinedConfigurationLabel: "app_components_radioButton_radioButtonItem_outlined_label"),
+                                                         additionalLabelConfiguration: "app_components_radioButton_radioButtonItem_additionalLabel_label".localized())
+        _configurationModel = StateObject(wrappedValue: model)
     }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configuration,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? RadioItemConfigurationModel {
-            RadioItemIllustration(model: model)
-        }
-    }
-
-    @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? RadioItemConfigurationModel {
-            RadioItemConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: - Radio Item Illustration
-
-private struct RadioItemIllustration: View {
-
-    let model: RadioItemConfigurationModel
-
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center) {
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            RadioItemDemo(model: model)
-            RadioItemDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
+        ControlItemElementPage(configurationModel: configurationModel) {
+            RadioItemDemo(configurationModel: configurationModel)
         }
     }
 }
@@ -69,29 +39,30 @@ private struct RadioItemIllustration: View {
 
 private struct RadioItemDemo: View {
 
-    @ObservedObject var model: RadioItemConfigurationModel
+    @ObservedObject var configurationModel: BooleanControlItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSRadioItem(isOn: $model.selection,
-                      label: model.labelText,
-                      additionalLabel: model.additionalLabelText,
-                      helper: model.helperText,
+        OUDSRadioItem(isOn: $configurationModel.isOn,
+                      label: configurationModel.labelText,
+                      additionalLabel: configurationModel.additionalLabelText,
+                      helper: configurationModel.helperText,
                       icon: icon,
-                      isOutlined: model.outlined,
-                      isReversed: model.isReversed,
-                      isError: model.isError,
-                      isReadOnly: model.isReadOnly,
-                      hasDivider: model.divider)
-            .disabled(!model.enabled)
-            .padding(.all, theme.spaces.spaceFixedMedium)
-            .designToolboxColoredSurface(false)
+                      flipIcon: configurationModel.flipIcon,
+                      isOutlined: configurationModel.outlined,
+                      isReversed: configurationModel.isReversed,
+                      isError: configurationModel.isError,
+                      isReadOnly: configurationModel.isReadOnly,
+                      hasDivider: configurationModel.divider)
+            .disabled(!configurationModel.enabled)
+            .padding(.all, theme.spaces.spaceFixedMd)
+            .accessibilityIdentifier(A11YIdentifiers.componentRadioItem)
     }
 
     // Need here that system name, a11y managed in component
     // swiftlint:disable accessibility_label_for_image
     private var icon: Image? {
-        model.icon ? Image(systemName: "figure.handball") : nil
+        configurationModel.icon ? Image(systemName: "figure.handball") : nil
     }
     // swiftlint:enable accessibility_label_for_image
 }

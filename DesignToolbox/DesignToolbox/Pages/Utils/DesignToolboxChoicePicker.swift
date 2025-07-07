@@ -47,7 +47,7 @@ struct DesignToolboxChoicePicker<Content, Selection>: View where Content: View, 
             .accessibilityElement(children: .contain)
             .accessibilityLabel(LocalizedStringKey(title))
         }
-        .padding(.horizontal, theme.spaces.spaceInsetMedium)
+        .padding(.horizontal, theme.spaces.spaceInsetMd)
     }
 }
 

@@ -58,7 +58,7 @@ extension NamedColor {
         case colorDecorativeNeutralMutedLowest
         case colorDecorativeNeutralMutedMedium
 
-        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
+        func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
             case .colorDecorativeAccent1Default:
                 theme.colors.colorDecorativeAccent1Default

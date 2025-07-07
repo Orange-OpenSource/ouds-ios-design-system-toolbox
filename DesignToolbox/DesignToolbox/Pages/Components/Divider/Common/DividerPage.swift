@@ -19,45 +19,17 @@ import SwiftUI
 
 struct DividerPage: View {
 
-    private let configuration: DividerConfigurationModel
+    @StateObject private var configurationModel: DividerConfigurationModel
 
     init(orientation: DividerConfigurationModel.Orientation) {
-        configuration = DividerConfigurationModel(orientation: orientation)
+        _configurationModel = StateObject(wrappedValue: DividerConfigurationModel(orientation: orientation))
     }
 
     var body: some View {
-        ComponentConfigurationView(
-            configuration: configuration,
-            componentView: componentView,
-            configurationView: configurationView)
-    }
-
-    @ViewBuilder
-    private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? DividerConfigurationModel {
-            DividerIllustration(model: model)
-        }
-    }
-
-    @ViewBuilder
-    private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? DividerConfigurationModel {
-            DividerConfiguration(model: model)
-        }
-    }
-}
-
-// MARK: Divider Illustration
-
-struct DividerIllustration: View {
-
-    @StateObject var model: DividerConfigurationModel
-    @Environment(\.colorScheme) private var colorScheme
-
-    var body: some View {
-        VStack(alignment: .center) {
-            DividerDemo(model: model)
-            DividerDemo(model: model).colorScheme(colorScheme == .dark ? .light : .dark)
+        ComponentConfigurationView(configuration: configurationModel) {
+            DividerDemo(configurationModel: configurationModel)
+        } configurationView: {
+            DividerConfiguration(configurationModel: configurationModel)
         }
     }
 }
@@ -66,28 +38,27 @@ struct DividerIllustration: View {
 
 struct DividerDemo: View {
 
-    @StateObject var model: DividerConfigurationModel
+    @StateObject var configurationModel: DividerConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         Group {
-            switch model.orientation {
+            switch configurationModel.orientation {
             case .horizontal:
                 VStack(alignment: .center) {
                     Spacer()
-                    OUDSHorizontalDivider(color: model.selectedColor)
+                    OUDSHorizontalDivider(color: configurationModel.selectedColor)
                     Spacer()
                 }
             case .vertical:
                 HStack(alignment: .center) {
                     Spacer()
-                    OUDSVerticalDivider(color: model.selectedColor)
+                    OUDSVerticalDivider(color: configurationModel.selectedColor)
                     Spacer()
                 }
             }
         }
         .frame(height: 44)
-        .padding(.all, theme.spaces.spaceFixedMedium)
-        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
+        .padding(.all, theme.spaces.spaceFixedMd)
     }
 }

@@ -33,12 +33,12 @@ struct Card: View {
             title
                 .typeHeadingMedium(theme)
                 .multilineTextAlignment(.leading)
-                .padding(.horizontal, theme.spaces.spaceFixedMedium)
-                .padding(.vertical, theme.spaces.spaceFixedMedium)
+                .padding(.horizontal, theme.spaces.spaceFixedMd)
+                .padding(.vertical, theme.spaces.spaceFixedMd)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
         }
-        .oudsBackground(theme.colors.colorBgPrimary)
+        .oudsBackground(theme.colors.colorOverlayDefault)
         .oudsShadow(theme.elevations.elevationRaised)
         .padding(.all, 4)
     }

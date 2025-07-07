@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import SwiftUI
 
 struct RadioItemElement: DesignToolboxElement {
@@ -25,6 +26,7 @@ struct RadioItemElement: DesignToolboxElement {
             name: name,
             image: nil,
             description: "app_components_radioButton_radioButtonItem_description_text",
+            version: OUDSVersions.componentRadioButtonVersion,
             illustration: AnyView(RadioItemPage())))
     }
 }

@@ -1,8 +1,63 @@
-# OUDS iOS library changelog
+# OUDS iOS design system toolbox changelog
 
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.16.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.15.0...0.16.0) - 2025-07-07
+
+### Added
+
+- [DesignToolbox] Versions of components in pages (Orange-OpenSource/ouds-ios#760)
+- [Library] Versions of components in package
+- [Library] New content-on color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] New repository color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Dimension semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Size semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [DesignToolbox] More UI tests for a11Y configurations
+- [DesignToolbox] Add in about page link to online CHANGELOG (Orange-OpenSource/ouds-ios#678)
+
+### Changed
+
+- [Library] Button component tokens (tokens library v1.2.0)
+- [Library] Link component tokens (tokens library v1.2.0)
+- [Library] Checkbox component tokens (tokens library v1.2.0)
+- [Library] Radio button component tokens (tokens library v1.2.0)
+- [Library] Button component tokens (tokens library v1.2.0)
+- [Library] Tag component tokens (tokens library v1.2.0)
+- [Library] Tag component tokens (tokens library v1.2.0)
+- [Library] Button component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Switch component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Checkbox component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Control item component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Link component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Tag component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Chip component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Badge component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Space semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Border semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Size semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Tool] Update `SwiftFormat/CLI` pod from v0.56.2 to v0.56.4
+- [Library] Optional accessibility identifiers for items of radio picker and checkbox picker components
+- [DesignToolbox] Simplify component demo Screen (Orange-OpenSource/ouds-ios#721)
+- [DesignToolbox] Mutualize configuration of `control items` demos (`switch`, `radio button`, `checkbox`) (Orange-OpenSource/ouds-ios#621) 
+- [Library] Color raw tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Dimension raw tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- [Library] Update the names and the order of the divider colors (Orange-OpenSource/ouds-io#712)
+- [Library] In low power mode, stop animations of loading button (Orange-OpenSource/ouds-ios#661)
+- [Library] Update the names and the order of the divider colors (Orange-OpenSource/ouds-ios#712)
+- [Library] In low power mode, stop animations of loading button (Orange-OpenSource/ouds-ios#661) 
+- [DesignToolbox] Update cards backgrounds token (Orange-OpenSource/ouds-ios#695)
+- [Tool] Update `SwiftFormat/CLI` pod from v0.56.1 to v0.56.2
+
+### Fixed
+
+- [Library] Background color in pressed and hover states for Radio button and Checkbox components (Orange-OpenSource/ouds-ios#720)
+- [DesignToolbox] Update background color in component illustration view (Orange-OpenSource/ouds-ios#723)
+- [DesignToolbox] In radio item page icons never flipped when flip option toggled (Orange-OpenSource/ouds-ios#675)
+- [Library] Change color of button loader in high contrast light mode (Orange-OpenSource/ouds-ios#437)
+- [Library] Change color of indicator and borders in high contrast mode (light scheme) for radio and checkbox components (Orange-OpenSource/ouds-ios#645)
 
 ## [0.15.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases/tag/0.15.0) - 2025-05-28
 

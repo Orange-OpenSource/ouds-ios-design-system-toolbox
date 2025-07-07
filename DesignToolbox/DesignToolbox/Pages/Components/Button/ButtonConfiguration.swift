@@ -167,7 +167,7 @@ struct ButtonConfiguration: View {
     @StateObject var model: ButtonConfigurationModel
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
                     .disabled(model.style != .default)

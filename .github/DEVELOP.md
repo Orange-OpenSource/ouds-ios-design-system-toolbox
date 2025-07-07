@@ -10,6 +10,7 @@
   * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
   * [Snapshots tests in demo app](#snapshots-tests-in-demo-app)
   * [UI tests in demo app](#ui-tests-in-demo-app)
+  * [Manual tests using demo app](#manual-tests-using-demo-app)
 - [Build phases](#build-phases)
 - [Targets](#targets)
 - [Certificates, profiles and identifiers](#certificates-profiles-and-identifiers)
@@ -22,14 +23,20 @@
 - [Linter](#linter)
 - [Formater](#formater)
 - [Dead code](#dead-code)
+- [Software Bill of Materials](#software-bill-of-materials)
 - [CI/CD](#cicd)
 - [Update 3rd parties](#update-3rd-parties)
 
 ## Technical preconditions
 
-You should check wether or not you have the tools in use in the project like _Fastlane_, _SwiftLint_, _SwiftFormat_, etc.
-You can have a look for example in the **THIRD\_PARTY.md** file which lists any dependencies and tools we use at different levels (SDK, design system toolbox app, projects).
-Have a look on the locks file to know which versions we are using (*Podfile*, *Podfile.lock*, *Packages.swift*, *Package.resolved*, *Gemfile*, *Gemfile.lock*).
+> [!IMPORTANT]
+> You should check wether or not you have the tools in use in the project like Fastlane, SwiftLint, SwiftFormat, etc.
+> You can have a look for example in the THIRD_PARTY.md file which lists any dependencies and tools we use at different levels (SDK, design system toolbox app, project).
+> Have a look on the locks file to know which versions we are using (Podfile, Podfile.lock, Gemfile, Gemfile.lock, etc.).
+
+> [!IMPORTANT]
+> We use a lot Fastlane for its automatic features and also to wrap to Shell command lines in order to have the same command to trigger
+> for both the design ssytem toolbox app and the OUDS Swift package.
 
 If some tools are missing, pick the suitable command line below and check versions:
 ```bash
@@ -71,12 +78,26 @@ brew install swiftformat
 brew install xcodesorg/made/xcodes
 # or `brew reinstall xcodesorg/made/xcodes` to get updates if old version installed
 
+# For git-cliff (at least 2.8.0)
+brew install git-cliff
+
+
+# For Syft (at least 1.26.1)
+brew install syft
+
+# For Grype (at least 0.92.2)
+brew tap anchore/grype
+brew install grype
+
 # For LicensePlist (at least 3.27.1)
 brew install licenseplist
 ```
 
 Ensure you have the suitable _Ruby_ version. We recommend the use of [rbenv](https://github.com/rbenv/rbenv) to load the suitable version of ruby.
-We use here _Ruby 3_ (>= 3.4).
+
+> [!TIP]
+> We use here Ruby 3 (>= 3.4).
+
 If you are not used to this tool:
 
 ```shell
@@ -98,7 +119,9 @@ ruby --version
 
 We use also for our GitLab CI runners **Xcode 16.3**, we suggest you use this version or newer if you want.
 
-**Xcode 16.3** and **Swift 6** are used for this project. You must use this configuration.
+> [!IMPORTANT]
+> Xcode 16.3 and Swift 6 are used for this project. You must use this configuration.
+> Not retrocompatibility is planned.
 
 ## Embed the OUDS iOS library
 
@@ -127,6 +150,12 @@ To build the demo application follow those steps:
 4. Select *DesignToolbox* scheme
 5. Build and run the Application on your device ou simulator
 
+> [!TIP]
+> You can also move the folder containing a clone of the [Swift package repository](https://github.com/Orange-OpenSource/ouds-ios) from the *Finder* to the design system toolbox Xcode project so as to have a local reference of the package in this demo app.
+
+> [!TIP]
+> For consistancy reasons, when you work on a dedicated branch on the Swift Package repository and need to have a dedicated branch in the design system toolbox app, you should create a branch from the issue in GitHub and (creating then a branch in the package repository) and create a branch with the same name in the design system toolbox app repositoy. Thus with two repositories we will be able to find easily the suitable branches because the names are the same. Because issues are disabled in the design system toolbox repository, there is no wories to have to refer to issues numbers in the branch names.
+
 ## Documentation
 
 The documentation is based on the Swift documentation with [DocC](https://www.swift.org/documentation/docc/).
@@ -154,16 +183,16 @@ To run these snapshots tests follow some steps:
 5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
 
-Beware, if you add new UI tests using [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) library, you may have new tests which fail at first time.
-Indeed for new tests the tool makes snapshots of the views, thus for the first run no previews exist making the tests fail. You should run the tests twice for new tests.
+> [!CAUTION]
+> Beware, if you add new UI tests using swift-snapshot-testing (https://github.com/pointfreeco/swift-snapshot-testing) library, you may have new tests which fail at first time.
+> Indeed for new tests the tool makes snapshots of the views, thus for the first run no previews exist making the tests fail. You should run the tests twice for new tests.
 
 Such tests here are used to as to be sure the look and feel of any components and tokens rendering remain the expected ones.
 
 Any interface modifications require regenerating the illustrations using the tool, i.e. run the tests twice. The reference illustrations have already been saved within the project.
 
-**Note today because the demo app (Design System Toolbox) is hosted in the repository, the tests assets are versioned too, thus the _Swift Package_ will be heavy when being downloaded because Xcode downloads the entire repository. When the demo app app will be extracted to an internal repository, the _Swift Package_ will be lighter**.
-
-The device under tests is a **simulator of iPhone 16 Pro (18.0), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode**.
+> [!IMPORTANT]
+> The device under tests is a simulator of iPhone 16 Pro (18.0), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
 
 #### How to use to use swift-snapshot-testing library
 
@@ -222,7 +251,7 @@ The snapshot tool fetched the reference image to compare it against the current 
 
 ### UI tests in demo app
 
-The project contains some UI tests made to test the behaviour of components.
+The project contains some UI tests made to test the behavior of components.
 
 To run these UI tests follow some steps:
 1. `cd DesignToolbox`
@@ -231,6 +260,12 @@ To run these UI tests follow some steps:
 4. Select *DesignToolboxUITests* scheme
 5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
+
+### Manual tests using demo app
+
+Do not forget to make manual tests of the library using the design system toolbox app!
+Indeed some features like *Voice Over*, *dynamic fonts*, high contrast and motion managements, or color contrasts, are hardly testable automatically.
+These types of tests should be done manualy with for example the help of the [Accessibility Inspector](https://developer.apple.com/documentation/accessibility/accessibility-inspector).
 
 ## Build phases
 
@@ -263,7 +298,6 @@ Sometimes dependencies should be updated, with for example warnings of [Renovate
 
 Here is the list of files to update to keep the project clean:
 - CHANGELOG (to note for releases the update of the version)
-- THIRD_PARTY (because we list all third-party components, it is a good practice)
 - Of course, update and save in your VCS the new states of the _Podfile_, _Package.swift_ or _Gemfile_ for example (and do not forget locks!)
 
 Maybe you will need to update your pods repo before if you updated a Pod:
@@ -301,7 +335,6 @@ Your commit message should be prefixed by keywords [you can find in the specific
 
 You can add also ! after the keyword to say a breaking change occurs, and also add a scope between parenthesis like:
 - `feat!:` breaking change because..
-- `feat(API)!:` breaking change in the API because..
 - `feat:` add something in the API...
 
 A *Git commit-msg hook* is also defined in the project. It will run *Shell* codes to check if rules defined in the hook are respected before commit being pushed.
@@ -319,16 +352,16 @@ We can add metafields picked from [this good guideline](https://git.kernel.org/p
 This is not mandatory (yet) but a good practice and quite interesting to know who reviewed and validated what.
 You must mention *co-authors* (*Co-authored-by*). You should add who are code reviewers (*Reviewed-by*), evolutions testers (*Tested-by*) and if needed ackers (*Acked-by*).
 
-For example, for issue n°123 and its pull request n°456, tested by Anton, Iman, Maxime, Pierre-Yves and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Stephen:
+For example, for issue n°123 and its pull request n°456, tested by Anton, Maxime, Jérôme and Pierre-Yves and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Stephen:
 ```text
-refactor: update some things colors and design of the demo app (#123) (#4562)
+refactor: update some things colors and design of the demo app (#123) (#456)
 
 Some things have been refactored to make incredible things.
 
-Tested-by: Iman Assabah <iman.assabah.ext@orange.com>
 Tested-by: Anton Astafev <anton.astafev@orange.com>
 Tested-by: Benoit Suzanne <benoit.suzanne@orange.com>
 Tested-by: Maxime Tonnerre <maxime.tonnerre@orange.com>
+Tested-by: Jérôme Régnier <jerome.regnier@orange.com>
 Tested-by: Pierre-Yves Ayoul <pierre-yves.ayoul@orange.com>
 Reviewed-by: Ludovic Pinel <ludovic.pinel@orange.com>
 Acked-by: Stephen McCarthy <stephen.mccarthy@orange.com>
@@ -337,6 +370,9 @@ Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Signed-off-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
 Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 ```
+
+> [!TIP]
+> Keep things clear and sorted. If people worked on your commits, mention them if relevant.
 
 #### Integration of tokenator updates
 
@@ -367,13 +403,11 @@ Today we update the unique CHANGELOG manualy, but you can find [in the wiki more
 To generate a release note:
 
 ```shell
-# Install git-cliff
-brew install git-cliff
-
-# Run the command
-# where X is the starting tag and Y the ending tag
 git-cliff --config .github/cliff.toml --output RELEASE_NOTE.md X..Y
 ```
+
+> [!Tip]
+> X can be a commit hash or the last tag for example. Y should be HEAD. Run this comman on main branch.
 
 ## Secrets leaks
 
@@ -384,7 +418,6 @@ It will launch the _Gitleaks_ tool automatically.
 However this tool does not detect plain API key mixed in URL, that is a reason why _Gitleaks_ can be called in a pre-commit hook, using the _giteaks.toml_ at the root of the project.
 To call _Gitleaks_ in pre-commit hooks, create a file named **pre-commit** inside _.git/hooks_ (then run `chmod u+x` in the file).
 Then place the bash code below in this file:
-
 ```bash
 # Run Gitleaks before commits
 echo "Running pre-commit hook: Use of gitleaks"
@@ -400,8 +433,11 @@ fi
 Or just run when you want the command:
 
 ```shell
-gitleaks detect -v -l debug --source .
+bundle exec fastlane check_leaks
 ```
+
+> [!CAUTION]
+> It can increase yout git flow time if your run this command in pre-commit stage
 
 Note that we face some issues about the use of _Gitleaks GitHub Action_ and _Gitleaks_ as CLI command, for fur further details see [#131](https://github.com/gitleaks/gitleaks-action/issues/131), [#132](https://github.com/gitleaks/gitleaks-action/issues/132) and [#1331](https://github.com/gitleaks/gitleaks/issues/1331).
 
@@ -415,11 +451,6 @@ There is a build phase in _Xcode_ to be sure you don't keep and submit warnings.
 We provide a command to run _SwiftLint_:
 ```shell
 bundle exec fastlane lint
-```
-You can also run *SwiftLint* in CLI in the DesignToolbox folder:
-
-```shell
-swiftlint --config ../.swiftlint.yml DesignToolbox/* DesignToolboxSnapshotsTests/* DesignToolboxUITests/*
 ```
 
 **In most of cases you must fix warnings, or explain why in your commits and pull request comments you choose to disable them.**
@@ -470,14 +501,26 @@ git config --local --add core.hooksPath .git-hooks
 We use [Periphery](https://github.com/peripheryapp/periphery) to look for dead code and help developers to track it and remove it.
 This tool is run in CI/CD side and can be run localy using *Fastlane*:
 
-Install *Periphery*:
-```shell
-brew install peripheryapp/periphery/periphery
-```
-
 And run:
 ```shell
 bundle exec fastlane check_dead_code
+```
+
+You can also in Xcode run from the *Periphery* scheme so as to make a scan.
+
+> [!CAUTION]
+> Use a real device and not a simulator. In addition, do not use local reference of OUDS iOS Swift Package as many false-positive warnings can rise; us branch version instead.
+
+## Software Bill of Materials
+
+For software quality reasons, intellectual property compliance, users trust and legal oblgitations with Cyber Resilience Act (CRA) and NIS2, it it interesing or mandatory to keep updated a Software Bill Of Materials (SBOM). And with such file listing dependencies in several levels we are able to make scans of them and check if there are known vulnerabilities.
+
+To do these operations, we use [Syft](https://github.com/anchore/syft) to generate a SBOM in SPDX JSON format, which will processed by [Grype](https://github.com/anchore/grype) to check if there are known vulnerabilities.
+
+These operations, triggered in CLI, are wrapped in a Fastlane command:
+
+```shell
+bundle exec fastlane update_sbom
 ```
 
 ## CI/CD

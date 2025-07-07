@@ -20,7 +20,7 @@ struct BorderTokenPage: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
             Section {
                 VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                     DesignToolboxCode(code: "theme.borders.borderWidthDefault", titleText: "app_tokens_common_viewCodeExample_label")
@@ -65,7 +65,7 @@ struct BorderTokenPage: View {
                     .oudsForegroundStyle(theme.colors.colorContentDefault)
             }
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMd)
     }
 
     struct RectangleBackground: View {
@@ -143,9 +143,9 @@ struct BorderTokenPage: View {
 enum NamedBorderRadius: String, CaseIterable {
     case borderRadiusNone
     case borderRadiusDefault
-    case borderRadiusShort
+    case borderRadiusSmall
     case borderRadiusMedium
-    case borderRadiusTall
+    case borderRadiusLarge
     case borderRadiusPill
 
     func token(from theme: OUDSTheme) -> BorderRadiusSemanticToken {
@@ -154,12 +154,12 @@ enum NamedBorderRadius: String, CaseIterable {
             theme.borders.borderRadiusNone
         case .borderRadiusDefault:
             theme.borders.borderRadiusDefault
-        case .borderRadiusShort:
-            theme.borders.borderRadiusShort
+        case .borderRadiusSmall:
+            theme.borders.borderRadiusSmall
         case .borderRadiusMedium:
             theme.borders.borderRadiusMedium
-        case .borderRadiusTall:
-            theme.borders.borderRadiusTall
+        case .borderRadiusLarge:
+            theme.borders.borderRadiusLarge
         case .borderRadiusPill:
             theme.borders.borderRadiusPill
         }

@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import SwiftUI
 
 struct DividerElement: DesignToolboxElement {
@@ -29,6 +30,7 @@ struct DividerElement: DesignToolboxElement {
             name: name,
             image: nil,
             description: keyForDescription.localized(),
+            version: OUDSVersions.componentDividerVersion,
             illustration: AnyView(DividerPage(orientation: orientation)))
         )
     }

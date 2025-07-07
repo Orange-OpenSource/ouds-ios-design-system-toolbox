@@ -29,15 +29,19 @@ extension XCTestCase {
     /// TImeout before failing the test
     private static let timeout: TimeInterval = 10
 
-    /// Given the `UIHostingController` for a specific `UIUserInterfaceStyle`, make assertions on snapshots
+    // swiftlint:disable function_default_parameter_at_end
+    /// Given the `UIHostingController` for a specific `UIUserInterfaceStyle`, make assertions on snapshots.
     /// Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name.
     ///
     /// - Parameters:
     ///    - illustration: A value to compare against a reference,  embeded inside a `UIHostingControler` as a root view
-    ///    - uiStyle: The UI style to apply in `UITraitCollection` to compute the image
-    ///    - named: Some description for the test
+    ///    - uiStyle: The UI style to apply in `UITraitCollection` to compute the image, light mode or dark mode
+    ///    - a11yContrast: The constrat mode, default set to normal
+    ///    - named: Name of the snapshot image
+    ///    - testName: Name for the tests
     @MainActor func assertIllustration(_ illustration: some View,
                                        on uiStyle: UIUserInterfaceStyle,
+                                       a11yContrast: UIAccessibilityContrast = .normal,
                                        named: String,
                                        testName: String,
                                        fileID: StaticString = #fileID,
@@ -47,13 +51,15 @@ extension XCTestCase {
         assertSnapshot(of: hostingViewController,
                        as: .image(precision: Self.precision,
                                   perceptualPrecision: Self.perceptualPrecision,
-                                  traits: UITraitCollection(userInterfaceStyle: uiStyle)),
+                                  traits: UITraitCollection(traitsFrom: [UITraitCollection(userInterfaceStyle: uiStyle), UITraitCollection(accessibilityContrast: a11yContrast)])),
                        named: named,
                        timeout: Self.timeout,
                        fileID: fileID,
                        file: file,
                        testName: testName)
     }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     /// Given the `UIHostingController` for a specific `UIUserInterfaceStyle`, make assertions on snapshots
     /// Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name.
