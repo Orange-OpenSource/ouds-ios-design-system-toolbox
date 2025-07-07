@@ -97,7 +97,9 @@ final class OUDSBadgeUITests: XCTestCase {
         let typePattern = model.badgeType.rawValue
         let statusPattern = model.status.technicalDescription
         let sizePattern = model.size.technicalDescription
-        let name = "\(typePattern)\(statusPattern)\(sizePattern)"
+        let countPattern = (model.badgeType == .count && model.countText == "100") ? "_maxCount" : ""
+
+        let name = "\(typePattern)\(countPattern)\(statusPattern)\(sizePattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
