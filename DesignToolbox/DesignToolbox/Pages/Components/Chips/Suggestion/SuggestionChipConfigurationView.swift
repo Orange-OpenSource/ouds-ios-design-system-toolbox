@@ -43,7 +43,7 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
 
     // MARK: Component Configuration
 
-    private var disableCode: String {
+    private var disabledCode: String {
         !enabled ? ".disabled(true)" : ""
     }
 
@@ -52,20 +52,20 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
                 """
-                OUDSChip(text: \"Chip\") {}
-                \(disableCode)
+                OUDSSuggestionChip(text: \"\(text)\") {}
+                \(disabledCode)
                 """
         case .iconOnly:
             code =
                 """
-                OUDSChip(icon: Image(\"ic_heart\")) {}
-                \(disableCode)
+                OUDSSuggestionChip(icon: Image(\"ic_heart\"), accessibilityLabel: \"Some label\") {}
+                \(disabledCode)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSChip(icon: Image(\"ic_heart\", text: \"Chip\")) {}
-                \(disableCode)
+                OUDSSuggestionChip(icon: Image(\"ic_heart\", text: \"\(text)\")) {}
+                \(disabledCode)
                 """
         }
     }

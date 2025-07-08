@@ -25,7 +25,7 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var selection: Bool {
+    @Published var selected: Bool {
         didSet { updateCode() }
     }
 
@@ -39,7 +39,7 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        selection = false
+        selected = false
         text = "app_components_chip_filterChip_chipContent_label".localized(with: 1)
         layout = .textOnly
     }
@@ -48,8 +48,12 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
 
     // MARK: Component Configuration
 
-    private var disableCode: String {
+    private var disableCodePattern: String {
         !enabled ? ".disabled(true)" : ""
+    }
+
+    private var selectedCodePattern: String {
+        selected ? ", selected: true" : ""
     }
 
     override func updateCode() {
@@ -57,20 +61,20 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
                 """
-                OUDSFilterChip(text: \"Chip\", selected: \(selection)) {}
-                \(disableCode)
+                OUDSFilterChip(text: \"Chip\"\(selectedCodePattern)) {}
+                \(disableCodePattern)
                 """
         case .iconOnly:
             code =
                 """
-                OUDSFilterChip(icon: Image(\"ic_heart\"), selected: \(selection)) {}
-                \(disableCode)
+                OUDSFilterChip(icon: Image(\"ic_heart\"), accessibilityLabel: \"Some label\"\(selectedCodePattern)) {}
+                \(disableCodePattern)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSFilterChip(icon: Image(\"ic_heart\", text: \"Chip\"), selected: \(selection)) {}
-                \(disableCode)
+                OUDSFilterChip(icon: Image(\"ic_heart\"), text: \"Chip\"\(selectedCodePattern)) {}
+                \(disableCodePattern)
                 """
         }
     }
@@ -89,7 +93,7 @@ struct FilterChipConfigurationView: View {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
 
-                OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.selection)
+                OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.selected)
                     .disabled(!configurationModel.enabled)
             }
 

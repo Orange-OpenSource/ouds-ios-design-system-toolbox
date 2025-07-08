@@ -45,7 +45,7 @@ struct ChipPickerDemo: View {
     var body: some View {
         OUDSChipPicker(title: "Select your drink",
                        selection: $configurationModel.selected,
-                       chips: configurationModel.dinks())
+                       chips: configurationModel.drinks())
             .disabled(!configurationModel.enabled)
     }
 }
