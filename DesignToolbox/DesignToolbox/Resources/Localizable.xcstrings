@@ -3274,7 +3274,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "تتضمن فجوة العمود المسافة الرأسية بين الكائنات."
           }
         },
@@ -3568,7 +3568,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "تتضمن فجوة الصفوف المسافة الأفقية بين الكائنات."
           }
         },
