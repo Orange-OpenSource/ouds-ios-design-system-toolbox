@@ -2269,7 +2269,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "514-component-create-component---badge";
+				branch = develop;
 				kind = branch;
 			};
 		};
