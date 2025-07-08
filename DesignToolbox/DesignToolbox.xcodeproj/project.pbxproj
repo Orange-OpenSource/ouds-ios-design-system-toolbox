@@ -2239,7 +2239,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "780-component-update-apply-switchborderradius-in-switch-components";
+				branch = develop;
 				kind = branch;
 			};
 		};
