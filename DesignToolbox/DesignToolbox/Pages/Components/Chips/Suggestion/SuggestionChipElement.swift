@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import SwiftUI
 
 struct SuggestionChipElement: DesignToolboxElement {
@@ -25,6 +26,7 @@ struct SuggestionChipElement: DesignToolboxElement {
             name: name,
             image: nil,
             description: "",
+            version: OUDSVersions.componentChipVersion,
             illustration: AnyView(SuggestionChipPage()))
         )
     }
