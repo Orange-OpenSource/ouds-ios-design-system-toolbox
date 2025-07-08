@@ -33,7 +33,7 @@ struct DesignToolboxTextField: View {
         VStack(alignment: .leading) {
             if let title {
                 Text(LocalizedStringKey(title))
-                    .typeHeadingMedium(theme)
+                    .typeHeadingSmall(theme)
                     .oudsForegroundStyle(theme.colors.colorContentDefault)
             }
 
