@@ -20,9 +20,9 @@ struct ChipElements: DesignToolboxElement {
 
     init() {
         let variants: [DesignToolboxElement] = [
-            ChipPickerElement(),
             SuggestionChipElement(),
             FilterChipElement(),
+            ChipPickerElement(),
         ]
 
         name = "app_components_chip_label".localized()

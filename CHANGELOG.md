@@ -24,6 +24,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Available color modes and surfaces by theme for `colored surface` component
 - [Library] Color mode semantic tokens (tokens library v1.1.0)
 - [Library] Color multiple semantic tokens (tokens library v1.1.0)
+### Added
+
+- [DesignToolbox] Add demo screens and UI tests for chips components (Orange-OpenSource/ouds-ios#407)
 
 ## [0.16.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.15.0...0.16.0) - 2025-07-07
 
@@ -31,7 +34,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [DesignToolbox] Versions of components in pages (Orange-OpenSource/ouds-ios#760)
 - [Library] Versions of components in package
-- [DesignToolBox] Add demo screens and ui tests for chips components (Orange-OpenSource/ouds-ios#407)
 - [Library] New content-on color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] New repository color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - [Library] Dimension semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)

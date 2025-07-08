@@ -49,17 +49,17 @@ struct FilterChipDemo: View {
             case .iconOnly:
                 OUDSFilterChip(icon: Image(decorative: "ic_heart"),
                                accessibilityLabel: "app_components_button_icon_a11y".localized(),
-                               selected: configurationModel.selection)
+                               selected: configurationModel.selected)
                 {
-                    configurationModel.selection.toggle()
+                    configurationModel.selected.toggle()
                 }
             case .textOnly:
-                OUDSFilterChip(text: configurationModel.text, selected: configurationModel.selection) {
-                    configurationModel.selection.toggle()
+                OUDSFilterChip(text: configurationModel.text, selected: configurationModel.selected) {
+                    configurationModel.selected.toggle()
                 }
             case .textAndIcon:
-                OUDSFilterChip(icon: Image(decorative: "ic_heart"), text: configurationModel.text, selected: configurationModel.selection) {
-                    configurationModel.selection.toggle()
+                OUDSFilterChip(icon: Image(decorative: "ic_heart"), text: configurationModel.text, selected: configurationModel.selected) {
+                    configurationModel.selected.toggle()
                 }
             }
 

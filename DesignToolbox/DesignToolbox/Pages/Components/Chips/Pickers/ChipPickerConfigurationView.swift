@@ -29,6 +29,31 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    // MARK: Initializer
+
+    override init() {
+        enabled = true
+        selected = .virginHolyLava
+        layout = .textAndIcon
+    }
+
+    deinit {}
+
+    // MARK: Component Configuration
+
+    private var disableCode: String {
+        !enabled ? ".disabled(true)" : ""
+    }
+
+    override func updateCode() {
+        code = """
+        OUDSChipPicker(title: "The title", selection: $selection, chips: someChipsData)
+        \(disableCode)
+        """
+    }
+
+    // MARK: - Data populating
+
     @Published var selected: Drink
 
     enum Drink: String, CaseIterable {
@@ -59,9 +84,7 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         }
     }
 
-    // MARK: - Data populating
-
-    func dinks() -> [OUDSChipPickerData<Drink>] {
+    func drinks() -> [OUDSChipPickerData<Drink>] {
         Drink.allCases.map { drink in
             switch layout {
             case .textOnly:
@@ -72,29 +95,6 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
                 .init(tag: drink, layout: .icon(icon: drink.icon, accessibilityLabel: drink.text))
             }
         }
-    }
-
-    // MARK: Initializer
-
-    override init() {
-        enabled = true
-        selected = .virginHolyLava
-        layout = .textAndIcon
-    }
-
-    deinit {}
-
-    // MARK: Component Configuration
-
-    private var disableCode: String {
-        !enabled ? ".disabled(true)" : ""
-    }
-
-    override func updateCode() {
-        code = """
-        OUDSChipPicker(title: "The title", selection: $selection, chips: someChipsDate)
-        \(disableCode)
-        """
     }
 }
 

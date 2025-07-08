@@ -22,10 +22,7 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-// MARK: - Test Cases
-
 /// Tests the UI rendering of the `OUDSFilterChip` and `OUDSSuggestionChip` for each parameter.
-
 final class OUDSChipsUITests: XCTestCase {
 
     /// Tests all chips configuration in the `OrangeTheme` with the `light` color schemes.
@@ -68,11 +65,11 @@ final class OUDSChipsUITests: XCTestCase {
 
         // Test OUDSSuggestionChips
         for layout in ChipLayout.allCases {
-            for selection in [true, false] {
+            for selected in [true, false] {
                 for enabled in [true, false] {
                     let model = FilterChipConfigurationModel()
                     model.layout = layout
-                    model.selection = selection
+                    model.selected = selected
                     model.enabled = enabled
 
                     testFilterChips(theme: theme, interfaceStyle: interfaceStyle, model: model)
@@ -108,7 +105,7 @@ final class OUDSChipsUITests: XCTestCase {
         // - `selectionPattern` is empty if not selected
         let testName = "testFilter_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let disabledPattern = !model.enabled ? "_Disabled" : ""
-        let selectedPattern = model.selection ? "_Selected" : ""
+        let selectedPattern = model.selected ? "_Selected" : ""
         let name = "\(model.layout.debugDescription)\(selectedPattern)\(disabledPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
