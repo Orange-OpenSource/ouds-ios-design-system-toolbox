@@ -67,7 +67,7 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         case .count:
             code = "OUDSBadge(count: \(count), \(statusPattern), \(sizePattern))"
         case .icon:
-            code = "OUDSBadge(icon: Image(\"ic_heart\", \(statusPattern), \(sizePattern))"
+            code = "OUDSBadge(icon: Image(\"ic_heart\"), \(statusPattern), \(sizePattern))"
         }
     }
 
@@ -149,7 +149,7 @@ extension OUDSBadge.Size: @retroactive CaseIterable, @retroactive CustomStringCo
     public var technicalDescription: String {
         switch self {
         case .extraSmall:
-            ".extarSmall"
+            ".extraSmall"
         case .small:
             ".small"
         case .medium:
@@ -173,7 +173,7 @@ extension OUDSBadge.Status: @retroactive CaseIterable, @retroactive CustomString
         case .info:
             "Info"
         case .negative:
-            "Negatice"
+            "Negative"
         case .neutral:
             "Neutral"
         case .positive:

@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import SwiftUI
 
 struct BadgeElement: DesignToolboxElement {
@@ -25,6 +26,7 @@ struct BadgeElement: DesignToolboxElement {
             name: name,
             image: nil,
             description: "app_components_badge_description_text",
+            version: OUDSVersions.componentBadgeVersion,
             illustration: AnyView(BadgePage()))
         )
     }
