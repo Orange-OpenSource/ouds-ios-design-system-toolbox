@@ -151,7 +151,7 @@ open class CheckboxUITestsTestCase: XCTestCase {
                            on: interfaceStyle,
                            a11yContrast: a11yContrast,
                            named: name,
-                           precision: 0.92,
+                           precision: 0.92, // Not found why it failed for indicator only in light mode enabled for Sosh (｡•́︿•̀｡)
                            testName: testName)
     }
 

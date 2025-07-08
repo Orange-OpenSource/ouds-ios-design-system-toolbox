@@ -8,21 +8,21 @@ in whole or part of, in any medium, except as required for reasonable and custom
 and reproducing the content of the NOTICE and DOCUMENTATION files.
 Any use or displaying shall constitute an infringement under intellectual property laws of France and international conventions.
 
-# Docs
-./docs_release/docs_assets/apple-touch-icon.png
-./docs_release/docs_assets/favicon-16x16.png
-./docs_release/docs_assets/favicon-32x32.png
-./docs_release/docs_assets/favicon.ico
+# Illustrations
 
-# Design Toolbox
+## Accessibility statement
 
 ./DesignToolbox/DesignToolbox/Resources/accessibilityStatement/favicon.ico
 ./DesignToolbox/DesignToolbox/Resources/accessibilityStatement/orange-logo.svg
+
+## Icons
 
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/AppIconDebug.appiconset/UDSDemo-DEBUG_SQR.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/AppIconAlpha.appiconset/UDSDemo-A_SQR.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/AppIconBeta.appiconset/UDSDemo-B_SQR.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/AppIconRelease.appiconset/Unified_App_IOS_SQR.png
+
+## Images
 
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_token.imageset/ic_token.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_component_atom.imageset/ic_component_atom.svg
