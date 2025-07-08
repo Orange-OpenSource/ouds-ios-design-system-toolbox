@@ -2239,7 +2239,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "777-component-update-apply-controlitemborderradius-in-control-item-components";
+				branch = develop;
 				kind = branch;
 			};
 		};
