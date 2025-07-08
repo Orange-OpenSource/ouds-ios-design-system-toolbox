@@ -301,6 +301,7 @@
 		51ABCD2B2E183226006CD6C0 /* SoshTheme+TokensSizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD202E183226006CD6C0 /* SoshTheme+TokensSizeUITests.swift */; };
 		51ABCD2C2E183226006CD6C0 /* SoshTheme+TokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD1F2E183226006CD6C0 /* SoshTheme+TokensElevationUITests.swift */; };
 		51ABCD2D2E183226006CD6C0 /* SoshTheme+TokensOpacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD232E183226006CD6C0 /* SoshTheme+TokensOpacityUITests.swift */; };
+		51B35BD62E1D0DD900E162D4 /* ChipsPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B35BD52E1D0DD900E162D4 /* ChipsPickerUITests.swift */; };
 		51B8D5A12DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
 		51B8D5A22DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
 		51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 51BC9DE62C6513F200EB2A11 /* OUDSFoundations */; };
@@ -583,6 +584,7 @@
 		51952A8B2D3FA2280068B807 /* OrangeTheme+TokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensFontUITests.swift"; sourceTree = "<group>"; };
 		51952A8E2D3FA2490068B807 /* OrangeTheme+TokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensOpacityUITests.swift"; sourceTree = "<group>"; };
 		51A7A9DA2C46E17F00EF7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		51ABCD1F2E183226006CD6C0 /* SoshTheme+TokensElevationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensElevationUITests.swift"; sourceTree = "<group>"; };
 		51ABCD202E183226006CD6C0 /* SoshTheme+TokensSizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensSizeUITests.swift"; sourceTree = "<group>"; };
 		51ABCD212E183226006CD6C0 /* SoshTheme+TokensSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensSpaceUITests.swift"; sourceTree = "<group>"; };
@@ -590,6 +592,9 @@
 		51ABCD232E183226006CD6C0 /* SoshTheme+TokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensOpacityUITests.swift"; sourceTree = "<group>"; };
 		51ABCD242E183226006CD6C0 /* SoshTheme+TokensColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensColorUITests.swift"; sourceTree = "<group>"; };
 		51ABCD252E183226006CD6C0 /* SoshTheme+TokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensFontUITests.swift"; sourceTree = "<group>"; };
+=======
+		51B35BD52E1D0DD900E162D4 /* ChipsPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsPickerUITests.swift; sourceTree = "<group>"; };
+>>>>>>> 4559d69 (test: UI functional test for picker (Orange-OpenSource/ouds-ios#407))
 		51B842BB2D93FF45000382F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/about_legal_information.html; sourceTree = "<group>"; };
 		51B842BC2D93FF45000382F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/about_privacy_policy.html; sourceTree = "<group>"; };
 		51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColorMode.swift; sourceTree = "<group>"; };
@@ -1268,6 +1273,7 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		51ABCD1B2E1830BB006CD6C0 /* OrangeTheme */ = {
 			isa = PBXGroup;
 			children = (
@@ -1322,6 +1328,14 @@
 				518EC09A2E1FF28300FC77E4 /* SoshTheme+SwitchUITests.swift */,
 			);
 			path = SoshTheme;
+=======
+		51B35BD42E1D0DCC00E162D4 /* Chips */ = {
+			isa = PBXGroup;
+			children = (
+				51B35BD52E1D0DD900E162D4 /* ChipsPickerUITests.swift */,
+			);
+			path = Chips;
+>>>>>>> 4559d69 (test: UI functional test for picker (Orange-OpenSource/ouds-ios#407))
 			sourceTree = "<group>";
 		};
 		51BD760C2C466FCF0033365D /* About */ = {
@@ -1445,6 +1459,7 @@
 		51EB737E2DBFD4B000F37FEC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				51B35BD42E1D0DCC00E162D4 /* Chips */,
 				51F676EB2E0D677800C15CB6 /* Switches */,
 				51F676E62E0D650900C15CB6 /* Radios */,
 				51F676E52E0D641500C15CB6 /* Checkboxes */,
@@ -2117,6 +2132,7 @@
 				51F676EA2E0D66EB00C15CB6 /* RadioItemUITests.swift in Sources */,
 				51F676DE2E0D567700C15CB6 /* CheckboxUITests.swift in Sources */,
 				51F676E22E0D61FE00C15CB6 /* CheckboxIndeterminateUITests.swift in Sources */,
+				51B35BD62E1D0DD900E162D4 /* ChipsPickerUITests.swift in Sources */,
 				51EB73952DBFDDF600F37FEC /* CheckboxPickerUITests.swift in Sources */,
 				51EB73962DBFDDF600F37FEC /* AppTestCase.swift in Sources */,
 				51F676E02E0D5E3F00C15CB6 /* CheckboxItemUITests.swift in Sources */,

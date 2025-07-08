@@ -88,11 +88,11 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         Drink.allCases.map { drink in
             switch layout {
             case .textOnly:
-                .init(tag: drink, layout: .text(text: drink.text))
+                .init(tag: drink, layout: .text(text: drink.text), accessibilityIdentifier: drink.text)
             case .textAndIcon:
-                .init(tag: drink, layout: .textAndIcon(text: drink.text, icon: drink.icon))
+                .init(tag: drink, layout: .textAndIcon(text: drink.text, icon: drink.icon), accessibilityIdentifier: drink.text)
             case .iconOnly:
-                .init(tag: drink, layout: .icon(icon: drink.icon, accessibilityLabel: drink.text))
+                .init(tag: drink, layout: .icon(icon: drink.icon, accessibilityLabel: drink.text), accessibilityIdentifier: drink.text)
             }
         }
     }
