@@ -151,6 +151,7 @@ open class CheckboxUITestsTestCase: XCTestCase {
                            on: interfaceStyle,
                            a11yContrast: a11yContrast,
                            named: name,
+                           precision: 0.92,
                            testName: testName)
     }
 

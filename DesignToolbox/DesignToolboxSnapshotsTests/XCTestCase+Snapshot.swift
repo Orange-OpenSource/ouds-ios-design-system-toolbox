@@ -43,13 +43,14 @@ extension XCTestCase {
                                        on uiStyle: UIUserInterfaceStyle,
                                        a11yContrast: UIAccessibilityContrast = .normal,
                                        named: String,
+                                       precision: Float = XCTestCase.precision,
                                        testName: String,
                                        fileID: StaticString = #fileID,
                                        file: StaticString = #filePath)
     {
         let hostingViewController = UIHostingController(rootView: illustration)
         assertSnapshot(of: hostingViewController,
-                       as: .image(precision: Self.precision,
+                       as: .image(precision: precision,
                                   perceptualPrecision: Self.perceptualPrecision,
                                   traits: UITraitCollection(traitsFrom: [UITraitCollection(userInterfaceStyle: uiStyle), UITraitCollection(accessibilityContrast: a11yContrast)])),
                        named: named,
