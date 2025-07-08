@@ -61,7 +61,7 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
                 """
-                OUDSFilterChip(text: \"Chip\"\(selectedCodePattern)) {}
+                OUDSFilterChip(text: \"\(text)"\(selectedCodePattern)) {}
                 \(disableCodePattern)
                 """
         case .iconOnly:
@@ -73,7 +73,7 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         case .textAndIcon:
             code =
                 """
-                OUDSFilterChip(icon: Image(\"ic_heart\"), text: \"Chip\"\(selectedCodePattern)) {}
+                OUDSFilterChip(icon: Image(\"ic_heart\"), text: \"\(text)"\(selectedCodePattern)) {}
                 \(disableCodePattern)
                 """
         }

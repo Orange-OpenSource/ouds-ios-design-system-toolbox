@@ -35,11 +35,7 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-<<<<<<< HEAD
         text = "app_components_chip_suggestionChip_chipContent_label".localized()
-=======
-        text = "app_components_chip_suggestionChip_suggestionChip_label".localized(with: 1)
->>>>>>> 2e42ea7 (feat: Add SuggestionChip demo)
         layout = .textOnly
     }
 
@@ -47,11 +43,7 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
 
     // MARK: Component Configuration
 
-<<<<<<< HEAD
     private var disabledCode: String {
-=======
-    private var disableCode: String {
->>>>>>> 2e42ea7 (feat: Add SuggestionChip demo)
         !enabled ? ".disabled(true)" : ""
     }
 
@@ -60,18 +52,12 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
                 """
-<<<<<<< HEAD
                 OUDSSuggestionChip(text: \"\(text)\") {}
                 \(disabledCode)
-=======
-                OUDSChip(text: \"Chip\") {}
-                \(disableCode)
->>>>>>> 2e42ea7 (feat: Add SuggestionChip demo)
                 """
         case .iconOnly:
             code =
                 """
-<<<<<<< HEAD
                 OUDSSuggestionChip(icon: Image(\"ic_heart\"), accessibilityLabel: \"Some label\") {}
                 \(disabledCode)
                 """
@@ -80,45 +66,11 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
                 """
                 OUDSSuggestionChip(icon: Image(\"ic_heart\", text: \"\(text)\")) {}
                 \(disabledCode)
-=======
-                OUDSChip(icon: Image(\"ic_heart\")) {}
-                \(disableCode)
-                """
-        case .iconAndText:
-            code =
-                """
-                OUDSChip(icon: Image(\"ic_heart\", text: \"Chip\")) {}
-                \(disableCode)
->>>>>>> 2e42ea7 (feat: Add SuggestionChip demo)
                 """
         }
     }
 }
 
-<<<<<<< HEAD
-=======
-// MARK: - Chip Layout
-
-enum ChipLayout: CaseIterable, CustomStringConvertible {
-    case textOnly
-    case iconAndText
-    case iconOnly
-
-    var description: String {
-        switch self {
-        case .textOnly:
-            "app_components_common_textOnlyLayout_label"
-        case .iconAndText:
-            "app_components_common_iconAndTextLayout_label"
-        case .iconOnly:
-            "app_components_common_iconOnlyLayout_label"
-        }
-    }
-
-    var id: String { description }
-}
-
->>>>>>> 2e42ea7 (feat: Add SuggestionChip demo)
 // MARK: - SuggestionChip Configuration View
 
 struct SuggestionChipConfigurationView: View {
@@ -128,11 +80,7 @@ struct SuggestionChipConfigurationView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-<<<<<<< HEAD
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
-=======
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
->>>>>>> 2e42ea7 (feat: Add SuggestionChip demo)
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
             }
@@ -146,11 +94,7 @@ struct SuggestionChipConfigurationView: View {
                 }
             }
 
-<<<<<<< HEAD
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
-=======
-            if configurationModel.layout == .iconAndText || configurationModel.layout == .textOnly {
->>>>>>> 2e42ea7 (feat: Add SuggestionChip demo)
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.text)
                 }
