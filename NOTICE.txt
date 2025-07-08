@@ -29,6 +29,8 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_info.imageset/ic_info.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_heart.imageset/ic_heart.svg
 
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_badge.imageset/il_component_badge.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_badge.imageset/il_component_badge_dark.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_button.imageset/il_component_button.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_button.imageset/il_component_button_dark.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_checkbox.imageset/il_component_checkbox.png
