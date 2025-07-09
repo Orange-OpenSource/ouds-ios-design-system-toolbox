@@ -1545,6 +1545,30 @@
         }
       }
     },
+    "app_components_chip_filterChip_description_text" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مُكوّن \"شريحة المُرشِّح\" هو عنصر مُدمج في واجهة المستخدم، يُستخدم في نظام التصميم، لعرض خيار مُرشِّح يُمكن للمستخدم تحديده أو إلغاء تحديده. يُتيح هذا المُكوّن للمستخدمين تحسين المحتوى أو البيانات من خلال تطبيق مُرشِّح واحد أو أكثر بطريقة تفاعلية وسهلة الوصول بصريًا."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A filter chip is a compact UI element used in a design system to represent a filter option that can be selected or deselected by the user. Filter chips allow users to refine content or data by applying one or more filters in a visually accessible and interactive way."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composent Filter Chip est un élément d'interface utilisateur compact utilisé dans un système de conception pour représenter une option de filtre qui peut être sélectionnée ou désélectionnée par l'utilisateur. Ils permettent aux utilisateurs d'affiner le contenu ou les données en appliquant un ou plusieurs filtres de manière visuellement accessible et interactive."
+          }
+        }
+      }
+    },
     "app_components_chip_filterChip_label" : {
       "comment" : "Component - Chip",
       "extractionState" : "manual",
@@ -1615,6 +1639,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suggestion"
+          }
+        }
+      }
+    },
+    "app_components_chip_suggestionChip_description_text" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شريحة الاقتراحات هي عنصر واجهة مستخدم مدمج يُستخدم لعرض الخيارات المُوصى بها أو التنبؤية بناءً على مدخلات المستخدم أو السياق. غالبًا ما توجد شرائح الاقتراحات في أشرطة البحث أو النماذج أو واجهات البريد الإلكتروني، وتساعد المستخدمين على اختيار الاقتراحات المناسبة بسرعة. عادةً ما لا يتم اختيارها افتراضيًا، ويمكن تطبيقها بنقرة واحدة، مما يُبسط مدخلات المستخدم ويُحسّن سهولة الاستخدام."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A suggestion chip is a compact UI element used to present recommended or predictive options based on user input or context. Often found in search bars, forms, or messaging interfaces, suggestion chips help users quickly select from relevant suggestions. They are typically non-selected by default and can be tapped or clicked to apply the suggestion, streamlining user input and enhancing usability."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composant Suggestion Chip est un élément d'interface utilisateur compact utilisé pour présenter des options recommandées ou prédictives en fonction de la saisie utilisateur ou du contexte. Souvent présentes dans les barres de recherche, les formulaires ou les interfaces de messagerie, les puces de suggestion aident les utilisateurs à sélectionner rapidement des suggestions pertinentes. Elles ne sont généralement pas sélectionnées par défaut et peuvent être appliquées d'un simple clic, ce qui simplifie la saisie utilisateur et améliore la convivialité."
           }
         }
       }
