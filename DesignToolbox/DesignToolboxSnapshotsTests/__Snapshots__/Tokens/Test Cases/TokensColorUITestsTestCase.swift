@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSFoundations
 import OUDSTokensSemantic
 import SnapshotTesting
 import SwiftUI
@@ -32,6 +33,11 @@ open class TokensColorUITestsTestCase: XCTestCase {
         for color in NamedColor.Background.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
+
+            if token.hasForbiddenColorValue() {
+                OL.debug("For NamedColor.Bacgkround cases and theme \(theme.name) a forbidden value has been skipped")
+                continue
+            }
 
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
@@ -62,6 +68,11 @@ open class TokensColorUITestsTestCase: XCTestCase {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
+            if token.hasForbiddenColorValue() {
+                OL.debug("For NamedColor.Action cases and theme \(theme.name) a forbidden value has been skipped")
+                continue
+            }
+
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
@@ -90,6 +101,11 @@ open class TokensColorUITestsTestCase: XCTestCase {
         for color in NamedColor.Always.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
+
+            if token.isForbiddenValueColor() {
+                OL.debug("For NamedColor.Always cases and theme \(theme.name) a forbidden value has been skipped")
+                continue
+            }
 
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
@@ -120,6 +136,11 @@ open class TokensColorUITestsTestCase: XCTestCase {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
+            if token.hasForbiddenColorValue() {
+                OL.debug("For NamedColor.Content cases and theme \(theme.name) a forbidden value has been skipped")
+                continue
+            }
+
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
@@ -148,6 +169,11 @@ open class TokensColorUITestsTestCase: XCTestCase {
         for color in NamedColor.Border.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
+
+            if token.hasForbiddenColorValue() {
+                OL.debug("For NamedColor.Border cases and theme \(theme.name) a forbidden value has been skipped")
+                continue
+            }
 
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
@@ -178,6 +204,11 @@ open class TokensColorUITestsTestCase: XCTestCase {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
+            if token.isForbiddenValueColor() {
+                OL.debug("For NamedColor.Decorative cases and theme \(theme.name) a forbidden value has been skipped")
+                continue
+            }
+
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
@@ -206,6 +237,11 @@ open class TokensColorUITestsTestCase: XCTestCase {
         for color in NamedColor.Chart.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
+
+            if token.hasForbiddenColorValue() {
+                OL.debug("For NamedColor.Chart cases and theme \(theme.name) a forbidden value has been skipped")
+                continue
+            }
 
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
@@ -265,6 +301,11 @@ open class TokensColorUITestsTestCase: XCTestCase {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
+            if token.hasForbiddenColorValue() {
+                OL.debug("For NamedColor.Opacity cases and theme \(theme.name) a forbidden value has been skipped")
+                continue
+            }
+
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
@@ -294,6 +335,11 @@ open class TokensColorUITestsTestCase: XCTestCase {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
+            if token.isForbiddenValueColor() {
+                OL.debug("For NamedColor.Repository cases and theme \(theme.name) a forbidden value has been skipped")
+                continue
+            }
+
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
@@ -322,6 +368,11 @@ open class TokensColorUITestsTestCase: XCTestCase {
         for color in NamedColor.Surface.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
+
+            if token.hasForbiddenColorValue() {
+                OL.debug("For NamedColor.Surface cases and theme \(theme.name) a forbidden value has been skipped")
+                continue
+            }
 
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
