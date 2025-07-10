@@ -24,8 +24,4 @@ enum A11YIdentifiers {
     static let componentRadioItem = "designSystemToolbox_component_radioItem"
     static let componentSwitch = "designSystemToolbox_component_switch"
     static let componentSwitchItem = "designSystemToolbox_component_switchitem"
-
-    // MARK: - Configuration of components (demo)
-
-    static let enableSwitch = "designSystemToolbox_configuration_switch_enable"
 }
