@@ -1716,7 +1716,7 @@
         }
       }
     },
-    "app_components_chipsPicker_description_text" : {
+    "app_components_chipPicker_description_text" : {
       "comment" : "Component - Chip Picker",
       "extractionState" : "manual",
       "localizations" : {
@@ -1736,6 +1736,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Le composant Chip picker permet à l'utilisateur de sélectionner un élément fourni dans une liste"
+          }
+        }
+      }
+    },
+    "app_components_chipPicker_selectionType_label" : {
+      "comment" : "Component - Chip Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection Type"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection Type"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection Type"
           }
         }
       }

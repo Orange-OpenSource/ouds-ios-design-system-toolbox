@@ -43,9 +43,17 @@ struct ChipPickerDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSChipPicker(title: configurationModel.titleText,
-                       selection: $configurationModel.selected,
-                       chips: configurationModel.drinks())
-            .disabled(!configurationModel.enabled)
+        switch configurationModel.selectionType {
+        case .single:
+            OUDSChipPicker(title: configurationModel.titleText,
+                           selection: $configurationModel.selectedDrink,
+                           chips: configurationModel.drinks())
+                .disabled(!configurationModel.enabled)
+        case .multiple:
+            OUDSChipPicker(title: configurationModel.titleText,
+                           selections: $configurationModel.selectedDrinks,
+                           chips: configurationModel.drinks())
+                .disabled(!configurationModel.enabled)
+        }
     }
 }
