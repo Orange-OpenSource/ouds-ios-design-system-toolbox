@@ -29,26 +29,31 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var titleText: String {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
         enabled = true
         selected = .virginHolyLava
         layout = .textAndIcon
+        titleText = "Select a drink"
     }
 
     deinit {}
 
     // MARK: Component Configuration
 
-    private var disableCode: String {
+    private var disableCodePattern: String {
         !enabled ? ".disabled(true)" : ""
     }
 
     override func updateCode() {
         code = """
-        OUDSChipPicker(title: "The title", selection: $selection, chips: someChipsData)
-        \(disableCode)
+        OUDSChipPicker(title: \"\(titleText)\", selection: $selection, chips: someChipsData)
+        \(disableCodePattern)
         """
     }
 
@@ -119,6 +124,10 @@ struct ChipPickerConfigurationView: View {
                 ForEach(ChipLayout.allCases, id: \.id) { layout in
                     Text(LocalizedStringKey(layout.description)).tag(layout)
                 }
+            }
+
+            DesignToolboxEditContentDisclosure {
+                DesignToolboxTextField(text: $configurationModel.titleText)
             }
         }
     }
