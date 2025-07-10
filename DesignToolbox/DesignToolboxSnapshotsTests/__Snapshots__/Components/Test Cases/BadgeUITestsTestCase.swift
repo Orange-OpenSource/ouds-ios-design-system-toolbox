@@ -24,23 +24,7 @@ import XCTest
 // MARK: - Test Cases
 
 /// Tests the UI rendering of the `OUDSBadge` for each parameter
-final class OUDSBadgeUITests: XCTestCase {
-
-    /// Tests all bages configuration in the `OrangeTheme` with the `light` color schemes.
-    @MainActor func testAllBagesOrangeThemeLight() {
-        let theme = OrangeTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testAllBadges(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all badges configuration in the `OrangeTheme` with the `dark` color schemes.
-    @MainActor func testAllBadgesOrangeThemeDark() {
-        let theme = OrangeTheme()
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllBadges(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    // MARK: - Helpers
+open class BadgeUITestsTestCase: XCTestCase {
 
     /// This function tests all badges with all types, status and size for the given theme and color scheme.
     ///
@@ -49,7 +33,7 @@ final class OUDSBadgeUITests: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testAllBadges(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    @MainActor func testAllBadges(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
         // Test OUDSBadge
         for badgeType in BadgeConfigurationModel.BadgeType.allCases {
@@ -81,9 +65,9 @@ final class OUDSBadgeUITests: XCTestCase {
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - model: The model contains each element of configuration
-    @MainActor private func testBadge(theme: OUDSTheme,
-                                      interfaceStyle: UIUserInterfaceStyle,
-                                      model: BadgeConfigurationModel)
+    @MainActor func testBadge(theme: OUDSTheme,
+                              interfaceStyle: UIUserInterfaceStyle,
+                              model: BadgeConfigurationModel)
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
