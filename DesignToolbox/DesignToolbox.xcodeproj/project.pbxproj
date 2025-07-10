@@ -2431,7 +2431,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "665-theme-integration-of-sosh-theme";
+				branch = develop;
 				kind = branch;
 			};
 		};
