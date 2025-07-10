@@ -41,7 +41,7 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         /// Multiple selction with tags of the selected chips
         case multiple
 
-        /// The chenical description
+        /// The technical description
         var description: String {
             rawValue.camelCase
         }

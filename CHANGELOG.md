@@ -24,9 +24,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Available color modes and surfaces by theme for `colored surface` component
 - [Library] Color mode semantic tokens (tokens library v1.1.0)
 - [Library] Color multiple semantic tokens (tokens library v1.1.0)
+
 ### Added
 
 - [DesignToolbox] Add demo screens and UI tests for chips components (Orange-OpenSource/ouds-ios#407)
+
 ### Fixed
 
 - [Library] Update `controlItem` component to use `controlItemBorderRadius*` tokens (Orange-OpenSource/ouds-ios#777)
