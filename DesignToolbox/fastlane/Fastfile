@@ -788,8 +788,7 @@ Please, get the new build from *TestFlight* app, or contact the project maintain
 - Version: **#{build_version}**
 - Build number: **#{build_number}**
 - Build tag: **#{build_tag}**
-- Build type: **#{build_type}**
-- Build details (GitHub): **#{build_details}**
+- GitHub issues: **#{build_details}**
 
 <!--
 @B3nz01d - Benoît SUZANNE - Product Owner
