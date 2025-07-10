@@ -24,7 +24,7 @@ struct ChipPickerElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             image: nil,
-            description: "app_components_chipsPicker_description_text",
+            description: "app_components_chipPicker_description_text",
             illustration: AnyView(ChipPickerPage()))
         )
     }

@@ -819,7 +819,7 @@
 				0751CEFA2E0EC7B7006BF8FC /* Common */,
 				0751CEF02E0E9893006BF8FC /* Filter */,
 				0751CEEC2E0E8AC1006BF8FC /* Suggestion */,
-				079CECBB2E1415AD0044905E /* Pickers */,
+				079CECBB2E1415AD0044905E /* Picker */,
 				0751CEED2E0E8B0C006BF8FC /* ChipElements.swift */,
 			);
 			path = Chips;
@@ -971,14 +971,14 @@
 			path = TwoStates;
 			sourceTree = "<group>";
 		};
-		079CECBB2E1415AD0044905E /* Pickers */ = {
+		079CECBB2E1415AD0044905E /* Picker */ = {
 			isa = PBXGroup;
 			children = (
 				079CECBC2E1415BE0044905E /* ChipPickerConfigurationView.swift */,
 				079CECBD2E1415BE0044905E /* ChipPickerElement.swift */,
 				079CECBE2E1415BE0044905E /* ChipPickerPage.swift */,
 			);
-			path = Pickers;
+			path = Picker;
 			sourceTree = "<group>";
 		};
 		07B3CCAD2D40E14C00DBB10A /* Link */ = {

@@ -33,13 +33,33 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    /// The type of selection
+    enum SelectionType: String, CaseIterable {
+        /// Single selction with tag of the selected chip
+        case single
+
+        /// Multiple selction with tags of the selected chips
+        case multiple
+
+        /// The chenical description
+        var description: String {
+            rawValue.camelCase
+        }
+    }
+
+    @Published var selectionType: SelectionType {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
         enabled = true
-        selected = .virginHolyLava
+        selectedDrink = .virginHolyLava
+        selectedDrinks = [.virginHolyLava]
         layout = .textAndIcon
         titleText = "Select a drink"
+        selectionType = .single
     }
 
     deinit {}
@@ -50,16 +70,36 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         !enabled ? ".disabled(true)" : ""
     }
 
+    private var selectedValuePattern: String {
+        switch selectionType {
+        case .single:
+            "@State var selection: Tag"
+        case .multiple:
+            "@State var selections: [Tag]"
+        }
+    }
+
+    private var selectionStypePattern: String {
+        switch selectionType {
+        case .single:
+            "selection: $selection"
+        case .multiple:
+            "selections: $selection"
+        }
+    }
+
     override func updateCode() {
         code = """
-        OUDSChipPicker(title: \"\(titleText)\", selection: $selection, chips: someChipsData)
+        \(selectedValuePattern)
+        OUDSChipPicker(title: \"\(titleText)\", \(selectionStypePattern), chips: someChipsData)
         \(disableCodePattern)
         """
     }
 
     // MARK: - Data populating
 
-    @Published var selected: Drink
+    @Published var selectedDrink: Drink
+    @Published var selectedDrinks: [Drink]
 
     enum Drink: String, CaseIterable {
         case virginHolyLava
@@ -123,6 +163,15 @@ struct ChipPickerConfigurationView: View {
             {
                 ForEach(ChipLayout.allCases, id: \.id) { layout in
                     Text(LocalizedStringKey(layout.description)).tag(layout)
+                }
+            }
+
+            DesignToolboxChoicePicker(title: "app_components_chipPicker_selectionType_label",
+                                      selection: $configurationModel.selectionType,
+                                      style: .segmented)
+            {
+                ForEach(ChipPickerConfigurationModel.SelectionType.allCases, id: \.self) { selectionType in
+                    Text(selectionType.description).tag(selectionType)
                 }
             }
 
