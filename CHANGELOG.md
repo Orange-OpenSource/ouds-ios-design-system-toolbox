@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Library] Update `controlItem` component to use `controlItemBorderRadius*` tokens (Orange-OpenSource/ouds-ios#777)
 - [Library] Update `switch` component to use `switchBorderRadius*` tokens (Orange-OpenSource/ouds-ios#780)
+- [Library] Sosh theme (Orange-OpenSource/ouds-ios#665)
+
 ### Changed
 
 - [DesignToolbox] Available color modes and surfaces by theme for `colored surface` component
