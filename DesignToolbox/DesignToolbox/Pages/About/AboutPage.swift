@@ -120,6 +120,7 @@ struct AboutPage: View {
 
         DesignToolboxCopyableText("app_about_details_themeCoreVersion" <- OUDSVersions.themeCoreVersion, OUDSVersions.themeCoreVersion)
         DesignToolboxCopyableText("app_about_details_themeOrangeVersion" <- OUDSVersions.themeOrangeVersion, OUDSVersions.themeOrangeVersion)
+        DesignToolboxCopyableText("app_about_details_themeSoshVersion" <- OUDSVersions.themeSoshVersion, OUDSVersions.themeSoshVersion)
     }
 
     @ViewBuilder
