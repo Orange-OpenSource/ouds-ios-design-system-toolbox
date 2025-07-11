@@ -12,21 +12,22 @@
 //
 
 import OUDS
+import OUDSComponents
 import SwiftUI
 
 struct RadioElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_components_radioButton_radioButton_label".localized()
-        image = Image(decorative: "il_component_radio").renderingMode(.original)
+        illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: nil,
+            illustration: nil,
             description: "app_components_radioButton_description_text",
             version: OUDSVersions.componentRadioButtonVersion,
-            illustration: AnyView(RadioPage())))
+            demoScreen: AnyView(RadioPage())))
     }
 }

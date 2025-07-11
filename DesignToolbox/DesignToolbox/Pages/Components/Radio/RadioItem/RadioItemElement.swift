@@ -16,17 +16,17 @@ import SwiftUI
 
 struct RadioItemElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_components_radioButton_radioButtonItem_label".localized()
-        image = Image(decorative: "il_component_radio_controlItem").renderingMode(.original)
+        illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: nil,
+            illustration: nil,
             description: "app_components_radioButton_radioButtonItem_description_text",
             version: OUDSVersions.componentRadioButtonVersion,
-            illustration: AnyView(RadioItemPage())))
+            demoScreen: AnyView(RadioItemPage())))
     }
 }

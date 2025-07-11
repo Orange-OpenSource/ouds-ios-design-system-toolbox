@@ -23,13 +23,13 @@ struct Card: View {
     // MARK: Stored properties
 
     let title: Text
-    let icon: Image
+    let illustration: AnyView
 
     // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            CardIllustration(icon: icon)
+            CardIllustration(illustration: illustration)
             title
                 .typeHeadingMedium(theme)
                 .multilineTextAlignment(.leading)

@@ -18,16 +18,16 @@ import SwiftUI
 
 struct RadioPickerElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_components_radioPicker_label".localized()
-        image = Image(decorative: "il_component_radio").renderingMode(.original)
+        illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: nil,
+            illustration: nil,
             description: "app_components_radioPicker_description_text",
-            illustration: AnyView(RadioPickerPage())))
+            demoScreen: AnyView(RadioPickerPage())))
     }
 }
