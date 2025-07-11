@@ -109,7 +109,7 @@ private struct BooleanSelectionView: View {
     @ObservedObject var model: BooleanControlItemConfigurationModel
 
     var body: some View {
-        OUDSSwitchItem("app_components_controlItem_selection_label", isOn: $model.isOn)
+        OUDSSwitchItem("app_components_common_selection_label", isOn: $model.isOn)
     }
 }
 
@@ -120,7 +120,7 @@ private struct IndeterminateSelectionView: View {
     @ObservedObject var model: IndicatorControlItemConfigurationModel
 
     var body: some View {
-        DesignToolboxChoicePicker(title: "app_components_controlItem_selection_label",
+        DesignToolboxChoicePicker(title: "app_components_common_selection_label",
                                   selection: $model.selection,
                                   style: .segmented)
         {

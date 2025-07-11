@@ -85,7 +85,7 @@ struct CheckboxIndeterminateConfiguration: View {
                     .disabled(!configurationModel.enabled)
             }
 
-            DesignToolboxChoicePicker(title: "app_components_controlItem_selection_label",
+            DesignToolboxChoicePicker(title: "app_components_common_selection_label",
                                       selection: $configurationModel.indicatorState,
                                       style: .segmented)
             {

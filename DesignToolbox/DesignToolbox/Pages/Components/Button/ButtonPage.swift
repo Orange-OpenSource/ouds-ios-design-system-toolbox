@@ -60,7 +60,7 @@ private struct ButtonDemo: View {
                     OUDSButton(text: configurationModel.text,
                                hierarchy: configurationModel.hierarchy,
                                style: configurationModel.style) {}
-                case .iconAndText:
+                case .textAndIcon:
                     OUDSButton(icon: Image(decorative: "ic_heart"),
                                text: configurationModel.text,
                                hierarchy: configurationModel.hierarchy,

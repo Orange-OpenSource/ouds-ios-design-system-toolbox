@@ -1113,47 +1113,22 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "رمز"
+            "value" : "هذه تسمية زائفة لوصف أيقونة"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icon"
+            "value" : "This is a dumb accessibility label for an icon"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icône"
+            "value" : "Ceci est un label bidon pour décrire une icône"
           }
         }
       }
-    },
-    "app_components_button_iconOnlyLayout_label" : {
-      "comment" : "Component - Button",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon only"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon only"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon only"
-          }
-        }
-      },
-      "shouldTranslate" : false
     },
     "app_components_button_label" : {
       "comment" : "Component - Button",
@@ -1497,6 +1472,298 @@
         }
       }
     },
+    "app_components_chip_chipPicker_label" : {
+      "comment" : "Component - ChipPicker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chips picker"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chips picker"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chips picker"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_chip_description_text" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تساعد الشرائح الأشخاص على إدخال المعلومات، أو إجراء التحديدات، أو تصفية المحتوى، أو تشغيل الإجراءات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chips help people enter information, make selections, filter content, or trigger actions."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les Chips aident les utilisateurs à saisir des informations, à effectuer des sélections, à filtrer le contenu ou à déclencher des actions."
+          }
+        }
+      }
+    },
+    "app_components_chip_filterChip_chipContent_label" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فلتر"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtre"
+          }
+        }
+      }
+    },
+    "app_components_chip_filterChip_description_text" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مُكوّن \"شريحة المُرشِّح\" هو عنصر مُدمج في واجهة المستخدم، يُستخدم في نظام التصميم، لعرض خيار مُرشِّح يُمكن للمستخدم تحديده أو إلغاء تحديده. يُتيح هذا المُكوّن للمستخدمين تحسين المحتوى أو البيانات من خلال تطبيق مُرشِّح واحد أو أكثر بطريقة تفاعلية وسهلة الوصول بصريًا."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A filter chip is a compact UI element used in a design system to represent a filter option that can be selected or deselected by the user. Filter chips allow users to refine content or data by applying one or more filters in a visually accessible and interactive way."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composent Filter Chip est un élément d'interface utilisateur compact utilisé dans un système de conception pour représenter une option de filtre qui peut être sélectionnée ou désélectionnée par l'utilisateur. Ils permettent aux utilisateurs d'affiner le contenu ou les données en appliquant un ou plusieurs filtres de manière visuellement accessible et interactive."
+          }
+        }
+      }
+    },
+    "app_components_chip_filterChip_label" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter chip"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter chip"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter chip"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_chip_label" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chip"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chip"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chip"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_chip_suggestionChip_chipContent_label" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اقتراح"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion"
+          }
+        }
+      }
+    },
+    "app_components_chip_suggestionChip_description_text" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شريحة الاقتراحات هي عنصر واجهة مستخدم مدمج يُستخدم لعرض الخيارات المُوصى بها أو التنبؤية بناءً على مدخلات المستخدم أو السياق. غالبًا ما توجد شرائح الاقتراحات في أشرطة البحث أو النماذج أو واجهات البريد الإلكتروني، وتساعد المستخدمين على اختيار الاقتراحات المناسبة بسرعة. عادةً ما لا يتم اختيارها افتراضيًا، ويمكن تطبيقها بنقرة واحدة، مما يُبسط مدخلات المستخدم ويُحسّن سهولة الاستخدام."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A suggestion chip is a compact UI element used to present recommended or predictive options based on user input or context. Often found in search bars, forms, or messaging interfaces, suggestion chips help users quickly select from relevant suggestions. They are typically non-selected by default and can be tapped or clicked to apply the suggestion, streamlining user input and enhancing usability."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composant Suggestion Chip est un élément d'interface utilisateur compact utilisé pour présenter des options recommandées ou prédictives en fonction de la saisie utilisateur ou du contexte. Souvent présentes dans les barres de recherche, les formulaires ou les interfaces de messagerie, les puces de suggestion aident les utilisateurs à sélectionner rapidement des suggestions pertinentes. Elles ne sont généralement pas sélectionnées par défaut et peuvent être appliquées d'un simple clic, ce qui simplifie la saisie utilisateur et améliore la convivialité."
+          }
+        }
+      }
+    },
+    "app_components_chip_suggestionChip_label" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion chip"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion chip"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion chip"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_chip_suggestionChip_suggestionChip_label" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggestion"
+          }
+        }
+      }
+    },
+    "app_components_chipPicker_description_text" : {
+      "comment" : "Component - Chip Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتيح لك أداة اختيار الرقائق إمكانية تحديد عنصر موجود في القائمة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A chips picker makes the user able to select an item provided in a list"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composant Chip picker permet à l'utilisateur de sélectionner un élément fourni dans une liste"
+          }
+        }
+      }
+    },
+    "app_components_chipPicker_selectionType_label" : {
+      "comment" : "Component - Chip Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection Type"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection Type"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection Type"
+          }
+        }
+      }
+    },
     "app_components_coloredSurface_description_text" : {
       "comment" : "Component - Colored Surface",
       "extractionState" : "manual",
@@ -1618,26 +1885,26 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_iconAndTextLayout_label" : {
+    "app_components_common_iconOnlyLayout_label" : {
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icon + text"
+            "value" : "Icon only"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icon + text"
+            "value" : "Icon only"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icon + text"
+            "value" : "Icon only"
           }
         }
       },
@@ -1768,6 +2035,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_selection_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        }
+      }
+    },
     "app_components_common_style_label" : {
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
@@ -1793,6 +2084,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_textAndIconLayout_label" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text + icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Text + icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text + icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_textOnlyLayout_label" : {
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
@@ -1812,7 +2128,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Texte only"
+            "value" : "Text only"
           }
         }
       },
@@ -1987,30 +2303,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reversed"
-          }
-        }
-      }
-    },
-    "app_components_controlItem_selection_label" : {
-      "comment" : "Component - ControlItem",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
           }
         }
       }
@@ -3061,13 +3353,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Column gap includes the vertical spacing between objects."
+            "value" : "Column gap includes the horizontal spacing between objects."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les tokens Column Gap correspondent à l'espacement vertical entre les objets."
+            "value" : "Les tokens Column Gap correspondent à l'espacement horizontal entre les objets."
           }
         }
       }
@@ -3355,13 +3647,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Row gap includes the horizontal spacing between objects."
+            "value" : "Row gap includes the vertical spacing between objects."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les tokens Raw Gap correspondent à l'espacement horizontal entre les objets."
+            "value" : "Les tokens Raw Gap correspondent à l'espacement verticaux entre les objets."
           }
         }
       }
