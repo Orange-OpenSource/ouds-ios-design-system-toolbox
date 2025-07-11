@@ -15,16 +15,16 @@ import SwiftUI
 
 struct GridTokenElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_tokens_grid_label".localized()
-        image = Image(decorative: "ic_grid").renderingMode(.template)
+        illustration = AnyView(Image(decorative: "ic_grid").renderingMode(.template))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: Image(decorative: "ic_grid").renderingMode(.template),
+            illustration: illustration,
             description: "app_tokens_grid_description_text",
-            illustration: AnyView(GridTokenPage())))
+            demoScreen: AnyView(GridTokenPage())))
     }
 }

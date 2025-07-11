@@ -16,7 +16,7 @@ import SwiftUI
 struct DimensionTokenElement: DesignToolboxElement {
 
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
@@ -26,11 +26,11 @@ struct DimensionTokenElement: DesignToolboxElement {
         ]
 
         name = "app_tokens_dimension_label".localized()
-        image = Image(decorative: "ic_dimension").renderingMode(.template)
+        illustration = AnyView(Image(decorative: "ic_dimension").renderingMode(.template))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: Image(decorative: "ic_dimension").renderingMode(.template),
+            illustration: illustration,
             description: "app_tokens_dimension_description_text",
-            illustration: AnyView(DesignToolboxVariantElement(elements: variants.sorted(by: { $0.name < $1.name })))))
+            demoScreen: AnyView(DesignToolboxVariantElement(elements: variants.sorted(by: { $0.name < $1.name })))))
     }
 }

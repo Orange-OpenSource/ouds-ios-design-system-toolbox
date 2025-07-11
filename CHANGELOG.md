@@ -12,12 +12,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [DesignToolbox] Update Badge component screen (Orange-OpenSource/ouds-ios#840)
 - [Library] Update `controlItem` component to use `controlItemBorderRadius*` tokens (Orange-OpenSource/ouds-ios#777)
 - [Library] Update `switch` component to use `switchBorderRadius*` tokens (Orange-OpenSource/ouds-ios#780)
 - [Library] Sosh theme (Orange-OpenSource/ouds-ios#665)
 
 ### Changed
 
+- [DesignToolbox] Replace components illustrations by the components themselves (Orange-OpenSource/ouds-ios#820)
 - [DesignToolbox] Available color modes and surfaces by theme for `colored surface` component
 - [Library] Color mode semantic tokens (tokens library v1.1.0)
 - [Library] Color multiple semantic tokens (tokens library v1.1.0)

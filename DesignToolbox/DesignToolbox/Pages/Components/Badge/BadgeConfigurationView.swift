@@ -36,7 +36,13 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     }
 
     @Published var badgeType: BadgeType {
-        didSet { updateCode() }
+        didSet {
+            // switching to icon or count so change to default size
+            if badgeType == .icon || badgeType == .icon {
+                size = .medium
+            }
+            updateCode()
+        }
     }
 
     @Published var countText: String {
@@ -51,8 +57,8 @@ final class BadgeConfigurationModel: ComponentConfiguration {
 
     override init() {
         size = .medium
-        status = .accent
-        badgeType = .standard
+        status = .neutral
+        badgeType = .count
         countText = "1"
     }
 
