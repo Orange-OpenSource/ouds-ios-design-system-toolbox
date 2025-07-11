@@ -23,23 +23,7 @@ import XCTest
 // swiftlint:disable required_deinit
 
 /// Tests the UI rendering of the `OUDSFilterChip` and `OUDSSuggestionChip` for each parameter.
-final class OUDSChipsUITests: XCTestCase {
-
-    /// Tests all chips configuration in the `OrangeTheme` with the `light` color schemes.
-    @MainActor func testAllChipsOrangeThemeLight() {
-        let theme = OrangeTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testAllChips(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all chips configuration in the `OrangeTheme` with the `dark` color schemes.
-    @MainActor func testAllChipsOrangeThemeDark() {
-        let theme = OrangeTheme()
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllChips(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    // MARK: - Helpers
+open class ChipsUITestsTestCase: XCTestCase {
 
     /// This function tests all chips (Filter and Suggestion) with all layouts, for the given theme and color scheme.
     ///
@@ -50,7 +34,7 @@ final class OUDSChipsUITests: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testAllChips(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    @MainActor func testAllChips(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
         // Test OUDSFilterChips
         for layout in ChipLayout.allCases {
@@ -89,9 +73,9 @@ final class OUDSChipsUITests: XCTestCase {
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - model: The model contains each element of configuration
-    @MainActor private func testFilterChips(theme: OUDSTheme,
-                                            interfaceStyle: UIUserInterfaceStyle,
-                                            model: FilterChipConfigurationModel)
+    @MainActor func testFilterChips(theme: OUDSTheme,
+                                    interfaceStyle: UIUserInterfaceStyle,
+                                    model: FilterChipConfigurationModel)
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
@@ -126,9 +110,9 @@ final class OUDSChipsUITests: XCTestCase {
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - model: The model contains each element of configuration
-    @MainActor private func testSuggestionChips(theme: OUDSTheme,
-                                                interfaceStyle: UIUserInterfaceStyle,
-                                                model: SuggestionChipConfigurationModel)
+    @MainActor func testSuggestionChips(theme: OUDSTheme,
+                                        interfaceStyle: UIUserInterfaceStyle,
+                                        model: SuggestionChipConfigurationModel)
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
