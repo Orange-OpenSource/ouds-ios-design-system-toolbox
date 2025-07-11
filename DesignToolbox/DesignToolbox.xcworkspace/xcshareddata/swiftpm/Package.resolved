@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "749f498d369fe2fd4fff0a43c600e2abc17a31d9"
+        "branch" : "845-bug-swich-indicator-position-default",
+        "revision" : "ef7485fa6c5bf59a728d17cf854a13fd1db7fda2"
       }
     },
     {
