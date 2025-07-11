@@ -12,22 +12,23 @@
 //
 
 import OUDS
+import OUDSComponents
 import SwiftUI
 
 struct BadgeElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    var illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_components_badge_label".localized()
-        image = Image(decorative: "il_component_badge").renderingMode(.original)
+        illustration = AnyView(OUDSBadge(count: 1, status: .negative, size: .medium))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: nil,
+            illustration: nil,
             description: "app_components_badge_description_text",
             version: OUDSVersions.componentBadgeVersion,
-            illustration: AnyView(BadgePage()))
+            demoScreen: AnyView(BadgePage()))
         )
     }
 }

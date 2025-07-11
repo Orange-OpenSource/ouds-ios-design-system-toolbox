@@ -2432,7 +2432,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "840-bug-update-badge-component-screen";
 				kind = branch;
 			};
 		};

@@ -18,7 +18,7 @@ import SwiftUI
 
 struct RadioElements: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
@@ -29,11 +29,23 @@ struct RadioElements: DesignToolboxElement {
         ]
 
         name = "app_components_radioButton_label".localized()
-        image = Image(decorative: "il_component_radio").renderingMode(.original)
+        illustration = AnyView(RadioIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: Image(decorative: "il_component_radio").renderingMode(.original),
+            illustration: AnyView(RadioIllustration()),
             description: "app_components_radioButton_description_text",
-            illustration: AnyView(DesignToolboxVariantElement(elements: variants))))
+            demoScreen: AnyView(DesignToolboxVariantElement(elements: variants))))
+    }
+}
+
+private struct RadioIllustration: View {
+
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        VStack(spacing: theme.spaces.spaceFixedNone) {
+            OUDSRadio(isOn: .constant(true), accessibilityLabel: "")
+            OUDSRadio(isOn: .constant(false), accessibilityLabel: "")
+        }
     }
 }

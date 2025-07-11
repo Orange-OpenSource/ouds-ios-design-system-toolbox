@@ -11,11 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSComponents
 import SwiftUI
 
 struct DividerElements: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
@@ -25,11 +26,25 @@ struct DividerElements: DesignToolboxElement {
         ]
 
         name = "app_components_divider_label".localized()
-        image = Image(decorative: "il_component_divider").renderingMode(.original)
+        illustration = AnyView(DividerIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: Image(decorative: "il_component_divider").renderingMode(.original),
+            illustration: AnyView(DividerIllustration()),
             description: "app_components_divider_description_text",
-            illustration: AnyView(DesignToolboxVariantElement(elements: variants))))
+            demoScreen: AnyView(DesignToolboxVariantElement(elements: variants))))
+    }
+}
+
+private struct DividerIllustration: View {
+
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        VStack {
+            Spacer()
+            OUDSHorizontalDivider(color: .default)
+            Spacer()
+        }
+        .padding(.horizontal, theme.spaces.spaceFixedMd)
     }
 }

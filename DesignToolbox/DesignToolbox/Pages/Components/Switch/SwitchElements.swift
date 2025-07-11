@@ -13,12 +13,11 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesOrange
 import SwiftUI
 
 struct SwitchElements: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
@@ -28,11 +27,23 @@ struct SwitchElements: DesignToolboxElement {
         ]
 
         name = "app_components_switch_label".localized()
-        image = Image(decorative: "il_component_switch").renderingMode(.original)
+        illustration = AnyView(SwitchIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: Image(decorative: "il_component_switch").renderingMode(.original),
+            illustration: AnyView(SwitchIllustration()),
             description: "app_components_switch_description_text",
-            illustration: AnyView(DesignToolboxVariantElement(elements: variants))))
+            demoScreen: AnyView(DesignToolboxVariantElement(elements: variants))))
+    }
+}
+
+private struct SwitchIllustration: View {
+
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        VStack(spacing: theme.spaces.spaceFixedSm) {
+            OUDSSwitch(isOn: .constant(true), accessibilityLabel: "")
+            OUDSSwitch(isOn: .constant(false), accessibilityLabel: "")
+        }
     }
 }

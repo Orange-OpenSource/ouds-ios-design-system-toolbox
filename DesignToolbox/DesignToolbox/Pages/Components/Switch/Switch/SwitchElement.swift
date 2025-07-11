@@ -16,17 +16,17 @@ import SwiftUI
 
 struct SwitchElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_components_switch_switch_label".localized()
-        image = Image(decorative: "il_component_switch").renderingMode(.original)
+        illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: nil,
+            illustration: nil,
             description: "app_components_switch_description_text",
             version: OUDSVersions.componentSwitchVersion,
-            illustration: AnyView(SwitchPage())))
+            demoScreen: AnyView(SwitchPage())))
     }
 }
