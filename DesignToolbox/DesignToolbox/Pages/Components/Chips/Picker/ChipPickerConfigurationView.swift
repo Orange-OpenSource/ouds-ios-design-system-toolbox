@@ -79,19 +79,19 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         }
     }
 
-    private var selectionStypePattern: String {
+    private var selectionTypePattern: String {
         switch selectionType {
         case .single:
             "selection: $selection"
         case .multiple:
-            "selections: $selection"
+            "selections: $selections"
         }
     }
 
     override func updateCode() {
         code = """
         \(selectedValuePattern)
-        OUDSChipPicker(title: \"\(titleText)\", \(selectionStypePattern), chips: someChipsData)
+        OUDSChipPicker(title: \"\(titleText)\", \(selectionTypePattern), chips: someChipsData)
         \(disableCodePattern)
         """
     }

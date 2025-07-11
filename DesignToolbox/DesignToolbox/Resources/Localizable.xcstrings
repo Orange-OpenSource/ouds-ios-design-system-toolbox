@@ -1113,19 +1113,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "رمز"
+            "value" : "هذه تسمية زائفة لوصف أيقونة"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icon"
+            "value" : "This is a dumb accessibility label for an icon"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icône"
+            "value" : "Ceci est un label bidon pour décrire une icône"
           }
         }
       }
