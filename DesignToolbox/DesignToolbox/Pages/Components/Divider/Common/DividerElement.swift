@@ -16,7 +16,7 @@ import SwiftUI
 
 struct DividerElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init(orientation: DividerConfigurationModel.Orientation) {
@@ -25,13 +25,12 @@ struct DividerElement: DesignToolboxElement {
         let keyForDescription = "app_components_divider_\(keyPattern)_description_text"
 
         name = keyForName.localized()
-        image = Image(decorative: "il_component_divider").renderingMode(.original)
+        illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: nil,
             description: keyForDescription.localized(),
             version: OUDSVersions.componentDividerVersion,
-            illustration: AnyView(DividerPage(orientation: orientation)))
+            demoScreen: AnyView(DividerPage(orientation: orientation)))
         )
     }
 }

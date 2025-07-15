@@ -17,17 +17,16 @@ import SwiftUI
 /// Related to `OUDSCheckbox` (i.e. with 2 available values).
 struct CheckboxElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_components_checkbox_label".localized()
-        image = Image(decorative: "il_component_checkbox").renderingMode(.original)
+        illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: nil,
             description: "app_components_checkbox_description_text",
             version: OUDSVersions.componentCheckboxVersion,
-            illustration: AnyView(CheckboxPage())))
+            demoScreen: AnyView(CheckboxPage())))
     }
 }

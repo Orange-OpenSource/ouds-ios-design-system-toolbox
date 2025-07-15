@@ -18,16 +18,15 @@ import SwiftUI
 
 struct CheckboxPickerElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_components_checkboxPicker_label".localized()
-        image = Image(decorative: "il_component_checkbox").renderingMode(.original)
+        illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: nil,
             description: "app_components_checkboxPicker_description_text",
-            illustration: AnyView(CheckboxPickerPage())))
+            demoScreen: AnyView(CheckboxPickerPage())))
     }
 }
