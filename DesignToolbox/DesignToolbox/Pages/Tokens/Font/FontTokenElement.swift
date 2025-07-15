@@ -15,16 +15,16 @@ import SwiftUI
 
 struct FontTokenElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_tokens_typography_label".localized()
-        image = Image(decorative: "ic_typography").renderingMode(.template)
+        illustration = AnyView(Image(decorative: "ic_typography").renderingMode(.template))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: Image(decorative: "ic_typography").renderingMode(.template),
+            illustration: illustration,
             description: "app_tokens_typography_description_text",
-            illustration: AnyView(FontTokenPage())))
+            demoScreen: AnyView(FontTokenPage())))
     }
 }

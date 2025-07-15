@@ -12,22 +12,31 @@
 //
 
 import OUDS
+import OUDSComponents
 import SwiftUI
 
 struct LinkElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_components_link_label".localized()
-        image = Image(decorative: "il_component_link").renderingMode(.original)
+        illustration = AnyView(LinkIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: nil,
             description: "app_components_link_description_text",
             version: OUDSVersions.componentLinkVersion,
-            illustration: AnyView(LinkPage()))
+            demoScreen: AnyView(LinkPage()))
         )
+    }
+}
+
+private struct LinkIllustration: View {
+
+    @Environment(\.layoutDirection) var direction
+
+    var body: some View {
+        OUDSLink(text: "Label", indicator: .next) {}
     }
 }
