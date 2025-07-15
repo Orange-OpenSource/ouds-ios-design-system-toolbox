@@ -8,8 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] Add `badge` component (Orange-OpenSource/ouds-ios#514)
 - [Library] Chip component (Orange-OpenSource/ouds-ios#407)
+- [Library] Add `badge` component (Orange-OpenSource/ouds-ios#514)
 - [Library] Badge component (Orange-OpenSource/ouds-ios#514)
 
 ### Fixed

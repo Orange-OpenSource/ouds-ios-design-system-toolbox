@@ -16,18 +16,17 @@ import SwiftUI
 
 struct SuggestionChipElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_components_chip_suggestionChip_label".localized()
-        image = Image(decorative: "il_component_chip").renderingMode(.original)
+        illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: nil,
             description: "app_components_chip_suggestionChip_description_text",
             version: OUDSVersions.componentChipVersion,
-            illustration: AnyView(SuggestionChipPage()))
+            demoScreen: AnyView(SuggestionChipPage()))
         )
     }
 }

@@ -16,18 +16,17 @@ import SwiftUI
 
 struct FilterChipElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_components_chip_filterChip_label".localized()
-        image = Image(decorative: "il_component_chip").renderingMode(.original)
+        illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: nil,
             description: "app_components_chip_filterChip_description_text",
             version: OUDSVersions.componentChipVersion,
-            illustration: AnyView(FilterChipPage()))
+            demoScreen: AnyView(FilterChipPage()))
         )
     }
 }

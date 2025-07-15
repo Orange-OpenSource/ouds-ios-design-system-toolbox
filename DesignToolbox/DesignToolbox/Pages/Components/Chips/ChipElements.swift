@@ -11,11 +11,13 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
+import OUDSComponents
 import SwiftUI
 
 struct ChipElements: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
@@ -26,11 +28,23 @@ struct ChipElements: DesignToolboxElement {
         ]
 
         name = "app_components_chip_label".localized()
-        image = Image(decorative: "il_component_chip").renderingMode(.original)
+        illustration = AnyView(ChipIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: Image(decorative: "il_component_chip").renderingMode(.original),
+            illustration: illustration,
             description: "app_components_chip_description_text",
-            illustration: AnyView(DesignToolboxVariantElement(elements: variants))))
+            demoScreen: AnyView(DesignToolboxVariantElement(elements: variants))))
+    }
+}
+
+private struct ChipIllustration: View {
+
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        VStack(spacing: theme.spaces.spaceFixedSm) {
+            OUDSFilterChip(text: "Filter", selected: true) {}
+            OUDSSuggestionChip(text: "Suggestion") {}
+        }
     }
 }

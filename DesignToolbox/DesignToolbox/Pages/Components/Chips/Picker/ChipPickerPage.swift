@@ -44,6 +44,11 @@ struct ChipPickerDemo: View {
 
     var body: some View {
         switch configurationModel.selectionType {
+        case .singleOrNone:
+            OUDSChipPicker(title: configurationModel.titleText,
+                           selection: $configurationModel.optionalSelectedDrink,
+                           chips: configurationModel.drinks())
+                .disabled(!configurationModel.enabled)
         case .single:
             OUDSChipPicker(title: configurationModel.titleText,
                            selection: $configurationModel.selectedDrink,

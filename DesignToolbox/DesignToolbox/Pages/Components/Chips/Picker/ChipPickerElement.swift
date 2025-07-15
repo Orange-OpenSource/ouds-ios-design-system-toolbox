@@ -15,17 +15,16 @@ import SwiftUI
 
 struct ChipPickerElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_components_chip_chipPicker_label".localized()
-        image = Image(decorative: "il_component_chip").renderingMode(.original)
+        illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: nil,
             description: "app_components_chipPicker_description_text",
-            illustration: AnyView(ChipPickerPage()))
+            demoScreen: AnyView(ChipPickerPage()))
         )
     }
 }

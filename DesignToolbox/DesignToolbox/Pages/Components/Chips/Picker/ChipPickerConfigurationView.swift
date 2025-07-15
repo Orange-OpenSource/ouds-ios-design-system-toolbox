@@ -35,10 +35,13 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
 
     /// The type of selection
     enum SelectionType: String, CaseIterable {
-        /// Single selction with tag of the selected chip
+        /// Single selection with tag of the selected chip, or none
+        case singleOrNone
+
+        /// Single selection with tag of the selected chip
         case single
 
-        /// Multiple selction with tags of the selected chips
+        /// Multiple selection with tags of the selected chips
         case multiple
 
         /// The technical description
@@ -55,6 +58,7 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
+        optionalSelectedDrink = nil
         selectedDrink = .virginHolyLava
         selectedDrinks = [.virginHolyLava]
         layout = .textAndIcon
@@ -72,6 +76,8 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
 
     private var selectedValuePattern: String {
         switch selectionType {
+        case .singleOrNone:
+            "@State var selection: Tag?"
         case .single:
             "@State var selection: Tag"
         case .multiple:
@@ -81,6 +87,8 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
 
     private var selectionTypePattern: String {
         switch selectionType {
+        case .singleOrNone:
+            "selection: $selection"
         case .single:
             "selection: $selection"
         case .multiple:
@@ -98,6 +106,7 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
 
     // MARK: - Data populating
 
+    @Published var optionalSelectedDrink: Drink?
     @Published var selectedDrink: Drink
     @Published var selectedDrinks: [Drink]
 
