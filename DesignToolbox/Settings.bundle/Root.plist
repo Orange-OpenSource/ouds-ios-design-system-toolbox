@@ -8,6 +8,16 @@
 	<array>
 		<dict>
 			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Restart app on theme switch</string>
+			<key>Key</key>
+			<string>com.orange.ouds.demoapp.askToRestartIfThemeChanged</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
 			<string>app_settings_thirdPartyComponents_label</string>
