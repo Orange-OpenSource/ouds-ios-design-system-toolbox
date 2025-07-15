@@ -58,7 +58,7 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     override init() {
         size = .medium
         status = .neutral
-        badgeType = .count
+        badgeType = .standard
         countText = "1"
     }
 
