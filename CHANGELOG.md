@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] Add badge component (Orange-OpenSource/ouds-ios#514)
+- [Library] Add `badge` component (Orange-OpenSource/ouds-ios#514)
 
 ### Fixed
 
@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Update `badge` component screen (Orange-OpenSource/ouds-ios#840)
 - [DesignToolbox] Available color modes and surfaces by theme for `colored surface` component
 - [Library] Color mode semantic tokens (tokens library v1.1.0)
 - [Library] Color multiple semantic tokens (tokens library v1.1.0)
