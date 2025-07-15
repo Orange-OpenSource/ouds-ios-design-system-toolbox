@@ -61,17 +61,6 @@ struct DesignToolboxElementPage: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .accessibilityFocused($requestFocus)
                     .padding(.horizontal, theme.spaces.spaceFixedMd)
-
-                if let version {
-                    HStack {
-                        Spacer()
-
-                        Text("app_common_design_version" <- version)
-                            .typeLabelStrongLarge(theme)
-
-                        Spacer()
-                    }
-                }
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)
@@ -84,6 +73,16 @@ struct DesignToolboxElementPage: View {
                 .listRowSeparator(Visibility.hidden)
                 .padding(.bottom, theme.spaces.spaceFixedMd)
                 .oudsBackground(theme.colors.colorBgPrimary)
+
+            if let version {
+                HStack {
+                    Spacer()
+                    Text("app_common_design_version" <- version)
+                        .typeLabelStrongLarge(theme)
+                    Spacer()
+                }
+                .padding(.bottom, theme.spaces.spaceFixedMd)
+            }
         }
         .listStyle(.plain)
         .padding(.top, theme.spaces.spaceFixedNone)
