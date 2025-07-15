@@ -27,6 +27,8 @@ struct CardIllustration: View {
         HStack {
             Spacer()
             illustration
+                .accessibilityHidden(true)
+                .allowsHitTesting(false)
             Spacer()
         }
         .frame(height: 184, alignment: .center)

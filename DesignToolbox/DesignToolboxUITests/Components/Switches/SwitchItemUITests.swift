@@ -27,6 +27,7 @@ final class SwitchItemUITests: AppTestCase {
         goToComponentsSheet(app)
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
         tapButton(withWording: "app_components_switch_label", app)
         waitForButtonToAppear(withWording: "Switch Item", app)
         tapButton(withWording: "Switch Item", app)

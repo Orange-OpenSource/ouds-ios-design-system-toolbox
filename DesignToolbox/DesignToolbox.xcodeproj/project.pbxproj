@@ -198,6 +198,32 @@
 		5152DA1D2DE0BD440078B9F1 /* DesignToolboxCopyableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5152DA1C2DE0BD3B0078B9F1 /* DesignToolboxCopyableText.swift */; };
 		5152DA1E2DE0BD440078B9F1 /* DesignToolboxCopyableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5152DA1C2DE0BD3B0078B9F1 /* DesignToolboxCopyableText.swift */; };
 		515439232DE734E600B25D13 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 515439222DE734E600B25D13 /* Settings.bundle */; };
+		515EE9852E21329B00A60E96 /* ChipLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9752E21329B00A60E96 /* ChipLayout.swift */; };
+		515EE9862E21329B00A60E96 /* FilterChipConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9772E21329B00A60E96 /* FilterChipConfigurationView.swift */; };
+		515EE9872E21329B00A60E96 /* FilterChipElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9782E21329B00A60E96 /* FilterChipElement.swift */; };
+		515EE9882E21329B00A60E96 /* FilterChipPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9792E21329B00A60E96 /* FilterChipPage.swift */; };
+		515EE9892E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97B2E21329B00A60E96 /* ChipPickerConfigurationView.swift */; };
+		515EE98A2E21329B00A60E96 /* ChipPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97C2E21329B00A60E96 /* ChipPickerElement.swift */; };
+		515EE98B2E21329B00A60E96 /* ChipPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97D2E21329B00A60E96 /* ChipPickerPage.swift */; };
+		515EE98C2E21329B00A60E96 /* SuggestionChipConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97F2E21329B00A60E96 /* SuggestionChipConfigurationView.swift */; };
+		515EE98D2E21329B00A60E96 /* SuggestionChipElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9802E21329B00A60E96 /* SuggestionChipElement.swift */; };
+		515EE98E2E21329B00A60E96 /* SuggestionChipPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9812E21329B00A60E96 /* SuggestionChipPage.swift */; };
+		515EE98F2E21329B00A60E96 /* ChipElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9832E21329B00A60E96 /* ChipElements.swift */; };
+		515EE9902E21329B00A60E96 /* ChipLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9752E21329B00A60E96 /* ChipLayout.swift */; };
+		515EE9912E21329B00A60E96 /* FilterChipConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9772E21329B00A60E96 /* FilterChipConfigurationView.swift */; };
+		515EE9922E21329B00A60E96 /* FilterChipElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9782E21329B00A60E96 /* FilterChipElement.swift */; };
+		515EE9932E21329B00A60E96 /* FilterChipPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9792E21329B00A60E96 /* FilterChipPage.swift */; };
+		515EE9942E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97B2E21329B00A60E96 /* ChipPickerConfigurationView.swift */; };
+		515EE9952E21329B00A60E96 /* ChipPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97C2E21329B00A60E96 /* ChipPickerElement.swift */; };
+		515EE9962E21329B00A60E96 /* ChipPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97D2E21329B00A60E96 /* ChipPickerPage.swift */; };
+		515EE9972E21329B00A60E96 /* SuggestionChipConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97F2E21329B00A60E96 /* SuggestionChipConfigurationView.swift */; };
+		515EE9982E21329B00A60E96 /* SuggestionChipElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9802E21329B00A60E96 /* SuggestionChipElement.swift */; };
+		515EE9992E21329B00A60E96 /* SuggestionChipPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9812E21329B00A60E96 /* SuggestionChipPage.swift */; };
+		515EE99A2E21329B00A60E96 /* ChipElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9832E21329B00A60E96 /* ChipElements.swift */; };
+		515EE9A02E2132E300A60E96 /* ChipsPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE99E2E2132E300A60E96 /* ChipsPickerUITests.swift */; };
+		515EE9A22E2133C800A60E96 /* ChipsUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9A12E2133C800A60E96 /* ChipsUITestsTestCase.swift */; };
+		515EE9A42E2133F200A60E96 /* SoshTheme+ChipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9A32E2133F200A60E96 /* SoshTheme+ChipsUITests.swift */; };
+		515EE9A62E21347200A60E96 /* OrangeTheme+ChipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9A52E21347200A60E96 /* OrangeTheme+ChipsUITests.swift */; };
 		5180FE6E2DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */; };
 		5180FE6F2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */; };
 		5180FE702DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */; };
@@ -511,6 +537,21 @@
 		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		5152DA1C2DE0BD3B0078B9F1 /* DesignToolboxCopyableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxCopyableText.swift; sourceTree = "<group>"; };
 		515439222DE734E600B25D13 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		515EE9752E21329B00A60E96 /* ChipLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipLayout.swift; sourceTree = "<group>"; };
+		515EE9772E21329B00A60E96 /* FilterChipConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChipConfigurationView.swift; sourceTree = "<group>"; };
+		515EE9782E21329B00A60E96 /* FilterChipElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChipElement.swift; sourceTree = "<group>"; };
+		515EE9792E21329B00A60E96 /* FilterChipPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChipPage.swift; sourceTree = "<group>"; };
+		515EE97B2E21329B00A60E96 /* ChipPickerConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipPickerConfigurationView.swift; sourceTree = "<group>"; };
+		515EE97C2E21329B00A60E96 /* ChipPickerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipPickerElement.swift; sourceTree = "<group>"; };
+		515EE97D2E21329B00A60E96 /* ChipPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipPickerPage.swift; sourceTree = "<group>"; };
+		515EE97F2E21329B00A60E96 /* SuggestionChipConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionChipConfigurationView.swift; sourceTree = "<group>"; };
+		515EE9802E21329B00A60E96 /* SuggestionChipElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionChipElement.swift; sourceTree = "<group>"; };
+		515EE9812E21329B00A60E96 /* SuggestionChipPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionChipPage.swift; sourceTree = "<group>"; };
+		515EE9832E21329B00A60E96 /* ChipElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipElements.swift; sourceTree = "<group>"; };
+		515EE99E2E2132E300A60E96 /* ChipsPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsPickerUITests.swift; sourceTree = "<group>"; };
+		515EE9A12E2133C800A60E96 /* ChipsUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsUITestsTestCase.swift; sourceTree = "<group>"; };
+		515EE9A32E2133F200A60E96 /* SoshTheme+ChipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+ChipsUITests.swift"; sourceTree = "<group>"; };
+		515EE9A52E21347200A60E96 /* OrangeTheme+ChipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+ChipsUITests.swift"; sourceTree = "<group>"; };
 		5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerConfiguration.swift; sourceTree = "<group>"; };
 		5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerElement.swift; sourceTree = "<group>"; };
 		5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerPage.swift; sourceTree = "<group>"; };
@@ -1100,6 +1141,7 @@
 		51417C0E2E1BEE06000266C8 /* Test Cases */ = {
 			isa = PBXGroup;
 			children = (
+				515EE9A12E2133C800A60E96 /* ChipsUITestsTestCase.swift */,
 				518EC0A12E1FF2C000FC77E4 /* BadgeUITestsTestCase.swift */,
 				518EC0A32E1FF2C000FC77E4 /* ButtonUITestsTestCase.swift */,
 				518EC0A42E1FF2C000FC77E4 /* CheckboxUITestsTestCase.swift */,
@@ -1123,6 +1165,64 @@
 				51417C1E2E1BF4FB000266C8 /* TokensElevationUITestsTestCase.swift */,
 			);
 			path = "Test Cases";
+			sourceTree = "<group>";
+		};
+		515EE9762E21329B00A60E96 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				515EE9752E21329B00A60E96 /* ChipLayout.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		515EE97A2E21329B00A60E96 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				515EE9772E21329B00A60E96 /* FilterChipConfigurationView.swift */,
+				515EE9782E21329B00A60E96 /* FilterChipElement.swift */,
+				515EE9792E21329B00A60E96 /* FilterChipPage.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		515EE97E2E21329B00A60E96 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				515EE97B2E21329B00A60E96 /* ChipPickerConfigurationView.swift */,
+				515EE97C2E21329B00A60E96 /* ChipPickerElement.swift */,
+				515EE97D2E21329B00A60E96 /* ChipPickerPage.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		515EE9822E21329B00A60E96 /* Suggestion */ = {
+			isa = PBXGroup;
+			children = (
+				515EE97F2E21329B00A60E96 /* SuggestionChipConfigurationView.swift */,
+				515EE9802E21329B00A60E96 /* SuggestionChipElement.swift */,
+				515EE9812E21329B00A60E96 /* SuggestionChipPage.swift */,
+			);
+			path = Suggestion;
+			sourceTree = "<group>";
+		};
+		515EE9842E21329B00A60E96 /* Chips */ = {
+			isa = PBXGroup;
+			children = (
+				515EE9762E21329B00A60E96 /* Common */,
+				515EE97A2E21329B00A60E96 /* Filter */,
+				515EE97E2E21329B00A60E96 /* Picker */,
+				515EE9822E21329B00A60E96 /* Suggestion */,
+				515EE9832E21329B00A60E96 /* ChipElements.swift */,
+			);
+			path = Chips;
+			sourceTree = "<group>";
+		};
+		515EE99F2E2132E300A60E96 /* Chips */ = {
+			isa = PBXGroup;
+			children = (
+				515EE99E2E2132E300A60E96 /* ChipsPickerUITests.swift */,
+			);
+			path = Chips;
 			sourceTree = "<group>";
 		};
 		5180FE6D2DBBC2FA0062E489 /* CheckboxPicker */ = {
@@ -1214,6 +1314,7 @@
 		51ABCD2E2E183350006CD6C0 /* OrangeTheme */ = {
 			isa = PBXGroup;
 			children = (
+				515EE9A52E21347200A60E96 /* OrangeTheme+ChipsUITests.swift */,
 				518EC0B32E1FF38400FC77E4 /* OrangeTheme+BadgeUITests.swift */,
 				518EC06F2E1FF23800FC77E4 /* OrangeTheme+ButtonUITests.swift */,
 				518EC0702E1FF23800FC77E4 /* OrangeTheme+CheckboxUITests.swift */,
@@ -1228,6 +1329,7 @@
 		51ABCD2F2E18335D006CD6C0 /* SoshTheme */ = {
 			isa = PBXGroup;
 			children = (
+				515EE9A32E2133F200A60E96 /* SoshTheme+ChipsUITests.swift */,
 				518EC0B12E1FF32B00FC77E4 /* SoshTheme+BadgeUITests.swift */,
 				518EC0952E1FF28300FC77E4 /* SoshTheme+ButtonUITests.swift */,
 				518EC0962E1FF28300FC77E4 /* SoshTheme+CheckboxUITests.swift */,
@@ -1254,6 +1356,7 @@
 				07EB46FC2E1801BB00B94EC2 /* Badge */,
 				072141182D02F52A00B7B9C6 /* Button */,
 				513442062D75B880000B5DE4 /* Checkbox */,
+				515EE9842E21329B00A60E96 /* Chips */,
 				07D3DBF02DA5084500D8A57F /* ColoredSurface */,
 				07523E7C2E0016FE00A7C87C /* ControlItem */,
 				076227622DA90C65009C3632 /* Divider */,
@@ -1362,6 +1465,7 @@
 				51F676EB2E0D677800C15CB6 /* Switches */,
 				51F676E62E0D650900C15CB6 /* Radios */,
 				51F676E52E0D641500C15CB6 /* Checkboxes */,
+				515EE99F2E2132E300A60E96 /* Chips */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1722,6 +1826,7 @@
 				51952A942D3FA32E0068B807 /* DesignToolboxElementsPage.swift in Sources */,
 				51952A952D3FA32E0068B807 /* DesignToolboxVariantElement.swift in Sources */,
 				51952A962D3FA32E0068B807 /* View+Illustration.swift in Sources */,
+				515EE9A22E2133C800A60E96 /* ChipsUITestsTestCase.swift in Sources */,
 				51952A972D3FA32E0068B807 /* FontTokenElement.swift in Sources */,
 				518B26672DAE9DE1003A6ED3 /* RadioPickerPage.swift in Sources */,
 				518B26682DAE9DE1003A6ED3 /* RadioPickerConfiguration.swift in Sources */,
@@ -1749,6 +1854,7 @@
 				51952AA22D3FA32E0068B807 /* GridTokenElement.swift in Sources */,
 				0794FCDB2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift in Sources */,
 				51952AA32D3FA32E0068B807 /* GrisTokenPage.swift in Sources */,
+				515EE9A42E2133F200A60E96 /* SoshTheme+ChipsUITests.swift in Sources */,
 				51952AA42D3FA32E0068B807 /* TokensPage.swift in Sources */,
 				0745C1912D7A0596006B3A1F /* RadioPage.swift in Sources */,
 				0745C1922D7A0596006B3A1F /* RadioConfiguration.swift in Sources */,
@@ -1818,6 +1924,7 @@
 				07D3DBF22DA5084500D8A57F /* ColoredSurfacePage.swift in Sources */,
 				07D3DBF32DA5084500D8A57F /* ColoredSurfaceElement.swift in Sources */,
 				51417C292E1BF70F000266C8 /* TokensColorUITestsTestCase.swift in Sources */,
+				515EE9A62E21347200A60E96 /* OrangeTheme+ChipsUITests.swift in Sources */,
 				51952A7F2D3FA17E0068B807 /* OrangeTheme+TokensColorUITests.swift in Sources */,
 				07CAE76A2CEE20B200D6C5D1 /* SpacePaddingTokenIllustrations.swift in Sources */,
 				07CAE76B2CEE20B200D6C5D1 /* SpaceBasicTokenIllustrations.swift in Sources */,
@@ -1835,6 +1942,17 @@
 				07B3CCB52D40F37000DBB10A /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				6D17A2332CCBF12B00C00512 /* NamedColor+Decorative.swift in Sources */,
 				51952A862D3FA1DB0068B807 /* OrangeTheme+TokensSpaceUITests.swift in Sources */,
+				515EE9852E21329B00A60E96 /* ChipLayout.swift in Sources */,
+				515EE9862E21329B00A60E96 /* FilterChipConfigurationView.swift in Sources */,
+				515EE9872E21329B00A60E96 /* FilterChipElement.swift in Sources */,
+				515EE9882E21329B00A60E96 /* FilterChipPage.swift in Sources */,
+				515EE9892E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */,
+				515EE98A2E21329B00A60E96 /* ChipPickerElement.swift in Sources */,
+				515EE98B2E21329B00A60E96 /* ChipPickerPage.swift in Sources */,
+				515EE98C2E21329B00A60E96 /* SuggestionChipConfigurationView.swift in Sources */,
+				515EE98D2E21329B00A60E96 /* SuggestionChipElement.swift in Sources */,
+				515EE98E2E21329B00A60E96 /* SuggestionChipPage.swift in Sources */,
+				515EE98F2E21329B00A60E96 /* ChipElements.swift in Sources */,
 				51417C1F2E1BF4FB000266C8 /* TokensElevationUITestsTestCase.swift in Sources */,
 				51952A832D3FA1AC0068B807 /* OrangeTheme+TokensSizeUITests.swift in Sources */,
 				51952A712D3F9D720068B807 /* DesignToolboxTokenIllustration.swift in Sources */,
@@ -1883,6 +2001,17 @@
 				0745C18F2D7A0596006B3A1F /* RadioConfiguration.swift in Sources */,
 				0745C1902D7A0596006B3A1F /* RadioElement.swift in Sources */,
 				519251F32D020BD0003FD1F6 /* DesignToolboxVariantElement.swift in Sources */,
+				515EE9902E21329B00A60E96 /* ChipLayout.swift in Sources */,
+				515EE9912E21329B00A60E96 /* FilterChipConfigurationView.swift in Sources */,
+				515EE9922E21329B00A60E96 /* FilterChipElement.swift in Sources */,
+				515EE9932E21329B00A60E96 /* FilterChipPage.swift in Sources */,
+				515EE9942E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */,
+				515EE9952E21329B00A60E96 /* ChipPickerElement.swift in Sources */,
+				515EE9962E21329B00A60E96 /* ChipPickerPage.swift in Sources */,
+				515EE9972E21329B00A60E96 /* SuggestionChipConfigurationView.swift in Sources */,
+				515EE9982E21329B00A60E96 /* SuggestionChipElement.swift in Sources */,
+				515EE9992E21329B00A60E96 /* SuggestionChipPage.swift in Sources */,
+				515EE99A2E21329B00A60E96 /* ChipElements.swift in Sources */,
 				5180FE6E2DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */,
 				5180FE6F2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */,
 				5180FE702DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */,
@@ -2008,6 +2137,7 @@
 				51F676EF2E0D681700C15CB6 /* SwitchItemUITests.swift in Sources */,
 				51F676E42E0D63C100C15CB6 /* CheckboxItemIndeterminateUITests.swift in Sources */,
 				51EB73982DBFE3FD00F37FEC /* String+extension.swift in Sources */,
+				515EE9A02E2132E300A60E96 /* ChipsPickerUITests.swift in Sources */,
 				51F676EA2E0D66EB00C15CB6 /* RadioItemUITests.swift in Sources */,
 				51F676DE2E0D567700C15CB6 /* CheckboxUITests.swift in Sources */,
 				51F676E22E0D61FE00C15CB6 /* CheckboxIndeterminateUITests.swift in Sources */,

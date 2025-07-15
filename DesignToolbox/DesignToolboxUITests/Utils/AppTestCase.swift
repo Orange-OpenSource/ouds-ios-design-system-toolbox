@@ -115,14 +115,41 @@ open class AppTestCase: XCTestCase {
         app.swipeUp()
     }
 
-    // MARK: - Helpers
+    // MARK: - Buttons checks
 
-    @MainActor func waitForButtonToAppear(withWording key: String, _ app: XCUIApplication, _ timeout: TimeInterval = 5) {
-        let wording = wording(for: key)
-        let buttonToWaitFor = app.buttons[wording]
-        let doesButtonExist = buttonToWaitFor.waitForExistence(timeout: timeout)
-        XCTAssertTrue(doesButtonExist, "The button with wording '\(wording)' did not appear after \(timeout) seconds")
+    /// Checks if the first button with this a11y identifier exists and has the wording with the given value as key
+    @MainActor func check(value: String, ofButtonWithIdentifier identifier: String, _ app: XCUIApplication) {
+        let element = buttons(withA11yIdentifier: identifier, app).firstMatch
+        let expectedValue = wording(for: value)
+        if element.exists {
+            if let currentValue = element.value as? String {
+                XCTAssertTrue(currentValue == expectedValue,
+                              "The expected accessible value for the element is '\(expectedValue)' and not '\(currentValue)'")
+            } else {
+                XCTFail("The value to compare does not exist!")
+            }
+        } else {
+            XCTFail("The element does not exists or the demo has been changed since!")
+        }
     }
+
+    /// Checks if the first button with this a11y identifier exists and do not have the wording with the given value as key
+    @MainActor func check(not value: String, ofButtonWithIdentifier identifier: String, _ app: XCUIApplication) {
+        let element = otherElements(withA11yIdentifier: identifier, app).firstMatch
+        let expectedValue = wording(for: value)
+        if element.exists {
+            if let currentValue = element.value as? String {
+                XCTAssertTrue(currentValue != expectedValue,
+                              "The expected accessible value for the element is equal to '\(expectedValue)' and was not expected")
+            } else {
+                XCTFail("The value to compare does not exist!")
+            }
+        } else {
+            XCTFail("The element does not exists or the demo has been changed since!")
+        }
+    }
+
+    // MARK: - Other elements checks
 
     /// Checks if the first element with this a11y identifier exists and has the wording with the given value as key
     @MainActor func check(value: String, ofElementWithIdentifier identifier: String, _ app: XCUIApplication) {
@@ -132,6 +159,22 @@ open class AppTestCase: XCTestCase {
             if let currentValue = element.value as? String {
                 XCTAssertTrue(currentValue == expectedValue,
                               "The expected accessible value for the element is '\(expectedValue)' and not '\(currentValue)'")
+            } else {
+                XCTFail("The value to compare does not exist!")
+            }
+        } else {
+            XCTFail("The element does not exists or the demo has been changed since!")
+        }
+    }
+
+    /// Checks if the first element with this a11y identifier exists and do not have the wording with the given value as key
+    @MainActor func check(not value: String, ofElementWithIdentifier identifier: String, _ app: XCUIApplication) {
+        let element = otherElements(withA11yIdentifier: identifier, app).firstMatch
+        let expectedValue = wording(for: value)
+        if element.exists {
+            if let currentValue = element.value as? String {
+                XCTAssertTrue(currentValue != expectedValue,
+                              "The expected accessible value for the element is equal to '\(expectedValue)' and was not expected")
             } else {
                 XCTFail("The value to compare does not exist!")
             }
@@ -150,6 +193,31 @@ open class AppTestCase: XCTestCase {
         } else {
             XCTFail("The element is not the expected one or does not exist or has no value, or the demo has been changed since!")
         }
+    }
+
+    // MARK: - Helpers
+
+    /// Checks if the first button with this a11y identifier exists and has the expected selected state or not
+    @MainActor func isButton(withAccessibleIdentifier identifier: String, selected: Bool, _ app: XCUIApplication) {
+        let element = buttons(withA11yIdentifier: identifier, app).firstMatch
+        if element.exists {
+            if selected {
+                XCTAssertTrue(element.isSelected,
+                              "The button with given identifier \"\(identifier)\" is not selected but should be!")
+            } else {
+                XCTAssertFalse(element.isSelected,
+                               "The button with given identifier \"\(identifier)\" is selected and should not be!")
+            }
+        } else {
+            XCTFail("The button with accessibility identifier \"\(identifier)\" does not exist or the demo has been changed since!")
+        }
+    }
+
+    @MainActor func waitForButtonToAppear(withWording key: String, _ app: XCUIApplication, _ timeout: TimeInterval = 5) {
+        let wording = wording(for: key)
+        let buttonToWaitFor = app.buttons[wording]
+        let doesButtonExist = buttonToWaitFor.waitForExistence(timeout: timeout)
+        XCTAssertTrue(doesButtonExist, "The button with wording '\(wording)' did not appear after \(timeout) seconds")
     }
 
     /// Checks fior the given element the value and a11y hint and a11y label
