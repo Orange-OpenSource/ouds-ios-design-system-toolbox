@@ -63,7 +63,7 @@ struct SwitchConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            OUDSSwitchItem("app_components_controlItem_selection_label", isOn: $configurationModel.selection)
+            OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.selection)
                 .disabled(!configurationModel.enabled)
 
             OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)

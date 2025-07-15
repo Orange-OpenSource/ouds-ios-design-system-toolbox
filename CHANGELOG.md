@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Chip component (Orange-OpenSource/ouds-ios#407)
 - [Library] Add `badge` component (Orange-OpenSource/ouds-ios#514)
 - [Library] Chip component (Orange-OpenSource/ouds-ios#407)
 - [Library] Add `badge` component (Orange-OpenSource/ouds-ios#514) (Orange-OpenSource/ouds-ios#847)
@@ -27,6 +28,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Available color modes and surfaces by theme for `colored surface` component
 - [Library] Color mode semantic tokens (tokens library v1.1.0)
 - [Library] Color multiple semantic tokens (tokens library v1.1.0)
+
+### Added
+
+- [DesignToolbox] Add demo screens and UI tests for chips components (Orange-OpenSource/ouds-ios#407)
+
+### Fixed
+
+- [Library] Update `controlItem` component to use `controlItemBorderRadius*` tokens (Orange-OpenSource/ouds-ios#777)
+- [Library] Update `switch` component to use `switchBorderRadius*` tokens (Orange-OpenSource/ouds-ios#780)
 
 ## [0.16.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.15.0...0.16.0) - 2025-07-07
 
@@ -77,6 +87,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] Divider in a ControlItem should not increase the size of this component (Orange-OpenSource/ouds-ios#525)
 - [Library] Background color in pressed and hover states for Radio button and Checkbox components (Orange-OpenSource/ouds-ios#720)
 - [DesignToolbox] Update background color in component illustration view (Orange-OpenSource/ouds-ios#723)
 - [DesignToolbox] In radio item page icons never flipped when flip option toggled (Orange-OpenSource/ouds-ios#675)
