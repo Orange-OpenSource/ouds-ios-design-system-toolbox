@@ -42,8 +42,9 @@ private struct SwitchIllustration: View {
 
     var body: some View {
         VStack(spacing: theme.spaces.spaceFixedSm) {
-            OUDSSwitch(isOn: .constant(true), accessibilityLabel: "")
-            OUDSSwitch(isOn: .constant(false), accessibilityLabel: "")
+            // 🥜: dumb label, not vocalized, preventing warnings because of empty labels
+            OUDSSwitch(isOn: .constant(true), accessibilityLabel: "🥜")
+            OUDSSwitch(isOn: .constant(false), accessibilityLabel: "🥜")
         }
     }
 }

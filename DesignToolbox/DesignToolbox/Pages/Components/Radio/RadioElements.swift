@@ -44,8 +44,9 @@ private struct RadioIllustration: View {
 
     var body: some View {
         VStack(spacing: theme.spaces.spaceFixedNone) {
-            OUDSRadio(isOn: .constant(true), accessibilityLabel: "")
-            OUDSRadio(isOn: .constant(false), accessibilityLabel: "")
+            // 🥜: dumb label, not vocalized, preventing warnings because of empty labels
+            OUDSRadio(isOn: .constant(true), accessibilityLabel: "🥜")
+            OUDSRadio(isOn: .constant(false), accessibilityLabel: "🥜")
         }
     }
 }
