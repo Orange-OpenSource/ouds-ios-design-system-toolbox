@@ -2562,7 +2562,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "407-component-create-component---chips";
+				branch = develop;
 				kind = branch;
 			};
 		};
