@@ -19,6 +19,44 @@ import XCTest
 /// Tests the accessibility identifiers, labels or values of the items depending to their states and user actions.
 final class ChipsPickerUITests: AppTestCase {
 
+    /// Test the selection of a unique item in the chips picker which can be undefined too
+    @MainActor func testChipsPickerWithUniqueOptionalSelection() throws {
+
+        let firstItemA11YIdentifier = "Virgin Holy Lava"
+        let secondItemA11YIdentifier = "IPA beer"
+        let thirdItemA11YIdentifier = "Mineral water"
+
+        // GIVEN
+
+        let app = launchApp()
+        goToComponentsSheet(app)
+        tapButton(withWording: "app_components_chip_label", app)
+        tapButton(withWording: "app_components_chip_chipPicker_label", app)
+        tapButton(withWording: "SingleOrNone", app)
+
+        // WHEN, THEN
+
+        tapImage(withName: "flame", app)
+        isButton(withAccessibleIdentifier: firstItemA11YIdentifier, selected: true, app)
+        isButton(withAccessibleIdentifier: secondItemA11YIdentifier, selected: false, app)
+        isButton(withAccessibleIdentifier: thirdItemA11YIdentifier, selected: false, app)
+
+        tapImage(withName: "flame", app)
+        isButton(withAccessibleIdentifier: firstItemA11YIdentifier, selected: false, app)
+        isButton(withAccessibleIdentifier: secondItemA11YIdentifier, selected: false, app)
+        isButton(withAccessibleIdentifier: thirdItemA11YIdentifier, selected: false, app)
+
+        tapImage(withName: "dog.fill", app)
+        isButton(withAccessibleIdentifier: firstItemA11YIdentifier, selected: false, app)
+        isButton(withAccessibleIdentifier: secondItemA11YIdentifier, selected: true, app)
+        isButton(withAccessibleIdentifier: thirdItemA11YIdentifier, selected: false, app)
+
+        tapImage(withName: "dog.fill", app)
+        isButton(withAccessibleIdentifier: firstItemA11YIdentifier, selected: false, app)
+        isButton(withAccessibleIdentifier: secondItemA11YIdentifier, selected: false, app)
+        isButton(withAccessibleIdentifier: thirdItemA11YIdentifier, selected: false, app)
+    }
+
     /// Test the selection of a unique item in the chips picker
     @MainActor func testChipsPickerWithUniqueSelection() throws {
 
