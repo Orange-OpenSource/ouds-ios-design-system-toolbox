@@ -33,7 +33,7 @@ struct CheckboxElements: DesignToolboxElement {
         illustration = AnyView(CheckboxIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            illustration: AnyView(CheckboxIllustration()),
+            illustration: illustration,
             description: "app_components_checkbox_description_text",
             demoScreen: AnyView(DesignToolboxVariantElement(elements: variants))))
     }

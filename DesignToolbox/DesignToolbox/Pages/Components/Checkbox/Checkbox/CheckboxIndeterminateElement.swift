@@ -25,7 +25,6 @@ struct CheckboxIndeterminateElement: DesignToolboxElement {
         illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            illustration: nil,
             description: "app_components_checkbox_indeterminateCheckbox_description_text",
             version: OUDSVersions.componentCheckboxVersion,
             demoScreen: AnyView(CheckboxIndeterminatePage())))

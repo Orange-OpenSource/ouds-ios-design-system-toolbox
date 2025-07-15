@@ -25,7 +25,6 @@ struct LinkElement: DesignToolboxElement {
         illustration = AnyView(LinkIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            illustration: nil,
             description: "app_components_link_description_text",
             version: OUDSVersions.componentLinkVersion,
             demoScreen: AnyView(LinkPage()))

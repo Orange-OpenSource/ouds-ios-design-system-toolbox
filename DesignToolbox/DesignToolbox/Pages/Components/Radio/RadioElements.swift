@@ -32,7 +32,7 @@ struct RadioElements: DesignToolboxElement {
         illustration = AnyView(RadioIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            illustration: AnyView(RadioIllustration()),
+            illustration: illustration,
             description: "app_components_radioButton_description_text",
             demoScreen: AnyView(DesignToolboxVariantElement(elements: variants))))
     }

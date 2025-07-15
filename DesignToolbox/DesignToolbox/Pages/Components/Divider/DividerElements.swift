@@ -29,7 +29,7 @@ struct DividerElements: DesignToolboxElement {
         illustration = AnyView(DividerIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            illustration: AnyView(DividerIllustration()),
+            illustration: illustration,
             description: "app_components_divider_description_text",
             demoScreen: AnyView(DesignToolboxVariantElement(elements: variants))))
     }

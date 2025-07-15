@@ -24,7 +24,6 @@ struct SwitchItemElement: DesignToolboxElement {
         illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            illustration: nil,
             description: "app_components_switch_switchItem_description_text",
             version: OUDSVersions.componentSwitchVersion,
             demoScreen: AnyView(SwitchItemPage())))

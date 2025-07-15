@@ -28,7 +28,6 @@ struct DividerElement: DesignToolboxElement {
         illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            illustration: nil,
             description: keyForDescription.localized(),
             version: OUDSVersions.componentDividerVersion,
             demoScreen: AnyView(DividerPage(orientation: orientation)))

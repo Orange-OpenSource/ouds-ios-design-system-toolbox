@@ -30,7 +30,7 @@ struct SwitchElements: DesignToolboxElement {
         illustration = AnyView(SwitchIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            illustration: AnyView(SwitchIllustration()),
+            illustration: illustration,
             description: "app_components_switch_description_text",
             demoScreen: AnyView(DesignToolboxVariantElement(elements: variants))))
     }

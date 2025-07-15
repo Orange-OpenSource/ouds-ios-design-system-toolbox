@@ -17,7 +17,7 @@ import SwiftUI
 
 struct BadgeElement: DesignToolboxElement {
     let name: String
-    var illustration: AnyView
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
@@ -25,7 +25,6 @@ struct BadgeElement: DesignToolboxElement {
         illustration = AnyView(OUDSBadge(count: 1, status: .negative, size: .medium))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            illustration: nil,
             description: "app_components_badge_description_text",
             version: OUDSVersions.componentBadgeVersion,
             demoScreen: AnyView(BadgePage()))

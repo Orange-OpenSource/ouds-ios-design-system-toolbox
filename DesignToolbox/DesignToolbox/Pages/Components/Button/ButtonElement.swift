@@ -25,7 +25,6 @@ struct ButtonElement: DesignToolboxElement {
         illustration = AnyView(ButtonIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            illustration: nil,
             description: "app_components_button_description_text",
             version: OUDSVersions.componentButtonVersion,
             demoScreen: AnyView(ButtonPage()))
@@ -33,7 +32,7 @@ struct ButtonElement: DesignToolboxElement {
     }
 }
 
-struct ButtonIllustration: View {
+private struct ButtonIllustration: View {
 
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.theme) private var theme

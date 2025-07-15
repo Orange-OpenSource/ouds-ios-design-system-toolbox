@@ -25,7 +25,6 @@ struct CheckboxItemElement: DesignToolboxElement {
         illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            illustration: nil,
             description: "app_components_checkbox_controlItem_description_text",
             version: OUDSVersions.componentCheckboxVersion,
             demoScreen: AnyView(CheckboxItemPage())))
