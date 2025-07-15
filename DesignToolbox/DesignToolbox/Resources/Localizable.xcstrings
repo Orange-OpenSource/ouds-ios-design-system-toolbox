@@ -2971,6 +2971,101 @@
       },
       "shouldTranslate" : false
     },
+    "app_settings_themeSwitch_cancel" : {
+      "comment" : "App - Settings",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا، سأعيد تشغيل التطبيق بنفسي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No, I will restart the app myself"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non, je vais relancer l’app moi-même"
+          }
+        }
+      }
+    },
+    "app_settings_themeSwitch_description" : {
+      "comment" : "App - Settings",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لقد سمحت في الإعدادات بإعادة تشغيل التطبيق عند تغيير السمة للتأكد من أن الرموز المتاحة هي الرموز المتوقعة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You allowed in settings to restart app when theme changed to be sure available tokens are the expected ones"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous avez défini dans les réglages de l’app qu’il faut relancer l’app si le thème venait à changer."
+          }
+        }
+      }
+    },
+    "app_settings_themeSwitch_restart" : {
+      "comment" : "App - Settings",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حسنًا، قم بإنهاء التطبيق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok, terminate the app"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oui, tuer l’app"
+          }
+        }
+      }
+    },
+    "app_settings_themeSwitch_title" : {
+      "comment" : "App - Settings",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تبديل السمة وتصحيح الأخطاء"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Theme switch and debugging"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changement de thème et débogage"
+          }
+        }
+      }
+    },
     "app_tokens_border_description_text" : {
       "comment" : "Tokens - Border",
       "extractionState" : "manual",

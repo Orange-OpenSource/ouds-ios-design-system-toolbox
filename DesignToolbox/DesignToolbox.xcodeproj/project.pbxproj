@@ -320,6 +320,9 @@
 		51D6D58C2D887E94009CD879 /* CheckboxIndeterminatePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D58A2D887E94009CD879 /* CheckboxIndeterminatePage.swift */; };
 		51D6D5912D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5902D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift */; };
 		51D6D5922D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5902D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift */; };
+		51E5999D2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */; };
+		51E5999E2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */; };
+		51E5999F2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */; };
 		51EB73952DBFDDF600F37FEC /* CheckboxPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */; };
 		51EB73962DBFDDF600F37FEC /* AppTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737B2DBFD26000F37FEC /* AppTestCase.swift */; };
 		51EB73982DBFE3FD00F37FEC /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
@@ -611,6 +614,7 @@
 		51D6D58A2D887E94009CD879 /* CheckboxIndeterminatePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxIndeterminatePage.swift; sourceTree = "<group>"; };
 		51D6D5902D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxIndeterminateConfiguration.swift; sourceTree = "<group>"; };
 		51E3FF0A2CAFD9AE00F1BC59 /* DesignToolboxElementPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxElementPage.swift; sourceTree = "<group>"; };
+		51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		51EB737B2DBFD26000F37FEC /* AppTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTestCase.swift; sourceTree = "<group>"; };
 		51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerUITests.swift; sourceTree = "<group>"; };
 		51EB73842DBFDC5500F37FEC /* DesignToolboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignToolboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1420,6 +1424,7 @@
 		51BD761D2C466FCF0033365D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */,
 				51F676DA2E0D45F300C15CB6 /* A11YIdentifiers.swift */,
 				5122E0292D65E7AC00CD2857 /* String+extension.swift */,
 				51BD761C2C466FCF0033365D /* WebView.swift */,
@@ -1899,6 +1904,7 @@
 				518EC0B22E1FF33300FC77E4 /* SoshTheme+BadgeUITests.swift in Sources */,
 				513442072D75B880000B5DE4 /* CheckboxElement.swift in Sources */,
 				513442082D75B880000B5DE4 /* CheckboxPage.swift in Sources */,
+				51E5999D2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */,
 				5134420B2D75B880000B5DE4 /* CheckboxConfiguration.swift in Sources */,
 				5134420C2D75B880000B5DE4 /* CheckboxElements.swift in Sources */,
 				6DB260DD2CD0F01F0091F72E /* NamedSpace+Scaled.swift in Sources */,
@@ -1990,6 +1996,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0762276D2DA93D62009C3632 /* DesignToolboxColorPicker.swift in Sources */,
+				51E5999F2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */,
 				51952A672D3F9B9E0068B807 /* DesignToolboxConfiguration.swift in Sources */,
 				51952A682D3F9B9E0068B807 /* NamedColor+Opacity.swift in Sources */,
 				07AB458B2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */,
@@ -2131,6 +2138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51F676DC2E0D469500C15CB6 /* A11YIdentifiers.swift in Sources */,
+				51E5999E2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */,
 				51F676ED2E0D678600C15CB6 /* SwitchUITests.swift in Sources */,
 				51F676D32E0C413700C15CB6 /* RadioPickerUITests.swift in Sources */,
 				51F676E82E0D651200C15CB6 /* RadioUITests.swift in Sources */,

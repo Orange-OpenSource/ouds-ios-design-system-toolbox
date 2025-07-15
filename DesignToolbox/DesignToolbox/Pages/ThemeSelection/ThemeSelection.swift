@@ -59,13 +59,20 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
 /// Theme provider that proposes all supported themes for the demo application.
 /// It also stores the current theme, selected by user.
-final class ThemeProvider: ObservableObject {
+@MainActor final class ThemeProvider: ObservableObject {
 
     let themes: [OUDSTheme]
+    var hotSwitchWarning: HotSwitchWarning
+
+    @UserDefaultsWrapper(key: "com.orange.ouds.demoapp.themeName", defaultValue: "Orange")
+    private static var currentThemeName
 
     @Published var currentTheme: OUDSTheme {
         didSet {
-            UserDefaults.standard.set(currentTheme.name, forKey: "themeName")
+            ThemeProvider.currentThemeName = currentTheme.name
+            if currentTheme != oldValue {
+                hotSwitchWarning.showAlert = true
+            }
         }
     }
 
@@ -75,13 +82,13 @@ final class ThemeProvider: ObservableObject {
         let defaultTheme = orangeTheme
         themes = [orangeTheme, soshTheme]
 
-        if let themeName = UserDefaults.standard.value(forKey: "themeName") as? String,
-           let theme = themes.first(where: { $0.name == themeName })
-        {
+        if let theme = themes.first(where: { $0.name == ThemeProvider.currentThemeName }) {
             currentTheme = theme
         } else {
             currentTheme = defaultTheme
         }
+
+        hotSwitchWarning = HotSwitchWarning()
     }
 
     deinit {}
@@ -120,5 +127,46 @@ struct ThemeSelectionButton: View {
                 .accessibilityHint("app_topBar_theme_button_hint_a11y")
         }
         .oudsForegroundColor(themeProvider.currentTheme.colors.colorContentBrandPrimary)
+        .modifier(HotSwitchWarningModifier(hotSwitchWarningIndicator: themeProvider.hotSwitchWarning))
+    }
+}
+
+// MARK: - Hot Switch
+
+final class HotSwitchWarning: ObservableObject {
+    @Published var showAlert: Bool = false
+
+    deinit {}
+}
+
+/// `ViewModifier` displaying an alert (if set in app settings) notifying the user if it wants to restart the app
+/// if the theme changed. If so, kills the app. If not, let iy as is.
+/// Thus if the app is killed or if the user restarts it, we won't be in unstable cases like the one explained in issue 850:
+/// a situation where an unexisting token is used but with the bad theme.
+///
+/// See https://github.com/Orange-OpenSource/ouds-ios/issues/850
+struct HotSwitchWarningModifier: ViewModifier {
+
+    @ObservedObject var hotSwitchWarningIndicator: HotSwitchWarning
+
+    @UserDefaultsWrapper(key: "com.orange.ouds.demoapp.askToRestartIfThemeChanged", defaultValue: false) // Defined in Settings.bundle
+    private var askToRestart: Bool
+
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        if askToRestart {
+            content
+                .alert(isPresented: $hotSwitchWarningIndicator.showAlert) {
+                    Alert(
+                        title: Text("app_settings_themeSwitch_title"),
+                        message: Text("app_settings_themeSwitch_description"),
+                        primaryButton: .destructive(Text("app_settings_themeSwitch_restart")) {
+                            exit(0) // ( ˶°ㅁ°) !! BOOM
+                        },
+                        secondaryButton: .cancel(Text("app_settings_themeSwitch_cancel")))
+                }
+        } else {
+            content
+        }
     }
 }
