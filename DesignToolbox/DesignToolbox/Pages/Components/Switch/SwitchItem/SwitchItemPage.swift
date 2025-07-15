@@ -46,7 +46,7 @@ private struct SwitchItemDemo: View {
                        helper: configurationModel.helperText,
                        icon: icon,
                        flipIcon: configurationModel.flipIcon,
-                       isReversed: configurationModel.isReversed,
+                       isReversed: !configurationModel.isReversed,
                        isError: configurationModel.isError,
                        isReadOnly: configurationModel.isReadOnly,
                        hasDivider: configurationModel.divider)
