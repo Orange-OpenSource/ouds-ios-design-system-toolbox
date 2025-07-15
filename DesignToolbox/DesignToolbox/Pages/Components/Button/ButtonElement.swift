@@ -12,22 +12,44 @@
 //
 
 import OUDS
+import OUDSComponents
 import SwiftUI
 
 struct ButtonElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_components_button_label".localized()
-        image = Image(decorative: "il_component_button").renderingMode(.original)
+        illustration = AnyView(ButtonIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: nil,
             description: "app_components_button_description_text",
             version: OUDSVersions.componentButtonVersion,
-            illustration: AnyView(ButtonPage()))
+            demoScreen: AnyView(ButtonPage()))
         )
+    }
+}
+
+private struct ButtonIllustration: View {
+
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        VStack(spacing: theme.spaces.spaceFixedSm) {
+            // Dont translate default text for all
+            OUDSButton(text: "Label", hierarchy: firstButtonHierarchy) {}
+            OUDSButton(text: "Label", hierarchy: secondButtonHierarchy) {}
+        }
+    }
+
+    private var firstButtonHierarchy: OUDSButton.Hierarchy {
+        colorScheme == .light ? .strong : .default
+    }
+
+    private var secondButtonHierarchy: OUDSButton.Hierarchy {
+        colorScheme == .light ? .default : .strong
     }
 }
