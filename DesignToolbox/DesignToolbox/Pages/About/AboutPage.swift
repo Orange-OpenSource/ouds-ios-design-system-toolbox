@@ -106,21 +106,39 @@ struct AboutPage: View {
 
     @ViewBuilder
     private var buildView: some View {
-        // TODO: Only for debug purposes, should be displayed in another way
-        DesignToolboxCopyableText("app_about_details_appVersion" <- Bundle.main.marketingVersion, Bundle.main.marketingVersion)
-        DesignToolboxCopyableText("app_about_details_buildNumber" <- Bundle.main.buildNumber, Bundle.main.buildNumber)
-        DesignToolboxCopyableText("app_about_details_buildType" <- Bundle.main.fullBuildType, Bundle.main.fullBuildType)
-        if let buildDetails = Bundle.main.buildDetails {
-            DesignToolboxCopyableText("app_about_details_githubBuildDetails" <- buildDetails,
-                                      buildDetails.leadingColumnFragment)
-        }
-        if let sdkVersion = Bundle.main.sdkVersion, !sdkVersion.isEmpty {
-            DesignToolboxCopyableText("app_about_details_sdkVersion" <- sdkVersion, sdkVersion)
+
+        if Bundle.main.fullBuildType == "stable" {
+            OpenableText("app_about_details_appVersion" <- Bundle.main.marketingVersion, anchor: Bundle.main.marketingVersion, type: .githubRelease)
+                .modifier(CopyableTextViewModifier(Bundle.main.marketingVersion))
+        } else {
+            Text("app_about_details_appVersion" <- Bundle.main.marketingVersion)
+                .modifier(CopyableTextViewModifier(Bundle.main.marketingVersion))
         }
 
-        DesignToolboxCopyableText("app_about_details_themeCoreVersion" <- OUDSVersions.themeCoreVersion, OUDSVersions.themeCoreVersion)
-        DesignToolboxCopyableText("app_about_details_themeOrangeVersion" <- OUDSVersions.themeOrangeVersion, OUDSVersions.themeOrangeVersion)
-        DesignToolboxCopyableText("app_about_details_themeSoshVersion" <- OUDSVersions.themeSoshVersion, OUDSVersions.themeSoshVersion)
+        Text("app_about_details_buildNumber" <- Bundle.main.buildNumber)
+            .modifier(CopyableTextViewModifier(Bundle.main.buildNumber))
+
+        OpenableText("app_about_details_buildType" <- Bundle.main.fullBuildType, anchor: Bundle.main.fullBuildType, type: .githubBuild)
+            .modifier(CopyableTextViewModifier(Bundle.main.fullBuildType))
+
+        if let buildDetails = Bundle.main.buildDetails {
+            OpenableText("app_about_details_githubBuildDetails" <- buildDetails, anchor: buildDetails, type: .githubIssue)
+                .modifier(CopyableTextViewModifier(buildDetails.leadingColumnFragment))
+        }
+
+        if let sdkVersion = Bundle.main.sdkVersion, !sdkVersion.isEmpty {
+            OpenableText("app_about_details_sdkVersion" <- sdkVersion, anchor: sdkVersion, type: .githubVersion)
+                .modifier(CopyableTextViewModifier(sdkVersion))
+        }
+
+        Text("app_about_details_themeCoreVersion" <- OUDSVersions.themeCoreVersion)
+            .modifier(CopyableTextViewModifier(OUDSVersions.themeCoreVersion))
+
+        Text("app_about_details_themeOrangeVersion" <- OUDSVersions.themeOrangeVersion)
+            .modifier(CopyableTextViewModifier(OUDSVersions.themeOrangeVersion))
+
+        Text("app_about_details_themeSoshVersion" <- OUDSVersions.themeSoshVersion)
+            .modifier(CopyableTextViewModifier(OUDSVersions.themeSoshVersion))
     }
 
     @ViewBuilder
