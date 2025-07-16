@@ -181,7 +181,7 @@ To run these snapshots tests follow some steps:
 2. `bundle exec pod install`
 3. Open *DesignToolbox.xcworkspace*
 4. Select *DesignToolboxSnapshotsTests* scheme
-5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
+5. Select *iPhone 16 Pro (18.4)* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
 
 Or run in terminal:
@@ -198,7 +198,7 @@ Such tests here are used to as to be sure the look and feel of any components an
 Any interface modifications require regenerating the illustrations using the tool, i.e. run the tests twice. The reference illustrations have already been saved within the project.
 
 > [!IMPORTANT]
-> The device under tests is a simulator of iPhone 16 Pro (18.0), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
+> The device under tests is a simulator of iPhone 16 Pro (18.4), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
 
 #### How to use to use swift-snapshot-testing library
 
@@ -264,7 +264,7 @@ To run these UI tests follow some steps:
 2. `bundle exec pod install`
 3. Open *DesignToolbox.xcworkspace*
 4. Select *DesignToolboxUITests* scheme
-5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
+5. Select *iPhone 16 Pro (18.4)* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
 
 Or run in terminal:

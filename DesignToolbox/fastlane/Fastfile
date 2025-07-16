@@ -73,8 +73,7 @@ OUDS_PACKAGE_RESOLVED_PATH = "#{OUDS_WORKSPACE}/xcshareddata/swiftpm/Package.res
 # Devices configuration
 # ---------------------
 
-OUDS_SNAPSHOTS_TEST_DEVICE = "iPhone 16 Pro (18.0)"
-OUDS_UNIT_TEST_DEVICE = "iPhone 16 Pro (18.4)"
+OUDS_TEST_DEVICE = "iPhone 16 Pro (18.4)"
 
 # Lanes
 # ------
@@ -201,7 +200,7 @@ platform :ios do
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
             scan(scheme: OUDS_SNAPSHOTS_SNAPSHOTS_TEST_SCHEME,
-                device: OUDS_SNAPSHOTS_TEST_DEVICE,
+                device: OUDS_TEST_DEVICE,
                 skip_build: true
             )
 
@@ -232,7 +231,7 @@ platform :ios do
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
             scan(scheme: OUDS_SNAPSHOTS_UI_TEST_SCHEME,
-                device: OUDS_SNAPSHOTS_TEST_DEVICE,
+                device: OUDS_TEST_DEVICE,
                 skip_build: true
             )
 
@@ -263,7 +262,7 @@ platform :ios do
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
             scan(scheme: OUDS_SNAPSHOTS_UNIT_TEST_SCHEME,
-                device: OUDS_UNIT_TEST_DEVICE,
+                device: OUDS_TEST_DEVICE,
                 skip_build: true
             )
 
