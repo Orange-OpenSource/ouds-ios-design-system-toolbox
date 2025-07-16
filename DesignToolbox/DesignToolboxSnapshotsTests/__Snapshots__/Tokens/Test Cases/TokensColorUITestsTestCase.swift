@@ -19,6 +19,7 @@ import SwiftUI
 import XCTest
 
 // swiftlint:disable required_deinit
+// swiftlint:disable type_body_length
 
 /// Tests the UI rendering of each **color token** using reference images
 open class TokensColorUITestsTestCase: XCTestCase {
@@ -28,14 +29,20 @@ open class TokensColorUITestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor func testBackgroundColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    ///   - precision: Value for tests, default set to `XCTestCase.precision`
+    ///   - perceptualPrecision: Value for tests, default set to `XCTestCase.perceptualPrecision`
+    @MainActor func testBackgroundColors(theme: OUDSTheme,
+                                         interfaceStyle: UIUserInterfaceStyle,
+                                         precision: Float = XCTestCase.precision,
+                                         perceptualPrecision: Float = XCTestCase.perceptualPrecision)
+    {
         // Iterate through all background color cases defined in NamedColor.Background
         for color in NamedColor.Background.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
             if token.hasForbiddenColorValue() {
-                OL.debug("For NamedColor.Bacgkround cases and theme \(theme.name) a forbidden value has been skipped")
+                OL.debug("For NamedColor.Bacgkround cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -53,6 +60,8 @@ open class TokensColorUITestsTestCase: XCTestCase {
             assertIllustration(illustration,
                                on: interfaceStyle,
                                named: name,
+                               precision: precision,
+                               perceptualPrecision: perceptualPrecision,
                                testName: testName)
         }
     }
@@ -62,14 +71,20 @@ open class TokensColorUITestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor func testActionColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    ///   - precision: Value for tests, default set to `XCTestCase.precision`
+    ///   - perceptualPrecision: Value for tests, default set to `XCTestCase.perceptualPrecision`
+    @MainActor func testActionColors(theme: OUDSTheme,
+                                     interfaceStyle: UIUserInterfaceStyle,
+                                     precision: Float = XCTestCase.precision,
+                                     perceptualPrecision: Float = XCTestCase.perceptualPrecision)
+    {
         // Iterate through all background color cases defined in NamedColor.Action
         for color in NamedColor.Action.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
             if token.hasForbiddenColorValue() {
-                OL.debug("For NamedColor.Action cases and theme \(theme.name) a forbidden value has been skipped")
+                OL.debug("For NamedColor.Action cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -87,6 +102,8 @@ open class TokensColorUITestsTestCase: XCTestCase {
             assertIllustration(illustration,
                                on: interfaceStyle,
                                named: name,
+                               precision: precision,
+                               perceptualPrecision: perceptualPrecision,
                                testName: testName)
         }
     }
@@ -96,14 +113,20 @@ open class TokensColorUITestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor func testAlwaysColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    ///   - precision: Value for tests, default set to `XCTestCase.precision`
+    ///   - perceptualPrecision: Value for tests, default set to `XCTestCase.perceptualPrecision`
+    @MainActor func testAlwaysColors(theme: OUDSTheme,
+                                     interfaceStyle: UIUserInterfaceStyle,
+                                     precision: Float = XCTestCase.precision,
+                                     perceptualPrecision: Float = XCTestCase.perceptualPrecision)
+    {
         // Iterate through all background color cases defined in NamedColor.Always
         for color in NamedColor.Always.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
             if token.isForbiddenValueColor() {
-                OL.debug("For NamedColor.Always cases and theme \(theme.name) a forbidden value has been skipped")
+                OL.debug("For NamedColor.Always cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -121,6 +144,8 @@ open class TokensColorUITestsTestCase: XCTestCase {
             assertIllustration(illustration,
                                on: interfaceStyle,
                                named: name,
+                               precision: precision,
+                               perceptualPrecision: perceptualPrecision,
                                testName: testName)
         }
     }
@@ -130,14 +155,20 @@ open class TokensColorUITestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor func testContentColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    ///   - precision: Value for tests, default set to `XCTestCase.precision`
+    ///   - perceptualPrecision: Value for tests, default set to `XCTestCase.perceptualPrecision`
+    @MainActor func testContentColors(theme: OUDSTheme,
+                                      interfaceStyle: UIUserInterfaceStyle,
+                                      precision: Float = XCTestCase.precision,
+                                      perceptualPrecision: Float = XCTestCase.perceptualPrecision)
+    {
         // Iterate through all background color cases defined in NamedColor.Content
         for color in NamedColor.Content.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
             if token.hasForbiddenColorValue() {
-                OL.debug("For NamedColor.Content cases and theme \(theme.name) a forbidden value has been skipped")
+                OL.debug("For NamedColor.Content cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -155,6 +186,8 @@ open class TokensColorUITestsTestCase: XCTestCase {
             assertIllustration(illustration,
                                on: interfaceStyle,
                                named: name,
+                               precision: precision,
+                               perceptualPrecision: perceptualPrecision,
                                testName: testName)
         }
     }
@@ -164,14 +197,20 @@ open class TokensColorUITestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor func testBorderColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    ///   - precision: Value for tests, default set to `XCTestCase.precision`
+    ///   - perceptualPrecision: Value for tests, default set to `XCTestCase.perceptualPrecision`
+    @MainActor func testBorderColors(theme: OUDSTheme,
+                                     interfaceStyle: UIUserInterfaceStyle,
+                                     precision: Float = XCTestCase.precision,
+                                     perceptualPrecision: Float = XCTestCase.perceptualPrecision)
+    {
         // Iterate through all background color cases defined in NamedColor.Border
         for color in NamedColor.Border.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
             if token.hasForbiddenColorValue() {
-                OL.debug("For NamedColor.Border cases and theme \(theme.name) a forbidden value has been skipped")
+                OL.debug("For NamedColor.Border cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -189,6 +228,8 @@ open class TokensColorUITestsTestCase: XCTestCase {
             assertIllustration(illustration,
                                on: interfaceStyle,
                                named: name,
+                               precision: precision,
+                               perceptualPrecision: perceptualPrecision,
                                testName: testName)
         }
     }
@@ -198,14 +239,20 @@ open class TokensColorUITestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor func testDecorativeColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    ///   - precision: Value for tests, default set to `XCTestCase.precision`
+    ///   - perceptualPrecision: Value for tests, default set to `XCTestCase.perceptualPrecision`
+    @MainActor func testDecorativeColors(theme: OUDSTheme,
+                                         interfaceStyle: UIUserInterfaceStyle,
+                                         precision: Float = XCTestCase.precision,
+                                         perceptualPrecision: Float = XCTestCase.perceptualPrecision)
+    {
         // Iterate through all background color cases defined in NamedColor.Decorative
         for color in NamedColor.Decorative.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
             if token.isForbiddenValueColor() {
-                OL.debug("For NamedColor.Decorative cases and theme \(theme.name) a forbidden value has been skipped")
+                OL.debug("For NamedColor.Decorative cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -223,6 +270,8 @@ open class TokensColorUITestsTestCase: XCTestCase {
             assertIllustration(illustration,
                                on: interfaceStyle,
                                named: name,
+                               precision: precision,
+                               perceptualPrecision: perceptualPrecision,
                                testName: testName)
         }
     }
@@ -232,14 +281,20 @@ open class TokensColorUITestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor func testChartColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    ///   - precision: Value for tests, default set to `XCTestCase.precision`
+    ///   - perceptualPrecision: Value for tests, default set to `XCTestCase.perceptualPrecision`
+    @MainActor func testChartColors(theme: OUDSTheme,
+                                    interfaceStyle: UIUserInterfaceStyle,
+                                    precision: Float = XCTestCase.precision,
+                                    perceptualPrecision: Float = XCTestCase.perceptualPrecision)
+    {
         // Iterate through all background color cases defined in NamedColor.Chart
         for color in NamedColor.Chart.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
             if token.hasForbiddenColorValue() {
-                OL.debug("For NamedColor.Chart cases and theme \(theme.name) a forbidden value has been skipped")
+                OL.debug("For NamedColor.Chart cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -257,6 +312,8 @@ open class TokensColorUITestsTestCase: XCTestCase {
             assertIllustration(illustration,
                                on: interfaceStyle,
                                named: name,
+                               precision: precision,
+                               perceptualPrecision: perceptualPrecision,
                                testName: testName)
         }
     }
@@ -266,8 +323,14 @@ open class TokensColorUITestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor func testOpacityColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        // Iterate through all background color cases defined in NamedColor.Chart
+    ///   - precision: Value for tests, default set to `XCTestCase.precision`
+    ///   - perceptualPrecision: Value for tests, default set to `XCTestCase.perceptualPrecision`
+    @MainActor func testOpacityColors(theme: OUDSTheme,
+                                      interfaceStyle: UIUserInterfaceStyle,
+                                      precision: Float = XCTestCase.precision,
+                                      perceptualPrecision: Float = XCTestCase.perceptualPrecision)
+    {
+        // Iterate through all background color cases defined in NamedColor.Opacity
         for color in NamedColor.Opacity.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
@@ -286,6 +349,8 @@ open class TokensColorUITestsTestCase: XCTestCase {
             assertIllustration(illustration,
                                on: interfaceStyle,
                                named: name,
+                               precision: precision,
+                               perceptualPrecision: perceptualPrecision,
                                testName: testName)
         }
     }
@@ -295,14 +360,20 @@ open class TokensColorUITestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor func testOverlayColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        // Iterate through all background color cases defined in NamedColor.Chart
+    ///   - precision: Value for tests, default set to `XCTestCase.precision`
+    ///   - perceptualPrecision: Value for tests, default set to `XCTestCase.perceptualPrecision`
+    @MainActor func testOverlayColors(theme: OUDSTheme,
+                                      interfaceStyle: UIUserInterfaceStyle,
+                                      precision: Float = XCTestCase.precision,
+                                      perceptualPrecision: Float = XCTestCase.perceptualPrecision)
+    {
+        // Iterate through all background color cases defined in NamedColor.Overlay
         for color in NamedColor.Overlay.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
             if token.hasForbiddenColorValue() {
-                OL.debug("For NamedColor.Opacity cases and theme \(theme.name) a forbidden value has been skipped")
+                OL.debug("For NamedColor.Opacity cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -320,6 +391,8 @@ open class TokensColorUITestsTestCase: XCTestCase {
             assertIllustration(illustration,
                                on: interfaceStyle,
                                named: name,
+                               precision: precision,
+                               perceptualPrecision: perceptualPrecision,
                                testName: testName)
         }
     }
@@ -329,14 +402,20 @@ open class TokensColorUITestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor func testRepositoryColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        // Iterate through all background color cases defined in NamedColor.Chart
+    ///   - precision: Value for tests, default set to `XCTestCase.precision`
+    ///   - perceptualPrecision: Value for tests, default set to `XCTestCase.perceptualPrecision`
+    @MainActor func testRepositoryColors(theme: OUDSTheme,
+                                         interfaceStyle: UIUserInterfaceStyle,
+                                         precision: Float = XCTestCase.precision,
+                                         perceptualPrecision: Float = XCTestCase.perceptualPrecision)
+    {
+        // Iterate through all background color cases defined in NamedColor.Repository
         for color in NamedColor.Repository.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
             if token.isForbiddenValueColor() {
-                OL.debug("For NamedColor.Repository cases and theme \(theme.name) a forbidden value has been skipped")
+                OL.debug("For NamedColor.Repository cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -354,6 +433,8 @@ open class TokensColorUITestsTestCase: XCTestCase {
             assertIllustration(illustration,
                                on: interfaceStyle,
                                named: name,
+                               precision: precision,
+                               perceptualPrecision: perceptualPrecision,
                                testName: testName)
         }
     }
@@ -363,14 +444,20 @@ open class TokensColorUITestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor func testSurfaceColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        // Iterate through all background color cases defined in NamedColor.Chart
+    ///   - precision: Value for tests, default set to `XCTestCase.precision`
+    ///   - perceptualPrecision: Value for tests, default set to `XCTestCase.perceptualPrecision`
+    @MainActor func testSurfaceColors(theme: OUDSTheme,
+                                      interfaceStyle: UIUserInterfaceStyle,
+                                      precision: Float = XCTestCase.precision,
+                                      perceptualPrecision: Float = XCTestCase.perceptualPrecision)
+    {
+        // Iterate through all background color cases defined in NamedColor.Surface
         for color in NamedColor.Surface.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 
             if token.hasForbiddenColorValue() {
-                OL.debug("For NamedColor.Surface cases and theme \(theme.name) a forbidden value has been skipped")
+                OL.debug("For NamedColor.Surface cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -388,9 +475,12 @@ open class TokensColorUITestsTestCase: XCTestCase {
             assertIllustration(illustration,
                                on: interfaceStyle,
                                named: name,
+                               precision: precision,
+                               perceptualPrecision: perceptualPrecision,
                                testName: testName)
         }
     }
 }
 
 // swiftlint:enable required_deinit
+// swiftlint:enable type_body_length
