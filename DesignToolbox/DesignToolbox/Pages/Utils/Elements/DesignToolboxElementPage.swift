@@ -78,7 +78,7 @@ struct DesignToolboxElementPage: View {
                 HStack {
                     Spacer()
                     Text("app_common_design_version" <- version)
-                        .typeLabelStrongLarge(theme)
+                        .typeLabelDefaultSmall(theme)
                     Spacer()
                 }
                 .padding(.bottom, theme.spaces.spaceFixedMd)
