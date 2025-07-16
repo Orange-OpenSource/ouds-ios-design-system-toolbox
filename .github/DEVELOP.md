@@ -60,6 +60,9 @@ bundle exec pod install --repo-update
 # Update your references
 brew update
 
+# Fastlane (at least 2.228.0)
+brew install fastlane
+
 # For Periphery (https://github.com/peripheryapp/periphery) for dead code hunt (at least 3.1.0)
 # If you used Periphery V2 before, follow their migration guide: https://github.com/peripheryapp/periphery/wiki/3.0-Migration-Guide
 brew install periphery
@@ -549,6 +552,11 @@ These operations, triggered in CLI, are wrapped in a Fastlane command:
 
 ```shell
 bundle exec fastlane update_sbom
+```
+
+You may need to udpate *grype* before so as to use an updated database for vulnerabilities checks:
+```shell
+brew install grype
 ```
 
 ## Update of dependencies
