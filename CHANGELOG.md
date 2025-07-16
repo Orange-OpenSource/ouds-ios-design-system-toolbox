@@ -16,21 +16,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Add `badge` component (Orange-OpenSource/ouds-ios#514) (Orange-OpenSource/ouds-ios#847)
 - [Library] Badge component (Orange-OpenSource/ouds-ios#514)
 
-### Fixed
-
-- [DesignToolbox] Fix default indicator position in `switch control item` (Orange-OpenSource/ouds-ios#845)
-- [Library] Update `controlItem` component to use `controlItemBorderRadius*` tokens (Orange-OpenSource/ouds-ios#777)
-- [Library] Update `switch` component to use `switchBorderRadius*` tokens (Orange-OpenSource/ouds-ios#780)
-- [Library] Sosh theme (Orange-OpenSource/ouds-ios#665)
-
 ### Changed
 
+- [Library] Swift package `swift-docc-plugin` from v1.4.3 to v1.4.5
+- [Library] Update `fastlane` gem from v2.227.2 to v2.228.0
+- [Library] Swift package `SwifFormat` from v0.56.4 to v0.57.2
 - [DesignToolbox] Update the position of the design component version (Orange-OpenSource/ouds-ios#848)
 - [DesignToolbox] Replace components illustrations by the components themselves (Orange-OpenSource/ouds-ios#820)
 - [DesignToolbox] Update `badge` component screen (Orange-OpenSource/ouds-ios#840)
 - [DesignToolbox] Available color modes and surfaces by theme for `colored surface` component
 - [Library] Color mode semantic tokens (tokens library v1.1.0)
 - [Library] Color multiple semantic tokens (tokens library v1.1.0)
+
+### Fixed
+
+- [DesignToolbox] Fix default indicator position in `switch control item` (Orange-OpenSource/ouds-ios#845)
+- [Library] Update `controlItem` component to use `controlItemBorderRadius*` tokens (Orange-OpenSource/ouds-ios#777)
+- [Library] Update `switch` component to use `switchBorderRadius*` tokens (Orange-OpenSource/ouds-ios#780)
+- [Library] Sosh theme (Orange-OpenSource/ouds-ios#665)
 
 ## [0.16.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.15.0...0.16.0) - 2025-07-07
 
