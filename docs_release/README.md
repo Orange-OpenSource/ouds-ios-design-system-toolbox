@@ -2,11 +2,24 @@
 
 This file lists all the steps to follow when releasing a new version of Design System Toolbox iOS app.
 
+- [Make release candidate](#make-release-candidate)
 - [Release OUDS iOS Swift Package](#release-ouds-ios-swift-package)
 - [Prepare release](#prepare-release)
 - [Release](#release)
   * [Publish release to GitHub](#publish-release-to-github)
 - [Prepare Next Release](#prepare-next-release)
+
+## Make release candidate
+
+> [!TIP]
+> A release candidate can be done on the develop branch. 
+> The aim is to prove a kind of pre-release, not an enough stable one,
+> with its dedicated tag, for the next incoming real release. It is usefull for some suers and with an incremental approach.
+
+The steps are quite simple:
+- update the SBOM
+- point to the suitable commit of OUDS iOS package (e.g. update cache of packages and point to *develop* branch, or point to release candidate tag)
+- define the tag on *develop* branch depending to what should be the next release (e.g. if 0.17.0 is planned, use tag 0.17.0-rc1, and increment then)
 
 ## Release OUDS iOS Swift Package
 
