@@ -10,6 +10,7 @@
   * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
   * [Snapshots tests in demo app](#snapshots-tests-in-demo-app)
   * [UI tests in demo app](#ui-tests-in-demo-app)
+  * [Unit tests in demo app](#unit-tests-in-demo-app)
   * [Manual tests using demo app](#manual-tests-using-demo-app)
 - [Build phases](#build-phases)
 - [Targets](#targets)
@@ -183,6 +184,11 @@ To run these snapshots tests follow some steps:
 5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
 
+Or run in terminal:
+```shell
+bundle exec fastlane ios test_snapshots
+```
+
 > [!CAUTION]
 > Beware, if you add new UI tests using swift-snapshot-testing (https://github.com/pointfreeco/swift-snapshot-testing) library, you may have new tests which fail at first time.
 > Indeed for new tests the tool makes snapshots of the views, thus for the first run no previews exist making the tests fail. You should run the tests twice for new tests.
@@ -260,6 +266,27 @@ To run these UI tests follow some steps:
 4. Select *DesignToolboxUITests* scheme
 5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
+
+Or run in terminal:
+```shell
+bundle exec fastlane ios test_ui
+```
+
+### Unit tests in demo app
+
+The project contains some unit tests made to test the behavior of some utils in demo app.
+
+To run these UI tests follow some steps:
+1. `cd DesignToolbox`
+2. `bundle exec pod install`
+3. Open *DesignToolbox.xcworkspace*
+4. Select *DesignToolboxUnitTests* scheme
+5. Run tests in left pane (target *DesignToolboxUnitTests*)
+
+Or run in terminal:
+```shell
+bundle exec fastlane ios test_unit
+```
 
 ### Manual tests using demo app
 

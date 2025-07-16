@@ -87,6 +87,14 @@ Run snapshots tests in the demo app to look for visual regressions of components
 
 Run UI tests in the demo app to check some specific components behaviors
 
+### ios test_unit
+
+```sh
+[bundle exec] fastlane ios test_unit
+```
+
+Run Uunit tests in the demo app to check some specific components behaviors
+
 ### ios buildDebugApp
 
 ```sh

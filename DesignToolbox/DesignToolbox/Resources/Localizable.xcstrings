@@ -606,19 +606,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "نسخ"
+            "value" : "نسخ: %@"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Copy"
+            "value" : "Copy %@"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Copier"
+            "value" : "Copier %@"
           }
         }
       }
