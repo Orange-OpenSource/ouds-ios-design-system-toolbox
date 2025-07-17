@@ -31,7 +31,9 @@ struct ColorTokenPage: View {
             Section { illustrationForAlways() } header: { header("Always") }
             Section { illustrationForBackground() } header: { header("Background") }
             Section { illustrationForBorder() } header: { header("Border") }
-            Section { illustrationForChart() } header: { header("Chart") }
+            if theme.colorCharts != nil { // Some themes like Sosh do not have color charts
+                Section { illustrationForChart() } header: { header("Chart") }
+            }
             Section { illustrationForContent() } header: { header("Content") }
             Section { illustrationForDecorative() } header: { header("Decorative") }
             Section { illustrationForOpacity() } header: { header("Opacity") }
