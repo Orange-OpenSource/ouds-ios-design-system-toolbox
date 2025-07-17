@@ -73,6 +73,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Button component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - [Library] Bullet list component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - [Library] Split color charts semantic tokens to dedicated provider (Orange-OpenSource/ouds-ios#856)
+- [Tool] Update `json` RubyGem from v2.12.2 to v2.13.0
 - [DesignToolbox] Update `fastlane` gem from v2.227.2 to v2.228.0
 - [DesignToolbox] Update `SwiftFormat/CLI` pod from v0.56.4 to v0.57.2
 - [Library] Swift package `swift-docc-plugin` from v1.4.3 to v1.4.5
