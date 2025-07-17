@@ -407,50 +407,98 @@
         }
       }
     },
-    "app_about_details_themeOrangeVersion" : {
+    "app_about_details_themeOrangeBrandVersion" : {
       "comment" : "About screen - Tokens library version (Orange)",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة الرموز البرتقالية: %@"
+            "value" : "إصدار مكتبة رموز العلامة التجارية Orange: %@"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Orange tokens library version: %@"
+            "value" : "Orange brand tokens library version: %@"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens Orange : %@"
+            "value" : "Version des tokens brand Orange : %@"
           }
         }
       }
     },
-    "app_about_details_themeSoshVersion" : {
+    "app_about_details_themeOrangeCoreVersion" : {
+      "comment" : "About screen - Tokens library version (Orange)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار مكتبة رموز Orange core: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orange core tokens library version: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version des tokens core Orange : %@"
+          }
+        }
+      }
+    },
+    "app_about_details_themeSoshBrandVersion" : {
       "comment" : "About screen - Tokens library version (Sosh)",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز Sosh: %@"
+            "value" : "إصدار مكتبة رموز العلامة التجارية Sosh: %@"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sosh tokens library version: %@"
+            "value" : "Sosh brand tokens library version: %@"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens Sosh : %@"
+            "value" : "Version des tokens brand Sosh : %@"
+          }
+        }
+      }
+    },
+    "app_about_details_themeSoshCoreVersion" : {
+      "comment" : "About screen - Tokens library version (Sosh)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار مكتبة رموز Sosh الأساسية: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sosh core tokens library version: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version des tokens core Sosh : %@"
           }
         }
       }
