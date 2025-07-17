@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Font family tokens for Orange theme
 - [Library] Split color charts semantic tokens to dedicated provider (Orange-OpenSource/ouds-ios#856)
 - [DesignToolbox] Update `fastlane` gem from v2.227.2 to v2.228.0
 - [DesignToolbox] Update `SwiftFormat/CLI` pod from v0.56.4 to v0.57.2
@@ -30,6 +31,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Available color modes and surfaces by theme for `colored surface` component
 - [Library] Color mode semantic tokens (tokens library v1.1.0)
 - [Library] Color multiple semantic tokens (tokens library v1.1.0)
+
+### Removed
+
+- [Library] Orange theme font family raw tokens
 
 ### Fixed
 
