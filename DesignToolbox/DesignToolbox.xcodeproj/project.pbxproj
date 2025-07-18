@@ -2748,7 +2748,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "821-theme-integration-of-business-tools-theme";
 				kind = branch;
 			};
 		};
