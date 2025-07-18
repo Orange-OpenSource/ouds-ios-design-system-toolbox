@@ -82,9 +82,10 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
     init() {
         let orangeTheme = OrangeTheme()
+        let orangeBusinessTools = OrangeBusinessToolsTheme()
         let soshTheme = SoshTheme()
         let defaultTheme = orangeTheme
-        themes = [orangeTheme, soshTheme]
+        themes = [orangeTheme, orangeBusinessTools, soshTheme]
 
         if let theme = themes.first(where: { $0.name == ThemeProvider.currentThemeName }) {
             currentTheme = theme
