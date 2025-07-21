@@ -479,6 +479,30 @@
         }
       }
     },
+    "app_about_details_themeOrangeInverseVersion" : {
+      "comment" : "About screen - Tokens library version (Orange Inverse)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار رمز العلامة التجارية البرتقالي عكسي: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orange Inverse brand tokens library version: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version des tokens brand Orange Inverse : %@"
+          }
+        }
+      }
+    },
     "app_about_details_themeSoshBrandVersion" : {
       "comment" : "About screen - Tokens library version (Sosh)",
       "extractionState" : "manual",
