@@ -39,11 +39,7 @@ final class OrangeBusinessToolsThemeTokensColorUITests: TokensColorUITestsTestCa
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
         testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
-        // OrangeBusinessTools theme does not have yet color charts branded for it
-        // If the provider is defined that's unexpected, it should be nil
-        if theme.colorCharts != nil {
-            XCTFail("The OrangeBusinessTools theme does not have yet color charts, that's unexpected")
-        }
+        testChartColors(theme: theme, interfaceStyle: interfaceStyle)
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
         testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
         testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
@@ -61,11 +57,7 @@ final class OrangeBusinessToolsThemeTokensColorUITests: TokensColorUITestsTestCa
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
         testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
-        // OrangeBusinessTools theme does not have yet color charts branded for it
-        // If the provider is defined that's unexpected, it should be nil
-        if theme.colorCharts != nil {
-            XCTFail("The OrangeBusinessTools theme does not have yet color charts, that's unexpected")
-        }
+        testChartColors(theme: theme, interfaceStyle: interfaceStyle)
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
         testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
         testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
