@@ -13,6 +13,7 @@
 
 import OUDS
 import OUDSThemesOrange
+import OUDSThemesOrangeBusinessTools
 import OUDSThemesSosh
 import SwiftUI
 
@@ -35,6 +36,9 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
     var name: String {
         if self is OrangeTheme {
             return "Orange"
+        }
+        if self is OrangeBusinessToolsTheme {
+            return "Orange Business Tools"
         }
         if self is SoshTheme {
             return "Sosh"
@@ -78,9 +82,10 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
     init() {
         let orangeTheme = OrangeTheme()
+        let orangeBusinessTools = OrangeBusinessToolsTheme()
         let soshTheme = SoshTheme()
         let defaultTheme = orangeTheme
-        themes = [orangeTheme, soshTheme]
+        themes = [orangeTheme, orangeBusinessTools, soshTheme]
 
         if let theme = themes.first(where: { $0.name == ThemeProvider.currentThemeName }) {
             currentTheme = theme

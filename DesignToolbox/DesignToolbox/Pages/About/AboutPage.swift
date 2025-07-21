@@ -145,6 +145,9 @@ struct AboutPage: View {
 
         Text("app_about_details_themeOrangeBrandVersion" <- OUDSVersions.themeSoshBrandVersion)
             .modifier(CopyableTextViewModifier(OUDSVersions.themeSoshBrandVersion))
+
+        Text("app_about_details_themeOrangeBusinessToolsBrandVersion" <- OUDSVersions.themeOrangeBusinessToolsBrandVersion)
+            .modifier(CopyableTextViewModifier(OUDSVersions.themeOrangeBusinessToolsBrandVersion))
     }
 
     @ViewBuilder
