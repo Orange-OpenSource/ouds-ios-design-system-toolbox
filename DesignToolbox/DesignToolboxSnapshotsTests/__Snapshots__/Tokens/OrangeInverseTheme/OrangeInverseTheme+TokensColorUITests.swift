@@ -17,7 +17,6 @@ import SwiftUI
 import XCTest
 
 // swiftlint:disable required_deinit
-// swiftlint:disable type_name
 
 /// Tests the UI rendering of each **color token** using reference images for `OrangeInverseTheme`
 final class OrangeInverseThemeTokensColorUITests: TokensColorUITestsTestCase {
@@ -73,4 +72,3 @@ final class OrangeInverseThemeTokensColorUITests: TokensColorUITestsTestCase {
 }
 
 // swiftlint:enable required_deinit
-// swiftlint:enable type_name

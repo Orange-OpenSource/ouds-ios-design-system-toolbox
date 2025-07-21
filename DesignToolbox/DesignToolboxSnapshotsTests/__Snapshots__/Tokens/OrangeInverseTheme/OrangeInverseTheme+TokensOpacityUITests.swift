@@ -16,7 +16,6 @@ import OUDSThemesOrangeInverse
 import SwiftUI
 
 // swiftlint:disable required_deinit
-// swiftlint:disable type_name
 
 /// Tests the UI rendering of each **opacity token** using reference images for `OrangeInverseTheme`.
 final class OrangeInverseThemeTokensOpacityUITests: TokensOpacityUITestsTestCase {
@@ -47,4 +46,3 @@ final class OrangeInverseThemeTokensOpacityUITests: TokensOpacityUITestsTestCase
 }
 
 // swiftlint:enable required_deinit
-// swiftlint:enable type_name

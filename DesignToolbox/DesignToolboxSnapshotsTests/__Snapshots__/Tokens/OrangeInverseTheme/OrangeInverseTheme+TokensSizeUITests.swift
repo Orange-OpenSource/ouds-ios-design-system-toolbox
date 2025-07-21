@@ -16,7 +16,6 @@ import OUDSThemesOrangeInverse
 import SwiftUI
 
 // swiftlint:disable required_deinit
-// swiftlint:disable type_name
 
 /// Tests the UI rendering of each **size token** using reference images
 final class OrangeInverseThemeTokensSizeUITests: TokensSizeUITestsTestCase {
@@ -49,4 +48,3 @@ final class OrangeInverseThemeTokensSizeUITests: TokensSizeUITestsTestCase {
 }
 
 // swiftlint:enable required_deinit
-// swiftlint:enable type_name

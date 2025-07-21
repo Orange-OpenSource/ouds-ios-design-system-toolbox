@@ -16,7 +16,6 @@ import OUDSThemesOrangeInverse
 import SwiftUI
 
 // swiftlint:disable required_deinit
-// swiftlint:disable type_name
 
 /// Tests the UI rendering of each **font token** using reference images for `OrangeInverseTheme`
 final class OrangeInverseThemeTokensFontUITests: TokensFontUITestsTestCase {
@@ -47,4 +46,3 @@ final class OrangeInverseThemeTokensFontUITests: TokensFontUITestsTestCase {
 }
 
 // swiftlint:enable required_deinit
-// swiftlint:enable type_name
