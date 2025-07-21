@@ -8,14 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Color charts for Orange Business Tools theme
+- [Library] Orange Inverse theme (Orange-OpenSource/ouds-ios#828)
 - [Library] Orange Business Tools theme (Orange-OpenSource/ouds-ios#821)
 - [DesignToolbox] GitHub references in about page (Orange-OpenSource/ouds-ios#852)
 - [DesignToolbox] Alert killing or not the app when theme changed (if toggled) (Orange-OpenSource/ouds-ios#850)
-- [Library] Chip component (Orange-OpenSource/ouds-ios#407)
-- [Library] Add `badge` component (Orange-OpenSource/ouds-ios#514)
-- [Library] Chip component (Orange-OpenSource/ouds-ios#407)
-- [Library] Add `badge` component (Orange-OpenSource/ouds-ios#514) (Orange-OpenSource/ouds-ios#847)
-- [Library] Badge component (Orange-OpenSource/ouds-ios#514)
+- [Library] Chip components (Orange-OpenSource/ouds-ios#407)
+- [Library] Add `badge` components (Orange-OpenSource/ouds-ios#514) (Orange-OpenSource/ouds-ios#847)
 
 ### Changed
 
