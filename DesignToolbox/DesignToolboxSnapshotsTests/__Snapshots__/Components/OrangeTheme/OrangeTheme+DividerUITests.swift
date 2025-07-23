@@ -19,7 +19,7 @@ import SwiftUI
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSDivider` for each parameter  for `OrangeTheme`.
+/// Tests the UI rendering of the `OUDSHorizontalDivider` and `OUDSVerticalDivider` for each parameter  for `OrangeTheme`.
 final class OrangeThemeDividerUITests: DividerUITestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional

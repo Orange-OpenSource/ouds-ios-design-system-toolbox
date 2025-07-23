@@ -137,10 +137,13 @@ struct AboutPage: View {
         Text("app_about_details_themeOrangeCoreVersion" <- OUDSVersions.themeOrangeCoreVersion)
             .modifier(CopyableTextViewModifier(OUDSVersions.themeOrangeCoreVersion))
 
+        Text("app_about_details_themeSoshCoreVersion" <- OUDSVersions.themeSoshCoreVersion)
+            .modifier(CopyableTextViewModifier(OUDSVersions.themeSoshCoreVersion))
+
         Text("app_about_details_themeOrangeBrandVersion" <- OUDSVersions.themeOrangeBrandVersion)
             .modifier(CopyableTextViewModifier(OUDSVersions.themeOrangeBrandVersion))
 
-        Text("app_about_details_themeOrangeBrandVersion" <- OUDSVersions.themeSoshBrandVersion)
+        Text("app_about_details_themeSoshBrandVersion" <- OUDSVersions.themeSoshBrandVersion)
             .modifier(CopyableTextViewModifier(OUDSVersions.themeSoshBrandVersion))
 
         Text("app_about_details_themeOrangeBusinessToolsBrandVersion" <- OUDSVersions.themeOrangeBusinessToolsBrandVersion)
