@@ -38,7 +38,7 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
     case modeOnStatusWarningMuted
     case modeOnOverlayDefault
     case modeOnOverlayEmphasized
-    case modeOnModal
+    case modeOnOverlayModal
 
     func toSurfaceColor(from theme: OUDSTheme) -> OUDSColoredSurface.SurfaceColor {
         switch self {
@@ -84,8 +84,8 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             theme.colorModes.modeOnOverlayDefault
         case .modeOnOverlayEmphasized:
             theme.colorModes.modeOnOverlayEmphasized
-        case .modeOnModal:
-            theme.colorModes.modeOnModal
+        case .modeOnOverlayModal:
+            theme.colorModes.modeOnOverlayModal
         }
     }
 
@@ -134,8 +134,8 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "On Overlay Default"
         case .modeOnOverlayEmphasized:
             "On Overlay Emphasized"
-        case .modeOnModal:
-            "On Modal"
+        case .modeOnOverlayModal:
+            "On Overlay Modal"
         }
     }
 
@@ -183,8 +183,8 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "modeOnOverlayDefault"
         case .modeOnOverlayEmphasized:
             "modeOnOverlayEmphasized"
-        case .modeOnModal:
-            "modeOnModal"
+        case .modeOnOverlayModal:
+            "modeOnOverlayModal"
         }
     }
 
