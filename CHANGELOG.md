@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Text input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- [Library] Text area component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- [Library] Select input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- [Library] Quantity input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- [Library] Tag input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- [Library] Pin code input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - [Library] Color charts for Orange Business Tools theme
 - [Library] Orange Inverse theme (Orange-OpenSource/ouds-ios#828)
 - [Library] Orange Business Tools theme (Orange-OpenSource/ouds-ios#821)
@@ -18,7 +24,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Library] Font family tokens for Orange theme
+- [Library] Control item component (Orange-OpenSource/ouds-ios#875)
+- [Library] Opacity semantic tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- [Library] Color repository semantic tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- [Library] Color mode semantic tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- [Library] Space semantic tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- [Library] Tag component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- [Library] Link component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- [Library] Chip component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- [Library] Button component (Orange-OpenSource/ouds-ios#875)
+- [Library] Button component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- [Library] Bullet list component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - [Library] Split color charts semantic tokens to dedicated provider (Orange-OpenSource/ouds-ios#856)
 - [DesignToolbox] Update `fastlane` gem from v2.227.2 to v2.228.0
 - [DesignToolbox] Update `SwiftFormat/CLI` pod from v0.56.4 to v0.57.2
@@ -34,6 +50,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- [Library] Input text component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- [Library] Select component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - [Library] Orange theme font family raw tokens
 
 ### Fixed
