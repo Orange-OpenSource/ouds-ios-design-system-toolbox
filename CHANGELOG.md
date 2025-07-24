@@ -24,6 +24,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Border semantic tokens (tokens library v1.4.0) (Orange-OpenSource/ouds-ios#883)
+- [Library] Text input component tokens (tokens library v1.4.0) (Orange-OpenSource/ouds-ios#883)
+- [Library] Button component tokens (tokens library v1.4.0) (Orange-OpenSource/ouds-ios#883)
 - [Library] Control item component (Orange-OpenSource/ouds-ios#875)
 - [Library] Opacity semantic tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - [Library] Color repository semantic tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
