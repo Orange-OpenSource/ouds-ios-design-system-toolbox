@@ -389,8 +389,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "إصدار الرمز المميز الأساسي: %@"
+            "state" : "translated",
+            "value" : "إصدار مكتبة رموز OUDS الأساسية: %@"
           }
         },
         "en" : {
