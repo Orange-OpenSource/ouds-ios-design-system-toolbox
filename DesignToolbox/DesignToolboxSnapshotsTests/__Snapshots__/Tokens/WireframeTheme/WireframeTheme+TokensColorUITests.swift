@@ -38,7 +38,11 @@ final class WireframeThemeTokensColorUITests: TokensColorUITestsTestCase {
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
         testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
-        testChartColors(theme: theme, interfaceStyle: interfaceStyle)
+        // Sosh theme does not have yet color charts branded for it
+        // If the provider is defined that's unexpected, it should be nil
+        if theme.colorCharts != nil {
+            XCTFail("The Wireframe theme does not have yet color charts, that's unexpected")
+        }
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
         testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
         testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
@@ -56,7 +60,11 @@ final class WireframeThemeTokensColorUITests: TokensColorUITestsTestCase {
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
         testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
-        testChartColors(theme: theme, interfaceStyle: interfaceStyle)
+        // Sosh theme does not have yet color charts branded for it
+        // If the provider is defined that's unexpected, it should be nil
+        if theme.colorCharts != nil {
+            XCTFail("The Wireframe theme does not have yet color charts, that's unexpected")
+        }
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
         testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
         testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
