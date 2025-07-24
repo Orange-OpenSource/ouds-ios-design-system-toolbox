@@ -83,7 +83,7 @@ struct CheckboxConfiguration: View {
             OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
                 .disabled(!configurationModel.enabled)
 
-            OUDSSwitchItem("app_components_controlItem_selection_label", isOn: $configurationModel.indicatorState)
+            OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.indicatorState)
                 .disabled(!configurationModel.enabled)
         }
     }

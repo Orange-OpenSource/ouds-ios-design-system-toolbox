@@ -17,6 +17,10 @@ import OUDSTokensSemantic
 
 enum NamedColorMode: CaseIterable, CustomStringConvertible {
 
+    case modeOnBgPrimary
+    case modeOnBgSecondary
+    case modeOnBgTertiary
+    case modeOnBgEmphasized
     case modeOnBrandPrimary
     case modeOnBrandSecondary
     case modeOnBrandTertiary
@@ -32,9 +36,20 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
     case modeOnStatusPositiveMuted
     case modeOnStatusWarningEmphasized
     case modeOnStatusWarningMuted
+    case modeOnOverlayDefault
+    case modeOnOverlayEmphasized
+    case modeOnOverlayModal
 
     func toSurfaceColor(from theme: OUDSTheme) -> OUDSColoredSurface.SurfaceColor {
         switch self {
+        case .modeOnBgPrimary:
+            theme.colorModes.modeOnBgPrimary
+        case .modeOnBgSecondary:
+            theme.colorModes.modeOnBgSecondary
+        case .modeOnBgTertiary:
+            theme.colorModes.modeOnBgTertiary
+        case .modeOnBgEmphasized:
+            theme.colorModes.modeOnBgEmphasized
         case .modeOnBrandPrimary:
             theme.colorModes.modeOnBrandPrimary
         case .modeOnBrandSecondary:
@@ -65,47 +80,75 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             theme.colorModes.modeOnStatusWarningEmphasized
         case .modeOnStatusWarningMuted:
             theme.colorModes.modeOnStatusWarningMuted
+        case .modeOnOverlayDefault:
+            theme.colorModes.modeOnOverlayDefault
+        case .modeOnOverlayEmphasized:
+            theme.colorModes.modeOnOverlayEmphasized
+        case .modeOnOverlayModal:
+            theme.colorModes.modeOnOverlayModal
         }
     }
 
     // No l10n, tehchnical names
     var formattedName: String {
         switch self {
+        case .modeOnBgPrimary:
+            "On Background Primary"
+        case .modeOnBgSecondary:
+            "On Background Secondary"
+        case .modeOnBgTertiary:
+            "On Background Tertiary"
+        case .modeOnBgEmphasized:
+            "On Background Emphasized"
         case .modeOnBrandPrimary:
-            "Brand Primary"
+            "On Brand Primary"
         case .modeOnBrandSecondary:
-            "Brand Secondary"
+            "On Brand Secondary"
         case .modeOnBrandTertiary:
-            "Brand Tertiary"
+            "On Brand Tertiary"
         case .modeOnStatusAccentEmphasized:
-            "Status Accent Emphasized"
+            "On Status Accent Emphasized"
         case .modeOnStatusAccentMuted:
-            "Status Accent Muted"
+            "On Status Accent Muted"
         case .modeOnStatusInfoEmphasized:
-            "Status Info Emphasized"
+            "On Status Info Emphasized"
         case .modeOnStatusInfoMuted:
-            "Status Info Muted"
+            "On Status Info Muted"
         case .modeOnStatusNegativeEmphasized:
-            "Status Negative Emphasized"
+            "On Status Negative Emphasized"
         case .modeOnStatusNegativeMuted:
-            "Status Negative Muted"
+            "On Status Negative Muted"
         case .modeOnStatusNeutralEmphasized:
-            "Status Neutral Emphasized"
+            "On Status Neutral Emphasized"
         case .modeOnStatusNeutralMuted:
-            "Status Neutral Muted"
+            "On Status Neutral Muted"
         case .modeOnStatusPositiveEmphasized:
-            "Status Positive Emphasized"
+            "On Status Positive Emphasized"
         case .modeOnStatusPositiveMuted:
-            "Status Positive Muted"
+            "On Status Positive Muted"
         case .modeOnStatusWarningEmphasized:
-            "Status Warning Emphasized"
+            "On Status Warning Emphasized"
         case .modeOnStatusWarningMuted:
-            "Status Warning Muted"
+            "On Status Warning Muted"
+        case .modeOnOverlayDefault:
+            "On Overlay Default"
+        case .modeOnOverlayEmphasized:
+            "On Overlay Emphasized"
+        case .modeOnOverlayModal:
+            "On Overlay Modal"
         }
     }
 
     public var description: String {
         switch self {
+        case .modeOnBgPrimary:
+            "modeOnBgPrimary"
+        case .modeOnBgSecondary:
+            "modeOnBgSecondary"
+        case .modeOnBgTertiary:
+            "modeOnBgTertiary"
+        case .modeOnBgEmphasized:
+            "modeOnBgEmphasized"
         case .modeOnBrandPrimary:
             "modeOnBrandPrimary"
         case .modeOnBrandSecondary:
@@ -136,6 +179,12 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "modeOnStatusWarningEmphasized"
         case .modeOnStatusWarningMuted:
             "modeOnStatusWarningMuted"
+        case .modeOnOverlayDefault:
+            "modeOnOverlayDefault"
+        case .modeOnOverlayEmphasized:
+            "modeOnOverlayEmphasized"
+        case .modeOnOverlayModal:
+            "modeOnOverlayModal"
         }
     }
 

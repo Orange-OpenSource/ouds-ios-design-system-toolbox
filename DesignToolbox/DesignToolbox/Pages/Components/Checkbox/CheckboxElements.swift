@@ -13,12 +13,11 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesOrange
 import SwiftUI
 
 struct CheckboxElements: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
@@ -31,11 +30,24 @@ struct CheckboxElements: DesignToolboxElement {
         ]
 
         name = "app_components_checkbox_label".localized()
-        image = Image(decorative: "il_component_checkbox").renderingMode(.original)
+        illustration = AnyView(CheckboxIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: Image(decorative: "il_component_checkbox").renderingMode(.original),
+            illustration: illustration,
             description: "app_components_checkbox_description_text",
-            illustration: AnyView(DesignToolboxVariantElement(elements: variants))))
+            demoScreen: AnyView(DesignToolboxVariantElement(elements: variants))))
+    }
+}
+
+private struct CheckboxIllustration: View {
+
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        VStack(spacing: theme.spaces.spaceFixedNone) {
+            // 🥜: dumb label, not vocalized, preventing warnings because of empty labels
+            OUDSCheckbox(isOn: .constant(true), accessibilityLabel: "🥜")
+            OUDSCheckbox(isOn: .constant(false), accessibilityLabel: "🥜")
+        }
     }
 }

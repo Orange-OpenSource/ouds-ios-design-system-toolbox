@@ -41,6 +41,17 @@
                ReferencedContainer = "container:DesignToolbox.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "51E599A62E27ED5F002BCB27"
+               BuildableName = "DesignToolboxUnitTests.xctest"
+               BlueprintName = "DesignToolboxUnitTests"
+               ReferencedContainer = "container:DesignToolbox.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
