@@ -94,12 +94,22 @@ In the _merge commit_ message add the changelog, the authors and the details. Th
 Below is an example of what should be a merge commit in `main` branch for a release (ignore of course // lines, see [this commit for example](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/commit/b43d4c70453fd1606e8f526d9e59d70a34654419)). You can also precise the tokens library version and the OUDS iOS Swift Package version:
 
 ```text
-Version 0.15.0 (#666) // [DO NOT ADD THIS COMMENT] <--- Commit title, #666 is PR nummber for the design toolbox project, GitHub suggests it
+Version 0.17.0 (#666) // [DO NOT ADD THIS COMMENT] <--- Commit title, #666 is PR nummber for the design toolbox project, GitHub suggests it
 
 // [DO NOT ADD THIS LINE] Below is commit body, keep an empty line
-Release of version 0.15.0
-Embeds token library v0.14.0
-Embeds OUDS iOS Swift Package v0.14.0
+Release of version 0.17.0
+Embeds OUDS iOS Swift Package v0.17.0
+Embeds token libraries:
+- Core OUDS version: 1.3.0
+- Core Orange version: 1.1.0
+- Brand Orange version: 1.3.0
+- Core Sosh version: 1.1.0
+- Brand Sosh version: 1.3.0
+- Core Wireframe version: 1.0.0
+- Brand Wireframe version: 1.1.0
+- Brand Orange Business Tools version: 1.3.0
+- Brand Orange Inverse version: 1.3.0
+
 See below the full CHANGELOG details.
 
 // [DO NOT ADD THIS LINE] Keep also an empty line above
