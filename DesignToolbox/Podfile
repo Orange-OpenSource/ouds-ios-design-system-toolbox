@@ -17,7 +17,7 @@ platform :ios, '15.0'
 
 target 'DesignToolbox' do
   pod 'SwiftLint', '0.59.1'
-  pod 'SwiftFormat/CLI', '0.56.4'
+  pod 'SwiftFormat/CLI', '0.57.2'
 end
 
 post_install do |installer|

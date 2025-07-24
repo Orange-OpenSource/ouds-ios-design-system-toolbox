@@ -19,14 +19,16 @@ struct CardIllustration: View {
 
     // MARK: Stored properties
 
-    let icon: Image
+    let illustration: AnyView
 
     // MARK: Body
 
     var body: some View {
         HStack {
             Spacer()
-            icon
+            illustration
+                .accessibilityHidden(true)
+                .allowsHitTesting(false)
             Spacer()
         }
         .frame(height: 184, alignment: .center)
@@ -36,8 +38,4 @@ struct CardIllustration: View {
         .oudsForegroundStyle(theme.colors.colorContentDefault)
         .oudsBackground(theme.colors.colorSurfaceStatusNeutralMuted)
     }
-}
-
-#Preview {
-    CardIllustration(icon: Image("ic_border", bundle: .main))
 }

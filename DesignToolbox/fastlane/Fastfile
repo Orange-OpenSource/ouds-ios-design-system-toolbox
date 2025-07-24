@@ -65,6 +65,7 @@ OUDS_PROJECT = "DesignToolbox.xcodeproj"
 OUDS_SCHEME = "DesignToolbox"
 OUDS_SNAPSHOTS_SNAPSHOTS_TEST_SCHEME = "DesignToolboxSnapshotsTests"
 OUDS_SNAPSHOTS_UI_TEST_SCHEME = "DesignToolboxUITests"
+OUDS_SNAPSHOTS_UNIT_TEST_SCHEME = "DesignToolboxUnitTests"
 OUDS_PROJECT_NAME = "DesignToolbox" # Root for Info.plist, etc.
 OUDS_APP_DISPLAY_NAME = "Design System Toolbox"
 OUDS_PACKAGE_RESOLVED_PATH = "#{OUDS_WORKSPACE}/xcshareddata/swiftpm/Package.resolved"
@@ -72,7 +73,7 @@ OUDS_PACKAGE_RESOLVED_PATH = "#{OUDS_WORKSPACE}/xcshareddata/swiftpm/Package.res
 # Devices configuration
 # ---------------------
 
-OUDS_SNAPSHOTS_TEST_DEVICE = "iPhone 16 Pro (18.0)"
+OUDS_TEST_DEVICE = "iPhone 16 Pro (18.4)"
 
 # Lanes
 # ------
@@ -199,7 +200,7 @@ platform :ios do
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
             scan(scheme: OUDS_SNAPSHOTS_SNAPSHOTS_TEST_SCHEME,
-                device: OUDS_SNAPSHOTS_TEST_DEVICE,
+                device: OUDS_TEST_DEVICE,
                 skip_build: true
             )
 
@@ -230,7 +231,7 @@ platform :ios do
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
             scan(scheme: OUDS_SNAPSHOTS_UI_TEST_SCHEME,
-                device: OUDS_SNAPSHOTS_TEST_DEVICE,
+                device: OUDS_TEST_DEVICE,
                 skip_build: true
             )
 
@@ -244,6 +245,37 @@ platform :ios do
                 puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow or locally"
             else
                 publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test_ui)")
+            end
+            raise error
+        end
+    end
+
+    # --------------
+    # RUN UNIT TESTS
+    # --------------
+    desc "Run Uunit tests in the demo app to check some specific components behaviors"
+    lane :test_unit do
+        puts "👉 Run unit tests"
+
+        # Should have on runner one device under at least iOS 15
+        # Check the available devices using `xcrun xctrace list devices`
+        # Add new environments using `xcodebuild -downloadPlatform iOS`
+        begin
+            scan(scheme: OUDS_SNAPSHOTS_UNIT_TEST_SCHEME,
+                device: OUDS_TEST_DEVICE,
+                skip_build: true
+            )
+
+            if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow or locally"
+            else
+                publish_mattermost_notification("🧪 ✅ No issue with unit tests")
+            end
+        rescue => error
+            if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow or locally"
+            else
+                publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test_unit)")
             end
             raise error
         end
@@ -788,8 +820,7 @@ Please, get the new build from *TestFlight* app, or contact the project maintain
 - Version: **#{build_version}**
 - Build number: **#{build_number}**
 - Build tag: **#{build_tag}**
-- Build type: **#{build_type}**
-- Build details (GitHub): **#{build_details}**
+- GitHub issues: **#{build_details}**
 
 <!--
 @B3nz01d - Benoît SUZANNE - Product Owner

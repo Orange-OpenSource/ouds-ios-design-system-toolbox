@@ -37,47 +37,50 @@ extension NamedColor {
         case colorChartHighlight
         case colorChartNeutral
 
+        // We can bang! theme.colorCharts here because controls on the existence of theme.colorCharts have been previosuly done
+        // swiftlint:disable force_unwrapping
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorChartBorder:
-                theme.colors.colorChartBorder
+                theme.colorCharts!.colorChartBorder
             case .colorChartBorderContrast:
-                theme.colors.colorChartBorderContrast
+                theme.colorCharts!.colorChartBorderContrast
             case .colorChartCategoricalTier1:
-                theme.colors.colorChartCategoricalTier1
+                theme.colorCharts!.colorChartCategoricalTier1
             case .colorChartCategoricalTier2:
-                theme.colors.colorChartCategoricalTier2
+                theme.colorCharts!.colorChartCategoricalTier2
             case .colorChartCategoricalTier3:
-                theme.colors.colorChartCategoricalTier3
+                theme.colorCharts!.colorChartCategoricalTier3
             case .colorChartCategoricalTier4:
-                theme.colors.colorChartCategoricalTier4
+                theme.colorCharts!.colorChartCategoricalTier4
             case .colorChartCategoricalTier5:
-                theme.colors.colorChartCategoricalTier5
+                theme.colorCharts!.colorChartCategoricalTier5
             case .colorChartCategoricalTier6:
-                theme.colors.colorChartCategoricalTier6
+                theme.colorCharts!.colorChartCategoricalTier6
             case .colorChartCategoricalTier7:
-                theme.colors.colorChartCategoricalTier7
+                theme.colorCharts!.colorChartCategoricalTier7
             case .colorChartCategoricalTier8:
-                theme.colors.colorChartCategoricalTier8
+                theme.colorCharts!.colorChartCategoricalTier8
             case .colorChartCategoricalTier9:
-                theme.colors.colorChartCategoricalTier9
+                theme.colorCharts!.colorChartCategoricalTier9
             case .colorChartCategoricalTier10:
-                theme.colors.colorChartCategoricalTier10
+                theme.colorCharts!.colorChartCategoricalTier10
             case .colorChartFunctionalInfo:
-                theme.colors.colorChartFunctionalInfo
+                theme.colorCharts!.colorChartFunctionalInfo
             case .colorChartFunctionalNegative:
-                theme.colors.colorChartFunctionalNegative
+                theme.colorCharts!.colorChartFunctionalNegative
             case .colorChartFunctionalPositive:
-                theme.colors.colorChartFunctionalPositive
+                theme.colorCharts!.colorChartFunctionalPositive
             case .colorChartFunctionalWarning:
-                theme.colors.colorChartFunctionalWarning
+                theme.colorCharts!.colorChartFunctionalWarning
             case .colorChartGridlines:
-                theme.colors.colorChartGridlines
+                theme.colorCharts!.colorChartGridlines
             case .colorChartHighlight:
-                theme.colors.colorChartHighlight
+                theme.colorCharts!.colorChartHighlight
             case .colorChartNeutral:
-                theme.colors.colorChartNeutral
+                theme.colorCharts!.colorChartNeutral
             }
         }
+        // swiftlint:enable force_unwrapping
     }
 }

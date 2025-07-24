@@ -28,18 +28,18 @@ struct DesignToolboxElementPage: View {
     // MARK: Stored Properties
 
     let name: String
-    let image: Image?
+    let illustration: AnyView?
     let description: String
     let version: String?
-    let illustration: AnyView
+    let demoScreen: AnyView
 
     // swiftlint:disable function_default_parameter_at_end
-    init(name: String, image: Image? = nil, description: String, version: String? = nil, illustration: AnyView) {
+    init(name: String, illustration: AnyView? = nil, description: String, version: String? = nil, demoScreen: AnyView) {
         self.name = name
-        self.image = image
+        self.illustration = illustration
         self.description = description
         self.version = version
-        self.illustration = illustration
+        self.demoScreen = demoScreen
     }
 
     // swiftlint:enable function_default_parameter_at_end
@@ -49,9 +49,10 @@ struct DesignToolboxElementPage: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
-                if let image {
-                    CardIllustration(icon: image)
+                if let illustration {
+                    CardIllustration(illustration: illustration)
                         .accessibilityHidden(true)
+                        .allowsTightening(true)
                 }
 
                 Text(LocalizedStringKey(description))
@@ -60,17 +61,6 @@ struct DesignToolboxElementPage: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .accessibilityFocused($requestFocus)
                     .padding(.horizontal, theme.spaces.spaceFixedMd)
-
-                if let version {
-                    HStack {
-                        Spacer()
-
-                        Text("app_common_version" <- version)
-                            .typeLabelStrongLarge(theme)
-
-                        Spacer()
-                    }
-                }
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)
@@ -78,11 +68,21 @@ struct DesignToolboxElementPage: View {
             .padding(.bottom, theme.spaces.spaceFixedMd)
             .oudsBackground(theme.colors.colorBgPrimary)
 
-            illustration
+            demoScreen
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
                 .padding(.bottom, theme.spaces.spaceFixedMd)
                 .oudsBackground(theme.colors.colorBgPrimary)
+
+            if let version {
+                HStack {
+                    Spacer()
+                    Text("app_common_design_version" <- version)
+                        .typeLabelDefaultSmall(theme)
+                    Spacer()
+                }
+                .padding(.bottom, theme.spaces.spaceFixedMd)
+            }
         }
         .listStyle(.plain)
         .padding(.top, theme.spaces.spaceFixedNone)

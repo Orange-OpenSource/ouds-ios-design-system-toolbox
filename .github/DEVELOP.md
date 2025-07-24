@@ -10,6 +10,7 @@
   * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
   * [Snapshots tests in demo app](#snapshots-tests-in-demo-app)
   * [UI tests in demo app](#ui-tests-in-demo-app)
+  * [Unit tests in demo app](#unit-tests-in-demo-app)
   * [Manual tests using demo app](#manual-tests-using-demo-app)
 - [Build phases](#build-phases)
 - [Targets](#targets)
@@ -24,8 +25,9 @@
 - [Formater](#formater)
 - [Dead code](#dead-code)
 - [Software Bill of Materials](#software-bill-of-materials)
-- [CI/CD](#cicd)
+- [Update of dependencies](#update-of-dependencies)
 - [Update 3rd parties](#update-3rd-parties)
+- [CI/CD](#cicd)
 
 ## Technical preconditions
 
@@ -57,6 +59,9 @@ bundle exec pod install --repo-update
 
 # Update your references
 brew update
+
+# Fastlane (at least 2.228.0)
+brew install fastlane
 
 # For Periphery (https://github.com/peripheryapp/periphery) for dead code hunt (at least 3.1.0)
 # If you used Periphery V2 before, follow their migration guide: https://github.com/peripheryapp/periphery/wiki/3.0-Migration-Guide
@@ -180,8 +185,13 @@ To run these snapshots tests follow some steps:
 2. `bundle exec pod install`
 3. Open *DesignToolbox.xcworkspace*
 4. Select *DesignToolboxSnapshotsTests* scheme
-5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
+5. Select *iPhone 16 Pro (18.4)* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
+
+Or run in terminal:
+```shell
+bundle exec fastlane ios test_snapshots
+```
 
 > [!CAUTION]
 > Beware, if you add new UI tests using swift-snapshot-testing (https://github.com/pointfreeco/swift-snapshot-testing) library, you may have new tests which fail at first time.
@@ -192,7 +202,7 @@ Such tests here are used to as to be sure the look and feel of any components an
 Any interface modifications require regenerating the illustrations using the tool, i.e. run the tests twice. The reference illustrations have already been saved within the project.
 
 > [!IMPORTANT]
-> The device under tests is a simulator of iPhone 16 Pro (18.0), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
+> The device under tests is a simulator of iPhone 16 Pro (18.4), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
 
 #### How to use to use swift-snapshot-testing library
 
@@ -258,8 +268,29 @@ To run these UI tests follow some steps:
 2. `bundle exec pod install`
 3. Open *DesignToolbox.xcworkspace*
 4. Select *DesignToolboxUITests* scheme
-5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
+5. Select *iPhone 16 Pro (18.4)* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
+
+Or run in terminal:
+```shell
+bundle exec fastlane ios test_ui
+```
+
+### Unit tests in demo app
+
+The project contains some unit tests made to test the behavior of some utils in demo app.
+
+To run these UI tests follow some steps:
+1. `cd DesignToolbox`
+2. `bundle exec pod install`
+3. Open *DesignToolbox.xcworkspace*
+4. Select *DesignToolboxUnitTests* scheme
+5. Run tests in left pane (target *DesignToolboxUnitTests*)
+
+Or run in terminal:
+```shell
+bundle exec fastlane ios test_unit
+```
 
 ### Manual tests using demo app
 
@@ -523,6 +554,36 @@ These operations, triggered in CLI, are wrapped in a Fastlane command:
 bundle exec fastlane update_sbom
 ```
 
+You may need to udpate *grype* before so as to use an updated database for vulnerabilities checks:
+```shell
+brew install grype
+```
+
+## Update of dependencies
+
+ > [!TIP]
+ > It is important to keep updated dependencies for its softwar,e but some steps must be processed carefully.
+
+To update dependencies of the project, supossing *Renovate* for example provides pull requests:
+- Check the new version of the dependency to update: is a a major release? minor? bug fix? Does it bring breaking changes? Does it fix vulnerabilities?
+- Have a look on the dependency release note or changelog to get enough details
+- Check in a dedicated branch if the CI/CD works fine still
+- Check if there is no issues or troubles with this new version (update of license, unstabilities, etc.)
+- Get the updates
+- Update the changelog
+- Update the SBOM
+- Make a nice commit message (e.g. `chore(deps):`) for the merge
+
+## Update 3rd parties
+
+The design ssytem toolbox application relies on some third-party components. Due to legal obligations we must or only should list the licenses and credits of such components. In fact, it is a best practice to list all open source components in use.
+To do that, we use [LicensePlist](https://github.com/mono0926/LicensePlist) project which can forge for a *Settings bundle* the assets with the list of detected third-party components, theirs licences and source-code reference.
+
+To generate the files to copy/paste, run:
+```shell
+bundle exec fastlane update_3rd_parties
+```
+
 ## CI/CD
 
 ### GitHub Action
@@ -550,13 +611,3 @@ However of course you will have to define all the variables, secrets and have th
 You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/wiki/51-%E2%80%90-About-continuous-integration-and-delivery).
 
 In few words, there is a pipeline containing some stages and HIRDjobs to build alpha, nightly/beta and production releases.
-
-## Update 3rd parties
-
-The design ssytem toolbox application relies on some third-party components. Due to legal obligations we must or only should list the licenses and credits of such components. In fact, it is a best practice to list all open source components in use.
-To do that, we use [LicensePlist](https://github.com/mono0926/LicensePlist) project which can forge for a *Settings bundle* the assets with the list of detected third-party components, theirs licences and source-code reference.
-
-To generate the files to copy/paste, run:
-```shell
-bundle exec fastlane update_3rd_parties
-```

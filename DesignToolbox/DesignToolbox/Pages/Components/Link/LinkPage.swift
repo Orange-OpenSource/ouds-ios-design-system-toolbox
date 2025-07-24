@@ -48,7 +48,7 @@ private struct LinkDemo: View {
             switch configurationModel.layout {
             case .textOnly:
                 OUDSLink(text: configurationModel.text, size: configurationModel.size) {}
-            case .iconAndText:
+            case .textAndIcon:
                 OUDSLink(text: configurationModel.text, icon: Image(decorative: "ic_heart"), size: configurationModel.size) {}
             case .indicatorBack:
                 OUDSLink(text: configurationModel.text, indicator: .back, size: configurationModel.size) {}

@@ -65,7 +65,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
                 \(disableCode)
                 \(coloredSurfaceCodeModifier)
                 """
-        case .iconAndText:
+        case .textAndIcon:
             code =
                 """
                 OUDSLink(text: \"Link\", icon: Image(\"ic_heart\"), size: \(size.description.lowercased())) {}
@@ -94,7 +94,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
 
 enum LinkLayout: CaseIterable, CustomStringConvertible {
     case textOnly
-    case iconAndText
+    case textAndIcon
     case indicatorBack
     case indicatorNext
 
@@ -102,8 +102,8 @@ enum LinkLayout: CaseIterable, CustomStringConvertible {
         switch self {
         case .textOnly:
             "app_components_common_textOnlyLayout_label"
-        case .iconAndText:
-            "app_components_common_iconAndTextLayout_label"
+        case .textAndIcon:
+            "app_components_common_textAndIconLayout_label"
         case .indicatorBack:
             "app_components_link_backLayout_label"
         case .indicatorNext:

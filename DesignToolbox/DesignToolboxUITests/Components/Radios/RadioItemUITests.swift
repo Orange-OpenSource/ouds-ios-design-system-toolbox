@@ -25,6 +25,7 @@ final class RadioItemUITests: AppTestCase {
 
         let app = launchApp()
         goToComponentsSheet(app)
+        swipeFromDownToUp(app)
         tapButton(withWording: "app_components_radioButton_label", app)
         tapButton(withWording: "Radio button item", app)
 

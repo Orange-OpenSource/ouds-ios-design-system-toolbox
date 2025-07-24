@@ -22,7 +22,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/ouds-ios</string>
 			<key>Title</key>
-			<string>ouds-ios</string>
+			<string>OUDS (0.17.0)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -54,7 +54,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/SwiftFormat</string>
 			<key>Title</key>
-			<string>SwiftFormat (0.56.4)</string>
+			<string>SwiftFormat (0.57.2)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>

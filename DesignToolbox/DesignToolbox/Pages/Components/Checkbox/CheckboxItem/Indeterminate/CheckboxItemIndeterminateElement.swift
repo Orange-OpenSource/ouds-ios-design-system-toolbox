@@ -17,17 +17,16 @@ import SwiftUI
 /// Related to `OUDSCheckboxItemIndeterminate` (i.e. with 3 available values).
 struct CheckboxItemIndeterminateElement: DesignToolboxElement {
     let name: String
-    let image: Image
+    let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
         name = "app_components_checkbox_indeterminateCheckboxItem_label".localized()
-        image = Image(decorative: "il_component_checkbox_controlItem").renderingMode(.original)
+        illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: nil,
             description: "app_components_checkbox_indeterminateCheckboxItem_description_text",
             version: OUDSVersions.componentCheckboxVersion,
-            illustration: AnyView(CheckboxItemIndeterminatePage())))
+            demoScreen: AnyView(CheckboxItemIndeterminatePage())))
     }
 }

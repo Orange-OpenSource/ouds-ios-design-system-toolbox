@@ -56,14 +56,17 @@ final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
 struct ColoredSurfaceConfiguration: View {
 
     @StateObject var configurationModel: ColoredSurfaceConfigurationModel
+    @Environment(\.theme) private var theme
 
     var body: some View {
         DesignToolboxColorPicker {
             ForEach(NamedColorMode.allCases, id: \.id) { color in
-                Button {
-                    configurationModel.selectedColor = color
-                } label: {
-                    ColorEntry(color: color)
+                if !color.toSurfaceColor(from: theme).hasUndefinedValue() {
+                    Button {
+                        configurationModel.selectedColor = color
+                    } label: {
+                        ColorEntry(color: color)
+                    }
                 }
             }
         } selectedColor: {

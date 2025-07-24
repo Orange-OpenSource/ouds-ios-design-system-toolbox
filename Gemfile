@@ -29,11 +29,11 @@ gem 'abbrev', '0.1.2'
 # Really needed gems
 # ------------------
 
-gem 'fastlane', '2.227.2'
+gem 'fastlane', '2.228.0'
 gem 'fastlane-plugin-changelog', '0.16.0'
 gem 'fastlane-plugin-mattermost', '1.3.2'
 gem 'cocoapods', '1.16.2'
-gem 'json', '2.12.2'
+gem 'json', '2.13.1'
 gem 'net-http', '0.6.0'
 gem 'xcode-install', '2.8.1'
 

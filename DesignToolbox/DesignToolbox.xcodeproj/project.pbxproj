@@ -29,7 +29,6 @@
 		0721411B2D02F52A00B7B9C6 /* ButtonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072141162D02F52A00B7B9C6 /* ButtonElement.swift */; };
 		0721411C2D02F52A00B7B9C6 /* ButtonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072141172D02F52A00B7B9C6 /* ButtonPage.swift */; };
 		0721411E2D02F52A00B7B9C6 /* ButtonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072141162D02F52A00B7B9C6 /* ButtonElement.swift */; };
-		07304A4B2D427146009320BA /* OUDSLinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07304A4A2D427146009320BA /* OUDSLinkUITests.swift */; };
 		07304A6A2D429F9F009320BA /* LinkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */; };
 		07304A6B2D429F9F009320BA /* LinkElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCAF2D40E34700DBB10A /* LinkElement.swift */; };
 		07304A6C2D429F9F009320BA /* LinkPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCB02D40E34700DBB10A /* LinkPage.swift */; };
@@ -67,7 +66,6 @@
 		0762276A2DA90C65009C3632 /* DividerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762275F2DA90C65009C3632 /* DividerPage.swift */; };
 		0762276C2DA93D62009C3632 /* DesignToolboxColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762276B2DA93D62009C3632 /* DesignToolboxColorPicker.swift */; };
 		0762276D2DA93D62009C3632 /* DesignToolboxColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762276B2DA93D62009C3632 /* DesignToolboxColorPicker.swift */; };
-		0762276F2DA9489C009C3632 /* OUDSDividerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762276E2DA9489C009C3632 /* OUDSDividerUITests.swift */; };
 		0765A6D62D09C5E2005DAB51 /* FontTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6CF2D09C5E2005DAB51 /* FontTokenElement.swift */; };
 		0765A6D72D09C5E2005DAB51 /* NamedFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6CC2D09C5E2005DAB51 /* NamedFont.swift */; };
 		0765A6D82D09C5E2005DAB51 /* FontTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6D02D09C5E2005DAB51 /* FontTokenPage.swift */; };
@@ -97,7 +95,6 @@
 		0786A9E72E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift */; };
 		078C4C372E01558B00598F75 /* ControlItemConfigurationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C4C362E01558B00598F75 /* ControlItemConfigurationViews.swift */; };
 		078C4C382E01558B00598F75 /* ControlItemConfigurationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C4C362E01558B00598F75 /* ControlItemConfigurationViews.swift */; };
-		0794FCD72D914DC400A9373A /* OUDSSwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0794FCD62D914DC400A9373A /* OUDSSwitchUITests.swift */; };
 		0794FCDB2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0794FCDA2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift */; };
 		07AB45872D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */; };
 		07AB45882D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */; };
@@ -144,6 +141,12 @@
 		07D3DBF62DA5084500D8A57F /* ColoredSurfaceElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3DBEE2DA5084500D8A57F /* ColoredSurfaceElement.swift */; };
 		07D7E1972D035566006472EB /* ButtonConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7E1962D035566006472EB /* ButtonConfigurationView.swift */; };
 		07D7E1982D035566006472EB /* ButtonConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7E1962D035566006472EB /* ButtonConfigurationView.swift */; };
+		07EB47002E1801D000B94EC2 /* BadgePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FF2E1801D000B94EC2 /* BadgePage.swift */; };
+		07EB47012E1801D000B94EC2 /* BadgeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FE2E1801D000B94EC2 /* BadgeElement.swift */; };
+		07EB47022E1801D000B94EC2 /* BadgeConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FD2E1801D000B94EC2 /* BadgeConfigurationView.swift */; };
+		07EB47032E1801D000B94EC2 /* BadgePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FF2E1801D000B94EC2 /* BadgePage.swift */; };
+		07EB47042E1801D000B94EC2 /* BadgeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FE2E1801D000B94EC2 /* BadgeElement.swift */; };
+		07EB47052E1801D000B94EC2 /* BadgeConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FD2E1801D000B94EC2 /* BadgeConfigurationView.swift */; };
 		07F0AFD72CFDB3CC00D334DD /* ComponentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */; };
 		07F0AFD82CFDB3CC00D334DD /* ComponentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */; };
 		07F0AFDE2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */; };
@@ -175,6 +178,7 @@
 		5122E02B2D65FEBA00CD2857 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
 		512364792C3D7B2D00572FD5 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 512364782C3D7B2D00572FD5 /* Podfile.lock */; };
 		5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 5123647A2C3D7B3500572FD5 /* Gemfile.lock */; };
+		5131F14D2E324A9A00A942B0 /* OUDSThemesWireframe in Frameworks */ = {isa = PBXBuildFile; productRef = 5131F14C2E324A9A00A942B0 /* OUDSThemesWireframe */; };
 		513442072D75B880000B5DE4 /* CheckboxElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513441FE2D75B880000B5DE4 /* CheckboxElement.swift */; };
 		513442082D75B880000B5DE4 /* CheckboxPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513441FF2D75B880000B5DE4 /* CheckboxPage.swift */; };
 		5134420B2D75B880000B5DE4 /* CheckboxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513441FD2D75B880000B5DE4 /* CheckboxConfiguration.swift */; };
@@ -184,11 +188,51 @@
 		513442122D75B880000B5DE4 /* CheckboxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513441FD2D75B880000B5DE4 /* CheckboxConfiguration.swift */; };
 		513442132D75B880000B5DE4 /* CheckboxElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513442052D75B880000B5DE4 /* CheckboxElements.swift */; };
 		513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93F2C5AAADE0003253B /* OUDSTokensComponent */; };
+		51417C1F2E1BF4FB000266C8 /* TokensElevationUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C1E2E1BF4FB000266C8 /* TokensElevationUITestsTestCase.swift */; };
+		51417C212E1BF57F000266C8 /* TokensSizeUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C202E1BF57F000266C8 /* TokensSizeUITestsTestCase.swift */; };
+		51417C232E1BF5D1000266C8 /* TokensSpaceUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C222E1BF5D1000266C8 /* TokensSpaceUITestsTestCase.swift */; };
+		51417C252E1BF661000266C8 /* TokensBorderUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C242E1BF661000266C8 /* TokensBorderUITestsTestCase.swift */; };
+		51417C272E1BF6B8000266C8 /* TokensOpacityUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C262E1BF6B8000266C8 /* TokensOpacityUITestsTestCase.swift */; };
+		51417C292E1BF70F000266C8 /* TokensColorUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C282E1BF70F000266C8 /* TokensColorUITestsTestCase.swift */; };
+		51417C2B2E1BF7B2000266C8 /* TokensFontUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C2A2E1BF7B2000266C8 /* TokensFontUITestsTestCase.swift */; };
 		5149BADB2C3D6F4F000FA4BF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5149BADA2C3D6F4F000FA4BF /* Podfile */; };
-		514D02FC2D75F45F00622692 /* OUDSCheckboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514D02FB2D75F45F00622692 /* OUDSCheckboxUITests.swift */; };
-		5152DA1D2DE0BD440078B9F1 /* DesignToolboxCopyableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5152DA1C2DE0BD3B0078B9F1 /* DesignToolboxCopyableText.swift */; };
-		5152DA1E2DE0BD440078B9F1 /* DesignToolboxCopyableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5152DA1C2DE0BD3B0078B9F1 /* DesignToolboxCopyableText.swift */; };
+		5152DA1D2DE0BD440078B9F1 /* DesignToolbox+EnrichedTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5152DA1C2DE0BD3B0078B9F1 /* DesignToolbox+EnrichedTexts.swift */; };
+		5152DA1E2DE0BD440078B9F1 /* DesignToolbox+EnrichedTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5152DA1C2DE0BD3B0078B9F1 /* DesignToolbox+EnrichedTexts.swift */; };
 		515439232DE734E600B25D13 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 515439222DE734E600B25D13 /* Settings.bundle */; };
+		515EE9852E21329B00A60E96 /* ChipLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9752E21329B00A60E96 /* ChipLayout.swift */; };
+		515EE9862E21329B00A60E96 /* FilterChipConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9772E21329B00A60E96 /* FilterChipConfigurationView.swift */; };
+		515EE9872E21329B00A60E96 /* FilterChipElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9782E21329B00A60E96 /* FilterChipElement.swift */; };
+		515EE9882E21329B00A60E96 /* FilterChipPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9792E21329B00A60E96 /* FilterChipPage.swift */; };
+		515EE9892E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97B2E21329B00A60E96 /* ChipPickerConfigurationView.swift */; };
+		515EE98A2E21329B00A60E96 /* ChipPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97C2E21329B00A60E96 /* ChipPickerElement.swift */; };
+		515EE98B2E21329B00A60E96 /* ChipPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97D2E21329B00A60E96 /* ChipPickerPage.swift */; };
+		515EE98C2E21329B00A60E96 /* SuggestionChipConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97F2E21329B00A60E96 /* SuggestionChipConfigurationView.swift */; };
+		515EE98D2E21329B00A60E96 /* SuggestionChipElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9802E21329B00A60E96 /* SuggestionChipElement.swift */; };
+		515EE98E2E21329B00A60E96 /* SuggestionChipPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9812E21329B00A60E96 /* SuggestionChipPage.swift */; };
+		515EE98F2E21329B00A60E96 /* ChipElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9832E21329B00A60E96 /* ChipElements.swift */; };
+		515EE9902E21329B00A60E96 /* ChipLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9752E21329B00A60E96 /* ChipLayout.swift */; };
+		515EE9912E21329B00A60E96 /* FilterChipConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9772E21329B00A60E96 /* FilterChipConfigurationView.swift */; };
+		515EE9922E21329B00A60E96 /* FilterChipElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9782E21329B00A60E96 /* FilterChipElement.swift */; };
+		515EE9932E21329B00A60E96 /* FilterChipPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9792E21329B00A60E96 /* FilterChipPage.swift */; };
+		515EE9942E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97B2E21329B00A60E96 /* ChipPickerConfigurationView.swift */; };
+		515EE9952E21329B00A60E96 /* ChipPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97C2E21329B00A60E96 /* ChipPickerElement.swift */; };
+		515EE9962E21329B00A60E96 /* ChipPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97D2E21329B00A60E96 /* ChipPickerPage.swift */; };
+		515EE9972E21329B00A60E96 /* SuggestionChipConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97F2E21329B00A60E96 /* SuggestionChipConfigurationView.swift */; };
+		515EE9982E21329B00A60E96 /* SuggestionChipElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9802E21329B00A60E96 /* SuggestionChipElement.swift */; };
+		515EE9992E21329B00A60E96 /* SuggestionChipPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9812E21329B00A60E96 /* SuggestionChipPage.swift */; };
+		515EE99A2E21329B00A60E96 /* ChipElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9832E21329B00A60E96 /* ChipElements.swift */; };
+		515EE9A02E2132E300A60E96 /* ChipsPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE99E2E2132E300A60E96 /* ChipsPickerUITests.swift */; };
+		515EE9A22E2133C800A60E96 /* ChipsUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9A12E2133C800A60E96 /* ChipsUITestsTestCase.swift */; };
+		515EE9A42E2133F200A60E96 /* SoshTheme+ChipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9A32E2133F200A60E96 /* SoshTheme+ChipsUITests.swift */; };
+		515EE9A62E21347200A60E96 /* OrangeTheme+ChipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9A52E21347200A60E96 /* OrangeTheme+ChipsUITests.swift */; };
+		515F66F02E2E71DB00268440 /* OUDSThemesOrangeInverse in Frameworks */ = {isa = PBXBuildFile; productRef = 515F66EF2E2E71DB00268440 /* OUDSThemesOrangeInverse */; };
+		515F66F92E2E925600268440 /* OrangeInverseTheme+TokensColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F62E2E925600268440 /* OrangeInverseTheme+TokensColorUITests.swift */; };
+		515F66FA2E2E925600268440 /* OrangeInverseTheme+TokensSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F32E2E925600268440 /* OrangeInverseTheme+TokensSpaceUITests.swift */; };
+		515F66FB2E2E925600268440 /* OrangeInverseTheme+TokensSizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F22E2E925600268440 /* OrangeInverseTheme+TokensSizeUITests.swift */; };
+		515F66FC2E2E925600268440 /* OrangeInverseTheme+TokensBorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F42E2E925600268440 /* OrangeInverseTheme+TokensBorderUITests.swift */; };
+		515F66FD2E2E925600268440 /* OrangeInverseTheme+TokensFontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F72E2E925600268440 /* OrangeInverseTheme+TokensFontUITests.swift */; };
+		515F66FE2E2E925600268440 /* OrangeInverseTheme+TokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F12E2E925600268440 /* OrangeInverseTheme+TokensElevationUITests.swift */; };
+		515F66FF2E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F52E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift */; };
 		5180FE6E2DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */; };
 		5180FE6F2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */; };
 		5180FE702DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */; };
@@ -201,6 +245,27 @@
 		518B26672DAE9DE1003A6ED3 /* RadioPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B26612DAE9DE1003A6ED3 /* RadioPickerPage.swift */; };
 		518B26682DAE9DE1003A6ED3 /* RadioPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B26622DAE9DE1003A6ED3 /* RadioPickerConfiguration.swift */; };
 		518B26692DAE9DE1003A6ED3 /* RadioPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B26602DAE9DE1003A6ED3 /* RadioPickerElement.swift */; };
+		518EC0752E1FF23800FC77E4 /* OrangeTheme+ButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC06F2E1FF23800FC77E4 /* OrangeTheme+ButtonUITests.swift */; };
+		518EC0762E1FF23800FC77E4 /* OrangeTheme+RadioButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0732E1FF23800FC77E4 /* OrangeTheme+RadioButtonUITests.swift */; };
+		518EC0772E1FF23800FC77E4 /* OrangeTheme+CheckboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0702E1FF23800FC77E4 /* OrangeTheme+CheckboxUITests.swift */; };
+		518EC0782E1FF23800FC77E4 /* OrangeTheme+DividerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0712E1FF23800FC77E4 /* OrangeTheme+DividerUITests.swift */; };
+		518EC0792E1FF23800FC77E4 /* OrangeTheme+LinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0722E1FF23800FC77E4 /* OrangeTheme+LinkUITests.swift */; };
+		518EC07A2E1FF23800FC77E4 /* OrangeTheme+SwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0742E1FF23800FC77E4 /* OrangeTheme+SwitchUITests.swift */; };
+		518EC09B2E1FF28300FC77E4 /* SoshTheme+DividerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0972E1FF28300FC77E4 /* SoshTheme+DividerUITests.swift */; };
+		518EC09C2E1FF28300FC77E4 /* SoshTheme+LinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0982E1FF28300FC77E4 /* SoshTheme+LinkUITests.swift */; };
+		518EC09D2E1FF28300FC77E4 /* SoshTheme+SwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC09A2E1FF28300FC77E4 /* SoshTheme+SwitchUITests.swift */; };
+		518EC09E2E1FF28300FC77E4 /* SoshTheme+CheckboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0962E1FF28300FC77E4 /* SoshTheme+CheckboxUITests.swift */; };
+		518EC09F2E1FF28300FC77E4 /* SoshTheme+RadioButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0992E1FF28300FC77E4 /* SoshTheme+RadioButtonUITests.swift */; };
+		518EC0A02E1FF28300FC77E4 /* SoshTheme+ButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0952E1FF28300FC77E4 /* SoshTheme+ButtonUITests.swift */; };
+		518EC0A82E1FF2C000FC77E4 /* BadgeUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0A12E1FF2C000FC77E4 /* BadgeUITestsTestCase.swift */; };
+		518EC0A92E1FF2C000FC77E4 /* ButtonUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0A32E1FF2C000FC77E4 /* ButtonUITestsTestCase.swift */; };
+		518EC0AA2E1FF2C000FC77E4 /* LinkUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0A62E1FF2C000FC77E4 /* LinkUITestsTestCase.swift */; };
+		518EC0AB2E1FF2C000FC77E4 /* CheckboxUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0A42E1FF2C000FC77E4 /* CheckboxUITestsTestCase.swift */; };
+		518EC0AC2E1FF2C000FC77E4 /* RadioButtonUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0A72E1FF2C000FC77E4 /* RadioButtonUITestsTestCase.swift */; };
+		518EC0AE2E1FF2C000FC77E4 /* DividerUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0A52E1FF2C000FC77E4 /* DividerUITestsTestCase.swift */; };
+		518EC0B02E1FF2E800FC77E4 /* SwitchUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0AF2E1FF2E800FC77E4 /* SwitchUITestsTestCase.swift */; };
+		518EC0B22E1FF33300FC77E4 /* SoshTheme+BadgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0B12E1FF32B00FC77E4 /* SoshTheme+BadgeUITests.swift */; };
+		518EC0B42E1FF38400FC77E4 /* OrangeTheme+BadgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC0B32E1FF38400FC77E4 /* OrangeTheme+BadgeUITests.swift */; };
 		519251EE2D020B8A003FD1F6 /* DesignToolboxElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543152CA17275001187EA /* DesignToolboxElement.swift */; };
 		519251EF2D020B8A003FD1F6 /* DesignToolboxElementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E3FF0A2CAFD9AE00F1BC59 /* DesignToolboxElementPage.swift */; };
 		519251F02D020BA6003FD1F6 /* DesignToolboxElementsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760F2C466FCF0033365D /* DesignToolboxElementsPage.swift */; };
@@ -214,14 +279,13 @@
 		51952A722D3F9D720068B807 /* DesignToolboxTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */; };
 		51952A742D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A732D3F9D840068B807 /* DesignToolboxTokenIllustrationBackground.swift */; };
 		51952A752D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A732D3F9D840068B807 /* DesignToolboxTokenIllustrationBackground.swift */; };
-		51952A7C2D3FA1510068B807 /* OUDSTokensBorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A7B2D3FA1490068B807 /* OUDSTokensBorderUITests.swift */; };
-		51952A7F2D3FA17E0068B807 /* OUDSTokensColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A7E2D3FA1770068B807 /* OUDSTokensColorUITests.swift */; };
-		51952A832D3FA1AC0068B807 /* OUDSTokensSizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A822D3FA1A70068B807 /* OUDSTokensSizeUITests.swift */; };
-		51952A862D3FA1DB0068B807 /* OUDSTokensSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A852D3FA1D60068B807 /* OUDSTokensSpaceUITests.swift */; };
-		51952A892D3FA20D0068B807 /* OUDSTokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A882D3FA2060068B807 /* OUDSTokensElevationUITests.swift */; };
-		51952A8C2D3FA22A0068B807 /* OUDSTokensFontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A8B2D3FA2280068B807 /* OUDSTokensFontUITests.swift */; };
-		51952A8F2D3FA24C0068B807 /* OUDSTokensOpacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A8E2D3FA2490068B807 /* OUDSTokensOpacityUITests.swift */; };
-		51952A922D3FA2720068B807 /* OUDSButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A912D3FA26B0068B807 /* OUDSButtonUITests.swift */; };
+		51952A7C2D3FA1510068B807 /* OrangeTheme+TokensBorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A7B2D3FA1490068B807 /* OrangeTheme+TokensBorderUITests.swift */; };
+		51952A7F2D3FA17E0068B807 /* OrangeTheme+TokensColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A7E2D3FA1770068B807 /* OrangeTheme+TokensColorUITests.swift */; };
+		51952A832D3FA1AC0068B807 /* OrangeTheme+TokensSizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A822D3FA1A70068B807 /* OrangeTheme+TokensSizeUITests.swift */; };
+		51952A862D3FA1DB0068B807 /* OrangeTheme+TokensSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A852D3FA1D60068B807 /* OrangeTheme+TokensSpaceUITests.swift */; };
+		51952A892D3FA20D0068B807 /* OrangeTheme+TokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A882D3FA2060068B807 /* OrangeTheme+TokensElevationUITests.swift */; };
+		51952A8C2D3FA22A0068B807 /* OrangeTheme+TokensFontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A8B2D3FA2280068B807 /* OrangeTheme+TokensFontUITests.swift */; };
+		51952A8F2D3FA24C0068B807 /* OrangeTheme+TokensOpacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A8E2D3FA2490068B807 /* OrangeTheme+TokensOpacityUITests.swift */; };
 		51952A932D3FA2E30068B807 /* NamedFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6CC2D09C5E2005DAB51 /* NamedFont.swift */; };
 		51952A942D3FA32E0068B807 /* DesignToolboxElementsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760F2C466FCF0033365D /* DesignToolboxElementsPage.swift */; };
 		51952A952D3FA32E0068B807 /* DesignToolboxVariantElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE5B2CB431C50059CC28 /* DesignToolboxVariantElement.swift */; };
@@ -241,6 +305,45 @@
 		51952AA32D3FA32E0068B807 /* GrisTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AF2CDD07F20043D558 /* GrisTokenPage.swift */; };
 		51952AA42D3FA32E0068B807 /* TokensPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF426A2CA30728000BD03E /* TokensPage.swift */; };
 		51952AA52D3FA3440068B807 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543102CA154DE001187EA /* Card.swift */; };
+		51A2174A2E325E6C00562BE0 /* OrangeInverseTheme+ButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217432E325E6C00562BE0 /* OrangeInverseTheme+ButtonUITests.swift */; };
+		51A2174B2E325E6C00562BE0 /* OrangeInverseTheme+RadioButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217472E325E6C00562BE0 /* OrangeInverseTheme+RadioButtonUITests.swift */; };
+		51A2174C2E325E6C00562BE0 /* OrangeInverseTheme+CheckboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217442E325E6C00562BE0 /* OrangeInverseTheme+CheckboxUITests.swift */; };
+		51A2174D2E325E6C00562BE0 /* OrangeInverseTheme+DividerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217452E325E6C00562BE0 /* OrangeInverseTheme+DividerUITests.swift */; };
+		51A2174E2E325E6C00562BE0 /* OrangeInverseTheme+LinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217462E325E6C00562BE0 /* OrangeInverseTheme+LinkUITests.swift */; };
+		51A2174F2E325E6C00562BE0 /* OrangeInverseTheme+SwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217482E325E6C00562BE0 /* OrangeInverseTheme+SwitchUITests.swift */; };
+		51A217502E325E6C00562BE0 /* OrangeInverseTheme+BadgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217422E325E6C00562BE0 /* OrangeInverseTheme+BadgeUITests.swift */; };
+		51A217512E325E6C00562BE0 /* OrangeInverseTheme+ChipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217412E325E6C00562BE0 /* OrangeInverseTheme+ChipsUITests.swift */; };
+		51A2175D2E325ED500562BE0 /* OrangeBusinessToolsTheme+ButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217562E325ED500562BE0 /* OrangeBusinessToolsTheme+ButtonUITests.swift */; };
+		51A2175E2E325ED500562BE0 /* OrangeBusinessToolsTheme+RadioButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2175A2E325ED500562BE0 /* OrangeBusinessToolsTheme+RadioButtonUITests.swift */; };
+		51A2175F2E325ED500562BE0 /* OrangeBusinessToolsTheme+CheckboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217572E325ED500562BE0 /* OrangeBusinessToolsTheme+CheckboxUITests.swift */; };
+		51A217602E325ED500562BE0 /* OrangeBusinessToolsTheme+DividerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217582E325ED500562BE0 /* OrangeBusinessToolsTheme+DividerUITests.swift */; };
+		51A217612E325ED500562BE0 /* OrangeBusinessToolsTheme+LinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217592E325ED500562BE0 /* OrangeBusinessToolsTheme+LinkUITests.swift */; };
+		51A217622E325ED500562BE0 /* OrangeBusinessToolsTheme+SwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2175B2E325ED500562BE0 /* OrangeBusinessToolsTheme+SwitchUITests.swift */; };
+		51A217632E325ED500562BE0 /* OrangeBusinessToolsTheme+BadgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217552E325ED500562BE0 /* OrangeBusinessToolsTheme+BadgeUITests.swift */; };
+		51A217642E325ED500562BE0 /* OrangeBusinessToolsTheme+ChipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217542E325ED500562BE0 /* OrangeBusinessToolsTheme+ChipsUITests.swift */; };
+		51A2176E2E325F7F00562BE0 /* WireframeTheme+BadgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217662E325F7F00562BE0 /* WireframeTheme+BadgeUITests.swift */; };
+		51A2176F2E325F7F00562BE0 /* WireframeTheme+ButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217672E325F7F00562BE0 /* WireframeTheme+ButtonUITests.swift */; };
+		51A217702E325F7F00562BE0 /* WireframeTheme+SwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2176C2E325F7F00562BE0 /* WireframeTheme+SwitchUITests.swift */; };
+		51A217712E325F7F00562BE0 /* WireframeTheme+RadioButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2176B2E325F7F00562BE0 /* WireframeTheme+RadioButtonUITests.swift */; };
+		51A217722E325F7F00562BE0 /* WireframeTheme+LinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2176A2E325F7F00562BE0 /* WireframeTheme+LinkUITests.swift */; };
+		51A217732E325F7F00562BE0 /* WireframeTheme+DividerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217692E325F7F00562BE0 /* WireframeTheme+DividerUITests.swift */; };
+		51A217742E325F7F00562BE0 /* WireframeTheme+CheckboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217682E325F7F00562BE0 /* WireframeTheme+CheckboxUITests.swift */; };
+		51A217752E325F7F00562BE0 /* WireframeTheme+ChipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217652E325F7F00562BE0 /* WireframeTheme+ChipsUITests.swift */; };
+		51A2177E2E325FE600562BE0 /* WireframeTheme+TokensColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2177B2E325FE600562BE0 /* WireframeTheme+TokensColorUITests.swift */; };
+		51A2177F2E325FE600562BE0 /* WireframeTheme+TokensSizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217772E325FE600562BE0 /* WireframeTheme+TokensSizeUITests.swift */; };
+		51A217802E325FE600562BE0 /* WireframeTheme+TokensSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217782E325FE600562BE0 /* WireframeTheme+TokensSpaceUITests.swift */; };
+		51A217812E325FE600562BE0 /* WireframeTheme+TokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217762E325FE600562BE0 /* WireframeTheme+TokensElevationUITests.swift */; };
+		51A217822E325FE600562BE0 /* WireframeTheme+TokensBorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217792E325FE600562BE0 /* WireframeTheme+TokensBorderUITests.swift */; };
+		51A217832E325FE600562BE0 /* WireframeTheme+TokensOpacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2177A2E325FE600562BE0 /* WireframeTheme+TokensOpacityUITests.swift */; };
+		51A217842E325FE600562BE0 /* WireframeTheme+TokensFontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2177C2E325FE600562BE0 /* WireframeTheme+TokensFontUITests.swift */; };
+		51ABCD182E182D7C006CD6C0 /* OUDSThemesSosh in Frameworks */ = {isa = PBXBuildFile; productRef = 51ABCD172E182D7C006CD6C0 /* OUDSThemesSosh */; };
+		51ABCD272E183226006CD6C0 /* SoshTheme+TokensBorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD222E183226006CD6C0 /* SoshTheme+TokensBorderUITests.swift */; };
+		51ABCD282E183226006CD6C0 /* SoshTheme+TokensFontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD252E183226006CD6C0 /* SoshTheme+TokensFontUITests.swift */; };
+		51ABCD292E183226006CD6C0 /* SoshTheme+TokensColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD242E183226006CD6C0 /* SoshTheme+TokensColorUITests.swift */; };
+		51ABCD2A2E183226006CD6C0 /* SoshTheme+TokensSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD212E183226006CD6C0 /* SoshTheme+TokensSpaceUITests.swift */; };
+		51ABCD2B2E183226006CD6C0 /* SoshTheme+TokensSizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD202E183226006CD6C0 /* SoshTheme+TokensSizeUITests.swift */; };
+		51ABCD2C2E183226006CD6C0 /* SoshTheme+TokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD1F2E183226006CD6C0 /* SoshTheme+TokensElevationUITests.swift */; };
+		51ABCD2D2E183226006CD6C0 /* SoshTheme+TokensOpacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD232E183226006CD6C0 /* SoshTheme+TokensOpacityUITests.swift */; };
 		51B8D5A12DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
 		51B8D5A22DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
 		51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 51BC9DE62C6513F200EB2A11 /* OUDSFoundations */; };
@@ -251,13 +354,25 @@
 		51BD76292C466FCF0033365D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761C2C466FCF0033365D /* WebView.swift */; };
 		51BD762A2C466FCF0033365D /* DesignToolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761E2C466FCF0033365D /* DesignToolbox.swift */; };
 		51BD762B2C466FCF0033365D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761F2C466FCF0033365D /* MainView.swift */; };
-		51D6D5832D883D50009CD879 /* OUDSRadioButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5822D883D50009CD879 /* OUDSRadioButtonUITests.swift */; };
 		51D6D5852D887E36009CD879 /* CheckboxIndeterminateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5842D887E36009CD879 /* CheckboxIndeterminateElement.swift */; };
 		51D6D5862D887E36009CD879 /* CheckboxIndeterminateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5842D887E36009CD879 /* CheckboxIndeterminateElement.swift */; };
 		51D6D58B2D887E94009CD879 /* CheckboxIndeterminatePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D58A2D887E94009CD879 /* CheckboxIndeterminatePage.swift */; };
 		51D6D58C2D887E94009CD879 /* CheckboxIndeterminatePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D58A2D887E94009CD879 /* CheckboxIndeterminatePage.swift */; };
 		51D6D5912D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5902D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift */; };
 		51D6D5922D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5902D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift */; };
+		51DB2E142E2AAAB9004F7487 /* OUDSThemesOrangeBusinessTools in Frameworks */ = {isa = PBXBuildFile; productRef = 51DB2E132E2AAAB9004F7487 /* OUDSThemesOrangeBusinessTools */; };
+		51E0159E2E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensBorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E015992E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensBorderUITests.swift */; };
+		51E0159F2E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E015982E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensSpaceUITests.swift */; };
+		51E015A02E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensOpacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E0159A2E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensOpacityUITests.swift */; };
+		51E015A12E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E0159B2E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensColorUITests.swift */; };
+		51E015A22E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensFontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E0159C2E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensFontUITests.swift */; };
+		51E015A32E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E015962E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensElevationUITests.swift */; };
+		51E015A42E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensSizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E015972E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensSizeUITests.swift */; };
+		51E5999D2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */; };
+		51E5999E2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */; };
+		51E5999F2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */; };
+		51E599B72E27EE3B002BCB27 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E599B32E27EDD0002BCB27 /* StringTests.swift */; };
+		51E599B82E27F05A002BCB27 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
 		51EB73952DBFDDF600F37FEC /* CheckboxPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */; };
 		51EB73962DBFDDF600F37FEC /* AppTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737B2DBFD26000F37FEC /* AppTestCase.swift */; };
 		51EB73982DBFE3FD00F37FEC /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
@@ -328,6 +443,13 @@
 			remoteGlobalIDString = 07FDCD902C296A500009AA13;
 			remoteInfo = Showcase;
 		};
+		51E599AB2E27ED5F002BCB27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07FDCD892C296A500009AA13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07FDCD902C296A500009AA13;
+			remoteInfo = DesignToolbox;
+		};
 		51EB738A2DBFDC5500F37FEC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 07FDCD892C296A500009AA13 /* Project object */;
@@ -344,7 +466,6 @@
 		070DF8AF2CDD07F20043D558 /* GrisTokenPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrisTokenPage.swift; sourceTree = "<group>"; };
 		072141162D02F52A00B7B9C6 /* ButtonElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonElement.swift; sourceTree = "<group>"; };
 		072141172D02F52A00B7B9C6 /* ButtonPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPage.swift; sourceTree = "<group>"; };
-		07304A4A2D427146009320BA /* OUDSLinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSLinkUITests.swift; sourceTree = "<group>"; };
 		073543102CA154DE001187EA /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		073543152CA17275001187EA /* DesignToolboxElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxElement.swift; sourceTree = "<group>"; };
 		074008222C942810006B8729 /* XCTestCase+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Snapshot.swift"; sourceTree = "<group>"; };
@@ -372,7 +493,6 @@
 		0762275F2DA90C65009C3632 /* DividerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerPage.swift; sourceTree = "<group>"; };
 		076227612DA90C65009C3632 /* DividerElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerElements.swift; sourceTree = "<group>"; };
 		0762276B2DA93D62009C3632 /* DesignToolboxColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxColorPicker.swift; sourceTree = "<group>"; };
-		0762276E2DA9489C009C3632 /* OUDSDividerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSDividerUITests.swift; sourceTree = "<group>"; };
 		0765A6CC2D09C5E2005DAB51 /* NamedFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedFont.swift; sourceTree = "<group>"; };
 		0765A6CD2D09C5E2005DAB51 /* View+Illustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Illustration.swift"; sourceTree = "<group>"; };
 		0765A6CF2D09C5E2005DAB51 /* FontTokenElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTokenElement.swift; sourceTree = "<group>"; };
@@ -401,7 +521,6 @@
 		0786A9E02E0AAB6600976098 /* CheckboxItemIndeterminatePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxItemIndeterminatePage.swift; sourceTree = "<group>"; };
 		0786A9E12E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OUDSCheckboxIndicatorState+extension.swift"; sourceTree = "<group>"; };
 		078C4C362E01558B00598F75 /* ControlItemConfigurationViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlItemConfigurationViews.swift; sourceTree = "<group>"; };
-		0794FCD62D914DC400A9373A /* OUDSSwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSSwitchUITests.swift; sourceTree = "<group>"; };
 		0794FCDA2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIUserInterfaceStyle+extension.swift"; sourceTree = "<group>"; };
 		07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxChoicePicker.swift; sourceTree = "<group>"; };
 		07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxTextField.swift; sourceTree = "<group>"; };
@@ -431,6 +550,9 @@
 		07D3DBEE2DA5084500D8A57F /* ColoredSurfaceElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredSurfaceElement.swift; sourceTree = "<group>"; };
 		07D3DBEF2DA5084500D8A57F /* ColoredSurfacePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredSurfacePage.swift; sourceTree = "<group>"; };
 		07D7E1962D035566006472EB /* ButtonConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfigurationView.swift; sourceTree = "<group>"; };
+		07EB46FD2E1801D000B94EC2 /* BadgeConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeConfigurationView.swift; sourceTree = "<group>"; };
+		07EB46FE2E1801D000B94EC2 /* BadgeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeElement.swift; sourceTree = "<group>"; };
+		07EB46FF2E1801D000B94EC2 /* BadgePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgePage.swift; sourceTree = "<group>"; };
 		07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentPage.swift; sourceTree = "<group>"; };
 		07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsPage.swift; sourceTree = "<group>"; };
 		07F0AFE72CFE0FBD00D334DD /* DesignToolboxConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxConfiguration.swift; sourceTree = "<group>"; };
@@ -465,27 +587,113 @@
 		513441FE2D75B880000B5DE4 /* CheckboxElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxElement.swift; sourceTree = "<group>"; };
 		513441FF2D75B880000B5DE4 /* CheckboxPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPage.swift; sourceTree = "<group>"; };
 		513442052D75B880000B5DE4 /* CheckboxElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxElements.swift; sourceTree = "<group>"; };
+		51417C1E2E1BF4FB000266C8 /* TokensElevationUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensElevationUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C202E1BF57F000266C8 /* TokensSizeUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensSizeUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C222E1BF5D1000266C8 /* TokensSpaceUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensSpaceUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C242E1BF661000266C8 /* TokensBorderUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensBorderUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C262E1BF6B8000266C8 /* TokensOpacityUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensOpacityUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C282E1BF70F000266C8 /* TokensColorUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensColorUITestsTestCase.swift; sourceTree = "<group>"; };
+		51417C2A2E1BF7B2000266C8 /* TokensFontUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensFontUITestsTestCase.swift; sourceTree = "<group>"; };
 		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		514D02FB2D75F45F00622692 /* OUDSCheckboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSCheckboxUITests.swift; sourceTree = "<group>"; };
-		5152DA1C2DE0BD3B0078B9F1 /* DesignToolboxCopyableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxCopyableText.swift; sourceTree = "<group>"; };
+		5152DA1C2DE0BD3B0078B9F1 /* DesignToolbox+EnrichedTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignToolbox+EnrichedTexts.swift"; sourceTree = "<group>"; };
 		515439222DE734E600B25D13 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		515EE9752E21329B00A60E96 /* ChipLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipLayout.swift; sourceTree = "<group>"; };
+		515EE9772E21329B00A60E96 /* FilterChipConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChipConfigurationView.swift; sourceTree = "<group>"; };
+		515EE9782E21329B00A60E96 /* FilterChipElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChipElement.swift; sourceTree = "<group>"; };
+		515EE9792E21329B00A60E96 /* FilterChipPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChipPage.swift; sourceTree = "<group>"; };
+		515EE97B2E21329B00A60E96 /* ChipPickerConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipPickerConfigurationView.swift; sourceTree = "<group>"; };
+		515EE97C2E21329B00A60E96 /* ChipPickerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipPickerElement.swift; sourceTree = "<group>"; };
+		515EE97D2E21329B00A60E96 /* ChipPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipPickerPage.swift; sourceTree = "<group>"; };
+		515EE97F2E21329B00A60E96 /* SuggestionChipConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionChipConfigurationView.swift; sourceTree = "<group>"; };
+		515EE9802E21329B00A60E96 /* SuggestionChipElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionChipElement.swift; sourceTree = "<group>"; };
+		515EE9812E21329B00A60E96 /* SuggestionChipPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionChipPage.swift; sourceTree = "<group>"; };
+		515EE9832E21329B00A60E96 /* ChipElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipElements.swift; sourceTree = "<group>"; };
+		515EE99E2E2132E300A60E96 /* ChipsPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsPickerUITests.swift; sourceTree = "<group>"; };
+		515EE9A12E2133C800A60E96 /* ChipsUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsUITestsTestCase.swift; sourceTree = "<group>"; };
+		515EE9A32E2133F200A60E96 /* SoshTheme+ChipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+ChipsUITests.swift"; sourceTree = "<group>"; };
+		515EE9A52E21347200A60E96 /* OrangeTheme+ChipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+ChipsUITests.swift"; sourceTree = "<group>"; };
+		515F66F12E2E925600268440 /* OrangeInverseTheme+TokensElevationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensElevationUITests.swift"; sourceTree = "<group>"; };
+		515F66F22E2E925600268440 /* OrangeInverseTheme+TokensSizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensSizeUITests.swift"; sourceTree = "<group>"; };
+		515F66F32E2E925600268440 /* OrangeInverseTheme+TokensSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensSpaceUITests.swift"; sourceTree = "<group>"; };
+		515F66F42E2E925600268440 /* OrangeInverseTheme+TokensBorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensBorderUITests.swift"; sourceTree = "<group>"; };
+		515F66F52E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensOpacityUITests.swift"; sourceTree = "<group>"; };
+		515F66F62E2E925600268440 /* OrangeInverseTheme+TokensColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensColorUITests.swift"; sourceTree = "<group>"; };
+		515F66F72E2E925600268440 /* OrangeInverseTheme+TokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensFontUITests.swift"; sourceTree = "<group>"; };
 		5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerConfiguration.swift; sourceTree = "<group>"; };
 		5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerElement.swift; sourceTree = "<group>"; };
 		5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerPage.swift; sourceTree = "<group>"; };
 		518B26602DAE9DE1003A6ED3 /* RadioPickerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPickerElement.swift; sourceTree = "<group>"; };
 		518B26612DAE9DE1003A6ED3 /* RadioPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPickerPage.swift; sourceTree = "<group>"; };
 		518B26622DAE9DE1003A6ED3 /* RadioPickerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPickerConfiguration.swift; sourceTree = "<group>"; };
+		518EC06F2E1FF23800FC77E4 /* OrangeTheme+ButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+ButtonUITests.swift"; sourceTree = "<group>"; };
+		518EC0702E1FF23800FC77E4 /* OrangeTheme+CheckboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+CheckboxUITests.swift"; sourceTree = "<group>"; };
+		518EC0712E1FF23800FC77E4 /* OrangeTheme+DividerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+DividerUITests.swift"; sourceTree = "<group>"; };
+		518EC0722E1FF23800FC77E4 /* OrangeTheme+LinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+LinkUITests.swift"; sourceTree = "<group>"; };
+		518EC0732E1FF23800FC77E4 /* OrangeTheme+RadioButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+RadioButtonUITests.swift"; sourceTree = "<group>"; };
+		518EC0742E1FF23800FC77E4 /* OrangeTheme+SwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+SwitchUITests.swift"; sourceTree = "<group>"; };
+		518EC0952E1FF28300FC77E4 /* SoshTheme+ButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+ButtonUITests.swift"; sourceTree = "<group>"; };
+		518EC0962E1FF28300FC77E4 /* SoshTheme+CheckboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+CheckboxUITests.swift"; sourceTree = "<group>"; };
+		518EC0972E1FF28300FC77E4 /* SoshTheme+DividerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+DividerUITests.swift"; sourceTree = "<group>"; };
+		518EC0982E1FF28300FC77E4 /* SoshTheme+LinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+LinkUITests.swift"; sourceTree = "<group>"; };
+		518EC0992E1FF28300FC77E4 /* SoshTheme+RadioButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+RadioButtonUITests.swift"; sourceTree = "<group>"; };
+		518EC09A2E1FF28300FC77E4 /* SoshTheme+SwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+SwitchUITests.swift"; sourceTree = "<group>"; };
+		518EC0A12E1FF2C000FC77E4 /* BadgeUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeUITestsTestCase.swift; sourceTree = "<group>"; };
+		518EC0A32E1FF2C000FC77E4 /* ButtonUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUITestsTestCase.swift; sourceTree = "<group>"; };
+		518EC0A42E1FF2C000FC77E4 /* CheckboxUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxUITestsTestCase.swift; sourceTree = "<group>"; };
+		518EC0A52E1FF2C000FC77E4 /* DividerUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerUITestsTestCase.swift; sourceTree = "<group>"; };
+		518EC0A62E1FF2C000FC77E4 /* LinkUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkUITestsTestCase.swift; sourceTree = "<group>"; };
+		518EC0A72E1FF2C000FC77E4 /* RadioButtonUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonUITestsTestCase.swift; sourceTree = "<group>"; };
+		518EC0AF2E1FF2E800FC77E4 /* SwitchUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchUITestsTestCase.swift; sourceTree = "<group>"; };
+		518EC0B12E1FF32B00FC77E4 /* SoshTheme+BadgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+BadgeUITests.swift"; sourceTree = "<group>"; };
+		518EC0B32E1FF38400FC77E4 /* OrangeTheme+BadgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+BadgeUITests.swift"; sourceTree = "<group>"; };
 		51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxTokenIllustration.swift; sourceTree = "<group>"; };
 		51952A732D3F9D840068B807 /* DesignToolboxTokenIllustrationBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxTokenIllustrationBackground.swift; sourceTree = "<group>"; };
-		51952A7B2D3FA1490068B807 /* OUDSTokensBorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensBorderUITests.swift; sourceTree = "<group>"; };
-		51952A7E2D3FA1770068B807 /* OUDSTokensColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensColorUITests.swift; sourceTree = "<group>"; };
-		51952A822D3FA1A70068B807 /* OUDSTokensSizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensSizeUITests.swift; sourceTree = "<group>"; };
-		51952A852D3FA1D60068B807 /* OUDSTokensSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensSpaceUITests.swift; sourceTree = "<group>"; };
-		51952A882D3FA2060068B807 /* OUDSTokensElevationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensElevationUITests.swift; sourceTree = "<group>"; };
-		51952A8B2D3FA2280068B807 /* OUDSTokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensFontUITests.swift; sourceTree = "<group>"; };
-		51952A8E2D3FA2490068B807 /* OUDSTokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensOpacityUITests.swift; sourceTree = "<group>"; };
-		51952A912D3FA26B0068B807 /* OUDSButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSButtonUITests.swift; sourceTree = "<group>"; };
+		51952A7B2D3FA1490068B807 /* OrangeTheme+TokensBorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensBorderUITests.swift"; sourceTree = "<group>"; };
+		51952A7E2D3FA1770068B807 /* OrangeTheme+TokensColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensColorUITests.swift"; sourceTree = "<group>"; };
+		51952A822D3FA1A70068B807 /* OrangeTheme+TokensSizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensSizeUITests.swift"; sourceTree = "<group>"; };
+		51952A852D3FA1D60068B807 /* OrangeTheme+TokensSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensSpaceUITests.swift"; sourceTree = "<group>"; };
+		51952A882D3FA2060068B807 /* OrangeTheme+TokensElevationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensElevationUITests.swift"; sourceTree = "<group>"; };
+		51952A8B2D3FA2280068B807 /* OrangeTheme+TokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensFontUITests.swift"; sourceTree = "<group>"; };
+		51952A8E2D3FA2490068B807 /* OrangeTheme+TokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensOpacityUITests.swift"; sourceTree = "<group>"; };
+		51A217412E325E6C00562BE0 /* OrangeInverseTheme+ChipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+ChipsUITests.swift"; sourceTree = "<group>"; };
+		51A217422E325E6C00562BE0 /* OrangeInverseTheme+BadgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+BadgeUITests.swift"; sourceTree = "<group>"; };
+		51A217432E325E6C00562BE0 /* OrangeInverseTheme+ButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+ButtonUITests.swift"; sourceTree = "<group>"; };
+		51A217442E325E6C00562BE0 /* OrangeInverseTheme+CheckboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+CheckboxUITests.swift"; sourceTree = "<group>"; };
+		51A217452E325E6C00562BE0 /* OrangeInverseTheme+DividerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+DividerUITests.swift"; sourceTree = "<group>"; };
+		51A217462E325E6C00562BE0 /* OrangeInverseTheme+LinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+LinkUITests.swift"; sourceTree = "<group>"; };
+		51A217472E325E6C00562BE0 /* OrangeInverseTheme+RadioButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+RadioButtonUITests.swift"; sourceTree = "<group>"; };
+		51A217482E325E6C00562BE0 /* OrangeInverseTheme+SwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+SwitchUITests.swift"; sourceTree = "<group>"; };
+		51A217542E325ED500562BE0 /* OrangeBusinessToolsTheme+ChipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+ChipsUITests.swift"; sourceTree = "<group>"; };
+		51A217552E325ED500562BE0 /* OrangeBusinessToolsTheme+BadgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+BadgeUITests.swift"; sourceTree = "<group>"; };
+		51A217562E325ED500562BE0 /* OrangeBusinessToolsTheme+ButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+ButtonUITests.swift"; sourceTree = "<group>"; };
+		51A217572E325ED500562BE0 /* OrangeBusinessToolsTheme+CheckboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+CheckboxUITests.swift"; sourceTree = "<group>"; };
+		51A217582E325ED500562BE0 /* OrangeBusinessToolsTheme+DividerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+DividerUITests.swift"; sourceTree = "<group>"; };
+		51A217592E325ED500562BE0 /* OrangeBusinessToolsTheme+LinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+LinkUITests.swift"; sourceTree = "<group>"; };
+		51A2175A2E325ED500562BE0 /* OrangeBusinessToolsTheme+RadioButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+RadioButtonUITests.swift"; sourceTree = "<group>"; };
+		51A2175B2E325ED500562BE0 /* OrangeBusinessToolsTheme+SwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+SwitchUITests.swift"; sourceTree = "<group>"; };
+		51A217652E325F7F00562BE0 /* WireframeTheme+ChipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+ChipsUITests.swift"; sourceTree = "<group>"; };
+		51A217662E325F7F00562BE0 /* WireframeTheme+BadgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+BadgeUITests.swift"; sourceTree = "<group>"; };
+		51A217672E325F7F00562BE0 /* WireframeTheme+ButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+ButtonUITests.swift"; sourceTree = "<group>"; };
+		51A217682E325F7F00562BE0 /* WireframeTheme+CheckboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+CheckboxUITests.swift"; sourceTree = "<group>"; };
+		51A217692E325F7F00562BE0 /* WireframeTheme+DividerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+DividerUITests.swift"; sourceTree = "<group>"; };
+		51A2176A2E325F7F00562BE0 /* WireframeTheme+LinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+LinkUITests.swift"; sourceTree = "<group>"; };
+		51A2176B2E325F7F00562BE0 /* WireframeTheme+RadioButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+RadioButtonUITests.swift"; sourceTree = "<group>"; };
+		51A2176C2E325F7F00562BE0 /* WireframeTheme+SwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+SwitchUITests.swift"; sourceTree = "<group>"; };
+		51A217762E325FE600562BE0 /* WireframeTheme+TokensElevationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+TokensElevationUITests.swift"; sourceTree = "<group>"; };
+		51A217772E325FE600562BE0 /* WireframeTheme+TokensSizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+TokensSizeUITests.swift"; sourceTree = "<group>"; };
+		51A217782E325FE600562BE0 /* WireframeTheme+TokensSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+TokensSpaceUITests.swift"; sourceTree = "<group>"; };
+		51A217792E325FE600562BE0 /* WireframeTheme+TokensBorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+TokensBorderUITests.swift"; sourceTree = "<group>"; };
+		51A2177A2E325FE600562BE0 /* WireframeTheme+TokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+TokensOpacityUITests.swift"; sourceTree = "<group>"; };
+		51A2177B2E325FE600562BE0 /* WireframeTheme+TokensColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+TokensColorUITests.swift"; sourceTree = "<group>"; };
+		51A2177C2E325FE600562BE0 /* WireframeTheme+TokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+TokensFontUITests.swift"; sourceTree = "<group>"; };
 		51A7A9DA2C46E17F00EF7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		51ABCD1F2E183226006CD6C0 /* SoshTheme+TokensElevationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensElevationUITests.swift"; sourceTree = "<group>"; };
+		51ABCD202E183226006CD6C0 /* SoshTheme+TokensSizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensSizeUITests.swift"; sourceTree = "<group>"; };
+		51ABCD212E183226006CD6C0 /* SoshTheme+TokensSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensSpaceUITests.swift"; sourceTree = "<group>"; };
+		51ABCD222E183226006CD6C0 /* SoshTheme+TokensBorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensBorderUITests.swift"; sourceTree = "<group>"; };
+		51ABCD232E183226006CD6C0 /* SoshTheme+TokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensOpacityUITests.swift"; sourceTree = "<group>"; };
+		51ABCD242E183226006CD6C0 /* SoshTheme+TokensColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensColorUITests.swift"; sourceTree = "<group>"; };
+		51ABCD252E183226006CD6C0 /* SoshTheme+TokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensFontUITests.swift"; sourceTree = "<group>"; };
 		51B842BB2D93FF45000382F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/about_legal_information.html; sourceTree = "<group>"; };
 		51B842BC2D93FF45000382F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/about_privacy_policy.html; sourceTree = "<group>"; };
 		51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColorMode.swift; sourceTree = "<group>"; };
@@ -497,11 +705,20 @@
 		51BD761C2C466FCF0033365D /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		51BD761E2C466FCF0033365D /* DesignToolbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignToolbox.swift; sourceTree = "<group>"; };
 		51BD761F2C466FCF0033365D /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		51D6D5822D883D50009CD879 /* OUDSRadioButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSRadioButtonUITests.swift; sourceTree = "<group>"; };
 		51D6D5842D887E36009CD879 /* CheckboxIndeterminateElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxIndeterminateElement.swift; sourceTree = "<group>"; };
 		51D6D58A2D887E94009CD879 /* CheckboxIndeterminatePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxIndeterminatePage.swift; sourceTree = "<group>"; };
 		51D6D5902D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxIndeterminateConfiguration.swift; sourceTree = "<group>"; };
+		51E015962E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensElevationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+TokensElevationUITests.swift"; sourceTree = "<group>"; };
+		51E015972E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensSizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+TokensSizeUITests.swift"; sourceTree = "<group>"; };
+		51E015982E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+TokensSpaceUITests.swift"; sourceTree = "<group>"; };
+		51E015992E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensBorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+TokensBorderUITests.swift"; sourceTree = "<group>"; };
+		51E0159A2E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+TokensOpacityUITests.swift"; sourceTree = "<group>"; };
+		51E0159B2E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+TokensColorUITests.swift"; sourceTree = "<group>"; };
+		51E0159C2E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+TokensFontUITests.swift"; sourceTree = "<group>"; };
 		51E3FF0A2CAFD9AE00F1BC59 /* DesignToolboxElementPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxElementPage.swift; sourceTree = "<group>"; };
+		51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		51E599A72E27ED5F002BCB27 /* DesignToolboxUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignToolboxUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		51E599B32E27EDD0002BCB27 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		51EB737B2DBFD26000F37FEC /* AppTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTestCase.swift; sourceTree = "<group>"; };
 		51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerUITests.swift; sourceTree = "<group>"; };
 		51EB73842DBFDC5500F37FEC /* DesignToolboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignToolboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -553,15 +770,26 @@
 				5115A16A2DDF39AC0025A760 /* OUDSFoundations in Frameworks */,
 				5115A1742DDF39AC0025A760 /* OUDSTokensSemantic in Frameworks */,
 				513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */,
+				515F66F02E2E71DB00268440 /* OUDSThemesOrangeInverse in Frameworks */,
 				510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */,
 				5115A1722DDF39AC0025A760 /* OUDSTokensRaw in Frameworks */,
 				5115A16C2DDF39AC0025A760 /* OUDSModules in Frameworks */,
 				6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */,
+				51DB2E142E2AAAB9004F7487 /* OUDSThemesOrangeBusinessTools in Frameworks */,
+				51ABCD182E182D7C006CD6C0 /* OUDSThemesSosh in Frameworks */,
 				5115A1702DDF39AC0025A760 /* OUDSTokensComponent in Frameworks */,
 				5115A1662DDF39AC0025A760 /* OUDS in Frameworks */,
 				5115A16E2DDF39AC0025A760 /* OUDSThemesOrange in Frameworks */,
 				070C35662C7762B90029C6A8 /* OUDSModules in Frameworks */,
+				5131F14D2E324A9A00A942B0 /* OUDSThemesWireframe in Frameworks */,
 				A5E69629240B3A88C139F084 /* Pods_DesignToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51E599A42E27ED5F002BCB27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +848,7 @@
 			children = (
 				0735430F2CA15440001187EA /* Cards */,
 				0708222D2CFF617000570EC7 /* Elements */,
-				5152DA1C2DE0BD3B0078B9F1 /* DesignToolboxCopyableText.swift */,
+				5152DA1C2DE0BD3B0078B9F1 /* DesignToolbox+EnrichedTexts.swift */,
 				07F7533A2CC785620007450D /* DesignToolboxSectionHeaderStyle.swift */,
 				07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */,
 				0762276B2DA93D62009C3632 /* DesignToolboxColorPicker.swift */,
@@ -907,6 +1135,16 @@
 			path = ColoredSurface;
 			sourceTree = "<group>";
 		};
+		07EB46FC2E1801BB00B94EC2 /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				07EB46FD2E1801D000B94EC2 /* BadgeConfigurationView.swift */,
+				07EB46FE2E1801D000B94EC2 /* BadgeElement.swift */,
+				07EB46FF2E1801D000B94EC2 /* BadgePage.swift */,
+			);
+			path = Badge;
+			sourceTree = "<group>";
+		};
 		07F0AFE62CFE055300D334DD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -937,6 +1175,7 @@
 				51BD76202C466FCF0033365D /* DesignToolbox */,
 				51EB73792DBFD24400F37FEC /* DesignToolboxUITests */,
 				0740A9902C9873500069D24A /* DesignToolboxSnapshotsTests */,
+				51E599B52E27EDD0002BCB27 /* DesignToolboxUnitTests */,
 				07FDCD922C296A500009AA13 /* Products */,
 				AFD4931269C94655071502F6 /* Pods */,
 				6E90D400B72B50FE406E8DFC /* Frameworks */,
@@ -949,6 +1188,7 @@
 				07FDCD912C296A500009AA13 /* Design System Toolbox.app */,
 				0740A98F2C9873500069D24A /* DesignToolboxSnapshotsTests.xctest */,
 				51EB73842DBFDC5500F37FEC /* DesignToolboxUITests.xctest */,
+				51E599A72E27ED5F002BCB27 /* DesignToolboxUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1018,6 +1258,107 @@
 			path = Checkbox;
 			sourceTree = "<group>";
 		};
+		51417C0E2E1BEE06000266C8 /* Test Cases */ = {
+			isa = PBXGroup;
+			children = (
+				515EE9A12E2133C800A60E96 /* ChipsUITestsTestCase.swift */,
+				518EC0A12E1FF2C000FC77E4 /* BadgeUITestsTestCase.swift */,
+				518EC0A32E1FF2C000FC77E4 /* ButtonUITestsTestCase.swift */,
+				518EC0A42E1FF2C000FC77E4 /* CheckboxUITestsTestCase.swift */,
+				518EC0A52E1FF2C000FC77E4 /* DividerUITestsTestCase.swift */,
+				518EC0A62E1FF2C000FC77E4 /* LinkUITestsTestCase.swift */,
+				518EC0A72E1FF2C000FC77E4 /* RadioButtonUITestsTestCase.swift */,
+				518EC0AF2E1FF2E800FC77E4 /* SwitchUITestsTestCase.swift */,
+			);
+			path = "Test Cases";
+			sourceTree = "<group>";
+		};
+		51417C1D2E1BF4EC000266C8 /* Test Cases */ = {
+			isa = PBXGroup;
+			children = (
+				51417C2A2E1BF7B2000266C8 /* TokensFontUITestsTestCase.swift */,
+				51417C282E1BF70F000266C8 /* TokensColorUITestsTestCase.swift */,
+				51417C262E1BF6B8000266C8 /* TokensOpacityUITestsTestCase.swift */,
+				51417C242E1BF661000266C8 /* TokensBorderUITestsTestCase.swift */,
+				51417C222E1BF5D1000266C8 /* TokensSpaceUITestsTestCase.swift */,
+				51417C202E1BF57F000266C8 /* TokensSizeUITestsTestCase.swift */,
+				51417C1E2E1BF4FB000266C8 /* TokensElevationUITestsTestCase.swift */,
+			);
+			path = "Test Cases";
+			sourceTree = "<group>";
+		};
+		515EE9762E21329B00A60E96 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				515EE9752E21329B00A60E96 /* ChipLayout.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		515EE97A2E21329B00A60E96 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				515EE9772E21329B00A60E96 /* FilterChipConfigurationView.swift */,
+				515EE9782E21329B00A60E96 /* FilterChipElement.swift */,
+				515EE9792E21329B00A60E96 /* FilterChipPage.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		515EE97E2E21329B00A60E96 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				515EE97B2E21329B00A60E96 /* ChipPickerConfigurationView.swift */,
+				515EE97C2E21329B00A60E96 /* ChipPickerElement.swift */,
+				515EE97D2E21329B00A60E96 /* ChipPickerPage.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		515EE9822E21329B00A60E96 /* Suggestion */ = {
+			isa = PBXGroup;
+			children = (
+				515EE97F2E21329B00A60E96 /* SuggestionChipConfigurationView.swift */,
+				515EE9802E21329B00A60E96 /* SuggestionChipElement.swift */,
+				515EE9812E21329B00A60E96 /* SuggestionChipPage.swift */,
+			);
+			path = Suggestion;
+			sourceTree = "<group>";
+		};
+		515EE9842E21329B00A60E96 /* Chips */ = {
+			isa = PBXGroup;
+			children = (
+				515EE9762E21329B00A60E96 /* Common */,
+				515EE97A2E21329B00A60E96 /* Filter */,
+				515EE97E2E21329B00A60E96 /* Picker */,
+				515EE9822E21329B00A60E96 /* Suggestion */,
+				515EE9832E21329B00A60E96 /* ChipElements.swift */,
+			);
+			path = Chips;
+			sourceTree = "<group>";
+		};
+		515EE99F2E2132E300A60E96 /* Chips */ = {
+			isa = PBXGroup;
+			children = (
+				515EE99E2E2132E300A60E96 /* ChipsPickerUITests.swift */,
+			);
+			path = Chips;
+			sourceTree = "<group>";
+		};
+		515F66F82E2E925600268440 /* OrangeInverseTheme */ = {
+			isa = PBXGroup;
+			children = (
+				515F66F12E2E925600268440 /* OrangeInverseTheme+TokensElevationUITests.swift */,
+				515F66F22E2E925600268440 /* OrangeInverseTheme+TokensSizeUITests.swift */,
+				515F66F32E2E925600268440 /* OrangeInverseTheme+TokensSpaceUITests.swift */,
+				515F66F42E2E925600268440 /* OrangeInverseTheme+TokensBorderUITests.swift */,
+				515F66F52E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift */,
+				515F66F62E2E925600268440 /* OrangeInverseTheme+TokensColorUITests.swift */,
+				515F66F72E2E925600268440 /* OrangeInverseTheme+TokensFontUITests.swift */,
+			);
+			path = OrangeInverseTheme;
+			sourceTree = "<group>";
+		};
 		5180FE6D2DBBC2FA0062E489 /* CheckboxPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1059,13 +1400,12 @@
 		51952A792D3FA1260068B807 /* Tokens */ = {
 			isa = PBXGroup;
 			children = (
-				51952A882D3FA2060068B807 /* OUDSTokensElevationUITests.swift */,
-				51952A822D3FA1A70068B807 /* OUDSTokensSizeUITests.swift */,
-				51952A852D3FA1D60068B807 /* OUDSTokensSpaceUITests.swift */,
-				51952A7B2D3FA1490068B807 /* OUDSTokensBorderUITests.swift */,
-				51952A8E2D3FA2490068B807 /* OUDSTokensOpacityUITests.swift */,
-				51952A7E2D3FA1770068B807 /* OUDSTokensColorUITests.swift */,
-				51952A8B2D3FA2280068B807 /* OUDSTokensFontUITests.swift */,
+				51417C1D2E1BF4EC000266C8 /* Test Cases */,
+				51ABCD1B2E1830BB006CD6C0 /* OrangeTheme */,
+				51ABCD262E183226006CD6C0 /* SoshTheme */,
+				51E0159D2E2AA82C00A86512 /* OrangeBusinessToolsTheme */,
+				515F66F82E2E925600268440 /* OrangeInverseTheme */,
+				51A2177D2E325FE600562BE0 /* WireframeTheme */,
 			);
 			path = Tokens;
 			sourceTree = "<group>";
@@ -1073,14 +1413,131 @@
 		51952A902D3FA25F0068B807 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				51952A912D3FA26B0068B807 /* OUDSButtonUITests.swift */,
-				514D02FB2D75F45F00622692 /* OUDSCheckboxUITests.swift */,
-				07304A4A2D427146009320BA /* OUDSLinkUITests.swift */,
-				0762276E2DA9489C009C3632 /* OUDSDividerUITests.swift */,
-				51D6D5822D883D50009CD879 /* OUDSRadioButtonUITests.swift */,
-				0794FCD62D914DC400A9373A /* OUDSSwitchUITests.swift */,
+				51417C0E2E1BEE06000266C8 /* Test Cases */,
+				51ABCD2F2E18335D006CD6C0 /* SoshTheme */,
+				51ABCD2E2E183350006CD6C0 /* OrangeTheme */,
+				51A2175C2E325ED500562BE0 /* OrangeBusinessToolsTheme */,
+				51A217492E325E6C00562BE0 /* OrangeInverseTheme */,
+				51A2176D2E325F7F00562BE0 /* WireframeTheme */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		51A217492E325E6C00562BE0 /* OrangeInverseTheme */ = {
+			isa = PBXGroup;
+			children = (
+				51A217412E325E6C00562BE0 /* OrangeInverseTheme+ChipsUITests.swift */,
+				51A217422E325E6C00562BE0 /* OrangeInverseTheme+BadgeUITests.swift */,
+				51A217432E325E6C00562BE0 /* OrangeInverseTheme+ButtonUITests.swift */,
+				51A217442E325E6C00562BE0 /* OrangeInverseTheme+CheckboxUITests.swift */,
+				51A217452E325E6C00562BE0 /* OrangeInverseTheme+DividerUITests.swift */,
+				51A217462E325E6C00562BE0 /* OrangeInverseTheme+LinkUITests.swift */,
+				51A217472E325E6C00562BE0 /* OrangeInverseTheme+RadioButtonUITests.swift */,
+				51A217482E325E6C00562BE0 /* OrangeInverseTheme+SwitchUITests.swift */,
+			);
+			path = OrangeInverseTheme;
+			sourceTree = "<group>";
+		};
+		51A2175C2E325ED500562BE0 /* OrangeBusinessToolsTheme */ = {
+			isa = PBXGroup;
+			children = (
+				51A217542E325ED500562BE0 /* OrangeBusinessToolsTheme+ChipsUITests.swift */,
+				51A217552E325ED500562BE0 /* OrangeBusinessToolsTheme+BadgeUITests.swift */,
+				51A217562E325ED500562BE0 /* OrangeBusinessToolsTheme+ButtonUITests.swift */,
+				51A217572E325ED500562BE0 /* OrangeBusinessToolsTheme+CheckboxUITests.swift */,
+				51A217582E325ED500562BE0 /* OrangeBusinessToolsTheme+DividerUITests.swift */,
+				51A217592E325ED500562BE0 /* OrangeBusinessToolsTheme+LinkUITests.swift */,
+				51A2175A2E325ED500562BE0 /* OrangeBusinessToolsTheme+RadioButtonUITests.swift */,
+				51A2175B2E325ED500562BE0 /* OrangeBusinessToolsTheme+SwitchUITests.swift */,
+			);
+			path = OrangeBusinessToolsTheme;
+			sourceTree = "<group>";
+		};
+		51A2176D2E325F7F00562BE0 /* WireframeTheme */ = {
+			isa = PBXGroup;
+			children = (
+				51A217652E325F7F00562BE0 /* WireframeTheme+ChipsUITests.swift */,
+				51A217662E325F7F00562BE0 /* WireframeTheme+BadgeUITests.swift */,
+				51A217672E325F7F00562BE0 /* WireframeTheme+ButtonUITests.swift */,
+				51A217682E325F7F00562BE0 /* WireframeTheme+CheckboxUITests.swift */,
+				51A217692E325F7F00562BE0 /* WireframeTheme+DividerUITests.swift */,
+				51A2176A2E325F7F00562BE0 /* WireframeTheme+LinkUITests.swift */,
+				51A2176B2E325F7F00562BE0 /* WireframeTheme+RadioButtonUITests.swift */,
+				51A2176C2E325F7F00562BE0 /* WireframeTheme+SwitchUITests.swift */,
+			);
+			path = WireframeTheme;
+			sourceTree = "<group>";
+		};
+		51A2177D2E325FE600562BE0 /* WireframeTheme */ = {
+			isa = PBXGroup;
+			children = (
+				51A217762E325FE600562BE0 /* WireframeTheme+TokensElevationUITests.swift */,
+				51A217772E325FE600562BE0 /* WireframeTheme+TokensSizeUITests.swift */,
+				51A217782E325FE600562BE0 /* WireframeTheme+TokensSpaceUITests.swift */,
+				51A217792E325FE600562BE0 /* WireframeTheme+TokensBorderUITests.swift */,
+				51A2177A2E325FE600562BE0 /* WireframeTheme+TokensOpacityUITests.swift */,
+				51A2177B2E325FE600562BE0 /* WireframeTheme+TokensColorUITests.swift */,
+				51A2177C2E325FE600562BE0 /* WireframeTheme+TokensFontUITests.swift */,
+			);
+			path = WireframeTheme;
+			sourceTree = "<group>";
+		};
+		51ABCD1B2E1830BB006CD6C0 /* OrangeTheme */ = {
+			isa = PBXGroup;
+			children = (
+				51952A882D3FA2060068B807 /* OrangeTheme+TokensElevationUITests.swift */,
+				51952A822D3FA1A70068B807 /* OrangeTheme+TokensSizeUITests.swift */,
+				51952A852D3FA1D60068B807 /* OrangeTheme+TokensSpaceUITests.swift */,
+				51952A7B2D3FA1490068B807 /* OrangeTheme+TokensBorderUITests.swift */,
+				51952A8E2D3FA2490068B807 /* OrangeTheme+TokensOpacityUITests.swift */,
+				51952A7E2D3FA1770068B807 /* OrangeTheme+TokensColorUITests.swift */,
+				51952A8B2D3FA2280068B807 /* OrangeTheme+TokensFontUITests.swift */,
+			);
+			path = OrangeTheme;
+			sourceTree = "<group>";
+		};
+		51ABCD262E183226006CD6C0 /* SoshTheme */ = {
+			isa = PBXGroup;
+			children = (
+				51ABCD1F2E183226006CD6C0 /* SoshTheme+TokensElevationUITests.swift */,
+				51ABCD202E183226006CD6C0 /* SoshTheme+TokensSizeUITests.swift */,
+				51ABCD212E183226006CD6C0 /* SoshTheme+TokensSpaceUITests.swift */,
+				51ABCD222E183226006CD6C0 /* SoshTheme+TokensBorderUITests.swift */,
+				51ABCD232E183226006CD6C0 /* SoshTheme+TokensOpacityUITests.swift */,
+				51ABCD242E183226006CD6C0 /* SoshTheme+TokensColorUITests.swift */,
+				51ABCD252E183226006CD6C0 /* SoshTheme+TokensFontUITests.swift */,
+			);
+			path = SoshTheme;
+			sourceTree = "<group>";
+		};
+		51ABCD2E2E183350006CD6C0 /* OrangeTheme */ = {
+			isa = PBXGroup;
+			children = (
+				515EE9A52E21347200A60E96 /* OrangeTheme+ChipsUITests.swift */,
+				518EC0B32E1FF38400FC77E4 /* OrangeTheme+BadgeUITests.swift */,
+				518EC06F2E1FF23800FC77E4 /* OrangeTheme+ButtonUITests.swift */,
+				518EC0702E1FF23800FC77E4 /* OrangeTheme+CheckboxUITests.swift */,
+				518EC0712E1FF23800FC77E4 /* OrangeTheme+DividerUITests.swift */,
+				518EC0722E1FF23800FC77E4 /* OrangeTheme+LinkUITests.swift */,
+				518EC0732E1FF23800FC77E4 /* OrangeTheme+RadioButtonUITests.swift */,
+				518EC0742E1FF23800FC77E4 /* OrangeTheme+SwitchUITests.swift */,
+			);
+			path = OrangeTheme;
+			sourceTree = "<group>";
+		};
+		51ABCD2F2E18335D006CD6C0 /* SoshTheme */ = {
+			isa = PBXGroup;
+			children = (
+				515EE9A32E2133F200A60E96 /* SoshTheme+ChipsUITests.swift */,
+				518EC0B12E1FF32B00FC77E4 /* SoshTheme+BadgeUITests.swift */,
+				518EC0952E1FF28300FC77E4 /* SoshTheme+ButtonUITests.swift */,
+				518EC0962E1FF28300FC77E4 /* SoshTheme+CheckboxUITests.swift */,
+				518EC0972E1FF28300FC77E4 /* SoshTheme+DividerUITests.swift */,
+				518EC0982E1FF28300FC77E4 /* SoshTheme+LinkUITests.swift */,
+				518EC0992E1FF28300FC77E4 /* SoshTheme+RadioButtonUITests.swift */,
+				518EC09A2E1FF28300FC77E4 /* SoshTheme+SwitchUITests.swift */,
+			);
+			path = SoshTheme;
 			sourceTree = "<group>";
 		};
 		51BD760C2C466FCF0033365D /* About */ = {
@@ -1095,8 +1552,10 @@
 		51BD760E2C466FCF0033365D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				07EB46FC2E1801BB00B94EC2 /* Badge */,
 				072141182D02F52A00B7B9C6 /* Button */,
 				513442062D75B880000B5DE4 /* Checkbox */,
+				515EE9842E21329B00A60E96 /* Chips */,
 				07D3DBF02DA5084500D8A57F /* ColoredSurface */,
 				07523E7C2E0016FE00A7C87C /* ControlItem */,
 				076227622DA90C65009C3632 /* Divider */,
@@ -1160,6 +1619,7 @@
 		51BD761D2C466FCF0033365D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */,
 				51F676DA2E0D45F300C15CB6 /* A11YIdentifiers.swift */,
 				5122E0292D65E7AC00CD2857 /* String+extension.swift */,
 				51BD761C2C466FCF0033365D /* WebView.swift */,
@@ -1180,6 +1640,36 @@
 				51BD761F2C466FCF0033365D /* MainView.swift */,
 			);
 			path = DesignToolbox;
+			sourceTree = "<group>";
+		};
+		51E0159D2E2AA82C00A86512 /* OrangeBusinessToolsTheme */ = {
+			isa = PBXGroup;
+			children = (
+				51E015962E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensElevationUITests.swift */,
+				51E015972E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensSizeUITests.swift */,
+				51E015982E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensSpaceUITests.swift */,
+				51E015992E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensBorderUITests.swift */,
+				51E0159A2E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensOpacityUITests.swift */,
+				51E0159B2E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensColorUITests.swift */,
+				51E0159C2E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensFontUITests.swift */,
+			);
+			path = OrangeBusinessToolsTheme;
+			sourceTree = "<group>";
+		};
+		51E599B42E27EDD0002BCB27 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				51E599B32E27EDD0002BCB27 /* StringTests.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		51E599B52E27EDD0002BCB27 /* DesignToolboxUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				51E599B42E27EDD0002BCB27 /* Utils */,
+			);
+			path = DesignToolboxUnitTests;
 			sourceTree = "<group>";
 		};
 		51EB73792DBFD24400F37FEC /* DesignToolboxUITests */ = {
@@ -1205,6 +1695,7 @@
 				51F676EB2E0D677800C15CB6 /* Switches */,
 				51F676E62E0D650900C15CB6 /* Radios */,
 				51F676E52E0D641500C15CB6 /* Checkboxes */,
+				515EE99F2E2132E300A60E96 /* Chips */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1339,10 +1830,34 @@
 				5115A16F2DDF39AC0025A760 /* OUDSTokensComponent */,
 				5115A1712DDF39AC0025A760 /* OUDSTokensRaw */,
 				5115A1732DDF39AC0025A760 /* OUDSTokensSemantic */,
+				51ABCD172E182D7C006CD6C0 /* OUDSThemesSosh */,
+				51DB2E132E2AAAB9004F7487 /* OUDSThemesOrangeBusinessTools */,
+				515F66EF2E2E71DB00268440 /* OUDSThemesOrangeInverse */,
+				5131F14C2E324A9A00A942B0 /* OUDSThemesWireframe */,
 			);
 			productName = DemoApp;
 			productReference = 07FDCD912C296A500009AA13 /* Design System Toolbox.app */;
 			productType = "com.apple.product-type.application";
+		};
+		51E599A62E27ED5F002BCB27 /* DesignToolboxUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51E599AD2E27ED5F002BCB27 /* Build configuration list for PBXNativeTarget "DesignToolboxUnitTests" */;
+			buildPhases = (
+				51E599A32E27ED5F002BCB27 /* Sources */,
+				51E599A42E27ED5F002BCB27 /* Frameworks */,
+				51E599A52E27ED5F002BCB27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				51E599AC2E27ED5F002BCB27 /* PBXTargetDependency */,
+			);
+			name = DesignToolboxUnitTests;
+			packageProductDependencies = (
+			);
+			productName = DesignToolboxUnitTest;
+			productReference = 51E599A72E27ED5F002BCB27 /* DesignToolboxUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		51EB73832DBFDC5500F37FEC /* DesignToolboxUITests */ = {
 			isa = PBXNativeTarget;
@@ -1385,6 +1900,10 @@
 					5123647C2C3D7D6F00572FD5 = {
 						CreatedOnToolsVersion = 15.4;
 					};
+					51E599A62E27ED5F002BCB27 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 07FDCD902C296A500009AA13;
+					};
 					51EB73832DBFDC5500F37FEC = {
 						CreatedOnToolsVersion = 16.3;
 						TestTargetID = 07FDCD902C296A500009AA13;
@@ -1415,6 +1934,7 @@
 				5123647C2C3D7D6F00572FD5 /* Periphery */,
 				0740A98E2C9873500069D24A /* DesignToolboxSnapshotsTests */,
 				51EB73832DBFDC5500F37FEC /* DesignToolboxUITests */,
+				51E599A62E27ED5F002BCB27 /* DesignToolboxUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1447,6 +1967,13 @@
 				6DFC20B82CE3AF1500F2EC33 /* style.css in Resources */,
 				6DFC20B92CE3AF1500F2EC33 /* orange-logo.svg in Resources */,
 				512364792C3D7B2D00572FD5 /* Podfile.lock in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51E599A52E27ED5F002BCB27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1546,13 +2073,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				51FD65222E0D8DB20084B982 /* A11YIdentifiers.swift in Sources */,
+				518EC0752E1FF23800FC77E4 /* OrangeTheme+ButtonUITests.swift in Sources */,
+				518EC0762E1FF23800FC77E4 /* OrangeTheme+RadioButtonUITests.swift in Sources */,
+				518EC09B2E1FF28300FC77E4 /* SoshTheme+DividerUITests.swift in Sources */,
+				51A217502E325E6C00562BE0 /* OrangeInverseTheme+BadgeUITests.swift in Sources */,
+				518EC09C2E1FF28300FC77E4 /* SoshTheme+LinkUITests.swift in Sources */,
+				518EC09D2E1FF28300FC77E4 /* SoshTheme+SwitchUITests.swift in Sources */,
+				518EC09E2E1FF28300FC77E4 /* SoshTheme+CheckboxUITests.swift in Sources */,
+				518EC09F2E1FF28300FC77E4 /* SoshTheme+RadioButtonUITests.swift in Sources */,
+				518EC0A02E1FF28300FC77E4 /* SoshTheme+ButtonUITests.swift in Sources */,
+				518EC0772E1FF23800FC77E4 /* OrangeTheme+CheckboxUITests.swift in Sources */,
+				51A2174A2E325E6C00562BE0 /* OrangeInverseTheme+ButtonUITests.swift in Sources */,
+				518EC0782E1FF23800FC77E4 /* OrangeTheme+DividerUITests.swift in Sources */,
+				518EC0792E1FF23800FC77E4 /* OrangeTheme+LinkUITests.swift in Sources */,
+				518EC07A2E1FF23800FC77E4 /* OrangeTheme+SwitchUITests.swift in Sources */,
 				5122E02B2D65FEBA00CD2857 /* String+extension.swift in Sources */,
 				510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */,
 				51952AA52D3FA3440068B807 /* Card.swift in Sources */,
 				51952A942D3FA32E0068B807 /* DesignToolboxElementsPage.swift in Sources */,
+				51A217622E325ED500562BE0 /* OrangeBusinessToolsTheme+SwitchUITests.swift in Sources */,
 				51952A952D3FA32E0068B807 /* DesignToolboxVariantElement.swift in Sources */,
+				51A2177E2E325FE600562BE0 /* WireframeTheme+TokensColorUITests.swift in Sources */,
 				51952A962D3FA32E0068B807 /* View+Illustration.swift in Sources */,
-				51D6D5832D883D50009CD879 /* OUDSRadioButtonUITests.swift in Sources */,
+				515EE9A22E2133C800A60E96 /* ChipsUITestsTestCase.swift in Sources */,
 				51952A972D3FA32E0068B807 /* FontTokenElement.swift in Sources */,
 				518B26672DAE9DE1003A6ED3 /* RadioPickerPage.swift in Sources */,
 				518B26682DAE9DE1003A6ED3 /* RadioPickerConfiguration.swift in Sources */,
@@ -1560,21 +2103,38 @@
 				0745C19C2D7A0823006B3A1F /* RadioItemPage.swift in Sources */,
 				07523E7E2E00173D00A7C87C /* ControlItemConfigurationModel.swift in Sources */,
 				51952A982D3FA32E0068B807 /* FontTokenPage.swift in Sources */,
+				51A2175E2E325ED500562BE0 /* OrangeBusinessToolsTheme+RadioButtonUITests.swift in Sources */,
 				07AB45872D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */,
+				51A217722E325F7F00562BE0 /* WireframeTheme+LinkUITests.swift in Sources */,
 				51952A992D3FA32E0068B807 /* BorderTokenElement.swift in Sources */,
 				51952A9A2D3FA32E0068B807 /* NamedColor+Opacity.swift in Sources */,
+				51A2174F2E325E6C00562BE0 /* OrangeInverseTheme+SwitchUITests.swift in Sources */,
 				51952A9B2D3FA32E0068B807 /* NamedColor+Overlay.swift in Sources */,
+				515F66F92E2E925600268440 /* OrangeInverseTheme+TokensColorUITests.swift in Sources */,
 				51952A9C2D3FA32E0068B807 /* NamedColor+Repository.swift in Sources */,
+				51417C212E1BF57F000266C8 /* TokensSizeUITestsTestCase.swift in Sources */,
 				51952A9D2D3FA32E0068B807 /* NamedColor+Surface.swift in Sources */,
 				51952A9E2D3FA32E0068B807 /* ColorTokenElement.swift in Sources */,
+				51A2174B2E325E6C00562BE0 /* OrangeInverseTheme+RadioButtonUITests.swift in Sources */,
+				518EC0A82E1FF2C000FC77E4 /* BadgeUITestsTestCase.swift in Sources */,
+				518EC0A92E1FF2C000FC77E4 /* ButtonUITestsTestCase.swift in Sources */,
+				518EC0AA2E1FF2C000FC77E4 /* LinkUITestsTestCase.swift in Sources */,
+				518EC0AB2E1FF2C000FC77E4 /* CheckboxUITestsTestCase.swift in Sources */,
+				518EC0AC2E1FF2C000FC77E4 /* RadioButtonUITestsTestCase.swift in Sources */,
+				51A217742E325F7F00562BE0 /* WireframeTheme+CheckboxUITests.swift in Sources */,
+				51A217632E325ED500562BE0 /* OrangeBusinessToolsTheme+BadgeUITests.swift in Sources */,
+				518EC0AE2E1FF2C000FC77E4 /* DividerUITestsTestCase.swift in Sources */,
 				51952A9F2D3FA32E0068B807 /* SpaceTokenElement.swift in Sources */,
 				51952AA02D3FA32E0068B807 /* DimensionTokenElement.swift in Sources */,
+				51A217642E325ED500562BE0 /* OrangeBusinessToolsTheme+ChipsUITests.swift in Sources */,
 				51952AA12D3FA32E0068B807 /* ElevationTokenElement.swift in Sources */,
 				51952AA22D3FA32E0068B807 /* GridTokenElement.swift in Sources */,
 				0794FCDB2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift in Sources */,
 				51952AA32D3FA32E0068B807 /* GrisTokenPage.swift in Sources */,
+				515EE9A42E2133F200A60E96 /* SoshTheme+ChipsUITests.swift in Sources */,
 				51952AA42D3FA32E0068B807 /* TokensPage.swift in Sources */,
 				0745C1912D7A0596006B3A1F /* RadioPage.swift in Sources */,
+				51A217612E325ED500562BE0 /* OrangeBusinessToolsTheme+LinkUITests.swift in Sources */,
 				0745C1922D7A0596006B3A1F /* RadioConfiguration.swift in Sources */,
 				0745C1932D7A0596006B3A1F /* RadioElement.swift in Sources */,
 				51952A932D3FA2E30068B807 /* NamedFont.swift in Sources */,
@@ -1582,22 +2142,35 @@
 				07CC9ADE2DB0F66E001BC929 /* RadioItemElement.swift in Sources */,
 				51B8D5A22DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */,
 				6DED17F12CD2641800584BC9 /* OpacityTokenElement.swift in Sources */,
+				07EB47032E1801D000B94EC2 /* BadgePage.swift in Sources */,
+				07EB47042E1801D000B94EC2 /* BadgeElement.swift in Sources */,
+				07EB47052E1801D000B94EC2 /* BadgeConfigurationView.swift in Sources */,
+				51E015A12E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensColorUITests.swift in Sources */,
+				51ABCD272E183226006CD6C0 /* SoshTheme+TokensBorderUITests.swift in Sources */,
 				0745C18A2D7A03B8006B3A1F /* RadioElements.swift in Sources */,
-				51952A922D3FA2720068B807 /* OUDSButtonUITests.swift in Sources */,
-				51952A7C2D3FA1510068B807 /* OUDSTokensBorderUITests.swift in Sources */,
+				51952A7C2D3FA1510068B807 /* OrangeTheme+TokensBorderUITests.swift in Sources */,
+				518EC0B42E1FF38400FC77E4 /* OrangeTheme+BadgeUITests.swift in Sources */,
 				51D6D5862D887E36009CD879 /* CheckboxIndeterminateElement.swift in Sources */,
 				6DED17EF2CD25B2200584BC9 /* SizeTokenElement.swift in Sources */,
+				51A217832E325FE600562BE0 /* WireframeTheme+TokensOpacityUITests.swift in Sources */,
 				6DED17EE2CD23E5400584BC9 /* CardIllustration.swift in Sources */,
 				6DED17ED2CD23D5200584BC9 /* DesignToolboxElementPage.swift in Sources */,
 				6DED17EC2CD23D3A00584BC9 /* DesignToolboxElement.swift in Sources */,
+				51ABCD2A2E183226006CD6C0 /* SoshTheme+TokensSpaceUITests.swift in Sources */,
 				07F0AFE82CFE0FBD00D334DD /* DesignToolboxConfiguration.swift in Sources */,
 				6DB260DF2CD0F0520091F72E /* NamedSpace+Fixed.swift in Sources */,
+				51A217732E325F7F00562BE0 /* WireframeTheme+DividerUITests.swift in Sources */,
+				51ABCD2D2E183226006CD6C0 /* SoshTheme+TokensOpacityUITests.swift in Sources */,
+				51E0159F2E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensSpaceUITests.swift in Sources */,
 				6DB260E02CD0F0520091F72E /* NameSpace+PaddingInline.swift in Sources */,
 				072141192D02F52A00B7B9C6 /* ButtonPage.swift in Sources */,
 				0721411B2D02F52A00B7B9C6 /* ButtonElement.swift in Sources */,
 				6DB260E12CD0F0520091F72E /* NameSpace+PaddingInset.swift in Sources */,
-				5152DA1D2DE0BD440078B9F1 /* DesignToolboxCopyableText.swift in Sources */,
+				5152DA1D2DE0BD440078B9F1 /* DesignToolbox+EnrichedTexts.swift in Sources */,
 				51952A752D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
+				515F66FB2E2E925600268440 /* OrangeInverseTheme+TokensSizeUITests.swift in Sources */,
+				51A217712E325F7F00562BE0 /* WireframeTheme+RadioButtonUITests.swift in Sources */,
+				51417C272E1BF6B8000266C8 /* TokensOpacityUITestsTestCase.swift in Sources */,
 				6DB260E22CD0F0520091F72E /* NameSpace+PaddingStack.swift in Sources */,
 				6DB260E32CD0F0520091F72E /* NameSpace+ColumnGap.swift in Sources */,
 				07CC9AED2DB0F7DD001BC929 /* SwitchElement.swift in Sources */,
@@ -1605,52 +2178,86 @@
 				07CC9AEF2DB0F7DD001BC929 /* SwitchItemElement.swift in Sources */,
 				07CC9AF02DB0F7DD001BC929 /* SwitchPage.swift in Sources */,
 				07CC9AF22DB0F7DD001BC929 /* SwitchConfiguration.swift in Sources */,
+				51A2175D2E325ED500562BE0 /* OrangeBusinessToolsTheme+ButtonUITests.swift in Sources */,
 				075BC9452DC01D2C00CB2573 /* DesignToolboxEditContentDisclosure.swift in Sources */,
 				6DB260E42CD0F0520091F72E /* NameSpace+RowGap.swift in Sources */,
+				518EC0B22E1FF33300FC77E4 /* SoshTheme+BadgeUITests.swift in Sources */,
+				51E015A42E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensSizeUITests.swift in Sources */,
 				513442072D75B880000B5DE4 /* CheckboxElement.swift in Sources */,
 				513442082D75B880000B5DE4 /* CheckboxPage.swift in Sources */,
+				51A217802E325FE600562BE0 /* WireframeTheme+TokensSpaceUITests.swift in Sources */,
+				51E5999D2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */,
+				51A217822E325FE600562BE0 /* WireframeTheme+TokensBorderUITests.swift in Sources */,
 				5134420B2D75B880000B5DE4 /* CheckboxConfiguration.swift in Sources */,
-				514D02FC2D75F45F00622692 /* OUDSCheckboxUITests.swift in Sources */,
 				5134420C2D75B880000B5DE4 /* CheckboxElements.swift in Sources */,
-				0794FCD72D914DC400A9373A /* OUDSSwitchUITests.swift in Sources */,
 				6DB260DD2CD0F01F0091F72E /* NamedSpace+Scaled.swift in Sources */,
 				6DB260DC2CD0F0000091F72E /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				6DB260DB2CD0EFD90091F72E /* NamedSize+IconWithTypography.swift in Sources */,
 				076227632DA90C65009C3632 /* DividerConfiguration.swift in Sources */,
-				0762276F2DA9489C009C3632 /* OUDSDividerUITests.swift in Sources */,
+				51A2174E2E325E6C00562BE0 /* OrangeInverseTheme+LinkUITests.swift in Sources */,
+				51417C232E1BF5D1000266C8 /* TokensSpaceUITestsTestCase.swift in Sources */,
 				076227642DA90C65009C3632 /* DividerElement.swift in Sources */,
 				0786A9DD2E0AAB4A00976098 /* CheckboxItemElement.swift in Sources */,
+				515F66FA2E2E925600268440 /* OrangeInverseTheme+TokensSpaceUITests.swift in Sources */,
 				0786A9DE2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
 				076227652DA90C65009C3632 /* DividerElements.swift in Sources */,
+				51A217702E325F7F00562BE0 /* WireframeTheme+SwitchUITests.swift in Sources */,
 				076227662DA90C65009C3632 /* DividerPage.swift in Sources */,
 				6DB260DA2CD0EF9D0091F72E /* NamedSize+IconDecorative.swift in Sources */,
 				07AB458A2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */,
-				51952A8C2D3FA22A0068B807 /* OUDSTokensFontUITests.swift in Sources */,
+				51952A8C2D3FA22A0068B807 /* OrangeTheme+TokensFontUITests.swift in Sources */,
 				51D6D58C2D887E94009CD879 /* CheckboxIndeterminatePage.swift in Sources */,
 				6D17A2352CCF8DC300C00512 /* NamedColor.swift in Sources */,
 				6D17A22C2CCBF12B00C00512 /* NamedColor+Action.swift in Sources */,
+				515F66FE2E2E925600268440 /* OrangeInverseTheme+TokensElevationUITests.swift in Sources */,
+				51ABCD292E183226006CD6C0 /* SoshTheme+TokensColorUITests.swift in Sources */,
 				6D17A22D2CCBF12B00C00512 /* NamedColor+Always.swift in Sources */,
+				51A2174D2E325E6C00562BE0 /* OrangeInverseTheme+DividerUITests.swift in Sources */,
 				07CAE7692CEE20B200D6C5D1 /* SpaceGapTokenIllustrations.swift in Sources */,
 				07D3DBF12DA5084500D8A57F /* ColoredSurfaceConfiguration.swift in Sources */,
 				07D3DBF22DA5084500D8A57F /* ColoredSurfacePage.swift in Sources */,
 				07D3DBF32DA5084500D8A57F /* ColoredSurfaceElement.swift in Sources */,
-				51952A7F2D3FA17E0068B807 /* OUDSTokensColorUITests.swift in Sources */,
+				51417C292E1BF70F000266C8 /* TokensColorUITestsTestCase.swift in Sources */,
+				51A2174C2E325E6C00562BE0 /* OrangeInverseTheme+CheckboxUITests.swift in Sources */,
+				515EE9A62E21347200A60E96 /* OrangeTheme+ChipsUITests.swift in Sources */,
+				51952A7F2D3FA17E0068B807 /* OrangeTheme+TokensColorUITests.swift in Sources */,
 				07CAE76A2CEE20B200D6C5D1 /* SpacePaddingTokenIllustrations.swift in Sources */,
 				07CAE76B2CEE20B200D6C5D1 /* SpaceBasicTokenIllustrations.swift in Sources */,
+				518EC0B02E1FF2E800FC77E4 /* SwitchUITestsTestCase.swift in Sources */,
 				6D17A22E2CCBF12B00C00512 /* NamedColor+Background.swift in Sources */,
 				6D17A22F2CCBF12B00C00512 /* NamedColor+Border.swift in Sources */,
 				6D17A2302CCBF12B00C00512 /* NamedColor+Chart.swift in Sources */,
 				6D17A2312CCBF12B00C00512 /* NamedColor+Content.swift in Sources */,
+				51417C2B2E1BF7B2000266C8 /* TokensFontUITestsTestCase.swift in Sources */,
 				511C96B52E157D3200F9D156 /* SwitchItemPage.swift in Sources */,
 				0786A9E52E0AAB6600976098 /* CheckboxItemIndeterminatePage.swift in Sources */,
 				0786A9E62E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				0786A9E72E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
+				51417C252E1BF661000266C8 /* TokensBorderUITestsTestCase.swift in Sources */,
 				07B3CCB52D40F37000DBB10A /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				6D17A2332CCBF12B00C00512 /* NamedColor+Decorative.swift in Sources */,
-				51952A862D3FA1DB0068B807 /* OUDSTokensSpaceUITests.swift in Sources */,
-				51952A832D3FA1AC0068B807 /* OUDSTokensSizeUITests.swift in Sources */,
+				51952A862D3FA1DB0068B807 /* OrangeTheme+TokensSpaceUITests.swift in Sources */,
+				515EE9852E21329B00A60E96 /* ChipLayout.swift in Sources */,
+				515EE9862E21329B00A60E96 /* FilterChipConfigurationView.swift in Sources */,
+				515EE9872E21329B00A60E96 /* FilterChipElement.swift in Sources */,
+				515EE9882E21329B00A60E96 /* FilterChipPage.swift in Sources */,
+				515EE9892E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */,
+				515EE98A2E21329B00A60E96 /* ChipPickerElement.swift in Sources */,
+				515EE98B2E21329B00A60E96 /* ChipPickerPage.swift in Sources */,
+				515EE98C2E21329B00A60E96 /* SuggestionChipConfigurationView.swift in Sources */,
+				51A2176F2E325F7F00562BE0 /* WireframeTheme+ButtonUITests.swift in Sources */,
+				51A2177F2E325FE600562BE0 /* WireframeTheme+TokensSizeUITests.swift in Sources */,
+				515EE98D2E21329B00A60E96 /* SuggestionChipElement.swift in Sources */,
+				51A2175F2E325ED500562BE0 /* OrangeBusinessToolsTheme+CheckboxUITests.swift in Sources */,
+				515EE98E2E21329B00A60E96 /* SuggestionChipPage.swift in Sources */,
+				51A217812E325FE600562BE0 /* WireframeTheme+TokensElevationUITests.swift in Sources */,
+				515EE98F2E21329B00A60E96 /* ChipElements.swift in Sources */,
+				51417C1F2E1BF4FB000266C8 /* TokensElevationUITestsTestCase.swift in Sources */,
+				51952A832D3FA1AC0068B807 /* OrangeTheme+TokensSizeUITests.swift in Sources */,
 				51952A712D3F9D720068B807 /* DesignToolboxTokenIllustration.swift in Sources */,
-				51952A892D3FA20D0068B807 /* OUDSTokensElevationUITests.swift in Sources */,
+				515F66FC2E2E925600268440 /* OrangeInverseTheme+TokensBorderUITests.swift in Sources */,
+				51952A892D3FA20D0068B807 /* OrangeTheme+TokensElevationUITests.swift in Sources */,
+				515F66FF2E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift in Sources */,
 				07F0AFD82CFDB3CC00D334DD /* ComponentPage.swift in Sources */,
 				6D17A22B2CCBF0E200C00512 /* ColorTokenPage.swift in Sources */,
 				07C54EC22DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift in Sources */,
@@ -1659,18 +2266,30 @@
 				6D8F9C542CC160660078A10E /* SpaceTokenPage.swift in Sources */,
 				07304A6A2D429F9F009320BA /* LinkConfiguration.swift in Sources */,
 				07304A6B2D429F9F009320BA /* LinkElement.swift in Sources */,
+				515F66FD2E2E925600268440 /* OrangeInverseTheme+TokensFontUITests.swift in Sources */,
+				51ABCD282E183226006CD6C0 /* SoshTheme+TokensFontUITests.swift in Sources */,
 				5180FE712DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */,
 				5180FE722DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */,
+				51ABCD2C2E183226006CD6C0 /* SoshTheme+TokensElevationUITests.swift in Sources */,
 				5180FE732DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */,
+				51A217512E325E6C00562BE0 /* OrangeInverseTheme+ChipsUITests.swift in Sources */,
+				51E0159E2E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensBorderUITests.swift in Sources */,
+				51A217602E325ED500562BE0 /* OrangeBusinessToolsTheme+DividerUITests.swift in Sources */,
 				07304A6C2D429F9F009320BA /* LinkPage.swift in Sources */,
 				07D7E1982D035566006472EB /* ButtonConfigurationView.swift in Sources */,
+				51E015A22E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensFontUITests.swift in Sources */,
 				6D8F9C532CC160580078A10E /* SizeTokenPage.swift in Sources */,
+				51ABCD2B2E183226006CD6C0 /* SoshTheme+TokensSizeUITests.swift in Sources */,
+				51A2176E2E325F7F00562BE0 /* WireframeTheme+BadgeUITests.swift in Sources */,
+				51E015A32E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensElevationUITests.swift in Sources */,
+				51A217752E325F7F00562BE0 /* WireframeTheme+ChipsUITests.swift in Sources */,
 				6D8F9C522CC15F960078A10E /* ElevationTokenPage.swift in Sources */,
 				6D8F9C502CC14EBF0078A10E /* OpacityTokenPage.swift in Sources */,
-				07304A4B2D427146009320BA /* OUDSLinkUITests.swift in Sources */,
 				0762276C2DA93D62009C3632 /* DesignToolboxColorPicker.swift in Sources */,
+				51A217842E325FE600562BE0 /* WireframeTheme+TokensFontUITests.swift in Sources */,
+				51E015A02E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensOpacityUITests.swift in Sources */,
 				6D24658E2CBEAC750023E359 /* BorderTokenPage.swift in Sources */,
-				51952A8F2D3FA24C0068B807 /* OUDSTokensOpacityUITests.swift in Sources */,
+				51952A8F2D3FA24C0068B807 /* OrangeTheme+TokensOpacityUITests.swift in Sources */,
 				07F0AFDF2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */,
 				078C4C382E01558B00598F75 /* ControlItemConfigurationViews.swift in Sources */,
 				51D6D5922D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift in Sources */,
@@ -1682,6 +2301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0762276D2DA93D62009C3632 /* DesignToolboxColorPicker.swift in Sources */,
+				51E5999F2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */,
 				51952A672D3F9B9E0068B807 /* DesignToolboxConfiguration.swift in Sources */,
 				51952A682D3F9B9E0068B807 /* NamedColor+Opacity.swift in Sources */,
 				07AB458B2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */,
@@ -1693,6 +2313,17 @@
 				0745C18F2D7A0596006B3A1F /* RadioConfiguration.swift in Sources */,
 				0745C1902D7A0596006B3A1F /* RadioElement.swift in Sources */,
 				519251F32D020BD0003FD1F6 /* DesignToolboxVariantElement.swift in Sources */,
+				515EE9902E21329B00A60E96 /* ChipLayout.swift in Sources */,
+				515EE9912E21329B00A60E96 /* FilterChipConfigurationView.swift in Sources */,
+				515EE9922E21329B00A60E96 /* FilterChipElement.swift in Sources */,
+				515EE9932E21329B00A60E96 /* FilterChipPage.swift in Sources */,
+				515EE9942E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */,
+				515EE9952E21329B00A60E96 /* ChipPickerElement.swift in Sources */,
+				515EE9962E21329B00A60E96 /* ChipPickerPage.swift in Sources */,
+				515EE9972E21329B00A60E96 /* SuggestionChipConfigurationView.swift in Sources */,
+				515EE9982E21329B00A60E96 /* SuggestionChipElement.swift in Sources */,
+				515EE9992E21329B00A60E96 /* SuggestionChipPage.swift in Sources */,
+				515EE99A2E21329B00A60E96 /* ChipElements.swift in Sources */,
 				5180FE6E2DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */,
 				5180FE6F2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */,
 				5180FE702DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */,
@@ -1727,6 +2358,9 @@
 				0786A9E32E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				0786A9E42E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
 				0721411E2D02F52A00B7B9C6 /* ButtonElement.swift in Sources */,
+				07EB47002E1801D000B94EC2 /* BadgePage.swift in Sources */,
+				07EB47012E1801D000B94EC2 /* BadgeElement.swift in Sources */,
+				07EB47022E1801D000B94EC2 /* BadgeConfigurationView.swift in Sources */,
 				07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */,
 				07CF42782CA3F4BE000BD03E /* ElevationTokenElement.swift in Sources */,
 				0765B4A42CC15C3E00E69359 /* NamedColor+Chart.swift in Sources */,
@@ -1788,7 +2422,7 @@
 				07F75A432CC654050004F1AD /* NameSpace+PaddingStack.swift in Sources */,
 				5134420E2D75B880000B5DE4 /* CheckboxElement.swift in Sources */,
 				518B26642DAE9DE1003A6ED3 /* RadioPickerPage.swift in Sources */,
-				5152DA1E2DE0BD440078B9F1 /* DesignToolboxCopyableText.swift in Sources */,
+				5152DA1E2DE0BD440078B9F1 /* DesignToolbox+EnrichedTexts.swift in Sources */,
 				518B26652DAE9DE1003A6ED3 /* RadioPickerConfiguration.swift in Sources */,
 				518B26662DAE9DE1003A6ED3 /* RadioPickerElement.swift in Sources */,
 				5134420F2D75B880000B5DE4 /* CheckboxPage.swift in Sources */,
@@ -1804,17 +2438,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		51E599A32E27ED5F002BCB27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51E599B82E27F05A002BCB27 /* String+extension.swift in Sources */,
+				51E599B72E27EE3B002BCB27 /* StringTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51EB73802DBFDC5500F37FEC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				51F676DC2E0D469500C15CB6 /* A11YIdentifiers.swift in Sources */,
+				51E5999E2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */,
 				51F676ED2E0D678600C15CB6 /* SwitchUITests.swift in Sources */,
 				51F676D32E0C413700C15CB6 /* RadioPickerUITests.swift in Sources */,
 				51F676E82E0D651200C15CB6 /* RadioUITests.swift in Sources */,
 				51F676EF2E0D681700C15CB6 /* SwitchItemUITests.swift in Sources */,
 				51F676E42E0D63C100C15CB6 /* CheckboxItemIndeterminateUITests.swift in Sources */,
 				51EB73982DBFE3FD00F37FEC /* String+extension.swift in Sources */,
+				515EE9A02E2132E300A60E96 /* ChipsPickerUITests.swift in Sources */,
 				51F676EA2E0D66EB00C15CB6 /* RadioItemUITests.swift in Sources */,
 				51F676DE2E0D567700C15CB6 /* CheckboxUITests.swift in Sources */,
 				51F676E22E0D61FE00C15CB6 /* CheckboxIndeterminateUITests.swift in Sources */,
@@ -1831,6 +2476,11 @@
 			isa = PBXTargetDependency;
 			target = 07FDCD902C296A500009AA13 /* DesignToolbox */;
 			targetProxy = 0740A9932C9873500069D24A /* PBXContainerItemProxy */;
+		};
+		51E599AC2E27ED5F002BCB27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07FDCD902C296A500009AA13 /* DesignToolbox */;
+			targetProxy = 51E599AB2E27ED5F002BCB27 /* PBXContainerItemProxy */;
 		};
 		51EB738B2DBFDC5500F37FEC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1874,7 +2524,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.orange.uds.demoapp.snapshotstests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp.snapshotstests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1898,7 +2548,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.orange.uds.demoapp.snapshotstests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp.snapshotstests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -2042,7 +2692,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
@@ -2058,7 +2708,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.16.0;
+				MARKETING_VERSION = 0.17.0;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "Design System Toolbox";
@@ -2081,7 +2731,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -2098,7 +2748,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.16.0;
+				MARKETING_VERSION = 0.17.0;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "Design System Toolbox";
@@ -2130,6 +2780,54 @@
 			};
 			name = Release;
 		};
+		51E599AE2E27ED5F002BCB27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp.unittests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Design System Toolbox.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Design System Toolbox";
+			};
+			name = Debug;
+		};
+		51E599AF2E27ED5F002BCB27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp.unittests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Design System Toolbox.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Design System Toolbox";
+			};
+			name = Release;
+		};
 		51EB738D2DBFDC5500F37FEC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2140,7 +2838,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp.uitests.DesignToolboxUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp.uitests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -2163,7 +2861,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp.uitests.DesignToolboxUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp.uitests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -2215,6 +2913,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		51E599AD2E27ED5F002BCB27 /* Build configuration list for PBXNativeTarget "DesignToolboxUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51E599AE2E27ED5F002BCB27 /* Debug */,
+				51E599AF2E27ED5F002BCB27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		51EB738C2DBFDC5500F37FEC /* Build configuration list for PBXNativeTarget "DesignToolboxUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2240,7 +2947,7 @@
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
 				kind = exactVersion;
-				version = 0.16.0;
+				version = 0.17.0;
 			};
 		};
 		6DFC20C32CE3D9AE00F2EC33 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */ = {
@@ -2311,13 +3018,29 @@
 			package = 5115A1642DDF39AC0025A760 /* XCRemoteSwiftPackageReference "ouds-ios" */;
 			productName = OUDSTokensSemantic;
 		};
+		5131F14C2E324A9A00A942B0 /* OUDSThemesWireframe */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OUDSThemesWireframe;
+		};
 		513AD93F2C5AAADE0003253B /* OUDSTokensComponent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSTokensComponent;
 		};
+		515F66EF2E2E71DB00268440 /* OUDSThemesOrangeInverse */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OUDSThemesOrangeInverse;
+		};
+		51ABCD172E182D7C006CD6C0 /* OUDSThemesSosh */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OUDSThemesSosh;
+		};
 		51BC9DE62C6513F200EB2A11 /* OUDSFoundations */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSFoundations;
+		};
+		51DB2E132E2AAAB9004F7487 /* OUDSThemesOrangeBusinessTools */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OUDSThemesOrangeBusinessTools;
 		};
 		51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */ = {
 			isa = XCSwiftPackageProductDependency;
