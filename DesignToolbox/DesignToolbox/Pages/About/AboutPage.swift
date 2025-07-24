@@ -140,6 +140,9 @@ struct AboutPage: View {
         Text("app_about_details_themeSoshCoreVersion" <- OUDSVersions.themeSoshCoreVersion)
             .modifier(CopyableTextViewModifier(OUDSVersions.themeSoshCoreVersion))
 
+        Text("app_about_details_themeWireframeCoreVersion" <- OUDSVersions.themeWireframeCoreVersion)
+            .modifier(CopyableTextViewModifier(OUDSVersions.themeWireframeCoreVersion))
+
         Text("app_about_details_themeOrangeBrandVersion" <- OUDSVersions.themeOrangeBrandVersion)
             .modifier(CopyableTextViewModifier(OUDSVersions.themeOrangeBrandVersion))
 
@@ -149,8 +152,11 @@ struct AboutPage: View {
         Text("app_about_details_themeOrangeBusinessToolsBrandVersion" <- OUDSVersions.themeOrangeBusinessToolsBrandVersion)
             .modifier(CopyableTextViewModifier(OUDSVersions.themeOrangeBusinessToolsBrandVersion))
 
-        Text("app_about_details_themeOrangeInverseVersion" <- OUDSVersions.themeOrangeInverseBrandVersion)
+        Text("app_about_details_themeOrangeInverseBrandVersion" <- OUDSVersions.themeOrangeInverseBrandVersion)
             .modifier(CopyableTextViewModifier(OUDSVersions.themeOrangeInverseBrandVersion))
+
+        Text("app_about_details_themeWireframeBrandVersion" <- OUDSVersions.themeWireframeBrandVersion)
+            .modifier(CopyableTextViewModifier(OUDSVersions.themeWireframeBrandVersion))
     }
 
     @ViewBuilder

@@ -16,6 +16,7 @@ import OUDSThemesOrange
 import OUDSThemesOrangeBusinessTools
 import OUDSThemesOrangeInverse
 import OUDSThemesSosh
+import OUDSThemesWireframe
 import SwiftUI
 
 // MARK: - Extensions of OUDSTheme
@@ -46,6 +47,9 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         }
         if self is SoshTheme {
             return "Sosh"
+        }
+        if self is WireframeTheme {
+            return "Wireframe"
         }
         return String(describing: Self.self)
     }
@@ -89,8 +93,9 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         let orangeBusinessToolsTheme = OrangeBusinessToolsTheme()
         let orangeInverseTheme = OrangeInverseTheme()
         let soshTheme = SoshTheme()
+        let wireframeTheme = WireframeTheme()
         let defaultTheme = orangeTheme
-        themes = [orangeTheme, orangeBusinessToolsTheme, orangeInverseTheme, soshTheme]
+        themes = [orangeTheme, orangeBusinessToolsTheme, orangeInverseTheme, soshTheme, wireframeTheme]
 
         if let theme = themes.first(where: { $0.name == ThemeProvider.currentThemeName }) {
             currentTheme = theme

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Wireframe theme (Orange-OpenSource/ouds-ios#669)
 - [Library] Text input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - [Library] Text area component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - [Library] Select input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
@@ -24,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Color semantic tokens (tokens library v1.4.0) (Orange-OpenSource/ouds-ios#883)
 - [Library] Border semantic tokens (tokens library v1.4.0) (Orange-OpenSource/ouds-ios#883)
 - [Library] Text input component tokens (tokens library v1.4.0) (Orange-OpenSource/ouds-ios#883)
 - [Library] Button component tokens (tokens library v1.4.0) (Orange-OpenSource/ouds-ios#883)
@@ -53,6 +55,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- [Library] List item component tokens
 - [Library] Input text component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - [Library] Select component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - [Library] Orange theme font family raw tokens
