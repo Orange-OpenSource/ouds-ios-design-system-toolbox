@@ -134,7 +134,7 @@ extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomString
 // MARK: Button hierarchy extension
 
 extension OUDSButton.Hierarchy: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    public nonisolated(unsafe) static let allCases: [OUDSButton.Hierarchy] = [.default, .strong, .minimal, .negative]
+    public nonisolated(unsafe) static let allCases: [OUDSButton.Hierarchy] = [.default, .strong, .brand, .minimal, .negative]
 
     // Note: Not localized because it is a technical name
     public var description: String {
@@ -143,6 +143,8 @@ extension OUDSButton.Hierarchy: @retroactive CaseIterable, @retroactive CustomSt
             "Default"
         case .strong:
             "Strong"
+        case .brand:
+            "Brand"
         case .minimal:
             "Minimal"
         case .negative:

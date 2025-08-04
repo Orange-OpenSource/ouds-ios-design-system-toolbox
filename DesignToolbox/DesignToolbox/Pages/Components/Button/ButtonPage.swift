@@ -46,8 +46,8 @@ private struct ButtonDemo: View {
         HStack(alignment: .center) {
             Spacer()
 
-            // It is not allowed to place a Negative button on colored surface
-            if configurationModel.hierarchy == .negative, configurationModel.onColoredSurface {
+            // It is not allowed to place a Negative or Brand button on colored surface
+            if configurationModel.hierarchy == .negative || configurationModel.hierarchy == .brand, configurationModel.onColoredSurface {
                 Text("app_components_button_negative_hierary_notAllowed_text")
             } else {
                 switch configurationModel.layout {
