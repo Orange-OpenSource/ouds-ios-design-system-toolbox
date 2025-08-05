@@ -39,6 +39,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var rounded: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -47,13 +51,18 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         layout = .textOnly
         hierarchy = .default
         style = .default
+        rounded = false
     }
 
     deinit {}
 
     // MARK: Component Configuration
 
-    private var disableCode: String {
+    private var roundedCodePattern: String {
+        rounded ? ".environement(\\.oudsRoundedButton, true)" : ""
+    }
+
+    private var disableCodePattern: String {
         if case .default = style {
             ".disabled(\(enabled ? "false" : "true"))"
         } else {
@@ -71,22 +80,22 @@ final class ButtonConfigurationModel: ComponentConfiguration {
             code =
                 """
                 OUDSButton(text: \"Button\", hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
-                \(disableCode)
-                \(coloredSurfaceCodeModifier)
+                \(disableCodePattern)
+                \(coloredSurfaceCodeModifier)\(roundedCodePattern)
                 """
         case .iconOnly:
             code =
                 """
                 OUDSButton(icon: Image(\"ic_heart\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
-                \(disableCode)
-                \(coloredSurfaceCodeModifier)
+                \(disableCodePattern)
+                \(coloredSurfaceCodeModifier)\(roundedCodePattern)
                 """
         case .textAndIcon:
             code =
                 """
                 OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
-                \(disableCode)
-                \(coloredSurfaceCodeModifier)
+                \(disableCodePattern)
+                \(coloredSurfaceCodeModifier)\(roundedCodePattern)
                 """
         }
     }
@@ -170,6 +179,8 @@ struct ButtonConfigurationView: View {
                     .disabled(configurationModel.style != .default)
 
                 OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $configurationModel.onColoredSurface)
+
+                OUDSSwitchItem("app_components_button_rounded_label", isOn: $configurationModel.rounded)
             }
 
             DesignToolboxChoicePicker(title: "app_components_button_hierarchy_label",

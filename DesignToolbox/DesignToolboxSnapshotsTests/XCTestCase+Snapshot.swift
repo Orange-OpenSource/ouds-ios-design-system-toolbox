@@ -56,7 +56,7 @@ extension XCTestCase {
                        as: .image(precision: precision,
                                   perceptualPrecision: perceptualPrecision,
                                   traits: UITraitCollection(traitsFrom: [UITraitCollection(userInterfaceStyle: uiStyle), UITraitCollection(accessibilityContrast: a11yContrast)])),
-                       named: named,    
+                       named: named,
                        timeout: Self.timeout,
                        fileID: fileID,
                        file: file,

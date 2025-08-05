@@ -56,15 +56,18 @@ private struct ButtonDemo: View {
                                accessibilityLabel: "app_components_button_icon_a11y".localized(),
                                hierarchy: configurationModel.hierarchy,
                                style: configurationModel.style) {}
+                        .environment(\.oudsRoundedButton, configurationModel.rounded)
                 case .textOnly:
                     OUDSButton(text: configurationModel.text,
                                hierarchy: configurationModel.hierarchy,
                                style: configurationModel.style) {}
+                        .environment(\.oudsRoundedButton, configurationModel.rounded)
                 case .textAndIcon:
                     OUDSButton(icon: Image(decorative: "ic_heart"),
                                text: configurationModel.text,
                                hierarchy: configurationModel.hierarchy,
                                style: configurationModel.style) {}
+                        .environment(\.oudsRoundedButton, configurationModel.rounded)
                 }
             }
 
