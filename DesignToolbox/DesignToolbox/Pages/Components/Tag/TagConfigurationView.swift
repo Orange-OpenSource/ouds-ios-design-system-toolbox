@@ -21,6 +21,12 @@ final class TagConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
+    @Published var layout: TagLayout {
+        didSet { updateCode() }
+    }
+
+    @Published var label: String
+
     @Published var size: OUDSTag.Size {
         didSet { updateCode() }
     }
@@ -40,6 +46,8 @@ final class TagConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
+        layout = .textOnly
+        label = String(localized: "app_components_common_label_label")
         size = .default
         status = .neutral
         shape = .rounded
@@ -84,21 +92,12 @@ struct TagConfigurationView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
-            DesignToolboxChoicePicker(title: "app_components_common_size_label",
-                                      selection: $configurationModel.size,
+            DesignToolboxChoicePicker(title: "app_components_common_layout_label",
+                                      selection: $configurationModel.layout,
                                       style: .segmented)
             {
-                ForEach(OUDSTag.Size.allCases, id: \.id) { size in
-                    Text(size.description).tag(size)
-                }
-            }
-
-            DesignToolboxChoicePicker(title: "app_components_common_status_label",
-                                      selection: $configurationModel.status,
-                                      style: .segmented)
-            {
-                ForEach(OUDSTag.Status.allCases, id: \.id) { status in
-                    Text(status.description).tag(status)
+                ForEach(TagLayout.allCases, id: \.id) { layout in
+                    Text(LocalizedStringKey(layout.description)).tag(layout)
                 }
             }
 
@@ -111,6 +110,15 @@ struct TagConfigurationView: View {
                 }
             }
 
+            DesignToolboxChoicePicker(title: "app_components_common_status_label",
+                                      selection: $configurationModel.status,
+                                      style: .segmented)
+            {
+                ForEach(OUDSTag.Status.allCases, id: \.id) { status in
+                    Text(status.description).tag(status)
+                }
+            }
+
             DesignToolboxChoicePicker(title: "app_components_tag_shape_label",
                                       selection: $configurationModel.shape,
                                       style: .segmented)
@@ -118,6 +126,19 @@ struct TagConfigurationView: View {
                 ForEach(OUDSTag.Shape.allCases, id: \.id) { shape in
                     Text(shape.description).tag(shape)
                 }
+            }
+
+            DesignToolboxChoicePicker(title: "app_components_common_size_label",
+                                      selection: $configurationModel.size,
+                                      style: .segmented)
+            {
+                ForEach(OUDSTag.Size.allCases, id: \.id) { size in
+                    Text(size.description).tag(size)
+                }
+            }
+
+            DesignToolboxEditContentDisclosure {
+                DesignToolboxTextField(text: $configurationModel.label)
             }
         }
     }
@@ -222,6 +243,25 @@ extension OUDSTag.Shape: @retroactive CaseIterable, @retroactive CustomStringCon
             ".rounded"
         case .square:
             ".square"
+        }
+    }
+
+    var id: String { description }
+}
+
+enum TagLayout: CaseIterable, CustomStringConvertible {
+    case textOnly
+    case textAndBullet
+    case textAndIcon
+
+    var description: String {
+        switch self {
+        case .textOnly:
+            "app_components_common_textOnlyLayout_label"
+        case .textAndBullet:
+            "app_components_tag_textAndBulletLayout_label"
+        case .textAndIcon:
+            "app_components_common_textAndIconLayout_label"
         }
     }
 

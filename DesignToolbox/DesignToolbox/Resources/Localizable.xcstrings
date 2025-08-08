@@ -2032,7 +2032,7 @@
       "shouldTranslate" : false
     },
     "app_components_common_label_label" : {
-      "comment" : "Component - Checkbox",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -3209,6 +3209,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Shape"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_tag_textAndBulletLayout_label" : {
+      "comment" : "Component - Tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text + bullet"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text + bullet"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text + bullet"
           }
         }
       },
@@ -4408,7 +4433,7 @@
         }
       }
     },
-    "Key" : {
+    "Key 1" : {
       "extractionState" : "manual"
     }
   },

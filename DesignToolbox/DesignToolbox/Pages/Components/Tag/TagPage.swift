@@ -47,7 +47,8 @@ struct TagDemo: View {
             Spacer()
 
             OUDSTag(
-                label: "Label",
+                label: configurationModel.label,
+                icon: icon,
                 hierarchy: configurationModel.hierarchy,
                 status: configurationModel.status,
                 shape: configurationModel.shape,
@@ -56,5 +57,16 @@ struct TagDemo: View {
             Spacer()
         }
         .padding(.all, theme.spaces.spaceFixedMd)
+    }
+
+    private var icon: OUDSTag.Icon? {
+        switch configurationModel.layout {
+        case .textOnly:
+            nil
+        case .textAndBullet:
+            .bullet
+        case .textAndIcon:
+            .asset(Image(decorative: "ic_heart"))
+        }
     }
 }
