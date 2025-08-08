@@ -160,6 +160,12 @@
 		07F75A3F2CC653CD0004F1AD /* NameSpace+ColumnGap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A3E2CC653CD0004F1AD /* NameSpace+ColumnGap.swift */; };
 		07F75A412CC653EB0004F1AD /* NameSpace+RowGap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A402CC653EB0004F1AD /* NameSpace+RowGap.swift */; };
 		07F75A432CC654050004F1AD /* NameSpace+PaddingStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A422CC654050004F1AD /* NameSpace+PaddingStack.swift */; };
+		07FB2A302E454D7900361ECA /* TagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2F2E454D7900361ECA /* TagPage.swift */; };
+		07FB2A312E454D7900361ECA /* TagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2E2E454D7900361ECA /* TagElement.swift */; };
+		07FB2A322E454D7900361ECA /* TagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2D2E454D7900361ECA /* TagConfigurationView.swift */; };
+		07FB2A332E454D7900361ECA /* TagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2F2E454D7900361ECA /* TagPage.swift */; };
+		07FB2A342E454D7900361ECA /* TagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2E2E454D7900361ECA /* TagElement.swift */; };
+		07FB2A352E454D7900361ECA /* TagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2D2E454D7900361ECA /* TagConfigurationView.swift */; };
 		51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
 		510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CCF2C5679A300430620 /* OUDSComponents */; };
 		510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* XCTestCase+Snapshot.swift */; };
@@ -564,6 +570,9 @@
 		07F75A3E2CC653CD0004F1AD /* NameSpace+ColumnGap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+ColumnGap.swift"; sourceTree = "<group>"; };
 		07F75A402CC653EB0004F1AD /* NameSpace+RowGap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+RowGap.swift"; sourceTree = "<group>"; };
 		07F75A422CC654050004F1AD /* NameSpace+PaddingStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+PaddingStack.swift"; sourceTree = "<group>"; };
+		07FB2A2D2E454D7900361ECA /* TagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagConfigurationView.swift; sourceTree = "<group>"; };
+		07FB2A2E2E454D7900361ECA /* TagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagElement.swift; sourceTree = "<group>"; };
+		07FB2A2F2E454D7900361ECA /* TagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPage.swift; sourceTree = "<group>"; };
 		07FDCD912C296A500009AA13 /* Design System Toolbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Design System Toolbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FDCDA52C296B4B0009AA13 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitattributes; path = ../.gitattributes; sourceTree = "<group>"; };
 		07FDCDA72C296B7A0009AA13 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -1167,6 +1176,16 @@
 			path = NamedSpace;
 			sourceTree = "<group>";
 		};
+		07FB2A2C2E454D4E00361ECA /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				07FB2A2D2E454D7900361ECA /* TagConfigurationView.swift */,
+				07FB2A2E2E454D7900361ECA /* TagElement.swift */,
+				07FB2A2F2E454D7900361ECA /* TagPage.swift */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
 		07FDCD882C296A500009AA13 = {
 			isa = PBXGroup;
 			children = (
@@ -1562,6 +1581,7 @@
 				07B3CCAD2D40E14C00DBB10A /* Link */,
 				0745C1852D7A0351006B3A1F /* Radio */,
 				07CC9AEB2DB0F7DD001BC929 /* Switch */,
+				07FB2A2C2E454D4E00361ECA /* Tag */,
 				07F0AFE62CFE055300D334DD /* Utils */,
 				07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */,
 			);
@@ -2235,6 +2255,9 @@
 				0786A9E72E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
 				51417C252E1BF661000266C8 /* TokensBorderUITestsTestCase.swift in Sources */,
 				07B3CCB52D40F37000DBB10A /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
+				07FB2A332E454D7900361ECA /* TagPage.swift in Sources */,
+				07FB2A342E454D7900361ECA /* TagElement.swift in Sources */,
+				07FB2A352E454D7900361ECA /* TagConfigurationView.swift in Sources */,
 				6D17A2332CCBF12B00C00512 /* NamedColor+Decorative.swift in Sources */,
 				51952A862D3FA1DB0068B807 /* OrangeTheme+TokensSpaceUITests.swift in Sources */,
 				515EE9852E21329B00A60E96 /* ChipLayout.swift in Sources */,
@@ -2317,6 +2340,9 @@
 				515EE9912E21329B00A60E96 /* FilterChipConfigurationView.swift in Sources */,
 				515EE9922E21329B00A60E96 /* FilterChipElement.swift in Sources */,
 				515EE9932E21329B00A60E96 /* FilterChipPage.swift in Sources */,
+				07FB2A302E454D7900361ECA /* TagPage.swift in Sources */,
+				07FB2A312E454D7900361ECA /* TagElement.swift in Sources */,
+				07FB2A322E454D7900361ECA /* TagConfigurationView.swift in Sources */,
 				515EE9942E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */,
 				515EE9952E21329B00A60E96 /* ChipPickerElement.swift in Sources */,
 				515EE9962E21329B00A60E96 /* ChipPickerPage.swift in Sources */,
@@ -2946,7 +2972,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "408-component-create-component---tags";
 				kind = branch;
 			};
 		};

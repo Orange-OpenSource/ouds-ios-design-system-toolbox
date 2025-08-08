@@ -108,7 +108,7 @@ struct BadgeConfigurationView: View {
                 }
             }
 
-            DesignToolboxChoicePicker(title: "app_components_badge_size_label",
+            DesignToolboxChoicePicker(title: "app_components_common_size_label",
                                       selection: $configurationModel.size,
                                       style: .segmented)
             {
@@ -117,7 +117,7 @@ struct BadgeConfigurationView: View {
                 }
             }
 
-            DesignToolboxChoicePicker(title: "app_components_badge_status_label",
+            DesignToolboxChoicePicker(title: "app_components_common_status_label",
                                       selection: $configurationModel.status,
                                       style: .segmented)
             {

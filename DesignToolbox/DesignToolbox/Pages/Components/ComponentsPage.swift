@@ -27,6 +27,7 @@ struct ComponentsPage: View {
         LinkElement(),
         RadioElements(),
         SwitchElements(),
+        TagElement(),
     ]
 
     var body: some View {
