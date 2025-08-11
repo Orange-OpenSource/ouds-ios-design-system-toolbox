@@ -63,19 +63,19 @@ final class TagConfigurationModel: ComponentConfiguration {
     }
 
     private var statusPattern: String {
-        "status: \(status.technicalDescription)"
+        "status: .\(status.technicalDescription)"
     }
 
     private var sizePattern: String {
-        "size: \(size.technicalDescription)"
+        "size: .\(size.technicalDescription)"
     }
 
     private var shapePattern: String {
-        "shape: \(shape.technicalDescription)"
+        "shape: .\(shape.technicalDescription)"
     }
 
     private var hierarchyPattern: String {
-        "hierarchy: \(hierarchy.technicalDescription)"
+        "hierarchy: .\(hierarchy.technicalDescription)"
     }
 }
 
@@ -160,9 +160,9 @@ extension OUDSTag.Size: @retroactive CaseIterable, @retroactive CustomStringConv
     public var technicalDescription: String {
         switch self {
         case .default:
-            ".default"
+            "default"
         case .small:
-            ".small"
+            "small"
         }
     }
 
@@ -193,7 +193,7 @@ extension OUDSTag.Status: @retroactive CaseIterable, @retroactive CustomStringCo
     }
 
     public var technicalDescription: String {
-        ".\(description.lowercased())"
+        "\(description.lowercased())"
     }
 
     var id: String { description }
@@ -215,9 +215,9 @@ extension OUDSTag.Hierarchy: @retroactive CaseIterable, @retroactive CustomStrin
     public var technicalDescription: String {
         switch self {
         case .emphasized:
-            ".emphasized"
+            "emphasized"
         case .muted:
-            ".muted"
+            "muted"
         }
     }
 
@@ -240,9 +240,9 @@ extension OUDSTag.Shape: @retroactive CaseIterable, @retroactive CustomStringCon
     public var technicalDescription: String {
         switch self {
         case .rounded:
-            ".rounded"
+            "rounded"
         case .square:
-            ".square"
+            "square"
         }
     }
 
@@ -262,6 +262,17 @@ enum TagLayout: CaseIterable, CustomStringConvertible {
             "app_components_tag_textAndBulletLayout_label"
         case .textAndIcon:
             "app_components_common_textAndIconLayout_label"
+        }
+    }
+
+    public var technicalDescription: String {
+        switch self {
+        case .textOnly:
+            "textOnlyLayout"
+        case .textAndBullet:
+            "textAndBullet"
+        case .textAndIcon:
+            "textAndIcon"
         }
     }
 
