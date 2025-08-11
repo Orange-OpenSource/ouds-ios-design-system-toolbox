@@ -59,23 +59,34 @@ final class TagConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     override func updateCode() {
-        code = "OUDSTag(label: \"Label\", \(hierarchyPattern), \(statusPattern), \(shapePattern), \(sizePattern))"
+        code = "OUDSTag(label: \(label)\(iconPattern)\(hierarchyPattern)\(statusPattern), \(shapePattern)\(sizePattern))"
     }
 
-    private var statusPattern: String {
-        "status: .\(status.technicalDescription)"
-    }
-
-    private var sizePattern: String {
-        "size: .\(size.technicalDescription)"
-    }
-
-    private var shapePattern: String {
-        "shape: .\(shape.technicalDescription)"
+    private var iconPattern: String {
+        switch layout {
+        case .textOnly:
+            return ""
+        case .textAndBullet:
+            return ", icon: .bullet"
+        case .textAndIcon:
+            return "icon: .asset(Image(decorative: \"ic_heart\"))"
+        }
     }
 
     private var hierarchyPattern: String {
-        "hierarchy: .\(hierarchy.technicalDescription)"
+        ", hierarchy: .\(hierarchy.technicalDescription)"
+    }
+
+    private var statusPattern: String {
+        ", status: .\(status.technicalDescription)"
+    }
+
+    private var shapePattern: String {
+        ", shape: .\(shape.technicalDescription)"
+    }
+
+    private var sizePattern: String {
+        ", size: .\(size.technicalDescription)"
     }
 }
 
