@@ -2081,6 +2081,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_loader_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loader"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loader"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loader"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_onColoredBackground_label" : {
       "comment" : "Component - Colored Surface",
       "extractionState" : "manual",

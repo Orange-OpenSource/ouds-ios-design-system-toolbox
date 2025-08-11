@@ -42,14 +42,21 @@ open class TagUITestsTestCase: XCTestCase {
                 for status in OUDSTag.Status.allCases {
                     for size in OUDSTag.Size.allCases {
                         for shape in OUDSTag.Shape.allCases {
-                            let model = TagConfigurationModel()
-                            model.layout = layout
-                            model.status = status
-                            model.hierarchy = hierarchy
-                            model.size = size
-                            model.shape = shape
+                            for loader in [true, false] where !(status == .disabled && loader == true) {
+                                // drop loader and disabled status
+                                // because this case is not allowed
+                                if !(status == .disabled && loader == true) {
+                                    let model = TagConfigurationModel()
+                                    model.layout = layout
+                                    model.status = status
+                                    model.hierarchy = hierarchy
+                                    model.size = size
+                                    model.shape = shape
+                                    model.loader = loader
 
-                            testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                                    testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                                }
+                            }
                         }
                     }
                 }
@@ -84,8 +91,9 @@ open class TagUITestsTestCase: XCTestCase {
         let statusPattern = model.status.technicalDescription
         let sizePattern = model.size.technicalDescription
         let shapePattern = model.shape.technicalDescription
+        let loaderPattern = model.loader ? "loader" : ""
 
-        let name = "\(layoutPattern)_\(hierarchyPattern)_\(statusPattern)_\(sizePattern)_\(shapePattern)"
+        let name = "\(layoutPattern)_\(hierarchyPattern)_\(statusPattern)_\(sizePattern)_\(shapePattern)_\(loaderPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,

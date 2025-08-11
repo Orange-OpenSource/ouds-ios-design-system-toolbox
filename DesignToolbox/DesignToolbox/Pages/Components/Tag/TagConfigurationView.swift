@@ -43,10 +43,15 @@ final class TagConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var loader: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
         layout = .textOnly
+        loader = false
         label = String(localized: "app_components_common_label_label")
         size = .default
         status = .neutral
@@ -59,17 +64,17 @@ final class TagConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     override func updateCode() {
-        code = "OUDSTag(label: \(label)\(iconPattern)\(hierarchyPattern)\(statusPattern), \(shapePattern)\(sizePattern))"
+        code = "OUDSTag(label: \(label)\(iconPattern)\(hierarchyPattern)\(statusPattern), \(shapePattern)\(sizePattern)\(loaderPattern)"
     }
 
     private var iconPattern: String {
         switch layout {
         case .textOnly:
-            return ""
+            ""
         case .textAndBullet:
-            return ", icon: .bullet"
+            ", icon: .bullet"
         case .textAndIcon:
-            return "icon: .asset(Image(decorative: \"ic_heart\"))"
+            "icon: .asset(Image(decorative: \"ic_heart\"))"
         }
     }
 
@@ -87,6 +92,10 @@ final class TagConfigurationModel: ComponentConfiguration {
 
     private var sizePattern: String {
         ", size: .\(size.technicalDescription)"
+    }
+
+    private var loaderPattern: String {
+        loader ? ", loader: true" : ""
     }
 }
 
@@ -112,6 +121,9 @@ struct TagConfigurationView: View {
                 }
             }
 
+            OUDSSwitchItem("app_components_common_loader_label", isOn: $configurationModel.loader)
+                .disabled(configurationModel.status == .disabled)
+
             DesignToolboxChoicePicker(title: "app_components_common_hierarchy_label",
                                       selection: $configurationModel.hierarchy,
                                       style: .segmented)
@@ -126,7 +138,11 @@ struct TagConfigurationView: View {
                                       style: .segmented)
             {
                 ForEach(OUDSTag.Status.allCases, id: \.id) { status in
-                    Text(status.description).tag(status)
+                    if configurationModel.loader, status == .disabled {
+                        EmptyView()
+                    } else {
+                        Text(status.description).tag(status)
+                    }
                 }
             }
 

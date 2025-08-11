@@ -52,7 +52,8 @@ struct TagDemo: View {
                 hierarchy: configurationModel.hierarchy,
                 status: configurationModel.status,
                 shape: configurationModel.shape,
-                size: configurationModel.size)
+                size: configurationModel.size,
+                loader: configurationModel.loader)
 
             Spacer()
         }
