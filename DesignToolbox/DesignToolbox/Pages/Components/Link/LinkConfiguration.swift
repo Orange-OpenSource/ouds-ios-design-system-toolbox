@@ -111,7 +111,13 @@ enum LinkLayout: CaseIterable, CustomStringConvertible {
         }
     }
 
-    var id: String { description }
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
 }
 
 // MARK: Link size extension
@@ -128,16 +134,25 @@ extension OUDSLink.Size: @retroactive CaseIterable, @retroactive CustomStringCon
         }
     }
 
-    var id: String { description }
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
 }
 
 // MARK: - Link Configuration View
 
 struct LinkConfiguration: View {
 
-    @Environment(\.theme) private var theme
+    // MARK: Stored properties
 
     @StateObject var configurationModel: LinkConfigurationModel
+    @Environment(\.theme) private var theme
+
+    // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
@@ -145,24 +160,14 @@ struct LinkConfiguration: View {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
 
                 OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $configurationModel.onColoredSurface)
-            }
 
-            DesignToolboxChoicePicker(title: "app_components_common_size_label",
-                                      selection: $configurationModel.size,
-                                      style: .segmented)
-            {
-                ForEach(OUDSLink.Size.allCases, id: \.id) { size in
-                    Text(LocalizedStringKey(size.description)).tag(size)
-                }
-            }
+                OUDSChipPicker(title: "app_components_common_size_label",
+                               selection: $configurationModel.size,
+                               chips: OUDSLink.Size.chips)
 
-            DesignToolboxChoicePicker(title: "app_components_common_layout_label",
-                                      selection: $configurationModel.layout,
-                                      style: .segmented)
-            {
-                ForEach(LinkLayout.allCases, id: \.id) { layout in
-                    Text(LocalizedStringKey(layout.description)).tag(layout)
-                }
+                OUDSChipPicker(title: "app_components_common_layout_label",
+                               selection: $configurationModel.layout,
+                               chips: LinkLayout.chips)
             }
 
             DesignToolboxEditContentDisclosure {
