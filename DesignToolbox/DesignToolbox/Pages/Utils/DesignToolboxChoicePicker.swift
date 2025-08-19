@@ -24,7 +24,7 @@ enum DesignToolboxChoicePickerStyle {
 
 // MARK: - Choice Picker
 
-struct DesignToolboxChoicePicker<Content, Selection>: View where Content: View, Selection: Hashable {
+struct DesignToolboxChoicePicker2<Content, Selection>: View where Content: View, Selection: Hashable {
 
     let title: String
     let selection: Binding<Selection>
