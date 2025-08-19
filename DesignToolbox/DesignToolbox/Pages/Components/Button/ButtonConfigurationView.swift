@@ -119,7 +119,13 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
         }
     }
 
-    var id: String { description }
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
 }
 
 // MARK: Button style extension
@@ -137,7 +143,13 @@ extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomString
         }
     }
 
-    var id: String { description }
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
 }
 
 // MARK: Button hierarchy extension
@@ -161,7 +173,13 @@ extension OUDSButton.Hierarchy: @retroactive CaseIterable, @retroactive CustomSt
         }
     }
 
-    var id: String { description }
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
 }
 
 // MARK: - Button Configuration View
@@ -179,35 +197,19 @@ struct ButtonConfigurationView: View {
                     .disabled(configurationModel.style != .default)
 
                 OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $configurationModel.onColoredSurface)
-
                 OUDSSwitchItem("app_components_button_rounded_label", isOn: $configurationModel.rounded)
-            }
 
-            DesignToolboxChoicePicker(title: "app_components_common_hierarchy_label",
-                                      selection: $configurationModel.hierarchy,
-                                      style: .segmented)
-            {
-                ForEach(OUDSButton.Hierarchy.allCases, id: \.id) { hierarchy in
-                    Text(LocalizedStringKey(hierarchy.description)).tag(hierarchy)
-                }
-            }
+                OUDSChipPicker(title: "app_components_common_hierarchy_label",
+                               selection: $configurationModel.hierarchy,
+                               chips: OUDSButton.Hierarchy.chips)
 
-            DesignToolboxChoicePicker(title: "app_components_common_style_label",
-                                      selection: $configurationModel.style,
-                                      style: .segmented)
-            {
-                ForEach(OUDSButton.Style.allCases, id: \.id) { style in
-                    Text(LocalizedStringKey(style.description)).tag(style)
-                }
-            }
+                OUDSChipPicker(title: "app_components_common_style_label",
+                               selection: $configurationModel.style,
+                               chips: OUDSButton.Style.chips)
 
-            DesignToolboxChoicePicker(title: "app_components_common_layout_label",
-                                      selection: $configurationModel.layout,
-                                      style: .segmented)
-            {
-                ForEach(ButtonLayout.allCases, id: \.id) { layout in
-                    Text(LocalizedStringKey(layout.description)).tag(layout)
-                }
+                OUDSChipPicker(title: "app_components_common_layout_label",
+                               selection: $configurationModel.layout,
+                               chips: ButtonLayout.chips)
             }
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
