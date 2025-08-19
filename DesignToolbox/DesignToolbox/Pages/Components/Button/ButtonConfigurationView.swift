@@ -59,7 +59,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     private var roundedCodePattern: String {
-        rounded ? ".environement(\\.oudsRoundedButton, true)" : ""
+        rounded ? ".environment(\\.oudsRoundedButton, true)" : ""
     }
 
     private var disableCodePattern: String {

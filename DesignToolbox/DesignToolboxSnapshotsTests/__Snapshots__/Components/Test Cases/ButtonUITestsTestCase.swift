@@ -65,7 +65,7 @@ open class ButtonUITestsTestCase: XCTestCase {
 
     /// This function tests all buttons configuration for the given themen and color schemes on aa colored surface (the `colorSurfaceBrandPrimary` token)
     ///
-    /// **/!\ It does not text the hover and pressed states.**
+    /// **/!\ It does not test the hover and pressed states.**
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
     ///
     /// It iterates through all button `hierarchy`, for all `style` with* textOnly, textAndIcon and iconOnly layouts*
@@ -75,8 +75,8 @@ open class ButtonUITestsTestCase: XCTestCase {
     ///   - theme: The theme (`OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllButtonsOnColoredSurface(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        // Skip test for negative hierarchy because it is not allowed on colored surface
-        for hierarchy in OUDSButton.Hierarchy.allCases where hierarchy != .negative {
+        // Skip test for negative and brand hierarchy because it is not allowed on colored surface
+        for hierarchy in OUDSButton.Hierarchy.allCases where hierarchy != .negative && hierarchy != .brand {
             for layout in ButtonTest.Layout.allCases {
                 for rounded in [true, false] {
                     for disabled in [true, false] {

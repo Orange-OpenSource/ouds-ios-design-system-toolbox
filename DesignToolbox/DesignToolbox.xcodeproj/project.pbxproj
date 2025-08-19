@@ -2946,7 +2946,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "887-component-update-button-version-30";
+				branch = develop;
 				kind = branch;
 			};
 		};
