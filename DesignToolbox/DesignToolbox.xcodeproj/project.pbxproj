@@ -2998,7 +2998,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "841-design-system-toolbox-use-chippicker-when-there-are-selections-in-component-screen-configuration";
 				kind = branch;
 			};
 		};
