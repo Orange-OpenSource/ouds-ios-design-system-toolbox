@@ -48,6 +48,14 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         var description: String {
             rawValue.camelCase
         }
+
+        private var chipData: OUDSChipPickerData<Self> {
+            OUDSChipPickerData(tag: self, layout: .text(text: description))
+        }
+
+        static var chips: [OUDSChipPickerData<Self>] {
+            allCases.map(\.chipData)
+        }
     }
 
     @Published var selectionType: SelectionType {
@@ -164,24 +172,14 @@ struct ChipPickerConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
-            }
 
-            DesignToolboxChoicePicker(title: "app_components_common_layout_label",
-                                      selection: $configurationModel.layout,
-                                      style: .segmented)
-            {
-                ForEach(ChipLayout.allCases, id: \.id) { layout in
-                    Text(LocalizedStringKey(layout.description)).tag(layout)
-                }
-            }
+                OUDSChipPicker(title: "app_components_common_layout_label",
+                               selection: $configurationModel.layout,
+                               chips: ChipLayout.chips)
 
-            DesignToolboxChoicePicker(title: "app_components_chipPicker_selectionType_label",
-                                      selection: $configurationModel.selectionType,
-                                      style: .segmented)
-            {
-                ForEach(ChipPickerConfigurationModel.SelectionType.allCases, id: \.self) { selectionType in
-                    Text(selectionType.description).tag(selectionType)
-                }
+                OUDSChipPicker(title: "app_components_chipPicker_selectionType_label",
+                               selection: $configurationModel.selectionType,
+                               chips: ChipPickerConfigurationModel.SelectionType.chips)
             }
 
             DesignToolboxEditContentDisclosure {

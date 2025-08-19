@@ -83,15 +83,10 @@ struct SuggestionChipConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
-            }
 
-            DesignToolboxChoicePicker(title: "app_components_common_layout_label",
-                                      selection: $configurationModel.layout,
-                                      style: .segmented)
-            {
-                ForEach(ChipLayout.allCases, id: \.id) { layout in
-                    Text(LocalizedStringKey(layout.description)).tag(layout)
-                }
+                OUDSChipPicker(title: "app_components_common_layout_label",
+                               selection: $configurationModel.layout,
+                               chips: ChipLayout.chips)
             }
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {

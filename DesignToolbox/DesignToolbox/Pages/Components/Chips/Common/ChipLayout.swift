@@ -11,6 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSComponents
+
 // MARK: - Chip Layout
 
 enum ChipLayout: CaseIterable, CustomStringConvertible {
@@ -29,5 +31,11 @@ enum ChipLayout: CaseIterable, CustomStringConvertible {
         }
     }
 
-    var id: String { description }
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
 }
