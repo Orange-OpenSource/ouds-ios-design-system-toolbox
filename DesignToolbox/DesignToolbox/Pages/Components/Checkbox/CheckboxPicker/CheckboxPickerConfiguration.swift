@@ -138,28 +138,21 @@ struct CheckboxPickerConfiguration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.isEnabled)
-                    .disabled(configurationModel.isError || configurationModel.isReadOnly)
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.isEnabled)
+                .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
-                OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
-                    .disabled(!configurationModel.isEnabled || configurationModel.isReadOnly)
+            OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
+                .disabled(!configurationModel.isEnabled || configurationModel.isReadOnly)
 
-                OUDSSwitchItem("app_components_controlItem_readOnly_label", isOn: $configurationModel.isReadOnly)
-                    .disabled(!configurationModel.isEnabled || configurationModel.isError)
+            OUDSSwitchItem("app_components_controlItem_readOnly_label", isOn: $configurationModel.isReadOnly)
+                .disabled(!configurationModel.isEnabled || configurationModel.isError)
 
-                OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $configurationModel.hasDivider)
-            }
+            OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $configurationModel.hasDivider)
 
-            DesignToolboxChoicePicker(title: "app_components_common_orientation_label",
-                                      selection: $configurationModel.pickerPlacement,
-                                      style: .menu)
-            {
-                ForEach(OUDSCheckboxPickerPlacement.allCases, id: \.id) { placement in
-                    Text(placement.description).tag(placement)
-                }
-            }
+            OUDSChipPicker(title: "app_components_common_orientation_label",
+                           selection: $configurationModel.pickerPlacement,
+                           chips: OUDSCheckboxPickerPlacement.chips)
         }
     }
 }
@@ -212,5 +205,14 @@ extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive C
 
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+    }
+
+    // MARK: - Chips description
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
     }
 }
