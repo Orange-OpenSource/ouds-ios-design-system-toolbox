@@ -1323,6 +1323,31 @@
         }
       }
     },
+    "app_components_button_rounded_label" : {
+      "comment" : "Component - Button",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rounded"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rounded"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rounded"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_checkbox_checkboxItem_label" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",

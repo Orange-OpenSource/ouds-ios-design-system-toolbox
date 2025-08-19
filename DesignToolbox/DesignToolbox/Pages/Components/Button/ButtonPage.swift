@@ -46,8 +46,8 @@ private struct ButtonDemo: View {
         HStack(alignment: .center) {
             Spacer()
 
-            // It is not allowed to place a Negative button on colored surface
-            if configurationModel.hierarchy == .negative, configurationModel.onColoredSurface {
+            // It is not allowed to place a Negative or Brand button on colored surface
+            if configurationModel.onColoredSurface, configurationModel.hierarchy == .negative || configurationModel.hierarchy == .brand {
                 Text("app_components_button_negative_hierary_notAllowed_text")
             } else {
                 switch configurationModel.layout {
@@ -56,15 +56,18 @@ private struct ButtonDemo: View {
                                accessibilityLabel: "app_components_button_icon_a11y".localized(),
                                hierarchy: configurationModel.hierarchy,
                                style: configurationModel.style) {}
+                        .environment(\.oudsRoundedButton, configurationModel.rounded)
                 case .textOnly:
                     OUDSButton(text: configurationModel.text,
                                hierarchy: configurationModel.hierarchy,
                                style: configurationModel.style) {}
+                        .environment(\.oudsRoundedButton, configurationModel.rounded)
                 case .textAndIcon:
                     OUDSButton(icon: Image(decorative: "ic_heart"),
                                text: configurationModel.text,
                                hierarchy: configurationModel.hierarchy,
                                style: configurationModel.style) {}
+                        .environment(\.oudsRoundedButton, configurationModel.rounded)
                 }
             }
 
