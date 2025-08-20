@@ -38,18 +38,21 @@ open class TagUITestsTestCase: XCTestCase {
                 for status in OUDSTag.Status.allCases {
                     for size in OUDSTag.Size.allCases {
                         for shape in OUDSTag.Shape.allCases {
+                            // Drop loader and disabled status because this case is not allowed
                             for loader in [true, false] where !(status == .disabled && loader == true) {
-                                // Drop loader and disabled status because this case is not allowed
-                                if !(status == .disabled && loader == true) {
-                                    let model = TagConfigurationModel()
-                                    model.layout = layout
-                                    model.status = status
-                                    model.hierarchy = hierarchy
-                                    model.size = size
-                                    model.shape = shape
-                                    model.loader = loader
+                                for flipIcon in [true, false] where !loader {
+                                    if !(status == .disabled && loader == true) {
+                                        let model = TagConfigurationModel()
+                                        model.layout = layout
+                                        model.status = status
+                                        model.hierarchy = hierarchy
+                                        model.size = size
+                                        model.shape = shape
+                                        model.loader = loader
+                                        model.flipIcon = flipIcon
 
-                                    testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                                        testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                                    }
                                 }
                             }
                         }
@@ -86,8 +89,9 @@ open class TagUITestsTestCase: XCTestCase {
         let sizePattern = model.size.technicalDescription
         let shapePattern = model.shape.technicalDescription
         let loaderPattern = model.loader ? "loader" : ""
+        let flipIconPattern = model.flipIcon ? "flipIcon" : ""
 
-        let name = "\(layoutPattern)_\(hierarchyPattern)_\(statusPattern)_\(sizePattern)_\(shapePattern)_\(loaderPattern)"
+        let name = "\(layoutPattern)_\(hierarchyPattern)_\(statusPattern)_\(sizePattern)_\(shapePattern)_\(loaderPattern)_\(flipIconPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,

@@ -47,11 +47,16 @@ final class TagConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var flipIcon: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
         layout = .textOnly
         loader = false
+        flipIcon = false
         label = String(localized: "app_components_common_label_label")
         size = .default
         status = .neutral
@@ -64,7 +69,7 @@ final class TagConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     override func updateCode() {
-        code = "OUDSTag(label: \"\(label)\"\(iconPattern)\(hierarchyPattern)\(statusPattern)\(shapePattern)\(sizePattern)\(loaderPattern))"
+        code = "OUDSTag(label: \"\(label)\"\(iconPattern)\(flipIconPattern)\(hierarchyPattern)\(statusPattern)\(shapePattern)\(sizePattern)\(loaderPattern))"
     }
 
     private var iconPattern: String {
@@ -97,6 +102,10 @@ final class TagConfigurationModel: ComponentConfiguration {
     private var loaderPattern: String {
         loader ? ", hasLoader: true" : ""
     }
+
+    private var flipIconPattern: String {
+        flipIcon ? ", flipIcon: true" : ""
+    }
 }
 
 // MARK: - Tag Configuration View
@@ -110,6 +119,7 @@ struct TagConfigurationView: View {
 
     // MARK: Body
 
+    // swiftlint:disable closure_body_length
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
             DesignToolboxChoicePicker(title: "app_components_common_layout_label",
@@ -123,6 +133,9 @@ struct TagConfigurationView: View {
 
             OUDSSwitchItem("app_components_common_loader_label", isOn: $configurationModel.loader)
                 .disabled(configurationModel.status == .disabled)
+
+            OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
+                .disabled(configurationModel.layout != .textAndIcon)
 
             DesignToolboxChoicePicker(title: "app_components_common_hierarchy_label",
                                       selection: $configurationModel.hierarchy,
@@ -169,6 +182,7 @@ struct TagConfigurationView: View {
             }
         }
     }
+    // swiftlint:enable closure_body_length
 }
 
 extension OUDSTag.Size: @retroactive CaseIterable, @retroactive CustomStringConvertible {
