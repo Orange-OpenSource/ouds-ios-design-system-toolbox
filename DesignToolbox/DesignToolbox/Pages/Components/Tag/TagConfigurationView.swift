@@ -119,70 +119,51 @@ struct TagConfigurationView: View {
 
     // MARK: Body
 
-    // swiftlint:disable closure_body_length
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
-            DesignToolboxChoicePicker(title: "app_components_common_layout_label",
-                                      selection: $configurationModel.layout,
-                                      style: .segmented)
-            {
-                ForEach(TagLayout.allCases, id: \.id) { layout in
-                    Text(LocalizedStringKey(layout.description)).tag(layout)
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            OUDSChipPicker(title: "app_components_common_layout_label",
+                           selection: $configurationModel.layout,
+                           chips: TagLayout.chips)
+
+            OUDSChipPicker(title: "app_components_common_hierarchy_label",
+                           selection: $configurationModel.hierarchy,
+                           chips: OUDSTag.Hierarchy.chips)
+
+            OUDSChipPicker(title: "app_components_common_status_label",
+                           selection: $configurationModel.status,
+                           chips: filteredStatusChips)
+
+            OUDSChipPicker(title: "app_components_tag_shape_label",
+                           selection: $configurationModel.shape,
+                           chips: OUDSTag.Shape.chips)
+
+            OUDSChipPicker(title: "app_components_common_size_label",
+                           selection: $configurationModel.size,
+                           chips: OUDSTag.Size.chips)
+
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
+                OUDSSwitchItem("app_components_common_loader_label", isOn: $configurationModel.loader)
+                    .disabled(configurationModel.status == .disabled)
+
+                OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
+                    .disabled(configurationModel.layout != .textAndIcon)
+
+                DesignToolboxEditContentDisclosure {
+                    DesignToolboxTextField(text: $configurationModel.label)
                 }
-            }
-
-            OUDSSwitchItem("app_components_common_loader_label", isOn: $configurationModel.loader)
-                .disabled(configurationModel.status == .disabled)
-
-            OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
-                .disabled(configurationModel.layout != .textAndIcon)
-
-            DesignToolboxChoicePicker(title: "app_components_common_hierarchy_label",
-                                      selection: $configurationModel.hierarchy,
-                                      style: .segmented)
-            {
-                ForEach(OUDSTag.Hierarchy.allCases, id: \.id) { hierarchy in
-                    Text(hierarchy.description).tag(hierarchy)
-                }
-            }
-
-            DesignToolboxChoicePicker(title: "app_components_common_status_label",
-                                      selection: $configurationModel.status,
-                                      style: .segmented)
-            {
-                ForEach(OUDSTag.Status.allCases, id: \.id) { status in
-                    if configurationModel.loader, status == .disabled {
-                        EmptyView()
-                    } else {
-                        Text(status.description).tag(status)
-                    }
-                }
-            }
-
-            DesignToolboxChoicePicker(title: "app_components_tag_shape_label",
-                                      selection: $configurationModel.shape,
-                                      style: .segmented)
-            {
-                ForEach(OUDSTag.Shape.allCases, id: \.id) { shape in
-                    Text(shape.description).tag(shape)
-                }
-            }
-
-            DesignToolboxChoicePicker(title: "app_components_common_size_label",
-                                      selection: $configurationModel.size,
-                                      style: .segmented)
-            {
-                ForEach(OUDSTag.Size.allCases, id: \.id) { size in
-                    Text(size.description).tag(size)
-                }
-            }
-
-            DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.label)
             }
         }
     }
-    // swiftlint:enable closure_body_length
+
+    private var filteredStatusChips: [OUDSChipPickerData<OUDSTag.Status>] {
+        OUDSTag.Status.allCases.compactMap {
+            if $0 == .disabled, configurationModel.loader {
+                nil
+            } else {
+                $0.chipData
+            }
+        }
+    }
 }
 
 extension OUDSTag.Size: @retroactive CaseIterable, @retroactive CustomStringConvertible {
@@ -207,7 +188,13 @@ extension OUDSTag.Size: @retroactive CaseIterable, @retroactive CustomStringConv
         }
     }
 
-    var id: String { description }
+    var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
 }
 
 extension OUDSTag.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible {
@@ -237,7 +224,9 @@ extension OUDSTag.Status: @retroactive CaseIterable, @retroactive CustomStringCo
         "\(description.lowercased())"
     }
 
-    var id: String { description }
+    var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
 }
 
 extension OUDSTag.Hierarchy: @retroactive CaseIterable, @retroactive CustomStringConvertible {
@@ -262,7 +251,13 @@ extension OUDSTag.Hierarchy: @retroactive CaseIterable, @retroactive CustomStrin
         }
     }
 
-    var id: String { description }
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
 }
 
 extension OUDSTag.Shape: @retroactive CaseIterable, @retroactive CustomStringConvertible {
@@ -287,7 +282,13 @@ extension OUDSTag.Shape: @retroactive CaseIterable, @retroactive CustomStringCon
         }
     }
 
-    var id: String { description }
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
 }
 
 enum TagLayout: CaseIterable, CustomStringConvertible {
@@ -317,5 +318,11 @@ enum TagLayout: CaseIterable, CustomStringConvertible {
         }
     }
 
-    var id: String { description }
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
 }
