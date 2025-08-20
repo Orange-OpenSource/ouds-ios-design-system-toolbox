@@ -27,24 +27,19 @@ import XCTest
 /// Tests the UI rendering of the `OUDSTag` for each parameter
 open class TagUITestsTestCase: XCTestCase {
 
-    /// This function tests all badges with all types, hierarchy, status and size for the given theme and color scheme.
-    ///
-    /// It iterates through all `Tag.Type`, `OUDSTag.Hierarchy`, `OUDSTag.Status`, `OUDSTag.Size`.
+    /// This function tests all tags with all types, hierarchy, status and size for the given theme and color scheme.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-
-        // Test OUDSTag
         for layout in TagLayout.allCases {
             for hierarchy in OUDSTag.Hierarchy.allCases {
                 for status in OUDSTag.Status.allCases {
                     for size in OUDSTag.Size.allCases {
                         for shape in OUDSTag.Shape.allCases {
                             for loader in [true, false] where !(status == .disabled && loader == true) {
-                                // drop loader and disabled status
-                                // because this case is not allowed
+                                // Drop loader and disabled status because this case is not allowed
                                 if !(status == .disabled && loader == true) {
                                     let model = TagConfigurationModel()
                                     model.layout = layout
@@ -67,7 +62,7 @@ open class TagUITestsTestCase: XCTestCase {
     /// This function tests `OUDSTag` according to all parameters of the configuration available for the given
     /// theme and color schemes.
     ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
+    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameter.
     ///
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme)
@@ -84,7 +79,6 @@ open class TagUITestsTestCase: XCTestCase {
         }
 
         // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>.<typePatterne><statusPattern><sizePattern> where:
         let testName = "testTag_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let layoutPattern = model.layout.technicalDescription.localized()
         let hierarchyPattern = model.hierarchy.technicalDescription

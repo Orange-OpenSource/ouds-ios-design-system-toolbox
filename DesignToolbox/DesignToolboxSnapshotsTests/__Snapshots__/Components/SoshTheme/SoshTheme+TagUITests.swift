@@ -17,9 +17,7 @@ import SwiftUI
 
 // swiftlint:disable required_deinit
 
-// MARK: - Test Cases
-
-/// Tests the UI rendering of the `OUDSTag` and `OUDSTagItem` for each parameter with `SoshTheme`.
+/// Tests the UI rendering of the `OUDSTag`  for each parameter with `SoshTheme`.
 final class SoshThemeTagUITests: TagUITestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
@@ -30,14 +28,14 @@ final class SoshThemeTagUITests: TagUITestsTestCase {
         theme = SoshTheme()
     }
 
-    /// Tests all switches configuration in the `SoshTheme` with the `light` color schemes.
-    @MainActor func testAllTagSoshThemeLight() {
+    /// Tests all tags configuration in the `SoshTheme` with the `light` color scheme.
+    @MainActor func testAllTagsSoshThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllTags(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all switches configuration in the `SoshTheme` with the `dark` color schemes.
-    @MainActor func testAllTagSoshThemeDark() {
+    /// Tests all tags configuration in the `SoshTheme` with the `dark` color scheme.
+    @MainActor func testAllTagsSoshThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTags(theme: theme, interfaceStyle: interfaceStyle)
     }

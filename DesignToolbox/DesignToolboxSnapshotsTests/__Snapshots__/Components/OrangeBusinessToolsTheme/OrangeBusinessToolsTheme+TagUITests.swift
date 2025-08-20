@@ -19,7 +19,7 @@ import SwiftUI
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSTag` and `OUDSTagItem` for each parameter with `SoshTheme`.
+/// Tests the UI rendering of the `OUDSTag` for each parameter with `OrangeBusinessToolsTheme`.
 final class OrangeBusinessToolsThemeTagUITests: TagUITestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
@@ -30,14 +30,14 @@ final class OrangeBusinessToolsThemeTagUITests: TagUITestsTestCase {
         theme = OrangeBusinessToolsTheme()
     }
 
-    /// Tests all switches configuration in the `OrangeBusinessToolsTheme` with the `light` color schemes.
-    @MainActor func testAllTagOrangeBusinessToolsThemeThemeLight() {
+    /// Tests all tags configuration in the `OrangeBusinessToolsTheme` with the `light` color scheme.
+    @MainActor func testAllTagsOrangeBusinessToolsThemeThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllTags(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all switches configuration in the `OrangeBusinessToolsTheme` with the `dark` color schemes.
-    @MainActor func testAllTagOrangeBusinessToolsThemeThemeDark() {
+    /// Tests all tags configuration in the `OrangeBusinessToolsTheme` with the `dark` color scheme.
+    @MainActor func testAllTagsOrangeBusinessToolsThemeThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTags(theme: theme, interfaceStyle: interfaceStyle)
     }

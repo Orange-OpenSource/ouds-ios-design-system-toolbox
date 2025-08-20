@@ -17,9 +17,7 @@ import SwiftUI
 
 // swiftlint:disable required_deinit
 
-// MARK: - Test Cases
-
-/// Tests the UI rendering of the `OUDSTag` and `OUDSTagItem` for each parameter with `SoshTheme`.
+/// Tests the UI rendering of the `OUDSTag` for each parameter with `WireframeTheme`.
 final class WireframeThemeTagUITests: TagUITestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
@@ -30,14 +28,14 @@ final class WireframeThemeTagUITests: TagUITestsTestCase {
         theme = WireframeTheme()
     }
 
-    /// Tests all switches configuration in the `Wireframe` with the `light` color schemes.
-    @MainActor func testAllTagWireframeThemeLight() {
+    /// Tests all tags configuration in the `Wireframe` with the `light` color scheme.
+    @MainActor func testAllTagsWireframeThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllTags(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all switches configuration in the `Wireframe` with the `dark` color schemes.
-    @MainActor func testAllTagWireframeThemeDark() {
+    /// Tests all tags configuration in the `Wireframe` with the `dark` color scheme.
+    @MainActor func testAllTagsWireframeThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTags(theme: theme, interfaceStyle: interfaceStyle)
     }
