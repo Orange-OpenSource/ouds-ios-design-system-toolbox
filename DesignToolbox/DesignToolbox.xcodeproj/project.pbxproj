@@ -103,8 +103,6 @@
 		079B4A1A2E49C78F0039FC26 /* OrangeBusinessToolsTheme+TagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079B4A192E49C78F0039FC26 /* OrangeBusinessToolsTheme+TagUITests.swift */; };
 		079B4A202E49C8390039FC26 /* OrangeInverseTheme+TagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079B4A1F2E49C8390039FC26 /* OrangeInverseTheme+TagUITests.swift */; };
 		079B4A222E49C8740039FC26 /* WireframeTheme+TagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079B4A212E49C8740039FC26 /* WireframeTheme+TagUITests.swift */; };
-		07AB45872D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */; };
-		07AB45882D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */; };
 		07AB458A2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */; };
 		07AB458B2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */; };
 		07B3CCB12D40E34700DBB10A /* LinkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */; };
@@ -541,7 +539,6 @@
 		079B4A192E49C78F0039FC26 /* OrangeBusinessToolsTheme+TagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+TagUITests.swift"; sourceTree = "<group>"; };
 		079B4A1F2E49C8390039FC26 /* OrangeInverseTheme+TagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TagUITests.swift"; sourceTree = "<group>"; };
 		079B4A212E49C8740039FC26 /* WireframeTheme+TagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+TagUITests.swift"; sourceTree = "<group>"; };
-		07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxChoicePicker.swift; sourceTree = "<group>"; };
 		07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxTextField.swift; sourceTree = "<group>"; };
 		07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkConfiguration.swift; sourceTree = "<group>"; };
 		07B3CCAF2D40E34700DBB10A /* LinkElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkElement.swift; sourceTree = "<group>"; };
@@ -872,7 +869,6 @@
 				0708222D2CFF617000570EC7 /* Elements */,
 				5152DA1C2DE0BD3B0078B9F1 /* DesignToolbox+EnrichedTexts.swift */,
 				07F7533A2CC785620007450D /* DesignToolboxSectionHeaderStyle.swift */,
-				07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */,
 				0762276B2DA93D62009C3632 /* DesignToolboxColorPicker.swift */,
 				6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */,
 				07F0AFE72CFE0FBD00D334DD /* DesignToolboxConfiguration.swift */,
@@ -2146,7 +2142,6 @@
 				07523E7E2E00173D00A7C87C /* ControlItemConfigurationModel.swift in Sources */,
 				51952A982D3FA32E0068B807 /* FontTokenPage.swift in Sources */,
 				51A2175E2E325ED500562BE0 /* OrangeBusinessToolsTheme+RadioButtonUITests.swift in Sources */,
-				07AB45872D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */,
 				51A217722E325F7F00562BE0 /* WireframeTheme+LinkUITests.swift in Sources */,
 				51952A992D3FA32E0068B807 /* BorderTokenElement.swift in Sources */,
 				51952A9A2D3FA32E0068B807 /* NamedColor+Opacity.swift in Sources */,
@@ -2421,7 +2416,6 @@
 				075114E12CB7FDC200B8B759 /* ColorTokenPage.swift in Sources */,
 				07F7533B2CC785620007450D /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				07F0AFDE2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */,
-				07AB45882D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */,
 				07B3CCB12D40E34700DBB10A /* LinkConfiguration.swift in Sources */,
 				07B3CCB22D40E34700DBB10A /* LinkElement.swift in Sources */,
 				07B3CCB32D40E34700DBB10A /* LinkPage.swift in Sources */,
@@ -2998,7 +2992,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "841-design-system-toolbox-use-chippicker-when-there-are-selections-in-component-screen-configuration";
+				branch = develop;
 				kind = branch;
 			};
 		};

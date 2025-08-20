@@ -29,20 +29,6 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    enum BadgeType: String, CaseIterable {
-        case standard = "app_components_badge_standardType_label"
-        case count = "app_components_badge_countType_label"
-        case icon = "app_components_badge_iconType_label"
-
-        private var chipData: OUDSChipPickerData<Self> {
-            OUDSChipPickerData(tag: self, layout: .text(text: rawValue.localized()))
-        }
-
-        static var chips: [OUDSChipPickerData<Self>] {
-            allCases.map(\.chipData)
-        }
-    }
-
     @Published var badgeType: BadgeType {
         didSet {
             // switching to icon or count so change to default size
@@ -59,6 +45,20 @@ final class BadgeConfigurationModel: ComponentConfiguration {
 
     var count: UInt {
         UInt(countText) ?? 1
+    }
+
+    enum BadgeType: String, CaseIterable {
+        case standard = "app_components_badge_standardType_label"
+        case count = "app_components_badge_countType_label"
+        case icon = "app_components_badge_iconType_label"
+
+        private var chipData: OUDSChipPickerData<Self> {
+            OUDSChipPickerData(tag: self, layout: .text(text: rawValue.localized()))
+        }
+
+        static var chips: [OUDSChipPickerData<Self>] {
+            allCases.map(\.chipData)
+        }
     }
 
     // MARK: Initializer
