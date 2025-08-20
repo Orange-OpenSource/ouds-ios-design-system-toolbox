@@ -147,7 +147,7 @@ struct LinkConfiguration: View {
                 OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $configurationModel.onColoredSurface)
             }
 
-            DesignToolboxChoicePicker(title: "app_components_link_size_label",
+            DesignToolboxChoicePicker(title: "app_components_common_size_label",
                                       selection: $configurationModel.size,
                                       style: .segmented)
             {

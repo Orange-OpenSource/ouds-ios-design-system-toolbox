@@ -183,7 +183,7 @@ struct ButtonConfigurationView: View {
                 OUDSSwitchItem("app_components_button_rounded_label", isOn: $configurationModel.rounded)
             }
 
-            DesignToolboxChoicePicker(title: "app_components_button_hierarchy_label",
+            DesignToolboxChoicePicker(title: "app_components_common_hierarchy_label",
                                       selection: $configurationModel.hierarchy,
                                       style: .segmented)
             {
