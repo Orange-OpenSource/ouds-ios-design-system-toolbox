@@ -28,7 +28,7 @@ open class BadgeUITestsTestCase: XCTestCase {
 
     /// This function tests all badges with all types, status and size for the given theme and color scheme.
     ///
-    /// It iterates through all `Badge.Type`, `OUDSBadge.Status`, `OUDSBadge.Size`.
+    /// It iterates through all `Badge.Type`, `OUDSBadge.Status`, `OUDSBadge.StandardSize`.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
@@ -38,18 +38,27 @@ open class BadgeUITestsTestCase: XCTestCase {
         // Test OUDSBadge
         for badgeType in BadgeConfigurationModel.BadgeType.allCases {
             for status in OUDSBadge.Status.allCases {
-                for size in OUDSBadge.Size.allCases {
-                    let model = BadgeConfigurationModel()
-                    model.badgeType = badgeType
-                    model.status = status
-                    model.size = size
 
-                    testBadge(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                let model = BadgeConfigurationModel()
+                model.badgeType = badgeType
+                model.status = status
 
-                    // Add extra test if type is count with value > 99
-                    if badgeType == .count {
-                        model.countText = "100"
+                switch badgeType {
+                case .standard:
+                    for size in OUDSBadge.StandardSize.allCases {
+                        model.standardSize = size
                         testBadge(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                    }
+                case .count, .icon:
+                    for size in OUDSBadge.IllustrationSize.allCases {
+                        model.illustrationSize = size
+                        testBadge(theme: theme, interfaceStyle: interfaceStyle, model: model)
+
+                        // Add extra test if type is count with value > 99
+                        if badgeType == .count {
+                            model.countText = "100"
+                            testBadge(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                        }
                     }
                 }
             }
@@ -80,7 +89,7 @@ open class BadgeUITestsTestCase: XCTestCase {
         let testName = "testBadge_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let typePattern = model.badgeType.rawValue
         let statusPattern = model.status.technicalDescription
-        let sizePattern = model.size.technicalDescription
+        let sizePattern = model.badgeType == .standard ? model.standardSize.technicalDescription : model.illustrationSize.technicalDescription
         let countPattern = (model.badgeType == .count && model.countText == "100") ? "_maxCount" : ""
 
         let name = "\(typePattern)\(countPattern)\(statusPattern)\(sizePattern)"
