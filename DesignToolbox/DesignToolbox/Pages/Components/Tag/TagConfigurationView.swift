@@ -64,7 +64,7 @@ final class TagConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     override func updateCode() {
-        code = "OUDSTag(label: \(label)\(iconPattern)\(hierarchyPattern)\(statusPattern), \(shapePattern)\(sizePattern)\(loaderPattern)"
+        code = "OUDSTag(label: \"\(label)\"\(iconPattern)\(hierarchyPattern)\(statusPattern)\(shapePattern)\(sizePattern)\(loaderPattern))"
     }
 
     private var iconPattern: String {
@@ -74,7 +74,7 @@ final class TagConfigurationModel: ComponentConfiguration {
         case .textAndBullet:
             ", icon: .bullet"
         case .textAndIcon:
-            "icon: .asset(Image(decorative: \"ic_heart\"))"
+            ", icon: .asset(Image(decorative: \"ic_heart\"))"
         }
     }
 
@@ -95,7 +95,7 @@ final class TagConfigurationModel: ComponentConfiguration {
     }
 
     private var loaderPattern: String {
-        loader ? ", loader: true" : ""
+        loader ? ", hasLoader: true" : ""
     }
 }
 

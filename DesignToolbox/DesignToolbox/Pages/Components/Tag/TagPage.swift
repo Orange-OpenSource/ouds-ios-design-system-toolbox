@@ -53,7 +53,7 @@ struct TagDemo: View {
                 status: configurationModel.status,
                 shape: configurationModel.shape,
                 size: configurationModel.size,
-                loader: configurationModel.loader)
+                hasLoader: configurationModel.loader)
 
             Spacer()
         }
