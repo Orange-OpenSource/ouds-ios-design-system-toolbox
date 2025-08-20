@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.17.0...develop)
 
+### Added
+
+- [Library] Tag component (Orange-OpenSource/ouds-ios#408)
+
 ### Changed
 
 - [Library] Chip version 1.3.0 (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#906)

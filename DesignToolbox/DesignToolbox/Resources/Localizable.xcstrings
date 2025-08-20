@@ -961,7 +961,7 @@
       }
     },
     "app_component_emptyContent_text" : {
-      "comment" : "Component screen - Common",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -1105,30 +1105,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_badge_size_label" : {
-      "comment" : "Component - Badge",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
-          }
-        }
-      }
-    },
     "app_components_badge_standardType_label" : {
       "comment" : "Component - Badge",
       "extractionState" : "manual",
@@ -1149,30 +1125,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Standard"
-          }
-        }
-      }
-    },
-    "app_components_badge_status_label" : {
-      "comment" : "Component - Badge",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Status"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Status"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Status"
           }
         }
       }
@@ -1224,31 +1176,6 @@
           }
         }
       }
-    },
-    "app_components_button_hierarchy_label" : {
-      "comment" : "Component - Button",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hierarchy"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hierarchy"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hierarchy"
-          }
-        }
-      },
-      "shouldTranslate" : false
     },
     "app_components_button_icon_a11y" : {
       "comment" : "Component - Button (a11y)",
@@ -2006,7 +1933,7 @@
       }
     },
     "app_components_common_enterText_prompt" : {
-      "comment" : "Component screen - Common",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2030,7 +1957,7 @@
       }
     },
     "app_components_common_error_label" : {
-      "comment" : "Component screen - Common",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2054,8 +1981,33 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_hierarchy_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hierarchy"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hierarchy"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hierarchy"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_iconOnlyLayout_label" : {
-      "comment" : "Component screen - Common",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2080,7 +2032,7 @@
       "shouldTranslate" : false
     },
     "app_components_common_label_label" : {
-      "comment" : "Component - Checkbox",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2105,7 +2057,7 @@
       "shouldTranslate" : false
     },
     "app_components_common_layout_label" : {
-      "comment" : "Component screen - Common",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2124,6 +2076,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Layout"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_loader_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loader"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loader"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loader"
           }
         }
       },
@@ -2155,7 +2132,7 @@
       "shouldTranslate" : false
     },
     "app_components_common_onColoredSurface_label" : {
-      "comment" : "Component screen - Common",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2180,7 +2157,7 @@
       "shouldTranslate" : false
     },
     "app_components_common_orientation_label" : {
-      "comment" : "Component screen - Common",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2228,8 +2205,56 @@
         }
       }
     },
+    "app_components_common_size_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size"
+          }
+        }
+      }
+    },
+    "app_components_common_status_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status"
+          }
+        }
+      }
+    },
     "app_components_common_style_label" : {
-      "comment" : "Component screen - Common",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2254,7 +2279,7 @@
       "shouldTranslate" : false
     },
     "app_components_common_textAndIconLayout_label" : {
-      "comment" : "Component screen - Common",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2279,7 +2304,7 @@
       "shouldTranslate" : false
     },
     "app_components_common_textOnlyLayout_label" : {
-      "comment" : "Component screen - Common",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2304,7 +2329,7 @@
       "shouldTranslate" : false
     },
     "app_components_common_viewCodeExample_label" : {
-      "comment" : "Component screen - Common",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -3135,6 +3160,105 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Switch Item"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_tag_description_text" : {
+      "comment" : "Component - Tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الوسم هو عنصر صغير يُستخدم لعرض معلومات قصيرة مثل تسمية أو كلمة مفتاحية أو تصنيف. يساعد المستخدمين على العثور على المحتوى بسرعة أو تجميعه أو فهمه."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A tag is a small element that shows short info like a label, keyword, or category.It helps users quickly find, group, or understand content."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composant Tag est un petit élément qui affiche de brèves informations comme une étiquette, un mot-clé ou une catégorie. Elle aide les utilisateurs à trouver, regrouper ou comprendre rapidement du contenu."
+          }
+        }
+      }
+    },
+    "app_components_tag_label" : {
+      "comment" : "Component - Tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_tag_shape_label" : {
+      "comment" : "Component - Tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shape"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shape"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shape"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_tag_textAndBulletLayout_label" : {
+      "comment" : "Component - Tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text + bullet"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text + bullet"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text + bullet"
           }
         }
       },
