@@ -52,10 +52,9 @@ private struct ControlItemConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
-            selection
-                .disabled(configurationModel.isError || configurationModel.isReadOnly)
-
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+                selection
+                    .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
                 OUDSSwitchItem("app_components_controlItem_icon_label", isOn: $configurationModel.icon)
 
@@ -91,7 +90,7 @@ private struct ControlItemConfiguration: View {
     }
 
     @ViewBuilder
-    var selection: some View {
+    private var selection: some View {
         if let booleanModel = configurationModel as? BooleanControlItemConfigurationModel {
             BooleanSelectionView(model: booleanModel)
         }
@@ -120,13 +119,8 @@ private struct IndeterminateSelectionView: View {
     @ObservedObject var model: IndicatorControlItemConfigurationModel
 
     var body: some View {
-        DesignToolboxChoicePicker(title: "app_components_common_selection_label",
-                                  selection: $model.selection,
-                                  style: .segmented)
-        {
-            ForEach(OUDSCheckboxIndicatorState.allCases, id: \.id) { state in
-                Text(LocalizedStringKey(state.description)).tag(state)
-            }
-        }
+        OUDSChipPicker(title: "app_components_common_selection_label",
+                       selection: $model.selection,
+                       chips: OUDSCheckboxIndicatorState.chips)
     }
 }

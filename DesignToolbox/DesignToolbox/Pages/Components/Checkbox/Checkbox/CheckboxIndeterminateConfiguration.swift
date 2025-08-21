@@ -76,23 +76,16 @@ struct CheckboxIndeterminateConfiguration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
-                    .disabled(configurationModel.isError)
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+                .disabled(configurationModel.isError)
 
-                OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
-                    .disabled(!configurationModel.enabled)
-            }
+            OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
+                .disabled(!configurationModel.enabled)
 
-            DesignToolboxChoicePicker(title: "app_components_common_selection_label",
-                                      selection: $configurationModel.indicatorState,
-                                      style: .segmented)
-            {
-                ForEach(OUDSCheckboxIndicatorState.allCases, id: \.id) { state in
-                    Text(LocalizedStringKey(state.description)).tag(state)
-                }
-            }
+            OUDSChipPicker(title: "app_components_common_selection_label",
+                           selection: $configurationModel.indicatorState,
+                           chips: OUDSCheckboxIndicatorState.chips)
         }
     }
 }

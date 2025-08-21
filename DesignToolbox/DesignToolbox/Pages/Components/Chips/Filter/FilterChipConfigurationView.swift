@@ -95,15 +95,10 @@ struct FilterChipConfigurationView: View {
 
                 OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.selected)
                     .disabled(!configurationModel.enabled)
-            }
 
-            DesignToolboxChoicePicker(title: "app_components_common_layout_label",
-                                      selection: $configurationModel.layout,
-                                      style: .segmented)
-            {
-                ForEach(ChipLayout.allCases, id: \.id) { layout in
-                    Text(LocalizedStringKey(layout.description)).tag(layout)
-                }
+                OUDSChipPicker(title: "app_components_common_layout_label",
+                               selection: $configurationModel.layout,
+                               chips: ChipLayout.chips)
             }
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
