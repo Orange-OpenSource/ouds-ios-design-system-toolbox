@@ -22,17 +22,17 @@
 apple_id(ENV["OUDS_FASTLANE_APPLE_ID"])
 team_id(ENV["OUDS_DEVELOPER_PORTAL_TEAM_ID"])
 
-for_lane :alpha do
+for_lane :build_alpha do
   app_identifier(ENV["OUDS_DEVELOPER_BUNDLE_IDENTIFIER"])
   ENV["TESTFLIGHT_GROUPS"] = "alpha-team"
 end
 
-for_lane :beta do
+for_lane :build_beta do
   app_identifier(ENV["OUDS_DEVELOPER_BUNDLE_IDENTIFIER"])
   ENV["TESTFLIGHT_GROUPS"] = "beta-team"
 end
 
-for_lane :stable do
+for_lane :build_stable do
   app_identifier(ENV["OUDS_DEVELOPER_BUNDLE_IDENTIFIER"])
   ENV["TESTFLIGHT_GROUPS"] = "public-access"
 end
