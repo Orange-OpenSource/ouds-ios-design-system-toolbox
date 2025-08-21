@@ -29,12 +29,6 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    enum BadgeType: String, CaseIterable {
-        case standard = "app_components_badge_standardType_label"
-        case count = "app_components_badge_countType_label"
-        case icon = "app_components_badge_iconType_label"
-    }
-
     @Published var badgeType: BadgeType {
         didSet {
             // switching to icon or count so change to default size
@@ -51,6 +45,22 @@ final class BadgeConfigurationModel: ComponentConfiguration {
 
     var count: UInt {
         UInt(countText) ?? 1
+    }
+
+    // MARK: - Types
+
+    enum BadgeType: String, CaseIterable {
+        case standard = "app_components_badge_standardType_label"
+        case count = "app_components_badge_countType_label"
+        case icon = "app_components_badge_iconType_label"
+
+        private var chipData: OUDSChipPickerData<Self> {
+            OUDSChipPickerData(tag: self, layout: .text(text: rawValue.localized()))
+        }
+
+        static var chips: [OUDSChipPickerData<Self>] {
+            allCases.map(\.chipData)
+        }
     }
 
     // MARK: Initializer
@@ -98,33 +108,18 @@ struct BadgeConfigurationView: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
-            DesignToolboxChoicePicker(title: "app_components_badge_type_label",
-                                      selection: $configurationModel.badgeType,
-                                      style: .segmented)
-            {
-                ForEach(BadgeConfigurationModel.BadgeType.allCases, id: \.rawValue) { type in
-                    Text(type.rawValue.localized()).tag(type)
-                }
-            }
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            OUDSChipPicker(title: "app_components_badge_type_label",
+                           selection: $configurationModel.badgeType,
+                           chips: BadgeConfigurationModel.BadgeType.chips)
 
-            DesignToolboxChoicePicker(title: "app_components_common_size_label",
-                                      selection: $configurationModel.size,
-                                      style: .segmented)
-            {
-                ForEach(OUDSBadge.Size.allCases, id: \.id) { size in
-                    Text(size.description).tag(size)
-                }
-            }
+            OUDSChipPicker(title: "app_components_common_size_label",
+                           selection: $configurationModel.size,
+                           chips: OUDSBadge.Size.chips)
 
-            DesignToolboxChoicePicker(title: "app_components_common_status_label",
-                                      selection: $configurationModel.status,
-                                      style: .segmented)
-            {
-                ForEach(OUDSBadge.Status.allCases, id: \.id) { status in
-                    Text(status.description).tag(status)
-                }
-            }
+            OUDSChipPicker(title: "app_components_common_status_label",
+                           selection: $configurationModel.status,
+                           chips: OUDSBadge.Status.chips)
 
             if configurationModel.badgeType == .count {
                 DesignToolboxTextField(text: $configurationModel.countText, title: "app_components_badge_count_label")
@@ -165,7 +160,13 @@ extension OUDSBadge.Size: @retroactive CaseIterable, @retroactive CustomStringCo
         }
     }
 
-    var id: String { description }
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
 }
 
 extension OUDSBadge.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible {
@@ -195,5 +196,11 @@ extension OUDSBadge.Status: @retroactive CaseIterable, @retroactive CustomString
         ".\(description.lowercased())"
     }
 
-    var id: String { description }
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
 }
