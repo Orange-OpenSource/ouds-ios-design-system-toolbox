@@ -120,7 +120,7 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
     }
 
     private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {
@@ -144,7 +144,7 @@ extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomString
     }
 
     private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {
@@ -174,7 +174,7 @@ extension OUDSButton.Hierarchy: @retroactive CaseIterable, @retroactive CustomSt
     }
 
     private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {

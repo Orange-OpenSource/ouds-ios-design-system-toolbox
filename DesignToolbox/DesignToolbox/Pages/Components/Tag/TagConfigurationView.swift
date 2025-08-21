@@ -189,7 +189,7 @@ extension OUDSTag.Size: @retroactive CaseIterable, @retroactive CustomStringConv
     }
 
     var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {
@@ -225,7 +225,7 @@ extension OUDSTag.Status: @retroactive CaseIterable, @retroactive CustomStringCo
     }
 
     var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 }
 
@@ -252,7 +252,7 @@ extension OUDSTag.Hierarchy: @retroactive CaseIterable, @retroactive CustomStrin
     }
 
     private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {
@@ -283,7 +283,7 @@ extension OUDSTag.Shape: @retroactive CaseIterable, @retroactive CustomStringCon
     }
 
     private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {
@@ -319,7 +319,7 @@ enum TagLayout: CaseIterable, CustomStringConvertible {
     }
 
     private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {

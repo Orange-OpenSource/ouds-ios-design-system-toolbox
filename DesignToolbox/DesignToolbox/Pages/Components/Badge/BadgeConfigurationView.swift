@@ -47,6 +47,8 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         UInt(countText) ?? 1
     }
 
+    // MARK: - Types
+
     enum BadgeType: String, CaseIterable {
         case standard = "app_components_badge_standardType_label"
         case count = "app_components_badge_countType_label"
@@ -159,7 +161,7 @@ extension OUDSBadge.Size: @retroactive CaseIterable, @retroactive CustomStringCo
     }
 
     private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {
@@ -195,7 +197,7 @@ extension OUDSBadge.Status: @retroactive CaseIterable, @retroactive CustomString
     }
 
     private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {

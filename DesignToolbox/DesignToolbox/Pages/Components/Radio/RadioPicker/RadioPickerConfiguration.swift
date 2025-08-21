@@ -211,7 +211,7 @@ extension OUDSRadioPickerPlacement: @retroactive CaseIterable, @retroactive Cust
     // MARK: Chips data
 
     private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {

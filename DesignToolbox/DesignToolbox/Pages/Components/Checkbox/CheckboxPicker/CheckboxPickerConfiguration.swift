@@ -209,7 +209,7 @@ extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive C
 
     // MARK: - Chips description
     private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {

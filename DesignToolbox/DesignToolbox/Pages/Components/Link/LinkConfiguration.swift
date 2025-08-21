@@ -112,7 +112,7 @@ enum LinkLayout: CaseIterable, CustomStringConvertible {
     }
 
     private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {
@@ -135,7 +135,7 @@ extension OUDSLink.Size: @retroactive CaseIterable, @retroactive CustomStringCon
     }
 
     private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {

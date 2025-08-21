@@ -31,7 +31,7 @@ extension OUDSCheckboxIndicatorState: @retroactive CaseIterable, @retroactive Cu
     }
 
     private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {
