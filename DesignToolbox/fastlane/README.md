@@ -21,7 +21,7 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 [bundle exec] fastlane ios check_dead_code
 ```
 
-Run Periphery to look dor dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned.
+Run Periphery to look for dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned.
 
 ### ios format
 
@@ -29,7 +29,7 @@ Run Periphery to look dor dead code in the code base. Avoid strict mode because 
 [bundle exec] fastlane ios format
 ```
 
-Run SwiftFormat to format Swift source files according to the local configuration.
+Run SwiftFormat to format Swift source files according to the local configuration and apply source header template.
 
 ### ios lint
 
@@ -37,7 +37,7 @@ Run SwiftFormat to format Swift source files according to the local configuratio
 [bundle exec] fastlane ios lint
 ```
 
-Run SwiftLint in strict mode to detect code smells
+Run SwiftLint in strict mode to detect code smells using local configuration for app, snapshots, units and UI tests
 
 ### ios update_3rd_parties
 
@@ -45,7 +45,7 @@ Run SwiftLint in strict mode to detect code smells
 [bundle exec] fastlane ios update_3rd_parties
 ```
 
-Run LicensePlist to update list of third-parties
+Run LicensePlist to update list of third-parties to embed in app
 
 ### ios check_leaks
 
@@ -61,7 +61,7 @@ Run GitLeaks to look for leaks of secrets in project and Git history
 [bundle exec] fastlane ios update_sbom
 ```
 
-Generates a SBOM (Software Bill Of Materials) in SPDX JSON format with Syft and analyse it with Grype to as to check for vulnerabilities
+Generates a SBOM (Software Bill Of Materials) in SPDX JSON format with Syft and analyse it with Grype to as to look for vulnerabilities
 
 ### ios update_build_number
 
@@ -93,36 +93,36 @@ Run UI tests in the demo app to check some specific components behaviors
 [bundle exec] fastlane ios test_unit
 ```
 
-Run Uunit tests in the demo app to check some specific components behaviors
+Run Unit tests in the demo app to check some specific components behaviors
 
-### ios buildDebugApp
+### ios build_debug
 
 ```sh
-[bundle exec] fastlane ios buildDebugApp
+[bundle exec] fastlane ios build_debug
 ```
 
 Build locally the demo app in debug mode without upload
 
-### ios alpha
+### ios build_alpha
 
 ```sh
-[bundle exec] fastlane ios alpha
+[bundle exec] fastlane ios build_alpha
 ```
 
 Build the demo app in alpha mode and upload to TestFlight
 
-### ios beta
+### ios build_beta
 
 ```sh
-[bundle exec] fastlane ios beta
+[bundle exec] fastlane ios build_beta
 ```
 
-Build the demo app in neta mode and upload to TestFlight
+Build the demo app in beta mode and upload to TestFlight
 
-### ios stable
+### ios build_stable
 
 ```sh
-[bundle exec] fastlane ios stable
+[bundle exec] fastlane ios build_stable
 ```
 
 Build the demo app in stable mode and, if defined, upload to internal portal for App Store publication
