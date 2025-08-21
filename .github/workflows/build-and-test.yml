@@ -63,7 +63,7 @@ jobs:
       - name: Build demo app
         run: |
           cd DesignToolbox
-          bundle exec fastlane buildDebugApp
+          bundle exec fastlane build_debug
 
   # Test the library with UI tests
   ui-test:
