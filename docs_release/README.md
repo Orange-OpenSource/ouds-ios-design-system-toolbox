@@ -13,8 +13,8 @@ This file lists all the steps to follow when releasing a new version of Design S
 
 > [!TIP]
 > A release candidate can be done on the develop branch. 
-> The aim is to prove a kind of pre-release, not an enough stable one,
-> with its dedicated tag, for the next incoming real release. It is usefull for some suers and with an incremental approach.
+> The aim is to provide a kind of pre-release, not an enough stable one,
+> with its dedicated tag, for the next incoming real release. It is usefull for some users and with an incremental approach.
 
 The steps are quite simple:
 - update the SBOM
@@ -72,7 +72,7 @@ bundle exec fastlane update_sbom
 ```
 
 >[!IMPORTANT]
-> Keeping up-to-date the SBOM and check for vulnerabilities is important for both software quality, users trust and legal obligations like the Cyber Resilience Act or NIS2.
+> Keeping up-to-date the SBOM and check for vulnerabilities is important for both software quality, users trust and legal obligations like the *Cyber Resilience Act* or *NIS2*.
 
 - Verify the changes mentioned above, then commit and push.
 
@@ -135,7 +135,28 @@ Co-authored-by: Ludovic Pinel <ludovic.pinel@orange.com>
 Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
 Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
 ```
-    
+
+### Publish release to GitHub
+
+- Go to [GitHub Releases](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases).
+
+- Click on `Draft a new release`.
+
+- Create a new tag X.Y.Z (following semantic versioning principles)
+
+- Add release notes and verify using the preview tab. Use *git-cliff* to build the release note to copy/paste in the release description
+
+    ```shell
+    git-cliff --config .github/cliff.toml --output RELEASE_NOTE.md X..Y
+    ```
+
+> [!TIP]
+> X can be a commit hash or the last tag for example.
+> Y should be HEAD.
+> Run this comman on main branch.
+
+- Optionally check `Set as a pre-release` and click `Publish release`, otherwise create the release.
+
 - Launch a job on your runner to build the demo application
 
 - Or use _Fastlane_ command:
@@ -173,27 +194,6 @@ Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
 
 > [!TIP]
 > Of course this build operation will be successful if and ony if you have the suitable certificates and provisoning profile son your computer
-
-### Publish release to GitHub
-
-- Go to [GitHub Releases](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases).
-
-- Click on `Draft a new release`.
-
-- Create a new tag X.Y.Z (following semantic versioning principles)
-
-- Add release notes and verify using the preview tab. Use *git-cliff* to build the release note to copy/paste in the release description
-
-    ```shell
-    git-cliff --config .github/cliff.toml --output RELEASE_NOTE.md X..Y
-    ```
-
-> [!TIP]
-> X can be a commit hash or the last tag for example.
-> Y should be HEAD.
-> Run this comman on main branch.
-
-- Optionally check `Set as a pre-release` and click `Publish release`.
 
 - From your internal runner (e.g. in our side GitLab CI) pipeline job (or locally if Fastlane used) which made the stable release, get the artifacts (app zip, dSYm zip, IPA)
 
