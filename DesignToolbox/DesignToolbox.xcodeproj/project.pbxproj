@@ -1289,15 +1289,7 @@
 		51417C0E2E1BEE06000266C8 /* Test Cases */ = {
 			isa = PBXGroup;
 			children = (
-				515EE9A12E2133C800A60E96 /* ChipsUITestsTestCase.swift */,
-				518EC0A12E1FF2C000FC77E4 /* BadgeUITestsTestCase.swift */,
-				518EC0A32E1FF2C000FC77E4 /* ButtonUITestsTestCase.swift */,
-				518EC0A42E1FF2C000FC77E4 /* CheckboxUITestsTestCase.swift */,
-				518EC0A52E1FF2C000FC77E4 /* DividerUITestsTestCase.swift */,
-				518EC0A62E1FF2C000FC77E4 /* LinkUITestsTestCase.swift */,
-				518EC0A72E1FF2C000FC77E4 /* RadioButtonUITestsTestCase.swift */,
-				518EC0AF2E1FF2E800FC77E4 /* SwitchUITestsTestCase.swift */,
-				079B4A122E49BFA20039FC26 /* TagUITestCase.swift */,
+				51F49C882E57449500D50BC4 /* Components */,
 			);
 			path = "Test Cases";
 			sourceTree = "<group>";
@@ -1354,7 +1346,7 @@
 			path = Suggestion;
 			sourceTree = "<group>";
 		};
-		515EE9842E21329B00A60E96 /* Chips */ = {
+		515EE9842E21329B00A60E96 /* Chip */ = {
 			isa = PBXGroup;
 			children = (
 				515EE9762E21329B00A60E96 /* Common */,
@@ -1363,15 +1355,15 @@
 				515EE9822E21329B00A60E96 /* Suggestion */,
 				515EE9832E21329B00A60E96 /* ChipElements.swift */,
 			);
-			path = Chips;
+			path = Chip;
 			sourceTree = "<group>";
 		};
-		515EE99F2E2132E300A60E96 /* Chips */ = {
+		515EE99F2E2132E300A60E96 /* Chip */ = {
 			isa = PBXGroup;
 			children = (
 				515EE99E2E2132E300A60E96 /* ChipsPickerUITests.swift */,
 			);
-			path = Chips;
+			path = Chip;
 			sourceTree = "<group>";
 		};
 		515F66F82E2E925600268440 /* OrangeInverseTheme */ = {
@@ -1455,15 +1447,7 @@
 		51A217492E325E6C00562BE0 /* OrangeInverseTheme */ = {
 			isa = PBXGroup;
 			children = (
-				51A217412E325E6C00562BE0 /* OrangeInverseTheme+ChipsUITests.swift */,
-				51A217422E325E6C00562BE0 /* OrangeInverseTheme+BadgeUITests.swift */,
-				51A217432E325E6C00562BE0 /* OrangeInverseTheme+ButtonUITests.swift */,
-				51A217442E325E6C00562BE0 /* OrangeInverseTheme+CheckboxUITests.swift */,
-				51A217452E325E6C00562BE0 /* OrangeInverseTheme+DividerUITests.swift */,
-				51A217462E325E6C00562BE0 /* OrangeInverseTheme+LinkUITests.swift */,
-				51A217472E325E6C00562BE0 /* OrangeInverseTheme+RadioButtonUITests.swift */,
-				51A217482E325E6C00562BE0 /* OrangeInverseTheme+SwitchUITests.swift */,
-				079B4A1F2E49C8390039FC26 /* OrangeInverseTheme+TagUITests.swift */,
+				51F49C8C2E5744A900D50BC4 /* Components */,
 			);
 			path = OrangeInverseTheme;
 			sourceTree = "<group>";
@@ -1471,15 +1455,7 @@
 		51A2175C2E325ED500562BE0 /* OrangeBusinessToolsTheme */ = {
 			isa = PBXGroup;
 			children = (
-				51A217542E325ED500562BE0 /* OrangeBusinessToolsTheme+ChipsUITests.swift */,
-				51A217552E325ED500562BE0 /* OrangeBusinessToolsTheme+BadgeUITests.swift */,
-				51A217562E325ED500562BE0 /* OrangeBusinessToolsTheme+ButtonUITests.swift */,
-				51A217572E325ED500562BE0 /* OrangeBusinessToolsTheme+CheckboxUITests.swift */,
-				51A217582E325ED500562BE0 /* OrangeBusinessToolsTheme+DividerUITests.swift */,
-				51A217592E325ED500562BE0 /* OrangeBusinessToolsTheme+LinkUITests.swift */,
-				51A2175A2E325ED500562BE0 /* OrangeBusinessToolsTheme+RadioButtonUITests.swift */,
-				51A2175B2E325ED500562BE0 /* OrangeBusinessToolsTheme+SwitchUITests.swift */,
-				079B4A192E49C78F0039FC26 /* OrangeBusinessToolsTheme+TagUITests.swift */,
+				51F49C8B2E5744A500D50BC4 /* Components */,
 			);
 			path = OrangeBusinessToolsTheme;
 			sourceTree = "<group>";
@@ -1487,15 +1463,7 @@
 		51A2176D2E325F7F00562BE0 /* WireframeTheme */ = {
 			isa = PBXGroup;
 			children = (
-				51A217652E325F7F00562BE0 /* WireframeTheme+ChipsUITests.swift */,
-				51A217662E325F7F00562BE0 /* WireframeTheme+BadgeUITests.swift */,
-				51A217672E325F7F00562BE0 /* WireframeTheme+ButtonUITests.swift */,
-				51A217682E325F7F00562BE0 /* WireframeTheme+CheckboxUITests.swift */,
-				51A217692E325F7F00562BE0 /* WireframeTheme+DividerUITests.swift */,
-				51A2176A2E325F7F00562BE0 /* WireframeTheme+LinkUITests.swift */,
-				51A2176B2E325F7F00562BE0 /* WireframeTheme+RadioButtonUITests.swift */,
-				51A2176C2E325F7F00562BE0 /* WireframeTheme+SwitchUITests.swift */,
-				079B4A212E49C8740039FC26 /* WireframeTheme+TagUITests.swift */,
+				51F49C8F2E5744B800D50BC4 /* Components */,
 			);
 			path = WireframeTheme;
 			sourceTree = "<group>";
@@ -1545,15 +1513,7 @@
 		51ABCD2E2E183350006CD6C0 /* OrangeTheme */ = {
 			isa = PBXGroup;
 			children = (
-				515EE9A52E21347200A60E96 /* OrangeTheme+ChipsUITests.swift */,
-				518EC0B32E1FF38400FC77E4 /* OrangeTheme+BadgeUITests.swift */,
-				518EC06F2E1FF23800FC77E4 /* OrangeTheme+ButtonUITests.swift */,
-				518EC0702E1FF23800FC77E4 /* OrangeTheme+CheckboxUITests.swift */,
-				518EC0712E1FF23800FC77E4 /* OrangeTheme+DividerUITests.swift */,
-				518EC0722E1FF23800FC77E4 /* OrangeTheme+LinkUITests.swift */,
-				518EC0732E1FF23800FC77E4 /* OrangeTheme+RadioButtonUITests.swift */,
-				518EC0742E1FF23800FC77E4 /* OrangeTheme+SwitchUITests.swift */,
-				079B4A172E49C7790039FC26 /* OrangeTheme+TagUITests.swift */,
+				51F49C8A2E5744A200D50BC4 /* Components */,
 			);
 			path = OrangeTheme;
 			sourceTree = "<group>";
@@ -1561,15 +1521,7 @@
 		51ABCD2F2E18335D006CD6C0 /* SoshTheme */ = {
 			isa = PBXGroup;
 			children = (
-				515EE9A32E2133F200A60E96 /* SoshTheme+ChipsUITests.swift */,
-				518EC0B12E1FF32B00FC77E4 /* SoshTheme+BadgeUITests.swift */,
-				518EC0952E1FF28300FC77E4 /* SoshTheme+ButtonUITests.swift */,
-				518EC0962E1FF28300FC77E4 /* SoshTheme+CheckboxUITests.swift */,
-				518EC0972E1FF28300FC77E4 /* SoshTheme+DividerUITests.swift */,
-				518EC0982E1FF28300FC77E4 /* SoshTheme+LinkUITests.swift */,
-				518EC0992E1FF28300FC77E4 /* SoshTheme+RadioButtonUITests.swift */,
-				518EC09A2E1FF28300FC77E4 /* SoshTheme+SwitchUITests.swift */,
-				079B4A152E49C6EB0039FC26 /* SoshTheme+TagUITests.swift */,
+				51F49C892E57449C00D50BC4 /* Components */,
 			);
 			path = SoshTheme;
 			sourceTree = "<group>";
@@ -1586,19 +1538,12 @@
 		51BD760E2C466FCF0033365D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				07EB46FC2E1801BB00B94EC2 /* Badge */,
-				072141182D02F52A00B7B9C6 /* Button */,
-				513442062D75B880000B5DE4 /* Checkbox */,
-				515EE9842E21329B00A60E96 /* Chips */,
-				07D3DBF02DA5084500D8A57F /* ColoredSurface */,
-				07523E7C2E0016FE00A7C87C /* ControlItem */,
-				076227622DA90C65009C3632 /* Divider */,
-				07B3CCAD2D40E14C00DBB10A /* Link */,
-				0745C1852D7A0351006B3A1F /* Radio */,
-				07CC9AEB2DB0F7DD001BC929 /* Switch */,
-				07FB2A2C2E454D4E00361ECA /* Tag */,
-				07F0AFE62CFE055300D334DD /* Utils */,
-				07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */,
+				51F49C812E57434900D50BC4 /* _ */,
+				51F49C822E57435900D50BC4 /* Actions */,
+				51F49C832E57437E00D50BC4 /* Controls */,
+				51F49C842E5743B800D50BC4 /* Indicators */,
+				51F49C852E5743D900D50BC4 /* Layouts */,
+				51F49C862E5743F600D50BC4 /* Navigations */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1727,15 +1672,414 @@
 		51EB737E2DBFD4B000F37FEC /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				51F676EB2E0D677800C15CB6 /* Switches */,
-				51F676E62E0D650900C15CB6 /* Radios */,
-				51F676E52E0D641500C15CB6 /* Checkboxes */,
-				515EE99F2E2132E300A60E96 /* Chips */,
+				51F49C872E57444F00D50BC4 /* Controls */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		51F676E52E0D641500C15CB6 /* Checkboxes */ = {
+		51F49C812E57434900D50BC4 /* _ */ = {
+			isa = PBXGroup;
+			children = (
+				07F0AFE62CFE055300D334DD /* Utils */,
+				07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */,
+				07523E7C2E0016FE00A7C87C /* ControlItem */,
+			);
+			path = _;
+			sourceTree = "<group>";
+		};
+		51F49C822E57435900D50BC4 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				072141182D02F52A00B7B9C6 /* Button */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		51F49C832E57437E00D50BC4 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				513442062D75B880000B5DE4 /* Checkbox */,
+				515EE9842E21329B00A60E96 /* Chip */,
+				0745C1852D7A0351006B3A1F /* Radio */,
+				07CC9AEB2DB0F7DD001BC929 /* Switch */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		51F49C842E5743B800D50BC4 /* Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				07EB46FC2E1801BB00B94EC2 /* Badge */,
+				07FB2A2C2E454D4E00361ECA /* Tag */,
+			);
+			path = Indicators;
+			sourceTree = "<group>";
+		};
+		51F49C852E5743D900D50BC4 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				07D3DBF02DA5084500D8A57F /* ColoredSurface */,
+				076227622DA90C65009C3632 /* Divider */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		51F49C862E5743F600D50BC4 /* Navigations */ = {
+			isa = PBXGroup;
+			children = (
+				07B3CCAD2D40E14C00DBB10A /* Link */,
+			);
+			path = Navigations;
+			sourceTree = "<group>";
+		};
+		51F49C872E57444F00D50BC4 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				51F676E62E0D650900C15CB6 /* Radio */,
+				51F676E52E0D641500C15CB6 /* Checkbox */,
+				51F676EB2E0D677800C15CB6 /* Switch */,
+				515EE99F2E2132E300A60E96 /* Chip */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		51F49C882E57449500D50BC4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				51F49CA82E5745F300D50BC4 /* Navigations */,
+				51F49CA22E5745C400D50BC4 /* Layouts */,
+				51F49C9C2E57458100D50BC4 /* Indicators */,
+				51F49C962E57451A00D50BC4 /* Controls */,
+				51F49C902E5744CC00D50BC4 /* Actions */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		51F49C892E57449C00D50BC4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				51F49CA92E5745FD00D50BC4 /* Navigations */,
+				51F49CA32E5745CD00D50BC4 /* Layouts */,
+				51F49C9D2E57458800D50BC4 /* Indicators */,
+				51F49C972E57452600D50BC4 /* Controls */,
+				51F49C912E5744D900D50BC4 /* Actions */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		51F49C8A2E5744A200D50BC4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				51F49CAA2E57460100D50BC4 /* Navigations */,
+				51F49CA42E5745CF00D50BC4 /* Layouts */,
+				51F49C9E2E57458A00D50BC4 /* Indicators */,
+				51F49C982E57452900D50BC4 /* Controls */,
+				51F49C922E5744E400D50BC4 /* Actions */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		51F49C8B2E5744A500D50BC4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				51F49CAB2E57460300D50BC4 /* Navigations */,
+				51F49CA52E5745D200D50BC4 /* Layouts */,
+				51F49C9F2E57458C00D50BC4 /* Indicators */,
+				51F49C992E57452B00D50BC4 /* Controls */,
+				51F49C932E5744EF00D50BC4 /* Actions */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		51F49C8C2E5744A900D50BC4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				51F49CAC2E57460700D50BC4 /* Navigations */,
+				51F49CA62E5745D300D50BC4 /* Layouts */,
+				51F49CA02E57458D00D50BC4 /* Indicators */,
+				51F49C9A2E57452E00D50BC4 /* Controls */,
+				51F49C942E5744FA00D50BC4 /* Actions */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		51F49C8F2E5744B800D50BC4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				51F49CAD2E57460900D50BC4 /* Navigations */,
+				51F49CA72E5745D600D50BC4 /* Layouts */,
+				51F49CA12E57458F00D50BC4 /* Indicators */,
+				51F49C9B2E57453200D50BC4 /* Controls */,
+				51F49C952E57450400D50BC4 /* Actions */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		51F49C902E5744CC00D50BC4 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				518EC0A32E1FF2C000FC77E4 /* ButtonUITestsTestCase.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		51F49C912E5744D900D50BC4 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				518EC0952E1FF28300FC77E4 /* SoshTheme+ButtonUITests.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		51F49C922E5744E400D50BC4 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				518EC06F2E1FF23800FC77E4 /* OrangeTheme+ButtonUITests.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		51F49C932E5744EF00D50BC4 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				51A217562E325ED500562BE0 /* OrangeBusinessToolsTheme+ButtonUITests.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		51F49C942E5744FA00D50BC4 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				51A217432E325E6C00562BE0 /* OrangeInverseTheme+ButtonUITests.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		51F49C952E57450400D50BC4 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				51A217672E325F7F00562BE0 /* WireframeTheme+ButtonUITests.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		51F49C962E57451A00D50BC4 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				515EE9A12E2133C800A60E96 /* ChipsUITestsTestCase.swift */,
+				518EC0A42E1FF2C000FC77E4 /* CheckboxUITestsTestCase.swift */,
+				518EC0A72E1FF2C000FC77E4 /* RadioButtonUITestsTestCase.swift */,
+				518EC0AF2E1FF2E800FC77E4 /* SwitchUITestsTestCase.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		51F49C972E57452600D50BC4 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				515EE9A32E2133F200A60E96 /* SoshTheme+ChipsUITests.swift */,
+				518EC0962E1FF28300FC77E4 /* SoshTheme+CheckboxUITests.swift */,
+				518EC0992E1FF28300FC77E4 /* SoshTheme+RadioButtonUITests.swift */,
+				518EC09A2E1FF28300FC77E4 /* SoshTheme+SwitchUITests.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		51F49C982E57452900D50BC4 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				515EE9A52E21347200A60E96 /* OrangeTheme+ChipsUITests.swift */,
+				518EC0702E1FF23800FC77E4 /* OrangeTheme+CheckboxUITests.swift */,
+				518EC0732E1FF23800FC77E4 /* OrangeTheme+RadioButtonUITests.swift */,
+				518EC0742E1FF23800FC77E4 /* OrangeTheme+SwitchUITests.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		51F49C992E57452B00D50BC4 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				51A217542E325ED500562BE0 /* OrangeBusinessToolsTheme+ChipsUITests.swift */,
+				51A217572E325ED500562BE0 /* OrangeBusinessToolsTheme+CheckboxUITests.swift */,
+				51A2175A2E325ED500562BE0 /* OrangeBusinessToolsTheme+RadioButtonUITests.swift */,
+				51A2175B2E325ED500562BE0 /* OrangeBusinessToolsTheme+SwitchUITests.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		51F49C9A2E57452E00D50BC4 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				51A217412E325E6C00562BE0 /* OrangeInverseTheme+ChipsUITests.swift */,
+				51A217442E325E6C00562BE0 /* OrangeInverseTheme+CheckboxUITests.swift */,
+				51A217472E325E6C00562BE0 /* OrangeInverseTheme+RadioButtonUITests.swift */,
+				51A217482E325E6C00562BE0 /* OrangeInverseTheme+SwitchUITests.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		51F49C9B2E57453200D50BC4 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				51A217652E325F7F00562BE0 /* WireframeTheme+ChipsUITests.swift */,
+				51A217682E325F7F00562BE0 /* WireframeTheme+CheckboxUITests.swift */,
+				51A2176B2E325F7F00562BE0 /* WireframeTheme+RadioButtonUITests.swift */,
+				51A2176C2E325F7F00562BE0 /* WireframeTheme+SwitchUITests.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		51F49C9C2E57458100D50BC4 /* Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				518EC0A12E1FF2C000FC77E4 /* BadgeUITestsTestCase.swift */,
+				079B4A122E49BFA20039FC26 /* TagUITestCase.swift */,
+			);
+			path = Indicators;
+			sourceTree = "<group>";
+		};
+		51F49C9D2E57458800D50BC4 /* Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				518EC0B12E1FF32B00FC77E4 /* SoshTheme+BadgeUITests.swift */,
+				079B4A152E49C6EB0039FC26 /* SoshTheme+TagUITests.swift */,
+			);
+			path = Indicators;
+			sourceTree = "<group>";
+		};
+		51F49C9E2E57458A00D50BC4 /* Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				518EC0B32E1FF38400FC77E4 /* OrangeTheme+BadgeUITests.swift */,
+				079B4A172E49C7790039FC26 /* OrangeTheme+TagUITests.swift */,
+			);
+			path = Indicators;
+			sourceTree = "<group>";
+		};
+		51F49C9F2E57458C00D50BC4 /* Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				51A217552E325ED500562BE0 /* OrangeBusinessToolsTheme+BadgeUITests.swift */,
+				079B4A192E49C78F0039FC26 /* OrangeBusinessToolsTheme+TagUITests.swift */,
+			);
+			path = Indicators;
+			sourceTree = "<group>";
+		};
+		51F49CA02E57458D00D50BC4 /* Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				51A217422E325E6C00562BE0 /* OrangeInverseTheme+BadgeUITests.swift */,
+				079B4A1F2E49C8390039FC26 /* OrangeInverseTheme+TagUITests.swift */,
+			);
+			path = Indicators;
+			sourceTree = "<group>";
+		};
+		51F49CA12E57458F00D50BC4 /* Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				51A217662E325F7F00562BE0 /* WireframeTheme+BadgeUITests.swift */,
+				079B4A212E49C8740039FC26 /* WireframeTheme+TagUITests.swift */,
+			);
+			path = Indicators;
+			sourceTree = "<group>";
+		};
+		51F49CA22E5745C400D50BC4 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				518EC0A52E1FF2C000FC77E4 /* DividerUITestsTestCase.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		51F49CA32E5745CD00D50BC4 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				518EC0972E1FF28300FC77E4 /* SoshTheme+DividerUITests.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		51F49CA42E5745CF00D50BC4 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				518EC0712E1FF23800FC77E4 /* OrangeTheme+DividerUITests.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		51F49CA52E5745D200D50BC4 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				51A217582E325ED500562BE0 /* OrangeBusinessToolsTheme+DividerUITests.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		51F49CA62E5745D300D50BC4 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				51A217452E325E6C00562BE0 /* OrangeInverseTheme+DividerUITests.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		51F49CA72E5745D600D50BC4 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				51A217692E325F7F00562BE0 /* WireframeTheme+DividerUITests.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		51F49CA82E5745F300D50BC4 /* Navigations */ = {
+			isa = PBXGroup;
+			children = (
+				518EC0A62E1FF2C000FC77E4 /* LinkUITestsTestCase.swift */,
+			);
+			path = Navigations;
+			sourceTree = "<group>";
+		};
+		51F49CA92E5745FD00D50BC4 /* Navigations */ = {
+			isa = PBXGroup;
+			children = (
+				518EC0982E1FF28300FC77E4 /* SoshTheme+LinkUITests.swift */,
+			);
+			path = Navigations;
+			sourceTree = "<group>";
+		};
+		51F49CAA2E57460100D50BC4 /* Navigations */ = {
+			isa = PBXGroup;
+			children = (
+				518EC0722E1FF23800FC77E4 /* OrangeTheme+LinkUITests.swift */,
+			);
+			path = Navigations;
+			sourceTree = "<group>";
+		};
+		51F49CAB2E57460300D50BC4 /* Navigations */ = {
+			isa = PBXGroup;
+			children = (
+				51A217592E325ED500562BE0 /* OrangeBusinessToolsTheme+LinkUITests.swift */,
+			);
+			path = Navigations;
+			sourceTree = "<group>";
+		};
+		51F49CAC2E57460700D50BC4 /* Navigations */ = {
+			isa = PBXGroup;
+			children = (
+				51A217462E325E6C00562BE0 /* OrangeInverseTheme+LinkUITests.swift */,
+			);
+			path = Navigations;
+			sourceTree = "<group>";
+		};
+		51F49CAD2E57460900D50BC4 /* Navigations */ = {
+			isa = PBXGroup;
+			children = (
+				51A2176A2E325F7F00562BE0 /* WireframeTheme+LinkUITests.swift */,
+			);
+			path = Navigations;
+			sourceTree = "<group>";
+		};
+		51F676E52E0D641500C15CB6 /* Checkbox */ = {
 			isa = PBXGroup;
 			children = (
 				51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */,
@@ -1744,26 +2088,26 @@
 				51F676E32E0D63C100C15CB6 /* CheckboxItemIndeterminateUITests.swift */,
 				51F676DF2E0D5E3F00C15CB6 /* CheckboxItemUITests.swift */,
 			);
-			path = Checkboxes;
+			path = Checkbox;
 			sourceTree = "<group>";
 		};
-		51F676E62E0D650900C15CB6 /* Radios */ = {
+		51F676E62E0D650900C15CB6 /* Radio */ = {
 			isa = PBXGroup;
 			children = (
 				51F676E92E0D66EB00C15CB6 /* RadioItemUITests.swift */,
 				51F676E72E0D651200C15CB6 /* RadioUITests.swift */,
 				51F676D22E0C413700C15CB6 /* RadioPickerUITests.swift */,
 			);
-			path = Radios;
+			path = Radio;
 			sourceTree = "<group>";
 		};
-		51F676EB2E0D677800C15CB6 /* Switches */ = {
+		51F676EB2E0D677800C15CB6 /* Switch */ = {
 			isa = PBXGroup;
 			children = (
 				51F676EC2E0D678600C15CB6 /* SwitchUITests.swift */,
 				51F676EE2E0D681700C15CB6 /* SwitchItemUITests.swift */,
 			);
-			path = Switches;
+			path = Switch;
 			sourceTree = "<group>";
 		};
 		6DFC20892CDE664400F2EC33 /* AccessibilityStatement */ = {
