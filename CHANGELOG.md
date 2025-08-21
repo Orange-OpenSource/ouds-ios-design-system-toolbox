@@ -13,8 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - [DesignToolbox] Notifications for alpha, beta and stable builds (Orange-OpenSource/ouds-ios#899)
+- [Library] Update API to use a specific size for count and icon badge types (Orange-OpenSource/ouds-ios#855)
 - [DesignToolbox] [Library] Structure of components and files in repository (Orange-OpenSource/ouds-ios#908)
-- Use chip picker for selections in component screens configurations (Orange-OpenSource/ouds-ios#841)
+- [DesignToolbox] Use chip picker for selections in component screens configurations (Orange-OpenSource/ouds-ios#841)
 - [Library] Chip version 1.3.0 (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#906)
 - [Library] Text input component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
 - [Library] Link component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
