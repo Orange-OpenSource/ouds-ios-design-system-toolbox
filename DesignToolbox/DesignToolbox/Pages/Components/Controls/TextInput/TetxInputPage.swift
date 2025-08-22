@@ -47,6 +47,7 @@ private struct TextInputDemo: View {
             Spacer()
 
             OUDSTextInput()
+                .environment(\.oudsRoundedTextInput, configurationModel.rounded)
 
             Spacer()
         }
