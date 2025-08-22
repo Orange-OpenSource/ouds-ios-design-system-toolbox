@@ -46,7 +46,10 @@ private struct TextInputDemo: View {
         HStack(alignment: .center) {
             Spacer()
 
-            OUDSTextInput()
+            OUDSTextInput(label: configurationModel.label,
+                          text: $configurationModel.text,
+                          placeholderText: configurationModel.placeHolderText,
+                          helperText: configurationModel.helperText)
                 .environment(\.oudsRoundedTextInput, configurationModel.rounded)
 
             Spacer()

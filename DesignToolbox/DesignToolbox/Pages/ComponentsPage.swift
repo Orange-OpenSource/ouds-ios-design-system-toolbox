@@ -18,16 +18,16 @@ import SwiftUI
 struct ComponentsPage: View {
 
     let componentElements: [DesignToolboxElement] = [
-        BadgeElement(),
-        ButtonElement(),
-        ColoredSurfaceElement(),
-        CheckboxElements(),
-        ChipElements(),
-        DividerElements(),
-        LinkElement(),
-        RadioElements(),
-        SwitchElements(),
-        TagElement(),
+        //        BadgeElement(),
+//        ButtonElement(),
+//        ColoredSurfaceElement(),
+//        CheckboxElements(),
+//        ChipElements(),
+//        DividerElements(),
+//        LinkElement(),
+//        RadioElements(),
+//        SwitchElements(),
+//        TagElement(),
         TextInputElement(),
     ]
 
