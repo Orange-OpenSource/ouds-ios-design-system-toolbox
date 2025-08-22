@@ -67,7 +67,7 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         standardSize = .medium
         illustrationSize = .medium
         status = .neutral
-        badgeType = .standard
+        badgeType = .count
         countText = "1"
     }
 
