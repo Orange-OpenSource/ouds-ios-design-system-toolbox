@@ -57,11 +57,11 @@ struct PaddingInsetProperty: View {
 
 // MARK: - Padding Stack property
 
-struct PaddingStackProperty: View {
+struct PaddingBlockProperty: View {
 
     var body: some View {
-        SpaceTokenProperty(namedTokens: NamedSpace.PaddingStack.allCases) {
-            SpaceHeaderDescription(text: "app_tokens_dimension_space_paddingStackHeader_text", paddings: EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+        SpaceTokenProperty(namedTokens: NamedSpace.PaddingBlock.allCases) {
+            SpaceHeaderDescription(text: "app_tokens_dimension_space_paddingBlockHeader_text", paddings: EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
         } illustration: { token in
             Illustration(token: token)
         }

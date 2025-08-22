@@ -16,6 +16,8 @@ import OUDSTokensSemantic
 
 extension NamedSize {
     enum IconDecorative: String, CaseIterable {
+        case sizeIconDecorative4xs
+        case sizeIconDecorative3xs
         case sizeIconDecorative2xs
         case sizeIconDecorativeXs
         case sizeIconDecorativeSm
@@ -26,6 +28,10 @@ extension NamedSize {
 
         func token(from theme: OUDSTheme) -> SizeSemanticToken {
             switch self {
+            case .sizeIconDecorative4xs:
+                theme.sizes.sizeIconDecorative4xs
+            case .sizeIconDecorative3xs:
+                theme.sizes.sizeIconDecorative3xs
             case .sizeIconDecorative2xs:
                 theme.sizes.sizeIconDecorative2xs
             case .sizeIconDecorativeXs:

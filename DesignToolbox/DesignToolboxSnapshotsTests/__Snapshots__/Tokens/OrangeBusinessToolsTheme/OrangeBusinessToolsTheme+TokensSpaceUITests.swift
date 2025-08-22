@@ -38,7 +38,7 @@ final class OrangeBusinessToolsThemeTokensSpaceUITests: TokensSpaceUITestsTestCa
         testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingBlock(theme: theme, interfaceStyle: interfaceStyle)
         testColumnGap(theme: theme, interfaceStyle: interfaceStyle)
         testRowGap(theme: theme, interfaceStyle: interfaceStyle)
     }
@@ -52,7 +52,7 @@ final class OrangeBusinessToolsThemeTokensSpaceUITests: TokensSpaceUITestsTestCa
         testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingBlock(theme: theme, interfaceStyle: interfaceStyle)
         testColumnGap(theme: theme, interfaceStyle: interfaceStyle)
         testRowGap(theme: theme, interfaceStyle: interfaceStyle)
     }

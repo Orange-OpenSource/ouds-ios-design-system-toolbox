@@ -3850,6 +3850,52 @@
       },
       "shouldTranslate" : false
     },
+    "app_tokens_dimension_space_paddingBlock_label" : {
+      "comment" : "Token - Dimension - Space",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padding bock"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padding block"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padding block"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_paddingBlockHeader_text" : {
+      "comment" : "Token - Dimension - Space",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتضمن مجموعة الحشو الحشو العلوي والسفلي."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padding block includes the top and bottom padding."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les tokens padding block correspondent au remplissage supérieur et inférieur."
+          }
+        }
+      }
+    },
     "app_tokens_dimension_space_paddingInline_label" : {
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
@@ -3944,55 +3990,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les tokens Padding Inset correspondent au remplissage équivalant autour d’un objet (gauche, droit, supérieur et inférieur)."
-          }
-        }
-      }
-    },
-    "app_tokens_dimension_space_paddingStack_label" : {
-      "comment" : "Token - Dimension - Space",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Padding stack"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Padding stack"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Padding stack"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_tokens_dimension_space_paddingStackHeader_text" : {
-      "comment" : "Token - Dimension - Space",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تتضمن مجموعة الحشو الحشو العلوي والسفلي."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Padding stack includes the top and bottom padding."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Les tokens Padding Stack correspondent au remplissage supérieur et inférieur."
           }
         }
       }

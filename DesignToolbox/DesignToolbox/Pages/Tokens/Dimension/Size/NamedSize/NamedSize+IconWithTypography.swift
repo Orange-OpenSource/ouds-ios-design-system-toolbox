@@ -16,9 +16,11 @@ import OUDSTokensSemantic
 import SwiftUI
 
 extension NamedSize {
+
     enum IconWithTypography: String, CaseIterable {
 
         // MARK: With Heading
+
         case sizeIconWithHeadingXlargeSizeSm
         case sizeIconWithHeadingXlargeSizeMd
         case sizeIconWithHeadingXlargeSizeLg
@@ -36,6 +38,7 @@ extension NamedSize {
         case sizeIconWithHeadingSmallSizeLg
 
         // MARK: With Body
+
         case sizeIconWithBodyLargeSizeSm
         case sizeIconWithBodyLargeSizeMd
         case sizeIconWithBodyLargeSizeLg
@@ -49,6 +52,7 @@ extension NamedSize {
         case sizeIconWithBodySmallSizeLg
 
         // MARK: With Label
+
         case sizeIconWithLabelXlargeSizeSm
         case sizeIconWithLabelXlargeSizeMd
         case sizeIconWithLabelXlargeSizeLg
@@ -68,6 +72,12 @@ extension NamedSize {
         case sizeIconWithLabelSmallSizeSm
         case sizeIconWithLabelSmallSizeMd
         case sizeIconWithLabelSmallSizeLg
+
+        // MARK: Max width
+        // Not sure they must be added
+
+        // MARK: Min width
+        // Not sure they must be added
 
         // swiftlint:disable function_body_length
         func token(for theme: OUDS.OUDSTheme, userInterfaceSizeClass: UserInterfaceSizeClass) -> OUDSTokensSemantic.SizeSemanticToken {
