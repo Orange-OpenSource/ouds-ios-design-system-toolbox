@@ -49,15 +49,15 @@ struct BadgeDemo: View {
             switch configurationModel.badgeType {
             case .standard:
                 OUDSBadge(status: configurationModel.status,
-                          size: configurationModel.size)
+                          size: configurationModel.standardSize)
             case .count:
                 OUDSBadge(count: configurationModel.count,
                           status: configurationModel.status,
-                          size: configurationModel.size)
+                          size: configurationModel.illustrationSize)
             case .icon:
                 OUDSBadge(icon: Image(decorative: "ic_heart"),
                           status: configurationModel.status,
-                          size: configurationModel.size)
+                          size: configurationModel.illustrationSize)
             }
 
             Spacer()
