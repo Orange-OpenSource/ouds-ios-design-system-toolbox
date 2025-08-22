@@ -164,7 +164,7 @@
 		07F75A3D2CC653BD0004F1AD /* NameSpace+PaddingInset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A3C2CC653BD0004F1AD /* NameSpace+PaddingInset.swift */; };
 		07F75A3F2CC653CD0004F1AD /* NameSpace+ColumnGap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A3E2CC653CD0004F1AD /* NameSpace+ColumnGap.swift */; };
 		07F75A412CC653EB0004F1AD /* NameSpace+RowGap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A402CC653EB0004F1AD /* NameSpace+RowGap.swift */; };
-		07F75A432CC654050004F1AD /* NameSpace+PaddingStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A422CC654050004F1AD /* NameSpace+PaddingStack.swift */; };
+		07F75A432CC654050004F1AD /* NameSpace+PaddingBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A422CC654050004F1AD /* NameSpace+PaddingBlock.swift */; };
 		07FB2A302E454D7900361ECA /* TagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2F2E454D7900361ECA /* TagPage.swift */; };
 		07FB2A312E454D7900361ECA /* TagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2E2E454D7900361ECA /* TagElement.swift */; };
 		07FB2A322E454D7900361ECA /* TagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2D2E454D7900361ECA /* TagConfigurationView.swift */; };
@@ -424,7 +424,7 @@
 		6DB260DF2CD0F0520091F72E /* NamedSpace+Fixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A382CC6462D0004F1AD /* NamedSpace+Fixed.swift */; };
 		6DB260E02CD0F0520091F72E /* NameSpace+PaddingInline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A3A2CC651EB0004F1AD /* NameSpace+PaddingInline.swift */; };
 		6DB260E12CD0F0520091F72E /* NameSpace+PaddingInset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A3C2CC653BD0004F1AD /* NameSpace+PaddingInset.swift */; };
-		6DB260E22CD0F0520091F72E /* NameSpace+PaddingStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A422CC654050004F1AD /* NameSpace+PaddingStack.swift */; };
+		6DB260E22CD0F0520091F72E /* NameSpace+PaddingBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A422CC654050004F1AD /* NameSpace+PaddingBlock.swift */; };
 		6DB260E32CD0F0520091F72E /* NameSpace+ColumnGap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A3E2CC653CD0004F1AD /* NameSpace+ColumnGap.swift */; };
 		6DB260E42CD0F0520091F72E /* NameSpace+RowGap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A402CC653EB0004F1AD /* NameSpace+RowGap.swift */; };
 		6DCC57E22CEB984D000F35F8 /* DesignToolboxCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */; };
@@ -579,7 +579,7 @@
 		07F75A3C2CC653BD0004F1AD /* NameSpace+PaddingInset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+PaddingInset.swift"; sourceTree = "<group>"; };
 		07F75A3E2CC653CD0004F1AD /* NameSpace+ColumnGap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+ColumnGap.swift"; sourceTree = "<group>"; };
 		07F75A402CC653EB0004F1AD /* NameSpace+RowGap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+RowGap.swift"; sourceTree = "<group>"; };
-		07F75A422CC654050004F1AD /* NameSpace+PaddingStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+PaddingStack.swift"; sourceTree = "<group>"; };
+		07F75A422CC654050004F1AD /* NameSpace+PaddingBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+PaddingBlock.swift"; sourceTree = "<group>"; };
 		07FB2A2D2E454D7900361ECA /* TagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagConfigurationView.swift; sourceTree = "<group>"; };
 		07FB2A2E2E454D7900361ECA /* TagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagElement.swift; sourceTree = "<group>"; };
 		07FB2A2F2E454D7900361ECA /* TagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPage.swift; sourceTree = "<group>"; };
@@ -1180,7 +1180,7 @@
 				07F75A402CC653EB0004F1AD /* NameSpace+RowGap.swift */,
 				07F75A3A2CC651EB0004F1AD /* NameSpace+PaddingInline.swift */,
 				07F75A3C2CC653BD0004F1AD /* NameSpace+PaddingInset.swift */,
-				07F75A422CC654050004F1AD /* NameSpace+PaddingStack.swift */,
+				07F75A422CC654050004F1AD /* NameSpace+PaddingBlock.swift */,
 			);
 			path = NamedSpace;
 			sourceTree = "<group>";
@@ -2554,7 +2554,7 @@
 				515F66FB2E2E925600268440 /* OrangeInverseTheme+TokensSizeUITests.swift in Sources */,
 				51A217712E325F7F00562BE0 /* WireframeTheme+RadioButtonUITests.swift in Sources */,
 				51417C272E1BF6B8000266C8 /* TokensOpacityUITestsTestCase.swift in Sources */,
-				6DB260E22CD0F0520091F72E /* NameSpace+PaddingStack.swift in Sources */,
+				6DB260E22CD0F0520091F72E /* NameSpace+PaddingBlock.swift in Sources */,
 				6DB260E32CD0F0520091F72E /* NameSpace+ColumnGap.swift in Sources */,
 				07CC9AED2DB0F7DD001BC929 /* SwitchElement.swift in Sources */,
 				07CC9AEE2DB0F7DD001BC929 /* SwitchElements.swift in Sources */,
@@ -2809,7 +2809,7 @@
 				0784B2732CCB8CC800299C10 /* NamedSize+IconDecorative.swift in Sources */,
 				51BD762A2C466FCF0033365D /* DesignToolbox.swift in Sources */,
 				0765B49E2CC15B7E00E69359 /* NamedColor+Decorative.swift in Sources */,
-				07F75A432CC654050004F1AD /* NameSpace+PaddingStack.swift in Sources */,
+				07F75A432CC654050004F1AD /* NameSpace+PaddingBlock.swift in Sources */,
 				5134420E2D75B880000B5DE4 /* CheckboxElement.swift in Sources */,
 				518B26642DAE9DE1003A6ED3 /* RadioPickerPage.swift in Sources */,
 				5152DA1E2DE0BD440078B9F1 /* DesignToolbox+EnrichedTexts.swift in Sources */,

@@ -16,14 +16,19 @@ import OUDSTokensSemantic
 
 extension NamedSpace {
 
-    enum PaddingStack: String, CaseIterable, NamedSpaceToken {
+    enum PaddingBlock: String, CaseIterable, NamedSpaceToken {
         case spacePaddingBlockNone
+        case spacePaddingBlock4xs
+        case spacePaddingBlock3xs
+        case spacePaddingBlock2xs
         case spacePaddingBlockXs
         case spacePaddingBlockSm
-        case spacePaddingBlockMedium
-        case spacePaddingBlockTall
-        case spacePaddingBlockTaller
-        case spacePaddingBlockTallest
+        case spacePaddingBlockMd
+        case spacePaddingBlockLg
+        case spacePaddingBlockXl
+        case spacePaddingBlock2xl
+        case spacePaddingBlock3xl
+        case spacePaddingBlock4xl
 
         var name: String { rawValue }
 
@@ -31,18 +36,28 @@ extension NamedSpace {
             switch self {
             case .spacePaddingBlockNone:
                 theme.spaces.spacePaddingBlockNone
+            case .spacePaddingBlock4xs:
+                theme.spaces.spacePaddingBlock4xs
+            case .spacePaddingBlock3xs:
+                theme.spaces.spacePaddingBlock3xs
+            case .spacePaddingBlock2xs:
+                theme.spaces.spacePaddingBlock2xs
             case .spacePaddingBlockXs:
                 theme.spaces.spacePaddingBlockXs
             case .spacePaddingBlockSm:
                 theme.spaces.spacePaddingBlockSm
-            case .spacePaddingBlockMedium:
+            case .spacePaddingBlockMd:
                 theme.spaces.spacePaddingBlockMd
-            case .spacePaddingBlockTall:
+            case .spacePaddingBlockLg:
                 theme.spaces.spacePaddingBlockLg
-            case .spacePaddingBlockTaller:
+            case .spacePaddingBlockXl:
                 theme.spaces.spacePaddingBlockXl
-            case .spacePaddingBlockTallest:
+            case .spacePaddingBlock2xl:
                 theme.spaces.spacePaddingBlock2xl
+            case .spacePaddingBlock3xl:
+                theme.spaces.spacePaddingBlock3xl
+            case .spacePaddingBlock4xl:
+                theme.spaces.spacePaddingBlock4xl
             }
         }
     }

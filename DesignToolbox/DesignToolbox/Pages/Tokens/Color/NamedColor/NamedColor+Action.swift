@@ -31,6 +31,7 @@ extension NamedColor {
         case colorActionPressed
         case colorActionSelected
         case colorActionSupportEnabled
+        case colorActionSupportDisabled
         case colorActionSupportFocus
         case colorActionSupportHover
         case colorActionSupportLoading
@@ -67,6 +68,8 @@ extension NamedColor {
                 theme.colors.colorActionSelected
             case .colorActionSupportEnabled:
                 theme.colors.colorActionSupportEnabled
+            case .colorActionSupportDisabled:
+                theme.colors.colorActionSupportDisabled
             case .colorActionSupportFocus:
                 theme.colors.colorActionSupportFocus
             case .colorActionSupportHover:

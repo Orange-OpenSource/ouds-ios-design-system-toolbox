@@ -182,7 +182,7 @@ struct ColorTokenPage: View {
         }
 
         var body: some View {
-            let colorRawToken = colorScheme == .dark ? lightValue : darkValue
+            let colorRawToken = colorScheme == .dark ? darkValue : lightValue
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: colorRawToken) {
                 Rectangle()
                     .fill(colorRawToken.color)

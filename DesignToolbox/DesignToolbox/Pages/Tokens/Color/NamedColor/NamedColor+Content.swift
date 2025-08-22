@@ -28,6 +28,7 @@ extension NamedColor {
         case colorContentOnActionHover
         case colorContentOnActionLoading
         case colorContentOnActionPressed
+        case colorContentOnActionSelected
         case colorContentOnBrandPrimary
         case colorContentOnOverlayEmphasized
         case colorContentOnStatusNeutralEmphasized
@@ -62,6 +63,8 @@ extension NamedColor {
                 theme.colors.colorContentOnActionLoading
             case .colorContentOnActionPressed:
                 theme.colors.colorContentOnActionPressed
+            case .colorContentOnActionSelected:
+                theme.colors.colorContentOnActionSelected
             case .colorContentOnBrandPrimary:
                 theme.colors.colorContentOnBrandPrimary
             case .colorContentOnOverlayEmphasized:
