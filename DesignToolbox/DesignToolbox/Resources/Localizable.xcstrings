@@ -2199,6 +2199,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_rounded_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rounded"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rounded"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rounded"
+          }
+        }
+      }
+    },
     "app_components_common_selection_label" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
@@ -3277,6 +3301,55 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Text + bullet"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_description_text" : {
+      "comment" : "Component - TextInput",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتيح مُكوِّن إدخال النص للمستخدمين إدخال بيانات نصية أو تحريرها أو تحديدها في سطر واحد. وهو أحد أهم عناصر النموذج لإدخال بيانات المستخدم، مثل الأسماء وعناوين البريد الإلكتروني وكلمات المرور واستعلامات البحث."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A Text Input is a user interface component that allows users to enter, edit, or select single-line textual data. It's one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composant TextInput permettant aux utilisateurs de saisir, de modifier ou de sélectionner des données textuelles sur une seule ligne. C'est l'un des éléments de formulaire les plus fondamentaux pour saisir des données utilisateur telles que des noms, des adresses e-mail, des mots de passe ou des requêtes de recherche."
+          }
+        }
+      }
+    },
+    "app_components_textInput_label" : {
+      "comment" : "Component - TextInput",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text input"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text input"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text input"
           }
         }
       },
