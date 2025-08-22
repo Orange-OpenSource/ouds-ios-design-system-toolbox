@@ -21,7 +21,11 @@ final class BadgeConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
-    @Published var size: OUDSBadge.Size {
+    @Published var standardSize: OUDSBadge.StandardSize {
+        didSet { updateCode() }
+    }
+
+    @Published var illustrationSize: OUDSBadge.IllustrationSize {
         didSet { updateCode() }
     }
 
@@ -30,13 +34,7 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     }
 
     @Published var badgeType: BadgeType {
-        didSet {
-            // switching to icon or count so change to default size
-            if badgeType == .icon || badgeType == .icon {
-                size = .medium
-            }
-            updateCode()
-        }
+        didSet { updateCode() }
     }
 
     @Published var countText: String {
@@ -66,7 +64,8 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        size = .medium
+        standardSize = .medium
+        illustrationSize = .medium
         status = .neutral
         badgeType = .standard
         countText = "1"
@@ -92,7 +91,7 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     }
 
     private var sizePattern: String {
-        "size: \(size.technicalDescription)"
+        "size: \(badgeType == .standard ? standardSize.technicalDescription : illustrationSize.technicalDescription)"
     }
 }
 
@@ -113,9 +112,17 @@ struct BadgeConfigurationView: View {
                            selection: $configurationModel.badgeType,
                            chips: BadgeConfigurationModel.BadgeType.chips)
 
-            OUDSChipPicker(title: "app_components_common_size_label",
-                           selection: $configurationModel.size,
-                           chips: OUDSBadge.Size.chips)
+            switch configurationModel.badgeType {
+            case .standard:
+                OUDSChipPicker(title: "app_components_common_size_label",
+                               selection: $configurationModel.standardSize,
+                               chips: OUDSBadge.StandardSize.chips)
+
+            case .count, .icon:
+                OUDSChipPicker(title: "app_components_common_size_label",
+                               selection: $configurationModel.illustrationSize,
+                               chips: OUDSBadge.IllustrationSize.chips)
+            }
 
             OUDSChipPicker(title: "app_components_common_status_label",
                            selection: $configurationModel.status,
@@ -130,9 +137,9 @@ struct BadgeConfigurationView: View {
     }
 }
 
-extension OUDSBadge.Size: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+extension OUDSBadge.StandardSize: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    public nonisolated(unsafe) static let allCases: [OUDSBadge.Size] = [.extraSmall, .small, .medium, .large]
+    public nonisolated(unsafe) static let allCases: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
 
     public var description: String {
         switch self {
@@ -153,6 +160,36 @@ extension OUDSBadge.Size: @retroactive CaseIterable, @retroactive CustomStringCo
             ".extraSmall"
         case .small:
             ".small"
+        case .medium:
+            ".medium"
+        case .large:
+            ".large"
+        }
+    }
+
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}
+
+extension OUDSBadge.IllustrationSize: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+    public nonisolated(unsafe) static let allCases: [OUDSBadge.IllustrationSize] = [.medium, .large]
+
+    public var description: String {
+        switch self {
+        case .medium:
+            "Medium"
+        case .large:
+            "Large"
+        }
+    }
+
+    public var technicalDescription: String {
+        switch self {
         case .medium:
             ".medium"
         case .large:

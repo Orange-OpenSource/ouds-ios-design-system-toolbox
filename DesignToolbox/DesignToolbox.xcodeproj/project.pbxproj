@@ -3336,7 +3336,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "855-component-update-split-badge-component-into-several-components";
 				kind = branch;
 			};
 		};
