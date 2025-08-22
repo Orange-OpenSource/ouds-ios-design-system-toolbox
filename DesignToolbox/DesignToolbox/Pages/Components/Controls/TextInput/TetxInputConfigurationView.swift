@@ -25,7 +25,21 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var text: String
+    @Published var label: String {
+        didSet { updateCode() }
+    }
+
+    @Published var helperText: String {
+        didSet { updateCode() }
+    }
+
+    @Published var placeHolderText: String {
+        didSet { updateCode() }
+    }
+
+    @Published var text: String {
+        didSet { updateCode() }
+    }
 
     @Published var rounded: Bool {
         didSet { updateCode() }
@@ -35,7 +49,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        text = String(localized: "app_components_common_label_label")
+        label = String(localized: "app_components_common_label_label")
+        helperText = String(localized: "app_components_common_helperText_label")
+        placeHolderText = String(localized: "app_components_text_input_placeholder_label")
+        text = ""
         rounded = false
     }
 
@@ -54,7 +71,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            OUDSTextInput()
+            OUDSTextInput(label: \(label))
             \(disableCodePattern)
             """
     }
@@ -76,7 +93,9 @@ struct TextInputConfigurationView: View {
                 OUDSSwitchItem("app_components_common_rounded_label", isOn: $configurationModel.rounded)
 
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.text)
+                    DesignToolboxTextField(text: $configurationModel.label)
+                    DesignToolboxTextField(text: $configurationModel.helperText)
+                    DesignToolboxTextField(text: $configurationModel.placeHolderText)
                 }
             }
         }

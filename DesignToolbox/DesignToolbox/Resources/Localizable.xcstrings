@@ -1980,6 +1980,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_helperText_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_hierarchy_label" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
@@ -2420,31 +2445,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Flip icon"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_controlItem_helperText_label" : {
-      "comment" : "Component - ControlItem",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Helper text"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Helper text"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Helper text"
           }
         }
       },
@@ -3282,6 +3282,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Text + bullet"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_text_input_placeholder_label" : {
+      "comment" : "Component TextInput",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
           }
         }
       },
