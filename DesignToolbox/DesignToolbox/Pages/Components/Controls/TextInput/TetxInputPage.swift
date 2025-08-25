@@ -38,9 +38,12 @@ struct TextInputPage: View {
 
 private struct TextInputDemo: View {
 
-    @StateObject var configurationModel: TextInputConfigurationModel
+    // MARK: - Stored properties
 
+    @StateObject var configurationModel: TextInputConfigurationModel
     @Environment(\.theme) private var theme
+
+    // MARK: - Body
 
     var body: some View {
         HStack(alignment: .center) {
@@ -49,12 +52,18 @@ private struct TextInputDemo: View {
             OUDSTextInput(label: configurationModel.label,
                           text: $configurationModel.text,
                           placeholderText: configurationModel.placeHolderText,
-                          helperText: configurationModel.helperText)
+                          helperText: configurationModel.helperText,
+                          leadingIcon: leadingIcon,
+                          style: configurationModel.style)
                 .environment(\.oudsRoundedTextInput, configurationModel.rounded)
 
             Spacer()
         }
         .disabled(!configurationModel.enabled)
         .padding(.all, theme.spaces.spaceFixedMd)
+    }
+
+    private var leadingIcon: Image? {
+        configurationModel.leadingIcon ? Image(decorative: "ic_heart") : nil
     }
 }
