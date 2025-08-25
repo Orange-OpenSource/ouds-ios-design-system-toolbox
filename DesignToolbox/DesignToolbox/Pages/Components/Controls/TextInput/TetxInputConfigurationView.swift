@@ -37,11 +37,19 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var leadingIcon: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var text: String {
         didSet { updateCode() }
     }
 
     @Published var rounded: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var style: OUDSTextInput.Style {
         didSet { updateCode() }
     }
 
@@ -52,8 +60,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         label = String(localized: "app_components_common_label_label")
         helperText = String(localized: "app_components_common_helperText_label")
         placeHolderText = String(localized: "app_components_text_input_placeholder_label")
+        leadingIcon = false
         text = ""
         rounded = false
+        style = .default
     }
 
     deinit {}
@@ -91,6 +101,12 @@ struct TextInputConfigurationView: View {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
 
                 OUDSSwitchItem("app_components_common_rounded_label", isOn: $configurationModel.rounded)
+
+                OUDSSwitchItem("app_components_textInput_leadingIcon_label", isOn: $configurationModel.leadingIcon)
+
+                OUDSChipPicker(title: "app_components_common_selection_label",
+                               selection: $configurationModel.style,
+                               chips: OUDSTextInput.Style.chips)
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.label)

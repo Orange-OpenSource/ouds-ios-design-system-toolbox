@@ -3379,6 +3379,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_textInput_leadingIcon_label" : {
+      "comment" : "Compontn - TextInput",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Leading icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Leading icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_settings_themeSwitch_cancel" : {
       "comment" : "App - Settings",
       "extractionState" : "manual",
