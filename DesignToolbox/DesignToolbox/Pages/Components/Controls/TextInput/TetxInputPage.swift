@@ -54,7 +54,8 @@ private struct TextInputDemo: View {
                           placeholderText: configurationModel.placeHolderText,
                           helperText: configurationModel.helperText,
                           leadingIcon: leadingIcon,
-                          style: configurationModel.style)
+                          style: configurationModel.style,
+                          isError: configurationModel.isError)
                 .environment(\.oudsRoundedTextInput, configurationModel.rounded)
 
             Spacer()
