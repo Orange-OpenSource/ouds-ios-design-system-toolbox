@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [DesignToolbox] URL of design system website in privacy policy page
 - [DesignToolbox] Default badge type in badge page (Orange-OpenSource/ouds-ios#909)
 - [Library] Voice Over vocalization for checkbox picker root item if error (Orange-OpenSource/ouds-ios#754)
 - [Library] Voice Over vocalization for disabled checkbox, radio button and switch (Orange-OpenSource/ouds-ios#715)
