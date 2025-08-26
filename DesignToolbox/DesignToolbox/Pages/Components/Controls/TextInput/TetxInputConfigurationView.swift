@@ -53,6 +53,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var isError: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -64,6 +68,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         text = ""
         rounded = false
         style = .default
+        isError = false
     }
 
     deinit {}
@@ -99,10 +104,14 @@ struct TextInputConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+                    .disabled(configurationModel.isError)
 
                 OUDSSwitchItem("app_components_common_rounded_label", isOn: $configurationModel.rounded)
 
                 OUDSSwitchItem("app_components_textInput_leadingIcon_label", isOn: $configurationModel.leadingIcon)
+
+                OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
+                    .disabled(!configurationModel.enabled)
 
                 OUDSChipPicker(title: "app_components_common_selection_label",
                                selection: $configurationModel.style,
