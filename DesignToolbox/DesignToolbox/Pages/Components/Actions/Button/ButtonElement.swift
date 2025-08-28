@@ -27,8 +27,7 @@ struct ButtonElement: DesignToolboxElement {
             name: name,
             description: "app_components_button_description_text",
             version: OUDSVersions.componentButtonVersion,
-            demoScreen: AnyView(ButtonPage()))
-        )
+            demoScreen: AnyView(ButtonPage())))
     }
 }
 

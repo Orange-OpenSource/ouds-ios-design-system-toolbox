@@ -25,8 +25,7 @@ struct ColoredSurfaceElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_coloredSurface_description_text",
-            demoScreen: AnyView(ColoredSurfacePage()))
-        )
+            demoScreen: AnyView(ColoredSurfacePage())))
     }
 }
 

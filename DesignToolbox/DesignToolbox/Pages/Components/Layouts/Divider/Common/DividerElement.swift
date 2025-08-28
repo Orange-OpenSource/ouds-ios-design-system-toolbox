@@ -30,7 +30,6 @@ struct DividerElement: DesignToolboxElement {
             name: name,
             description: keyForDescription.localized(),
             version: OUDSVersions.componentDividerVersion,
-            demoScreen: AnyView(DividerPage(orientation: orientation)))
-        )
+            demoScreen: AnyView(DividerPage(orientation: orientation))))
     }
 }

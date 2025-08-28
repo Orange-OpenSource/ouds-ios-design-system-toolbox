@@ -27,8 +27,7 @@ struct LinkElement: DesignToolboxElement {
             name: name,
             description: "app_components_link_description_text",
             version: OUDSVersions.componentLinkVersion,
-            demoScreen: AnyView(LinkPage()))
-        )
+            demoScreen: AnyView(LinkPage())))
     }
 }
 

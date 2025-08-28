@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Migration to Xcode 16.4
 - [DesignToolbox] Notifications for alpha, beta and stable builds (Orange-OpenSource/ouds-ios#899)
 - [Library] Update API to use a specific size for count and icon badge types (Orange-OpenSource/ouds-ios#855)
 - [DesignToolbox] [Library] Structure of components and files in repository (Orange-OpenSource/ouds-ios#908)

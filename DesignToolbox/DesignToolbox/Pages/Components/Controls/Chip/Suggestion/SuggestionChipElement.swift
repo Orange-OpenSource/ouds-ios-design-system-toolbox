@@ -26,7 +26,6 @@ struct SuggestionChipElement: DesignToolboxElement {
             name: name,
             description: "app_components_chip_suggestionChip_description_text",
             version: OUDSVersions.componentChipVersion,
-            demoScreen: AnyView(SuggestionChipPage()))
-        )
+            demoScreen: AnyView(SuggestionChipPage())))
     }
 }

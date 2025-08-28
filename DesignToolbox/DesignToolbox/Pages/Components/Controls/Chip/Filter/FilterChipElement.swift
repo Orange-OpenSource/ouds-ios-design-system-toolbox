@@ -26,7 +26,6 @@ struct FilterChipElement: DesignToolboxElement {
             name: name,
             description: "app_components_chip_filterChip_description_text",
             version: OUDSVersions.componentChipVersion,
-            demoScreen: AnyView(FilterChipPage()))
-        )
+            demoScreen: AnyView(FilterChipPage())))
     }
 }
