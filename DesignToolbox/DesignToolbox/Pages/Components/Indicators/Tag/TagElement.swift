@@ -27,7 +27,6 @@ struct TagElement: DesignToolboxElement {
             name: name,
             description: "app_components_tag_description_text",
             version: OUDSVersions.componentTagVersion,
-            demoScreen: AnyView(TagPage()))
-        )
+            demoScreen: AnyView(TagPage())))
     }
 }

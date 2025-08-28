@@ -27,7 +27,6 @@ struct BadgeElement: DesignToolboxElement {
             name: name,
             description: "app_components_badge_description_text",
             version: OUDSVersions.componentBadgeVersion,
-            demoScreen: AnyView(BadgePage()))
-        )
+            demoScreen: AnyView(BadgePage())))
     }
 }
