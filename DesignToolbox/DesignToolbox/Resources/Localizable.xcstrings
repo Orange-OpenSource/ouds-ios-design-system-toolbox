@@ -839,6 +839,31 @@
         }
       }
     },
+    "app_common_disabled_label" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disabled"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disabled"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disabled"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_common_enabled_label" : {
       "comment" : "Common",
       "extractionState" : "manual",
@@ -2224,6 +2249,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_readOnly_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read Only"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read only"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read only"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_rounded_label" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
@@ -2489,31 +2539,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Icon"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_controlItem_readOnly_label" : {
-      "comment" : "Component - ControlItem",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Read Only"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Read only"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Read only"
           }
         }
       },
@@ -3306,25 +3331,26 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_text_input_placeholder_label" : {
-      "comment" : "Component TextInput",
+    "app_components_text_input_trailingIcon_label" : {
+      "comment" : "Compontn - TextInput",
+      "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Placeholder"
+            "value" : "Training icon"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Placeholder"
+            "value" : "Training icon"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Placeholder"
+            "value" : "Training icon"
           }
         }
       },
@@ -3399,6 +3425,105 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Leading icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_placeholder_label" : {
+      "comment" : "Compontn - TextInput",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_style_alternative_label" : {
+      "comment" : "Component - TextInput",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alternative"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alternative"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alternative"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_style_default_label" : {
+      "comment" : "Commonent - TextInput",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_trailingIcon_label" : {
+      "comment" : "Component - TextInput",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing icon"
           }
         }
       },

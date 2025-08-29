@@ -36,6 +36,7 @@ extension NamedColor {
         case colorActionSupportHover
         case colorActionSupportLoading
         case colorActionSupportPressed
+        case colorActionSupportDisabled
         case colorActionVisited
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
@@ -78,6 +79,8 @@ extension NamedColor {
                 theme.colors.colorActionSupportLoading
             case .colorActionSupportPressed:
                 theme.colors.colorActionSupportPressed
+            case .colorActionSupportDisabled:
+                theme.colors.colorActionSupportDisabled
             case .colorActionVisited:
                 theme.colors.colorActionVisited
             }

@@ -89,27 +89,3 @@ struct CheckboxIndeterminateConfiguration: View {
         }
     }
 }
-
-// MARK: - OUDS Checkbox Indicator State extension
-
-extension OUDSTextInput.Style: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    public nonisolated(unsafe) static var allCases: [OUDSTextInput.Style] = [.default, .alternative]
-
-    // No l10n, tehchnical names
-    public var description: String {
-        switch self {
-        case .default:
-            "Default"
-        case .alternative:
-            "Alternative"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
-}
