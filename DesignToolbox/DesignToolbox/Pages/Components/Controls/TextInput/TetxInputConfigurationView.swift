@@ -21,10 +21,6 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
-    @Published var enabled: Bool {
-        didSet { updateCode() }
-    }
-
     @Published var label: String {
         didSet { updateCode() }
     }
@@ -37,7 +33,19 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var prefixText: String {
+        didSet { updateCode() }
+    }
+
+    @Published var suffixText: String {
+        didSet { updateCode() }
+    }
+
     @Published var leadingIcon: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var trailingAction: Bool {
         didSet { updateCode() }
     }
 
@@ -49,26 +57,33 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var layout: OUDSTextInput.Layout {
+        didSet { updateCode() }
+    }
+
     @Published var style: OUDSTextInput.Style {
         didSet { updateCode() }
     }
 
-    @Published var isError: Bool {
+    @Published var status: OUDSTextInput.Status {
         didSet { updateCode() }
     }
 
     // MARK: Initializer
 
     override init() {
-        enabled = true
         label = String(localized: "app_components_common_label_label")
         helperText = String(localized: "app_components_common_helperText_label")
-        placeHolderText = String(localized: "app_components_text_input_placeholder_label")
+        placeHolderText = String(localized: "app_components_textInput_placeholder_label")
+        prefixText = "$"
+        suffixText = "€"
         leadingIcon = false
+        trailingAction = false
         text = ""
         rounded = false
+        layout = .label
         style = .default
-        isError = false
+        status = .default
     }
 
     deinit {}
@@ -79,15 +94,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         rounded ? ".environment(\\.oudsRoundedTextInput, true)" : ""
     }
 
-    private var disableCodePattern: String {
-        enabled ? "" : ".disabled(true)"
-    }
-
     override func updateCode() {
         code =
             """
             OUDSTextInput(label: \(label))
-            \(disableCodePattern)
             """
     }
 }
@@ -103,26 +113,105 @@ struct TextInputConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
-                    .disabled(configurationModel.isError)
-
                 OUDSSwitchItem("app_components_common_rounded_label", isOn: $configurationModel.rounded)
 
                 OUDSSwitchItem("app_components_textInput_leadingIcon_label", isOn: $configurationModel.leadingIcon)
 
-                OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
-                    .disabled(!configurationModel.enabled)
+                OUDSSwitchItem("app_components_textInput_trailingIcon_label", isOn: $configurationModel.trailingAction)
 
-                OUDSChipPicker(title: "app_components_common_selection_label",
+                OUDSChipPicker(title: "app_components_common_layout_label",
+                               selection: $configurationModel.layout,
+                               chips: OUDSTextInput.Layout.chips)
+
+                OUDSChipPicker(title: "app_components_common_style_label",
                                selection: $configurationModel.style,
                                chips: OUDSTextInput.Style.chips)
 
+                OUDSChipPicker(title: "app_components_common_status_label",
+                               selection: $configurationModel.status,
+                               chips: OUDSTextInput.Status.chips)
+
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.label)
-                    DesignToolboxTextField(text: $configurationModel.helperText)
-                    DesignToolboxTextField(text: $configurationModel.placeHolderText)
+                    DesignToolboxTextField(text: $configurationModel.helperText, prompt: "app_components_common_helperText_label")
+                    DesignToolboxTextField(text: $configurationModel.placeHolderText, prompt: "app_components_textInput_placeholder_label")
+                    if !configurationModel.placeHolderText.isEmpty {
+                        DesignToolboxTextField(text: $configurationModel.prefixText, prompt: "app_components_textInput_prefix_label")
+                        DesignToolboxTextField(text: $configurationModel.suffixText, prompt: "app_components_textInput_suffix_label")
+                    }
                 }
             }
         }
+    }
+}
+
+extension OUDSTextInput.Style: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+    public nonisolated(unsafe) static var allCases: [OUDSTextInput.Style] = [.default, .alternative]
+
+    // No l10n, tehchnical names
+    public var description: String {
+        switch self {
+        case .default:
+            "app_components_textInput_style_default_label"
+        case .alternative:
+            "app_components_textInput_style_alternative_label"
+        }
+    }
+
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}
+
+extension OUDSTextInput.Layout: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+
+    public nonisolated(unsafe) static let allCases: [OUDSTextInput.Layout] = [.label, .placeholder]
+
+    public var description: String {
+        switch self {
+        case .label:
+            "app_components_common_label_label"
+        case .placeholder:
+            "app_components_textInput_placeholder_label"
+        }
+    }
+
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}
+
+extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+    public nonisolated(unsafe) static var allCases: [OUDSTextInput.Status] = [.default, .error, .loading, .readOnly, .disbaled]
+
+    public var description: String {
+        switch self {
+        case .default:
+            "app_common_enabled_label"
+        case .error:
+            "app_components_common_error_label"
+        case .loading:
+            "app_components_common_loader_label"
+        case .readOnly:
+            "app_components_common_readOnly_label"
+        case .disbaled:
+            "app_common_disabled_label"
+        }
+    }
+
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
     }
 }

@@ -46,25 +46,45 @@ private struct TextInputDemo: View {
     // MARK: - Body
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-
-            OUDSTextInput(label: configurationModel.label,
-                          text: $configurationModel.text,
-                          placeholderText: configurationModel.placeHolderText,
-                          helperText: configurationModel.helperText,
-                          leadingIcon: leadingIcon,
-                          style: configurationModel.style,
-                          isError: configurationModel.isError)
-                .environment(\.oudsRoundedTextInput, configurationModel.rounded)
-
-            Spacer()
-        }
-        .disabled(!configurationModel.enabled)
-        .padding(.all, theme.spaces.spaceFixedMd)
+        OUDSTextInput(layout: configurationModel.layout,
+                      label: configurationModel.label,
+                      text: $configurationModel.text,
+                      placeholder: placeholder,
+                      leadingIcon: leadingIcon,
+                      trailingAction: tarilingAction,
+                      helperText: configurationModel.helperText,
+                      style: configurationModel.style,
+                      status: configurationModel.status)
+            .environment(\.oudsRoundedTextInput, configurationModel.rounded)
+            .autocorrectionDisabled()
+            .textInputAutocapitalization(.never)
+            .padding(.all, theme.spaces.spaceFixedMd)
+            .onSubmit {
+                if configurationModel.text == "error" {
+                    configurationModel.status = .error
+                    configurationModel.helperText = "Error text detected"
+                }
+            }
     }
 
     private var leadingIcon: Image? {
         configurationModel.leadingIcon ? Image(decorative: "ic_heart") : nil
+    }
+
+    private var tarilingAction: OUDSTextInput.TrailingAction? {
+        guard configurationModel.trailingAction else {
+            return nil
+        }
+
+        return .init(icon: Image(decorative: "ic_heart"),
+                     accessibilityLabel: "app_components_button_icon_a11y".localized()) {}
+    }
+
+    private var placeholder: OUDSTextInput.Placeholder? {
+        let text = configurationModel.placeHolderText
+        let prefix = configurationModel.prefixText
+        let suffix = configurationModel.suffixText
+
+        return text.isEmpty && prefix.isEmpty && suffix.isEmpty ? nil : .init(text: text, prefix: prefix, suffix: suffix)
     }
 }

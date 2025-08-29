@@ -34,13 +34,9 @@ struct TextInputElement: DesignToolboxElement {
 
 private struct TextInputIllustration: View {
 
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.theme) private var theme
     @State private var text: String = ""
 
     var body: some View {
-        VStack(spacing: theme.spaces.spaceFixedSm) {
-            OUDSTextInput(label: "Label", text: $text, helperText: "")
-        }
+        OUDSTextInput(label: "Label", text: $text)
     }
 }
