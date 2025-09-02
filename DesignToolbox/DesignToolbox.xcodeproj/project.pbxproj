@@ -384,6 +384,7 @@
 		51E5999F2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */; };
 		51E599B72E27EE3B002BCB27 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E599B32E27EDD0002BCB27 /* StringTests.swift */; };
 		51E599B82E27F05A002BCB27 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
+		51E5AC0C2E6725F300FAA5F1 /* DesignSystemToolboxAppStoreScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B412F2E66D985005A8EFD /* DesignSystemToolboxAppStoreScreenshots.swift */; };
 		51EB73952DBFDDF600F37FEC /* CheckboxPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */; };
 		51EB73962DBFDDF600F37FEC /* AppTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737B2DBFD26000F37FEC /* AppTestCase.swift */; };
 		51EB73982DBFE3FD00F37FEC /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
@@ -674,6 +675,7 @@
 		51952A882D3FA2060068B807 /* OrangeTheme+TokensElevationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensElevationUITests.swift"; sourceTree = "<group>"; };
 		51952A8B2D3FA2280068B807 /* OrangeTheme+TokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensFontUITests.swift"; sourceTree = "<group>"; };
 		51952A8E2D3FA2490068B807 /* OrangeTheme+TokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensOpacityUITests.swift"; sourceTree = "<group>"; };
+		519B412F2E66D985005A8EFD /* DesignSystemToolboxAppStoreScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemToolboxAppStoreScreenshots.swift; sourceTree = "<group>"; };
 		51A217412E325E6C00562BE0 /* OrangeInverseTheme+ChipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+ChipsUITests.swift"; sourceTree = "<group>"; };
 		51A217422E325E6C00562BE0 /* OrangeInverseTheme+BadgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+BadgeUITests.swift"; sourceTree = "<group>"; };
 		51A217432E325E6C00562BE0 /* OrangeInverseTheme+ButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+ButtonUITests.swift"; sourceTree = "<group>"; };
@@ -1652,21 +1654,38 @@
 			path = DesignToolboxUnitTests;
 			sourceTree = "<group>";
 		};
-		51EB73792DBFD24400F37FEC /* DesignToolboxUITests */ = {
+		51E5AC0A2E67232900FAA5F1 /* App Store Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				519B412F2E66D985005A8EFD /* DesignSystemToolboxAppStoreScreenshots.swift */,
+			);
+			path = "App Store Screenshots";
+			sourceTree = "<group>";
+		};
+		51E5AC0B2E67233B00FAA5F1 /* Design System Toolbox App */ = {
 			isa = PBXGroup;
 			children = (
 				51EB737E2DBFD4B000F37FEC /* Components */,
-				51EB737A2DBFD25900F37FEC /* Utils */,
+			);
+			path = "Design System Toolbox App";
+			sourceTree = "<group>";
+		};
+		51EB73792DBFD24400F37FEC /* DesignToolboxUITests */ = {
+			isa = PBXGroup;
+			children = (
+				51EB737A2DBFD25900F37FEC /* _ */,
+				51E5AC0B2E67233B00FAA5F1 /* Design System Toolbox App */,
+				51E5AC0A2E67232900FAA5F1 /* App Store Screenshots */,
 			);
 			path = DesignToolboxUITests;
 			sourceTree = "<group>";
 		};
-		51EB737A2DBFD25900F37FEC /* Utils */ = {
+		51EB737A2DBFD25900F37FEC /* _ */ = {
 			isa = PBXGroup;
 			children = (
 				51EB737B2DBFD26000F37FEC /* AppTestCase.swift */,
 			);
-			path = Utils;
+			path = _;
 			sourceTree = "<group>";
 		};
 		51EB737E2DBFD4B000F37FEC /* Components */ = {
@@ -2266,7 +2285,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1630;
+				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					0740A98E2C9873500069D24A = {
@@ -2385,7 +2404,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which \"swiftlint\" >/dev/null; then\n    swiftlint --config ../.swiftlint.yml DesignToolbox/*\nelse\n    echo \"warning: SwiftLint not installed, download from CocoaPods (see https://github.com/realm/SwiftLint)\"\nfi\n";
+			shellScript = "if which \"swiftlint\" >/dev/null; then\n    swiftlint --config ../.swiftlint.yml DesignToolbox/* DesignToolboxSnapshotsTests/* DesignToolboxUITests/* DesignToolboxUnitTests/* DesignSystemToolboxAppCaptures/*\nelse\n    echo \"warning: SwiftLint not installed, download from CocoaPods (see https://github.com/realm/SwiftLint)\"\nfi\n";
 		};
 		2A5B2E6765E57E6A6B13CBA1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2429,7 +2448,7 @@
 		};
 		51B4005F2DDCC51E00B69CDC /* Run SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -2853,6 +2872,7 @@
 				51F676EA2E0D66EB00C15CB6 /* RadioItemUITests.swift in Sources */,
 				51F676DE2E0D567700C15CB6 /* CheckboxUITests.swift in Sources */,
 				51F676E22E0D61FE00C15CB6 /* CheckboxIndeterminateUITests.swift in Sources */,
+				51E5AC0C2E6725F300FAA5F1 /* DesignSystemToolboxAppStoreScreenshots.swift in Sources */,
 				51EB73952DBFDDF600F37FEC /* CheckboxPickerUITests.swift in Sources */,
 				51EB73962DBFDDF600F37FEC /* AppTestCase.swift in Sources */,
 				51F676E02E0D5E3F00C15CB6 /* CheckboxItemUITests.swift in Sources */,
