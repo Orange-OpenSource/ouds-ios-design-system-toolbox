@@ -94,6 +94,13 @@ open class AppTestCase: XCTestCase {
         return elements
     }
 
+    @MainActor func otherElements(write content: String, in withA11yIdentifier: String, _ app: XCUIApplication) {
+        let textField = app.otherElements[withA11yIdentifier].firstMatch
+        XCTAssertTrue(textField.exists, "The expected text field with accessibility identifier '\(withA11yIdentifier)' does not exist")
+        textField.tap()
+        textField.typeText(content)
+    }
+
     // swiftlint:enable empty_count
 
     /// Returns element with the given accessiiblity label
@@ -110,9 +117,12 @@ open class AppTestCase: XCTestCase {
         app.tabBars.buttons.element(boundBy: 1).tap()
     }
 
-    @MainActor
-    func swipeFromDownToUp(_ app: XCUIApplication) {
+    @MainActor func swipeFromDownToUp(_ app: XCUIApplication) {
         app.swipeUp()
+    }
+
+    @MainActor func swipeFromUpToDown(_ app: XCUIApplication) {
+        app.swipeDown()
     }
 
     // MARK: - Buttons checks
@@ -197,6 +207,12 @@ open class AppTestCase: XCTestCase {
 
     // MARK: - Helpers
 
+    /// Just wait during `timeInSeconds` seconds
+    @MainActor func wait(_ timeInSeconds: Int) {
+        let expectation = XCTestExpectation(description: "Waiting...")
+        _ = XCTWaiter.wait(for: [expectation], timeout: TimeInterval(timeInSeconds))
+    }
+
     /// Checks if the first button with this a11y identifier exists and has the expected selected state or not
     @MainActor func isButton(withAccessibleIdentifier identifier: String, selected: Bool, _ app: XCUIApplication) {
         let element = buttons(withA11yIdentifier: identifier, app).firstMatch
@@ -250,6 +266,36 @@ open class AppTestCase: XCTestCase {
         } else {
             XCTAssertNil(element.accessibilityHint)
         }
+    }
+
+    // MARK: - Screen captures
+
+    static let screenStartX = 0
+    static let deviceWidth = 1_170
+
+    @MainActor func takeScreenshot(named name: String, _ x: Int, _ y: Int, _ width: Int, _ height: Int, _ app: XCUIApplication) {
+        takeScreenshot(named: name, cropped: CGRect(x: x, y: y, width: width, height: height), app)
+    }
+
+    @MainActor func takeScreenshot(named name: String, cropped rect: CGRect, _ app: XCUIApplication) {
+        let fullScreenshot = app.windows.firstMatch.screenshot()
+
+        guard let image = UIImage(data: fullScreenshot.pngRepresentation) else {
+            print("❌ Impossible to convert screenshot to UIImage")
+            return
+        }
+
+        guard let cgImage = image.cgImage?.cropping(to: rect) else {
+            print("❌ Impossible to crop the image")
+            return
+        }
+
+        let croppedImage = UIImage(cgImage: cgImage)
+        let attachment = XCTAttachment(image: croppedImage)
+        attachment.name = name
+        attachment.lifetime = .keepAlways
+        add(attachment)
+        print("📸 Cropped screenshot of application done, put in attachments and available in reports: '\(name)'")
     }
 }
 

@@ -114,7 +114,7 @@ final class DesignSystemToolboxAppStoreScreenshots: AppTestCase {
         attachment.name = name
         attachment.lifetime = .keepAlways
         add(attachment)
-        print("📸 Screenshot of application done, put in attachments and avaialble in reports: '\(name)'")
+        print("📸 Screenshot of application done, put in attachments and available in reports: '\(name)'")
     }
 }
 

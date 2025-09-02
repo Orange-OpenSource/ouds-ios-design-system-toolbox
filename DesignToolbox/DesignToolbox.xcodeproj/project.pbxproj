@@ -384,7 +384,10 @@
 		51E5999F2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */; };
 		51E599B72E27EE3B002BCB27 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E599B32E27EDD0002BCB27 /* StringTests.swift */; };
 		51E599B82E27F05A002BCB27 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
-		51E5AC0C2E6725F300FAA5F1 /* DesignSystemToolboxAppStoreScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B412F2E66D985005A8EFD /* DesignSystemToolboxAppStoreScreenshots.swift */; };
+		51E5AC0C2E6725F300FAA5F1 /* App Store Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B412F2E66D985005A8EFD /* App Store Screenshots.swift */; };
+		51E5AC0E2E672ECC00FAA5F1 /* Documentation Screenshots - Indicators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5AC0D2E672ECC00FAA5F1 /* Documentation Screenshots - Indicators.swift */; };
+		51E5AC102E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5AC0F2E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift */; };
+		51E5AC122E673A7600FAA5F1 /* Documentation Screenshots - Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5AC112E673A7600FAA5F1 /* Documentation Screenshots - Actions.swift */; };
 		51EB73952DBFDDF600F37FEC /* CheckboxPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */; };
 		51EB73962DBFDDF600F37FEC /* AppTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737B2DBFD26000F37FEC /* AppTestCase.swift */; };
 		51EB73982DBFE3FD00F37FEC /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
@@ -675,7 +678,7 @@
 		51952A882D3FA2060068B807 /* OrangeTheme+TokensElevationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensElevationUITests.swift"; sourceTree = "<group>"; };
 		51952A8B2D3FA2280068B807 /* OrangeTheme+TokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensFontUITests.swift"; sourceTree = "<group>"; };
 		51952A8E2D3FA2490068B807 /* OrangeTheme+TokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensOpacityUITests.swift"; sourceTree = "<group>"; };
-		519B412F2E66D985005A8EFD /* DesignSystemToolboxAppStoreScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemToolboxAppStoreScreenshots.swift; sourceTree = "<group>"; };
+		519B412F2E66D985005A8EFD /* App Store Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Store Screenshots.swift"; sourceTree = "<group>"; };
 		51A217412E325E6C00562BE0 /* OrangeInverseTheme+ChipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+ChipsUITests.swift"; sourceTree = "<group>"; };
 		51A217422E325E6C00562BE0 /* OrangeInverseTheme+BadgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+BadgeUITests.swift"; sourceTree = "<group>"; };
 		51A217432E325E6C00562BE0 /* OrangeInverseTheme+ButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+ButtonUITests.swift"; sourceTree = "<group>"; };
@@ -740,6 +743,9 @@
 		51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		51E599A72E27ED5F002BCB27 /* DesignToolboxUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignToolboxUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E599B32E27EDD0002BCB27 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		51E5AC0D2E672ECC00FAA5F1 /* Documentation Screenshots - Indicators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Documentation Screenshots - Indicators.swift"; sourceTree = "<group>"; };
+		51E5AC0F2E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Documentation Screenshots - Controls.swift"; sourceTree = "<group>"; };
+		51E5AC112E673A7600FAA5F1 /* Documentation Screenshots - Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Documentation Screenshots - Actions.swift"; sourceTree = "<group>"; };
 		51EB737B2DBFD26000F37FEC /* AppTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTestCase.swift; sourceTree = "<group>"; };
 		51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerUITests.swift; sourceTree = "<group>"; };
 		51EB73842DBFDC5500F37FEC /* DesignToolboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignToolboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1654,12 +1660,15 @@
 			path = DesignToolboxUnitTests;
 			sourceTree = "<group>";
 		};
-		51E5AC0A2E67232900FAA5F1 /* App Store Screenshots */ = {
+		51E5AC0A2E67232900FAA5F1 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				519B412F2E66D985005A8EFD /* DesignSystemToolboxAppStoreScreenshots.swift */,
+				519B412F2E66D985005A8EFD /* App Store Screenshots.swift */,
+				51E5AC0D2E672ECC00FAA5F1 /* Documentation Screenshots - Indicators.swift */,
+				51E5AC0F2E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift */,
+				51E5AC112E673A7600FAA5F1 /* Documentation Screenshots - Actions.swift */,
 			);
-			path = "App Store Screenshots";
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 		51E5AC0B2E67233B00FAA5F1 /* Design System Toolbox App */ = {
@@ -1675,7 +1684,7 @@
 			children = (
 				51EB737A2DBFD25900F37FEC /* _ */,
 				51E5AC0B2E67233B00FAA5F1 /* Design System Toolbox App */,
-				51E5AC0A2E67232900FAA5F1 /* App Store Screenshots */,
+				51E5AC0A2E67232900FAA5F1 /* Screenshots */,
 			);
 			path = DesignToolboxUITests;
 			sourceTree = "<group>";
@@ -2869,10 +2878,13 @@
 				51F676E42E0D63C100C15CB6 /* CheckboxItemIndeterminateUITests.swift in Sources */,
 				51EB73982DBFE3FD00F37FEC /* String+extension.swift in Sources */,
 				515EE9A02E2132E300A60E96 /* ChipsPickerUITests.swift in Sources */,
+				51E5AC122E673A7600FAA5F1 /* Documentation Screenshots - Actions.swift in Sources */,
 				51F676EA2E0D66EB00C15CB6 /* RadioItemUITests.swift in Sources */,
 				51F676DE2E0D567700C15CB6 /* CheckboxUITests.swift in Sources */,
 				51F676E22E0D61FE00C15CB6 /* CheckboxIndeterminateUITests.swift in Sources */,
-				51E5AC0C2E6725F300FAA5F1 /* DesignSystemToolboxAppStoreScreenshots.swift in Sources */,
+				51E5AC0E2E672ECC00FAA5F1 /* Documentation Screenshots - Indicators.swift in Sources */,
+				51E5AC102E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift in Sources */,
+				51E5AC0C2E6725F300FAA5F1 /* App Store Screenshots.swift in Sources */,
 				51EB73952DBFDDF600F37FEC /* CheckboxPickerUITests.swift in Sources */,
 				51EB73962DBFDDF600F37FEC /* AppTestCase.swift in Sources */,
 				51F676E02E0D5E3F00C15CB6 /* CheckboxItemUITests.swift in Sources */,
