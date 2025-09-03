@@ -40,6 +40,7 @@ struct DesignToolboxTextField: View {
             TextField(text: text, prompt: Text(prompt.localized())) {
                 Text(LocalizedStringKey(text.wrappedValue))
             }
+            .accessibilityIdentifier(A11YIdentifiers.configurationTextField)
             .oudsForegroundStyle(theme.colors.colorContentDefault)
         }
         .accessibilityElement(children: .combine)

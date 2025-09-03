@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [DesignToolbox] Generation of illustrations for App Store and documentation (Orange-OpenSource/ouds-ios#920)
 - [Library] Illustrations in documentation (Orange-OpenSource/ouds-ios#666)
 - [Library] Tag component (Orange-OpenSource/ouds-ios#408)
 

@@ -25,6 +25,10 @@ open class AppTestCase: XCTestCase {
 
     private let testBundle = Bundle(for: AppTestCase.self)
 
+    /// Loads the suitable wording from the `testBundle`.
+    /// If wording not found loads drom `OUDSComponents` bundle.
+    /// - Parameter key: The wording key or text
+    /// - Returns String: The localized string or text if not wording found
     func wording(for key: String) -> String {
         let wording = key.localized(bundle: testBundle)
         if wording != key {
@@ -44,8 +48,8 @@ open class AppTestCase: XCTestCase {
 
     // MARK: - Application
 
-    @MainActor
-    func launchApp() -> XCUIApplication {
+    /// Just launches the app
+    @MainActor func launchApp() -> XCUIApplication {
         let app = XCUIApplication()
         app.launch()
         return app
@@ -61,8 +65,19 @@ open class AppTestCase: XCTestCase {
         buttonToTap.tap()
     }
 
+    // swiftlint:disable empty_count
+    /// Returns buttons with the given accessiiblity identifier
+    @MainActor func buttons(withA11yIdentifier id: String, _ app: XCUIApplication) -> XCUIElementQuery {
+        let elements = app.buttons.matching(identifier: id)
+        XCTAssertTrue(elements.count > 0, "No matching button with accessibility identifier '\(id)'")
+        return elements
+    }
+
+    // swiftlint:enable empty_count
+
     // MARK: - Texts
 
+    /// Asserts if the given String exists as static texts
     @MainActor func assertStaticTextExists(_ content: String, _ app: XCUIApplication) {
         let text = app.staticTexts[content]
         XCTAssertTrue(text.exists, "The expected text content '\(content)' does not exist")
@@ -77,16 +92,23 @@ open class AppTestCase: XCTestCase {
         imageToTap.tap()
     }
 
-    // MARK: - Other elements
-
-    // swiftlint:disable empty_count
-    /// Returns buttons with the given accessiiblity identifier
-    @MainActor func buttons(withA11yIdentifier id: String, _ app: XCUIApplication) -> XCUIElementQuery {
-        let elements = app.buttons.matching(identifier: id)
-        XCTAssertTrue(elements.count > 0, "No matching button with accessibility identifier '\(id)'")
-        return elements
+    /// Tap on a UI element seen as a image with the given name at the given position
+    @MainActor func tapImage(withName name: String, indexed at: UInt, _ app: XCUIApplication) {
+        let imageToTap = app.images.matching(identifier: name).element(boundBy: Int(at))
+        XCTAssertTrue(imageToTap.exists, "The image with name '\(name)' does not exist")
+        imageToTap.tap()
     }
 
+    // MARK: - Other elements
+
+    /// Taps an element with the given accessibility identifier be seen as "other element"
+    @MainActor func tapOtherElement(withA11yIdentifier id: String, _ app: XCUIApplication) {
+        let element = app.otherElements[A11YIdentifiers.configurationSwitchSelection].firstMatch
+        XCTAssertTrue(element.exists, "The eoected other element with accessibility identifier '\(id)' does not exist")
+        element.tap()
+    }
+
+    // swiftlint:disable empty_count
     /// Returns elements with the given accessiiblity identifier
     @MainActor func otherElements(withA11yIdentifier id: String, _ app: XCUIApplication) -> XCUIElementQuery {
         let elements = app.otherElements.matching(identifier: id)
@@ -95,6 +117,14 @@ open class AppTestCase: XCTestCase {
     }
 
     // swiftlint:enable empty_count
+
+    /// Taps and writes the given text to an undefined element with the given accessiibility identifier
+    @MainActor func otherElements(write content: String, in withA11yIdentifier: String, _ app: XCUIApplication) {
+        let textField = app.otherElements[withA11yIdentifier].firstMatch
+        XCTAssertTrue(textField.exists, "The expected text field with accessibility identifier '\(withA11yIdentifier)' does not exist")
+        textField.tap()
+        textField.typeText(content)
+    }
 
     /// Returns element with the given accessiiblity label
     @MainActor func otherElement(withA11yLabel label: String, _ app: XCUIApplication) -> XCUIElement {
@@ -110,9 +140,14 @@ open class AppTestCase: XCTestCase {
         app.tabBars.buttons.element(boundBy: 1).tap()
     }
 
-    @MainActor
-    func swipeFromDownToUp(_ app: XCUIApplication) {
+    /// Makes a to-the-top swipe
+    @MainActor func swipeFromDownToUp(_ app: XCUIApplication) {
         app.swipeUp()
+    }
+
+    /// Makes a to-the-bottom swipe
+    @MainActor func swipeFromUpToDown(_ app: XCUIApplication) {
+        app.swipeDown()
     }
 
     // MARK: - Buttons checks
@@ -197,6 +232,12 @@ open class AppTestCase: XCTestCase {
 
     // MARK: - Helpers
 
+    /// Just wait during `timeInSeconds` seconds
+    @MainActor func wait(_ timeInSeconds: Int) {
+        let expectation = XCTestExpectation(description: "Waiting...")
+        _ = XCTWaiter.wait(for: [expectation], timeout: TimeInterval(timeInSeconds))
+    }
+
     /// Checks if the first button with this a11y identifier exists and has the expected selected state or not
     @MainActor func isButton(withAccessibleIdentifier identifier: String, selected: Bool, _ app: XCUIApplication) {
         let element = buttons(withA11yIdentifier: identifier, app).firstMatch
@@ -213,6 +254,7 @@ open class AppTestCase: XCTestCase {
         }
     }
 
+    /// Wait the given time internval for button apparition with the given wording inside
     @MainActor func waitForButtonToAppear(withWording key: String, _ app: XCUIApplication, _ timeout: TimeInterval = 5) {
         let wording = wording(for: key)
         let buttonToWaitFor = app.buttons[wording]

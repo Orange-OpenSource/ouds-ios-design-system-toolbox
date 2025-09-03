@@ -94,6 +94,7 @@ struct FilterChipConfigurationView: View {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
 
                 OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.selected)
+                    .accessibilityIdentifier(A11YIdentifiers.configurationSwitchSelection)
                     .disabled(!configurationModel.enabled)
 
                 OUDSChipPicker(title: "app_components_common_layout_label",
