@@ -85,6 +85,20 @@ extension AppTestCase {
         static let radioPickerWidth = deviceWidth
         static let radioPickerHeight = 1_180
 
+        // MARK: - Controls - Switch
+
+        static let switchX = screenStartX
+        static let switchY = 460
+        static let switchWidth = deviceWidth
+        static let switchHeight = 400
+
+        // MARK: - Controls - Switch item
+
+        static let switchItemX = screenStartX
+        static let switchItemY = 460
+        static let switchItemWidth = deviceWidth
+        static let switchItemHeight = 570
+
         // MARK: - Indicators - Badge
 
         static let badgeX = screenStartX

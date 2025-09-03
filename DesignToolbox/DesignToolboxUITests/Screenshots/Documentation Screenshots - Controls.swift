@@ -176,6 +176,48 @@ final class ControlsDocumentationScreenshots: AppTestCase {
                        ACDC.radioPickerHeight,
                        app)
     }
+
+    // MARK: - Switch
+
+    @MainActor
+    func testMakeScreenshotsForDocumentation_Switch() {
+        let app = launchApp()
+        goToComponentsSheet(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_switch_label", app)
+        tapButton(withWording: "app_components_switch_label", app)
+        waitForButtonToAppear(withWording: "app_components_switch_label", app)
+        tapButton(withWording: "app_components_switch_label", app)
+
+        takeScreenshot(named: "component_switch",
+                       ACDC.switchX,
+                       ACDC.switchY,
+                       ACDC.switchWidth,
+                       ACDC.switchHeight,
+                       app)
+    }
+
+    @MainActor
+    func testMakeScreenshotsForDocumentation_SwitchItem() {
+        let app = launchApp()
+        goToComponentsSheet(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_switch_label", app)
+        tapButton(withWording: "app_components_switch_label", app)
+        waitForButtonToAppear(withWording: "app_components_switch_switchItem_label", app)
+        tapButton(withWording: "app_components_switch_switchItem_label", app)
+
+        takeScreenshot(named: "component_switchitem",
+                       ACDC.switchItemX,
+                       ACDC.switchItemY,
+                       ACDC.switchItemWidth,
+                       ACDC.switchItemHeight,
+                       app)
+    }
 }
 
 // swiftlint:enable required_deinit
