@@ -53,6 +53,7 @@ private struct TextInputDemo: View {
                       leadingIcon: leadingIcon,
                       trailingAction: tarilingAction,
                       helperText: configurationModel.helperText,
+                      helperLink: configurationModel.helperLink,
                       style: configurationModel.style,
                       status: configurationModel.status)
             .environment(\.oudsRoundedTextInput, configurationModel.rounded)
