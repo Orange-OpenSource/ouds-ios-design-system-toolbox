@@ -52,7 +52,7 @@ final class NavigationsDocumentationScreenshots: AppTestCase {
 
         tapButton(withWording: "Next", app)
 
-        takeScreenshot(named: "component_link", ACDC.linkX, ACDC.linkY, ACDC.linkWidth, ACDC.linkHeight, app)
+        takeScreenshot(named: "component_link_", ACDC.linkX, ACDC.linkY, ACDC.linkWidth, ACDC.linkHeight, app)
     }
 }
 

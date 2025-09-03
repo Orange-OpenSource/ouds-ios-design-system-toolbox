@@ -50,7 +50,7 @@ final class ActionsDocumentationScreenshots: AppTestCase {
 
         tapButton(withWording: "Strong", app)
 
-        takeScreenshot(named: "component_button", ACDC.buttonX, ACDC.buttonY, ACDC.buttonWidth, ACDC.buttonHeight, app)
+        takeScreenshot(named: "component_button_", ACDC.buttonX, ACDC.buttonY, ACDC.buttonWidth, ACDC.buttonHeight, app)
     }
 }
 

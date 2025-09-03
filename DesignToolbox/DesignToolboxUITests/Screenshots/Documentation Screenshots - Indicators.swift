@@ -55,7 +55,12 @@ final class IndicatorsDocumentationScreenshots: AppTestCase {
         swipeFromUpToDown(app) // Keyboard does not close, so swipe to get component to capture
 
         wait(2)
-        takeScreenshot(named: "component_badge", ACDC.tagX, ACDC.badgeY, ACDC.tagWidth, ACDC.badgeHeight, app)
+        takeScreenshot(named: "component_badge_",
+                       ACDC.tagX,
+                       ACDC.badgeY,
+                       ACDC.tagWidth,
+                       ACDC.badgeHeight,
+                       app)
     }
 
     // MARK: - Tag
@@ -73,7 +78,12 @@ final class IndicatorsDocumentationScreenshots: AppTestCase {
         tapButton(withWording: "Text + bullet", app)
         tapButton(withWording: "Accent", app)
 
-        takeScreenshot(named: "component_tag", ACDC.tagX, ACDC.tagY, ACDC.tagWidth, ACDC.tagHeight, app)
+        takeScreenshot(named: "component_tag_",
+                       ACDC.tagX,
+                       ACDC.tagY,
+                       ACDC.tagWidth,
+                       ACDC.tagHeight,
+                       app)
     }
 }
 

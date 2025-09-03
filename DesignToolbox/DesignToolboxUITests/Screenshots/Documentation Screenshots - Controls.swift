@@ -60,7 +60,7 @@ final class ControlsDocumentationScreenshots: AppTestCase {
         waitForButtonToAppear(withWording: "app_components_checkbox_label", app)
         tapButton(withWording: "app_components_checkbox_label", app)
 
-        takeScreenshot(named: "component_checkbox",
+        takeScreenshot(named: "component_checkbox_",
                        ACDC.checkboxX,
                        ACDC.checkboxY,
                        ACDC.checkboxWidth,
@@ -77,7 +77,7 @@ final class ControlsDocumentationScreenshots: AppTestCase {
         waitForButtonToAppear(withWording: "app_components_checkbox_checkboxItem_label", app)
         tapButton(withWording: "app_components_checkbox_checkboxItem_label", app)
 
-        takeScreenshot(named: "component_checkboxitem",
+        takeScreenshot(named: "component_checkboxItem_",
                        ACDC.checkboxItemX,
                        ACDC.checkboxItemY,
                        ACDC.checkboxItemWidth,
@@ -102,7 +102,7 @@ final class ControlsDocumentationScreenshots: AppTestCase {
 
         wait(2) // Let press animation ends
 
-        takeScreenshot(named: "component_checkboxpicker",
+        takeScreenshot(named: "component_checkboxPicker_",
                        ACDC.checkboxPickerX,
                        ACDC.checkboxPickerY,
                        ACDC.checkboxPickerWidth,
@@ -123,7 +123,7 @@ final class ControlsDocumentationScreenshots: AppTestCase {
         waitForButtonToAppear(withWording: "app_components_radioButton_label", app)
         tapButton(withWording: "app_components_radioButton_label", app)
 
-        takeScreenshot(named: "component_radio",
+        takeScreenshot(named: "component_radio_",
                        ACDC.radioX,
                        ACDC.radioY,
                        ACDC.radioWidth,
@@ -142,7 +142,7 @@ final class ControlsDocumentationScreenshots: AppTestCase {
         waitForButtonToAppear(withWording: "app_components_radioButton_radioButtonItem_label", app)
         tapButton(withWording: "app_components_radioButton_radioButtonItem_label", app)
 
-        takeScreenshot(named: "component_radioitem",
+        takeScreenshot(named: "component_radioItem_",
                        ACDC.radioItemX,
                        ACDC.radioItemY,
                        ACDC.radioItemWidth,
@@ -169,7 +169,7 @@ final class ControlsDocumentationScreenshots: AppTestCase {
 
         wait(2) // Let press animation ends
 
-        takeScreenshot(named: "component_radiopicker",
+        takeScreenshot(named: "component_radioPicker_",
                        ACDC.radioPickerX,
                        ACDC.radioPickerY,
                        ACDC.radioPickerWidth,
@@ -191,7 +191,7 @@ final class ControlsDocumentationScreenshots: AppTestCase {
         waitForButtonToAppear(withWording: "app_components_switch_label", app)
         tapButton(withWording: "app_components_switch_label", app)
 
-        takeScreenshot(named: "component_switch",
+        takeScreenshot(named: "component_switch_",
                        ACDC.switchX,
                        ACDC.switchY,
                        ACDC.switchWidth,
@@ -211,7 +211,7 @@ final class ControlsDocumentationScreenshots: AppTestCase {
         waitForButtonToAppear(withWording: "app_components_switch_switchItem_label", app)
         tapButton(withWording: "app_components_switch_switchItem_label", app)
 
-        takeScreenshot(named: "component_switchitem",
+        takeScreenshot(named: "component_switchItem_",
                        ACDC.switchItemX,
                        ACDC.switchItemY,
                        ACDC.switchItemWidth,
@@ -237,7 +237,7 @@ final class ControlsDocumentationScreenshots: AppTestCase {
 
         wait(2)
 
-        takeScreenshot(named: "component_suggestionchip",
+        takeScreenshot(named: "component_suggestionChip_",
                        ACDC.suggestionChipX,
                        ACDC.suggestionChipY,
                        ACDC.suggestionChipWidth,
@@ -262,7 +262,7 @@ final class ControlsDocumentationScreenshots: AppTestCase {
 
         wait(2)
 
-        takeScreenshot(named: "component_suggestionchip",
+        takeScreenshot(named: "component_filterChip_",
                        ACDC.filterChipX,
                        ACDC.filterChipY,
                        ACDC.filterChipWidth,
@@ -288,7 +288,7 @@ final class ControlsDocumentationScreenshots: AppTestCase {
 
         wait(2)
 
-        takeScreenshot(named: "component_chippicker",
+        takeScreenshot(named: "component_chipPicker_",
                        ACDC.chipPickerX,
                        ACDC.chipPickerY,
                        ACDC.chipPickerWidth,

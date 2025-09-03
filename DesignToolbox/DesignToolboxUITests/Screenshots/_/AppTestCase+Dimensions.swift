@@ -147,14 +147,14 @@ extension AppTestCase {
         static let horizontalDividerX = screenStartX + offsetX
         static let horizontalDividerY = 500 + offsetY
         static let horizontalDividerWidth = deviceWidth + offsetWidth
-        static let horizontalDividerHeight = 200 + offsetHeight
+        static let horizontalDividerHeight = 440 + offsetHeight
 
         // MARK: - Layouts - Vertical Divider
 
         static let verticalDividerX = screenStartX + offsetX
-        static let verticalDividerY = 500 + offsetY
+        static let verticalDividerY = 480 + offsetY
         static let verticalDividerWidth = deviceWidth + offsetWidth
-        static let verticalDividerHeight = 200 + offsetHeight
+        static let verticalDividerHeight = 440 + offsetHeight
 
         // MARK: - Layouts - Colored surface
 

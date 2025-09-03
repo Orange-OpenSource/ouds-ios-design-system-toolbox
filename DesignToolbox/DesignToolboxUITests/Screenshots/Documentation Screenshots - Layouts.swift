@@ -41,7 +41,7 @@ import XCTest
 /// Then get the screenshots in attachments ; base name of the files are the ones defined in the tests.
 final class LayoutsDocumentationScreenshots: AppTestCase {
 
-    // MARK: Link
+    // MARK: - Link
 
     @MainActor
     func testMakeScreenshotsForDocumentation_ColoredSurface() {
@@ -51,7 +51,48 @@ final class LayoutsDocumentationScreenshots: AppTestCase {
         waitForButtonToAppear(withWording: "app_components_common_onColoredBackground_label", app)
         tapButton(withWording: "app_components_common_onColoredBackground_label", app)
 
-        takeScreenshot(named: "component_coloredsurface", ACDC.coloredSurfaceX, ACDC.coloredSurfaceY, ACDC.coloredSurfaceWidth, ACDC.coloredSurfaceHeight, app)
+        takeScreenshot(named: "component_coloredSurface",
+                       ACDC.coloredSurfaceX,
+                       ACDC.coloredSurfaceY,
+                       ACDC.coloredSurfaceWidth,
+                       ACDC.coloredSurfaceHeight,
+                       app)
+    }
+
+    // MARK: - Dividers
+
+    @MainActor
+    func testMakeScreenshotsForDocumentation_HorizontalDivider() {
+        let app = launchApp()
+        goToComponentsSheet(app)
+        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_divider_label", app)
+        tapButton(withWording: "app_components_divider_label", app)
+        tapButton(withWording: "Horizontal divider", app)
+
+        takeScreenshot(named: "component_horizontalDivider",
+                       ACDC.horizontalDividerX,
+                       ACDC.horizontalDividerY,
+                       ACDC.horizontalDividerWidth,
+                       ACDC.horizontalDividerHeight,
+                       app)
+    }
+
+    @MainActor
+    func testMakeScreenshotsForDocumentation_VerticalDivider() {
+        let app = launchApp()
+        goToComponentsSheet(app)
+        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_divider_label", app)
+        tapButton(withWording: "app_components_divider_label", app)
+        tapButton(withWording: "Vertical divider", app)
+
+        takeScreenshot(named: "component_verticalDivider",
+                       ACDC.verticalDividerX,
+                       ACDC.verticalDividerY,
+                       ACDC.verticalDividerWidth,
+                       ACDC.verticalDividerHeight,
+                       app)
     }
 }
 
