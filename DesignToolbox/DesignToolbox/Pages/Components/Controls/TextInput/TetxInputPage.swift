@@ -49,7 +49,7 @@ private struct TextInputDemo: View {
         OUDSTextInput(layout: configurationModel.layout,
                       label: configurationModel.label,
                       text: $configurationModel.text,
-                      placeholder: placeholder,
+                      placeholder: configurationModel.placeholder,
                       leadingIcon: leadingIcon,
                       trailingAction: tarilingAction,
                       helperText: configurationModel.helperText,
@@ -78,13 +78,5 @@ private struct TextInputDemo: View {
 
         return .init(icon: Image(decorative: "ic_heart"),
                      accessibilityLabel: "app_components_button_icon_a11y".localized()) {}
-    }
-
-    private var placeholder: OUDSTextInput.Placeholder? {
-        let text = configurationModel.placeHolderText
-        let prefix = configurationModel.prefixText
-        let suffix = configurationModel.suffixText
-
-        return text.isEmpty && prefix.isEmpty && suffix.isEmpty ? nil : .init(text: text, prefix: prefix, suffix: suffix)
     }
 }

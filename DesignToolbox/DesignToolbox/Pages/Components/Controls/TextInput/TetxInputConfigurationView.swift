@@ -88,6 +88,14 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
     deinit {}
 
+    var placeholder: OUDSTextInput.Placeholder? {
+        if placeHolderText.isEmpty, prefixText.isEmpty, suffixText.isEmpty {
+            return nil
+        }
+
+        return .init(text: placeHolderText, prefix: prefixText, suffix: suffixText)
+    }
+
     // MARK: Component Configuration
 
     private var roundedCodePattern: String {
@@ -97,8 +105,68 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            OUDSTextInput(label: \(label))
+            OUDSTextInput(\(layoutPattern)\(labelPattern)\(textPattern)\(placeholderPattern)\(leadingIconPattern)\(trailingActionPattern)\(heleprTextPattern)\(stylePattern))
             """
+    }
+
+    private var layoutPattern: String {
+        "layout: \(layout.technicalDescription)"
+    }
+
+    private var labelPattern: String {
+        label.isEmpty ? "" : ", label: \"\(label)\""
+    }
+
+    private var textPattern: String {
+        ", text: $text"
+    }
+
+    private var placeholderPattern: String {
+        guard let placeholder else {
+            return ""
+        }
+        return ", placeholder: \(placeholder.technicalDescription)"
+    }
+
+    private var leadingIconPattern: String {
+        leadingIcon ? ", leadingIcon: Image(decorative: \"ic_heart\")" : ""
+    }
+
+    private var trailingActionPattern: String {
+        let accessibilityLabel = "app_components_button_icon_a11y".localized()
+        return trailingAction ? ", trailingAction: .init(icon: Image(decorative: \"ic_heart\"), accessibilityLabel: \"\(accessibilityLabel)\") {}" : ""
+    }
+
+    private var heleprTextPattern: String {
+        helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
+    }
+
+    private var stylePattern: String {
+        ", style: \(style.technicalDescription)"
+    }
+
+    private var statusPattern: String {
+        ", status: \(status.technicalDescription)"
+    }
+}
+
+extension OUDSTextInput.Placeholder {
+    private var prefixPattern: String {
+        guard let prefix else {
+            return ""
+        }
+        return ", prefix: \"\(prefix)\""
+    }
+
+    private var suffixPattern: String {
+        guard let suffix else {
+            return ""
+        }
+        return ", suffix: \"\(suffix)\""
+    }
+
+    var technicalDescription: String {
+        ".init(text: \"\(text)\"\(prefixPattern)\(suffixPattern))"
     }
 }
 
@@ -132,7 +200,7 @@ struct TextInputConfigurationView: View {
                                chips: OUDSTextInput.Status.chips)
 
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.label)
+                    DesignToolboxTextField(text: $configurationModel.label, prompt: "app_components_common_label_label")
                     DesignToolboxTextField(text: $configurationModel.helperText, prompt: "app_components_common_helperText_label")
                     DesignToolboxTextField(text: $configurationModel.placeHolderText, prompt: "app_components_textInput_placeholder_label")
                     if !configurationModel.placeHolderText.isEmpty {
@@ -148,14 +216,17 @@ struct TextInputConfigurationView: View {
 extension OUDSTextInput.Style: @retroactive CaseIterable, @retroactive CustomStringConvertible {
     public nonisolated(unsafe) static var allCases: [OUDSTextInput.Style] = [.default, .alternative]
 
-    // No l10n, tehchnical names
     public var description: String {
         switch self {
         case .default:
-            "app_components_textInput_style_default_label"
+            String(localized: "app_components_textInput_style_default_label")
         case .alternative:
-            "app_components_textInput_style_alternative_label"
+            String(localized: "app_components_textInput_style_alternative_label")
         }
+    }
+
+    public var technicalDescription: String {
+        ".\(description.lowercased())"
     }
 
     private var chipData: OUDSChipPickerData<Self> {
@@ -174,10 +245,14 @@ extension OUDSTextInput.Layout: @retroactive CaseIterable, @retroactive CustomSt
     public var description: String {
         switch self {
         case .label:
-            "app_components_common_label_label"
+            String(localized: "app_components_common_label_label")
         case .placeholder:
-            "app_components_textInput_placeholder_label"
+            String(localized: "app_components_textInput_placeholder_label")
         }
+    }
+
+    public var technicalDescription: String {
+        ".\(description.lowercased())"
     }
 
     private var chipData: OUDSChipPickerData<Self> {
@@ -195,16 +270,20 @@ extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomSt
     public var description: String {
         switch self {
         case .default:
-            "app_common_enabled_label"
+            String(localized: "app_common_enabled_label")
         case .error:
-            "app_components_common_error_label"
+            String(localized: "app_components_common_error_label")
         case .loading:
-            "app_components_common_loader_label"
+            String(localized: "app_components_common_loader_label")
         case .readOnly:
-            "app_components_common_readOnly_label"
+            String(localized: "app_components_common_readOnly_label")
         case .disbaled:
-            "app_common_disabled_label"
+            String(localized: "app_common_disabled_label")
         }
+    }
+
+    public var technicalDescription: String {
+        ".\(description.lowercased())"
     }
 
     private var chipData: OUDSChipPickerData<Self> {

@@ -3454,6 +3454,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_textInput_prefix_label" : {
+      "comment" : "Compontn - TextInput",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefix"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefix"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefix"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_textInput_style_alternative_label" : {
       "comment" : "Component - TextInput",
       "extractionState" : "manual",
@@ -3499,6 +3524,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Default"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_suffix_label" : {
+      "comment" : "Component _ TextInput",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suffix"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suffix"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suffix"
           }
         }
       },
