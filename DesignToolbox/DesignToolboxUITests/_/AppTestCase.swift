@@ -98,6 +98,13 @@ open class AppTestCase: XCTestCase {
         return elements
     }
 
+    /// Taps an element with the given accessibility identifier be seen as "other element"
+    @MainActor func tapOtherElement(withA11yIdentifier id: String, _ app: XCUIApplication) {
+        let element = app.otherElements[A11YIdentifiers.configurationSwitchSelection].firstMatch
+        XCTAssertTrue(element.exists, "The eoected other element with accessibility identifier '\(id)' does not exist")
+        element.tap()
+    }
+
     /// Returns elements with the given accessiiblity identifier
     @MainActor func otherElements(withA11yIdentifier id: String, _ app: XCUIApplication) -> XCUIElementQuery {
         let elements = app.otherElements.matching(identifier: id)

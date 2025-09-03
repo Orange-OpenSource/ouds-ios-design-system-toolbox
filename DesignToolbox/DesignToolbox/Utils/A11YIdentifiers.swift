@@ -28,4 +28,5 @@ enum A11YIdentifiers {
     // MARK: - Configurations
 
     static let configurationTextField = "designSystemToolbox_configuration_textField"
+    static let configurationSwitchSelection = "designSystemToolbox_configuration_switch_selection"
 }

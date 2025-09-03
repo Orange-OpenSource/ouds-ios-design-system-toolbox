@@ -218,6 +218,57 @@ final class ControlsDocumentationScreenshots: AppTestCase {
                        ACDC.switchItemHeight,
                        app)
     }
+
+    // MARK: - Chips
+
+    @MainActor
+    func testMakeScreenshotsForDocumentation_SuggestionChip() {
+        let app = launchApp()
+        goToComponentsSheet(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_chip_label", app)
+        tapButton(withWording: "app_components_chip_label", app)
+        waitForButtonToAppear(withWording: "app_components_chip_suggestionChip_label", app)
+        tapButton(withWording: "app_components_chip_suggestionChip_label", app)
+
+        tapButton(withWording: "Text + icon", app)
+
+        wait(2)
+
+        takeScreenshot(named: "component_suggestionchip",
+                       ACDC.suggestionChipX,
+                       ACDC.suggestionChipY,
+                       ACDC.suggestionChipWidth,
+                       ACDC.suggestionChipHeight,
+                       app)
+    }
+
+    @MainActor
+    func testMakeScreenshotsForDocumentation_FilterChip() {
+        let app = launchApp()
+        goToComponentsSheet(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_chip_label", app)
+        tapButton(withWording: "app_components_chip_label", app)
+        waitForButtonToAppear(withWording: "app_components_chip_filterChip_label", app)
+        tapButton(withWording: "app_components_chip_filterChip_label", app)
+
+        tapOtherElement(withA11yIdentifier: A11YIdentifiers.configurationSwitchSelection, app)
+        tapButton(withWording: "Text + icon", app)
+
+        wait(2)
+
+        takeScreenshot(named: "component_suggestionchip",
+                       ACDC.filterChipX,
+                       ACDC.filterChipY,
+                       ACDC.filterChipWidth,
+                       ACDC.filterChipHeight,
+                       app)
+    }
 }
 
 // swiftlint:enable required_deinit
