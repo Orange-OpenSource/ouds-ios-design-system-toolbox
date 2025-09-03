@@ -126,6 +126,8 @@ final class 📄_ControlsDocumentationScreenshots: AppTestCase {
 
         tapOtherElement(withA11yIdentifier: A11YIdentifiers.configurationSwitchSelection, app)
 
+        wait(2)
+
         takeScreenshot(named: "component_radio_",
                        ACDC.radioX,
                        ACDC.radioY,
@@ -228,8 +230,7 @@ final class 📄_ControlsDocumentationScreenshots: AppTestCase {
     func testMakeScreenshotsForDocumentation_SuggestionChip() {
         let app = launchApp()
         goToComponentsSheet(app)
-        swipeFromDownToUp(app)
-        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_chip_label", app)
         swipeFromDownToUp(app)
         waitForButtonToAppear(withWording: "app_components_chip_label", app)
         tapButton(withWording: "app_components_chip_label", app)
@@ -252,8 +253,7 @@ final class 📄_ControlsDocumentationScreenshots: AppTestCase {
     func testMakeScreenshotsForDocumentation_FilterChip() {
         let app = launchApp()
         goToComponentsSheet(app)
-        swipeFromDownToUp(app)
-        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_chip_label", app)
         swipeFromDownToUp(app)
         waitForButtonToAppear(withWording: "app_components_chip_label", app)
         tapButton(withWording: "app_components_chip_label", app)
@@ -277,10 +277,8 @@ final class 📄_ControlsDocumentationScreenshots: AppTestCase {
     func testMakeScreenshotsForDocumentation_ChipPicker() {
         let app = launchApp()
         goToComponentsSheet(app)
-        swipeFromDownToUp(app)
-        swipeFromDownToUp(app)
-        swipeFromDownToUp(app)
         waitForButtonToAppear(withWording: "app_components_chip_label", app)
+        swipeFromDownToUp(app)
         tapButton(withWording: "app_components_chip_label", app)
         waitForButtonToAppear(withWording: "app_components_chip_chipPicker_label", app)
         tapButton(withWording: "app_components_chip_chipPicker_label", app)
