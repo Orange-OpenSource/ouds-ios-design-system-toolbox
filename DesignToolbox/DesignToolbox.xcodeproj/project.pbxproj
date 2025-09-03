@@ -388,6 +388,7 @@
 		51E5AC0E2E672ECC00FAA5F1 /* Documentation Screenshots - Indicators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5AC0D2E672ECC00FAA5F1 /* Documentation Screenshots - Indicators.swift */; };
 		51E5AC102E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5AC0F2E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift */; };
 		51E5AC122E673A7600FAA5F1 /* Documentation Screenshots - Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5AC112E673A7600FAA5F1 /* Documentation Screenshots - Actions.swift */; };
+		51E5AC152E6839B200FAA5F1 /* AppTestCase+Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5AC142E6839AA00FAA5F1 /* AppTestCase+Dimensions.swift */; };
 		51EB73952DBFDDF600F37FEC /* CheckboxPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */; };
 		51EB73962DBFDDF600F37FEC /* AppTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737B2DBFD26000F37FEC /* AppTestCase.swift */; };
 		51EB73982DBFE3FD00F37FEC /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
@@ -746,6 +747,7 @@
 		51E5AC0D2E672ECC00FAA5F1 /* Documentation Screenshots - Indicators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Documentation Screenshots - Indicators.swift"; sourceTree = "<group>"; };
 		51E5AC0F2E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Documentation Screenshots - Controls.swift"; sourceTree = "<group>"; };
 		51E5AC112E673A7600FAA5F1 /* Documentation Screenshots - Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Documentation Screenshots - Actions.swift"; sourceTree = "<group>"; };
+		51E5AC142E6839AA00FAA5F1 /* AppTestCase+Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppTestCase+Dimensions.swift"; sourceTree = "<group>"; };
 		51EB737B2DBFD26000F37FEC /* AppTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTestCase.swift; sourceTree = "<group>"; };
 		51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerUITests.swift; sourceTree = "<group>"; };
 		51EB73842DBFDC5500F37FEC /* DesignToolboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignToolboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1663,6 +1665,7 @@
 		51E5AC0A2E67232900FAA5F1 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
+				51E5AC132E6839A500FAA5F1 /* _ */,
 				519B412F2E66D985005A8EFD /* App Store Screenshots.swift */,
 				51E5AC0D2E672ECC00FAA5F1 /* Documentation Screenshots - Indicators.swift */,
 				51E5AC0F2E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift */,
@@ -1677,6 +1680,14 @@
 				51EB737E2DBFD4B000F37FEC /* Components */,
 			);
 			path = "Design System Toolbox App";
+			sourceTree = "<group>";
+		};
+		51E5AC132E6839A500FAA5F1 /* _ */ = {
+			isa = PBXGroup;
+			children = (
+				51E5AC142E6839AA00FAA5F1 /* AppTestCase+Dimensions.swift */,
+			);
+			path = _;
 			sourceTree = "<group>";
 		};
 		51EB73792DBFD24400F37FEC /* DesignToolboxUITests */ = {
@@ -2881,6 +2892,7 @@
 				51E5AC122E673A7600FAA5F1 /* Documentation Screenshots - Actions.swift in Sources */,
 				51F676EA2E0D66EB00C15CB6 /* RadioItemUITests.swift in Sources */,
 				51F676DE2E0D567700C15CB6 /* CheckboxUITests.swift in Sources */,
+				51E5AC152E6839B200FAA5F1 /* AppTestCase+Dimensions.swift in Sources */,
 				51F676E22E0D61FE00C15CB6 /* CheckboxIndeterminateUITests.swift in Sources */,
 				51E5AC0E2E672ECC00FAA5F1 /* Documentation Screenshots - Indicators.swift in Sources */,
 				51E5AC102E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift in Sources */,

@@ -25,6 +25,10 @@ open class AppTestCase: XCTestCase {
 
     private let testBundle = Bundle(for: AppTestCase.self)
 
+    /// Loads the suitable wording from the `testBundle`.
+    /// If wording not found loads drom `OUDSComponents` bundle.
+    /// - Parameter key: The wording key or text
+    /// - Returns String: The localized string or text if not wording found
     func wording(for key: String) -> String {
         let wording = key.localized(bundle: testBundle)
         if wording != key {
@@ -73,6 +77,13 @@ open class AppTestCase: XCTestCase {
     /// Tap on a UI element seen as a image with the given name
     @MainActor func tapImage(withName name: String, _ app: XCUIApplication) {
         let imageToTap = app.images[name].firstMatch
+        XCTAssertTrue(imageToTap.exists, "The image with name '\(name)' does not exist")
+        imageToTap.tap()
+    }
+
+    /// Tap on a UI element seen as a image with the given name at the given position
+    @MainActor func tapImage(withName name: String, indexed at: UInt, _ app: XCUIApplication) {
+        let imageToTap = app.images.matching(identifier: name).element(boundBy: Int(at))
         XCTAssertTrue(imageToTap.exists, "The image with name '\(name)' does not exist")
         imageToTap.tap()
     }
@@ -269,9 +280,6 @@ open class AppTestCase: XCTestCase {
     }
 
     // MARK: - Screen captures
-
-    static let screenStartX = 0
-    static let deviceWidth = 1_170
 
     @MainActor func takeScreenshot(named name: String, _ x: Int, _ y: Int, _ width: Int, _ height: Int, _ app: XCUIApplication) {
         takeScreenshot(named: name, cropped: CGRect(x: x, y: y, width: width, height: height), app)

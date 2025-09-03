@@ -47,19 +47,9 @@ import XCTest
 /// Screenshots can be found in tests attachements.
 /// You can pick them in tests reports.
 /// Then get the screenshots in attachments ; base name of the files are the ones defined in the tests.
-///
-/// ## Device for test
-///
-/// Use the iPhone you want, in english mode.
-/// Configuration with current values is;
-/// - iPhone 12 Pro
-/// - portrait mode
-/// - english app
-/// - no increased text
-///
 final class ControlsDocumentationScreenshots: AppTestCase {
 
-    // MARK: Checkboxes
+    // MARK: - Checkboxes
 
     @MainActor
     func testMakeScreenshotsForDocumentation_Checkbox() {
@@ -70,7 +60,12 @@ final class ControlsDocumentationScreenshots: AppTestCase {
         waitForButtonToAppear(withWording: "app_components_checkbox_label", app)
         tapButton(withWording: "app_components_checkbox_label", app)
 
-        takeScreenshot(named: "component_checkbox", AppTestCase.screenStartX, 480, AppTestCase.deviceWidth, 560, app)
+        takeScreenshot(named: "component_checkbox",
+                       ACDC.checkboxX,
+                       ACDC.checkboxY,
+                       ACDC.checkboxWidth,
+                       ACDC.checkboxHeight,
+                       app)
     }
 
     @MainActor
@@ -82,7 +77,12 @@ final class ControlsDocumentationScreenshots: AppTestCase {
         waitForButtonToAppear(withWording: "app_components_checkbox_checkboxItem_label", app)
         tapButton(withWording: "app_components_checkbox_checkboxItem_label", app)
 
-        takeScreenshot(named: "component_checkboxitem", AppTestCase.screenStartX, 480, AppTestCase.deviceWidth, 560, app)
+        takeScreenshot(named: "component_checkboxitem",
+                       ACDC.checkboxItemX,
+                       ACDC.checkboxItemY,
+                       ACDC.checkboxItemWidth,
+                       ACDC.checkboxItemHeight,
+                       app)
     }
 
     @MainActor
@@ -94,7 +94,87 @@ final class ControlsDocumentationScreenshots: AppTestCase {
         waitForButtonToAppear(withWording: "app_components_checkboxPicker_label", app)
         tapButton(withWording: "app_components_checkboxPicker_label", app)
 
-        takeScreenshot(named: "component_checkboxpicker", AppTestCase.screenStartX, 480, AppTestCase.deviceWidth, 560, app)
+        tapImage(withName: "dog.fill", indexed: 0, app)
+
+        tapImage(withName: "waterbottle.fill", indexed: 1, app)
+        tapImage(withName: "dog.fill", indexed: 1, app)
+        tapImage(withName: "flame", indexed: 1, app)
+
+        wait(2) // Let press animation ends
+
+        takeScreenshot(named: "component_checkboxpicker",
+                       ACDC.checkboxPickerX,
+                       ACDC.checkboxPickerY,
+                       ACDC.checkboxPickerWidth,
+                       ACDC.checkboxPickerHeight,
+                       app)
+    }
+
+    // MARK: - Radios
+
+    @MainActor
+    func testMakeScreenshotsForDocumentation_Radio() {
+        let app = launchApp()
+        goToComponentsSheet(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_radioButton_label", app)
+        tapButton(withWording: "app_components_radioButton_label", app)
+        waitForButtonToAppear(withWording: "app_components_radioButton_label", app)
+        tapButton(withWording: "app_components_radioButton_label", app)
+
+        takeScreenshot(named: "component_radio",
+                       ACDC.radioX,
+                       ACDC.radioY,
+                       ACDC.radioWidth,
+                       ACDC.radioHeight,
+                       app)
+    }
+
+    @MainActor
+    func testMakeScreenshotsForDocumentation_RadioItem() {
+        let app = launchApp()
+        goToComponentsSheet(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_radioButton_label", app)
+        tapButton(withWording: "app_components_radioButton_label", app)
+        waitForButtonToAppear(withWording: "app_components_radioButton_radioButtonItem_label", app)
+        tapButton(withWording: "app_components_radioButton_radioButtonItem_label", app)
+
+        takeScreenshot(named: "component_radioitem",
+                       ACDC.radioItemX,
+                       ACDC.radioItemY,
+                       ACDC.radioItemWidth,
+                       ACDC.radioItemHeight,
+                       app)
+    }
+
+    @MainActor
+    func testMakeScreenshotsForDocumentation_RadioPicker() {
+        let app = launchApp()
+        goToComponentsSheet(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_radioButton_label", app)
+        tapButton(withWording: "app_components_radioButton_label", app)
+        waitForButtonToAppear(withWording: "app_components_radioPicker_label", app)
+        tapButton(withWording: "app_components_radioPicker_label", app)
+
+        tapImage(withName: "dog.fill", indexed: 0, app)
+
+        tapImage(withName: "waterbottle.fill", indexed: 1, app)
+        tapImage(withName: "dog.fill", indexed: 1, app)
+        tapImage(withName: "flame", indexed: 1, app)
+
+        wait(2) // Let press animation ends
+
+        takeScreenshot(named: "component_radiopicker",
+                       ACDC.radioPickerX,
+                       ACDC.radioPickerY,
+                       ACDC.radioPickerWidth,
+                       ACDC.radioPickerHeight,
+                       app)
     }
 }
 

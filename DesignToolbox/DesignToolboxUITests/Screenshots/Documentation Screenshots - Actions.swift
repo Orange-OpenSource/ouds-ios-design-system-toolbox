@@ -37,16 +37,6 @@ import XCTest
 /// Screenshots can be found in tests attachements.
 /// You can pick them in tests reports.
 /// Then get the screenshots in attachments ; base name of the files are the ones defined in the tests.
-///
-/// ## Device for test
-///
-/// Use the iPhone you want, in english mode.
-/// Configuration with current values is;
-/// - iPhone 12 Pro
-/// - portrait mode
-/// - english app
-/// - no increased text
-///
 final class ActionsDocumentationScreenshots: AppTestCase {
 
     // MARK: Button
@@ -60,7 +50,7 @@ final class ActionsDocumentationScreenshots: AppTestCase {
 
         tapButton(withWording: "Strong", app)
 
-        takeScreenshot(named: "component_button", AppTestCase.screenStartX, 500, AppTestCase.deviceWidth, 510, app)
+        takeScreenshot(named: "component_button", ACDC.buttonX, ACDC.buttonY, ACDC.buttonWidth, ACDC.buttonHeight, app)
     }
 }
 

@@ -38,16 +38,6 @@ import XCTest
 /// Screenshots can be found in tests attachements.
 /// You can pick them in tests reports.
 /// Then get the screenshots in attachments ; base name of the files are the ones defined in the tests.
-///
-/// ## Device for test
-///
-/// Use the iPhone you want, in english mode.
-/// Configuration with current values is;
-/// - iPhone 12 Pro
-/// - portrait mode
-/// - english app
-/// - no increased text
-///
 final class IndicatorsDocumentationScreenshots: AppTestCase {
 
     // MARK: - Badge
@@ -65,7 +55,7 @@ final class IndicatorsDocumentationScreenshots: AppTestCase {
         swipeFromUpToDown(app) // Keyboard does not close, so swipe to get component to capture
 
         wait(2)
-        takeScreenshot(named: "component_badge", AppTestCase.screenStartX, 620, AppTestCase.deviceWidth, 350, app)
+        takeScreenshot(named: "component_badge", ACDC.tagX, ACDC.badgeY, ACDC.tagWidth, ACDC.badgeHeight, app)
     }
 
     // MARK: - Tag
@@ -83,7 +73,7 @@ final class IndicatorsDocumentationScreenshots: AppTestCase {
         tapButton(withWording: "Text + bullet", app)
         tapButton(withWording: "Accent", app)
 
-        takeScreenshot(named: "component_tag", AppTestCase.screenStartX, 520, AppTestCase.deviceWidth, 400, app)
+        takeScreenshot(named: "component_tag", ACDC.tagX, ACDC.tagY, ACDC.tagWidth, ACDC.tagHeight, app)
     }
 }
 
