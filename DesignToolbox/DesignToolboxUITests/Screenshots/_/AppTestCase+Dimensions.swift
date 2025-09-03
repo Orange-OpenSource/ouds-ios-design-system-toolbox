@@ -159,9 +159,9 @@ extension AppTestCase {
         // MARK: - Layouts - Colored surface
 
         static let coloredSurfaceX = screenStartX + offsetX
-        static let coloredSurfaceY = 500 + offsetY
+        static let coloredSurfaceY = 600 + offsetY
         static let coloredSurfaceWidth = deviceWidth + offsetWidth
-        static let coloredSurfaceHeight = 200 + offsetHeight
+        static let coloredSurfaceHeight = 1_350 + offsetHeight
 
         // MARK: - Navigations - Link
 
