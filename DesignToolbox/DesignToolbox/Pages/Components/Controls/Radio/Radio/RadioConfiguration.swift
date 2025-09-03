@@ -73,6 +73,7 @@ struct RadioConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.selection)
+                .accessibilityIdentifier(A11YIdentifiers.configurationSwitchSelection)
                 .disabled(!configurationModel.enabled || configurationModel.isError)
 
             OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)

@@ -124,6 +124,8 @@ final class 📄_ControlsDocumentationScreenshots: AppTestCase {
         waitForButtonToAppear(withWording: "app_components_radioButton_label", app)
         tapButton(withWording: "app_components_radioButton_label", app)
 
+        tapOtherElement(withA11yIdentifier: A11YIdentifiers.configurationSwitchSelection, app)
+
         takeScreenshot(named: "component_radio_",
                        ACDC.radioX,
                        ACDC.radioY,
