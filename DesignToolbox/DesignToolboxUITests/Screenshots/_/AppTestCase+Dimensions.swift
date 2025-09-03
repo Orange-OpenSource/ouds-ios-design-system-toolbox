@@ -32,6 +32,8 @@ extension AppTestCase {
         static let iPhone12ProPortraitWidth = 1_170
 
         // Offsets to apply if, for example, use another device almost with same diemsnsions as iPhone 12 Pro
+        // Prevents to change all values
+        // Feel free to update and precise which device you use!
         private static let offsetX = 0
         private static let offsetY = 0
         private static let offsetWidth = 0
@@ -164,8 +166,8 @@ extension AppTestCase {
         // MARK: - Navigations - Link
 
         static let linkX = screenStartX + offsetX
-        static let linkY = 500 + offsetY
+        static let linkY = 600 + offsetY
         static let linkWidth = deviceWidth + offsetWidth
-        static let linkHeight = 200 + offsetHeight
+        static let linkHeight = 480 + offsetHeight
     }
 }

@@ -389,6 +389,7 @@
 		51E5AC102E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5AC0F2E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift */; };
 		51E5AC122E673A7600FAA5F1 /* Documentation Screenshots - Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5AC112E673A7600FAA5F1 /* Documentation Screenshots - Actions.swift */; };
 		51E5AC152E6839B200FAA5F1 /* AppTestCase+Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5AC142E6839AA00FAA5F1 /* AppTestCase+Dimensions.swift */; };
+		51E5AC172E686CE200FAA5F1 /* Documentation Screenshots - Navigations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5AC162E686CE200FAA5F1 /* Documentation Screenshots - Navigations.swift */; };
 		51EB73952DBFDDF600F37FEC /* CheckboxPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */; };
 		51EB73962DBFDDF600F37FEC /* AppTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737B2DBFD26000F37FEC /* AppTestCase.swift */; };
 		51EB73982DBFE3FD00F37FEC /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
@@ -748,6 +749,7 @@
 		51E5AC0F2E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Documentation Screenshots - Controls.swift"; sourceTree = "<group>"; };
 		51E5AC112E673A7600FAA5F1 /* Documentation Screenshots - Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Documentation Screenshots - Actions.swift"; sourceTree = "<group>"; };
 		51E5AC142E6839AA00FAA5F1 /* AppTestCase+Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppTestCase+Dimensions.swift"; sourceTree = "<group>"; };
+		51E5AC162E686CE200FAA5F1 /* Documentation Screenshots - Navigations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Documentation Screenshots - Navigations.swift"; sourceTree = "<group>"; };
 		51EB737B2DBFD26000F37FEC /* AppTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTestCase.swift; sourceTree = "<group>"; };
 		51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerUITests.swift; sourceTree = "<group>"; };
 		51EB73842DBFDC5500F37FEC /* DesignToolboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignToolboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1670,6 +1672,7 @@
 				51E5AC0D2E672ECC00FAA5F1 /* Documentation Screenshots - Indicators.swift */,
 				51E5AC0F2E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift */,
 				51E5AC112E673A7600FAA5F1 /* Documentation Screenshots - Actions.swift */,
+				51E5AC162E686CE200FAA5F1 /* Documentation Screenshots - Navigations.swift */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -2895,6 +2898,7 @@
 				51E5AC152E6839B200FAA5F1 /* AppTestCase+Dimensions.swift in Sources */,
 				51F676E22E0D61FE00C15CB6 /* CheckboxIndeterminateUITests.swift in Sources */,
 				51E5AC0E2E672ECC00FAA5F1 /* Documentation Screenshots - Indicators.swift in Sources */,
+				51E5AC172E686CE200FAA5F1 /* Documentation Screenshots - Navigations.swift in Sources */,
 				51E5AC102E673A3E00FAA5F1 /* Documentation Screenshots - Controls.swift in Sources */,
 				51E5AC0C2E6725F300FAA5F1 /* App Store Screenshots.swift in Sources */,
 				51EB73952DBFDDF600F37FEC /* CheckboxPickerUITests.swift in Sources */,
