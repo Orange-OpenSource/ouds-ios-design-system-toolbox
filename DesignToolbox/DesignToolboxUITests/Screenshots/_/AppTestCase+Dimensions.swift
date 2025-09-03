@@ -122,9 +122,9 @@ extension AppTestCase {
         // MARK: - Controls - Chip picker
 
         static let chipPickerX = screenStartX + offsetX
-        static let chipPickerY = 830 + offsetY
+        static let chipPickerY = 450 + offsetY
         static let chipPickerWidth = deviceWidth + offsetWidth
-        static let chipPickerHeight = 900 + offsetHeight
+        static let chipPickerHeight = 550 + offsetHeight
 
         // MARK: - Indicators - Badge
 

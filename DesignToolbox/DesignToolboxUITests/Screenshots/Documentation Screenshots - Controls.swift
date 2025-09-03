@@ -40,7 +40,7 @@ import XCTest
 /// - switch item (all themes, in one image light and dark declinations)
 /// - filter chip  (all themes, in one image light and dark declinations)
 /// - suggestion chip  (all themes, in one image light and dark declinations)
-/// - chip picker (Orange theme, in one image light and dark declinations) (1st and 2nd options selected both in light and dark)
+/// - chip picker (Orange theme, in one image light and dark declinations) (1st and 2nd options selected both in light and dark, text only, multiple)
 ///
 /// ## How to find screenshots
 ///
@@ -267,6 +267,32 @@ final class ControlsDocumentationScreenshots: AppTestCase {
                        ACDC.filterChipY,
                        ACDC.filterChipWidth,
                        ACDC.filterChipHeight,
+                       app)
+    }
+
+    @MainActor
+    func testMakeScreenshotsForDocumentation_ChipPicker() {
+        let app = launchApp()
+        goToComponentsSheet(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_chip_label", app)
+        tapButton(withWording: "app_components_chip_label", app)
+        waitForButtonToAppear(withWording: "app_components_chip_chipPicker_label", app)
+        tapButton(withWording: "app_components_chip_chipPicker_label", app)
+
+        tapButton(withWording: "Multiple", app)
+        tapImage(withName: "dog.fill", app)
+        tapButton(withWording: "Text only", app)
+
+        wait(2)
+
+        takeScreenshot(named: "component_chippicker",
+                       ACDC.chipPickerX,
+                       ACDC.chipPickerY,
+                       ACDC.chipPickerWidth,
+                       ACDC.chipPickerHeight,
                        app)
     }
 }
