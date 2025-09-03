@@ -55,7 +55,8 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
         otherElements(write: "999", in: A11YIdentifiers.configurationTextField, app)
         swipeFromUpToDown(app) // Keyboard does not close, so swipe to get component to capture
 
-        wait(2)
+        wait(3)
+
         takeScreenshot(named: "component_badge_",
                        ACDC.tagX,
                        ACDC.badgeY,
@@ -78,6 +79,8 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
 
         tapButton(withWording: "Text + bullet", app)
         tapButton(withWording: "Accent", app)
+
+        wait(2)
 
         takeScreenshot(named: "component_tag_",
                        ACDC.tagX,
