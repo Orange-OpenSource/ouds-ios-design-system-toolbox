@@ -21,11 +21,11 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
-    @Published var label: String {
+    @Published var layout: OUDSTextInput.Layout {
         didSet { updateCode() }
     }
 
-    @Published var helperText: String {
+    @Published var label: String {
         didSet { updateCode() }
     }
 
@@ -53,11 +53,15 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var rounded: Bool {
+    @Published var helperText: String {
         didSet { updateCode() }
     }
 
-    @Published var layout: OUDSTextInput.Layout {
+    @Published var helperLinkText: String {
+        didSet { updateCode() }
+    }
+
+    @Published var rounded: Bool {
         didSet { updateCode() }
     }
 
@@ -75,11 +79,12 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         label = String(localized: "app_components_common_label_label")
         helperText = String(localized: "app_components_common_helperText_label")
         placeHolderText = String(localized: "app_components_textInput_placeholder_label")
-        prefixText = "$"
-        suffixText = "€"
+        prefixText = ""
+        suffixText = ""
         leadingIcon = false
         trailingAction = false
         text = ""
+        helperLinkText = ""
         rounded = false
         layout = .label
         style = .default
@@ -87,6 +92,8 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 
     deinit {}
+
+    // MARK: Component Configuration
 
     var placeholder: OUDSTextInput.Placeholder? {
         if placeHolderText.isEmpty, prefixText.isEmpty, suffixText.isEmpty {
@@ -96,17 +103,23 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         return .init(text: placeHolderText, prefix: prefixText, suffix: suffixText)
     }
 
-    // MARK: Component Configuration
+    var helperLink: OUDSTextInput.Helperlink? {
+        guard !helperLinkText.isEmpty else {
+            return nil
+        }
 
-    private var roundedCodePattern: String {
-        rounded ? ".environment(\\.oudsRoundedTextInput, true)" : ""
+        return .init(text: helperLinkText) {}
     }
 
+    // MARK: Code illustration
     override func updateCode() {
+        // swiftlint:disable line_length
         code =
             """
-            OUDSTextInput(\(layoutPattern)\(labelPattern)\(textPattern)\(placeholderPattern)\(leadingIconPattern)\(trailingActionPattern)\(heleprTextPattern)\(stylePattern))
+            OUDSTextInput(\(layoutPattern)\(labelPattern)\(textPattern)\(placeholderPattern)\(leadingIconPattern)\(trailingActionPattern)\(heleprTextPattern)\(helperLinkPattern)\(stylePattern)\(statusPattern))
+            \(roundedCodePattern)
             """
+        // swiftlint:enable line_length
     }
 
     private var layoutPattern: String {
@@ -141,12 +154,20 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
     }
 
+    private var helperLinkPattern: String {
+        helperLinkText.isEmpty ? "" : ", helperLink: .init(text: \"\(helperLinkText)\") {}"
+    }
+
     private var stylePattern: String {
         ", style: \(style.technicalDescription)"
     }
 
     private var statusPattern: String {
         ", status: \(status.technicalDescription)"
+    }
+
+    private var roundedCodePattern: String {
+        rounded ? ".environment(\\.oudsRoundedTextInput, true)" : ""
     }
 }
 
@@ -207,6 +228,8 @@ struct TextInputConfigurationView: View {
                         DesignToolboxTextField(text: $configurationModel.prefixText, prompt: "app_components_textInput_prefix_label")
                         DesignToolboxTextField(text: $configurationModel.suffixText, prompt: "app_components_textInput_suffix_label")
                     }
+
+                    DesignToolboxTextField(text: $configurationModel.helperLinkText, prompt: "app_components_textInput_helperlink_label")
                 }
             }
         }

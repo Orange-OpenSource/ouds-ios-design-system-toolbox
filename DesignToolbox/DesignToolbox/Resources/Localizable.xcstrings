@@ -3361,6 +3361,31 @@
         }
       }
     },
+    "app_components_textInput_helperlink_label" : {
+      "comment" : "Component - TextInput",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper link"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper link"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper link"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_textInput_label" : {
       "comment" : "Component - TextInput",
       "extractionState" : "manual",
@@ -3387,7 +3412,7 @@
       "shouldTranslate" : false
     },
     "app_components_textInput_leadingIcon_label" : {
-      "comment" : "Compontn - TextInput",
+      "comment" : "Component - TextInput",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -3412,7 +3437,7 @@
       "shouldTranslate" : false
     },
     "app_components_textInput_placeholder_label" : {
-      "comment" : "Compontn - TextInput",
+      "comment" : "Component - TextInput",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -3436,7 +3461,7 @@
       "shouldTranslate" : false
     },
     "app_components_textInput_prefix_label" : {
-      "comment" : "Compontn - TextInput",
+      "comment" : "Component - TextInput",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -3511,7 +3536,7 @@
       "shouldTranslate" : false
     },
     "app_components_textInput_suffix_label" : {
-      "comment" : "Component _ TextInput",
+      "comment" : "Component - TextInput",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
