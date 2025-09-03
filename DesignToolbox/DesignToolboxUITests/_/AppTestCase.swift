@@ -48,8 +48,8 @@ open class AppTestCase: XCTestCase {
 
     // MARK: - Application
 
-    @MainActor
-    func launchApp() -> XCUIApplication {
+    /// Just launches the app
+    @MainActor func launchApp() -> XCUIApplication {
         let app = XCUIApplication()
         app.launch()
         return app
@@ -65,8 +65,19 @@ open class AppTestCase: XCTestCase {
         buttonToTap.tap()
     }
 
+    // swiftlint:disable empty_count
+    /// Returns buttons with the given accessiiblity identifier
+    @MainActor func buttons(withA11yIdentifier id: String, _ app: XCUIApplication) -> XCUIElementQuery {
+        let elements = app.buttons.matching(identifier: id)
+        XCTAssertTrue(elements.count > 0, "No matching button with accessibility identifier '\(id)'")
+        return elements
+    }
+
+    // swiftlint:enable empty_count
+
     // MARK: - Texts
 
+    /// Asserts if the given String exists as static texts
     @MainActor func assertStaticTextExists(_ content: String, _ app: XCUIApplication) {
         let text = app.staticTexts[content]
         XCTAssertTrue(text.exists, "The expected text content '\(content)' does not exist")
@@ -90,14 +101,6 @@ open class AppTestCase: XCTestCase {
 
     // MARK: - Other elements
 
-    // swiftlint:disable empty_count
-    /// Returns buttons with the given accessiiblity identifier
-    @MainActor func buttons(withA11yIdentifier id: String, _ app: XCUIApplication) -> XCUIElementQuery {
-        let elements = app.buttons.matching(identifier: id)
-        XCTAssertTrue(elements.count > 0, "No matching button with accessibility identifier '\(id)'")
-        return elements
-    }
-
     /// Taps an element with the given accessibility identifier be seen as "other element"
     @MainActor func tapOtherElement(withA11yIdentifier id: String, _ app: XCUIApplication) {
         let element = app.otherElements[A11YIdentifiers.configurationSwitchSelection].firstMatch
@@ -105,6 +108,7 @@ open class AppTestCase: XCTestCase {
         element.tap()
     }
 
+    // swiftlint:disable empty_count
     /// Returns elements with the given accessiiblity identifier
     @MainActor func otherElements(withA11yIdentifier id: String, _ app: XCUIApplication) -> XCUIElementQuery {
         let elements = app.otherElements.matching(identifier: id)
@@ -112,14 +116,15 @@ open class AppTestCase: XCTestCase {
         return elements
     }
 
+    // swiftlint:enable empty_count
+
+    /// Taps and writes the given text to an undefined element with the given accessiibility identifier
     @MainActor func otherElements(write content: String, in withA11yIdentifier: String, _ app: XCUIApplication) {
         let textField = app.otherElements[withA11yIdentifier].firstMatch
         XCTAssertTrue(textField.exists, "The expected text field with accessibility identifier '\(withA11yIdentifier)' does not exist")
         textField.tap()
         textField.typeText(content)
     }
-
-    // swiftlint:enable empty_count
 
     /// Returns element with the given accessiiblity label
     @MainActor func otherElement(withA11yLabel label: String, _ app: XCUIApplication) -> XCUIElement {
@@ -135,10 +140,12 @@ open class AppTestCase: XCTestCase {
         app.tabBars.buttons.element(boundBy: 1).tap()
     }
 
+    /// Makes a to-the-top swipe
     @MainActor func swipeFromDownToUp(_ app: XCUIApplication) {
         app.swipeUp()
     }
 
+    /// Makes a to-the-bottom swipe
     @MainActor func swipeFromUpToDown(_ app: XCUIApplication) {
         app.swipeDown()
     }
@@ -247,6 +254,7 @@ open class AppTestCase: XCTestCase {
         }
     }
 
+    /// Wait the given time internval for button apparition with the given wording inside
     @MainActor func waitForButtonToAppear(withWording key: String, _ app: XCUIApplication, _ timeout: TimeInterval = 5) {
         let wording = wording(for: key)
         let buttonToWaitFor = app.buttons[wording]
@@ -284,33 +292,6 @@ open class AppTestCase: XCTestCase {
         } else {
             XCTAssertNil(element.accessibilityHint)
         }
-    }
-
-    // MARK: - Screen captures
-
-    @MainActor func takeScreenshot(named name: String, _ x: Int, _ y: Int, _ width: Int, _ height: Int, _ app: XCUIApplication) {
-        takeScreenshot(named: name, cropped: CGRect(x: x, y: y, width: width, height: height), app)
-    }
-
-    @MainActor func takeScreenshot(named name: String, cropped rect: CGRect, _ app: XCUIApplication) {
-        let fullScreenshot = app.windows.firstMatch.screenshot()
-
-        guard let image = UIImage(data: fullScreenshot.pngRepresentation) else {
-            print("❌ Impossible to convert screenshot to UIImage")
-            return
-        }
-
-        guard let cgImage = image.cgImage?.cropping(to: rect) else {
-            print("❌ Impossible to crop the image")
-            return
-        }
-
-        let croppedImage = UIImage(cgImage: cgImage)
-        let attachment = XCTAttachment(image: croppedImage)
-        attachment.name = name
-        attachment.lifetime = .keepAlways
-        add(attachment)
-        print("📸 Cropped screenshot of application done, put in attachments and available in reports: '\(name)'")
     }
 }
 

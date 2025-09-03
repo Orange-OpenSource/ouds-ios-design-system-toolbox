@@ -14,6 +14,7 @@
 import XCTest
 
 // swiftlint:disable required_deinit
+// swiftlint:disable type_name
 
 /// Walks across the application and make screenshots for documentation.
 ///
@@ -37,7 +38,7 @@ import XCTest
 /// Screenshots can be found in tests attachements.
 /// You can pick them in tests reports.
 /// Then get the screenshots in attachments ; base name of the files are the ones defined in the tests.
-final class ActionsDocumentationScreenshots: AppTestCase {
+final class 📄_ActionsDocumentationScreenshots: AppTestCase {
 
     // MARK: Button
 
@@ -55,3 +56,4 @@ final class ActionsDocumentationScreenshots: AppTestCase {
 }
 
 // swiftlint:enable required_deinit
+// swiftlint:enable type_name

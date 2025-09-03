@@ -14,6 +14,7 @@
 import XCTest
 
 // swiftlint:disable required_deinit
+// swiftlint:disable type_name
 
 /// Walks across the application and make screenshots for the App Store.
 ///
@@ -51,7 +52,7 @@ import XCTest
 /// - iPhone 5.5-inch devices (iPhone 6/7/8 Plus) 1242 x 2208
 /// - iPhone 6.5-inch (iPhone XS Max) 1242 x 2688
 ///
-final class DesignSystemToolboxAppStoreScreenshots: AppTestCase {
+final class 🛍️_DesignSystemToolboxAppStoreScreenshots: AppTestCase {
 
     // MARK: - Pages
 
@@ -67,6 +68,8 @@ final class DesignSystemToolboxAppStoreScreenshots: AppTestCase {
         let app = launchApp()
         goToComponentsSheet(app)
 
+        wait(2)
+
         takeScreenshot(named: "Components", app)
     }
 
@@ -77,6 +80,8 @@ final class DesignSystemToolboxAppStoreScreenshots: AppTestCase {
         let app = launchApp()
         waitForButtonToAppear(withWording: "app_tokens_color_label", app)
         tapButton(withWording: "app_tokens_color_label", app)
+
+        wait(2)
 
         takeScreenshot(named: "Colors", app)
     }
@@ -101,21 +106,13 @@ final class DesignSystemToolboxAppStoreScreenshots: AppTestCase {
         swipeFromDownToUp(app)
         waitForButtonToAppear(withWording: "app_components_switch_label", app)
         tapButton(withWording: "app_components_switch_label", app)
+        tapButton(withWording: "app_components_switch_switchItem_label", app)
+
+        wait(2)
 
         takeScreenshot(named: "Component - Switch item", app)
-    }
-
-    // MARK: - Helpers
-
-    @MainActor
-    private func takeScreenshot(named name: String, _ app: XCUIApplication) {
-        let screenshot = app.windows.firstMatch.screenshot()
-        let attachment = XCTAttachment(screenshot: screenshot)
-        attachment.name = name
-        attachment.lifetime = .keepAlways
-        add(attachment)
-        print("📸 Screenshot of application done, put in attachments and available in reports: '\(name)'")
     }
 }
 
 // swiftlint:enable required_deinit
+// swiftlint:enable type_name
