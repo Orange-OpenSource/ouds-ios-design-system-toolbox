@@ -19,6 +19,14 @@ import SwiftUI
 /// The model shared between `TextInputPageConfiguration` view and `TextInputPageComponent` view.
 final class TextInputConfigurationModel: ComponentConfiguration {
 
+    // MARK: Stored properties
+    let defaultlabel = String(localized: "app_components_common_label_label")
+    let defaultHelperText = String(localized: "app_components_common_helperText_label")
+    let defaultPlaceHolderText = String(localized: "app_components_textInput_helperLink_label")
+    let defaultPrefix = "$"
+    let defaultSuffix = "€"
+    let defaultHelperLinkText = String(localized: "app_components_textInput_helperLink_label")
+
     // MARK: Published properties
 
     @Published var layout: OUDSTextInput.Layout {
@@ -76,9 +84,9 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        label = String(localized: "app_components_common_label_label")
-        helperText = String(localized: "app_components_common_helperText_label")
-        placeHolderText = String(localized: "app_components_textInput_placeholder_label")
+        label = self.defaultlabel
+        helperText = self.defaultHelperText
+        placeHolderText = self.defaultPlaceHolderText
         prefixText = ""
         suffixText = ""
         leadingIcon = false
@@ -229,7 +237,7 @@ struct TextInputConfigurationView: View {
                         DesignToolboxTextField(text: $configurationModel.suffixText, prompt: "app_components_textInput_suffix_label")
                     }
 
-                    DesignToolboxTextField(text: $configurationModel.helperLinkText, prompt: "app_components_textInput_helperlink_label")
+                    DesignToolboxTextField(text: $configurationModel.helperLinkText, prompt: "app_components_textInput_helperLink_label")
                 }
             }
         }
