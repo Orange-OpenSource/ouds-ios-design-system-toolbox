@@ -36,7 +36,7 @@ struct TextInputPage: View {
 
 // MARK: - TextInput Demo
 
-private struct TextInputDemo: View {
+struct TextInputDemo: View {
 
     // MARK: - Stored properties
 
