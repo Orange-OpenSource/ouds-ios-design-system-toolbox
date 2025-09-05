@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "revision" : "2ba40fe970f6786004fd2541a8c3f69534ba89b4",
-        "version" : "0.18.0"
+        "branch" : "develop",
+        "revision" : "e40b3aaa1c9ceee35898634a68ea486b60be73d1"
       }
     },
     {
