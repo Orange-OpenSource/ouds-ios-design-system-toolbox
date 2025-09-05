@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Update `json` RubyGem from v2.13.1 to v2.13.2
 - [DesignToolbox] Update GitHub Actions `checkout` action from v4 to v5
 - [DesignToolbox] Update `SwiftLint` pod from v0.59.1 to v0.60.0
 - [DesignToolbox] Migration to Xcode 16.4
