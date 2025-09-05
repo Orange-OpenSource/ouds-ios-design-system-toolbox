@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Update GitHub Actions `checkout` action from v4 to v5
 - [DesignToolbox] Update `SwiftLint` pod from v0.59.1 to v0.60.0
 - [DesignToolbox] Migration to Xcode 16.4
 - [DesignToolbox] Notifications for alpha, beta and stable builds (Orange-OpenSource/ouds-ios#899)
