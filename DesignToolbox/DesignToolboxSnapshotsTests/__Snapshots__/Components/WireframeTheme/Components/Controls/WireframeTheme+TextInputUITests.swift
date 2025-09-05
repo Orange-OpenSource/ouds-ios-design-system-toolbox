@@ -31,13 +31,13 @@ final class WireframeThemeTextInputUITests: TextInputUITestsTestCase {
     }
 
     /// Tests all switches configuration in the `WireframeTheme` with the `light` color schemes.
-    @MainActor func testAllTextInputesWireframeThemeLight() {
+    @MainActor func testAllTextInputsWireframeThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllTextInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// Tests all switches configuration in the `WireframeTheme` with the `dark` color schemes.
-    @MainActor func testAllTextInputesWireframeThemeDark() {
+    @MainActor func testAllTextInputsWireframeThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTextInputs(theme: theme, interfaceStyle: interfaceStyle)
     }

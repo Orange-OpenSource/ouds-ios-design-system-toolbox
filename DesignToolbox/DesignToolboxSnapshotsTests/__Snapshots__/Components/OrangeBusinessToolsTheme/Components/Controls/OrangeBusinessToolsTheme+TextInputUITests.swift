@@ -31,13 +31,13 @@ final class OrangeBusinessToolsThemeTextInputUITests: TextInputUITestsTestCase {
     }
 
     /// Tests all switches configuration in the `OrangeBusinessToolsTheme` with the `light` color schemes.
-    @MainActor func testAllTextInputesOrangeBusinessToolsThemeLight() {
+    @MainActor func testAllTextInputsOrangeBusinessToolsThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllTextInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// Tests all switches configuration in the `OrangeBusinessToolsTheme` with the `dark` color schemes.
-    @MainActor func testAllTextInputesOrangeBusinessToolsThemeDark() {
+    @MainActor func testAllTextInputsOrangeBusinessToolsThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTextInputs(theme: theme, interfaceStyle: interfaceStyle)
     }

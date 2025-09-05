@@ -20,9 +20,9 @@ import SwiftUI
 final class TextInputConfigurationModel: ComponentConfiguration {
 
     // MARK: Stored properties
-    let defaultlabel = String(localized: "app_components_common_label_label")
+    let defaultLabel = String(localized: "app_components_common_label_label")
     let defaultHelperText = String(localized: "app_components_common_helperText_label")
-    let defaultPlaceHolderText = String(localized: "app_components_textInput_helperLink_label")
+    let defaultPlaceholderText = String(localized: "app_components_textInput_placeholder_label")
     let defaultPrefix = "$"
     let defaultSuffix = "€"
     let defaultHelperLinkText = String(localized: "app_components_textInput_helperLink_label")
@@ -37,7 +37,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var placeHolderText: String {
+    @Published var placeholderText: String {
         didSet { updateCode() }
     }
 
@@ -84,9 +84,9 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        label = self.defaultlabel
-        helperText = self.defaultHelperText
-        placeHolderText = self.defaultPlaceHolderText
+        label = defaultLabel
+        helperText = defaultHelperText
+        placeholderText = defaultPlaceholderText
         prefixText = ""
         suffixText = ""
         leadingIcon = false
@@ -104,11 +104,11 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     var placeholder: OUDSTextInput.Placeholder? {
-        if placeHolderText.isEmpty, prefixText.isEmpty, suffixText.isEmpty {
+        if placeholderText.isEmpty, prefixText.isEmpty, suffixText.isEmpty {
             return nil
         }
 
-        return .init(text: placeHolderText, prefix: prefixText, suffix: suffixText)
+        return .init(text: placeholderText, prefix: prefixText, suffix: suffixText)
     }
 
     var helperLink: OUDSTextInput.Helperlink? {
@@ -231,8 +231,8 @@ struct TextInputConfigurationView: View {
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.label, prompt: "app_components_common_label_label")
                     DesignToolboxTextField(text: $configurationModel.helperText, prompt: "app_components_common_helperText_label")
-                    DesignToolboxTextField(text: $configurationModel.placeHolderText, prompt: "app_components_textInput_placeholder_label")
-                    if !configurationModel.placeHolderText.isEmpty {
+                    DesignToolboxTextField(text: $configurationModel.placeholderText, prompt: "app_components_textInput_placeholder_label")
+                    if !configurationModel.placeholderText.isEmpty {
                         DesignToolboxTextField(text: $configurationModel.prefixText, prompt: "app_components_textInput_prefix_label")
                         DesignToolboxTextField(text: $configurationModel.suffixText, prompt: "app_components_textInput_suffix_label")
                     }

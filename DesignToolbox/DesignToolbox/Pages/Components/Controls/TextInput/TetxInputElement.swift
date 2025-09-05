@@ -37,6 +37,8 @@ private struct TextInputIllustration: View {
     @State private var text: String = ""
 
     var body: some View {
-        OUDSTextInput(label: "Label", text: $text)
+        OUDSTextInput(label: String(localized: "app_components_common_label_label"),
+                      text: $text,
+                      helperText: String(localized: "app_components_common_helperText_label"))
     }
 }
