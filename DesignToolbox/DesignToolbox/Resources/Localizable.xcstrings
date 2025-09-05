@@ -3361,9 +3361,8 @@
         }
       }
     },
-    "app_components_textInput_helperlink_label" : {
+    "app_components_textInput_helperLink_label" : {
       "comment" : "Component - TextInput",
-      "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -3383,8 +3382,7 @@
             "value" : "Helper link"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "app_components_textInput_label" : {
       "comment" : "Component - TextInput",

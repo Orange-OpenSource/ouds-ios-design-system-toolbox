@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDS
@@ -20,10 +20,9 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
-
 // MARK: - Test Cases
 
-// swiftlint:disable required_deinit
+// swiftlint:disable required_deinit cyclomatic_complexity
 /// Tests the UI rendering of the `OUDSTextInput` for each parameter
 open class TextInputUITestsTestCase: XCTestCase {
 
@@ -38,7 +37,7 @@ open class TextInputUITestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllTextInputs(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
-        var model = TextInputConfigurationModel()
+        let model = TextInputConfigurationModel()
         for rounded in [true, false] {
             for style in OUDSTextInput.Style.allCases {
                 for status in OUDSTextInput.Status.allCases {
@@ -46,10 +45,10 @@ open class TextInputUITestsTestCase: XCTestCase {
                         for helperText in ["", model.defaultHelperText] {
                             for leadingIcon in [true, false] {
                                 for trailingAction in [true, false] {
-                                    for placeHoldedText in ["", model.defaultPlaceHolderText] {
+                                    for placeHoldedText in ["", model.defaultPlaceholderText] {
                                         for prefixText in ["", model.defaultPrefix] {
                                             for suffixText in ["", model.defaultSuffix] {
-                                                for enteredText in ["", model.defaultlabel] {
+                                                for enteredText in ["", "text"] {
                                                     for helperLinkText in ["", model.defaultHelperLinkText] {
 
                                                         model.rounded = rounded
@@ -59,7 +58,7 @@ open class TextInputUITestsTestCase: XCTestCase {
                                                         model.helperText = helperText
                                                         model.leadingIcon = leadingIcon
                                                         model.trailingAction = trailingAction
-                                                        model.placeHolderText = placeHoldedText
+                                                        model.placeholderText = placeHoldedText
                                                         model.prefixText = prefixText
                                                         model.suffixText = suffixText
                                                         model.text = enteredText
@@ -82,14 +81,13 @@ open class TextInputUITestsTestCase: XCTestCase {
         }
     }
 
-
     // Defines if test can be done because some configurations are not allowed:
     // - suffix and prefix with empty placeholder
     // - loading status with empty text
     func canDoTest(model: TextInputConfigurationModel) -> Bool {
 
         // Don't test suffix and prefix if placeholder is empty
-        if model.placeHolderText.isEmpty {
+        if model.placeholderText.isEmpty {
             if !model.suffixText.isEmpty || !model.suffixText.isEmpty {
                 return false
             }
@@ -101,8 +99,6 @@ open class TextInputUITestsTestCase: XCTestCase {
             if model.status == .loading {
                 return false
             }
-
-
         }
 
         return true
@@ -118,8 +114,8 @@ open class TextInputUITestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - model: The model contains each element of configuration
     @MainActor func testTextInput(theme: OUDSTheme,
-                              interfaceStyle: UIUserInterfaceStyle,
-                              model: TextInputConfigurationModel)
+                                  interfaceStyle: UIUserInterfaceStyle,
+                                  model: TextInputConfigurationModel)
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
@@ -138,13 +134,15 @@ open class TextInputUITestsTestCase: XCTestCase {
         let helperTextPattern = model.helperText.isEmpty ? "" : ".helperText"
         let leadingIconPattern = model.leadingIcon ? ".leadingIcon" : ""
         let trailingActionPattern = model.trailingAction ? ".trailingAction" : ""
-        let placeholderPattern = model.placeHolderText.isEmpty ? "" : ".placeholder"
-        let prefixPattern = model.prefixText.isEmpty ? "" :  "_prefix"
-        let suffixPattern = model.suffixText.isEmpty ? "" : "_sufffix"
+        let placeholderPattern = model.placeholderText.isEmpty ? "" : ".placeholder"
+        let prefixPattern = model.prefixText.isEmpty ? "" : "_prefix"
+        let suffixPattern = model.suffixText.isEmpty ? "" : "_suffix"
         let enteredTextPattern = model.text.isEmpty ? "" : ".enteredText"
         let helperLinkPattern = model.helperLinkText.isEmpty ? "" : ".helperLink"
 
+        // swiftlint:disable line_length
         let named = "\(roundedPettern)\(layoutPattern)\(stylePattern)\(statusPattern)\(helperTextPattern)\(leadingIconPattern)\(trailingActionPattern)\(placeholderPattern)\(prefixPattern)\(suffixPattern)\(enteredTextPattern)\(helperLinkPattern)"
+        // swiftlint:enable line_length
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
@@ -153,4 +151,5 @@ open class TextInputUITestsTestCase: XCTestCase {
                            testName: testName)
     }
 }
-// swiftlint:enable required_deinit
+
+// swiftlint:enable required_deinit cyclomatic_complexity

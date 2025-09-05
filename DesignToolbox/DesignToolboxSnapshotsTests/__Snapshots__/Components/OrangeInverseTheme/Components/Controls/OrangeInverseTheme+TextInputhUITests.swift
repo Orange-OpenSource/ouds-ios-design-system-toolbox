@@ -31,13 +31,13 @@ final class OrangeInverseThemeTextInputUITests: TextInputUITestsTestCase {
     }
 
     /// Tests all switches configuration in the `OrangeInverseTheme` with the `light` color schemes.
-    @MainActor func testAllTextInputesOrangeInverseThemeLight() {
+    @MainActor func testAllTextInputsOrangeInverseThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllTextInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// Tests all switches configuration in the `OrangeInverseTheme` with the `dark` color schemes.
-    @MainActor func testAllTextInputesOrangeInverseThemeDark() {
+    @MainActor func testAllTextInputsOrangeInverseThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTextInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
