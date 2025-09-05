@@ -45,11 +45,11 @@ jobs:
     runs-on: macos-15
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Set up Xcode 16.3.0
+      - name: Set up Xcode 16.4.0
         run: |
-          sudo xcode-select -s /Applications/Xcode_16.3.0.app/Contents/Developer
+          sudo xcode-select -s /Applications/Xcode_16.4.0.app/Contents/Developer
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -63,18 +63,18 @@ jobs:
       - name: Build demo app
         run: |
           cd DesignToolbox
-          bundle exec fastlane buildDebugApp
+          bundle exec fastlane build_debug
 
   # Test the library with UI tests
   ui-test:
     runs-on: macos-15
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Set up Xcode 16.3.0
+      - name: Set up Xcode 16.4.0
         run: |
-          sudo xcode-select -s /Applications/Xcode_16.3.0.app/Contents/Developer
+          sudo xcode-select -s /Applications/Xcode_16.4.0.app/Contents/Developer
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -96,11 +96,11 @@ jobs:
     runs-on: macos-15
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Set up Xcode 16.3.0
+      - name: Set up Xcode 16.4.0
         run: |
-          sudo xcode-select -s /Applications/Xcode_16.3.0.app/Contents/Developer
+          sudo xcode-select -s /Applications/Xcode_16.4.0.app/Contents/Developer
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1

@@ -33,13 +33,14 @@ struct DesignToolboxTextField: View {
         VStack(alignment: .leading) {
             if let title {
                 Text(LocalizedStringKey(title))
-                    .typeHeadingSmall(theme)
+                    .typeBodyStrongLarge(theme)
                     .oudsForegroundStyle(theme.colors.colorContentDefault)
             }
 
             TextField(text: text, prompt: Text(prompt.localized())) {
                 Text(LocalizedStringKey(text.wrappedValue))
             }
+            .accessibilityIdentifier(A11YIdentifiers.configurationTextField)
             .oudsForegroundStyle(theme.colors.colorContentDefault)
         }
         .accessibilityElement(children: .combine)

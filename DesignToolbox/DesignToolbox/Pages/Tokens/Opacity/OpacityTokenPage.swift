@@ -83,6 +83,7 @@ enum NamedOpacity: String, CaseIterable {
     case opacityMedium
     case opacityStrong
     case opacityOpaque
+    case opacityDisabled
 
     func token(from theme: OUDSTheme) -> OpacitySemanticToken {
         switch self {
@@ -98,6 +99,8 @@ enum NamedOpacity: String, CaseIterable {
             theme.opacities.opacityStrong
         case .opacityOpaque:
             theme.opacities.opacityOpaque
+        case .opacityDisabled:
+            theme.opacities.opacityDisabled
         }
     }
 }

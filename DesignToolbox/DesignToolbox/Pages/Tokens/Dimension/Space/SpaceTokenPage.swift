@@ -41,8 +41,8 @@ struct SpaceTokenPage: View {
             Section { PaddingInsetProperty() } header: {
                 header("app_tokens_dimension_space_paddingInset_label")
             }
-            Section { PaddingStackProperty() } header: {
-                header("app_tokens_dimension_space_paddingStack_label")
+            Section { PaddingBlockProperty() } header: {
+                header("app_tokens_dimension_space_paddingBlock_label")
             }
             // Gap Space Tokens
             Section { ColumnGapProperty() } header: {

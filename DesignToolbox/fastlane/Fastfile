@@ -70,6 +70,12 @@ OUDS_PROJECT_NAME = "DesignToolbox" # Root for Info.plist, etc.
 OUDS_APP_DISPLAY_NAME = "Design System Toolbox"
 OUDS_PACKAGE_RESOLVED_PATH = "#{OUDS_WORKSPACE}/xcshareddata/swiftpm/Package.resolved"
 
+module BuildType
+    ALPHA = :alpha
+    BETA = :beta
+    STABLE = :stable
+end
+
 # Devices configuration
 # ---------------------
 
@@ -84,7 +90,7 @@ platform :ios do
 
     before_all do |lane, options|
         xcodes(
-            version: '16.3',
+            version: '16.4',
             select_for_current_build_only: true,
         )
     end
@@ -92,7 +98,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN PERIPHERY FOR DEAD CODE ANALYSIS
     # ------------------------------------------------------------
-    desc "Run Periphery to look dor dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned."
+    desc "Run Periphery to look for dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned."
     lane :check_dead_code do
         puts "👉 Check dead code with Periphery"
 
@@ -102,7 +108,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN SWIFT FORMAT TO FORMAT SOURCES
     # ------------------------------------------------------------
-    desc "Run SwiftFormat to format Swift source files according to the local configuration."
+    desc "Run SwiftFormat to format Swift source files according to the local configuration and apply source header template."
     lane :format do
         puts "👉 Run Swift Format to format sources"
 
@@ -113,18 +119,18 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN SWIFT LINT TO CHECK SMELLS
     # ------------------------------------------------------------
-    desc "Run SwiftLint in strict mode to detect code smells"
+    desc "Run SwiftLint in strict mode to detect code smells using local configuration for app, snapshots, units and UI tests"
     lane :lint do
         puts "👉 Run Swift Lint for smells"
 
         # If there are violations, error 2 will be returned by swiftlint, making Fastlane fail (expected)
-        sh "cd .. && swiftlint --strict --config ../.swiftlint.yml DesignToolbox/* DesignToolboxSnapshotsTests/* DesignToolboxUITests/*"
+        sh "cd .. && swiftlint --strict --config ../.swiftlint.yml DesignToolbox/* DesignToolboxSnapshotsTests/* DesignToolboxUITests/* DesignToolboxUnitTests/*"
     end
 
     # ------------------------------------------------------------
     # RUN LICENSE-PLSIT FOR 3RD PARTIES UPDATES
     # ------------------------------------------------------------
-    desc "Run LicensePlist to update list of third-parties"
+    desc "Run LicensePlist to update list of third-parties to embed in app"
     lane :update_3rd_parties do
         puts "👉 Run LicensePlist to update list of third-parties"
 
@@ -140,7 +146,7 @@ platform :ios do
     end
 
     # ------------------------------------------------------------
-    # RUN GITLEAKS FOR SECET LEAKS SCAN
+    # RUN GITLEAKS FOR SECRET LEAKS SCAN
     # ------------------------------------------------------------
     desc "Run GitLeaks to look for leaks of secrets in project and Git history"
     lane :check_leaks do
@@ -153,7 +159,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN SYFT AND GRYPE TO BUILD AND ANALYSE SBOM
     # ------------------------------------------------------------
-    desc "Generates a SBOM (Software Bill Of Materials) in SPDX JSON format with Syft and analyse it with Grype to as to check for vulnerabilities"
+    desc "Generates a SBOM (Software Bill Of Materials) in SPDX JSON format with Syft and analyse it with Grype to as to look for vulnerabilities"
     lane :update_sbom do
         puts "👉 Run Syft to generate the SBOM"
 
@@ -179,7 +185,7 @@ platform :ios do
     lane :update_build_number do
         puts "👉 Update build number"
 
-        timestamp = sh 'date +%s' # Timestamp are unique and bring details about build date
+        timestamp = sh 'date +%s' # Timestamp are unique, incremental and bring details about build date
         timestamp = timestamp.strip!
         puts "ℹ️ New builder number: '#{timestamp}'"
 
@@ -253,7 +259,7 @@ platform :ios do
     # --------------
     # RUN UNIT TESTS
     # --------------
-    desc "Run Uunit tests in the demo app to check some specific components behaviors"
+    desc "Run Unit tests in the demo app to check some specific components behaviors"
     lane :test_unit do
         puts "👉 Run unit tests"
 
@@ -282,10 +288,10 @@ platform :ios do
     end
 
     # ------------------------------------------------------------
-    # BUILD DEBUG APP
+    # BUILD DEBUG
     # ------------------------------------------------------------
     desc "Build locally the demo app in debug mode without upload"
-    lane :buildDebugApp do
+    lane :build_debug do
         puts "👉 Build debug app"
 
         cocoapods(
@@ -313,7 +319,7 @@ platform :ios do
     # BUILD & UPLOAD TO TESTFLIGHT ALPHA APP
     # ------------------------------------------------------------
     desc "Build the demo app in alpha mode and upload to TestFlight"
-    lane :alpha do |params|
+    lane :build_alpha do |params|
 
         issues_numbers = params[:issueNumber]
         puts "👉 Alpha (commit hash = '#{params[:commitHash]}', issue number = '#{issues_numbers}')"
@@ -351,14 +357,14 @@ platform :ios do
             puts "❌ Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for alpha build"
         end
 
-        build_and_upload(isAlpha: true, upload: true, issues: issues_numbers)
+        build_and_upload(type: BuildType::ALPHA, upload: true, issues: issues_numbers)
     end
 
     # ------------------------------------------------------------
     # BUILD & UPLOAD TO TESTFLIGHT BETA APP
     # ------------------------------------------------------------
-    desc "Build the demo app in neta mode and upload to TestFlight"
-    lane :beta do |params|
+    desc "Build the demo app in beta mode and upload to TestFlight"
+    lane :build_beta do |params|
         puts "👉 Beta (commit hash = '#{params[:commitHash]}')"
         Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
@@ -384,7 +390,7 @@ platform :ios do
 
         # Beta app must point to OUDS iOS develop branch
         if check_package_version_for_beta_app
-            build_and_upload(isAlpha: false, upload: true, detailSymbol: params[:commitHash])
+            build_and_upload(type: BuildType::BETA, upload: true, detailSymbol: params[:commitHash])
         else
             puts "❌ Error: The beta code base of the app does not point to an OUDS iOS Swfit Package develop branch"
             publish_mattermost_notification("📦 🚨 @channel The beta code base of the app does not point to an OUDS iOS Swfit Package develop branch (:beta)")
@@ -396,7 +402,7 @@ platform :ios do
     # BUILD & UPLOAD TO STORE STABLE APP
     # ------------------------------------------------------------
     desc "Build the demo app in stable mode and, if defined, upload to internal portal for App Store publication"
-    lane :stable do |params|
+    lane :build_stable do |params|
         puts "👉 Stable"
 
         update_build_number
@@ -424,6 +430,8 @@ platform :ios do
             if params[:upload]
                 puts "Upload to store requested"
                 upload_2_store()
+                build_details = extract_issues_numbers_for_stable
+                publish_github_notifications_build_details(BuildType::STABLE, build_details)
             else
                 puts "Upload to store not requested"
             end
@@ -439,18 +447,18 @@ platform :ios do
     # -----------------------------------------------------------------------
     desc "Build the demo app in a defined mode and upload if needed to TestFlight or internal portal for App Store publication"
     private_lane :build_and_upload do |params|
-        isAlpha = params[:isAlpha]
+        isAlpha = params[:type] == BuildType::ALPHA
 
         if isAlpha # Alpha case, detailSymbol should be the issue number of the feature/fix to test
             puts "👉 Build and upload (alpha)"
             update_build_number
             build
-            upload_2_testflight(type: "alpha", issues_numbers: params[:issues])
-            public_github_notifications_build_details
+            upload_2_testflight(type: BuildType::ALPHA, issues_numbers: params[:issues])
+            publish_github_notifications_build_details(BuildType::ALPHA, get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildDetails"))
 
         else # Beta case (not production too), detailSymbol should be here commit hash
             detailSymbol = params[:detailSymbol]
-            puts "👉 Build and upload (alpha = #{isAlpha}), detail symbol = #{detailSymbol})"
+            puts "👉 Build and upload (type = #{params[:type]}), detail symbol = #{detailSymbol})"
             
             # If already built, prevents to build again for nothing
             # Warning: tag is done before build and not removed, so if build failed, tag will remain and needs to be removed manualy.
@@ -468,7 +476,9 @@ platform :ios do
                 puts "ℹ️ Upload to TestFlight requested"
                 # If already uploaded, prevents to upload again
                 if tag_testflight_upload(detailSymbol)
-                    upload_2_testflight(type: "beta")
+                    upload_2_testflight(type: BuildType::BETA)
+                    build_details = extract_issues_numbers_for_beta
+                    publish_github_notifications_build_details(BuildType::BETA, build_details)
                 else
                     puts "ℹ️ Nothing new to build today, a TestFlight tag for commit '#{detailSymbol}' already exists"
                     publish_mattermost_notification("⚙️ 🤔 Nothing new to build today, a TestFlight tag for commit '#{detailSymbol}' already exists")
@@ -556,13 +566,13 @@ platform :ios do
             puts "ℹ️ App build number: '#{build_number}'"
 
             uploadType = params[:type]
-            if uploadType != nil && uploadType.to_s.empty? == false
+            if uploadType != nil
                 issues_numbers = params[:issues_numbers]
                 puts "ℹ️ Upload type: '#{uploadType}'"
-                if uploadType == "alpha"
+                if uploadType == BuildType::ALPHA
                     news = "⚠️ Warning: this is alpha build for issues '#{issues_numbers}'\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
                 else
-                    news = "This is a #{uploadType} build\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
+                    news = "This is a beta build\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight, beta build here ebcause not alpha and stable are not in TestFlight
                 end
             end
 
@@ -781,82 +791,6 @@ platform :ios do
         end
     end
 
-    # Sends a message notification through Mattermost hook
-    def publish_mattermost_notification(message)
-        mattermost(url: MATTERMOST_HOOK_URL,
-                  text: "#{message}",
-                  username: MATTERMOST_HOOK_BOT_NAME,
-                  icon_url: MATTERMOST_HOOK_BOT_ICON_URL
-                  )
-    end
-
-    # Send a comment to the GitHub related GitHub issues about a new available build.
-    # Will find in Info.plist of demo app all the suitable needed details.
-    def public_github_notifications_build_details
-        build_version = get_app_version
-        build_number = get_build_number(xcodeproj: OUDS_PROJECT)
-        build_display_name = get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "CFBundleDisplayName")
-        build_type = get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType")
-        build_tag = get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildTag")
-        build_details = get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildDetails")
-        
-        build_issues_numbers = build_details.scan(/\d+/).map(&:to_i)
-        
-        build_issues_numbers.each do |issue_number|
-            uri = URI("https://api.github.com/repos/#{GITHUB_ORG_LIB_REPO}/issues/#{issue_number}")
-            response = Net::HTTP.get(uri)
-            issue = JSON.parse(response)
-        
-            if issue['message'] == 'Not Found'
-                puts "❌ Error: Issue '#{issue_number}' does not exist"
-            else
-          
-                comment_to_upload=<<-EOF
-📣 **New TestFlight ALPHA upload available** 🚀
-
-Please, get the new build from *TestFlight* app, or contact the project maintainers (@ludovic35 or @pylapp) to get access.
-
-- Display name: **#{build_display_name}**
-- Version: **#{build_version}**
-- Build number: **#{build_number}**
-- Build tag: **#{build_tag}**
-- GitHub issues: **#{build_details}**
-
-<!--
-@B3nz01d - Benoît SUZANNE - Product Owner
-@pylapp - Pierre-Yves LAPERSONNE - iOS developer, OUDS iOS maintainer
-@ludovic35 - Ludovic PINEL - iOS developer, OUDS iOS maintainer
-@jerome-regnier - Jérôme RÉGNIER - designer
-@pya35 - Pierre-Yves AYOUL - a11y expert
--->
-cc @B3nz01d (product owner)
-cc @pylapp @ludovic35 (dev team)
-cc @jerome-regnier (design team)
-cc @pya35 (a11y team)
-
-_This is an automated message sent with love thanks to *Fastlane* from our CI/CD pipeline 🤘_
-EOF
-
-                uri = URI("https://api.github.com/repos/#{GITHUB_ORG_LIB_REPO}/issues/#{issue_number}/comments")
-                http = Net::HTTP.new(uri.host, uri.port)
-                http.use_ssl = true
-          
-                request = Net::HTTP::Post.new(uri.path)
-                request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
-                request['Content-Type'] = 'application/json'
-                request.body = { body: comment_to_upload }.to_json
-          
-                response = http.request(request)
-          
-                if response.code.to_i == 201
-                    puts "ℹ️ Comment posted on issue '#{issue_number}'"
-                else
-                    puts "❌ Error: Failed to post comment on issue '#{issue_number}'"
-                end
-            end
-        end
-    end
-
     # Get version set in the Xcode project
     def get_app_version
         version = get_version_number(
@@ -885,5 +819,124 @@ EOF
 
         puts "ℹ️ Current relase notes = #{changelog}"
         return changelog
+    end
+
+    # From the changelog extract the issues numbers so as to prepare notifications for beta builds.
+    # Will extract only issues numbers from "Unreleased" section.
+    def extract_issues_numbers_for_beta
+        changelog = read_changelog(
+            changelog_path: '../CHANGELOG.md',
+            section_identifier: "[Unreleased]",
+        )
+
+        extracted_issues_numbers = changelog.scan(/#(\d+)/).flatten.uniq
+
+        return extracted_issues_numbers.join(', ')
+    end
+
+    # From the changelog extract the issues numbers so as to prepare notifications for stabme builds.
+    # Will extract only issues numbers from last release section.
+    def extract_issues_numbers_for_stable
+        version = get_app_version
+
+        changelog = read_changelog(
+            changelog_path: '../CHANGELOG.md',
+            section_identifier: "[#{version}]",
+        )
+
+        extracted_issues_numbers = changelog.scan(/#(\d+)/).flatten.uniq
+
+        return extracted_issues_numbers.join(', ')
+    end
+
+    # Sends a message notification through Mattermost hook
+    def publish_mattermost_notification(message)
+        mattermost(url: MATTERMOST_HOOK_URL,
+                  text: "#{message}",
+                  username: MATTERMOST_HOOK_BOT_NAME,
+                  icon_url: MATTERMOST_HOOK_BOT_ICON_URL
+                  )
+    end
+
+    # Send comments to the related GitHub issues about a new available build or release.
+    # Will find in Info.plist of demo app all the suitable needed details.
+    def publish_github_notifications_build_details(build_type, build_details)
+        build_version = get_app_version
+        build_number = get_build_number(xcodeproj: OUDS_PROJECT)
+        build_display_name = get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "CFBundleDisplayName")
+        build_tag = get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildTag")
+
+        if build_type === BuildType::ALPHA
+            comment_title = "**New TestFlight ALPHA upload available**"
+            comment_description = "Please, get the new build from *TestFlight* app, or contact the project maintainers (pylapp, ludovic35) to get access and test this issue implementation."
+            comment_notified=<<-EOF
+<!--
+@B3nz01d - Benoît SUZANNE - Product Owner
+@pylapp - Pierre-Yves LAPERSONNE - iOS developer, OUDS iOS maintainer
+@ludovic35 - Ludovic PINEL - iOS developer, OUDS iOS maintainer
+@jerome-regnier - Jérôme RÉGNIER - designer
+@pya35 - Pierre-Yves AYOUL - a11y expert
+-->
+cc @B3nz01d (product owner)
+cc @pylapp @ludovic35 (dev team)
+cc @jerome-regnier (design team)
+cc @pya35 (a11y team)
+EOF
+            comment_description_build_tag="- Build tag: **#{build_tag}**"
+        elsif build_type === BuildType::BETA
+            comment_title = "**New TestFlight BETA upload available**"
+            comment_description = "Please, get the new build from *TestFlight* app, or contact the project maintainers (pylapp, ludovic35) to get access and test this issue implementation."
+            comment_notified = ""
+            comment_description_build_tag="- Build tag: **#{build_tag}**"
+        else # BuildType::STABLE
+            comment_title = "**New release available**"
+            comment_description = "Please, get the [new release from GitHub](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases/tag/#{build_version}) and wait for App Store update to test it!"
+            comment_notified = ""
+            comment_description_build_tag=""
+        end
+
+        build_issues_numbers = build_details.scan(/\d+/).map(&:to_i)
+        
+        build_issues_numbers.each do |issue_number|
+            uri = URI("https://api.github.com/repos/#{GITHUB_ORG_LIB_REPO}/issues/#{issue_number}")
+            response = Net::HTTP.get(uri)
+            issue = JSON.parse(response)
+        
+            if issue['message'] == 'Not Found'
+                puts "❌ Error: Issue '#{issue_number}' does not exist"
+            else
+          
+                comment_to_upload=<<-EOF
+📣 #{comment_title} 🚀
+
+#{comment_description}
+
+- Display name: **#{build_display_name}**
+- Version: **#{build_version}**
+- Build number: **#{build_number}**
+#{comment_description_build_tag}
+
+#{comment_notified}
+_🤖 This is an automated message sent with love thanks to *Fastlane* from our CI/CD pipeline 🤘_
+EOF
+
+                uri = URI("https://api.github.com/repos/#{GITHUB_ORG_LIB_REPO}/issues/#{issue_number}/comments")
+                http = Net::HTTP.new(uri.host, uri.port)
+                http.use_ssl = true
+          
+                request = Net::HTTP::Post.new(uri.path)
+                request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
+                request['Content-Type'] = 'application/json'
+                request.body = { body: comment_to_upload }.to_json
+          
+                response = http.request(request)
+          
+                if response.code.to_i == 201
+                    puts "ℹ️ Comment posted on issue '#{issue_number}'"
+                else
+                    puts "❌ Error: Failed to post comment on issue '#{issue_number}'"
+                end
+            end
+        end
     end
 end

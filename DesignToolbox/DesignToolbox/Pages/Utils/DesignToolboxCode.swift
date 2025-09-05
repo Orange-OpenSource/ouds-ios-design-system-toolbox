@@ -81,7 +81,6 @@ struct DesignToolboxCode: View {
                 .oudsBorder(style: theme.borders.borderStyleDefault,
                             width: theme.borders.borderWidthThin,
                             radius: theme.borders.borderRadiusDefault,
-                            color: theme.colors.colorBorderDefault)
-        )
+                            color: theme.colors.colorBorderDefault))
     }
 }
