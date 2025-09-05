@@ -23,11 +23,11 @@ extension NamedSpace {
         case spaceInset2xs
         case spaceInsetXs
         case spaceInsetSm
-        case spaceInsetMedium
-        case spaceInsetTall
-        case spaceInsetTaller
-        case spaceInsetTallest
-        case spaceInsetSpacious
+        case spaceInsetMd
+        case spaceInsetLg
+        case spaceInsetXl
+        case spaceInset2xl
+        case spaceInset3xl
 
         var name: String { rawValue }
 
@@ -45,15 +45,15 @@ extension NamedSpace {
                 theme.spaces.spaceInsetXs
             case .spaceInsetSm:
                 theme.spaces.spaceInsetSm
-            case .spaceInsetMedium:
+            case .spaceInsetMd:
                 theme.spaces.spaceInsetMd
-            case .spaceInsetTall:
+            case .spaceInsetLg:
                 theme.spaces.spaceInsetLg
-            case .spaceInsetTaller:
+            case .spaceInsetXl:
                 theme.spaces.spaceInsetXl
-            case .spaceInsetTallest:
+            case .spaceInset2xl:
                 theme.spaces.spaceInset2xl
-            case .spaceInsetSpacious:
+            case .spaceInset3xl:
                 theme.spaces.spaceInset3xl
             }
         }

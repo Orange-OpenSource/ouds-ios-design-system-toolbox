@@ -4,6 +4,39 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.18.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.17.0...0.18.0) - 2025-09-05
+
+### Added
+
+- [DesignToolbox] Generation of illustrations for App Store and documentation (Orange-OpenSource/ouds-ios#920)
+- [Library] Illustrations in documentation (Orange-OpenSource/ouds-ios#666)
+- [Library] Tag component (Orange-OpenSource/ouds-ios#408)
+
+### Changed
+
+- [DesignToolbox] Update `json` RubyGem from v2.13.1 to v2.13.2
+- [DesignToolbox] Update GitHub Actions `checkout` action from v4 to v5
+- [DesignToolbox] Update `SwiftLint` pod from v0.59.1 to v0.60.0
+- [DesignToolbox] Migration to Xcode 16.4
+- [DesignToolbox] Notifications for alpha, beta and stable builds (Orange-OpenSource/ouds-ios#899)
+- [Library] Update API to use a specific size for count and icon badge types (Orange-OpenSource/ouds-ios#855)
+- [DesignToolbox] [Library] Structure of components and files in repository (Orange-OpenSource/ouds-ios#908)
+- [DesignToolbox] Use chip picker for selections in component screens configurations (Orange-OpenSource/ouds-ios#841)
+- [Library] Chip version 1.3.0 (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#906)
+- [Library] Text input component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
+- [Library] Link component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
+- [Library] Button mono component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
+- [Library] Button component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
+- [Library] Button version 3.0.0 (add brand hierarchy and rounded property, update minimal variant) (Orange-OpenSource/ouds-ios#887)
+
+### Fixed
+
+- [DesignToolbox] URL of design system website in privacy policy page
+- [DesignToolbox] Default badge type in badge page (Orange-OpenSource/ouds-ios#909)
+- [Library] Voice Over vocalization for checkbox picker root item if error (Orange-OpenSource/ouds-ios#754)
+- [Library] Voice Over vocalization for disabled checkbox, radio button and switch (Orange-OpenSource/ouds-ios#715)
+- [Library] Icon of badge component does not resize if big texts used (Orange-OpenSource/ouds-ios#844)
+
 ## [0.17.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.16.0...0.17.0) - 2025-07-24
 
 ### Added
@@ -41,6 +74,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Button component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - [Library] Bullet list component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - [Library] Split color charts semantic tokens to dedicated provider (Orange-OpenSource/ouds-ios#856)
+- [Tool] Update `json` RubyGem from v2.12.2 to v2.13.0
 - [DesignToolbox] Update `fastlane` gem from v2.227.2 to v2.228.0
 - [DesignToolbox] Update `SwiftFormat/CLI` pod from v0.56.4 to v0.57.2
 - [Library] Swift package `swift-docc-plugin` from v1.4.3 to v1.4.5
