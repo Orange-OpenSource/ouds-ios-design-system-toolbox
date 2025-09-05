@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Update `SwiftLint` pod from v0.59.1 to v0.60.0
 - [DesignToolbox] Migration to Xcode 16.4
 - [DesignToolbox] Notifications for alpha, beta and stable builds (Orange-OpenSource/ouds-ios#899)
 - [Library] Update API to use a specific size for count and icon badge types (Orange-OpenSource/ouds-ios#855)
