@@ -111,14 +111,6 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         return .init(text: placeholderText, prefix: prefixText, suffix: suffixText)
     }
 
-    var helperLink: OUDSTextInput.Helperlink? {
-        guard !helperLinkText.isEmpty else {
-            return nil
-        }
-
-        return .init(text: helperLinkText) {}
-    }
-
     // MARK: Code illustration
     override func updateCode() {
         // swiftlint:disable line_length
