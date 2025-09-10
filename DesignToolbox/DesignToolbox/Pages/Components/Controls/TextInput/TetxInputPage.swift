@@ -42,6 +42,7 @@ struct TextInputDemo: View {
 
     @StateObject var configurationModel: TextInputConfigurationModel
     @Environment(\.theme) private var theme
+    @Environment(\.openURL) private var openUrl
 
     // MARK: - Body
 
@@ -53,7 +54,7 @@ struct TextInputDemo: View {
                       leadingIcon: leadingIcon,
                       trailingAction: tarilingAction,
                       helperText: configurationModel.helperText,
-                      helperLink: configurationModel.helperLink,
+                      helperLink: helperLink,
                       style: configurationModel.style,
                       status: configurationModel.status)
             .environment(\.oudsRoundedTextInput, configurationModel.rounded)
@@ -79,5 +80,17 @@ struct TextInputDemo: View {
 
         return .init(icon: Image(decorative: "ic_heart"),
                      accessibilityLabel: "app_components_button_icon_a11y".localized()) {}
+    }
+
+    private var helperLink: OUDSTextInput.Helperlink? {
+        guard !configurationModel.helperLinkText.isEmpty,
+              let url = URL(string: "https://unified-design-system.orange.com/")
+        else {
+            return nil
+        }
+
+        return .init(text: configurationModel.helperLinkText) {
+            openUrl.callAsFunction(url)
+        }
     }
 }
