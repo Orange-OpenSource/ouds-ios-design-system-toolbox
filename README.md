@@ -23,6 +23,8 @@
 &nbsp;
 <a href="https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/actions/workflows/swiftlint.yml" title="SwiftLint status"><img src="https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/actions/workflows/swiftlint.yml/badge.svg" alt="SwiftLint status"></a>
 &nbsp;
+<a href="https://scorecard.dev/viewer/?uri=github.com/Orange-OpenSource/ouds-ios-design-system-toolbox" title="OpenSSF Scorecard"><img src="https://api.scorecard.dev/projects/github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/badge" alt="OpenSSF Scorecard"></a>  
+&nbsp;
 <a href="https://renovatebot.com" title="Renovate status"><img src="https://img.shields.io/badge/renovate-enabled-brightgreen.svg" alt="Renovate status"></a>
 </p>
 
