@@ -196,7 +196,8 @@ struct ThemeSelectionButton: View {
             }
             .pickerStyle(.automatic)
         } label: {
-            Image(systemName: "paintpalette")
+            Image(decorative: "ic_theme")
+                .scaledToFit()
                 .accessibilityLabel("app_topBar_theme_button_a11y")
                 .accessibilityHint("app_topBar_theme_button_hint_a11y")
         }
