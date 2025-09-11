@@ -23,25 +23,49 @@ import SwiftUI
 final class OrangeBusinessToolsThemeButtonUITests: ButtonUITestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
-    private var theme: OUDSTheme!
+    private var standardTheme: OUDSTheme!
+    private var tunedTheme: OUDSTheme!
     // swiftlint:enable implicitly_unwrapped_optional
 
     override func setUp() {
-        theme = OrangeBusinessToolsTheme()
+        standardTheme = OrangeBusinessToolsTheme() // Default tuning do not have rounded corners
+        tunedTheme = OrangeBusinessToolsTheme(tuning: Tuning(hasRoundedCorners: true))
     }
 
-    /// Tests all buttons configuration in the `OrangeBusinessToolsTheme` with the `light` color schemes.
-    @MainActor func testAllButtonsOrangeBusinessToolsThemeLight() {
+    // MARK: Orange Business Tools theme - no tuning
+
+    /// Tests all buttons configuration in the `OrangeBusinessToolsTheme` with the `light` color schemes
+    /// with default tuning.
+    @MainActor func testAllButtonsOrangeBusinessToolsStandardThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
-        testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
-        testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
+        testAllButtons(theme: standardTheme, interfaceStyle: interfaceStyle)
+        testAllButtonsOnColoredSurface(theme: standardTheme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all buttons configuration in the `OrangeBusinessToolsTheme` with the `dark` color schemes.
-    @MainActor func testAllButtonsOrangeBusinessToolsThemeDark() {
+    /// Tests all buttons configuration in the `OrangeBusinessToolsTheme` with the `dark` color schemes
+    /// with default tuning.
+    @MainActor func testAllButtonsOrangeBusinessToolsStandardThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
-        testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
+        testAllButtons(theme: standardTheme, interfaceStyle: interfaceStyle)
+        testAllButtonsOnColoredSurface(theme: standardTheme, interfaceStyle: interfaceStyle)
+    }
+
+    // MARK: Orange Business Tools theme - with tuning
+
+    /// Tests all buttons configuration in the `OrangeBusinessToolsTheme` with the `light` color schemes
+    /// with special tuning (rounded corners)
+    @MainActor func testAllButtonsOrangeBusinessToolsTunedThemeLight() {
+        let interfaceStyle = UIUserInterfaceStyle.light
+        testAllButtons(theme: tunedTheme, interfaceStyle: interfaceStyle)
+        testAllButtonsOnColoredSurface(theme: tunedTheme, interfaceStyle: interfaceStyle)
+    }
+
+    /// Tests all buttons configuration in the `OrangeBusinessToolsTheme` with the `dark` color schemes
+    /// with special tuning (rounded corners)
+    @MainActor func testAllButtonsOrangeBusinessToolsTunedThemeDark() {
+        let interfaceStyle = UIUserInterfaceStyle.dark
+        testAllButtons(theme: tunedTheme, interfaceStyle: interfaceStyle)
+        testAllButtonsOnColoredSurface(theme: tunedTheme, interfaceStyle: interfaceStyle)
     }
 }
 
