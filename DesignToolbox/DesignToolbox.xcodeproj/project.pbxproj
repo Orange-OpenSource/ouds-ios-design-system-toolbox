@@ -3396,7 +3396,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "951-define-rounded-corner-settings-through-theme-definition";
 				kind = branch;
 			};
 		};
