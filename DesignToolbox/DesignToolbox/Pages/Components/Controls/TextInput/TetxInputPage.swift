@@ -47,15 +47,14 @@ struct TextInputDemo: View {
     // MARK: - Body
 
     var body: some View {
-        OUDSTextInput(layout: configurationModel.layout,
-                      label: configurationModel.label,
+        OUDSTextInput(label: configurationModel.label,
                       text: $configurationModel.text,
                       placeholder: configurationModel.placeholder,
                       leadingIcon: leadingIcon,
                       trailingAction: tarilingAction,
                       helperText: configurationModel.helperText,
                       helperLink: helperLink,
-                      style: configurationModel.style,
+                      isOutlined: configurationModel.isOutlined,
                       status: configurationModel.status)
             .environment(\.oudsRoundedTextInput, configurationModel.rounded)
             .autocorrectionDisabled()
@@ -67,6 +66,7 @@ struct TextInputDemo: View {
                     configurationModel.helperText = "Error text detected"
                 }
             }
+            .searchable(text: $configurationModel.text)
     }
 
     private var leadingIcon: Image? {
@@ -79,7 +79,7 @@ struct TextInputDemo: View {
         }
 
         return .init(icon: Image(decorative: "ic_heart"),
-                     accessibilityLabel: "app_components_button_icon_a11y".localized()) {}
+                     accessibilityLabel: "app_components_common_icon_a11y".localized()) {}
     }
 
     private var helperLink: OUDSTextInput.Helperlink? {
