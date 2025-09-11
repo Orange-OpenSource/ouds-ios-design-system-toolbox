@@ -4431,13 +4431,13 @@
       }
     },
     "Orange" : {
-
+      "shouldTranslate" : false
     },
     "Orange Business Tools" : {
-
+      "shouldTranslate" : false
     },
     "Orange Inverse" : {
-
+      "shouldTranslate" : false
     }
   },
   "version" : "1.0"
