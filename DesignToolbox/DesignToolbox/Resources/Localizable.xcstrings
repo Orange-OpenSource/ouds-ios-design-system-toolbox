@@ -1226,30 +1226,6 @@
         }
       }
     },
-    "app_components_button_icon_a11y" : {
-      "comment" : "Component - Button (a11y)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "هذه تسمية زائفة لوصف أيقونة"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This is a dumb accessibility label for an icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ceci est un label bidon pour décrire une icône"
-          }
-        }
-      }
-    },
     "app_components_button_label" : {
       "comment" : "Component - Button",
       "extractionState" : "manual",
@@ -2074,6 +2050,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_icon_a11y" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذه تسمية زائفة لوصف أيقونة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is a dumb accessibility label for an icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceci est un label bidon pour décrire une icône"
+          }
+        }
+      }
+    },
     "app_components_common_iconOnlyLayout_label" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
@@ -2248,6 +2248,30 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_common_outlined_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outlined"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outlined"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outlined"
+          }
+        }
+      }
     },
     "app_components_common_readOnly_label" : {
       "comment" : "Component - Common",
@@ -2814,31 +2838,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_link_size_label" : {
-      "comment" : "Component - Link",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_radioButton_description_text" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
@@ -3006,31 +3005,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Radio button item"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_radioButton_radioButtonItem_outlined_label" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Outlined"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Outlined"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Outlined"
           }
         }
       },
@@ -3331,31 +3305,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_text_input_trailingIcon_label" : {
-      "comment" : "Compontn - TextInput",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Training icon"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Training icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Training icon"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_textInput_description_text" : {
       "comment" : "Component - TextInput",
       "extractionState" : "manual",
@@ -3497,56 +3446,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Prefix"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_textInput_style_alternative_label" : {
-      "comment" : "Component - TextInput",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alternative"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alternative"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alternative"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_textInput_style_default_label" : {
-      "comment" : "Commonent - TextInput",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Default"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Default"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Default"
           }
         }
       },

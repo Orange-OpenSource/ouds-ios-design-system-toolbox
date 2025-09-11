@@ -29,10 +29,6 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
-    @Published var layout: OUDSTextInput.Layout {
-        didSet { updateCode() }
-    }
-
     @Published var label: String {
         didSet { updateCode() }
     }
@@ -73,7 +69,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var style: OUDSTextInput.Style {
+    @Published var isOutlined: Bool {
         didSet { updateCode() }
     }
 
@@ -94,8 +90,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         text = ""
         helperLinkText = ""
         rounded = false
-        layout = .label
-        style = .default
+        isOutlined = false
         status = .default
     }
 
@@ -116,14 +111,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         // swiftlint:disable line_length
         code =
             """
-            OUDSTextInput(\(layoutPattern)\(labelPattern)\(textPattern)\(placeholderPattern)\(leadingIconPattern)\(trailingActionPattern)\(heleprTextPattern)\(helperLinkPattern)\(stylePattern)\(statusPattern))
+            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(leadingIconPattern)\(trailingActionPattern)\(heleprTextPattern)\(helperLinkPattern)\(outlinedPattern)\(statusPattern))
             \(roundedCodePattern)
             """
         // swiftlint:enable line_length
-    }
-
-    private var layoutPattern: String {
-        "layout: \(layout.technicalDescription)"
     }
 
     private var labelPattern: String {
@@ -146,7 +137,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 
     private var trailingActionPattern: String {
-        let accessibilityLabel = "app_components_button_icon_a11y".localized()
+        let accessibilityLabel = "app_components_common_icon_a11y".localized()
         return trailingAction ? ", trailingAction: .init(icon: Image(decorative: \"ic_heart\"), accessibilityLabel: \"\(accessibilityLabel)\") {}" : ""
     }
 
@@ -158,8 +149,8 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         helperLinkText.isEmpty ? "" : ", helperLink: .init(text: \"\(helperLinkText)\") {}"
     }
 
-    private var stylePattern: String {
-        ", style: \(style.technicalDescription)"
+    private var outlinedPattern: String {
+        isOutlined ? ", isOutlined: true" : ""
     }
 
     private var statusPattern: String {
@@ -204,17 +195,11 @@ struct TextInputConfigurationView: View {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 OUDSSwitchItem("app_components_common_rounded_label", isOn: $configurationModel.rounded)
 
+                OUDSSwitchItem("app_components_common_outlined_label", isOn: $configurationModel.isOutlined)
+
                 OUDSSwitchItem("app_components_textInput_leadingIcon_label", isOn: $configurationModel.leadingIcon)
 
                 OUDSSwitchItem("app_components_textInput_trailingIcon_label", isOn: $configurationModel.trailingAction)
-
-                OUDSChipPicker(title: "app_components_common_layout_label",
-                               selection: $configurationModel.layout,
-                               chips: OUDSTextInput.Layout.chips)
-
-                OUDSChipPicker(title: "app_components_common_style_label",
-                               selection: $configurationModel.style,
-                               chips: OUDSTextInput.Style.chips)
 
                 OUDSChipPicker(title: "app_components_common_status_label",
                                selection: $configurationModel.status,
@@ -233,57 +218,6 @@ struct TextInputConfigurationView: View {
                 }
             }
         }
-    }
-}
-
-extension OUDSTextInput.Style: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    public nonisolated(unsafe) static var allCases: [OUDSTextInput.Style] = [.default, .alternative]
-
-    public var description: String {
-        switch self {
-        case .default:
-            String(localized: "app_components_textInput_style_default_label")
-        case .alternative:
-            String(localized: "app_components_textInput_style_alternative_label")
-        }
-    }
-
-    public var technicalDescription: String {
-        ".\(description.lowercased())"
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
-}
-
-extension OUDSTextInput.Layout: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
-    public nonisolated(unsafe) static let allCases: [OUDSTextInput.Layout] = [.label, .placeholder]
-
-    public var description: String {
-        switch self {
-        case .label:
-            String(localized: "app_components_common_label_label")
-        case .placeholder:
-            String(localized: "app_components_textInput_placeholder_label")
-        }
-    }
-
-    public var technicalDescription: String {
-        ".\(description.lowercased())"
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
     }
 }
 

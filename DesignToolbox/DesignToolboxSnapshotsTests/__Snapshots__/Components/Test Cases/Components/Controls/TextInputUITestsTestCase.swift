@@ -41,11 +41,11 @@ open class TextInputUITestsTestCase: XCTestCase {
     @MainActor func testAllTextInputs(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
         for rounded in [true, false] {
-            for style in OUDSTextInput.Style.allCases {
+            for outlined in [true, false] {
                 // Drop the loading status still the progress indicator is done
                 for status in OUDSTextInput.Status.allCases where status != .loading {
-                    testTextInput(theme: theme, interfaceStyle: interfaceStyle, testType: .styleAndStatus, rounded: rounded, status: status, style: style)
-                    testTextInput(theme: theme, interfaceStyle: interfaceStyle, testType: .helpers, rounded: rounded, status: status, style: style)
+                    testTextInput(theme: theme, interfaceStyle: interfaceStyle, testType: .styleAndStatus, status: status, rounded: rounded, outlined: outlined)
+                    testTextInput(theme: theme, interfaceStyle: interfaceStyle, testType: .helpers, status: status, rounded: rounded, outlined: outlined)
                 }
             }
         }
@@ -67,19 +67,19 @@ open class TextInputUITestsTestCase: XCTestCase {
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     ///   - testStyle: the type of test expected
-    ///   - rounded: the rounded flag
     ///   - status: the status of the text input
-    ///   - style: the style of the text input
+    ///   - rounded: flag to know if rounded
+    ///   - outlined: flag to know if outlined
     @MainActor private func testTextInput(theme: OUDSTheme,
                                           interfaceStyle: UIUserInterfaceStyle,
                                           testType: TestTextInputView.TestType,
-                                          rounded: Bool,
                                           status: OUDSTextInput.Status,
-                                          style: OUDSTextInput.Style)
+                                          rounded: Bool,
+                                          outlined: Bool)
     {
         // Generate the illustration for configuration elements
         let illustration = OUDSThemeableView(theme: theme) {
-            TestTextInputView(type: testType, status: status, style: style)
+            TestTextInputView(type: testType, status: status, outlined: outlined)
                 .environment(\.oudsRoundedTextInput, rounded)
                 .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
@@ -88,10 +88,10 @@ open class TextInputUITestsTestCase: XCTestCase {
         // test<testType>_<themeName>_<colorScheme>.<roundedPattern><stylePattern><statusPattern>
         let testName = "test\(testType)_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let roundedPettern = rounded ? ".rounded" : ""
-        let stylePattern = style.technicalDescription.localized()
+        let outlinedPattern = outlined ? ".outlined" : ""
         let statusPattern = status.technicalDescription
 
-        let named = "\(roundedPettern)\(stylePattern)\(statusPattern)"
+        let named = "\(roundedPettern)\(outlinedPattern)\(statusPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
@@ -117,7 +117,7 @@ struct TestTextInputView: View {
 
     let type: TestType
     let status: OUDSTextInput.Status
-    let style: OUDSTextInput.Style
+    let outlined: Bool
     private let icon = Image(decorative: "ic_heart")
     @State private var text = ""
 
@@ -137,24 +137,75 @@ struct TestTextInputView: View {
     /// View to test all layouts in once
     private var textInputWithStatus: some View {
         VStack(alignment: .leading, spacing: 1) {
-            OUDSTextInput(layout: .label, label: "Label", text: $text, status: status)
-            OUDSTextInput(layout: .label, label: "Label", text: $text, leadingIcon: icon, status: status)
-            OUDSTextInput(layout: .label, label: "Label", text: $text, trailingAction: trailingAction, status: status)
-            OUDSTextInput(layout: .label, label: "Label", text: $text, leadingIcon: icon, trailingAction: trailingAction, status: status)
+            OUDSTextInput(label: "Label",
+                          text: $text,
+                          isOutlined: outlined,
+                          status: status)
 
-            OUDSTextInput(layout: .placeholder, label: "Label", text: $text, placeholder: placeholder, status: status)
-            OUDSTextInput(layout: .placeholder, label: "Label", text: $text, placeholder: placeholder, leadingIcon: icon, status: status)
-            OUDSTextInput(layout: .placeholder, label: "Label", text: $text, placeholder: placeholder, trailingAction: trailingAction, status: status)
-            OUDSTextInput(layout: .placeholder, label: "Label", text: $text, placeholder: placeholder, leadingIcon: icon, trailingAction: trailingAction, status: status)
+            OUDSTextInput(label: "Label",
+                          text: $text,
+                          leadingIcon: icon,
+                          isOutlined: outlined,
+                          status: status)
+
+            OUDSTextInput(label: "Label",
+                          text: $text,
+                          trailingAction: trailingAction,
+                          isOutlined: outlined,
+                          status: status)
+
+            OUDSTextInput(label: "Label",
+                          text: $text,
+                          leadingIcon: icon,
+                          trailingAction: trailingAction,
+                          isOutlined: outlined,
+                          status: status)
+
+            OUDSTextInput(label: "Label",
+                          text: $text,
+                          placeholder: placeholder,
+                          isOutlined: outlined,
+                          status: status)
+
+            OUDSTextInput(label: "Label",
+                          text: $text,
+                          placeholder: placeholder,
+                          leadingIcon: icon,
+                          isOutlined: outlined,
+                          status: status)
+
+            OUDSTextInput(label: "Label",
+                          text: $text,
+                          placeholder: placeholder,
+                          trailingAction: trailingAction,
+                          isOutlined: outlined,
+                          status: status)
+
+            OUDSTextInput(label: "Label", text: $text, placeholder: placeholder, leadingIcon: icon, trailingAction: trailingAction, isOutlined: outlined, status: status)
         }
     }
 
     /// View to test helpers (Helper Text, Helper Link)
     private var textinputWithHelper: some View {
         VStack(alignment: .leading, spacing: 1) {
-            OUDSTextInput(layout: .label, label: "Label", text: $text, helperText: "Helper text", status: status)
-            OUDSTextInput(layout: .label, label: "Label", text: $text, helperLink: helperLink, status: status)
-            OUDSTextInput(layout: .label, label: "Label", text: $text, helperText: "Helper text", helperLink: helperLink, status: status)
+            OUDSTextInput(label: "Label",
+                          text: $text,
+                          helperText: "Helper text",
+                          isOutlined: outlined,
+                          status: status)
+
+            OUDSTextInput(label: "Label",
+                          text: $text,
+                          helperLink: helperLink,
+                          isOutlined: outlined,
+                          status: status)
+
+            OUDSTextInput(label: "Label",
+                          text: $text,
+                          helperText: "Helper text",
+                          helperLink: helperLink,
+                          isOutlined: outlined,
+                          status: status)
         }
     }
 
