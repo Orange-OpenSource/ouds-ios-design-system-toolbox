@@ -188,7 +188,6 @@ struct ButtonConfigurationView: View {
                     .disabled(configurationModel.style != .default)
 
                 OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $configurationModel.onColoredSurface)
-                OUDSSwitchItem("app_components_button_rounded_label", isOn: $configurationModel.rounded)
 
                 OUDSChipPicker(title: "app_components_common_hierarchy_label",
                                selection: $configurationModel.hierarchy,
