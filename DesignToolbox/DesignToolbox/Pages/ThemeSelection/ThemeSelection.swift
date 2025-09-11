@@ -26,7 +26,7 @@ extension OUDSTheme: @retroactive Equatable {
     // MARK: Equtabable
 
     public static func == (lhs: OUDSTheme, rhs: OUDSTheme) -> Bool {
-        lhs.name == rhs.name
+        lhs.id == rhs.id
     }
 }
 
@@ -35,7 +35,21 @@ extension OUDSTheme: @retroactive Equatable {
 /// It must be `Hashable` because it is used in a picker than need `Hashable` element.
 extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
-    var name: String {
+    /// The text displayed in submenus of the theme selector
+    var description: String {
+        if self is SoshTheme {
+            return "Sosh"
+        }
+        if self is WireframeTheme {
+            return "Wireframe"
+        }
+        return tuning.hasRoundedCorners ? "Rounded theme" : "Sharp theme"
+    }
+
+    // MARK: Identifiable
+
+    /// The unique identifier to store the selected theme
+    public var id: String {
         if self is OrangeTheme {
             return tuning.hasRoundedCorners ? "Orange (tuned)" : "Orange"
         }
@@ -54,26 +68,10 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         return String(describing: Self.self)
     }
 
-    var description: String {
-        if self is SoshTheme {
-            return "Sosh"
-        }
-        if self is WireframeTheme {
-            return "Wireframe"
-        }
-        return tuning.hasRoundedCorners ? "Rounded theme" : "Sharp theme"
-    }
-
-    // MARK: Identifiable
-
-    public var id: String {
-        name
-    }
-
     // MARK: Hashable
 
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
+        hasher.combine(id)
     }
 }
 
@@ -92,12 +90,12 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
     var hotSwitchWarning: HotSwitchWarning
 
-    @UserDefaultsWrapper(key: "com.orange.ouds.demoapp.themeName", defaultValue: "Orange")
-    private static var currentThemeName
+    @UserDefaultsWrapper(key: "com.orange.ouds.demoapp.theme", defaultValue: "Orange")
+    private static var currentTheme
 
     @Published var currentTheme: OUDSTheme {
         didSet {
-            ThemeProvider.currentThemeName = currentTheme.name
+            ThemeProvider.currentTheme = currentTheme.id
             if currentTheme != oldValue {
                 hotSwitchWarning.showAlert = true
             }
@@ -124,7 +122,7 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         otherThemes = [soshTheme, wireframeTheme]
         allThemes = orangeThemes + orangeBusinessToolsThemes + orangeInverseThemes + otherThemes
 
-        if let theme = allThemes.first(where: { $0.name == ThemeProvider.currentThemeName }) {
+        if let theme = allThemes.first(where: { $0.id == ThemeProvider.currentTheme }) {
             currentTheme = theme
         } else {
             currentTheme = defaultTheme
@@ -157,7 +155,7 @@ struct ThemeSelectionButton: View {
 
     var body: some View {
         Menu {
-            // Orange themes
+            // Orange theme and tunings
             Menu("Orange") {
                 Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
                     ForEach(themeProvider.orangeThemes, id: \.id) { theme in
@@ -167,7 +165,7 @@ struct ThemeSelectionButton: View {
                 .pickerStyle(.automatic)
             }
 
-            // Orange Business Tools themes
+            // Orange Business Tools theme and tunings
             Menu("Orange Business Tools") {
                 Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
                     ForEach(themeProvider.orangeBusinessToolsThemes, id: \.id) { theme in
@@ -177,7 +175,7 @@ struct ThemeSelectionButton: View {
                 .pickerStyle(.automatic)
             }
 
-            // Orange Inverse themes
+            // Orange Inverse theme and tunings
             Menu("Orange Inverse") {
                 Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
                     ForEach(themeProvider.orangeInverseThemes, id: \.id) { theme in
@@ -187,7 +185,7 @@ struct ThemeSelectionButton: View {
                 .pickerStyle(.automatic)
             }
 
-            // Sosh and Wireframe themes
+            // Sosh and Wireframe themes (which do not have tunings)
             Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
                 ForEach(themeProvider.otherThemes, id: \.id) { theme in
                     Text(theme.description).tag(theme)
