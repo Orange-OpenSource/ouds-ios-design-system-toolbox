@@ -39,10 +39,6 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var rounded: Bool {
-        didSet { updateCode() }
-    }
-
     // MARK: Initializer
 
     override init() {
@@ -51,16 +47,11 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         layout = .textOnly
         hierarchy = .default
         style = .default
-        rounded = false
     }
 
     deinit {}
 
     // MARK: Component Configuration
-
-    private var roundedCodePattern: String {
-        rounded ? ".environment(\\.oudsRoundedButton, true)" : ""
-    }
 
     private var disableCodePattern: String {
         if case .default = style {
@@ -81,21 +72,21 @@ final class ButtonConfigurationModel: ComponentConfiguration {
                 """
                 OUDSButton(text: \"Button\", hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
-                \(coloredSurfaceCodeModifier)\(roundedCodePattern)
+                \(coloredSurfaceCodeModifier)
                 """
         case .iconOnly:
             code =
                 """
                 OUDSButton(icon: Image(\"ic_heart\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
-                \(coloredSurfaceCodeModifier)\(roundedCodePattern)
+                \(coloredSurfaceCodeModifier)
                 """
         case .textAndIcon:
             code =
                 """
                 OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
-                \(coloredSurfaceCodeModifier)\(roundedCodePattern)
+                \(coloredSurfaceCodeModifier)
                 """
         }
     }

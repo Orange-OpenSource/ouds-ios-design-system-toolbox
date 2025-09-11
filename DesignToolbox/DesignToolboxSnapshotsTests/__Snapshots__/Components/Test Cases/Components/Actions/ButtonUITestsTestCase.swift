@@ -39,25 +39,21 @@ open class ButtonUITestsTestCase: XCTestCase {
     @MainActor func testAllButtons(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for hierarchy in OUDSButton.Hierarchy.allCases {
             for layout in ButtonTest.Layout.allCases {
-                for rounded in [true, false] {
-                    for disabled in [true, false] {
-                        testButton(theme: theme,
-                                   interfaceStyle: interfaceStyle,
-                                   a11yContrast: .normal,
-                                   layout: layout,
-                                   hierarchy: hierarchy,
-                                   disabled: disabled,
-                                   rounded: rounded,
-                                   onColoredSurface: false)
-                        testButton(theme: theme,
-                                   interfaceStyle: interfaceStyle,
-                                   a11yContrast: .high,
-                                   layout: layout,
-                                   hierarchy: hierarchy,
-                                   disabled: disabled,
-                                   rounded: rounded,
-                                   onColoredSurface: false)
-                    }
+                for disabled in [true, false] {
+                    testButton(theme: theme,
+                               interfaceStyle: interfaceStyle,
+                               a11yContrast: .normal,
+                               layout: layout,
+                               hierarchy: hierarchy,
+                               disabled: disabled,
+                               onColoredSurface: false)
+                    testButton(theme: theme,
+                               interfaceStyle: interfaceStyle,
+                               a11yContrast: .high,
+                               layout: layout,
+                               hierarchy: hierarchy,
+                               disabled: disabled,
+                               onColoredSurface: false)
                 }
             }
         }
@@ -78,25 +74,21 @@ open class ButtonUITestsTestCase: XCTestCase {
         // Skip test for negative and brand hierarchy because it is not allowed on colored surface
         for hierarchy in OUDSButton.Hierarchy.allCases where hierarchy != .negative && hierarchy != .brand {
             for layout in ButtonTest.Layout.allCases {
-                for rounded in [true, false] {
-                    for disabled in [true, false] {
-                        testButton(theme: theme,
-                                   interfaceStyle: interfaceStyle,
-                                   a11yContrast: .normal,
-                                   layout: layout,
-                                   hierarchy: hierarchy,
-                                   disabled: disabled,
-                                   rounded: rounded,
-                                   onColoredSurface: true)
-                        testButton(theme: theme,
-                                   interfaceStyle: interfaceStyle,
-                                   a11yContrast: .high,
-                                   layout: layout,
-                                   hierarchy: hierarchy,
-                                   disabled: disabled,
-                                   rounded: rounded,
-                                   onColoredSurface: true)
-                    }
+                for disabled in [true, false] {
+                    testButton(theme: theme,
+                               interfaceStyle: interfaceStyle,
+                               a11yContrast: .normal,
+                               layout: layout,
+                               hierarchy: hierarchy,
+                               disabled: disabled,
+                               onColoredSurface: true)
+                    testButton(theme: theme,
+                               interfaceStyle: interfaceStyle,
+                               a11yContrast: .high,
+                               layout: layout,
+                               hierarchy: hierarchy,
+                               disabled: disabled,
+                               onColoredSurface: true)
                 }
             }
         }
@@ -117,7 +109,6 @@ open class ButtonUITestsTestCase: XCTestCase {
     ///   - layout: the layout of the button
     ///   - hierarchy; the hierarchy of the button
     ///   - disabled: the disabled flag
-    ///   - rounded: a flag to activate rounded behavior
     ///   - onColoredSurface: a flag to know if button is on a colored surface or not
     @MainActor private func testButton(theme: OUDSTheme,
                                        interfaceStyle: UIUserInterfaceStyle,
@@ -125,7 +116,6 @@ open class ButtonUITestsTestCase: XCTestCase {
                                        layout: ButtonTest.Layout,
                                        hierarchy: OUDSButton.Hierarchy,
                                        disabled: Bool,
-                                       rounded: Bool = false,
                                        onColoredSurface: Bool = false)
     {
         // Generate the illustration for the specified configuration
@@ -133,15 +123,13 @@ open class ButtonUITestsTestCase: XCTestCase {
             ButtonTest(layout: layout, hierarchy: hierarchy, style: .default, onColoredSurface: onColoredSurface)
                 .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
                 .disabled(disabled)
-                .environment(\.oudsRoundedButton, rounded)
         }
 
         // Create a unique snapshot name based on the current configuration
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")_\(a11yContrast == .high ? "HighContrast" : "")"
         let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
         let disabledPatern = disabled ? "_Disabled" : ""
-        let roundedPattern = rounded ? "_Rounded" : ""
-        let name = "\(coloredSurfacePatern)\(layout.rawValue.camelCase)_\(hierarchy.description)_\(OUDSButton.Style.default.description)\(disabledPatern)\(roundedPattern)"
+        let name = "\(coloredSurfacePatern)\(layout.rawValue.camelCase)_\(hierarchy.description)_\(OUDSButton.Style.default.description)\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
