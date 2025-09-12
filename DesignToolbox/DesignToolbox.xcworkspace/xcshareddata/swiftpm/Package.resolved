@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "04a596968df2a8a80c8fe3882e9f97d7ae4f3e81"
+        "branch" : "957-buga11y-badge-with-icon-should-not-be-hidden-to-voice-over",
+        "revision" : "6a07e1d8fdadb64b3f60190dcfa79fa4f0348d69"
       }
     },
     {

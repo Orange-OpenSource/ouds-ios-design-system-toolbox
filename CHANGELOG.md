@@ -13,6 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Theme selector icon (Orange-OpenSource/ouds-ios#943)
 - [DesignToolbox] [Library] Tuning of themes and theme selector (Orange-OpenSource/ouds-ios#951)
 
+### Fixed
+
+- [Library] Vocalisation of badge with icons (Orange-OpenSource/ouds-ios#956)
+- [Library] Badge component does not have bigger sizes if text sizes is increased (Orange-OpenSource#844)
+
 ## [0.18.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.17.0...0.18.0) - 2025-09-05
 
 ### Added
