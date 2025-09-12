@@ -26,7 +26,7 @@ extension OUDSTheme: @retroactive Equatable {
     // MARK: Equtabable
 
     public static func == (lhs: OUDSTheme, rhs: OUDSTheme) -> Bool {
-        lhs.name == rhs.name
+        lhs.id == rhs.id
     }
 }
 
@@ -35,15 +35,29 @@ extension OUDSTheme: @retroactive Equatable {
 /// It must be `Hashable` because it is used in a picker than need `Hashable` element.
 extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
-    var name: String {
+    /// The text displayed in submenus of the theme selector
+    var description: String {
+        if self is SoshTheme {
+            return "Sosh"
+        }
+        if self is WireframeTheme {
+            return "Wireframe"
+        }
+        return tuning.hasRoundedCorners ? "Rounded theme" : "Sharp theme"
+    }
+
+    // MARK: Identifiable
+
+    /// The unique identifier to store the selected theme
+    public var id: String {
         if self is OrangeTheme {
-            return "Orange"
+            return tuning.hasRoundedCorners ? "Orange (tuned)" : "Orange"
         }
         if self is OrangeBusinessToolsTheme {
-            return "Orange Business Tools"
+            return tuning.hasRoundedCorners ? "Orange Business Tools (tuned)" : "Orange Business Tools"
         }
         if self is OrangeInverseTheme {
-            return "Orange Inverse"
+            return tuning.hasRoundedCorners ? "Orange Inverse (tuned)" : "Orange Inverse"
         }
         if self is SoshTheme {
             return "Sosh"
@@ -54,16 +68,10 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         return String(describing: Self.self)
     }
 
-    // MARK: Identifiable
-
-    public var id: String {
-        name
-    }
-
     // MARK: Hashable
 
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
+        hasher.combine(id)
     }
 }
 
@@ -73,15 +81,21 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 /// It also stores the current theme, selected by user.
 @MainActor final class ThemeProvider: ObservableObject {
 
-    let themes: [OUDSTheme]
+    let orangeThemes: [OUDSTheme]
+    let orangeBusinessToolsThemes: [OUDSTheme]
+    let orangeInverseThemes: [OUDSTheme]
+    let otherThemes: [OUDSTheme]
+
+    let allThemes: [OUDSTheme]
+
     var hotSwitchWarning: HotSwitchWarning
 
-    @UserDefaultsWrapper(key: "com.orange.ouds.demoapp.themeName", defaultValue: "Orange")
-    private static var currentThemeName
+    @UserDefaultsWrapper(key: "com.orange.ouds.demoapp.theme", defaultValue: "Orange")
+    private static var currentTheme
 
     @Published var currentTheme: OUDSTheme {
         didSet {
-            ThemeProvider.currentThemeName = currentTheme.name
+            ThemeProvider.currentTheme = currentTheme.id
             if currentTheme != oldValue {
                 hotSwitchWarning.showAlert = true
             }
@@ -89,15 +103,26 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
     }
 
     init() {
+
+        // Init all themes
         let orangeTheme = OrangeTheme()
+        let orangeThemeRounded = OrangeTheme(tuning: Tuning(hasRoundedCorners: true))
         let orangeBusinessToolsTheme = OrangeBusinessToolsTheme()
+        let orangeBusinessToolsThemeRounded = OrangeBusinessToolsTheme(tuning: Tuning(hasRoundedCorners: true))
         let orangeInverseTheme = OrangeInverseTheme()
+        let orangeInverseThemeRounded = OrangeInverseTheme(tuning: Tuning(hasRoundedCorners: true))
         let soshTheme = SoshTheme()
         let wireframeTheme = WireframeTheme()
         let defaultTheme = orangeTheme
-        themes = [orangeTheme, orangeBusinessToolsTheme, orangeInverseTheme, soshTheme, wireframeTheme]
 
-        if let theme = themes.first(where: { $0.name == ThemeProvider.currentThemeName }) {
+        // Fill arrays for menus
+        orangeThemes = [orangeTheme, orangeThemeRounded]
+        orangeBusinessToolsThemes = [orangeBusinessToolsTheme, orangeBusinessToolsThemeRounded]
+        orangeInverseThemes = [orangeInverseTheme, orangeInverseThemeRounded]
+        otherThemes = [soshTheme, wireframeTheme]
+        allThemes = orangeThemes + orangeBusinessToolsThemes + orangeInverseThemes + otherThemes
+
+        if let theme = allThemes.first(where: { $0.id == ThemeProvider.currentTheme }) {
             currentTheme = theme
         } else {
             currentTheme = defaultTheme
@@ -130,14 +155,47 @@ struct ThemeSelectionButton: View {
 
     var body: some View {
         Menu {
+            // Orange theme and tunings
+            Menu("Orange") {
+                Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
+                    ForEach(themeProvider.orangeThemes, id: \.id) { theme in
+                        Text(theme.description).tag(theme)
+                    }
+                }
+                .pickerStyle(.automatic)
+            }
+
+            // Orange Business Tools theme and tunings
+            Menu("Orange Business Tools") {
+                Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
+                    ForEach(themeProvider.orangeBusinessToolsThemes, id: \.id) { theme in
+                        Text(theme.description).tag(theme)
+                    }
+                }
+                .pickerStyle(.automatic)
+            }
+
+            // Orange Inverse theme and tunings
+            Menu("Orange Inverse") {
+                Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
+                    ForEach(themeProvider.orangeInverseThemes, id: \.id) { theme in
+                        Text(theme.description).tag(theme)
+                    }
+                }
+                .pickerStyle(.automatic)
+            }
+
+            // Sosh and Wireframe themes (which do not have tunings)
             Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
-                ForEach(themeProvider.themes, id: \.id) { theme in
-                    Text(theme.name).tag(theme)
+                ForEach(themeProvider.otherThemes, id: \.id) { theme in
+                    Text(theme.description).tag(theme)
+                    Divider()
                 }
             }
             .pickerStyle(.automatic)
         } label: {
-            Image(systemName: "paintpalette")
+            Image(decorative: "ic_theme")
+                .scaledToFit()
                 .accessibilityLabel("app_topBar_theme_button_a11y")
                 .accessibilityHint("app_topBar_theme_button_hint_a11y")
         }
