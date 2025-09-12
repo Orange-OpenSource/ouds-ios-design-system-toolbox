@@ -27,8 +27,7 @@ struct TextInputElement: DesignToolboxElement {
             name: name,
             description: "app_components_textInput_description_text",
             version: OUDSVersions.componentTextInputVersion,
-            demoScreen: AnyView(TextInputPage()))
-        )
+            demoScreen: AnyView(TextInputPage())))
     }
 }
 
