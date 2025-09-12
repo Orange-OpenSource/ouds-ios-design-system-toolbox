@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "951-define-rounded-corner-settings-through-theme-definition",
-        "revision" : "348ca3f6cb1b18c96344211b9ea3bbeb76f372eb"
+        "branch" : "develop",
+        "revision" : "202c3f21aea1bdbc8736d9ae01a44426db95b95e"
       }
     },
     {
