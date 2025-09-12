@@ -1,5 +1,5 @@
 {
-  "originHash" : "6ea3d37f1306824a57aceca4318954b015df152cccfd354b173dfe326870c15b",
+  "originHash" : "a33c7ab1e5ca6c9ef8e19d76bbf9a6ff94589dd8744eefa6d39c1ed344b5b939",
   "pins" : [
     {
       "identity" : "accessibility-statement-lib-ios",
@@ -47,6 +47,27 @@
       }
     },
     {
+<<<<<<< HEAD
+=======
+      "identity" : "swiftformat",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nicklockwood/SwiftFormat",
+      "state" : {
+        "revision" : "b83a8f132ff5430f3b6ff7d912baa407caea9e29",
+        "version" : "0.57.2"
+      }
+    },
+    {
+      "identity" : "swiftlintplugins",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SimplyDanny/SwiftLintPlugins",
+      "state" : {
+        "revision" : "634ada2eee7eac4ca79bf1fc8943ddc91408eb06",
+        "version" : "0.60.0"
+      }
+    },
+    {
+>>>>>>> b1a1aa86 (refactor: fix compilation errors)
       "identity" : "xctest-dynamic-overlay",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",
