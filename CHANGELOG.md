@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.18.0...develop)
 
+### Changed
+
+- [DesignToolbox] Update `json` RubyGem from v2.13.1 to v2.13.2
+- [DesignSystemToolbox] Update various GitHub Actions workflows dependencies
+
 ## [0.18.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.17.0...0.18.0) - 2025-09-05
 
 ### Added
