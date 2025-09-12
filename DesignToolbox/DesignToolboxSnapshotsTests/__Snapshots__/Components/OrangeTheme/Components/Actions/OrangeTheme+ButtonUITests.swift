@@ -23,25 +23,49 @@ import SwiftUI
 final class OrangeThemeButtonUITests: ButtonUITestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
-    private var theme: OUDSTheme!
+    private var standardTheme: OUDSTheme!
+    private var tunedTheme: OUDSTheme!
     // swiftlint:enable implicitly_unwrapped_optional
 
     override func setUp() {
-        theme = OrangeTheme()
+        standardTheme = OrangeTheme() // Default tuning do not have rounded corners
+        tunedTheme = OrangeTheme(tuning: Tuning(hasRoundedCorners: true))
     }
 
-    /// Tests all buttons configuration in the `OrangeTheme` with the `light` color schemes.
-    @MainActor func testAllButtonsOrangeThemeLight() {
+    // MARK: Orange theme - no tuning
+
+    /// Tests all buttons configuration in the `OrangeTheme` with the `light` color schemes
+    /// with default tuning.
+    @MainActor func testAllButtonsOrangeStandardThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
-        testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
-        testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
+        testAllButtons(theme: standardTheme, interfaceStyle: interfaceStyle)
+        testAllButtonsOnColoredSurface(theme: standardTheme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
-    @MainActor func testAllButtonsOrangeThemeDark() {
+    /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes
+    /// with default tuning.
+    @MainActor func testAllButtonsOrangeStandardThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
-        testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
+        testAllButtons(theme: standardTheme, interfaceStyle: interfaceStyle)
+        testAllButtonsOnColoredSurface(theme: standardTheme, interfaceStyle: interfaceStyle)
+    }
+
+    // MARK: Orange theme - with tuning
+
+    /// Tests all buttons configuration in the `OrangeTheme` with the `light` color schemes
+    /// with special tuning (rounded corners)
+    @MainActor func testAllButtonsOrangeTunedThemeLight() {
+        let interfaceStyle = UIUserInterfaceStyle.light
+        testAllButtons(theme: tunedTheme, interfaceStyle: interfaceStyle)
+        testAllButtonsOnColoredSurface(theme: tunedTheme, interfaceStyle: interfaceStyle)
+    }
+
+    /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes
+    /// with special tuning (rounded corners)
+    @MainActor func testAllButtonsOrangeTunedThemeDark() {
+        let interfaceStyle = UIUserInterfaceStyle.dark
+        testAllButtons(theme: tunedTheme, interfaceStyle: interfaceStyle)
+        testAllButtonsOnColoredSurface(theme: tunedTheme, interfaceStyle: interfaceStyle)
     }
 }
 
