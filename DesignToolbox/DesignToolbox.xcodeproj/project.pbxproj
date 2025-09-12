@@ -3396,7 +3396,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "956-buga11y-filter-chip-component-should-have-a-toggle-role-instead-of-a-button";
 				kind = branch;
 			};
 		};

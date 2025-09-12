@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "202c3f21aea1bdbc8736d9ae01a44426db95b95e"
+        "branch" : "956-buga11y-filter-chip-component-should-have-a-toggle-role-instead-of-a-button",
+        "revision" : "b53cdaf39877a2915ddfd87432adc0ada39fbddf"
       }
     },
     {
