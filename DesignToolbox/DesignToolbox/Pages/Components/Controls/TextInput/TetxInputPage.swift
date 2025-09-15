@@ -56,7 +56,6 @@ struct TextInputDemo: View {
                       helperLink: helperLink,
                       isOutlined: configurationModel.isOutlined,
                       status: configurationModel.status)
-            .environment(\.oudsRoundedTextInput, configurationModel.rounded)
             .autocorrectionDisabled()
             .textInputAutocapitalization(.never)
             .padding(.all, theme.spaces.spaceFixedMd)

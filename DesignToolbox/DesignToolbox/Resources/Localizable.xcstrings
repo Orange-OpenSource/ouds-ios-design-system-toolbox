@@ -2298,30 +2298,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_rounded_label" : {
-      "comment" : "Component - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rounded"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rounded"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rounded"
-          }
-        }
-      }
-    },
     "app_components_common_selection_label" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",

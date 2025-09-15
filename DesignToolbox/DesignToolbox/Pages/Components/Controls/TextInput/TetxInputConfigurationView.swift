@@ -65,10 +65,6 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var rounded: Bool {
-        didSet { updateCode() }
-    }
-
     @Published var isOutlined: Bool {
         didSet { updateCode() }
     }
@@ -89,7 +85,6 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         trailingAction = false
         text = ""
         helperLinkText = ""
-        rounded = false
         isOutlined = false
         status = .default
     }
@@ -112,7 +107,6 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         code =
             """
             OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(leadingIconPattern)\(trailingActionPattern)\(heleprTextPattern)\(helperLinkPattern)\(outlinedPattern)\(statusPattern))
-            \(roundedCodePattern)
             """
         // swiftlint:enable line_length
     }
@@ -156,10 +150,6 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     private var statusPattern: String {
         ", status: \(status.technicalDescription)"
     }
-
-    private var roundedCodePattern: String {
-        rounded ? ".environment(\\.oudsRoundedTextInput, true)" : ""
-    }
 }
 
 extension OUDSTextInput.Placeholder {
@@ -193,8 +183,6 @@ struct TextInputConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-                OUDSSwitchItem("app_components_common_rounded_label", isOn: $configurationModel.rounded)
-
                 OUDSSwitchItem("app_components_common_outlined_label", isOn: $configurationModel.isOutlined)
 
                 OUDSSwitchItem("app_components_textInput_leadingIcon_label", isOn: $configurationModel.leadingIcon)
