@@ -39,14 +39,11 @@ open class TextInputUITestsTestCase: XCTestCase {
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllTextInputs(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-
-        for rounded in [true, false] {
-            for outlined in [true, false] {
-                // Drop the loading status still the progress indicator is done
-                for status in OUDSTextInput.Status.allCases where status != .loading {
-                    testTextInput(theme: theme, interfaceStyle: interfaceStyle, testType: .styleAndStatus, status: status, rounded: rounded, outlined: outlined)
-                    testTextInput(theme: theme, interfaceStyle: interfaceStyle, testType: .helpers, status: status, rounded: rounded, outlined: outlined)
-                }
+        for outlined in [true, false] {
+            // Drop the loading status still the progress indicator is done
+            for status in OUDSTextInput.Status.allCases where status != .loading {
+                testTextInput(theme: theme, interfaceStyle: interfaceStyle, testType: .styleAndStatus, status: status, outlined: outlined)
+                testTextInput(theme: theme, interfaceStyle: interfaceStyle, testType: .helpers, status: status, outlined: outlined)
             }
         }
     }
@@ -68,30 +65,26 @@ open class TextInputUITestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     ///   - testStyle: the type of test expected
     ///   - status: the status of the text input
-    ///   - rounded: flag to know if rounded
     ///   - outlined: flag to know if outlined
     @MainActor private func testTextInput(theme: OUDSTheme,
                                           interfaceStyle: UIUserInterfaceStyle,
                                           testType: TestTextInputView.TestType,
                                           status: OUDSTextInput.Status,
-                                          rounded: Bool,
                                           outlined: Bool)
     {
         // Generate the illustration for configuration elements
         let illustration = OUDSThemeableView(theme: theme) {
             TestTextInputView(type: testType, status: status, outlined: outlined)
-                .environment(\.oudsRoundedTextInput, rounded)
                 .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
         // Create a unique snapshot name based on the current configuration :
         // test<testType>_<themeName>_<colorScheme>.<roundedPattern><stylePattern><statusPattern>
         let testName = "test\(testType)_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let roundedPettern = rounded ? ".rounded" : ""
         let outlinedPattern = outlined ? ".outlined" : ""
         let statusPattern = status.technicalDescription
 
-        let named = "\(roundedPettern)\(outlinedPattern)\(statusPattern)"
+        let named = "\(outlinedPattern)\(statusPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
