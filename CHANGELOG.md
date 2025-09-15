@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.18.0...develop)
 
+### Added
+
+- [Library] TextInput component (Orange-OpenSource/ouds-ios#406)
+
 ### Changed
 
 - [DesignToolbox] Update `json` RubyGem from v2.13.1 to v2.13.2
