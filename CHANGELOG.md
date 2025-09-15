@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Management of `Helvetica Neue Arabic` font family (Orange-OpenSource/ouds-ios#1006)
 - [DesignToolbox] Color scheme selector (Orange-OpenSource/ouds-ios#944)
 
+### Added
+
+- [Library] TextInput component (Orange-OpenSource/ouds-ios#406)
+
 ### Changed
 
 - [Library] Apply `Shantell Sans` font family for `Wireframe` theme instead of `Chalkboard SE` (Orange-OpenSource/ouds-ios#990)
