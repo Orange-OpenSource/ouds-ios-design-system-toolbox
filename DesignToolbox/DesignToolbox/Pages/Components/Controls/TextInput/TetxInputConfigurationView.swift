@@ -222,7 +222,7 @@ struct TextInputConfigurationView: View {
 }
 
 extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    public nonisolated(unsafe) static var allCases: [OUDSTextInput.Status] = [.default, .error, .loading, .readOnly, .disbaled]
+    public nonisolated(unsafe) static var allCases: [OUDSTextInput.Status] = [.default, .error, .loading, .readOnly, .disabled]
 
     public var description: String {
         switch self {
@@ -234,7 +234,7 @@ extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomSt
             String(localized: "app_components_common_loader_label")
         case .readOnly:
             String(localized: "app_components_common_readOnly_label")
-        case .disbaled:
+        case .disabled:
             String(localized: "app_common_disabled_label")
         }
     }
