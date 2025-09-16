@@ -39,6 +39,9 @@ on:
       - develop
       - '*'   
 
+permissions:
+  contents: read
+
 jobs:
   # Build the app (if there are linter errors or compiler issues, it will fail)
   build:
