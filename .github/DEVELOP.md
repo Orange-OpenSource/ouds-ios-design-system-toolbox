@@ -659,7 +659,6 @@ It will help us to ensure code on pull requests or being merged compiles and has
 
 Workflows are the following:
 - [build-and-test](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml) to build and run unit tests
-- [codeql](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/codeql.yml) to automated security checks
 - [dependency-review](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/codeql.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
 - [gitleaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks.yml) to check if there are secrets leaks
 - [periphery](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/periphery.yml) to check if there is dead code
