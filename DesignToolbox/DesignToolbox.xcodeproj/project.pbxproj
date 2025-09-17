@@ -3396,7 +3396,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "957-buga11y-badge-with-icon-should-not-be-hidden-to-voice-over";
+				branch = develop;
 				kind = branch;
 			};
 		};
