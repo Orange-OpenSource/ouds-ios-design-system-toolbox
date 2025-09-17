@@ -1056,6 +1056,30 @@
         }
       }
     },
+    "app_components_badge_hint_a11y" : {
+      "comment" : "Component - Badge",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذه ملصق زائف للشارة مع ملف"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is a dumb label for the badge with an icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceci est un label bidon pour le badge avec une icône"
+          }
+        }
+      }
+    },
     "app_components_badge_iconType_label" : {
       "comment" : "Composent - Badge",
       "extractionState" : "manual",
