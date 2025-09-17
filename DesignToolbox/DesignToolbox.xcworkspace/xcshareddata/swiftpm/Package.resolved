@@ -47,8 +47,6 @@
       }
     },
     {
-<<<<<<< HEAD
-=======
       "identity" : "swiftformat",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nicklockwood/SwiftFormat",
@@ -67,7 +65,6 @@
       }
     },
     {
->>>>>>> b1a1aa86 (refactor: fix compilation errors)
       "identity" : "xctest-dynamic-overlay",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",

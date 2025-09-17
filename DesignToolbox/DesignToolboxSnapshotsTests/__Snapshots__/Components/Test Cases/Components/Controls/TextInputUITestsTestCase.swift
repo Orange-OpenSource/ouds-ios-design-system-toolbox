@@ -26,7 +26,7 @@ import XCTest
 /// Tests the UI rendering of the `OUDSTextInput` for each parameter
 open class TextInputUITestsTestCase: XCTestCase {
 
-    /// This function tests some Text input configuration for the given theme and color schemes on a standard surface.
+    /// This function tests some text input configuration for the given theme and color schemes on a standard surface.
     ///
     /// **/!\ It does not test the hover and pressed states.**
     ///
@@ -48,7 +48,7 @@ open class TextInputUITestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests some Text input configuration for the given theme and color schemes on a standard surface.
+    /// This function tests some text input configuration for the given theme and color schemes on a standard surface.
     ///
     /// **/!\ It does not test the hover and pressed states.**
     ///
@@ -63,7 +63,7 @@ open class TextInputUITestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    ///   - testStyle: the type of test expected
+    ///   - testType: the type of test expected
     ///   - status: the status of the text input
     ///   - outlined: flag to know if outlined
     @MainActor private func testTextInput(theme: OUDSTheme,
@@ -81,22 +81,23 @@ open class TextInputUITestsTestCase: XCTestCase {
         // Create a unique snapshot name based on the current configuration :
         // test<testType>_<themeName>_<colorScheme>.<roundedPattern><stylePattern><statusPattern>
         let testName = "test\(testType)_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let outlinedPattern = outlined ? ".outlined" : ""
+        let outlinedPattern = outlined ? "_Outlined" : ""
+        let roundedPattern = theme.tuning.hasRoundedTextInputs ? "_Rounded" : ""
         let statusPattern = status.technicalDescription
 
-        let named = "\(outlinedPattern)\(statusPattern)"
+        let name = "\(outlinedPattern)\(roundedPattern)\(statusPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
-                           named: named,
+                           named: name,
                            testName: testName)
     }
 }
 
 // swiftlint:enable required_deinit
 
-struct TestTextInputView: View {
+private struct TestTextInputView: View {
 
     /// Two types of test
     enum TestType: String {
@@ -127,7 +128,7 @@ struct TestTextInputView: View {
 
     // MARK: - Layout for tests
 
-    /// View to test all layouts in once
+    /// View to test all layouts at once
     private var textInputWithStatus: some View {
         VStack(alignment: .leading, spacing: 1) {
             OUDSTextInput(label: "Label",
@@ -174,7 +175,13 @@ struct TestTextInputView: View {
                           isOutlined: outlined,
                           status: status)
 
-            OUDSTextInput(label: "Label", text: $text, placeholder: placeholder, leadingIcon: icon, trailingAction: trailingAction, isOutlined: outlined, status: status)
+            OUDSTextInput(label: "Label",
+                          text: $text,
+                          placeholder: placeholder,
+                          leadingIcon: icon,
+                          trailingAction: trailingAction,
+                          isOutlined: outlined,
+                          status: status)
         }
     }
 

@@ -29,4 +29,6 @@ enum A11YIdentifiers {
 
     static let configurationTextField = "designSystemToolbox_configuration_textField"
     static let configurationSwitchSelection = "designSystemToolbox_configuration_switch_selection"
+    static let configurationSwitchOutlined = "designSystemToolbox_configuration_switch_outlined"
+    static let configurationSwitchLeadingIcon = "designSystemToolbox_configuration_switch_leadingIcon"
 }
