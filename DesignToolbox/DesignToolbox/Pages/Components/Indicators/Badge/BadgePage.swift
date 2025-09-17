@@ -56,6 +56,7 @@ struct BadgeDemo: View {
                           size: configurationModel.illustrationSize)
             case .icon:
                 OUDSBadge(icon: Image(decorative: "ic_heart"),
+                          accessibilityLabel: "app_components_badge_hint_a11y".localized(),
                           status: configurationModel.status,
                           size: configurationModel.illustrationSize)
             }
