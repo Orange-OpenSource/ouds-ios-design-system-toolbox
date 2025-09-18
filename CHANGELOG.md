@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] Button in minimal hierarchy does not handle the hover state (Orange-OpenSource/ouds-ios#942)
 - [Library] Vocalisation of badge with icons (Orange-OpenSource/ouds-ios#957)
 - [Library] Badge component does not have bigger sizes if text sizes is increased (Orange-OpenSource#844)
 
