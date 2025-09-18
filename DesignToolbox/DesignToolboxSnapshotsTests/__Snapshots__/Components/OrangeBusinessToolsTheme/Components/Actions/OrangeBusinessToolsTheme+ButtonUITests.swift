@@ -29,7 +29,7 @@ final class OrangeBusinessToolsThemeButtonUITests: ButtonUITestsTestCase {
 
     override func setUp() {
         standardTheme = OrangeBusinessToolsTheme() // Default tuning do not have rounded corners
-        tunedTheme = OrangeBusinessToolsTheme(tuning: Tuning(hasRoundedCorners: true))
+        tunedTheme = OrangeBusinessToolsTheme(tuning: Tuning(hasRoundedButtons: true))
     }
 
     // MARK: Orange Business Tools theme - no tuning

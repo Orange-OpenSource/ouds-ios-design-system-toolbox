@@ -29,7 +29,7 @@ final class OrangeInverseThemeButtonUITests: ButtonUITestsTestCase {
 
     override func setUp() {
         standardTheme = OrangeInverseTheme() // Default tuning do not have rounded corners
-        tunedTheme = OrangeInverseTheme(tuning: Tuning(hasRoundedCorners: true))
+        tunedTheme = OrangeInverseTheme(tuning: Tuning(hasRoundedButtons: true))
     }
 
     // MARK: Orange Inverse theme - no tuning
