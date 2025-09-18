@@ -15,8 +15,13 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
+<<<<<<< HEAD
         "branch" : "develop",
         "revision" : "514bd91dd9d558db49e31dad5c4cf9642797b40e"
+=======
+        "branch" : "refactor/themes-tunings",
+        "revision" : "475c748da6df8459273af891805868038a5cd408"
+>>>>>>> 14578854 (build: point to last commit for package)
       }
     },
     {
