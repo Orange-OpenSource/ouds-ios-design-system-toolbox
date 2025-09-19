@@ -43,29 +43,48 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         if self is WireframeTheme {
             return "Wireframe"
         }
-        return tuning.hasRoundedCorners ? "Rounded theme" : "Sharp theme"
+        if tuning == Tuning.OrangeFrance {
+            return "Orange France"
+        }
+        if tuning == Tuning.MaxIt {
+            return "Max it"
+        }
+        if tuning == Tuning.OrangeBusiness {
+            return "Orange Business"
+        }
+        return "Default"
     }
 
     // MARK: Identifiable
 
     /// The unique identifier to store the selected theme
     public var id: String {
+        var constructedId = String(describing: Self.self)
         if self is OrangeTheme {
-            return tuning.hasRoundedCorners ? "Orange (tuned)" : "Orange"
+            constructedId = "Orange"
         }
         if self is OrangeBusinessToolsTheme {
-            return tuning.hasRoundedCorners ? "Orange Business Tools (tuned)" : "Orange Business Tools"
+            constructedId = "Orange Business Tools"
         }
         if self is OrangeInverseTheme {
-            return tuning.hasRoundedCorners ? "Orange Inverse (tuned)" : "Orange Inverse"
+            constructedId = "Orange Inverse"
         }
         if self is SoshTheme {
-            return "Sosh"
+            constructedId = "Sosh"
         }
         if self is WireframeTheme {
-            return "Wireframe"
+            constructedId = "Wireframe"
         }
-        return String(describing: Self.self)
+        if tuning == Tuning.OrangeFrance {
+            constructedId += constructedId + " (Orange France)"
+        }
+        if tuning == Tuning.MaxIt {
+            constructedId += constructedId + " (Max It)"
+        }
+        if tuning == Tuning.OrangeBusiness {
+            constructedId += constructedId + " (Orange Business)"
+        }
+        return constructedId
     }
 
     // MARK: Hashable
@@ -105,20 +124,23 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
     init() {
 
         // Init all themes
-        let orangeTheme = OrangeTheme()
-        let orangeThemeRounded = OrangeTheme(tuning: Tuning(hasRoundedCorners: true))
-        let orangeBusinessToolsTheme = OrangeBusinessToolsTheme()
-        let orangeBusinessToolsThemeRounded = OrangeBusinessToolsTheme(tuning: Tuning(hasRoundedCorners: true))
-        let orangeInverseTheme = OrangeInverseTheme()
-        let orangeInverseThemeRounded = OrangeInverseTheme(tuning: Tuning(hasRoundedCorners: true))
+        let orangeFranceOrangeTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)
+        let maxItOrangeTheme = OrangeTheme(tuning: Tuning.MaxIt)
+        let orangeFranceOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(tuning: Tuning.OrangeBusiness)
+        let maxItOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(tuning: Tuning.MaxIt)
+        let orangeFranceOrangeInverseTheme = OrangeInverseTheme(tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeInverseTheme = OrangeInverseTheme(tuning: Tuning.OrangeBusiness)
+        let maxItOrangeInverseTheme = OrangeInverseTheme(tuning: Tuning.MaxIt)
         let soshTheme = SoshTheme()
         let wireframeTheme = WireframeTheme()
-        let defaultTheme = orangeTheme
+        let defaultTheme = orangeFranceOrangeTheme
 
         // Fill arrays for menus
-        orangeThemes = [orangeTheme, orangeThemeRounded]
-        orangeBusinessToolsThemes = [orangeBusinessToolsTheme, orangeBusinessToolsThemeRounded]
-        orangeInverseThemes = [orangeInverseTheme, orangeInverseThemeRounded]
+        orangeThemes = [orangeFranceOrangeTheme, orangeBusinessOrangeTheme, maxItOrangeTheme]
+        orangeBusinessToolsThemes = [orangeFranceOrangeBusinessToolsTheme, orangeBusinessOrangeBusinessToolsTheme, maxItOrangeBusinessToolsTheme]
+        orangeInverseThemes = [orangeFranceOrangeInverseTheme, orangeBusinessOrangeInverseTheme, maxItOrangeInverseTheme]
         otherThemes = [soshTheme, wireframeTheme]
         allThemes = orangeThemes + orangeBusinessToolsThemes + orangeInverseThemes + otherThemes
 
