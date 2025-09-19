@@ -129,7 +129,7 @@ open class ButtonUITestsTestCase: XCTestCase {
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")_\(a11yContrast == .high ? "HighContrast" : "")"
         let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
         let disabledPatern = disabled ? "_Disabled" : ""
-        let roundedPattern = theme.tuning.hasRoundedCorners ? "_Rounded" : ""
+        let roundedPattern = theme.tuning.hasRoundedButtons ? "_Rounded" : ""
         let name = "\(coloredSurfacePatern)\(layout.rawValue.camelCase)_\(hierarchy.description)_\(OUDSButton.Style.default.description)\(disabledPatern)\(roundedPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
