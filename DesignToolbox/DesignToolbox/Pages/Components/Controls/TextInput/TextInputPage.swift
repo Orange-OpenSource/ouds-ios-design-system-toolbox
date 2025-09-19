@@ -83,7 +83,7 @@ struct TextInputDemo: View {
         }
 
         return .init(icon: Image(decorative: "ic_heart"),
-                     accessibilityLabel: "app_components_common_icon_a11y".localized()) {}
+                     actionHint: "app_components_textInput_action_hint".localized()) {}
     }
 
     private var helperLink: OUDSTextInput.Helperlink? {

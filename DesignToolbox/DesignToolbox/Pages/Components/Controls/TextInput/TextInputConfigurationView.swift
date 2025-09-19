@@ -142,7 +142,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
     private var trailingActionPattern: String {
         let accessibilityLabel = "app_components_common_icon_a11y".localized()
-        return trailingAction ? ", trailingAction: .init(icon: Image(decorative: \"ic_heart\"), accessibilityLabel: \"\(accessibilityLabel)\") {}" : ""
+        return trailingAction ? ", trailingAction: .init(icon: Image(decorative: \"ic_heart\"), actionHint: \"\(accessibilityLabel)\") {}" : ""
     }
 
     private var helperTextPattern: String {

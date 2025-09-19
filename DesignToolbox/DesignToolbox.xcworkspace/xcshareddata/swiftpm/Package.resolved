@@ -16,7 +16,7 @@
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
         "branch" : "406-component-create-component---input-text",
-        "revision" : "5687be109d24d03060ae1cca797dc670aedaa0a9"
+        "revision" : "f55ac508d47e04245657b0a39d117f0cf4667570"
       }
     },
     {
@@ -44,24 +44,6 @@
       "state" : {
         "revision" : "0687f71944021d616d34d922343dcef086855920",
         "version" : "600.0.1"
-      }
-    },
-    {
-      "identity" : "swiftformat",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/nicklockwood/SwiftFormat",
-      "state" : {
-        "revision" : "b83a8f132ff5430f3b6ff7d912baa407caea9e29",
-        "version" : "0.57.2"
-      }
-    },
-    {
-      "identity" : "swiftlintplugins",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SimplyDanny/SwiftLintPlugins",
-      "state" : {
-        "revision" : "6166499ede0efe43c3809f101d2c3cd409e2b77a",
-        "version" : "0.61.0"
       }
     },
     {

@@ -3262,6 +3262,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_textInput_action_hint" : {
+      "comment" : "Component - TextInput",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر مرتين للإعجاب بشيء ما"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap twice to like somehing"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tapez deux fois pour aimer un truc"
+          }
+        }
+      }
+    },
     "app_components_textInput_description_text" : {
       "comment" : "Component - TextInput",
       "extractionState" : "manual",
