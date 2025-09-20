@@ -103,8 +103,8 @@ open class AppTestCase: XCTestCase {
 
     /// Taps an element with the given accessibility identifier be seen as "other element"
     @MainActor func tapOtherElement(withA11yIdentifier id: String, _ app: XCUIApplication) {
-        let element = app.otherElements[A11YIdentifiers.configurationSwitchSelection].firstMatch
-        XCTAssertTrue(element.exists, "The eoected other element with accessibility identifier '\(id)' does not exist")
+        let element = app.otherElements[id].firstMatch
+        XCTAssertTrue(element.exists, "The expected other element with accessibility identifier '\(id)' does not exist")
         element.tap()
     }
 

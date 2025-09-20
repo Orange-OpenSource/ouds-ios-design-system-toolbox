@@ -150,13 +150,13 @@ struct RadioPickerConfiguration: View {
             OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.isEnabled)
                 .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
-            OUDSSwitchItem("app_components_controlItem_readOnly_label", isOn: $configurationModel.isReadOnly)
+            OUDSSwitchItem("app_components_common_readOnly_label", isOn: $configurationModel.isReadOnly)
                 .disabled(!configurationModel.isEnabled || configurationModel.isError)
 
             OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
                 .disabled(!configurationModel.isEnabled || configurationModel.isReadOnly)
 
-            OUDSSwitchItem("app_components_radioButton_radioButtonItem_outlined_label", isOn: $configurationModel.isOutlined)
+            OUDSSwitchItem("app_components_common_outlined_label", isOn: $configurationModel.isOutlined)
 
             OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $configurationModel.hasDivider)
 

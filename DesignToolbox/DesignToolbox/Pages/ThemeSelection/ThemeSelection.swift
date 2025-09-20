@@ -123,6 +123,8 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
     init() {
 
+        // TODO: #960 To be improved with https://github.com/Orange-OpenSource/ouds-ios/issues/960
+
         // Init all themes
         let orangeFranceOrangeTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
         let orangeBusinessOrangeTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)

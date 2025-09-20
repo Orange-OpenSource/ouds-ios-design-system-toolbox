@@ -178,4 +178,11 @@ struct ButtonTest: View {
     }
 }
 
+// MARK: - Extension of Tuning
+
+extension Tuning {
+
+    static let roundedButtons = Tuning(hasRoundedButtons: true)
+}
+
 // swiftlint:enable required_deinit

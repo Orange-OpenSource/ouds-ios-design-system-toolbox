@@ -87,7 +87,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         isReversed = false
         divider = true
         labelText = String(localized: "app_components_common_label_label")
-        helperText = String(localized: "app_components_controlItem_helperText_label")
+        helperText = String(localized: "app_components_common_helperText_label")
         self.outlinedConfiguration = outlinedConfiguration
         self.additionalLabelConfiguration = additionalLabelConfiguration
         outlined = outlinedConfiguration?.value ?? false
