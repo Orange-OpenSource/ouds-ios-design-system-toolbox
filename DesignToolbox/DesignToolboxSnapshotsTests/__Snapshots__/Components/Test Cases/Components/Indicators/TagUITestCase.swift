@@ -33,24 +33,29 @@ open class TagUITestsTestCase: XCTestCase {
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        // swiftlint:disable for_where
         for layout in TagLayout.allCases {
             for hierarchy in OUDSTag.Hierarchy.allCases {
                 for status in OUDSTag.Status.allCases {
                     for size in OUDSTag.Size.allCases {
                         for shape in OUDSTag.Shape.allCases {
                             // Drop loader and disabled status because this case is not allowed
-                            for loader in [true, false] where !(status == .disabled && loader == true) {
-                                for flipIcon in [true, false] where !loader {
-                                    if !(status == .disabled && loader == true) {
-                                        let model = TagConfigurationModel()
-                                        model.layout = layout
-                                        model.status = status
-                                        model.hierarchy = hierarchy
-                                        model.size = size
-                                        model.shape = shape
-                                        model.loader = loader
-                                        model.flipIcon = flipIcon
+                            for loader in [true, false] {
+                                if !(status == .disabled && loader == true) {
+                                    let model = TagConfigurationModel()
+                                    model.layout = layout
+                                    model.status = status
+                                    model.hierarchy = hierarchy
+                                    model.size = size
+                                    model.shape = shape
+                                    model.loader = loader
+                                    model.flipIcon = false
 
+                                    testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+
+                                    // Add extra test for flip icon if not a loader
+                                    if loader == false, layout == .textAndIcon {
+                                        model.flipIcon = true
                                         testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
                                     }
                                 }
@@ -60,6 +65,7 @@ open class TagUITestsTestCase: XCTestCase {
                 }
             }
         }
+        // swiftlint:enable for_where
     }
 
     /// This function tests `OUDSTag` according to all parameters of the configuration available for the given
@@ -88,10 +94,10 @@ open class TagUITestsTestCase: XCTestCase {
         let statusPattern = model.status.technicalDescription
         let sizePattern = model.size.technicalDescription
         let shapePattern = model.shape.technicalDescription
-        let loaderPattern = model.loader ? "loader" : ""
-        let flipIconPattern = model.flipIcon ? "flipIcon" : ""
+        let loaderPattern = model.loader ? "_loader" : ""
+        let flipIconPattern = model.flipIcon ? "_flipIcon" : ""
 
-        let name = "\(layoutPattern)_\(hierarchyPattern)_\(statusPattern)_\(sizePattern)_\(shapePattern)_\(loaderPattern)_\(flipIconPattern)"
+        let name = "\(layoutPattern)_\(hierarchyPattern)_\(statusPattern)_\(sizePattern)_\(shapePattern)\(loaderPattern)\(flipIconPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
