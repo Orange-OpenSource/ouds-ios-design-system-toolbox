@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [DesignToolbox] Update `json` RubyGem from v2.13.2 to v2.15.2
 - [DesignToolbox] Update `ruby/setup-ruby` GitHub Actions action from v1.257.0 to v1.263.0
+- [Library] Apply `Helvetica Neue` font family for themes `Orange`, `Orange Inverse` and `Orange Business Tools` (Orange-OpenSource/ouds-ios#965)
 - [DesignToolbox] Update `json` RubyGem from v2.13.1 to v2.13.2
 - [DesignSystemToolbox] Update various GitHub Actions workflows dependencies
 - [DesignToolbox] Theme selector icon (Orange-OpenSource/ouds-ios#943)
