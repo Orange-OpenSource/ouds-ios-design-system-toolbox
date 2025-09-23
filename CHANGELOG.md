@@ -16,8 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [DesignToolbox] Update `json` RubyGem from v2.13.2 to v2.15.2
 - [DesignToolbox] Update `ruby/setup-ruby` GitHub Actions action from v1.257.0 to v1.263.0
+- [Library] Button component `hierarchy` property renamed to `appearance` (Orange-OpenSource/ouds-ios#969)
 - [DesignToolbox] Update `json` RubyGem from v2.13.1 to v2.13.2
-- [DesignSystemToolbox] Update various GitHub Actions workflows dependencies
+- [DesignToolbox] Update various GitHub Actions workflows dependencies
 - [DesignToolbox] Theme selector icon (Orange-OpenSource/ouds-ios#943)
 - [DesignToolbox] [Library] Tuning of themes and theme selector (Orange-OpenSource/ouds-ios#951)
 

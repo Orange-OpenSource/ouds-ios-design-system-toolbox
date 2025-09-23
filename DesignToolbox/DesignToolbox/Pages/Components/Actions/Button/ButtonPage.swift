@@ -47,23 +47,23 @@ private struct ButtonDemo: View {
             Spacer()
 
             // It is not allowed to place a Negative or Brand button on colored surface
-            if configurationModel.onColoredSurface, configurationModel.hierarchy == .negative || configurationModel.hierarchy == .brand {
+            if configurationModel.onColoredSurface, configurationModel.appearance == .negative || configurationModel.appearance == .brand {
                 Text("app_components_button_negative_hierary_notAllowed_text")
             } else {
                 switch configurationModel.layout {
                 case .iconOnly:
                     OUDSButton(icon: Image(decorative: "ic_heart"),
                                accessibilityLabel: "app_components_button_icon_a11y".localized(),
-                               hierarchy: configurationModel.hierarchy,
+                               appearance: configurationModel.appearance,
                                style: configurationModel.style) {}
                 case .textOnly:
                     OUDSButton(text: configurationModel.text,
-                               hierarchy: configurationModel.hierarchy,
+                               appearance: configurationModel.appearance,
                                style: configurationModel.style) {}
                 case .textAndIcon:
                     OUDSButton(icon: Image(decorative: "ic_heart"),
                                text: configurationModel.text,
-                               hierarchy: configurationModel.hierarchy,
+                               appearance: configurationModel.appearance,
                                style: configurationModel.style) {}
                 }
             }
