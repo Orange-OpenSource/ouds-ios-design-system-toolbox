@@ -39,16 +39,16 @@ private struct ButtonIllustration: View {
     var body: some View {
         VStack(spacing: theme.spaces.spaceFixedSm) {
             // Dont translate default text for all
-            OUDSButton(text: "Label", hierarchy: firstButtonHierarchy) {}
-            OUDSButton(text: "Label", hierarchy: secondButtonHierarchy) {}
+            OUDSButton(text: "Label", appearance: firstButtonAppearance) {}
+            OUDSButton(text: "Label", appearance: secondButtonAppearance) {}
         }
     }
 
-    private var firstButtonHierarchy: OUDSButton.Hierarchy {
+    private var firstButtonAppearance: OUDSButton.Appearance {
         colorScheme == .light ? .strong : .default
     }
 
-    private var secondButtonHierarchy: OUDSButton.Hierarchy {
+    private var secondButtonAppearance: OUDSButton.Appearance {
         colorScheme == .light ? .default : .strong
     }
 }
