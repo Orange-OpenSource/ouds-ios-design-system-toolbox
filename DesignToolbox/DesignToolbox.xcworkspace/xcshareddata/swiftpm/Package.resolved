@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "0f2578f6dfaba468a8f8f5c79b1fe86c40133213"
+        "branch" : "969-component-update-rename-oudsbutton-hierarchyparameter-into-appearance",
+        "revision" : "9fb95ac954d99ed138978353bb235d9c0e41ef50"
       }
     },
     {

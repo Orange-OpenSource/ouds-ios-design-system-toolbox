@@ -30,28 +30,28 @@ open class ButtonUITestsTestCase: XCTestCase {
     /// **/!\ It does not test the hover and pressed states.**
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
     ///
-    /// It iterates through all button `hierarchy`, for all `style` with *textOnly, textAndIcon and iconOnly* layouts
+    /// It iterates through all button `appearance`, for all `style` with *textOnly, textAndIcon and iconOnly* layouts
     /// in enabled and disabled states.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`).
     ///   - interfaceStyle: The user interface style (light or dark).
     @MainActor func testAllButtons(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        for hierarchy in OUDSButton.Hierarchy.allCases {
+        for appearance in OUDSButton.Appearance.allCases {
             for layout in ButtonTest.Layout.allCases {
                 for disabled in [true, false] {
                     testButton(theme: theme,
                                interfaceStyle: interfaceStyle,
                                a11yContrast: .normal,
                                layout: layout,
-                               hierarchy: hierarchy,
+                               appearance: appearance,
                                disabled: disabled,
                                onColoredSurface: false)
                     testButton(theme: theme,
                                interfaceStyle: interfaceStyle,
                                a11yContrast: .high,
                                layout: layout,
-                               hierarchy: hierarchy,
+                               appearance: appearance,
                                disabled: disabled,
                                onColoredSurface: false)
                 }
@@ -64,29 +64,29 @@ open class ButtonUITestsTestCase: XCTestCase {
     /// **/!\ It does not test the hover and pressed states.**
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
     ///
-    /// It iterates through all button `hierarchy`, for all `style` with* textOnly, textAndIcon and iconOnly layouts*
+    /// It iterates through all button `appearance`, for all `style` with* textOnly, textAndIcon and iconOnly layouts*
     /// in enabled and disabled state.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllButtonsOnColoredSurface(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        // Skip test for negative and brand hierarchy because it is not allowed on colored surface
-        for hierarchy in OUDSButton.Hierarchy.allCases where hierarchy != .negative && hierarchy != .brand {
+        // Skip test for negative and brand appearance because it is not allowed on colored surface
+        for appearance in OUDSButton.Appearance.allCases where appearance != .negative && appearance != .brand {
             for layout in ButtonTest.Layout.allCases {
                 for disabled in [true, false] {
                     testButton(theme: theme,
                                interfaceStyle: interfaceStyle,
                                a11yContrast: .normal,
                                layout: layout,
-                               hierarchy: hierarchy,
+                               appearance: appearance,
                                disabled: disabled,
                                onColoredSurface: true)
                     testButton(theme: theme,
                                interfaceStyle: interfaceStyle,
                                a11yContrast: .high,
                                layout: layout,
-                               hierarchy: hierarchy,
+                               appearance: appearance,
                                disabled: disabled,
                                onColoredSurface: true)
                 }
@@ -107,20 +107,20 @@ open class ButtonUITestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - a11yContrast:Contrast mode (high or not)
     ///   - layout: the layout of the button
-    ///   - hierarchy; the hierarchy of the button
+    ///   - appearance; the appearance of the button
     ///   - disabled: the disabled flag
     ///   - onColoredSurface: a flag to know if button is on a colored surface or not
     @MainActor private func testButton(theme: OUDSTheme,
                                        interfaceStyle: UIUserInterfaceStyle,
                                        a11yContrast: UIAccessibilityContrast,
                                        layout: ButtonTest.Layout,
-                                       hierarchy: OUDSButton.Hierarchy,
+                                       appearance: OUDSButton.Appearance,
                                        disabled: Bool,
                                        onColoredSurface: Bool = false)
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
-            ButtonTest(layout: layout, hierarchy: hierarchy, style: .default, onColoredSurface: onColoredSurface)
+            ButtonTest(layout: layout, appearance: appearance, style: .default, onColoredSurface: onColoredSurface)
                 .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
                 .disabled(disabled)
         }
@@ -130,7 +130,7 @@ open class ButtonUITestsTestCase: XCTestCase {
         let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
         let disabledPatern = disabled ? "_Disabled" : ""
         let roundedPattern = theme.tuning.hasRoundedButtons ? "_Rounded" : ""
-        let name = "\(coloredSurfacePatern)\(layout.rawValue.camelCase)_\(hierarchy.description)_\(OUDSButton.Style.default.description)\(disabledPatern)\(roundedPattern)"
+        let name = "\(coloredSurfacePatern)\(layout.rawValue.camelCase)_\(appearance.description)_\(OUDSButton.Style.default.description)\(disabledPatern)\(roundedPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
@@ -152,7 +152,7 @@ struct ButtonTest: View {
     }
 
     let layout: Layout
-    let hierarchy: OUDSButton.Hierarchy
+    let appearance: OUDSButton.Appearance
     let style: OUDSButton.Style
     let onColoredSurface: Bool
 
@@ -169,11 +169,11 @@ struct ButtonTest: View {
     func button() -> some View {
         switch layout {
         case .text:
-            OUDSButton(text: "Button", hierarchy: hierarchy, style: style) {}
+            OUDSButton(text: "Button", appearance: appearance, style: style) {}
         case .textAndIcon:
-            OUDSButton(icon: Image(decorative: "ic_heart"), text: "Button", hierarchy: hierarchy, style: style) {}
+            OUDSButton(icon: Image(decorative: "ic_heart"), text: "Button", appearance: appearance, style: style) {}
         case .icon:
-            OUDSButton(icon: Image(decorative: "ic_heart"), accessibilityLabel: "Icon", hierarchy: hierarchy, style: style) {}
+            OUDSButton(icon: Image(decorative: "ic_heart"), accessibilityLabel: "Icon", appearance: appearance, style: style) {}
         }
     }
 }
