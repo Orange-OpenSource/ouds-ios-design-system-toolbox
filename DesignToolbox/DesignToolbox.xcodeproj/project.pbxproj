@@ -3396,7 +3396,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "965-theme-management-of-helvetica-neue-75-font-for-orange-themes";
+				branch = "969-component-update-rename-oudsbutton-hierarchyparameter-into-appearance";
 				kind = branch;
 			};
 		};
