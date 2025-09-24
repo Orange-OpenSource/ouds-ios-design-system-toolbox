@@ -311,6 +311,7 @@ platform :ios do
             configuration: 'Debug',
             include_symbols: true,
             skip_archive: true,
+            skip_codesigning: true,
             destination: "generic/platform=iOS Simulator"
         )
     end

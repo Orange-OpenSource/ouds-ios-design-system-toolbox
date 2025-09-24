@@ -24,10 +24,11 @@ Any use or displaying shall constitute an infringement under intellectual proper
 
 ## Images
 
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_token.imageset/ic_token.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_component_atom.imageset/ic_component_atom.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_info.imageset/ic_info.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_heart.imageset/ic_heart.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_token.imageset/ic_token.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_component_atom.imageset/ic_component_atom.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_info.imageset/ic_info.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_heart.imageset/ic_heart.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_theme.imageset/ic_theme.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin_dark.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width.png

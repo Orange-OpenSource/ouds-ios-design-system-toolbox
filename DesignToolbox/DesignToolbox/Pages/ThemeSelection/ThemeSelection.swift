@@ -26,7 +26,7 @@ extension OUDSTheme: @retroactive Equatable {
     // MARK: Equtabable
 
     public static func == (lhs: OUDSTheme, rhs: OUDSTheme) -> Bool {
-        lhs.name == rhs.name
+        lhs.id == rhs.id
     }
 }
 
@@ -35,35 +35,62 @@ extension OUDSTheme: @retroactive Equatable {
 /// It must be `Hashable` because it is used in a picker than need `Hashable` element.
 extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
-    var name: String {
-        if self is OrangeTheme {
-            return "Orange"
-        }
-        if self is OrangeBusinessToolsTheme {
-            return "Orange Business Tools"
-        }
-        if self is OrangeInverseTheme {
-            return "Orange Inverse"
-        }
+    /// The text displayed in submenus of the theme selector
+    var description: String {
         if self is SoshTheme {
             return "Sosh"
         }
         if self is WireframeTheme {
             return "Wireframe"
         }
-        return String(describing: Self.self)
+        if tuning == Tuning.OrangeFrance {
+            return "Orange France"
+        }
+        if tuning == Tuning.MaxIt {
+            return "Max it"
+        }
+        if tuning == Tuning.OrangeBusiness {
+            return "Orange Business"
+        }
+        return "Default"
     }
 
     // MARK: Identifiable
 
+    /// The unique identifier to store the selected theme
     public var id: String {
-        name
+        var constructedId = String(describing: Self.self)
+        if self is OrangeTheme {
+            constructedId = "Orange"
+        }
+        if self is OrangeBusinessToolsTheme {
+            constructedId = "Orange Business Tools"
+        }
+        if self is OrangeInverseTheme {
+            constructedId = "Orange Inverse"
+        }
+        if self is SoshTheme {
+            constructedId = "Sosh"
+        }
+        if self is WireframeTheme {
+            constructedId = "Wireframe"
+        }
+        if tuning == Tuning.OrangeFrance {
+            constructedId += constructedId + " (Orange France)"
+        }
+        if tuning == Tuning.MaxIt {
+            constructedId += constructedId + " (Max It)"
+        }
+        if tuning == Tuning.OrangeBusiness {
+            constructedId += constructedId + " (Orange Business)"
+        }
+        return constructedId
     }
 
     // MARK: Hashable
 
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
+        hasher.combine(id)
     }
 }
 
@@ -73,15 +100,21 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 /// It also stores the current theme, selected by user.
 @MainActor final class ThemeProvider: ObservableObject {
 
-    let themes: [OUDSTheme]
+    let orangeThemes: [OUDSTheme]
+    let orangeBusinessToolsThemes: [OUDSTheme]
+    let orangeInverseThemes: [OUDSTheme]
+    let otherThemes: [OUDSTheme]
+
+    let allThemes: [OUDSTheme]
+
     var hotSwitchWarning: HotSwitchWarning
 
-    @UserDefaultsWrapper(key: "com.orange.ouds.demoapp.themeName", defaultValue: "Orange")
-    private static var currentThemeName
+    @UserDefaultsWrapper(key: "com.orange.ouds.demoapp.theme", defaultValue: "Orange")
+    private static var currentTheme
 
     @Published var currentTheme: OUDSTheme {
         didSet {
-            ThemeProvider.currentThemeName = currentTheme.name
+            ThemeProvider.currentTheme = currentTheme.id
             if currentTheme != oldValue {
                 hotSwitchWarning.showAlert = true
             }
@@ -89,15 +122,29 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
     }
 
     init() {
-        let orangeTheme = OrangeTheme()
-        let orangeBusinessToolsTheme = OrangeBusinessToolsTheme()
-        let orangeInverseTheme = OrangeInverseTheme()
+
+        // Init all themes
+        let orangeFranceOrangeTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)
+        let maxItOrangeTheme = OrangeTheme(tuning: Tuning.MaxIt)
+        let orangeFranceOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(tuning: Tuning.OrangeBusiness)
+        let maxItOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(tuning: Tuning.MaxIt)
+        let orangeFranceOrangeInverseTheme = OrangeInverseTheme(tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeInverseTheme = OrangeInverseTheme(tuning: Tuning.OrangeBusiness)
+        let maxItOrangeInverseTheme = OrangeInverseTheme(tuning: Tuning.MaxIt)
         let soshTheme = SoshTheme()
         let wireframeTheme = WireframeTheme()
-        let defaultTheme = orangeTheme
-        themes = [orangeTheme, orangeBusinessToolsTheme, orangeInverseTheme, soshTheme, wireframeTheme]
+        let defaultTheme = orangeFranceOrangeTheme
 
-        if let theme = themes.first(where: { $0.name == ThemeProvider.currentThemeName }) {
+        // Fill arrays for menus
+        orangeThemes = [orangeFranceOrangeTheme, orangeBusinessOrangeTheme, maxItOrangeTheme]
+        orangeBusinessToolsThemes = [orangeFranceOrangeBusinessToolsTheme, orangeBusinessOrangeBusinessToolsTheme, maxItOrangeBusinessToolsTheme]
+        orangeInverseThemes = [orangeFranceOrangeInverseTheme, orangeBusinessOrangeInverseTheme, maxItOrangeInverseTheme]
+        otherThemes = [soshTheme, wireframeTheme]
+        allThemes = orangeThemes + orangeBusinessToolsThemes + orangeInverseThemes + otherThemes
+
+        if let theme = allThemes.first(where: { $0.id == ThemeProvider.currentTheme }) {
             currentTheme = theme
         } else {
             currentTheme = defaultTheme
@@ -130,14 +177,47 @@ struct ThemeSelectionButton: View {
 
     var body: some View {
         Menu {
+            // Orange theme and tunings
+            Menu("Orange") {
+                Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
+                    ForEach(themeProvider.orangeThemes, id: \.id) { theme in
+                        Text(theme.description).tag(theme)
+                    }
+                }
+                .pickerStyle(.automatic)
+            }
+
+            // Orange Business Tools theme and tunings
+            Menu("Orange Business Tools") {
+                Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
+                    ForEach(themeProvider.orangeBusinessToolsThemes, id: \.id) { theme in
+                        Text(theme.description).tag(theme)
+                    }
+                }
+                .pickerStyle(.automatic)
+            }
+
+            // Orange Inverse theme and tunings
+            Menu("Orange Inverse") {
+                Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
+                    ForEach(themeProvider.orangeInverseThemes, id: \.id) { theme in
+                        Text(theme.description).tag(theme)
+                    }
+                }
+                .pickerStyle(.automatic)
+            }
+
+            // Sosh and Wireframe themes (which do not have tunings)
             Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
-                ForEach(themeProvider.themes, id: \.id) { theme in
-                    Text(theme.name).tag(theme)
+                ForEach(themeProvider.otherThemes, id: \.id) { theme in
+                    Text(theme.description).tag(theme)
+                    Divider()
                 }
             }
             .pickerStyle(.automatic)
         } label: {
-            Image(systemName: "paintpalette")
+            Image(decorative: "ic_theme")
+                .scaledToFit()
                 .accessibilityLabel("app_topBar_theme_button_a11y")
                 .accessibilityHint("app_topBar_theme_button_hint_a11y")
         }
