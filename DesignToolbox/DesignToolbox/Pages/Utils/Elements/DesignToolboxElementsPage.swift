@@ -46,7 +46,7 @@ struct DesignToolboxElementsPage: View {
                     }
                 }
                 .padding(.all, theme.spaces.spaceFixedMd)
-                .navigationbarMenuForThemeSelection()
+                .navigationBarMenus()
             }
             .oudsBackground(theme.colors.colorBgPrimary)
             .oudsNavigationTitle(title)
