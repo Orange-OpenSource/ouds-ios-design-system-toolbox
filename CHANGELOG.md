@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.19.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.18.0...0.19.0) - 2025-09-24
+
+### Changed
+
+- [DesignToolbox] Update `json` RubyGem from v2.13.2 to v2.15.2
+- [DesignToolbox] Update `ruby/setup-ruby` GitHub Actions action from v1.257.0 to v1.263.0
+- [DesignToolbox] Update `json` RubyGem from v2.13.1 to v2.13.2
+- [DesignSystemToolbox] Update various GitHub Actions workflows dependencies
+- [DesignToolbox] Theme selector icon (Orange-OpenSource/ouds-ios#943)
+- [DesignToolbox] [Library] Tuning of themes and theme selector (Orange-OpenSource/ouds-ios#951)
+
+### Fixed
+
+- [Library] Button in minimal hierarchy does not handle the hover state (Orange-OpenSource/ouds-ios#942)
+- [Library] Vocalisation of badge with icons (Orange-OpenSource/ouds-ios#957)
+- [Library] Badge component does not have bigger sizes if text sizes is increased (Orange-OpenSource#844)
+
 ## [0.18.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.17.0...0.18.0) - 2025-09-05
 
 ### Added

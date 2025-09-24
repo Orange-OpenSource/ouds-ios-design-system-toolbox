@@ -174,6 +174,7 @@
 		51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
 		510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CCF2C5679A300430620 /* OUDSComponents */; };
 		510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* XCTestCase+Snapshot.swift */; };
+		5115808A2E730E0600DFFE4E /* OUDSTheme+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511580892E730E0100DFFE4E /* OUDSTheme+Name.swift */; };
 		5115A1662DDF39AC0025A760 /* OUDS in Frameworks */ = {isa = PBXBuildFile; productRef = 5115A1652DDF39AC0025A760 /* OUDS */; };
 		5115A1682DDF39AC0025A760 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 5115A1672DDF39AC0025A760 /* OUDSComponents */; };
 		5115A16A2DDF39AC0025A760 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 5115A1692DDF39AC0025A760 /* OUDSFoundations */; };
@@ -603,6 +604,7 @@
 		07FDCDB72C296C370009AA13 /* .swiftformat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .swiftformat; path = ../.swiftformat; sourceTree = "<group>"; };
 		07FDCDB82C296C370009AA13 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
+		511580892E730E0100DFFE4E /* OUDSTheme+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OUDSTheme+Name.swift"; sourceTree = "<group>"; };
 		511C96B42E157D2C00F9D156 /* SwitchItemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemPage.swift; sourceTree = "<group>"; };
 		5122E0252D65D13400CD2857 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/about_legal_information.html; sourceTree = "<group>"; };
 		5122E0262D65D13400CD2857 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/about_privacy_policy.html; sourceTree = "<group>"; };
@@ -911,6 +913,7 @@
 			children = (
 				51952A782D3FA0FB0068B807 /* __Snapshots__ */,
 				074008222C942810006B8729 /* XCTestCase+Snapshot.swift */,
+				511580892E730E0100DFFE4E /* OUDSTheme+Name.swift */,
 				0794FCDA2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift */,
 			);
 			path = DesignToolboxSnapshotsTests;
@@ -2523,6 +2526,7 @@
 				51952A942D3FA32E0068B807 /* DesignToolboxElementsPage.swift in Sources */,
 				51A217622E325ED500562BE0 /* OrangeBusinessToolsTheme+SwitchUITests.swift in Sources */,
 				51952A952D3FA32E0068B807 /* DesignToolboxVariantElement.swift in Sources */,
+				5115808A2E730E0600DFFE4E /* OUDSTheme+Name.swift in Sources */,
 				51A2177E2E325FE600562BE0 /* WireframeTheme+TokensColorUITests.swift in Sources */,
 				51952A962D3FA32E0068B807 /* View+Illustration.swift in Sources */,
 				515EE9A22E2133C800A60E96 /* ChipsUITestsTestCase.swift in Sources */,
@@ -3138,7 +3142,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
@@ -3154,7 +3158,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.18.0;
+				MARKETING_VERSION = 0.19.0;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "Design System Toolbox";
@@ -3177,7 +3181,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -3194,7 +3198,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.18.0;
+				MARKETING_VERSION = 0.19.0;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "Design System Toolbox";
@@ -3393,7 +3397,7 @@
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
 				kind = exactVersion;
-				version = 0.18.0;
+				version = 0.19.0;
 			};
 		};
 		6DFC20C32CE3D9AE00F2EC33 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */ = {

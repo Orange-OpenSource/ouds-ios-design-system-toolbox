@@ -1056,6 +1056,30 @@
         }
       }
     },
+    "app_components_badge_hint_a11y" : {
+      "comment" : "Component - Badge",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذه ملصق زائف للشارة مع ملف"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is a dumb label for the badge with an icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceci est un label bidon pour le badge avec une icône"
+          }
+        }
+      }
+    },
     "app_components_badge_iconType_label" : {
       "comment" : "Composent - Badge",
       "extractionState" : "manual",
@@ -1249,31 +1273,6 @@
           }
         }
       }
-    },
-    "app_components_button_rounded_label" : {
-      "comment" : "Component - Button",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rounded"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rounded"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rounded"
-          }
-        }
-      },
-      "shouldTranslate" : false
     },
     "app_components_checkbox_checkboxItem_label" : {
       "comment" : "Component - Checkbox",
@@ -4454,6 +4453,15 @@
           }
         }
       }
+    },
+    "Orange" : {
+      "shouldTranslate" : false
+    },
+    "Orange Business Tools" : {
+      "shouldTranslate" : false
+    },
+    "Orange Inverse" : {
+      "shouldTranslate" : false
     }
   },
   "version" : "1.0"
