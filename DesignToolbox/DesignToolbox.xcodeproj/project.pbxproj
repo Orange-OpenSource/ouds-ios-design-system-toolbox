@@ -3335,7 +3335,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "945-component-update-tag-13 ";
 				kind = branch;
 			};
 		};
