@@ -158,18 +158,6 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
 // MARK: - Theme Selection Button
 
-extension View {
-
-    /// To add a `ThemeSelectionButton` in the toolbar
-    func navigationbarMenuForThemeSelection() -> some View {
-        toolbar {
-            ToolbarItemGroup(placement: .navigationBarTrailing) {
-                ThemeSelectionButton()
-            }
-        }
-    }
-}
-
 /// Button to make the user change the current theme.
 struct ThemeSelectionButton: View {
 
@@ -218,11 +206,11 @@ struct ThemeSelectionButton: View {
         } label: {
             Image(decorative: "ic_theme")
                 .scaledToFit()
-                .accessibilityLabel("app_topBar_theme_button_a11y")
-                .accessibilityHint("app_topBar_theme_button_hint_a11y")
         }
         .oudsForegroundColor(themeProvider.currentTheme.colors.colorContentBrandPrimary)
         .modifier(HotSwitchWarningModifier(hotSwitchWarningIndicator: themeProvider.hotSwitchWarning))
+        .accessibilityLabel("app_topBar_theme_button_a11y")
+        .accessibilityHint("app_topBar_theme_button_hint_a11y")
     }
 }
 

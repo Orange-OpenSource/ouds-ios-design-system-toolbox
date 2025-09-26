@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.19.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.18.0...0.19.0) - 2025-09-24
 
+### Added
+
+- [DesignToolbox] Color scheme selector (Orange-OpenSource/ouds-ios#944)
+
 ### Changed
 
 - [DesignToolbox] Update `json` RubyGem from v2.13.2 to v2.15.2
