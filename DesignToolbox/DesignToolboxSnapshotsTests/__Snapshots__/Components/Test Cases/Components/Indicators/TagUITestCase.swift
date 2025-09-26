@@ -35,24 +35,26 @@ open class TagUITestsTestCase: XCTestCase {
     @MainActor func testAllTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for layout in TagLayout.allCases {
             for hierarchy in OUDSTag.Hierarchy.allCases {
-                for status in OUDSTag.Status.allCases {
+                for statusCategory in OUDSTag.Status.Category.allCases {
                     for size in OUDSTag.Size.allCases {
                         for shape in OUDSTag.Shape.allCases {
                             // Drop loader and disabled status because this case is not allowed
-                            for loader in [true, false] where !(status == .disabled && loader == true) {
-                                for flipIcon in [true, false] where !loader {
-                                    if !(status == .disabled && loader == true) {
-                                        let model = TagConfigurationModel()
-                                        model.layout = layout
-                                        model.status = status
-                                        model.hierarchy = hierarchy
-                                        model.size = size
-                                        model.shape = shape
-                                        model.loader = loader
-                                        model.flipIcon = flipIcon
+                            for loader in [true, false] {
+                                let model = TagConfigurationModel()
+                                model.layout = layout
+                                model.statusCategory = statusCategory
+                                model.hierarchy = hierarchy
+                                model.size = size
+                                model.shape = shape
+                                model.loader = loader
+                                model.flipIcon = false
 
-                                        testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
-                                    }
+                                testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+
+                                // Add extra test for flip icon if not disbaled
+                                if !model.disableFlipIcon {
+                                    model.flipIcon = true
+                                    testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
                                 }
                             }
                         }
@@ -83,21 +85,34 @@ open class TagUITestsTestCase: XCTestCase {
 
         // Create a unique snapshot name based on the current configuration :
         let testName = "testTag_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let layoutPattern = model.layout.technicalDescription.localized()
+        let layoutPattern = model.layout.debugDescription
         let hierarchyPattern = model.hierarchy.technicalDescription
-        let statusPattern = model.status.technicalDescription
+        let statusPattern = model.statusCategory.technicalDescription
         let sizePattern = model.size.technicalDescription
         let shapePattern = model.shape.technicalDescription
-        let loaderPattern = model.loader ? "loader" : ""
-        let flipIconPattern = model.flipIcon ? "flipIcon" : ""
+        let loaderPattern = model.loader ? ".loader" : ""
+        let flipIconPattern = model.flipIcon ? ".flipIcon" : ""
 
-        let name = "\(layoutPattern)_\(hierarchyPattern)_\(statusPattern)_\(sizePattern)_\(shapePattern)_\(loaderPattern)_\(flipIconPattern)"
+        let name = "\(layoutPattern)\(hierarchyPattern)\(statusPattern)\(sizePattern)\(shapePattern)\(loaderPattern)\(flipIconPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
                            named: name,
                            testName: testName)
+    }
+}
+
+extension TagLayout: CustomDebugStringConvertible {
+    var debugDescription: String {
+        switch self {
+        case .textOnly:
+            "textOnly"
+        case .textAndBullet:
+            "textAndBullet"
+        case .textAndIcon:
+            "textAndIcon"
+        }
     }
 }
 
