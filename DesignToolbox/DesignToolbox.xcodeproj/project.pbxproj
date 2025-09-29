@@ -3396,7 +3396,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "969-component-update-rename-oudsbutton-hierarchyparameter-into-appearance";
+				branch = develop;
 				kind = branch;
 			};
 		};
