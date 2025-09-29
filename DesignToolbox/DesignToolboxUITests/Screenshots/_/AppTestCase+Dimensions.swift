@@ -31,7 +31,7 @@ extension AppTestCase {
 
         static let iPhone12ProPortraitWidth = 1_170
 
-        // Offsets to apply if, for example, use another device almost with same diemsnsions as iPhone 12 Pro
+        // Offsets to apply if, for example, use another device almost with same dimensions as iPhone 12 Pro (or not)
         // Prevents to change all values
         // Feel free to update and precise which device you use!
         private static let offsetX = 0
@@ -54,72 +54,72 @@ extension AppTestCase {
         // MARK: - Controls - Checkbox
 
         static let checkboxX = screenStartX + offsetX
-        static let checkboxY = 520 + offsetY
+        static let checkboxY = 550 + offsetY
         static let checkboxWidth = deviceWidth + offsetWidth
         static let checkboxHeight = 500 + offsetHeight
 
         // MARK: - Controls - Checkbox item
 
         static let checkboxItemX = screenStartX + offsetX
-        static let checkboxItemY = 520 + offsetY
+        static let checkboxItemY = 550 + offsetY
         static let checkboxItemWidth = deviceWidth + offsetWidth
         static let checkboxItemHeight = 570 + offsetHeight
 
         // MARK: - Controls - Checkbox picker
 
         static let checkboxPickerX = screenStartX + offsetX
-        static let checkboxPickerY = 470 + offsetY
+        static let checkboxPickerY = 475 + offsetY
         static let checkboxPickerWidth = deviceWidth + offsetWidth
         static let checkboxPickerHeight = 1_180 + offsetHeight
 
         // MARK: - Controls - Radio
 
         static let radioX = screenStartX + offsetX
-        static let radioY = 550 + offsetY
+        static let radioY = 520 + offsetY
         static let radioWidth = deviceWidth + offsetWidth
         static let radioHeight = 500 + offsetHeight
 
         // MARK: - Controls - Radio item
 
         static let radioItemX = screenStartX + offsetX
-        static let radioItemY = 520 + offsetY
+        static let radioItemY = 540 + offsetY
         static let radioItemWidth = deviceWidth + offsetWidth
-        static let radioItemHeight = 570 + offsetHeight
+        static let radioItemHeight = 610 + offsetHeight
 
         // MARK: - Controls - Radio picker
 
         static let radioPickerX = screenStartX + offsetX
-        static let radioPickerY = 440 + offsetY
+        static let radioPickerY = 470 + offsetY
         static let radioPickerWidth = deviceWidth + offsetWidth
-        static let radioPickerHeight = 1_180 + offsetHeight
+        static let radioPickerHeight = 1_190 + offsetHeight
 
         // MARK: - Controls - Switch
 
         static let switchX = screenStartX + offsetX
-        static let switchY = 460 + offsetY
+        static let switchY = 480 + offsetY
         static let switchWidth = deviceWidth + offsetWidth
-        static let switchHeight = 400 + offsetHeight
+        static let switchHeight = 430 + offsetHeight
 
         // MARK: - Controls - Switch item
 
         static let switchItemX = screenStartX + offsetX
-        static let switchItemY = 460 + offsetY
+        static let switchItemY = 490 + offsetY
         static let switchItemWidth = deviceWidth + offsetWidth
-        static let switchItemHeight = 570 + offsetHeight
+        static let switchItemHeight = 590 + offsetHeight
 
         // MARK: - Controls - Suggestion chip
 
         static let suggestionChipX = screenStartX + offsetX
-        static let suggestionChipY = 840 + offsetY
+        static let suggestionChipY = 1_080 + offsetY
         static let suggestionChipWidth = deviceWidth + offsetWidth
-        static let suggestionChipHeight = 450 + offsetHeight
+        static let suggestionChipHeight = 420 + offsetHeight
 
         // MARK: - Controls - Filter chip
 
         static let filterChipX = screenStartX + offsetX
-        static let filterChipY = 700 + offsetY
+        static let filterChipY = 760 + offsetY
         static let filterChipWidth = deviceWidth + offsetWidth
-        static let filterChipHeight = 400 + offsetHeight
+        static let filterChipHeight = 440 + offsetHeight
 
         // MARK: - Controls - Chip picker
 
@@ -131,43 +131,43 @@ extension AppTestCase {
         // MARK: - Indicators - Badge
 
         static let badgeX = screenStartX + offsetX
-        static let badgeY = 620 + offsetY
+        static let badgeY = 750 + offsetY
         static let badgeWidth = deviceWidth + offsetWidth
-        static let badgeHeight = 350 + offsetHeight
+        static let badgeHeight = 320 + offsetHeight
 
         // MARK: - Indicators - Tag
 
         static let tagX = screenStartX + offsetX
-        static let tagY = 520 + offsetY
+        static let tagY = 600 + offsetY
         static let tagWidth = deviceWidth + offsetWidth
-        static let tagHeight = 400 + offsetHeight
+        static let tagHeight = 410 + offsetHeight
 
         // MARK: - Layouts - Horizontal Divider
 
         static let horizontalDividerX = screenStartX + offsetX
         static let horizontalDividerY = 500 + offsetY
         static let horizontalDividerWidth = deviceWidth + offsetWidth
-        static let horizontalDividerHeight = 440 + offsetHeight
+        static let horizontalDividerHeight = 460 + offsetHeight
 
         // MARK: - Layouts - Vertical Divider
 
         static let verticalDividerX = screenStartX + offsetX
         static let verticalDividerY = 480 + offsetY
         static let verticalDividerWidth = deviceWidth + offsetWidth
-        static let verticalDividerHeight = 440 + offsetHeight
+        static let verticalDividerHeight = 500 + offsetHeight
 
         // MARK: - Layouts - Colored surface
 
         static let coloredSurfaceX = screenStartX + offsetX
-        static let coloredSurfaceY = 600 + offsetY
+        static let coloredSurfaceY = 620 + offsetY
         static let coloredSurfaceWidth = deviceWidth + offsetWidth
-        static let coloredSurfaceHeight = 1_350 + offsetHeight
+        static let coloredSurfaceHeight = 1_380 + offsetHeight
 
-        // MARK: - Navigations - Link
+        // MARK: - Navigations - Lin
 
         static let linkX = screenStartX + offsetX
         static let linkY = 600 + offsetY
         static let linkWidth = deviceWidth + offsetWidth
-        static let linkHeight = 480 + offsetHeight
+        static let linkHeight = 470 + offsetHeight
     }
 }
