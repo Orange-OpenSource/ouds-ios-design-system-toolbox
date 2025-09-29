@@ -89,7 +89,7 @@ struct DesignToolboxElementPage: View {
         .padding(.horizontal, theme.spaces.spaceFixedNone)
         .oudsBackground(theme.colors.colorBgPrimary)
         .navigationTitle(name.localized())
-        .navigationbarMenuForThemeSelection()
+        .navigationBarMenus()
         .oudsRequestAccessibleFocus(_requestFocus)
     }
 }

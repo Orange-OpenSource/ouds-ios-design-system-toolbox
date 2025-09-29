@@ -29,6 +29,9 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_info.imageset/ic_info.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_heart.imageset/ic_heart.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_theme.imageset/ic_theme.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_theme_dark.imageset/ic_theme_dark.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_theme_light.imageset/ic_theme_light.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_theme_system.imageset/ic_theme_system.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin_dark.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width.png

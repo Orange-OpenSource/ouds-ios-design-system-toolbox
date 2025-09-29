@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.19.0...develop)
 
+### Added
+
+- [DesignToolbox] Color scheme selector (Orange-OpenSource/ouds-ios#944)
+
 ### Changed
 
 - [Library] Apply `Helvetica Neue` font family for themes `Orange`, `Orange Inverse` and `Orange Business Tools` (Orange-OpenSource/ouds-ios#965)
