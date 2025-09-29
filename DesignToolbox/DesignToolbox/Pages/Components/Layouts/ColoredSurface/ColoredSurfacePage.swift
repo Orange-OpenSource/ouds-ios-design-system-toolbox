@@ -49,7 +49,7 @@ private struct ColoredSurfaceDemo: View {
                         .oudsForegroundColor(theme.colors.colorContentDefault)
 
                     OUDSButton(text: "app_components_button_label".localized(),
-                               hierarchy: .default,
+                               appearance: .default,
                                style: .default) {}
 
                     OUDSLink(text: "app_components_link_label".localized(), indicator: .next) {}
