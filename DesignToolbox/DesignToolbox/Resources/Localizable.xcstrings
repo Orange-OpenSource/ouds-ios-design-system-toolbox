@@ -1883,6 +1883,25 @@
         }
       }
     },
+    "app_components_common_appearance_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appereances"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apparences"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_color_label" : {
       "comment" : "Component - Common",
       "localizations" : {
