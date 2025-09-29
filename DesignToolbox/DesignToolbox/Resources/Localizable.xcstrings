@@ -4449,6 +4449,54 @@
         }
       }
     },
+    "app_topBar_mode_button_automatic_a11y" : {
+      "comment" : "Top bar - Color scheme selector - System mode",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تلقائي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatic"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatique"
+          }
+        }
+      }
+    },
+    "app_topBar_mode_button_dark_a11y" : {
+      "comment" : "Top bar - Color scheme selector - Dark mode",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "داكن"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sombre"
+          }
+        }
+      }
+    },
     "app_topBar_mode_button_hint_a11y" : {
       "comment" : "Top bar - Color scheme selector",
       "extractionState" : "manual",
@@ -4469,6 +4517,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Taper deux fois pour changer le mode de l'app"
+          }
+        }
+      }
+    },
+    "app_topBar_mode_button_light_a11y" : {
+      "comment" : "Top bar - Color scheme selector - Light mode",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "واضح"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clair"
           }
         }
       }

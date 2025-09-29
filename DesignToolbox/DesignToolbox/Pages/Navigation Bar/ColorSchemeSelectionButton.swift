@@ -43,14 +43,15 @@ enum ColorSchemeMode: String, CustomStringConvertible {
     }
 
     var description: String {
-        switch self {
+        let wordingKey = switch self {
         case .light:
-            "Light"
+            "app_topBar_mode_button_light_a11y"
         case .dark:
-            "Dark"
+            "app_topBar_mode_button_dark_a11y"
         case .auto:
-            "Automatique"
+            "app_topBar_mode_button_automatic_a11y"
         }
+        return wordingKey.localized()
     }
 }
 
