@@ -4425,8 +4425,128 @@
         }
       }
     },
+    "app_topBar_mode_button_a11y" : {
+      "comment" : "Top bar - Color scheme selector",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "غيّر الوضع"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change mode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changer de mode"
+          }
+        }
+      }
+    },
+    "app_topBar_mode_button_automatic_a11y" : {
+      "comment" : "Top bar - Color scheme selector - System mode",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تلقائي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatic"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatique"
+          }
+        }
+      }
+    },
+    "app_topBar_mode_button_dark_a11y" : {
+      "comment" : "Top bar - Color scheme selector - Dark mode",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "داكن"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sombre"
+          }
+        }
+      }
+    },
+    "app_topBar_mode_button_hint_a11y" : {
+      "comment" : "Top bar - Color scheme selector",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر لتغيير وضع التطبيق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap to change the mode of the app"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois pour changer le mode de l'app"
+          }
+        }
+      }
+    },
+    "app_topBar_mode_button_light_a11y" : {
+      "comment" : "Top bar - Color scheme selector - Light mode",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "واضح"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clair"
+          }
+        }
+      }
+    },
     "app_topBar_theme_button_a11y" : {
-      "comment" : "Top bar",
+      "comment" : "Top bar - Theme selector",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -4438,7 +4558,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chgange theme"
+            "value" : "Change theme"
           }
         },
         "fr" : {
@@ -4450,7 +4570,7 @@
       }
     },
     "app_topBar_theme_button_hint_a11y" : {
-      "comment" : "Top bar",
+      "comment" : "Top bar - Theme selector",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -4468,7 +4588,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Appuyez pour changer le thème de l'application"
+            "value" : "Taper deux fois pour changer le thème de l'application"
           }
         }
       }
