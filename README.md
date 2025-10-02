@@ -35,6 +35,8 @@
 [![Versions](https://img.shields.io/github/v/release/Orange-OpenSource/ouds-ios-design-system-toolbox?label=Last%20version&style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases)
 [![Still maintained](https://img.shields.io/maintenance/yes/2025?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/issues?q=is%3Aissue+is%3Aclosed)
 
+[![Xcode 26.0](https://img.shields.io/badge/Xcode-26.0-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes)
+
 [![AppStore](https://img.shields.io/itunes/v/6743708286?style=for-the-badge&label=AppStore)](https://apps.apple.com/fr/app/design-system-toolbox/id6743708286)
 
 ## Content
