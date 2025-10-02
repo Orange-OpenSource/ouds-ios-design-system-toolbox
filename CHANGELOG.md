@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Improve README for onboarding and newcomers (Orange-OpenSource/ouds-ios#1005)
+- [Library] Improve web documentation for onboarding and newcomers (Orange-OpenSource/ouds-ios#982)
 - [DesignToolbox] Migration to Xcode 26.0
 - [Library] Apply `Helvetica Neue` font family for themes `Orange`, `Orange Inverse` and `Orange Business Tools` (Orange-OpenSource/ouds-ios#965)
 
