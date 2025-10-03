@@ -3191,7 +3191,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.20.0;
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "Design System Toolbox";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -3231,7 +3231,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.20.0;
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "Design System Toolbox";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -157,17 +157,19 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         }
 
         hotSwitchWarning = HotSwitchWarning()
-
-        registerFonts()
+        #if USE_INTERNAL_FONTS
+        registerInternalFonts()
+        #endif
     }
 
     deinit {}
 
+    #if USE_INTERNAL_FONTS
     private static var fontsAlreadyRegistered = false
 
     /// Fonts are defined in Resources/Fonts in TTF files.
     /// Needed for Helvetica Neue Arabic
-    private func registerFonts() {
+    private func registerInternalFonts() {
         if !Self.fontsAlreadyRegistered {
             let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
             fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
@@ -185,6 +187,11 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
             return "Helvetica Neue"
         }
     }
+    #else
+    private static func localizedHelveticaFont() -> String {
+        "Helvetica Neue"
+    }
+    #endif
 }
 
 // MARK: - Theme Selection Button
