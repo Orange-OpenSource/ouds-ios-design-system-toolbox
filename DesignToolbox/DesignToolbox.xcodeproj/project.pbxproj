@@ -174,9 +174,6 @@
 		51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
 		510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CCF2C5679A300430620 /* OUDSComponents */; };
 		510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* XCTestCase+Snapshot.swift */; };
-		5114F57F2E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5114F57D2E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Light.ttf */; };
-		5114F5802E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5114F57C2E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Bold.ttf */; };
-		5114F5812E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5114F57E2E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Roman.ttf */; };
 		5115808A2E730E0600DFFE4E /* OUDSTheme+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511580892E730E0100DFFE4E /* OUDSTheme+Name.swift */; };
 		5115A1662DDF39AC0025A760 /* OUDS in Frameworks */ = {isa = PBXBuildFile; productRef = 5115A1652DDF39AC0025A760 /* OUDS */; };
 		5115A1682DDF39AC0025A760 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 5115A1672DDF39AC0025A760 /* OUDSComponents */; };
@@ -612,9 +609,6 @@
 		07FDCDB72C296C370009AA13 /* .swiftformat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .swiftformat; path = ../.swiftformat; sourceTree = "<group>"; };
 		07FDCDB82C296C370009AA13 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
-		5114F57C2E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTArabic-Bold.ttf"; sourceTree = "<group>"; };
-		5114F57D2E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTArabic-Light.ttf"; sourceTree = "<group>"; };
-		5114F57E2E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTArabic-Roman.ttf"; sourceTree = "<group>"; };
 		511580892E730E0100DFFE4E /* OUDSTheme+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OUDSTheme+Name.swift"; sourceTree = "<group>"; };
 		511C96B42E157D2C00F9D156 /* SwitchItemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemPage.swift; sourceTree = "<group>"; };
 		5122E0252D65D13400CD2857 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/about_legal_information.html; sourceTree = "<group>"; };
@@ -1292,9 +1286,6 @@
 			isa = PBXGroup;
 			children = (
 				51D5898F2E8FCC310071E8BF /* README.md */,
-				5114F57C2E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Bold.ttf */,
-				5114F57D2E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Light.ttf */,
-				5114F57E2E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Roman.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -2425,9 +2416,6 @@
 				6DFC20B62CE3AF1500F2EC33 /* favicon.ico in Resources */,
 				6DFC20B72CE3AF1500F2EC33 /* pie.css in Resources */,
 				6DFC20B82CE3AF1500F2EC33 /* style.css in Resources */,
-				5114F57F2E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Light.ttf in Resources */,
-				5114F5802E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Bold.ttf in Resources */,
-				5114F5812E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Roman.ttf in Resources */,
 				6DFC20B92CE3AF1500F2EC33 /* orange-logo.svg in Resources */,
 				512364792C3D7B2D00572FD5 /* Podfile.lock in Resources */,
 			);
