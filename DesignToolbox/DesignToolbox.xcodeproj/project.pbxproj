@@ -373,6 +373,7 @@
 		51BD76292C466FCF0033365D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761C2C466FCF0033365D /* WebView.swift */; };
 		51BD762A2C466FCF0033365D /* DesignToolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761E2C466FCF0033365D /* DesignToolbox.swift */; };
 		51BD762B2C466FCF0033365D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761F2C466FCF0033365D /* MainView.swift */; };
+		51D589902E8FCC350071E8BF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 51D5898F2E8FCC310071E8BF /* README.md */; };
 		51D6D5852D887E36009CD879 /* CheckboxIndeterminateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5842D887E36009CD879 /* CheckboxIndeterminateElement.swift */; };
 		51D6D5862D887E36009CD879 /* CheckboxIndeterminateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5842D887E36009CD879 /* CheckboxIndeterminateElement.swift */; };
 		51D6D58B2D887E94009CD879 /* CheckboxIndeterminatePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D58A2D887E94009CD879 /* CheckboxIndeterminatePage.swift */; };
@@ -747,6 +748,7 @@
 		51BD761C2C466FCF0033365D /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		51BD761E2C466FCF0033365D /* DesignToolbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignToolbox.swift; sourceTree = "<group>"; };
 		51BD761F2C466FCF0033365D /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		51D5898F2E8FCC310071E8BF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		51D6D5842D887E36009CD879 /* CheckboxIndeterminateElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxIndeterminateElement.swift; sourceTree = "<group>"; };
 		51D6D58A2D887E94009CD879 /* CheckboxIndeterminatePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxIndeterminatePage.swift; sourceTree = "<group>"; };
 		51D6D5902D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxIndeterminateConfiguration.swift; sourceTree = "<group>"; };
@@ -1289,6 +1291,7 @@
 		5114F57B2E8EB10800BC2BDD /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				51D5898F2E8FCC310071E8BF /* README.md */,
 				5114F57C2E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Bold.ttf */,
 				5114F57D2E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Light.ttf */,
 				5114F57E2E8EB11A00BC2BDD /* HelveticaNeueLTArabic-Roman.ttf */,
@@ -2409,6 +2412,7 @@
 			files = (
 				6DFC20C12CE3D39D00F2EC33 /* accessibility_detail.html in Resources */,
 				6DFC20C22CE3D39D00F2EC33 /* accessibility_result.xml in Resources */,
+				51D589902E8FCC350071E8BF /* README.md in Resources */,
 				5149BADB2C3D6F4F000FA4BF /* Podfile in Resources */,
 				51BD76242C466FCF0033365D /* Preview Assets.xcassets in Resources */,
 				51BD76252C466FCF0033365D /* about_legal_information.html in Resources */,
