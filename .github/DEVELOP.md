@@ -16,6 +16,7 @@
   * [Manual tests using demo app](#manual-tests-using-demo-app)
 - [Build phases](#build-phases)
 - [Targets](#targets)
+- [Internal assets](#internal-assets)
 - [Certificates, profiles and identifiers](#certificates-profiles-and-identifiers)
 - [Update dependencies with Renovate](#update-dependencies-with-renovate)
 - [Developer Certificate of Origin](#developer-certificate-of-origin)
@@ -234,7 +235,7 @@ Such tests here are used to as to be sure the look and feel of any components an
 Any interface modifications require regenerating the illustrations using the tool, i.e. run the tests twice. The reference illustrations have already been saved within the project.
 
 > [!IMPORTANT]
-> The device under tests is a simulator of iPhone 16 Pro (18.4), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
+> The device under tests is a simulator of iPhone 17 Pro (26.0), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
 
 #### How to use to use swift-snapshot-testing library
 
@@ -346,6 +347,13 @@ The Xcode project contains two targets:
 2. _Periphery_ to look for dead code in the source code
 3. _DesignToolboxSnapshotsTests_ for UI tests in demo app
 
+## Internal assets
+
+Some assets must not be versioned in this external public repository. 
+For example, the license terms of the *Helvetica Neue* font family forbid to save fonts files in repositories.
+Thus, for *Helvetica Neue Arabic* font, these assets are not available in the repository.
+If you want to get them, download them from the [Orange Brand website (authentication needed)](https://brand.orange.com/en/brand-basics/typography) and add them in *Resources/Fonts*
+ 
 ## Certificates, profiles and identifiers
 
 We choose to use Xcode automatic signing for debug builds of the app so as to make easier onboarding of newcomers in development team, and also to prevent to update provisioning profiles with individual developers certificates each team someone wants to build the app and also to prevent to register each new build device. You may need to be part of our team if you want to build in debug mode.
