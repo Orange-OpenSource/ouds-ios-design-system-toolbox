@@ -126,11 +126,12 @@ rbenv global 3.4.0
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 26.0**, we suggest you use this version or newer if you want.
+We use also for our GitLab CI runners **Xcode 26.0.1**, we suggest you use this version or newer if you want (even if not recommended).
 
 > [!IMPORTANT]
-> Xcode 26.0 and Swift 6.2 are used for this project. You must use this configuration.
-> Not retrocompatibility is planned.
+> Xcode 26.0.1 and Swift 6.2 are used for this project. You should use this configuration.
+> Not retrocompatibility is planned yet.
+> If need you can contact us and open a discussion on GitHub Orange-OpenSource/ouds-ios
 
 ## Embed the OUDS iOS library
 
