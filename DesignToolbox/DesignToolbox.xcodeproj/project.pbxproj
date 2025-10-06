@@ -3420,7 +3420,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1006-typography-manage-helvetica-neue-arabic-font";
+				branch = develop;
 				kind = branch;
 			};
 		};

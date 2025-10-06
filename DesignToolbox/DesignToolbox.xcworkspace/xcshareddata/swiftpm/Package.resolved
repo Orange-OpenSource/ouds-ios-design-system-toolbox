@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1006-typography-manage-helvetica-neue-arabic-font",
-        "revision" : "eccc6514103c0dc6ad95b87d1c2d9c382cd71bce"
+        "branch" : "develop",
+        "revision" : "9f53c3e0f0f8eb34eaf80b5f6aa54ddd08401d79"
       }
     },
     {
