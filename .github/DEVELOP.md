@@ -217,7 +217,7 @@ To run these snapshots tests follow some steps:
 2. `bundle exec pod install`
 3. Open *DesignToolbox.xcworkspace*
 4. Select *DesignToolboxSnapshotsTests* scheme
-5. Select *iPhone 16 Pro (18.4)* simulator (the device used to tests and views rendering)
+5. Select *iPhone 17 Pro* simulator (the device used to tests and views rendering) (iOS 26.0 (23A339))
 6. Run tests (Product -> Test)
 
 Or run in terminal:
@@ -300,7 +300,7 @@ To run these UI tests follow some steps:
 2. `bundle exec pod install`
 3. Open *DesignToolbox.xcworkspace*
 4. Select *DesignToolboxUITests* scheme
-5. Select *iPhone 16 Pro (18.4)* simulator (the device used to tests and views rendering)
+5. Select *iPhone 17 Pro* simulator (the device used to tests and views rendering) (iOS 26.0 (23A339))
 6. Run tests (Product -> Test)
 
 Or run in terminal:
