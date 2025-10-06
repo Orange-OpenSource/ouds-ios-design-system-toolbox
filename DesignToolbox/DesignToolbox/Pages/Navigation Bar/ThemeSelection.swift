@@ -124,20 +124,26 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
     init() {
 
         // Init all themes
-        let orangeFranceOrangeTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)
-        let maxItOrangeTheme = OrangeTheme(tuning: Tuning.MaxIt)
-        let orangeFranceOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(tuning: Tuning.OrangeBusiness)
-        let maxItOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(tuning: Tuning.MaxIt)
-        let orangeFranceOrangeInverseTheme = OrangeInverseTheme(tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeInverseTheme = OrangeInverseTheme(tuning: Tuning.OrangeBusiness)
-        let maxItOrangeInverseTheme = OrangeInverseTheme(tuning: Tuning.MaxIt)
+
+        let orangeFranceOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
+        let maxItOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
+
+        let orangeFranceOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
+        let maxItOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
+
+        let orangeFranceOrangeInverseTheme = OrangeInverseTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeInverseTheme = OrangeInverseTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
+        let maxItOrangeInverseTheme = OrangeInverseTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
+
         let soshTheme = SoshTheme()
         let wireframeTheme = WireframeTheme()
+
         let defaultTheme = orangeFranceOrangeTheme
 
         // Fill arrays for menus
+
         orangeThemes = [orangeFranceOrangeTheme, orangeBusinessOrangeTheme, maxItOrangeTheme]
         orangeBusinessToolsThemes = [orangeFranceOrangeBusinessToolsTheme, orangeBusinessOrangeBusinessToolsTheme, maxItOrangeBusinessToolsTheme]
         orangeInverseThemes = [orangeFranceOrangeInverseTheme, orangeBusinessOrangeInverseTheme, maxItOrangeInverseTheme]
@@ -151,9 +157,41 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         }
 
         hotSwitchWarning = HotSwitchWarning()
+        #if USE_INTERNAL_FONTS
+        registerInternalFonts()
+        #endif
     }
 
     deinit {}
+
+    #if USE_INTERNAL_FONTS
+    private static var fontsAlreadyRegistered = false
+
+    /// Fonts are defined in Resources/Fonts in TTF files.
+    /// Needed for Helvetica Neue Arabic
+    private func registerInternalFonts() {
+        if !Self.fontsAlreadyRegistered {
+            let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
+            fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
+            Self.fontsAlreadyRegistered = true
+        }
+    }
+
+    private static func localizedHelveticaFont() -> String {
+        guard let preferredLanguage = Locale.preferredLanguages.first else {
+            return "Helvetica Neue"
+        }
+        if preferredLanguage.hasPrefix("ar") || Locale.current.languageCode == "ar" {
+            return "Helvetica Neue Arabic"
+        } else {
+            return "Helvetica Neue"
+        }
+    }
+    #else
+    private static func localizedHelveticaFont() -> String {
+        "Helvetica Neue"
+    }
+    #endif
 }
 
 // MARK: - Theme Selection Button
