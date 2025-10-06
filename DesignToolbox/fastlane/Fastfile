@@ -88,13 +88,6 @@ default_platform(:ios)
 
 platform :ios do
 
-    before_all do |lane, options|
-        xcodes(
-            version: '26.0',
-            select_for_current_build_only: true,
-        )
-    end
-
     # ------------------------------------------------------------
     # RUN PERIPHERY FOR DEAD CODE ANALYSIS
     # ------------------------------------------------------------
