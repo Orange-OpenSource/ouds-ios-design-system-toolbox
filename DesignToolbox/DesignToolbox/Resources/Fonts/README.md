@@ -11,3 +11,5 @@ These files are not relevant because *Helvetica Neue* font is available through 
 
 No TTF files of *Helvetica Neue Arabic* is versioned here.
 If you want to get them, download them from the [Orange Brand website (authentication needed)](https://brand.orange.com/en/brand-basics/typography).
+
+The three HelveticaNeueLTArabic files here are fakes and only for compilation issues.

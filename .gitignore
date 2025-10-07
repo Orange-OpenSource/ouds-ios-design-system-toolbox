@@ -17,9 +17,10 @@
 **/.DS_Store
 
 # Orange Brand fonts - Helvetica Neue - Arabic
-/DesignToolbox/DesignToolbox/Resources/Fonts/HelveticaNeueLTArabic-Bold.ttf
-/DesignToolbox/DesignToolbox/Resources/Fonts/HelveticaNeueLTArabic-Light.ttf
-/DesignToolbox/DesignToolbox/Resources/Fonts/HelveticaNeueLTArabic-Roman.ttf
+#/DesignToolbox/DesignToolbox/Resources/Fonts/HelveticaNeueLTArabic-Bold.ttf
+#/DesignToolbox/DesignToolbox/Resources/Fonts/HelveticaNeueLTArabic-Light.ttf
+#/DesignToolbox/DesignToolbox/Resources/Fonts/HelveticaNeueLTArabic-Roman.ttf
+# These 3 TTF above are replaced by fake files for compilation issues
 
 # Orange Brand fonts - Helvetica Neue - Pan European
 /DesignToolbox/DesignToolbox/Resources/Fonts/HelvNeue35_W1G.ttf
