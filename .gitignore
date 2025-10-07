@@ -16,29 +16,6 @@
 .DS_Store
 **/.DS_Store
 
-# Orange Brand fonts - Helvetica Neue - Arabic
-#/DesignToolbox/DesignToolbox/Resources/Fonts/HelveticaNeueLTArabic-Bold.ttf
-#/DesignToolbox/DesignToolbox/Resources/Fonts/HelveticaNeueLTArabic-Light.ttf
-#/DesignToolbox/DesignToolbox/Resources/Fonts/HelveticaNeueLTArabic-Roman.ttf
-# These 3 TTF above are replaced by fake files for compilation issues
-
-# Orange Brand fonts - Helvetica Neue - Pan European
-/DesignToolbox/DesignToolbox/Resources/Fonts/HelvNeue35_W1G.ttf
-/DesignToolbox/DesignToolbox/Resources/Fonts/HelvNeue45_W1G.ttf
-/DesignToolbox/DesignToolbox/Resources/Fonts/HelvNeue55_W1G.ttf
-/DesignToolbox/DesignToolbox/Resources/Fonts/HelvNeue65_W1G.ttf
-/DesignToolbox/DesignToolbox/Resources/Fonts/HelvNeue75_W1G.ttf
-
-# Orange Brand fonts - Mhei Chinese
-/DesignToolbox/DesignToolbox/Resources/Fonts/MHeiHK-Bold.ttf
-/DesignToolbox/DesignToolbox/Resources/Fonts/MHeiHK-Light.ttf
-/DesignToolbox/DesignToolbox/Resources/Fonts/MHeiHK-Medium.ttf
-/DesignToolbox/DesignToolbox/Resources/Fonts/MHeiHK-Xbold.ttf
-/DesignToolbox/DesignToolbox/Resources/Fonts/MHeiPRC-Bold.ttf
-/DesignToolbox/DesignToolbox/Resources/Fonts/MHeiPRC-Light.ttf
-/DesignToolbox/DesignToolbox/Resources/Fonts/MHeiPRC-Medium.ttf
-/DesignToolbox/DesignToolbox/Resources/Fonts/MHeiPRC-Xbold.ttf
-
 # Produced by tool generating documentation, should be versionined in gh-pages branch
 /.build/
 
