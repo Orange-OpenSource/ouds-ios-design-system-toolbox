@@ -197,7 +197,6 @@
 		5122E0282D65D18E00CD2857 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5122E0272D65D18E00CD2857 /* Localizable.xcstrings */; };
 		5122E02A2D65E7AC00CD2857 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
 		5122E02B2D65FEBA00CD2857 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
-		512364792C3D7B2D00572FD5 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 512364782C3D7B2D00572FD5 /* Podfile.lock */; };
 		5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 5123647A2C3D7B3500572FD5 /* Gemfile.lock */; };
 		5131F14D2E324A9A00A942B0 /* OUDSThemesWireframe in Frameworks */ = {isa = PBXBuildFile; productRef = 5131F14C2E324A9A00A942B0 /* OUDSThemesWireframe */; };
 		513442072D75B880000B5DE4 /* CheckboxElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513441FE2D75B880000B5DE4 /* CheckboxElement.swift */; };
@@ -566,7 +565,6 @@
 		07CC9AE42DB0F7DD001BC929 /* SwitchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchPage.swift; sourceTree = "<group>"; };
 		07CC9AE72DB0F7DD001BC929 /* SwitchItemElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemElement.swift; sourceTree = "<group>"; };
 		07CC9AEA2DB0F7DD001BC929 /* SwitchElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchElements.swift; sourceTree = "<group>"; };
-		07CEDD802C7DB921003E1885 /* generateDoc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = generateDoc.sh; path = ../generateDoc.sh; sourceTree = "<group>"; };
 		07CF426A2CA30728000BD03E /* TokensPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensPage.swift; sourceTree = "<group>"; };
 		07CF42712CA31AC3000BD03E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07CF42732CA3EC58000BD03E /* CardIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardIllustration.swift; sourceTree = "<group>"; };
@@ -616,7 +614,6 @@
 		5122E0262D65D13400CD2857 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/about_privacy_policy.html; sourceTree = "<group>"; };
 		5122E0272D65D18E00CD2857 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		5122E0292D65E7AC00CD2857 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
-		512364782C3D7B2D00572FD5 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		5123647A2C3D7B3500572FD5 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gemfile.lock; path = ../Gemfile.lock; sourceTree = "<group>"; };
 		513441FD2D75B880000B5DE4 /* CheckboxConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxConfiguration.swift; sourceTree = "<group>"; };
 		513441FE2D75B880000B5DE4 /* CheckboxElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxElement.swift; sourceTree = "<group>"; };
@@ -1265,11 +1262,9 @@
 			isa = PBXGroup;
 			children = (
 				0740A98A2C98337C0069D24A /* fastlane */,
-				07CEDD802C7DB921003E1885 /* generateDoc.sh */,
 				0707B6432C2C569500A911E7 /* Gemfile */,
 				5123647A2C3D7B3500572FD5 /* Gemfile.lock */,
 				5149BADA2C3D6F4F000FA4BF /* Podfile */,
-				512364782C3D7B2D00572FD5 /* Podfile.lock */,
 				07FDCDB82C296C370009AA13 /* .gitignore */,
 				07FDCDA52C296B4B0009AA13 /* .gitattributes */,
 				07FDCDB62C296C370009AA13 /* .gitleaks.toml */,
@@ -2345,7 +2340,6 @@
 				6DFC20B82CE3AF1500F2EC33 /* style.css in Resources */,
 				5180A3D32E95943300664BD0 /* HelveticaNeueLTArabic-Roman.ttf in Resources */,
 				6DFC20B92CE3AF1500F2EC33 /* orange-logo.svg in Resources */,
-				512364792C3D7B2D00572FD5 /* Podfile.lock in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
