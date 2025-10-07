@@ -246,8 +246,8 @@
 		515F66FE2E2E925600268440 /* OrangeInverseTheme+TokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F12E2E925600268440 /* OrangeInverseTheme+TokensElevationUITests.swift */; };
 		515F66FF2E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F52E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift */; };
 		5180A3CF2E95941D00664BD0 /* HelveticaNeueLTArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3CE2E95941900664BD0 /* HelveticaNeueLTArabic-Bold.ttf */; };
-		5180A3D12E95942800664BD0 /* HelveticaNeueLTArabic-Light.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 5180A3D02E95942100664BD0 /* HelveticaNeueLTArabic-Light.ttf */; };
 		5180A3D32E95943300664BD0 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
+		5180A3D52E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D42E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf */; };
 		5180FE6E2DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */; };
 		5180FE6F2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */; };
 		5180FE702DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */; };
@@ -657,8 +657,8 @@
 		515F66F62E2E925600268440 /* OrangeInverseTheme+TokensColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensColorUITests.swift"; sourceTree = "<group>"; };
 		515F66F72E2E925600268440 /* OrangeInverseTheme+TokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensFontUITests.swift"; sourceTree = "<group>"; };
 		5180A3CE2E95941900664BD0 /* HelveticaNeueLTArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HelveticaNeueLTArabic-Bold.ttf"; sourceTree = "<group>"; };
-		5180A3D02E95942100664BD0 /* HelveticaNeueLTArabic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HelveticaNeueLTArabic-Light.ttf"; sourceTree = "<group>"; };
 		5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HelveticaNeueLTArabic-Roman.ttf"; sourceTree = "<group>"; };
+		5180A3D42E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HelveticaNeueLTArabic-Light.ttf"; sourceTree = "<group>"; };
 		5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerConfiguration.swift; sourceTree = "<group>"; };
 		5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerElement.swift; sourceTree = "<group>"; };
 		5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerPage.swift; sourceTree = "<group>"; };
@@ -1292,7 +1292,7 @@
 			isa = PBXGroup;
 			children = (
 				5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */,
-				5180A3D02E95942100664BD0 /* HelveticaNeueLTArabic-Light.ttf */,
+				5180A3D42E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf */,
 				5180A3CE2E95941900664BD0 /* HelveticaNeueLTArabic-Bold.ttf */,
 				51D5898F2E8FCC310071E8BF /* README.md */,
 			);
@@ -2417,6 +2417,7 @@
 				51BD76242C466FCF0033365D /* Preview Assets.xcassets in Resources */,
 				51BD76252C466FCF0033365D /* about_legal_information.html in Resources */,
 				5180A3CF2E95941D00664BD0 /* HelveticaNeueLTArabic-Bold.ttf in Resources */,
+				5180A3D52E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf in Resources */,
 				5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */,
 				51BD76262C466FCF0033365D /* about_privacy_policy.html in Resources */,
 				07CF42722CA31AC3000BD03E /* Assets.xcassets in Resources */,
@@ -2865,7 +2866,6 @@
 				0765B4942CC1597C00E69359 /* NamedColor+Background.swift in Sources */,
 				075C71372CECC3D800B93FC3 /* SpacePaddingTokenIllustrations.swift in Sources */,
 				075114DB2CB7D28D00B8B759 /* SizeTokenElement.swift in Sources */,
-				5180A3D12E95942800664BD0 /* HelveticaNeueLTArabic-Light.ttf in Sources */,
 				0765B4A02CC15BBC00E69359 /* NamedColor+Content.swift in Sources */,
 				0765B49A2CC15ACE00E69359 /* NamedColor+Border.swift in Sources */,
 				07B3CCB62D40F37000DBB10A /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
