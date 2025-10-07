@@ -16,11 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [DesignToolbox] Update `json` RubyGem from v2.15.0 to v2.15.1
+- [DesignToolbox] `ossf/scorecard-action` action from v2.4.2 to v2.4.3 for scorecard workflow
+- [DesignToolbox] `json` RubyGem from v2.15.0 to v2.15.1
 - [DesignToolbox] `github/codeql-action/upload-sarif` action from v3 to v4 for scorecard workflow
 - [DesignToolbox] `ruby/setup-ruby` action from v1.263.0 to v1.265.0 for build-and-test and periphery workflows
 - [DesignToolbox] `Ruby version from v3.3 to v3.4.7 for build-and-test and periphery workflows
-- [DesignToolbox] Update `SwiftLint` pod from v0.61.0 to v0.62.1
+- [DesignToolbox] `SwiftLint` pod from v0.61.0 to v0.62.1
 - [Library] Apply `Shantell Sans` font family for `Wireframe` theme instead of `Chalkboard SE` (Orange-OpenSource/ouds-ios#990)
 - [Library] Icon for components catalog documentation (Orange-OpenSource/ouds-ios#1019)
 - [Library] Tokens library v1.6 (Orange-OpenSource/ouds-ios#991)
