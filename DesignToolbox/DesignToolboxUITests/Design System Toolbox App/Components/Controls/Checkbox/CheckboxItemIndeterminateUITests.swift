@@ -35,7 +35,7 @@ final class CheckboxitemIndeterminateUITests: AppTestCase {
 
         // WHEN
 
-        checkbox.tap()
+        tapButton(withWording: "Unselected", app)
 
         // THEN
 
@@ -43,7 +43,7 @@ final class CheckboxitemIndeterminateUITests: AppTestCase {
 
         // WHEN
 
-        checkbox.tap()
+        tapButton(withWording: "Selected", app)
 
         // THEN
 
@@ -59,7 +59,7 @@ final class CheckboxitemIndeterminateUITests: AppTestCase {
 
         // WHEN
 
-        checkbox.tap()
+        tapButton(withWording: "Selected", app)
 
         // THEN
 

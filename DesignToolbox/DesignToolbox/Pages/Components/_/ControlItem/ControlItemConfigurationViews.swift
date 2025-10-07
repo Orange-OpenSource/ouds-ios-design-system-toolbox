@@ -109,6 +109,7 @@ private struct BooleanSelectionView: View {
 
     var body: some View {
         OUDSSwitchItem("app_components_common_selection_label", isOn: $model.isOn)
+            .accessibilityIdentifier(A11YIdentifiers.configurationSwitchSelection)
     }
 }
 
