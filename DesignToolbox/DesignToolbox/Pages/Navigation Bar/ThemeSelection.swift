@@ -170,11 +170,11 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
     /// Fonts are defined in Resources/Fonts in TTF files.
     /// Needed for Helvetica Neue Arabic
     private func registerInternalFonts() {
-        if !Self.fontsAlreadyRegistered {
-            let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
-            fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
-            Self.fontsAlreadyRegistered = true
-        }
+//        if !Self.fontsAlreadyRegistered {
+//            let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
+//            fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
+//            Self.fontsAlreadyRegistered = true
+//        }
     }
 
     private static func localizedHelveticaFont() -> String {
