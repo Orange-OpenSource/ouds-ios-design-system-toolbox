@@ -245,6 +245,9 @@
 		515F66FD2E2E925600268440 /* OrangeInverseTheme+TokensFontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F72E2E925600268440 /* OrangeInverseTheme+TokensFontUITests.swift */; };
 		515F66FE2E2E925600268440 /* OrangeInverseTheme+TokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F12E2E925600268440 /* OrangeInverseTheme+TokensElevationUITests.swift */; };
 		515F66FF2E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F52E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift */; };
+		5180A3CB2E95918A00664BD0 /* HelveticaNeueLTArabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3C92E95918A00664BD0 /* HelveticaNeueLTArabic-Light.ttf */; };
+		5180A3CC2E95918A00664BD0 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3CA2E95918A00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
+		5180A3CD2E95918A00664BD0 /* HelveticaNeueLTArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3C82E95918A00664BD0 /* HelveticaNeueLTArabic-Bold.ttf */; };
 		5180FE6E2DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */; };
 		5180FE6F2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */; };
 		5180FE702DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */; };
@@ -653,6 +656,9 @@
 		515F66F52E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensOpacityUITests.swift"; sourceTree = "<group>"; };
 		515F66F62E2E925600268440 /* OrangeInverseTheme+TokensColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensColorUITests.swift"; sourceTree = "<group>"; };
 		515F66F72E2E925600268440 /* OrangeInverseTheme+TokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensFontUITests.swift"; sourceTree = "<group>"; };
+		5180A3C82E95918A00664BD0 /* HelveticaNeueLTArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTArabic-Bold.ttf"; sourceTree = "<group>"; };
+		5180A3C92E95918A00664BD0 /* HelveticaNeueLTArabic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTArabic-Light.ttf"; sourceTree = "<group>"; };
+		5180A3CA2E95918A00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTArabic-Roman.ttf"; sourceTree = "<group>"; };
 		5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerConfiguration.swift; sourceTree = "<group>"; };
 		5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerElement.swift; sourceTree = "<group>"; };
 		5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerPage.swift; sourceTree = "<group>"; };
@@ -1286,6 +1292,9 @@
 			isa = PBXGroup;
 			children = (
 				51D5898F2E8FCC310071E8BF /* README.md */,
+				5180A3C82E95918A00664BD0 /* HelveticaNeueLTArabic-Bold.ttf */,
+				5180A3C92E95918A00664BD0 /* HelveticaNeueLTArabic-Light.ttf */,
+				5180A3CA2E95918A00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -2412,6 +2421,9 @@
 				07CF42722CA31AC3000BD03E /* Assets.xcassets in Resources */,
 				515439232DE734E600B25D13 /* Settings.bundle in Resources */,
 				5122E0282D65D18E00CD2857 /* Localizable.xcstrings in Resources */,
+				5180A3CB2E95918A00664BD0 /* HelveticaNeueLTArabic-Light.ttf in Resources */,
+				5180A3CC2E95918A00664BD0 /* HelveticaNeueLTArabic-Roman.ttf in Resources */,
+				5180A3CD2E95918A00664BD0 /* HelveticaNeueLTArabic-Bold.ttf in Resources */,
 				6DFC20B52CE3AF1500F2EC33 /* boosted-grid.min.css in Resources */,
 				6DFC20B62CE3AF1500F2EC33 /* favicon.ico in Resources */,
 				6DFC20B72CE3AF1500F2EC33 /* pie.css in Resources */,
