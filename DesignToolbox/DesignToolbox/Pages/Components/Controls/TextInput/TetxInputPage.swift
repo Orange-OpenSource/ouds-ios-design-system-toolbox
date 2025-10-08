@@ -65,7 +65,6 @@ struct TextInputDemo: View {
                     configurationModel.helperText = "Error text detected"
                 }
             }
-            .searchable(text: $configurationModel.text)
     }
 
     private var leadingIcon: Image? {
@@ -78,7 +77,7 @@ struct TextInputDemo: View {
         }
 
         return .init(icon: Image(decorative: "ic_heart"),
-                     accessibilityLabel: "app_components_common_icon_a11y".localized()) {}
+                     actionHint: "app_components_common_icon_a11y".localized()) {}
     }
 
     private var helperLink: OUDSTextInput.Helperlink? {
