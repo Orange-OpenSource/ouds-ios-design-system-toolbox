@@ -21,18 +21,18 @@ struct MainView: View {
 
     var body: some View {
         TabView {
-//            TokensPage()
-//                .tabItem {
-//                    Label("app_bottomBar_tokens_label", image: "ic_token")
-//                }
+            TokensPage()
+                .tabItem {
+                    Label("app_bottomBar_tokens_label", image: "ic_token")
+                }
             ComponentsPage()
                 .tabItem {
                     Label("app_bottomBar_components_label", image: "ic_component_atom")
                 }
-//            AboutPage()
-//                .tabItem {
-//                    Label("app_bottomBar_about_label", image: "ic_info")
-//                }
+            AboutPage()
+                .tabItem {
+                    Label("app_bottomBar_about_label", image: "ic_info")
+                }
         }
         .oudsAccentColor(theme.colors.colorContentBrandPrimary)
     }
