@@ -55,7 +55,7 @@ private struct RadioItemDemo: View {
                       isReadOnly: configurationModel.isReadOnly,
                       hasDivider: configurationModel.divider)
             .disabled(!configurationModel.enabled)
-            .padding(.all, theme.spaces.spaceFixedMd)
+            .padding(.all, theme.spaces.spaceFixedMedium)
             .accessibilityIdentifier(A11YIdentifiers.componentRadioItem)
     }
 

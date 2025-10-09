@@ -20,7 +20,7 @@ struct BorderTokenPage: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             Section {
                 VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                     DesignToolboxCode(code: "theme.borders.borderWidthDefault", titleText: "app_tokens_common_viewCodeExample_label")
@@ -65,7 +65,7 @@ struct BorderTokenPage: View {
                     .oudsForegroundStyle(theme.colors.colorContentDefault)
             }
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMd)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
     struct RectangleBackground: View {

@@ -37,7 +37,7 @@ private struct ColoredSurfaceIllustration: View {
         OUDSColoredSurface(color: theme.colorModes.modeOnBrandPrimary) {
             Rectangle().fill(Color.clear)
         }
-        .padding(.horizontal, theme.spaces.spaceFixedSm)
-        .padding(.vertical, theme.spaces.spaceFixedMd)
+        .padding(.horizontal, theme.spaces.spaceFixedSmall)
+        .padding(.vertical, theme.spaces.spaceFixedMedium)
     }
 }

@@ -45,6 +45,6 @@ private struct DividerIllustration: View {
             OUDSHorizontalDivider(color: .default)
             Spacer()
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMd)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 }

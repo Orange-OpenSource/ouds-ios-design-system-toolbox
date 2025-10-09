@@ -16,35 +16,35 @@ import OUDSTokensSemantic
 
 extension NamedSize {
     enum IconDecorative: String, CaseIterable {
-        case sizeIconDecorative4xs
-        case sizeIconDecorative3xs
-        case sizeIconDecorative2xs
-        case sizeIconDecorativeXs
-        case sizeIconDecorativeSm
-        case sizeIconDecorativeMd
-        case sizeIconDecorativeLg
-        case sizeIconDecorativeXl
-        case sizeIconDecorative2xl
+        case sizeIconDecorative4xsmall
+        case sizeIconDecorative3xsmall
+        case sizeIconDecorative2xsmall
+        case sizeIconDecorativeXsmall
+        case sizeIconDecorativeSmall
+        case sizeIconDecorativeMedium
+        case sizeIconDecorativeLarge
+        case sizeIconDecorativeXlarge
+        case sizeIconDecorative2xlarge
 
         func token(from theme: OUDSTheme) -> SizeSemanticToken {
             switch self {
-            case .sizeIconDecorative4xs:
+            case .sizeIconDecorative4xsmall:
                 theme.sizes.sizeIconDecorative4xs
-            case .sizeIconDecorative3xs:
+            case .sizeIconDecorative3xsmall:
                 theme.sizes.sizeIconDecorative3xs
-            case .sizeIconDecorative2xs:
+            case .sizeIconDecorative2xsmall:
                 theme.sizes.sizeIconDecorative2xs
-            case .sizeIconDecorativeXs:
+            case .sizeIconDecorativeXsmall:
                 theme.sizes.sizeIconDecorativeXs
-            case .sizeIconDecorativeSm:
+            case .sizeIconDecorativeSmall:
                 theme.sizes.sizeIconDecorativeSm
-            case .sizeIconDecorativeMd:
+            case .sizeIconDecorativeMedium:
                 theme.sizes.sizeIconDecorativeMd
-            case .sizeIconDecorativeLg:
+            case .sizeIconDecorativeLarge:
                 theme.sizes.sizeIconDecorativeLg
-            case .sizeIconDecorativeXl:
+            case .sizeIconDecorativeXlarge:
                 theme.sizes.sizeIconDecorativeXl
-            case .sizeIconDecorative2xl:
+            case .sizeIconDecorative2xlarge:
                 theme.sizes.sizeIconDecorative2xl
             }
         }

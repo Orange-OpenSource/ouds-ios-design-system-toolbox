@@ -53,6 +53,6 @@ private struct CheckboxDemo: View {
                 .accessibilityIdentifier(A11YIdentifiers.componentCheckbox)
             Spacer()
         }
-        .padding(.all, theme.spaces.spaceFixedMd)
+        .padding(.all, theme.spaces.spaceFixedMedium)
     }
 }

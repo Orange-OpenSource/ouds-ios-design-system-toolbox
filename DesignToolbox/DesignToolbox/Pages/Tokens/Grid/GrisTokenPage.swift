@@ -25,7 +25,7 @@ struct GridTokenPage: View {
 
     var body: some View {
         Group {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
                 Image(decorative: "il_tokens_grid_column_margin")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -49,7 +49,7 @@ struct GridTokenPage: View {
                     .designToolboxSectionHeaderStyle()
             }
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMd)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
     // MARK: Private helpers

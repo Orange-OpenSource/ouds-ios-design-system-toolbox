@@ -52,7 +52,7 @@ private struct CheckboxItemDemo: View {
                          isReadOnly: configurationModel.isReadOnly,
                          hasDivider: configurationModel.divider)
             .disabled(!configurationModel.enabled)
-            .padding(.all, theme.spaces.spaceFixedMd)
+            .padding(.all, theme.spaces.spaceFixedMedium)
             .designToolboxColoredSurface(false)
             .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
     }

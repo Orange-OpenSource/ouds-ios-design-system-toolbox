@@ -51,7 +51,7 @@ private struct ControlItemConfiguration: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 selection
                     .disabled(configurationModel.isError || configurationModel.isReadOnly)

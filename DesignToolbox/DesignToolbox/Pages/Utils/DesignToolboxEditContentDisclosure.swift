@@ -29,6 +29,6 @@ struct DesignToolboxEditContentDisclosure<Content>: View where Content: View {
                 .typeHeadingSmall(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMd)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 }

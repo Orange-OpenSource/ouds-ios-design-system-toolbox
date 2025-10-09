@@ -141,7 +141,7 @@ struct TagConfigurationView: View {
                            selection: $configurationModel.size,
                            chips: OUDSTag.Size.chips)
 
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
                 OUDSSwitchItem("app_components_common_loader_label", isOn: $configurationModel.loader)
                     .disabled(configurationModel.status == .disabled)
 

@@ -63,6 +63,6 @@ struct BadgeDemo: View {
 
             Spacer()
         }
-        .padding(.all, theme.spaces.spaceFixedMd)
+        .padding(.all, theme.spaces.spaceFixedMedium)
     }
 }
