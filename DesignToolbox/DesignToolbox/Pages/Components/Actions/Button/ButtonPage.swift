@@ -53,7 +53,7 @@ private struct ButtonDemo: View {
                 switch configurationModel.layout {
                 case .iconOnly:
                     OUDSButton(icon: Image(decorative: "ic_heart"),
-                               accessibilityLabel: "app_components_common_icon_a11y".localized(),                               
+                               accessibilityLabel: "app_components_common_icon_a11y".localized(),
                                appearance: configurationModel.appearance,
                                style: configurationModel.style) {}
                 case .textOnly:
