@@ -206,8 +206,8 @@ For *App Store* illustrations, same thing, but with the suitable simulators or d
 
 ### Unit tests for OUDS Swift package
 
-You can, from the design system toolbox project, if you referenced the OUDS package with a local repository reference before, run the unit tests of the OUDS package.
-To do that, select the scheme *OUDS-Package* and in the tests navigator run the tests.
+You can, from the design system toolbox project, if you referenced the OUDS package with a local repository reference before, run the unit tests of the OUDS package. Or you can run them from Xcode if you opened only the package?
+To do that, select the scheme *OUDS-Package* scheme, which is also the current package test plan, and in the tests navigator run the tests.
 
 ### Snapshots tests in demo app
 

@@ -307,7 +307,7 @@ enum TagLayout: CaseIterable, CustomStringConvertible {
         }
     }
 
-    public var technicalDescription: String {
+    var technicalDescription: String {
         switch self {
         case .textOnly:
             "textOnlyLayout"
