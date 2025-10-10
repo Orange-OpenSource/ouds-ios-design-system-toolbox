@@ -3328,6 +3328,30 @@
         }
       }
     },
+    "app_components_textInput_illustration_helperText_label" : {
+      "comment" : "Component - TextInput",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص مساعد."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte d'aide."
+          }
+        }
+      }
+    },
     "app_components_textInput_label" : {
       "comment" : "Component - TextInput",
       "extractionState" : "manual",

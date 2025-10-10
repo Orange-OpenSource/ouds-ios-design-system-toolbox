@@ -205,7 +205,7 @@ struct TestTextInputView: View {
     // MARK: - Heleprs
 
     private var trailingAction: OUDSTextInput.TrailingAction {
-        .init(icon: icon, accessibilityLabel: "", action: {})
+        .init(icon: icon, actionHint: "", action: {})
     }
 
     private var placeholder: OUDSTextInput.Placeholder {
