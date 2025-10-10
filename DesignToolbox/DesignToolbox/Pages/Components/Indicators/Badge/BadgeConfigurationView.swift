@@ -131,7 +131,7 @@ struct BadgeConfigurationView: View {
             if configurationModel.badgeType == .count {
                 DesignToolboxTextField(text: $configurationModel.countText, title: "app_components_badge_count_label")
                     .keyboardType(.numberPad)
-                    .padding(.horizontal, theme.spaces.spaceFixedMd)
+                    .padding(.horizontal, theme.spaces.spaceFixedMedium)
             }
         }
     }

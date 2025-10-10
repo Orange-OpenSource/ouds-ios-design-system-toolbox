@@ -18,38 +18,38 @@ extension NamedSpace {
 
     enum Scaled: String, CaseIterable {
         case spaceScaledNone
-        case spaceScaled3xs
-        case spaceScaled2xs
-        case spaceScaledXs
-        case spaceScaledSm
-        case spaceScaledMd
-        case spaceScaledLg
-        case spaceScaledXl
-        case spaceScaled2xl
-        case spaceScaled3xl
+        case spaceScaled3xsmall
+        case spaceScaled2xsmall
+        case spaceScaledXsmall
+        case spaceScaledSmall
+        case spaceScaledMedium
+        case spaceScaledLarge
+        case spaceScaledXlarge
+        case spaceScaled2xlarge
+        case spaceScaled3xlarge
 
         func token(from theme: OUDSTheme) -> MultipleSpaceSemanticTokens {
             switch self {
             case .spaceScaledNone:
                 theme.spaces.spaceScaledNone
-            case .spaceScaled3xs:
-                theme.spaces.spaceScaled3xs
-            case .spaceScaled2xs:
-                theme.spaces.spaceScaled2xs
-            case .spaceScaledXs:
-                theme.spaces.spaceScaledXs
-            case .spaceScaledSm:
-                theme.spaces.spaceScaledSm
-            case .spaceScaledMd:
-                theme.spaces.spaceScaledMd
-            case .spaceScaledLg:
-                theme.spaces.spaceScaledLg
-            case .spaceScaledXl:
-                theme.spaces.spaceScaledXl
-            case .spaceScaled2xl:
-                theme.spaces.spaceScaled2xl
-            case .spaceScaled3xl:
-                theme.spaces.spaceScaled3xl
+            case .spaceScaled3xsmall:
+                theme.spaces.spaceScaled3xsmall
+            case .spaceScaled2xsmall:
+                theme.spaces.spaceScaled2xsmall
+            case .spaceScaledXsmall:
+                theme.spaces.spaceScaledXsmall
+            case .spaceScaledSmall:
+                theme.spaces.spaceScaledSmall
+            case .spaceScaledMedium:
+                theme.spaces.spaceScaledMedium
+            case .spaceScaledLarge:
+                theme.spaces.spaceScaledLarge
+            case .spaceScaledXlarge:
+                theme.spaces.spaceScaledXlarge
+            case .spaceScaled2xlarge:
+                theme.spaces.spaceScaled2xlarge
+            case .spaceScaled3xlarge:
+                theme.spaces.spaceScaled3xlarge
             }
         }
     }

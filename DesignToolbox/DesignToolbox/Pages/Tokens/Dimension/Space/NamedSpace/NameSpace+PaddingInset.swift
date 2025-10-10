@@ -18,16 +18,16 @@ extension NamedSpace {
 
     enum PaddingInset: String, CaseIterable, NamedSpaceToken {
         case spaceInsetNone
-        case spaceInset4xs
-        case spaceInset3xs
-        case spaceInset2xs
-        case spaceInsetXs
-        case spaceInsetSm
-        case spaceInsetMd
-        case spaceInsetLg
-        case spaceInsetXl
-        case spaceInset2xl
-        case spaceInset3xl
+        case spaceInset4xsmall
+        case spaceInset3xsmall
+        case spaceInset2xsmall
+        case spaceInsetXsmall
+        case spaceInsetSmall
+        case spaceInsetMedium
+        case spaceInsetLarge
+        case spaceInsetXlarge
+        case spaceInset2xlarge
+        case spaceInset3xlarge
 
         var name: String { rawValue }
 
@@ -35,26 +35,26 @@ extension NamedSpace {
             switch self {
             case .spaceInsetNone:
                 theme.spaces.spaceInsetNone
-            case .spaceInset4xs:
-                theme.spaces.spaceInset4xs
-            case .spaceInset3xs:
-                theme.spaces.spaceInset3xs
-            case .spaceInset2xs:
-                theme.spaces.spaceInset2xs
-            case .spaceInsetXs:
-                theme.spaces.spaceInsetXs
-            case .spaceInsetSm:
-                theme.spaces.spaceInsetSm
-            case .spaceInsetMd:
-                theme.spaces.spaceInsetMd
-            case .spaceInsetLg:
-                theme.spaces.spaceInsetLg
-            case .spaceInsetXl:
-                theme.spaces.spaceInsetXl
-            case .spaceInset2xl:
-                theme.spaces.spaceInset2xl
-            case .spaceInset3xl:
-                theme.spaces.spaceInset3xl
+            case .spaceInset4xsmall:
+                theme.spaces.spaceInset4xsmall
+            case .spaceInset3xsmall:
+                theme.spaces.spaceInset3xsmall
+            case .spaceInset2xsmall:
+                theme.spaces.spaceInset2xsmall
+            case .spaceInsetXsmall:
+                theme.spaces.spaceInsetXsmall
+            case .spaceInsetSmall:
+                theme.spaces.spaceInsetSmall
+            case .spaceInsetMedium:
+                theme.spaces.spaceInsetMedium
+            case .spaceInsetLarge:
+                theme.spaces.spaceInsetLarge
+            case .spaceInsetXlarge:
+                theme.spaces.spaceInsetXlarge
+            case .spaceInset2xlarge:
+                theme.spaces.spaceInset2xlarge
+            case .spaceInset3xlarge:
+                theme.spaces.spaceInset3xlarge
             }
         }
     }

@@ -52,7 +52,7 @@ private struct RadioPickerDemo: View {
                             isError: configurationModel.isError,
                             isReadOnly: configurationModel.isReadOnly,
                             hasDivider: configurationModel.hasDivider)
-                .padding([.trailing, .leading], theme.spaces.spacePaddingInlineSm)
+                .padding([.trailing, .leading], theme.spaces.spacePaddingInlineSmall)
                 .disabled(!configurationModel.isEnabled)
         }
     }

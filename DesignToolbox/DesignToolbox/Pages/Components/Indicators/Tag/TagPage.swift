@@ -58,7 +58,7 @@ struct TagDemo: View {
 
             Spacer()
         }
-        .padding(.all, theme.spaces.spaceFixedMd)
+        .padding(.all, theme.spaces.spaceFixedMedium)
     }
 
     // Need here that system name, a11y managed in component
