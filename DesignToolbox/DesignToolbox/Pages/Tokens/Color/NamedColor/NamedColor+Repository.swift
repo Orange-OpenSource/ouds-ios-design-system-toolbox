@@ -15,6 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 
 // swiftlint:disable function_body_length
+// swiftlint:disable type_body_length
 
 extension NamedColor {
 
@@ -286,3 +287,4 @@ extension NamedColor {
 }
 
 // swiftlint:enable function_body_length
+// swiftlint:enable type_body_length

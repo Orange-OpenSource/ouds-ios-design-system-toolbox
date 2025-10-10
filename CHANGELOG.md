@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Apply `Shantell Sans` font family for `Wireframe` theme instead of `Chalkboard SE` (Orange-OpenSource/ouds-ios#990)
+- [Library] Icon for components catalog documentation (Orange-OpenSource/ouds-ios#1019)
+- [Library] Tokens library v1.6 (Orange-OpenSource/ouds-ios#991)
 - [Library] Improve README for onboarding and newcomers (Orange-OpenSource/ouds-ios#1005)
 - [Library] Improve web documentation for onboarding and newcomers (Orange-OpenSource/ouds-ios#982)
 - [DesignToolbox] Migration to Xcode 26.0
