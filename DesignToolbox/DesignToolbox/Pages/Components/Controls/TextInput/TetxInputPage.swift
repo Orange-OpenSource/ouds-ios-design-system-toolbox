@@ -51,7 +51,8 @@ struct TextInputDemo: View {
                       text: $configurationModel.text,
                       placeholder: configurationModel.placeholder,
                       leadingIcon: leadingIcon,
-                      trailingAction: tarilingAction,
+                      flipLeadingIcon: configurationModel.flipLeadingIcon,
+                      trailingAction: trailingAction,
                       helperText: configurationModel.helperText,
                       helperLink: helperLink,
                       isOutlined: configurationModel.isOutlined,
@@ -67,11 +68,15 @@ struct TextInputDemo: View {
             }
     }
 
+    // Need here that system name, a11y managed in component
+    // swiftlint:disable accessibility_label_for_image
     private var leadingIcon: Image? {
-        configurationModel.leadingIcon ? Image(decorative: "ic_heart") : nil
+        configurationModel.leadingIcon ? Image(systemName: "figure.handball") : nil
     }
 
-    private var tarilingAction: OUDSTextInput.TrailingAction? {
+    // swiftlint:enable accessibility_label_for_image
+
+    private var trailingAction: OUDSTextInput.TrailingAction? {
         guard configurationModel.trailingAction else {
             return nil
         }

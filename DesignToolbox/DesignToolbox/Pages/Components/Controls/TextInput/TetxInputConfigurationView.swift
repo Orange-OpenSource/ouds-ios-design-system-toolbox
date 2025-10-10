@@ -20,12 +20,13 @@ import SwiftUI
 final class TextInputConfigurationModel: ComponentConfiguration {
 
     // MARK: Stored properties
-    let defaultLabel = String(localized: "app_components_common_label_label")
-    let defaultHelperText = String(localized: "app_components_common_helperText_label")
-    let defaultPlaceholderText = String(localized: "app_components_textInput_placeholder_label")
-    let defaultPrefix = "$"
-    let defaultSuffix = "€"
-    let defaultHelperLinkText = String(localized: "app_components_textInput_helperLink_label")
+
+    private let defaultLabel = String(localized: "app_components_common_label_label")
+    private let defaultHelperText = String(localized: "app_components_common_helperText_label")
+    private let defaultPlaceholderText = String(localized: "app_components_textInput_placeholder_label")
+    private let defaultPrefix = "$"
+    private let defaultSuffix = "€"
+    private let defaultHelperLinkText = String(localized: "app_components_textInput_helperLink_label")
 
     // MARK: Published properties
 
@@ -46,6 +47,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 
     @Published var leadingIcon: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var flipLeadingIcon: Bool {
         didSet { updateCode() }
     }
 
@@ -82,11 +87,12 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         prefixText = ""
         suffixText = ""
         leadingIcon = false
+        flipLeadingIcon = false
         trailingAction = false
         text = ""
         helperLinkText = ""
         isOutlined = false
-        status = .default
+        status = .enabled
     }
 
     deinit {}
@@ -102,17 +108,18 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 
     // MARK: Code illustration
+
     override func updateCode() {
         // swiftlint:disable line_length
         code =
             """
-            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(leadingIconPattern)\(trailingActionPattern)\(heleprTextPattern)\(helperLinkPattern)\(outlinedPattern)\(statusPattern))
+            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(leadingIconPattern)\(flipLeadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(statusPattern))
             """
         // swiftlint:enable line_length
     }
 
     private var labelPattern: String {
-        label.isEmpty ? "" : ", label: \"\(label)\""
+        "label: \"\(label)\""
     }
 
     private var textPattern: String {
@@ -127,15 +134,19 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 
     private var leadingIconPattern: String {
-        leadingIcon ? ", leadingIcon: Image(decorative: \"ic_heart\")" : ""
+        leadingIcon ? ", leadingIcon: Image(systemName: \"figure.handball\")" : ""
+    }
+
+    private var flipLeadingIconPattern: String {
+        flipLeadingIcon ? ", flipLeadingIcon: true" : ""
     }
 
     private var trailingActionPattern: String {
         let accessibilityLabel = "app_components_common_icon_a11y".localized()
-        return trailingAction ? ", trailingAction: .init(icon: Image(decorative: \"ic_heart\"), accessibilityLabel: \"\(accessibilityLabel)\") {}" : ""
+        return trailingAction ? ", trailingAction: .init(icon: Image(decorative: \"ic_heart\"), actionHint: \"\(accessibilityLabel)\") {}" : ""
     }
 
-    private var heleprTextPattern: String {
+    private var helperTextPattern: String {
         helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
     }
 
@@ -148,7 +159,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 
     private var statusPattern: String {
-        ", status: \(status.technicalDescription)"
+        status != .enabled ? ", status: \(status.technicalDescription)" : ""
     }
 }
 
@@ -187,6 +198,9 @@ struct TextInputConfigurationView: View {
 
                 OUDSSwitchItem("app_components_textInput_leadingIcon_label", isOn: $configurationModel.leadingIcon)
 
+                OUDSSwitchItem("app_components_textInput_flipLeadingIcon_label", isOn: $configurationModel.flipLeadingIcon)
+                    .disabled(!configurationModel.leadingIcon)
+
                 OUDSSwitchItem("app_components_textInput_trailingIcon_label", isOn: $configurationModel.trailingAction)
 
                 OUDSChipPicker(title: "app_components_common_status_label",
@@ -210,11 +224,11 @@ struct TextInputConfigurationView: View {
 }
 
 extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    public nonisolated(unsafe) static var allCases: [OUDSTextInput.Status] = [.default, .error, .loading, .readOnly, .disabled]
+    public nonisolated(unsafe) static var allCases: [OUDSTextInput.Status] = [.enabled, .error, .loading, .readOnly, .disabled]
 
     public var description: String {
         switch self {
-        case .default:
+        case .enabled:
             String(localized: "app_common_enabled_label")
         case .error:
             String(localized: "app_components_common_error_label")
@@ -228,7 +242,11 @@ extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomSt
     }
 
     public var technicalDescription: String {
-        ".\(description.lowercased())"
+        if self == .readOnly {
+            ".readOnly"
+        } else {
+            ".\(description.lowercased())"
+        }
     }
 
     private var chipData: OUDSChipPickerData<Self> {

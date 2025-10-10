@@ -128,6 +128,13 @@ extension AppTestCase {
         static let chipPickerWidth = deviceWidth + offsetWidth
         static let chipPickerHeight = 550 + offsetHeight
 
+        // MARK: - Controls - Text input
+
+        static let textInputX = screenStartX + offsetX
+        static let textInputY = 860 + offsetY
+        static let textInputWidth = deviceWidth + offsetWidth
+        static let textInputHeight = 690 + offsetHeight
+
         // MARK: - Indicators - Badge
 
         static let badgeX = screenStartX + offsetX

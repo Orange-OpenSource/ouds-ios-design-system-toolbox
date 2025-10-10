@@ -8,14 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `text input` component (Orange-OpenSource/ouds-ios#406)
 - [Library] `body moderate` and `label moderate` typography and tokens (Orange-OpenSource/ouds-ios#1003)
 - [DesignToolbox] Use `Helvetica Neue Arabic` font family if arabic (Orange-OpenSource/ouds-ios#1006)
 - [Library] Management of `Helvetica Neue Arabic` font family (Orange-OpenSource/ouds-ios#1006)
 - [DesignToolbox] Color scheme selector (Orange-OpenSource/ouds-ios#944)
-
-### Added
-
-- [Library] TextInput component (Orange-OpenSource/ouds-ios#406)
 
 ### Changed
 

@@ -296,6 +296,30 @@ final class 📄_ControlsDocumentationScreenshots: AppTestCase {
                        ACDC.chipPickerHeight,
                        app)
     }
+
+    // MARK: - Text Input
+
+    @MainActor
+    func testMakeScreenshotsForDocumentation_TextInput() {
+        let app = launchApp()
+        goToComponentsSheet(app)
+        wait(2)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_textInput_label", app)
+        tapButton(withWording: "app_components_textInput_label", app)
+
+        wait(2)
+
+        takeScreenshot(named: "component_textInput_",
+                       ACDC.textInputX,
+                       ACDC.textInputY,
+                       ACDC.textInputWidth,
+                       ACDC.textInputHeight,
+                       app)
+    }
 }
 
 // swiftlint:enable required_deinit

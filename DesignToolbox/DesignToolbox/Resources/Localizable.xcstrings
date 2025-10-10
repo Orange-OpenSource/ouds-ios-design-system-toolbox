@@ -3282,7 +3282,7 @@
       "shouldTranslate" : false
     },
     "app_components_textInput_description_text" : {
-      "comment" : "Component - TextInput",
+      "comment" : "Component - Text Input",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -3305,8 +3305,33 @@
         }
       }
     },
+    "app_components_textInput_flipLeadingIcon_label" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip leading icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip leading icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip leading icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_textInput_helperLink_label" : {
-      "comment" : "Component - TextInput",
+      "comment" : "Component - Text Input",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -3329,7 +3354,7 @@
       }
     },
     "app_components_textInput_illustration_helperText_label" : {
-      "comment" : "Component - TextInput",
+      "comment" : "Component - Text Input",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -3353,7 +3378,7 @@
       }
     },
     "app_components_textInput_label" : {
-      "comment" : "Component - TextInput",
+      "comment" : "Component - Text Input",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -3378,7 +3403,7 @@
       "shouldTranslate" : false
     },
     "app_components_textInput_leadingIcon_label" : {
-      "comment" : "Component - TextInput",
+      "comment" : "Component - Text Input",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -3403,7 +3428,7 @@
       "shouldTranslate" : false
     },
     "app_components_textInput_placeholder_label" : {
-      "comment" : "Component - TextInput",
+      "comment" : "Component - Text Input",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -3427,7 +3452,7 @@
       "shouldTranslate" : false
     },
     "app_components_textInput_prefix_label" : {
-      "comment" : "Component - TextInput",
+      "comment" : "Component - Text Input",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -3452,7 +3477,7 @@
       "shouldTranslate" : false
     },
     "app_components_textInput_suffix_label" : {
-      "comment" : "Component - TextInput",
+      "comment" : "Component - Text Input",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -3477,7 +3502,7 @@
       "shouldTranslate" : false
     },
     "app_components_textInput_trailingIcon_label" : {
-      "comment" : "Component - TextInput",
+      "comment" : "Component - Text Input",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
