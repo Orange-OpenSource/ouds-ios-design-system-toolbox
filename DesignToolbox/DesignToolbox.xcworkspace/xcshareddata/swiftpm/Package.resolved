@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1003-typography-manage-the-new-medium-font-weight",
-        "revision" : "c3ca7ebe44ef7a2031b6f1b9ec0afcaf635d6073"
+        "branch" : "develop",
+        "revision" : "c88694037bf10466a74a0a05f7152925cbae5cc6"
       }
     },
     {

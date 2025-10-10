@@ -3432,7 +3432,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1003-typography-manage-the-new-medium-font-weight";
+				branch = develop;
 				kind = branch;
 			};
 		};
