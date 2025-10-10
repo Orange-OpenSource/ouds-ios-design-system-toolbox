@@ -181,7 +181,7 @@ struct TextInputConfigurationView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 OUDSSwitchItem("app_components_common_outlined_label", isOn: $configurationModel.isOutlined)
 
