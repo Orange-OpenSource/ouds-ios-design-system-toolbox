@@ -72,7 +72,7 @@ private struct ControlItemConfiguration: View {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
                     .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
-                OUDSSwitchItem("app_components_controlItem_readOnly_label", isOn: $configurationModel.isReadOnly)
+                OUDSSwitchItem("app_components_common_readOnly_label", isOn: $configurationModel.isReadOnly)
                     .disabled(!configurationModel.enabled || configurationModel.isError)
 
                 OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)

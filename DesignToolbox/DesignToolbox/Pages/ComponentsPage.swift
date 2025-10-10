@@ -28,6 +28,7 @@ struct ComponentsPage: View {
         RadioElements(),
         SwitchElements(),
         TagElement(),
+        TextInputElement(),
     ]
 
     var body: some View {
