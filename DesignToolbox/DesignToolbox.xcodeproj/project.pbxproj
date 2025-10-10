@@ -3482,7 +3482,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "406-component-create-component---input-text";
+				branch = develop;
 				kind = branch;
 			};
 		};
