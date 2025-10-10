@@ -17,6 +17,8 @@ import SwiftUI
 
 // MARK: - Token Illustration
 
+// swiftlint:disable function_body_length
+
 // Used in Typography screen and SizeIconWithLabel
 extension View {
 
@@ -43,6 +45,12 @@ extension View {
             Text(namedFont.rawValue.camelCase).typeBodyDefaultMedium(theme)
         case .bodyDefaultSmall:
             Text(namedFont.rawValue.camelCase).typeBodyDefaultSmall(theme)
+        case .bodyModerateLarge:
+            Text(namedFont.rawValue.camelCase).typeBodyModerateLarge(theme)
+        case .bodyModerateMedium:
+            Text(namedFont.rawValue.camelCase).typeBodyModerateMedium(theme)
+        case .bodyModerateSmall:
+            Text(namedFont.rawValue.camelCase).typeBodyModerateSmall(theme)
         case .bodyStrongLarge:
             Text(namedFont.rawValue.camelCase).typeBodyStrongLarge(theme)
         case .bodyStrongMedium:
@@ -57,6 +65,14 @@ extension View {
             Text(namedFont.rawValue.camelCase).typeLabelDefaultMedium(theme)
         case .labelDefaultSmall:
             Text(namedFont.rawValue.camelCase).typeLabelDefaultSmall(theme)
+        case .labelModerateXLarge:
+            Text(namedFont.rawValue.camelCase).typeLabelModerateXLarge(theme)
+        case .labelModerateLarge:
+            Text(namedFont.rawValue.camelCase).typeLabelModerateLarge(theme)
+        case .labelModerateMedium:
+            Text(namedFont.rawValue.camelCase).typeLabelModerateMedium(theme)
+        case .labelModerateSmall:
+            Text(namedFont.rawValue.camelCase).typeLabelModerateSmall(theme)
         case .labelStrongXLarge:
             Text(namedFont.rawValue.camelCase).typeLabelStrongXLarge(theme)
         case .labelStrongLarge:
@@ -72,3 +88,5 @@ extension View {
         }
     }
 }
+
+// swiftlint:enable function_body_length
