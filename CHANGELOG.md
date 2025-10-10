@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] `ruby/setup-ruby` action from v1.263.0 to v1.265.0 for build-and-test and periphery workflows
 - [DesignToolbox] `Ruby version from v3.3 to v3.4.7 for build-and-test and periphery workflows
 - [DesignToolbox] Update `SwiftLint` pod from v0.61.0 to v0.62.1
 - [Library] Apply `Shantell Sans` font family for `Wireframe` theme instead of `Chalkboard SE` (Orange-OpenSource/ouds-ios#990)
