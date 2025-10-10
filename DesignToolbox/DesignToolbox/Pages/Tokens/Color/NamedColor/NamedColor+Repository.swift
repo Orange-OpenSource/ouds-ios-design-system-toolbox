@@ -80,8 +80,27 @@ extension NamedColor {
         case colorRepositoryPositiveHighest
         case colorRepositoryPositiveLow
         case colorRepositoryPositiveLowest
+        case colorRepositoryPrimaryHighest
+        case colorRepositoryPrimaryHigher
+        case colorRepositoryPrimaryHigh
         case colorRepositoryPrimaryDefault
         case colorRepositoryPrimaryLow
+        case colorRepositoryPrimaryLower
+        case colorRepositoryPrimaryLowest
+        case colorRepositorySecondaryHighest
+        case colorRepositorySecondaryHigher
+        case colorRepositorySecondaryHigh
+        case colorRepositorySecondaryDefault
+        case colorRepositorySecondaryLow
+        case colorRepositorySecondaryLower
+        case colorRepositorySecondaryLowest
+        case colorRepositoryTertiaryHighest
+        case colorRepositoryTertiaryHigher
+        case colorRepositoryTertiaryHigh
+        case colorRepositoryTertiaryDefault
+        case colorRepositoryTertiaryLow
+        case colorRepositoryTertiaryLower
+        case colorRepositoryTertiaryLowest
         case colorRepositoryWarningDefault
         case colorRepositoryWarningHighest
         case colorRepositoryWarningLow
@@ -211,10 +230,48 @@ extension NamedColor {
                 theme.colors.colorRepositoryPositiveLow
             case .colorRepositoryPositiveLowest:
                 theme.colors.colorRepositoryPositiveLowest
+            case .colorRepositoryPrimaryHighest:
+                theme.colors.colorRepositoryPrimaryHighest
+            case .colorRepositoryPrimaryHigher:
+                theme.colors.colorRepositoryPrimaryHigher
+            case .colorRepositoryPrimaryHigh:
+                theme.colors.colorRepositoryPrimaryHigh
             case .colorRepositoryPrimaryDefault:
                 theme.colors.colorRepositoryPrimaryDefault
             case .colorRepositoryPrimaryLow:
                 theme.colors.colorRepositoryPrimaryLow
+            case .colorRepositoryPrimaryLower:
+                theme.colors.colorRepositoryPrimaryLower
+            case .colorRepositoryPrimaryLowest:
+                theme.colors.colorRepositoryPrimaryLowest
+            case .colorRepositorySecondaryHighest:
+                theme.colors.colorRepositorySecondaryHighest
+            case .colorRepositorySecondaryHigher:
+                theme.colors.colorRepositorySecondaryHigher
+            case .colorRepositorySecondaryHigh:
+                theme.colors.colorRepositorySecondaryHigh
+            case .colorRepositorySecondaryDefault:
+                theme.colors.colorRepositorySecondaryDefault
+            case .colorRepositorySecondaryLow:
+                theme.colors.colorRepositorySecondaryLow
+            case .colorRepositorySecondaryLower:
+                theme.colors.colorRepositorySecondaryLower
+            case .colorRepositorySecondaryLowest:
+                theme.colors.colorRepositorySecondaryLowest
+            case .colorRepositoryTertiaryHighest:
+                theme.colors.colorRepositoryTertiaryHighest
+            case .colorRepositoryTertiaryHigher:
+                theme.colors.colorRepositoryTertiaryHigher
+            case .colorRepositoryTertiaryHigh:
+                theme.colors.colorRepositoryTertiaryHigh
+            case .colorRepositoryTertiaryDefault:
+                theme.colors.colorRepositoryTertiaryDefault
+            case .colorRepositoryTertiaryLow:
+                theme.colors.colorRepositoryTertiaryLow
+            case .colorRepositoryTertiaryLower:
+                theme.colors.colorRepositoryTertiaryLower
+            case .colorRepositoryTertiaryLowest:
+                theme.colors.colorRepositoryTertiaryLowest
             case .colorRepositoryWarningDefault:
                 theme.colors.colorRepositoryWarningDefault
             case .colorRepositoryWarningHighest:

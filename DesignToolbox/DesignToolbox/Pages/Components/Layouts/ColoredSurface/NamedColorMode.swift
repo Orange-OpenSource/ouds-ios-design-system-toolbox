@@ -139,7 +139,7 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
         }
     }
 
-    public var description: String {
+    var description: String {
         switch self {
         case .modeOnBgPrimary:
             "modeOnBgPrimary"

@@ -59,6 +59,6 @@ struct DividerDemo: View {
             }
         }
         .frame(height: 44)
-        .padding(.all, theme.spaces.spaceFixedMd)
+        .padding(.all, theme.spaces.spaceFixedMedium)
     }
 }

@@ -38,7 +38,7 @@ struct SizeTokenPage: View {
             }
 
             Section {
-                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
+                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
                     ForEach(NamedSize.iconSizeByTypographyCategories, id: \.namedFont) { category in
                         IllustrationSizeIconByTypographyCategory(category: category)
                     }
@@ -47,7 +47,7 @@ struct SizeTokenPage: View {
                 sectionHeader("app_tokens_dimension_size_iconWith_label")
             }
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMd)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
     // MARK: Illustration Icon Decorative
@@ -126,7 +126,7 @@ struct SizeTokenPage: View {
                 TypographyCategoryHeader(namedFont: category.namedFont, namedSize: lastSize)
             }
 
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
                 ForEach(category.sizes, id: \.sizeDescription) { namedSize in
                     IllustrationIconWithTypography(namedSize: namedSize)
                 }
@@ -149,7 +149,7 @@ struct SizeTokenPage: View {
         }
 
         var body: some View {
-            HStack(alignment: .center, spacing: theme.spaces.spaceFixedSm) {
+            HStack(alignment: .center, spacing: theme.spaces.spaceFixedSmall) {
                 HStack(alignment: .center, spacing: 1) {
                     Image(decorative: "ic_token")
                         .resizable()
@@ -163,7 +163,7 @@ struct SizeTokenPage: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .oudsForegroundStyle(theme.colors.colorContentDefault)
             }
-            .padding(.all, theme.spaces.spaceFixedMd)
+            .padding(.all, theme.spaces.spaceFixedMedium)
             .oudsBackground(theme.colors.colorSurfaceStatusNeutralMuted)
         }
     }

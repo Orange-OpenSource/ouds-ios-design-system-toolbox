@@ -19,17 +19,17 @@ extension NamedSpace {
 
     enum Fixed: String, CaseIterable, NamedSpaceToken {
         case spaceFixedNone
-        case spaceFixed3xs
-        case spaceFixed2xs
-        case spaceFixedXs
-        case spaceFixedSm
-        case spaceFixedMd
-        case spaceFixedLg
-        case spaceFixedXl
-        case spaceFixed2xl
-        case spaceFixed3xl
-        case spaceFixed4xl
-        case spaceFixed5xl
+        case spaceFixed3xsmall
+        case spaceFixed2xsmall
+        case spaceFixedXsmall
+        case spaceFixedSmall
+        case spaceFixedMedium
+        case spaceFixedLarge
+        case spaceFixedXlarge
+        case spaceFixed2xlarge
+        case spaceFixed3xlarge
+        case spaceFixed4xlarge
+        case spaceFixed5xlarge
 
         var name: String { rawValue }
 
@@ -37,28 +37,28 @@ extension NamedSpace {
             switch self {
             case .spaceFixedNone:
                 theme.spaces.spaceFixedNone
-            case .spaceFixed3xs:
-                theme.spaces.spaceFixed3xs
-            case .spaceFixed2xs:
-                theme.spaces.spaceFixed2xs
-            case .spaceFixedXs:
-                theme.spaces.spaceFixedXs
-            case .spaceFixedSm:
-                theme.spaces.spaceFixedSm
-            case .spaceFixedMd:
-                theme.spaces.spaceFixedMd
-            case .spaceFixedLg:
-                theme.spaces.spaceFixedLg
-            case .spaceFixedXl:
-                theme.spaces.spaceFixedXl
-            case .spaceFixed2xl:
-                theme.spaces.spaceFixed2xl
-            case .spaceFixed3xl:
-                theme.spaces.spaceFixed3xl
-            case .spaceFixed4xl:
-                theme.spaces.spaceFixed4xl
-            case .spaceFixed5xl:
-                theme.spaces.spaceFixed5xl
+            case .spaceFixed3xsmall:
+                theme.spaces.spaceFixed3xsmall
+            case .spaceFixed2xsmall:
+                theme.spaces.spaceFixed2xsmall
+            case .spaceFixedXsmall:
+                theme.spaces.spaceFixedXsmall
+            case .spaceFixedSmall:
+                theme.spaces.spaceFixedSmall
+            case .spaceFixedMedium:
+                theme.spaces.spaceFixedMedium
+            case .spaceFixedLarge:
+                theme.spaces.spaceFixedLarge
+            case .spaceFixedXlarge:
+                theme.spaces.spaceFixedXlarge
+            case .spaceFixed2xlarge:
+                theme.spaces.spaceFixed2xlarge
+            case .spaceFixed3xlarge:
+                theme.spaces.spaceFixed3xlarge
+            case .spaceFixed4xlarge:
+                theme.spaces.spaceFixed4xlarge
+            case .spaceFixed5xlarge:
+                theme.spaces.spaceFixed5xlarge
             }
         }
     }

@@ -59,6 +59,6 @@ struct SuggestionChipDemo: View {
             Spacer()
         }
         .disabled(!configurationModel.enabled)
-        .padding(.all, theme.spaces.spaceFixedMd)
+        .padding(.all, theme.spaces.spaceFixedMedium)
     }
 }

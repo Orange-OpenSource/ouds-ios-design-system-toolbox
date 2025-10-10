@@ -45,7 +45,7 @@ struct SpaceTokenProperty<HeaderDescription, TokenIllustration>: View where Head
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            header().padding(.bottom, theme.spaces.spaceFixedMd)
+            header().padding(.bottom, theme.spaces.spaceFixedMedium)
 
             ForEach(namedTokens, id: \.name) { namedSpaceToken in
                 SpaceTokenVariant(namedSpaceToken: namedSpaceToken, illustration: illustration)
@@ -296,7 +296,7 @@ struct SpaceHeaderDescription: View {
     var body: some View {
         content
             .oudsBorder(style: theme.borders.borderStyleDrag, width: theme.borders.borderWidthThin, radius: theme.borders.borderRadiusNone, color: theme.colors.colorBgEmphasized)
-            .padding(.all, theme.spaces.spaceFixedMd)
+            .padding(.all, theme.spaces.spaceFixedMedium)
             .oudsBackground(theme.colors.colorSurfaceStatusNeutralMuted)
     }
 

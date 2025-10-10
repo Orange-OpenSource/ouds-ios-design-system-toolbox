@@ -18,17 +18,17 @@ extension NamedSpace {
 
     enum PaddingInline: String, CaseIterable, NamedSpaceToken {
         case spacePaddingInlineNone
-        case spacePaddingInline4xs
-        case spacePaddingInline3xs
-        case spacePaddingInline2xs
-        case spacePaddingInlineXs
-        case spacePaddingInlineSm
-        case spacePaddingInlineMd
-        case spacePaddingInlineLg
-        case spacePaddingInlineXl
-        case spacePaddingInline2xl
-        case spacePaddingInline3xl
-        case spacePaddingInline4xl
+        case spacePaddingInline4xsmall
+        case spacePaddingInline3xsmall
+        case spacePaddingInline2xsmall
+        case spacePaddingInlineXsmall
+        case spacePaddingInlineSmall
+        case spacePaddingInlineMedium
+        case spacePaddingInlineLarge
+        case spacePaddingInlineXlarge
+        case spacePaddingInline2xlarge
+        case spacePaddingInline3xlarge
+        case spacePaddingInline4xlarge
 
         var name: String { rawValue }
 
@@ -36,28 +36,28 @@ extension NamedSpace {
             switch self {
             case .spacePaddingInlineNone:
                 theme.spaces.spacePaddingInlineNone
-            case .spacePaddingInline4xs:
-                theme.spaces.spacePaddingInline4xs
-            case .spacePaddingInline3xs:
-                theme.spaces.spacePaddingInline3xs
-            case .spacePaddingInline2xs:
-                theme.spaces.spacePaddingInline2xs
-            case .spacePaddingInlineXs:
-                theme.spaces.spacePaddingInlineXs
-            case .spacePaddingInlineSm:
-                theme.spaces.spacePaddingInlineSm
-            case .spacePaddingInlineMd:
-                theme.spaces.spacePaddingInlineMd
-            case .spacePaddingInlineLg:
-                theme.spaces.spacePaddingInlineLg
-            case .spacePaddingInlineXl:
-                theme.spaces.spacePaddingInlineXl
-            case .spacePaddingInline2xl:
-                theme.spaces.spacePaddingInline2xl
-            case .spacePaddingInline3xl:
-                theme.spaces.spacePaddingInline3xl
-            case .spacePaddingInline4xl:
-                theme.spaces.spacePaddingInline4xl
+            case .spacePaddingInline4xsmall:
+                theme.spaces.spacePaddingInline4xsmall
+            case .spacePaddingInline3xsmall:
+                theme.spaces.spacePaddingInline3xsmall
+            case .spacePaddingInline2xsmall:
+                theme.spaces.spacePaddingInline2xsmall
+            case .spacePaddingInlineXsmall:
+                theme.spaces.spacePaddingInlineXsmall
+            case .spacePaddingInlineSmall:
+                theme.spaces.spacePaddingInlineSmall
+            case .spacePaddingInlineMedium:
+                theme.spaces.spacePaddingInlineMedium
+            case .spacePaddingInlineLarge:
+                theme.spaces.spacePaddingInlineLarge
+            case .spacePaddingInlineXlarge:
+                theme.spaces.spacePaddingInlineXlarge
+            case .spacePaddingInline2xlarge:
+                theme.spaces.spacePaddingInline2xlarge
+            case .spacePaddingInline3xlarge:
+                theme.spaces.spacePaddingInline3xlarge
+            case .spacePaddingInline4xlarge:
+                theme.spaces.spacePaddingInline4xlarge
             }
         }
     }
