@@ -39,7 +39,7 @@ final class TagConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var hierarchy: OUDSTag.Hierarchy {
+    @Published var appearance: OUDSTag.Appearance {
         didSet { updateCode() }
     }
 
@@ -66,7 +66,7 @@ final class TagConfigurationModel: ComponentConfiguration {
         size = .default
         statusCategory = .neutral
         shape = .rounded
-        hierarchy = .emphasized
+        appearance = .emphasized
     }
 
     deinit {}
@@ -110,7 +110,7 @@ final class TagConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         code = """
-        OUDSTag(label: \(label)\(statusPattern)\(hierarchyPattern)\(shapePattern)\(sizePattern)\(loaderPattern))
+        OUDSTag(label: \(label)\(statusPattern)\(appearancePattern)\(shapePattern)\(sizePattern)\(loaderPattern))
         \(disablePattern)
         """
     }
@@ -119,8 +119,8 @@ final class TagConfigurationModel: ComponentConfiguration {
         !loader && !enabled ? ".disabled(true)" : ""
     }
 
-    private var hierarchyPattern: String {
-        ", hierarchy: \(hierarchy.technicalDescription)"
+    private var appearancePattern: String {
+        ", appearance: \(appearance.technicalDescription)"
     }
 
     private var customIconPattern: String {
@@ -175,9 +175,9 @@ struct TagConfigurationView: View {
             OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
                 .disabled(configurationModel.disableFlipIcon)
 
-            OUDSChipPicker(title: "app_components_common_hierarchy_label",
-                           selection: $configurationModel.hierarchy,
-                           chips: OUDSTag.Hierarchy.chips)
+            OUDSChipPicker(title: "app_components_common_appearance_label",
+                           selection: $configurationModel.appearance,
+                           chips: OUDSTag.Appearance.chips)
 
             OUDSChipPicker(title: "app_components_common_status_label",
                            selection: $configurationModel.statusCategory,
@@ -289,9 +289,9 @@ extension OUDSTag.Status.Category: @retroactive CaseIterable, @retroactive Custo
     }
 }
 
-extension OUDSTag.Hierarchy: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+extension OUDSTag.Appearance: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    public nonisolated(unsafe) static let allCases: [OUDSTag.Hierarchy] = [.emphasized, .muted]
+    public nonisolated(unsafe) static let allCases: [OUDSTag.Appearance] = [.emphasized, .muted]
 
     public var description: String {
         switch self {
