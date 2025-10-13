@@ -34,7 +34,7 @@ open class TagUITestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for layout in TagLayout.allCases {
-            for hierarchy in OUDSTag.Hierarchy.allCases {
+            for appearance in OUDSTag.Appearance.allCases {
                 for statusCategory in OUDSTag.Status.Category.allCases {
                     for size in OUDSTag.Size.allCases {
                         for shape in OUDSTag.Shape.allCases {
@@ -43,7 +43,7 @@ open class TagUITestsTestCase: XCTestCase {
                                 let model = TagConfigurationModel()
                                 model.layout = layout
                                 model.statusCategory = statusCategory
-                                model.hierarchy = hierarchy
+                                model.appearance = appearance
                                 model.size = size
                                 model.shape = shape
                                 model.loader = loader
@@ -86,14 +86,14 @@ open class TagUITestsTestCase: XCTestCase {
         // Create a unique snapshot name based on the current configuration :
         let testName = "testTag_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let layoutPattern = model.layout.debugDescription
-        let hierarchyPattern = model.hierarchy.technicalDescription
+        let appearancePattern = model.appearance.technicalDescription
         let statusPattern = model.statusCategory.technicalDescription
         let sizePattern = model.size.technicalDescription
         let shapePattern = model.shape.technicalDescription
         let loaderPattern = model.loader ? ".loader" : ""
         let flipIconPattern = model.flipIcon ? ".flipIcon" : ""
 
-        let name = "\(layoutPattern)\(hierarchyPattern)\(statusPattern)\(sizePattern)\(shapePattern)\(loaderPattern)\(flipIconPattern)"
+        let name = "\(layoutPattern)\(appearancePattern)\(statusPattern)\(sizePattern)\(shapePattern)\(loaderPattern)\(flipIconPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,

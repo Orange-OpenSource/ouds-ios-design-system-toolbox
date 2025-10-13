@@ -49,7 +49,7 @@ struct TagDemo: View {
             OUDSTag(
                 label: configurationModel.label,
                 status: configurationModel.status,
-                hierarchy: configurationModel.hierarchy,
+                appearance: configurationModel.appearance,
                 shape: configurationModel.shape,
                 size: configurationModel.size,
                 hasLoader: configurationModel.loader)
