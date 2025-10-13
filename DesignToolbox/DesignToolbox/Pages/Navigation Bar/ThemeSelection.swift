@@ -14,7 +14,6 @@
 import OUDS
 import OUDSThemesOrange
 import OUDSThemesOrangeBusinessTools
-import OUDSThemesOrangeInverse
 import OUDSThemesSosh
 import OUDSThemesWireframe
 import SwiftUI
@@ -66,9 +65,6 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         if self is OrangeBusinessToolsTheme {
             constructedId = "Orange Business Tools"
         }
-        if self is OrangeInverseTheme {
-            constructedId = "Orange Inverse"
-        }
         if self is SoshTheme {
             constructedId = "Sosh"
         }
@@ -102,7 +98,6 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
     let orangeThemes: [OUDSTheme]
     let orangeBusinessToolsThemes: [OUDSTheme]
-    let orangeInverseThemes: [OUDSTheme]
     let otherThemes: [OUDSTheme]
 
     let allThemes: [OUDSTheme]
@@ -133,10 +128,6 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         let orangeBusinessOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
         let maxItOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
 
-        let orangeFranceOrangeInverseTheme = OrangeInverseTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeInverseTheme = OrangeInverseTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
-        let maxItOrangeInverseTheme = OrangeInverseTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
-
         let soshTheme = SoshTheme()
         let wireframeTheme = WireframeTheme()
 
@@ -146,9 +137,8 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
         orangeThemes = [orangeFranceOrangeTheme, orangeBusinessOrangeTheme, maxItOrangeTheme]
         orangeBusinessToolsThemes = [orangeFranceOrangeBusinessToolsTheme, orangeBusinessOrangeBusinessToolsTheme, maxItOrangeBusinessToolsTheme]
-        orangeInverseThemes = [orangeFranceOrangeInverseTheme, orangeBusinessOrangeInverseTheme, maxItOrangeInverseTheme]
         otherThemes = [soshTheme, wireframeTheme]
-        allThemes = orangeThemes + orangeBusinessToolsThemes + orangeInverseThemes + otherThemes
+        allThemes = orangeThemes + orangeBusinessToolsThemes + otherThemes
 
         if let theme = allThemes.first(where: { $0.id == ThemeProvider.currentTheme }) {
             currentTheme = theme
@@ -217,16 +207,6 @@ struct ThemeSelectionButton: View {
             Menu("Orange Business Tools") {
                 Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
                     ForEach(themeProvider.orangeBusinessToolsThemes, id: \.id) { theme in
-                        Text(theme.description).tag(theme)
-                    }
-                }
-                .pickerStyle(.automatic)
-            }
-
-            // Orange Inverse theme and tunings
-            Menu("Orange Inverse") {
-                Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
-                    ForEach(themeProvider.orangeInverseThemes, id: \.id) { theme in
                         Text(theme.description).tag(theme)
                     }
                 }
