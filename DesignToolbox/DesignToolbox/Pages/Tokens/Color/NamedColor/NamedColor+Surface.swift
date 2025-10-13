@@ -24,8 +24,9 @@ extension NamedColor {
         case colorSurfaceStatusInfoMuted
         case colorSurfaceStatusNegativeEmphasized
         case colorSurfaceStatusNegativeMuted
-        case colorSurfaceStatusNeutralEmphasized
-        case colorSurfaceStatusNeutralMuted
+        case colorSurfaceInverseHigh
+        case colorSurfaceInverseLow
+        case colorSurfaceSecondary
         case colorSurfaceStatusPositiveEmphasized
         case colorSurfaceStatusPositiveMuted
         case colorSurfaceStatusWarningEmphasized
@@ -47,10 +48,12 @@ extension NamedColor {
                 theme.colors.colorSurfaceStatusNegativeEmphasized
             case .colorSurfaceStatusNegativeMuted:
                 theme.colors.colorSurfaceStatusNegativeMuted
-            case .colorSurfaceStatusNeutralEmphasized:
-                theme.colors.colorSurfaceStatusNeutralEmphasized
-            case .colorSurfaceStatusNeutralMuted:
-                theme.colors.colorSurfaceStatusNeutralMuted
+            case .colorSurfaceInverseHigh:
+                theme.colors.colorSurfaceInverseHigh
+            case .colorSurfaceInverseLow:
+                theme.colors.colorSurfaceInverseLow
+            case .colorSurfaceSecondary:
+                theme.colors.colorSurfaceSecondary
             case .colorSurfaceStatusPositiveEmphasized:
                 theme.colors.colorSurfaceStatusPositiveEmphasized
             case .colorSurfaceStatusPositiveMuted:

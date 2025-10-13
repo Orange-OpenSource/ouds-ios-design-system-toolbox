@@ -55,11 +55,11 @@ extension NamedColor {
         case colorRepositoryOpacityBlackMedium
         case colorRepositoryOpacityBlackMediumHigh
         case colorRepositoryOpacityBlackTransparent
-        case colorRepositoryOpacityInfo
-        case colorRepositoryOpacityAccent
-        case colorRepositoryOpacityNegative
-        case colorRepositoryOpacityPositive
-        case colorRepositoryOpacityWarning
+        case colorRepositoryOpacityInfoLow
+        case colorRepositoryOpacityAccentLow
+        case colorRepositoryOpacityNegativeLow
+        case colorRepositoryOpacityPositiveLow
+        case colorRepositoryOpacityWarningLow
         case colorRepositoryOpacityWhiteHigh
         case colorRepositoryOpacityWhiteHigher
         case colorRepositoryOpacityWhiteHighest
@@ -179,16 +179,16 @@ extension NamedColor {
                 theme.colors.colorRepositoryOpacityBlackMediumHigh
             case .colorRepositoryOpacityBlackTransparent:
                 theme.colors.colorRepositoryOpacityBlackTransparent
-            case .colorRepositoryOpacityInfo:
-                theme.colors.colorRepositoryOpacityInfo
-            case .colorRepositoryOpacityAccent:
-                theme.colors.colorRepositoryOpacityAccent
-            case .colorRepositoryOpacityNegative:
-                theme.colors.colorRepositoryOpacityNegative
-            case .colorRepositoryOpacityPositive:
-                theme.colors.colorRepositoryOpacityPositive
-            case .colorRepositoryOpacityWarning:
-                theme.colors.colorRepositoryOpacityWarning
+            case .colorRepositoryOpacityInfoLow:
+                theme.colors.colorRepositoryOpacityInfoLow
+            case .colorRepositoryOpacityAccentLow:
+                theme.colors.colorRepositoryOpacityAccentLow
+            case .colorRepositoryOpacityNegativeLow:
+                theme.colors.colorRepositoryOpacityNegativeLow
+            case .colorRepositoryOpacityPositiveLow:
+                theme.colors.colorRepositoryOpacityPositiveLow
+            case .colorRepositoryOpacityWarningLow:
+                theme.colors.colorRepositoryOpacityWarningLow
             case .colorRepositoryOpacityWhiteHigh:
                 theme.colors.colorRepositoryOpacityWhiteHigh
             case .colorRepositoryOpacityWhiteHigher:

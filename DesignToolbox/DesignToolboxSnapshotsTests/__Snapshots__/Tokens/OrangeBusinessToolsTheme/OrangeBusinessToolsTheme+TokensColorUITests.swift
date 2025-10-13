@@ -65,7 +65,7 @@ final class OrangeBusinessToolsThemeTokensColorUITests: TokensColorUITestsTestCa
         /*
          There are some failures with two tokens, even if the snapshots are fresh:
          - OrangeBusinessTools Theme, dark mode --> colorRepositoryOpacityBlackHighest
-         - OrangeBusinessTools Theme, dark mode --> colorSurfaceStatusNeutralEmphasized
+         - OrangeBusinessTools Theme, dark mode --> colorSurfaceInverseHigh
          */
         testRepositoryColors(theme: theme, interfaceStyle: interfaceStyle, precision: 0.94, perceptualPrecision: 0.96)
         testSurfaceColors(theme: theme, interfaceStyle: interfaceStyle, precision: 0.94, perceptualPrecision: 0.96)
