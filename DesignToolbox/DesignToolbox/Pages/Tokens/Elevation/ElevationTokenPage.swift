@@ -78,9 +78,7 @@ enum NamedElevation: String, CaseIterable {
     case elevationDrag
     case elevationOverlayDefault
     case elevationOverlayEmphasized
-    case elevationStickyDefault
-    case elevationStickyEmphasized
-    case elevationStickyNavigationScrolled
+    case elevationSticky
 
     func token(from theme: OUDSTheme) -> ElevationCompositeSemanticToken {
         switch self {
@@ -88,18 +86,14 @@ enum NamedElevation: String, CaseIterable {
             theme.elevations.elevationNone
         case .elevationRaised:
             theme.elevations.elevationRaised
-        case .elevationStickyNavigationScrolled:
-            theme.elevations.elevationStickyNavigationScrolled
-        case .elevationOverlayDefault:
-            theme.elevations.elevationOverlayDefault
-        case .elevationStickyDefault:
-            theme.elevations.elevationStickyDefault
-        case .elevationStickyEmphasized:
-            theme.elevations.elevationStickyEmphasized
         case .elevationDrag:
             theme.elevations.elevationDrag
+        case .elevationOverlayDefault:
+            theme.elevations.elevationOverlayDefault
         case .elevationOverlayEmphasized:
             theme.elevations.elevationOverlayEmphasized
+        case .elevationSticky:
+            theme.elevations.elevationSticky
         }
     }
 }

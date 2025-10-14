@@ -41,7 +41,6 @@ final class OrangeBusinessToolsThemeTokensColorUITests: TokensColorUITestsTestCa
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
         testChartColors(theme: theme, interfaceStyle: interfaceStyle)
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
-        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
         testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
         testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
         testRepositoryColors(theme: theme, interfaceStyle: interfaceStyle)
@@ -59,7 +58,6 @@ final class OrangeBusinessToolsThemeTokensColorUITests: TokensColorUITestsTestCa
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
         testChartColors(theme: theme, interfaceStyle: interfaceStyle)
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
-        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
         testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
         testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
         /*

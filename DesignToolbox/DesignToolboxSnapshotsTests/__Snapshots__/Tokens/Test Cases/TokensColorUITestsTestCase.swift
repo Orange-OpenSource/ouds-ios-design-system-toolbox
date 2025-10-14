@@ -234,48 +234,6 @@ open class TokensColorUITestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests colors for the `Decorative` category of the given theme.
-    /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
-    /// - Parameters:
-    ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    ///   - precision: Value for tests, default set to `XCTestCase.precision`
-    ///   - perceptualPrecision: Value for tests, default set to `XCTestCase.perceptualPrecision`
-    @MainActor func testDecorativeColors(theme: OUDSTheme,
-                                         interfaceStyle: UIUserInterfaceStyle,
-                                         precision: Float = XCTestCase.precision,
-                                         perceptualPrecision: Float = XCTestCase.perceptualPrecision)
-    {
-        // Iterate through all background color cases defined in NamedColor.Decorative
-        for color in NamedColor.Decorative.allCases {
-            // Retrieve the corresponding color token from the provided theme
-            let token = color.token(from: theme)
-
-            if token.isForbiddenValueColor() {
-                OL.debug("For NamedColor.Decorative cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
-                continue
-            }
-
-            // Generate the illustration for the specified color token
-            let illustration = OUDSThemeableView(theme: theme) {
-                ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-            }
-
-            // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
-            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-            let name = color.rawValue
-
-            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertIllustration(illustration,
-                               on: interfaceStyle,
-                               named: name,
-                               precision: precision,
-                               perceptualPrecision: perceptualPrecision,
-                               testName: testName)
-        }
-    }
-
     /// This function tests colors for the `Chart` category of the given theme.
     /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
     /// - Parameters:

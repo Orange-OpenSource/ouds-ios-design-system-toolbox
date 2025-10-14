@@ -44,7 +44,6 @@ final class SoshThemeTokensColorUITests: TokensColorUITestsTestCase {
             XCTFail("The Sosh theme does not have yet color charts, that's unexpected")
         }
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
-        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
         testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
         testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
         testRepositoryColors(theme: theme, interfaceStyle: interfaceStyle)
@@ -66,7 +65,6 @@ final class SoshThemeTokensColorUITests: TokensColorUITestsTestCase {
             XCTFail("The Sosh theme does not have yet color charts, that's unexpected")
         }
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
-        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
         testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
         testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
         /*
