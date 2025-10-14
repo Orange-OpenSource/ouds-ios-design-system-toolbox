@@ -17,19 +17,16 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Overlay: String, CaseIterable {
-        case colorOverlayDefault
+        case colorOverlayDropDown
         case colorOverlayDrag
-        case colorOverlayEmphasized
         case colorOverlayModal
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
-            case .colorOverlayDefault:
-                theme.colors.colorOverlayDefault
+            case .colorOverlayDropDown:
+                theme.colors.colorOverlayDropdown
             case .colorOverlayDrag:
                 theme.colors.colorOverlayDrag
-            case .colorOverlayEmphasized:
-                theme.colors.colorOverlayEmphasized
             case .colorOverlayModal:
                 theme.colors.colorOverlayModal
             }

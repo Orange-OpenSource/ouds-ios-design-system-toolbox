@@ -164,7 +164,7 @@ struct SizeTokenPage: View {
                     .oudsForegroundStyle(theme.colors.colorContentDefault)
             }
             .padding(.all, theme.spaces.spaceFixedMedium)
-            .oudsBackground(theme.colors.colorSurfaceStatusNeutralMuted)
+            .oudsBackground(theme.colors.colorSurfaceSecondary)
         }
     }
 

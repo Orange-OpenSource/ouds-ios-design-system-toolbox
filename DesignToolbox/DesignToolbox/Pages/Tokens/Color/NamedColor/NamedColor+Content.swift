@@ -30,7 +30,6 @@ extension NamedColor {
         case colorContentOnActionPressed
         case colorContentOnActionSelected
         case colorContentOnBrandPrimary
-        case colorContentOnOverlayEmphasized
         case colorContentInverse
         case colorContentOnStatusNegativeEmphasized
         case colorContentStatusInfo
@@ -66,8 +65,6 @@ extension NamedColor {
                 theme.colors.colorContentOnActionSelected
             case .colorContentOnBrandPrimary:
                 theme.colors.colorContentOnBrandPrimary
-            case .colorContentOnOverlayEmphasized:
-                theme.colors.colorContentOnOverlayEmphasized
             case .colorContentInverse:
                 theme.colors.colorContentInverse
             case .colorContentOnStatusNegativeEmphasized:
