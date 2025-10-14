@@ -35,7 +35,6 @@ struct ColorTokenPage: View {
                 Section { illustrationForChart() } header: { header("Chart") }
             }
             Section { illustrationForContent() } header: { header("Content") }
-            Section { illustrationForDecorative() } header: { header("Decorative") }
             Section { illustrationForOpacity() } header: { header("Opacity") }
             Section { illustrationForOverlay() } header: { header("Overlay") }
             Section { illustrationForRepository() } header: { header("Repository") }
@@ -104,16 +103,6 @@ struct ColorTokenPage: View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             ForEach(NamedColor.Content.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
-                }
-            }
-        }
-    }
-
-    private func illustrationForDecorative() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            ForEach(NamedColor.Decorative.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).isForbiddenValueColor() {
                     Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
                 }
             }
