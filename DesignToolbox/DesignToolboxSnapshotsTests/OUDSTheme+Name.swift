@@ -14,7 +14,6 @@
 import OUDS
 import OUDSThemesOrange
 import OUDSThemesOrangeBusinessTools
-import OUDSThemesOrangeInverse
 import OUDSThemesSosh
 import OUDSThemesWireframe
 
@@ -27,9 +26,6 @@ extension OUDSTheme {
         }
         if self is OrangeBusinessToolsTheme {
             return "Orange Business Tools"
-        }
-        if self is OrangeInverseTheme {
-            return "Orange Inverse"
         }
         if self is SoshTheme {
             return "Sosh"
