@@ -33,7 +33,6 @@
 		072BB4562E69704C00A4DF2D /* SoshTheme+TextInputUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072BB4552E69704C00A4DF2D /* SoshTheme+TextInputUITests.swift */; };
 		072BB4582E69726D00A4DF2D /* OrangeTheme+TextInputUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072BB4572E69726D00A4DF2D /* OrangeTheme+TextInputUITests.swift */; };
 		072BB45A2E6972B200A4DF2D /* OrangeBusinessToolsTheme+TextInputUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072BB4592E6972B200A4DF2D /* OrangeBusinessToolsTheme+TextInputUITests.swift */; };
-		072BB45C2E69730300A4DF2D /* OrangeInverseTheme+TextInputhUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072BB45B2E69730300A4DF2D /* OrangeInverseTheme+TextInputhUITests.swift */; };
 		072BB45E2E69733500A4DF2D /* WireframeTheme+TextInputUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072BB45D2E69733500A4DF2D /* WireframeTheme+TextInputUITests.swift */; };
 		07304A6A2D429F9F009320BA /* LinkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */; };
 		07304A6B2D429F9F009320BA /* LinkElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCAF2D40E34700DBB10A /* LinkElement.swift */; };
@@ -113,7 +112,6 @@
 		079B4A162E49C6EB0039FC26 /* SoshTheme+TagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079B4A152E49C6EB0039FC26 /* SoshTheme+TagUITests.swift */; };
 		079B4A182E49C7790039FC26 /* OrangeTheme+TagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079B4A172E49C7790039FC26 /* OrangeTheme+TagUITests.swift */; };
 		079B4A1A2E49C78F0039FC26 /* OrangeBusinessToolsTheme+TagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079B4A192E49C78F0039FC26 /* OrangeBusinessToolsTheme+TagUITests.swift */; };
-		079B4A202E49C8390039FC26 /* OrangeInverseTheme+TagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079B4A1F2E49C8390039FC26 /* OrangeInverseTheme+TagUITests.swift */; };
 		079B4A222E49C8740039FC26 /* WireframeTheme+TagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079B4A212E49C8740039FC26 /* WireframeTheme+TagUITests.swift */; };
 		07AB458A2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */; };
 		07AB458B2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */; };
@@ -249,14 +247,6 @@
 		515EE9A22E2133C800A60E96 /* ChipsUITestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9A12E2133C800A60E96 /* ChipsUITestsTestCase.swift */; };
 		515EE9A42E2133F200A60E96 /* SoshTheme+ChipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9A32E2133F200A60E96 /* SoshTheme+ChipsUITests.swift */; };
 		515EE9A62E21347200A60E96 /* OrangeTheme+ChipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9A52E21347200A60E96 /* OrangeTheme+ChipsUITests.swift */; };
-		515F66F02E2E71DB00268440 /* OUDSThemesOrangeInverse in Frameworks */ = {isa = PBXBuildFile; productRef = 515F66EF2E2E71DB00268440 /* OUDSThemesOrangeInverse */; };
-		515F66F92E2E925600268440 /* OrangeInverseTheme+TokensColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F62E2E925600268440 /* OrangeInverseTheme+TokensColorUITests.swift */; };
-		515F66FA2E2E925600268440 /* OrangeInverseTheme+TokensSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F32E2E925600268440 /* OrangeInverseTheme+TokensSpaceUITests.swift */; };
-		515F66FB2E2E925600268440 /* OrangeInverseTheme+TokensSizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F22E2E925600268440 /* OrangeInverseTheme+TokensSizeUITests.swift */; };
-		515F66FC2E2E925600268440 /* OrangeInverseTheme+TokensBorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F42E2E925600268440 /* OrangeInverseTheme+TokensBorderUITests.swift */; };
-		515F66FD2E2E925600268440 /* OrangeInverseTheme+TokensFontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F72E2E925600268440 /* OrangeInverseTheme+TokensFontUITests.swift */; };
-		515F66FE2E2E925600268440 /* OrangeInverseTheme+TokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F12E2E925600268440 /* OrangeInverseTheme+TokensElevationUITests.swift */; };
-		515F66FF2E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F66F52E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift */; };
 		5180A3CF2E95941D00664BD0 /* HelveticaNeueLTArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3CE2E95941900664BD0 /* HelveticaNeueLTArabic-Bold.ttf */; };
 		5180A3D32E95943300664BD0 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
 		5180A3D52E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D42E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf */; };
@@ -332,14 +322,6 @@
 		51952AA32D3FA32E0068B807 /* GrisTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AF2CDD07F20043D558 /* GrisTokenPage.swift */; };
 		51952AA42D3FA32E0068B807 /* TokensPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF426A2CA30728000BD03E /* TokensPage.swift */; };
 		51952AA52D3FA3440068B807 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543102CA154DE001187EA /* Card.swift */; };
-		51A2174A2E325E6C00562BE0 /* OrangeInverseTheme+ButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217432E325E6C00562BE0 /* OrangeInverseTheme+ButtonUITests.swift */; };
-		51A2174B2E325E6C00562BE0 /* OrangeInverseTheme+RadioButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217472E325E6C00562BE0 /* OrangeInverseTheme+RadioButtonUITests.swift */; };
-		51A2174C2E325E6C00562BE0 /* OrangeInverseTheme+CheckboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217442E325E6C00562BE0 /* OrangeInverseTheme+CheckboxUITests.swift */; };
-		51A2174D2E325E6C00562BE0 /* OrangeInverseTheme+DividerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217452E325E6C00562BE0 /* OrangeInverseTheme+DividerUITests.swift */; };
-		51A2174E2E325E6C00562BE0 /* OrangeInverseTheme+LinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217462E325E6C00562BE0 /* OrangeInverseTheme+LinkUITests.swift */; };
-		51A2174F2E325E6C00562BE0 /* OrangeInverseTheme+SwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217482E325E6C00562BE0 /* OrangeInverseTheme+SwitchUITests.swift */; };
-		51A217502E325E6C00562BE0 /* OrangeInverseTheme+BadgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217422E325E6C00562BE0 /* OrangeInverseTheme+BadgeUITests.swift */; };
-		51A217512E325E6C00562BE0 /* OrangeInverseTheme+ChipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217412E325E6C00562BE0 /* OrangeInverseTheme+ChipsUITests.swift */; };
 		51A2175D2E325ED500562BE0 /* OrangeBusinessToolsTheme+ButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217562E325ED500562BE0 /* OrangeBusinessToolsTheme+ButtonUITests.swift */; };
 		51A2175E2E325ED500562BE0 /* OrangeBusinessToolsTheme+RadioButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2175A2E325ED500562BE0 /* OrangeBusinessToolsTheme+RadioButtonUITests.swift */; };
 		51A2175F2E325ED500562BE0 /* OrangeBusinessToolsTheme+CheckboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217572E325ED500562BE0 /* OrangeBusinessToolsTheme+CheckboxUITests.swift */; };
@@ -510,7 +492,6 @@
 		072BB4552E69704C00A4DF2D /* SoshTheme+TextInputUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TextInputUITests.swift"; sourceTree = "<group>"; };
 		072BB4572E69726D00A4DF2D /* OrangeTheme+TextInputUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TextInputUITests.swift"; sourceTree = "<group>"; };
 		072BB4592E6972B200A4DF2D /* OrangeBusinessToolsTheme+TextInputUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+TextInputUITests.swift"; sourceTree = "<group>"; };
-		072BB45B2E69730300A4DF2D /* OrangeInverseTheme+TextInputhUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TextInputhUITests.swift"; sourceTree = "<group>"; };
 		072BB45D2E69733500A4DF2D /* WireframeTheme+TextInputUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+TextInputUITests.swift"; sourceTree = "<group>"; };
 		073543102CA154DE001187EA /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		073543152CA17275001187EA /* DesignToolboxElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxElement.swift; sourceTree = "<group>"; };
@@ -575,7 +556,6 @@
 		079B4A152E49C6EB0039FC26 /* SoshTheme+TagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TagUITests.swift"; sourceTree = "<group>"; };
 		079B4A172E49C7790039FC26 /* OrangeTheme+TagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TagUITests.swift"; sourceTree = "<group>"; };
 		079B4A192E49C78F0039FC26 /* OrangeBusinessToolsTheme+TagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+TagUITests.swift"; sourceTree = "<group>"; };
-		079B4A1F2E49C8390039FC26 /* OrangeInverseTheme+TagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TagUITests.swift"; sourceTree = "<group>"; };
 		079B4A212E49C8740039FC26 /* WireframeTheme+TagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+TagUITests.swift"; sourceTree = "<group>"; };
 		07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxTextField.swift; sourceTree = "<group>"; };
 		07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkConfiguration.swift; sourceTree = "<group>"; };
@@ -670,13 +650,6 @@
 		515EE9A12E2133C800A60E96 /* ChipsUITestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsUITestsTestCase.swift; sourceTree = "<group>"; };
 		515EE9A32E2133F200A60E96 /* SoshTheme+ChipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+ChipsUITests.swift"; sourceTree = "<group>"; };
 		515EE9A52E21347200A60E96 /* OrangeTheme+ChipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+ChipsUITests.swift"; sourceTree = "<group>"; };
-		515F66F12E2E925600268440 /* OrangeInverseTheme+TokensElevationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensElevationUITests.swift"; sourceTree = "<group>"; };
-		515F66F22E2E925600268440 /* OrangeInverseTheme+TokensSizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensSizeUITests.swift"; sourceTree = "<group>"; };
-		515F66F32E2E925600268440 /* OrangeInverseTheme+TokensSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensSpaceUITests.swift"; sourceTree = "<group>"; };
-		515F66F42E2E925600268440 /* OrangeInverseTheme+TokensBorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensBorderUITests.swift"; sourceTree = "<group>"; };
-		515F66F52E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensOpacityUITests.swift"; sourceTree = "<group>"; };
-		515F66F62E2E925600268440 /* OrangeInverseTheme+TokensColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensColorUITests.swift"; sourceTree = "<group>"; };
-		515F66F72E2E925600268440 /* OrangeInverseTheme+TokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+TokensFontUITests.swift"; sourceTree = "<group>"; };
 		5180A3CE2E95941900664BD0 /* HelveticaNeueLTArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HelveticaNeueLTArabic-Bold.ttf"; sourceTree = "<group>"; };
 		5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HelveticaNeueLTArabic-Roman.ttf"; sourceTree = "<group>"; };
 		5180A3D42E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HelveticaNeueLTArabic-Light.ttf"; sourceTree = "<group>"; };
@@ -717,14 +690,6 @@
 		51952A8B2D3FA2280068B807 /* OrangeTheme+TokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensFontUITests.swift"; sourceTree = "<group>"; };
 		51952A8E2D3FA2490068B807 /* OrangeTheme+TokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TokensOpacityUITests.swift"; sourceTree = "<group>"; };
 		519B412F2E66D985005A8EFD /* App Store Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Store Screenshots.swift"; sourceTree = "<group>"; };
-		51A217412E325E6C00562BE0 /* OrangeInverseTheme+ChipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+ChipsUITests.swift"; sourceTree = "<group>"; };
-		51A217422E325E6C00562BE0 /* OrangeInverseTheme+BadgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+BadgeUITests.swift"; sourceTree = "<group>"; };
-		51A217432E325E6C00562BE0 /* OrangeInverseTheme+ButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+ButtonUITests.swift"; sourceTree = "<group>"; };
-		51A217442E325E6C00562BE0 /* OrangeInverseTheme+CheckboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+CheckboxUITests.swift"; sourceTree = "<group>"; };
-		51A217452E325E6C00562BE0 /* OrangeInverseTheme+DividerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+DividerUITests.swift"; sourceTree = "<group>"; };
-		51A217462E325E6C00562BE0 /* OrangeInverseTheme+LinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+LinkUITests.swift"; sourceTree = "<group>"; };
-		51A217472E325E6C00562BE0 /* OrangeInverseTheme+RadioButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+RadioButtonUITests.swift"; sourceTree = "<group>"; };
-		51A217482E325E6C00562BE0 /* OrangeInverseTheme+SwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeInverseTheme+SwitchUITests.swift"; sourceTree = "<group>"; };
 		51A217542E325ED500562BE0 /* OrangeBusinessToolsTheme+ChipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+ChipsUITests.swift"; sourceTree = "<group>"; };
 		51A217552E325ED500562BE0 /* OrangeBusinessToolsTheme+BadgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+BadgeUITests.swift"; sourceTree = "<group>"; };
 		51A217562E325ED500562BE0 /* OrangeBusinessToolsTheme+ButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+ButtonUITests.swift"; sourceTree = "<group>"; };
@@ -842,7 +807,6 @@
 				5115A16A2DDF39AC0025A760 /* OUDSFoundations in Frameworks */,
 				5115A1742DDF39AC0025A760 /* OUDSTokensSemantic in Frameworks */,
 				513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */,
-				515F66F02E2E71DB00268440 /* OUDSThemesOrangeInverse in Frameworks */,
 				510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */,
 				5115A1722DDF39AC0025A760 /* OUDSTokensRaw in Frameworks */,
 				5115A16C2DDF39AC0025A760 /* OUDSModules in Frameworks */,
@@ -1443,20 +1407,6 @@
 			path = Chip;
 			sourceTree = "<group>";
 		};
-		515F66F82E2E925600268440 /* OrangeInverseTheme */ = {
-			isa = PBXGroup;
-			children = (
-				515F66F12E2E925600268440 /* OrangeInverseTheme+TokensElevationUITests.swift */,
-				515F66F22E2E925600268440 /* OrangeInverseTheme+TokensSizeUITests.swift */,
-				515F66F32E2E925600268440 /* OrangeInverseTheme+TokensSpaceUITests.swift */,
-				515F66F42E2E925600268440 /* OrangeInverseTheme+TokensBorderUITests.swift */,
-				515F66F52E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift */,
-				515F66F62E2E925600268440 /* OrangeInverseTheme+TokensColorUITests.swift */,
-				515F66F72E2E925600268440 /* OrangeInverseTheme+TokensFontUITests.swift */,
-			);
-			path = OrangeInverseTheme;
-			sourceTree = "<group>";
-		};
 		5180FE6D2DBBC2FA0062E489 /* CheckboxPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1502,7 +1452,6 @@
 				51ABCD1B2E1830BB006CD6C0 /* OrangeTheme */,
 				51ABCD262E183226006CD6C0 /* SoshTheme */,
 				51E0159D2E2AA82C00A86512 /* OrangeBusinessToolsTheme */,
-				515F66F82E2E925600268440 /* OrangeInverseTheme */,
 				51A2177D2E325FE600562BE0 /* WireframeTheme */,
 			);
 			path = Tokens;
@@ -1515,18 +1464,9 @@
 				51ABCD2F2E18335D006CD6C0 /* SoshTheme */,
 				51ABCD2E2E183350006CD6C0 /* OrangeTheme */,
 				51A2175C2E325ED500562BE0 /* OrangeBusinessToolsTheme */,
-				51A217492E325E6C00562BE0 /* OrangeInverseTheme */,
 				51A2176D2E325F7F00562BE0 /* WireframeTheme */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		51A217492E325E6C00562BE0 /* OrangeInverseTheme */ = {
-			isa = PBXGroup;
-			children = (
-				51F49C8C2E5744A900D50BC4 /* Components */,
-			);
-			path = OrangeInverseTheme;
 			sourceTree = "<group>";
 		};
 		51A2175C2E325ED500562BE0 /* OrangeBusinessToolsTheme */ = {
@@ -1902,18 +1842,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		51F49C8C2E5744A900D50BC4 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				51F49CAC2E57460700D50BC4 /* Navigations */,
-				51F49CA62E5745D300D50BC4 /* Layouts */,
-				51F49CA02E57458D00D50BC4 /* Indicators */,
-				51F49C9A2E57452E00D50BC4 /* Controls */,
-				51F49C942E5744FA00D50BC4 /* Actions */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		51F49C8F2E5744B800D50BC4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -1954,14 +1882,6 @@
 			isa = PBXGroup;
 			children = (
 				51A217562E325ED500562BE0 /* OrangeBusinessToolsTheme+ButtonUITests.swift */,
-			);
-			path = Actions;
-			sourceTree = "<group>";
-		};
-		51F49C942E5744FA00D50BC4 /* Actions */ = {
-			isa = PBXGroup;
-			children = (
-				51A217432E325E6C00562BE0 /* OrangeInverseTheme+ButtonUITests.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -2022,18 +1942,6 @@
 			path = Controls;
 			sourceTree = "<group>";
 		};
-		51F49C9A2E57452E00D50BC4 /* Controls */ = {
-			isa = PBXGroup;
-			children = (
-				51A217412E325E6C00562BE0 /* OrangeInverseTheme+ChipsUITests.swift */,
-				51A217442E325E6C00562BE0 /* OrangeInverseTheme+CheckboxUITests.swift */,
-				51A217472E325E6C00562BE0 /* OrangeInverseTheme+RadioButtonUITests.swift */,
-				51A217482E325E6C00562BE0 /* OrangeInverseTheme+SwitchUITests.swift */,
-				072BB45B2E69730300A4DF2D /* OrangeInverseTheme+TextInputhUITests.swift */,
-			);
-			path = Controls;
-			sourceTree = "<group>";
-		};
 		51F49C9B2E57453200D50BC4 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -2082,15 +1990,6 @@
 			path = Indicators;
 			sourceTree = "<group>";
 		};
-		51F49CA02E57458D00D50BC4 /* Indicators */ = {
-			isa = PBXGroup;
-			children = (
-				51A217422E325E6C00562BE0 /* OrangeInverseTheme+BadgeUITests.swift */,
-				079B4A1F2E49C8390039FC26 /* OrangeInverseTheme+TagUITests.swift */,
-			);
-			path = Indicators;
-			sourceTree = "<group>";
-		};
 		51F49CA12E57458F00D50BC4 /* Indicators */ = {
 			isa = PBXGroup;
 			children = (
@@ -2132,14 +2031,6 @@
 			path = Layouts;
 			sourceTree = "<group>";
 		};
-		51F49CA62E5745D300D50BC4 /* Layouts */ = {
-			isa = PBXGroup;
-			children = (
-				51A217452E325E6C00562BE0 /* OrangeInverseTheme+DividerUITests.swift */,
-			);
-			path = Layouts;
-			sourceTree = "<group>";
-		};
 		51F49CA72E5745D600D50BC4 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
@@ -2176,14 +2067,6 @@
 			isa = PBXGroup;
 			children = (
 				51A217592E325ED500562BE0 /* OrangeBusinessToolsTheme+LinkUITests.swift */,
-			);
-			path = Navigations;
-			sourceTree = "<group>";
-		};
-		51F49CAC2E57460700D50BC4 /* Navigations */ = {
-			isa = PBXGroup;
-			children = (
-				51A217462E325E6C00562BE0 /* OrangeInverseTheme+LinkUITests.swift */,
 			);
 			path = Navigations;
 			sourceTree = "<group>";
@@ -2328,7 +2211,6 @@
 				5115A1732DDF39AC0025A760 /* OUDSTokensSemantic */,
 				51ABCD172E182D7C006CD6C0 /* OUDSThemesSosh */,
 				51DB2E132E2AAAB9004F7487 /* OUDSThemesOrangeBusinessTools */,
-				515F66EF2E2E71DB00268440 /* OUDSThemesOrangeInverse */,
 				5131F14C2E324A9A00A942B0 /* OUDSThemesWireframe */,
 			);
 			productName = DemoApp;
@@ -2577,9 +2459,7 @@
 				51FD65222E0D8DB20084B982 /* A11YIdentifiers.swift in Sources */,
 				518EC0752E1FF23800FC77E4 /* OrangeTheme+ButtonUITests.swift in Sources */,
 				518EC0762E1FF23800FC77E4 /* OrangeTheme+RadioButtonUITests.swift in Sources */,
-				079B4A202E49C8390039FC26 /* OrangeInverseTheme+TagUITests.swift in Sources */,
 				518EC09B2E1FF28300FC77E4 /* SoshTheme+DividerUITests.swift in Sources */,
-				51A217502E325E6C00562BE0 /* OrangeInverseTheme+BadgeUITests.swift in Sources */,
 				518EC09C2E1FF28300FC77E4 /* SoshTheme+LinkUITests.swift in Sources */,
 				518EC09D2E1FF28300FC77E4 /* SoshTheme+SwitchUITests.swift in Sources */,
 				518EC09E2E1FF28300FC77E4 /* SoshTheme+CheckboxUITests.swift in Sources */,
@@ -2587,7 +2467,6 @@
 				518EC0A02E1FF28300FC77E4 /* SoshTheme+ButtonUITests.swift in Sources */,
 				518EC0772E1FF23800FC77E4 /* OrangeTheme+CheckboxUITests.swift in Sources */,
 				072BB45A2E6972B200A4DF2D /* OrangeBusinessToolsTheme+TextInputUITests.swift in Sources */,
-				51A2174A2E325E6C00562BE0 /* OrangeInverseTheme+ButtonUITests.swift in Sources */,
 				518EC0782E1FF23800FC77E4 /* OrangeTheme+DividerUITests.swift in Sources */,
 				518EC0792E1FF23800FC77E4 /* OrangeTheme+LinkUITests.swift in Sources */,
 				518EC07A2E1FF23800FC77E4 /* OrangeTheme+SwitchUITests.swift in Sources */,
@@ -2613,15 +2492,12 @@
 				51A217722E325F7F00562BE0 /* WireframeTheme+LinkUITests.swift in Sources */,
 				51952A992D3FA32E0068B807 /* BorderTokenElement.swift in Sources */,
 				51952A9A2D3FA32E0068B807 /* NamedColor+Opacity.swift in Sources */,
-				51A2174F2E325E6C00562BE0 /* OrangeInverseTheme+SwitchUITests.swift in Sources */,
 				51952A9B2D3FA32E0068B807 /* NamedColor+Overlay.swift in Sources */,
-				515F66F92E2E925600268440 /* OrangeInverseTheme+TokensColorUITests.swift in Sources */,
 				51952A9C2D3FA32E0068B807 /* NamedColor+Repository.swift in Sources */,
 				51417C212E1BF57F000266C8 /* TokensSizeUITestsTestCase.swift in Sources */,
 				072BB4582E69726D00A4DF2D /* OrangeTheme+TextInputUITests.swift in Sources */,
 				51952A9D2D3FA32E0068B807 /* NamedColor+Surface.swift in Sources */,
 				51952A9E2D3FA32E0068B807 /* ColorTokenElement.swift in Sources */,
-				51A2174B2E325E6C00562BE0 /* OrangeInverseTheme+RadioButtonUITests.swift in Sources */,
 				518EC0A82E1FF2C000FC77E4 /* BadgeUITestsTestCase.swift in Sources */,
 				518EC0A92E1FF2C000FC77E4 /* ButtonUITestsTestCase.swift in Sources */,
 				518EC0AA2E1FF2C000FC77E4 /* LinkUITestsTestCase.swift in Sources */,
@@ -2677,7 +2553,6 @@
 				6DB260E12CD0F0520091F72E /* NameSpace+PaddingInset.swift in Sources */,
 				5152DA1D2DE0BD440078B9F1 /* DesignToolbox+EnrichedTexts.swift in Sources */,
 				51952A752D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
-				515F66FB2E2E925600268440 /* OrangeInverseTheme+TokensSizeUITests.swift in Sources */,
 				51A217712E325F7F00562BE0 /* WireframeTheme+RadioButtonUITests.swift in Sources */,
 				51417C272E1BF6B8000266C8 /* TokensOpacityUITestsTestCase.swift in Sources */,
 				6DB260E22CD0F0520091F72E /* NameSpace+PaddingBlock.swift in Sources */,
@@ -2708,11 +2583,9 @@
 				6DB260DC2CD0F0000091F72E /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				6DB260DB2CD0EFD90091F72E /* NamedSize+IconWithTypography.swift in Sources */,
 				076227632DA90C65009C3632 /* DividerConfiguration.swift in Sources */,
-				51A2174E2E325E6C00562BE0 /* OrangeInverseTheme+LinkUITests.swift in Sources */,
 				51417C232E1BF5D1000266C8 /* TokensSpaceUITestsTestCase.swift in Sources */,
 				076227642DA90C65009C3632 /* DividerElement.swift in Sources */,
 				0786A9DD2E0AAB4A00976098 /* CheckboxItemElement.swift in Sources */,
-				515F66FA2E2E925600268440 /* OrangeInverseTheme+TokensSpaceUITests.swift in Sources */,
 				0786A9DE2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
 				076227652DA90C65009C3632 /* DividerElements.swift in Sources */,
 				51A217702E325F7F00562BE0 /* WireframeTheme+SwitchUITests.swift in Sources */,
@@ -2723,16 +2596,13 @@
 				51D6D58C2D887E94009CD879 /* CheckboxIndeterminatePage.swift in Sources */,
 				6D17A2352CCF8DC300C00512 /* NamedColor.swift in Sources */,
 				6D17A22C2CCBF12B00C00512 /* NamedColor+Action.swift in Sources */,
-				515F66FE2E2E925600268440 /* OrangeInverseTheme+TokensElevationUITests.swift in Sources */,
 				51ABCD292E183226006CD6C0 /* SoshTheme+TokensColorUITests.swift in Sources */,
 				6D17A22D2CCBF12B00C00512 /* NamedColor+Always.swift in Sources */,
-				51A2174D2E325E6C00562BE0 /* OrangeInverseTheme+DividerUITests.swift in Sources */,
 				07CAE7692CEE20B200D6C5D1 /* SpaceGapTokenIllustrations.swift in Sources */,
 				07D3DBF12DA5084500D8A57F /* ColoredSurfaceConfiguration.swift in Sources */,
 				07D3DBF22DA5084500D8A57F /* ColoredSurfacePage.swift in Sources */,
 				07D3DBF32DA5084500D8A57F /* ColoredSurfaceElement.swift in Sources */,
 				51417C292E1BF70F000266C8 /* TokensColorUITestsTestCase.swift in Sources */,
-				51A2174C2E325E6C00562BE0 /* OrangeInverseTheme+CheckboxUITests.swift in Sources */,
 				515EE9A62E21347200A60E96 /* OrangeTheme+ChipsUITests.swift in Sources */,
 				51952A7F2D3FA17E0068B807 /* OrangeTheme+TokensColorUITests.swift in Sources */,
 				07CAE76A2CEE20B200D6C5D1 /* SpacePaddingTokenIllustrations.swift in Sources */,
@@ -2773,10 +2643,7 @@
 				51417C1F2E1BF4FB000266C8 /* TokensElevationUITestsTestCase.swift in Sources */,
 				51952A832D3FA1AC0068B807 /* OrangeTheme+TokensSizeUITests.swift in Sources */,
 				51952A712D3F9D720068B807 /* DesignToolboxTokenIllustration.swift in Sources */,
-				515F66FC2E2E925600268440 /* OrangeInverseTheme+TokensBorderUITests.swift in Sources */,
 				51952A892D3FA20D0068B807 /* OrangeTheme+TokensElevationUITests.swift in Sources */,
-				072BB45C2E69730300A4DF2D /* OrangeInverseTheme+TextInputhUITests.swift in Sources */,
-				515F66FF2E2E925600268440 /* OrangeInverseTheme+TokensOpacityUITests.swift in Sources */,
 				07F0AFD82CFDB3CC00D334DD /* ComponentPage.swift in Sources */,
 				6D17A22B2CCBF0E200C00512 /* ColorTokenPage.swift in Sources */,
 				07C54EC22DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift in Sources */,
@@ -2785,7 +2652,6 @@
 				6D8F9C542CC160660078A10E /* SpaceTokenPage.swift in Sources */,
 				07304A6A2D429F9F009320BA /* LinkConfiguration.swift in Sources */,
 				07304A6B2D429F9F009320BA /* LinkElement.swift in Sources */,
-				515F66FD2E2E925600268440 /* OrangeInverseTheme+TokensFontUITests.swift in Sources */,
 				51ABCD282E183226006CD6C0 /* SoshTheme+TokensFontUITests.swift in Sources */,
 				5180FE712DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */,
 				51A905FD2E8427C6003F3E0E /* View+NavigationBar.swift in Sources */,
@@ -2793,7 +2659,6 @@
 				079B4A132E49BFA20039FC26 /* TagUITestCase.swift in Sources */,
 				51ABCD2C2E183226006CD6C0 /* SoshTheme+TokensElevationUITests.swift in Sources */,
 				5180FE732DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */,
-				51A217512E325E6C00562BE0 /* OrangeInverseTheme+ChipsUITests.swift in Sources */,
 				51E0159E2E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensBorderUITests.swift in Sources */,
 				51A217602E325ED500562BE0 /* OrangeBusinessToolsTheme+DividerUITests.swift in Sources */,
 				07304A6C2D429F9F009320BA /* LinkPage.swift in Sources */,
@@ -3482,8 +3347,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
-				kind = branch;
+				kind = revision;
+				revision = fc3c082b254e0577cc0632e3c5aaad8d6582e69b;
 			};
 		};
 		6DFC20C32CE3D9AE00F2EC33 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */ = {
@@ -3561,10 +3426,6 @@
 		513AD93F2C5AAADE0003253B /* OUDSTokensComponent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSTokensComponent;
-		};
-		515F66EF2E2E71DB00268440 /* OUDSThemesOrangeInverse */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OUDSThemesOrangeInverse;
 		};
 		51ABCD172E182D7C006CD6C0 /* OUDSThemesSosh */ = {
 			isa = XCSwiftPackageProductDependency;
