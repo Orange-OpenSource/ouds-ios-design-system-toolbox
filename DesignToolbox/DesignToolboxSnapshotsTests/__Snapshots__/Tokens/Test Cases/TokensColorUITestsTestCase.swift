@@ -19,7 +19,6 @@ import SwiftUI
 import XCTest
 
 // swiftlint:disable required_deinit
-// swiftlint:disable type_body_length
 
 /// Tests the UI rendering of each **color token** using reference images
 open class TokensColorUITestsTestCase: XCTestCase {
@@ -441,4 +440,3 @@ open class TokensColorUITestsTestCase: XCTestCase {
 }
 
 // swiftlint:enable required_deinit
-// swiftlint:enable type_body_length
