@@ -75,12 +75,12 @@ struct ElevationTokenPage: View {
 enum NamedElevation: String, CaseIterable {
     case elevationNone
     case elevationRaised
-    case elevationStickyNavigationScrolled
+    case elevationDrag
     case elevationOverlayDefault
+    case elevationOverlayEmphasized
     case elevationStickyDefault
     case elevationStickyEmphasized
-    case elevationDrag
-    case elevationOverlayEmphasized
+    case elevationStickyNavigationScrolled
 
     func token(from theme: OUDSTheme) -> ElevationCompositeSemanticToken {
         switch self {

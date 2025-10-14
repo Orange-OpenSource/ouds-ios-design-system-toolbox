@@ -17,13 +17,6 @@ import OUDSTokensSemantic
 
 enum NamedColorMode: CaseIterable, CustomStringConvertible {
 
-    /*
-     // MARK: - On Status
-
-     // MARK: - Navigation
-
-     var modeNavigationBar: MultipleColorModeSemanticTokens { get }
-     */
     case modeOnBgPrimary
     case modeOnBgSecondary
     case modeOnBgTertiary

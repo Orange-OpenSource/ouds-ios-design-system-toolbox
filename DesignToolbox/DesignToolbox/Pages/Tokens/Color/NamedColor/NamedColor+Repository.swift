@@ -42,6 +42,7 @@ extension NamedColor {
         case colorRepositoryNeutralEmphasizedHigher
         case colorRepositoryNeutralEmphasizedHighest
         case colorRepositoryNeutralEmphasizedMedium
+        case colorRepositoryNeutralEmphasizedLow
         case colorRepositoryNeutralMutedLower
         case colorRepositoryNeutralMutedLowest
         case colorRepositoryNeutralMutedWhite
@@ -56,10 +57,15 @@ extension NamedColor {
         case colorRepositoryOpacityBlackMediumHigh
         case colorRepositoryOpacityBlackTransparent
         case colorRepositoryOpacityInfoLow
+        case colorRepositoryOpacityInfoMedium
         case colorRepositoryOpacityAccentLow
+        case colorRepositoryOpacityAccentMedium
         case colorRepositoryOpacityNegativeLow
+        case colorRepositoryOpacityNegativeMedium
         case colorRepositoryOpacityPositiveLow
+        case colorRepositoryOpacityPositiveMedium
         case colorRepositoryOpacityWarningLow
+        case colorRepositoryOpacityWarningMedium
         case colorRepositoryOpacityWhiteHigh
         case colorRepositoryOpacityWhiteHigher
         case colorRepositoryOpacityWhiteHighest
@@ -153,6 +159,8 @@ extension NamedColor {
                 theme.colors.colorRepositoryNeutralEmphasizedHighest
             case .colorRepositoryNeutralEmphasizedMedium:
                 theme.colors.colorRepositoryNeutralEmphasizedMedium
+            case .colorRepositoryNeutralEmphasizedLow:
+                theme.colors.colorRepositoryNeutralEmphasizedLow
             case .colorRepositoryNeutralMutedLower:
                 theme.colors.colorRepositoryNeutralMutedLower
             case .colorRepositoryNeutralMutedLowest:
@@ -181,14 +189,24 @@ extension NamedColor {
                 theme.colors.colorRepositoryOpacityBlackTransparent
             case .colorRepositoryOpacityInfoLow:
                 theme.colors.colorRepositoryOpacityInfoLow
+            case .colorRepositoryOpacityInfoMedium:
+                theme.colors.colorRepositoryOpacityInfoMedium
             case .colorRepositoryOpacityAccentLow:
                 theme.colors.colorRepositoryOpacityAccentLow
+            case .colorRepositoryOpacityAccentMedium:
+                theme.colors.colorRepositoryOpacityAccentMedium
             case .colorRepositoryOpacityNegativeLow:
                 theme.colors.colorRepositoryOpacityNegativeLow
+            case .colorRepositoryOpacityNegativeMedium:
+                theme.colors.colorRepositoryOpacityNegativeMedium
             case .colorRepositoryOpacityPositiveLow:
                 theme.colors.colorRepositoryOpacityPositiveLow
+            case .colorRepositoryOpacityPositiveMedium:
+                theme.colors.colorRepositoryOpacityPositiveMedium
             case .colorRepositoryOpacityWarningLow:
                 theme.colors.colorRepositoryOpacityWarningLow
+            case .colorRepositoryOpacityWarningMedium:
+                theme.colors.colorRepositoryOpacityWarningMedium
             case .colorRepositoryOpacityWhiteHigh:
                 theme.colors.colorRepositoryOpacityWhiteHigh
             case .colorRepositoryOpacityWhiteHigher:

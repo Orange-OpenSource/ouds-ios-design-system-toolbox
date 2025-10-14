@@ -295,7 +295,7 @@ struct SpaceHeaderDescription: View {
 
     var body: some View {
         content
-            .oudsBorder(style: theme.borders.borderStyleDrag, width: theme.borders.borderWidthThin, radius: theme.borders.borderRadiusNone, color: theme.colors.colorBgInverse)
+            .oudsBorder(style: theme.borders.borderStyleDrag, width: theme.borders.borderWidthThin, radius: theme.borders.borderRadiusNone, color: theme.colors.colorBgInverseLow)
             .padding(.all, theme.spaces.spaceFixedMedium)
             .oudsBackground(theme.colors.colorSurfaceSecondary)
     }

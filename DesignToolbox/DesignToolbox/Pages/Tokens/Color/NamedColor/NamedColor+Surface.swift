@@ -24,13 +24,15 @@ extension NamedColor {
         case colorSurfaceStatusInfoMuted
         case colorSurfaceStatusNegativeEmphasized
         case colorSurfaceStatusNegativeMuted
-        case colorSurfaceInverseHigh
-        case colorSurfaceInverseLow
-        case colorSurfaceSecondary
         case colorSurfaceStatusPositiveEmphasized
         case colorSurfaceStatusPositiveMuted
         case colorSurfaceStatusWarningEmphasized
         case colorSurfaceStatusWarningMuted
+        case colorSurfaceInverseHigh
+        case colorSurfaceInverseLow
+        case colorSurfacePrimary
+        case colorSurfaceSecondary
+        case colorSurfaceTertiary
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
@@ -52,8 +54,6 @@ extension NamedColor {
                 theme.colors.colorSurfaceInverseHigh
             case .colorSurfaceInverseLow:
                 theme.colors.colorSurfaceInverseLow
-            case .colorSurfaceSecondary:
-                theme.colors.colorSurfaceSecondary
             case .colorSurfaceStatusPositiveEmphasized:
                 theme.colors.colorSurfaceStatusPositiveEmphasized
             case .colorSurfaceStatusPositiveMuted:
@@ -62,6 +62,12 @@ extension NamedColor {
                 theme.colors.colorSurfaceStatusWarningEmphasized
             case .colorSurfaceStatusWarningMuted:
                 theme.colors.colorSurfaceStatusWarningMuted
+            case .colorSurfacePrimary:
+                theme.colors.colorSurfacePrimary
+            case .colorSurfaceSecondary:
+                theme.colors.colorSurfaceSecondary
+            case .colorSurfaceTertiary:
+                theme.colors.colorSurfaceTertiary
             }
         }
     }
