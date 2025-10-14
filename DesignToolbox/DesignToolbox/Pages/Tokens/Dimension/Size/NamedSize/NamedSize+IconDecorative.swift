@@ -29,23 +29,23 @@ extension NamedSize {
         func token(from theme: OUDSTheme) -> SizeSemanticToken {
             switch self {
             case .sizeIconDecorative4xsmall:
-                theme.sizes.sizeIconDecorative4xs
+                theme.sizes.sizeIconDecorative4xsmall
             case .sizeIconDecorative3xsmall:
-                theme.sizes.sizeIconDecorative3xs
+                theme.sizes.sizeIconDecorative3xsmall
             case .sizeIconDecorative2xsmall:
-                theme.sizes.sizeIconDecorative2xs
+                theme.sizes.sizeIconDecorative2xsmall
             case .sizeIconDecorativeXsmall:
-                theme.sizes.sizeIconDecorativeXs
+                theme.sizes.sizeIconDecorativeXsmall
             case .sizeIconDecorativeSmall:
-                theme.sizes.sizeIconDecorativeSm
+                theme.sizes.sizeIconDecorativeSmall
             case .sizeIconDecorativeMedium:
-                theme.sizes.sizeIconDecorativeMd
+                theme.sizes.sizeIconDecorativeMedium
             case .sizeIconDecorativeLarge:
-                theme.sizes.sizeIconDecorativeLg
+                theme.sizes.sizeIconDecorativeLarge
             case .sizeIconDecorativeXlarge:
-                theme.sizes.sizeIconDecorativeXl
+                theme.sizes.sizeIconDecorativeXlarge
             case .sizeIconDecorative2xlarge:
-                theme.sizes.sizeIconDecorative2xl
+                theme.sizes.sizeIconDecorative2xlarge
             }
         }
     }

@@ -66,7 +66,7 @@ struct SizeTokenPage: View {
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 ZStack {
                     Rectangle()
-                        .fill(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
+                        .fill(theme.colors.colorSurfaceSecondary.color(for: colorScheme))
                         .frame(width: 82, height: 82, alignment: .center)
 
                     Image("ic_token")
@@ -100,7 +100,7 @@ struct SizeTokenPage: View {
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 ZStack {
                     Rectangle()
-                        .fill(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
+                        .fill(theme.colors.colorSurfaceSecondary.color(for: colorScheme))
                         .frame(width: 82, height: 82, alignment: .center)
                     Image("ic_token")
                         .resizable()
@@ -164,7 +164,7 @@ struct SizeTokenPage: View {
                     .oudsForegroundStyle(theme.colors.colorContentDefault)
             }
             .padding(.all, theme.spaces.spaceFixedMedium)
-            .oudsBackground(theme.colors.colorSurfaceStatusNeutralMuted)
+            .oudsBackground(theme.colors.colorSurfaceSecondary)
         }
     }
 
