@@ -102,8 +102,8 @@ final class TagConfigurationModel: ComponentConfiguration {
         }
     }
 
-    var disableFlipIcon: Bool {
-        loader || layout != .textAndIcon || statusCategory != .accent || statusCategory != .neutral
+    var enableFlipIcon: Bool {
+        !loader && (layout == .textAndIcon && (statusCategory == .accent || statusCategory == .neutral))
     }
 
     // MARK: Component Configuration
@@ -124,11 +124,11 @@ final class TagConfigurationModel: ComponentConfiguration {
     }
 
     private var customIconPattern: String {
-        if disableFlipIcon {
-            return ""
-        } else {
+        if enableFlipIcon {
             let flipIconPattern = flipIcon ? ", flipIcon: true" : ""
             return ", customIcon: Image(\"ic_heart\")\(flipIconPattern))"
+        } else {
+            return ""
         }
     }
 
@@ -173,7 +173,7 @@ struct TagConfigurationView: View {
                            chips: TagLayout.chips)
 
             OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
-                .disabled(configurationModel.disableFlipIcon)
+                .disabled(!configurationModel.enableFlipIcon)
 
             OUDSChipPicker(title: "app_components_common_appearance_label",
                            selection: $configurationModel.appearance,
