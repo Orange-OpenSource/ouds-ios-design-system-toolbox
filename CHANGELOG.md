@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.20.0...develop)
+## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.20.0...develop)
+
+### Changed
+
+- [Library] Update `OUDSTag` to 1.4 version (Orange-OpenSource/ouds-ios#1037)
+- [Library] Update `OUDSTag` to 1.3 version (Orange-OpenSource/ouds-ios#945)
 
 ### Added
 
@@ -30,8 +36,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Library] Update `OUDSTag` to 1.4 version (Orange-OpenSource/ouds-ios#1037)
-- [Library] Update `OUDSTag` to 1.3 version (Orange-OpenSource/ouds-ios#945)
 - [DesignToolbox] `actions/dependency-review-action` action from v4.7.3 to v4.8.1 for `dependency-review` workflow
 - [DesignToolbox] `SwiftFormat/CLI` pod from v0.57.2 to v0.58.3
 - [DesignToolbox] `ossf/scorecard-action` action from v2.4.2 to v2.4.3 for `scorecard` workflow
