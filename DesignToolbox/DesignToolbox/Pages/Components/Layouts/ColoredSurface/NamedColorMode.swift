@@ -20,25 +20,23 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
     case modeOnBgPrimary
     case modeOnBgSecondary
     case modeOnBgTertiary
-    case modeOnBgEmphasized
     case modeOnBrandPrimary
     case modeOnBrandSecondary
     case modeOnBrandTertiary
+    case modeOnOverlayModal
+    case modeOnOverlayDropdown
+    case modeOnOverlayTooltip
     case modeOnStatusAccentEmphasized
     case modeOnStatusAccentMuted
     case modeOnStatusInfoEmphasized
     case modeOnStatusInfoMuted
     case modeOnStatusNegativeEmphasized
     case modeOnStatusNegativeMuted
-    case modeOnStatusNeutralEmphasized
-    case modeOnStatusNeutralMuted
     case modeOnStatusPositiveEmphasized
     case modeOnStatusPositiveMuted
     case modeOnStatusWarningEmphasized
     case modeOnStatusWarningMuted
-    case modeOnOverlayDefault
-    case modeOnOverlayEmphasized
-    case modeOnOverlayModal
+    case modeNavigationBar
 
     func toSurfaceColor(from theme: OUDSTheme) -> OUDSColoredSurface.SurfaceColor {
         switch self {
@@ -48,14 +46,14 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             theme.colorModes.modeOnBgSecondary
         case .modeOnBgTertiary:
             theme.colorModes.modeOnBgTertiary
-        case .modeOnBgEmphasized:
-            theme.colorModes.modeOnBgEmphasized
         case .modeOnBrandPrimary:
             theme.colorModes.modeOnBrandPrimary
         case .modeOnBrandSecondary:
             theme.colorModes.modeOnBrandSecondary
         case .modeOnBrandTertiary:
             theme.colorModes.modeOnBrandTertiary
+        case .modeOnOverlayModal:
+            theme.colorModes.modeOnOverlayModal
         case .modeOnStatusAccentEmphasized:
             theme.colorModes.modeOnStatusAccentEmphasized
         case .modeOnStatusAccentMuted:
@@ -68,10 +66,6 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             theme.colorModes.modeOnStatusNegativeEmphasized
         case .modeOnStatusNegativeMuted:
             theme.colorModes.modeOnStatusNegativeMuted
-        case .modeOnStatusNeutralEmphasized:
-            theme.colorModes.modeOnStatusNeutralEmphasized
-        case .modeOnStatusNeutralMuted:
-            theme.colorModes.modeOnStatusNeutralMuted
         case .modeOnStatusPositiveEmphasized:
             theme.colorModes.modeOnStatusPositiveEmphasized
         case .modeOnStatusPositiveMuted:
@@ -80,12 +74,12 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             theme.colorModes.modeOnStatusWarningEmphasized
         case .modeOnStatusWarningMuted:
             theme.colorModes.modeOnStatusWarningMuted
-        case .modeOnOverlayDefault:
-            theme.colorModes.modeOnOverlayDefault
-        case .modeOnOverlayEmphasized:
-            theme.colorModes.modeOnOverlayEmphasized
-        case .modeOnOverlayModal:
-            theme.colorModes.modeOnOverlayModal
+        case .modeOnOverlayDropdown:
+            theme.colorModes.modeOnOverlayDropdown
+        case .modeOnOverlayTooltip:
+            theme.colorModes.modeOnOverlayTooltip
+        case .modeNavigationBar:
+            theme.colorModes.modeNavigationBar
         }
     }
 
@@ -98,8 +92,6 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "On Background Secondary"
         case .modeOnBgTertiary:
             "On Background Tertiary"
-        case .modeOnBgEmphasized:
-            "On Background Emphasized"
         case .modeOnBrandPrimary:
             "On Brand Primary"
         case .modeOnBrandSecondary:
@@ -118,10 +110,6 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "On Status Negative Emphasized"
         case .modeOnStatusNegativeMuted:
             "On Status Negative Muted"
-        case .modeOnStatusNeutralEmphasized:
-            "On Status Neutral Emphasized"
-        case .modeOnStatusNeutralMuted:
-            "On Status Neutral Muted"
         case .modeOnStatusPositiveEmphasized:
             "On Status Positive Emphasized"
         case .modeOnStatusPositiveMuted:
@@ -130,16 +118,18 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "On Status Warning Emphasized"
         case .modeOnStatusWarningMuted:
             "On Status Warning Muted"
-        case .modeOnOverlayDefault:
-            "On Overlay Default"
-        case .modeOnOverlayEmphasized:
-            "On Overlay Emphasized"
+        case .modeOnOverlayDropdown:
+            "On Overlay Dropdown"
+        case .modeOnOverlayTooltip:
+            "On Overlay Tooltip"
         case .modeOnOverlayModal:
             "On Overlay Modal"
+        case .modeNavigationBar:
+            "Navigation Bar"
         }
     }
 
-    public var description: String {
+    var description: String {
         switch self {
         case .modeOnBgPrimary:
             "modeOnBgPrimary"
@@ -147,8 +137,6 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "modeOnBgSecondary"
         case .modeOnBgTertiary:
             "modeOnBgTertiary"
-        case .modeOnBgEmphasized:
-            "modeOnBgEmphasized"
         case .modeOnBrandPrimary:
             "modeOnBrandPrimary"
         case .modeOnBrandSecondary:
@@ -167,10 +155,6 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "modeOnStatusNegativeEmphasized"
         case .modeOnStatusNegativeMuted:
             "modeOnStatusNegativeMuted"
-        case .modeOnStatusNeutralEmphasized:
-            "modeOnStatusNeutralEmphasized"
-        case .modeOnStatusNeutralMuted:
-            "modeOnStatusNeutralMuted"
         case .modeOnStatusPositiveEmphasized:
             "modeOnStatusPositiveEmphasized"
         case .modeOnStatusPositiveMuted:
@@ -179,12 +163,14 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "modeOnStatusWarningEmphasized"
         case .modeOnStatusWarningMuted:
             "modeOnStatusWarningMuted"
-        case .modeOnOverlayDefault:
-            "modeOnOverlayDefault"
-        case .modeOnOverlayEmphasized:
-            "modeOnOverlayEmphasized"
+        case .modeOnOverlayDropdown:
+            "modeOnOverlayDropdown"
+        case .modeOnOverlayTooltip:
+            "modeOnOverlayTooltip"
         case .modeOnOverlayModal:
             "modeOnOverlayModal"
+        case .modeNavigationBar:
+            "modeNavigationBar"
         }
     }
 

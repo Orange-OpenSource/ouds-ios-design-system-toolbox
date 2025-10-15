@@ -479,30 +479,6 @@
         }
       }
     },
-    "app_about_details_themeOrangeInverseBrandVersion" : {
-      "comment" : "About screen - Tokens library version (Orange Inverse)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "إصدار رمز العلامة التجارية البرتقالي عكسي: %@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Orange Inverse brand tokens library version: %@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version des tokens brand Orange Inverse : %@"
-          }
-        }
-      }
-    },
     "app_about_details_themeSoshBrandVersion" : {
       "comment" : "About screen - Tokens library version (Sosh)",
       "extractionState" : "manual",
@@ -838,6 +814,31 @@
           }
         }
       }
+    },
+    "app_common_disabled_label" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disabled"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disabled"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disabled"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_common_enabled_label" : {
       "comment" : "Common",
@@ -1197,30 +1198,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Le composant Button permet aux utilisateurs de faire des choix ou d'effectuer une action. Ils ont plusieurs styles pour divers besoins."
-          }
-        }
-      }
-    },
-    "app_components_button_icon_a11y" : {
-      "comment" : "Component - Button (a11y)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "هذه تسمية زائفة لوصف أيقونة"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This is a dumb accessibility label for an icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ceci est un label bidon pour décrire une icône"
           }
         }
       }
@@ -1883,6 +1860,25 @@
         }
       }
     },
+    "app_components_common_appearance_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appereances"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apparences"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_color_label" : {
       "comment" : "Component - Common",
       "localizations" : {
@@ -1980,6 +1976,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_helperText_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_hierarchy_label" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
@@ -2004,6 +2025,30 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_common_icon_a11y" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذه تسمية زائفة لوصف أيقونة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is a dumb accessibility label for an icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceci est un label bidon pour décrire une icône"
+          }
+        }
+      }
     },
     "app_components_common_iconOnlyLayout_label" : {
       "comment" : "Component - Common",
@@ -2175,6 +2220,55 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Orientation"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_outlined_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outlined"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outlined"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outlined"
+          }
+        }
+      }
+    },
+    "app_components_common_readOnly_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read Only"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read only"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read only"
           }
         }
       },
@@ -2401,31 +2495,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_controlItem_helperText_label" : {
-      "comment" : "Component - ControlItem",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Helper text"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Helper text"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Helper text"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_controlItem_icon_label" : {
       "comment" : "Component - ControlItem",
       "extractionState" : "manual",
@@ -2446,31 +2515,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Icon"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_controlItem_readOnly_label" : {
-      "comment" : "Component - ControlItem",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Read Only"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Read only"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Read only"
           }
         }
       },
@@ -2746,31 +2790,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_link_size_label" : {
-      "comment" : "Component - Link",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_radioButton_description_text" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
@@ -2938,31 +2957,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Radio button item"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_radioButton_radioButtonItem_outlined_label" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Outlined"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Outlined"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Outlined"
           }
         }
       },
@@ -3258,6 +3252,251 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Text + bullet"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_description_text" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتيح مُكوِّن إدخال النص للمستخدمين إدخال بيانات نصية أو تحريرها أو تحديدها في سطر واحد. وهو أحد أهم عناصر النموذج لإدخال بيانات المستخدم، مثل الأسماء وعناوين البريد الإلكتروني وكلمات المرور واستعلامات البحث."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A Text Input is a user interface component that allows users to enter, edit, or select single-line textual data. It's one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composant TextInput permettant aux utilisateurs de saisir, de modifier ou de sélectionner des données textuelles sur une seule ligne. C'est l'un des éléments de formulaire les plus fondamentaux pour saisir des données utilisateur telles que des noms, des adresses e-mail, des mots de passe ou des requêtes de recherche."
+          }
+        }
+      }
+    },
+    "app_components_textInput_flipLeadingIcon_label" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip leading icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip leading icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip leading icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_helperLink_label" : {
+      "comment" : "Component - Text Input",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper link"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper link"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper link"
+          }
+        }
+      }
+    },
+    "app_components_textInput_illustration_helperText_label" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص مساعد."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte d'aide."
+          }
+        }
+      }
+    },
+    "app_components_textInput_label" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text input"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text input"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text input"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_leadingIcon_label" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Leading icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Leading icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_placeholder_label" : {
+      "comment" : "Component - Text Input",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_prefix_label" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefix"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefix"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefix"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_suffix_label" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suffix"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suffix"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suffix"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_trailingIcon_label" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing icon"
           }
         }
       },
@@ -4406,8 +4645,128 @@
         }
       }
     },
+    "app_topBar_mode_button_a11y" : {
+      "comment" : "Top bar - Color scheme selector",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "غيّر الوضع"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change mode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changer de mode"
+          }
+        }
+      }
+    },
+    "app_topBar_mode_button_automatic_a11y" : {
+      "comment" : "Top bar - Color scheme selector - System mode",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تلقائي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatic"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatique"
+          }
+        }
+      }
+    },
+    "app_topBar_mode_button_dark_a11y" : {
+      "comment" : "Top bar - Color scheme selector - Dark mode",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "داكن"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sombre"
+          }
+        }
+      }
+    },
+    "app_topBar_mode_button_hint_a11y" : {
+      "comment" : "Top bar - Color scheme selector",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر لتغيير وضع التطبيق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap to change the mode of the app"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois pour changer le mode de l'app"
+          }
+        }
+      }
+    },
+    "app_topBar_mode_button_light_a11y" : {
+      "comment" : "Top bar - Color scheme selector - Light mode",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "واضح"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clair"
+          }
+        }
+      }
+    },
     "app_topBar_theme_button_a11y" : {
-      "comment" : "Top bar",
+      "comment" : "Top bar - Theme selector",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -4419,7 +4778,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chgange theme"
+            "value" : "Change theme"
           }
         },
         "fr" : {
@@ -4431,7 +4790,7 @@
       }
     },
     "app_topBar_theme_button_hint_a11y" : {
-      "comment" : "Top bar",
+      "comment" : "Top bar - Theme selector",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -4449,7 +4808,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Appuyez pour changer le thème de l'application"
+            "value" : "Taper deux fois pour changer le thème de l'application"
           }
         }
       }
@@ -4458,9 +4817,6 @@
       "shouldTranslate" : false
     },
     "Orange Business Tools" : {
-      "shouldTranslate" : false
-    },
-    "Orange Inverse" : {
       "shouldTranslate" : false
     }
   },

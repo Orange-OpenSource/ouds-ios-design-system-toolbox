@@ -23,7 +23,7 @@ struct RadioItemPage: View {
     init() {
         let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSRadioItem(isOn: $isOn",
                                                          outlinedConfiguration: (value: false,
-                                                                                 outlinedConfigurationLabel: "app_components_radioButton_radioButtonItem_outlined_label"),
+                                                                                 outlinedConfigurationLabel: "app_components_common_outlined_label"),
                                                          additionalLabelConfiguration: "app_components_radioButton_radioButtonItem_additionalLabel_label".localized())
         _configurationModel = StateObject(wrappedValue: model)
     }
@@ -55,7 +55,7 @@ private struct RadioItemDemo: View {
                       isReadOnly: configurationModel.isReadOnly,
                       hasDivider: configurationModel.divider)
             .disabled(!configurationModel.enabled)
-            .padding(.all, theme.spaces.spaceFixedMd)
+            .padding(.all, theme.spaces.spaceFixedMedium)
             .accessibilityIdentifier(A11YIdentifiers.componentRadioItem)
     }
 

@@ -27,14 +27,14 @@ struct OpacityTokenPage: View {
                 DesignToolboxCode(code: "theme.opacities.opacityInvisible", titleText: "app_tokens_common_viewCodeExample_label")
             }
 
-            Spacer().frame(height: theme.spaces.spaceFixedMd)
+            Spacer().frame(height: theme.spaces.spaceFixedMedium)
 
             ForEach(NamedOpacity.allCases, id: \.rawValue) { opacityName in
                 IllustrationOpacity(opacityName: opacityName)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal, theme.spaces.spaceFixedMd)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
     struct IllustrationOpacity: View {
@@ -58,7 +58,7 @@ struct OpacityTokenPage: View {
                         .accessibilityHidden(true)
 
                     Rectangle()
-                        .fill(theme.colors.colorOverlayEmphasized.color(for: colorScheme))
+                        .fill(theme.colors.colorOverlayModal.color(for: colorScheme))
                         .opacity(token)
                         .frame(width: 48, height: 48)
                         .oudsBorder(style: theme.borders.borderStyleDefault,

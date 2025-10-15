@@ -17,6 +17,8 @@ import SwiftUI
 
 // MARK: - Named Font
 
+// swiftlint:disable function_body_length
+
 enum NamedFont: String, CaseIterable {
     case displayLarge
     case displayMedium
@@ -28,6 +30,9 @@ enum NamedFont: String, CaseIterable {
     case bodyDefaultLarge
     case bodyDefaultMedium
     case bodyDefaultSmall
+    case bodyModerateLarge
+    case bodyModerateMedium
+    case bodyModerateSmall
     case bodyStrongLarge
     case bodyStrongMedium
     case bodyStrongSmall
@@ -35,6 +40,10 @@ enum NamedFont: String, CaseIterable {
     case labelDefaultLarge
     case labelDefaultMedium
     case labelDefaultSmall
+    case labelModerateXLarge
+    case labelModerateLarge
+    case labelModerateMedium
+    case labelModerateSmall
     case labelStrongXLarge
     case labelStrongLarge
     case labelStrongMedium
@@ -66,6 +75,12 @@ enum NamedFont: String, CaseIterable {
             theme.fonts.typeBodyDefaultMedium
         case .bodyDefaultSmall:
             theme.fonts.typeBodyDefaultSmall
+        case .bodyModerateLarge:
+            theme.fonts.typeBodyModerateLarge
+        case .bodyModerateMedium:
+            theme.fonts.typeBodyModerateMedium
+        case .bodyModerateSmall:
+            theme.fonts.typeBodyModerateSmall
         case .bodyStrongLarge:
             theme.fonts.typeBodyStrongLarge
         case .bodyStrongMedium:
@@ -80,6 +95,14 @@ enum NamedFont: String, CaseIterable {
             theme.fonts.typeLabelDefaultMedium
         case .labelDefaultSmall:
             theme.fonts.typeLabelDefaultSmall
+        case .labelModerateXLarge:
+            theme.fonts.typeLabelModerateXLarge
+        case .labelModerateLarge:
+            theme.fonts.typeLabelModerateLarge
+        case .labelModerateMedium:
+            theme.fonts.typeLabelModerateMedium
+        case .labelModerateSmall:
+            theme.fonts.typeLabelModerateSmall
         case .labelStrongXLarge:
             theme.fonts.typeLabelStrongXLarge
         case .labelStrongLarge:
@@ -95,3 +118,5 @@ enum NamedFont: String, CaseIterable {
         }
     }
 }
+
+// swiftlint:enable function_body_length

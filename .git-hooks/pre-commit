@@ -13,7 +13,8 @@
 #
 
 # pre-commit hook to format Swift sources before submitting them to remote
-# Ensures source code is always formatted.
+# Checks also if some files have been modified and stagde even if they are supposed to be excluded.
+# Ensures source code is always formatted without leak of touchy files.
 
 # Configuration
 # -------------
@@ -22,12 +23,30 @@ export PATH="$PATH:/opt/homebrew/bin"
 
 formatterExec=$(which swiftformat)
 
+# List of files for which, supposing they exist and are empty, must not have changes 
+# (supposing in that case the original version and not empty are commited which is not acceptable)
+# See Orange-OpenSource/ouds-ios#1066
+exclusion_list=("HelveticaNeueLTArabic-Bold.ttf" "HelveticaNeueLTArabic-Light.ttf" "HelveticaNeueLTArabic-Roman.ttf")
+
 # Functions
 # ---------
 
+checkExclusions() {
+  staged_files=$(git diff --diff-filter=d --staged --name-only)
+  for staged_file in $staged_files; do
+    filename=$(basename "$staged_file")
+    for excluded in "${exclusion_list[@]}"; do
+      if [ "$filename" = "$excluded" ]; then
+        echo "💥 ERROR: The file '$filename' is in exclusion list and must not be modified."
+        exit 1
+      fi
+    done
+  done
+}
+
 checkIfSwiftFormatInstalled() {
   if [ ! -x "$formatterExec" ]; then
-    1>&2 echo "💥 Unable to find swiftformat - no formatting will take place"
+    1>&2 echo "💥 ERROR: Unable to find swiftformat - no formatting will take place"
     exit 0
   fi
 }
@@ -54,6 +73,8 @@ formatStagedFiles() {
 # Main
 # ----
 
+echo "🧹 Checking of some trials of modification of excluded files"
+checkExclusions
 echo "🧹 Cleaning sources before commit..."
 checkIfSwiftFormatInstalled
 formatStagedFiles

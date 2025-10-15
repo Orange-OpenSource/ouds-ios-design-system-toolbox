@@ -152,9 +152,6 @@ struct AboutPage: View {
         Text("app_about_details_themeOrangeBusinessToolsBrandVersion" <- OUDSVersions.themeOrangeBusinessToolsBrandVersion)
             .modifier(CopyableTextViewModifier(OUDSVersions.themeOrangeBusinessToolsBrandVersion))
 
-        Text("app_about_details_themeOrangeInverseBrandVersion" <- OUDSVersions.themeOrangeInverseBrandVersion)
-            .modifier(CopyableTextViewModifier(OUDSVersions.themeOrangeInverseBrandVersion))
-
         Text("app_about_details_themeWireframeBrandVersion" <- OUDSVersions.themeWireframeBrandVersion)
             .modifier(CopyableTextViewModifier(OUDSVersions.themeWireframeBrandVersion))
     }

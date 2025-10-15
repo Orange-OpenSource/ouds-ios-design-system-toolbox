@@ -22,7 +22,7 @@ struct SwitchItemPage: View {
     @StateObject private var configurationModel: BooleanControlItemConfigurationModel
 
     init() {
-        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSRadioItem(isOn: $isOn")
+        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSSwitchItem(isOn: $isOn")
         _configurationModel = StateObject(wrappedValue: model)
     }
 
@@ -51,7 +51,7 @@ private struct SwitchItemDemo: View {
                        isReadOnly: configurationModel.isReadOnly,
                        hasDivider: configurationModel.divider)
             .disabled(!configurationModel.enabled)
-            .padding(.all, theme.spaces.spaceFixedMd)
+            .padding(.all, theme.spaces.spaceFixedMedium)
             .accessibilityIdentifier(A11YIdentifiers.componentSwitchItem)
     }
 

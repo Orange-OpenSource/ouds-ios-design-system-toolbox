@@ -36,6 +36,6 @@ struct CardIllustration: View {
         .accessibilityRemoveTraits(.isImage)
         .accessibilityHidden(true)
         .oudsForegroundStyle(theme.colors.colorContentDefault)
-        .oudsBackground(theme.colors.colorSurfaceStatusNeutralMuted)
+        .oudsBackground(theme.colors.colorSurfaceSecondary)
     }
 }

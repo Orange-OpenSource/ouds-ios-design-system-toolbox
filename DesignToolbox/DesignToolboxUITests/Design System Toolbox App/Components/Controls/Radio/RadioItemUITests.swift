@@ -35,7 +35,8 @@ final class RadioItemUITests: AppTestCase {
 
         // WHEN
 
-        radioItem.tap()
+        tapOtherElement(withA11yIdentifier: A11YIdentifiers.configurationSwitchSelection, app)
+        wait(1)
 
         // THEN
 
@@ -43,7 +44,8 @@ final class RadioItemUITests: AppTestCase {
 
         // WHEN
 
-        radioItem.tap()
+        tapOtherElement(withA11yIdentifier: A11YIdentifiers.configurationSwitchSelection, app)
+        wait(1)
 
         // THEN
 

@@ -14,7 +14,6 @@
 import OUDS
 import OUDSThemesOrange
 import OUDSThemesOrangeBusinessTools
-import OUDSThemesOrangeInverse
 import OUDSThemesSosh
 import OUDSThemesWireframe
 import SwiftUI
@@ -66,9 +65,6 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         if self is OrangeBusinessToolsTheme {
             constructedId = "Orange Business Tools"
         }
-        if self is OrangeInverseTheme {
-            constructedId = "Orange Inverse"
-        }
         if self is SoshTheme {
             constructedId = "Sosh"
         }
@@ -102,7 +98,6 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
     let orangeThemes: [OUDSTheme]
     let orangeBusinessToolsThemes: [OUDSTheme]
-    let orangeInverseThemes: [OUDSTheme]
     let otherThemes: [OUDSTheme]
 
     let allThemes: [OUDSTheme]
@@ -124,25 +119,26 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
     init() {
 
         // Init all themes
-        let orangeFranceOrangeTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)
-        let maxItOrangeTheme = OrangeTheme(tuning: Tuning.MaxIt)
-        let orangeFranceOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(tuning: Tuning.OrangeBusiness)
-        let maxItOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(tuning: Tuning.MaxIt)
-        let orangeFranceOrangeInverseTheme = OrangeInverseTheme(tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeInverseTheme = OrangeInverseTheme(tuning: Tuning.OrangeBusiness)
-        let maxItOrangeInverseTheme = OrangeInverseTheme(tuning: Tuning.MaxIt)
+
+        let orangeFranceOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
+        let maxItOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
+
+        let orangeFranceOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
+        let maxItOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
+
         let soshTheme = SoshTheme()
         let wireframeTheme = WireframeTheme()
+
         let defaultTheme = orangeFranceOrangeTheme
 
         // Fill arrays for menus
+
         orangeThemes = [orangeFranceOrangeTheme, orangeBusinessOrangeTheme, maxItOrangeTheme]
         orangeBusinessToolsThemes = [orangeFranceOrangeBusinessToolsTheme, orangeBusinessOrangeBusinessToolsTheme, maxItOrangeBusinessToolsTheme]
-        orangeInverseThemes = [orangeFranceOrangeInverseTheme, orangeBusinessOrangeInverseTheme, maxItOrangeInverseTheme]
         otherThemes = [soshTheme, wireframeTheme]
-        allThemes = orangeThemes + orangeBusinessToolsThemes + orangeInverseThemes + otherThemes
+        allThemes = orangeThemes + orangeBusinessToolsThemes + otherThemes
 
         if let theme = allThemes.first(where: { $0.id == ThemeProvider.currentTheme }) {
             currentTheme = theme
@@ -151,24 +147,44 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         }
 
         hotSwitchWarning = HotSwitchWarning()
+        #if USE_INTERNAL_FONTS
+        registerInternalFonts()
+        #endif
     }
 
     deinit {}
+
+    #if USE_INTERNAL_FONTS
+    private static var fontsAlreadyRegistered = false
+
+    /// Fonts are defined in Resources/Fonts in TTF files.
+    /// Needed for Helvetica Neue Arabic
+    private func registerInternalFonts() {
+        if !Self.fontsAlreadyRegistered {
+            let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
+            fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
+            Self.fontsAlreadyRegistered = true
+        }
+    }
+
+    private static func localizedHelveticaFont() -> String {
+        guard let preferredLanguage = Locale.preferredLanguages.first else {
+            return "Helvetica Neue"
+        }
+        if preferredLanguage.hasPrefix("ar") || Locale.current.languageCode == "ar" {
+            return "Helvetica Neue Arabic"
+        } else {
+            return "Helvetica Neue"
+        }
+    }
+    #else
+    private static func localizedHelveticaFont() -> String {
+        "Helvetica Neue"
+    }
+    #endif
 }
 
 // MARK: - Theme Selection Button
-
-extension View {
-
-    /// To add a `ThemeSelectionButton` in the toolbar
-    func navigationbarMenuForThemeSelection() -> some View {
-        toolbar {
-            ToolbarItemGroup(placement: .navigationBarTrailing) {
-                ThemeSelectionButton()
-            }
-        }
-    }
-}
 
 /// Button to make the user change the current theme.
 struct ThemeSelectionButton: View {
@@ -197,16 +213,6 @@ struct ThemeSelectionButton: View {
                 .pickerStyle(.automatic)
             }
 
-            // Orange Inverse theme and tunings
-            Menu("Orange Inverse") {
-                Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
-                    ForEach(themeProvider.orangeInverseThemes, id: \.id) { theme in
-                        Text(theme.description).tag(theme)
-                    }
-                }
-                .pickerStyle(.automatic)
-            }
-
             // Sosh and Wireframe themes (which do not have tunings)
             Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
                 ForEach(themeProvider.otherThemes, id: \.id) { theme in
@@ -218,11 +224,11 @@ struct ThemeSelectionButton: View {
         } label: {
             Image(decorative: "ic_theme")
                 .scaledToFit()
-                .accessibilityLabel("app_topBar_theme_button_a11y")
-                .accessibilityHint("app_topBar_theme_button_hint_a11y")
         }
         .oudsForegroundColor(themeProvider.currentTheme.colors.colorContentBrandPrimary)
         .modifier(HotSwitchWarningModifier(hotSwitchWarningIndicator: themeProvider.hotSwitchWarning))
+        .accessibilityLabel("app_topBar_theme_button_a11y")
+        .accessibilityHint("app_topBar_theme_button_hint_a11y")
     }
 }
 

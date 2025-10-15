@@ -79,7 +79,7 @@ end
 # Devices configuration
 # ---------------------
 
-OUDS_TEST_DEVICE = "iPhone 16 Pro (18.4)"
+OUDS_TEST_DEVICE = "iPhone 17 Pro"
 
 # Lanes
 # ------
@@ -87,13 +87,6 @@ OUDS_TEST_DEVICE = "iPhone 16 Pro (18.4)"
 default_platform(:ios)
 
 platform :ios do
-
-    before_all do |lane, options|
-        xcodes(
-            version: '16.4',
-            select_for_current_build_only: true,
-        )
-    end
 
     # ------------------------------------------------------------
     # RUN PERIPHERY FOR DEAD CODE ANALYSIS
@@ -818,7 +811,7 @@ platform :ios do
             )
         end
 
-        puts "ℹ️ Current relase notes = #{changelog}"
+        puts "ℹ️ Current relaase notes = #{changelog}"
         return changelog
     end
 

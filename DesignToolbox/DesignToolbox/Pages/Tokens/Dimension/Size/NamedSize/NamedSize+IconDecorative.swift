@@ -16,36 +16,36 @@ import OUDSTokensSemantic
 
 extension NamedSize {
     enum IconDecorative: String, CaseIterable {
-        case sizeIconDecorative4xs
-        case sizeIconDecorative3xs
-        case sizeIconDecorative2xs
-        case sizeIconDecorativeXs
-        case sizeIconDecorativeSm
-        case sizeIconDecorativeMd
-        case sizeIconDecorativeLg
-        case sizeIconDecorativeXl
-        case sizeIconDecorative2xl
+        case sizeIconDecorative4xsmall
+        case sizeIconDecorative3xsmall
+        case sizeIconDecorative2xsmall
+        case sizeIconDecorativeXsmall
+        case sizeIconDecorativeSmall
+        case sizeIconDecorativeMedium
+        case sizeIconDecorativeLarge
+        case sizeIconDecorativeXlarge
+        case sizeIconDecorative2xlarge
 
         func token(from theme: OUDSTheme) -> SizeSemanticToken {
             switch self {
-            case .sizeIconDecorative4xs:
-                theme.sizes.sizeIconDecorative4xs
-            case .sizeIconDecorative3xs:
-                theme.sizes.sizeIconDecorative3xs
-            case .sizeIconDecorative2xs:
-                theme.sizes.sizeIconDecorative2xs
-            case .sizeIconDecorativeXs:
-                theme.sizes.sizeIconDecorativeXs
-            case .sizeIconDecorativeSm:
-                theme.sizes.sizeIconDecorativeSm
-            case .sizeIconDecorativeMd:
-                theme.sizes.sizeIconDecorativeMd
-            case .sizeIconDecorativeLg:
-                theme.sizes.sizeIconDecorativeLg
-            case .sizeIconDecorativeXl:
-                theme.sizes.sizeIconDecorativeXl
-            case .sizeIconDecorative2xl:
-                theme.sizes.sizeIconDecorative2xl
+            case .sizeIconDecorative4xsmall:
+                theme.sizes.sizeIconDecorative4xsmall
+            case .sizeIconDecorative3xsmall:
+                theme.sizes.sizeIconDecorative3xsmall
+            case .sizeIconDecorative2xsmall:
+                theme.sizes.sizeIconDecorative2xsmall
+            case .sizeIconDecorativeXsmall:
+                theme.sizes.sizeIconDecorativeXsmall
+            case .sizeIconDecorativeSmall:
+                theme.sizes.sizeIconDecorativeSmall
+            case .sizeIconDecorativeMedium:
+                theme.sizes.sizeIconDecorativeMedium
+            case .sizeIconDecorativeLarge:
+                theme.sizes.sizeIconDecorativeLarge
+            case .sizeIconDecorativeXlarge:
+                theme.sizes.sizeIconDecorativeXlarge
+            case .sizeIconDecorative2xlarge:
+                theme.sizes.sizeIconDecorative2xlarge
             }
         }
     }

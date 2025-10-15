@@ -36,7 +36,7 @@ struct DesignToolboxCode: View {
             Text(titleText)
                 .typeBodyStrongLarge(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .padding(.vertical, theme.spaces.spacePaddingInlineSm)
+                .padding(.vertical, theme.spaces.spacePaddingInlineSmall)
         }
     }
 
@@ -45,11 +45,11 @@ struct DesignToolboxCode: View {
             Text(code)
                 .font(.system(.body, design: .monospaced))
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .padding(.vertical, theme.spaces.spacePaddingInlineSm)
+                .padding(.vertical, theme.spaces.spacePaddingInlineSmall)
                 .multilineTextAlignment(layoutDirection == .rightToLeft ? .trailing : .leading)
             // As the source code sample is written in english, keep text aligned on the left
 
-            Spacer(minLength: theme.spaces.spacePaddingBlockMd)
+            Spacer(minLength: theme.spaces.spacePaddingBlockMedium)
 
             Button {
                 UIPasteboard.general.string = code
@@ -69,8 +69,8 @@ struct DesignToolboxCode: View {
             }
         }
         .frame(minWidth: 72, maxWidth: .infinity, alignment: .leading)
-        .padding(.vertical, theme.spaces.spacePaddingInlineSm)
-        .padding(.leading, theme.spaces.spacePaddingInlineMd)
+        .padding(.vertical, theme.spaces.spacePaddingInlineSmall)
+        .padding(.leading, theme.spaces.spacePaddingInlineMedium)
         .oudsBackground(theme.colors.colorBgSecondary)
         .accessibilityElement(children: .combine)
         .accessibilityHint("app_common_copyCode_a11y")

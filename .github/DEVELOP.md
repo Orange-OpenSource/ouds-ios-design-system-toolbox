@@ -16,6 +16,7 @@
   * [Manual tests using demo app](#manual-tests-using-demo-app)
 - [Build phases](#build-phases)
 - [Targets](#targets)
+- [Internal assets](#internal-assets)
 - [Certificates, profiles and identifiers](#certificates-profiles-and-identifiers)
 - [Update dependencies with Renovate](#update-dependencies-with-renovate)
 - [Developer Certificate of Origin](#developer-certificate-of-origin)
@@ -83,13 +84,8 @@ brew install swiftlint
 brew install swiftformat
 # or `brew reinstall swiftformat` to get updates if old version installed
 
-# For xcodes (at least 1.5.0)
-brew install xcodesorg/made/xcodes
-# or `brew reinstall xcodesorg/made/xcodes` to get updates if old version installed
-
 # For git-cliff (at least 2.8.0)
 brew install git-cliff
-
 
 # For Syft (at least 1.26.1)
 brew install syft
@@ -122,15 +118,21 @@ rbenv global 3.4.0
 # then 
 # >  rbenv global x.y.z
 
+# Apple commends using ZSH as shell instead of Bash, so to will need to add the magic line in the end of your shell configuration
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+# Then
+source ~/.zshrc
+
 # Check Ruby version
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 16.4**, we suggest you use this version or newer if you want.
+We use also for our GitLab CI runners **Xcode 26.0.1**, we suggest you use this version or newer if you want (even if not recommended).
 
 > [!IMPORTANT]
-> Xcode 16.4 and Swift 6.1 are used for this project. You must use this configuration.
-> Not retrocompatibility is planned.
+> Xcode 26.0.1 and Swift 6.2 are used for this project. You should use this configuration.
+> Not retrocompatibility is planned yet.
+> If need you can contact us and open a discussion on GitHub Orange-OpenSource/ouds-ios
 
 ## Embed the OUDS iOS library
 
@@ -204,8 +206,8 @@ For *App Store* illustrations, same thing, but with the suitable simulators or d
 
 ### Unit tests for OUDS Swift package
 
-You can, from the design system toolbox project, if you referenced the OUDS package with a local repository reference before, run the unit tests of the OUDS package.
-To do that, select the scheme *OUDS-Package* and in the tests navigator run the tests.
+You can, from the design system toolbox project, if you referenced the OUDS package with a local repository reference before, run the unit tests of the OUDS package. Or you can run them from Xcode if you opened only the package?
+To do that, select the scheme *OUDS-Package* scheme, which is also the current package test plan, and in the tests navigator run the tests.
 
 ### Snapshots tests in demo app
 
@@ -216,7 +218,7 @@ To run these snapshots tests follow some steps:
 2. `bundle exec pod install`
 3. Open *DesignToolbox.xcworkspace*
 4. Select *DesignToolboxSnapshotsTests* scheme
-5. Select *iPhone 16 Pro (18.4)* simulator (the device used to tests and views rendering)
+5. Select *iPhone 17 Pro* simulator (the device used to tests and views rendering) (iOS 26.0 (23A339))
 6. Run tests (Product -> Test)
 
 Or run in terminal:
@@ -233,7 +235,7 @@ Such tests here are used to as to be sure the look and feel of any components an
 Any interface modifications require regenerating the illustrations using the tool, i.e. run the tests twice. The reference illustrations have already been saved within the project.
 
 > [!IMPORTANT]
-> The device under tests is a simulator of iPhone 16 Pro (18.4), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
+> The device under tests is a simulator of iPhone 17 Pro (26.0), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
 
 #### How to use to use swift-snapshot-testing library
 
@@ -299,7 +301,7 @@ To run these UI tests follow some steps:
 2. `bundle exec pod install`
 3. Open *DesignToolbox.xcworkspace*
 4. Select *DesignToolboxUITests* scheme
-5. Select *iPhone 16 Pro (18.4)* simulator (the device used to tests and views rendering)
+5. Select *iPhone 17 Pro* simulator (the device used to tests and views rendering) (iOS 26.0 (23A339))
 6. Run tests (Product -> Test)
 
 Or run in terminal:
@@ -345,6 +347,13 @@ The Xcode project contains two targets:
 2. _Periphery_ to look for dead code in the source code
 3. _DesignToolboxSnapshotsTests_ for UI tests in demo app
 
+## Internal assets
+
+Some assets must not be versioned in this external public repository. 
+For example, the license terms of the *Helvetica Neue* font family forbid to save fonts files in repositories.
+Thus, for *Helvetica Neue Arabic* font, these assets are not available in the repository.
+If you want to get them, download them from the [Orange Brand website (authentication needed)](https://brand.orange.com/en/brand-basics/typography) and add them in *Resources/Fonts*
+ 
 ## Certificates, profiles and identifiers
 
 We choose to use Xcode automatic signing for debug builds of the app so as to make easier onboarding of newcomers in development team, and also to prevent to update provisioning profiles with individual developers certificates each team someone wants to build the app and also to prevent to register each new build device. You may need to be part of our team if you want to build in debug mode.
@@ -659,7 +668,6 @@ It will help us to ensure code on pull requests or being merged compiles and has
 
 Workflows are the following:
 - [build-and-test](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml) to build and run unit tests
-- [dependency-review](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/codeql.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
 - [gitleaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks.yml) to check if there are secrets leaks
 - [periphery](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/periphery.yml) to check if there is dead code
 - [scorecard](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/scorecard.yml) to buold the OpenSSF score card on README
@@ -670,6 +678,10 @@ We use also two GitHub apps making controls on pull requests and defining wether
 There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
 
 Finaly we have [this *GitHub Action*](https://github.com/cirruslabs/swiftlint-action) using _SwiftLint_ to ensure no warnings are in our codebase.
+
+> [!NOTE]
+> A workflow for dependency-review based on CodeQL existed but it was not posssible to have successful build for analyis
+> It has been withdrawn and will be added later.
 
 ### GitLab CI (internal)
 

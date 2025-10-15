@@ -18,12 +18,24 @@ import SwiftUI
 struct DesignToolbox: App {
 
     @StateObject private var themeProvider = ThemeProvider()
+    @AppStorage("colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
+
+    private var colorScheme: ColorScheme? {
+        if mode == ColorSchemeMode.light.rawValue {
+            return .light
+        }
+        if mode == ColorSchemeMode.dark.rawValue {
+            return .dark
+        }
+        return nil
+    }
 
     var body: some Scene {
         WindowGroup {
             OUDSThemeableView(theme: themeProvider.currentTheme) {
                 MainView().environmentObject(themeProvider)
             }
+            .preferredColorScheme(colorScheme)
         }
     }
 }

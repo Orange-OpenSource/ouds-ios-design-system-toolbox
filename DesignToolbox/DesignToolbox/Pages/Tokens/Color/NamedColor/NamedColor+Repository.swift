@@ -15,6 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 
 // swiftlint:disable function_body_length
+// swiftlint:disable type_body_length
 
 extension NamedColor {
 
@@ -41,6 +42,7 @@ extension NamedColor {
         case colorRepositoryNeutralEmphasizedHigher
         case colorRepositoryNeutralEmphasizedHighest
         case colorRepositoryNeutralEmphasizedMedium
+        case colorRepositoryNeutralEmphasizedLow
         case colorRepositoryNeutralMutedLower
         case colorRepositoryNeutralMutedLowest
         case colorRepositoryNeutralMutedWhite
@@ -54,11 +56,16 @@ extension NamedColor {
         case colorRepositoryOpacityBlackMedium
         case colorRepositoryOpacityBlackMediumHigh
         case colorRepositoryOpacityBlackTransparent
-        case colorRepositoryOpacityInfo
-        case colorRepositoryOpacityAccent
-        case colorRepositoryOpacityNegative
-        case colorRepositoryOpacityPositive
-        case colorRepositoryOpacityWarning
+        case colorRepositoryOpacityInfoLow
+        case colorRepositoryOpacityInfoMedium
+        case colorRepositoryOpacityAccentLow
+        case colorRepositoryOpacityAccentMedium
+        case colorRepositoryOpacityNegativeLow
+        case colorRepositoryOpacityNegativeMedium
+        case colorRepositoryOpacityPositiveLow
+        case colorRepositoryOpacityPositiveMedium
+        case colorRepositoryOpacityWarningLow
+        case colorRepositoryOpacityWarningMedium
         case colorRepositoryOpacityWhiteHigh
         case colorRepositoryOpacityWhiteHigher
         case colorRepositoryOpacityWhiteHighest
@@ -80,8 +87,27 @@ extension NamedColor {
         case colorRepositoryPositiveHighest
         case colorRepositoryPositiveLow
         case colorRepositoryPositiveLowest
+        case colorRepositoryPrimaryHighest
+        case colorRepositoryPrimaryHigher
+        case colorRepositoryPrimaryHigh
         case colorRepositoryPrimaryDefault
         case colorRepositoryPrimaryLow
+        case colorRepositoryPrimaryLower
+        case colorRepositoryPrimaryLowest
+        case colorRepositorySecondaryHighest
+        case colorRepositorySecondaryHigher
+        case colorRepositorySecondaryHigh
+        case colorRepositorySecondaryDefault
+        case colorRepositorySecondaryLow
+        case colorRepositorySecondaryLower
+        case colorRepositorySecondaryLowest
+        case colorRepositoryTertiaryHighest
+        case colorRepositoryTertiaryHigher
+        case colorRepositoryTertiaryHigh
+        case colorRepositoryTertiaryDefault
+        case colorRepositoryTertiaryLow
+        case colorRepositoryTertiaryLower
+        case colorRepositoryTertiaryLowest
         case colorRepositoryWarningDefault
         case colorRepositoryWarningHighest
         case colorRepositoryWarningLow
@@ -133,6 +159,8 @@ extension NamedColor {
                 theme.colors.colorRepositoryNeutralEmphasizedHighest
             case .colorRepositoryNeutralEmphasizedMedium:
                 theme.colors.colorRepositoryNeutralEmphasizedMedium
+            case .colorRepositoryNeutralEmphasizedLow:
+                theme.colors.colorRepositoryNeutralEmphasizedLow
             case .colorRepositoryNeutralMutedLower:
                 theme.colors.colorRepositoryNeutralMutedLower
             case .colorRepositoryNeutralMutedLowest:
@@ -159,16 +187,26 @@ extension NamedColor {
                 theme.colors.colorRepositoryOpacityBlackMediumHigh
             case .colorRepositoryOpacityBlackTransparent:
                 theme.colors.colorRepositoryOpacityBlackTransparent
-            case .colorRepositoryOpacityInfo:
-                theme.colors.colorRepositoryOpacityInfo
-            case .colorRepositoryOpacityAccent:
-                theme.colors.colorRepositoryOpacityAccent
-            case .colorRepositoryOpacityNegative:
-                theme.colors.colorRepositoryOpacityNegative
-            case .colorRepositoryOpacityPositive:
-                theme.colors.colorRepositoryOpacityPositive
-            case .colorRepositoryOpacityWarning:
-                theme.colors.colorRepositoryOpacityWarning
+            case .colorRepositoryOpacityInfoLow:
+                theme.colors.colorRepositoryOpacityInfoLow
+            case .colorRepositoryOpacityInfoMedium:
+                theme.colors.colorRepositoryOpacityInfoMedium
+            case .colorRepositoryOpacityAccentLow:
+                theme.colors.colorRepositoryOpacityAccentLow
+            case .colorRepositoryOpacityAccentMedium:
+                theme.colors.colorRepositoryOpacityAccentMedium
+            case .colorRepositoryOpacityNegativeLow:
+                theme.colors.colorRepositoryOpacityNegativeLow
+            case .colorRepositoryOpacityNegativeMedium:
+                theme.colors.colorRepositoryOpacityNegativeMedium
+            case .colorRepositoryOpacityPositiveLow:
+                theme.colors.colorRepositoryOpacityPositiveLow
+            case .colorRepositoryOpacityPositiveMedium:
+                theme.colors.colorRepositoryOpacityPositiveMedium
+            case .colorRepositoryOpacityWarningLow:
+                theme.colors.colorRepositoryOpacityWarningLow
+            case .colorRepositoryOpacityWarningMedium:
+                theme.colors.colorRepositoryOpacityWarningMedium
             case .colorRepositoryOpacityWhiteHigh:
                 theme.colors.colorRepositoryOpacityWhiteHigh
             case .colorRepositoryOpacityWhiteHigher:
@@ -211,10 +249,48 @@ extension NamedColor {
                 theme.colors.colorRepositoryPositiveLow
             case .colorRepositoryPositiveLowest:
                 theme.colors.colorRepositoryPositiveLowest
+            case .colorRepositoryPrimaryHighest:
+                theme.colors.colorRepositoryPrimaryHighest
+            case .colorRepositoryPrimaryHigher:
+                theme.colors.colorRepositoryPrimaryHigher
+            case .colorRepositoryPrimaryHigh:
+                theme.colors.colorRepositoryPrimaryHigh
             case .colorRepositoryPrimaryDefault:
                 theme.colors.colorRepositoryPrimaryDefault
             case .colorRepositoryPrimaryLow:
                 theme.colors.colorRepositoryPrimaryLow
+            case .colorRepositoryPrimaryLower:
+                theme.colors.colorRepositoryPrimaryLower
+            case .colorRepositoryPrimaryLowest:
+                theme.colors.colorRepositoryPrimaryLowest
+            case .colorRepositorySecondaryHighest:
+                theme.colors.colorRepositorySecondaryHighest
+            case .colorRepositorySecondaryHigher:
+                theme.colors.colorRepositorySecondaryHigher
+            case .colorRepositorySecondaryHigh:
+                theme.colors.colorRepositorySecondaryHigh
+            case .colorRepositorySecondaryDefault:
+                theme.colors.colorRepositorySecondaryDefault
+            case .colorRepositorySecondaryLow:
+                theme.colors.colorRepositorySecondaryLow
+            case .colorRepositorySecondaryLower:
+                theme.colors.colorRepositorySecondaryLower
+            case .colorRepositorySecondaryLowest:
+                theme.colors.colorRepositorySecondaryLowest
+            case .colorRepositoryTertiaryHighest:
+                theme.colors.colorRepositoryTertiaryHighest
+            case .colorRepositoryTertiaryHigher:
+                theme.colors.colorRepositoryTertiaryHigher
+            case .colorRepositoryTertiaryHigh:
+                theme.colors.colorRepositoryTertiaryHigh
+            case .colorRepositoryTertiaryDefault:
+                theme.colors.colorRepositoryTertiaryDefault
+            case .colorRepositoryTertiaryLow:
+                theme.colors.colorRepositoryTertiaryLow
+            case .colorRepositoryTertiaryLower:
+                theme.colors.colorRepositoryTertiaryLower
+            case .colorRepositoryTertiaryLowest:
+                theme.colors.colorRepositoryTertiaryLowest
             case .colorRepositoryWarningDefault:
                 theme.colors.colorRepositoryWarningDefault
             case .colorRepositoryWarningHighest:
@@ -229,3 +305,4 @@ extension NamedColor {
 }
 
 // swiftlint:enable function_body_length
+// swiftlint:enable type_body_length

@@ -4,14 +4,48 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.20.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.19.0...0.20.0) - 2025-10-15
+
+### Added
+
+- [Library] `text input` component (Orange-OpenSource/ouds-ios#406)
+- [Library] `body moderate` and `label moderate` typography and tokens (Orange-OpenSource/ouds-ios#1003)
+- [DesignToolbox] Use `Helvetica Neue Arabic` font family if arabic (Orange-OpenSource/ouds-ios#1006)
+- [Library] Management of `Helvetica Neue Arabic` font family (Orange-OpenSource/ouds-ios#1006)
+- [DesignToolbox] Color scheme selector (Orange-OpenSource/ouds-ios#944)
+
+### Changed
+
+- [DesignToolbox] `actions/dependency-review-action` action from v4.7.3 to v4.8.1 for `dependency-review` workflow
+- [DesignToolbox] `SwiftFormat/CLI` pod from v0.57.2 to v0.58.3
+- [DesignToolbox] `ossf/scorecard-action` action from v2.4.2 to v2.4.3 for `scorecard` workflow
+- [DesignToolbox] `json` RubyGem from v2.15.0 to v2.15.1
+- [DesignToolbox] `github/codeql-action/upload-sarif` action from v3 to v4 for `scorecard` workflow
+- [DesignToolbox] `ruby/setup-ruby` action from v1.263.0 to v1.265.0 for `build-and-test` and `periphery` workflows
+- [DesignToolbox] `Ruby` version from v3.3 to v3.4.7 for `build-and-test` and `periphery` workflows
+- [DesignToolbox] `SwiftLint` pod from v0.61.0 to v0.62.1
+- [Library] Apply `Shantell Sans` font family for `Wireframe` theme instead of `Chalkboard SE` (Orange-OpenSource/ouds-ios#990)
+- [Library] Icon for components catalog documentation (Orange-OpenSource/ouds-ios#1019)
+- [Library] Tokens library v1.6 (Orange-OpenSource/ouds-ios#991)
+- [Library] Improve README for onboarding and newcomers (Orange-OpenSource/ouds-ios#1005)
+- [Library] Improve web documentation for onboarding and newcomers (Orange-OpenSource/ouds-ios#982)
+- [DesignToolbox] Migration to Xcode 26.0
+- [Library] Apply `Helvetica Neue` font family for themes `Orange`, `Orange Inverse` and `Orange Business Tools` (Orange-OpenSource/ouds-ios#965)
+
+### Removed
+
+- [Library] Button should be disabled in loading state (Orange-OpenSource/ouds-ios#988)
+- [DesignToolbox] `Orange Inverse` theme (Orange-OpenSource/ouds-ios#1038)
+
 ## [0.19.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.18.0...0.19.0) - 2025-09-24
 
 ### Changed
 
 - [DesignToolbox] Update `json` RubyGem from v2.13.2 to v2.15.2
 - [DesignToolbox] Update `ruby/setup-ruby` GitHub Actions action from v1.257.0 to v1.263.0
+- [Library] Button component `hierarchy` property renamed to `appearance` (Orange-OpenSource/ouds-ios#969)
 - [DesignToolbox] Update `json` RubyGem from v2.13.1 to v2.13.2
-- [DesignSystemToolbox] Update various GitHub Actions workflows dependencies
+- [DesignToolbox] Update various GitHub Actions workflows dependencies
 - [DesignToolbox] Theme selector icon (Orange-OpenSource/ouds-ios#943)
 - [DesignToolbox] [Library] Tuning of themes and theme selector (Orange-OpenSource/ouds-ios#951)
 
