@@ -54,7 +54,7 @@ open class TagUITestsTestCase: XCTestCase {
                 model.appearance = .emphasized
                 model.flipIcon = false
                 model.enabled = true
-                
+
                 model.loader = true
                 model.size = size
                 model.shape = shape
@@ -74,11 +74,11 @@ open class TagUITestsTestCase: XCTestCase {
         for layout in TagLayout.allCases {
             for size in OUDSTag.Size.allCases {
                 for shape in OUDSTag.Shape.allCases {
-                    
+
                     let model = TagConfigurationModel()
                     model.statusCategory = .accent
                     model.appearance = .emphasized
-                    
+
                     model.loader = false
                     model.enabled = false
                     model.flipIcon = false
@@ -86,9 +86,9 @@ open class TagUITestsTestCase: XCTestCase {
                     model.layout = layout
                     model.size = size
                     model.shape = shape
-                    
+
                     testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
-                    
+
                     // Add extra test for flip icon if enabled
                     if model.enableFlipIcon {
                         model.flipIcon = true
@@ -98,7 +98,7 @@ open class TagUITestsTestCase: XCTestCase {
             }
         }
     }
-    
+
     /// This function tests tags in enbaled state for each layouts, appearances, catagories, sizes and shapes.
     ///
     /// - Parameters:
@@ -111,19 +111,19 @@ open class TagUITestsTestCase: XCTestCase {
                     for size in OUDSTag.Size.allCases {
                         for shape in OUDSTag.Shape.allCases {
                             let model = TagConfigurationModel()
-                            
+
                             model.loader = false
                             model.enabled = true
-                            
+
                             model.layout = layout
                             model.statusCategory = statusCategory
                             model.appearance = appearance
                             model.size = size
                             model.shape = shape
                             model.flipIcon = false
-                            
+
                             testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
-                            
+
                             // Add extra test for flip icon if enabled
                             if model.enableFlipIcon {
                                 model.flipIcon = true
@@ -147,7 +147,8 @@ open class TagUITestsTestCase: XCTestCase {
     ///   - model: The model contains each element of configuration
     @MainActor private func testTag(theme: OUDSTheme,
                                     interfaceStyle: UIUserInterfaceStyle,
-                                    model: TagConfigurationModel) {
+                                    model: TagConfigurationModel)
+    {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             TagDemo(configurationModel: model)
