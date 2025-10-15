@@ -2,24 +2,40 @@
 
 This file lists all the steps to follow when releasing a new version of Design System Toolbox iOS app.
 
-- [Make release candidate](#make-release-candidate)
+- [Make earlier release](#make-earlier-release)
 - [Release OUDS iOS Swift Package](#release-ouds-ios-swift-package)
 - [Prepare release](#prepare-release)
 - [Release](#release)
   * [Publish release to GitHub](#publish-release-to-github)
 - [Prepare Next Release](#prepare-next-release)
 
-## Make release candidate
+## Make earlier release (alpha, beta, release candidate)
+
+You comply with [semantic versioning rules](https://semver.org/).
+Choose the type of early release you want:
+- If you think the current *develop* code base will be almost equal to the next release make a *release candidate* (prefered)
+- If your users need a beta version and ask for it, make a *beta release*
+- If your users need an alpha version and ask for it, make a *alpha release*
+
+These tags must be done on *develop* branch.
 
 > [!TIP]
-> A release candidate can be done on the develop branch. 
-> The aim is to provide a kind of pre-release, not an enough stable one,
-> with its dedicated tag, for the next incoming real release. It is usefull for some users and with an incremental approach.
+> For example, given a future xxy.z. version 1.2.3, 
+> a release candidate n°1 will be tagged 1.2.3-rc.1,
+> a beta n°1 will be tagged 1.2.3-beta.1,
+> an alpha n°1 will be tagged 1.2.3-alpha.1
 
-The steps are quite simple:
+The *snapshot* tag (x.y.z-SNAPSHOT) is not used in this project.
+
+The actions to do are:
 - update the SBOM
-- point to the suitable commit of OUDS iOS package (e.g. update cache of packages and point to *develop* branch, or point to release candidate tag)
-- define the tag on *develop* branch depending to what should be the next release (e.g. if 0.17.0 is planned, use tag 0.17.0-rc1, and increment then)
+- update the 3rd parties
+- define the tag on *develop* branch depending to what should be the next release
+
+> [!CAUTION]
+> These notions of alpha and beta releases are not the same as
+> the alpha builds (i.e. build a feature branch without tags) and
+> the beta builds (i.e. in OUDS context nightly builds tagged with "ci" and "Test_Flight" sufixes)
 
 ## Release OUDS iOS Swift Package
 
