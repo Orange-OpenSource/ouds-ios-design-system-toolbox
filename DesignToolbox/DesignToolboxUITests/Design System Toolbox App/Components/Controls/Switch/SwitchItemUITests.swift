@@ -38,7 +38,8 @@ final class SwitchItemUITests: AppTestCase {
 
         // WHEN
 
-        switchItem.tap()
+        tapOtherElement(withA11yIdentifier: A11YIdentifiers.configurationSwitchSelection, app)
+        wait(1)
 
         // THEN
 
@@ -46,7 +47,8 @@ final class SwitchItemUITests: AppTestCase {
 
         // WHEN
 
-        switchItem.tap()
+        tapOtherElement(withA11yIdentifier: A11YIdentifiers.configurationSwitchSelection, app)
+        wait(1)
 
         // THEN
 
@@ -54,7 +56,8 @@ final class SwitchItemUITests: AppTestCase {
 
         // WHEN
 
-        switchItem.tap()
+        tapOtherElement(withA11yIdentifier: A11YIdentifiers.configurationSwitchSelection, app)
+        wait(1)
 
         // THEN
 

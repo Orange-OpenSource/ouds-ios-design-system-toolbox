@@ -49,7 +49,7 @@ struct SuggestionChipDemo: View {
             switch configurationModel.layout {
             case .iconOnly:
                 OUDSSuggestionChip(icon: Image(decorative: "ic_heart"),
-                                   accessibilityLabel: "app_components_button_icon_a11y".localized()) {}
+                                   accessibilityLabel: "app_components_common_icon_a11y".localized()) {}
             case .textOnly:
                 OUDSSuggestionChip(text: configurationModel.text) {}
             case .textAndIcon:
@@ -59,6 +59,6 @@ struct SuggestionChipDemo: View {
             Spacer()
         }
         .disabled(!configurationModel.enabled)
-        .padding(.all, theme.spaces.spaceFixedMd)
+        .padding(.all, theme.spaces.spaceFixedMedium)
     }
 }

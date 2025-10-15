@@ -48,7 +48,7 @@ struct DesignToolboxElementPage: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
                 if let illustration {
                     CardIllustration(illustration: illustration)
                         .accessibilityHidden(true)
@@ -60,18 +60,18 @@ struct DesignToolboxElementPage: View {
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .accessibilityFocused($requestFocus)
-                    .padding(.horizontal, theme.spaces.spaceFixedMd)
+                    .padding(.horizontal, theme.spaces.spaceFixedMedium)
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)
             .padding(.horizontal, theme.spaces.spaceFixedNone)
-            .padding(.bottom, theme.spaces.spaceFixedMd)
+            .padding(.bottom, theme.spaces.spaceFixedMedium)
             .oudsBackground(theme.colors.colorBgPrimary)
 
             demoScreen
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
-                .padding(.bottom, theme.spaces.spaceFixedMd)
+                .padding(.bottom, theme.spaces.spaceFixedMedium)
                 .oudsBackground(theme.colors.colorBgPrimary)
 
             if let version {
@@ -81,7 +81,7 @@ struct DesignToolboxElementPage: View {
                         .typeLabelDefaultSmall(theme)
                     Spacer()
                 }
-                .padding(.bottom, theme.spaces.spaceFixedMd)
+                .padding(.bottom, theme.spaces.spaceFixedMedium)
             }
         }
         .listStyle(.plain)
@@ -89,7 +89,7 @@ struct DesignToolboxElementPage: View {
         .padding(.horizontal, theme.spaces.spaceFixedNone)
         .oudsBackground(theme.colors.colorBgPrimary)
         .navigationTitle(name.localized())
-        .navigationbarMenuForThemeSelection()
+        .navigationBarMenus()
         .oudsRequestAccessibleFocus(_requestFocus)
     }
 }

@@ -51,7 +51,7 @@ private struct ControlItemConfiguration: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 selection
                     .disabled(configurationModel.isError || configurationModel.isReadOnly)
@@ -72,7 +72,7 @@ private struct ControlItemConfiguration: View {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
                     .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
-                OUDSSwitchItem("app_components_controlItem_readOnly_label", isOn: $configurationModel.isReadOnly)
+                OUDSSwitchItem("app_components_common_readOnly_label", isOn: $configurationModel.isReadOnly)
                     .disabled(!configurationModel.enabled || configurationModel.isError)
 
                 OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
@@ -109,6 +109,7 @@ private struct BooleanSelectionView: View {
 
     var body: some View {
         OUDSSwitchItem("app_components_common_selection_label", isOn: $model.isOn)
+            .accessibilityIdentifier(A11YIdentifiers.configurationSwitchSelection)
     }
 }
 

@@ -31,7 +31,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var hierarchy: OUDSButton.Hierarchy {
+    @Published var appearance: OUDSButton.Appearance {
         didSet { updateCode() }
     }
 
@@ -45,7 +45,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         enabled = true
         text = String(localized: "app_components_button_label")
         layout = .textOnly
-        hierarchy = .default
+        appearance = .default
         style = .default
     }
 
@@ -70,21 +70,21 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
                 """
-                OUDSButton(text: \"Button\", hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
+                OUDSButton(text: \"Button\", appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifier)
                 """
         case .iconOnly:
             code =
                 """
-                OUDSButton(icon: Image(\"ic_heart\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
+                OUDSButton(icon: Image(\"ic_heart\"), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifier)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
+                OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifier)
                 """
@@ -143,10 +143,10 @@ extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomString
     }
 }
 
-// MARK: Button hierarchy extension
+// MARK: Button appearance extension
 
-extension OUDSButton.Hierarchy: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    public nonisolated(unsafe) static let allCases: [OUDSButton.Hierarchy] = [.default, .strong, .brand, .minimal, .negative]
+extension OUDSButton.Appearance: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+    public nonisolated(unsafe) static let allCases: [OUDSButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
 
     // Note: Not localized because it is a technical name
     public var description: String {
@@ -182,16 +182,16 @@ struct ButtonConfigurationView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
                     .disabled(configurationModel.style != .default)
 
                 OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $configurationModel.onColoredSurface)
 
-                OUDSChipPicker(title: "app_components_common_hierarchy_label",
-                               selection: $configurationModel.hierarchy,
-                               chips: OUDSButton.Hierarchy.chips)
+                OUDSChipPicker(title: "app_components_common_appearance_label",
+                               selection: $configurationModel.appearance,
+                               chips: OUDSButton.Appearance.chips)
 
                 OUDSChipPicker(title: "app_components_common_style_label",
                                selection: $configurationModel.style,

@@ -44,7 +44,6 @@ final class WireframeThemeTokensColorUITests: TokensColorUITestsTestCase {
             XCTFail("The Wireframe theme does not have yet color charts, that's unexpected")
         }
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
-        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
         testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
         testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
         testRepositoryColors(theme: theme, interfaceStyle: interfaceStyle)
@@ -66,13 +65,12 @@ final class WireframeThemeTokensColorUITests: TokensColorUITestsTestCase {
             XCTFail("The Wireframe theme does not have yet color charts, that's unexpected")
         }
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
-        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
         testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
         testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
         /*
          There are some failures with two tokens, even if the snapshots are fresh:
          - Wireframe Theme, dark mode --> colorRepositoryOpacityBlackHighest
-         - Wireframe Theme, dark mode --> colorSurfaceStatusNeutralEmphasized
+         - Wireframe Theme, dark mode --> colorSurfaceInverseHigh
          */
         testRepositoryColors(theme: theme, interfaceStyle: interfaceStyle, precision: 0.94, perceptualPrecision: 0.96)
         testSurfaceColors(theme: theme, interfaceStyle: interfaceStyle, precision: 0.94, perceptualPrecision: 0.96)

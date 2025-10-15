@@ -42,22 +42,22 @@ private struct ColoredSurfaceDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.spaces.spaceFixedMd) {
+        HStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {
             OUDSColoredSurface(color: configurationModel.selectedColor.toSurfaceColor(from: theme)) {
-                VStack(alignment: .center, spacing: theme.spaces.spaceFixedMd) {
+                VStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {
                     Text(configurationModel.selectedColor.formattedName)
                         .oudsForegroundColor(theme.colors.colorContentDefault)
 
                     OUDSButton(text: "app_components_button_label".localized(),
-                               hierarchy: .default,
+                               appearance: .default,
                                style: .default) {}
 
                     OUDSLink(text: "app_components_link_label".localized(), indicator: .next) {}
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.all, theme.spaces.spaceFixedMd)
+                .padding(.all, theme.spaces.spaceFixedMedium)
             }
         }
-        .padding(.all, theme.spaces.spaceFixedMd)
+        .padding(.all, theme.spaces.spaceFixedMedium)
     }
 }
