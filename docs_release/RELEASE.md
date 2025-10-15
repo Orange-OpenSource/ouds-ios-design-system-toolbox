@@ -2,7 +2,7 @@
 
 This file lists all the steps to follow when releasing a new version of Design System Toolbox iOS app.
 
-- [Make earlier release](#make-earlier-release)
+- [Make earlier release](#make-earlier-release-alpha-beta-release-candidate)
 - [Release OUDS iOS Swift Package](#release-ouds-ios-swift-package)
 - [Prepare release](#prepare-release)
 - [Release](#release)
@@ -154,6 +154,11 @@ Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
 
 ### Publish release to GitHub
 
+> [!CAUTION]
+> Prefer creating a tag lcoally to cryptographically sign it (if you sue for example GPG).
+> Keep in mind the project uses GitHub immutable release: when the release is done the tag will be blocked
+> and the associated release won't be editable. The tag won't be usable then.
+
 - Go to [GitHub Releases](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases).
 
 - Click on `Draft a new release`.
@@ -213,7 +218,16 @@ Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
 
 - From your internal runner (e.g. in our side GitLab CI) pipeline job (or locally if Fastlane used) which made the stable release, get the artifacts (app zip, dSYm zip, IPA)
 
-- For the archive with the build artefacts and copypaste from previous release (and if needed update) the store screenshots
+- Create the archive with the build artefacts and copypaste from previous release (and if needed update) the App Store screenshots. You can create new screenshots.
+
+> [!NOTE]
+> The internal portal maanging projects for App Store requires to have PNG images without alpha channel.
+> If you make screenshots you may need to remove this transaprency.
+> You can use GIMP for example to remove the alpha channel.
+
+> [!CAUTION]
+> Do your screenshots and get the binaires for the release artefacts BEFORE creating the release.
+> In this project the GitHub immutable release is enabled, so when published it won't be editable (except title and notes).
 
 ## Prepare Next Release
 
