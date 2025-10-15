@@ -811,7 +811,7 @@ platform :ios do
             )
         end
 
-        puts "ℹ️ Current relase notes = #{changelog}"
+        puts "ℹ️ Current relaase notes = #{changelog}"
         return changelog
     end
 
