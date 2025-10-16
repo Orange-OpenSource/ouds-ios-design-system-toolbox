@@ -27,7 +27,7 @@ struct ComponentsPage: View {
         LinkElement(),
         RadioElements(),
         SwitchElements(),
-        TagElement(),
+        TagElements(),
         TextInputElement(),
     ]
 
