@@ -39,6 +39,18 @@ final class OrangeThemeThemeTagUITests: TagUITestsTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTags(theme: theme, interfaceStyle: interfaceStyle)
     }
+    
+    /// Tests all tags configuration in the `OrangeTheme` with the `light` color scheme.
+    @MainActor func testAllInputTagsOrangeThemeThemeLight() {
+        let interfaceStyle = UIUserInterfaceStyle.light
+        testAllInputTags(theme: theme, interfaceStyle: interfaceStyle)
+    }
+
+    /// Tests all tags configuration in the `OrangeTheme` with the `dark` color scheme.
+    @MainActor func testAllInputTagsOrangeThemeThemeDark() {
+        let interfaceStyle = UIUserInterfaceStyle.dark
+        testAllInputTags(theme: theme, interfaceStyle: interfaceStyle)
+    }
 }
 
 // swiftlint:enable required_deinit
