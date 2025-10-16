@@ -452,7 +452,6 @@
 		6DFC20C22CE3D39D00F2EC33 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
 		6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; productRef = 6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */; };
 		A5E69629240B3A88C139F084 /* Pods_DesignToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8ECF213874016985FA405A3 /* Pods_DesignToolbox.framework */; };
-		FC39FDCF2EA19C6900F04232 /* InputTagUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39FDCE2EA19C6900F04232 /* InputTagUITestCase.swift */; };
 		FCA849142E9FF00500DBCE76 /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
 		FCA849152E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */; };
 		FCA849162E9FF00500DBCE76 /* InputTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849132E9FF00500DBCE76 /* InputTagPage.swift */; };
@@ -788,7 +787,6 @@
 		BF4130905502F287757622E2 /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E4EBC0F46BFFE3801998F6B0 /* Pods-Showcase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase.release.xcconfig"; path = "Target Support Files/Pods-Showcase/Pods-Showcase.release.xcconfig"; sourceTree = "<group>"; };
 		F98488CF05532E8CD405A8F8 /* Pods-Showcase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase.debug.xcconfig"; path = "Target Support Files/Pods-Showcase/Pods-Showcase.debug.xcconfig"; sourceTree = "<group>"; };
-		FC39FDCE2EA19C6900F04232 /* InputTagUITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagUITestCase.swift; sourceTree = "<group>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
 		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
 		FCA849132E9FF00500DBCE76 /* InputTagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagPage.swift; sourceTree = "<group>"; };
@@ -1964,7 +1962,6 @@
 			children = (
 				518EC0A12E1FF2C000FC77E4 /* BadgeUITestsTestCase.swift */,
 				079B4A122E49BFA20039FC26 /* TagUITestCase.swift */,
-				FC39FDCE2EA19C6900F04232 /* InputTagUITestCase.swift */,
 			);
 			path = Indicators;
 			sourceTree = "<group>";
@@ -2528,7 +2525,6 @@
 				518EC0AA2E1FF2C000FC77E4 /* LinkUITestsTestCase.swift in Sources */,
 				518EC0AB2E1FF2C000FC77E4 /* CheckboxUITestsTestCase.swift in Sources */,
 				518EC0AC2E1FF2C000FC77E4 /* RadioButtonUITestsTestCase.swift in Sources */,
-				FC39FDCF2EA19C6900F04232 /* InputTagUITestCase.swift in Sources */,
 				51A217742E325F7F00562BE0 /* WireframeTheme+CheckboxUITests.swift in Sources */,
 				51A217632E325ED500562BE0 /* OrangeBusinessToolsTheme+BadgeUITests.swift in Sources */,
 				518EC0AE2E1FF2C000FC77E4 /* DividerUITestsTestCase.swift in Sources */,
