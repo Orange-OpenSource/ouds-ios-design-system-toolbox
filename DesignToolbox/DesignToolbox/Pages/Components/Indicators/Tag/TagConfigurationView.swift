@@ -43,7 +43,7 @@ final class TagConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var shape: OUDSTag.Shape {
+    @Published var roundedCorners: Bool {
         didSet { updateCode() }
     }
 
@@ -65,7 +65,7 @@ final class TagConfigurationModel: ComponentConfiguration {
         label = String(localized: "app_components_common_label_label")
         size = .default
         statusCategory = .neutral
-        shape = .rounded
+        roundedCorners = true
         appearance = .emphasized
     }
 
@@ -110,7 +110,7 @@ final class TagConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         code = """
-        OUDSTag(label: \(label)\(statusPattern)\(appearancePattern)\(shapePattern)\(sizePattern)\(loaderPattern))
+        OUDSTag(label: \(label)\(statusPattern)\(appearancePattern)\(roundedCornersPattern)\(sizePattern)\(loaderPattern))
         \(disablePattern)
         """
     }
@@ -136,8 +136,8 @@ final class TagConfigurationModel: ComponentConfiguration {
         ", status: \(statusCategory.technicalDescription)(leading: \(layout.statusLeading.technicalDescription)\(customIconPattern))"
     }
 
-    private var shapePattern: String {
-        ", shape: \(shape.technicalDescription)"
+    private var roundedCornersPattern: String {
+        ", roundedCorners: \(roundedCorners)"
     }
 
     private var sizePattern: String {
@@ -168,6 +168,8 @@ struct TagConfigurationView: View {
             OUDSSwitchItem("app_components_common_loader_label", isOn: $configurationModel.loader)
                 .disabled(!configurationModel.enabled)
 
+            OUDSSwitchItem("app_components_tag_roundedCorners_label", isOn: $configurationModel.roundedCorners)
+
             OUDSChipPicker(title: "app_components_common_layout_label",
                            selection: $configurationModel.layout,
                            chips: TagLayout.chips)
@@ -182,10 +184,6 @@ struct TagConfigurationView: View {
             OUDSChipPicker(title: "app_components_common_status_label",
                            selection: $configurationModel.statusCategory,
                            chips: filteredStatusChips)
-
-            OUDSChipPicker(title: "app_components_tag_shape_label",
-                           selection: $configurationModel.shape,
-                           chips: OUDSTag.Shape.chips)
 
             OUDSChipPicker(title: "app_components_common_size_label",
                            selection: $configurationModel.size,
@@ -286,32 +284,6 @@ extension OUDSTag.Appearance: @retroactive CaseIterable, @retroactive CustomStri
             "Emphasized"
         case .muted:
             "Muted"
-        }
-    }
-
-    public var technicalDescription: String {
-        ".\(description.lowercased())"
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
-}
-
-extension OUDSTag.Shape: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
-    public nonisolated(unsafe) static let allCases: [OUDSTag.Shape] = [.rounded, .square]
-
-    public var description: String {
-        switch self {
-        case .rounded:
-            "Rounded"
-        case .square:
-            "Square"
         }
     }
 

@@ -46,7 +46,7 @@ open class TagUITestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testLoaderTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for size in OUDSTag.Size.allCases {
-            for shape in OUDSTag.Shape.allCases {
+            for roundedCorners in [true, false] {
 
                 let model = TagConfigurationModel()
                 model.layout = .textOnly
@@ -57,7 +57,7 @@ open class TagUITestsTestCase: XCTestCase {
 
                 model.loader = true
                 model.size = size
-                model.shape = shape
+                model.roundedCorners = roundedCorners
 
                 testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
             }
@@ -73,7 +73,7 @@ open class TagUITestsTestCase: XCTestCase {
     @MainActor private func testDisbaledTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for layout in TagLayout.allCases {
             for size in OUDSTag.Size.allCases {
-                for shape in OUDSTag.Shape.allCases {
+                for roundedCorners in [true, false] {
 
                     let model = TagConfigurationModel()
                     model.statusCategory = .accent
@@ -85,7 +85,7 @@ open class TagUITestsTestCase: XCTestCase {
 
                     model.layout = layout
                     model.size = size
-                    model.shape = shape
+                    model.roundedCorners = roundedCorners
 
                     testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
 
@@ -109,7 +109,7 @@ open class TagUITestsTestCase: XCTestCase {
             for appearance in OUDSTag.Appearance.allCases {
                 for statusCategory in OUDSTag.Status.Category.allCases {
                     for size in OUDSTag.Size.allCases {
-                        for shape in OUDSTag.Shape.allCases {
+                        for roundedCorners in [true, false] {
                             let model = TagConfigurationModel()
 
                             model.loader = false
@@ -119,7 +119,7 @@ open class TagUITestsTestCase: XCTestCase {
                             model.statusCategory = statusCategory
                             model.appearance = appearance
                             model.size = size
-                            model.shape = shape
+                            model.roundedCorners = roundedCorners
                             model.flipIcon = false
 
                             testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
@@ -161,11 +161,11 @@ open class TagUITestsTestCase: XCTestCase {
         let appearancePattern = model.appearance.technicalDescription
         let statusPattern = model.statusCategory.technicalDescription
         let sizePattern = model.size.technicalDescription
-        let shapePattern = model.shape.technicalDescription
+        let roundedCornerPattern = model.roundedCorners ? ".roundedCorners" : ""
         let loaderPattern = model.loader ? ".loader" : ""
         let flipIconPattern = model.flipIcon ? ".flipIcon" : ""
 
-        let name = "\(layoutPattern)\(appearancePattern)\(statusPattern)\(sizePattern)\(shapePattern)\(loaderPattern)\(flipIconPattern)"
+        let name = "\(layoutPattern)\(appearancePattern)\(statusPattern)\(sizePattern)\(roundedCornerPattern)\(loaderPattern)\(flipIconPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,

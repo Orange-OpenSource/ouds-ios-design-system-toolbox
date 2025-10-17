@@ -50,7 +50,7 @@ struct TagDemo: View {
                 label: configurationModel.label,
                 status: configurationModel.status,
                 appearance: configurationModel.appearance,
-                shape: configurationModel.shape,
+                roundedCorners: configurationModel.roundedCorners,
                 size: configurationModel.size,
                 hasLoader: configurationModel.loader)
                 .disabled(!configurationModel.enabled)
