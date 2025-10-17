@@ -39,6 +39,18 @@ final class SoshThemeTagUITests: TagUITestsTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTags(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests all tags configuration in the `SoshTheme` with the `light` color scheme.
+    @MainActor func testAllInputTagsSoshThemeLight() {
+        let interfaceStyle = UIUserInterfaceStyle.light
+        testAllInputTags(theme: theme, interfaceStyle: interfaceStyle)
+    }
+
+    /// Tests all tags configuration in the `SoshTheme` with the `dark` color scheme.
+    @MainActor func testAllInputTagsSoshThemeDark() {
+        let interfaceStyle = UIUserInterfaceStyle.dark
+        testAllInputTags(theme: theme, interfaceStyle: interfaceStyle)
+    }
 }
 
 // swiftlint:enable required_deinit

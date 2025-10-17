@@ -74,7 +74,7 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
-        waitForButtonToAppear(withWording: "app_components_tag_label", app)
+        waitForButtonToAppear(withWording: "app_components_tag_tag_label", app)
         tapButton(withWording: "app_components_tag_label", app)
 
         tapButton(withWording: "Text + bullet", app)
@@ -83,6 +83,31 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
         wait(2)
 
         takeScreenshot(named: "component_tag_",
+                       ACDC.tagX,
+                       ACDC.tagY,
+                       ACDC.tagWidth,
+                       ACDC.tagHeight,
+                       app)
+    }
+    
+    // MARK: - InputTag
+
+    @MainActor
+    func testMakeScreenshotsForDocumentation_InputTag() {
+        let app = launchApp()
+        goToComponentsSheet(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_tag_label", app)
+        swipeFromDownToUp(app)
+        tapButton(withWording: "app_components_tag_label", app)
+        waitForButtonToAppear(withWording: "app_components_tag_inputTag_label", app)
+        tapButton(withWording: "app_components_tag_inputTag_label", app)
+
+        wait(2)
+
+        takeScreenshot(named: "component_inputTag_",
                        ACDC.tagX,
                        ACDC.tagY,
                        ACDC.tagWidth,
