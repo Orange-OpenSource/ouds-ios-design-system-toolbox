@@ -41,10 +41,10 @@ final class InputTagConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code = """
                OUDSInnputTag(label: \"\(label)\") {}
-                \(disabledPattern)
+               \(disabledPattern)
                """
     }
-    
+
     private var disabledPattern: String {
         enabled ? "" : ".disabled(true)"
     }
@@ -53,18 +53,18 @@ final class InputTagConfigurationModel: ComponentConfiguration {
 // MARK: - InputTag Configuration View
 
 struct InputTagConfigurationView: View {
-    
+
     // MARK: Stored properties
-    
+
     @StateObject var configurationModel: InputTagConfigurationModel
     @Environment(\.theme) private var theme
-    
+
     // MARK: Body
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
-            
+
             DesignToolboxEditContentDisclosure {
                 DesignToolboxTextField(text: $configurationModel.label)
             }

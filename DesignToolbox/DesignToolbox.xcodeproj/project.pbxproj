@@ -3375,7 +3375,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "917-component-update-add-component-tag-input";
 				kind = branch;
 			};
 		};

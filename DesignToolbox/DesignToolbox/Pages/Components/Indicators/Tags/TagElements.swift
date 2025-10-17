@@ -37,7 +37,7 @@ struct TagElements: DesignToolboxElement {
 }
 
 private struct TagIllustration: View {
-    
+
     var body: some View {
         OUDSTag(label: "Label", hierarchy: .emphasized, status: .positive, shape: .rounded, size: .default)
     }
