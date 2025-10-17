@@ -33,27 +33,101 @@ open class TagUITestsTestCase: XCTestCase {
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        for layout in TagLayout.allCases {
-            for hierarchy in OUDSTag.Hierarchy.allCases {
-                for status in OUDSTag.Status.allCases {
-                    for size in OUDSTag.Size.allCases {
-                        for shape in OUDSTag.Shape.allCases {
-                            // Drop loader and disabled status because this case is not allowed
-                            for loader in [true, false] where !(status == .disabled && loader == true) {
-                                for flipIcon in [true, false] where !loader {
-                                    if !(status == .disabled && loader == true) {
-                                        let model = TagConfigurationModel()
-                                        model.layout = layout
-                                        model.status = status
-                                        model.hierarchy = hierarchy
-                                        model.size = size
-                                        model.shape = shape
-                                        model.loader = loader
-                                        model.flipIcon = flipIcon
+        testLoaderTags(theme: theme, interfaceStyle: interfaceStyle)
+        testDisbaledTags(theme: theme, interfaceStyle: interfaceStyle)
+        testEnabledTags(theme: theme, interfaceStyle: interfaceStyle)
+    }
 
-                                        testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
-                                    }
-                                }
+    /// This function tests tags in loading state for each sizes and shapes.
+    /// Because tag has the same rendering for all layouts, appearances and catagories,
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testLoaderTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        for size in OUDSTag.Size.allCases {
+            for roundedCorners in [true, false] {
+
+                let model = TagConfigurationModel()
+                model.layout = .textOnly
+                model.statusCategory = .accent
+                model.appearance = .emphasized
+                model.flipIcon = false
+                model.enabled = true
+
+                model.loader = true
+                model.size = size
+                model.roundedCorners = roundedCorners
+
+                testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+            }
+        }
+    }
+
+    /// This function tests tags in disabled state for each layouts, sizes and shapes.
+    /// Because tag has the same rendering for all appearances and catagories,
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testDisbaledTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        for layout in TagLayout.allCases {
+            for size in OUDSTag.Size.allCases {
+                for roundedCorners in [true, false] {
+
+                    let model = TagConfigurationModel()
+                    model.statusCategory = .accent
+                    model.appearance = .emphasized
+
+                    model.loader = false
+                    model.enabled = false
+                    model.flipIcon = false
+
+                    model.layout = layout
+                    model.size = size
+                    model.roundedCorners = roundedCorners
+
+                    testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+
+                    // Add extra test for flip icon if enabled
+                    if model.enableFlipIcon {
+                        model.flipIcon = true
+                        testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                    }
+                }
+            }
+        }
+    }
+
+    /// This function tests tags in enbaled state for each layouts, appearances, catagories, sizes and shapes.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testEnabledTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        for layout in TagLayout.allCases {
+            for appearance in OUDSTag.Appearance.allCases {
+                for statusCategory in OUDSTag.Status.Category.allCases {
+                    for size in OUDSTag.Size.allCases {
+                        for roundedCorners in [true, false] {
+                            let model = TagConfigurationModel()
+
+                            model.loader = false
+                            model.enabled = true
+
+                            model.layout = layout
+                            model.statusCategory = statusCategory
+                            model.appearance = appearance
+                            model.size = size
+                            model.roundedCorners = roundedCorners
+                            model.flipIcon = false
+
+                            testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+
+                            // Add extra test for flip icon if enabled
+                            if model.enableFlipIcon {
+                                model.flipIcon = true
+                                testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
                             }
                         }
                     }
@@ -71,9 +145,9 @@ open class TagUITestsTestCase: XCTestCase {
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - model: The model contains each element of configuration
-    @MainActor func testTag(theme: OUDSTheme,
-                            interfaceStyle: UIUserInterfaceStyle,
-                            model: TagConfigurationModel)
+    @MainActor private func testTag(theme: OUDSTheme,
+                                    interfaceStyle: UIUserInterfaceStyle,
+                                    model: TagConfigurationModel)
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
@@ -83,21 +157,34 @@ open class TagUITestsTestCase: XCTestCase {
 
         // Create a unique snapshot name based on the current configuration :
         let testName = "testTag_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let layoutPattern = model.layout.technicalDescription.localized()
-        let hierarchyPattern = model.hierarchy.technicalDescription
-        let statusPattern = model.status.technicalDescription
+        let layoutPattern = model.layout.debugDescription
+        let appearancePattern = model.appearance.technicalDescription
+        let statusPattern = model.statusCategory.technicalDescription
         let sizePattern = model.size.technicalDescription
-        let shapePattern = model.shape.technicalDescription
-        let loaderPattern = model.loader ? "loader" : ""
-        let flipIconPattern = model.flipIcon ? "flipIcon" : ""
+        let roundedCornerPattern = model.roundedCorners ? ".roundedCorners" : ""
+        let loaderPattern = model.loader ? ".loader" : ""
+        let flipIconPattern = model.flipIcon ? ".flipIcon" : ""
 
-        let name = "\(layoutPattern)_\(hierarchyPattern)_\(statusPattern)_\(sizePattern)_\(shapePattern)_\(loaderPattern)_\(flipIconPattern)"
+        let name = "\(layoutPattern)\(appearancePattern)\(statusPattern)\(sizePattern)\(roundedCornerPattern)\(loaderPattern)\(flipIconPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
                            named: name,
                            testName: testName)
+    }
+}
+
+extension TagLayout: CustomDebugStringConvertible {
+    var debugDescription: String {
+        switch self {
+        case .textOnly:
+            "textOnly"
+        case .textAndBullet:
+            "textAndBullet"
+        case .textAndIcon:
+            "textAndIcon"
+        }
     }
 }
 

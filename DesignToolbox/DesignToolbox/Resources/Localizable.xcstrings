@@ -3207,30 +3207,29 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_tag_shape_label" : {
+    "app_components_tag_roundedCorners_label" : {
       "comment" : "Component - Tag",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Shape"
+            "value" : "Rounded corners"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Shape"
+            "value" : "Rounded corners"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Shape"
+            "value" : "Coins arrondis"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "app_components_tag_textAndBulletLayout_label" : {
       "comment" : "Component - Tag",

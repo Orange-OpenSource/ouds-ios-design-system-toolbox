@@ -21,6 +21,10 @@ final class TagConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
+    @Published var enabled: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var layout: TagLayout {
         didSet { updateCode() }
     }
@@ -31,15 +35,15 @@ final class TagConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var status: OUDSTag.Status {
+    @Published var statusCategory: OUDSTag.Status.Category {
         didSet { updateCode() }
     }
 
-    @Published var hierarchy: OUDSTag.Hierarchy {
+    @Published var appearance: OUDSTag.Appearance {
         didSet { updateCode() }
     }
 
-    @Published var shape: OUDSTag.Shape {
+    @Published var roundedCorners: Bool {
         didSet { updateCode() }
     }
 
@@ -54,57 +58,94 @@ final class TagConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
+        enabled = true
         layout = .textOnly
         loader = false
         flipIcon = false
         label = String(localized: "app_components_common_label_label")
         size = .default
-        status = .neutral
-        shape = .rounded
-        hierarchy = .emphasized
+        statusCategory = .neutral
+        roundedCorners = true
+        appearance = .emphasized
     }
 
     deinit {}
 
-    // MARK: Component Configuration
-
-    override func updateCode() {
-        code = "OUDSTag(label: \"\(label)\"\(iconPattern)\(flipIconPattern)\(hierarchyPattern)\(statusPattern)\(shapePattern)\(sizePattern)\(loaderPattern))"
-    }
-
-    private var iconPattern: String {
-        switch layout {
-        case .textOnly:
-            ""
-        case .textAndBullet:
-            ", icon: .bullet"
-        case .textAndIcon:
-            ", icon: .asset(Image(decorative: \"ic_heart\"))"
+    var status: OUDSTag.Status {
+        switch statusCategory {
+        case .accent:
+            switch layout.statusLeading {
+            case .bullet:
+                .accent(bullet: true)
+            case .none:
+                .accent(bullet: false)
+            case .icon:
+                .accent(icon: Image(systemName: "figure.handball"), flipIcon: flipIcon)
+            }
+        case .neutral:
+            switch layout.statusLeading {
+            case .bullet:
+                .neutral(bullet: true)
+            case .none:
+                .neutral(bullet: false)
+            case .icon:
+                .neutral(icon: Image(systemName: "figure.handball"), flipIcon: flipIcon)
+            }
+        case .positive:
+            .positive(leading: layout.statusLeading)
+        case .warning:
+            .warning(leading: layout.statusLeading)
+        case .negative:
+            .negative(leading: layout.statusLeading)
+        case .info:
+            .info(leading: layout.statusLeading)
         }
     }
 
-    private var hierarchyPattern: String {
-        ", hierarchy: .\(hierarchy.technicalDescription)"
+    var enableFlipIcon: Bool {
+        !loader && (layout == .textAndIcon && (statusCategory == .accent || statusCategory == .neutral))
+    }
+
+    // MARK: Component Configuration
+
+    override func updateCode() {
+        code = """
+        OUDSTag(label: \(label)\(statusPattern)\(appearancePattern)\(roundedCornersPattern)\(sizePattern)\(loaderPattern))
+        \(disablePattern)
+        """
+    }
+
+    private var disablePattern: String {
+        !loader && !enabled ? ".disabled(true)" : ""
+    }
+
+    private var appearancePattern: String {
+        ", appearance: \(appearance.technicalDescription)"
+    }
+
+    private var customIconPattern: String {
+        if enableFlipIcon {
+            let flipIconPattern = flipIcon ? ", flipIcon: true" : ""
+            return ", customIcon: Image(\"ic_heart\")\(flipIconPattern))"
+        } else {
+            return ""
+        }
     }
 
     private var statusPattern: String {
-        ", status: .\(status.technicalDescription)"
+        ", status: \(statusCategory.technicalDescription)(leading: \(layout.statusLeading.technicalDescription)\(customIconPattern))"
     }
 
-    private var shapePattern: String {
-        ", shape: .\(shape.technicalDescription)"
+    private var roundedCornersPattern: String {
+        ", roundedCorners: \(roundedCorners)"
     }
 
     private var sizePattern: String {
-        ", size: .\(size.technicalDescription)"
+        ", size: \(size.technicalDescription)"
     }
 
     private var loaderPattern: String {
         loader ? ", hasLoader: true" : ""
-    }
-
-    private var flipIconPattern: String {
-        flipIcon ? ", flipIcon: true" : ""
     }
 }
 
@@ -121,48 +162,41 @@ struct TagConfigurationView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+                .disabled(configurationModel.loader)
+
+            OUDSSwitchItem("app_components_common_loader_label", isOn: $configurationModel.loader)
+                .disabled(!configurationModel.enabled)
+
+            OUDSSwitchItem("app_components_tag_roundedCorners_label", isOn: $configurationModel.roundedCorners)
+
             OUDSChipPicker(title: "app_components_common_layout_label",
                            selection: $configurationModel.layout,
                            chips: TagLayout.chips)
 
-            OUDSChipPicker(title: "app_components_common_hierarchy_label",
-                           selection: $configurationModel.hierarchy,
-                           chips: OUDSTag.Hierarchy.chips)
+            OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
+                .disabled(!configurationModel.enableFlipIcon)
+
+            OUDSChipPicker(title: "app_components_common_appearance_label",
+                           selection: $configurationModel.appearance,
+                           chips: OUDSTag.Appearance.chips)
 
             OUDSChipPicker(title: "app_components_common_status_label",
-                           selection: $configurationModel.status,
+                           selection: $configurationModel.statusCategory,
                            chips: filteredStatusChips)
-
-            OUDSChipPicker(title: "app_components_tag_shape_label",
-                           selection: $configurationModel.shape,
-                           chips: OUDSTag.Shape.chips)
 
             OUDSChipPicker(title: "app_components_common_size_label",
                            selection: $configurationModel.size,
                            chips: OUDSTag.Size.chips)
 
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-                OUDSSwitchItem("app_components_common_loader_label", isOn: $configurationModel.loader)
-                    .disabled(configurationModel.status == .disabled)
-
-                OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
-                    .disabled(configurationModel.layout != .textAndIcon)
-
-                DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.label)
-                }
+            DesignToolboxEditContentDisclosure {
+                DesignToolboxTextField(text: $configurationModel.label)
             }
         }
     }
 
-    private var filteredStatusChips: [OUDSChipPickerData<OUDSTag.Status>] {
-        OUDSTag.Status.allCases.compactMap {
-            if $0 == .disabled, configurationModel.loader {
-                nil
-            } else {
-                $0.chipData
-            }
-        }
+    private var filteredStatusChips: [OUDSChipPickerData<OUDSTag.Status.Category>] {
+        OUDSTag.Status.Category.allCases.compactMap(\.chipData)
     }
 }
 
@@ -180,12 +214,7 @@ extension OUDSTag.Size: @retroactive CaseIterable, @retroactive CustomStringConv
     }
 
     public var technicalDescription: String {
-        switch self {
-        case .default:
-            "default"
-        case .small:
-            "small"
-        }
+        ".\(description.lowercased())"
     }
 
     var chipData: OUDSChipPickerData<Self> {
@@ -197,9 +226,27 @@ extension OUDSTag.Size: @retroactive CaseIterable, @retroactive CustomStringConv
     }
 }
 
-extension OUDSTag.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+extension OUDSTag.Status.Leading: @retroactive CustomStringConvertible {
 
-    public nonisolated(unsafe) static let allCases: [OUDSTag.Status] = [.neutral, .accent, .info, .negative, .positive, .warning, .disabled]
+    public var description: String {
+        switch self {
+        case .none:
+            "none"
+        case .bullet:
+            "bullet"
+        case .icon:
+            "icon"
+        }
+    }
+
+    public var technicalDescription: String {
+        ".\(description)"
+    }
+}
+
+extension OUDSTag.Status.Category: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+
+    public nonisolated(unsafe) static let allCases: [OUDSTag.Status.Category] = [.neutral, .accent, .info, .negative, .positive, .warning]
 
     public var description: String {
         switch self {
@@ -215,13 +262,11 @@ extension OUDSTag.Status: @retroactive CaseIterable, @retroactive CustomStringCo
             "Positive"
         case .warning:
             "Warning"
-        case .disabled:
-            "Disabled"
         }
     }
 
     public var technicalDescription: String {
-        "\(description.lowercased())"
+        ".\(description.lowercased())"
     }
 
     var chipData: OUDSChipPickerData<Self> {
@@ -229,9 +274,9 @@ extension OUDSTag.Status: @retroactive CaseIterable, @retroactive CustomStringCo
     }
 }
 
-extension OUDSTag.Hierarchy: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+extension OUDSTag.Appearance: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    public nonisolated(unsafe) static let allCases: [OUDSTag.Hierarchy] = [.emphasized, .muted]
+    public nonisolated(unsafe) static let allCases: [OUDSTag.Appearance] = [.emphasized, .muted]
 
     public var description: String {
         switch self {
@@ -243,43 +288,7 @@ extension OUDSTag.Hierarchy: @retroactive CaseIterable, @retroactive CustomStrin
     }
 
     public var technicalDescription: String {
-        switch self {
-        case .emphasized:
-            "emphasized"
-        case .muted:
-            "muted"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
-}
-
-extension OUDSTag.Shape: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
-    public nonisolated(unsafe) static let allCases: [OUDSTag.Shape] = [.rounded, .square]
-
-    public var description: String {
-        switch self {
-        case .rounded:
-            "Rounded"
-        case .square:
-            "Square"
-        }
-    }
-
-    public var technicalDescription: String {
-        switch self {
-        case .rounded:
-            "rounded"
-        case .square:
-            "square"
-        }
+        ".\(description.lowercased())"
     }
 
     private var chipData: OUDSChipPickerData<Self> {
@@ -307,22 +316,22 @@ enum TagLayout: CaseIterable, CustomStringConvertible {
         }
     }
 
-    var technicalDescription: String {
-        switch self {
-        case .textOnly:
-            "textOnlyLayout"
-        case .textAndBullet:
-            "textAndBullet"
-        case .textAndIcon:
-            "textAndIcon"
-        }
-    }
-
     private var chipData: OUDSChipPickerData<Self> {
         OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {
         allCases.map(\.chipData)
+    }
+
+    var statusLeading: OUDSTag.Status.Leading {
+        switch self {
+        case .textOnly:
+            .none
+        case .textAndBullet:
+            .bullet
+        case .textAndIcon:
+            .icon
+        }
     }
 }
