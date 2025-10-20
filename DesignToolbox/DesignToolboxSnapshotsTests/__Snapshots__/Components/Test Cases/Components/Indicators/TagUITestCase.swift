@@ -137,8 +137,9 @@ open class TagUITestsTestCase: XCTestCase {
         let shapePattern = model.shape.technicalDescription
         let loaderPattern = model.loader ? ".loader" : ""
         let flipIconPattern = model.flipIcon ? ".flipIcon" : ""
+        let disabledPatern = !model.enabled ? "_Disabled" : "_Enabled"
 
-        let name = "\(layoutPattern)\(appearancePattern)\(statusPattern)\(sizePattern)\(shapePattern)\(loaderPattern)\(flipIconPattern)"
+        let name = "\(layoutPattern)\(appearancePattern)\(statusPattern)\(sizePattern)\(shapePattern)\(loaderPattern)\(flipIconPattern)\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
