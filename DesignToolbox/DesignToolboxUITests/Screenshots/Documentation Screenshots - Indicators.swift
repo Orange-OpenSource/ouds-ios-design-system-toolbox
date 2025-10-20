@@ -79,6 +79,7 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
 
         tapButton(withWording: "Text + bullet", app)
         tapButton(withWording: "Accent", app)
+        swipeFromUpToDown(app) // Keyboard does not close, so swipe to get component to capture
 
         wait(2)
 
