@@ -127,26 +127,31 @@ struct TestTextInputView: View {
 
     // MARK: - Layout for tests
 
+    // swiftlint:disable closure_body_length
     /// View to test all layouts in once
     private var textInputWithStatus: some View {
         VStack(alignment: .leading, spacing: 1) {
+            // Simplest text case
             OUDSTextInput(label: "Label",
                           text: $text,
                           isOutlined: outlined,
                           status: status)
 
+            // With leading icon
             OUDSTextInput(label: "Label",
                           text: $text,
                           leadingIcon: icon,
                           isOutlined: outlined,
                           status: status)
 
+            // With tariling action
             OUDSTextInput(label: "Label",
                           text: $text,
                           trailingAction: trailingAction,
                           isOutlined: outlined,
                           status: status)
 
+            // With leading icon and tariling action
             OUDSTextInput(label: "Label",
                           text: $text,
                           leadingIcon: icon,
@@ -154,29 +159,49 @@ struct TestTextInputView: View {
                           isOutlined: outlined,
                           status: status)
 
+            // More complex with placeholder
             OUDSTextInput(label: "Label",
                           text: $text,
-                          placeholder: placeholder,
+                          placeholder: "PlaceHolder",
+                          prefix: "£",
+                          suffix: "$",
                           isOutlined: outlined,
                           status: status)
 
+            // With placeholder and leading icon
             OUDSTextInput(label: "Label",
                           text: $text,
-                          placeholder: placeholder,
+                          placeholder: "PlaceHolder",
+                          prefix: "£",
+                          suffix: "$",
                           leadingIcon: icon,
                           isOutlined: outlined,
                           status: status)
 
+            // With placeholder and trailing action
             OUDSTextInput(label: "Label",
                           text: $text,
-                          placeholder: placeholder,
+                          placeholder: "PlaceHolder",
+                          prefix: "£",
+                          suffix: "$",
                           trailingAction: trailingAction,
                           isOutlined: outlined,
                           status: status)
 
-            OUDSTextInput(label: "Label", text: $text, placeholder: placeholder, leadingIcon: icon, trailingAction: trailingAction, isOutlined: outlined, status: status)
+            // Full options
+            OUDSTextInput(label: "Label",
+                          text: $text,
+                          placeholder: "PlaceHolder",
+                          prefix: "£",
+                          suffix: "$",
+                          leadingIcon: icon,
+                          trailingAction: trailingAction,
+                          isOutlined: outlined,
+                          status: status)
         }
     }
+
+    // swiftlint:enable closure_body_length
 
     /// View to test helpers (Helper Text, Helper Link)
     private var textinputWithHelper: some View {
@@ -206,10 +231,6 @@ struct TestTextInputView: View {
 
     private var trailingAction: OUDSTextInput.TrailingAction {
         .init(icon: icon, actionHint: "", action: {})
-    }
-
-    private var placeholder: OUDSTextInput.Placeholder {
-        .init(text: "PlaceHolder", prefix: "£", suffix: "$")
     }
 
     private var helperLink: OUDSTextInput.Helperlink {

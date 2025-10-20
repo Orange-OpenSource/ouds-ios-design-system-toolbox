@@ -1976,6 +1976,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_errorText_label" : {
+      "comment" : "Component - Common - Text displayed in a text input when there is an error.",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error message"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error message"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error message"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_helperText_label" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
@@ -3281,6 +3305,30 @@
         }
       }
     },
+    "app_components_textInput_errorDescription_label" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "وصف الخطأ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error description"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Message d’erreur"
+          }
+        }
+      }
+    },
     "app_components_textInput_flipLeadingIcon_label" : {
       "comment" : "Component - Text Input",
       "extractionState" : "manual",
@@ -3325,30 +3373,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Helper link"
-          }
-        }
-      }
-    },
-    "app_components_textInput_illustration_helperText_label" : {
-      "comment" : "Component - Text Input",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "نص مساعد."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Helper text."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Texte d'aide."
           }
         }
       }
@@ -3477,30 +3501,54 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_textInput_trailingIcon_label" : {
+    "app_components_textInput_trailingAction_label" : {
       "comment" : "Component - Text Input",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Trailing icon"
+            "value" : "Trailing action"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Trailing icon"
+            "value" : "Trailing action"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Trailing icon"
+            "value" : "Trailing action"
           }
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_textInputHelperText_label" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص مساعد."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte d'aide."
+          }
+        }
+      }
     },
     "app_settings_themeSwitch_cancel" : {
       "comment" : "App - Settings",
