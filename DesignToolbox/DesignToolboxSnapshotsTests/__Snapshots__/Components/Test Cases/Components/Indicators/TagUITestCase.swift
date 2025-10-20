@@ -27,19 +27,18 @@ import XCTest
 /// Tests the UI rendering of the `OUDSTag` for each parameter
 open class TagUITestsTestCase: XCTestCase {
 
-    /// This function tests all tags with all types, hierarchy, status and size for the given theme and color scheme.
+    /// Tests all tags with all types, appearances, status and size for the given theme and color scheme.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         testLoaderTags(theme: theme, interfaceStyle: interfaceStyle)
-        testDisbaledTags(theme: theme, interfaceStyle: interfaceStyle)
+        testDisabledTags(theme: theme, interfaceStyle: interfaceStyle)
         testEnabledTags(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// This function tests tags in loading state for each sizes and shapes.
-    /// Because tag has the same rendering for all layouts, appearances and catagories,
+    /// Tests tags in loading state for each sizes and shapes.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
@@ -64,13 +63,12 @@ open class TagUITestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests tags in disabled state for each layouts, sizes and shapes.
-    /// Because tag has the same rendering for all appearances and catagories,
+    /// Tests tags in disabled state for each layouts, sizes and shapes.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testDisbaledTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    @MainActor private func testDisabledTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for layout in TagLayout.allCases {
             for size in OUDSTag.Size.allCases {
                 for shape in OUDSTag.Shape.allCases {
@@ -99,7 +97,7 @@ open class TagUITestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests tags in enbaled state for each layouts, appearances, catagories, sizes and shapes.
+    /// Tests tags in enabled state for each layouts, appearances, catagories, sizes and shapes.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
@@ -136,8 +134,7 @@ open class TagUITestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests `OUDSTag` according to all parameters of the configuration available for the given
-    /// theme and color schemes.
+    /// Tests`OUDSTag` according to all parameters of the configuration available for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameter.
     ///

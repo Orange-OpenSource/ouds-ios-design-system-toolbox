@@ -1,5 +1,5 @@
 {
-  "originHash" : "a93d59967bd1380ca853986f81e9fa8d8ccf9ee4d22868d21c7a98927aaeb521",
+  "originHash" : "6ea3d37f1306824a57aceca4318954b015df152cccfd354b173dfe326870c15b",
   "pins" : [
     {
       "identity" : "accessibility-statement-lib-ios",
@@ -12,10 +12,14 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6df81d95 (refactor: docs, sample code, style (Orange-OpenSource/ouds-ios#945) (Orange-OpenSource/ouds-ios#1037))
       "identity" : "ouds-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
+<<<<<<< HEAD
         "branch" : "develop",
         "revision" : "64fc719386bddf5407ef9be743f31b5f25e1c060"
       }
@@ -23,30 +27,19 @@
     {
 =======
 >>>>>>> 5b8166cc (refactor: update api and internal adaptation for v1.3)
+=======
+        "branch" : "945-component-update-tag-13",
+        "revision" : "d1d3c2ca1ee574486b5cbc0087ae0ec9c28ec6d5"
+      }
+    },
+    {
+>>>>>>> 6df81d95 (refactor: docs, sample code, style (Orange-OpenSource/ouds-ios#945) (Orange-OpenSource/ouds-ios#1037))
       "identity" : "swift-custom-dump",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-custom-dump",
       "state" : {
         "revision" : "82645ec760917961cfa08c9c0c7104a57a0fa4b1",
         "version" : "1.3.3"
-      }
-    },
-    {
-      "identity" : "swift-docc-plugin",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/swiftlang/swift-docc-plugin",
-      "state" : {
-        "revision" : "3e4f133a77e644a5812911a0513aeb7288b07d06",
-        "version" : "1.4.5"
-      }
-    },
-    {
-      "identity" : "swift-docc-symbolkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/swiftlang/swift-docc-symbolkit",
-      "state" : {
-        "revision" : "b45d1f2ed151d057b54504d653e0da5552844e34",
-        "version" : "1.0.0"
       }
     },
     {
@@ -65,24 +58,6 @@
       "state" : {
         "revision" : "0687f71944021d616d34d922343dcef086855920",
         "version" : "600.0.1"
-      }
-    },
-    {
-      "identity" : "swiftformat",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/nicklockwood/SwiftFormat",
-      "state" : {
-        "revision" : "9c82dcb15307ba06795d31788d3467d9a375e3e7",
-        "version" : "0.58.5"
-      }
-    },
-    {
-      "identity" : "swiftlintplugins",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SimplyDanny/SwiftLintPlugins",
-      "state" : {
-        "revision" : "ef264ee3ccea175f5c9efc8b814ccb48cd3fdaac",
-        "version" : "0.62.1"
       }
     },
     {

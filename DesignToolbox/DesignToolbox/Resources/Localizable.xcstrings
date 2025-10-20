@@ -3356,6 +3356,7 @@
     },
     "app_components_textInput_helperLink_label" : {
       "comment" : "Component - Text Input",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
