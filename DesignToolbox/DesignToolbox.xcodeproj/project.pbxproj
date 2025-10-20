@@ -3335,7 +3335,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1063-component-update-update-textinput-to-set-error-message-as-mandatory-when-on-error";
+				branch = develop;
 				kind = branch;
 			};
 		};
