@@ -24,6 +24,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     private let defaultLabel = String(localized: "app_components_common_label_label")
     private let defaultHelperText = String(localized: "app_components_common_helperText_label")
     private let defaultPlaceholderText = String(localized: "app_components_textInput_placeholder_label")
+    private let defaultPrefix = "$"
+    private let defaultSuffix = "€"
+    private let defaultHelperLinkText = String(localized: "app_components_textInput_helperLink_label")
+    private let defaultErrorText = String(localized: "app_components_common_errorText_label")
 
     // MARK: Published properties
 
@@ -70,7 +74,6 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         }
     }
 
-
     @Published var helperLinkText: String {
         didSet { updateCode() }
     }
@@ -88,7 +91,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     override init() {
         label = defaultLabel
         helperText = defaultHelperText
-        errorText = "app_components_textInput_errorDescription_label".localized()
+        errorText = defaultErrorText
         placeholderText = defaultPlaceholderText
         prefixText = ""
         suffixText = ""
@@ -237,9 +240,6 @@ struct TextInputConfigurationView: View {
 }
 
 extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(description)
-    }
     
     public nonisolated(unsafe) static var allCases: [OUDSTextInput.Status] = [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading, .readOnly, .disabled]
 
@@ -272,5 +272,9 @@ extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomSt
 
     static var chips: [OUDSChipPickerData<Self>] {
         allCases.map(\.chipData)
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(description)
     }
 }
