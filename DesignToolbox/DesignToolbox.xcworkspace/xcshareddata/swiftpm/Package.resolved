@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "aa5a8e081addc3059397a260b0a759b43d8c5178"
+        "branch" : "1063-component-update-update-textinput-to-set-error-message-as-mandatory-when-on-error",
+        "revision" : "8d0187c329f8a4ecd1d6847eb326c2d23bdf8d13"
       }
     },
     {
