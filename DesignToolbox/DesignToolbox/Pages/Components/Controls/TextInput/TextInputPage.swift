@@ -49,7 +49,9 @@ struct TextInputDemo: View {
     var body: some View {
         OUDSTextInput(label: configurationModel.label,
                       text: $configurationModel.text,
-                      placeholder: configurationModel.placeholder,
+                      placeholder: configurationModel.placeholderText,
+                      prefix: configurationModel.prefixText,
+                      suffix: configurationModel.suffixText,
                       leadingIcon: leadingIcon,
                       flipLeadingIcon: configurationModel.flipLeadingIcon,
                       trailingAction: trailingAction,
@@ -62,8 +64,7 @@ struct TextInputDemo: View {
             .padding(.all, theme.spaces.spaceFixedMedium)
             .onSubmit {
                 if configurationModel.text == "error" {
-                    configurationModel.status = .error
-                    configurationModel.helperText = "Error text detected"
+                    configurationModel.status = .error(message: "Error text detecte")
                 }
             }
     }
