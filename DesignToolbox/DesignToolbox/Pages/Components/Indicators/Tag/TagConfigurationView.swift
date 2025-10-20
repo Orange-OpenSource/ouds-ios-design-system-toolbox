@@ -110,7 +110,7 @@ final class TagConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         code = """
-        OUDSTag(label: \(label)\(statusPattern)\(appearancePattern)\(shapePattern)\(sizePattern)\(loaderPattern))
+        OUDSTag(label: \"\(label)\"\(statusPattern)\(appearancePattern)\(shapePattern)\(sizePattern)\(loaderPattern))
         \(disablePattern)
         """
     }
@@ -123,17 +123,19 @@ final class TagConfigurationModel: ComponentConfiguration {
         ", appearance: \(appearance.technicalDescription)"
     }
 
-    private var customIconPattern: String {
-        if enableFlipIcon {
-            let flipIconPattern = flipIcon ? ", flipIcon: true" : ""
-            return ", customIcon: Image(\"ic_heart\")\(flipIconPattern))"
-        } else {
-            return ""
-        }
-    }
-
     private var statusPattern: String {
-        ", status: \(statusCategory.technicalDescription)(leading: \(layout.statusLeading.technicalDescription)\(customIconPattern))"
+        if statusCategory != .neutral, statusCategory != .accent {
+            return ", status: \(statusCategory.technicalDescription)(leading: \(layout.statusLeading.technicalDescription))"
+        } else {
+            if layout == .textAndBullet {
+                return ", status: \(statusCategory.technicalDescription)(bullet: true)"
+            } else if layout == .textAndIcon {
+                let flipIconPattern = flipIcon ? ", flipIcon: true" : ""
+                return ", status: \(statusCategory.technicalDescription)(icon: Image(systemName: \"figure.handball\")\(flipIconPattern))"
+            } else {
+                return ", status: \(statusCategory.technicalDescription)()"
+            }
+        }
     }
 
     private var shapePattern: String {
