@@ -58,9 +58,9 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
         wait(3)
 
         takeScreenshot(named: "component_badge_",
-                       ACDC.tagX,
+                       ACDC.badgeX,
                        ACDC.badgeY,
-                       ACDC.tagWidth,
+                       ACDC.badgeWidth,
                        ACDC.badgeHeight,
                        app)
     }

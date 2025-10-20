@@ -49,12 +49,12 @@
 		0745C1932D7A0596006B3A1F /* RadioElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C18C2D7A0596006B3A1F /* RadioElement.swift */; };
 		0745C1992D7A0823006B3A1F /* RadioItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C1942D7A0823006B3A1F /* RadioItemPage.swift */; };
 		0745C19C2D7A0823006B3A1F /* RadioItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C1942D7A0823006B3A1F /* RadioItemPage.swift */; };
-		075045F92E58717F00D98587 /* TetxInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F82E58717F00D98587 /* TetxInputPage.swift */; };
-		075045FA2E58717F00D98587 /* TetxInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F72E58717F00D98587 /* TetxInputElement.swift */; };
-		075045FB2E58717F00D98587 /* TetxInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F62E58717F00D98587 /* TetxInputConfigurationView.swift */; };
-		075045FC2E58717F00D98587 /* TetxInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F82E58717F00D98587 /* TetxInputPage.swift */; };
-		075045FD2E58717F00D98587 /* TetxInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F72E58717F00D98587 /* TetxInputElement.swift */; };
-		075045FE2E58717F00D98587 /* TetxInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F62E58717F00D98587 /* TetxInputConfigurationView.swift */; };
+		075045F92E58717F00D98587 /* TextInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F82E58717F00D98587 /* TextInputPage.swift */; };
+		075045FA2E58717F00D98587 /* TextInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F72E58717F00D98587 /* TextInputElement.swift */; };
+		075045FB2E58717F00D98587 /* TextInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F62E58717F00D98587 /* TextInputConfigurationView.swift */; };
+		075045FC2E58717F00D98587 /* TextInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F82E58717F00D98587 /* TextInputPage.swift */; };
+		075045FD2E58717F00D98587 /* TextInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F72E58717F00D98587 /* TextInputElement.swift */; };
+		075045FE2E58717F00D98587 /* TextInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F62E58717F00D98587 /* TextInputConfigurationView.swift */; };
 		075114DB2CB7D28D00B8B759 /* SizeTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D82CB7D28D00B8B759 /* SizeTokenElement.swift */; };
 		075114DC2CB7D28D00B8B759 /* SizeTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D92CB7D28D00B8B759 /* SizeTokenPage.swift */; };
 		075114E02CB7FDC200B8B759 /* ColorTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114DE2CB7FDC200B8B759 /* ColorTokenElement.swift */; };
@@ -502,9 +502,9 @@
 		0745C18C2D7A0596006B3A1F /* RadioElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioElement.swift; sourceTree = "<group>"; };
 		0745C18D2D7A0596006B3A1F /* RadioPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPage.swift; sourceTree = "<group>"; };
 		0745C1942D7A0823006B3A1F /* RadioItemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioItemPage.swift; sourceTree = "<group>"; };
-		075045F62E58717F00D98587 /* TetxInputConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetxInputConfigurationView.swift; sourceTree = "<group>"; };
-		075045F72E58717F00D98587 /* TetxInputElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetxInputElement.swift; sourceTree = "<group>"; };
-		075045F82E58717F00D98587 /* TetxInputPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetxInputPage.swift; sourceTree = "<group>"; };
+		075045F62E58717F00D98587 /* TextInputConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputConfigurationView.swift; sourceTree = "<group>"; };
+		075045F72E58717F00D98587 /* TextInputElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputElement.swift; sourceTree = "<group>"; };
+		075045F82E58717F00D98587 /* TextInputPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputPage.swift; sourceTree = "<group>"; };
 		075114D82CB7D28D00B8B759 /* SizeTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTokenElement.swift; sourceTree = "<group>"; };
 		075114D92CB7D28D00B8B759 /* SizeTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTokenPage.swift; sourceTree = "<group>"; };
 		075114DE2CB7FDC200B8B759 /* ColorTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTokenElement.swift; sourceTree = "<group>"; };
@@ -945,9 +945,9 @@
 		075045F52E58715D00D98587 /* TextInput */ = {
 			isa = PBXGroup;
 			children = (
-				075045F62E58717F00D98587 /* TetxInputConfigurationView.swift */,
-				075045F72E58717F00D98587 /* TetxInputElement.swift */,
-				075045F82E58717F00D98587 /* TetxInputPage.swift */,
+				075045F62E58717F00D98587 /* TextInputConfigurationView.swift */,
+				075045F72E58717F00D98587 /* TextInputElement.swift */,
+				075045F82E58717F00D98587 /* TextInputPage.swift */,
 			);
 			path = TextInput;
 			sourceTree = "<group>";
@@ -2552,9 +2552,9 @@
 				072BB4562E69704C00A4DF2D /* SoshTheme+TextInputUITests.swift in Sources */,
 				07CC9AEE2DB0F7DD001BC929 /* SwitchElements.swift in Sources */,
 				07CC9AEF2DB0F7DD001BC929 /* SwitchItemElement.swift in Sources */,
-				075045FC2E58717F00D98587 /* TetxInputPage.swift in Sources */,
-				075045FD2E58717F00D98587 /* TetxInputElement.swift in Sources */,
-				075045FE2E58717F00D98587 /* TetxInputConfigurationView.swift in Sources */,
+				075045FC2E58717F00D98587 /* TextInputPage.swift in Sources */,
+				075045FD2E58717F00D98587 /* TextInputElement.swift in Sources */,
+				075045FE2E58717F00D98587 /* TextInputConfigurationView.swift in Sources */,
 				07CC9AF02DB0F7DD001BC929 /* SwitchPage.swift in Sources */,
 				07CC9AF22DB0F7DD001BC929 /* SwitchConfiguration.swift in Sources */,
 				51A2175D2E325ED500562BE0 /* OrangeBusinessToolsTheme+ButtonUITests.swift in Sources */,
@@ -2783,9 +2783,9 @@
 				07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */,
 				07CF427F2CA41325000BD03E /* OpacityTokenElement.swift in Sources */,
 				07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */,
-				075045F92E58717F00D98587 /* TetxInputPage.swift in Sources */,
-				075045FA2E58717F00D98587 /* TetxInputElement.swift in Sources */,
-				075045FB2E58717F00D98587 /* TetxInputConfigurationView.swift in Sources */,
+				075045F92E58717F00D98587 /* TextInputPage.swift in Sources */,
+				075045FA2E58717F00D98587 /* TextInputElement.swift in Sources */,
+				075045FB2E58717F00D98587 /* TextInputConfigurationView.swift in Sources */,
 				07F75A372CC644C80004F1AD /* NamedSpace+Scaled.swift in Sources */,
 				0765B4A62CC15C9D00E69359 /* NamedColor.swift in Sources */,
 				07CC9AF42DB0F7DD001BC929 /* SwitchElement.swift in Sources */,

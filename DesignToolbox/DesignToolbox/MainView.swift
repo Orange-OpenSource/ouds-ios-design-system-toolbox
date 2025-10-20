@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSThemesOrange
 import SwiftUI
 
 struct MainView: View {

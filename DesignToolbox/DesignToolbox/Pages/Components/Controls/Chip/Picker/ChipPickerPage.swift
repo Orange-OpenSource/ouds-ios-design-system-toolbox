@@ -40,8 +40,6 @@ struct ChipPickerDemo: View {
 
     @StateObject var configurationModel: ChipPickerConfigurationModel
 
-    @Environment(\.theme) private var theme
-
     var body: some View {
         switch configurationModel.selectionType {
         case .singleOrNone:

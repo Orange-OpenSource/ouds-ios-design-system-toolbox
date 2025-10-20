@@ -24,9 +24,6 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     private let defaultLabel = String(localized: "app_components_common_label_label")
     private let defaultHelperText = String(localized: "app_components_common_helperText_label")
     private let defaultPlaceholderText = String(localized: "app_components_textInput_placeholder_label")
-    private let defaultPrefix = "$"
-    private let defaultSuffix = "€"
-    private let defaultHelperLinkText = String(localized: "app_components_textInput_helperLink_label")
 
     // MARK: Published properties
 

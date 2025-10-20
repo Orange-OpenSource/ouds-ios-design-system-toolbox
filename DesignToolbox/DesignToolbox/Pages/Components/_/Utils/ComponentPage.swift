@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSComponents
 import SwiftUI
 
 // MARK: - Component Configuration

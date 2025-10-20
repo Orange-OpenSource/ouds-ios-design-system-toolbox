@@ -615,7 +615,15 @@ bundle exec fastlane check_dead_code
 You can also in Xcode run from the *Periphery* scheme so as to make a scan.
 
 > [!CAUTION]
-> Use a real device and not a simulator. In addition, do not use local reference of OUDS iOS Swift Package as many false-positive warnings can rise; us branch version instead.
+> Use a real device and not a simulator. 
+
+> [!CAUTION]
+> In addition, do not use local reference of OUDS iOS Swift Package as many false-positive warnings can rise; use branch version instead.
+
+> [!TIP]
+> periphery is not perfect, and false positive can occur.
+> If so, create or update an isue in their repository and leave a note in the false-psotive line.
+> That is the reason why periphery-related jobs are allowed to fail, because of these false warnings.
 
 ## Software Bill of Materials
 
