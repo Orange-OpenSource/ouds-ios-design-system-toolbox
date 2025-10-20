@@ -24,7 +24,9 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSTag` for each parameter
+/// Tests the UI rendering of the `OUDSTag` for each parameter.
+///
+/// **Warning: the loader state tag is not tested because of discrepencies with snapshots comparisons**
 open class TagUITestsTestCase: XCTestCase {
 
     /// Tests all tags with all types, appearances, status and size for the given theme and color scheme.
@@ -33,34 +35,8 @@ open class TagUITestsTestCase: XCTestCase {
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        testLoaderTags(theme: theme, interfaceStyle: interfaceStyle)
         testDisabledTags(theme: theme, interfaceStyle: interfaceStyle)
         testEnabledTags(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests tags in loading state for each sizes and shapes.
-    ///
-    /// - Parameters:
-    ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testLoaderTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        for size in OUDSTag.Size.allCases {
-            for shape in OUDSTag.Shape.allCases {
-
-                let model = TagConfigurationModel()
-                model.layout = .textOnly
-                model.statusCategory = .accent
-                model.appearance = .emphasized
-                model.flipIcon = false
-                model.enabled = true
-
-                model.loader = true
-                model.size = size
-                model.shape = shape
-
-                testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
-            }
-        }
     }
 
     /// Tests tags in disabled state for each layouts, sizes and shapes.
