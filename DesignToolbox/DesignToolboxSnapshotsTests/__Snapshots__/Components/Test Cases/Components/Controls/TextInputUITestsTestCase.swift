@@ -127,6 +127,7 @@ struct TestTextInputView: View {
 
     // MARK: - Layout for tests
 
+    // swiftlint:disable closure_body_length
     /// View to test all layouts in once
     private var textInputWithStatus: some View {
         VStack(alignment: .leading, spacing: 1) {
@@ -199,6 +200,8 @@ struct TestTextInputView: View {
                           status: status)
         }
     }
+
+    // swiftlint:enable closure_body_length
 
     /// View to test helpers (Helper Text, Helper Link)
     private var textinputWithHelper: some View {

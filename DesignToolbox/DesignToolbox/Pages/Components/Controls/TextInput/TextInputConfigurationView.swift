@@ -24,9 +24,6 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     private let defaultLabel = String(localized: "app_components_common_label_label")
     private let defaultHelperText = String(localized: "app_components_common_helperText_label")
     private let defaultPlaceholderText = String(localized: "app_components_textInput_placeholder_label")
-    private let defaultPrefix = "$"
-    private let defaultSuffix = "€"
-    private let defaultHelperLinkText = String(localized: "app_components_textInput_helperLink_label")
     private let defaultErrorText = String(localized: "app_components_common_errorText_label")
 
     // MARK: Published properties
@@ -66,7 +63,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     @Published var helperText: String {
         didSet { updateCode() }
     }
-    
+
     @Published var errorText: String {
         didSet {
             status = .error(message: errorText)
@@ -112,7 +109,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         // swiftlint:disable line_length
         code =
             """
-            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(leadingIconPattern)\(flipLeadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(statusPattern))
+            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(suffixPattern)\(leadingIconPattern)\(flipLeadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(statusPattern))
             """
         // swiftlint:enable line_length
     }
@@ -126,15 +123,15 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 
     private var prefixPattern: String {
-        prefixText.isEmpty ? "" : ", prefix: \(prefixText)"
+        prefixText.isEmpty ? "" : ", prefix: \"\(prefixText)\""
     }
 
     private var suffixPattern: String {
-        suffixText.isEmpty ? "" : ", suffix: \(suffixText)"
+        suffixText.isEmpty ? "" : ", suffix: \"\(suffixText)\""
     }
 
     private var placeholderPattern: String {
-        placeholderText.isEmpty ? "" : ", placeholder: \(placeholderText)"
+        placeholderText.isEmpty ? "" : ", placeholder: \"\(placeholderText)\""
     }
 
     private var leadingIconPattern: String {
@@ -185,7 +182,7 @@ struct TextInputConfigurationView: View {
                 OUDSSwitchItem("app_components_textInput_flipLeadingIcon_label", isOn: $configurationModel.flipLeadingIcon)
                     .disabled(!configurationModel.leadingIcon)
 
-                OUDSSwitchItem("app_components_textInput_trailingIcon_label", isOn: $configurationModel.trailingAction)
+                OUDSSwitchItem("app_components_textInput_trailingAction_label", isOn: $configurationModel.trailingAction)
 
                 OUDSChipPicker(title: "app_components_common_status_label",
                                selection: $configurationModel.status,
@@ -193,14 +190,14 @@ struct TextInputConfigurationView: View {
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.label, prompt: "app_components_common_label_label")
-                    
+
                     switch configurationModel.status {
                     case .error:
                         DesignToolboxTextField(text: $configurationModel.errorText, prompt: "app_components_textInput_errorDescription_label")
                     default:
                         DesignToolboxTextField(text: $configurationModel.helperText, prompt: "app_components_common_helperText_label")
                     }
-                    
+
                     DesignToolboxTextField(text: $configurationModel.placeholderText, prompt: "app_components_textInput_placeholder_label")
                     DesignToolboxTextField(text: $configurationModel.prefixText, prompt: "app_components_textInput_prefix_label")
                     DesignToolboxTextField(text: $configurationModel.suffixText, prompt: "app_components_textInput_suffix_label")
@@ -213,8 +210,9 @@ struct TextInputConfigurationView: View {
 }
 
 extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
-    
-    public nonisolated(unsafe) static var allCases: [OUDSTextInput.Status] = [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading, .readOnly, .disabled]
+
+    public nonisolated(unsafe) static var allCases: [OUDSTextInput.Status] =
+        [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading, .readOnly, .disabled]
 
     public var description: String {
         switch self {
@@ -233,9 +231,12 @@ extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomSt
 
     public var technicalDescription: String {
         if self == .readOnly {
-            ".readOnly"
+            return ".readOnly"
+        }
+        if case let .error(message) = self {
+            return ".error(message: \"\(message)\")"
         } else {
-            ".\(description.lowercased())"
+            return ".\(description.lowercased())"
         }
     }
 
@@ -246,7 +247,7 @@ extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomSt
     static var chips: [OUDSChipPickerData<Self>] {
         allCases.map(\.chipData)
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(description)
     }
