@@ -106,16 +106,6 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
     deinit {}
 
-    // MARK: Component Configuration
-
-    var placeholder: OUDSTextInput.Placeholder? {
-        if placeholderText.isEmpty, prefixText.isEmpty, suffixText.isEmpty {
-            return nil
-        }
-
-        return .init(text: placeholderText, prefix: prefixText, suffix: suffixText)
-    }
-
     // MARK: Code illustration
 
     override func updateCode() {
@@ -135,11 +125,16 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         ", text: $text"
     }
 
+    private var prefixPattern: String {
+        prefixText.isEmpty ? "" : ", prefix: \(prefixText)"
+    }
+
+    private var suffixPattern: String {
+        suffixText.isEmpty ? "" : ", suffix: \(suffixText)"
+    }
+
     private var placeholderPattern: String {
-        guard let placeholder else {
-            return ""
-        }
-        return ", placeholder: \(placeholder.technicalDescription)"
+        placeholderText.isEmpty ? "" : ", placeholder: \(placeholderText)"
     }
 
     private var leadingIconPattern: String {
@@ -169,26 +164,6 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
     private var statusPattern: String {
         status != .enabled ? ", status: \(status.technicalDescription)" : ""
-    }
-}
-
-extension OUDSTextInput.Placeholder {
-    private var prefixPattern: String {
-        guard let prefix else {
-            return ""
-        }
-        return ", prefix: \"\(prefix)\""
-    }
-
-    private var suffixPattern: String {
-        guard let suffix else {
-            return ""
-        }
-        return ", suffix: \"\(suffix)\""
-    }
-
-    var technicalDescription: String {
-        ".init(text: \"\(text)\"\(prefixPattern)\(suffixPattern))"
     }
 }
 
@@ -227,10 +202,8 @@ struct TextInputConfigurationView: View {
                     }
                     
                     DesignToolboxTextField(text: $configurationModel.placeholderText, prompt: "app_components_textInput_placeholder_label")
-                    if !configurationModel.placeholderText.isEmpty {
-                        DesignToolboxTextField(text: $configurationModel.prefixText, prompt: "app_components_textInput_prefix_label")
-                        DesignToolboxTextField(text: $configurationModel.suffixText, prompt: "app_components_textInput_suffix_label")
-                    }
+                    DesignToolboxTextField(text: $configurationModel.prefixText, prompt: "app_components_textInput_prefix_label")
+                    DesignToolboxTextField(text: $configurationModel.suffixText, prompt: "app_components_textInput_suffix_label")
 
                     DesignToolboxTextField(text: $configurationModel.helperLinkText, prompt: "app_components_textInput_helperLink_label")
                 }

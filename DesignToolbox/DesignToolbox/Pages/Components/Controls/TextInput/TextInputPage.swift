@@ -49,7 +49,9 @@ struct TextInputDemo: View {
     var body: some View {
         OUDSTextInput(label: configurationModel.label,
                       text: $configurationModel.text,
-                      placeholder: configurationModel.placeholder,
+                      placeholder: configurationModel.placeholderText,
+                      prefix: configurationModel.prefixText,
+                      suffix: configurationModel.suffixText,
                       leadingIcon: leadingIcon,
                       flipLeadingIcon: configurationModel.flipLeadingIcon,
                       trailingAction: trailingAction,
