@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations // NOTE: Seen as "unused" for Periphery (https://github.com/peripheryapp/periphery/issues/942)
+import OUDSFoundations
 import SwiftUI
 
 // MARK: - Design Toolbox Colored Surface Modifier

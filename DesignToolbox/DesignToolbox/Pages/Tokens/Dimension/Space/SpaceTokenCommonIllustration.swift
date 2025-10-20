@@ -215,9 +215,6 @@ struct SpaceIllustrationIcon: View {
     let asset: Asset?
 
     var body: some View {
-        // NOTE: Periphery thinks "asset" is assigned but never used (false positive)
-        // See issue https://github.com/peripheryapp/periphery/issues/909
-        // Keep the "if let asset = asset" workaround and not "if let asset"
         if let asset {
             Image(decorative: asset.imageName)
                 .resizable()

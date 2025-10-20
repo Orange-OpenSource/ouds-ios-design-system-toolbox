@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSTokensSemantic
 import SwiftUI
 
 struct DesignToolboxSectionHeaderModifier: ViewModifier {

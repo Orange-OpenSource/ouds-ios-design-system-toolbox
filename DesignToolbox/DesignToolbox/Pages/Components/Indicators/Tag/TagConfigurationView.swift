@@ -307,7 +307,7 @@ enum TagLayout: CaseIterable, CustomStringConvertible {
         }
     }
 
-    var technicalDescription: String {
+    var technicalDescription: String { // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/980)
         switch self {
         case .textOnly:
             "textOnlyLayout"

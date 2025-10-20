@@ -11,9 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
-import OUDSThemesOrange
 import SwiftUI
 
 struct CheckboxPickerElement: DesignToolboxElement {

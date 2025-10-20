@@ -74,6 +74,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
 
     // MARK: - Initializer
 
+    // NOTE: "unused" false-positive for periphery (https://github.com/peripheryapp/periphery/issues/957)
     init(componentInitCode: String,
          outlinedConfiguration: OutlinedConfiguration? = nil,
          additionalLabelConfiguration: AdditionalLabelConfiguration? = nil)
