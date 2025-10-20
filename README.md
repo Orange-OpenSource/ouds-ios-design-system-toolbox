@@ -66,6 +66,18 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 
 ## Design System Toolbox
 
+<!-- Mockups designed thanks to https://mockuphone.com/model/iphone-15-pro-max/ -->
+
+<p align="center">
+<img src="./docs_release/images/Tokens list - en - light-portrait.png" alt="List of tokens on iPhone 15 Pro Max (engligh, light mode, portrait)"  height="350" />
+&nbsp;
+<img src="./docs_release/images/Colors - en - light-portrait.png" alt="List of colors on iPhone 15 Pro Max (engligh, light mode, portrait)"  height="350" />
+&nbsp;
+<img src="./docs_release/images/Components list - en - light-portrait.png" alt="List of components on iPhone 15 Pro Max (engligh, light mode, portrait)"  height="350" />
+&nbsp;
+<img src="./docs_release/images/Button - en - light-portrait.png" alt="Button component on iPhone 15 Pro Max (engligh, light mode, portrait)"  height="350" />
+</p>
+
 Flash the QrCode below or click on it to download the *Design System Toolbox* app.
 
 <p align="center">
