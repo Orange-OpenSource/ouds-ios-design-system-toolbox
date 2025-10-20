@@ -3281,6 +3281,30 @@
         }
       }
     },
+    "app_components_textInput_errorDescription_label" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "وصف الخطأ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error description"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Message d’erreur"
+          }
+        }
+      }
+    },
     "app_components_textInput_flipLeadingIcon_label" : {
       "comment" : "Component - Text Input",
       "extractionState" : "manual",
@@ -3325,30 +3349,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Helper link"
-          }
-        }
-      }
-    },
-    "app_components_textInput_illustration_helperText_label" : {
-      "comment" : "Component - Text Input",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "نص مساعد."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Helper text."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Texte d'aide."
           }
         }
       }
@@ -3501,6 +3501,30 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_textInputHelperText_label" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص مساعد."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte d'aide."
+          }
+        }
+      }
     },
     "app_settings_themeSwitch_cancel" : {
       "comment" : "App - Settings",

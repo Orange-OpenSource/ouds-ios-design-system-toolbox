@@ -62,6 +62,14 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     @Published var helperText: String {
         didSet { updateCode() }
     }
+    
+    @Published var errorText: String {
+        didSet {
+            status = .error(message: errorText)
+            updateCode()
+        }
+    }
+
 
     @Published var helperLinkText: String {
         didSet { updateCode() }
@@ -80,6 +88,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     override init() {
         label = defaultLabel
         helperText = defaultHelperText
+        errorText = "app_components_textInput_errorDescription_label".localized()
         placeholderText = defaultPlaceholderText
         prefixText = ""
         suffixText = ""
@@ -206,7 +215,14 @@ struct TextInputConfigurationView: View {
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.label, prompt: "app_components_common_label_label")
-                    DesignToolboxTextField(text: $configurationModel.helperText, prompt: "app_components_common_helperText_label")
+                    
+                    switch configurationModel.status {
+                    case .error:
+                        DesignToolboxTextField(text: $configurationModel.errorText, prompt: "app_components_textInput_errorDescription_label")
+                    default:
+                        DesignToolboxTextField(text: $configurationModel.helperText, prompt: "app_components_common_helperText_label")
+                    }
+                    
                     DesignToolboxTextField(text: $configurationModel.placeholderText, prompt: "app_components_textInput_placeholder_label")
                     if !configurationModel.placeholderText.isEmpty {
                         DesignToolboxTextField(text: $configurationModel.prefixText, prompt: "app_components_textInput_prefix_label")
@@ -220,8 +236,12 @@ struct TextInputConfigurationView: View {
     }
 }
 
-extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    public nonisolated(unsafe) static var allCases: [OUDSTextInput.Status] = [.enabled, .error, .loading, .readOnly, .disabled]
+extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(description)
+    }
+    
+    public nonisolated(unsafe) static var allCases: [OUDSTextInput.Status] = [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading, .readOnly, .disabled]
 
     public var description: String {
         switch self {

@@ -62,8 +62,7 @@ struct TextInputDemo: View {
             .padding(.all, theme.spaces.spaceFixedMedium)
             .onSubmit {
                 if configurationModel.text == "error" {
-                    configurationModel.status = .error
-                    configurationModel.helperText = "Error text detected"
+                    configurationModel.status = .error(message: "Error text detecte")
                 }
             }
     }
