@@ -64,6 +64,7 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
         textFields(withA11yIdentifier: A11YIdentifiers.configurationTextField, app).firstMatch.tap()
         wait(2)
         textField(write: "999", in: A11YIdentifiers.configurationTextField, app)
+
         swipeFromUpToDown(app) // Keyboard does not close, so swipe to get component to capture
 
         wait(3)
@@ -86,6 +87,7 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
         waitForButtonToAppear(withWording: "app_components_tag_tag_label", app)
+        tapButton(withWording: "app_components_tag_label", app)
         tapButton(withWording: "app_components_tag_label", app)
 
         tapButton(withWording: "Text + bullet", app)
