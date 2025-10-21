@@ -14,20 +14,18 @@
 import OUDSComponents
 import SwiftUI
 
-// MARK: - InpitTag Configuration Model
+// MARK: - Input Tag Configuration Model
 
 /// The model shared between `InputTagPageConfiguration` view and `InputTagPageComponent` view.
 final class InputTagConfigurationModel: ComponentConfiguration {
-
-    // MARK: Published properties
 
     @Published var enabled: Bool {
         didSet { updateCode() }
     }
 
-    @Published var label: String
-
-    // MARK: Initializer
+    @Published var label: String {
+        didSet { updateCode() }
+    }
 
     override init() {
         enabled = true
@@ -36,13 +34,11 @@ final class InputTagConfigurationModel: ComponentConfiguration {
 
     deinit {}
 
-    // MARK: Component Configuration
-
     override func updateCode() {
         code = """
-               OUDSInnputTag(label: \"\(label)\") {}
-               \(disabledPattern)
-               """
+        OUDSInputTag(label: \"\(label)\") {}
+        \(disabledPattern)
+        """
     }
 
     private var disabledPattern: String {
@@ -54,12 +50,9 @@ final class InputTagConfigurationModel: ComponentConfiguration {
 
 struct InputTagConfigurationView: View {
 
-    // MARK: Stored properties
-
     @StateObject var configurationModel: InputTagConfigurationModel
-    @Environment(\.theme) private var theme
 
-    // MARK: Body
+    @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {

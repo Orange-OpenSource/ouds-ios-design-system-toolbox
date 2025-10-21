@@ -99,7 +99,7 @@ open class TagUITestsTestCase: XCTestCase {
                            named: name,
                            testName: testName)
     }
-    
+
     /// This function tests all input tags with disable state for the given theme and color scheme.
     ///
     /// - Parameters:
@@ -144,7 +144,6 @@ open class TagUITestsTestCase: XCTestCase {
                            named: name,
                            testName: testName)
     }
-
 }
 
 // swiftlint:enable required_deinit

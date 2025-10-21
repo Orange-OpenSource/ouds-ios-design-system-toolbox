@@ -25,7 +25,9 @@ final class TagConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var label: String
+    @Published var label: String {
+        didSet { updateCode() }
+    }
 
     @Published var size: OUDSTag.Size {
         didSet { updateCode() }

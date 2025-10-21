@@ -41,7 +41,7 @@ final class OrangeBusinessToolsThemeTagUITests: TagUITestsTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTags(theme: theme, interfaceStyle: interfaceStyle)
     }
-    
+
     /// Tests all tags configuration in the `OrangeBusinessToolsTheme` with the `light` color scheme.
     @MainActor func testAllInputTagsOrangeBusinessToolsThemeThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light

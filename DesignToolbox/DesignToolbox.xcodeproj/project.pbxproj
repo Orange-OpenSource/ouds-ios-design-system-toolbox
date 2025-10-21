@@ -993,20 +993,20 @@
 			path = ControlItem;
 			sourceTree = "<group>";
 		};
-		076227602DA90C65009C3632 /* Common */ = {
+		076227602DA90C65009C3632 /* Dividers */ = {
 			isa = PBXGroup;
 			children = (
 				0762275D2DA90C65009C3632 /* DividerConfiguration.swift */,
 				0762275E2DA90C65009C3632 /* DividerElement.swift */,
 				0762275F2DA90C65009C3632 /* DividerPage.swift */,
 			);
-			path = Common;
+			path = Dividers;
 			sourceTree = "<group>";
 		};
 		076227622DA90C65009C3632 /* Divider */ = {
 			isa = PBXGroup;
 			children = (
-				076227602DA90C65009C3632 /* Common */,
+				076227602DA90C65009C3632 /* Dividers */,
 				076227612DA90C65009C3632 /* DividerElements.swift */,
 			);
 			path = Divider;
