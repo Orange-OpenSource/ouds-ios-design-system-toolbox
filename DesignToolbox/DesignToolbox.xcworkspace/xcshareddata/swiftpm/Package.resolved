@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "693563666e45247e1c63e4306887826902b55f84"
+        "branch" : "917-component-update-add-component-tag-input",
+        "revision" : "f31c9b55e6a9904692e4669f2516ede5799027d7"
       }
     },
     {

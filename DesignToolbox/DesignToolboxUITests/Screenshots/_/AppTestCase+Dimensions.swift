@@ -149,6 +149,13 @@ extension AppTestCase {
         static let tagWidth = deviceWidth + offsetWidth
         static let tagHeight = 410 + offsetHeight
 
+        // MARK: - Indicators - Input Tag
+
+        static let inputTagX = tagX
+        static let inputTagY = tagY
+        static let inputTagWidth = tagWidth
+        static let inputTagHeight = tagHeight
+
         // MARK: - Layouts - Horizontal Divider
 
         static let horizontalDividerX = screenStartX + offsetX

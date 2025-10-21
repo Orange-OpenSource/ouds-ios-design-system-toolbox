@@ -52,6 +52,9 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
 
         tapButton(withWording: "Large", app)
         tapButton(withWording: "Accent", app)
+        swipeFromDownToUp(app)
+        wait(3)
+
         otherElements(write: "999", in: A11YIdentifiers.configurationTextField, app)
         swipeFromUpToDown(app) // Keyboard does not close, so swipe to get component to capture
 
@@ -74,7 +77,8 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
-        waitForButtonToAppear(withWording: "app_components_tag_label", app)
+        waitForButtonToAppear(withWording: "app_components_tag_tag_label", app)
+        tapButton(withWording: "app_components_tag_label", app)
         tapButton(withWording: "app_components_tag_label", app)
 
         tapButton(withWording: "Text + bullet", app)
@@ -87,6 +91,31 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
                        ACDC.tagY,
                        ACDC.tagWidth,
                        ACDC.tagHeight,
+                       app)
+    }
+
+    // MARK: - InputTag
+
+    @MainActor
+    func testMakeScreenshotsForDocumentation_InputTag() {
+        let app = launchApp()
+        goToComponentsSheet(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_tag_label", app)
+        swipeFromDownToUp(app)
+        tapButton(withWording: "app_components_tag_label", app)
+        waitForButtonToAppear(withWording: "app_components_tag_inputTag_label", app)
+        tapButton(withWording: "app_components_tag_inputTag_label", app)
+
+        wait(2)
+
+        takeScreenshot(named: "component_inputTag_",
+                       ACDC.inputTagX,
+                       ACDC.inputTagY,
+                       ACDC.inputTagWidth,
+                       ACDC.inputTagHeight,
                        app)
     }
 }

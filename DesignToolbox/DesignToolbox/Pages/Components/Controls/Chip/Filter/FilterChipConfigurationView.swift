@@ -29,7 +29,9 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var text: String
+    @Published var text: String {
+        didSet { updateCode() }
+    }
 
     @Published var layout: ChipLayout {
         didSet { updateCode() }

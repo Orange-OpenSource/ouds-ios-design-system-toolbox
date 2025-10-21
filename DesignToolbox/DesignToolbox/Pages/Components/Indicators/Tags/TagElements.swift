@@ -15,18 +15,30 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-struct TagElement: DesignToolboxElement {
+struct TagElements: DesignToolboxElement {
     let name: String
     let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
+        let variants: [DesignToolboxElement] = [
+            TagElement(),
+            InputTagElement(),
+        ]
+
         name = "app_components_tag_label".localized()
-        illustration = AnyView(OUDSTag(label: "Label", hierarchy: .emphasized, status: .positive, shape: .rounded, size: .default))
+        illustration = AnyView(TagIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
+            illustration: illustration,
             description: "app_components_tag_description_text",
-            version: OUDSVersions.componentTagVersion,
-            demoScreen: AnyView(TagPage())))
+            demoScreen: AnyView(DesignToolboxVariantElement(elements: variants))))
+    }
+}
+
+private struct TagIllustration: View {
+
+    var body: some View {
+        OUDSTag(label: "Label", hierarchy: .emphasized, status: .positive, shape: .rounded, size: .default)
     }
 }
