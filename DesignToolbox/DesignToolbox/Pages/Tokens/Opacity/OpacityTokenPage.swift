@@ -78,6 +78,7 @@ struct OpacityTokenPage: View {
 
 enum NamedOpacity: String, CaseIterable {
     case opacityInvisible
+    case opacityWeakest
     case opacityWeaker
     case opacityWeak
     case opacityMedium
@@ -89,6 +90,8 @@ enum NamedOpacity: String, CaseIterable {
         switch self {
         case .opacityInvisible:
             theme.opacities.opacityInvisible
+        case .opacityWeakest:
+            theme.opacities.opacityWeakest
         case .opacityWeaker:
             theme.opacities.opacityWeaker
         case .opacityWeak:
