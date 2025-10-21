@@ -15,7 +15,7 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-// MARK: InputTag page
+// MARK: Input Tag page
 
 struct InputTagPage: View {
 
@@ -34,7 +34,7 @@ struct InputTagPage: View {
     }
 }
 
-// MARK: - Tag Demo
+// MARK: - Input Tag Demo
 
 struct InputTagDemo: View {
 
@@ -46,7 +46,7 @@ struct InputTagDemo: View {
         HStack(alignment: .center) {
             Spacer()
 
-            OUDSInputTag(label: configurationModel.label) { }
+            OUDSInputTag(label: configurationModel.label) {}
                 .disabled(!configurationModel.enabled)
 
             Spacer()

@@ -101,7 +101,7 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
                        ACDC.tagHeight,
                        app)
     }
-    
+
     // MARK: - InputTag
 
     @MainActor
@@ -120,10 +120,10 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
         wait(2)
 
         takeScreenshot(named: "component_inputTag_",
-                       ACDC.tagX,
-                       ACDC.tagY,
-                       ACDC.tagWidth,
-                       ACDC.tagHeight,
+                       ACDC.inputTagX,
+                       ACDC.inputTagY,
+                       ACDC.inputTagWidth,
+                       ACDC.inputTagHeight,
                        app)
     }
 }
