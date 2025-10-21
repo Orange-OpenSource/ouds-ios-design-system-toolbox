@@ -171,7 +171,7 @@ struct LinkConfiguration: View {
             }
 
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.text)
+                DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_label")
             }
         }
     }
