@@ -18,13 +18,13 @@ import SwiftUI
 
 struct DesignToolboxTextField: View {
 
-    @Environment(\.theme) private var theme
-
     let text: Binding<String>
     let prompt: String
     let label: String
 
-    init(text: Binding<String>, prompt: String = "app_components_common_enterText_prompt", label: String) {
+    @Environment(\.theme) private var theme
+
+    init(text: Binding<String>, label: String, prompt: String = "app_components_common_enterText_prompt") {
         self.label = label.localized()
         self.text = text
         self.prompt = prompt.localized()
@@ -40,7 +40,7 @@ struct DesignToolboxTextField: View {
             return nil
         }
 
-        return .init(icon: Image("ic_delete", bundle: theme.resourcesBundle), actionHint: "") {
+        return .init(icon: Image(decorative: "ic_delete", bundle: theme.resourcesBundle), actionHint: "") {
             text.wrappedValue = ""
         }
     }
