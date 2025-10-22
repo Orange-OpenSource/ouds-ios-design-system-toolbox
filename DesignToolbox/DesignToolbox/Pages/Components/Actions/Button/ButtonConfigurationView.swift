@@ -25,7 +25,9 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var text: String
+    @Published var text: String {
+        didSet { updateCode() }
+    }
 
     @Published var layout: ButtonLayout {
         didSet { updateCode() }
@@ -70,7 +72,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
                 """
-                OUDSButton(text: \"Button\", appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
+                OUDSButton(text: \"\(text)\", appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifier)
                 """
@@ -84,7 +86,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .textAndIcon:
             code =
                 """
-                OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
+                OUDSButton(icon: Image(\"ic_heart\", text: \"\(text)\"), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifier)
                 """
@@ -204,7 +206,7 @@ struct ButtonConfigurationView: View {
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.text)
+                    DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_label")
                 }
             }
         }

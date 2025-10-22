@@ -129,9 +129,10 @@ struct BadgeConfigurationView: View {
                            chips: OUDSBadge.Status.chips)
 
             if configurationModel.badgeType == .count {
-                DesignToolboxTextField(text: $configurationModel.countText, title: "app_components_badge_count_label")
-                    .keyboardType(.numberPad)
-                    .padding(.horizontal, theme.spaces.spaceFixedMedium)
+                DesignToolboxEditContentDisclosure {
+                    DesignToolboxTextField(text: $configurationModel.countText, label: "app_components_badge_count_label")
+                        .keyboardType(.numberPad)
+                }
             }
         }
     }

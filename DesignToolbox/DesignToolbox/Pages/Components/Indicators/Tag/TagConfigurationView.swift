@@ -149,7 +149,7 @@ struct TagConfigurationView: View {
                     .disabled(configurationModel.layout != .textAndIcon)
 
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.label)
+                    DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_label")
                 }
             }
         }
