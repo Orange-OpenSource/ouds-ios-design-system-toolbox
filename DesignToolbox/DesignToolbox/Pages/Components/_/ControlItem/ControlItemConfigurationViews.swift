@@ -80,11 +80,11 @@ private struct ControlItemConfiguration: View {
             }
 
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.labelText)
+                DesignToolboxTextField(text: $configurationModel.labelText, label: "app_components_common_label_label")
                 if configurationModel.additionalLabelConfiguration != nil {
-                    DesignToolboxTextField(text: $configurationModel.additionalLabelText)
+                    DesignToolboxTextField(text: $configurationModel.additionalLabelText, label: "app_components_radioButton_radioButtonItem_additionalLabel_label")
                 }
-                DesignToolboxTextField(text: $configurationModel.helperText)
+                DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_label")
             }
         }
     }

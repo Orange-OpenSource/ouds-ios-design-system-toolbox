@@ -183,7 +183,7 @@ struct ChipPickerConfigurationView: View {
             }
 
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.titleText)
+                DesignToolboxTextField(text: $configurationModel.titleText, label: "app_components_common_label_label")
             }
         }
     }
