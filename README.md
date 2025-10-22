@@ -47,6 +47,24 @@
 > and also the [whole design system](https://unified-design-system.orange.com/).
 > The source code of the [Swift Package is on Orange-OpenSource/ouds-ios](https://github.com/Orange-OpenSource/ouds-ios).
 
+> [!TIP]
+> Releases are immutable and in most of time cryptographically signed.
+> You can verify integrity of release and assets with commands below
+> using [GitHub CLI](https://cli.github.com/) 
+> and available [release tags](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases).
+
+To verify integrity of a release *x.y.z*:
+```shell
+gh release verify x.y.z --repo Orange-OpenSource/ouds-ios-design-system-toolbox
+```
+
+To verify integrity of an *asset* (previously downloaded at current location) associated to the release *x.y.z*:
+```shell
+gh release verify-asset x.y.z asset --repo Orange-OpenSource/ouds-ios-design-system-toolbox
+```
+
+For these commands a message should say release is verified or asset verification succeeded.
+
 ## Bugs, feature requests and discussions
 
 > [!CAUTION]
