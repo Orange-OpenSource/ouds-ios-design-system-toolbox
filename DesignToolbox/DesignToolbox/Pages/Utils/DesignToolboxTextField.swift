@@ -12,9 +12,9 @@
 //
 
 import OUDS
+import OUDSComponents
 import OUDSTokensSemantic
 import SwiftUI
-import OUDSComponents
 
 struct DesignToolboxTextField: View {
 
@@ -31,15 +31,15 @@ struct DesignToolboxTextField: View {
     }
 
     var body: some View {
-            OUDSTextInput(label: label, text: text, placeholder: prompt, trailingAction: deleteAction)
+        OUDSTextInput(label: label, text: text, placeholder: prompt, trailingAction: deleteAction)
             .accessibilityIdentifier(A11YIdentifiers.configurationTextField)
     }
-    
+
     private var deleteAction: OUDSTextInput.TrailingAction? {
         guard !text.wrappedValue.isEmpty else {
             return nil
         }
-        
+
         return .init(icon: Image("ic_delete", bundle: theme.resourcesBundle), actionHint: "") {
             text.wrappedValue = ""
         }
