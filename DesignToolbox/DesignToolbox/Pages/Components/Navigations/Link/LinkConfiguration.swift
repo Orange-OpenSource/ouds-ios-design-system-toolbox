@@ -25,7 +25,9 @@ final class LinkConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var text: String
+    @Published var text: String {
+        didSet { updateCode() }
+    }
 
     @Published var layout: LinkLayout {
         didSet { updateCode() }
@@ -61,28 +63,28 @@ final class LinkConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
                 """
-                OUDSLink(text: \"Link\", size: \(size.description.lowercased())) {}
+                OUDSLink(text: \"\(text)\", size: \(size.description.lowercased())) {}
                 \(disableCode)
                 \(coloredSurfaceCodeModifier)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSLink(text: \"Link\", icon: Image(\"ic_heart\"), size: \(size.description.lowercased())) {}
+                OUDSLink(text: \"\(text)\", icon: Image(\"ic_heart\"), size: \(size.description.lowercased())) {}
                 \(disableCode)
                 \(coloredSurfaceCodeModifier)
                 """
         case .indicatorNext:
             code =
                 """
-                OUDSLink(text: \"Link\", indicator: .next, size: \(size.description.lowercased())) {}
+                OUDSLink(text: \"\(text)\", indicator: .next, size: \(size.description.lowercased())) {}
                 \(disableCode)
                 \(coloredSurfaceCodeModifier)
                 """
         case .indicatorBack:
             code =
                 """
-                OUDSLink(text: \"Link\", indicator: .back, size: \(size.description.lowercased())) {}
+                OUDSLink(text: \"\(text)\", indicator: .back, size: \(size.description.lowercased())) {}
                 \(disableCode)
                 \(coloredSurfaceCodeModifier)
                 """
