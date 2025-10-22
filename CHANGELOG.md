@@ -5,10 +5,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.20.0...develop)
-  
+
+### Added
+
+- [Library] Swift DocC tutorial (Orange-OpenSource/ouds-ios#919)
+
 ### Changed
 
-- [DesignToolbox] Use OUDSTextInput in customize section (Orange-OpenSource/ouds-ios#1059)
+- [DesignToolbox] Use `OUDSTextInput` in components configuration sections (Orange-OpenSource/ouds-ios#1059)
+- [DesignToolbox] Update `link` component version (Orange-OpenSource/ouds-ios#1035)
 - [Library] Apply new tokens library (v1.8.0) (Orange-OpenSource/ouds-ios#1070)
 - [Library] Update `text input` to display error message if error, and display suffix/prefix even if placeholder empty (Orange-OpenSource/ouds-ios#1063)
 
