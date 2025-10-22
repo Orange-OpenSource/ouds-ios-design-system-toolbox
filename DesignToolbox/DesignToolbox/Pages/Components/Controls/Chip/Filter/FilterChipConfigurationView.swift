@@ -29,7 +29,9 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var text: String
+    @Published var text: String {
+        didSet { updateCode() }
+    }
 
     @Published var layout: ChipLayout {
         didSet { updateCode() }
@@ -104,7 +106,7 @@ struct FilterChipConfigurationView: View {
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.text)
+                    DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_label")
                 }
             }
         }

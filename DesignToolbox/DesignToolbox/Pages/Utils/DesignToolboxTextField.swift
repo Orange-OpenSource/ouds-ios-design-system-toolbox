@@ -12,39 +12,36 @@
 //
 
 import OUDS
+import OUDSComponents
 import OUDSTokensSemantic
 import SwiftUI
 
 struct DesignToolboxTextField: View {
 
-    @Environment(\.theme) private var theme
-
     let text: Binding<String>
     let prompt: String
-    let title: String?
+    let label: String
 
-    init(text: Binding<String>, prompt: String = "app_components_common_enterText_prompt", title: String? = nil) {
-        self.title = title
+    @Environment(\.theme) private var theme
+
+    init(text: Binding<String>, label: String, prompt: String = "app_components_common_enterText_prompt") {
+        self.label = label.localized()
         self.text = text
-        self.prompt = prompt
+        self.prompt = prompt.localized()
     }
 
     var body: some View {
-        VStack(alignment: .leading) {
-            if let title {
-                Text(LocalizedStringKey(title))
-                    .typeBodyStrongLarge(theme)
-                    .oudsForegroundStyle(theme.colors.colorContentDefault)
-            }
-
-            TextField(text: text, prompt: Text(prompt.localized())) {
-                Text(LocalizedStringKey(text.wrappedValue))
-            }
+        OUDSTextInput(label: label, text: text, placeholder: prompt, trailingAction: deleteAction)
             .accessibilityIdentifier(A11YIdentifiers.configurationTextField)
-            .oudsForegroundStyle(theme.colors.colorContentDefault)
+    }
+
+    private var deleteAction: OUDSTextInput.TrailingAction? {
+        guard !text.wrappedValue.isEmpty else {
+            return nil
         }
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel(LocalizedStringKey(prompt))
-        .accessibilityValue(text.wrappedValue)
+
+        return .init(icon: Image(decorative: "ic_delete", bundle: theme.resourcesBundle), actionHint: "") {
+            text.wrappedValue = ""
+        }
     }
 }

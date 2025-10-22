@@ -189,20 +189,20 @@ struct TextInputConfigurationView: View {
                                chips: OUDSTextInput.Status.chips)
 
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.label, prompt: "app_components_common_label_label")
+                    DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_label")
 
                     switch configurationModel.status {
                     case .error:
-                        DesignToolboxTextField(text: $configurationModel.errorText, prompt: "app_components_textInput_errorDescription_label")
+                        DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_textInput_errorDescription_label")
                     default:
-                        DesignToolboxTextField(text: $configurationModel.helperText, prompt: "app_components_common_helperText_label")
+                        DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_label")
                     }
 
-                    DesignToolboxTextField(text: $configurationModel.placeholderText, prompt: "app_components_textInput_placeholder_label")
-                    DesignToolboxTextField(text: $configurationModel.prefixText, prompt: "app_components_textInput_prefix_label")
-                    DesignToolboxTextField(text: $configurationModel.suffixText, prompt: "app_components_textInput_suffix_label")
+                    DesignToolboxTextField(text: $configurationModel.placeholderText, label: "app_components_textInput_placeholder_label")
+                    DesignToolboxTextField(text: $configurationModel.prefixText, label: "app_components_textInput_prefix_label")
+                    DesignToolboxTextField(text: $configurationModel.suffixText, label: "app_components_textInput_suffix_label")
 
-                    DesignToolboxTextField(text: $configurationModel.helperLinkText, prompt: "app_components_textInput_helperLink_label")
+                    DesignToolboxTextField(text: $configurationModel.helperLinkText, label: "app_components_textInput_helperLink_label")
                 }
             }
         }
