@@ -82,7 +82,7 @@ open class TextInputUITestsTestCase: XCTestCase {
         // test<testType>_<themeName>_<colorScheme>.<roundedPattern><stylePattern><statusPattern>
         let testName = "test\(testType)_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let outlinedPattern = outlined ? ".outlined" : ""
-        let statusPattern = status.technicalDescription
+        let statusPattern = status.technicalDescription.contains("error") ? "error" : status.technicalDescription
 
         let named = "\(outlinedPattern)\(statusPattern)"
 
