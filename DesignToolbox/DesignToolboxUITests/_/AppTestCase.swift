@@ -73,7 +73,24 @@ open class AppTestCase: XCTestCase {
         return elements
     }
 
+    // MARK: - Text Fields
+
+    /// Returns text fields with the given accessiiblity identifier
+    @MainActor func textFields(withA11yIdentifier id: String, _ app: XCUIApplication) -> XCUIElementQuery {
+        let elements = app.textFields.matching(identifier: id)
+        XCTAssertTrue(elements.count > 0, "No matching text field with accessibility identifier '\(id)'")
+        return elements
+    }
+
     // swiftlint:enable empty_count
+
+    /// Taps and writes the given text to an text field element with the given accessiibility identifier
+    @MainActor func textField(write content: String, in withA11yIdentifier: String, _ app: XCUIApplication) {
+        let textField = app.textFields[withA11yIdentifier].firstMatch
+        XCTAssertTrue(textField.exists, "The expected text field with accessibility identifier '\(withA11yIdentifier)' does not exist")
+        textField.tap()
+        textField.typeText(content)
+    }
 
     // MARK: - Texts
 
@@ -104,7 +121,7 @@ open class AppTestCase: XCTestCase {
     /// Taps an element with the given accessibility identifier be seen as "other element"
     @MainActor func tapOtherElement(withA11yIdentifier id: String, _ app: XCUIApplication) {
         let element = app.otherElements[id].firstMatch
-        XCTAssertTrue(element.exists, "The eoected other element with accessibility identifier '\(id)' does not exist")
+        XCTAssertTrue(element.exists, "The expected other element with accessibility identifier '\(id)' does not exist")
         element.tap()
     }
 
@@ -121,7 +138,7 @@ open class AppTestCase: XCTestCase {
     /// Taps and writes the given text to an undefined element with the given accessiibility identifier
     @MainActor func otherElements(write content: String, in withA11yIdentifier: String, _ app: XCUIApplication) {
         let textField = app.otherElements[withA11yIdentifier].firstMatch
-        XCTAssertTrue(textField.exists, "The expected text field with accessibility identifier '\(withA11yIdentifier)' does not exist")
+        XCTAssertTrue(textField.exists, "The expected other element (supposed text field) with accessibility identifier '\(withA11yIdentifier)' does not exist")
         textField.tap()
         textField.typeText(content)
     }
