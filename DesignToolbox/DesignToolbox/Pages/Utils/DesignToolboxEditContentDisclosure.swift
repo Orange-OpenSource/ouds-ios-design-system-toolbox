@@ -28,6 +28,7 @@ struct DesignToolboxEditContentDisclosure<Content>: View where Content: View {
             Text("app_components_common_editContent_label")
                 .typeHeadingSmall(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
+                .accessibilityAddTraits([.isButton])
         }
         .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
