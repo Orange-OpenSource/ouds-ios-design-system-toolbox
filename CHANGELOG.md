@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Expose dimensions for pickers components (Orange-OpenSource/ouds-ios#1080)
 - [DesignToolbox] Use `OUDSTextInput` in components configuration sections (Orange-OpenSource/ouds-ios#1059)
 - [DesignToolbox] Update `link` component version (Orange-OpenSource/ouds-ios#1035)
 - [Library] Apply new tokens library (v1.8.0) (Orange-OpenSource/ouds-ios#1070)
