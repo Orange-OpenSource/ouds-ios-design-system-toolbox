@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Update `radio item` to v1.3.0 (Orange-OpenSource/ouds-ios#1072)
+- [Library] Update `switch item` to v1.4.0 (Orange-OpenSource/ouds-ios#1071)
+- [Library] Update `checkbox item` to v2.3.0 (Orange-OpenSource/ouds-ios#1069)
 - [Library] Expose dimensions for pickers components (Orange-OpenSource/ouds-ios#1080)
 - [DesignToolbox] Use `OUDSTextInput` in components configuration sections (Orange-OpenSource/ouds-ios#1059)
 - [DesignToolbox] Update `link` component version (Orange-OpenSource/ouds-ios#1035)
