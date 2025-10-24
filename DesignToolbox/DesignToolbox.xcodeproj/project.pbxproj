@@ -3335,7 +3335,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1035-component-update-of-link-component-v22";
 				kind = branch;
 			};
 		};
