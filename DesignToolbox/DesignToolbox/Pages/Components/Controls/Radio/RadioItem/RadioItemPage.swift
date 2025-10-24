@@ -52,6 +52,7 @@ private struct RadioItemDemo: View {
                       isOutlined: configurationModel.outlined,
                       isReversed: configurationModel.isReversed,
                       isError: configurationModel.isError,
+                      errorText: configurationModel.errorText,
                       isReadOnly: configurationModel.isReadOnly,
                       hasDivider: configurationModel.divider)
             .disabled(!configurationModel.enabled)
