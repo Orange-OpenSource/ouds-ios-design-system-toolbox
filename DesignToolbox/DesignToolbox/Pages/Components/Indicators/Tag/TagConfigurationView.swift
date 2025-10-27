@@ -170,12 +170,12 @@ struct TagConfigurationView: View {
             OUDSSwitchItem("app_components_common_loader_label", isOn: $configurationModel.loader)
                 .disabled(!configurationModel.enabled)
 
+            OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
+                .disabled(!configurationModel.enableFlipIcon)
+
             OUDSChipPicker(title: "app_components_common_layout_label",
                            selection: $configurationModel.layout,
                            chips: TagLayout.chips)
-
-            OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
-                .disabled(!configurationModel.enableFlipIcon)
 
             OUDSChipPicker(title: "app_components_common_appearance_label",
                            selection: $configurationModel.appearance,
@@ -193,21 +193,8 @@ struct TagConfigurationView: View {
                            selection: $configurationModel.size,
                            chips: OUDSTag.Size.chips)
 
-<<<<<<< HEAD
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-                OUDSSwitchItem("app_components_common_loader_label", isOn: $configurationModel.loader)
-                    .disabled(configurationModel.status == .disabled)
-
-                OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
-                    .disabled(configurationModel.layout != .textAndIcon)
-
-                DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_label")
-                }
-=======
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.label)
->>>>>>> 5b8166cc (refactor: update api and internal adaptation for v1.3)
+                DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_label")
             }
         }
     }

@@ -11,29 +11,15 @@
       }
     },
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 6df81d95 (refactor: docs, sample code, style (Orange-OpenSource/ouds-ios#945) (Orange-OpenSource/ouds-ios#1037))
       "identity" : "ouds-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-<<<<<<< HEAD
-        "branch" : "develop",
-        "revision" : "64fc719386bddf5407ef9be743f31b5f25e1c060"
-      }
-    },
-    {
-=======
->>>>>>> 5b8166cc (refactor: update api and internal adaptation for v1.3)
-=======
         "branch" : "945-component-update-tag-13",
         "revision" : "d1d3c2ca1ee574486b5cbc0087ae0ec9c28ec6d5"
       }
     },
     {
->>>>>>> 6df81d95 (refactor: docs, sample code, style (Orange-OpenSource/ouds-ios#945) (Orange-OpenSource/ouds-ios#1037))
       "identity" : "swift-custom-dump",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-custom-dump",
