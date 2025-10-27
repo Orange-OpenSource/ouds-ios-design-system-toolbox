@@ -59,7 +59,7 @@ struct InputTagConfigurationView: View {
             OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
 
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.label, label: "Zozor")
+                DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_label")
             }
         }
     }
