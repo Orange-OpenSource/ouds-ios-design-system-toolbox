@@ -6,18 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.20.0...develop)
 
+### Added
+
+- [Library] `input tag` component (Orange-OpenSource/ouds-ios#917)
+- [Library] Swift DocC tutorial (Orange-OpenSource/ouds-ios#919)
+
 ### Changed
 
 - [Library] Provide predefined icons for `OUDSTag` components (Orange-OpenSource/ouds-ios#912)
 - [Library] Update `OUDSTag` to 1.4 version (Orange-OpenSource/ouds-ios#1037)
 - [Library] Update `OUDSTag` to 1.3 version (Orange-OpenSource/ouds-ios#945)
-
-### Added
-
-- [Library] Swift DocC tutorial (Orange-OpenSource/ouds-ios#919)
-
-### Changed
-
 - [Library] Expose dimensions for pickers components (Orange-OpenSource/ouds-ios#1080)
 - [DesignToolbox] Use `OUDSTextInput` in components configuration sections (Orange-OpenSource/ouds-ios#1059)
 - [DesignToolbox] Update `link` component version (Orange-OpenSource/ouds-ios#1035)

@@ -2715,6 +2715,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_inoputTag_description_text" : {
+      "comment" : "Component - Input Tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إدخال الوسوم هو مُكوِّن يسمح للمستخدمين بإدخال قيم متعددة، كلٌّ منها مُمَثَّل بوسم. عند كتابة المستخدمين للقيم وإرسالها (عادةً بالضغط على مفتاح الإدخال أو الفاصلة أو علامة التبويب)، تُحوَّل كل قيمة إلى وسم."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A Tag Input is a component that allows users to enter multiple values, each represented as a tag. As users type and submit values (usually by pressing enter, comma, or tab), each value is transformed into a Tag."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composent InputTag permet aux utilisateurs de saisir plusieurs valeurs, chacune représentée par une balise. À mesure que les utilisateurs saisissent et valident des valeurs (généralement en appuyant sur Entrée, une virgule ou une tabulation), chaque valeur est transformée en balise."
+          }
+        }
+      }
+    },
     "app_components_link_backLayout_label" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",
@@ -3206,6 +3230,31 @@
         }
       }
     },
+    "app_components_tag_inputTag_label" : {
+      "comment" : "Component - InputTag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input Tag"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input Tag"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input Tag"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_tag_label" : {
       "comment" : "Component - Tag",
       "extractionState" : "manual",
@@ -3251,6 +3300,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Shape"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_tag_tag_label" : {
+      "comment" : "Component - Tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag"
           }
         }
       },
