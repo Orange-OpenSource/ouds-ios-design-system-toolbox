@@ -64,6 +64,10 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var errorText: String {
+        didSet { updateCode() }
+    }
+
     @Published var outlined: Bool {
         didSet { updateCode() }
     }
@@ -89,6 +93,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         divider = true
         labelText = String(localized: "app_components_common_label_label")
         helperText = String(localized: "app_components_common_helperText_label")
+        errorText = String(localized: "app_components_common_errorText_label")
         self.outlinedConfiguration = outlinedConfiguration
         self.additionalLabelConfiguration = additionalLabelConfiguration
         outlined = outlinedConfiguration?.value ?? false
@@ -103,7 +108,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            \(componentInitCode), label: "\(labelText)"\(additionalLabelTextPattern)\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
+            \(componentInitCode), label: "\(labelText)"\(additionalLabelTextPattern)\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(dividerPattern))
             \(disableCodePattern)
             """
     }
@@ -123,7 +128,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     }
 
     private var flipIconPattern: String {
-        flipIcon ? ", flipIcon: true" : ""
+        !isError && flipIcon ? ", flipIcon: true" : ""
     }
 
     private var isReversedPattern: String {
@@ -132,6 +137,10 @@ class ControlItemConfigurationModel: ComponentConfiguration {
 
     private var isErrorPattern: String {
         isError ? ", isError: true" : ""
+    }
+
+    private var errorTextPattern: String {
+        isError && !errorText.isEmpty ? ", errorText: \"\(errorText)\"" : ""
     }
 
     private var isReadOnlyPattern: String {
