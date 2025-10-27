@@ -13,17 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Library] Provide predefined icons for `OUDSTag` components (Orange-OpenSource/ouds-ios#912)
-- [Library] Update `OUDSTag` to 1.4 version (Orange-OpenSource/ouds-ios#1037)
-- [Library] Update `OUDSTag` to 1.3 version (Orange-OpenSource/ouds-ios#945)
-
-### Added
-
-- [Library] `input tag` component (Orange-OpenSource/ouds-ios#917)
-- [Library] Swift DocC tutorial (Orange-OpenSource/ouds-ios#919)
-
-### Changed
-
+- [DesignToolbox] Change positions of color scheme and theme selectors (Orange-OpenSource/ouds-ios#1082)
 - [Library] Update `radio item` to v1.3.0 (Orange-OpenSource/ouds-ios#1072)
 - [Library] Update `switch item` to v1.4.0 (Orange-OpenSource/ouds-ios#1071)
 - [Library] Update `checkbox item` to v2.3.0 (Orange-OpenSource/ouds-ios#1069)
