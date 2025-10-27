@@ -19,8 +19,8 @@ extension View {
     func navigationBarMenus() -> some View {
         toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                ColorSchemeSelectionButton()
                 ThemeSelectionButton()
+                ColorSchemeSelectionButton()
             }
         }
     }
