@@ -22,7 +22,7 @@ struct InputTagElement: DesignToolboxElement {
 
     init() {
         name = "app_components_tag_inputTag_label".localized()
-        illustration = AnyView(OUDSTag(label: "Label", hierarchy: .emphasized, status: .positive, shape: .rounded, size: .default))
+        illustration = AnyView(OUDSTag(label: "Label", status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_inoputTag_description_text",
