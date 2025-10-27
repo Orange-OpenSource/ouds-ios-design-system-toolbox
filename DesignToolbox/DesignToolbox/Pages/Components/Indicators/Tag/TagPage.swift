@@ -48,30 +48,15 @@ struct TagDemo: View {
 
             OUDSTag(
                 label: configurationModel.label,
-                icon: icon,
-                flipIcon: configurationModel.flipIcon,
-                hierarchy: configurationModel.hierarchy,
                 status: configurationModel.status,
+                appearance: configurationModel.appearance,
                 shape: configurationModel.shape,
                 size: configurationModel.size,
                 hasLoader: configurationModel.loader)
+                .disabled(!configurationModel.enabled)
 
             Spacer()
         }
         .padding(.all, theme.spaces.spaceFixedMedium)
     }
-
-    // Need here that system name, a11y managed in component
-    // swiftlint:disable accessibility_label_for_image
-    private var icon: OUDSTag.Icon? {
-        switch configurationModel.layout {
-        case .textOnly:
-            nil
-        case .textAndBullet:
-            .bullet
-        case .textAndIcon:
-            .asset(Image(systemName: "figure.handball"))
-        }
-    }
-    // swiftlint:enable accessibility_label_for_image
 }

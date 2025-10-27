@@ -24,36 +24,84 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSTag` for each parameter
+/// Tests the UI rendering of the `OUDSTag` for each parameter.
+///
+/// **Warning: the loader state tag is not tested because of discrepencies with snapshots comparisons**
 open class TagUITestsTestCase: XCTestCase {
 
-    /// This function tests all tags with all types, hierarchy, status and size for the given theme and color scheme.
+    /// Tests all tags with all types, appearances, status and size for the given theme and color scheme.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        testDisabledTags(theme: theme, interfaceStyle: interfaceStyle)
+        testEnabledTags(theme: theme, interfaceStyle: interfaceStyle)
+    }
+
+    /// Tests tags in disabled state for each layouts, sizes and shapes.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testDisabledTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for layout in TagLayout.allCases {
-            for hierarchy in OUDSTag.Hierarchy.allCases {
-                for status in OUDSTag.Status.allCases {
+            for size in OUDSTag.Size.allCases {
+                for shape in OUDSTag.Shape.allCases {
+
+                    let model = TagConfigurationModel()
+                    model.statusCategory = .accent
+                    model.appearance = .emphasized
+
+                    model.loader = false
+                    model.enabled = false
+                    model.flipIcon = false
+
+                    model.layout = layout
+                    model.size = size
+                    model.shape = shape
+
+                    testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+
+                    // Add extra test for flip icon if enabled
+                    if model.enableFlipIcon {
+                        model.flipIcon = true
+                        testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                    }
+                }
+            }
+        }
+    }
+
+    /// Tests tags in enabled state for each layouts, appearances, catagories, sizes and shapes.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testEnabledTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        for layout in TagLayout.allCases {
+            for appearance in OUDSTag.Appearance.allCases {
+                for statusCategory in OUDSTag.Status.Category.allCases {
                     for size in OUDSTag.Size.allCases {
                         for shape in OUDSTag.Shape.allCases {
-                            // Drop loader and disabled status because this case is not allowed
-                            for loader in [true, false] where !(status == .disabled && loader == true) {
-                                for flipIcon in [true, false] where !loader {
-                                    if !(status == .disabled && loader == true) {
-                                        let model = TagConfigurationModel()
-                                        model.layout = layout
-                                        model.status = status
-                                        model.hierarchy = hierarchy
-                                        model.size = size
-                                        model.shape = shape
-                                        model.loader = loader
-                                        model.flipIcon = flipIcon
+                            let model = TagConfigurationModel()
 
-                                        testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
-                                    }
-                                }
+                            model.loader = false
+                            model.enabled = true
+
+                            model.layout = layout
+                            model.statusCategory = statusCategory
+                            model.appearance = appearance
+                            model.size = size
+                            model.shape = shape
+                            model.flipIcon = false
+
+                            testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+
+                            // Add extra test for flip icon if enabled
+                            if model.enableFlipIcon {
+                                model.flipIcon = true
+                                testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
                             }
                         }
                     }
@@ -62,8 +110,7 @@ open class TagUITestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests `OUDSTag` according to all parameters of the configuration available for the given
-    /// theme and color schemes.
+    /// Tests`OUDSTag` according to all parameters of the configuration available for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameter.
     ///
@@ -71,9 +118,9 @@ open class TagUITestsTestCase: XCTestCase {
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - model: The model contains each element of configuration
-    @MainActor func testTag(theme: OUDSTheme,
-                            interfaceStyle: UIUserInterfaceStyle,
-                            model: TagConfigurationModel)
+    @MainActor private func testTag(theme: OUDSTheme,
+                                    interfaceStyle: UIUserInterfaceStyle,
+                                    model: TagConfigurationModel)
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
@@ -83,21 +130,35 @@ open class TagUITestsTestCase: XCTestCase {
 
         // Create a unique snapshot name based on the current configuration :
         let testName = "testTag_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let layoutPattern = model.layout.technicalDescription.localized()
-        let hierarchyPattern = model.hierarchy.technicalDescription
-        let statusPattern = model.status.technicalDescription
+        let layoutPattern = model.layout.debugDescription
+        let appearancePattern = model.appearance.technicalDescription
+        let statusPattern = model.statusCategory.technicalDescription
         let sizePattern = model.size.technicalDescription
         let shapePattern = model.shape.technicalDescription
-        let loaderPattern = model.loader ? "loader" : ""
-        let flipIconPattern = model.flipIcon ? "flipIcon" : ""
+        let loaderPattern = model.loader ? ".loader" : ""
+        let flipIconPattern = model.flipIcon ? ".flipIcon" : ""
+        let disabledPatern = !model.enabled ? "_Disabled" : "_Enabled"
 
-        let name = "\(layoutPattern)_\(hierarchyPattern)_\(statusPattern)_\(sizePattern)_\(shapePattern)_\(loaderPattern)_\(flipIconPattern)"
+        let name = "\(layoutPattern)\(appearancePattern)\(statusPattern)\(sizePattern)\(shapePattern)\(loaderPattern)\(flipIconPattern)\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
                            named: name,
                            testName: testName)
+    }
+}
+
+extension TagLayout: CustomDebugStringConvertible {
+    var debugDescription: String {
+        switch self {
+        case .textOnly:
+            "textOnly"
+        case .textAndBullet:
+            "textAndBullet"
+        case .textAndIcon:
+            "textAndIcon"
+        }
     }
 }
 
