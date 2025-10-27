@@ -452,6 +452,14 @@
 		6DFC20C22CE3D39D00F2EC33 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
 		6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; productRef = 6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */; };
 		A5E69629240B3A88C139F084 /* Pods_DesignToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8ECF213874016985FA405A3 /* Pods_DesignToolbox.framework */; };
+		FCA849142E9FF00500DBCE76 /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
+		FCA849152E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */; };
+		FCA849162E9FF00500DBCE76 /* InputTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849132E9FF00500DBCE76 /* InputTagPage.swift */; };
+		FCA849172E9FF00500DBCE76 /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
+		FCA849182E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */; };
+		FCA849192E9FF00500DBCE76 /* InputTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849132E9FF00500DBCE76 /* InputTagPage.swift */; };
+		FCA8491C2E9FF35700DBCE76 /* TagElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8491B2E9FF35700DBCE76 /* TagElements.swift */; };
+		FCA8491D2E9FF35700DBCE76 /* TagElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8491B2E9FF35700DBCE76 /* TagElements.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -779,6 +787,10 @@
 		BF4130905502F287757622E2 /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E4EBC0F46BFFE3801998F6B0 /* Pods-Showcase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase.release.xcconfig"; path = "Target Support Files/Pods-Showcase/Pods-Showcase.release.xcconfig"; sourceTree = "<group>"; };
 		F98488CF05532E8CD405A8F8 /* Pods-Showcase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase.debug.xcconfig"; path = "Target Support Files/Pods-Showcase/Pods-Showcase.debug.xcconfig"; sourceTree = "<group>"; };
+		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
+		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
+		FCA849132E9FF00500DBCE76 /* InputTagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagPage.swift; sourceTree = "<group>"; };
+		FCA8491B2E9FF35700DBCE76 /* TagElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagElements.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -981,20 +993,20 @@
 			path = ControlItem;
 			sourceTree = "<group>";
 		};
-		076227602DA90C65009C3632 /* Common */ = {
+		076227602DA90C65009C3632 /* Dividers */ = {
 			isa = PBXGroup;
 			children = (
 				0762275D2DA90C65009C3632 /* DividerConfiguration.swift */,
 				0762275E2DA90C65009C3632 /* DividerElement.swift */,
 				0762275F2DA90C65009C3632 /* DividerPage.swift */,
 			);
-			path = Common;
+			path = Dividers;
 			sourceTree = "<group>";
 		};
 		076227622DA90C65009C3632 /* Divider */ = {
 			isa = PBXGroup;
 			children = (
-				076227602DA90C65009C3632 /* Common */,
+				076227602DA90C65009C3632 /* Dividers */,
 				076227612DA90C65009C3632 /* DividerElements.swift */,
 			);
 			path = Divider;
@@ -1208,14 +1220,14 @@
 			path = NamedSpace;
 			sourceTree = "<group>";
 		};
-		07FB2A2C2E454D4E00361ECA /* Tag */ = {
+		07FB2A2C2E454D4E00361ECA /* Tags */ = {
 			isa = PBXGroup;
 			children = (
-				07FB2A2D2E454D7900361ECA /* TagConfigurationView.swift */,
-				07FB2A2E2E454D7900361ECA /* TagElement.swift */,
-				07FB2A2F2E454D7900361ECA /* TagPage.swift */,
+				FCA849102E9FEFF600DBCE76 /* InputTag */,
+				FCA8491A2E9FF33900DBCE76 /* Tag */,
+				FCA8491B2E9FF35700DBCE76 /* TagElements.swift */,
 			);
-			path = Tag;
+			path = Tags;
 			sourceTree = "<group>";
 		};
 		07FDCD882C296A500009AA13 = {
@@ -1752,7 +1764,7 @@
 			isa = PBXGroup;
 			children = (
 				07EB46FC2E1801BB00B94EC2 /* Badge */,
-				07FB2A2C2E454D4E00361ECA /* Tag */,
+				07FB2A2C2E454D4E00361ECA /* Tags */,
 			);
 			path = Indicators;
 			sourceTree = "<group>";
@@ -2142,6 +2154,26 @@
 				8C66FEEE1D0289EB1A4D5730 /* Pods-DesignToolbox.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FCA849102E9FEFF600DBCE76 /* InputTag */ = {
+			isa = PBXGroup;
+			children = (
+				FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */,
+				FCA849122E9FF00500DBCE76 /* InputTagElement.swift */,
+				FCA849132E9FF00500DBCE76 /* InputTagPage.swift */,
+			);
+			path = InputTag;
+			sourceTree = "<group>";
+		};
+		FCA8491A2E9FF33900DBCE76 /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				07FB2A2D2E454D7900361ECA /* TagConfigurationView.swift */,
+				07FB2A2E2E454D7900361ECA /* TagElement.swift */,
+				07FB2A2F2E454D7900361ECA /* TagPage.swift */,
+			);
+			path = Tag;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2627,6 +2659,10 @@
 				515EE98D2E21329B00A60E96 /* SuggestionChipElement.swift in Sources */,
 				51A2175F2E325ED500562BE0 /* OrangeBusinessToolsTheme+CheckboxUITests.swift in Sources */,
 				515EE98E2E21329B00A60E96 /* SuggestionChipPage.swift in Sources */,
+				FCA849142E9FF00500DBCE76 /* InputTagElement.swift in Sources */,
+				FCA849152E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */,
+				FCA849162E9FF00500DBCE76 /* InputTagPage.swift in Sources */,
+				FCA8491D2E9FF35700DBCE76 /* TagElements.swift in Sources */,
 				51A217812E325FE600562BE0 /* WireframeTheme+TokensElevationUITests.swift in Sources */,
 				515EE98F2E21329B00A60E96 /* ChipElements.swift in Sources */,
 				51417C1F2E1BF4FB000266C8 /* TokensElevationUITestsTestCase.swift in Sources */,
@@ -2705,6 +2741,7 @@
 				5180FE6E2DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */,
 				5180FE6F2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */,
 				5180FE702DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */,
+				FCA8491C2E9FF35700DBCE76 /* TagElements.swift in Sources */,
 				51A906012E842834003F3E0E /* ColorSchemeSelectionButton.swift in Sources */,
 				519251F02D020BA6003FD1F6 /* DesignToolboxElementsPage.swift in Sources */,
 				519251EE2D020B8A003FD1F6 /* DesignToolboxElement.swift in Sources */,
@@ -2773,6 +2810,9 @@
 				51952A742D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */,
 				0765B4962CC159F600E69359 /* NamedColor+Action.swift in Sources */,
+				FCA849172E9FF00500DBCE76 /* InputTagElement.swift in Sources */,
+				FCA849182E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */,
+				FCA849192E9FF00500DBCE76 /* InputTagPage.swift in Sources */,
 				077CCE572CB426090059CC28 /* SpaceTokenElement.swift in Sources */,
 				076227672DA90C65009C3632 /* DividerConfiguration.swift in Sources */,
 				076227682DA90C65009C3632 /* DividerElement.swift in Sources */,
@@ -3335,7 +3375,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "917-component-update-add-component-tag-input";
 				kind = branch;
 			};
 		};
