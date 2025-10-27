@@ -25,10 +25,14 @@ extension NamedColor {
         case colorRepositoryAccentHigher
         case colorRepositoryAccentHighest
         case colorRepositoryAccentLow
+        case colorRepositoryAccentLower
         case colorRepositoryAccentLowest
-        case colorRepositoryInfoMedium
+        case colorRepositoryInfoHigh
+        case colorRepositoryInfoHigher
         case colorRepositoryInfoHighest
+        case colorRepositoryInfoMedium
         case colorRepositoryInfoLow
+        case colorRepositoryInfoLower
         case colorRepositoryInfoLowest
         case colorRepositoryNegativeMedium
         case colorRepositoryNegativeHigh
@@ -84,8 +88,10 @@ extension NamedColor {
         case colorRepositoryOpacityPrimaryHighest
         case colorRepositoryPositiveMedium
         case colorRepositoryPositiveHigh
+        case colorRepositoryPositiveHigher
         case colorRepositoryPositiveHighest
         case colorRepositoryPositiveLow
+        case colorRepositoryPositiveLower
         case colorRepositoryPositiveLowest
         case colorRepositoryPrimaryHighest
         case colorRepositoryPrimaryHigher
@@ -108,10 +114,13 @@ extension NamedColor {
         case colorRepositoryTertiaryLow
         case colorRepositoryTertiaryLower
         case colorRepositoryTertiaryLowest
-        case colorRepositoryWarningMedium
-        case colorRepositoryWarningHighest
         case colorRepositoryWarningLow
+        case colorRepositoryWarningLower
         case colorRepositoryWarningLowest
+        case colorRepositoryWarningMedium
+        case colorRepositoryWarningHigh
+        case colorRepositoryWarningHigher
+        case colorRepositoryWarningHighest
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
@@ -125,14 +134,22 @@ extension NamedColor {
                 theme.colors.colorRepositoryAccentHighest
             case .colorRepositoryAccentLow:
                 theme.colors.colorRepositoryAccentLow
+            case .colorRepositoryAccentLower:
+                theme.colors.colorRepositoryAccentLower
             case .colorRepositoryAccentLowest:
                 theme.colors.colorRepositoryAccentLowest
             case .colorRepositoryInfoMedium:
                 theme.colors.colorRepositoryInfoMedium
+            case .colorRepositoryInfoHigh:
+                theme.colors.colorRepositoryInfoHigh
+            case .colorRepositoryInfoHigher:
+                theme.colors.colorRepositoryInfoHigher
             case .colorRepositoryInfoHighest:
                 theme.colors.colorRepositoryInfoHighest
             case .colorRepositoryInfoLow:
                 theme.colors.colorRepositoryInfoLow
+            case .colorRepositoryInfoLower:
+                theme.colors.colorRepositoryInfoLower
             case .colorRepositoryInfoLowest:
                 theme.colors.colorRepositoryInfoLowest
             case .colorRepositoryNegativeMedium:
@@ -243,10 +260,14 @@ extension NamedColor {
                 theme.colors.colorRepositoryPositiveMedium
             case .colorRepositoryPositiveHigh:
                 theme.colors.colorRepositoryPositiveHigh
+            case .colorRepositoryPositiveHigher:
+                theme.colors.colorRepositoryPositiveHigher
             case .colorRepositoryPositiveHighest:
                 theme.colors.colorRepositoryPositiveHighest
             case .colorRepositoryPositiveLow:
                 theme.colors.colorRepositoryPositiveLow
+            case .colorRepositoryPositiveLower:
+                theme.colors.colorRepositoryPositiveLower
             case .colorRepositoryPositiveLowest:
                 theme.colors.colorRepositoryPositiveLowest
             case .colorRepositoryPrimaryHighest:
@@ -291,12 +312,18 @@ extension NamedColor {
                 theme.colors.colorRepositoryTertiaryLower
             case .colorRepositoryTertiaryLowest:
                 theme.colors.colorRepositoryTertiaryLowest
-            case .colorRepositoryWarningMedium:
-                theme.colors.colorRepositoryWarningMedium
             case .colorRepositoryWarningHighest:
                 theme.colors.colorRepositoryWarningHighest
+            case .colorRepositoryWarningHigher:
+                theme.colors.colorRepositoryWarningHigher
+            case .colorRepositoryWarningHigh:
+                theme.colors.colorRepositoryWarningHigh
+            case .colorRepositoryWarningMedium:
+                theme.colors.colorRepositoryWarningMedium
             case .colorRepositoryWarningLow:
                 theme.colors.colorRepositoryWarningLow
+            case .colorRepositoryWarningLower:
+                theme.colors.colorRepositoryWarningLower
             case .colorRepositoryWarningLowest:
                 theme.colors.colorRepositoryWarningLowest
             }
