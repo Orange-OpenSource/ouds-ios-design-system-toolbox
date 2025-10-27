@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `input tag` component (Orange-OpenSource/ouds-ios#917)
 - [Library] Swift DocC tutorial (Orange-OpenSource/ouds-ios#919)
 
 ### Changed
@@ -26,6 +27,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Update `radio item` to v1.3.0 (Orange-OpenSource/ouds-ios#1072)
 - [Library] Update `switch item` to v1.4.0 (Orange-OpenSource/ouds-ios#1071)
 - [Library] Update `checkbox item` to v2.3.0 (Orange-OpenSource/ouds-ios#1069)
+- [Library] Provide predefined icons for `OUDSTag` components (Orange-OpenSource/ouds-ios#912)
+- [Library] Update `OUDSTag` to 1.4 version (Orange-OpenSource/ouds-ios#1037)
+- [Library] Update `OUDSTag` to 1.3 version (Orange-OpenSource/ouds-ios#945)
 - [Library] Expose dimensions for pickers components (Orange-OpenSource/ouds-ios#1080)
 - [DesignToolbox] Use `OUDSTextInput` in components configuration sections (Orange-OpenSource/ouds-ios#1059)
 - [DesignToolbox] Update `link` component version (Orange-OpenSource/ouds-ios#1035)
