@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Library] Apply predefined icons for `OUDSTag` in some cases (Orange-OpenSource/ouds-ios#912)
+- [Library] Provide predefined icons for `OUDSTag` components (Orange-OpenSource/ouds-ios#912)
 - [Library] Update `OUDSTag` to 1.4 version (Orange-OpenSource/ouds-ios#1037)
 - [Library] Update `OUDSTag` to 1.3 version (Orange-OpenSource/ouds-ios#945)
 
