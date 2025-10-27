@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Use `OUDSButton` in code sample panes (Orange-OpenSource/ouds-ios#1081)
 - [DesignToolbox] Add missing semantic tokens of colors in list (Orange-OpenSource/ouds-ios#1084)
 - [DesignToolbox] Change positions of color scheme and theme selectors (Orange-OpenSource/ouds-ios#1082)
 - [Library] Update `radio item` to v1.3.0 (Orange-OpenSource/ouds-ios#1072)

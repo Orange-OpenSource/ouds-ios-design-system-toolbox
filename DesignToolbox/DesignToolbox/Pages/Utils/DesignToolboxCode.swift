@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSComponents
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -51,21 +52,8 @@ struct DesignToolboxCode: View {
 
             Spacer(minLength: theme.spaces.spacePaddingBlockMedium)
 
-            Button {
+            OUDSButton(icon: Image("ic_copy"), accessibilityLabel: "app_common_copyCode_a11y".localized(), appearance: .minimal) {
                 UIPasteboard.general.string = code
-            } label: {
-                ZStack {
-                    Color.clear
-                        .frame(width: kMinimalTouchAreaWidth, height: kMinimalTouchAreaHeight)
-
-                    Image("ic_copy")
-                        .resizable()
-                        .renderingMode(.template)
-                        .oudsForegroundColor(theme.colors.colorContentDefault)
-                        .frame(width: 24, height: 24)
-                        .alignmentGuide(.firstTextBaseline) { $0[.bottom] * 0.7 }
-                        .accessibilityLabel("app_common_copyCode_a11y")
-                }
             }
         }
         .frame(minWidth: 72, maxWidth: .infinity, alignment: .leading)
