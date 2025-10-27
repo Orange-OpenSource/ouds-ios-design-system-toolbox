@@ -59,7 +59,7 @@ private struct ControlItemConfiguration: View {
                 OUDSSwitchItem("app_components_controlItem_icon_label", isOn: $configurationModel.icon)
 
                 OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
-                    .disabled(!configurationModel.icon)
+                    .disabled(!configurationModel.icon || configurationModel.isError)
 
                 if let outlinedConfiguration = configurationModel.outlinedConfiguration {
                     OUDSSwitchItem(outlinedConfiguration.outlinedConfigurationLabel, isOn: $configurationModel.outlined)
@@ -81,10 +81,16 @@ private struct ControlItemConfiguration: View {
 
             DesignToolboxEditContentDisclosure {
                 DesignToolboxTextField(text: $configurationModel.labelText, label: "app_components_common_label_label")
+
                 if configurationModel.additionalLabelConfiguration != nil {
                     DesignToolboxTextField(text: $configurationModel.additionalLabelText, label: "app_components_radioButton_radioButtonItem_additionalLabel_label")
                 }
+
                 DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_label")
+
+                if configurationModel.isError {
+                    DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_common_errorText_label")
+                }
             }
         }
     }
