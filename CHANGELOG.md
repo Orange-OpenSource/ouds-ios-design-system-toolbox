@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.20.0...develop)
 
+### Changed
+
+- [Library] Provide predefined icons for `OUDSTag` components (Orange-OpenSource/ouds-ios#912)
+- [Library] Update `OUDSTag` to 1.4 version (Orange-OpenSource/ouds-ios#1037)
+- [Library] Update `OUDSTag` to 1.3 version (Orange-OpenSource/ouds-ios#945)
+
 ### Added
 
 - [Library] Swift DocC tutorial (Orange-OpenSource/ouds-ios#919)
@@ -26,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] `body moderate` and `label moderate` typography and tokens (Orange-OpenSource/ouds-ios#1003)
 - [DesignToolbox] Use `Helvetica Neue Arabic` font family if arabic (Orange-OpenSource/ouds-ios#1006)
 - [Library] Management of `Helvetica Neue Arabic` font family (Orange-OpenSource/ouds-ios#1006)
-- [DesignToolbox] Color scheme selector (Orange-OpenSource/ouds-ios#944)
+- [DesignToolbox] Color scheme selector (Orange-OpenSource/agUITesouds-ios#944)
 
 ### Changed
 
