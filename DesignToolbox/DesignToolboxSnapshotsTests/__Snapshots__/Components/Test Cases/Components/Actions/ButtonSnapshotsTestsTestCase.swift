@@ -160,7 +160,7 @@ struct ButtonTest: View {
 
     var body: some View {
         if onColoredSurface {
-            OUDSColoredSurface(color: theme.colorModes.modeOnBrandPrimary, content: button)
+            OUDSColoredSurface(color: theme.colorModes.onBrandPrimary, content: button)
         } else {
             button()
         }

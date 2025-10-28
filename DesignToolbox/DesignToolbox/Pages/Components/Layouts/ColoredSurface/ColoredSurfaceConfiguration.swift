@@ -29,7 +29,7 @@ final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        selectedColor = NamedColorMode.modeOnBrandPrimary
+        selectedColor = NamedColorMode.onBrandPrimary
     }
 
     deinit {}

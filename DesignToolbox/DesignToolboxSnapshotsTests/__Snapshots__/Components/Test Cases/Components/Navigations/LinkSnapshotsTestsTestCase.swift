@@ -126,7 +126,7 @@ struct LinkTest: View {
 
     var body: some View {
         if onColoredSurface {
-            OUDSColoredSurface(color: theme.colorModes.modeOnBrandPrimary, content: link)
+            OUDSColoredSurface(color: theme.colorModes.onBrandPrimary, content: link)
         } else {
             link()
         }
