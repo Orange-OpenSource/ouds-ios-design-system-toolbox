@@ -69,7 +69,7 @@ final class SoshThemeTokensColorSnapshotsTests: TokensColorSnapshotsTestsTestCas
         testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
         /*
          There are some failures with two tokens, even if the snapshots are fresh:
-         - Sosh Theme, dark mode --> colorRepositoryOpacityBlackHighest
+         - Sosh Theme, dark mode --> repositoryOpacityBlackHighest
          - Sosh Theme, dark mode --> surfaceInverseHigh
          */
         testRepositoryColors(theme: theme, interfaceStyle: interfaceStyle, precision: 0.94, perceptualPrecision: 0.96)

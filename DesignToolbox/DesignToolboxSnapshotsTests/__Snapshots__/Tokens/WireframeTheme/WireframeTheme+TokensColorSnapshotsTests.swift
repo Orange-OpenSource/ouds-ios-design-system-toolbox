@@ -69,7 +69,7 @@ final class WireframeThemeTokensColorSnapshotsTests: TokensColorSnapshotsTestsTe
         testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
         /*
          There are some failures with two tokens, even if the snapshots are fresh:
-         - Wireframe Theme, dark mode --> colorRepositoryOpacityBlackHighest
+         - Wireframe Theme, dark mode --> repositoryOpacityBlackHighest
          - Wireframe Theme, dark mode --> surfaceInverseHigh
          */
         testRepositoryColors(theme: theme, interfaceStyle: interfaceStyle, precision: 0.94, perceptualPrecision: 0.96)
