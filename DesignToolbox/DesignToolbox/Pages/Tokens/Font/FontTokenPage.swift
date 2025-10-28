@@ -73,7 +73,7 @@ struct FontTokenPage: View {
         }
 
         private var familyText: String {
-            "app_tokens_typography_familyAttribute" <- "\(theme.fontFamily ?? "system")"
+            "app_tokens_typography_familyAttribute" <- "\(theme.family ?? "system")"
         }
 
         private var weightText: String {
