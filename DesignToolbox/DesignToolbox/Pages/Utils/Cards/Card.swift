@@ -39,7 +39,7 @@ struct Card: View {
                 .oudsForegroundStyle(theme.colors.contentDefault)
         }
         .oudsBackground(theme.colors.overlayDropdown)
-        .oudsShadow(theme.elevations.elevationRaised)
+        .oudsShadow(theme.elevations.raised)
         .padding(.all, 4)
     }
 }

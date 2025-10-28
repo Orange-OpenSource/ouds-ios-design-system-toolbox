@@ -25,7 +25,7 @@ struct ElevationTokenPage: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Section {
-                DesignToolboxCode(code: "theme.elevations.elevationNone.elevation(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
+                DesignToolboxCode(code: "theme.elevations.none.elevation(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
 
             Spacer().frame(height: theme.spaces.spaceFixedMedium)
@@ -73,27 +73,27 @@ struct ElevationTokenPage: View {
 // MARK: - Named Elevation
 
 enum NamedElevation: String, CaseIterable {
-    case elevationNone
-    case elevationRaised
-    case elevationDrag
-    case elevationDefault
-    case elevationEmphasized
-    case elevationSticky
+    case none
+    case raised
+    case drag
+    case `default`
+    case emphasized
+    case sticky
 
     func token(from theme: OUDSTheme) -> ElevationCompositeSemanticToken {
         switch self {
-        case .elevationNone:
-            theme.elevations.elevationNone
-        case .elevationRaised:
-            theme.elevations.elevationRaised
-        case .elevationDrag:
-            theme.elevations.elevationDrag
-        case .elevationDefault:
-            theme.elevations.elevationDefault
-        case .elevationEmphasized:
-            theme.elevations.elevationEmphasized
-        case .elevationSticky:
-            theme.elevations.elevationSticky
+        case .none:
+            theme.elevations.none
+        case .raised:
+            theme.elevations.raised
+        case .drag:
+            theme.elevations.drag
+        case .default:
+            theme.elevations.default
+        case .emphasized:
+            theme.elevations.emphasized
+        case .sticky:
+            theme.elevations.sticky
         }
     }
 }
