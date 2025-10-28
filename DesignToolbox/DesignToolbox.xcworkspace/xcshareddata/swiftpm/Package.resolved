@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1030-reduce-name-of-tokens-to-have-things-shorter",
-        "revision" : "de1449fe6fe696ea2a461bcb46d182bab9503e1f"
+        "branch" : "develop",
+        "revision" : "7525572540e703ea4440bdf71aeb5016580a0cde"
       }
     },
     {

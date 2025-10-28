@@ -3375,7 +3375,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1030-reduce-name-of-tokens-to-have-things-shorter";
+				branch = develop;
 				kind = branch;
 			};
 		};
