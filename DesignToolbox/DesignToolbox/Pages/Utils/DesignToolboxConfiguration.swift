@@ -43,9 +43,9 @@ struct DesignToolboxConfiguration<Configuration>: View where Configuration: View
             configuration()
         }
         .padding(.vertical, theme.spaces.spaceFixedMedium)
-        .oudsBorder(style: theme.borders.borderStyleDefault,
-                    width: theme.borders.borderWidthThin,
-                    radius: theme.borders.borderRadiusMedium,
+        .oudsBorder(style: theme.borders.styeDefault,
+                    width: theme.borders.widthThin,
+                    radius: theme.borders.radiusMedium,
                     color: theme.colors.colorBorderDefault)
     }
 }

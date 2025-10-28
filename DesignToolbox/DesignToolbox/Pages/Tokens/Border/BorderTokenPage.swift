@@ -23,7 +23,7 @@ struct BorderTokenPage: View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             Section {
                 VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-                    DesignToolboxCode(code: "theme.borders.borderWidthDefault", titleText: "app_tokens_common_viewCodeExample_label")
+                    DesignToolboxCode(code: "theme.borders.widthDefault", titleText: "app_tokens_common_viewCodeExample_label")
                 }
             }
             Section {
@@ -91,9 +91,9 @@ struct BorderTokenPage: View {
 
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()
-                    .oudsBorder(style: theme.borders.borderStyleDefault,
+                    .oudsBorder(style: theme.borders.styeDefault,
                                 width: token,
-                                radius: theme.borders.borderRadiusNone,
+                                radius: theme.borders.radiusNone,
                                 color: theme.colors.colorBorderFocus)
             }
         }
@@ -111,8 +111,8 @@ struct BorderTokenPage: View {
 
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()
-                    .oudsBorder(style: theme.borders.borderStyleDefault,
-                                width: theme.borders.borderWidthDefault,
+                    .oudsBorder(style: theme.borders.styeDefault,
+                                width: theme.borders.widthDefault,
                                 radius: token,
                                 color: theme.colors.colorBorderFocus)
             }
@@ -132,8 +132,8 @@ struct BorderTokenPage: View {
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()
                     .oudsBorder(style: token,
-                                width: theme.borders.borderWidthDefault,
-                                radius: theme.borders.borderRadiusNone,
+                                width: theme.borders.widthDefault,
+                                radius: theme.borders.radiusNone,
                                 color: theme.colors.colorBorderFocus)
             }
         }
@@ -141,73 +141,73 @@ struct BorderTokenPage: View {
 }
 
 enum NamedBorderRadius: String, CaseIterable {
-    case borderRadiusNone
-    case borderRadiusDefault
-    case borderRadiusSmall
-    case borderRadiusMedium
-    case borderRadiusLarge
-    case borderRadiusPill
+    case radiusNone
+    case radiusDefault
+    case radiusSmall
+    case radiusMedium
+    case radiusLarge
+    case radiusPill
 
     func token(from theme: OUDSTheme) -> BorderRadiusSemanticToken {
         switch self {
-        case .borderRadiusNone:
-            theme.borders.borderRadiusNone
-        case .borderRadiusDefault:
-            theme.borders.borderRadiusDefault
-        case .borderRadiusSmall:
-            theme.borders.borderRadiusSmall
-        case .borderRadiusMedium:
-            theme.borders.borderRadiusMedium
-        case .borderRadiusLarge:
-            theme.borders.borderRadiusLarge
-        case .borderRadiusPill:
-            theme.borders.borderRadiusPill
+        case .radiusNone:
+            theme.borders.radiusNone
+        case .radiusDefault:
+            theme.borders.radiusDefault
+        case .radiusSmall:
+            theme.borders.radiusSmall
+        case .radiusMedium:
+            theme.borders.radiusMedium
+        case .radiusLarge:
+            theme.borders.radiusLarge
+        case .radiusPill:
+            theme.borders.radiusPill
         }
     }
 }
 
 enum NamedBorderWidth: String, CaseIterable {
-    case borderWidthNone
-    case borderWidthDefault
-    case borderWidthThin
-    case borderWidthMedium
-    case borderWidthThick
-    case borderWidthThicker
-    case borderWidthFocus
-    case borderWidthFocusInset
+    case widthNone
+    case widthDefault
+    case widthThin
+    case widthMedium
+    case widthThick
+    case widthThicker
+    case widthFocus
+    case widthFocusInset
 
     func token(from theme: OUDSTheme) -> BorderWidthSemanticToken {
         switch self {
-        case .borderWidthNone:
-            theme.borders.borderWidthNone
-        case .borderWidthDefault:
-            theme.borders.borderWidthDefault
-        case .borderWidthThin:
-            theme.borders.borderWidthThin
-        case .borderWidthMedium:
-            theme.borders.borderWidthMedium
-        case .borderWidthThick:
-            theme.borders.borderWidthThick
-        case .borderWidthThicker:
-            theme.borders.borderWidthThicker
-        case .borderWidthFocus:
-            theme.borders.borderWidthFocus
-        case .borderWidthFocusInset:
-            theme.borders.borderWidthFocusInset
+        case .widthNone:
+            theme.borders.widthNone
+        case .widthDefault:
+            theme.borders.widthDefault
+        case .widthThin:
+            theme.borders.widthThin
+        case .widthMedium:
+            theme.borders.widthMedium
+        case .widthThick:
+            theme.borders.widthThick
+        case .widthThicker:
+            theme.borders.widthThicker
+        case .widthFocus:
+            theme.borders.widthFocus
+        case .widthFocusInset:
+            theme.borders.widthFocusInset
         }
     }
 }
 
 enum NamedBorderStyle: String, CaseIterable {
-    case borderStyleDefault
-    case borderStyleDrag
+    case styeDefault
+    case styeDrag
 
     func token(from theme: OUDSTheme) -> BorderStyleSemanticToken {
         switch self {
-        case .borderStyleDefault:
-            theme.borders.borderStyleDefault
-        case .borderStyleDrag:
-            theme.borders.borderStyleDrag
+        case .styeDefault:
+            theme.borders.styeDefault
+        case .styeDrag:
+            theme.borders.styeDrag
         }
     }
 }

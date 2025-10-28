@@ -66,9 +66,9 @@ struct DesignToolboxCode: View {
             Rectangle()
                 .opacity(theme.opacities.opacityInvisible)
                 .frame(minWidth: 40, maxWidth: .infinity, alignment: .leading)
-                .oudsBorder(style: theme.borders.borderStyleDefault,
-                            width: theme.borders.borderWidthThin,
-                            radius: theme.borders.borderRadiusDefault,
+                .oudsBorder(style: theme.borders.styeDefault,
+                            width: theme.borders.widthThin,
+                            radius: theme.borders.radiusDefault,
                             color: theme.colors.colorBorderDefault))
     }
 }

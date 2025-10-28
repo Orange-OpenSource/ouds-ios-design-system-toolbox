@@ -61,9 +61,9 @@ struct OpacityTokenPage: View {
                         .fill(theme.colors.colorOverlayModal.color(for: colorScheme))
                         .opacity(token)
                         .frame(width: 48, height: 48)
-                        .oudsBorder(style: theme.borders.borderStyleDefault,
-                                    width: theme.borders.borderWidthThin,
-                                    radius: theme.borders.borderRadiusNone,
+                        .oudsBorder(style: theme.borders.styeDefault,
+                                    width: theme.borders.widthThin,
+                                    radius: theme.borders.radiusNone,
                                     color: theme.colors.colorBorderDefault)
                         .padding(.top, 24)
                         .padding(.leading, 24)
