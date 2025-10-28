@@ -33,8 +33,8 @@ struct Card: View {
             title
                 .headingMedium(theme)
                 .multilineTextAlignment(.leading)
-                .padding(.horizontal, theme.spaces.spaceFixedMedium)
-                .padding(.vertical, theme.spaces.spaceFixedMedium)
+                .padding(.horizontal, theme.spaces.fixedMedium)
+                .padding(.vertical, theme.spaces.fixedMedium)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .oudsForegroundStyle(theme.colors.contentDefault)
         }

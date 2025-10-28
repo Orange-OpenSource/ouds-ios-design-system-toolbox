@@ -37,28 +37,28 @@ struct DesignToolboxCode: View {
             Text(titleText)
                 .bodyStrongLarge(theme)
                 .oudsForegroundStyle(theme.colors.contentDefault)
-                .padding(.vertical, theme.spaces.spacePaddingInlineSmall)
+                .padding(.vertical, theme.spaces.paddingInlineSmall)
         }
     }
 
     private func codeTokenSection() -> some View {
-        HStack(alignment: .firstTextBaseline, spacing: theme.spaces.spacePaddingBlockNone) {
+        HStack(alignment: .firstTextBaseline, spacing: theme.spaces.paddingBlockNone) {
             Text(code)
                 .font(.system(.body, design: .monospaced))
                 .oudsForegroundStyle(theme.colors.contentDefault)
-                .padding(.vertical, theme.spaces.spacePaddingInlineSmall)
+                .padding(.vertical, theme.spaces.paddingInlineSmall)
                 .multilineTextAlignment(layoutDirection == .rightToLeft ? .trailing : .leading)
             // As the source code sample is written in english, keep text aligned on the left
 
-            Spacer(minLength: theme.spaces.spacePaddingBlockMedium)
+            Spacer(minLength: theme.spaces.paddingBlockMedium)
 
             OUDSButton(icon: Image("ic_copy"), accessibilityLabel: "app_common_copyCode_a11y".localized(), appearance: .minimal) {
                 UIPasteboard.general.string = code
             }
         }
         .frame(minWidth: 72, maxWidth: .infinity, alignment: .leading)
-        .padding(.vertical, theme.spaces.spacePaddingInlineSmall)
-        .padding(.leading, theme.spaces.spacePaddingInlineMedium)
+        .padding(.vertical, theme.spaces.paddingInlineSmall)
+        .padding(.leading, theme.spaces.paddingInlineMedium)
         .oudsBackground(theme.colors.bgSecondary)
         .accessibilityElement(children: .combine)
         .accessibilityHint("app_common_copyCode_a11y")

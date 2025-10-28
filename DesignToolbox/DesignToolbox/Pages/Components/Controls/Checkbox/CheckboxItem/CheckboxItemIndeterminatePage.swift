@@ -52,7 +52,7 @@ private struct CheckboxItemIndeterminateDemo: View {
                                       isReadOnly: configurationModel.isReadOnly,
                                       hasDivider: configurationModel.divider)
             .disabled(!configurationModel.enabled)
-            .padding(.all, theme.spaces.spaceFixedMedium)
+            .padding(.all, theme.spaces.fixedMedium)
     }
 
     // Need here that system name, a11y managed in component

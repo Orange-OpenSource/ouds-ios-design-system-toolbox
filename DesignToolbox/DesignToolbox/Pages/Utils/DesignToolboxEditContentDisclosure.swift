@@ -30,6 +30,6 @@ struct DesignToolboxEditContentDisclosure<Content>: View where Content: View {
                 .oudsForegroundStyle(theme.colors.contentDefault)
                 .accessibilityAddTraits([.isButton])
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.fixedMedium)
     }
 }

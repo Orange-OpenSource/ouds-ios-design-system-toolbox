@@ -32,7 +32,7 @@ struct DesignToolboxElementsPage: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaces.spaceFixed2xsmall) {
+                LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaces.fixed2xsmall) {
                     ForEach(elements, id: \.id) { element in
                         NavigationLink {
                             element.pageDescription
@@ -45,7 +45,7 @@ struct DesignToolboxElementsPage: View {
                         }
                     }
                 }
-                .padding(.all, theme.spaces.spaceFixedMedium)
+                .padding(.all, theme.spaces.fixedMedium)
                 .navigationBarMenus()
             }
             .oudsBackground(theme.colors.bgPrimary)

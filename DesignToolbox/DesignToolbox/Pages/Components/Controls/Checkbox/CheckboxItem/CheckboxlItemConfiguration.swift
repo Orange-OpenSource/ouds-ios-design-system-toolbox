@@ -125,7 +125,7 @@ struct CheckboxItemConfiguration: View {
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
 
             DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.indicatorState) {
                 ForEach(OUDSCheckboxIndicatorState.allCases, id: \.id) { state in
@@ -133,7 +133,7 @@ struct CheckboxItemConfiguration: View {
                 }
             }
 
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
                     .disabled(model.isError || model.isReadOnly)
 

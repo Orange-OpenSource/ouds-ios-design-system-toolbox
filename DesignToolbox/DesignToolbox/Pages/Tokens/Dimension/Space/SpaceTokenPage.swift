@@ -51,7 +51,7 @@ struct SpaceTokenPage: View {
                 header("app_tokens_dimension_space_rowGap_label")
             }
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.fixedMedium)
     }
 
     // MARK: Common helpers

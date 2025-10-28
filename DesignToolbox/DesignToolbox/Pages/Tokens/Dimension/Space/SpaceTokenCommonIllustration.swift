@@ -44,8 +44,8 @@ struct SpaceTokenProperty<HeaderDescription, TokenIllustration>: View where Head
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            header().padding(.bottom, theme.spaces.spaceFixedMedium)
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            header().padding(.bottom, theme.spaces.fixedMedium)
 
             ForEach(namedTokens, id: \.name) { namedSpaceToken in
                 SpaceTokenVariant(namedSpaceToken: namedSpaceToken, illustration: illustration)
@@ -114,17 +114,17 @@ struct SpaceCommonIllustration: View {
                 SpaceIllustrationRectangle(width: dimension)
                 SpaceIllustrationRectangle(height: dimension)
             case let .leading(asset): // ZStack alignment leading
-                HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
+                HStack(alignment: .center, spacing: theme.spaces.fixedNone) {
                     SpaceIllustrationRectangle(width: dimension)
                     SpaceIllustrationIcon(asset: asset)
                 }
             case let .bottom(asset): // ZStack alignment bottom
-                VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
+                VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
                     SpaceIllustrationIcon(asset: asset)
                     SpaceIllustrationRectangle(height: dimension)
                 }
             case let .top(asset): // ZStack alignment top
-                VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
+                VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
                     SpaceIllustrationRectangle(height: dimension)
                     SpaceIllustrationIcon(asset: asset)
                 }
@@ -293,7 +293,7 @@ struct SpaceHeaderDescription: View {
     var body: some View {
         content
             .oudsBorder(style: theme.borders.styeDrag, width: theme.borders.widthThin, radius: theme.borders.radiusNone, color: theme.colors.bgInverseLow)
-            .padding(.all, theme.spaces.spaceFixedMedium)
+            .padding(.all, theme.spaces.fixedMedium)
             .oudsBackground(theme.colors.surfaceSecondary)
     }
 
@@ -310,7 +310,7 @@ struct SpaceHeaderDescription: View {
     private func texts(_ orientation: TextsOrientation) -> some View {
         switch orientation {
         case .horizontal:
-            HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
+            HStack(alignment: .center, spacing: theme.spaces.fixedNone) {
                 Text(firstText)
                     .oudsForegroundStyle(theme.colors.contentDefault)
                     .bodyDefaultMedium(theme)
@@ -326,7 +326,7 @@ struct SpaceHeaderDescription: View {
                 }
             }
         case .verical:
-            VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
+            VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
                 Text(firstText)
                     .oudsForegroundStyle(theme.colors.contentDefault)
                     .bodyDefaultMedium(theme)

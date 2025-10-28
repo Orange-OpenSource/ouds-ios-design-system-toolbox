@@ -77,7 +77,7 @@ struct OpenableText: View {
     }
 
     var body: some View {
-        HStack(spacing: theme.spaces.spaceInsetNone) {
+        HStack(spacing: theme.spaces.insetNone) {
             Text(rawText.replacingOccurrences(of: anchor, with: ""))
             anchorLinkView
         }

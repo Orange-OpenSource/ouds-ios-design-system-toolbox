@@ -20,14 +20,14 @@ struct BorderTokenPage: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             Section {
-                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                     DesignToolboxCode(code: "theme.borders.widthDefault", titleText: "app_tokens_common_viewCodeExample_label")
                 }
             }
             Section {
-                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                     ForEach(NamedBorderWidth.allCases, id: \.rawValue) { namedWidth in
                         IllustrationWidth(namedWidth: namedWidth)
                     }
@@ -40,7 +40,7 @@ struct BorderTokenPage: View {
             }
 
             Section {
-                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                     ForEach(NamedBorderRadius.allCases, id: \.rawValue) { namedRadius in
                         IllustrationRadius(namedRadius: namedRadius)
                     }
@@ -53,7 +53,7 @@ struct BorderTokenPage: View {
             }
 
             Section {
-                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                     ForEach(NamedBorderStyle.allCases, id: \.rawValue) { namedStyle in
                         IllustrationStyle(namedStyle: namedStyle)
                     }
@@ -65,7 +65,7 @@ struct BorderTokenPage: View {
                     .oudsForegroundStyle(theme.colors.contentDefault)
             }
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.fixedMedium)
     }
 
     struct RectangleBackground: View {

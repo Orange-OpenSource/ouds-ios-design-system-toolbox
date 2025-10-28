@@ -23,19 +23,19 @@ struct ElevationTokenPage: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             Section {
                 DesignToolboxCode(code: "theme.elevations.none.elevation(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
 
-            Spacer().frame(height: theme.spaces.spaceFixedMedium)
+            Spacer().frame(height: theme.spaces.fixedMedium)
 
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
                 IllustrationElevation(namedElevation: elevationName)
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.fixedMedium)
     }
 
     struct IllustrationElevation: View {

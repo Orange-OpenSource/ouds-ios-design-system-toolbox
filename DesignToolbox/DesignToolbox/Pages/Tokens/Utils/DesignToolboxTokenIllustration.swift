@@ -40,7 +40,7 @@ struct DesignToolboxTokenIllustration<TokenIllustration>: View where TokenIllust
 
     var body: some View {
 
-        HStack(alignment: .top, spacing: theme.spaces.spaceFixedMedium) {
+        HStack(alignment: .top, spacing: theme.spaces.fixedMedium) {
 
             tokenIllustration()
 
@@ -57,6 +57,6 @@ struct DesignToolboxTokenIllustration<TokenIllustration>: View where TokenIllust
             .frame(maxWidth: .infinity, alignment: .leading)
             .accessibilityElement(children: .combine)
         }
-        .padding(.vertical, theme.spaces.spaceFixedXsmall)
+        .padding(.vertical, theme.spaces.fixedXsmall)
     }
 }

@@ -23,7 +23,7 @@ struct FontTokenPage: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             Section {
                 DesignToolboxCode(code: "theme.bodyStrongLarge(theme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
@@ -34,7 +34,7 @@ struct FontTokenPage: View {
                 IllustrationFont(namedFont: fontName)
             }
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.fixedMedium)
         .navigationTitle(LocalizedStringKey("app_tokens_typography_label"))
     }
 
@@ -52,7 +52,7 @@ struct FontTokenPage: View {
         @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
         var body: some View {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 illustration(for: namedFont, in: theme)
                     .oudsForegroundStyle(theme.colors.contentDefault)
 
@@ -68,7 +68,7 @@ struct FontTokenPage: View {
                 .oudsForegroundStyle(theme.colors.contentMuted)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.vertical, theme.spaces.spaceFixedXsmall)
+            .padding(.vertical, theme.spaces.fixedXsmall)
             .accessibilityElement(children: .combine)
         }
 
