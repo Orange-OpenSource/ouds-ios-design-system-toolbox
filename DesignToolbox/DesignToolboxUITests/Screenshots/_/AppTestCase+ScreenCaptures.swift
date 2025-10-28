@@ -27,7 +27,7 @@ extension AppTestCase {
     }
 
     /// Takes a screenshot form the current device or simulator in use and use the given `name`
-    /// fir the screenshot file in attachement. Crops the result image using given 2D coordinates and dimensions.
+    /// fir the screenshot file in attachement. Crops the result image using given 2D coordinates and _s.
     @MainActor func takeScreenshot(named name: String, _ x: Int, _ y: Int, _ width: Int, _ height: Int, _ app: XCUIApplication) {
         takeScreenshot(named: name, cropped: CGRect(x: x, y: y, width: width, height: height), app)
     }
