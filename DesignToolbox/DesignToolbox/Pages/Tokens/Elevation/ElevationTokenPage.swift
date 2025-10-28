@@ -52,7 +52,7 @@ struct ElevationTokenPage: View {
 
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 Rectangle()
-                    .frame(width: theme.sizes.sizeIconDecorative2xlarge, height: theme.sizes.sizeIconDecorative2xlarge)
+                    .frame(width: theme.sizes.iconDecorative2xlarge, height: theme.sizes.iconDecorative2xlarge)
                     .oudsForegroundColor(theme.colors.bgSecondary)
                     .oudsShadow(token)
                     .padding(.bottom, 2)

@@ -24,7 +24,7 @@ struct SizeTokenPage: View {
     var body: some View {
         Group {
             Section {
-                DesignToolboxCode(code: "theme.sizeIconWithHeadingXLargeSm.dimension(for: horizontalSizeClass ?? .regular)",
+                DesignToolboxCode(code: "theme.iconWithHeadingXLargeSm.dimension(for: horizontalSizeClass ?? .regular)",
                                   titleText: "app_tokens_common_viewCodeExample_label")
             }
             Section {
