@@ -64,7 +64,7 @@ struct DesignToolboxCode: View {
         .accessibilityHint("app_common_copyCode_a11y")
         .overlay(
             Rectangle()
-                .opacity(theme.opacities.opacityInvisible)
+                .opacity(theme.opacities.invisible)
                 .frame(minWidth: 40, maxWidth: .infinity, alignment: .leading)
                 .oudsBorder(style: theme.borders.styeDefault,
                             width: theme.borders.widthThin,
