@@ -33,15 +33,15 @@ struct DesignToolboxVariantElement: View {
             } label: {
                 HStack {
                     Text(LocalizedStringKey(element.name))
-                        .typeHeadingMedium(theme)
+                        .headingMedium(theme)
                         .multilineTextAlignment(.leading)
-                        .oudsForegroundStyle(theme.colors.colorContentDefault)
-                        .padding(.vertical, theme.spaces.spaceFixedXsmall)
-                        .padding(.leading, theme.spaces.spaceFixedMedium)
+                        .oudsForegroundStyle(theme.colors.contentDefault)
+                        .padding(.vertical, theme.spaces.fixedXsmall)
+                        .padding(.leading, theme.spaces.fixedMedium)
                     Spacer()
                     Image(systemName: "chevron.right")
-                        .oudsForegroundColor(theme.colors.colorContentDefault)
-                        .padding(layoutDirection == .rightToLeft ? .leading : .trailing, theme.spaces.spaceFixedMedium)
+                        .oudsForegroundColor(theme.colors.contentDefault)
+                        .padding(layoutDirection == .rightToLeft ? .leading : .trailing, theme.spaces.fixedMedium)
                         .accessibilityHidden(true)
                         .scaleEffect(layoutDirection == .rightToLeft ? -1 : 1, anchor: .center)
                 }

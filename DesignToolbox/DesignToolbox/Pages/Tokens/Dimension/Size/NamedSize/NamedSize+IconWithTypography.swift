@@ -21,57 +21,57 @@ extension NamedSize {
 
         // MARK: With Heading
 
-        case sizeIconWithHeadingXlargeSizeSmall
-        case sizeIconWithHeadingXlargeSizeMedium
-        case sizeIconWithHeadingXlargeSizeLarge
+        case iconWithHeadingXlargeSizeSmall
+        case iconWithHeadingXlargeSizeMedium
+        case iconWithHeadingXlargeSizeLarge
 
-        case sizeIconWithHeadingLargeSizeSmall
-        case sizeIconWithHeadingLargeSizeMedium
-        case sizeIconWithHeadingLargeSizeLarge
+        case iconWithHeadingLargeSizeSmall
+        case iconWithHeadingLargeSizeMedium
+        case iconWithHeadingLargeSizeLarge
 
-        case sizeIconWithHeadingMediumSizeSmall
-        case sizeIconWithHeadingMediumSizeMedium
-        case sizeIconWithHeadingMediumSizeLarge
+        case iconWithHeadingMediumSizeSmall
+        case iconWithHeadingMediumSizeMedium
+        case iconWithHeadingMediumSizeLarge
 
-        case sizeIconWithHeadingSmallSizeSmall
-        case sizeIconWithHeadingSmallSizeMedium
-        case sizeIconWithHeadingSmallSizeLarge
+        case iconWithHeadingSmallSizeSmall
+        case iconWithHeadingSmallSizeMedium
+        case iconWithHeadingSmallSizeLarge
 
         // MARK: With Body
 
-        case sizeIconWithBodyLargeSizeSmall
-        case sizeIconWithBodyLargeSizeMedium
-        case sizeIconWithBodyLargeSizeLarge
+        case iconWithBodyLargeSizeSmall
+        case iconWithBodyLargeSizeMedium
+        case iconWithBodyLargeSizeLarge
 
-        case sizeIconWithBodyMediumSizeSmall
-        case sizeIconWithBodyMediumSizeMedium
-        case sizeIconWithBodyMediumSizeLarge
+        case iconWithBodyMediumSizeSmall
+        case iconWithBodyMediumSizeMedium
+        case iconWithBodyMediumSizeLarge
 
-        case sizeIconWithBodySmallSizeSmall
-        case sizeIconWithBodySmallSizeMedium
-        case sizeIconWithBodySmallSizeLarge
+        case iconWithBodySmallSizeSmall
+        case iconWithBodySmallSizeMedium
+        case iconWithBodySmallSizeLarge
 
         // MARK: With Label
 
-        case sizeIconWithLabelXlargeSizeSmall
-        case sizeIconWithLabelXlargeSizeMedium
-        case sizeIconWithLabelXlargeSizeLarge
+        case iconWithLabelXlargeSizeSmall
+        case iconWithLabelXlargeSizeMedium
+        case iconWithLabelXlargeSizeLarge
 
-        case sizeIconWithLabelLargeSizeXsmall
-        case sizeIconWithLabelLargeSizeSmall
-        case sizeIconWithLabelLargeSizeMedium
-        case sizeIconWithLabelLargeSizeLarge
-        case sizeIconWithLabelLargeSizeXlarge
+        case iconWithLabelLargeSizeXsmall
+        case iconWithLabelLargeSizeSmall
+        case iconWithLabelLargeSizeMedium
+        case iconWithLabelLargeSizeLarge
+        case iconWithLabelLargeSizeXlarge
 
-        case sizeIconWithLabelMediumSizeXsmall
-        case sizeIconWithLabelMediumSizeSmall
-        case sizeIconWithLabelMediumSizeMedium
-        case sizeIconWithLabelMediumSizeLarge
+        case iconWithLabelMediumSizeXsmall
+        case iconWithLabelMediumSizeSmall
+        case iconWithLabelMediumSizeMedium
+        case iconWithLabelMediumSizeLarge
 
-        case sizeIconWithLabelSmallSizeXsmall
-        case sizeIconWithLabelSmallSizeSmall
-        case sizeIconWithLabelSmallSizeMedium
-        case sizeIconWithLabelSmallSizeLarge
+        case iconWithLabelSmallSizeXsmall
+        case iconWithLabelSmallSizeSmall
+        case iconWithLabelSmallSizeMedium
+        case iconWithLabelSmallSizeLarge
 
         // MARK: Max width
         // Not sure they must be added
@@ -83,82 +83,82 @@ extension NamedSize {
         func token(for theme: OUDS.OUDSTheme, userInterfaceSizeClass: UserInterfaceSizeClass) -> OUDSTokensSemantic.SizeSemanticToken {
             switch self {
             // Heading
-            case .sizeIconWithHeadingXlargeSizeSmall:
-                theme.sizes.sizeIconWithHeadingXlargeSizeSmall.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithHeadingXlargeSizeMedium:
-                theme.sizes.sizeIconWithHeadingXlargeSizeMedium.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithHeadingXlargeSizeLarge:
-                theme.sizes.sizeIconWithHeadingXlargeSizeLarge.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithHeadingLargeSizeSmall:
-                theme.sizes.sizeIconWithHeadingLargeSizeSmall.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithHeadingLargeSizeMedium:
-                theme.sizes.sizeIconWithHeadingLargeSizeMedium.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithHeadingLargeSizeLarge:
-                theme.sizes.sizeIconWithHeadingLargeSizeLarge.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithHeadingMediumSizeSmall:
-                theme.sizes.sizeIconWithHeadingMediumSizeSmall.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithHeadingMediumSizeMedium:
-                theme.sizes.sizeIconWithHeadingMediumSizeMedium.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithHeadingMediumSizeLarge:
-                theme.sizes.sizeIconWithHeadingMediumSizeLarge.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithHeadingSmallSizeSmall:
-                theme.sizes.sizeIconWithHeadingSmallSizeSmall.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithHeadingSmallSizeMedium:
-                theme.sizes.sizeIconWithHeadingSmallSizeMedium.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithHeadingSmallSizeLarge:
-                theme.sizes.sizeIconWithHeadingSmallSizeLarge.dimension(for: userInterfaceSizeClass)
+            case .iconWithHeadingXlargeSizeSmall:
+                theme.sizes.iconWithHeadingXlargeSizeSmall.dimension(for: userInterfaceSizeClass)
+            case .iconWithHeadingXlargeSizeMedium:
+                theme.sizes.iconWithHeadingXlargeSizeMedium.dimension(for: userInterfaceSizeClass)
+            case .iconWithHeadingXlargeSizeLarge:
+                theme.sizes.iconWithHeadingXlargeSizeLarge.dimension(for: userInterfaceSizeClass)
+            case .iconWithHeadingLargeSizeSmall:
+                theme.sizes.iconWithHeadingLargeSizeSmall.dimension(for: userInterfaceSizeClass)
+            case .iconWithHeadingLargeSizeMedium:
+                theme.sizes.iconWithHeadingLargeSizeMedium.dimension(for: userInterfaceSizeClass)
+            case .iconWithHeadingLargeSizeLarge:
+                theme.sizes.iconWithHeadingLargeSizeLarge.dimension(for: userInterfaceSizeClass)
+            case .iconWithHeadingMediumSizeSmall:
+                theme.sizes.iconWithHeadingMediumSizeSmall.dimension(for: userInterfaceSizeClass)
+            case .iconWithHeadingMediumSizeMedium:
+                theme.sizes.iconWithHeadingMediumSizeMedium.dimension(for: userInterfaceSizeClass)
+            case .iconWithHeadingMediumSizeLarge:
+                theme.sizes.iconWithHeadingMediumSizeLarge.dimension(for: userInterfaceSizeClass)
+            case .iconWithHeadingSmallSizeSmall:
+                theme.sizes.iconWithHeadingSmallSizeSmall.dimension(for: userInterfaceSizeClass)
+            case .iconWithHeadingSmallSizeMedium:
+                theme.sizes.iconWithHeadingSmallSizeMedium.dimension(for: userInterfaceSizeClass)
+            case .iconWithHeadingSmallSizeLarge:
+                theme.sizes.iconWithHeadingSmallSizeLarge.dimension(for: userInterfaceSizeClass)
             // Body
-            case .sizeIconWithBodyLargeSizeSmall:
-                theme.sizes.sizeIconWithBodyLargeSizeSmall.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithBodyLargeSizeMedium:
-                theme.sizes.sizeIconWithBodyLargeSizeMedium.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithBodyLargeSizeLarge:
-                theme.sizes.sizeIconWithBodyLargeSizeLarge.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithBodyMediumSizeSmall:
-                theme.sizes.sizeIconWithBodyMediumSizeSmall.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithBodyMediumSizeMedium:
-                theme.sizes.sizeIconWithBodyMediumSizeMedium.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithBodyMediumSizeLarge:
-                theme.sizes.sizeIconWithBodyMediumSizeLarge.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithBodySmallSizeSmall:
-                theme.sizes.sizeIconWithBodySmallSizeSmall.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithBodySmallSizeMedium:
-                theme.sizes.sizeIconWithBodySmallSizeMedium.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithBodySmallSizeLarge:
-                theme.sizes.sizeIconWithBodySmallSizeLarge.dimension(for: userInterfaceSizeClass)
+            case .iconWithBodyLargeSizeSmall:
+                theme.sizes.iconWithBodyLargeSizeSmall.dimension(for: userInterfaceSizeClass)
+            case .iconWithBodyLargeSizeMedium:
+                theme.sizes.iconWithBodyLargeSizeMedium.dimension(for: userInterfaceSizeClass)
+            case .iconWithBodyLargeSizeLarge:
+                theme.sizes.iconWithBodyLargeSizeLarge.dimension(for: userInterfaceSizeClass)
+            case .iconWithBodyMediumSizeSmall:
+                theme.sizes.iconWithBodyMediumSizeSmall.dimension(for: userInterfaceSizeClass)
+            case .iconWithBodyMediumSizeMedium:
+                theme.sizes.iconWithBodyMediumSizeMedium.dimension(for: userInterfaceSizeClass)
+            case .iconWithBodyMediumSizeLarge:
+                theme.sizes.iconWithBodyMediumSizeLarge.dimension(for: userInterfaceSizeClass)
+            case .iconWithBodySmallSizeSmall:
+                theme.sizes.iconWithBodySmallSizeSmall.dimension(for: userInterfaceSizeClass)
+            case .iconWithBodySmallSizeMedium:
+                theme.sizes.iconWithBodySmallSizeMedium.dimension(for: userInterfaceSizeClass)
+            case .iconWithBodySmallSizeLarge:
+                theme.sizes.iconWithBodySmallSizeLarge.dimension(for: userInterfaceSizeClass)
             // With Label
-            case .sizeIconWithLabelXlargeSizeSmall:
-                theme.sizes.sizeIconWithLabelLargeSizeSmall
-            case .sizeIconWithLabelXlargeSizeMedium:
-                theme.sizes.sizeIconWithLabelLargeSizeMedium
-            case .sizeIconWithLabelXlargeSizeLarge:
-                theme.sizes.sizeIconWithLabelLargeSizeLarge
-            case .sizeIconWithLabelLargeSizeXsmall:
-                theme.sizes.sizeIconWithLabelLargeSizeXsmall
-            case .sizeIconWithLabelLargeSizeSmall:
-                theme.sizes.sizeIconWithLabelLargeSizeSmall
-            case .sizeIconWithLabelLargeSizeMedium:
-                theme.sizes.sizeIconWithLabelLargeSizeMedium
-            case .sizeIconWithLabelLargeSizeLarge:
-                theme.sizes.sizeIconWithLabelLargeSizeLarge
-            case .sizeIconWithLabelLargeSizeXlarge:
-                theme.sizes.sizeIconWithLabelLargeSizeXlarge
-            case .sizeIconWithLabelMediumSizeXsmall:
-                theme.sizes.sizeIconWithLabelMediumSizeXsmall
-            case .sizeIconWithLabelMediumSizeSmall:
-                theme.sizes.sizeIconWithLabelMediumSizeSmall
-            case .sizeIconWithLabelMediumSizeMedium:
-                theme.sizes.sizeIconWithLabelMediumSizeMedium
-            case .sizeIconWithLabelMediumSizeLarge:
-                theme.sizes.sizeIconWithLabelMediumSizeLarge
-            case .sizeIconWithLabelSmallSizeXsmall:
-                theme.sizes.sizeIconWithLabelSmallSizeXsmall
-            case .sizeIconWithLabelSmallSizeSmall:
-                theme.sizes.sizeIconWithLabelSmallSizeSmall
-            case .sizeIconWithLabelSmallSizeMedium:
-                theme.sizes.sizeIconWithLabelSmallSizeMedium
-            case .sizeIconWithLabelSmallSizeLarge:
-                theme.sizes.sizeIconWithLabelSmallSizeLarge
+            case .iconWithLabelXlargeSizeSmall:
+                theme.sizes.iconWithLabelLargeSizeSmall
+            case .iconWithLabelXlargeSizeMedium:
+                theme.sizes.iconWithLabelLargeSizeMedium
+            case .iconWithLabelXlargeSizeLarge:
+                theme.sizes.iconWithLabelLargeSizeLarge
+            case .iconWithLabelLargeSizeXsmall:
+                theme.sizes.iconWithLabelLargeSizeXsmall
+            case .iconWithLabelLargeSizeSmall:
+                theme.sizes.iconWithLabelLargeSizeSmall
+            case .iconWithLabelLargeSizeMedium:
+                theme.sizes.iconWithLabelLargeSizeMedium
+            case .iconWithLabelLargeSizeLarge:
+                theme.sizes.iconWithLabelLargeSizeLarge
+            case .iconWithLabelLargeSizeXlarge:
+                theme.sizes.iconWithLabelLargeSizeXlarge
+            case .iconWithLabelMediumSizeXsmall:
+                theme.sizes.iconWithLabelMediumSizeXsmall
+            case .iconWithLabelMediumSizeSmall:
+                theme.sizes.iconWithLabelMediumSizeSmall
+            case .iconWithLabelMediumSizeMedium:
+                theme.sizes.iconWithLabelMediumSizeMedium
+            case .iconWithLabelMediumSizeLarge:
+                theme.sizes.iconWithLabelMediumSizeLarge
+            case .iconWithLabelSmallSizeXsmall:
+                theme.sizes.iconWithLabelSmallSizeXsmall
+            case .iconWithLabelSmallSizeSmall:
+                theme.sizes.iconWithLabelSmallSizeSmall
+            case .iconWithLabelSmallSizeMedium:
+                theme.sizes.iconWithLabelSmallSizeMedium
+            case .iconWithLabelSmallSizeLarge:
+                theme.sizes.iconWithLabelSmallSizeLarge
             }
         }
 
@@ -167,100 +167,100 @@ extension NamedSize {
         /// Provides the `namedFont associated to the icon size
         var namedFont: NamedFont {
             switch self {
-            case .sizeIconWithHeadingXlargeSizeSmall,
-                 .sizeIconWithHeadingXlargeSizeMedium,
-                 .sizeIconWithHeadingXlargeSizeLarge:
+            case .iconWithHeadingXlargeSizeSmall,
+                 .iconWithHeadingXlargeSizeMedium,
+                 .iconWithHeadingXlargeSizeLarge:
                 .headingXLarge
-            case .sizeIconWithHeadingLargeSizeSmall,
-                 .sizeIconWithHeadingLargeSizeMedium,
-                 .sizeIconWithHeadingLargeSizeLarge:
+            case .iconWithHeadingLargeSizeSmall,
+                 .iconWithHeadingLargeSizeMedium,
+                 .iconWithHeadingLargeSizeLarge:
                 .headingLarge
-            case .sizeIconWithHeadingMediumSizeSmall,
-                 .sizeIconWithHeadingMediumSizeMedium,
-                 .sizeIconWithHeadingMediumSizeLarge:
+            case .iconWithHeadingMediumSizeSmall,
+                 .iconWithHeadingMediumSizeMedium,
+                 .iconWithHeadingMediumSizeLarge:
                 .headingMedium
-            case .sizeIconWithHeadingSmallSizeSmall,
-                 .sizeIconWithHeadingSmallSizeMedium,
-                 .sizeIconWithHeadingSmallSizeLarge:
+            case .iconWithHeadingSmallSizeSmall,
+                 .iconWithHeadingSmallSizeMedium,
+                 .iconWithHeadingSmallSizeLarge:
                 .headingSmall
-            case .sizeIconWithBodyLargeSizeSmall,
-                 .sizeIconWithBodyLargeSizeMedium,
-                 .sizeIconWithBodyLargeSizeLarge:
+            case .iconWithBodyLargeSizeSmall,
+                 .iconWithBodyLargeSizeMedium,
+                 .iconWithBodyLargeSizeLarge:
                 .bodyDefaultLarge
-            case .sizeIconWithBodyMediumSizeSmall,
-                 .sizeIconWithBodyMediumSizeMedium,
-                 .sizeIconWithBodyMediumSizeLarge:
+            case .iconWithBodyMediumSizeSmall,
+                 .iconWithBodyMediumSizeMedium,
+                 .iconWithBodyMediumSizeLarge:
                 .bodyDefaultMedium
-            case .sizeIconWithBodySmallSizeSmall,
-                 .sizeIconWithBodySmallSizeMedium,
-                 .sizeIconWithBodySmallSizeLarge:
+            case .iconWithBodySmallSizeSmall,
+                 .iconWithBodySmallSizeMedium,
+                 .iconWithBodySmallSizeLarge:
                 .bodyDefaultSmall
-            case .sizeIconWithLabelXlargeSizeSmall,
-                 .sizeIconWithLabelXlargeSizeMedium,
-                 .sizeIconWithLabelXlargeSizeLarge:
+            case .iconWithLabelXlargeSizeSmall,
+                 .iconWithLabelXlargeSizeMedium,
+                 .iconWithLabelXlargeSizeLarge:
                 .labelDefaultXLarge
-            case .sizeIconWithLabelLargeSizeXsmall,
-                 .sizeIconWithLabelLargeSizeSmall,
-                 .sizeIconWithLabelLargeSizeMedium,
-                 .sizeIconWithLabelLargeSizeLarge,
-                 .sizeIconWithLabelLargeSizeXlarge:
+            case .iconWithLabelLargeSizeXsmall,
+                 .iconWithLabelLargeSizeSmall,
+                 .iconWithLabelLargeSizeMedium,
+                 .iconWithLabelLargeSizeLarge,
+                 .iconWithLabelLargeSizeXlarge:
                 .labelDefaultLarge
-            case .sizeIconWithLabelMediumSizeXsmall,
-                 .sizeIconWithLabelMediumSizeSmall,
-                 .sizeIconWithLabelMediumSizeMedium,
-                 .sizeIconWithLabelMediumSizeLarge:
+            case .iconWithLabelMediumSizeXsmall,
+                 .iconWithLabelMediumSizeSmall,
+                 .iconWithLabelMediumSizeMedium,
+                 .iconWithLabelMediumSizeLarge:
                 .labelDefaultMedium
-            case .sizeIconWithLabelSmallSizeXsmall,
-                 .sizeIconWithLabelSmallSizeSmall,
-                 .sizeIconWithLabelSmallSizeMedium,
-                 .sizeIconWithLabelSmallSizeLarge:
+            case .iconWithLabelSmallSizeXsmall,
+                 .iconWithLabelSmallSizeSmall,
+                 .iconWithLabelSmallSizeMedium,
+                 .iconWithLabelSmallSizeLarge:
                 .labelDefaultSmall
             }
         }
 
         var sizeDescription: String {
             switch self {
-            case .sizeIconWithHeadingXlargeSizeSmall,
-                 .sizeIconWithHeadingLargeSizeSmall,
-                 .sizeIconWithHeadingMediumSizeSmall,
-                 .sizeIconWithHeadingSmallSizeSmall,
-                 .sizeIconWithBodyLargeSizeSmall,
-                 .sizeIconWithBodyMediumSizeSmall,
-                 .sizeIconWithBodySmallSizeSmall,
-                 .sizeIconWithLabelXlargeSizeSmall,
-                 .sizeIconWithLabelLargeSizeSmall,
-                 .sizeIconWithLabelMediumSizeSmall,
-                 .sizeIconWithLabelSmallSizeSmall:
+            case .iconWithHeadingXlargeSizeSmall,
+                 .iconWithHeadingLargeSizeSmall,
+                 .iconWithHeadingMediumSizeSmall,
+                 .iconWithHeadingSmallSizeSmall,
+                 .iconWithBodyLargeSizeSmall,
+                 .iconWithBodyMediumSizeSmall,
+                 .iconWithBodySmallSizeSmall,
+                 .iconWithLabelXlargeSizeSmall,
+                 .iconWithLabelLargeSizeSmall,
+                 .iconWithLabelMediumSizeSmall,
+                 .iconWithLabelSmallSizeSmall:
                 "Size Small"
-            case .sizeIconWithHeadingXlargeSizeMedium,
-                 .sizeIconWithHeadingLargeSizeMedium,
-                 .sizeIconWithHeadingMediumSizeMedium,
-                 .sizeIconWithHeadingSmallSizeMedium,
-                 .sizeIconWithBodyLargeSizeMedium,
-                 .sizeIconWithBodyMediumSizeMedium,
-                 .sizeIconWithBodySmallSizeMedium,
-                 .sizeIconWithLabelXlargeSizeMedium,
-                 .sizeIconWithLabelLargeSizeMedium,
-                 .sizeIconWithLabelMediumSizeMedium,
-                 .sizeIconWithLabelSmallSizeMedium:
+            case .iconWithHeadingXlargeSizeMedium,
+                 .iconWithHeadingLargeSizeMedium,
+                 .iconWithHeadingMediumSizeMedium,
+                 .iconWithHeadingSmallSizeMedium,
+                 .iconWithBodyLargeSizeMedium,
+                 .iconWithBodyMediumSizeMedium,
+                 .iconWithBodySmallSizeMedium,
+                 .iconWithLabelXlargeSizeMedium,
+                 .iconWithLabelLargeSizeMedium,
+                 .iconWithLabelMediumSizeMedium,
+                 .iconWithLabelSmallSizeMedium:
                 "Size Medium"
-            case .sizeIconWithHeadingXlargeSizeLarge,
-                 .sizeIconWithHeadingLargeSizeLarge,
-                 .sizeIconWithHeadingMediumSizeLarge,
-                 .sizeIconWithHeadingSmallSizeLarge,
-                 .sizeIconWithBodyLargeSizeLarge,
-                 .sizeIconWithBodyMediumSizeLarge,
-                 .sizeIconWithBodySmallSizeLarge,
-                 .sizeIconWithLabelXlargeSizeLarge,
-                 .sizeIconWithLabelLargeSizeLarge,
-                 .sizeIconWithLabelMediumSizeLarge,
-                 .sizeIconWithLabelSmallSizeLarge:
+            case .iconWithHeadingXlargeSizeLarge,
+                 .iconWithHeadingLargeSizeLarge,
+                 .iconWithHeadingMediumSizeLarge,
+                 .iconWithHeadingSmallSizeLarge,
+                 .iconWithBodyLargeSizeLarge,
+                 .iconWithBodyMediumSizeLarge,
+                 .iconWithBodySmallSizeLarge,
+                 .iconWithLabelXlargeSizeLarge,
+                 .iconWithLabelLargeSizeLarge,
+                 .iconWithLabelMediumSizeLarge,
+                 .iconWithLabelSmallSizeLarge:
                 "Size Large"
-            case .sizeIconWithLabelSmallSizeXsmall,
-                 .sizeIconWithLabelMediumSizeXsmall,
-                 .sizeIconWithLabelLargeSizeXsmall:
+            case .iconWithLabelSmallSizeXsmall,
+                 .iconWithLabelMediumSizeXsmall,
+                 .iconWithLabelLargeSizeXsmall:
                 "Extra Small"
-            case .sizeIconWithLabelLargeSizeXlarge:
+            case .iconWithLabelLargeSizeXlarge:
                 "Extra Large"
             }
         }

@@ -120,13 +120,13 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
         // Init all themes
 
-        let orangeFranceOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
-        let maxItOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
+        let orangeFranceOrangeTheme = OrangeTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeTheme = OrangeTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
+        let maxItOrangeTheme = OrangeTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
 
-        let orangeFranceOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
-        let maxItOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
+        let orangeFranceOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
+        let maxItOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
 
         let soshTheme = SoshTheme()
         let wireframeTheme = WireframeTheme()
@@ -225,7 +225,7 @@ struct ThemeSelectionButton: View {
             Image(decorative: "ic_theme")
                 .scaledToFit()
         }
-        .oudsForegroundColor(themeProvider.currentTheme.colors.colorContentBrandPrimary)
+        .oudsForegroundColor(themeProvider.currentTheme.colors.contentBrandPrimary)
         .modifier(HotSwitchWarningModifier(hotSwitchWarningIndicator: themeProvider.hotSwitchWarning))
         .accessibilityLabel("app_topBar_theme_button_a11y")
         .accessibilityHint("app_topBar_theme_button_hint_a11y")

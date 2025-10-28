@@ -29,7 +29,7 @@ final class OrangeBusinessToolsThemeTokensSpaceSnapshotsTests: TokensSpaceSnapsh
         theme = OrangeBusinessToolsTheme()
     }
 
-    /// This function tests all dimension tokens in the `OrangeBusinessToolsTheme` with  the `light` color schemes.
+    /// This function tests all _ tokens in the `OrangeBusinessToolsTheme` with  the `light` color schemes.
     /// It iterates through all `NamedSpace` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
     @MainActor func testAllSpacesOrangeBusinessToolsThemeLight() {

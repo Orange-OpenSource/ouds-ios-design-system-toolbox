@@ -33,7 +33,7 @@ open class TokensOpacitySnapshotsTestsTestCase: XCTestCase {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
                 OpacityTokenPage.IllustrationOpacity(opacityName: namedToken)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value

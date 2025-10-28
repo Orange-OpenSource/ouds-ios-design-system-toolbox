@@ -34,10 +34,10 @@ private struct ColoredSurfaceIllustration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSColoredSurface(color: theme.colorModes.modeOnBrandPrimary) {
+        OUDSColoredSurface(color: theme.colorModes.onBrandPrimary) {
             Rectangle().fill(Color.clear)
         }
-        .padding(.horizontal, theme.spaces.spaceFixedSmall)
-        .padding(.vertical, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.fixedSmall)
+        .padding(.vertical, theme.spaces.fixedMedium)
     }
 }

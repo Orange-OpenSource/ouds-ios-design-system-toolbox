@@ -107,7 +107,7 @@ struct BadgeConfigurationView: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             OUDSChipPicker(title: "app_components_badge_type_label",
                            selection: $configurationModel.badgeType,
                            chips: BadgeConfigurationModel.BadgeType.chips)

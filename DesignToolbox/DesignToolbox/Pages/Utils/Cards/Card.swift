@@ -31,15 +31,15 @@ struct Card: View {
         VStack(alignment: .leading, spacing: 0) {
             CardIllustration(illustration: illustration)
             title
-                .typeHeadingMedium(theme)
+                .headingMedium(theme)
                 .multilineTextAlignment(.leading)
-                .padding(.horizontal, theme.spaces.spaceFixedMedium)
-                .padding(.vertical, theme.spaces.spaceFixedMedium)
+                .padding(.horizontal, theme.spaces.fixedMedium)
+                .padding(.vertical, theme.spaces.fixedMedium)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                .oudsForegroundStyle(theme.colors.contentDefault)
         }
-        .oudsBackground(theme.colors.colorOverlayDropdown)
-        .oudsShadow(theme.elevations.elevationRaised)
+        .oudsBackground(theme.colors.overlayDropdown)
+        .oudsShadow(theme.elevations.raised)
         .padding(.all, 4)
     }
 }

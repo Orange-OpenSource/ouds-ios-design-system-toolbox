@@ -67,7 +67,7 @@ struct ColorSchemeSelectionButton: View {
         }, label: {
             Image(decorative: mode.imageName)
                 .scaledToFit()
-                .oudsForegroundColor(theme.colors.colorContentBrandPrimary)
+                .oudsForegroundColor(theme.colors.contentBrandPrimary)
         })
         .accessibilityLabel("app_topBar_mode_button_a11y")
         .accessibilityHint("app_topBar_mode_button_hint_a11y")

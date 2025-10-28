@@ -33,7 +33,7 @@ open class TokensSizeSnapshotsTestsTestCase: XCTestCase {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
                 SizeTokenPage.IllustrationIconDecorative(namedSize: namedToken)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
@@ -59,7 +59,7 @@ open class TokensSizeSnapshotsTestsTestCase: XCTestCase {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
                 SizeTokenPage.IllustrationIconWithTypography(namedSize: namedToken)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value

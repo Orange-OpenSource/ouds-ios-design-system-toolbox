@@ -17,47 +17,47 @@ import OUDSTokensSemantic
 extension NamedSpace {
 
     enum PaddingBlock: String, CaseIterable, NamedSpaceToken {
-        case spacePaddingBlockNone
-        case spacePaddingBlock4xsmall
-        case spacePaddingBlock3xsmall
-        case spacePaddingBlock2xsmall
-        case spacePaddingBlockXsmall
-        case spacePaddingBlockSmall
-        case spacePaddingBlockMedium
-        case spacePaddingBlockLarge
-        case spacePaddingBlockXlarge
-        case spacePaddingBlock2xlarge
-        case spacePaddingBlock3xlarge
-        case spacePaddingBlock4xlarge
+        case paddingBlockNone
+        case paddingBlock4xsmall
+        case paddingBlock3xsmall
+        case paddingBlock2xsmall
+        case paddingBlockXsmall
+        case paddingBlockSmall
+        case paddingBlockMedium
+        case paddingBlockLarge
+        case paddingBlockXlarge
+        case paddingBlock2xlarge
+        case paddingBlock3xlarge
+        case paddingBlock4xlarge
 
         var name: String { rawValue }
 
         func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {
-            case .spacePaddingBlockNone:
-                theme.spaces.spacePaddingBlockNone
-            case .spacePaddingBlock4xsmall:
-                theme.spaces.spacePaddingBlock4xsmall
-            case .spacePaddingBlock3xsmall:
-                theme.spaces.spacePaddingBlock3xsmall
-            case .spacePaddingBlock2xsmall:
-                theme.spaces.spacePaddingBlock2xsmall
-            case .spacePaddingBlockXsmall:
-                theme.spaces.spacePaddingBlockXsmall
-            case .spacePaddingBlockSmall:
-                theme.spaces.spacePaddingBlockSmall
-            case .spacePaddingBlockMedium:
-                theme.spaces.spacePaddingBlockMedium
-            case .spacePaddingBlockLarge:
-                theme.spaces.spacePaddingBlockLarge
-            case .spacePaddingBlockXlarge:
-                theme.spaces.spacePaddingBlockXlarge
-            case .spacePaddingBlock2xlarge:
-                theme.spaces.spacePaddingBlock2xlarge
-            case .spacePaddingBlock3xlarge:
-                theme.spaces.spacePaddingBlock3xlarge
-            case .spacePaddingBlock4xlarge:
-                theme.spaces.spacePaddingBlock4xlarge
+            case .paddingBlockNone:
+                theme.spaces.paddingBlockNone
+            case .paddingBlock4xsmall:
+                theme.spaces.paddingBlock4xsmall
+            case .paddingBlock3xsmall:
+                theme.spaces.paddingBlock3xsmall
+            case .paddingBlock2xsmall:
+                theme.spaces.paddingBlock2xsmall
+            case .paddingBlockXsmall:
+                theme.spaces.paddingBlockXsmall
+            case .paddingBlockSmall:
+                theme.spaces.paddingBlockSmall
+            case .paddingBlockMedium:
+                theme.spaces.paddingBlockMedium
+            case .paddingBlockLarge:
+                theme.spaces.paddingBlockLarge
+            case .paddingBlockXlarge:
+                theme.spaces.paddingBlockXlarge
+            case .paddingBlock2xlarge:
+                theme.spaces.paddingBlock2xlarge
+            case .paddingBlock3xlarge:
+                theme.spaces.paddingBlock3xlarge
+            case .paddingBlock4xlarge:
+                theme.spaces.paddingBlock4xlarge
             }
         }
     }
