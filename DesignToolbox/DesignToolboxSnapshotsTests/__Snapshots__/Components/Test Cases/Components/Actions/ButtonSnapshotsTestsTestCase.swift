@@ -59,7 +59,7 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests all buttons configuration for the given themen and color schemes on aa colored surface (the `colorSurfaceBrandPrimary` token)
+    /// This function tests all buttons configuration for the given themen and color schemes on aa colored surface (the `surfaceBrandPrimary` token)
     ///
     /// **/!\ It does not test the hover and pressed states.**
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
@@ -121,7 +121,7 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             ButtonTest(layout: layout, appearance: appearance, style: .default, onColoredSurface: onColoredSurface)
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
                 .disabled(disabled)
         }
 

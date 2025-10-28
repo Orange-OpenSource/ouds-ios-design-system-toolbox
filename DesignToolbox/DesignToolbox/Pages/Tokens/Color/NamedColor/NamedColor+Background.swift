@@ -17,24 +17,24 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Background: String, CaseIterable {
-        case colorBgPrimary
-        case colorBgSecondary
-        case colorBgTertiary
-        case colorBgInverseHigh
-        case colorBgInverseLow
+        case bgPrimary
+        case bgSecondary
+        case bgTertiary
+        case bgInverseHigh
+        case bgInverseLow
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
-            case .colorBgPrimary:
-                theme.colors.colorBgPrimary
-            case .colorBgSecondary:
-                theme.colors.colorBgSecondary
-            case .colorBgTertiary:
-                theme.colors.colorBgTertiary
-            case .colorBgInverseHigh:
-                theme.colors.colorBgInverseHigh
-            case .colorBgInverseLow:
-                theme.colors.colorBgInverseLow
+            case .bgPrimary:
+                theme.colors.bgPrimary
+            case .bgSecondary:
+                theme.colors.bgSecondary
+            case .bgTertiary:
+                theme.colors.bgTertiary
+            case .bgInverseHigh:
+                theme.colors.bgInverseHigh
+            case .bgInverseLow:
+                theme.colors.bgInverseLow
             }
         }
     }

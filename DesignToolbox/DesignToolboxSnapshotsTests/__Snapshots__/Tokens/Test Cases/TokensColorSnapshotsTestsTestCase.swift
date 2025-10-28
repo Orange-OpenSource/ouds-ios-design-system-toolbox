@@ -48,7 +48,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
@@ -90,7 +90,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
@@ -132,7 +132,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
@@ -174,7 +174,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
@@ -216,7 +216,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
@@ -258,7 +258,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
@@ -295,7 +295,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
@@ -337,7 +337,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
@@ -379,7 +379,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
@@ -421,7 +421,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value

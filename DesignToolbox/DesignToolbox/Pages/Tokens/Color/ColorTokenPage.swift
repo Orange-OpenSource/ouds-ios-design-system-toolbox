@@ -24,7 +24,7 @@ struct ColorTokenPage: View {
     var body: some View {
         Group {
             Section {
-                DesignToolboxCode(code: "theme.colors.colorBgPrimary.color(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
+                DesignToolboxCode(code: "theme.colors.bgPrimary.color(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
             Section { illustrationForAction() } header: { header("Action") }
             Section { illustrationForAlways() } header: { header("Always") }
@@ -179,7 +179,7 @@ struct ColorTokenPage: View {
                         style: theme.borders.styeDefault,
                         width: theme.borders.widthThin,
                         radius: theme.borders.radiusNone,
-                        color: theme.colors.colorBorderDefault)
+                        color: theme.colors.borderDefault)
             }
         }
     }

@@ -45,7 +45,7 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests all link configuration for the given theme and color schemes on a colored surface (the `colorSurfaceBrandPrimary` token)
+    /// This function tests all link configuration for the given theme and color schemes on a colored surface (the `surfaceBrandPrimary` token)
     ///
     /// **/!\ It does not text the hover and pressed states.**
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
@@ -92,7 +92,7 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             LinkTest(layout: layout, size: size, onColoredSurface: onColoredSurface)
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
                 .disabled(disabled)
         }
 

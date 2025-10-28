@@ -225,7 +225,7 @@ struct ThemeSelectionButton: View {
             Image(decorative: "ic_theme")
                 .scaledToFit()
         }
-        .oudsForegroundColor(themeProvider.currentTheme.colors.colorContentBrandPrimary)
+        .oudsForegroundColor(themeProvider.currentTheme.colors.contentBrandPrimary)
         .modifier(HotSwitchWarningModifier(hotSwitchWarningIndicator: themeProvider.hotSwitchWarning))
         .accessibilityLabel("app_topBar_theme_button_a11y")
         .accessibilityHint("app_topBar_theme_button_hint_a11y")

@@ -33,7 +33,7 @@ open class TokensSpaceSnapshotsTestsTestCase: XCTestCase {
             // Generate the illustration for the specified space token
             let illustration = OUDSThemeableView(theme: theme) {
                 ScaledSpaceProperty.Illustration(for: namedToken)
-                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
@@ -61,7 +61,7 @@ open class TokensSpaceSnapshotsTestsTestCase: XCTestCase {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
                     FixedSpaceProperty.Illustration(token: token)
                 }
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
@@ -88,7 +88,7 @@ open class TokensSpaceSnapshotsTestsTestCase: XCTestCase {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
                     PaddingInlineProperty.Illustration(token: token)
                 }
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
@@ -116,7 +116,7 @@ open class TokensSpaceSnapshotsTestsTestCase: XCTestCase {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
                     PaddingInsetProperty.Illustration(token: token)
                 }
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
@@ -144,7 +144,7 @@ open class TokensSpaceSnapshotsTestsTestCase: XCTestCase {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
                     PaddingBlockProperty.Illustration(token: token)
                 }
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
@@ -172,7 +172,7 @@ open class TokensSpaceSnapshotsTestsTestCase: XCTestCase {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
                     ColumnGapProperty.Illustration(token: token)
                 }
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
@@ -200,7 +200,7 @@ open class TokensSpaceSnapshotsTestsTestCase: XCTestCase {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
                     RowGapProperty.Illustration(token: token)
                 }
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value

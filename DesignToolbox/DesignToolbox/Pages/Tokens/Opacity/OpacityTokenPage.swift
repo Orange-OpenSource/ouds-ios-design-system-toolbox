@@ -53,18 +53,18 @@ struct OpacityTokenPage: View {
                     Image(decorative: "ic_union")
                         .resizable()
                         .renderingMode(.template)
-                        .oudsForegroundColor(theme.colors.colorContentStatusInfo)
+                        .oudsForegroundColor(theme.colors.contentStatusInfo)
                         .frame(width: 48, height: 48)
                         .accessibilityHidden(true)
 
                     Rectangle()
-                        .fill(theme.colors.colorOverlayModal.color(for: colorScheme))
+                        .fill(theme.colors.overlayModal.color(for: colorScheme))
                         .opacity(token)
                         .frame(width: 48, height: 48)
                         .oudsBorder(style: theme.borders.styeDefault,
                                     width: theme.borders.widthThin,
                                     radius: theme.borders.radiusNone,
-                                    color: theme.colors.colorBorderDefault)
+                                    color: theme.colors.borderDefault)
                         .padding(.top, 24)
                         .padding(.leading, 24)
                 }

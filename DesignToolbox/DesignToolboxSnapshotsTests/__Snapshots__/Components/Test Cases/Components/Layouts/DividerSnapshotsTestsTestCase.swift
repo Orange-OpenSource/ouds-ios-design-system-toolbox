@@ -60,7 +60,7 @@ open class DividerSnapshotsTestsTestCase: XCTestCase {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             DividerDemo(configurationModel: DividerConfigurationModel(orientation: orientation, selectedColor: dividerColor))
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
         // Create a unique snapshot name based on the current configuration :

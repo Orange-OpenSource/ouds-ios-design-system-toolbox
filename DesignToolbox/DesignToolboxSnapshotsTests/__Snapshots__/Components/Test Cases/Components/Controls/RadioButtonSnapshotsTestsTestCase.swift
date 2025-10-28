@@ -150,7 +150,7 @@ open class RadioButtonSnapshotsTestsTestCase: XCTestCase {
             RadioTest(layout: layout,
                       indicatorState: indicatorState,
                       isDisabled: isDisabled)
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
         // Create a unique snapshot name based on the current configuration

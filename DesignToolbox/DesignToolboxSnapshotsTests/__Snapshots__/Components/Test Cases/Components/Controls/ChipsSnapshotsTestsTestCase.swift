@@ -80,7 +80,7 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             FilterChipDemo(configurationModel: model)
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
         // Create a unique snapshot name based on the current configuration :
@@ -117,7 +117,7 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             SuggestionChipDemo(configurationModel: model)
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
         // Create a unique snapshot name based on the current configuration :

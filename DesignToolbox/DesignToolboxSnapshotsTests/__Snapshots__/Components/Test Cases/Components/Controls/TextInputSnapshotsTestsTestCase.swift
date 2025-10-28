@@ -75,7 +75,7 @@ open class TextInputSnapshotsTestsTestCase: XCTestCase {
         // Generate the illustration for configuration elements
         let illustration = OUDSThemeableView(theme: theme) {
             TestTextInputView(type: testType, status: status, outlined: outlined)
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
         // Create a unique snapshot name based on the current configuration :

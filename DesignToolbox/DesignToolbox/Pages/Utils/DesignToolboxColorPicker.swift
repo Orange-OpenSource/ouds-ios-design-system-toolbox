@@ -31,7 +31,7 @@ struct DesignToolboxColorPicker<Content, SelectedColor>: View where Content: Vie
             VStack(alignment: .leading) {
                 Text("app_components_common_color_label")
                     .typeHeadingMedium(theme)
-                    .oudsForegroundColor(theme.colors.colorContentDefault)
+                    .oudsForegroundColor(theme.colors.contentDefault)
 
                 selectedColor()
 
@@ -53,7 +53,7 @@ struct DesignToolboxColorEntry<ColorIcon>: View where ColorIcon: View {
     var body: some View {
         Label {
             Text(colorName)
-                .oudsForegroundColor(theme.colors.colorContentDefault)
+                .oudsForegroundColor(theme.colors.contentDefault)
         } icon: {
             colorIcon()
                 .frame(width: 30, height: 30, alignment: .leading)

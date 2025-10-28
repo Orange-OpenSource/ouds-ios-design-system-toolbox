@@ -66,13 +66,13 @@ struct DesignToolboxElementPage: View {
             .listRowSeparator(Visibility.hidden)
             .padding(.horizontal, theme.spaces.spaceFixedNone)
             .padding(.bottom, theme.spaces.spaceFixedMedium)
-            .oudsBackground(theme.colors.colorBgPrimary)
+            .oudsBackground(theme.colors.bgPrimary)
 
             demoScreen
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
                 .padding(.bottom, theme.spaces.spaceFixedMedium)
-                .oudsBackground(theme.colors.colorBgPrimary)
+                .oudsBackground(theme.colors.bgPrimary)
 
             if let version {
                 HStack {
@@ -87,7 +87,7 @@ struct DesignToolboxElementPage: View {
         .listStyle(.plain)
         .padding(.top, theme.spaces.spaceFixedNone)
         .padding(.horizontal, theme.spaces.spaceFixedNone)
-        .oudsBackground(theme.colors.colorBgPrimary)
+        .oudsBackground(theme.colors.bgPrimary)
         .navigationTitle(name.localized())
         .navigationBarMenus()
         .oudsRequestAccessibleFocus(_requestFocus)

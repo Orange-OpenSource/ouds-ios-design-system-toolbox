@@ -31,7 +31,7 @@ struct DesignToolboxColoredSurfaceModifier: ViewModifier {
                 .modifier(DebugWCAG21RatiosModifier())
         } else {
             content
-                .oudsBackground(theme.colors.colorBgPrimary)
+                .oudsBackground(theme.colors.bgPrimary)
         }
     }
 }

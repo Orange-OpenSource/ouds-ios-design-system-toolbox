@@ -66,13 +66,13 @@ struct SizeTokenPage: View {
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 ZStack {
                     Rectangle()
-                        .fill(theme.colors.colorSurfaceSecondary.color(for: colorScheme))
+                        .fill(theme.colors.surfaceSecondary.color(for: colorScheme))
                         .frame(width: 82, height: 82, alignment: .center)
 
                     Image("ic_token")
                         .resizable()
                         .renderingMode(.template)
-                        .oudsForegroundColor(theme.colors.colorContentStatusInfo)
+                        .oudsForegroundColor(theme.colors.contentStatusInfo)
                         .frame(width: token, height: token, alignment: .center)
                         .accessibilityHidden(true)
                 }
@@ -100,12 +100,12 @@ struct SizeTokenPage: View {
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 ZStack {
                     Rectangle()
-                        .fill(theme.colors.colorSurfaceSecondary.color(for: colorScheme))
+                        .fill(theme.colors.surfaceSecondary.color(for: colorScheme))
                         .frame(width: 82, height: 82, alignment: .center)
                     Image("ic_token")
                         .resizable()
                         .renderingMode(.template)
-                        .oudsForegroundColor(theme.colors.colorContentStatusInfo)
+                        .oudsForegroundColor(theme.colors.contentStatusInfo)
                         .frame(width: token, height: token, alignment: .center)
                         .accessibilityHidden(true)
                 }
@@ -155,16 +155,16 @@ struct SizeTokenPage: View {
                         .resizable()
                         .renderingMode(.template)
                         .aspectRatio(contentMode: .fit)
-                        .oudsForegroundStyle(theme.colors.colorContentStatusInfo)
+                        .oudsForegroundStyle(theme.colors.contentStatusInfo)
                 }
                 .frame(height: size, alignment: .center)
 
                 illustration(for: namedFont, in: theme)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .oudsForegroundStyle(theme.colors.colorContentDefault)
+                    .oudsForegroundStyle(theme.colors.contentDefault)
             }
             .padding(.all, theme.spaces.spaceFixedMedium)
-            .oudsBackground(theme.colors.colorSurfaceSecondary)
+            .oudsBackground(theme.colors.surfaceSecondary)
         }
     }
 

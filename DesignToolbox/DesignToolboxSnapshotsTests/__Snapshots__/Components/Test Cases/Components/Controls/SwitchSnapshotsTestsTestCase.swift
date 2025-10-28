@@ -106,7 +106,7 @@ open class SwitchSnapshotsTestsTestCase: XCTestCase {
             SwitchTest(layout: layout,
                        indicatorState: indicatorState,
                        isDisabled: isDisabled)
-                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle.colorScheme))
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle.colorScheme))
         }
 
         // Create a unique snapshot name based on the current configuration :

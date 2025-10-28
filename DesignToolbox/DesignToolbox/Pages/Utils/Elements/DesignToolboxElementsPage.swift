@@ -48,7 +48,7 @@ struct DesignToolboxElementsPage: View {
                 .padding(.all, theme.spaces.spaceFixedMedium)
                 .navigationBarMenus()
             }
-            .oudsBackground(theme.colors.colorBgPrimary)
+            .oudsBackground(theme.colors.bgPrimary)
             .oudsNavigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
         }
