@@ -56,7 +56,7 @@ struct DesignToolboxElementPage: View {
                 }
 
                 Text(LocalizedStringKey(description))
-                    .typeBodyDefaultLarge(theme)
+                    .bodyDefaultLarge(theme)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .accessibilityFocused($requestFocus)
@@ -78,7 +78,7 @@ struct DesignToolboxElementPage: View {
                 HStack {
                     Spacer()
                     Text("app_common_design_version" <- version)
-                        .typeLabelDefaultSmall(theme)
+                        .labelDefaultSmall(theme)
                     Spacer()
                 }
                 .padding(.bottom, theme.spaces.spaceFixedMedium)

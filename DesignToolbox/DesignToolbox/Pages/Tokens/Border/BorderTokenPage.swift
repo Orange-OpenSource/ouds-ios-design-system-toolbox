@@ -35,7 +35,7 @@ struct BorderTokenPage: View {
                 }
             } header: {
                 Text("app_tokens_border_width_label")
-                    .typeHeadingLarge(theme)
+                    .headingLarge(theme)
                     .oudsForegroundStyle(theme.colors.contentDefault)
             }
 
@@ -48,7 +48,7 @@ struct BorderTokenPage: View {
                 }
             } header: {
                 Text("app_tokens_border_radius_label")
-                    .typeHeadingLarge(theme)
+                    .headingLarge(theme)
                     .oudsForegroundStyle(theme.colors.contentDefault)
             }
 
@@ -61,7 +61,7 @@ struct BorderTokenPage: View {
                 }
             } header: {
                 Text("app_tokens_border_style_label")
-                    .typeHeadingLarge(theme)
+                    .headingLarge(theme)
                     .oudsForegroundStyle(theme.colors.contentDefault)
             }
         }

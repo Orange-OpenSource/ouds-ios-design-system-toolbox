@@ -313,7 +313,7 @@ struct SpaceHeaderDescription: View {
             HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                 Text(firstText)
                     .oudsForegroundStyle(theme.colors.contentDefault)
-                    .typeBodyDefaultMedium(theme)
+                    .bodyDefaultMedium(theme)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 SpaceIllustrationRectangle(width: 8)
@@ -321,7 +321,7 @@ struct SpaceHeaderDescription: View {
                 if let secondText {
                     Text(secondText)
                         .oudsForegroundStyle(theme.colors.contentDefault)
-                        .typeBodyDefaultMedium(theme)
+                        .bodyDefaultMedium(theme)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
@@ -329,7 +329,7 @@ struct SpaceHeaderDescription: View {
             VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                 Text(firstText)
                     .oudsForegroundStyle(theme.colors.contentDefault)
-                    .typeBodyDefaultMedium(theme)
+                    .bodyDefaultMedium(theme)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 SpaceIllustrationRectangle(height: 8)
@@ -337,7 +337,7 @@ struct SpaceHeaderDescription: View {
                 if let secondText {
                     Text(secondText)
                         .oudsForegroundStyle(theme.colors.contentDefault)
-                        .typeBodyDefaultMedium(theme)
+                        .bodyDefaultMedium(theme)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
@@ -353,7 +353,7 @@ struct SpaceHeaderDescription: View {
                 Text(firstText)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .oudsForegroundStyle(theme.colors.contentDefault)
-                    .typeBodyDefaultMedium(theme)
+                    .bodyDefaultMedium(theme)
 
                 SpaceIllustrationRectangle(height: paddings.bottom)
             }

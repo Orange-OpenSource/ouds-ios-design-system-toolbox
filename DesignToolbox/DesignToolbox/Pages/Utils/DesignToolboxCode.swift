@@ -35,7 +35,7 @@ struct DesignToolboxCode: View {
             codeTokenSection()
         } label: {
             Text(titleText)
-                .typeBodyStrongLarge(theme)
+                .bodyStrongLarge(theme)
                 .oudsForegroundStyle(theme.colors.contentDefault)
                 .padding(.vertical, theme.spaces.spacePaddingInlineSmall)
         }

@@ -31,7 +31,7 @@ struct Card: View {
         VStack(alignment: .leading, spacing: 0) {
             CardIllustration(illustration: illustration)
             title
-                .typeHeadingMedium(theme)
+                .headingMedium(theme)
                 .multilineTextAlignment(.leading)
                 .padding(.horizontal, theme.spaces.spaceFixedMedium)
                 .padding(.vertical, theme.spaces.spaceFixedMedium)

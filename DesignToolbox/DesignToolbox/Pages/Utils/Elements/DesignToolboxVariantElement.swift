@@ -33,7 +33,7 @@ struct DesignToolboxVariantElement: View {
             } label: {
                 HStack {
                     Text(LocalizedStringKey(element.name))
-                        .typeHeadingMedium(theme)
+                        .headingMedium(theme)
                         .multilineTextAlignment(.leading)
                         .oudsForegroundStyle(theme.colors.contentDefault)
                         .padding(.vertical, theme.spaces.spaceFixedXsmall)

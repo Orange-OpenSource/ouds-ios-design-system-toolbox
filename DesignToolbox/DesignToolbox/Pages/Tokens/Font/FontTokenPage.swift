@@ -25,7 +25,7 @@ struct FontTokenPage: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Section {
-                DesignToolboxCode(code: "theme.typeBodyStrongLarge(theme)", titleText: "app_tokens_common_viewCodeExample_label")
+                DesignToolboxCode(code: "theme.bodyStrongLarge(theme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
 
             Spacer()
@@ -63,7 +63,7 @@ struct FontTokenPage: View {
                         + Text(lineHeightText)
                         + Text(letterSpacingText)
                 }
-                .typeBodyDefaultMedium(theme)
+                .bodyDefaultMedium(theme)
                 .fixedSize(horizontal: false, vertical: true)
                 .oudsForegroundStyle(theme.colors.contentMuted)
             }
