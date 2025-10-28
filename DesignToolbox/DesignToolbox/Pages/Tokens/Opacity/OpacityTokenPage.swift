@@ -22,19 +22,19 @@ struct OpacityTokenPage: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             Section {
-                DesignToolboxCode(code: "theme.opacities.opacityInvisible", titleText: "app_tokens_common_viewCodeExample_label")
+                DesignToolboxCode(code: "theme.opacities.invisible", titleText: "app_tokens_common_viewCodeExample_label")
             }
 
-            Spacer().frame(height: theme.spaces.spaceFixedMedium)
+            Spacer().frame(height: theme.spaces.fixedMedium)
 
             ForEach(NamedOpacity.allCases, id: \.rawValue) { opacityName in
                 IllustrationOpacity(opacityName: opacityName)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.fixedMedium)
     }
 
     struct IllustrationOpacity: View {
@@ -53,18 +53,18 @@ struct OpacityTokenPage: View {
                     Image(decorative: "ic_union")
                         .resizable()
                         .renderingMode(.template)
-                        .oudsForegroundColor(theme.colors.colorContentStatusInfo)
+                        .oudsForegroundColor(theme.colors.contentStatusInfo)
                         .frame(width: 48, height: 48)
                         .accessibilityHidden(true)
 
                     Rectangle()
-                        .fill(theme.colors.colorOverlayModal.color(for: colorScheme))
+                        .fill(theme.colors.overlayModal.color(for: colorScheme))
                         .opacity(token)
                         .frame(width: 48, height: 48)
-                        .oudsBorder(style: theme.borders.borderStyleDefault,
-                                    width: theme.borders.borderWidthThin,
-                                    radius: theme.borders.borderRadiusNone,
-                                    color: theme.colors.colorBorderDefault)
+                        .oudsBorder(style: theme.borders.styleDefault,
+                                    width: theme.borders.widthThin,
+                                    radius: theme.borders.radiusNone,
+                                    color: theme.colors.borderDefault)
                         .padding(.top, 24)
                         .padding(.leading, 24)
                 }
@@ -77,33 +77,33 @@ struct OpacityTokenPage: View {
 // MARK: - Named Opacity
 
 enum NamedOpacity: String, CaseIterable {
-    case opacityInvisible
-    case opacityWeakest
-    case opacityWeaker
-    case opacityWeak
-    case opacityMedium
-    case opacityStrong
-    case opacityOpaque
-    case opacityDisabled
+    case invisible
+    case weakest
+    case weaker
+    case weak
+    case medium
+    case strong
+    case opaque
+    case disabled
 
     func token(from theme: OUDSTheme) -> OpacitySemanticToken {
         switch self {
-        case .opacityInvisible:
-            theme.opacities.opacityInvisible
-        case .opacityWeakest:
-            theme.opacities.opacityWeakest
-        case .opacityWeaker:
-            theme.opacities.opacityWeaker
-        case .opacityWeak:
-            theme.opacities.opacityWeak
-        case .opacityMedium:
-            theme.opacities.opacityMedium
-        case .opacityStrong:
-            theme.opacities.opacityStrong
-        case .opacityOpaque:
-            theme.opacities.opacityOpaque
-        case .opacityDisabled:
-            theme.opacities.opacityDisabled
+        case .invisible:
+            theme.opacities.invisible
+        case .weakest:
+            theme.opacities.weakest
+        case .weaker:
+            theme.opacities.weaker
+        case .weak:
+            theme.opacities.weak
+        case .medium:
+            theme.opacities.medium
+        case .strong:
+            theme.opacities.strong
+        case .opaque:
+            theme.opacities.opaque
+        case .disabled:
+            theme.opacities.disabled
         }
     }
 }

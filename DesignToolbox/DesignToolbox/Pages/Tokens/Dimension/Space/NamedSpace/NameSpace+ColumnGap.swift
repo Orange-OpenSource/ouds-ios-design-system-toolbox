@@ -17,29 +17,29 @@ import OUDSTokensSemantic
 extension NamedSpace {
 
     enum ColumnGap: String, CaseIterable, NamedSpaceToken {
-        case spaceColumnGapNone
-        case spaceColumnGapXsmall
-        case spaceColumnGapSmall
-        case spaceColumnGapMedium
-        case spaceColumnGapLarge
-        case spaceColumnGapXlarge
+        case columnGapNone
+        case columnGapXsmall
+        case columnGapSmall
+        case columnGapMedium
+        case columnGapLarge
+        case columnGapXlarge
 
         var name: String { rawValue }
 
         func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {
-            case .spaceColumnGapNone:
-                theme.spaces.spaceColumnGapNone
-            case .spaceColumnGapXsmall:
-                theme.spaces.spaceColumnGapXsmall
-            case .spaceColumnGapSmall:
-                theme.spaces.spaceColumnGapSmall
-            case .spaceColumnGapMedium:
-                theme.spaces.spaceColumnGapMedium
-            case .spaceColumnGapLarge:
-                theme.spaces.spaceColumnGapLarge
-            case .spaceColumnGapXlarge:
-                theme.spaces.spaceColumnGapXlarge
+            case .columnGapNone:
+                theme.spaces.columnGapNone
+            case .columnGapXsmall:
+                theme.spaces.columnGapXsmall
+            case .columnGapSmall:
+                theme.spaces.columnGapSmall
+            case .columnGapMedium:
+                theme.spaces.columnGapMedium
+            case .columnGapLarge:
+                theme.spaces.columnGapLarge
+            case .columnGapXlarge:
+                theme.spaces.columnGapXlarge
             }
         }
     }

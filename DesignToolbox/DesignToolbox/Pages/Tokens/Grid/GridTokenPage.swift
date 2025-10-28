@@ -25,19 +25,19 @@ struct GridTokenPage: View {
 
     var body: some View {
         Group {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
                 Image(decorative: "il_tokens_grid_column_margin")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .oudsBackground(theme.colors.colorSurfaceSecondary)
+                    .oudsBackground(theme.colors.surfaceSecondary)
                 Image(decorative: "il_tokens_grid_min_width")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .oudsBackground(theme.colors.colorSurfaceSecondary)
+                    .oudsBackground(theme.colors.surfaceSecondary)
                 Image(decorative: "il_tokens_grid_max_width")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .oudsBackground(theme.colors.colorSurfaceSecondary)
+                    .oudsBackground(theme.colors.surfaceSecondary)
             }
 
             Section {
@@ -49,13 +49,13 @@ struct GridTokenPage: View {
                     .designToolboxSectionHeaderStyle()
             }
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.fixedMedium)
     }
 
     // MARK: Private helpers
 
     private func illustrationForGridTokens() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             ForEach(NamedGrid.allCases, id: \.rawValue) { namedGrid in
                 illustration(for: namedGrid)
             }
@@ -74,21 +74,21 @@ struct GridTokenPage: View {
 }
 
 private enum NamedGrid: String, CaseIterable {
-    case gridMinWidth
-    case gridMaxWidth
-    case gridMargin
-    case gridColumnGap
+    case minWidth
+    case maxWidth
+    case margin
+    case columnGap
 
     @MainActor
     func token(from theme: OUDSTheme, for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
         switch self {
-        case .gridMinWidth:
+        case .minWidth:
             theme.gridMinWidth(for: sizeClass)
-        case .gridMaxWidth:
+        case .maxWidth:
             theme.gridMaxWidth(for: sizeClass)
-        case .gridMargin:
+        case .margin:
             theme.gridMargin(for: sizeClass)
-        case .gridColumnGap:
+        case .columnGap:
             theme.gridColumnGap(for: sizeClass)
         }
     }

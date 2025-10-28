@@ -17,18 +17,18 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Opacity: String, CaseIterable {
-        case colorOpacityLowest
-        case colorOpacityLower
-        case colorOpacityTransparent
+        case opacityLowest
+        case opacityLower
+        case opacityTransparent
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
-            case .colorOpacityLowest:
-                theme.colors.colorOpacityLowest
-            case .colorOpacityLower:
-                theme.colors.colorOpacityLower
-            case .colorOpacityTransparent:
-                theme.colors.colorOpacityTransparent
+            case .opacityLowest:
+                theme.colors.opacityLowest
+            case .opacityLower:
+                theme.colors.opacityLower
+            case .opacityTransparent:
+                theme.colors.opacityTransparent
             }
         }
     }

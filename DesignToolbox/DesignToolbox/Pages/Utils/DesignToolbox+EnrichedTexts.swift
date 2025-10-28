@@ -77,7 +77,7 @@ struct OpenableText: View {
     }
 
     var body: some View {
-        HStack(spacing: theme.spaces.spaceInsetNone) {
+        HStack(spacing: theme.spaces.insetNone) {
             Text(rawText.replacingOccurrences(of: anchor, with: ""))
             anchorLinkView
         }
@@ -89,7 +89,7 @@ struct OpenableText: View {
         if type != .githubIssue {
             Text(anchor)
                 .underline()
-                .oudsForegroundStyle(theme.link.linkColorContentEnabled)
+                .oudsForegroundStyle(theme.link.colorContentEnabled)
                 .onTapGesture {
                     UIApplication.shared.open(URL(string: type.destination(for: anchor).first!)!)
                 }
@@ -100,7 +100,7 @@ struct OpenableText: View {
                 if let url = urlFor(String(someAnchor)) {
                     Text(someAnchor)
                         .underline()
-                        .oudsForegroundStyle(theme.link.linkColorContentEnabled)
+                        .oudsForegroundStyle(theme.link.colorContentEnabled)
                         .onTapGesture {
                             UIApplication.shared.open(url)
                         }

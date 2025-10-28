@@ -59,6 +59,6 @@ private struct LinkDemo: View {
             Spacer()
         }
         .disabled(!configurationModel.enabled)
-        .padding(.all, theme.spaces.spaceFixedMedium)
+        .padding(.all, theme.spaces.fixedMedium)
     }
 }

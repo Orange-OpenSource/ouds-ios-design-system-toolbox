@@ -51,6 +51,6 @@ struct InputTagDemo: View {
 
             Spacer()
         }
-        .padding(.all, theme.spaces.spaceFixedMedium)
+        .padding(.all, theme.spaces.fixedMedium)
     }
 }

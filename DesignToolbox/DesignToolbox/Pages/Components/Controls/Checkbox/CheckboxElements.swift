@@ -44,7 +44,7 @@ private struct CheckboxIllustration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: theme.spaces.spaceFixedNone) {
+        VStack(spacing: theme.spaces.fixedNone) {
             // 🥜: dumb label, not vocalized, preventing warnings because of empty labels
             OUDSCheckbox(isOn: .constant(true), accessibilityLabel: "🥜")
             OUDSCheckbox(isOn: .constant(false), accessibilityLabel: "🥜")

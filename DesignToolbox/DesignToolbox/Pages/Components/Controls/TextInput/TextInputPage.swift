@@ -61,7 +61,7 @@ struct TextInputDemo: View {
                       status: configurationModel.status)
             .autocorrectionDisabled()
             .textInputAutocapitalization(.never)
-            .padding(.all, theme.spaces.spaceFixedMedium)
+            .padding(.all, theme.spaces.fixedMedium)
             .onSubmit {
                 if configurationModel.text == "error" {
                     configurationModel.status = .error(message: "Error text detecte")

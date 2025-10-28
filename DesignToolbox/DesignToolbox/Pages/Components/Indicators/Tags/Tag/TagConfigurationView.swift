@@ -165,7 +165,7 @@ struct TagConfigurationView: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
                 .disabled(configurationModel.loader)
 

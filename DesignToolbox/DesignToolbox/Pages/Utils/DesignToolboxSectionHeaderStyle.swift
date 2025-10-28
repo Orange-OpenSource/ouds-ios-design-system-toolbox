@@ -20,7 +20,7 @@ struct DesignToolboxSectionHeaderModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .typeHeadingMedium(theme)
+            .headingMedium(theme)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

@@ -23,6 +23,6 @@ struct DesignToolboxTokenIllustrationBackground: View {
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        Rectangle().fill(theme.colors.colorSurfaceSecondary.color(for: colorScheme))
+        Rectangle().fill(theme.colors.surfaceSecondary.color(for: colorScheme))
     }
 }

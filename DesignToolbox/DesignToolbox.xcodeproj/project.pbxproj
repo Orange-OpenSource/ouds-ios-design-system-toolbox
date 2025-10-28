@@ -23,7 +23,7 @@
 /* Begin PBXBuildFile section */
 		070C35622C75EB1C0029C6A8 /* OUDS in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35612C75EB1C0029C6A8 /* OUDS */; };
 		070C35662C7762B90029C6A8 /* OUDSModules in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35652C7762B90029C6A8 /* OUDSModules */; };
-		070DF8B12CDD07F20043D558 /* GrisTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AF2CDD07F20043D558 /* GrisTokenPage.swift */; };
+		070DF8B12CDD07F20043D558 /* GridTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AF2CDD07F20043D558 /* GridTokenPage.swift */; };
 		070DF8B22CDD07F20043D558 /* GridTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AE2CDD07F20043D558 /* GridTokenElement.swift */; };
 		072141192D02F52A00B7B9C6 /* ButtonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072141172D02F52A00B7B9C6 /* ButtonPage.swift */; };
 		0721411B2D02F52A00B7B9C6 /* ButtonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072141162D02F52A00B7B9C6 /* ButtonElement.swift */; };
@@ -317,7 +317,7 @@
 		51952AA02D3FA32E0068B807 /* DimensionTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE542CB426090059CC28 /* DimensionTokenElement.swift */; };
 		51952AA12D3FA32E0068B807 /* ElevationTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42762CA3F4BE000BD03E /* ElevationTokenElement.swift */; };
 		51952AA22D3FA32E0068B807 /* GridTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AE2CDD07F20043D558 /* GridTokenElement.swift */; };
-		51952AA32D3FA32E0068B807 /* GrisTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AF2CDD07F20043D558 /* GrisTokenPage.swift */; };
+		51952AA32D3FA32E0068B807 /* GridTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AF2CDD07F20043D558 /* GridTokenPage.swift */; };
 		51952AA42D3FA32E0068B807 /* TokensPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF426A2CA30728000BD03E /* TokensPage.swift */; };
 		51952AA52D3FA3440068B807 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543102CA154DE001187EA /* Card.swift */; };
 		51A2175D2E325ED500562BE0 /* OrangeBusinessToolsTheme+ButtonSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A217562E325ED500562BE0 /* OrangeBusinessToolsTheme+ButtonSnapshotsTests.swift */; };
@@ -490,7 +490,7 @@
 		0707B6402C2C3C0400A911E7 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; name = .github; path = ../.github; sourceTree = "<group>"; };
 		0707B6432C2C569500A911E7 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gemfile; path = ../Gemfile; sourceTree = "<group>"; };
 		070DF8AE2CDD07F20043D558 /* GridTokenElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTokenElement.swift; sourceTree = "<group>"; };
-		070DF8AF2CDD07F20043D558 /* GrisTokenPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrisTokenPage.swift; sourceTree = "<group>"; };
+		070DF8AF2CDD07F20043D558 /* GridTokenPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTokenPage.swift; sourceTree = "<group>"; };
 		072141162D02F52A00B7B9C6 /* ButtonElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonElement.swift; sourceTree = "<group>"; };
 		072141172D02F52A00B7B9C6 /* ButtonPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPage.swift; sourceTree = "<group>"; };
 		072BB4532E68937E00A4DF2D /* TextInputSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputSnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
@@ -861,7 +861,7 @@
 			isa = PBXGroup;
 			children = (
 				070DF8AE2CDD07F20043D558 /* GridTokenElement.swift */,
-				070DF8AF2CDD07F20043D558 /* GrisTokenPage.swift */,
+				070DF8AF2CDD07F20043D558 /* GridTokenPage.swift */,
 			);
 			path = Grid;
 			sourceTree = "<group>";
@@ -2535,7 +2535,7 @@
 				51952AA22D3FA32E0068B807 /* GridTokenElement.swift in Sources */,
 				0794FCDB2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift in Sources */,
 				079B4A1A2E49C78F0039FC26 /* OrangeBusinessToolsTheme+TagSnapshotsTests.swift in Sources */,
-				51952AA32D3FA32E0068B807 /* GrisTokenPage.swift in Sources */,
+				51952AA32D3FA32E0068B807 /* GridTokenPage.swift in Sources */,
 				515EE9A42E2133F200A60E96 /* SoshTheme+ChipsSnapshotsTests.swift in Sources */,
 				51952AA42D3FA32E0068B807 /* TokensPage.swift in Sources */,
 				0745C1912D7A0596006B3A1F /* RadioPage.swift in Sources */,
@@ -2788,7 +2788,7 @@
 				07B3CCB12D40E34700DBB10A /* LinkConfiguration.swift in Sources */,
 				07B3CCB22D40E34700DBB10A /* LinkElement.swift in Sources */,
 				07B3CCB32D40E34700DBB10A /* LinkPage.swift in Sources */,
-				070DF8B12CDD07F20043D558 /* GrisTokenPage.swift in Sources */,
+				070DF8B12CDD07F20043D558 /* GridTokenPage.swift in Sources */,
 				070DF8B22CDD07F20043D558 /* GridTokenElement.swift in Sources */,
 				077CCE582CB426090059CC28 /* SpaceTokenPage.swift in Sources */,
 				07F75A3F2CC653CD0004F1AD /* NameSpace+ColumnGap.swift in Sources */,

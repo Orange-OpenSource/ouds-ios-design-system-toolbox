@@ -33,7 +33,7 @@ struct MainView: View {
                     Label("app_bottomBar_about_label", image: "ic_info")
                 }
         }
-        .oudsAccentColor(theme.colors.colorContentBrandPrimary)
+        .oudsAccentColor(theme.colors.contentBrandPrimary)
     }
 }
 

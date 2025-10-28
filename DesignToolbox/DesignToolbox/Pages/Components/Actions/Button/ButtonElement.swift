@@ -37,7 +37,7 @@ private struct ButtonIllustration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: theme.spaces.spaceFixedSmall) {
+        VStack(spacing: theme.spaces.fixedSmall) {
             // Dont translate default text for all
             OUDSButton(text: "Label", appearance: firstButtonAppearance) {}
             OUDSButton(text: "Label", appearance: secondButtonAppearance) {}

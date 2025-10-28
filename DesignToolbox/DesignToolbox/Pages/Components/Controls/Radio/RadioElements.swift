@@ -42,7 +42,7 @@ private struct RadioIllustration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: theme.spaces.spaceFixedNone) {
+        VStack(spacing: theme.spaces.fixedNone) {
             // 🥜: dumb label, not vocalized, preventing warnings because of empty labels
             OUDSRadio(isOn: .constant(true), accessibilityLabel: "🥜")
             OUDSRadio(isOn: .constant(false), accessibilityLabel: "🥜")

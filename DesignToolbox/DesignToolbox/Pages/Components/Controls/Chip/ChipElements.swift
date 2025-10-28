@@ -42,7 +42,7 @@ private struct ChipIllustration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: theme.spaces.spaceFixedSmall) {
+        VStack(spacing: theme.spaces.fixedSmall) {
             OUDSFilterChip(text: "Filter", selected: true) {}
             OUDSSuggestionChip(text: "Suggestion") {}
         }

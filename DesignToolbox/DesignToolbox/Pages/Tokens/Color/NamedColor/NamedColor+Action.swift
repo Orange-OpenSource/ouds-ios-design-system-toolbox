@@ -17,69 +17,69 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Action: String, CaseIterable {
-        case colorActionDisabled
-        case colorActionEnabled
-        case colorActionFocus
-        case colorActionHighlighted
-        case colorActionHover
-        case colorActionLoading
-        case colorActionNegativeEnabled
-        case colorActionNegativeFocus
-        case colorActionNegativeHover
-        case colorActionNegativeLoading
-        case colorActionNegativePressed
-        case colorActionPressed
-        case colorActionSelected
-        case colorActionSupportEnabled
-        case colorActionSupportDisabled
-        case colorActionSupportFocus
-        case colorActionSupportHover
-        case colorActionSupportLoading
-        case colorActionSupportPressed
-        case colorActionVisited
+        case actionDisabled
+        case actionEnabled
+        case actionFocus
+        case actionHighlighted
+        case actionHover
+        case actionLoading
+        case actionNegativeEnabled
+        case actionNegativeFocus
+        case actionNegativeHover
+        case actionNegativeLoading
+        case actionNegativePressed
+        case actionPressed
+        case actionSelected
+        case actionSupportEnabled
+        case actionSupportDisabled
+        case actionSupportFocus
+        case actionSupportHover
+        case actionSupportLoading
+        case actionSupportPressed
+        case actionVisited
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
-            case .colorActionDisabled:
-                theme.colors.colorActionDisabled
-            case .colorActionEnabled:
-                theme.colors.colorActionEnabled
-            case .colorActionFocus:
-                theme.colors.colorActionFocus
-            case .colorActionHighlighted:
-                theme.colors.colorActionHighlighted
-            case .colorActionHover:
-                theme.colors.colorActionHover
-            case .colorActionLoading:
-                theme.colors.colorActionLoading
-            case .colorActionNegativeEnabled:
-                theme.colors.colorActionNegativeEnabled
-            case .colorActionNegativeFocus:
-                theme.colors.colorActionNegativeFocus
-            case .colorActionNegativeHover:
-                theme.colors.colorActionNegativeHover
-            case .colorActionNegativeLoading:
-                theme.colors.colorActionNegativeLoading
-            case .colorActionNegativePressed:
-                theme.colors.colorActionNegativePressed
-            case .colorActionPressed:
-                theme.colors.colorActionPressed
-            case .colorActionSelected:
-                theme.colors.colorActionSelected
-            case .colorActionSupportEnabled:
-                theme.colors.colorActionSupportEnabled
-            case .colorActionSupportDisabled:
-                theme.colors.colorActionSupportDisabled
-            case .colorActionSupportFocus:
-                theme.colors.colorActionSupportFocus
-            case .colorActionSupportHover:
-                theme.colors.colorActionSupportHover
-            case .colorActionSupportLoading:
-                theme.colors.colorActionSupportLoading
-            case .colorActionSupportPressed:
-                theme.colors.colorActionSupportPressed
-            case .colorActionVisited:
-                theme.colors.colorActionVisited
+            case .actionDisabled:
+                theme.colors.actionDisabled
+            case .actionEnabled:
+                theme.colors.actionEnabled
+            case .actionFocus:
+                theme.colors.actionFocus
+            case .actionHighlighted:
+                theme.colors.actionHighlighted
+            case .actionHover:
+                theme.colors.actionHover
+            case .actionLoading:
+                theme.colors.actionLoading
+            case .actionNegativeEnabled:
+                theme.colors.actionNegativeEnabled
+            case .actionNegativeFocus:
+                theme.colors.actionNegativeFocus
+            case .actionNegativeHover:
+                theme.colors.actionNegativeHover
+            case .actionNegativeLoading:
+                theme.colors.actionNegativeLoading
+            case .actionNegativePressed:
+                theme.colors.actionNegativePressed
+            case .actionPressed:
+                theme.colors.actionPressed
+            case .actionSelected:
+                theme.colors.actionSelected
+            case .actionSupportEnabled:
+                theme.colors.actionSupportEnabled
+            case .actionSupportDisabled:
+                theme.colors.actionSupportDisabled
+            case .actionSupportFocus:
+                theme.colors.actionSupportFocus
+            case .actionSupportHover:
+                theme.colors.actionSupportHover
+            case .actionSupportLoading:
+                theme.colors.actionSupportLoading
+            case .actionSupportPressed:
+                theme.colors.actionSupportPressed
+            case .actionVisited:
+                theme.colors.actionVisited
             }
         }
     }

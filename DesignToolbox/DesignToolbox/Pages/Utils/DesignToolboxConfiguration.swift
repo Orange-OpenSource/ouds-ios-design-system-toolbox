@@ -29,23 +29,23 @@ struct DesignToolboxConfiguration<Configuration>: View where Configuration: View
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             Group {
                 Text("app_common_configuration_label")
-                    .typeHeadingMedium(theme)
-                    .oudsForegroundColor(theme.colors.colorContentDefault)
+                    .headingMedium(theme)
+                    .oudsForegroundColor(theme.colors.contentDefault)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 OUDSHorizontalDivider()
             }
-            .padding(.horizontal, theme.spaces.spaceFixedMedium)
+            .padding(.horizontal, theme.spaces.fixedMedium)
 
             configuration()
         }
-        .padding(.vertical, theme.spaces.spaceFixedMedium)
-        .oudsBorder(style: theme.borders.borderStyleDefault,
-                    width: theme.borders.borderWidthThin,
-                    radius: theme.borders.borderRadiusMedium,
-                    color: theme.colors.colorBorderDefault)
+        .padding(.vertical, theme.spaces.fixedMedium)
+        .oudsBorder(style: theme.borders.styleDefault,
+                    width: theme.borders.widthThin,
+                    radius: theme.borders.radiusMedium,
+                    color: theme.colors.borderDefault)
     }
 }
