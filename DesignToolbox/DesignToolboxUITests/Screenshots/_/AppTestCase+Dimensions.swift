@@ -31,7 +31,7 @@ extension AppTestCase {
 
         static let iPhone12ProPortraitWidth = 1_170
 
-        // Offsets to apply if, for example, use another device almost with same _s as iPhone 12 Pro (or not)
+        // Offsets to apply if, for example, use another device almost with same dimensions as iPhone 12 Pro (or not)
         // Prevents to change all values
         // Feel free to update and precise which device you use!
         private static let offsetX = 0
