@@ -292,7 +292,7 @@ struct SpaceHeaderDescription: View {
 
     var body: some View {
         content
-            .oudsBorder(style: theme.borders.styeDrag, width: theme.borders.widthThin, radius: theme.borders.radiusNone, color: theme.colors.bgInverseLow)
+            .oudsBorder(style: theme.borders.styleDrag, width: theme.borders.widthThin, radius: theme.borders.radiusNone, color: theme.colors.bgInverseLow)
             .padding(.all, theme.spaces.fixedMedium)
             .oudsBackground(theme.colors.surfaceSecondary)
     }

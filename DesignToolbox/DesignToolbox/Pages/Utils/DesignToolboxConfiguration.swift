@@ -43,7 +43,7 @@ struct DesignToolboxConfiguration<Configuration>: View where Configuration: View
             configuration()
         }
         .padding(.vertical, theme.spaces.fixedMedium)
-        .oudsBorder(style: theme.borders.styeDefault,
+        .oudsBorder(style: theme.borders.styleDefault,
                     width: theme.borders.widthThin,
                     radius: theme.borders.radiusMedium,
                     color: theme.colors.borderDefault)

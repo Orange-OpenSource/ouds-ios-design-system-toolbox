@@ -91,7 +91,7 @@ struct BorderTokenPage: View {
 
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()
-                    .oudsBorder(style: theme.borders.styeDefault,
+                    .oudsBorder(style: theme.borders.styleDefault,
                                 width: token,
                                 radius: theme.borders.radiusNone,
                                 color: theme.colors.borderFocus)
@@ -111,7 +111,7 @@ struct BorderTokenPage: View {
 
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()
-                    .oudsBorder(style: theme.borders.styeDefault,
+                    .oudsBorder(style: theme.borders.styleDefault,
                                 width: theme.borders.widthDefault,
                                 radius: token,
                                 color: theme.colors.borderFocus)
@@ -199,15 +199,15 @@ enum NamedBorderWidth: String, CaseIterable {
 }
 
 enum NamedBorderStyle: String, CaseIterable {
-    case styeDefault
-    case styeDrag
+    case styleDefault
+    case styleDrag
 
     func token(from theme: OUDSTheme) -> BorderStyleSemanticToken {
         switch self {
-        case .styeDefault:
-            theme.borders.styeDefault
-        case .styeDrag:
-            theme.borders.styeDrag
+        case .styleDefault:
+            theme.borders.styleDefault
+        case .styleDrag:
+            theme.borders.styleDrag
         }
     }
 }

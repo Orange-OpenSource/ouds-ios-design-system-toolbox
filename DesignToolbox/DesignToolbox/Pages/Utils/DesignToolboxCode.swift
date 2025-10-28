@@ -66,7 +66,7 @@ struct DesignToolboxCode: View {
             Rectangle()
                 .opacity(theme.opacities.invisible)
                 .frame(minWidth: 40, maxWidth: .infinity, alignment: .leading)
-                .oudsBorder(style: theme.borders.styeDefault,
+                .oudsBorder(style: theme.borders.styleDefault,
                             width: theme.borders.widthThin,
                             radius: theme.borders.radiusDefault,
                             color: theme.colors.borderDefault))
