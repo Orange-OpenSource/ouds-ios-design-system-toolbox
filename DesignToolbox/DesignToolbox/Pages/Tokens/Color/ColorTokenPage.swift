@@ -30,7 +30,7 @@ struct ColorTokenPage: View {
             Section { illustrationForAlways() } header: { header("Always") }
             Section { illustrationForBackground() } header: { header("Background") }
             Section { illustrationForBorder() } header: { header("Border") }
-            if theme.colorCharts != nil { // Some themes like Sosh do not have color charts
+            if theme.charts != nil { // Some themes like Sosh do not have color charts
                 Section { illustrationForChart() } header: { header("Chart") }
             }
             Section { illustrationForContent() } header: { header("Content") }

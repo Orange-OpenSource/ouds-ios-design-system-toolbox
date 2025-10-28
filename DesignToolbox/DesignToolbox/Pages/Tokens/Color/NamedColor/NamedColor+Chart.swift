@@ -17,68 +17,68 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Chart: String, CaseIterable {
-        case colorChartBorder
-        case colorChartBorderContrast
-        case colorChartCategoricalTier1
-        case colorChartCategoricalTier2
-        case colorChartCategoricalTier3
-        case colorChartCategoricalTier4
-        case colorChartCategoricalTier5
-        case colorChartCategoricalTier6
-        case colorChartCategoricalTier7
-        case colorChartCategoricalTier8
-        case colorChartCategoricalTier9
-        case colorChartCategoricalTier10
-        case colorChartFunctionalInfo
-        case colorChartFunctionalNegative
-        case colorChartFunctionalPositive
-        case colorChartFunctionalWarning
-        case colorChartGridlines
-        case colorChartHighlight
-        case colorChartNeutral
+        case chartBorder
+        case chartBorderContrast
+        case chartCategoricalTier1
+        case chartCategoricalTier2
+        case chartCategoricalTier3
+        case chartCategoricalTier4
+        case chartCategoricalTier5
+        case chartCategoricalTier6
+        case chartCategoricalTier7
+        case chartCategoricalTier8
+        case chartCategoricalTier9
+        case chartCategoricalTier10
+        case chartFunctionalInfo
+        case chartFunctionalNegative
+        case chartFunctionalPositive
+        case chartFunctionalWarning
+        case chartGridlines
+        case chartHighlight
+        case chartNeutral
 
-        // We can bang! theme.colorCharts here because controls on the existence of theme.colorCharts have been previosuly done
+        // We can bang! theme.charts here because controls on the existence of theme.charts have been previosuly done
         // swiftlint:disable force_unwrapping
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
-            case .colorChartBorder:
-                theme.colorCharts!.colorChartBorder
-            case .colorChartBorderContrast:
-                theme.colorCharts!.colorChartBorderContrast
-            case .colorChartCategoricalTier1:
-                theme.colorCharts!.colorChartCategoricalTier1
-            case .colorChartCategoricalTier2:
-                theme.colorCharts!.colorChartCategoricalTier2
-            case .colorChartCategoricalTier3:
-                theme.colorCharts!.colorChartCategoricalTier3
-            case .colorChartCategoricalTier4:
-                theme.colorCharts!.colorChartCategoricalTier4
-            case .colorChartCategoricalTier5:
-                theme.colorCharts!.colorChartCategoricalTier5
-            case .colorChartCategoricalTier6:
-                theme.colorCharts!.colorChartCategoricalTier6
-            case .colorChartCategoricalTier7:
-                theme.colorCharts!.colorChartCategoricalTier7
-            case .colorChartCategoricalTier8:
-                theme.colorCharts!.colorChartCategoricalTier8
-            case .colorChartCategoricalTier9:
-                theme.colorCharts!.colorChartCategoricalTier9
-            case .colorChartCategoricalTier10:
-                theme.colorCharts!.colorChartCategoricalTier10
-            case .colorChartFunctionalInfo:
-                theme.colorCharts!.colorChartFunctionalInfo
-            case .colorChartFunctionalNegative:
-                theme.colorCharts!.colorChartFunctionalNegative
-            case .colorChartFunctionalPositive:
-                theme.colorCharts!.colorChartFunctionalPositive
-            case .colorChartFunctionalWarning:
-                theme.colorCharts!.colorChartFunctionalWarning
-            case .colorChartGridlines:
-                theme.colorCharts!.colorChartGridlines
-            case .colorChartHighlight:
-                theme.colorCharts!.colorChartHighlight
-            case .colorChartNeutral:
-                theme.colorCharts!.colorChartNeutral
+            case .chartBorder:
+                theme.charts!.chartBorder
+            case .chartBorderContrast:
+                theme.charts!.chartBorderContrast
+            case .chartCategoricalTier1:
+                theme.charts!.chartCategoricalTier1
+            case .chartCategoricalTier2:
+                theme.charts!.chartCategoricalTier2
+            case .chartCategoricalTier3:
+                theme.charts!.chartCategoricalTier3
+            case .chartCategoricalTier4:
+                theme.charts!.chartCategoricalTier4
+            case .chartCategoricalTier5:
+                theme.charts!.chartCategoricalTier5
+            case .chartCategoricalTier6:
+                theme.charts!.chartCategoricalTier6
+            case .chartCategoricalTier7:
+                theme.charts!.chartCategoricalTier7
+            case .chartCategoricalTier8:
+                theme.charts!.chartCategoricalTier8
+            case .chartCategoricalTier9:
+                theme.charts!.chartCategoricalTier9
+            case .chartCategoricalTier10:
+                theme.charts!.chartCategoricalTier10
+            case .chartFunctionalInfo:
+                theme.charts!.chartFunctionalInfo
+            case .chartFunctionalNegative:
+                theme.charts!.chartFunctionalNegative
+            case .chartFunctionalPositive:
+                theme.charts!.chartFunctionalPositive
+            case .chartFunctionalWarning:
+                theme.charts!.chartFunctionalWarning
+            case .chartGridlines:
+                theme.charts!.chartGridlines
+            case .chartHighlight:
+                theme.charts!.chartHighlight
+            case .chartNeutral:
+                theme.charts!.chartNeutral
             }
         }
         // swiftlint:enable force_unwrapping

@@ -40,7 +40,7 @@ final class WireframeThemeTokensColorSnapshotsTests: TokensColorSnapshotsTestsTe
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
         // Sosh theme does not have yet color charts branded for it
         // If the provider is defined that's unexpected, it should be nil
-        if theme.colorCharts != nil {
+        if theme.charts != nil {
             XCTFail("The Wireframe theme does not have yet color charts, that's unexpected")
         }
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
@@ -61,7 +61,7 @@ final class WireframeThemeTokensColorSnapshotsTests: TokensColorSnapshotsTestsTe
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
         // Sosh theme does not have yet color charts branded for it
         // If the provider is defined that's unexpected, it should be nil
-        if theme.colorCharts != nil {
+        if theme.charts != nil {
             XCTFail("The Wireframe theme does not have yet color charts, that's unexpected")
         }
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
