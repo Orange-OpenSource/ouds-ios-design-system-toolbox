@@ -89,7 +89,7 @@ struct OpenableText: View {
         if type != .githubIssue {
             Text(anchor)
                 .underline()
-                .oudsForegroundStyle(theme.link.linkColorContentEnabled)
+                .oudsForegroundStyle(theme.link.colorContentEnabled)
                 .onTapGesture {
                     UIApplication.shared.open(URL(string: type.destination(for: anchor).first!)!)
                 }
@@ -100,7 +100,7 @@ struct OpenableText: View {
                 if let url = urlFor(String(someAnchor)) {
                     Text(someAnchor)
                         .underline()
-                        .oudsForegroundStyle(theme.link.linkColorContentEnabled)
+                        .oudsForegroundStyle(theme.link.colorContentEnabled)
                         .onTapGesture {
                             UIApplication.shared.open(url)
                         }
