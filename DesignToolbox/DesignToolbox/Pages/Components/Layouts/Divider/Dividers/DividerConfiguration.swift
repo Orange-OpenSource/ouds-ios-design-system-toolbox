@@ -97,7 +97,7 @@ private struct ColorEntry: View {
 
 extension OUDSDividerColor: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    public nonisolated(unsafe) static var allCases: [OUDSDividerColor] = [
+    nonisolated(unsafe) public static var allCases: [OUDSDividerColor] = [
         .default,
         .muted,
         .emphasized,

@@ -140,7 +140,7 @@ struct BadgeConfigurationView: View {
 
 extension OUDSBadge.StandardSize: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    public nonisolated(unsafe) static let allCases: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
+    nonisolated(unsafe) public static let allCases: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
 
     public var description: String {
         switch self {
@@ -178,7 +178,8 @@ extension OUDSBadge.StandardSize: @retroactive CaseIterable, @retroactive Custom
 }
 
 extension OUDSBadge.IllustrationSize: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    public nonisolated(unsafe) static let allCases: [OUDSBadge.IllustrationSize] = [.medium, .large]
+
+    nonisolated(unsafe) public static let allCases: [OUDSBadge.IllustrationSize] = [.medium, .large]
 
     public var description: String {
         switch self {
@@ -209,7 +210,7 @@ extension OUDSBadge.IllustrationSize: @retroactive CaseIterable, @retroactive Cu
 
 extension OUDSBadge.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    public nonisolated(unsafe) static let allCases: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning, .disabled]
+    nonisolated(unsafe) public static let allCases: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning, .disabled]
 
     public var description: String {
         switch self {

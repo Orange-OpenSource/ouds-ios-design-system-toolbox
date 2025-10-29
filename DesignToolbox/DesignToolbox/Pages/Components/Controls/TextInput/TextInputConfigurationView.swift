@@ -211,7 +211,7 @@ struct TextInputConfigurationView: View {
 
 extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
 
-    public nonisolated(unsafe) static var allCases: [OUDSTextInput.Status] =
+    nonisolated(unsafe) public static var allCases: [OUDSTextInput.Status] =
         [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading, .readOnly, .disabled]
 
     public var description: String {
