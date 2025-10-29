@@ -17,21 +17,21 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Always: String, CaseIterable {
-        case colorAlwaysBlack
-        case colorAlwaysOnBlack
-        case colorAlwaysOnWhite
-        case colorAlwaysWhite
+        case alwaysBlack
+        case alwaysOnBlack
+        case alwaysOnWhite
+        case alwaysWhite
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
-            case .colorAlwaysBlack:
-                theme.colors.colorAlwaysBlack
-            case .colorAlwaysOnBlack:
-                theme.colors.colorAlwaysOnBlack
-            case .colorAlwaysOnWhite:
-                theme.colors.colorAlwaysOnWhite
-            case .colorAlwaysWhite:
-                theme.colors.colorAlwaysWhite
+            case .alwaysBlack:
+                theme.colors.alwaysBlack
+            case .alwaysOnBlack:
+                theme.colors.alwaysOnBlack
+            case .alwaysOnWhite:
+                theme.colors.alwaysOnWhite
+            case .alwaysWhite:
+                theme.colors.alwaysWhite
             }
         }
     }
