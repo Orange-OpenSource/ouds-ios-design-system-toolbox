@@ -118,4 +118,5 @@ jobs:
         run: |
           cd DesignToolbox
           bundle exec pod install
+          xcrun simctl list # List available simulators
           bundle exec fastlane test_snapshots
