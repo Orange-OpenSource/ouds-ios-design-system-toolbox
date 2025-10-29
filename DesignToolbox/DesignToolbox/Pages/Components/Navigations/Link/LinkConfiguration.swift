@@ -125,7 +125,8 @@ enum LinkLayout: CaseIterable, CustomStringConvertible {
 // MARK: Link size extension
 
 extension OUDSLink.Size: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    public nonisolated(unsafe) static let allCases: [OUDSLink.Size] = [.default, .small]
+
+    nonisolated(unsafe) public static let allCases: [OUDSLink.Size] = [.default, .small]
 
     public var description: String {
         switch self {
