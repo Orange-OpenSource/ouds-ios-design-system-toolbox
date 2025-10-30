@@ -19,7 +19,7 @@ import SwiftUI
 /// (enumerate tokens and components)
 struct DesignToolboxElementsPage: View {
 
-    #if os(macOS)
+    #if !os(iOS)
     @State private var selectedElement: DesignToolboxElement?
     #endif
 
@@ -34,7 +34,7 @@ struct DesignToolboxElementsPage: View {
     // MARK: Body
 
     var body: some View {
-        #if os(iOS)
+        #if os(iOS) || os(visionOS)
         NavigationView {
             elementsPage
                 .navigationBarTitleDisplayMode(.inline)
@@ -59,6 +59,22 @@ struct DesignToolboxElementsPage: View {
 
     private var elementsPage: some View {
         ScrollView {
+            #if os(visionOS)
+            LazyVStack(spacing: 12) {
+                ForEach(elements, id: \.id) { element in
+                    NavigationLink {
+                        element.pageDescription
+                            .navigationBarMenus()
+                    } label: {
+                        cardView(for: element)
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(.horizontal, 32)
+            .padding(.vertical, 20)
+            .navigationBarMenus()
+            #else
             LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaces.fixed2xsmall) {
                 ForEach(elements, id: \.id) { element in
                     #if os(iOS)
@@ -78,16 +94,119 @@ struct DesignToolboxElementsPage: View {
             }
             .padding(.all, theme.spaces.fixedMedium)
             .navigationBarMenus()
+            #endif
         }
         .oudsBackground(theme.colors.bgPrimary)
         .oudsNavigationTitle(title)
     }
 
     private func cardView(for element: DesignToolboxElement) -> some View {
+        #if os(visionOS)
+        HStack(spacing: 16) {
+            // Illustration
+            element.illustration
+                .frame(width: 44, height: 44)
+                .scaleEffect(0.6)
+                .clipped()
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+
+            // Titre
+            Text(LocalizedStringKey(element.name))
+                .font(.headline)
+                .foregroundStyle(.primary)
+                .multilineTextAlignment(.leading)
+                .lineLimit(2)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            Image(systemName: "chevron.right")
+                .accessibilityHidden(true)
+                .font(.subheadline)
+                .foregroundStyle(.tertiary)
+        }
+        .padding(.horizontal, 24)
+        .padding(.vertical, 18)
+        .background(.regularMaterial, in: .capsule)
+        .hoverEffect(.highlight)
+        .accessibilityFocused($requestFocus, equals: .some(id: element.id))
+        .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
+
+        #else
         Card(
             title: Text(LocalizedStringKey(element.name)),
             illustration: element.illustration)
             .accessibilityFocused($requestFocus, equals: .some(id: element.id))
             .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
+        #endif
     }
+
+    /*
+     private var elementsPage: some View {
+     ScrollView {
+     LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaces.fixed2xsmall) {
+     ForEach(elements, id: \.id) { element in
+     #if os(iOS) || os(visionOS)
+     NavigationLink {
+     element.pageDescription
+     } label: {
+     cardView(for: element)
+     }
+     #else // macOS
+     Button {
+     selectedElement = element
+     } label: {
+     cardView(for: element)
+     }
+     #endif
+     }
+     }
+     .padding(.all, theme.spaces.fixedMedium)
+     .navigationBarMenus()
+     }
+     .oudsBackground(theme.colors.bgPrimary)
+     .oudsNavigationTitle(title)
+     }
+
+     private func cardView(for element: DesignToolboxElement) -> some View {
+     #if os(visionOS)
+     HStack(spacing: 16) {
+     // Illustration
+     element.illustration
+     .frame(width: 44, height: 44)
+     .scaleEffect(0.6) // Réduit à 60% de la taille
+     .clipped()
+     .clipShape(RoundedRectangle(cornerRadius: 10))
+
+     // Titre
+     Text(LocalizedStringKey(element.name))
+     .font(.headline)
+     .foregroundStyle(.primary)
+     .multilineTextAlignment(.leading)
+     .lineLimit(2) // Limite à 2 lignes
+     .fixedSize(horizontal: false, vertical: true) // Permet seulement le wrap vertical
+     .frame(maxWidth: .infinity, alignment: .leading) // Prend l'espace disponible
+
+     Image(systemName: "chevron.right")
+     .font(.subheadline)
+     .foregroundStyle(.tertiary)
+     }
+     .frame(maxWidth: .infinity) // Force la largeur maximale
+     .padding(.horizontal, 24)
+     .padding(.vertical, 18)
+     //.background(.regularMaterial, in: .capsule)
+     .background(.pink, in: .capsule)
+     .hoverEffect(.highlight)
+     .accessibilityFocused($requestFocus, equals: .some(id: element.id))
+     .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
+
+     #else
+     Card(
+     title: Text(LocalizedStringKey(element.name)),
+     illustration: element.illustration)
+     .accessibilityFocused($requestFocus, equals: .some(id: element.id))
+     .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
+     #endif
+     }
+     }
+
+     */
 }

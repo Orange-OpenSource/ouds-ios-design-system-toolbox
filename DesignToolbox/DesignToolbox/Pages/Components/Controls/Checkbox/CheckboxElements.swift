@@ -45,9 +45,13 @@ private struct CheckboxIllustration: View {
 
     var body: some View {
         VStack(spacing: theme.spaces.fixedNone) {
+            #if !os(visionOS)
             // 🥜: dumb label, not vocalized, preventing warnings because of empty labels
             OUDSCheckbox(isOn: .constant(true), accessibilityLabel: "🥜")
             OUDSCheckbox(isOn: .constant(false), accessibilityLabel: "🥜")
+            #else
+            OUDSCheckbox(isOn: .constant(true), accessibilityLabel: "🥜")
+            #endif
         }
     }
 }

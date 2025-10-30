@@ -48,6 +48,16 @@ struct DesignToolboxVariantElement: View {
             } label: {
                 rowView(for: element)
             }
+
+            #elseif os(visionOS)
+            NavigationLink {
+                element.pageDescription
+                    .navigationTitle(element.name)
+                    .navigationBarTitleDisplayMode(.large)
+            } label: {
+                rowView(for: element)
+            }
+
             #else // macOS
             Button {
                 windowManager.openWindow(

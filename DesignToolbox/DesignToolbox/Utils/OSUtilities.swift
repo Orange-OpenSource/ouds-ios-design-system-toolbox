@@ -23,7 +23,7 @@ enum OSUtilities {
         #if os(iOS)
         let pasteboard = UIPasteboard.general
         pasteboard.string = content
-        #else // macOS
+        #elseif os(macOS)
         let pasteboard = NSPasteboard.general
         pasteboard.clearContents()
         pasteboard.setString(content, forType: .string)
@@ -44,7 +44,7 @@ enum OSUtilities {
     @MainActor static func open(url asURL: URL) {
         #if os(iOS)
         UIApplication.shared.open(asURL)
-        #else // macOS
+        #elseif os(macOS)
         NSWorkspace.shared.open(asURL)
         #endif
     }
@@ -54,7 +54,7 @@ enum OSUtilities {
     static func languageCode() -> String? {
         #if os(iOS)
         Locale.current.languageCode
-        #else // macOS
+        #else
         Locale.current.language.languageCode?.identifier
         #endif
     }

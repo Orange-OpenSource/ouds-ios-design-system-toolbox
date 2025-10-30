@@ -46,7 +46,8 @@ struct WebView: UIViewRepresentable {
         }
     }
 }
-#else // macOS
+
+#elseif os(macOS)
 import AppKit
 import SwiftUI
 import WebKit

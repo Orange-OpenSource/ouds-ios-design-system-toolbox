@@ -119,7 +119,8 @@ struct AboutPage: View {
             Text("app_about_accessibilityStatement_label")
         }
     }
-    #else
+
+    #elseif os(macOS)
     @ViewBuilder
     private var legalView: some View {
         NavigationLink {
@@ -133,6 +134,11 @@ struct AboutPage: View {
         } label: {
             Text("app_about_legalInformation_label")
         }
+    }
+    #else
+    @ViewBuilder
+    private var legalView: some View {
+        EmptyView()
     }
     #endif
 

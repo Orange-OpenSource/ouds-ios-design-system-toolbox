@@ -42,7 +42,11 @@ private struct DividerIllustration: View {
     var body: some View {
         VStack {
             Spacer()
+            #if !os(visionOS)
             OUDSHorizontalDivider(color: .default)
+            #else
+            OUDSHorizontalDivider(color: .brandPrimary)
+            #endif
             Spacer()
         }
         .padding(.horizontal, theme.spaces.fixedMedium)

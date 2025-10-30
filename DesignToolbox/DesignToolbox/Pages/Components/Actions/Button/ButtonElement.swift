@@ -38,9 +38,13 @@ private struct ButtonIllustration: View {
 
     var body: some View {
         VStack(spacing: theme.spaces.fixedSmall) {
+            #if !os(visionOS)
             // Dont translate default text for all
             OUDSButton(text: "Label", appearance: firstButtonAppearance) {}
             OUDSButton(text: "Label", appearance: secondButtonAppearance) {}
+            #else
+            OUDSButton(text: "Label", appearance: firstButtonAppearance) {}
+            #endif
         }
     }
 
