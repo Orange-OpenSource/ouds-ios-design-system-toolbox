@@ -19,6 +19,10 @@ import SwiftUI
 /// (enumerate tokens and components)
 struct DesignToolboxElementsPage: View {
 
+    #if os(macOS)
+    @State private var selectedElement: DesignToolboxElement?
+    #endif
+
     @AccessibilityFocusState private var requestFocus: AccessibilityFocusable?
     @Environment(\.theme) private var theme
 
@@ -32,33 +36,44 @@ struct DesignToolboxElementsPage: View {
     var body: some View {
         #if os(iOS)
         NavigationView {
-            elementPage
+            elementsPage
                 .navigationBarTitleDisplayMode(.inline)
         }
         .navigationViewStyle(.stack)
         #else // macOS
-        NavigationView {
-            elementPage
+        // Trick to be sure the view refreshes because NavigationView not always refreshed
+        NavigationSplitView {
+            elementsPage
+        } detail: {
+            if let selectedElement {
+                selectedElement.pageDescription
+            } else {
+                Text("app_common_select_element")
+                    .foregroundColor(.secondary)
+            }
         }
-        .navigationViewStyle(.automatic)
         #endif
     }
 
     // MARK: - Helper
 
-    private var elementPage: some View {
+    private var elementsPage: some View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaces.fixed2xsmall) {
                 ForEach(elements, id: \.id) { element in
+                    #if os(iOS)
                     NavigationLink {
                         element.pageDescription
                     } label: {
-                        Card(
-                            title: Text(LocalizedStringKey(element.name)),
-                            illustration: element.illustration)
-                            .accessibilityFocused($requestFocus, equals: .some(id: element.id))
-                            .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
+                        cardView(for: element)
                     }
+                    #else // macOS
+                    Button {
+                        selectedElement = element
+                    } label: {
+                        cardView(for: element)
+                    }
+                    #endif
                 }
             }
             .padding(.all, theme.spaces.fixedMedium)
@@ -66,5 +81,13 @@ struct DesignToolboxElementsPage: View {
         }
         .oudsBackground(theme.colors.bgPrimary)
         .oudsNavigationTitle(title)
+    }
+
+    private func cardView(for element: DesignToolboxElement) -> some View {
+        Card(
+            title: Text(LocalizedStringKey(element.name)),
+            illustration: element.illustration)
+            .accessibilityFocused($requestFocus, equals: .some(id: element.id))
+            .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
     }
 }
