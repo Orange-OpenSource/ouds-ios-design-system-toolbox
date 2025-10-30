@@ -91,7 +91,6 @@ jobs:
       - name: Run UI-based unit tests on demo app
         run: |
           cd DesignToolbox
-          bundle exec pod install
           bundle exec fastlane test_ui
 
   # Test the library with snapshots tests
@@ -117,6 +116,5 @@ jobs:
       - name: Run snapshots tests on demo app
         run: |
           cd DesignToolbox
-          bundle exec pod install
           xcrun simctl list # List available simulators
           bundle exec fastlane test_snapshots

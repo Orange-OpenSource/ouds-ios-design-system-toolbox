@@ -5,7 +5,7 @@ This document contains the list of Third Party Softwares along with the license 
 Third Party Software may impose additional restrictions and it is the user's responsibility to ensure that they have met the licensing
 requirements of the relevant license of the Third Party Software they are using.
 
-For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *Package.swift*, *Package.resolved* and *Podfile* files.
+For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *Package.swift*, *Package.resolved* files.
 
 ## In Design System Toolbox
 <!-- Inside application and for tests -->
@@ -41,14 +41,7 @@ You may download the source code on the [following website](https://github.com/p
 ## In Project
 
 ### Ruby gems
-<!-- Fastlane and CocoaPods dependencies for CI/CD -->
-
-#### CocoaPods
-
-Copyright 2011 Eloy Durán, Fabio Pelosin, Samuel Giddins, Marius Rackwitz, Kyle Fuller, Boris Bügling, Orta Therox, Olivier Halligon, Danielle Tomlinson, Dimitris Koutsogiorgas, Paul Beusterien, Eric Amorde
-
-*CocoaPods* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
-You may download the source code on the [following website](https://github.com/CocoaPods/CocoaPods).
+<!-- Fastlane dependencies for CI/CD -->
                    
 #### Fastlane
 
