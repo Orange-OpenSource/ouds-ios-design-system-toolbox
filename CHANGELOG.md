@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] `SwiftFormat/CLI` pod from v0.58.3 to v0.58.5
 - [DesignToolbox] `actions/upload-artifact` action from v4.6.2 to v5.0.0 for `scorecard` workflow
 - [DesignToolbox] `github/codeql-action/upload-sarif` action from v3 to v4 for `scorecard` workflow
 - [DesignToolbox] `json` RubyGem from v2.15.1 to v2.15.2
