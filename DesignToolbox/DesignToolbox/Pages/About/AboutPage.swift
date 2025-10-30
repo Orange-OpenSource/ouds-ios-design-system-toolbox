@@ -21,7 +21,9 @@ struct AboutPage: View {
 
     private let privacyPolicyUrl: URL
     private let legalInformationUrl: URL
+    #if os(iOS)
     private let appSettingsUrl: URL
+    #endif
     private let appSourcesUrl: URL
     private let bugReportUrl: URL
     private let designSystemUrl: URL
@@ -39,9 +41,11 @@ struct AboutPage: View {
             OL.fatal("Unable to find about_legal_information.html in resources")
         }
 
+        #if os(iOS)
         guard let appSettingsUrl = URL(string: UIApplication.openSettingsURLString) else {
             OL.fatal("Unable to find app settings URL")
         }
+        #endif
 
         guard let appSourcesUrl = URL(string: "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox") else {
             OL.fatal("Unable to forge app sources URL")
@@ -57,7 +61,9 @@ struct AboutPage: View {
 
         privacyPolicyUrl = privacyNoticeUrl
         self.legalInformationUrl = legalInformationUrl
+        #if os(iOS)
         self.appSettingsUrl = appSettingsUrl
+        #endif
         self.appSourcesUrl = appSourcesUrl
         self.bugReportUrl = bugReportUrl
         self.designSystemUrl = designSystemUrl
@@ -66,20 +72,32 @@ struct AboutPage: View {
     // MARK: Body
 
     var body: some View {
+        #if os(iOS)
         NavigationView {
-            List {
-                legalView
-                buildView
-                linksView
-            }
-            .oudsNavigationTitle("app_bottomBar_about_label")
-            .navigationBarTitleDisplayMode(.inline)
+            listBody
+                .navigationBarTitleDisplayMode(.inline)
         }
         .navigationViewStyle(.stack)
+        #else
+        NavigationView {
+            listBody
+        }
+        .navigationViewStyle(.automatic)
+        #endif
+    }
+
+    private var listBody: some View {
+        List {
+            legalView
+            buildView
+            linksView
+        }
+        .oudsNavigationTitle("app_bottomBar_about_label")
     }
 
     // MARK: - Views
 
+    #if os(iOS)
     @ViewBuilder
     private var legalView: some View {
         NavigationLink {
@@ -103,6 +121,22 @@ struct AboutPage: View {
             Text("app_about_accessibilityStatement_label")
         }
     }
+    #else
+    @ViewBuilder
+    private var legalView: some View {
+        NavigationLink {
+            WebView(from: privacyPolicyUrl)
+        } label: {
+            Text("app_about_privacyPolicy_label")
+        }
+
+        NavigationLink {
+            WebView(from: legalInformationUrl)
+        } label: {
+            Text("app_about_legalInformation_label")
+        }
+    }
+    #endif
 
     @ViewBuilder
     private var buildView: some View {
@@ -158,8 +192,9 @@ struct AboutPage: View {
 
     @ViewBuilder
     private var linksView: some View {
+        #if os(iOS)
         Button {
-            UIApplication.shared.open(appSettingsUrl)
+            OSUtilities.open(url: appSettingsUrl)
         } label: {
             HStack {
                 Text("app_about_appSettings_label")
@@ -167,6 +202,7 @@ struct AboutPage: View {
                 Image(systemName: "gear").accessibilityHidden(true)
             }
         }.accessibilityHint("app_about_appSettings_hint_a11y")
+        #endif
 
         if let changelogURL = Bundle.main.changelogURL {
             link(changelogURL, label: "app_about_changelog_label", hint: "app_about_changelog_hint_a11y")

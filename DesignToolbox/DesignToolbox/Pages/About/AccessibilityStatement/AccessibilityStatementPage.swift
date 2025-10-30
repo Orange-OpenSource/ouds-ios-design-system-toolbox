@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if os(iOS)
 import DeclarationAccessibility
 import OUDSFoundations
 import SwiftUI
@@ -39,3 +40,4 @@ struct AccessibilityStatementPage: View {
         }
     }
 }
+#endif

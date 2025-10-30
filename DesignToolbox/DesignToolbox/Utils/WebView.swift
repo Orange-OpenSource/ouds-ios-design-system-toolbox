@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if os(iOS)
 import SwiftUI
 import WebKit
 
@@ -21,11 +22,7 @@ struct WebView: UIViewRepresentable {
         case html(String)
     }
 
-    // MARK: Stored properties
-
     let source: ContentSource
-
-    // MARK: Initializer
 
     init(from url: URL) {
         source = .url(url)
@@ -49,3 +46,44 @@ struct WebView: UIViewRepresentable {
         }
     }
 }
+#else // macOS
+import AppKit
+import SwiftUI
+import WebKit
+
+struct WebView: NSViewRepresentable {
+    enum ContentSource {
+        case url(URL)
+        case html(String)
+    }
+
+    let source: ContentSource
+
+    init(from url: URL) {
+        source = .url(url)
+    }
+
+    init(html: String) {
+        source = .html(html)
+    }
+
+    // MARK: NSViewRepresentable
+
+    @MainActor
+    func makeNSView(context: Context) -> WKWebView {
+        let webView = WKWebView()
+        return webView
+    }
+
+    @MainActor
+    func updateNSView(_ webView: WKWebView, context: Context) {
+        switch source {
+        case let .url(url):
+            let request = URLRequest(url: url)
+            webView.load(request)
+        case let .html(string):
+            webView.loadHTMLString(string, baseURL: nil)
+        }
+    }
+}
+#endif

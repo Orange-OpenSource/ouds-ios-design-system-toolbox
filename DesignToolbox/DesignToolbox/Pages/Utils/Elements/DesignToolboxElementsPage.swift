@@ -30,28 +30,41 @@ struct DesignToolboxElementsPage: View {
     // MARK: Body
 
     var body: some View {
+        #if os(iOS)
         NavigationView {
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaces.fixed2xsmall) {
-                    ForEach(elements, id: \.id) { element in
-                        NavigationLink {
-                            element.pageDescription
-                        } label: {
-                            Card(
-                                title: Text(LocalizedStringKey(element.name)),
-                                illustration: element.illustration)
-                                .accessibilityFocused($requestFocus, equals: .some(id: element.id))
-                                .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
-                        }
-                    }
-                }
-                .padding(.all, theme.spaces.fixedMedium)
-                .navigationBarMenus()
-            }
-            .oudsBackground(theme.colors.bgPrimary)
-            .oudsNavigationTitle(title)
-            .navigationBarTitleDisplayMode(.inline)
+            elementPage
+                .navigationBarTitleDisplayMode(.inline)
         }
         .navigationViewStyle(.stack)
+        #else // macOS
+        NavigationView {
+            elementPage
+        }
+        .navigationViewStyle(.automatic)
+        #endif
+    }
+
+    // MARK: - Helper
+
+    private var elementPage: some View {
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaces.fixed2xsmall) {
+                ForEach(elements, id: \.id) { element in
+                    NavigationLink {
+                        element.pageDescription
+                    } label: {
+                        Card(
+                            title: Text(LocalizedStringKey(element.name)),
+                            illustration: element.illustration)
+                            .accessibilityFocused($requestFocus, equals: .some(id: element.id))
+                            .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
+                    }
+                }
+            }
+            .padding(.all, theme.spaces.fixedMedium)
+            .navigationBarMenus()
+        }
+        .oudsBackground(theme.colors.bgPrimary)
+        .oudsNavigationTitle(title)
     }
 }

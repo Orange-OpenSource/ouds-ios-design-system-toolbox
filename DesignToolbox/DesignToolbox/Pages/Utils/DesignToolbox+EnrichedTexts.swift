@@ -30,7 +30,7 @@ struct CopyableTextViewModifier: ViewModifier {
         content
             .contextMenu {
                 Button(action: {
-                    UIPasteboard.general.string = copyable
+                    OSUtilities.copy(content: copyable)
                 }, label: {
                     Text("app_common_copy" <- copyable)
                     Image(systemName: "doc.on.doc").accessibilityHidden(true)
@@ -91,7 +91,7 @@ struct OpenableText: View {
                 .underline()
                 .oudsForegroundStyle(theme.link.colorContentEnabled)
                 .onTapGesture {
-                    UIApplication.shared.open(URL(string: type.destination(for: anchor).first!)!)
+                    OSUtilities.open(url: type.destination(for: anchor).first!)
                 }
                 .accessibilityAddTraits([.isLink])
         } else {
@@ -102,7 +102,7 @@ struct OpenableText: View {
                         .underline()
                         .oudsForegroundStyle(theme.link.colorContentEnabled)
                         .onTapGesture {
-                            UIApplication.shared.open(url)
+                            OSUtilities.open(url: url)
                         }
                         .accessibilityAddTraits([.isLink])
                 } else {
