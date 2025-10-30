@@ -450,7 +450,9 @@
 		6DFC20B92CE3AF1500F2EC33 /* orange-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */; };
 		6DFC20C12CE3D39D00F2EC33 /* accessibility_detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */; };
 		6DFC20C22CE3D39D00F2EC33 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
-		6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; productRef = 6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */; };
+		6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */; };
+		95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
+		95D713EC2EB36B0B00EBB7C2 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
 		A5E69629240B3A88C139F084 /* Pods_DesignToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8ECF213874016985FA405A3 /* Pods_DesignToolbox.framework */; };
 		FCA849142E9FF00500DBCE76 /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
 		FCA849152E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */; };
@@ -782,6 +784,8 @@
 		6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = accessibility_result.xml; sourceTree = "<group>"; };
 		8C66FEEE1D0289EB1A4D5730 /* Pods-DesignToolbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignToolbox.release.xcconfig"; path = "Target Support Files/Pods-DesignToolbox/Pods-DesignToolbox.release.xcconfig"; sourceTree = "<group>"; };
 		8EFDA228C8677427EEF029B1 /* Pods-DesignToolbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignToolbox.debug.xcconfig"; path = "Target Support Files/Pods-DesignToolbox/Pods-DesignToolbox.debug.xcconfig"; sourceTree = "<group>"; };
+		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
+		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
 		974E2EAB64D9123627CD7D29 /* Pods-DemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.release.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		A8ECF213874016985FA405A3 /* Pods_DesignToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesignToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4130905502F287757622E2 /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1621,11 +1625,13 @@
 		51BD761D2C466FCF0033365D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */,
 				51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */,
 				51F676DA2E0D45F300C15CB6 /* A11YIdentifiers.swift */,
 				5122E0292D65E7AC00CD2857 /* String+extension.swift */,
 				51BD761C2C466FCF0033365D /* WebView.swift */,
 				51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */,
+				95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -2747,6 +2753,7 @@
 				519251EE2D020B8A003FD1F6 /* DesignToolboxElement.swift in Sources */,
 				519251EF2D020B8A003FD1F6 /* DesignToolboxElementPage.swift in Sources */,
 				075BC9462DC01D2C00CB2573 /* DesignToolboxEditContentDisclosure.swift in Sources */,
+				95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */,
 				07F75A3D2CC653BD0004F1AD /* NameSpace+PaddingInset.swift in Sources */,
 				075C713B2CECC7DA00B93FC3 /* SpaceGapTokenIllustrations.swift in Sources */,
 				075114DC2CB7D28D00B8B759 /* SizeTokenPage.swift in Sources */,
@@ -2783,6 +2790,7 @@
 				07CF42792CA3F4BE000BD03E /* ElevationTokenPage.swift in Sources */,
 				51D6D5912D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift in Sources */,
 				075114E12CB7FDC200B8B759 /* ColorTokenPage.swift in Sources */,
+				95D713EC2EB36B0B00EBB7C2 /* View+extensions.swift in Sources */,
 				07F7533B2CC785620007450D /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				07F0AFDE2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */,
 				07B3CCB12D40E34700DBB10A /* LinkConfiguration.swift in Sources */,
@@ -3124,6 +3132,9 @@
 				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
@@ -3141,7 +3152,8 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "Design System Toolbox";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -3183,7 +3195,7 @@
 				PRODUCT_NAME = "Design System Toolbox";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "OUDS demo app (release)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
