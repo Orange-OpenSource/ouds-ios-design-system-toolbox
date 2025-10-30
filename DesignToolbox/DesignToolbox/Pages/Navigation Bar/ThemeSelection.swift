@@ -171,7 +171,7 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         guard let preferredLanguage = Locale.preferredLanguages.first else {
             return "Helvetica Neue"
         }
-        if preferredLanguage.hasPrefix("ar") || Locale.current.languageCode == "ar" {
+        if preferredLanguage.hasPrefix("ar") || OSUtilities.languageCode() == "ar" {
             return "Helvetica Neue Arabic"
         } else {
             return "Helvetica Neue"

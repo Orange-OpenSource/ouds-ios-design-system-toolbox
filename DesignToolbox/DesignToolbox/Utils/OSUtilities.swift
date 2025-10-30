@@ -45,4 +45,14 @@ enum OSUtilities {
         NSWorkspace.shared.open(asURL)
         #endif
     }
+
+    // MARK: - Locale
+
+    static func languageCode() -> String? {
+        #if os(iOS)
+        Locale.current.languageCode
+        #else // macOS
+        Locale.current.language.languageCode?.identifier
+        #endif
+    }
 }
