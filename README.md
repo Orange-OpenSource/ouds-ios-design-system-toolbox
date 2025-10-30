@@ -31,11 +31,13 @@
 [![MIT license](https://img.shields.io/github/license/Orange-OpenSource/ouds-ios-design-system-toolbox?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/main/LICENSE)
 
 [![Versions](https://img.shields.io/github/v/release/Orange-OpenSource/ouds-ios-design-system-toolbox?label=Last%20version&style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases)
+[![AppStore](https://img.shields.io/itunes/v/6743708286?style=for-the-badge&label=AppStore)](https://apps.apple.com/fr/app/design-system-toolbox/id6743708286)
 [![Still maintained](https://img.shields.io/maintenance/yes/2025?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/issues?q=is%3Aissue+is%3Aclosed)
 
 [![Xcode 26.0](https://img.shields.io/badge/Xcode-26.0-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes)
 
-[![AppStore](https://img.shields.io/itunes/v/6743708286?style=for-the-badge&label=AppStore)](https://apps.apple.com/fr/app/design-system-toolbox/id6743708286)
+[![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)](https://developer.apple.com/support/app-store)
+[![iPadOS 15.0](https://img.shields.io/badge/iPadOS-15.0-FF1AB2?style=for-the-badge)](https://developer.apple.com/support/app-store")
 
 ## Content
 
