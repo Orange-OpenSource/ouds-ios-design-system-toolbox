@@ -17,16 +17,17 @@ import SwiftUI
 
 struct AboutPage: View {
 
-    // MARK: Stored properties
+    // MARK: Properties
 
     private let privacyPolicyUrl: URL
     private let legalInformationUrl: URL
-    #if os(iOS)
-    private let appSettingsUrl: URL
-    #endif
     private let appSourcesUrl: URL
     private let bugReportUrl: URL
     private let designSystemUrl: URL
+
+    #if os(iOS)
+    private let appSettingsUrl: URL
+    #endif
 
     @Environment(\.layoutDirection) private var layoutDirection
 
@@ -40,12 +41,6 @@ struct AboutPage: View {
         guard let legalInformationUrl = Bundle.main.url(forResource: "about_legal_information", withExtension: "html") else {
             OL.fatal("Unable to find about_legal_information.html in resources")
         }
-
-        #if os(iOS)
-        guard let appSettingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-            OL.fatal("Unable to find app settings URL")
-        }
-        #endif
 
         guard let appSourcesUrl = URL(string: "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox") else {
             OL.fatal("Unable to forge app sources URL")
@@ -61,12 +56,15 @@ struct AboutPage: View {
 
         privacyPolicyUrl = privacyNoticeUrl
         self.legalInformationUrl = legalInformationUrl
-        #if os(iOS)
-        self.appSettingsUrl = appSettingsUrl
-        #endif
         self.appSourcesUrl = appSourcesUrl
         self.bugReportUrl = bugReportUrl
         self.designSystemUrl = designSystemUrl
+        #if os(iOS)
+        guard let appSettingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+            OL.fatal("Unable to find app settings URL")
+        }
+        self.appSettingsUrl = appSettingsUrl
+        #endif
     }
 
     // MARK: Body

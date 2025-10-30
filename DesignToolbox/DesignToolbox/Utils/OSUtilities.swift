@@ -32,13 +32,16 @@ enum OSUtilities {
 
     // MARK: - URL
 
-    /// - Parameter url: The URL to open
-    static func open(url asString: String) {
+    // swiftlint:disable force_unwrapping
+    /// - Parameter asString: The URL to open
+    @MainActor static func open(url asString: String) {
         open(url: URL(string: asString)!)
     }
 
-    /// - Parameter url: The URL to open
-    static func open(url asURL: URL) {
+    // swiftlint:enable force_unwrapping
+
+    /// - Parameter asURL: The URL to open
+    @MainActor static func open(url asURL: URL) {
         #if os(iOS)
         UIApplication.shared.open(asURL)
         #else // macOS

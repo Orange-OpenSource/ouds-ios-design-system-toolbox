@@ -450,6 +450,7 @@
 		6DFC20C12CE3D39D00F2EC33 /* accessibility_detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */; };
 		6DFC20C22CE3D39D00F2EC33 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
 		6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */; };
+		95CD64F22EB3A375008FAB03 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD64F12EB3A371008FAB03 /* WindowManager.swift */; };
 		95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95D713EC2EB36B0B00EBB7C2 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
 		FCA849142E9FF00500DBCE76 /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
@@ -779,6 +780,7 @@
 		6DFC20B42CE3AF1500F2EC33 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = accessibility_detail.html; sourceTree = "<group>"; };
 		6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = accessibility_result.xml; sourceTree = "<group>"; };
+		95CD64F12EB3A371008FAB03 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
 		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
@@ -1611,6 +1613,7 @@
 		51BD761D2C466FCF0033365D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				95CD64F12EB3A371008FAB03 /* WindowManager.swift */,
 				95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */,
 				51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */,
 				51F676DA2E0D45F300C15CB6 /* A11YIdentifiers.swift */,
@@ -2670,6 +2673,7 @@
 				51D6D58B2D887E94009CD879 /* CheckboxIndeterminatePage.swift in Sources */,
 				07CF42842CA45DA9000BD03E /* BorderTokenElement.swift in Sources */,
 				07D7E1972D035566006472EB /* ButtonConfigurationView.swift in Sources */,
+				95CD64F22EB3A375008FAB03 /* WindowManager.swift in Sources */,
 				07CF42802CA41325000BD03E /* OpacityTokenPage.swift in Sources */,
 				51B8D5A12DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */,
 				075114E02CB7FDC200B8B759 /* ColorTokenElement.swift in Sources */,

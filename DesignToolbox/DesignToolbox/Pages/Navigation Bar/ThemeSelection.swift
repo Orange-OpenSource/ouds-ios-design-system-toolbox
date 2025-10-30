@@ -200,7 +200,7 @@ struct ThemeSelectionButton: View {
                         Text(theme.description).tag(theme)
                     }
                 }
-                .pickerStyle(.automatic)
+                .pickerStyle(.inline)
             }
 
             // Orange Business Tools theme and tunings
@@ -210,9 +210,10 @@ struct ThemeSelectionButton: View {
                         Text(theme.description).tag(theme)
                     }
                 }
-                .pickerStyle(.automatic)
+                .pickerStyle(.inline)
             }
 
+            #if os(iOS)
             // Sosh and Wireframe themes (which do not have tunings)
             Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
                 ForEach(themeProvider.otherThemes, id: \.id) { theme in
@@ -221,6 +222,15 @@ struct ThemeSelectionButton: View {
                 }
             }
             .pickerStyle(.automatic)
+            #else
+            Divider()
+            // Sur macOS, utiliser des Button directement
+            ForEach(themeProvider.otherThemes, id: \.id) { theme in
+                Button(theme.description) {
+                    themeProvider.currentTheme = theme
+                }
+            }
+            #endif
         } label: {
             Image(decorative: "ic_theme")
                 .scaledToFit()

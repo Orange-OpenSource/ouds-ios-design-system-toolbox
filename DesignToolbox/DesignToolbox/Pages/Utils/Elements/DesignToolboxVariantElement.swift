@@ -17,13 +17,16 @@ import SwiftUI
 
 struct DesignToolboxVariantElement: View {
 
+    let elements: [DesignToolboxElement]
+
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection
+
     #if os(macOS)
+    @AppStorage("colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
     @EnvironmentObject private var windowManager: WindowManager
     @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
 
-    @AppStorage("colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
     private var colorScheme: ColorScheme? {
         if mode == ColorSchemeMode.light.rawValue {
             return .light
@@ -33,12 +36,7 @@ struct DesignToolboxVariantElement: View {
         }
         return nil
     }
-
     #endif
-
-    // MARK: Stored properties
-
-    let elements: [DesignToolboxElement]
 
     // MARK: Body
 
@@ -91,67 +89,3 @@ struct DesignToolboxVariantElement: View {
         }
     }
 }
-
-#if os(macOS)
-import AppKit
-
-@MainActor
-class WindowManager: ObservableObject {
-    private var windows: [String: WeakWindow] = [:]
-
-    private class WeakWindow {
-        weak var window: NSWindow?
-
-        init(_ window: NSWindow) {
-            self.window = window
-        }
-    }
-
-    func openWindow(
-        id: String,
-        title: String,
-        size: CGSize = CGSize(width: 800, height: 600),
-        @ViewBuilder content: () -> some View)
-    {
-        // Fermer la fenêtre existante si elle existe
-        closeWindow(id: id)
-
-        let newWindow = NSWindow(
-            contentRect: NSRect(origin: .zero, size: size),
-            styleMask: [.titled, .closable, .resizable, .miniaturizable],
-            backing: .buffered,
-            defer: false)
-
-        newWindow.title = title
-        newWindow.center()
-        newWindow.contentView = NSHostingView(rootView: content())
-
-        // Empêcher la libération automatique
-        newWindow.isReleasedWhenClosed = false
-
-        windows[id] = WeakWindow(newWindow)
-        newWindow.makeKeyAndOrderFront(nil)
-    }
-
-    func closeWindow(id: String) {
-        guard let weakWindow = windows[id],
-              let window = weakWindow.window
-        else {
-            windows.removeValue(forKey: id)
-            return
-        }
-
-        window.close()
-        windows.removeValue(forKey: id)
-    }
-
-    func cleanupClosedWindows() {
-        windows = windows.compactMapValues { weakWindow in
-            guard let window = weakWindow.window, window.isVisible else {
-                return nil
-            }
-            return weakWindow
-        }
-    }
-}
-#endif

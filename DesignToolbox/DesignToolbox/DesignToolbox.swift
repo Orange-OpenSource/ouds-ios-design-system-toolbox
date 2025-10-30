@@ -19,6 +19,7 @@ struct DesignToolbox: App {
 
     @StateObject private var themeProvider = ThemeProvider()
     @AppStorage("colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
+
     #if os(macOS)
     @StateObject private var windowManager = WindowManager()
     #endif
