@@ -15,17 +15,25 @@ import OUDS
 import OUDSFoundations
 import SwiftUI
 
+// NOTE: Several items below are seen as unused but are used
+// This is a false positive in Periphy
+// See https://github.com/peripheryapp/periphery/issues/908
+
 struct AboutPage: View {
 
-    // MARK: Stored properties
+    // MARK: Properties
 
     private let privacyPolicyUrl: URL
     private let legalInformationUrl: URL
-    private let appSettingsUrl: URL
     private let appSourcesUrl: URL
     private let bugReportUrl: URL
     private let designSystemUrl: URL
 
+    #if os(iOS)
+    private let appSettingsUrl: URL
+    #endif
+
+    // NOTE: "unused" false-positive for periphery (https://github.com/peripheryapp/periphery/issues/993)
     @Environment(\.layoutDirection) private var layoutDirection
 
     // MARK: Initializer
@@ -37,10 +45,6 @@ struct AboutPage: View {
 
         guard let legalInformationUrl = Bundle.main.url(forResource: "about_legal_information", withExtension: "html") else {
             OL.fatal("Unable to find about_legal_information.html in resources")
-        }
-
-        guard let appSettingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-            OL.fatal("Unable to find app settings URL")
         }
 
         guard let appSourcesUrl = URL(string: "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox") else {
@@ -57,29 +61,46 @@ struct AboutPage: View {
 
         privacyPolicyUrl = privacyNoticeUrl
         self.legalInformationUrl = legalInformationUrl
-        self.appSettingsUrl = appSettingsUrl
         self.appSourcesUrl = appSourcesUrl
         self.bugReportUrl = bugReportUrl
         self.designSystemUrl = designSystemUrl
+        #if os(iOS)
+        guard let appSettingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+            OL.fatal("Unable to find app settings URL")
+        }
+        self.appSettingsUrl = appSettingsUrl
+        #endif
     }
 
     // MARK: Body
 
     var body: some View {
+        #if os(iOS)
         NavigationView {
-            List {
-                legalView
-                buildView
-                linksView
-            }
-            .oudsNavigationTitle("app_bottomBar_about_label")
-            .navigationBarTitleDisplayMode(.inline)
+            listBody
+                .navigationBarTitleDisplayMode(.inline)
         }
         .navigationViewStyle(.stack)
+        #else
+        NavigationView {
+            listBody
+        }
+        .navigationViewStyle(.automatic)
+        #endif
+    }
+
+    private var listBody: some View {
+        List {
+            legalView
+            buildView
+            linksView
+        }
+        .oudsNavigationTitle("app_bottomBar_about_label")
     }
 
     // MARK: - Views
 
+    #if os(iOS)
     @ViewBuilder
     private var legalView: some View {
         NavigationLink {
@@ -103,6 +124,28 @@ struct AboutPage: View {
             Text("app_about_accessibilityStatement_label")
         }
     }
+
+    #elseif os(macOS)
+    @ViewBuilder
+    private var legalView: some View {
+        NavigationLink {
+            WebView(from: privacyPolicyUrl)
+        } label: {
+            Text("app_about_privacyPolicy_label")
+        }
+
+        NavigationLink {
+            WebView(from: legalInformationUrl)
+        } label: {
+            Text("app_about_legalInformation_label")
+        }
+    }
+    #else
+    @ViewBuilder
+    private var legalView: some View {
+        EmptyView()
+    }
+    #endif
 
     @ViewBuilder
     private var buildView: some View {
@@ -158,8 +201,9 @@ struct AboutPage: View {
 
     @ViewBuilder
     private var linksView: some View {
+        #if os(iOS)
         Button {
-            UIApplication.shared.open(appSettingsUrl)
+            OSUtilities.open(url: appSettingsUrl)
         } label: {
             HStack {
                 Text("app_about_appSettings_label")
@@ -167,6 +211,7 @@ struct AboutPage: View {
                 Image(systemName: "gear").accessibilityHidden(true)
             }
         }.accessibilityHint("app_about_appSettings_hint_a11y")
+        #endif
 
         if let changelogURL = Bundle.main.changelogURL {
             link(changelogURL, label: "app_about_changelog_label", hint: "app_about_changelog_hint_a11y")

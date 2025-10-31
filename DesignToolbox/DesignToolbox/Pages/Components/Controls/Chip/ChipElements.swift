@@ -43,8 +43,12 @@ private struct ChipIllustration: View {
 
     var body: some View {
         VStack(spacing: theme.spaces.fixedSmall) {
+            #if !os(visionOS)
             OUDSFilterChip(text: "Filter", selected: true) {}
             OUDSSuggestionChip(text: "Suggestion") {}
+            #else
+            OUDSFilterChip(text: "🥜", selected: true) {}
+            #endif
         }
     }
 }

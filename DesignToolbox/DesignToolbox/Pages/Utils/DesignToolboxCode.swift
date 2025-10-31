@@ -53,7 +53,7 @@ struct DesignToolboxCode: View {
             Spacer(minLength: theme.spaces.paddingBlockMedium)
 
             OUDSButton(icon: Image("ic_copy"), accessibilityLabel: "app_common_copyCode_a11y".localized(), appearance: .minimal) {
-                UIPasteboard.general.string = code
+                OSUtilities.copy(content: code)
             }
         }
         .frame(minWidth: 72, maxWidth: .infinity, alignment: .leading)

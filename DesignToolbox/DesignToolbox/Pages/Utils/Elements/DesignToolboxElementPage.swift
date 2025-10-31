@@ -47,6 +47,15 @@ struct DesignToolboxElementPage: View {
     // MARK: Body
 
     var body: some View {
+        #if os(iOS)
+        elementPageBody
+            .navigationBarMenus() // Otherwise does not appear
+        #else // macOS, visionOS
+        elementPageBody // Otherwise appears twice
+        #endif
+    }
+
+    private var elementPageBody: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
                 if let illustration {
@@ -89,7 +98,6 @@ struct DesignToolboxElementPage: View {
         .padding(.horizontal, theme.spaces.fixedNone)
         .oudsBackground(theme.colors.bgPrimary)
         .navigationTitle(name.localized())
-        .navigationBarMenus()
         .oudsRequestAccessibleFocus(_requestFocus)
     }
 }
