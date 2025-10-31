@@ -60,7 +60,7 @@ struct TextInputDemo: View {
                       isOutlined: configurationModel.isOutlined,
                       status: configurationModel.status)
             .autocorrectionDisabled()
-            .textInputAutocapitalization(.never)
+            .textInputDisableAutocapitalization()
             .padding(.all, theme.spaces.fixedMedium)
             .onSubmit {
                 if configurationModel.text == "error" {

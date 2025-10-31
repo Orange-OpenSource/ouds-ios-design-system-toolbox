@@ -450,8 +450,15 @@
 		6DFC20B92CE3AF1500F2EC33 /* orange-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */; };
 		6DFC20C12CE3D39D00F2EC33 /* accessibility_detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */; };
 		6DFC20C22CE3D39D00F2EC33 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
-		6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; productRef = 6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */; };
-		A5E69629240B3A88C139F084 /* Pods_DesignToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8ECF213874016985FA405A3 /* Pods_DesignToolbox.framework */; };
+		6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */; };
+		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
+		9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
+		95818BC22EB50D70004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
+		95818BC32EB50D7F004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
+		95CD64F22EB3A375008FAB03 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD64F12EB3A371008FAB03 /* WindowManager.swift */; };
+		95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
+		95D713EC2EB36B0B00EBB7C2 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
+		B1E23C90BDD485337932B3D5 /* Pods_DesignToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D896603F007C1BC7101BAD0 /* Pods_DesignToolbox.framework */; platformFilter = ios; };
 		FCA849142E9FF00500DBCE76 /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
 		FCA849152E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */; };
 		FCA849162E9FF00500DBCE76 /* InputTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849132E9FF00500DBCE76 /* InputTagPage.swift */; };
@@ -615,6 +622,7 @@
 		07FDCDB62C296C370009AA13 /* .gitleaks.toml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitleaks.toml; path = ../.gitleaks.toml; sourceTree = "<group>"; };
 		07FDCDB72C296C370009AA13 /* .swiftformat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .swiftformat; path = ../.swiftformat; sourceTree = "<group>"; };
 		07FDCDB82C296C370009AA13 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+		19940C38BA05BCAF0F7B6050 /* Pods-DesignToolbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignToolbox.debug.xcconfig"; path = "Target Support Files/Pods-DesignToolbox/Pods-DesignToolbox.debug.xcconfig"; sourceTree = "<group>"; };
 		51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		511580892E730E0100DFFE4E /* OUDSTheme+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OUDSTheme+Name.swift"; sourceTree = "<group>"; };
 		511C96B42E157D2C00F9D156 /* SwitchItemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemPage.swift; sourceTree = "<group>"; };
@@ -771,6 +779,7 @@
 		51F676E92E0D66EB00C15CB6 /* RadioItemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioItemUITests.swift; sourceTree = "<group>"; };
 		51F676EC2E0D678600C15CB6 /* SwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchUITests.swift; sourceTree = "<group>"; };
 		51F676EE2E0D681700C15CB6 /* SwitchItemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemUITests.swift; sourceTree = "<group>"; };
+		67CBC22E5AFC49ED8D8687D9 /* Pods-DesignToolbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignToolbox.release.xcconfig"; path = "Target Support Files/Pods-DesignToolbox/Pods-DesignToolbox.release.xcconfig"; sourceTree = "<group>"; };
 		6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxCode.swift; sourceTree = "<group>"; };
 		6DFC208A2CDE669500F2EC33 /* AccessibilityStatementPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityStatementPage.swift; sourceTree = "<group>"; };
 		6DFC20B02CE3AF1500F2EC33 /* boosted-grid.min.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "boosted-grid.min.css"; sourceTree = "<group>"; };
@@ -780,13 +789,10 @@
 		6DFC20B42CE3AF1500F2EC33 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = accessibility_detail.html; sourceTree = "<group>"; };
 		6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = accessibility_result.xml; sourceTree = "<group>"; };
-		8C66FEEE1D0289EB1A4D5730 /* Pods-DesignToolbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignToolbox.release.xcconfig"; path = "Target Support Files/Pods-DesignToolbox/Pods-DesignToolbox.release.xcconfig"; sourceTree = "<group>"; };
-		8EFDA228C8677427EEF029B1 /* Pods-DesignToolbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignToolbox.debug.xcconfig"; path = "Target Support Files/Pods-DesignToolbox/Pods-DesignToolbox.debug.xcconfig"; sourceTree = "<group>"; };
-		974E2EAB64D9123627CD7D29 /* Pods-DemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.release.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.release.xcconfig"; sourceTree = "<group>"; };
-		A8ECF213874016985FA405A3 /* Pods_DesignToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesignToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF4130905502F287757622E2 /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
-		E4EBC0F46BFFE3801998F6B0 /* Pods-Showcase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase.release.xcconfig"; path = "Target Support Files/Pods-Showcase/Pods-Showcase.release.xcconfig"; sourceTree = "<group>"; };
-		F98488CF05532E8CD405A8F8 /* Pods-Showcase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase.debug.xcconfig"; path = "Target Support Files/Pods-Showcase/Pods-Showcase.debug.xcconfig"; sourceTree = "<group>"; };
+		8D896603F007C1BC7101BAD0 /* Pods_DesignToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesignToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95CD64F12EB3A371008FAB03 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
+		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
+		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
 		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
 		FCA849132E9FF00500DBCE76 /* InputTagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagPage.swift; sourceTree = "<group>"; };
@@ -824,7 +830,7 @@
 				5115A16E2DDF39AC0025A760 /* OUDSThemesOrange in Frameworks */,
 				070C35662C7762B90029C6A8 /* OUDSModules in Frameworks */,
 				5131F14D2E324A9A00A942B0 /* OUDSThemesWireframe in Frameworks */,
-				A5E69629240B3A88C139F084 /* Pods_DesignToolbox.framework in Frameworks */,
+				B1E23C90BDD485337932B3D5 /* Pods_DesignToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1241,7 +1247,7 @@
 				51E599B52E27EDD0002BCB27 /* DesignToolboxUnitTests */,
 				07FDCD922C296A500009AA13 /* Products */,
 				AFD4931269C94655071502F6 /* Pods */,
-				6E90D400B72B50FE406E8DFC /* Frameworks */,
+				3A9289D88D13C81017596009 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1284,6 +1290,14 @@
 				07FDCDB52C296C370009AA13 /* .swiftlint.yml */,
 			);
 			name = Configuration;
+			sourceTree = "<group>";
+		};
+		3A9289D88D13C81017596009 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D896603F007C1BC7101BAD0 /* Pods_DesignToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5114F57B2E8EB10800BC2BDD /* Fonts */ = {
@@ -1621,11 +1635,14 @@
 		51BD761D2C466FCF0033365D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				95CD64F12EB3A371008FAB03 /* WindowManager.swift */,
+				95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */,
 				51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */,
 				51F676DA2E0D45F300C15CB6 /* A11YIdentifiers.swift */,
 				5122E0292D65E7AC00CD2857 /* String+extension.swift */,
 				51BD761C2C466FCF0033365D /* WebView.swift */,
 				51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */,
+				95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -2135,23 +2152,11 @@
 			path = accessibilityStatement;
 			sourceTree = "<group>";
 		};
-		6E90D400B72B50FE406E8DFC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A8ECF213874016985FA405A3 /* Pods_DesignToolbox.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		AFD4931269C94655071502F6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BF4130905502F287757622E2 /* Pods-DemoApp.debug.xcconfig */,
-				974E2EAB64D9123627CD7D29 /* Pods-DemoApp.release.xcconfig */,
-				F98488CF05532E8CD405A8F8 /* Pods-Showcase.debug.xcconfig */,
-				E4EBC0F46BFFE3801998F6B0 /* Pods-Showcase.release.xcconfig */,
-				8EFDA228C8677427EEF029B1 /* Pods-DesignToolbox.debug.xcconfig */,
-				8C66FEEE1D0289EB1A4D5730 /* Pods-DesignToolbox.release.xcconfig */,
+				19940C38BA05BCAF0F7B6050 /* Pods-DesignToolbox.debug.xcconfig */,
+				67CBC22E5AFC49ED8D8687D9 /* Pods-DesignToolbox.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -2204,7 +2209,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07FDCD9F2C296A540009AA13 /* Build configuration list for PBXNativeTarget "DesignToolbox" */;
 			buildPhases = (
-				2A5B2E6765E57E6A6B13CBA1 /* [CP] Check Pods Manifest.lock */,
+				1B4B49DB0BF4A0B49B3F10BB /* [CP] Check Pods Manifest.lock */,
 				0707B6412C2C414200A911E7 /* Run Swiftlint */,
 				07FDCD8D2C296A500009AA13 /* Sources */,
 				07FDCD8E2C296A500009AA13 /* Frameworks */,
@@ -2254,8 +2259,6 @@
 				51E599AC2E27ED5F002BCB27 /* PBXTargetDependency */,
 			);
 			name = DesignToolboxUnitTests;
-			packageProductDependencies = (
-			);
 			productName = DesignToolboxUnitTest;
 			productReference = 51E599A72E27ED5F002BCB27 /* DesignToolboxUnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -2412,7 +2415,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which \"swiftlint\" >/dev/null; then\n    swiftlint --config ../.swiftlint.yml DesignToolbox/* DesignToolboxSnapshotsTests/* DesignToolboxUITests/* DesignToolboxUnitTests/* DesignSystemToolboxAppCaptures/*\nelse\n    echo \"warning: SwiftLint not installed, download from CocoaPods (see https://github.com/realm/SwiftLint)\"\nfi\n";
 		};
-		2A5B2E6765E57E6A6B13CBA1 /* [CP] Check Pods Manifest.lock */ = {
+		1B4B49DB0BF4A0B49B3F10BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2477,6 +2480,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95818BC32EB50D7F004F46F4 /* View+extensions.swift in Sources */,
+				9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */,
 				079B4A222E49C8740039FC26 /* WireframeTheme+TagSnapshotsTests.swift in Sources */,
 				51FD65222E0D8DB20084B982 /* A11YIdentifiers.swift in Sources */,
 				518EC0752E1FF23800FC77E4 /* OrangeTheme+ButtonSnapshotsTests.swift in Sources */,
@@ -2747,6 +2752,7 @@
 				519251EE2D020B8A003FD1F6 /* DesignToolboxElement.swift in Sources */,
 				519251EF2D020B8A003FD1F6 /* DesignToolboxElementPage.swift in Sources */,
 				075BC9462DC01D2C00CB2573 /* DesignToolboxEditContentDisclosure.swift in Sources */,
+				95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */,
 				07F75A3D2CC653BD0004F1AD /* NameSpace+PaddingInset.swift in Sources */,
 				075C713B2CECC7DA00B93FC3 /* SpaceGapTokenIllustrations.swift in Sources */,
 				075114DC2CB7D28D00B8B759 /* SizeTokenPage.swift in Sources */,
@@ -2763,6 +2769,7 @@
 				51D6D58B2D887E94009CD879 /* CheckboxIndeterminatePage.swift in Sources */,
 				07CF42842CA45DA9000BD03E /* BorderTokenElement.swift in Sources */,
 				07D7E1972D035566006472EB /* ButtonConfigurationView.swift in Sources */,
+				95CD64F22EB3A375008FAB03 /* WindowManager.swift in Sources */,
 				07CF42802CA41325000BD03E /* OpacityTokenPage.swift in Sources */,
 				51B8D5A12DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */,
 				075114E02CB7FDC200B8B759 /* ColorTokenElement.swift in Sources */,
@@ -2783,6 +2790,7 @@
 				07CF42792CA3F4BE000BD03E /* ElevationTokenPage.swift in Sources */,
 				51D6D5912D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift in Sources */,
 				075114E12CB7FDC200B8B759 /* ColorTokenPage.swift in Sources */,
+				95D713EC2EB36B0B00EBB7C2 /* View+extensions.swift in Sources */,
 				07F7533B2CC785620007450D /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				07F0AFDE2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */,
 				07B3CCB12D40E34700DBB10A /* LinkConfiguration.swift in Sources */,
@@ -2872,6 +2880,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95818BC22EB50D70004F46F4 /* View+extensions.swift in Sources */,
+				9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */,
 				51F676DC2E0D469500C15CB6 /* A11YIdentifiers.swift in Sources */,
 				51E5999E2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */,
 				51F676ED2E0D678600C15CB6 /* SwitchUITests.swift in Sources */,
@@ -3115,7 +3125,7 @@
 		};
 		07FDCDA02C296A540009AA13 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EFDA228C8677427EEF029B1 /* Pods-DesignToolbox.debug.xcconfig */;
+			baseConfigurationReference = 19940C38BA05BCAF0F7B6050 /* Pods-DesignToolbox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDebug;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -3124,6 +3134,9 @@
 				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
@@ -3137,23 +3150,26 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 0.21.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "Design System Toolbox";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 1.3;
 			};
 			name = Debug;
 		};
 		07FDCDA12C296A540009AA13 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C66FEEE1D0289EB1A4D5730 /* Pods-DesignToolbox.release.xcconfig */;
+			baseConfigurationReference = 67CBC22E5AFC49ED8D8687D9 /* Pods-DesignToolbox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconRelease;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -3177,19 +3193,21 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 0.21.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "Design System Toolbox";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "OUDS demo app (release)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 1.3;
 			};
 			name = Release;
 		};

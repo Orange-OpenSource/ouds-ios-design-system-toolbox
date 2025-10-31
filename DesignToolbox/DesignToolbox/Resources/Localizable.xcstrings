@@ -865,6 +865,29 @@
       },
       "shouldTranslate" : false
     },
+    "app_common_select_element" : {
+      "comment" : "Common - A message displayed when no element is selected in the Design Toolbox.",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حدد عنصرا"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select an element"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionnez un élément"
+          }
+        }
+      }
+    },
     "app_common_showCode_text" : {
       "comment" : "Common",
       "extractionState" : "manual",

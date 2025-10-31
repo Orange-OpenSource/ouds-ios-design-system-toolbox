@@ -42,9 +42,13 @@ private struct SwitchIllustration: View {
 
     var body: some View {
         VStack(spacing: theme.spaces.fixedSmall) {
+            #if !os(visionOS)
             // 🥜: dumb label, not vocalized, preventing warnings because of empty labels
             OUDSSwitch(isOn: .constant(true), accessibilityLabel: "🥜")
             OUDSSwitch(isOn: .constant(false), accessibilityLabel: "🥜")
+            #else
+            OUDSSwitch(isOn: .constant(true), accessibilityLabel: "🥜")
+            #endif
         }
     }
 }

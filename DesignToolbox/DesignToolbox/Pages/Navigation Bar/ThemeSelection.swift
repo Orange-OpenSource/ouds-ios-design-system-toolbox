@@ -171,7 +171,7 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         guard let preferredLanguage = Locale.preferredLanguages.first else {
             return "Helvetica Neue"
         }
-        if preferredLanguage.hasPrefix("ar") || Locale.current.languageCode == "ar" {
+        if preferredLanguage.hasPrefix("ar") || OSUtilities.languageCode() == "ar" {
             return "Helvetica Neue Arabic"
         } else {
             return "Helvetica Neue"
@@ -200,7 +200,7 @@ struct ThemeSelectionButton: View {
                         Text(theme.description).tag(theme)
                     }
                 }
-                .pickerStyle(.automatic)
+                .pickerStyle(.inline)
             }
 
             // Orange Business Tools theme and tunings
@@ -210,9 +210,10 @@ struct ThemeSelectionButton: View {
                         Text(theme.description).tag(theme)
                     }
                 }
-                .pickerStyle(.automatic)
+                .pickerStyle(.inline)
             }
 
+            #if !os(macOS)
             // Sosh and Wireframe themes (which do not have tunings)
             Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
                 ForEach(themeProvider.otherThemes, id: \.id) { theme in
@@ -221,6 +222,14 @@ struct ThemeSelectionButton: View {
                 }
             }
             .pickerStyle(.automatic)
+            #else
+            Divider() // with macOS at least there are troubles with menus and pickers inside
+            ForEach(themeProvider.otherThemes, id: \.id) { theme in
+                Button(theme.description) {
+                    themeProvider.currentTheme = theme
+                }
+            }
+            #endif
         } label: {
             Image(decorative: "ic_theme")
                 .scaledToFit()
@@ -235,6 +244,7 @@ struct ThemeSelectionButton: View {
 // MARK: - Hot Switch
 
 final class HotSwitchWarning: ObservableObject {
+
     @Published var showAlert: Bool = false
 
     deinit {}

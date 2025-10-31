@@ -17,11 +17,20 @@ extension View {
 
     /// To add a `ThemeSelectionButton` in the toolbar and also a `ColorSchemeSelectionButton`
     func navigationBarMenus() -> some View {
+        #if os(iOS) || os(visionOS)
         toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 ThemeSelectionButton()
                 ColorSchemeSelectionButton()
             }
         }
+        #else // macOS
+        toolbar {
+            ToolbarItemGroup(placement: .automatic) {
+                ThemeSelectionButton()
+                ColorSchemeSelectionButton()
+            }
+        }
+        #endif
     }
 }
