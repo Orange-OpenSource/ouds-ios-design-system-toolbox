@@ -11,6 +11,10 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+// NOTE: Several items below are seen as unused but are used
+// This is a false positive in Periphy
+// See https://github.com/peripheryapp/periphery/issues/908
+
 #if os(iOS)
 import SwiftUI
 import WebKit

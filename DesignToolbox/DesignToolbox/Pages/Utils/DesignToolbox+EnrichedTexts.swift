@@ -14,6 +14,10 @@
 import OUDS
 import SwiftUI
 
+// NOTE: Several items below are seen as unused but are used
+// This is a false positive in Periphy
+// See https://github.com/peripheryapp/periphery/issues/908
+
 // MARK: - Copyable Text View Modifier
 
 /// A  `ViewModifier` defining a context menu allowing user to copy in clipboard some content.

@@ -15,6 +15,10 @@ import OUDS
 import OUDSFoundations
 import SwiftUI
 
+// NOTE: Several items below are seen as unused but are used
+// This is a false positive in Periphy
+// See https://github.com/peripheryapp/periphery/issues/908
+
 struct AboutPage: View {
 
     // MARK: Properties
@@ -29,6 +33,7 @@ struct AboutPage: View {
     private let appSettingsUrl: URL
     #endif
 
+    // NOTE: "unused" false-positive for periphery (https://github.com/peripheryapp/periphery/issues/993)
     @Environment(\.layoutDirection) private var layoutDirection
 
     // MARK: Initializer
