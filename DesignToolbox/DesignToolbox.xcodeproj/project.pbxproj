@@ -451,6 +451,8 @@
 		6DFC20C12CE3D39D00F2EC33 /* accessibility_detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */; };
 		6DFC20C22CE3D39D00F2EC33 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
 		6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */; };
+		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
+		9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95CD64F22EB3A375008FAB03 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD64F12EB3A371008FAB03 /* WindowManager.swift */; };
 		95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95D713EC2EB36B0B00EBB7C2 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
@@ -2476,6 +2478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */,
 				079B4A222E49C8740039FC26 /* WireframeTheme+TagSnapshotsTests.swift in Sources */,
 				51FD65222E0D8DB20084B982 /* A11YIdentifiers.swift in Sources */,
 				518EC0752E1FF23800FC77E4 /* OrangeTheme+ButtonSnapshotsTests.swift in Sources */,
@@ -2874,6 +2877,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */,
 				51F676DC2E0D469500C15CB6 /* A11YIdentifiers.swift in Sources */,
 				51E5999E2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */,
 				51F676ED2E0D678600C15CB6 /* SwitchUITests.swift in Sources */,
