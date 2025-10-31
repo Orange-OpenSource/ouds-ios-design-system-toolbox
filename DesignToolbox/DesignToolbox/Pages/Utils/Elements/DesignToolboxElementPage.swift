@@ -50,7 +50,7 @@ struct DesignToolboxElementPage: View {
         #if os(iOS)
         elementPageBody
             .navigationBarMenus() // Otherwise does not appear
-        #else // macOS
+        #else // macOS, visionOS
         elementPageBody // Otherwise appears twice
         #endif
     }

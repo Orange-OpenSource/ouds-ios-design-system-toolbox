@@ -213,7 +213,7 @@ struct ThemeSelectionButton: View {
                 .pickerStyle(.inline)
             }
 
-            #if os(iOS)
+            #if !os(macOS)
             // Sosh and Wireframe themes (which do not have tunings)
             Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
                 ForEach(themeProvider.otherThemes, id: \.id) { theme in
@@ -223,8 +223,7 @@ struct ThemeSelectionButton: View {
             }
             .pickerStyle(.automatic)
             #else
-            Divider()
-            // Sur macOS, utiliser des Button directement
+            Divider() // with macOS at least there are troubles with menus and pickers inside
             ForEach(themeProvider.otherThemes, id: \.id) { theme in
                 Button(theme.description) {
                     themeProvider.currentTheme = theme
@@ -245,6 +244,7 @@ struct ThemeSelectionButton: View {
 // MARK: - Hot Switch
 
 final class HotSwitchWarning: ObservableObject {
+
     @Published var showAlert: Bool = false
 
     deinit {}

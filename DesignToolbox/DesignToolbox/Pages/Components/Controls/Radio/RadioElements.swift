@@ -45,7 +45,7 @@ private struct RadioIllustration: View {
         VStack(spacing: theme.spaces.fixedNone) {
             // 🥜: dumb label, not vocalized, preventing warnings because of empty labels
             #if !os(visionOS)
-            OUDSRadio(isOn: .constant(false), accessibilityLabel: "🥜")
+            OUDSRadio(isOn: .constant(true), accessibilityLabel: "🥜")
             OUDSRadio(isOn: .constant(false), accessibilityLabel: "🥜")
             #else
             OUDSRadio(isOn: .constant(false), accessibilityLabel: "🥜")

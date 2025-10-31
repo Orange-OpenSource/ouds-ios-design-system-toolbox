@@ -19,17 +19,17 @@ import SwiftUI
 /// (enumerate tokens and components)
 struct DesignToolboxElementsPage: View {
 
+    // MARK: - Properties
+
+    let title: String
+    let elements: [DesignToolboxElement]
+
     #if !os(iOS)
     @State private var selectedElement: DesignToolboxElement?
     #endif
 
     @AccessibilityFocusState private var requestFocus: AccessibilityFocusable?
     @Environment(\.theme) private var theme
-
-    // MARK: Stored properties
-
-    let title: String
-    let elements: [DesignToolboxElement]
 
     // MARK: Body
 
@@ -41,7 +41,7 @@ struct DesignToolboxElementsPage: View {
         }
         .navigationViewStyle(.stack)
         #else // macOS
-        // Trick to be sure the view refreshes because NavigationView not always refreshed
+        // Trick to be sure the view refreshes because NavigationView not always refreshed with macOS
         NavigationSplitView {
             elementsPage
         } detail: {
@@ -129,7 +129,6 @@ struct DesignToolboxElementsPage: View {
         .hoverEffect(.highlight)
         .accessibilityFocused($requestFocus, equals: .some(id: element.id))
         .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
-
         #else
         Card(
             title: Text(LocalizedStringKey(element.name)),
@@ -138,75 +137,4 @@ struct DesignToolboxElementsPage: View {
             .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
         #endif
     }
-
-    /*
-     private var elementsPage: some View {
-     ScrollView {
-     LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaces.fixed2xsmall) {
-     ForEach(elements, id: \.id) { element in
-     #if os(iOS) || os(visionOS)
-     NavigationLink {
-     element.pageDescription
-     } label: {
-     cardView(for: element)
-     }
-     #else // macOS
-     Button {
-     selectedElement = element
-     } label: {
-     cardView(for: element)
-     }
-     #endif
-     }
-     }
-     .padding(.all, theme.spaces.fixedMedium)
-     .navigationBarMenus()
-     }
-     .oudsBackground(theme.colors.bgPrimary)
-     .oudsNavigationTitle(title)
-     }
-
-     private func cardView(for element: DesignToolboxElement) -> some View {
-     #if os(visionOS)
-     HStack(spacing: 16) {
-     // Illustration
-     element.illustration
-     .frame(width: 44, height: 44)
-     .scaleEffect(0.6) // Réduit à 60% de la taille
-     .clipped()
-     .clipShape(RoundedRectangle(cornerRadius: 10))
-
-     // Titre
-     Text(LocalizedStringKey(element.name))
-     .font(.headline)
-     .foregroundStyle(.primary)
-     .multilineTextAlignment(.leading)
-     .lineLimit(2) // Limite à 2 lignes
-     .fixedSize(horizontal: false, vertical: true) // Permet seulement le wrap vertical
-     .frame(maxWidth: .infinity, alignment: .leading) // Prend l'espace disponible
-
-     Image(systemName: "chevron.right")
-     .font(.subheadline)
-     .foregroundStyle(.tertiary)
-     }
-     .frame(maxWidth: .infinity) // Force la largeur maximale
-     .padding(.horizontal, 24)
-     .padding(.vertical, 18)
-     //.background(.regularMaterial, in: .capsule)
-     .background(.pink, in: .capsule)
-     .hoverEffect(.highlight)
-     .accessibilityFocused($requestFocus, equals: .some(id: element.id))
-     .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
-
-     #else
-     Card(
-     title: Text(LocalizedStringKey(element.name)),
-     illustration: element.illustration)
-     .accessibilityFocused($requestFocus, equals: .some(id: element.id))
-     .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
-     #endif
-     }
-     }
-
-     */
 }

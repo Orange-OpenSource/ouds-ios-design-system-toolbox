@@ -17,7 +17,7 @@ extension View {
 
     /// To add a `ThemeSelectionButton` in the toolbar and also a `ColorSchemeSelectionButton`
     func navigationBarMenus() -> some View {
-        #if os(iOS)
+        #if os(iOS) || os(visionOS)
         toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 ThemeSelectionButton()

@@ -35,11 +35,15 @@
 [![Still maintained](https://img.shields.io/maintenance/yes/2025?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/issues?q=is%3Aissue+is%3Aclosed)
 
 [![Xcode 26.0](https://img.shields.io/badge/Xcode-26.0-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes)
-Ack
-[![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)](https://developer.apple.com/support/app-store)
-[![iPadOS 15.0](https://img.shields.io/badge/iPadOS-15.0-FF1AB2?style=for-the-badge)](https://developer.apple.com/support/app-store")
+
+![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)
+![iPadOS 15.0](https://img.shields.io/badge/iPadOS-15.0-FF1AB2?style=for-the-badge)
+![macOS 15.0](https://img.shields.io/badge/macOS-15.0-FF1AB2?style=for-the-badge)
+![visionOS 1.3](https://img.shields.io/badge/visionOS-1.3-FF1AB2?style=for-the-badge)
 
 ## Content
+
+Source code of the app showcasing the design system for iOS, iPadOS, macOS and visionOS.
 
 > [!NOTE]
 > This repository contains the design system toolbox app which contains the OUDS iOS Swift Package and displays its features.
@@ -84,17 +88,59 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 
 ## Design System Toolbox
 
+### iOS
+
 <!-- Mockups designed thanks to https://mockuphone.com/model/iphone-15-pro-max/ -->
 
 <p align="center">
-<img src="./images/Tokens list - en - light-portrait.png" alt="List of tokens on iPhone 15 Pro Max (engligh, light mode, portrait)"  height="350" />
+<img src="./images/iOS/Tokens list - en - light - portrait.png" alt="List of tokens on iPhone 15 Pro Max (english, light mode, portrait)"  height="350" />
 &nbsp;
-<img src="./images/Colors - en - light-portrait.png" alt="List of colors on iPhone 15 Pro Max (engligh, light mode, portrait)"  height="350" />
+<img src="./images/iOS/Colors - en - light - portrait.png" alt="List of colors on iPhone 15 Pro Max (english, light mode, portrait)"  height="350" />
 &nbsp;
-<img src="./images/Components list - en - light-portrait.png" alt="List of components on iPhone 15 Pro Max (engligh, light mode, portrait)"  height="350" />
+<img src="./images/iOS/Components list - en - light - portrait.png" alt="List of components on iPhone 15 Pro Max (english, light mode, portrait)"  height="350" />
 &nbsp;
-<img src="./images/Button - en - light-portrait.png" alt="Button component on iPhone 15 Pro Max (engligh, light mode, portrait)"  height="350" />
+<img src="./images/iOS/Button - en - light - portrait.png" alt="Button component on iPhone 15 Pro Max (english, light mode, portrait)"  height="350" />
 </p>
+
+### iPadOS
+
+<!-- Mockups designed thanks to https://mockuphone.com/model/ipad-pro-13-inch/ -->
+
+<p align="center">
+<img src="./images/iPadOS/Tokens list - en - light - portrait.png" alt="List of tokens on iPad (A16) (english, light mode, portrait)"  height="350" />
+&nbsp;
+<img src="./images/iPadOS/Colors - en - light - portrait.png" alt="List of colors on iPad (A16) (english, light mode, portrait)"  height="350" />
+&nbsp;
+<img src="./images/iPadOS/Components list - en - light - portrait.png" alt="List of components on iPad (A16) (english, light mode, portrait)"  height="350" />
+&nbsp;
+<img src="./images/iPadOS/Button - en - light - portrait.png" alt="Button component on iPad (A16) (english, light mode, portrait)"  height="350" />
+</p>
+
+### macOS
+
+<p align="center">
+<img src="./images/macOS/Tokens list - en - light.png" alt="List of tokens on MacBook Pro 16'' inch'' (english, light mode)"  height="350" />
+&nbsp;
+<img src="./images/macOS/Colors - en - light.png" alt="List of colors on MacBook Pro 16'' (english, light mode)"  height="350" />
+&nbsp;
+<img src="./images/macOS/Components list - en - light.png" alt="List of components on MacBook Pro 16'' (english, light mode)"  height="350" />
+&nbsp;
+<img src="./images/macOS/Button - en - light.png" alt="Button component on MacBook Pro 16'' (english, light mode)"  height="350" />
+</p>
+
+### visionOS
+
+<p align="center">
+<img src="./images/visionOS/Tokens list - en - light.png" alt="List of tokens on Vision Pro (english, light mode)"  height="350" />
+&nbsp;
+<img src="./images/visionOS/Colors - en - light.png" alt="List of colors on Vision Pro (english, light mode)"  height="350" />
+&nbsp;
+<img src="./images/visionOS/Components list - en - light.png" alt="List of components on Vision Pro (english, light mode)"  height="350" />
+&nbsp;
+<img src="./images/visionOS/Button - en - light.png" alt="Button component on Vision Pro (english, light mode)"  height="350" />
+</p>
+
+### Get the app
 
 Flash the QrCode below or click on it to download the *Design System Toolbox* app.
 

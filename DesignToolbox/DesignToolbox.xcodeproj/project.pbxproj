@@ -3393,7 +3393,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1102-support-of-other-apple-os";
+				branch = develop;
 				kind = branch;
 			};
 		};
