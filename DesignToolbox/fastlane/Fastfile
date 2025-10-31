@@ -287,6 +287,10 @@ platform :ios do
     lane :build_debug do
         puts "👉 Build debug app"
 
+        cocoapods(
+          clean_install: true
+        )
+
         Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
             sh "cp -R AppIconDebug.appiconset AppIconRelease.appiconset"
@@ -491,6 +495,10 @@ platform :ios do
                 xcodeproj: "#{OUDS_PROJECT}",
                 plist_path: "#{OUDS_PROJECT_NAME}/Info.plist",
                 app_identifier: CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
+            )
+
+            cocoapods(
+                clean_install: true
             )
 
             # Disable automatic code signing for release / distribution builds.

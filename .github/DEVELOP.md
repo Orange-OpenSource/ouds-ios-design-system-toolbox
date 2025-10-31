@@ -39,7 +39,7 @@
 > [!IMPORTANT]
 > You should check wether or not you have the tools in use in the project like Fastlane, SwiftLint, SwiftFormat, etc.
 > You can have a look for example in the THIRD_PARTY.md file which lists any dependencies and tools we use at different levels (SDK, design system toolbox app, project).
-> Have a look on the locks file to know which versions we are using (Gemfile, Gemfile.lock, etc.).
+> Have a look on the locks file to know which versions we are using (Podfile, Podfile.lock, Gemfile, Gemfile.lock, etc.).
 
 > [!IMPORTANT]
 > We use a lot Fastlane for its automatic features and also to wrap to Shell command lines in order to have the same command to trigger
@@ -58,6 +58,9 @@ brew install rbenv
 
 # Use Bundler to install a major part of dependencies (thanks to Gemfile and Gemfile.lock files)
 bundle install
+
+# Use CocoaPods to install other dependencies not available as rubygems (thanks to Podfile and Podfile.lock files)
+bundle exec pod install --repo-update
 
 # Update your references
 brew update
@@ -153,9 +156,10 @@ You should not add in your VCS tool the *{$PROJET}.xcworkspace/contents.xcworksp
 To build the demo application follow those steps:
 
 1. `cd DesignToolbox`
-2. Open *DesignToolbox.xcworkspace*
-3. Select *DesignToolbox* scheme
-4. Build and run the Application on your device ou simulator
+2. `bundle exec pod install`
+3. Open *DesignToolbox.xcworkspace*
+4. Select *DesignToolbox* scheme
+5. Build and run the Application on your device ou simulator
 
 > [!TIP]
 > You can also move the folder containing a clone of the [Swift package repository](https://github.com/Orange-OpenSource/ouds-ios) from the *Finder* to the design system toolbox Xcode project so as to have a local reference of the package in this demo app.
@@ -211,10 +215,11 @@ The snapshots tests are made to test the rendering of the components and tokens,
 
 To run these snapshots tests follow some steps:
 1. `cd DesignToolbox`
-2. Open *DesignToolbox.xcworkspace*
-3. Select *DesignToolboxSnapshotsTests* scheme
-4. Select *iPhone 17 Pro* simulator (the device used to tests and views rendering) (iOS 26.0 (23A339))
-5. Run tests (Product -> Test)
+2. `bundle exec pod install`
+3. Open *DesignToolbox.xcworkspace*
+4. Select *DesignToolboxSnapshotsTests* scheme
+5. Select *iPhone 17 Pro* simulator (the device used to tests and views rendering) (iOS 26.0 (23A339))
+6. Run tests (Product -> Test)
 
 Or run in terminal:
 ```shell
@@ -293,10 +298,11 @@ The project contains some UI tests made to test the behavior of components.
 
 To run these UI tests follow some steps:
 1. `cd DesignToolbox`
-2. Open *DesignToolbox.xcworkspace*
-3. Select *DesignToolboxUITests* scheme
-4. Select *iPhone 17 Pro* simulator (the device used to tests and views rendering) (iOS 26.0 (23A339))
-5. Run tests (Product -> Test)
+2. `bundle exec pod install`
+3. Open *DesignToolbox.xcworkspace*
+4. Select *DesignToolboxUITests* scheme
+5. Select *iPhone 17 Pro* simulator (the device used to tests and views rendering) (iOS 26.0 (23A339))
+6. Run tests (Product -> Test)
 
 Or run in terminal:
 ```shell
@@ -309,9 +315,10 @@ The project contains some unit tests made to test the behavior of some utils in 
 
 To run these UI tests follow some steps:
 1. `cd DesignToolbox`
-2. Open *DesignToolbox.xcworkspace*
-3. Select *DesignToolboxUnitTests* scheme
-4. Run tests in left pane (target *DesignToolboxUnitTests*)
+2. `bundle exec pod install`
+3. Open *DesignToolbox.xcworkspace*
+4. Select *DesignToolboxUnitTests* scheme
+5. Run tests in left pane (target *DesignToolboxUnitTests*)
 
 Or run in terminal:
 ```shell
@@ -362,7 +369,13 @@ Sometimes dependencies should be updated, with for example warnings of [Renovate
 
 Here is the list of files to update to keep the project clean:
 - CHANGELOG (to note for releases the update of the version)
-- Of course, update and save in your VCS the new states of the _Package.swift_ or _Gemfile_ for example (and do not forget locks!)
+- Of course, update and save in your VCS the new states of the _Podfile_, _Package.swift_ or _Gemfile_ for example (and do not forget locks!)
+
+Maybe you will need to update your pods repo before if you updated a Pod:
+
+```shell
+bundle exec pod install --repo-update
+```
 
 ## Developer Certificate of Origin
 
