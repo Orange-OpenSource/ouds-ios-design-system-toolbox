@@ -612,7 +612,9 @@ This tool should be run locally, for example using *Fastlane*:
 
 And run:
 ```shell
-bundle exec fastlane check_dead_code
+bundle exec fastlane ios check_dead_code
+bundle exec fastlane mac check_dead_code
+bundle exec fastlane vision check_dead_code
 ```
 
 Because _Periphery_ has several issues about false positive, and needs to compile the project to look for symbols, this tool is not used anymore in CI/CD on GitHub Actions. Indeed we needed to allow errors and treat errors as warnings, so as manual check was still needed.

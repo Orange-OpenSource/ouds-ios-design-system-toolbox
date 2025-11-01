@@ -13,6 +13,57 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 # Available Actions
 
+### format
+
+```sh
+[bundle exec] fastlane format
+```
+
+Run SwiftFormat to format Swift source files according to the local configuration and apply source header template.
+
+### lint
+
+```sh
+[bundle exec] fastlane lint
+```
+
+Run SwiftLint in strict mode to detect code smells using local configuration for app, snapshots, units and UI tests
+
+### update_3rd_parties
+
+```sh
+[bundle exec] fastlane update_3rd_parties
+```
+
+Run LicensePlist to update list of third-parties to embed in app
+
+### check_leaks
+
+```sh
+[bundle exec] fastlane check_leaks
+```
+
+Run GitLeaks to look for leaks of secrets in project and Git history
+
+### update_sbom
+
+```sh
+[bundle exec] fastlane update_sbom
+```
+
+Generates a SBOM (Software Bill Of Materials) in SPDX JSON format with Syft and analyse it with Grype to as to look for vulnerabilities
+
+### update_build_number
+
+```sh
+[bundle exec] fastlane update_build_number
+```
+
+UPDATE BUILD NUMBER WITH TIMESTAMP
+
+----
+
+
 ## iOS
 
 ### ios check_dead_code
@@ -22,54 +73,6 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 ```
 
 Run Periphery to look for dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned.
-
-### ios format
-
-```sh
-[bundle exec] fastlane ios format
-```
-
-Run SwiftFormat to format Swift source files according to the local configuration and apply source header template.
-
-### ios lint
-
-```sh
-[bundle exec] fastlane ios lint
-```
-
-Run SwiftLint in strict mode to detect code smells using local configuration for app, snapshots, units and UI tests
-
-### ios update_3rd_parties
-
-```sh
-[bundle exec] fastlane ios update_3rd_parties
-```
-
-Run LicensePlist to update list of third-parties to embed in app
-
-### ios check_leaks
-
-```sh
-[bundle exec] fastlane ios check_leaks
-```
-
-Run GitLeaks to look for leaks of secrets in project and Git history
-
-### ios update_sbom
-
-```sh
-[bundle exec] fastlane ios update_sbom
-```
-
-Generates a SBOM (Software Bill Of Materials) in SPDX JSON format with Syft and analyse it with Grype to as to look for vulnerabilities
-
-### ios update_build_number
-
-```sh
-[bundle exec] fastlane ios update_build_number
-```
-
-UPDATE BUILD NUMBER WITH TIMESTAMP
 
 ### ios test_snapshots
 
@@ -126,6 +129,48 @@ Build the demo app in beta mode and upload to TestFlight
 ```
 
 Build the demo app in stable mode and, if defined, upload to internal portal for App Store publication
+
+----
+
+
+## Mac
+
+### mac check_dead_code
+
+```sh
+[bundle exec] fastlane mac check_dead_code
+```
+
+Run Periphery to look for dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned.
+
+### mac build_debug
+
+```sh
+[bundle exec] fastlane mac build_debug
+```
+
+Build locally the demo app in debug mode without upload
+
+----
+
+
+## vision
+
+### vision check_dead_code
+
+```sh
+[bundle exec] fastlane vision check_dead_code
+```
+
+Run Periphery to look for dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned.
+
+### vision build_debug
+
+```sh
+[bundle exec] fastlane vision build_debug
+```
+
+Build locally the demo app in debug mode without upload
 
 ----
 
