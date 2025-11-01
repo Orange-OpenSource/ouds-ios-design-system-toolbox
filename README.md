@@ -118,6 +118,9 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 
 ### macOS
 
+> [!NOTE]
+> The macOS app is not yet available on TestFlight nor the AppStore
+
 <p align="center">
 <img src="./images/macOS/Tokens list - en - light.png" alt="List of tokens on MacBook Pro 16'' inch'' (english, light mode)"  height="350" />
 &nbsp;
@@ -128,7 +131,10 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 <img src="./images/macOS/Button - en - light.png" alt="Button component on MacBook Pro 16'' (english, light mode)"  height="350" />
 </p>
 
-### visionOS
+### visionOS 
+
+> [!NOTE]
+> The visionOS app is not yet available on TestFlight nor the AppStore
 
 <p align="center">
 <img src="./images/visionOS/Tokens list - en - light.png" alt="List of tokens on Vision Pro (english, light mode)"  height="350" />
