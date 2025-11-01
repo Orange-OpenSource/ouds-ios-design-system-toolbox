@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] `ruby/setup-ruby` action from v1.265.0 to v1.267.0 for `build-and-test` workflow
 - [DesignToolbox] `SwiftLint` pod from v0.62.1 to v0.62.2
 - [DesignToolbox] Update `net-http` gem from v0.6.0 to v0.7.0
 - [DesignToolbox] Hide divider by default in `radio item`, `checkbox item` and `switch item` (Orange-OpenSource/ouds-ios#971)
