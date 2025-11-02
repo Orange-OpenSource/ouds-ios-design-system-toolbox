@@ -62,10 +62,11 @@ GITHUB_ACCESS_TOKEN = ENV['GITHUB_ACCESS_TOKEN']
 
 OUDS_WORKSPACE = "DesignToolbox.xcworkspace"
 OUDS_PROJECT = "DesignToolbox.xcodeproj"
-OUDS_SCHEME = "DesignToolbox"
-OUDS_SNAPSHOTS_SNAPSHOTS_TEST_SCHEME = "DesignToolboxSnapshotsTests"
-OUDS_SNAPSHOTS_UI_TEST_SCHEME = "DesignToolboxUITests"
-OUDS_SNAPSHOTS_UNIT_TEST_SCHEME = "DesignToolboxUnitTests"
+OUDS_SCHEME_DEFAULT = "DesignToolbox"
+OUDS_TARGET_IOS = "DesignToolbox (iOS)"
+OUDS_SNAPSHOTS_TEST_SCHEME = "DesignToolboxSnapshotsTests"
+OUDS_UI_TEST_SCHEME = "DesignToolboxUITests"
+OUDS_UNIT_TEST_SCHEME = "DesignToolboxUnitTests"
 OUDS_PROJECT_NAME = "DesignToolbox" # Root for Info.plist, etc.
 OUDS_APP_DISPLAY_NAME = "Design System Toolbox"
 OUDS_PACKAGE_RESOLVED_PATH = "#{OUDS_WORKSPACE}/xcshareddata/swiftpm/Package.resolved"
@@ -95,7 +96,7 @@ platform :ios do
     lane :check_dead_code do
         puts "👉 Check dead code with Periphery"
 
-        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME} --format xcode"
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_DEFAULT} --format xcode"
     end
 
     # ------------------------------------------------------------
@@ -229,7 +230,7 @@ platform :ios do
         # Check the available devices using `xcrun xctrace list devices`
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
-            scan(scheme: OUDS_SNAPSHOTS_UI_TEST_SCHEME,
+            scan(scheme: OUDS_UI_TEST_SCHEME,
                 device: OUDS_TEST_DEVICE,
                 skip_build: true
             )
@@ -260,7 +261,7 @@ platform :ios do
         # Check the available devices using `xcrun xctrace list devices`
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
-            scan(scheme: OUDS_SNAPSHOTS_UNIT_TEST_SCHEME,
+            scan(scheme: OUDS_UNIT_TEST_SCHEME,
                 device: OUDS_TEST_DEVICE,
                 skip_build: true
             )
@@ -297,7 +298,7 @@ platform :ios do
         end
 
         gym(
-            scheme: OUDS_SCHEME,
+            scheme: OUDS_SCHEME_DEFAULT,
             output_directory: 'build/',
             archive_path: 'build/',
             output_name: 'odsApp',
@@ -503,17 +504,17 @@ platform :ios do
 
             # Disable automatic code signing for release / distribution builds.
             # Thus we won't use any Xcode with plugged account in, and use only needed certificates and provisioning profiles.
-            # Mobile provisioning profile named "OUDS demo app (release)" must be placed in runner.
+            # Mobile provisioning profile named "OUDS iOS app (release)" must be placed in runner.
             # The certificate(s) used to build (with bundle ID) the provisionning profile must be available in the keychain of the runner
             # (both .cer and .p12), here a distribution certificate.
             # This way is more agile and allows to use VM-based solution with on the fly configuration like with Tart.
             update_code_signing_settings(path: "#{OUDS_PROJECT}",
                 use_automatic_signing: false,
-                profile_name: 'OUDS demo app (release)',
-                targets: OUDS_SCHEME)
+                profile_name: 'OUDS iOS app (release)',
+                targets: OUDS_TARGET_IOS)
             
             gym(workspace: "#{OUDS_WORKSPACE}",
-                scheme: OUDS_SCHEME,
+                scheme: OUDS_SCHEME_DEFAULT,
                 configuration: "Release",
                 output_directory: "build/",
                 export_method: "app-store",
@@ -789,7 +790,7 @@ platform :ios do
     def get_app_version
         version = get_version_number(
             xcodeproj: OUDS_PROJECT,
-            target: OUDS_SCHEME
+            target: OUDS_TARGET_IOS
         )
         return version
     end
