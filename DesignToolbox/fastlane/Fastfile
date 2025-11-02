@@ -419,7 +419,9 @@ platform :ios do
 
         # Stable app must point to OUDS iOS version
         if check_package_version_for_stable_app
-            build
+            build(os_type: "iOS")
+            build(os_type: "macOS")
+            build(os_type: "visionOS")
 
             if params[:upload]
                 puts "Upload to store requested"
@@ -446,7 +448,9 @@ platform :ios do
         if isAlpha # Alpha case, detailSymbol should be the issue number of the feature/fix to test
             puts "👉 Build and upload (alpha)"
             update_build_number
-            build
+            build(os_type: "iOS")
+            build(os_type: "macOS")
+            build(os_type: "visionOS")
             upload_2_testflight(type: BuildType::ALPHA, issues_numbers: params[:issues])
             publish_github_notifications_build_details(BuildType::ALPHA, get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildDetails"))
 
@@ -460,7 +464,9 @@ platform :ios do
             if tag_ci_build(detailSymbol)
                 # Ensure this build-then-uploaded app has a new and unique build number matching also to code version
                 update_build_number
-                build
+                build(os_type: "iOS")
+                build(os_type: "macOS")
+                build(os_type: "visionOS")
             else
                 puts "ℹ️ Nothing new to build today, a CI tag for commit '#{detailSymbol}' already exists"
                 publish_mattermost_notification("⚙️ 🤔 Nothing new to build today, a CI tag for commit '#{detailSymbol}' already exists")
@@ -487,8 +493,9 @@ platform :ios do
     # PRIVATE LANE BUILD (ALPHA / BETA / STABLE is set by main lane)
     # -----------------------------------------------------------------------
     desc "Build the demo app"
-    private_lane :build do
-        puts "👉 Build"
+    private_lane :build do |params|
+        os_type = params[:os_type]
+        puts "👉 Build for #{os_type}"
 
         begin
             update_app_identifier(
@@ -501,15 +508,30 @@ platform :ios do
                 clean_install: true
             )
 
+            # Must match provisioning profile installed in the computer and defined in Xcode settigns for the target
+            profile_name = case os_type
+               when "iOS"
+                    'OUDS iOS app (release)'
+               when "macOS"
+                    'OUDS macOS app (release)'
+               when "visionOS"
+                    'OUDS visionOS app (development)'
+               else
+                    raise "❌ Error: not managed OS : #{os_type}"
+               end
+
+             # Must match provisioning profile installed in the computer and defined in Xcode settigns for the target
+            artifactName = "oudsApp-#{os_type}"
+
             # Disable automatic code signing for release / distribution builds.
             # Thus we won't use any Xcode with plugged account in, and use only needed certificates and provisioning profiles.
-            # Mobile provisioning profile named "OUDS demo app (release)" must be placed in runner.
-            # The certificate(s) used to build (with bundle ID) the provisionning profile must be available in the keychain of the runner
+            # Mobile provisioning profiles named above must be placed in runner.
+            # The certificate(s) used to build (with bundle ID) the provisionning profile(s) must be available in the keychain of the runner
             # (both .cer and .p12), here a distribution certificate.
             # This way is more agile and allows to use VM-based solution with on the fly configuration like with Tart.
             update_code_signing_settings(path: "#{OUDS_PROJECT}",
                 use_automatic_signing: false,
-                profile_name: 'OUDS demo app (release)',
+                profile_name: profile_name,
                 targets: OUDS_SCHEME)
             
             gym(workspace: "#{OUDS_WORKSPACE}",
@@ -517,13 +539,13 @@ platform :ios do
                 configuration: "Release",
                 output_directory: "build/",
                 export_method: "app-store",
-                archive_path: "build/oudsApp.xcarchive",
+                archive_path: "build/#{artifactName}.xcarchive",
                 xcargs: "-allowProvisioningUpdates")
             
             # Build a ZIP archive to put as artifact to the GitLab CI runner
             # Needed for upload later as .xcarchive for App Store through corporate portal
-            zip(path: "build/oudsApp.xcarchive",
-                output_path: "build/oudsApp.zip")
+            zip(path: "build/#{artifactName}.xcarchive",
+                output_path: "build/#{artifactName}.zip")
                           
             version = get_app_version
             build_number = get_build_number(xcodeproj: OUDS_PROJECT)
