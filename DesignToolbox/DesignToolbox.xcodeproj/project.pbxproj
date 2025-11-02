@@ -825,8 +825,6 @@
 		9589F1B52EB7D67E00134487 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B42CE3AF1500F2EC33 /* style.css */; };
 		9589F1B62EB7D67E00134487 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
 		9589F1B72EB7D67E00134487 /* orange-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */; };
-		9589F1BE2EB7DA7600134487 /* DesignToolbox (macOS) Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9589F0E32EB7D67B00134487 /* DesignToolbox (macOS) Info.plist */; };
-		9589F1BF2EB7DA8200134487 /* DesignToolbox (visionOS) Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9589F1BD2EB7D67E00134487 /* DesignToolbox (visionOS) Info.plist */; };
 		959D1A092EB80F5C00B5F14A /* Pods_DesignToolbox__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959D1A082EB80F5C00B5F14A /* Pods_DesignToolbox__iOS_.framework */; };
 		959D1A0A2EB80F5C00B5F14A /* Pods_DesignToolbox__iOS_.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 959D1A082EB80F5C00B5F14A /* Pods_DesignToolbox__iOS_.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95CD64F22EB3A375008FAB03 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD64F12EB3A371008FAB03 /* WindowManager.swift */; };
@@ -1178,9 +1176,7 @@
 		6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = accessibility_result.xml; sourceTree = "<group>"; };
 		8D896603F007C1BC7101BAD0 /* Pods_DesignToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesignToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9589F0E32EB7D67B00134487 /* DesignToolbox (macOS) Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DesignToolbox (macOS) Info.plist"; path = "/Users/pylapersonne/Documents/5_Projects/17-OUDS/ouds-ios-design-system-toolbox/DesignToolbox/DesignToolbox (macOS) Info.plist"; sourceTree = "<absolute>"; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9589F1BD2EB7D67E00134487 /* DesignToolbox (visionOS) Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DesignToolbox (visionOS) Info.plist"; path = "/Users/pylapersonne/Documents/5_Projects/17-OUDS/ouds-ios-design-system-toolbox/DesignToolbox/DesignToolbox (visionOS) Info.plist"; sourceTree = "<absolute>"; };
 		959D1A082EB80F5C00B5F14A /* Pods_DesignToolbox__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_DesignToolbox__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CD64F12EB3A371008FAB03 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
@@ -1690,8 +1686,6 @@
 				07FDCD922C296A500009AA13 /* Products */,
 				AFD4931269C94655071502F6 /* Pods */,
 				3A9289D88D13C81017596009 /* Frameworks */,
-				9589F0E32EB7D67B00134487 /* DesignToolbox (macOS) Info.plist */,
-				9589F1BD2EB7D67E00134487 /* DesignToolbox (visionOS) Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2925,7 +2919,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9589F1BE2EB7DA7600134487 /* DesignToolbox (macOS) Info.plist in Resources */,
 				9589F0CB2EB7D67B00134487 /* accessibility_detail.html in Resources */,
 				9589F0CC2EB7D67B00134487 /* accessibility_result.xml in Resources */,
 				9589F0CD2EB7D67B00134487 /* README.md in Resources */,
@@ -2952,7 +2945,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9589F1BF2EB7DA8200134487 /* DesignToolbox (visionOS) Info.plist in Resources */,
 				9589F1A52EB7D67E00134487 /* accessibility_detail.html in Resources */,
 				9589F1A62EB7D67E00134487 /* accessibility_result.xml in Resources */,
 				9589F1A72EB7D67E00134487 /* README.md in Resources */,
@@ -4313,7 +4305,7 @@
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "DesignToolbox (macOS) Info.plist";
+				INFOPLIST_FILE = DesignToolbox/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Design System Toolbox (DEBUG)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -4358,7 +4350,7 @@
 				"DEVELOPMENT_TEAM[sdk=xros*]" = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "DesignToolbox (macOS) Info.plist";
+				INFOPLIST_FILE = DesignToolbox/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Design System Toolbox (DEBUG)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -4404,7 +4396,7 @@
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "DesignToolbox (visionOS) Info.plist";
+				INFOPLIST_FILE = DesignToolbox/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Design System Toolbox (DEBUG)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -4450,7 +4442,7 @@
 				"DEVELOPMENT_TEAM[sdk=xros*]" = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "DesignToolbox (visionOS) Info.plist";
+				INFOPLIST_FILE = DesignToolbox/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Design System Toolbox (DEBUG)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

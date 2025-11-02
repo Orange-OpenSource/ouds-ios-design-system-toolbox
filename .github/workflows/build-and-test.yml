@@ -62,11 +62,19 @@ jobs:
       - name: Install Fastlane
         run: |
           bundle install
-
-      - name: Build demo app
-        run: |
           cd DesignToolbox
-          bundle exec fastlane build_debug
+
+      - name: Build demo app (iOS)
+        run: |
+          bundle exec fastlane ios build_debug
+
+      - name: Build demo app (macOS)
+        run: |
+          bundle exec fastlane mac build_debug
+
+      - name: Build demo app (visionOS)
+        run: |
+          bundle exec fastlane vision build_debug
 
   # Test the app with unit tests
   unit-test:
@@ -92,7 +100,7 @@ jobs:
         run: |
           cd DesignToolbox
           bundle exec pod install
-          bundle exec fastlane test_unit
+          bundle exec fastlane ios test_unit
 
   # Test the app / library with UI tests
   ui-test:
@@ -118,7 +126,7 @@ jobs:
         run: |
           cd DesignToolbox
           bundle exec pod install
-          bundle exec fastlane test_ui
+          bundle exec fastlane ios test_ui
 
   # Test the app / library with snapshots tests
   snapshots-test:
@@ -145,4 +153,4 @@ jobs:
           cd DesignToolbox
           bundle exec pod install
           xcrun simctl list # List available simulators
-          bundle exec fastlane test_snapshots
+          bundle exec fastlane ios test_snapshots
