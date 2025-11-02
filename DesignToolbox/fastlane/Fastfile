@@ -520,8 +520,13 @@ platform :ios do
                 output_directory: "build/",
                 output_name: "oudsApp",
                 export_method: "app-store",
-                archive_path: "build/oudsApp.xcarchive",
                 xcargs: "-allowProvisioningUpdates")
+            
+            puts "📁 Contenu du dossier build :"
+            Dir.glob("build/*").each { |file| puts "  - #{file}" }
+
+            ipa_files = Dir.glob("build/*.ipa")
+            puts "📱 Fichiers IPA trouvés : #{ipa_files}"
             
             # Build a ZIP archive to put as artifact to the GitLab CI runner
             # Needed for upload later as .xcarchive for App Store through corporate portal
@@ -574,7 +579,6 @@ platform :ios do
             end
 
             upload_to_testflight(
-                ipa: "build/oudsApp.ipa",
                 changelog: news,
                 app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
                 skip_submission: false,
