@@ -419,7 +419,7 @@ platform :ios do
 
         # Stable app must point to OUDS iOS version
         if check_package_version_for_stable_app
-            build
+            build()
 
             if params[:upload]
                 puts "Upload to store requested"
@@ -446,7 +446,7 @@ platform :ios do
         if isAlpha # Alpha case, detailSymbol should be the issue number of the feature/fix to test
             puts "👉 Build and upload (alpha)"
             update_build_number
-            build
+            build()
             upload_2_testflight(type: BuildType::ALPHA, issues_numbers: params[:issues])
             publish_github_notifications_build_details(BuildType::ALPHA, get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildDetails"))
 
@@ -460,7 +460,7 @@ platform :ios do
             if tag_ci_build(detailSymbol)
                 # Ensure this build-then-uploaded app has a new and unique build number matching also to code version
                 update_build_number
-                build
+                build()
             else
                 puts "ℹ️ Nothing new to build today, a CI tag for commit '#{detailSymbol}' already exists"
                 publish_mattermost_notification("⚙️ 🤔 Nothing new to build today, a CI tag for commit '#{detailSymbol}' already exists")
@@ -503,14 +503,15 @@ platform :ios do
 
             # Disable automatic code signing for release / distribution builds.
             # Thus we won't use any Xcode with plugged account in, and use only needed certificates and provisioning profiles.
-            # Mobile provisioning profile named "OUDS demo app (release)" must be placed in runner.
-            # The certificate(s) used to build (with bundle ID) the provisionning profile must be available in the keychain of the runner
+            # Mobile provisioning profiles named above must be placed in runner.
+            # The certificate(s) used to build (with bundle ID) the provisionning profile(s) must be available in the keychain of the runner
             # (both .cer and .p12), here a distribution certificate.
             # This way is more agile and allows to use VM-based solution with on the fly configuration like with Tart.
             update_code_signing_settings(path: "#{OUDS_PROJECT}",
                 use_automatic_signing: false,
-                profile_name: 'OUDS demo app (release)',
-                targets: OUDS_SCHEME)
+                profile_name: "OUDS iOS app (release)",
+                targets: OUDS_SCHEME,
+                build_configurations: ["Release"])
             
             gym(workspace: "#{OUDS_WORKSPACE}",
                 scheme: OUDS_SCHEME,
