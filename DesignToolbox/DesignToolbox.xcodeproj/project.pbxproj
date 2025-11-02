@@ -3176,8 +3176,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
-				"CODE_SIGN_IDENTITY[sdk=xros*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Distribution: France Telecom (MG2LSJNJB6)";
+				"CODE_SIGN_IDENTITY[sdk=xros*]" = "Apple Distribution: France Telecom (MG2LSJNJB6)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
@@ -3206,7 +3206,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "OUDS iOS app (release)";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "OUDS macOS app (release)";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=xros*]" = "OUDS visionOS app (development)";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=xros*]" = "OUDS iOS app (release)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
