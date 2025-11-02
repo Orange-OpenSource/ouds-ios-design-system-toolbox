@@ -300,7 +300,7 @@ platform :ios do
             scheme: OUDS_SCHEME,
             output_directory: 'build/',
             archive_path: 'build/',
-            output_name: 'odsApp',
+            output_name: 'oudsApp',
             configuration: 'Debug',
             include_symbols: true,
             skip_archive: true,
@@ -503,19 +503,22 @@ platform :ios do
 
             # Disable automatic code signing for release / distribution builds.
             # Thus we won't use any Xcode with plugged account in, and use only needed certificates and provisioning profiles.
-            # Mobile provisioning profile named "OUDS demo app (release)" must be placed in runner.
-            # The certificate(s) used to build (with bundle ID) the provisionning profile must be available in the keychain of the runner
+            # Mobile provisioning profiles named above must be placed in runner.
+            # The certificate(s) used to build (with bundle ID) the provisionning profile(s) must be available in the keychain of the runner
             # (both .cer and .p12), here a distribution certificate.
             # This way is more agile and allows to use VM-based solution with on the fly configuration like with Tart.
             update_code_signing_settings(path: "#{OUDS_PROJECT}",
                 use_automatic_signing: false,
-                profile_name: 'OUDS demo app (release)',
-                targets: OUDS_SCHEME)
+                profile_name: "OUDS iOS app (release)",
+                targets: OUDS_SCHEME,
+                build_configurations: ["Release"])
             
             gym(workspace: "#{OUDS_WORKSPACE}",
                 scheme: OUDS_SCHEME,
                 configuration: "Release",
+                destination: "generic/platform=iOS",
                 output_directory: "build/",
+                output_name: "oudsApp",
                 export_method: "app-store",
                 archive_path: "build/oudsApp.xcarchive",
                 xcargs: "-allowProvisioningUpdates")
@@ -571,6 +574,7 @@ platform :ios do
             end
 
             upload_to_testflight(
+                ipa: "build/oudsApp.ipa",
                 changelog: news,
                 app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
                 skip_submission: false,
