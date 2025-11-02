@@ -17,7 +17,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "07FDCD902C296A500009AA13"
                BuildableName = "Design System Toolbox.app"
-               BlueprintName = "DesignToolbox"
+               BlueprintName = "DesignToolbox (iOS)"
                ReferencedContainer = "container:DesignToolbox.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -81,7 +81,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07FDCD902C296A500009AA13"
             BuildableName = "Design System Toolbox.app"
-            BlueprintName = "DesignToolbox"
+            BlueprintName = "DesignToolbox (iOS)"
             ReferencedContainer = "container:DesignToolbox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -98,7 +98,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07FDCD902C296A500009AA13"
             BuildableName = "Design System Toolbox.app"
-            BlueprintName = "DesignToolbox"
+            BlueprintName = "DesignToolbox (iOS)"
             ReferencedContainer = "container:DesignToolbox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
