@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSComponents
-import OUDSThemesContract
+import OUDSSwiftUI
 import SwiftUI
 
 /// Used to list all elements in the main screen of the application

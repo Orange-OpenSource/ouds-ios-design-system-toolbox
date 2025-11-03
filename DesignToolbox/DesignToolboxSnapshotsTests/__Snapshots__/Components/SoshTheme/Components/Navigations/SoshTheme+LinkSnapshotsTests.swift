@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSThemesContract
-import OUDSThemesSosh
+import OUDSSwiftUI
 import SwiftUI
 
 // swiftlint:disable required_deinit

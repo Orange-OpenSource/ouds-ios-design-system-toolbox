@@ -17,7 +17,7 @@
 
 #if os(iOS)
 import DeclarationAccessibility
-import OUDSFoundations
+import OUDSSwiftUI
 import SwiftUI
 
 struct AccessibilityStatementPage: View {

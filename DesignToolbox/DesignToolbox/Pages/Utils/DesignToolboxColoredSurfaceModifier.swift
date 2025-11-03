@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Design Toolbox Colored Surface Modifier

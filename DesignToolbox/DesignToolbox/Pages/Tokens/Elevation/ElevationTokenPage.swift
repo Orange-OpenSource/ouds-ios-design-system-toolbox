@@ -11,9 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSThemesContract
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Elevation Token Page

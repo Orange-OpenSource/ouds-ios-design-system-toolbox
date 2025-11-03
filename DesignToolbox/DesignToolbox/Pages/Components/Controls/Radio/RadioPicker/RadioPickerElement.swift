@@ -11,9 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSComponents
-import OUDSThemesContract
-import OUDSThemesOrange
+import OUDSSwiftUI
 import SwiftUI
 
 struct RadioPickerElement: DesignToolboxElement {

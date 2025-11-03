@@ -11,11 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSThemesContract
-import OUDSThemesOrange
-import OUDSThemesOrangeBusinessTools
-import OUDSThemesSosh
-import OUDSThemesWireframe
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Extensions of OUDSTheme
