@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -13,7 +13,7 @@
 
 import OUDSComponents
 
-// MARK: - OUDS Checkbox Indicator State extension
+// MARK: - OUDSThemesContract Checkbox Indicator State extension
 
 extension OUDSCheckboxIndicatorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 

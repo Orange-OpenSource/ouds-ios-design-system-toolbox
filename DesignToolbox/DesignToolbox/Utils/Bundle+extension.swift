@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -66,7 +66,7 @@ extension Bundle {
         #endif
     }
 
-    /// A value filled outside the app (e.g. by the CI/CD chain) to indicate the version of the OUDS iOS Swift Package in use
+    /// A value filled outside the app (e.g. by the CI/CD chain) to indicate the version of the OUDSThemesContract iOS Swift Package in use
     /// For example, contains a tag or a branch or a commit hash
     var sdkVersion: String? {
         #if DEBUG

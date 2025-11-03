@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -80,7 +80,7 @@ extension NamedSize {
         // Not sure they must be added
 
         // swiftlint:disable function_body_length
-        func token(for theme: OUDS.OUDSTheme, userInterfaceSizeClass: UserInterfaceSizeClass) -> OUDSTokensSemantic.SizeSemanticToken {
+        func token(for theme: OUDSTheme, userInterfaceSizeClass: UserInterfaceSizeClass) -> OUDSTokensSemantic.SizeSemanticToken {
             switch self {
             // Heading
             case .iconWithHeadingXlargeSizeSmall:

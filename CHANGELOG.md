@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Standalone checkbox and radio button should have rounded corners with Sosh and Wireframe themes (Orange-OpenSource/ouds-ios#1079)
 - [Library] Update `OUDSBadge` to version 1.2 (Orange-OpenSource/ouds-ios#1043)
 - [Library] Update `badge` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1043)
+- [Library] Reduce number of imports by using higher level Swift Package product (Orange-OpenSource/ouds-ios#1117)
 - [Library] Shorten names of raw, semantic and components tokens and associated modifiers (Orange-OpenSource/ouds-ios#1030)
 - [DesignToolbox] Use `OUDSButton` in code sample panes (Orange-OpenSource/ouds-ios#1081)
 - [DesignToolbox] Add missing semantic tokens of colors in list (Orange-OpenSource/ouds-ios#1084)

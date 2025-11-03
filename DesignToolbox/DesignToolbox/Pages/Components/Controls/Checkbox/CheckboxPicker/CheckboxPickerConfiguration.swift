@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -157,7 +157,7 @@ struct CheckboxPickerConfiguration: View {
     }
 }
 
-// MARK: - Extension of OUDS Checkbox Picker Placement
+// MARK: - Extension of OUDSThemesContract Checkbox Picker Placement
 
 extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Equatable, @retroactive Hashable {
 

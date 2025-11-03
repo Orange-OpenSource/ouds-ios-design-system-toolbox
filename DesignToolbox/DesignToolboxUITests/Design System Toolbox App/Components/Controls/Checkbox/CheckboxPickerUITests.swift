@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -15,7 +15,7 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To make UI tests on some checkbox picker from OUDS
+/// To make UI tests on some checkbox picker from OUDSThemesContract
 /// Tests the accessibility identifiers, labels or values of the items depending to their states and user actions.
 final class CheckboxPickerUITests: AppTestCase {
 

@@ -1,5 +1,5 @@
 {
-  "originHash" : "6ea3d37f1306824a57aceca4318954b015df152cccfd354b173dfe326870c15b",
+  "originHash" : "639104ac04b349f8fb8fa48adbe31b1640a38bed2ad74fe1c42d840067ab502e",
   "pins" : [
     {
       "identity" : "accessibility-statement-lib-ios",
@@ -29,6 +29,24 @@
       }
     },
     {
+      "identity" : "swift-docc-plugin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-docc-plugin",
+      "state" : {
+        "revision" : "3e4f133a77e644a5812911a0513aeb7288b07d06",
+        "version" : "1.4.5"
+      }
+    },
+    {
+      "identity" : "swift-docc-symbolkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-docc-symbolkit",
+      "state" : {
+        "revision" : "b45d1f2ed151d057b54504d653e0da5552844e34",
+        "version" : "1.0.0"
+      }
+    },
+    {
       "identity" : "swift-snapshot-testing",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-snapshot-testing.git",
@@ -44,6 +62,24 @@
       "state" : {
         "revision" : "0687f71944021d616d34d922343dcef086855920",
         "version" : "600.0.1"
+      }
+    },
+    {
+      "identity" : "swiftformat",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nicklockwood/SwiftFormat",
+      "state" : {
+        "revision" : "9c82dcb15307ba06795d31788d3467d9a375e3e7",
+        "version" : "0.58.5"
+      }
+    },
+    {
+      "identity" : "swiftlintplugins",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SimplyDanny/SwiftLintPlugins",
+      "state" : {
+        "revision" : "ef264ee3ccea175f5c9efc8b814ccb48cd3fdaac",
+        "version" : "0.62.1"
       }
     },
     {
