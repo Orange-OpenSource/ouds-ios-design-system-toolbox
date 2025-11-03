@@ -4563,7 +4563,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1078-component-update-standalone-checkbox-and-radio-button-should-have-rounded-corners-with-sosh-and-wireframe-themes";
+				branch = develop;
 				kind = branch;
 			};
 		};
