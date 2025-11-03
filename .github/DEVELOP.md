@@ -686,6 +686,7 @@ Workflows are the following:
 - [dependency-review](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/dependency-review.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
 - [gitleaks](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/gitleaks.yml) to check if there are secrets leaks
 - [scorecard](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/scorecard.yml) to build the OpenSSF score card on README
+- [snapshot](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/snapshot.yml) to move SNAPSHOT git tag to last develop version
 - [swiftlint](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/swiftlint.yml) to check if there is no linter warnings
 - [swiftpolyglot](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/swiftpolyglot.yml) to check if there are localizations troubles
 
