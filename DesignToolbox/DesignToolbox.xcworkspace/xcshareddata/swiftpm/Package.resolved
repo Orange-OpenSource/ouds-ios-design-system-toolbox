@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "553823d9739531fa7502b8c80655580f9415e0cf"
+        "branch" : "1117-reduce-number-of-imports",
+        "revision" : "ae032cb1f99bbf7f79d9dd6ab757c80f0e9c63ae"
       }
     },
     {
