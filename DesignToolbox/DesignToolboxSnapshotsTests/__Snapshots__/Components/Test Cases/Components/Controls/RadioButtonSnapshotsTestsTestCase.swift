@@ -11,10 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SnapshotTesting
 import SwiftUI
 import XCTest
