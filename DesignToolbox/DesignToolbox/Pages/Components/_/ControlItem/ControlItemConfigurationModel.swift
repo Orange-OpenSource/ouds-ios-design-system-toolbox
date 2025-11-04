@@ -90,7 +90,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         icon = true
         flipIcon = false
         isReversed = false
-        divider = true
+        divider = false
         labelText = String(localized: "app_components_common_label_label")
         helperText = String(localized: "app_components_common_helperText_label")
         errorText = String(localized: "app_components_common_errorText_label")
