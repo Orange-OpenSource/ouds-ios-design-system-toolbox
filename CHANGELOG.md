@@ -46,6 +46,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Apply new tokens library (v1.8.0) (Orange-OpenSource/ouds-ios#1070)
 - [Library] Update `text input` to display error message if error, and display suffix/prefix even if placeholder empty (Orange-OpenSource/ouds-ios#1063)
 
+### Removed
+
+- [DesignToolbox] `periphery` workfow on GitHub Actions
+
 ### Fixed
 
 - [Library] Apply rounded corners for hover and pressed states of radio button and checkbox components (Orange-OpenSource/ouds-ios#1078)
