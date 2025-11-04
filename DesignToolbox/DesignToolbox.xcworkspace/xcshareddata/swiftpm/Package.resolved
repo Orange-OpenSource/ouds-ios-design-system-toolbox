@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1034-component-update-of-button-component-v32",
-        "revision" : "96224291112560e66e65d3595017402e4e962d88"
+        "branch" : "develop",
+        "revision" : "553823d9739531fa7502b8c80655580f9415e0cf"
       }
     },
     {
