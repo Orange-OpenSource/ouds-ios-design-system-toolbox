@@ -11,9 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSComponents
+import OUDSSwiftUI
 
-// MARK: - OUDS Checkbox Indicator State extension
+// MARK: - OUDSThemesContract Checkbox Indicator State extension
 
 extension OUDSCheckboxIndicatorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 

@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 /// The disclosure group used in Design tool box to have the same bahaviour on the header (arrow) and for all contents displayed.

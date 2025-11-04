@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 extension NamedSize {
@@ -80,7 +79,7 @@ extension NamedSize {
         // Not sure they must be added
 
         // swiftlint:disable function_body_length
-        func token(for theme: OUDS.OUDSTheme, userInterfaceSizeClass: UserInterfaceSizeClass) -> OUDSTokensSemantic.SizeSemanticToken {
+        func token(for theme: OUDSTheme, userInterfaceSizeClass: UserInterfaceSizeClass) -> OUDSTokensSemantic.SizeSemanticToken {
             switch self {
             // Heading
             case .iconWithHeadingXlargeSizeSmall:
