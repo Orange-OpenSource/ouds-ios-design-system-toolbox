@@ -4446,7 +4446,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1117-reduce-number-of-imports";
+				branch = develop;
 				kind = branch;
 			};
 		};
