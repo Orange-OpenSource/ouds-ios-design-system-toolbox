@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Add umbrella Swift Package product to wrap all others (Orange-OpenSource/ouds-ios#1117)
 - [DesignToolbox] GitHub Actions workflow to move the SNAPSHOT tag
 - [DesignToolbox] Support of `visionOS` (Orange-OpenSource/ouds-ios#1102)
 - [DesignToolbox] Support of `macOS` (Orange-OpenSource/ouds-ios#1102)
