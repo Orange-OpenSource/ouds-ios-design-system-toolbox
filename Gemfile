@@ -19,7 +19,7 @@ source "https://rubygems.org"
 # Embeded in net-http RubyGem without defined version
 # Solves CVE-2025-27221 (https://github.com/Orange-OpenSource/ouds-ios/security/dependabot/6)
 # Should be removed when net-http > 0.6.0 and CVE fixed
-gem 'uri', '1.0.4'
+gem 'uri', '1.1.1'
 
 # To fix
 # "warning: abbrev was loaded from the standard library, but is not part of the default gems starting from Ruby 3.4.0.
