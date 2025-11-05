@@ -3949,7 +3949,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 101;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_APP_SANDBOX = YES;
@@ -3969,7 +3969,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 0.21.0;
+				MARKETING_VERSION = 0.22.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "Design System Toolbox";
@@ -3996,7 +3996,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 101;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -4016,7 +4016,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 0.21.0;
+				MARKETING_VERSION = 0.22.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "Design System Toolbox";
@@ -4156,7 +4156,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 101;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_APP_SANDBOX = YES;
@@ -4176,7 +4176,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 0.21.0;
+				MARKETING_VERSION = 0.22.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4201,7 +4201,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 101;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -4221,7 +4221,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 0.21.0;
+				MARKETING_VERSION = 0.22.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4247,7 +4247,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 101;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_APP_SANDBOX = YES;
@@ -4267,7 +4267,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 0.21.0;
+				MARKETING_VERSION = 0.22.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4293,7 +4293,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "Apple Distribution: France Telecom (MG2LSJNJB6)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 101;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -4313,7 +4313,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 0.21.0;
+				MARKETING_VERSION = 0.22.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4446,8 +4446,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				kind = exactVersion;
-				version = 0.21.0;
+				branch = develop;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
