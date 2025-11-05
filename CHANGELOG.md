@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - [DesignToolbox] `CocoaPods` tool (Orange-OpenSource/ouds-ios#1103)
+### Changed
+
+- [Library] Update `text input` to display the label on two lines and in the middle when no placeholder and one line at top otherwise  (Orange-OpenSource/ouds-ios#1086) 
 
 ## [0.21.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.20.0...0.21.0) - 2025-11-05
 
@@ -31,7 +34,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] `SwiftLint` pod from v0.62.1 to v0.62.2
 - [DesignToolbox] Update `net-http` gem from v0.6.0 to v0.7.0
 - [DesignToolbox] Hide divider by default in `radio item`, `checkbox item` and `switch item` (Orange-OpenSource/ouds-ios#971)
-- [Library] Update `text input` to display the label on two lines and in the middle when no placeholder and one line at top otherwise  (Orange-OpenSource/ouds-ios#1086)
 - [Library] Update `button` component to version v3.2.0 (Orange-OpenSource/ouds-ios#1034)
 - [Library] Standalone checkbox and radio button should have rounded corners with Sosh and Wireframe themes (Orange-OpenSource/ouds-ios#1079)
 - [Library] Update `OUDSBadge` to version 1.2 (Orange-OpenSource/ouds-ios#1043)
