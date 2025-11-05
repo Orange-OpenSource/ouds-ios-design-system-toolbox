@@ -11,8 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
 import SwiftUI
 
 struct ComponentsPage: View {
@@ -27,7 +25,7 @@ struct ComponentsPage: View {
         LinkElement(),
         RadioElements(),
         SwitchElements(),
-        TagElement(),
+        TagElements(),
         TextInputElement(),
     ]
 

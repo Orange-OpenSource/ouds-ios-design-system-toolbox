@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 struct TextInputElement: DesignToolboxElement {
@@ -38,6 +37,6 @@ private struct TextInputIllustration: View {
     var body: some View {
         OUDSTextInput(label: String(localized: "app_components_common_label_label"),
                       text: $text,
-                      helperText: String(localized: "app_components_textInput_illustration_helperText_label"))
+                      helperText: String(localized: "app_components_textInputHelperText_label"))
     }
 }

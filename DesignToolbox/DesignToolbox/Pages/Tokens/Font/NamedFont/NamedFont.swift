@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Named Font
@@ -56,65 +55,65 @@ enum NamedFont: String, CaseIterable {
     func token(from theme: OUDSTheme) -> MultipleFontCompositeRawTokens {
         switch self {
         case .displayLarge:
-            theme.fonts.typeDisplayLarge
+            theme.fonts.displayLarge
         case .displayMedium:
-            theme.fonts.typeDisplayMedium
+            theme.fonts.displayMedium
         case .displaySmall:
-            theme.fonts.typeDisplaySmall
+            theme.fonts.displaySmall
         case .headingXLarge:
-            theme.fonts.typeHeadingXLarge
+            theme.fonts.headingXLarge
         case .headingLarge:
-            theme.fonts.typeHeadingLarge
+            theme.fonts.headingLarge
         case .headingMedium:
-            theme.fonts.typeHeadingMedium
+            theme.fonts.headingMedium
         case .headingSmall:
-            theme.fonts.typeHeadingSmall
+            theme.fonts.headingSmall
         case .bodyDefaultLarge:
-            theme.fonts.typeBodyDefaultLarge
+            theme.fonts.bodyDefaultLarge
         case .bodyDefaultMedium:
-            theme.fonts.typeBodyDefaultMedium
+            theme.fonts.bodyDefaultMedium
         case .bodyDefaultSmall:
-            theme.fonts.typeBodyDefaultSmall
+            theme.fonts.bodyDefaultSmall
         case .bodyModerateLarge:
-            theme.fonts.typeBodyModerateLarge
+            theme.fonts.bodyModerateLarge
         case .bodyModerateMedium:
-            theme.fonts.typeBodyModerateMedium
+            theme.fonts.bodyModerateMedium
         case .bodyModerateSmall:
-            theme.fonts.typeBodyModerateSmall
+            theme.fonts.bodyModerateSmall
         case .bodyStrongLarge:
-            theme.fonts.typeBodyStrongLarge
+            theme.fonts.bodyStrongLarge
         case .bodyStrongMedium:
-            theme.fonts.typeBodyStrongMedium
+            theme.fonts.bodyStrongMedium
         case .bodyStrongSmall:
-            theme.fonts.typeBodyStrongSmall
+            theme.fonts.bodyStrongSmall
         case .labelDefaultXLarge:
-            theme.fonts.typeLabelDefaultXLarge
+            theme.fonts.labelDefaultXLarge
         case .labelDefaultLarge:
-            theme.fonts.typeLabelDefaultLarge
+            theme.fonts.labelDefaultLarge
         case .labelDefaultMedium:
-            theme.fonts.typeLabelDefaultMedium
+            theme.fonts.labelDefaultMedium
         case .labelDefaultSmall:
-            theme.fonts.typeLabelDefaultSmall
+            theme.fonts.labelDefaultSmall
         case .labelModerateXLarge:
-            theme.fonts.typeLabelModerateXLarge
+            theme.fonts.labelModerateXLarge
         case .labelModerateLarge:
-            theme.fonts.typeLabelModerateLarge
+            theme.fonts.labelModerateLarge
         case .labelModerateMedium:
-            theme.fonts.typeLabelModerateMedium
+            theme.fonts.labelModerateMedium
         case .labelModerateSmall:
-            theme.fonts.typeLabelModerateSmall
+            theme.fonts.labelModerateSmall
         case .labelStrongXLarge:
-            theme.fonts.typeLabelStrongXLarge
+            theme.fonts.labelStrongXLarge
         case .labelStrongLarge:
-            theme.fonts.typeLabelStrongLarge
+            theme.fonts.labelStrongLarge
         case .labelStrongMedium:
-            theme.fonts.typeLabelStrongMedium
+            theme.fonts.labelStrongMedium
         case .labelStrongSmall:
-            theme.fonts.typeLabelStrongSmall
+            theme.fonts.labelStrongSmall
         case .codeSmall:
-            theme.fonts.typeCodeSmall
+            theme.fonts.codeSmall
         case .codeMedium:
-            theme.fonts.typeCodeMedium
+            theme.fonts.codeMedium
         }
     }
 }

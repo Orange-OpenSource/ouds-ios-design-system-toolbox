@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 struct DesignToolboxCode: View {
@@ -34,53 +33,40 @@ struct DesignToolboxCode: View {
             codeTokenSection()
         } label: {
             Text(titleText)
-                .typeBodyStrongLarge(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .padding(.vertical, theme.spaces.spacePaddingInlineSmall)
+                .bodyStrongLarge(theme)
+                .oudsForegroundStyle(theme.colors.contentDefault)
+                .padding(.vertical, theme.spaces.paddingInlineSmall)
         }
     }
 
     private func codeTokenSection() -> some View {
-        HStack(alignment: .firstTextBaseline, spacing: theme.spaces.spacePaddingBlockNone) {
+        HStack(alignment: .firstTextBaseline, spacing: theme.spaces.paddingBlockNone) {
             Text(code)
                 .font(.system(.body, design: .monospaced))
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .padding(.vertical, theme.spaces.spacePaddingInlineSmall)
+                .oudsForegroundStyle(theme.colors.contentDefault)
+                .padding(.vertical, theme.spaces.paddingInlineSmall)
                 .multilineTextAlignment(layoutDirection == .rightToLeft ? .trailing : .leading)
             // As the source code sample is written in english, keep text aligned on the left
 
-            Spacer(minLength: theme.spaces.spacePaddingBlockMedium)
+            Spacer(minLength: theme.spaces.paddingBlockMedium)
 
-            Button {
-                UIPasteboard.general.string = code
-            } label: {
-                ZStack {
-                    Color.clear
-                        .frame(width: kMinimalTouchAreaWidth, height: kMinimalTouchAreaHeight)
-
-                    Image("ic_copy")
-                        .resizable()
-                        .renderingMode(.template)
-                        .oudsForegroundColor(theme.colors.colorContentDefault)
-                        .frame(width: 24, height: 24)
-                        .alignmentGuide(.firstTextBaseline) { $0[.bottom] * 0.7 }
-                        .accessibilityLabel("app_common_copyCode_a11y")
-                }
+            OUDSButton(icon: Image("ic_copy"), accessibilityLabel: "app_common_copyCode_a11y".localized(), appearance: .minimal) {
+                OSUtilities.copy(content: code)
             }
         }
         .frame(minWidth: 72, maxWidth: .infinity, alignment: .leading)
-        .padding(.vertical, theme.spaces.spacePaddingInlineSmall)
-        .padding(.leading, theme.spaces.spacePaddingInlineMedium)
-        .oudsBackground(theme.colors.colorBgSecondary)
+        .padding(.vertical, theme.spaces.paddingInlineSmall)
+        .padding(.leading, theme.spaces.paddingInlineMedium)
+        .oudsBackground(theme.colors.bgSecondary)
         .accessibilityElement(children: .combine)
         .accessibilityHint("app_common_copyCode_a11y")
         .overlay(
             Rectangle()
-                .opacity(theme.opacities.opacityInvisible)
+                .opacity(theme.opacities.invisible)
                 .frame(minWidth: 40, maxWidth: .infinity, alignment: .leading)
-                .oudsBorder(style: theme.borders.borderStyleDefault,
-                            width: theme.borders.borderWidthThin,
-                            radius: theme.borders.borderRadiusDefault,
-                            color: theme.colors.colorBorderDefault))
+                .oudsBorder(style: theme.borders.styleDefault,
+                            width: theme.borders.widthThin,
+                            radius: theme.borders.radiusDefault,
+                            color: theme.colors.borderDefault))
     }
 }

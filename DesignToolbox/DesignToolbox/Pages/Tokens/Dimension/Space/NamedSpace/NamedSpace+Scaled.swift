@@ -11,45 +11,44 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 
 extension NamedSpace {
 
     enum Scaled: String, CaseIterable {
-        case spaceScaledNone
-        case spaceScaled3xsmall
-        case spaceScaled2xsmall
-        case spaceScaledXsmall
-        case spaceScaledSmall
-        case spaceScaledMedium
-        case spaceScaledLarge
-        case spaceScaledXlarge
-        case spaceScaled2xlarge
-        case spaceScaled3xlarge
+        case scaledNone
+        case scaled3xsmall
+        case scaled2xsmall
+        case scaledXsmall
+        case scaledSmall
+        case scaledMedium
+        case scaledLarge
+        case scaledXlarge
+        case scaled2xlarge
+        case scaled3xlarge
 
         func token(from theme: OUDSTheme) -> MultipleSpaceSemanticTokens {
             switch self {
-            case .spaceScaledNone:
-                theme.spaces.spaceScaledNone
-            case .spaceScaled3xsmall:
-                theme.spaces.spaceScaled3xsmall
-            case .spaceScaled2xsmall:
-                theme.spaces.spaceScaled2xsmall
-            case .spaceScaledXsmall:
-                theme.spaces.spaceScaledXsmall
-            case .spaceScaledSmall:
-                theme.spaces.spaceScaledSmall
-            case .spaceScaledMedium:
-                theme.spaces.spaceScaledMedium
-            case .spaceScaledLarge:
-                theme.spaces.spaceScaledLarge
-            case .spaceScaledXlarge:
-                theme.spaces.spaceScaledXlarge
-            case .spaceScaled2xlarge:
-                theme.spaces.spaceScaled2xlarge
-            case .spaceScaled3xlarge:
-                theme.spaces.spaceScaled3xlarge
+            case .scaledNone:
+                theme.spaces.scaledNone
+            case .scaled3xsmall:
+                theme.spaces.scaled3xsmall
+            case .scaled2xsmall:
+                theme.spaces.scaled2xsmall
+            case .scaledXsmall:
+                theme.spaces.scaledXsmall
+            case .scaledSmall:
+                theme.spaces.scaledSmall
+            case .scaledMedium:
+                theme.spaces.scaledMedium
+            case .scaledLarge:
+                theme.spaces.scaledLarge
+            case .scaledXlarge:
+                theme.spaces.scaledXlarge
+            case .scaled2xlarge:
+                theme.spaces.scaled2xlarge
+            case .scaled3xlarge:
+                theme.spaces.scaled3xlarge
             }
         }
     }

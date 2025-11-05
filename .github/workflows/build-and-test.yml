@@ -21,7 +21,7 @@
 # - automatically triggered when pull request is opened and has new commits (synchronize)
 # But beware, triggered on commit push, so do not be a push-machine-gun!
 
-name: Build and Test
+name: Build and test demo app
 
 on:
   push:
@@ -55,7 +55,7 @@ jobs:
           sudo xcode-select -s /Applications/Xcode_26.0.1.app/Contents/Developer
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@ab177d40ee5483edb974554986f56b33477e21d0 # v1.265.0, https://github.com/ruby/setup-ruby
+        uses: ruby/setup-ruby@d5126b9b3579e429dd52e51e68624dda2e05be25 # v1.267.0, https://github.com/ruby/setup-ruby
         with:
           ruby-version: '3.4.7'
 
@@ -63,12 +63,41 @@ jobs:
         run: |
           bundle install
 
-      - name: Build demo app
+      - name: Build demo app (iOS, macOS, visionOS)
         run: |
           cd DesignToolbox
-          bundle exec fastlane build_debug
+          xcrun simctl list # List available simulators
+          bundle exec fastlane ios build_debug
+          bundle exec fastlane mac build_debug
+          bundle exec fastlane vision build_debug
 
-  # Test the library with UI tests
+  # Test the app with unit tests
+  unit-test:
+    runs-on: macos-26
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+
+      - name: Set up Xcode 26.0.1
+        run: |
+          sudo xcode-select -s /Applications/Xcode_26.0.1.app/Contents/Developer
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@d5126b9b3579e429dd52e51e68624dda2e05be25 # v1.267.0, https://github.com/ruby/setup-ruby
+        with:
+          ruby-version: '3.4.7'
+
+      - name: Install Fastlane
+        run: |
+          bundle install
+
+      - name: Run unit tests on demo app
+        run: |
+          cd DesignToolbox
+          bundle exec pod install
+          bundle exec fastlane ios test_unit
+
+  # Test the app / library with UI tests
   ui-test:
     runs-on: macos-26
     steps:
@@ -80,7 +109,7 @@ jobs:
           sudo xcode-select -s /Applications/Xcode_26.0.1.app/Contents/Developer
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@ab177d40ee5483edb974554986f56b33477e21d0 # v1.265.0, https://github.com/ruby/setup-ruby
+        uses: ruby/setup-ruby@d5126b9b3579e429dd52e51e68624dda2e05be25 # v1.267.0, https://github.com/ruby/setup-ruby
         with:
           ruby-version: '3.4.7'
 
@@ -92,9 +121,9 @@ jobs:
         run: |
           cd DesignToolbox
           bundle exec pod install
-          bundle exec fastlane test_ui
+          bundle exec fastlane ios test_ui
 
-  # Test the library with snapshots tests
+  # Test the app / library with snapshots tests
   snapshots-test:
     runs-on: macos-26
     steps:
@@ -106,7 +135,7 @@ jobs:
           sudo xcode-select -s /Applications/Xcode_26.0.1.app/Contents/Developer
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@ab177d40ee5483edb974554986f56b33477e21d0 # v1.265.0, https://github.com/ruby/setup-ruby
+        uses: ruby/setup-ruby@d5126b9b3579e429dd52e51e68624dda2e05be25 # v1.267.0, https://github.com/ruby/setup-ruby
         with:
           ruby-version: '3.4.7'
 
@@ -118,4 +147,5 @@ jobs:
         run: |
           cd DesignToolbox
           bundle exec pod install
-          bundle exec fastlane test_snapshots
+          xcrun simctl list # List available simulators
+          bundle exec fastlane ios test_snapshots

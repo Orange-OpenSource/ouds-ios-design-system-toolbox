@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Component Configuration
@@ -58,19 +57,19 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             ComponentShowcases(onColoredSurface: configuration.onColoredSurface, componentDemo: componentView)
             // No padding here, the component area keeps all the frame horizontaly
 
             DesignToolboxConfiguration {
                 configurationView()
             }
-            .padding(.horizontal, theme.spaces.spaceFixedMedium)
+            .padding(.horizontal, theme.spaces.fixedMedium)
 
             DesignToolboxCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
-                .padding(.horizontal, theme.spaces.spaceFixedMedium)
+                .padding(.horizontal, theme.spaces.fixedMedium)
         }
-        .padding(.bottom, theme.spaces.spaceFixedMedium)
+        .padding(.bottom, theme.spaces.fixedMedium)
     }
 }
 

@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Checkbox Page
@@ -53,6 +52,6 @@ private struct CheckboxDemo: View {
                 .accessibilityIdentifier(A11YIdentifiers.componentCheckbox)
             Spacer()
         }
-        .padding(.all, theme.spaces.spaceFixedMedium)
+        .padding(.all, theme.spaces.fixedMedium)
     }
 }

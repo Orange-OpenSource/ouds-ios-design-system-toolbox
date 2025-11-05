@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSComponents
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Divider Configuration Model
@@ -97,7 +96,7 @@ private struct ColorEntry: View {
 
 extension OUDSDividerColor: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    public nonisolated(unsafe) static var allCases: [OUDSDividerColor] = [
+    nonisolated(unsafe) public static var allCases: [OUDSDividerColor] = [
         .default,
         .muted,
         .emphasized,

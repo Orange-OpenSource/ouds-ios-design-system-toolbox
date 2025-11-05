@@ -11,8 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSSwiftUI
 import SwiftUI
+
+// NOTE: Several items below are seen as unused but are used
+// This is a false positive in Periphy
+// See https://github.com/peripheryapp/periphery/issues/908
 
 // MARK: - Copyable Text View Modifier
 
@@ -30,7 +34,7 @@ struct CopyableTextViewModifier: ViewModifier {
         content
             .contextMenu {
                 Button(action: {
-                    UIPasteboard.general.string = copyable
+                    OSUtilities.copy(content: copyable)
                 }, label: {
                     Text("app_common_copy" <- copyable)
                     Image(systemName: "doc.on.doc").accessibilityHidden(true)
@@ -77,7 +81,7 @@ struct OpenableText: View {
     }
 
     var body: some View {
-        HStack(spacing: theme.spaces.spaceInsetNone) {
+        HStack(spacing: theme.spaces.insetNone) {
             Text(rawText.replacingOccurrences(of: anchor, with: ""))
             anchorLinkView
         }
@@ -89,9 +93,9 @@ struct OpenableText: View {
         if type != .githubIssue {
             Text(anchor)
                 .underline()
-                .oudsForegroundStyle(theme.link.linkColorContentEnabled)
+                .oudsForegroundStyle(theme.link.colorContentEnabled)
                 .onTapGesture {
-                    UIApplication.shared.open(URL(string: type.destination(for: anchor).first!)!)
+                    OSUtilities.open(url: type.destination(for: anchor).first!)
                 }
                 .accessibilityAddTraits([.isLink])
         } else {
@@ -100,9 +104,9 @@ struct OpenableText: View {
                 if let url = urlFor(String(someAnchor)) {
                     Text(someAnchor)
                         .underline()
-                        .oudsForegroundStyle(theme.link.linkColorContentEnabled)
+                        .oudsForegroundStyle(theme.link.colorContentEnabled)
                         .onTapGesture {
-                            UIApplication.shared.open(url)
+                            OSUtilities.open(url: url)
                         }
                         .accessibilityAddTraits([.isLink])
                 } else {

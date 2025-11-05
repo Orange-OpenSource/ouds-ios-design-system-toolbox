@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - FilterChip Configuration Model
@@ -29,7 +29,9 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var text: String
+    @Published var text: String {
+        didSet { updateCode() }
+    }
 
     @Published var layout: ChipLayout {
         didSet { updateCode() }
@@ -89,8 +91,8 @@ struct FilterChipConfigurationView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
 
                 OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.selected)
@@ -104,7 +106,7 @@ struct FilterChipConfigurationView: View {
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.text)
+                    DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_label")
                 }
             }
         }

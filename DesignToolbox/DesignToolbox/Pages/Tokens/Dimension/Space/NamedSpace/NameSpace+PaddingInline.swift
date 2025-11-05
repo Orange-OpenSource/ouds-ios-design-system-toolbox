@@ -11,53 +11,52 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 
 extension NamedSpace {
 
     enum PaddingInline: String, CaseIterable, NamedSpaceToken {
-        case spacePaddingInlineNone
-        case spacePaddingInline4xsmall
-        case spacePaddingInline3xsmall
-        case spacePaddingInline2xsmall
-        case spacePaddingInlineXsmall
-        case spacePaddingInlineSmall
-        case spacePaddingInlineMedium
-        case spacePaddingInlineLarge
-        case spacePaddingInlineXlarge
-        case spacePaddingInline2xlarge
-        case spacePaddingInline3xlarge
-        case spacePaddingInline4xlarge
+        case paddingInlineNone
+        case paddingInline4xsmall
+        case paddingInline3xsmall
+        case paddingInline2xsmall
+        case paddingInlineXsmall
+        case paddingInlineSmall
+        case paddingInlineMedium
+        case paddingInlineLarge
+        case paddingInlineXlarge
+        case paddingInline2xlarge
+        case paddingInline3xlarge
+        case paddingInline4xlarge
 
         var name: String { rawValue }
 
         func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {
-            case .spacePaddingInlineNone:
-                theme.spaces.spacePaddingInlineNone
-            case .spacePaddingInline4xsmall:
-                theme.spaces.spacePaddingInline4xsmall
-            case .spacePaddingInline3xsmall:
-                theme.spaces.spacePaddingInline3xsmall
-            case .spacePaddingInline2xsmall:
-                theme.spaces.spacePaddingInline2xsmall
-            case .spacePaddingInlineXsmall:
-                theme.spaces.spacePaddingInlineXsmall
-            case .spacePaddingInlineSmall:
-                theme.spaces.spacePaddingInlineSmall
-            case .spacePaddingInlineMedium:
-                theme.spaces.spacePaddingInlineMedium
-            case .spacePaddingInlineLarge:
-                theme.spaces.spacePaddingInlineLarge
-            case .spacePaddingInlineXlarge:
-                theme.spaces.spacePaddingInlineXlarge
-            case .spacePaddingInline2xlarge:
-                theme.spaces.spacePaddingInline2xlarge
-            case .spacePaddingInline3xlarge:
-                theme.spaces.spacePaddingInline3xlarge
-            case .spacePaddingInline4xlarge:
-                theme.spaces.spacePaddingInline4xlarge
+            case .paddingInlineNone:
+                theme.spaces.paddingInlineNone
+            case .paddingInline4xsmall:
+                theme.spaces.paddingInline4xsmall
+            case .paddingInline3xsmall:
+                theme.spaces.paddingInline3xsmall
+            case .paddingInline2xsmall:
+                theme.spaces.paddingInline2xsmall
+            case .paddingInlineXsmall:
+                theme.spaces.paddingInlineXsmall
+            case .paddingInlineSmall:
+                theme.spaces.paddingInlineSmall
+            case .paddingInlineMedium:
+                theme.spaces.paddingInlineMedium
+            case .paddingInlineLarge:
+                theme.spaces.paddingInlineLarge
+            case .paddingInlineXlarge:
+                theme.spaces.paddingInlineXlarge
+            case .paddingInline2xlarge:
+                theme.spaces.paddingInline2xlarge
+            case .paddingInline3xlarge:
+                theme.spaces.paddingInline3xlarge
+            case .paddingInline4xlarge:
+                theme.spaces.paddingInline4xlarge
             }
         }
     }

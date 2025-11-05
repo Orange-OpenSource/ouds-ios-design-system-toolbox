@@ -15,7 +15,7 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To make UI tests on some radio picker from OUDS.
+/// To make UI tests on some radio picker from OUDSThemesContract.
 /// Tests the accessibility identifier,s labels or values of the items depending to their states and user actions.
 final class RadioPickerUITests: AppTestCase {
 

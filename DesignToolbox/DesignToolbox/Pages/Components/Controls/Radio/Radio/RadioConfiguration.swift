@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Radio Configuration Model
@@ -71,7 +71,7 @@ struct RadioConfiguration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.selection)
                 .accessibilityIdentifier(A11YIdentifiers.configurationSwitchSelection)
                 .disabled(!configurationModel.enabled || configurationModel.isError)

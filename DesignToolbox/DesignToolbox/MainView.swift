@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSThemesOrange
+import OUDSSwiftUI
 import SwiftUI
 
 struct MainView: View {
@@ -34,7 +33,7 @@ struct MainView: View {
                     Label("app_bottomBar_about_label", image: "ic_info")
                 }
         }
-        .oudsAccentColor(theme.colors.colorContentBrandPrimary)
+        .oudsAccentColor(theme.colors.contentBrandPrimary)
     }
 }
 

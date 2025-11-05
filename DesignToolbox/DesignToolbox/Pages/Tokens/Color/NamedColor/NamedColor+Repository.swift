@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 
 // swiftlint:disable function_body_length
 // swiftlint:disable type_body_length
@@ -20,285 +19,312 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Repository: String, CaseIterable {
-        case colorRepositoryAccentDefault
-        case colorRepositoryAccentHigh
-        case colorRepositoryAccentHigher
-        case colorRepositoryAccentHighest
-        case colorRepositoryAccentLow
-        case colorRepositoryAccentLowest
-        case colorRepositoryInfoDefault
-        case colorRepositoryInfoHighest
-        case colorRepositoryInfoLow
-        case colorRepositoryInfoLowest
-        case colorRepositoryNegativeDefault
-        case colorRepositoryNegativeHigh
-        case colorRepositoryNegativeHigher
-        case colorRepositoryNegativeHighest
-        case colorRepositoryNegativeLow
-        case colorRepositoryNegativeLower
-        case colorRepositoryNegativeLowest
-        case colorRepositoryNeutralEmphasizedBlack
-        case colorRepositoryNeutralEmphasizedHigh
-        case colorRepositoryNeutralEmphasizedHigher
-        case colorRepositoryNeutralEmphasizedHighest
-        case colorRepositoryNeutralEmphasizedMedium
-        case colorRepositoryNeutralEmphasizedLow
-        case colorRepositoryNeutralMutedLower
-        case colorRepositoryNeutralMutedLowest
-        case colorRepositoryNeutralMutedWhite
-        case colorRepositoryOpacityBlackHigh
-        case colorRepositoryOpacityBlackHigher
-        case colorRepositoryOpacityBlackHighest
-        case colorRepositoryOpacityBlackLow
-        case colorRepositoryOpacityBlackLower
-        case colorRepositoryOpacityBlackLowest
-        case colorRepositoryOpacityBlackMediumLow
-        case colorRepositoryOpacityBlackMedium
-        case colorRepositoryOpacityBlackMediumHigh
-        case colorRepositoryOpacityBlackTransparent
-        case colorRepositoryOpacityInfoLow
-        case colorRepositoryOpacityInfoMedium
-        case colorRepositoryOpacityAccentLow
-        case colorRepositoryOpacityAccentMedium
-        case colorRepositoryOpacityNegativeLow
-        case colorRepositoryOpacityNegativeMedium
-        case colorRepositoryOpacityPositiveLow
-        case colorRepositoryOpacityPositiveMedium
-        case colorRepositoryOpacityWarningLow
-        case colorRepositoryOpacityWarningMedium
-        case colorRepositoryOpacityWhiteHigh
-        case colorRepositoryOpacityWhiteHigher
-        case colorRepositoryOpacityWhiteHighest
-        case colorRepositoryOpacityWhiteMedium
-        case colorRepositoryOpacityWhiteMediumLow
-        case colorRepositoryOpacityWhiteLow
-        case colorRepositoryOpacityWhiteLower
-        case colorRepositoryOpacityWhiteLowest
-        case colorRepositoryOpacityWhiteTransparent
-        case colorRepositoryOpacityPrimaryLow
-        case colorRepositoryOpacityPrimaryLower
-        case colorRepositoryOpacityPrimaryLowest
-        case colorRepositoryOpacityPrimaryMedium
-        case colorRepositoryOpacityPrimaryHigh
-        case colorRepositoryOpacityPrimaryHigher
-        case colorRepositoryOpacityPrimaryHighest
-        case colorRepositoryPositiveDefault
-        case colorRepositoryPositiveHigh
-        case colorRepositoryPositiveHighest
-        case colorRepositoryPositiveLow
-        case colorRepositoryPositiveLowest
-        case colorRepositoryPrimaryHighest
-        case colorRepositoryPrimaryHigher
-        case colorRepositoryPrimaryHigh
-        case colorRepositoryPrimaryDefault
-        case colorRepositoryPrimaryLow
-        case colorRepositoryPrimaryLower
-        case colorRepositoryPrimaryLowest
-        case colorRepositorySecondaryHighest
-        case colorRepositorySecondaryHigher
-        case colorRepositorySecondaryHigh
-        case colorRepositorySecondaryDefault
-        case colorRepositorySecondaryLow
-        case colorRepositorySecondaryLower
-        case colorRepositorySecondaryLowest
-        case colorRepositoryTertiaryHighest
-        case colorRepositoryTertiaryHigher
-        case colorRepositoryTertiaryHigh
-        case colorRepositoryTertiaryDefault
-        case colorRepositoryTertiaryLow
-        case colorRepositoryTertiaryLower
-        case colorRepositoryTertiaryLowest
-        case colorRepositoryWarningDefault
-        case colorRepositoryWarningHighest
-        case colorRepositoryWarningLow
-        case colorRepositoryWarningLowest
+        case repositoryAccentMedium
+        case repositoryAccentHigh
+        case repositoryAccentHigher
+        case repositoryAccentHighest
+        case repositoryAccentLow
+        case repositoryAccentLower
+        case repositoryAccentLowest
+        case repositoryInfoHigh
+        case repositoryInfoHigher
+        case repositoryInfoHighest
+        case repositoryInfoMedium
+        case repositoryInfoLow
+        case repositoryInfoLower
+        case repositoryInfoLowest
+        case repositoryNegativeMedium
+        case repositoryNegativeHigh
+        case repositoryNegativeHigher
+        case repositoryNegativeHighest
+        case repositoryNegativeLow
+        case repositoryNegativeLower
+        case repositoryNegativeLowest
+        case repositoryNeutralEmphasizedBlack
+        case repositoryNeutralEmphasizedHigh
+        case repositoryNeutralEmphasizedHigher
+        case repositoryNeutralEmphasizedHighest
+        case repositoryNeutralEmphasizedMedium
+        case repositoryNeutralEmphasizedLow
+        case repositoryNeutralMutedLower
+        case repositoryNeutralMutedLowest
+        case repositoryNeutralMutedWhite
+        case repositoryOpacityBlackHigh
+        case repositoryOpacityBlackHigher
+        case repositoryOpacityBlackHighest
+        case repositoryOpacityBlackLow
+        case repositoryOpacityBlackLower
+        case repositoryOpacityBlackLowest
+        case repositoryOpacityBlackMediumLow
+        case repositoryOpacityBlackMedium
+        case repositoryOpacityBlackMediumHigh
+        case repositoryOpacityBlackTransparent
+        case repositoryOpacityInfoLow
+        case repositoryOpacityInfoMedium
+        case repositoryOpacityAccentLow
+        case repositoryOpacityAccentMedium
+        case repositoryOpacityNegativeLow
+        case repositoryOpacityNegativeMedium
+        case repositoryOpacityPositiveLow
+        case repositoryOpacityPositiveMedium
+        case repositoryOpacityWarningLow
+        case repositoryOpacityWarningMedium
+        case repositoryOpacityWhiteHigh
+        case repositoryOpacityWhiteHigher
+        case repositoryOpacityWhiteHighest
+        case repositoryOpacityWhiteMedium
+        case repositoryOpacityWhiteMediumLow
+        case repositoryOpacityWhiteLow
+        case repositoryOpacityWhiteLower
+        case repositoryOpacityWhiteLowest
+        case repositoryOpacityWhiteTransparent
+        case repositoryOpacityPrimaryLow
+        case repositoryOpacityPrimaryLower
+        case repositoryOpacityPrimaryLowest
+        case repositoryOpacityPrimaryMedium
+        case repositoryOpacityPrimaryHigh
+        case repositoryOpacityPrimaryHigher
+        case repositoryOpacityPrimaryHighest
+        case repositoryPositiveMedium
+        case repositoryPositiveHigh
+        case repositoryPositiveHigher
+        case repositoryPositiveHighest
+        case repositoryPositiveLow
+        case repositoryPositiveLower
+        case repositoryPositiveLowest
+        case repositoryPrimaryHighest
+        case repositoryPrimaryHigher
+        case repositoryPrimaryHigh
+        case repositoryPrimaryMedium
+        case repositoryPrimaryLow
+        case repositoryPrimaryLower
+        case repositoryPrimaryLowest
+        case repositorySecondaryHighest
+        case repositorySecondaryHigher
+        case repositorySecondaryHigh
+        case repositorySecondaryMedium
+        case repositorySecondaryLow
+        case repositorySecondaryLower
+        case repositorySecondaryLowest
+        case repositoryTertiaryHighest
+        case repositoryTertiaryHigher
+        case repositoryTertiaryHigh
+        case repositoryTertiaryMedium
+        case repositoryTertiaryLow
+        case repositoryTertiaryLower
+        case repositoryTertiaryLowest
+        case repositoryWarningLow
+        case repositoryWarningLower
+        case repositoryWarningLowest
+        case repositoryWarningMedium
+        case repositoryWarningHigh
+        case repositoryWarningHigher
+        case repositoryWarningHighest
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
-            case .colorRepositoryAccentDefault:
-                theme.colors.colorRepositoryAccentDefault
-            case .colorRepositoryAccentHigh:
-                theme.colors.colorRepositoryAccentHigh
-            case .colorRepositoryAccentHigher:
-                theme.colors.colorRepositoryAccentHigher
-            case .colorRepositoryAccentHighest:
-                theme.colors.colorRepositoryAccentHighest
-            case .colorRepositoryAccentLow:
-                theme.colors.colorRepositoryAccentLow
-            case .colorRepositoryAccentLowest:
-                theme.colors.colorRepositoryAccentLowest
-            case .colorRepositoryInfoDefault:
-                theme.colors.colorRepositoryInfoDefault
-            case .colorRepositoryInfoHighest:
-                theme.colors.colorRepositoryInfoHighest
-            case .colorRepositoryInfoLow:
-                theme.colors.colorRepositoryInfoLow
-            case .colorRepositoryInfoLowest:
-                theme.colors.colorRepositoryInfoLowest
-            case .colorRepositoryNegativeDefault:
-                theme.colors.colorRepositoryNegativeDefault
-            case .colorRepositoryNegativeHigh:
-                theme.colors.colorRepositoryNegativeHigh
-            case .colorRepositoryNegativeHigher:
-                theme.colors.colorRepositoryNegativeHigher
-            case .colorRepositoryNegativeHighest:
-                theme.colors.colorRepositoryNegativeHighest
-            case .colorRepositoryNegativeLow:
-                theme.colors.colorRepositoryNegativeLow
-            case .colorRepositoryNegativeLower:
-                theme.colors.colorRepositoryNegativeLower
-            case .colorRepositoryNegativeLowest:
-                theme.colors.colorRepositoryNegativeLowest
-            case .colorRepositoryNeutralEmphasizedBlack:
-                theme.colors.colorRepositoryNeutralEmphasizedBlack
-            case .colorRepositoryNeutralEmphasizedHigh:
-                theme.colors.colorRepositoryNeutralEmphasizedHigh
-            case .colorRepositoryNeutralEmphasizedHigher:
-                theme.colors.colorRepositoryNeutralEmphasizedHigher
-            case .colorRepositoryNeutralEmphasizedHighest:
-                theme.colors.colorRepositoryNeutralEmphasizedHighest
-            case .colorRepositoryNeutralEmphasizedMedium:
-                theme.colors.colorRepositoryNeutralEmphasizedMedium
-            case .colorRepositoryNeutralEmphasizedLow:
-                theme.colors.colorRepositoryNeutralEmphasizedLow
-            case .colorRepositoryNeutralMutedLower:
-                theme.colors.colorRepositoryNeutralMutedLower
-            case .colorRepositoryNeutralMutedLowest:
-                theme.colors.colorRepositoryNeutralMutedLowest
-            case .colorRepositoryNeutralMutedWhite:
-                theme.colors.colorRepositoryNeutralMutedWhite
-            case .colorRepositoryOpacityBlackHigh:
-                theme.colors.colorRepositoryOpacityBlackHigh
-            case .colorRepositoryOpacityBlackHigher:
-                theme.colors.colorRepositoryOpacityBlackHigher
-            case .colorRepositoryOpacityBlackHighest:
-                theme.colors.colorRepositoryOpacityBlackHighest
-            case .colorRepositoryOpacityBlackLow:
-                theme.colors.colorRepositoryOpacityBlackLow
-            case .colorRepositoryOpacityBlackLower:
-                theme.colors.colorRepositoryOpacityBlackLower
-            case .colorRepositoryOpacityBlackLowest:
-                theme.colors.colorRepositoryOpacityBlackLowest
-            case .colorRepositoryOpacityBlackMediumLow:
-                theme.colors.colorRepositoryOpacityBlackMediumLow
-            case .colorRepositoryOpacityBlackMedium:
-                theme.colors.colorRepositoryOpacityBlackMedium
-            case .colorRepositoryOpacityBlackMediumHigh:
-                theme.colors.colorRepositoryOpacityBlackMediumHigh
-            case .colorRepositoryOpacityBlackTransparent:
-                theme.colors.colorRepositoryOpacityBlackTransparent
-            case .colorRepositoryOpacityInfoLow:
-                theme.colors.colorRepositoryOpacityInfoLow
-            case .colorRepositoryOpacityInfoMedium:
-                theme.colors.colorRepositoryOpacityInfoMedium
-            case .colorRepositoryOpacityAccentLow:
-                theme.colors.colorRepositoryOpacityAccentLow
-            case .colorRepositoryOpacityAccentMedium:
-                theme.colors.colorRepositoryOpacityAccentMedium
-            case .colorRepositoryOpacityNegativeLow:
-                theme.colors.colorRepositoryOpacityNegativeLow
-            case .colorRepositoryOpacityNegativeMedium:
-                theme.colors.colorRepositoryOpacityNegativeMedium
-            case .colorRepositoryOpacityPositiveLow:
-                theme.colors.colorRepositoryOpacityPositiveLow
-            case .colorRepositoryOpacityPositiveMedium:
-                theme.colors.colorRepositoryOpacityPositiveMedium
-            case .colorRepositoryOpacityWarningLow:
-                theme.colors.colorRepositoryOpacityWarningLow
-            case .colorRepositoryOpacityWarningMedium:
-                theme.colors.colorRepositoryOpacityWarningMedium
-            case .colorRepositoryOpacityWhiteHigh:
-                theme.colors.colorRepositoryOpacityWhiteHigh
-            case .colorRepositoryOpacityWhiteHigher:
-                theme.colors.colorRepositoryOpacityWhiteHigher
-            case .colorRepositoryOpacityWhiteHighest:
-                theme.colors.colorRepositoryOpacityWhiteHighest
-            case .colorRepositoryOpacityWhiteMedium:
-                theme.colors.colorRepositoryOpacityWhiteMedium
-            case .colorRepositoryOpacityWhiteMediumLow:
-                theme.colors.colorRepositoryOpacityWhiteMediumLow
-            case .colorRepositoryOpacityWhiteLow:
-                theme.colors.colorRepositoryOpacityWhiteLow
-            case .colorRepositoryOpacityWhiteLower:
-                theme.colors.colorRepositoryOpacityWhiteLower
-            case .colorRepositoryOpacityWhiteLowest:
-                theme.colors.colorRepositoryOpacityWhiteLowest
-            case .colorRepositoryOpacityWhiteTransparent:
-                theme.colors.colorRepositoryOpacityWhiteTransparent
-            case .colorRepositoryOpacityPrimaryLow:
-                theme.colors.colorRepositoryOpacityPrimaryLow
-            case .colorRepositoryOpacityPrimaryLower:
-                theme.colors.colorRepositoryOpacityPrimaryLower
-            case .colorRepositoryOpacityPrimaryLowest:
-                theme.colors.colorRepositoryOpacityPrimaryLowest
-            case .colorRepositoryOpacityPrimaryMedium:
-                theme.colors.colorRepositoryOpacityPrimaryMedium
-            case .colorRepositoryOpacityPrimaryHigh:
-                theme.colors.colorRepositoryOpacityPrimaryHigh
-            case .colorRepositoryOpacityPrimaryHigher:
-                theme.colors.colorRepositoryOpacityPrimaryHigher
-            case .colorRepositoryOpacityPrimaryHighest:
-                theme.colors.colorRepositoryOpacityPrimaryHighest
-            case .colorRepositoryPositiveDefault:
-                theme.colors.colorRepositoryPositiveDefault
-            case .colorRepositoryPositiveHigh:
-                theme.colors.colorRepositoryPositiveHigh
-            case .colorRepositoryPositiveHighest:
-                theme.colors.colorRepositoryPositiveHighest
-            case .colorRepositoryPositiveLow:
-                theme.colors.colorRepositoryPositiveLow
-            case .colorRepositoryPositiveLowest:
-                theme.colors.colorRepositoryPositiveLowest
-            case .colorRepositoryPrimaryHighest:
-                theme.colors.colorRepositoryPrimaryHighest
-            case .colorRepositoryPrimaryHigher:
-                theme.colors.colorRepositoryPrimaryHigher
-            case .colorRepositoryPrimaryHigh:
-                theme.colors.colorRepositoryPrimaryHigh
-            case .colorRepositoryPrimaryDefault:
-                theme.colors.colorRepositoryPrimaryDefault
-            case .colorRepositoryPrimaryLow:
-                theme.colors.colorRepositoryPrimaryLow
-            case .colorRepositoryPrimaryLower:
-                theme.colors.colorRepositoryPrimaryLower
-            case .colorRepositoryPrimaryLowest:
-                theme.colors.colorRepositoryPrimaryLowest
-            case .colorRepositorySecondaryHighest:
-                theme.colors.colorRepositorySecondaryHighest
-            case .colorRepositorySecondaryHigher:
-                theme.colors.colorRepositorySecondaryHigher
-            case .colorRepositorySecondaryHigh:
-                theme.colors.colorRepositorySecondaryHigh
-            case .colorRepositorySecondaryDefault:
-                theme.colors.colorRepositorySecondaryDefault
-            case .colorRepositorySecondaryLow:
-                theme.colors.colorRepositorySecondaryLow
-            case .colorRepositorySecondaryLower:
-                theme.colors.colorRepositorySecondaryLower
-            case .colorRepositorySecondaryLowest:
-                theme.colors.colorRepositorySecondaryLowest
-            case .colorRepositoryTertiaryHighest:
-                theme.colors.colorRepositoryTertiaryHighest
-            case .colorRepositoryTertiaryHigher:
-                theme.colors.colorRepositoryTertiaryHigher
-            case .colorRepositoryTertiaryHigh:
-                theme.colors.colorRepositoryTertiaryHigh
-            case .colorRepositoryTertiaryDefault:
-                theme.colors.colorRepositoryTertiaryDefault
-            case .colorRepositoryTertiaryLow:
-                theme.colors.colorRepositoryTertiaryLow
-            case .colorRepositoryTertiaryLower:
-                theme.colors.colorRepositoryTertiaryLower
-            case .colorRepositoryTertiaryLowest:
-                theme.colors.colorRepositoryTertiaryLowest
-            case .colorRepositoryWarningDefault:
-                theme.colors.colorRepositoryWarningDefault
-            case .colorRepositoryWarningHighest:
-                theme.colors.colorRepositoryWarningHighest
-            case .colorRepositoryWarningLow:
-                theme.colors.colorRepositoryWarningLow
-            case .colorRepositoryWarningLowest:
-                theme.colors.colorRepositoryWarningLowest
+            case .repositoryAccentMedium:
+                theme.colors.repositoryAccentMedium
+            case .repositoryAccentHigh:
+                theme.colors.repositoryAccentHigh
+            case .repositoryAccentHigher:
+                theme.colors.repositoryAccentHigher
+            case .repositoryAccentHighest:
+                theme.colors.repositoryAccentHighest
+            case .repositoryAccentLow:
+                theme.colors.repositoryAccentLow
+            case .repositoryAccentLower:
+                theme.colors.repositoryAccentLower
+            case .repositoryAccentLowest:
+                theme.colors.repositoryAccentLowest
+            case .repositoryInfoMedium:
+                theme.colors.repositoryInfoMedium
+            case .repositoryInfoHigh:
+                theme.colors.repositoryInfoHigh
+            case .repositoryInfoHigher:
+                theme.colors.repositoryInfoHigher
+            case .repositoryInfoHighest:
+                theme.colors.repositoryInfoHighest
+            case .repositoryInfoLow:
+                theme.colors.repositoryInfoLow
+            case .repositoryInfoLower:
+                theme.colors.repositoryInfoLower
+            case .repositoryInfoLowest:
+                theme.colors.repositoryInfoLowest
+            case .repositoryNegativeMedium:
+                theme.colors.repositoryNegativeMedium
+            case .repositoryNegativeHigh:
+                theme.colors.repositoryNegativeHigh
+            case .repositoryNegativeHigher:
+                theme.colors.repositoryNegativeHigher
+            case .repositoryNegativeHighest:
+                theme.colors.repositoryNegativeHighest
+            case .repositoryNegativeLow:
+                theme.colors.repositoryNegativeLow
+            case .repositoryNegativeLower:
+                theme.colors.repositoryNegativeLower
+            case .repositoryNegativeLowest:
+                theme.colors.repositoryNegativeLowest
+            case .repositoryNeutralEmphasizedBlack:
+                theme.colors.repositoryNeutralEmphasizedBlack
+            case .repositoryNeutralEmphasizedHigh:
+                theme.colors.repositoryNeutralEmphasizedHigh
+            case .repositoryNeutralEmphasizedHigher:
+                theme.colors.repositoryNeutralEmphasizedHigher
+            case .repositoryNeutralEmphasizedHighest:
+                theme.colors.repositoryNeutralEmphasizedHighest
+            case .repositoryNeutralEmphasizedMedium:
+                theme.colors.repositoryNeutralEmphasizedMedium
+            case .repositoryNeutralEmphasizedLow:
+                theme.colors.repositoryNeutralEmphasizedLow
+            case .repositoryNeutralMutedLower:
+                theme.colors.repositoryNeutralMutedLower
+            case .repositoryNeutralMutedLowest:
+                theme.colors.repositoryNeutralMutedLowest
+            case .repositoryNeutralMutedWhite:
+                theme.colors.repositoryNeutralMutedWhite
+            case .repositoryOpacityBlackHigh:
+                theme.colors.repositoryOpacityBlackHigh
+            case .repositoryOpacityBlackHigher:
+                theme.colors.repositoryOpacityBlackHigher
+            case .repositoryOpacityBlackHighest:
+                theme.colors.repositoryOpacityBlackHighest
+            case .repositoryOpacityBlackLow:
+                theme.colors.repositoryOpacityBlackLow
+            case .repositoryOpacityBlackLower:
+                theme.colors.repositoryOpacityBlackLower
+            case .repositoryOpacityBlackLowest:
+                theme.colors.repositoryOpacityBlackLowest
+            case .repositoryOpacityBlackMediumLow:
+                theme.colors.repositoryOpacityBlackMediumLow
+            case .repositoryOpacityBlackMedium:
+                theme.colors.repositoryOpacityBlackMedium
+            case .repositoryOpacityBlackMediumHigh:
+                theme.colors.repositoryOpacityBlackMediumHigh
+            case .repositoryOpacityBlackTransparent:
+                theme.colors.repositoryOpacityBlackTransparent
+            case .repositoryOpacityInfoLow:
+                theme.colors.repositoryOpacityInfoLow
+            case .repositoryOpacityInfoMedium:
+                theme.colors.repositoryOpacityInfoMedium
+            case .repositoryOpacityAccentLow:
+                theme.colors.repositoryOpacityAccentLow
+            case .repositoryOpacityAccentMedium:
+                theme.colors.repositoryOpacityAccentMedium
+            case .repositoryOpacityNegativeLow:
+                theme.colors.repositoryOpacityNegativeLow
+            case .repositoryOpacityNegativeMedium:
+                theme.colors.repositoryOpacityNegativeMedium
+            case .repositoryOpacityPositiveLow:
+                theme.colors.repositoryOpacityPositiveLow
+            case .repositoryOpacityPositiveMedium:
+                theme.colors.repositoryOpacityPositiveMedium
+            case .repositoryOpacityWarningLow:
+                theme.colors.repositoryOpacityWarningLow
+            case .repositoryOpacityWarningMedium:
+                theme.colors.repositoryOpacityWarningMedium
+            case .repositoryOpacityWhiteHigh:
+                theme.colors.repositoryOpacityWhiteHigh
+            case .repositoryOpacityWhiteHigher:
+                theme.colors.repositoryOpacityWhiteHigher
+            case .repositoryOpacityWhiteHighest:
+                theme.colors.repositoryOpacityWhiteHighest
+            case .repositoryOpacityWhiteMedium:
+                theme.colors.repositoryOpacityWhiteMedium
+            case .repositoryOpacityWhiteMediumLow:
+                theme.colors.repositoryOpacityWhiteMediumLow
+            case .repositoryOpacityWhiteLow:
+                theme.colors.repositoryOpacityWhiteLow
+            case .repositoryOpacityWhiteLower:
+                theme.colors.repositoryOpacityWhiteLower
+            case .repositoryOpacityWhiteLowest:
+                theme.colors.repositoryOpacityWhiteLowest
+            case .repositoryOpacityWhiteTransparent:
+                theme.colors.repositoryOpacityWhiteTransparent
+            case .repositoryOpacityPrimaryLow:
+                theme.colors.repositoryOpacityPrimaryLow
+            case .repositoryOpacityPrimaryLower:
+                theme.colors.repositoryOpacityPrimaryLower
+            case .repositoryOpacityPrimaryLowest:
+                theme.colors.repositoryOpacityPrimaryLowest
+            case .repositoryOpacityPrimaryMedium:
+                theme.colors.repositoryOpacityPrimaryMedium
+            case .repositoryOpacityPrimaryHigh:
+                theme.colors.repositoryOpacityPrimaryHigh
+            case .repositoryOpacityPrimaryHigher:
+                theme.colors.repositoryOpacityPrimaryHigher
+            case .repositoryOpacityPrimaryHighest:
+                theme.colors.repositoryOpacityPrimaryHighest
+            case .repositoryPositiveMedium:
+                theme.colors.repositoryPositiveMedium
+            case .repositoryPositiveHigh:
+                theme.colors.repositoryPositiveHigh
+            case .repositoryPositiveHigher:
+                theme.colors.repositoryPositiveHigher
+            case .repositoryPositiveHighest:
+                theme.colors.repositoryPositiveHighest
+            case .repositoryPositiveLow:
+                theme.colors.repositoryPositiveLow
+            case .repositoryPositiveLower:
+                theme.colors.repositoryPositiveLower
+            case .repositoryPositiveLowest:
+                theme.colors.repositoryPositiveLowest
+            case .repositoryPrimaryHighest:
+                theme.colors.repositoryPrimaryHighest
+            case .repositoryPrimaryHigher:
+                theme.colors.repositoryPrimaryHigher
+            case .repositoryPrimaryHigh:
+                theme.colors.repositoryPrimaryHigh
+            case .repositoryPrimaryMedium:
+                theme.colors.repositoryPrimaryMedium
+            case .repositoryPrimaryLow:
+                theme.colors.repositoryPrimaryLow
+            case .repositoryPrimaryLower:
+                theme.colors.repositoryPrimaryLower
+            case .repositoryPrimaryLowest:
+                theme.colors.repositoryPrimaryLowest
+            case .repositorySecondaryHighest:
+                theme.colors.repositorySecondaryHighest
+            case .repositorySecondaryHigher:
+                theme.colors.repositorySecondaryHigher
+            case .repositorySecondaryHigh:
+                theme.colors.repositorySecondaryHigh
+            case .repositorySecondaryMedium:
+                theme.colors.repositorySecondaryMedium
+            case .repositorySecondaryLow:
+                theme.colors.repositorySecondaryLow
+            case .repositorySecondaryLower:
+                theme.colors.repositorySecondaryLower
+            case .repositorySecondaryLowest:
+                theme.colors.repositorySecondaryLowest
+            case .repositoryTertiaryHighest:
+                theme.colors.repositoryTertiaryHighest
+            case .repositoryTertiaryHigher:
+                theme.colors.repositoryTertiaryHigher
+            case .repositoryTertiaryHigh:
+                theme.colors.repositoryTertiaryHigh
+            case .repositoryTertiaryMedium:
+                theme.colors.repositoryTertiaryMedium
+            case .repositoryTertiaryLow:
+                theme.colors.repositoryTertiaryLow
+            case .repositoryTertiaryLower:
+                theme.colors.repositoryTertiaryLower
+            case .repositoryTertiaryLowest:
+                theme.colors.repositoryTertiaryLowest
+            case .repositoryWarningHighest:
+                theme.colors.repositoryWarningHighest
+            case .repositoryWarningHigher:
+                theme.colors.repositoryWarningHigher
+            case .repositoryWarningHigh:
+                theme.colors.repositoryWarningHigh
+            case .repositoryWarningMedium:
+                theme.colors.repositoryWarningMedium
+            case .repositoryWarningLow:
+                theme.colors.repositoryWarningLow
+            case .repositoryWarningLower:
+                theme.colors.repositoryWarningLower
+            case .repositoryWarningLowest:
+                theme.colors.repositoryWarningLowest
             }
         }
     }

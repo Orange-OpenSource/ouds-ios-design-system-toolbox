@@ -11,36 +11,35 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 
 extension NamedColor {
 
     enum Border: String, CaseIterable {
-        case colorBorderBrandPrimary
-        case colorBorderDefault
-        case colorBorderEmphasized
-        case colorBorderMuted
-        case colorBorderFocus
-        case colorBorderFocusInset
-        case colorBorderOnBrandPrimary
+        case borderBrandPrimary
+        case borderDefault
+        case borderEmphasized
+        case borderMuted
+        case borderFocus
+        case borderFocusInset
+        case borderOnBrandPrimary
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
-            case .colorBorderBrandPrimary:
-                theme.colors.colorBorderBrandPrimary
-            case .colorBorderDefault:
-                theme.colors.colorBorderDefault
-            case .colorBorderEmphasized:
-                theme.colors.colorBorderEmphasized
-            case .colorBorderMuted:
-                theme.colors.colorBorderMuted
-            case .colorBorderFocus:
-                theme.colors.colorBorderFocus
-            case .colorBorderFocusInset:
-                theme.colors.colorBorderFocusInset
-            case .colorBorderOnBrandPrimary:
-                theme.colors.colorBorderOnBrandPrimary
+            case .borderBrandPrimary:
+                theme.colors.borderBrandPrimary
+            case .borderDefault:
+                theme.colors.borderDefault
+            case .borderEmphasized:
+                theme.colors.borderEmphasized
+            case .borderMuted:
+                theme.colors.borderMuted
+            case .borderFocus:
+                theme.colors.borderFocus
+            case .borderFocusInset:
+                theme.colors.borderFocusInset
+            case .borderOnBrandPrimary:
+                theme.colors.borderOnBrandPrimary
             }
         }
     }

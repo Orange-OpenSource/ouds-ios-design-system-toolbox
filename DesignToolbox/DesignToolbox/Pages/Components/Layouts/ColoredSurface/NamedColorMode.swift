@@ -11,166 +11,164 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
-import OUDSTokensSemantic
+import OUDSSwiftUI
 
 enum NamedColorMode: CaseIterable, CustomStringConvertible {
 
-    case modeOnBgPrimary
-    case modeOnBgSecondary
-    case modeOnBgTertiary
-    case modeOnBrandPrimary
-    case modeOnBrandSecondary
-    case modeOnBrandTertiary
-    case modeOnOverlayModal
-    case modeOnOverlayDropdown
-    case modeOnOverlayTooltip
-    case modeOnStatusAccentEmphasized
-    case modeOnStatusAccentMuted
-    case modeOnStatusInfoEmphasized
-    case modeOnStatusInfoMuted
-    case modeOnStatusNegativeEmphasized
-    case modeOnStatusNegativeMuted
-    case modeOnStatusPositiveEmphasized
-    case modeOnStatusPositiveMuted
-    case modeOnStatusWarningEmphasized
-    case modeOnStatusWarningMuted
-    case modeNavigationBar
+    case onBgPrimary
+    case onBgSecondary
+    case onBgTertiary
+    case onBrandPrimary
+    case onBrandSecondary
+    case onBrandTertiary
+    case onOverlayModal
+    case onOverlayDropdown
+    case onOverlayTooltip
+    case onStatusAccentEmphasized
+    case onStatusAccentMuted
+    case onStatusInfoEmphasized
+    case onStatusInfoMuted
+    case onStatusNegativeEmphasized
+    case onStatusNegativeMuted
+    case onStatusPositiveEmphasized
+    case onStatusPositiveMuted
+    case onStatusWarningEmphasized
+    case onStatusWarningMuted
+    case navigationBar
 
     func toSurfaceColor(from theme: OUDSTheme) -> OUDSColoredSurface.SurfaceColor {
         switch self {
-        case .modeOnBgPrimary:
-            theme.colorModes.modeOnBgPrimary
-        case .modeOnBgSecondary:
-            theme.colorModes.modeOnBgSecondary
-        case .modeOnBgTertiary:
-            theme.colorModes.modeOnBgTertiary
-        case .modeOnBrandPrimary:
-            theme.colorModes.modeOnBrandPrimary
-        case .modeOnBrandSecondary:
-            theme.colorModes.modeOnBrandSecondary
-        case .modeOnBrandTertiary:
-            theme.colorModes.modeOnBrandTertiary
-        case .modeOnOverlayModal:
-            theme.colorModes.modeOnOverlayModal
-        case .modeOnStatusAccentEmphasized:
-            theme.colorModes.modeOnStatusAccentEmphasized
-        case .modeOnStatusAccentMuted:
-            theme.colorModes.modeOnStatusAccentMuted
-        case .modeOnStatusInfoEmphasized:
-            theme.colorModes.modeOnStatusInfoEmphasized
-        case .modeOnStatusInfoMuted:
-            theme.colorModes.modeOnStatusInfoMuted
-        case .modeOnStatusNegativeEmphasized:
-            theme.colorModes.modeOnStatusNegativeEmphasized
-        case .modeOnStatusNegativeMuted:
-            theme.colorModes.modeOnStatusNegativeMuted
-        case .modeOnStatusPositiveEmphasized:
-            theme.colorModes.modeOnStatusPositiveEmphasized
-        case .modeOnStatusPositiveMuted:
-            theme.colorModes.modeOnStatusPositiveMuted
-        case .modeOnStatusWarningEmphasized:
-            theme.colorModes.modeOnStatusWarningEmphasized
-        case .modeOnStatusWarningMuted:
-            theme.colorModes.modeOnStatusWarningMuted
-        case .modeOnOverlayDropdown:
-            theme.colorModes.modeOnOverlayDropdown
-        case .modeOnOverlayTooltip:
-            theme.colorModes.modeOnOverlayTooltip
-        case .modeNavigationBar:
-            theme.colorModes.modeNavigationBar
+        case .onBgPrimary:
+            theme.colorModes.onBgPrimary
+        case .onBgSecondary:
+            theme.colorModes.onBgSecondary
+        case .onBgTertiary:
+            theme.colorModes.onBgTertiary
+        case .onBrandPrimary:
+            theme.colorModes.onBrandPrimary
+        case .onBrandSecondary:
+            theme.colorModes.onBrandSecondary
+        case .onBrandTertiary:
+            theme.colorModes.onBrandTertiary
+        case .onOverlayModal:
+            theme.colorModes.onOverlayModal
+        case .onStatusAccentEmphasized:
+            theme.colorModes.onStatusAccentEmphasized
+        case .onStatusAccentMuted:
+            theme.colorModes.onStatusAccentMuted
+        case .onStatusInfoEmphasized:
+            theme.colorModes.onStatusInfoEmphasized
+        case .onStatusInfoMuted:
+            theme.colorModes.onStatusInfoMuted
+        case .onStatusNegativeEmphasized:
+            theme.colorModes.onStatusNegativeEmphasized
+        case .onStatusNegativeMuted:
+            theme.colorModes.onStatusNegativeMuted
+        case .onStatusPositiveEmphasized:
+            theme.colorModes.onStatusPositiveEmphasized
+        case .onStatusPositiveMuted:
+            theme.colorModes.onStatusPositiveMuted
+        case .onStatusWarningEmphasized:
+            theme.colorModes.onStatusWarningEmphasized
+        case .onStatusWarningMuted:
+            theme.colorModes.onStatusWarningMuted
+        case .onOverlayDropdown:
+            theme.colorModes.onOverlayDropdown
+        case .onOverlayTooltip:
+            theme.colorModes.onOverlayTooltip
+        case .navigationBar:
+            theme.colorModes.navigationBar
         }
     }
 
     // No l10n, tehchnical names
     var formattedName: String {
         switch self {
-        case .modeOnBgPrimary:
+        case .onBgPrimary:
             "On Background Primary"
-        case .modeOnBgSecondary:
+        case .onBgSecondary:
             "On Background Secondary"
-        case .modeOnBgTertiary:
+        case .onBgTertiary:
             "On Background Tertiary"
-        case .modeOnBrandPrimary:
+        case .onBrandPrimary:
             "On Brand Primary"
-        case .modeOnBrandSecondary:
+        case .onBrandSecondary:
             "On Brand Secondary"
-        case .modeOnBrandTertiary:
+        case .onBrandTertiary:
             "On Brand Tertiary"
-        case .modeOnStatusAccentEmphasized:
+        case .onStatusAccentEmphasized:
             "On Status Accent Emphasized"
-        case .modeOnStatusAccentMuted:
+        case .onStatusAccentMuted:
             "On Status Accent Muted"
-        case .modeOnStatusInfoEmphasized:
+        case .onStatusInfoEmphasized:
             "On Status Info Emphasized"
-        case .modeOnStatusInfoMuted:
+        case .onStatusInfoMuted:
             "On Status Info Muted"
-        case .modeOnStatusNegativeEmphasized:
+        case .onStatusNegativeEmphasized:
             "On Status Negative Emphasized"
-        case .modeOnStatusNegativeMuted:
+        case .onStatusNegativeMuted:
             "On Status Negative Muted"
-        case .modeOnStatusPositiveEmphasized:
+        case .onStatusPositiveEmphasized:
             "On Status Positive Emphasized"
-        case .modeOnStatusPositiveMuted:
+        case .onStatusPositiveMuted:
             "On Status Positive Muted"
-        case .modeOnStatusWarningEmphasized:
+        case .onStatusWarningEmphasized:
             "On Status Warning Emphasized"
-        case .modeOnStatusWarningMuted:
+        case .onStatusWarningMuted:
             "On Status Warning Muted"
-        case .modeOnOverlayDropdown:
+        case .onOverlayDropdown:
             "On Overlay Dropdown"
-        case .modeOnOverlayTooltip:
+        case .onOverlayTooltip:
             "On Overlay Tooltip"
-        case .modeOnOverlayModal:
+        case .onOverlayModal:
             "On Overlay Modal"
-        case .modeNavigationBar:
+        case .navigationBar:
             "Navigation Bar"
         }
     }
 
     var description: String {
         switch self {
-        case .modeOnBgPrimary:
-            "modeOnBgPrimary"
-        case .modeOnBgSecondary:
-            "modeOnBgSecondary"
-        case .modeOnBgTertiary:
-            "modeOnBgTertiary"
-        case .modeOnBrandPrimary:
-            "modeOnBrandPrimary"
-        case .modeOnBrandSecondary:
-            "modeOnBrandSecondary"
-        case .modeOnBrandTertiary:
-            "modeOnBrandTertiary"
-        case .modeOnStatusAccentEmphasized:
-            "modeOnStatusAccentEmphasized"
-        case .modeOnStatusAccentMuted:
-            "modeOnStatusAccentMuted"
-        case .modeOnStatusInfoEmphasized:
-            "modeOnStatusInfoEmphasized"
-        case .modeOnStatusInfoMuted:
-            "modeOnStatusInfoMuted"
-        case .modeOnStatusNegativeEmphasized:
-            "modeOnStatusNegativeEmphasized"
-        case .modeOnStatusNegativeMuted:
-            "modeOnStatusNegativeMuted"
-        case .modeOnStatusPositiveEmphasized:
-            "modeOnStatusPositiveEmphasized"
-        case .modeOnStatusPositiveMuted:
-            "modeOnStatusPositiveMuted"
-        case .modeOnStatusWarningEmphasized:
-            "modeOnStatusWarningEmphasized"
-        case .modeOnStatusWarningMuted:
-            "modeOnStatusWarningMuted"
-        case .modeOnOverlayDropdown:
-            "modeOnOverlayDropdown"
-        case .modeOnOverlayTooltip:
-            "modeOnOverlayTooltip"
-        case .modeOnOverlayModal:
-            "modeOnOverlayModal"
-        case .modeNavigationBar:
-            "modeNavigationBar"
+        case .onBgPrimary:
+            "onBgPrimary"
+        case .onBgSecondary:
+            "onBgSecondary"
+        case .onBgTertiary:
+            "onBgTertiary"
+        case .onBrandPrimary:
+            "onBrandPrimary"
+        case .onBrandSecondary:
+            "onBrandSecondary"
+        case .onBrandTertiary:
+            "onBrandTertiary"
+        case .onStatusAccentEmphasized:
+            "onStatusAccentEmphasized"
+        case .onStatusAccentMuted:
+            "onStatusAccentMuted"
+        case .onStatusInfoEmphasized:
+            "onStatusInfoEmphasized"
+        case .onStatusInfoMuted:
+            "onStatusInfoMuted"
+        case .onStatusNegativeEmphasized:
+            "onStatusNegativeEmphasized"
+        case .onStatusNegativeMuted:
+            "onStatusNegativeMuted"
+        case .onStatusPositiveEmphasized:
+            "onStatusPositiveEmphasized"
+        case .onStatusPositiveMuted:
+            "onStatusPositiveMuted"
+        case .onStatusWarningEmphasized:
+            "onStatusWarningEmphasized"
+        case .onStatusWarningMuted:
+            "onStatusWarningMuted"
+        case .onOverlayDropdown:
+            "onOverlayDropdown"
+        case .onOverlayTooltip:
+            "onOverlayTooltip"
+        case .onOverlayModal:
+            "onOverlayModal"
+        case .navigationBar:
+            "navigationBar"
         }
     }
 

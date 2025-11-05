@@ -14,11 +14,6 @@
 require 'net/http'
 require 'json'
 
-# App features configuration
-# --------------------------
-
-# TODO Add URL for MoreApps module to get feed from APPS_PLUS backend (cf github.com/Orange-OpenSource/ods-ios)
-
 # Apple configuration
 # -------------------
 
@@ -62,10 +57,18 @@ GITHUB_ACCESS_TOKEN = ENV['GITHUB_ACCESS_TOKEN']
 
 OUDS_WORKSPACE = "DesignToolbox.xcworkspace"
 OUDS_PROJECT = "DesignToolbox.xcodeproj"
-OUDS_SCHEME = "DesignToolbox"
-OUDS_SNAPSHOTS_SNAPSHOTS_TEST_SCHEME = "DesignToolboxSnapshotsTests"
-OUDS_SNAPSHOTS_UI_TEST_SCHEME = "DesignToolboxUITests"
-OUDS_SNAPSHOTS_UNIT_TEST_SCHEME = "DesignToolboxUnitTests"
+
+OUDS_SCHEME_IOS = "DesignToolbox" # Default scheme
+OUDS_SCHEME_MACOS = "DesignToolbox_macOS"
+OUDS_SCHEME_VISIONOS = "DesignToolbox_visionOS"
+OUDS_SCHEME_SNAPSHOTS_TESTS = "DesignToolboxSnapshotsTests"
+OUDS_SCHEME_UI_TESTS = "DesignToolboxUITests"
+OUDS_SCHEME_UNIT_TESTS = "DesignToolboxUnitTests"
+
+OUDS_TARGET_IOS = "DesignToolbox (iOS)"
+OUDS_TARGET_MACOS = "DesignToolbox (macOS)"
+OUDS_TARGET_VISIONOS = "DesignToolbox (visionOS)"
+
 OUDS_PROJECT_NAME = "DesignToolbox" # Root for Info.plist, etc.
 OUDS_APP_DISPLAY_NAME = "Design System Toolbox"
 OUDS_PACKAGE_RESOLVED_PATH = "#{OUDS_WORKSPACE}/xcshareddata/swiftpm/Package.resolved"
@@ -79,117 +82,95 @@ end
 # Devices configuration
 # ---------------------
 
-OUDS_TEST_DEVICE = "iPhone 17 Pro"
+OUDS_TEST_DEVICE = "iPhone 17 Pro (26.0)"
 
-# Lanes
-# ------
+# Non-platform specific lanes
+# ---------------------------
 
-default_platform(:ios)
+desc "Run SwiftFormat to format Swift source files according to the local configuration and apply source header template."
+lane :format do
+    puts "👉 Run Swift Format to format sources"
+
+    template = '\\nSoftware Name: OUDS iOS\\nSPDX-FileCopyrightText: Copyright (c) Orange SA\\nSPDX-License-Identifier: MIT\\n\\nThis software is distributed under the MIT license,\\nthe text of which is available at https://opensource.org/license/MIT/\\nor see the \\"LICENSE\\" file for more details.\\n\\nAuthors: See CONTRIBUTORS.txt\\nSoftware description: A SwiftUI components library with code examples for Orange Unified Design System\\n'
+    sh "cd .. && swiftformat . --header \"#{template}\""
+end
+
+desc "Run SwiftLint in strict mode to detect code smells using local configuration for app, snapshots, units and UI tests"
+lane :lint do
+    puts "👉 Run Swift Lint for smells"
+
+    # If there are violations, error 2 will be returned by swiftlint, making Fastlane fail (expected)
+    sh "cd .. && swiftlint --strict --config ../.swiftlint.yml DesignToolbox/* DesignToolboxSnapshotsTests/* DesignToolboxUITests/* DesignToolboxUnitTests/*"
+end
+
+desc "Run LicensePlist to update list of third-parties to embed in app"
+lane :update_3rd_parties do
+    puts "👉 Run LicensePlist to update list of third-parties"
+
+    Dir.chdir ".." do
+        # Run the command to generate assets
+        sh "license-plist --add-version-numbers --add-sources --force --suppress-opening-directory"
+
+        # Copy assets and delete temporary folders
+        sh "rm -rf Settings.bundle/com.mono0926.LicensePlist &&  mv -f com.mono0926.LicensePlist.Output/com.mono0926.LicensePlist Settings.bundle"
+        sh "rm -rf Settings.bundle/com.mono0926.LicensePlist.plist && mv com.mono0926.LicensePlist.Output/com.mono0926.LicensePlist.plist Settings.bundle"
+        sh "rm -rf com.mono0926.LicensePlist.Output"
+    end
+end
+
+desc "Run GitLeaks to look for leaks of secrets in project and Git history"
+lane :check_leaks do
+    puts "👉 Run Gitleaks for leaks scan"
+
+    # If there are violations, non 0 error be returned by swiftlint, making Fastlane fail (expected)
+    sh "cd .. && gitleaks detect -v -l debug --source ."
+end
+
+desc "Generates a SBOM (Software Bill Of Materials) in SPDX JSON format with Syft and analyse it with Grype to as to look for vulnerabilities"
+lane :update_sbom do
+    puts "👉 Run Syft to generate the SBOM"
+
+    # Or also cyclonedx-json
+    sbomFormat = "spdx-json"
+
+    # In { negligible, low, medium, high, critical }
+    vulnerabilitiesTolerance = "negligible"
+
+     Dir.chdir "../.." do
+        # Run the command to generate SBOM
+        sh "syft . -o #{sbomFormat} > SBOM.json"
+
+        # Process the SBOM
+        sh "grype sbom:./SBOM.json --fail-on #{vulnerabilitiesTolerance}"
+    end
+ end
+
+desc "UPDATE BUILD NUMBER WITH TIMESTAMP"
+lane :update_build_number do
+    puts "👉 Update build number"
+
+    timestamp = sh 'date +%s' # Timestamp are unique, incremental and bring details about build date
+    timestamp = timestamp.strip!
+    puts "ℹ️ New builder number: '#{timestamp}'"
+
+    increment_build_number(xcodeproj: OUDS_PROJECT, build_number: timestamp)
+end
+
+# iOS Lanes
+# ---------
+
+# NOTE: Not so much specific test / build / upload lanes for macOS and visionOS as these platforms are not the more priorized
+# Priority is first to iOS / iPadOS apps which are avaialble through TestFlight and App Store
 
 platform :ios do
 
-    # ------------------------------------------------------------
-    # RUN PERIPHERY FOR DEAD CODE ANALYSIS
-    # ------------------------------------------------------------
     desc "Run Periphery to look for dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned."
     lane :check_dead_code do
-        puts "👉 Check dead code with Periphery"
+        puts "👉 Check iOS dead code with Periphery"
 
-        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME} --format xcode"
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_IOS} --format xcode"
     end
-
-    # ------------------------------------------------------------
-    # RUN SWIFT FORMAT TO FORMAT SOURCES
-    # ------------------------------------------------------------
-    desc "Run SwiftFormat to format Swift source files according to the local configuration and apply source header template."
-    lane :format do
-        puts "👉 Run Swift Format to format sources"
-
-        template = '\\nSoftware Name: OUDS iOS\\nSPDX-FileCopyrightText: Copyright (c) Orange SA\\nSPDX-License-Identifier: MIT\\n\\nThis software is distributed under the MIT license,\\nthe text of which is available at https://opensource.org/license/MIT/\\nor see the \\"LICENSE\\" file for more details.\\n\\nAuthors: See CONTRIBUTORS.txt\\nSoftware description: A SwiftUI components library with code examples for Orange Unified Design System\\n'
-        sh "cd .. && swiftformat . --header \"#{template}\""
-    end
-
-    # ------------------------------------------------------------
-    # RUN SWIFT LINT TO CHECK SMELLS
-    # ------------------------------------------------------------
-    desc "Run SwiftLint in strict mode to detect code smells using local configuration for app, snapshots, units and UI tests"
-    lane :lint do
-        puts "👉 Run Swift Lint for smells"
-
-        # If there are violations, error 2 will be returned by swiftlint, making Fastlane fail (expected)
-        sh "cd .. && swiftlint --strict --config ../.swiftlint.yml DesignToolbox/* DesignToolboxSnapshotsTests/* DesignToolboxUITests/* DesignToolboxUnitTests/*"
-    end
-
-    # ------------------------------------------------------------
-    # RUN LICENSE-PLSIT FOR 3RD PARTIES UPDATES
-    # ------------------------------------------------------------
-    desc "Run LicensePlist to update list of third-parties to embed in app"
-    lane :update_3rd_parties do
-        puts "👉 Run LicensePlist to update list of third-parties"
-
-        Dir.chdir ".." do
-            # Run the command to generate assets
-            sh "license-plist --add-version-numbers --add-sources --force --suppress-opening-directory"
-
-            # Copy assets and delete temporary folders
-            sh "rm -rf Settings.bundle/com.mono0926.LicensePlist &&  mv -f com.mono0926.LicensePlist.Output/com.mono0926.LicensePlist Settings.bundle"
-            sh "rm -rf Settings.bundle/com.mono0926.LicensePlist.plist && mv com.mono0926.LicensePlist.Output/com.mono0926.LicensePlist.plist Settings.bundle"
-            sh "rm -rf com.mono0926.LicensePlist.Output"
-        end
-    end
-
-    # ------------------------------------------------------------
-    # RUN GITLEAKS FOR SECRET LEAKS SCAN
-    # ------------------------------------------------------------
-    desc "Run GitLeaks to look for leaks of secrets in project and Git history"
-    lane :check_leaks do
-        puts "👉 Run Gitleaks for leaks scan"
-
-        # If there are violations, non 0 error be returned by swiftlint, making Fastlane fail (expected)
-        sh "cd .. && gitleaks detect -v -l debug --source ."
-    end
-
-    # ------------------------------------------------------------
-    # RUN SYFT AND GRYPE TO BUILD AND ANALYSE SBOM
-    # ------------------------------------------------------------
-    desc "Generates a SBOM (Software Bill Of Materials) in SPDX JSON format with Syft and analyse it with Grype to as to look for vulnerabilities"
-    lane :update_sbom do
-        puts "👉 Run Syft to generate the SBOM"
-
-        # Or also cyclonedx-json
-        sbomFormat = "spdx-json"
-
-        # In { negligible, low, medium, high, critical }
-        vulnerabilitiesTolerance = "negligible"
-
-        Dir.chdir "../.." do
-            # Run the command to generate SBOM
-            sh "syft . -o #{sbomFormat} > SBOM.json"
-
-            # Process the SBOM
-            sh "grype sbom:./SBOM.json --fail-on #{vulnerabilitiesTolerance}"
-        end
-    end
-
-    # ------------------------------------------------------------
-    # UPDATE BUILD NUMBER WITH TIMESTAMP
-    # ------------------------------------------------------------
-    desc "UPDATE BUILD NUMBER WITH TIMESTAMP"
-    lane :update_build_number do
-        puts "👉 Update build number"
-
-        timestamp = sh 'date +%s' # Timestamp are unique, incremental and bring details about build date
-        timestamp = timestamp.strip!
-        puts "ℹ️ New builder number: '#{timestamp}'"
-
-        increment_build_number(xcodeproj: OUDS_PROJECT, build_number: timestamp)
-    end
-
-    # TODO Add lane for add_credentials_appsplus (cf github.com/Orange-OpenSource/ods-ios)
     
-    # -------------------
-    # RUN SNAPSHOTS TESTS
-    # -------------------
     desc "Run snapshots tests in the demo app to look for visual regressions of components defined in OUDS package"
     lane :test_snapshots do
         puts "👉 Run UI tests"
@@ -198,7 +179,7 @@ platform :ios do
         # Check the available devices using `xcrun xctrace list devices`
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
-            scan(scheme: OUDS_SNAPSHOTS_SNAPSHOTS_TEST_SCHEME,
+            scan(scheme: OUDS_SCHEME_SNAPSHOTS_TESTS,
                 device: OUDS_TEST_DEVICE,
                 skip_build: true
             )
@@ -218,9 +199,6 @@ platform :ios do
         end
     end
 
-    # ------------
-    # RUN UI TESTS
-    # ------------
     desc "Run UI tests in the demo app to check some specific components behaviors"
     lane :test_ui do
         puts "👉 Run UI tests"
@@ -229,7 +207,7 @@ platform :ios do
         # Check the available devices using `xcrun xctrace list devices`
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
-            scan(scheme: OUDS_SNAPSHOTS_UI_TEST_SCHEME,
+            scan(scheme: OUDS_SCHEME_UI_TESTS,
                 device: OUDS_TEST_DEVICE,
                 skip_build: true
             )
@@ -249,9 +227,6 @@ platform :ios do
         end
     end
 
-    # --------------
-    # RUN UNIT TESTS
-    # --------------
     desc "Run Unit tests in the demo app to check some specific components behaviors"
     lane :test_unit do
         puts "👉 Run unit tests"
@@ -260,7 +235,7 @@ platform :ios do
         # Check the available devices using `xcrun xctrace list devices`
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
-            scan(scheme: OUDS_SNAPSHOTS_UNIT_TEST_SCHEME,
+            scan(scheme: OUDS_SCHEME_UNIT_TESTS,
                 device: OUDS_TEST_DEVICE,
                 skip_build: true
             )
@@ -280,9 +255,6 @@ platform :ios do
         end
     end
 
-    # ------------------------------------------------------------
-    # BUILD DEBUG
-    # ------------------------------------------------------------
     desc "Build locally the demo app in debug mode without upload"
     lane :build_debug do
         puts "👉 Build debug app"
@@ -297,10 +269,10 @@ platform :ios do
         end
 
         gym(
-            scheme: OUDS_SCHEME,
+            scheme: OUDS_SCHEME_IOS,
             output_directory: 'build/',
             archive_path: 'build/',
-            output_name: 'odsApp',
+            output_name: 'oudsApp',
             configuration: 'Debug',
             include_symbols: true,
             skip_archive: true,
@@ -309,9 +281,6 @@ platform :ios do
         )
     end
 
-    # ------------------------------------------------------------
-    # BUILD & UPLOAD TO TESTFLIGHT ALPHA APP
-    # ------------------------------------------------------------
     desc "Build the demo app in alpha mode and upload to TestFlight"
     lane :build_alpha do |params|
 
@@ -354,9 +323,6 @@ platform :ios do
         build_and_upload(type: BuildType::ALPHA, upload: true, issues: issues_numbers)
     end
 
-    # ------------------------------------------------------------
-    # BUILD & UPLOAD TO TESTFLIGHT BETA APP
-    # ------------------------------------------------------------
     desc "Build the demo app in beta mode and upload to TestFlight"
     lane :build_beta do |params|
         puts "👉 Beta (commit hash = '#{params[:commitHash]}')"
@@ -392,9 +358,6 @@ platform :ios do
         end
     end
 
-    # ------------------------------------------------------------
-    # BUILD & UPLOAD TO STORE STABLE APP
-    # ------------------------------------------------------------
     desc "Build the demo app in stable mode and, if defined, upload to internal portal for App Store publication"
     lane :build_stable do |params|
         puts "👉 Stable"
@@ -436,9 +399,6 @@ platform :ios do
         end
     end
 
-    # -----------------------------------------------------------------------
-    # PRIVATE LANE BUILD & UPLOAD (ALPHA / BETA is set by main lane)
-    # -----------------------------------------------------------------------
     desc "Build the demo app in a defined mode and upload if needed to TestFlight or internal portal for App Store publication"
     private_lane :build_and_upload do |params|
         isAlpha = params[:type] == BuildType::ALPHA
@@ -483,9 +443,6 @@ platform :ios do
         end
     end
 
-    # -----------------------------------------------------------------------
-    # PRIVATE LANE BUILD (ALPHA / BETA / STABLE is set by main lane)
-    # -----------------------------------------------------------------------
     desc "Build the demo app"
     private_lane :build do
         puts "👉 Build"
@@ -503,17 +460,17 @@ platform :ios do
 
             # Disable automatic code signing for release / distribution builds.
             # Thus we won't use any Xcode with plugged account in, and use only needed certificates and provisioning profiles.
-            # Mobile provisioning profile named "OUDS demo app (release)" must be placed in runner.
+            # Mobile provisioning profile named "OUDS iOS app (release)" must be placed in runner.
             # The certificate(s) used to build (with bundle ID) the provisionning profile must be available in the keychain of the runner
             # (both .cer and .p12), here a distribution certificate.
             # This way is more agile and allows to use VM-based solution with on the fly configuration like with Tart.
             update_code_signing_settings(path: "#{OUDS_PROJECT}",
                 use_automatic_signing: false,
-                profile_name: 'OUDS demo app (release)',
-                targets: OUDS_SCHEME)
+                profile_name: 'OUDS iOS app (release)',
+                targets: OUDS_TARGET_IOS)
             
             gym(workspace: "#{OUDS_WORKSPACE}",
-                scheme: OUDS_SCHEME,
+                scheme: OUDS_SCHEME_IOS,
                 configuration: "Release",
                 output_directory: "build/",
                 export_method: "app-store",
@@ -525,7 +482,7 @@ platform :ios do
             zip(path: "build/oudsApp.xcarchive",
                 output_path: "build/oudsApp.zip")
                           
-            version = get_app_version
+            version = get_iOS_app_version
             build_number = get_build_number(xcodeproj: OUDS_PROJECT)
 
             publish_mattermost_notification("🔨 ✅ A new build has been done successfully (version = '#{version}', build number = '#{build_number}')")
@@ -535,9 +492,6 @@ platform :ios do
         end
     end
 
-    # --------------------------------------------------------------------------
-    # PRIVATE LANE UPLOAD TO TESTFLIGHT (ALPHA / BETA is set by main lane)
-    # ---------------------------------------------------------------------------
     desc "Upload the demo app to TestFlight"
     private_lane :upload_2_testflight do |params|
         puts "👉 Upload"
@@ -553,7 +507,7 @@ platform :ios do
             
             TESTFLIGHT_GROUPS = ENV['TESTFLIGHT_GROUPS'] # Defined in Appfile
             
-            version = get_app_version
+            version = get_iOS_app_version
             puts "ℹ️ App version: '#{version}'"
 
             build_number = get_build_number(xcodeproj: OUDS_PROJECT)
@@ -588,15 +542,12 @@ platform :ios do
         end
     end
 
-    # ----------------------------
-    # PRIVATE LANE UPLOAD TO STORE
-    # ----------------------------
     desc "Upload the demo app to the internal portal for the App Store publication"
     private_lane :upload_2_store do |params|
         puts "👉 Upload to store"
 
         begin
-            version = get_app_version
+            version = get_iOS_app_version
             puts "ℹ️ App version: '#{version}'"
 
             build_number = get_build_number(xcodeproj: OUDS_PROJECT)
@@ -614,256 +565,352 @@ platform :ios do
         end
     end
 
-    # -------
-    # Helpers
-    # -------
-
-    # Checks if beta build of the design system toolbox app points to develop branch of Swift Package,
-    # i.e. points to a branch
-    def check_package_version_for_beta_app()
-        puts "👉 Check package version for OUDS iOS Swift package (beta)"
-    
-        package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
-        package_resolved_json_content = JSON.parse(package_resolved_content)
-        ouds_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "ouds-ios" }
-        
-        return ouds_ios_obj.dig("state", "branch") == "develop"
-
-    end
-
-    # Checks if the current version of the OUDS Swift Package is the expected one for stable builds of the app;
-    # i.e. points to a tag
-    def check_package_version_for_stable_app()
-        puts "👉 Check package version for OUDS iOS Swift package (stable)"
-
-        package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
-        package_resolved_json_content = JSON.parse(package_resolved_content)
-        ouds_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "ouds-ios" }
-        
-        return !ouds_ios_obj.dig("state", "version").nil?
-    end
-
-    # Extract from Package.resolved details about the version in use of the OUDS iOS Swift Package.
-    # Returns a string with branch and revision on 8 digits or tag and revision on 8 digits
-    def ouds_swift_package_version()
-        puts "👉 Extract version of OUDS iOS Swift package"
-
-        package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
-        package_resolved_json_content = JSON.parse(package_resolved_content)
-        ouds_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "ouds-ios" }
-        ouds_ios_branch = ouds_ios_obj.dig("state", "branch") # Git branch
-        ouds_ios_revision = ouds_ios_obj.dig("state", "revision") # Commit hash
-        ouds_ios_version = ouds_ios_obj.dig("state", "version") # Git tag
-
-        if ouds_ios_branch && ouds_ios_revision
-            return "#{ouds_ios_branch} (#{ouds_ios_revision[0,7]})"
-        elsif ouds_ios_revision && ouds_ios_version
-            return "#{ouds_ios_version} (#{ouds_ios_revision[0,7]})"
-        else
-            raise error
-        end
-    end
-
-    # Extract from Package.resolved details about the Git branch in use for the OUDS iOS Swift Package.
-    # Returns the branch if defined or raises an error.
-    # Supposes the OUDS iOS package is defined and used; if a local reference is used instead the branch won't be retrieved
-    def ouds_swift_package_git_branch()
-        puts "👉 Extract Git branch of OUDS iOS Swift package"
-
-        package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
-        package_resolved_json_content = JSON.parse(package_resolved_content)
-        ouds_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "ouds-ios" }
-        ouds_ios_branch = ouds_ios_obj.dig("state", "branch")
-
-        if ouds_ios_branch
-            return "#{ouds_ios_branch}"
-        else
-            raise error
-        end
-    end
-
-    # Add a Git tag dedicated to CI/CD builds with for some commit hash used to compute tag suffix
-    def tag_ci_build(commitHash)
-        puts "👉 Tag CI build"
-
-        begin
-            if commitHash.nil? || commitHash.empty?
-                puts "ℹ️ No parameter sent for CI tag, nothing will be done"
-                publish_mattermost_notification("⚙️ 🤔 No commit hash has been given, no tag can be created")
-                return false
-            else
-                if create_tag("ci", commitHash)
-                    publish_mattermost_notification("📦 ✅  New Git CI tag created for commit #{commitHash}")
-                    return true
-                else
-                    return false
-                end
-            end
-        rescue => error
-            publish_mattermost_notification("📦 🚨 @channel Some issue occurred during the tagging step (:tag_ci_build)")
-            raise error
-        end
-    end
-
-    # Add a Git tag dedicated to TestFLight uploads for some commit hash used to compute tag suffix
-    def tag_testflight_upload(commitHash)
-        puts "👉 Tag TestFlight upload"
-
-        begin     
-            if commitHash.nil? || commitHash.empty?
-                puts "ℹ️ No parameter sent for CI tag, nothing will be done"
-                publish_mattermost_notification("⚙️ 🤔 No commit hash has been given, no tag can be created")
-                return false
-            else
-                if create_tag("Test_Flight", commitHash)
-                    publish_mattermost_notification("📦 ✅  New Git Test_Flight tag created for commit #{commitHash}")
-                    return true
-                else
-                    return false
-                end
-            end
-        rescue => error
-            publish_mattermost_notification("📦 🚨 @channel Some issue occurred during the tagging step (:tag_testflight_upload)")
-            raise error
-        end
-    end
-
-    # Creates a Git tag at given commit through HTTP protocol to prevent proxy or firewalls to block SSH requests.
-    # Not possible also to make repository mirroring because of the current purchased plan of the GitLab instance.
-    def create_tag(prefix, commitHash)
-      
-        # Check personal access token for tag creation
-        if GITHUB_ACCESS_TOKEN.nil? || GITHUB_ACCESS_TOKEN.empty?
-            puts "❌ Error: No GitHub access token defined, cannot create and push tags"
-            publish_mattermost_notification("⚙️ 😰 @channel No GitHub access token defined, cannot create and push tags!")
-            return false
-        else
-            # Check if given tag exists yet
-            tag = "#{prefix}/" + commitHash[0,7]
-            puts "ℹ️ Check if '#{tag}' exists yet"
-
-            uri = URI("https://api.github.com/repos/#{GITHUB_ORG_APP_REPO}/tags")
-            http = Net::HTTP.new(uri.host, uri.port)
-            http.use_ssl = true
-            
-            request = Net::HTTP::Get.new(uri.path)
-            request['Accept'] = 'application/vnd.github+json'
-            request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
-            request['X-GitHub-Api-Version'] = '2022-11-28'
-
-            response = http.request(request)
-            tags = JSON.parse(response.body)
-
-            # puts tags.inspect # Uncomment for debug
-
-            if tags.any? { |t| t['name'] == tag }
-                puts "ℹ️ The tag '#{tag}' still exists, won't create new tag"
-                return false
-            else
-                puts "ℹ️ Commit SHA to tag is '#{commitHash}'"
-
-                uri = URI("https://api.github.com/repos/#{GITHUB_ORG_APP_REPO}/git/refs")
-                http = Net::HTTP.new(uri.host, uri.port)
-                http.use_ssl = true
-                
-                request = Net::HTTP::Post.new(uri.path)
-                request['Accept'] = 'application/vnd.github+json'
-                request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
-                request['X-GitHub-Api-Version'] = '2022-11-28'
-                request.body = { ref: "refs/tags/#{tag}", sha: commitHash }.to_json
-                
-                response = http.request(request)
-                
-                if response.code.to_i == 201
-                  puts "ℹ️ Light tag '#{tag}' published in repository"
-                  return true
-                else
-                  puts "❌ Error: Failed to publish light tag '#{tag}' (#{response.code.to_i})"
-                  return false
-                end
-            end
-        end
-    end
-
     # Get version set in the Xcode project
-    def get_app_version
+    def get_iOS_app_version()
         version = get_version_number(
             xcodeproj: OUDS_PROJECT,
-            target: OUDS_SCHEME
+            target: OUDS_TARGET_IOS
+        )
+        return version
+    end    
+end
+
+# macOS lanes
+# -----------
+
+platform :mac do
+
+    desc "Run Periphery to look for dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned."
+    lane :check_dead_code do
+        puts "👉 Check macOS dead code with Periphery"
+
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_MACOS} --format xcode"
+    end
+
+    desc "Build locally the demo app in debug mode without upload"
+    lane :build_debug do
+        puts "👉 Build debug app"
+
+        cocoapods(
+          clean_install: true
+        )
+
+        Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
+            sh "rm -Rf AppIconRelease.appiconset"
+            sh "cp -R AppIconDebug.appiconset AppIconRelease.appiconset"
+        end
+
+        gym(
+            scheme: OUDS_SCHEME_MACOS,
+            output_directory: 'build/',
+            archive_path: 'build/',
+            output_name: 'oudsApp',
+            configuration: 'Debug',
+            include_symbols: true,
+            skip_archive: true,
+            skip_codesigning: true,
+            destination: "platform=macOS"
+        )
+    end    
+
+    # Get version set in the Xcode project
+    def get_macOS_app_version()
+        version = get_version_number(
+            xcodeproj: OUDS_PROJECT,
+            target: OUDS_TARGET_MACOS
+        )
+        return version
+    end    
+end
+
+# visionOS lanes
+# --------------
+
+platform :vision do
+
+    desc "Run Periphery to look for dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned."
+    lane :check_dead_code do
+        puts "👉 Check visionOS dead code with Periphery"
+
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_VISIONOS} --format xcode"
+    end
+
+    desc "Build locally the demo app in debug mode without upload"
+    lane :build_debug do
+        puts "👉 Build debug app"
+
+        cocoapods(
+          clean_install: true
+        )
+
+        Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
+            sh "rm -Rf AppIconRelease.appiconset"
+            sh "cp -R AppIconDebug.appiconset AppIconRelease.appiconset"
+        end
+
+        gym(
+            scheme: OUDS_SCHEME_VISIONOS,
+            output_directory: 'build/',
+            archive_path: 'build/',
+            output_name: 'oudsApp',
+            configuration: 'Debug',
+            include_symbols: true,
+            skip_archive: true,
+            skip_codesigning: true,
+            destination: "platform=visionOS Simulator,OS=26.0,name=Apple Vision Pro"
+        )
+    end
+    
+    # Get version set in the Xcode project
+    def get_visionOS_app_version()
+        version = get_version_number(
+            xcodeproj: OUDS_PROJECT,
+            target: OUDS_TARGET_VISIONOS
         )
         return version
     end
+end
 
-    # Read release note in section associated to the current version
-    # If empty, try within the Unreleased section
-    def read_current_release_notes
-        version = get_app_version
+# Helpers
+# -------
 
-        changelog = read_changelog(
-            changelog_path: '../CHANGELOG.md',
-            section_identifier: "[#{version}]",
-        )
+# Checks if beta build of the design system toolbox app points to develop branch of Swift Package,
+ # i.e. points to a branch
+ def check_package_version_for_beta_app()
+    puts "👉 Check package version for OUDS iOS Swift package (beta)"
+    
+    package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
+    package_resolved_json_content = JSON.parse(package_resolved_content)
+    ouds_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "ouds-ios" }
+        
+    return ouds_ios_obj.dig("state", "branch") == "develop"
 
-        if changelog == ""
-            changelog = read_changelog(
-                changelog_path: '../CHANGELOG.md',
-                section_identifier: "[Unreleased]",
-            )
-        end
+end
 
-        puts "ℹ️ Current relaase notes = #{changelog}"
-        return changelog
+ # Checks if the current version of the OUDS Swift Package is the expected one for stable builds of the app;
+ # i.e. points to a tag
+def check_package_version_for_stable_app()
+    puts "👉 Check package version for OUDS iOS Swift package (stable)"
+
+    package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
+    package_resolved_json_content = JSON.parse(package_resolved_content)
+    ouds_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "ouds-ios" }
+        
+    return !ouds_ios_obj.dig("state", "version").nil?
+end
+
+# Extract from Package.resolved details about the version in use of the OUDS iOS Swift Package.
+ # Returns a string with branch and revision on 8 digits or tag and revision on 8 digits
+ def ouds_swift_package_version()
+    puts "👉 Extract version of OUDS iOS Swift package"
+
+    package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
+    package_resolved_json_content = JSON.parse(package_resolved_content)
+    ouds_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "ouds-ios" }
+    ouds_ios_branch = ouds_ios_obj.dig("state", "branch") # Git branch
+     ouds_ios_revision = ouds_ios_obj.dig("state", "revision") # Commit hash
+     ouds_ios_version = ouds_ios_obj.dig("state", "version") # Git tag
+
+    if ouds_ios_branch && ouds_ios_revision
+        return "#{ouds_ios_branch} (#{ouds_ios_revision[0,7]})"
+    elsif ouds_ios_revision && ouds_ios_version
+        return "#{ouds_ios_version} (#{ouds_ios_revision[0,7]})"
+    else
+        raise error
     end
+end
 
-    # From the changelog extract the issues numbers so as to prepare notifications for beta builds.
-    # Will extract only issues numbers from "Unreleased" section.
-    def extract_issues_numbers_for_beta
+# Extract from Package.resolved details about the Git branch in use for the OUDS iOS Swift Package.
+# Returns the branch if defined or raises an error.
+# Supposes the OUDS iOS package is defined and used; if a local reference is used instead the branch won't be retrieved
+def ouds_swift_package_git_branch()
+    puts "👉 Extract Git branch of OUDS iOS Swift package"
+
+    package_resolved_content = File.read("../#{OUDS_PACKAGE_RESOLVED_PATH}")
+    package_resolved_json_content = JSON.parse(package_resolved_content)
+    ouds_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "ouds-ios" }
+     ouds_ios_branch = ouds_ios_obj.dig("state", "branch")
+
+     if ouds_ios_branch
+        return "#{ouds_ios_branch}"
+    else
+        raise error
+    end
+end
+
+# Add a Git tag dedicated to CI/CD builds with for some commit hash used to compute tag suffix
+def tag_ci_build(commitHash)
+    puts "👉 Tag CI build"
+
+    begin
+        if commitHash.nil? || commitHash.empty?
+            puts "ℹ️ No parameter sent for CI tag, nothing will be done"
+            publish_mattermost_notification("⚙️ 🤔 No commit hash has been given, no tag can be created")
+            return false
+         else
+            if create_tag("ci", commitHash)
+                publish_mattermost_notification("📦 ✅  New Git CI tag created for commit #{commitHash}")
+                return true
+            else
+                return false
+            end
+        end
+    rescue => error
+        publish_mattermost_notification("📦 🚨 @channel Some issue occurred during the tagging step (:tag_ci_build)")
+        raise error
+    end
+end
+
+# Add a Git tag dedicated to TestFLight uploads for some commit hash used to compute tag suffix
+def tag_testflight_upload(commitHash)
+    puts "👉 Tag TestFlight upload"
+
+    begin     
+        if commitHash.nil? || commitHash.empty?
+            puts "ℹ️ No parameter sent for CI tag, nothing will be done"
+            publish_mattermost_notification("⚙️ 🤔 No commit hash has been given, no tag can be created")
+            return false
+        else
+            if create_tag("Test_Flight", commitHash)
+                publish_mattermost_notification("📦 ✅  New Git Test_Flight tag created for commit #{commitHash}")
+                return true
+            else
+                return false
+            end
+        end
+    rescue => error
+        publish_mattermost_notification("📦 🚨 @channel Some issue occurred during the tagging step (:tag_testflight_upload)")
+        raise error
+    end
+end
+
+# Creates a Git tag at given commit through HTTP protocol to prevent proxy or firewalls to block SSH requests.
+# Not possible also to make repository mirroring because of the current purchased plan of the GitLab instance.
+def create_tag(prefix, commitHash)
+      
+    # Check personal access token for tag creation
+    if GITHUB_ACCESS_TOKEN.nil? || GITHUB_ACCESS_TOKEN.empty?
+        puts "❌ Error: No GitHub access token defined, cannot create and push tags"
+        publish_mattermost_notification("⚙️ 😰 @channel No GitHub access token defined, cannot create and push tags!")
+        return false
+    else
+        # Check if given tag exists yet
+        tag = "#{prefix}/" + commitHash[0,7]
+        puts "ℹ️ Check if '#{tag}' exists yet"
+
+        uri = URI("https://api.github.com/repos/#{GITHUB_ORG_APP_REPO}/tags")
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = true
+            
+        request = Net::HTTP::Get.new(uri.path)
+        request['Accept'] = 'application/vnd.github+json'
+        request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
+        request['X-GitHub-Api-Version'] = '2022-11-28'
+
+        response = http.request(request)
+        tags = JSON.parse(response.body)
+
+        # puts tags.inspect # Uncomment for debug
+
+        if tags.any? { |t| t['name'] == tag }
+            puts "ℹ️ The tag '#{tag}' still exists, won't create new tag"
+            return false
+        else
+            puts "ℹ️ Commit SHA to tag is '#{commitHash}'"
+
+            uri = URI("https://api.github.com/repos/#{GITHUB_ORG_APP_REPO}/git/refs")
+            http = Net::HTTP.new(uri.host, uri.port)
+            http.use_ssl = true
+                
+            request = Net::HTTP::Post.new(uri.path)
+            request['Accept'] = 'application/vnd.github+json'
+            request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
+            request['X-GitHub-Api-Version'] = '2022-11-28'
+            request.body = { ref: "refs/tags/#{tag}", sha: commitHash }.to_json
+                
+            response = http.request(request)
+                
+            if response.code.to_i == 201
+                puts "ℹ️ Light tag '#{tag}' published in repository"
+                return true
+            else
+                puts "❌ Error: Failed to publish light tag '#{tag}' (#{response.code.to_i})"
+                return false
+            end
+        end
+    end
+end
+
+# Read release note in section associated to the current version
+# If empty, try within the Unreleased section
+def read_current_release_notes
+    version = get_iOS_app_version
+
+    changelog = read_changelog(
+        changelog_path: '../CHANGELOG.md',
+        section_identifier: "[#{version}]",
+    )
+
+    if changelog == ""
         changelog = read_changelog(
             changelog_path: '../CHANGELOG.md',
             section_identifier: "[Unreleased]",
         )
-
-        extracted_issues_numbers = changelog.scan(/#(\d+)/).flatten.uniq
-
-        return extracted_issues_numbers.join(', ')
     end
 
-    # From the changelog extract the issues numbers so as to prepare notifications for stabme builds.
-    # Will extract only issues numbers from last release section.
-    def extract_issues_numbers_for_stable
-        version = get_app_version
+    puts "ℹ️ Current relaase notes = #{changelog}"
+    return changelog
+end
 
-        changelog = read_changelog(
-            changelog_path: '../CHANGELOG.md',
-            section_identifier: "[#{version}]",
-        )
+# From the changelog extract the issues numbers so as to prepare notifications for beta builds.
+# Will extract only issues numbers from "Unreleased" section.
+def extract_issues_numbers_for_beta
+    changelog = read_changelog(
+        changelog_path: '../CHANGELOG.md',
+        section_identifier: "[Unreleased]",
+    )
 
-        extracted_issues_numbers = changelog.scan(/#(\d+)/).flatten.uniq
+    extracted_issues_numbers = changelog.scan(/#(\d+)/).flatten.uniq
 
-        return extracted_issues_numbers.join(', ')
-    end
+    return extracted_issues_numbers.join(', ')
+end
 
-    # Sends a message notification through Mattermost hook
-    def publish_mattermost_notification(message)
-        mattermost(url: MATTERMOST_HOOK_URL,
-                  text: "#{message}",
-                  username: MATTERMOST_HOOK_BOT_NAME,
-                  icon_url: MATTERMOST_HOOK_BOT_ICON_URL
-                  )
-    end
+# From the changelog extract the issues numbers so as to prepare notifications for stabme builds.
+# Will extract only issues numbers from last release section.
+def extract_issues_numbers_for_stable
+     version = get_iOS_app_version
 
-    # Send comments to the related GitHub issues about a new available build or release.
-    # Will find in Info.plist of demo app all the suitable needed details.
-    def publish_github_notifications_build_details(build_type, build_details)
-        build_version = get_app_version
-        build_number = get_build_number(xcodeproj: OUDS_PROJECT)
-        build_display_name = get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "CFBundleDisplayName")
-        build_tag = get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildTag")
+    changelog = read_changelog(
+        changelog_path: '../CHANGELOG.md',
+        section_identifier: "[#{version}]",
+    )
 
-        if build_type === BuildType::ALPHA
-            comment_title = "**New TestFlight ALPHA upload available**"
-            comment_description = "Please, get the new build from *TestFlight* app, or contact the project maintainers (pylapp, ludovic35) to get access and test this issue implementation."
-            comment_notified=<<-EOF
+    extracted_issues_numbers = changelog.scan(/#(\d+)/).flatten.uniq
+
+    return extracted_issues_numbers.join(', ')
+end
+
+# Sends a message notification through Mattermost hook
+def publish_mattermost_notification(message)
+    mattermost(url: MATTERMOST_HOOK_URL,
+                text: "#{message}",
+                username: MATTERMOST_HOOK_BOT_NAME,
+                icon_url: MATTERMOST_HOOK_BOT_ICON_URL
+    )
+end
+
+# Send comments to the related GitHub issues about a new available build or release.
+# Will find in Info.plist of demo app all the suitable needed details.
+def publish_github_notifications_build_details(build_type, build_details)
+    build_version = get_iOS_app_version
+    build_number = get_build_number(xcodeproj: OUDS_PROJECT)
+    build_display_name = get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "CFBundleDisplayName")
+    build_tag = get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildTag")
+
+    if build_type === BuildType::ALPHA
+        comment_title = "**New TestFlight ALPHA upload available**"
+        comment_description = "Please, get the new build from *TestFlight* app, or contact the project maintainers (pylapp, ludovic35) to get access and test this issue implementation."
+        comment_notified=<<-EOF
 <!--
 @B3nz01d - Benoît SUZANNE - Product Owner
 @pylapp - Pierre-Yves LAPERSONNE - iOS developer, OUDS iOS maintainer
@@ -876,31 +923,30 @@ cc @pylapp @ludovic35 (dev team)
 cc @jerome-regnier (design team)
 cc @pya35 (a11y team)
 EOF
-            comment_description_build_tag="- Build tag: **#{build_tag}**"
-        elsif build_type === BuildType::BETA
-            comment_title = "**New TestFlight BETA upload available**"
-            comment_description = "Please, get the new build from *TestFlight* app, or contact the project maintainers (pylapp, ludovic35) to get access and test this issue implementation."
-            comment_notified = ""
-            comment_description_build_tag="- Build tag: **#{build_tag}**"
-        else # BuildType::STABLE
-            comment_title = "**New release available**"
-            comment_description = "Please, get the [new release from GitHub](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases/tag/#{build_version}) and wait for App Store update to test it!"
-            comment_notified = ""
-            comment_description_build_tag=""
-        end
+        comment_description_build_tag="- Build tag: **#{build_tag}**"
+    elsif build_type === BuildType::BETA
+        comment_title = "**New TestFlight BETA upload available**"
+        comment_description = "Please, get the new build from *TestFlight* app, or contact the project maintainers (pylapp, ludovic35) to get access and test this issue implementation."
+        comment_notified = ""
+        comment_description_build_tag="- Build tag: **#{build_tag}**"
+    else # BuildType::STABLE
+        comment_title = "**New release available**"
+        comment_description = "Please, get the [new release from GitHub](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases/tag/#{build_version}) and wait for App Store update to test it!"
+        comment_notified = ""
+        comment_description_build_tag=""
+    end
 
-        build_issues_numbers = build_details.scan(/\d+/).map(&:to_i)
+    build_issues_numbers = build_details.scan(/\d+/).map(&:to_i)
         
-        build_issues_numbers.each do |issue_number|
-            uri = URI("https://api.github.com/repos/#{GITHUB_ORG_LIB_REPO}/issues/#{issue_number}")
-            response = Net::HTTP.get(uri)
-            issue = JSON.parse(response)
+    build_issues_numbers.each do |issue_number|
+        uri = URI("https://api.github.com/repos/#{GITHUB_ORG_LIB_REPO}/issues/#{issue_number}")
+        response = Net::HTTP.get(uri)
+        issue = JSON.parse(response)
         
-            if issue['message'] == 'Not Found'
-                puts "❌ Error: Issue '#{issue_number}' does not exist"
-            else
-          
-                comment_to_upload=<<-EOF
+        if issue['message'] == 'Not Found'
+            puts "❌ Error: Issue '#{issue_number}' does not exist"
+        else
+            comment_to_upload=<<-EOF
 📣 #{comment_title} 🚀
 
 #{comment_description}
@@ -914,22 +960,21 @@ EOF
 _🤖 This is an automated message sent with love thanks to *Fastlane* from our CI/CD pipeline 🤘_
 EOF
 
-                uri = URI("https://api.github.com/repos/#{GITHUB_ORG_LIB_REPO}/issues/#{issue_number}/comments")
-                http = Net::HTTP.new(uri.host, uri.port)
-                http.use_ssl = true
+            uri = URI("https://api.github.com/repos/#{GITHUB_ORG_LIB_REPO}/issues/#{issue_number}/comments")
+            http = Net::HTTP.new(uri.host, uri.port)
+            http.use_ssl = true
           
-                request = Net::HTTP::Post.new(uri.path)
-                request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
-                request['Content-Type'] = 'application/json'
-                request.body = { body: comment_to_upload }.to_json
+            request = Net::HTTP::Post.new(uri.path)
+            request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
+            request['Content-Type'] = 'application/json'
+            request.body = { body: comment_to_upload }.to_json
           
-                response = http.request(request)
+            response = http.request(request)
           
-                if response.code.to_i == 201
-                    puts "ℹ️ Comment posted on issue '#{issue_number}'"
-                else
-                    puts "❌ Error: Failed to post comment on issue '#{issue_number}'"
-                end
+            if response.code.to_i == 201
+                puts "ℹ️ Comment posted on issue '#{issue_number}'"
+            else
+                puts "❌ Error: Failed to post comment on issue '#{issue_number}'"
             end
         end
     end

@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations // NOTE: Seen as "unused" for Periphery (https://github.com/peripheryapp/periphery/issues/942)
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Design Toolbox Colored Surface Modifier
@@ -27,11 +27,11 @@ struct DesignToolboxColoredSurfaceModifier: ViewModifier {
     func body(content: Content) -> some View {
         if coloredSurface {
             content
-                .oudsColoredSurface(theme.colorModes.modeOnBrandPrimary)
+                .oudsColoredSurface(theme.colorModes.onBrandPrimary)
                 .modifier(DebugWCAG21RatiosModifier())
         } else {
             content
-                .oudsBackground(theme.colors.colorBgPrimary)
+                .oudsBackground(theme.colors.bgPrimary)
         }
     }
 }

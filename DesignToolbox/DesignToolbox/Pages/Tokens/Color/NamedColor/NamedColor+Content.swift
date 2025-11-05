@@ -11,72 +11,71 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 
 extension NamedColor {
 
     enum Content: String, CaseIterable {
-        case colorContentBrandPrimary
-        case colorContentDefault
-        case colorContentDisabled
-        case colorContentMuted
-        case colorContentOnActionDisabled
-        case colorContentOnActionEnabled
-        case colorContentOnActionFocus
-        case colorContentOnActionHighlighted
-        case colorContentOnActionHover
-        case colorContentOnActionLoading
-        case colorContentOnActionPressed
-        case colorContentOnActionSelected
-        case colorContentOnBrandPrimary
-        case colorContentInverse
-        case colorContentOnStatusNegativeEmphasized
-        case colorContentStatusInfo
-        case colorContentStatusNegative
-        case colorContentStatusPositive
-        case colorContentStatusWarning
+        case contentBrandPrimary
+        case contentDefault
+        case contentDisabled
+        case contentMuted
+        case contentOnActionDisabled
+        case contentOnActionEnabled
+        case contentOnActionFocus
+        case contentOnActionHighlighted
+        case contentOnActionHover
+        case contentOnActionLoading
+        case contentOnActionPressed
+        case contentOnActionSelected
+        case contentOnBrandPrimary
+        case contentInverse
+        case contentOnStatusNegativeEmphasized
+        case contentStatusInfo
+        case contentStatusNegative
+        case contentStatusPositive
+        case contentStatusWarning
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
-            case .colorContentBrandPrimary:
-                theme.colors.colorContentBrandPrimary
-            case .colorContentDefault:
-                theme.colors.colorContentDefault
-            case .colorContentDisabled:
-                theme.colors.colorContentDisabled
-            case .colorContentMuted:
-                theme.colors.colorContentMuted
-            case .colorContentOnActionDisabled:
-                theme.colors.colorContentOnActionDisabled
-            case .colorContentOnActionEnabled:
-                theme.colors.colorContentOnActionEnabled
-            case .colorContentOnActionFocus:
-                theme.colors.colorContentOnActionFocus
-            case .colorContentOnActionHighlighted:
-                theme.colors.colorContentOnActionHighlighted
-            case .colorContentOnActionHover:
-                theme.colors.colorContentOnActionHover
-            case .colorContentOnActionLoading:
-                theme.colors.colorContentOnActionLoading
-            case .colorContentOnActionPressed:
-                theme.colors.colorContentOnActionPressed
-            case .colorContentOnActionSelected:
-                theme.colors.colorContentOnActionSelected
-            case .colorContentOnBrandPrimary:
-                theme.colors.colorContentOnBrandPrimary
-            case .colorContentInverse:
-                theme.colors.colorContentInverse
-            case .colorContentOnStatusNegativeEmphasized:
-                theme.colors.colorContentOnStatusNegativeEmphasized
-            case .colorContentStatusInfo:
-                theme.colors.colorContentStatusInfo
-            case .colorContentStatusNegative:
-                theme.colors.colorContentStatusNegative
-            case .colorContentStatusPositive:
-                theme.colors.colorContentStatusPositive
-            case .colorContentStatusWarning:
-                theme.colors.colorContentStatusWarning
+            case .contentBrandPrimary:
+                theme.colors.contentBrandPrimary
+            case .contentDefault:
+                theme.colors.contentDefault
+            case .contentDisabled:
+                theme.colors.contentDisabled
+            case .contentMuted:
+                theme.colors.contentMuted
+            case .contentOnActionDisabled:
+                theme.colors.contentOnActionDisabled
+            case .contentOnActionEnabled:
+                theme.colors.contentOnActionEnabled
+            case .contentOnActionFocus:
+                theme.colors.contentOnActionFocus
+            case .contentOnActionHighlighted:
+                theme.colors.contentOnActionHighlighted
+            case .contentOnActionHover:
+                theme.colors.contentOnActionHover
+            case .contentOnActionLoading:
+                theme.colors.contentOnActionLoading
+            case .contentOnActionPressed:
+                theme.colors.contentOnActionPressed
+            case .contentOnActionSelected:
+                theme.colors.contentOnActionSelected
+            case .contentOnBrandPrimary:
+                theme.colors.contentOnBrandPrimary
+            case .contentInverse:
+                theme.colors.contentInverse
+            case .contentOnStatusNegativeEmphasized:
+                theme.colors.contentOnStatusNegativeEmphasized
+            case .contentStatusInfo:
+                theme.colors.contentStatusInfo
+            case .contentStatusNegative:
+                theme.colors.contentStatusNegative
+            case .contentStatusPositive:
+                theme.colors.contentStatusPositive
+            case .contentStatusWarning:
+                theme.colors.contentStatusWarning
             }
         }
     }

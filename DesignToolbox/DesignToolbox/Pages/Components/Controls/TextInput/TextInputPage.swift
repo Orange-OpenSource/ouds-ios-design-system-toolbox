@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: TextInput page
@@ -49,7 +48,9 @@ struct TextInputDemo: View {
     var body: some View {
         OUDSTextInput(label: configurationModel.label,
                       text: $configurationModel.text,
-                      placeholder: configurationModel.placeholder,
+                      placeholder: configurationModel.placeholderText,
+                      prefix: configurationModel.prefixText,
+                      suffix: configurationModel.suffixText,
                       leadingIcon: leadingIcon,
                       flipLeadingIcon: configurationModel.flipLeadingIcon,
                       trailingAction: trailingAction,
@@ -58,12 +59,11 @@ struct TextInputDemo: View {
                       isOutlined: configurationModel.isOutlined,
                       status: configurationModel.status)
             .autocorrectionDisabled()
-            .textInputAutocapitalization(.never)
-            .padding(.all, theme.spaces.spaceFixedMedium)
+            .textInputDisableAutocapitalization()
+            .padding(.all, theme.spaces.fixedMedium)
             .onSubmit {
                 if configurationModel.text == "error" {
-                    configurationModel.status = .error
-                    configurationModel.helperText = "Error text detected"
+                    configurationModel.status = .error(message: "Error text detecte")
                 }
             }
     }

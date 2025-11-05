@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 struct ButtonElement: DesignToolboxElement {
@@ -37,10 +36,14 @@ private struct ButtonIllustration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: theme.spaces.spaceFixedSmall) {
+        VStack(spacing: theme.spaces.fixedSmall) {
+            #if !os(visionOS)
             // Dont translate default text for all
             OUDSButton(text: "Label", appearance: firstButtonAppearance) {}
             OUDSButton(text: "Label", appearance: secondButtonAppearance) {}
+            #else
+            OUDSButton(text: "Label", appearance: firstButtonAppearance) {}
+            #endif
         }
     }
 

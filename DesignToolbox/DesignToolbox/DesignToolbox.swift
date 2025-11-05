@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSSwiftUI
 import SwiftUI
 
 @main
@@ -19,6 +19,10 @@ struct DesignToolbox: App {
 
     @StateObject private var themeProvider = ThemeProvider()
     @AppStorage("colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
+
+    #if os(macOS)
+    @StateObject private var windowManager = WindowManager()
+    #endif
 
     private var colorScheme: ColorScheme? {
         if mode == ColorSchemeMode.light.rawValue {
@@ -36,6 +40,9 @@ struct DesignToolbox: App {
                 MainView().environmentObject(themeProvider)
             }
             .preferredColorScheme(colorScheme)
+            #if os(macOS)
+                .environmentObject(windowManager)
+            #endif
         }
     }
 }

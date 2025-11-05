@@ -11,9 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Font Token Page
@@ -23,9 +21,9 @@ struct FontTokenPage: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             Section {
-                DesignToolboxCode(code: "theme.typeBodyStrongLarge(theme)", titleText: "app_tokens_common_viewCodeExample_label")
+                DesignToolboxCode(code: "theme.bodyStrongLarge(theme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
 
             Spacer()
@@ -34,7 +32,7 @@ struct FontTokenPage: View {
                 IllustrationFont(namedFont: fontName)
             }
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.fixedMedium)
         .navigationTitle(LocalizedStringKey("app_tokens_typography_label"))
     }
 
@@ -52,9 +50,9 @@ struct FontTokenPage: View {
         @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
         var body: some View {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 illustration(for: namedFont, in: theme)
-                    .oudsForegroundStyle(theme.colors.colorContentDefault)
+                    .oudsForegroundStyle(theme.colors.contentDefault)
 
                 Group {
                     Text(familyText)
@@ -63,17 +61,17 @@ struct FontTokenPage: View {
                         + Text(lineHeightText)
                         + Text(letterSpacingText)
                 }
-                .typeBodyDefaultMedium(theme)
+                .bodyDefaultMedium(theme)
                 .fixedSize(horizontal: false, vertical: true)
-                .oudsForegroundStyle(theme.colors.colorContentMuted)
+                .oudsForegroundStyle(theme.colors.contentMuted)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.vertical, theme.spaces.spaceFixedXsmall)
+            .padding(.vertical, theme.spaces.fixedXsmall)
             .accessibilityElement(children: .combine)
         }
 
         private var familyText: String {
-            "app_tokens_typography_familyAttribute" <- "\(theme.fontFamily ?? "system")"
+            "app_tokens_typography_familyAttribute" <- "\(theme.family ?? "system")"
         }
 
         private var weightText: String {

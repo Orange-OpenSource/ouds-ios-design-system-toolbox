@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 struct ChipElements: DesignToolboxElement {
@@ -42,9 +41,13 @@ private struct ChipIllustration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: theme.spaces.spaceFixedSmall) {
+        VStack(spacing: theme.spaces.fixedSmall) {
+            #if !os(visionOS)
             OUDSFilterChip(text: "Filter", selected: true) {}
             OUDSSuggestionChip(text: "Suggestion") {}
+            #else
+            OUDSFilterChip(text: "🥜", selected: true) {}
+            #endif
         }
     }
 }

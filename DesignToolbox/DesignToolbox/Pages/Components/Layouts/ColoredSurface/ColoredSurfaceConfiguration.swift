@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Colored Surface Configuration Model
@@ -29,7 +28,7 @@ final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        selectedColor = NamedColorMode.modeOnBrandPrimary
+        selectedColor = NamedColorMode.onBrandPrimary
     }
 
     deinit {}
@@ -41,7 +40,7 @@ final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
             """
             OUDSColoredSurface(color: theme.colorModes.\(selectedColor.description)) {
                Text("\(selectedColor.formattedName)")
-               .oudsForegroundColor(theme.colors.colorContentDefault)
+               .oudsForegroundColor(theme.colors.contentDefault)
 
                OUDSButton(text: "\("app_components_button_label".localized())") {}
 

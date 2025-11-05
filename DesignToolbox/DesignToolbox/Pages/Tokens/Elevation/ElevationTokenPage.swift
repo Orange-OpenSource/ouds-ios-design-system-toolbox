@@ -11,9 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Elevation Token Page
@@ -23,19 +21,19 @@ struct ElevationTokenPage: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             Section {
-                DesignToolboxCode(code: "theme.elevations.elevationNone.elevation(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
+                DesignToolboxCode(code: "theme.elevations.none.elevation(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
 
-            Spacer().frame(height: theme.spaces.spaceFixedMedium)
+            Spacer().frame(height: theme.spaces.fixedMedium)
 
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
                 IllustrationElevation(namedElevation: elevationName)
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.fixedMedium)
     }
 
     struct IllustrationElevation: View {
@@ -52,8 +50,8 @@ struct ElevationTokenPage: View {
 
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 Rectangle()
-                    .frame(width: theme.sizes.sizeIconDecorative2xlarge, height: theme.sizes.sizeIconDecorative2xlarge)
-                    .oudsForegroundColor(theme.colors.colorBgSecondary)
+                    .frame(width: theme.sizes.iconDecorative2xlarge, height: theme.sizes.iconDecorative2xlarge)
+                    .oudsForegroundColor(theme.colors.bgSecondary)
                     .oudsShadow(token)
                     .padding(.bottom, 2)
             }
@@ -73,27 +71,27 @@ struct ElevationTokenPage: View {
 // MARK: - Named Elevation
 
 enum NamedElevation: String, CaseIterable {
-    case elevationNone
-    case elevationRaised
-    case elevationDrag
-    case elevationOverlayDefault
-    case elevationOverlayEmphasized
-    case elevationSticky
+    case none
+    case raised
+    case drag
+    case `default`
+    case emphasized
+    case sticky
 
     func token(from theme: OUDSTheme) -> ElevationCompositeSemanticToken {
         switch self {
-        case .elevationNone:
-            theme.elevations.elevationNone
-        case .elevationRaised:
-            theme.elevations.elevationRaised
-        case .elevationDrag:
-            theme.elevations.elevationDrag
-        case .elevationOverlayDefault:
-            theme.elevations.elevationOverlayDefault
-        case .elevationOverlayEmphasized:
-            theme.elevations.elevationOverlayEmphasized
-        case .elevationSticky:
-            theme.elevations.elevationSticky
+        case .none:
+            theme.elevations.none
+        case .raised:
+            theme.elevations.raised
+        case .drag:
+            theme.elevations.drag
+        case .default:
+            theme.elevations.default
+        case .emphasized:
+            theme.elevations.emphasized
+        case .sticky:
+            theme.elevations.sticky
         }
     }
 }

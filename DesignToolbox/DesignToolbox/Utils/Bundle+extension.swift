@@ -11,6 +11,10 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+// NOTE: Several items below are seen as unused but are used
+// This is a false positive in Periphy
+// See https://github.com/peripheryapp/periphery/issues/908
+
 import Foundation
 
 extension Bundle {
@@ -62,7 +66,7 @@ extension Bundle {
         #endif
     }
 
-    /// A value filled outside the app (e.g. by the CI/CD chain) to indicate the version of the OUDS iOS Swift Package in use
+    /// A value filled outside the app (e.g. by the CI/CD chain) to indicate the version of the OUDSThemesContract iOS Swift Package in use
     /// For example, contains a tag or a branch or a commit hash
     var sdkVersion: String? {
         #if DEBUG

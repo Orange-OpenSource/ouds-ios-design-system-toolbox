@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: Colored Surface Page
@@ -42,11 +41,11 @@ private struct ColoredSurfaceDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {
+        HStack(alignment: .center, spacing: theme.spaces.fixedMedium) {
             OUDSColoredSurface(color: configurationModel.selectedColor.toSurfaceColor(from: theme)) {
-                VStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {
+                VStack(alignment: .center, spacing: theme.spaces.fixedMedium) {
                     Text(configurationModel.selectedColor.formattedName)
-                        .oudsForegroundColor(theme.colors.colorContentDefault)
+                        .oudsForegroundColor(theme.colors.contentDefault)
 
                     OUDSButton(text: "app_components_button_label".localized(),
                                appearance: .default,
@@ -55,9 +54,9 @@ private struct ColoredSurfaceDemo: View {
                     OUDSLink(text: "app_components_link_label".localized(), indicator: .next) {}
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.all, theme.spaces.spaceFixedMedium)
+                .padding(.all, theme.spaces.fixedMedium)
             }
         }
-        .padding(.all, theme.spaces.spaceFixedMedium)
+        .padding(.all, theme.spaces.fixedMedium)
     }
 }

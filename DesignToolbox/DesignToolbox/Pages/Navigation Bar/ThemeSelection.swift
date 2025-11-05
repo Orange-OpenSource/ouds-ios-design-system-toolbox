@@ -11,11 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSThemesOrange
-import OUDSThemesOrangeBusinessTools
-import OUDSThemesSosh
-import OUDSThemesWireframe
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Extensions of OUDSTheme
@@ -120,13 +116,13 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
         // Init all themes
 
-        let orangeFranceOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
-        let maxItOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
+        let orangeFranceOrangeTheme = OrangeTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeTheme = OrangeTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
+        let maxItOrangeTheme = OrangeTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
 
-        let orangeFranceOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
-        let maxItOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
+        let orangeFranceOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
+        let maxItOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
 
         let soshTheme = SoshTheme()
         let wireframeTheme = WireframeTheme()
@@ -171,7 +167,7 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         guard let preferredLanguage = Locale.preferredLanguages.first else {
             return "Helvetica Neue"
         }
-        if preferredLanguage.hasPrefix("ar") || Locale.current.languageCode == "ar" {
+        if preferredLanguage.hasPrefix("ar") || OSUtilities.languageCode() == "ar" {
             return "Helvetica Neue Arabic"
         } else {
             return "Helvetica Neue"
@@ -200,7 +196,7 @@ struct ThemeSelectionButton: View {
                         Text(theme.description).tag(theme)
                     }
                 }
-                .pickerStyle(.automatic)
+                .pickerStyle(.inline)
             }
 
             // Orange Business Tools theme and tunings
@@ -210,9 +206,10 @@ struct ThemeSelectionButton: View {
                         Text(theme.description).tag(theme)
                     }
                 }
-                .pickerStyle(.automatic)
+                .pickerStyle(.inline)
             }
 
+            #if !os(macOS)
             // Sosh and Wireframe themes (which do not have tunings)
             Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
                 ForEach(themeProvider.otherThemes, id: \.id) { theme in
@@ -221,11 +218,19 @@ struct ThemeSelectionButton: View {
                 }
             }
             .pickerStyle(.automatic)
+            #else
+            Divider() // with macOS at least there are troubles with menus and pickers inside
+            ForEach(themeProvider.otherThemes, id: \.id) { theme in
+                Button(theme.description) {
+                    themeProvider.currentTheme = theme
+                }
+            }
+            #endif
         } label: {
             Image(decorative: "ic_theme")
                 .scaledToFit()
         }
-        .oudsForegroundColor(themeProvider.currentTheme.colors.colorContentBrandPrimary)
+        .oudsForegroundColor(themeProvider.currentTheme.colors.contentBrandPrimary)
         .modifier(HotSwitchWarningModifier(hotSwitchWarningIndicator: themeProvider.hotSwitchWarning))
         .accessibilityLabel("app_topBar_theme_button_a11y")
         .accessibilityHint("app_topBar_theme_button_hint_a11y")
@@ -235,6 +240,7 @@ struct ThemeSelectionButton: View {
 // MARK: - Hot Switch
 
 final class HotSwitchWarning: ObservableObject {
+
     @Published var showAlert: Bool = false
 
     deinit {}
