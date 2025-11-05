@@ -657,7 +657,7 @@ platform :vision do
             include_symbols: true,
             skip_archive: true,
             skip_codesigning: true,
-            destination: "platform=visionOS Simulator,name=Apple Vision Pro"
+            destination: "platform=visionOS Simulator,OS=26.0,name=Apple Vision Pro"
         )
     end
     
