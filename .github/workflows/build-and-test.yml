@@ -66,6 +66,7 @@ jobs:
       - name: Build demo app (iOS, macOS, visionOS)
         run: |
           cd DesignToolbox
+          xcrun simctl list # List available simulators
           bundle exec fastlane ios build_debug
           bundle exec fastlane mac build_debug
           bundle exec fastlane vision build_debug
