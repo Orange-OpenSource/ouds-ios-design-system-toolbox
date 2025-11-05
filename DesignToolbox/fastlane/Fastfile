@@ -104,7 +104,7 @@ lane :lint do
 end
 
 desc "Run LicensePlist to update list of third-parties to embed in app"
-    lane :update_3rd_parties do
+lane :update_3rd_parties do
     puts "👉 Run LicensePlist to update list of third-parties"
 
     Dir.chdir ".." do
