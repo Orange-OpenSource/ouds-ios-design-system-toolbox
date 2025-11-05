@@ -4248,6 +4248,14 @@
 				version = 1.18.1;
 			};
 		};
+		5115A1642DDF39AC0025A760 /* XCRemoteSwiftPackageReference "ouds-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
+			requirement = {
+				branch = "1086-bug-input-component-updates";
+				kind = branch;
+			};
+		};
 		6DFC20C32CE3D9AE00F2EC33 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git";
