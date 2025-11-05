@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 struct DesignToolboxTokenIllustrationBackground: View {
@@ -23,6 +22,6 @@ struct DesignToolboxTokenIllustrationBackground: View {
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        Rectangle().fill(theme.colors.colorSurfaceSecondary.color(for: colorScheme))
+        Rectangle().fill(theme.colors.surfaceSecondary.color(for: colorScheme))
     }
 }

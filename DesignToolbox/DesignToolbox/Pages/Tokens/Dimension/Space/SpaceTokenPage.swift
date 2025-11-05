@@ -11,9 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Space Token Page
@@ -25,7 +23,7 @@ struct SpaceTokenPage: View {
     var body: some View {
         Group {
             Section {
-                DesignToolboxCode(code: "theme.spaceScaledMd.dimension(for: horizontalSizeClass ?? .regular)", titleText: "app_tokens_common_viewCodeExample_label")
+                DesignToolboxCode(code: "theme.scaledMd.dimension(for: horizontalSizeClass ?? .regular)", titleText: "app_tokens_common_viewCodeExample_label")
             }
             // Basic Space Tokens
             Section { ScaledSpaceProperty() } header: {
@@ -52,7 +50,7 @@ struct SpaceTokenPage: View {
                 header("app_tokens_dimension_space_rowGap_label")
             }
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.fixedMedium)
     }
 
     // MARK: Common helpers

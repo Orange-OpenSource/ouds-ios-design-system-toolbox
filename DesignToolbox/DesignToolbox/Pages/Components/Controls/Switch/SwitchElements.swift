@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 struct SwitchElements: DesignToolboxElement {
@@ -41,10 +40,14 @@ private struct SwitchIllustration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: theme.spaces.spaceFixedSmall) {
+        VStack(spacing: theme.spaces.fixedSmall) {
+            #if !os(visionOS)
             // 🥜: dumb label, not vocalized, preventing warnings because of empty labels
             OUDSSwitch(isOn: .constant(true), accessibilityLabel: "🥜")
             OUDSSwitch(isOn: .constant(false), accessibilityLabel: "🥜")
+            #else
+            OUDSSwitch(isOn: .constant(true), accessibilityLabel: "🥜")
+            #endif
         }
     }
 }

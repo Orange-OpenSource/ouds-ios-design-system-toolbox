@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 struct DividerElements: DesignToolboxElement {
@@ -42,9 +42,13 @@ private struct DividerIllustration: View {
     var body: some View {
         VStack {
             Spacer()
+            #if !os(visionOS)
             OUDSHorizontalDivider(color: .default)
+            #else
+            OUDSHorizontalDivider(color: .brandPrimary)
+            #endif
             Spacer()
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.fixedMedium)
     }
 }

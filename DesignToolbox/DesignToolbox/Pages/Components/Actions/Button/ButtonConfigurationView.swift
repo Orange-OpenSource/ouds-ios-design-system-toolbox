@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Button Configuration Model
@@ -25,7 +25,9 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var text: String
+    @Published var text: String {
+        didSet { updateCode() }
+    }
 
     @Published var layout: ButtonLayout {
         didSet { updateCode() }
@@ -62,7 +64,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     }
 
     private var coloredSurfaceCodeModifier: String {
-        onColoredSurface ? ".oudsColoredSurface(theme.colorModes.modeOnBrandPrimary)" : ""
+        onColoredSurface ? ".oudsColoredSurface(theme.colorModes.onBrandPrimary)" : ""
     }
 
     override func updateCode() {
@@ -70,7 +72,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
                 """
-                OUDSButton(text: \"Button\", appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
+                OUDSButton(text: \"\(text)\", appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifier)
                 """
@@ -84,7 +86,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .textAndIcon:
             code =
                 """
-                OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
+                OUDSButton(icon: Image(\"ic_heart\", text: \"\(text)\"), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifier)
                 """
@@ -123,7 +125,7 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
 
 extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    public nonisolated(unsafe) static let allCases: [OUDSButton.Style] = [.default, .loading]
+    nonisolated(unsafe) public static let allCases: [OUDSButton.Style] = [.default, .loading]
 
     public var description: String {
         switch self {
@@ -146,7 +148,8 @@ extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomString
 // MARK: Button appearance extension
 
 extension OUDSButton.Appearance: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    public nonisolated(unsafe) static let allCases: [OUDSButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
+
+    nonisolated(unsafe) public static let allCases: [OUDSButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
 
     // Note: Not localized because it is a technical name
     public var description: String {
@@ -182,8 +185,8 @@ struct ButtonConfigurationView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
                     .disabled(configurationModel.style != .default)
 
@@ -204,7 +207,7 @@ struct ButtonConfigurationView: View {
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.text)
+                    DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_label")
                 }
             }
         }

@@ -4,6 +4,56 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.21.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.20.0...0.21.0) - 2025-11-05
+
+### Added
+
+- [Library] Add umbrella Swift Package product to wrap all others (Orange-OpenSource/ouds-ios#1117)
+- [DesignToolbox] GitHub Actions workflow to move the SNAPSHOT tag
+- [DesignToolbox] Support of `visionOS` (Orange-OpenSource/ouds-ios#1102)
+- [DesignToolbox] Support of `macOS` (Orange-OpenSource/ouds-ios#1102)
+- [Library] `input tag` component (Orange-OpenSource/ouds-ios#917)
+- [Library] Swift DocC tutorial (Orange-OpenSource/ouds-ios#919)
+
+### Changed
+
+- [DesignToolbox] `SwiftFormat/CLI` pod from v0.58.3 to v0.58.5
+- [DesignToolbox] `actions/upload-artifact` action from v4.6.2 to v5.0.0 for `scorecard` workflow
+- [DesignToolbox] `github/codeql-action/upload-sarif` action from v3 to v4 for `scorecard` workflow
+- [DesignToolbox] `json` RubyGem from v2.15.1 to v2.15.2
+- [DesignToolbox] `ruby/setup-ruby` action from v1.265.0 to v1.267.0 for `build-and-test` workflow
+- [DesignToolbox] `SwiftLint` pod from v0.62.1 to v0.62.2
+- [DesignToolbox] Update `net-http` gem from v0.6.0 to v0.7.0
+- [DesignToolbox] Hide divider by default in `radio item`, `checkbox item` and `switch item` (Orange-OpenSource/ouds-ios#971)
+- [Library] Update `button` component to version v3.2.0 (Orange-OpenSource/ouds-ios#1034)
+- [Library] Standalone checkbox and radio button should have rounded corners with Sosh and Wireframe themes (Orange-OpenSource/ouds-ios#1079)
+- [Library] Update `OUDSBadge` to version 1.2 (Orange-OpenSource/ouds-ios#1043)
+- [Library] Update `badge` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1043)
+- [Library] Reduce number of imports by using higher level Swift Package product (Orange-OpenSource/ouds-ios#1117)
+- [Library] Shorten names of raw, semantic and components tokens and associated modifiers (Orange-OpenSource/ouds-ios#1030)
+- [DesignToolbox] Use `OUDSButton` in code sample panes (Orange-OpenSource/ouds-ios#1081)
+- [DesignToolbox] Add missing semantic tokens of colors in list (Orange-OpenSource/ouds-ios#1084)
+- [DesignToolbox] Change positions of color scheme and theme selectors (Orange-OpenSource/ouds-ios#1082)
+- [Library] Update `radio item` to v1.3.0 (Orange-OpenSource/ouds-ios#1072)
+- [Library] Update `switch item` to v1.4.0 (Orange-OpenSource/ouds-ios#1071)
+- [Library] Update `checkbox item` to v2.3.0 (Orange-OpenSource/ouds-ios#1069)
+- [Library] Provide predefined icons for `OUDSTag` components (Orange-OpenSource/ouds-ios#912)
+- [Library] Update `OUDSTag` to 1.4 version (Orange-OpenSource/ouds-ios#1037)
+- [Library] Update `OUDSTag` to 1.3 version (Orange-OpenSource/ouds-ios#945)
+- [Library] Expose dimensions for pickers components (Orange-OpenSource/ouds-ios#1080)
+- [DesignToolbox] Use `OUDSTextInput` in components configuration sections (Orange-OpenSource/ouds-ios#1059)
+- [DesignToolbox] Update `link` component version (Orange-OpenSource/ouds-ios#1035)
+- [Library] Apply new tokens library (v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- [Library] Update `text input` to display error message if error, and display suffix/prefix even if placeholder empty (Orange-OpenSource/ouds-ios#1063)
+
+### Removed
+
+- [DesignToolbox] `periphery` workfow on GitHub Actions
+
+### Fixed
+
+- [Library] Apply rounded corners for hover and pressed states of radio button and checkbox components (Orange-OpenSource/ouds-ios#1078)
+
 ## [0.20.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.19.0...0.20.0) - 2025-10-15
 
 ### Added
@@ -12,7 +62,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] `body moderate` and `label moderate` typography and tokens (Orange-OpenSource/ouds-ios#1003)
 - [DesignToolbox] Use `Helvetica Neue Arabic` font family if arabic (Orange-OpenSource/ouds-ios#1006)
 - [Library] Management of `Helvetica Neue Arabic` font family (Orange-OpenSource/ouds-ios#1006)
-- [DesignToolbox] Color scheme selector (Orange-OpenSource/ouds-ios#944)
+- [DesignToolbox] Color scheme selector (Orange-OpenSource/agUITesouds-ios#944)
 
 ### Changed
 

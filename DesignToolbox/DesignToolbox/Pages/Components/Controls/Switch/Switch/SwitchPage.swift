@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Switch Page
@@ -50,6 +49,6 @@ private struct SwitchDemo: View {
                 .accessibilityIdentifier(A11YIdentifiers.componentSwitch)
             Spacer()
         }
-        .padding(.all, theme.spaces.spaceFixedMedium)
+        .padding(.all, theme.spaces.fixedMedium)
     }
 }

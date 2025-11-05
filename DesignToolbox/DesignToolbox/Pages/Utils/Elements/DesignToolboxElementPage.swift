@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 /// Used to present the element in same layout with:
@@ -47,8 +46,17 @@ struct DesignToolboxElementPage: View {
     // MARK: Body
 
     var body: some View {
+        #if os(iOS)
+        elementPageBody
+            .navigationBarMenus() // Otherwise does not appear
+        #else // macOS, visionOS
+        elementPageBody // Otherwise appears twice
+        #endif
+    }
+
+    private var elementPageBody: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
                 if let illustration {
                     CardIllustration(illustration: illustration)
                         .accessibilityHidden(true)
@@ -56,40 +64,39 @@ struct DesignToolboxElementPage: View {
                 }
 
                 Text(LocalizedStringKey(description))
-                    .typeBodyDefaultLarge(theme)
+                    .bodyDefaultLarge(theme)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .accessibilityFocused($requestFocus)
-                    .padding(.horizontal, theme.spaces.spaceFixedMedium)
+                    .padding(.horizontal, theme.spaces.fixedMedium)
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)
-            .padding(.horizontal, theme.spaces.spaceFixedNone)
-            .padding(.bottom, theme.spaces.spaceFixedMedium)
-            .oudsBackground(theme.colors.colorBgPrimary)
+            .padding(.horizontal, theme.spaces.fixedNone)
+            .padding(.bottom, theme.spaces.fixedMedium)
+            .oudsBackground(theme.colors.bgPrimary)
 
             demoScreen
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
-                .padding(.bottom, theme.spaces.spaceFixedMedium)
-                .oudsBackground(theme.colors.colorBgPrimary)
+                .padding(.bottom, theme.spaces.fixedMedium)
+                .oudsBackground(theme.colors.bgPrimary)
 
             if let version {
                 HStack {
                     Spacer()
                     Text("app_common_design_version" <- version)
-                        .typeLabelDefaultSmall(theme)
+                        .labelDefaultSmall(theme)
                     Spacer()
                 }
-                .padding(.bottom, theme.spaces.spaceFixedMedium)
+                .padding(.bottom, theme.spaces.fixedMedium)
             }
         }
         .listStyle(.plain)
-        .padding(.top, theme.spaces.spaceFixedNone)
-        .padding(.horizontal, theme.spaces.spaceFixedNone)
-        .oudsBackground(theme.colors.colorBgPrimary)
+        .padding(.top, theme.spaces.fixedNone)
+        .padding(.horizontal, theme.spaces.fixedNone)
+        .oudsBackground(theme.colors.bgPrimary)
         .navigationTitle(name.localized())
-        .navigationBarMenus()
         .oudsRequestAccessibleFocus(_requestFocus)
     }
 }

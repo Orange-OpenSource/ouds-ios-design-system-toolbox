@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSSwiftUI
 import SwiftUI
 
 /// Related to `OUDSCheckboxItem` (i.e. with 2 available values).

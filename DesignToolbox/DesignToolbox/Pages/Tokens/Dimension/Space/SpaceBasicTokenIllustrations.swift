@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Fixed property of space token category
@@ -44,9 +43,9 @@ struct ScaledSpaceProperty: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_scaledHeader_text", paddings: EdgeInsets(top: 4, leading: 8, bottom: 0, trailing: 0))
-                .padding(.bottom, theme.spaces.spaceFixedMedium)
+                .padding(.bottom, theme.spaces.fixedMedium)
 
             ForEach(NamedSpace.Scaled.allCases, id: \.rawValue) { namedSpaceToken in
                 Illustration(for: namedSpaceToken)

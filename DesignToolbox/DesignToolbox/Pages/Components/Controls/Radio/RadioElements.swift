@@ -11,9 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
-import OUDSThemesOrange
+import OUDSSwiftUI
 import SwiftUI
 
 struct RadioElements: DesignToolboxElement {
@@ -43,10 +41,14 @@ private struct RadioIllustration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: theme.spaces.spaceFixedNone) {
+        VStack(spacing: theme.spaces.fixedNone) {
             // 🥜: dumb label, not vocalized, preventing warnings because of empty labels
+            #if !os(visionOS)
             OUDSRadio(isOn: .constant(true), accessibilityLabel: "🥜")
             OUDSRadio(isOn: .constant(false), accessibilityLabel: "🥜")
+            #else
+            OUDSRadio(isOn: .constant(false), accessibilityLabel: "🥜")
+            #endif
         }
     }
 }

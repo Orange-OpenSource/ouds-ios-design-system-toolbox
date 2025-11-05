@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Link Configuration Model
@@ -25,7 +25,9 @@ final class LinkConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var text: String
+    @Published var text: String {
+        didSet { updateCode() }
+    }
 
     @Published var layout: LinkLayout {
         didSet { updateCode() }
@@ -49,7 +51,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     private var coloredSurfaceCodeModifier: String {
-        onColoredSurface ? ".oudsColoredSurface(theme.colorModes.modeOnBrandPrimary)" : ""
+        onColoredSurface ? ".oudsColoredSurface(theme.colorModes.onBrandPrimary)" : ""
     }
 
     private var disableCode: String {
@@ -61,28 +63,28 @@ final class LinkConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
                 """
-                OUDSLink(text: \"Link\", size: \(size.description.lowercased())) {}
+                OUDSLink(text: \"\(text)\", size: \(size.description.lowercased())) {}
                 \(disableCode)
                 \(coloredSurfaceCodeModifier)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSLink(text: \"Link\", icon: Image(\"ic_heart\"), size: \(size.description.lowercased())) {}
+                OUDSLink(text: \"\(text)\", icon: Image(\"ic_heart\"), size: \(size.description.lowercased())) {}
                 \(disableCode)
                 \(coloredSurfaceCodeModifier)
                 """
         case .indicatorNext:
             code =
                 """
-                OUDSLink(text: \"Link\", indicator: .next, size: \(size.description.lowercased())) {}
+                OUDSLink(text: \"\(text)\", indicator: .next, size: \(size.description.lowercased())) {}
                 \(disableCode)
                 \(coloredSurfaceCodeModifier)
                 """
         case .indicatorBack:
             code =
                 """
-                OUDSLink(text: \"Link\", indicator: .back, size: \(size.description.lowercased())) {}
+                OUDSLink(text: \"\(text)\", indicator: .back, size: \(size.description.lowercased())) {}
                 \(disableCode)
                 \(coloredSurfaceCodeModifier)
                 """
@@ -123,7 +125,8 @@ enum LinkLayout: CaseIterable, CustomStringConvertible {
 // MARK: Link size extension
 
 extension OUDSLink.Size: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    public nonisolated(unsafe) static let allCases: [OUDSLink.Size] = [.default, .small]
+
+    nonisolated(unsafe) public static let allCases: [OUDSLink.Size] = [.default, .small]
 
     public var description: String {
         switch self {
@@ -155,8 +158,8 @@ struct LinkConfiguration: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
 
                 OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $configurationModel.onColoredSurface)
@@ -171,7 +174,7 @@ struct LinkConfiguration: View {
             }
 
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.text)
+                DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_label")
             }
         }
     }

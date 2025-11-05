@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 struct DesignToolboxColorPicker<Content, SelectedColor>: View where Content: View, SelectedColor: View {
@@ -30,8 +29,8 @@ struct DesignToolboxColorPicker<Content, SelectedColor>: View where Content: Vie
         } label: {
             VStack(alignment: .leading) {
                 Text("app_components_common_color_label")
-                    .typeHeadingMedium(theme)
-                    .oudsForegroundColor(theme.colors.colorContentDefault)
+                    .headingMedium(theme)
+                    .oudsForegroundColor(theme.colors.contentDefault)
 
                 selectedColor()
 
@@ -40,7 +39,7 @@ struct DesignToolboxColorPicker<Content, SelectedColor>: View where Content: Vie
                 }
             }
         }
-        .padding(.horizontal, theme.spaces.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.fixedMedium)
     }
 }
 
@@ -53,7 +52,7 @@ struct DesignToolboxColorEntry<ColorIcon>: View where ColorIcon: View {
     var body: some View {
         Label {
             Text(colorName)
-                .oudsForegroundColor(theme.colors.colorContentDefault)
+                .oudsForegroundColor(theme.colors.contentDefault)
         } icon: {
             colorIcon()
                 .frame(width: 30, height: 30, alignment: .leading)

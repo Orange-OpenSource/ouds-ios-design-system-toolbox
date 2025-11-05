@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Badge Configuration Model
@@ -107,7 +107,7 @@ struct BadgeConfigurationView: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             OUDSChipPicker(title: "app_components_badge_type_label",
                            selection: $configurationModel.badgeType,
                            chips: BadgeConfigurationModel.BadgeType.chips)
@@ -129,9 +129,10 @@ struct BadgeConfigurationView: View {
                            chips: OUDSBadge.Status.chips)
 
             if configurationModel.badgeType == .count {
-                DesignToolboxTextField(text: $configurationModel.countText, title: "app_components_badge_count_label")
-                    .keyboardType(.numberPad)
-                    .padding(.horizontal, theme.spaces.spaceFixedMedium)
+                DesignToolboxEditContentDisclosure {
+                    DesignToolboxTextField(text: $configurationModel.countText, label: "app_components_badge_count_label")
+                        .numberPadKeyboard()
+                }
             }
         }
     }
@@ -139,7 +140,7 @@ struct BadgeConfigurationView: View {
 
 extension OUDSBadge.StandardSize: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    public nonisolated(unsafe) static let allCases: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
+    nonisolated(unsafe) public static let allCases: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
 
     public var description: String {
         switch self {
@@ -177,7 +178,8 @@ extension OUDSBadge.StandardSize: @retroactive CaseIterable, @retroactive Custom
 }
 
 extension OUDSBadge.IllustrationSize: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    public nonisolated(unsafe) static let allCases: [OUDSBadge.IllustrationSize] = [.medium, .large]
+
+    nonisolated(unsafe) public static let allCases: [OUDSBadge.IllustrationSize] = [.medium, .large]
 
     public var description: String {
         switch self {
@@ -208,7 +210,7 @@ extension OUDSBadge.IllustrationSize: @retroactive CaseIterable, @retroactive Cu
 
 extension OUDSBadge.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    public nonisolated(unsafe) static let allCases: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning, .disabled]
+    nonisolated(unsafe) public static let allCases: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning, .disabled]
 
     public var description: String {
         switch self {

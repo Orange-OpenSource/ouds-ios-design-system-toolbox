@@ -6,6 +6,22 @@
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
       buildArchitectures = "Automatic">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "07FDCD902C296A500009AA13"
+               BuildableName = "Design System Toolbox.app"
+               BlueprintName = "DesignToolbox (iOS)"
+               ReferencedContainer = "container:DesignToolbox.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -18,30 +34,6 @@
             default = "YES">
          </TestPlanReference>
       </TestPlans>
-      <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0740A98E2C9873500069D24A"
-               BuildableName = "DesignToolboxSnapshotsTests.xctest"
-               BlueprintName = "DesignToolboxSnapshotsTests"
-               ReferencedContainer = "container:DesignToolbox.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "51E599A62E27ED5F002BCB27"
-               BuildableName = "DesignToolboxUnitTests.xctest"
-               BlueprintName = "DesignToolboxUnitTests"
-               ReferencedContainer = "container:DesignToolbox.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -60,6 +52,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "07FDCD902C296A500009AA13"
+            BuildableName = "Design System Toolbox.app"
+            BlueprintName = "DesignToolbox (iOS)"
+            ReferencedContainer = "container:DesignToolbox.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

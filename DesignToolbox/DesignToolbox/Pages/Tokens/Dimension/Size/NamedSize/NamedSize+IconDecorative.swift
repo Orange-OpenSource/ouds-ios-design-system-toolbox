@@ -11,41 +11,40 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 
 extension NamedSize {
     enum IconDecorative: String, CaseIterable {
-        case sizeIconDecorative4xsmall
-        case sizeIconDecorative3xsmall
-        case sizeIconDecorative2xsmall
-        case sizeIconDecorativeXsmall
-        case sizeIconDecorativeSmall
-        case sizeIconDecorativeMedium
-        case sizeIconDecorativeLarge
-        case sizeIconDecorativeXlarge
-        case sizeIconDecorative2xlarge
+        case iconDecorative4xsmall
+        case iconDecorative3xsmall
+        case iconDecorative2xsmall
+        case iconDecorativeXsmall
+        case iconDecorativeSmall
+        case iconDecorativeMedium
+        case iconDecorativeLarge
+        case iconDecorativeXlarge
+        case iconDecorative2xlarge
 
         func token(from theme: OUDSTheme) -> SizeSemanticToken {
             switch self {
-            case .sizeIconDecorative4xsmall:
-                theme.sizes.sizeIconDecorative4xsmall
-            case .sizeIconDecorative3xsmall:
-                theme.sizes.sizeIconDecorative3xsmall
-            case .sizeIconDecorative2xsmall:
-                theme.sizes.sizeIconDecorative2xsmall
-            case .sizeIconDecorativeXsmall:
-                theme.sizes.sizeIconDecorativeXsmall
-            case .sizeIconDecorativeSmall:
-                theme.sizes.sizeIconDecorativeSmall
-            case .sizeIconDecorativeMedium:
-                theme.sizes.sizeIconDecorativeMedium
-            case .sizeIconDecorativeLarge:
-                theme.sizes.sizeIconDecorativeLarge
-            case .sizeIconDecorativeXlarge:
-                theme.sizes.sizeIconDecorativeXlarge
-            case .sizeIconDecorative2xlarge:
-                theme.sizes.sizeIconDecorative2xlarge
+            case .iconDecorative4xsmall:
+                theme.sizes.iconDecorative4xsmall
+            case .iconDecorative3xsmall:
+                theme.sizes.iconDecorative3xsmall
+            case .iconDecorative2xsmall:
+                theme.sizes.iconDecorative2xsmall
+            case .iconDecorativeXsmall:
+                theme.sizes.iconDecorativeXsmall
+            case .iconDecorativeSmall:
+                theme.sizes.iconDecorativeSmall
+            case .iconDecorativeMedium:
+                theme.sizes.iconDecorativeMedium
+            case .iconDecorativeLarge:
+                theme.sizes.iconDecorativeLarge
+            case .iconDecorativeXlarge:
+                theme.sizes.iconDecorativeXlarge
+            case .iconDecorative2xlarge:
+                theme.sizes.iconDecorative2xlarge
             }
         }
     }

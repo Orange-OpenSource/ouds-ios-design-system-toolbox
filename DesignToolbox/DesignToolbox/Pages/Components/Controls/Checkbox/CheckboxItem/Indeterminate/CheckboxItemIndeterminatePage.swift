@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Checkbox Item Indeterminate Page
@@ -49,10 +48,11 @@ private struct CheckboxItemIndeterminateDemo: View {
                                       flipIcon: configurationModel.flipIcon,
                                       isReversed: configurationModel.isReversed,
                                       isError: configurationModel.isError,
+                                      errorText: configurationModel.errorText,
                                       isReadOnly: configurationModel.isReadOnly,
                                       hasDivider: configurationModel.divider)
             .disabled(!configurationModel.enabled)
-            .padding(.all, theme.spaces.spaceFixedMedium)
+            .padding(.all, theme.spaces.fixedMedium)
             .designToolboxColoredSurface(false)
             .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItemIndeterminate)
     }

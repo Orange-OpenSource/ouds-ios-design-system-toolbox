@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: Chip page
@@ -39,8 +38,6 @@ struct ChipPickerPage: View {
 struct ChipPickerDemo: View {
 
     @StateObject var configurationModel: ChipPickerConfigurationModel
-
-    @Environment(\.theme) private var theme
 
     var body: some View {
         switch configurationModel.selectionType {

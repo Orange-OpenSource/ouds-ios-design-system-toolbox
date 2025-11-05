@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 struct DesignToolboxSectionHeaderModifier: ViewModifier {
@@ -21,7 +20,7 @@ struct DesignToolboxSectionHeaderModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .typeHeadingMedium(theme)
+            .headingMedium(theme)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

@@ -11,9 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Internal constants
@@ -44,8 +42,8 @@ struct SpaceTokenProperty<HeaderDescription, TokenIllustration>: View where Head
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            header().padding(.bottom, theme.spaces.spaceFixedMedium)
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            header().padding(.bottom, theme.spaces.fixedMedium)
 
             ForEach(namedTokens, id: \.name) { namedSpaceToken in
                 SpaceTokenVariant(namedSpaceToken: namedSpaceToken, illustration: illustration)
@@ -114,17 +112,17 @@ struct SpaceCommonIllustration: View {
                 SpaceIllustrationRectangle(width: dimension)
                 SpaceIllustrationRectangle(height: dimension)
             case let .leading(asset): // ZStack alignment leading
-                HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
+                HStack(alignment: .center, spacing: theme.spaces.fixedNone) {
                     SpaceIllustrationRectangle(width: dimension)
                     SpaceIllustrationIcon(asset: asset)
                 }
             case let .bottom(asset): // ZStack alignment bottom
-                VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
+                VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
                     SpaceIllustrationIcon(asset: asset)
                     SpaceIllustrationRectangle(height: dimension)
                 }
             case let .top(asset): // ZStack alignment top
-                VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
+                VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
                     SpaceIllustrationRectangle(height: dimension)
                     SpaceIllustrationIcon(asset: asset)
                 }
@@ -215,15 +213,12 @@ struct SpaceIllustrationIcon: View {
     let asset: Asset?
 
     var body: some View {
-        // NOTE: Periphery thinks "asset" is assigned but never used (false positive)
-        // See issue https://github.com/peripheryapp/periphery/issues/909
-        // Keep the "if let asset = asset" workaround and not "if let asset"
         if let asset {
             Image(decorative: asset.imageName)
                 .resizable()
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
-                .oudsForegroundColor(theme.colors.colorContentStatusInfo)
+                .oudsForegroundColor(theme.colors.contentStatusInfo)
                 .padding(.horizontal, asset.extraPadding)
                 .padding(.vertical, asset.extraPadding)
                 .frame(width: 24)
@@ -254,7 +249,7 @@ private struct SpaceIllustrationRectangle: View {
 
     var body: some View {
         Rectangle()
-            .oudsForegroundColor(theme.colors.colorContentStatusInfo)
+            .oudsForegroundColor(theme.colors.contentStatusInfo)
             .frame(width: width, height: height)
     }
 }
@@ -295,9 +290,9 @@ struct SpaceHeaderDescription: View {
 
     var body: some View {
         content
-            .oudsBorder(style: theme.borders.borderStyleDrag, width: theme.borders.borderWidthThin, radius: theme.borders.borderRadiusNone, color: theme.colors.colorBgInverseLow)
-            .padding(.all, theme.spaces.spaceFixedMedium)
-            .oudsBackground(theme.colors.colorSurfaceSecondary)
+            .oudsBorder(style: theme.borders.styleDrag, width: theme.borders.widthThin, radius: theme.borders.radiusNone, color: theme.colors.bgInverseLow)
+            .padding(.all, theme.spaces.fixedMedium)
+            .oudsBackground(theme.colors.surfaceSecondary)
     }
 
     @ViewBuilder private var content: some View {
@@ -313,34 +308,34 @@ struct SpaceHeaderDescription: View {
     private func texts(_ orientation: TextsOrientation) -> some View {
         switch orientation {
         case .horizontal:
-            HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
+            HStack(alignment: .center, spacing: theme.spaces.fixedNone) {
                 Text(firstText)
-                    .oudsForegroundStyle(theme.colors.colorContentDefault)
-                    .typeBodyDefaultMedium(theme)
+                    .oudsForegroundStyle(theme.colors.contentDefault)
+                    .bodyDefaultMedium(theme)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 SpaceIllustrationRectangle(width: 8)
 
                 if let secondText {
                     Text(secondText)
-                        .oudsForegroundStyle(theme.colors.colorContentDefault)
-                        .typeBodyDefaultMedium(theme)
+                        .oudsForegroundStyle(theme.colors.contentDefault)
+                        .bodyDefaultMedium(theme)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
         case .verical:
-            VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
+            VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
                 Text(firstText)
-                    .oudsForegroundStyle(theme.colors.colorContentDefault)
-                    .typeBodyDefaultMedium(theme)
+                    .oudsForegroundStyle(theme.colors.contentDefault)
+                    .bodyDefaultMedium(theme)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 SpaceIllustrationRectangle(height: 8)
 
                 if let secondText {
                     Text(secondText)
-                        .oudsForegroundStyle(theme.colors.colorContentDefault)
-                        .typeBodyDefaultMedium(theme)
+                        .oudsForegroundStyle(theme.colors.contentDefault)
+                        .bodyDefaultMedium(theme)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
@@ -355,8 +350,8 @@ struct SpaceHeaderDescription: View {
 
                 Text(firstText)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .oudsForegroundStyle(theme.colors.colorContentDefault)
-                    .typeBodyDefaultMedium(theme)
+                    .oudsForegroundStyle(theme.colors.contentDefault)
+                    .bodyDefaultMedium(theme)
 
                 SpaceIllustrationRectangle(height: paddings.bottom)
             }

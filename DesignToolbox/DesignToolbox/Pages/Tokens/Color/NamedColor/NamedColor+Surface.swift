@@ -11,63 +11,62 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 
 extension NamedColor {
 
     enum Surface: String, CaseIterable {
-        case colorSurfaceBrandPrimary
-        case colorSurfaceStatusAccentEmphasized
-        case colorSurfaceStatusAccentMuted
-        case colorSurfaceStatusInfoEmphasized
-        case colorSurfaceStatusInfoMuted
-        case colorSurfaceStatusNegativeEmphasized
-        case colorSurfaceStatusNegativeMuted
-        case colorSurfaceStatusPositiveEmphasized
-        case colorSurfaceStatusPositiveMuted
-        case colorSurfaceStatusWarningEmphasized
-        case colorSurfaceStatusWarningMuted
-        case colorSurfaceInverseHigh
-        case colorSurfaceInverseLow
-        case colorSurfacePrimary
-        case colorSurfaceSecondary
-        case colorSurfaceTertiary
+        case surfaceBrandPrimary
+        case surfaceStatusAccentEmphasized
+        case surfaceStatusAccentMuted
+        case surfaceStatusInfoEmphasized
+        case surfaceStatusInfoMuted
+        case surfaceStatusNegativeEmphasized
+        case surfaceStatusNegativeMuted
+        case surfaceStatusPositiveEmphasized
+        case surfaceStatusPositiveMuted
+        case surfaceStatusWarningEmphasized
+        case surfaceStatusWarningMuted
+        case surfaceInverseHigh
+        case surfaceInverseLow
+        case surfacePrimary
+        case surfaceSecondary
+        case surfaceTertiary
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
-            case .colorSurfaceBrandPrimary:
-                theme.colors.colorSurfaceBrandPrimary
-            case .colorSurfaceStatusAccentEmphasized:
-                theme.colors.colorSurfaceStatusAccentEmphasized
-            case .colorSurfaceStatusAccentMuted:
-                theme.colors.colorSurfaceStatusAccentMuted
-            case .colorSurfaceStatusInfoEmphasized:
-                theme.colors.colorSurfaceStatusInfoEmphasized
-            case .colorSurfaceStatusInfoMuted:
-                theme.colors.colorSurfaceStatusInfoMuted
-            case .colorSurfaceStatusNegativeEmphasized:
-                theme.colors.colorSurfaceStatusNegativeEmphasized
-            case .colorSurfaceStatusNegativeMuted:
-                theme.colors.colorSurfaceStatusNegativeMuted
-            case .colorSurfaceInverseHigh:
-                theme.colors.colorSurfaceInverseHigh
-            case .colorSurfaceInverseLow:
-                theme.colors.colorSurfaceInverseLow
-            case .colorSurfaceStatusPositiveEmphasized:
-                theme.colors.colorSurfaceStatusPositiveEmphasized
-            case .colorSurfaceStatusPositiveMuted:
-                theme.colors.colorSurfaceStatusPositiveMuted
-            case .colorSurfaceStatusWarningEmphasized:
-                theme.colors.colorSurfaceStatusWarningEmphasized
-            case .colorSurfaceStatusWarningMuted:
-                theme.colors.colorSurfaceStatusWarningMuted
-            case .colorSurfacePrimary:
-                theme.colors.colorSurfacePrimary
-            case .colorSurfaceSecondary:
-                theme.colors.colorSurfaceSecondary
-            case .colorSurfaceTertiary:
-                theme.colors.colorSurfaceTertiary
+            case .surfaceBrandPrimary:
+                theme.colors.surfaceBrandPrimary
+            case .surfaceStatusAccentEmphasized:
+                theme.colors.surfaceStatusAccentEmphasized
+            case .surfaceStatusAccentMuted:
+                theme.colors.surfaceStatusAccentMuted
+            case .surfaceStatusInfoEmphasized:
+                theme.colors.surfaceStatusInfoEmphasized
+            case .surfaceStatusInfoMuted:
+                theme.colors.surfaceStatusInfoMuted
+            case .surfaceStatusNegativeEmphasized:
+                theme.colors.surfaceStatusNegativeEmphasized
+            case .surfaceStatusNegativeMuted:
+                theme.colors.surfaceStatusNegativeMuted
+            case .surfaceInverseHigh:
+                theme.colors.surfaceInverseHigh
+            case .surfaceInverseLow:
+                theme.colors.surfaceInverseLow
+            case .surfaceStatusPositiveEmphasized:
+                theme.colors.surfaceStatusPositiveEmphasized
+            case .surfaceStatusPositiveMuted:
+                theme.colors.surfaceStatusPositiveMuted
+            case .surfaceStatusWarningEmphasized:
+                theme.colors.surfaceStatusWarningEmphasized
+            case .surfaceStatusWarningMuted:
+                theme.colors.surfaceStatusWarningMuted
+            case .surfacePrimary:
+                theme.colors.surfacePrimary
+            case .surfaceSecondary:
+                theme.colors.surfaceSecondary
+            case .surfaceTertiary:
+                theme.colors.surfaceTertiary
             }
         }
     }

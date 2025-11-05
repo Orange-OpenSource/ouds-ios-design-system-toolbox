@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 /// The disclosure group used in Design tool box to have the same bahaviour on the header (arrow) and for all contents displayed.
@@ -105,15 +105,15 @@ struct InternalDisclosure<Label, Content>: View where Label: View, Content: View
                         .resizable()
                         .renderingMode(.template)
                         .rotationEffect(Angle.degrees(isExpanded ? 0 : 180))
-                        .oudsForegroundColor(theme.colors.colorSurfaceBrandPrimary)
+                        .oudsForegroundColor(theme.colors.surfaceBrandPrimary)
                         .frame(width: 20, height: 20)
-                        .padding(.trailing, theme.spaces.spacePaddingInlineMedium)
+                        .padding(.trailing, theme.spaces.paddingInlineMedium)
                         .accessibilityLabel(accessibilityLabel.localized())
                 }
             }
             .buttonStyle(.plain)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.bottom, theme.spaces.spacePaddingBlockSmall)
+            .padding(.bottom, theme.spaces.paddingBlockSmall)
 
             if isExpanded {
                 content()

@@ -11,8 +11,13 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+// NOTE: Seen as unused but are used
+// This is a false positive in Periphy
+// See https://github.com/peripheryapp/periphery/issues/908
+
+#if os(iOS)
 import DeclarationAccessibility
-import OUDSFoundations // NOTE: Seen as "unused" for Periphery (https://github.com/peripheryapp/periphery/issues/942)
+import OUDSSwiftUI
 import SwiftUI
 
 struct AccessibilityStatementPage: View {
@@ -39,3 +44,4 @@ struct AccessibilityStatementPage: View {
         }
     }
 }
+#endif

@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Checkbox Picker Page
@@ -51,7 +50,7 @@ private struct CheckboxPickerDemo: View {
                                isError: configurationModel.isError,
                                isReadOnly: configurationModel.isReadOnly,
                                hasDivider: configurationModel.hasDivider)
-                .padding([.trailing, .leading], theme.spaces.spacePaddingInlineSmall)
+                .padding([.trailing, .leading], theme.spaces.paddingInlineSmall)
                 .disabled(!configurationModel.isEnabled)
         }
     }

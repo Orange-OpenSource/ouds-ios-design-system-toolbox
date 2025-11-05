@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 struct CheckboxElements: DesignToolboxElement {
@@ -44,10 +43,14 @@ private struct CheckboxIllustration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: theme.spaces.spaceFixedNone) {
+        VStack(spacing: theme.spaces.fixedNone) {
+            #if !os(visionOS)
             // 🥜: dumb label, not vocalized, preventing warnings because of empty labels
             OUDSCheckbox(isOn: .constant(true), accessibilityLabel: "🥜")
             OUDSCheckbox(isOn: .constant(false), accessibilityLabel: "🥜")
+            #else
+            OUDSCheckbox(isOn: .constant(true), accessibilityLabel: "🥜")
+            #endif
         }
     }
 }

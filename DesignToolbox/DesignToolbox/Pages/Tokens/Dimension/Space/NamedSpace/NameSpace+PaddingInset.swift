@@ -11,50 +11,49 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSSwiftUI
 
 extension NamedSpace {
 
     enum PaddingInset: String, CaseIterable, NamedSpaceToken {
-        case spaceInsetNone
-        case spaceInset4xsmall
-        case spaceInset3xsmall
-        case spaceInset2xsmall
-        case spaceInsetXsmall
-        case spaceInsetSmall
-        case spaceInsetMedium
-        case spaceInsetLarge
-        case spaceInsetXlarge
-        case spaceInset2xlarge
-        case spaceInset3xlarge
+        case insetNone
+        case inset4xsmall
+        case inset3xsmall
+        case inset2xsmall
+        case insetXsmall
+        case insetSmall
+        case insetMedium
+        case insetLarge
+        case insetXlarge
+        case inset2xlarge
+        case inset3xlarge
 
         var name: String { rawValue }
 
         func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {
-            case .spaceInsetNone:
-                theme.spaces.spaceInsetNone
-            case .spaceInset4xsmall:
-                theme.spaces.spaceInset4xsmall
-            case .spaceInset3xsmall:
-                theme.spaces.spaceInset3xsmall
-            case .spaceInset2xsmall:
-                theme.spaces.spaceInset2xsmall
-            case .spaceInsetXsmall:
-                theme.spaces.spaceInsetXsmall
-            case .spaceInsetSmall:
-                theme.spaces.spaceInsetSmall
-            case .spaceInsetMedium:
-                theme.spaces.spaceInsetMedium
-            case .spaceInsetLarge:
-                theme.spaces.spaceInsetLarge
-            case .spaceInsetXlarge:
-                theme.spaces.spaceInsetXlarge
-            case .spaceInset2xlarge:
-                theme.spaces.spaceInset2xlarge
-            case .spaceInset3xlarge:
-                theme.spaces.spaceInset3xlarge
+            case .insetNone:
+                theme.spaces.insetNone
+            case .inset4xsmall:
+                theme.spaces.inset4xsmall
+            case .inset3xsmall:
+                theme.spaces.inset3xsmall
+            case .inset2xsmall:
+                theme.spaces.inset2xsmall
+            case .insetXsmall:
+                theme.spaces.insetXsmall
+            case .insetSmall:
+                theme.spaces.insetSmall
+            case .insetMedium:
+                theme.spaces.insetMedium
+            case .insetLarge:
+                theme.spaces.insetLarge
+            case .insetXlarge:
+                theme.spaces.insetXlarge
+            case .inset2xlarge:
+                theme.spaces.inset2xlarge
+            case .inset3xlarge:
+                theme.spaces.inset3xlarge
             }
         }
     }

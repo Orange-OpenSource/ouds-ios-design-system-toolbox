@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSComponents
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - Checkbox Picker Configuration Model
@@ -138,7 +138,7 @@ struct CheckboxPickerConfiguration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.isEnabled)
                 .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
@@ -157,7 +157,7 @@ struct CheckboxPickerConfiguration: View {
     }
 }
 
-// MARK: - Extension of OUDS Checkbox Picker Placement
+// MARK: - Extension of OUDSThemesContract Checkbox Picker Placement
 
 extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Equatable, @retroactive Hashable {
 
