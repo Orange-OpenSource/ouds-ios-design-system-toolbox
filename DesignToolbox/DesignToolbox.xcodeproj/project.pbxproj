@@ -4276,7 +4276,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1086-bug-input-component-updates";
+				branch = develop;
 				kind = branch;
 			};
 		};
