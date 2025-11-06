@@ -40,10 +40,11 @@
 ![iPadOS 15.0](https://img.shields.io/badge/iPadOS-15.0-FF1AB2?style=for-the-badge)
 ![macOS 15.0](https://img.shields.io/badge/macOS-15.0-FF1AB2?style=for-the-badge)
 ![visionOS 1.3](https://img.shields.io/badge/visionOS-1.3-FF1AB2?style=for-the-badge)
+![watchOS 11.6](https://img.shields.io/badge/watchOS-11.6-FF1AB2?style=for-the-badge)
 
 ## Content
 
-Source code of the app showcasing the design system for iOS, iPadOS, macOS and visionOS.
+Source code of the app sshowcasing the design system for iOS, iPadOS, macOS, visionOS and watchOS.
 
 > [!NOTE]
 > This repository contains the design system toolbox app which contains the OUDS iOS Swift Package and displays its features.
@@ -145,6 +146,12 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 &nbsp;
 <img src="./images/visionOS/Button - en - light.png" alt="Button component on Vision Pro (english, light mode)"  height="350" />
 </p>
+
+### watchOS
+
+> [!NOTE]
+> The watchOS app is not yet available on TestFlight nor the AppStore
+
 
 ### Get the app
 
