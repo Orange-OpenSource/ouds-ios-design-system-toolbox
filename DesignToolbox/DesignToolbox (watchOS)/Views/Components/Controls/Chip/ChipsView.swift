@@ -33,10 +33,11 @@ struct ChipsView: View {
 private struct FilterChipView: View {
 
     @State private var isSelected: Bool = true
+    @Environment(\.theme) private var theme
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 8) {
+            VStack(spacing: theme.spaces.scaledXsmallMobile) {
                 OUDSFilterChip(text: "Filter", selected: isSelected) { isSelected.toggle() }
                 OUDSFilterChip(icon: Image(systemName: "sun.min.fill"), text: "Filter", selected: isSelected) { isSelected.toggle() }
                 OUDSFilterChip(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Filter", selected: isSelected) { isSelected.toggle() }
@@ -52,9 +53,11 @@ private struct FilterChipView: View {
 // swiftlint:disable accessibility_label_for_image
 private struct SuggestionChipView: View {
 
+    @Environment(\.theme) private var theme
+
     var body: some View {
         ScrollView {
-            VStack(spacing: 8) {
+            VStack(spacing: theme.spaces.scaledXsmallMobile) {
                 OUDSSuggestionChip(text: "Suggestion") {}
                 OUDSSuggestionChip(icon: Image(systemName: "sun.min.fill"), text: "Suggestion") {}
                 OUDSSuggestionChip(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Suggestion") {}

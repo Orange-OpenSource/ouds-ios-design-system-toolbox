@@ -16,9 +16,12 @@ import SwiftUI
 
 // swiftlint:disable accessibility_label_for_image
 struct BadgesView: View {
+
+    @Environment(\.theme) private var theme
+
     var body: some View {
         ScrollView {
-            VStack(spacing: 8) {
+            VStack(spacing: theme.spaces.scaledXsmallMobile) {
                 Text("Status badges").font(.headline)
                 ForEach(kAllBadgeStandardSizes, id: \.self) { size in
                     Text("Standard size \(String(describing: size))").font(.subheadline)

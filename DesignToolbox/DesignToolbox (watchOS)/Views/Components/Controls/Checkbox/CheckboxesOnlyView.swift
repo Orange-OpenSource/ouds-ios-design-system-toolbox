@@ -33,10 +33,11 @@ struct CheckboxesOnlyView: View {
 private struct TwoStatesCheckboxesOnlyView: View {
 
     @State private var isOn: Bool = false
+    @Environment(\.theme) private var theme
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 8) {
+            VStack(spacing: theme.spaces.scaledXsmallMobile) {
                 Text("Two-states checkboxes").font(.headline)
 
                 Text("Enabled, no error").font(.subheadline)
@@ -64,10 +65,11 @@ private struct TwoStatesCheckboxesOnlyView: View {
 private struct ThreeStatesCheckboxesOnlyView: View {
 
     @State private var state: OUDSCheckboxIndicatorState = .unselected
+    @Environment(\.theme) private var theme
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 8) {
+            VStack(spacing: theme.spaces.scaledXsmallMobile) {
                 Text("Three-states checkboxes").font(.headline)
 
                 Text("Enabled, no error").font(.subheadline)

@@ -17,6 +17,7 @@ import SwiftUI
 struct ContentView: View {
 
     @Environment(\.theme) private var theme
+
     var body: some View {
         NavigationView {
             List {

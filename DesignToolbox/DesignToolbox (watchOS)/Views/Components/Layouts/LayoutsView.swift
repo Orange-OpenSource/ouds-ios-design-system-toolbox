@@ -18,7 +18,7 @@ struct LayoutsView: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink("Colored background", destination: ColoredBackgroundView())
+                NavigationLink("Colored surface", destination: ColoredBackgroundView())
             }
         }
     }

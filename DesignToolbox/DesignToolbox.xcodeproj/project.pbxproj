@@ -2541,8 +2541,9 @@
 		9598006E2EBCC714007BE0EA /* DesignToolbox (watchOS) */ = {
 			isa = PBXGroup;
 			children = (
-				959800742EBCCB6C007BE0EA /* Views */,
 				9598006B2EBCC714007BE0EA /* Assets.xcassets */,
+				9598006D2EBCC714007BE0EA /* DesignToolbox_Watch_App.swift */,
+				959800742EBCCB6C007BE0EA /* Views */,
 			);
 			path = "DesignToolbox (watchOS)";
 			sourceTree = "<group>";
@@ -2550,9 +2551,8 @@
 		959800742EBCCB6C007BE0EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				959800752EBCCB81007BE0EA /* Components */,
-				9598006D2EBCC714007BE0EA /* DesignToolbox_Watch_App.swift */,
 				9598006C2EBCC714007BE0EA /* ContentView.swift */,
+				959800752EBCCB81007BE0EA /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2563,7 +2563,9 @@
 				950EA6C12EBCFA2F0009414A /* Layouts */,
 				959800872EBCCC13007BE0EA /* Navigations */,
 				959800852EBCCC07007BE0EA /* Indicators */,
+				950EA6BD2EBCF8D50009414A /* IndicatorsView.swift */,
 				959800842EBCCC03007BE0EA /* Controls */,
+				950EA6BF2EBCF8E50009414A /* ControlsView.swift */,
 				959800832EBCCBFE007BE0EA /* Actions */,
 			);
 			path = Components;
@@ -2635,8 +2637,8 @@
 		959800832EBCCBFE007BE0EA /* Actions */ = {
 			isa = PBXGroup;
 			children = (
-				950EA6B92EBCF87C0009414A /* ActionsView.swift */,
 				959800792EBCCBAE007BE0EA /* Button */,
+				950EA6B92EBCF87C0009414A /* ActionsView.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -2644,7 +2646,6 @@
 		959800842EBCCC03007BE0EA /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				950EA6BF2EBCF8E50009414A /* ControlsView.swift */,
 				959800882EBCCC84007BE0EA /* Radio */,
 				9598007F2EBCCBD8007BE0EA /* Switch */,
 				9598007B2EBCCBB9007BE0EA /* Chip */,
@@ -2657,7 +2658,6 @@
 		959800852EBCCC07007BE0EA /* Indicators */ = {
 			isa = PBXGroup;
 			children = (
-				950EA6BD2EBCF8D50009414A /* IndicatorsView.swift */,
 				959800782EBCCBA8007BE0EA /* Badge */,
 				959800802EBCCBDE007BE0EA /* Tags */,
 			);
@@ -2667,8 +2667,8 @@
 		959800872EBCCC13007BE0EA /* Navigations */ = {
 			isa = PBXGroup;
 			children = (
-				950EA6BB2EBCF8C40009414A /* NavigationsView.swift */,
 				9598007E2EBCCBD0007BE0EA /* Link */,
+				950EA6BB2EBCF8C40009414A /* NavigationsView.swift */,
 			);
 			path = Navigations;
 			sourceTree = "<group>";

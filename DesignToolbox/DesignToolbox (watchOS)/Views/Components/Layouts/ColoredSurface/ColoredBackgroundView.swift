@@ -20,7 +20,7 @@ struct ColoredBackgroundView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 8) {
+            VStack(spacing: theme.spaces.scaledXsmallMobile) {
                 ForEach(NamedColorMode.allCases, id: \.self) { color in
                     let themedColor = color.toSurfaceColor(from: theme)
                     if !themedColor.hasUndefinedValue() {
@@ -41,7 +41,7 @@ private struct ColoredSurfaceItems: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .center, spacing: 12) {
+        VStack(alignment: .center, spacing: theme.spaces.scaledSmallMobile) {
             Text("Text").oudsForegroundColor(theme.colors.contentDefault)
             OUDSButton(text: "Button", appearance: .default, style: .default) {}
             OUDSLink(text: "Link", indicator: .next) {}

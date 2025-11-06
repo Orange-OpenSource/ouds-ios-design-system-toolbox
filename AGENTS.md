@@ -29,7 +29,7 @@ The source code is formatted for Swift 6.2. Configuration of formater is in `.sw
 
 ### DesignToolbox
 
-Contains the sources of the Design System Toolbox app
+Contains the sources of the Design System Toolbox app for iOS, iPadOS, macOS and visionOS.
 
 ### DesignToolboxUITests
 
@@ -43,9 +43,13 @@ Contains the sources of snapshots tests, i.e. unit tests where there are compari
 
 Contains the sources of some unit tests.
 
+### DesignToolbox (watchOS)
+
+Contains source code of the design toolbox app but only for watchOS
+
 ## Architecture details
 
-The Design System Toolbox is quite simple and must be usable in iOS, iPadOS, macOS and visionOS.
+The Design System Toolbox is quite simple and must be usable in iOS, iPadOS, macOS, visionOS and watchOS.
 
 ### Pages
 

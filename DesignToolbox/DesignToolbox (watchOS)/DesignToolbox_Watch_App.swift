@@ -16,6 +16,7 @@ import SwiftUI
 
 @main
 struct DesignToolbox_Watch_App: App {
+
     @State private var selectedThemeIndex: Int = 0
 
     private let themes: [OUDSTheme] = [

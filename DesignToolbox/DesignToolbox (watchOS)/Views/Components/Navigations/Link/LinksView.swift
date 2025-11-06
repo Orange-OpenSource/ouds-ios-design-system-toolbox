@@ -16,9 +16,12 @@ import SwiftUI
 
 // swiftlint:disable accessibility_label_for_image
 struct LinksView: View {
+
+    @Environment(\.theme) var theme
+
     var body: some View {
         ScrollView {
-            VStack(spacing: 8) {
+            VStack(spacing: theme.spaces.scaledXsmallMobile) {
                 Text("Size default").font(.headline)
 
                 Text("Enabled").font(.subheadline)
