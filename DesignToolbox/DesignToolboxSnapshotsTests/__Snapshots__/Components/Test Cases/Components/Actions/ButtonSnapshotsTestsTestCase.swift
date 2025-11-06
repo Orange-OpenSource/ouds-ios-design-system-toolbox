@@ -169,7 +169,7 @@ struct ButtonTest: View {
         case .text:
             OUDSButton(text: "Button", appearance: appearance, style: style) {}
         case .textAndIcon:
-            OUDSButton(icon: Image(decorative: "ic_heart"), text: "Button", appearance: appearance, style: style) {}
+            OUDSButton(text: "Button", icon: Image(decorative: "ic_heart"), appearance: appearance, style: style) {}
         case .icon:
             OUDSButton(icon: Image(decorative: "ic_heart"), accessibilityLabel: "Icon", appearance: appearance, style: style) {}
         }

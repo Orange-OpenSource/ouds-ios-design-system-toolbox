@@ -5320,7 +5320,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1124-feature-add-flip-option-for-button-with-icon";
 				kind = branch;
 			};
 		};
