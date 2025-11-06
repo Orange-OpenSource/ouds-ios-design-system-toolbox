@@ -32,6 +32,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     @Published var layout: ButtonLayout {
         didSet { updateCode() }
     }
+    
+    @Published var flipIcon: Bool {
+        didSet { updateCode() }
+    }
 
     @Published var flipIcon: Bool {
         didSet { updateCode() }
