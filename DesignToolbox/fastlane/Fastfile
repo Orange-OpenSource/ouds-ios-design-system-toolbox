@@ -259,10 +259,6 @@ platform :ios do
     lane :build_debug do
         puts "👉 Build debug app"
 
-        cocoapods(
-          clean_install: true
-        )
-
         Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
             sh "cp -R AppIconDebug.appiconset AppIconRelease.appiconset"
@@ -454,10 +450,6 @@ platform :ios do
                 app_identifier: CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
             )
 
-            cocoapods(
-                clean_install: true
-            )
-
             # Disable automatic code signing for release / distribution builds.
             # Thus we won't use any Xcode with plugged account in, and use only needed certificates and provisioning profiles.
             # Mobile provisioning profile named "OUDS iOS app (release)" must be placed in runner.
@@ -591,10 +583,6 @@ platform :mac do
     lane :build_debug do
         puts "👉 Build debug app"
 
-        cocoapods(
-          clean_install: true
-        )
-
         Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
             sh "cp -R AppIconDebug.appiconset AppIconRelease.appiconset"
@@ -638,10 +626,6 @@ platform :vision do
     desc "Build locally the demo app in debug mode without upload"
     lane :build_debug do
         puts "👉 Build debug app"
-
-        cocoapods(
-          clean_install: true
-        )
 
         Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"

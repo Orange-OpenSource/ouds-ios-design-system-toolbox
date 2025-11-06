@@ -202,7 +202,6 @@
 		51417C272E1BF6B8000266C8 /* TokensOpacitySnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C262E1BF6B8000266C8 /* TokensOpacitySnapshotsTestsTestCase.swift */; };
 		51417C292E1BF70F000266C8 /* TokensColorSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C282E1BF70F000266C8 /* TokensColorSnapshotsTestsTestCase.swift */; };
 		51417C2B2E1BF7B2000266C8 /* TokensFontSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51417C2A2E1BF7B2000266C8 /* TokensFontSnapshotsTestsTestCase.swift */; };
-		5149BADB2C3D6F4F000FA4BF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5149BADA2C3D6F4F000FA4BF /* Podfile */; };
 		5152DA1D2DE0BD440078B9F1 /* DesignToolbox+EnrichedTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5152DA1C2DE0BD3B0078B9F1 /* DesignToolbox+EnrichedTexts.swift */; };
 		5152DA1E2DE0BD440078B9F1 /* DesignToolbox+EnrichedTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5152DA1C2DE0BD3B0078B9F1 /* DesignToolbox+EnrichedTexts.swift */; };
 		515439232DE734E600B25D13 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 515439222DE734E600B25D13 /* Settings.bundle */; };
@@ -589,7 +588,6 @@
 		9589F0CB2EB7D67B00134487 /* accessibility_detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */; };
 		9589F0CC2EB7D67B00134487 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
 		9589F0CD2EB7D67B00134487 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 51D5898F2E8FCC310071E8BF /* README.md */; };
-		9589F0CE2EB7D67B00134487 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5149BADA2C3D6F4F000FA4BF /* Podfile */; };
 		9589F0CF2EB7D67B00134487 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76122C466FCF0033365D /* Preview Assets.xcassets */; };
 		9589F0D02EB7D67B00134487 /* about_legal_information.html in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76152C466FCF0033365D /* about_legal_information.html */; };
 		9589F0D12EB7D67B00134487 /* HelveticaNeueLTArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3CE2E95941900664BD0 /* HelveticaNeueLTArabic-Bold.ttf */; };
@@ -757,7 +755,6 @@
 		9589F1A52EB7D67E00134487 /* accessibility_detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */; };
 		9589F1A62EB7D67E00134487 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
 		9589F1A72EB7D67E00134487 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 51D5898F2E8FCC310071E8BF /* README.md */; };
-		9589F1A82EB7D67E00134487 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5149BADA2C3D6F4F000FA4BF /* Podfile */; };
 		9589F1A92EB7D67E00134487 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76122C466FCF0033365D /* Preview Assets.xcassets */; };
 		9589F1AA2EB7D67E00134487 /* about_legal_information.html in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76152C466FCF0033365D /* about_legal_information.html */; };
 		9589F1AB2EB7D67E00134487 /* HelveticaNeueLTArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3CE2E95941900664BD0 /* HelveticaNeueLTArabic-Bold.ttf */; };
@@ -773,12 +770,10 @@
 		9589F1B52EB7D67E00134487 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B42CE3AF1500F2EC33 /* style.css */; };
 		9589F1B62EB7D67E00134487 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
 		9589F1B72EB7D67E00134487 /* orange-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */; };
-		9599CE2C2EB903C900CFCF3F /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9599CE2B2EB903C900CFCF3F /* OUDSSwiftUI */; };
-		9599CE2E2EB903F000CFCF3F /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9599CE2D2EB903F000CFCF3F /* OUDSSwiftUI */; };
-		9599CE302EB903F800CFCF3F /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9599CE2F2EB903F800CFCF3F /* OUDSSwiftUI */; };
 		9599CE322EB9040300CFCF3F /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9599CE312EB9040300CFCF3F /* OUDSSwiftUI */; };
-		959D1A092EB80F5C00B5F14A /* Pods_DesignToolbox__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959D1A082EB80F5C00B5F14A /* Pods_DesignToolbox__iOS_.framework */; };
-		959D1A0A2EB80F5C00B5F14A /* Pods_DesignToolbox__iOS_.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 959D1A082EB80F5C00B5F14A /* Pods_DesignToolbox__iOS_.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95C17B892EBCAC64002A7371 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95C17B882EBCAC64002A7371 /* OUDSSwiftUI */; };
+		95C17B8C2EBCAC75002A7371 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95C17B8B2EBCAC75002A7371 /* OUDSSwiftUI */; };
+		95C17B8E2EBCAC7B002A7371 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95C17B8D2EBCAC7B002A7371 /* OUDSSwiftUI */; };
 		95CD64F22EB3A375008FAB03 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD64F12EB3A371008FAB03 /* WindowManager.swift */; };
 		95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95D713EC2EB36B0B00EBB7C2 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
@@ -824,7 +819,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				959D1A0A2EB80F5C00B5F14A /* Pods_DesignToolbox__iOS_.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -960,8 +954,6 @@
 		07FDCDB62C296C370009AA13 /* .gitleaks.toml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitleaks.toml; path = ../.gitleaks.toml; sourceTree = "<group>"; };
 		07FDCDB72C296C370009AA13 /* .swiftformat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .swiftformat; path = ../.swiftformat; sourceTree = "<group>"; };
 		07FDCDB82C296C370009AA13 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
-		22E62A67D4335140A690C8CB /* Pods-DesignToolbox (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignToolbox (iOS).release.xcconfig"; path = "Target Support Files/Pods-DesignToolbox (iOS)/Pods-DesignToolbox (iOS).release.xcconfig"; sourceTree = "<group>"; };
-		434465C538DC9652E8C11306 /* Pods-DesignToolbox (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignToolbox (iOS).debug.xcconfig"; path = "Target Support Files/Pods-DesignToolbox (iOS)/Pods-DesignToolbox (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 		51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		511580892E730E0100DFFE4E /* OUDSTheme+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OUDSTheme+Name.swift"; sourceTree = "<group>"; };
 		511C96B42E157D2C00F9D156 /* SwitchItemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemPage.swift; sourceTree = "<group>"; };
@@ -981,7 +973,6 @@
 		51417C262E1BF6B8000266C8 /* TokensOpacitySnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensOpacitySnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
 		51417C282E1BF70F000266C8 /* TokensColorSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensColorSnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
 		51417C2A2E1BF7B2000266C8 /* TokensFontSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensFontSnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
-		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		5152DA1C2DE0BD3B0078B9F1 /* DesignToolbox+EnrichedTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignToolbox+EnrichedTexts.swift"; sourceTree = "<group>"; };
 		515439222DE734E600B25D13 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		515EE9752E21329B00A60E96 /* ChipLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipLayout.swift; sourceTree = "<group>"; };
@@ -1127,10 +1118,8 @@
 		6DFC20B42CE3AF1500F2EC33 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = accessibility_detail.html; sourceTree = "<group>"; };
 		6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = accessibility_result.xml; sourceTree = "<group>"; };
-		8D896603F007C1BC7101BAD0 /* Pods_DesignToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesignToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		959D1A082EB80F5C00B5F14A /* Pods_DesignToolbox__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_DesignToolbox__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CD64F12EB3A371008FAB03 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
 		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
@@ -1154,9 +1143,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9599CE2C2EB903C900CFCF3F /* OUDSSwiftUI in Frameworks */,
-				959D1A092EB80F5C00B5F14A /* Pods_DesignToolbox__iOS_.framework in Frameworks */,
 				6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */,
+				95C17B892EBCAC64002A7371 /* OUDSSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1180,7 +1168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9589F0C12EB7D67B00134487 /* DeclarationAccessibility in Frameworks */,
-				9599CE2E2EB903F000CFCF3F /* OUDSSwiftUI in Frameworks */,
+				95C17B8C2EBCAC75002A7371 /* OUDSSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1189,7 +1177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9589F19B2EB7D67E00134487 /* DeclarationAccessibility in Frameworks */,
-				9599CE302EB903F800CFCF3F /* OUDSSwiftUI in Frameworks */,
+				95C17B8E2EBCAC7B002A7371 /* OUDSSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1589,9 +1577,8 @@
 				51EB73792DBFD24400F37FEC /* DesignToolboxUITests */,
 				0740A9902C9873500069D24A /* DesignToolboxSnapshotsTests */,
 				51E599B52E27EDD0002BCB27 /* DesignToolboxUnitTests */,
+				95C17B8A2EBCAC75002A7371 /* Frameworks */,
 				07FDCD922C296A500009AA13 /* Products */,
-				AFD4931269C94655071502F6 /* Pods */,
-				3A9289D88D13C81017596009 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1628,7 +1615,6 @@
 				0740A98A2C98337C0069D24A /* fastlane */,
 				0707B6432C2C569500A911E7 /* Gemfile */,
 				5123647A2C3D7B3500572FD5 /* Gemfile.lock */,
-				5149BADA2C3D6F4F000FA4BF /* Podfile */,
 				07FDCDB82C296C370009AA13 /* .gitignore */,
 				07FDCDA52C296B4B0009AA13 /* .gitattributes */,
 				07FDCDB62C296C370009AA13 /* .gitleaks.toml */,
@@ -1636,15 +1622,6 @@
 				07FDCDB52C296C370009AA13 /* .swiftlint.yml */,
 			);
 			name = Configuration;
-			sourceTree = "<group>";
-		};
-		3A9289D88D13C81017596009 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				959D1A082EB80F5C00B5F14A /* Pods_DesignToolbox__iOS_.framework */,
-				8D896603F007C1BC7101BAD0 /* Pods_DesignToolbox.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5114F57B2E8EB10800BC2BDD /* Fonts */ = {
@@ -2499,13 +2476,11 @@
 			path = accessibilityStatement;
 			sourceTree = "<group>";
 		};
-		AFD4931269C94655071502F6 /* Pods */ = {
+		95C17B8A2EBCAC75002A7371 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				434465C538DC9652E8C11306 /* Pods-DesignToolbox (iOS).debug.xcconfig */,
-				22E62A67D4335140A690C8CB /* Pods-DesignToolbox (iOS).release.xcconfig */,
 			);
-			path = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FCA849102E9FEFF600DBCE76 /* InputTag */ = {
@@ -2557,12 +2532,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07FDCD9F2C296A540009AA13 /* Build configuration list for PBXNativeTarget "DesignToolbox (iOS)" */;
 			buildPhases = (
-				1B4B49DB0BF4A0B49B3F10BB /* [CP] Check Pods Manifest.lock */,
-				0707B6412C2C414200A911E7 /* Run Swiftlint */,
 				07FDCD8D2C296A500009AA13 /* Sources */,
 				07FDCD8E2C296A500009AA13 /* Frameworks */,
 				07FDCD8F2C296A500009AA13 /* Resources */,
-				51B4005F2DDCC51E00B69CDC /* Run SwiftFormat */,
 				959D1A0B2EB80F5C00B5F14A /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -2572,7 +2544,7 @@
 			name = "DesignToolbox (iOS)";
 			packageProductDependencies = (
 				6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */,
-				9599CE2B2EB903C900CFCF3F /* OUDSSwiftUI */,
+				95C17B882EBCAC64002A7371 /* OUDSSwiftUI */,
 			);
 			productName = DemoApp;
 			productReference = 07FDCD912C296A500009AA13 /* Design System Toolbox.app */;
@@ -2621,11 +2593,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9589F0DF2EB7D67B00134487 /* Build configuration list for PBXNativeTarget "DesignToolbox (macOS)" */;
 			buildPhases = (
-				9589F0202EB7D67B00134487 /* Run Swiftlint */,
 				9589F0212EB7D67B00134487 /* Sources */,
 				9589F0B62EB7D67B00134487 /* Frameworks */,
 				9589F0CA2EB7D67B00134487 /* Resources */,
-				9589F0DE2EB7D67B00134487 /* Run SwiftFormat */,
 			);
 			buildRules = (
 			);
@@ -2634,7 +2604,7 @@
 			name = "DesignToolbox (macOS)";
 			packageProductDependencies = (
 				9589F0112EB7D67B00134487 /* DeclarationAccessibility */,
-				9599CE2D2EB903F000CFCF3F /* OUDSSwiftUI */,
+				95C17B8B2EBCAC75002A7371 /* OUDSSwiftUI */,
 			);
 			productName = DemoApp;
 			productReference = 9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */;
@@ -2644,11 +2614,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9589F1B92EB7D67E00134487 /* Build configuration list for PBXNativeTarget "DesignToolbox (visionOS)" */;
 			buildPhases = (
-				9589F0FA2EB7D67E00134487 /* Run Swiftlint */,
 				9589F0FB2EB7D67E00134487 /* Sources */,
 				9589F1902EB7D67E00134487 /* Frameworks */,
 				9589F1A42EB7D67E00134487 /* Resources */,
-				9589F1B82EB7D67E00134487 /* Run SwiftFormat */,
 			);
 			buildRules = (
 			);
@@ -2657,7 +2625,7 @@
 			name = "DesignToolbox (visionOS)";
 			packageProductDependencies = (
 				9589F0EB2EB7D67E00134487 /* DeclarationAccessibility */,
-				9599CE2F2EB903F800CFCF3F /* OUDSSwiftUI */,
+				95C17B8D2EBCAC7B002A7371 /* OUDSSwiftUI */,
 			);
 			productName = DemoApp;
 			productReference = 9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */;
@@ -2707,7 +2675,7 @@
 			packageReferences = (
 				0740080F2C94256C006B8729 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 				6DFC20C32CE3D9AE00F2EC33 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */,
-				9599CE2A2EB903C900CFCF3F /* XCRemoteSwiftPackageReference "ouds-ios" */,
+				95C17B872EBCAC64002A7371 /* XCRemoteSwiftPackageReference "ouds-ios" */,
 			);
 			productRefGroup = 07FDCD922C296A500009AA13 /* Products */;
 			projectDirPath = "";
@@ -2740,7 +2708,6 @@
 				6DFC20C12CE3D39D00F2EC33 /* accessibility_detail.html in Resources */,
 				6DFC20C22CE3D39D00F2EC33 /* accessibility_result.xml in Resources */,
 				51D589902E8FCC350071E8BF /* README.md in Resources */,
-				5149BADB2C3D6F4F000FA4BF /* Podfile in Resources */,
 				51BD76242C466FCF0033365D /* Preview Assets.xcassets in Resources */,
 				51BD76252C466FCF0033365D /* about_legal_information.html in Resources */,
 				5180A3CF2E95941D00664BD0 /* HelveticaNeueLTArabic-Bold.ttf in Resources */,
@@ -2781,7 +2748,6 @@
 				9589F0CB2EB7D67B00134487 /* accessibility_detail.html in Resources */,
 				9589F0CC2EB7D67B00134487 /* accessibility_result.xml in Resources */,
 				9589F0CD2EB7D67B00134487 /* README.md in Resources */,
-				9589F0CE2EB7D67B00134487 /* Podfile in Resources */,
 				9589F0CF2EB7D67B00134487 /* Preview Assets.xcassets in Resources */,
 				9589F0D02EB7D67B00134487 /* about_legal_information.html in Resources */,
 				9589F0D12EB7D67B00134487 /* HelveticaNeueLTArabic-Bold.ttf in Resources */,
@@ -2807,7 +2773,6 @@
 				9589F1A52EB7D67E00134487 /* accessibility_detail.html in Resources */,
 				9589F1A62EB7D67E00134487 /* accessibility_result.xml in Resources */,
 				9589F1A72EB7D67E00134487 /* README.md in Resources */,
-				9589F1A82EB7D67E00134487 /* Podfile in Resources */,
 				9589F1A92EB7D67E00134487 /* Preview Assets.xcassets in Resources */,
 				9589F1AA2EB7D67E00134487 /* about_legal_information.html in Resources */,
 				9589F1AB2EB7D67E00134487 /* HelveticaNeueLTArabic-Bold.ttf in Resources */,
@@ -2829,47 +2794,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0707B6412C2C414200A911E7 /* Run Swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Swiftlint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which \"swiftlint\" >/dev/null; then\n    swiftlint --config ../.swiftlint.yml DesignToolbox/* DesignToolboxSnapshotsTests/* DesignToolboxUITests/* DesignToolboxUnitTests/* DesignSystemToolboxAppCaptures/*\nelse\n    echo \"warning: SwiftLint not installed, download from CocoaPods (see https://github.com/realm/SwiftLint)\"\nfi\n";
-		};
-		1B4B49DB0BF4A0B49B3F10BB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DesignToolbox (iOS)-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		512364802C3D7D8300572FD5 /* Run Periphery (for dead code analysis) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2887,98 +2811,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Periphery action to look for dead code\nperiphery scan --project DesignToolbox.xcworkspace --schemes DesignToolbox --format xcode\n";
-		};
-		51B4005F2DDCC51E00B69CDC /* Run SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftFormat";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
-		};
-		9589F0202EB7D67B00134487 /* Run Swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Swiftlint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which \"swiftlint\" >/dev/null; then\n    swiftlint --config ../.swiftlint.yml DesignToolbox/* DesignToolboxSnapshotsTests/* DesignToolboxUITests/* DesignToolboxUnitTests/* DesignSystemToolboxAppCaptures/*\nelse\n    echo \"warning: SwiftLint not installed, download from CocoaPods (see https://github.com/realm/SwiftLint)\"\nfi\n";
-		};
-		9589F0DE2EB7D67B00134487 /* Run SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftFormat";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
-		};
-		9589F0FA2EB7D67E00134487 /* Run Swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Swiftlint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which \"swiftlint\" >/dev/null; then\n    swiftlint --config ../.swiftlint.yml DesignToolbox/* DesignToolboxSnapshotsTests/* DesignToolboxUITests/* DesignToolboxUnitTests/* DesignSystemToolboxAppCaptures/*\nelse\n    echo \"warning: SwiftLint not installed, download from CocoaPods (see https://github.com/realm/SwiftLint)\"\nfi\n";
-		};
-		9589F1B82EB7D67E00134487 /* Run SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftFormat";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -3942,7 +3774,6 @@
 		};
 		07FDCDA02C296A540009AA13 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 434465C538DC9652E8C11306 /* Pods-DesignToolbox (iOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDebug;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -3987,7 +3818,6 @@
 		};
 		07FDCDA12C296A540009AA13 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22E62A67D4335140A690C8CB /* Pods-DesignToolbox (iOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconRelease;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -4442,7 +4272,7 @@
 				version = 1.3.0;
 			};
 		};
-		9599CE2A2EB903C900CFCF3F /* XCRemoteSwiftPackageReference "ouds-ios" */ = {
+		95C17B872EBCAC64002A7371 /* XCRemoteSwiftPackageReference "ouds-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
@@ -4473,23 +4303,23 @@
 			package = 9589F0EC2EB7D67E00134487 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */;
 			productName = DeclarationAccessibility;
 		};
-		9599CE2B2EB903C900CFCF3F /* OUDSSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9599CE2A2EB903C900CFCF3F /* XCRemoteSwiftPackageReference "ouds-ios" */;
-			productName = OUDSSwiftUI;
-		};
-		9599CE2D2EB903F000CFCF3F /* OUDSSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9599CE2A2EB903C900CFCF3F /* XCRemoteSwiftPackageReference "ouds-ios" */;
-			productName = OUDSSwiftUI;
-		};
-		9599CE2F2EB903F800CFCF3F /* OUDSSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9599CE2A2EB903C900CFCF3F /* XCRemoteSwiftPackageReference "ouds-ios" */;
-			productName = OUDSSwiftUI;
-		};
 		9599CE312EB9040300CFCF3F /* OUDSSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = OUDSSwiftUI;
+		};
+		95C17B882EBCAC64002A7371 /* OUDSSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95C17B872EBCAC64002A7371 /* XCRemoteSwiftPackageReference "ouds-ios" */;
+			productName = OUDSSwiftUI;
+		};
+		95C17B8B2EBCAC75002A7371 /* OUDSSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95C17B872EBCAC64002A7371 /* XCRemoteSwiftPackageReference "ouds-ios" */;
+			productName = OUDSSwiftUI;
+		};
+		95C17B8D2EBCAC7B002A7371 /* OUDSSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95C17B872EBCAC64002A7371 /* XCRemoteSwiftPackageReference "ouds-ios" */;
 			productName = OUDSSwiftUI;
 		};
 		95F840D22EB8FAA200CE1FE6 /* OUDSSwiftUI */ = {

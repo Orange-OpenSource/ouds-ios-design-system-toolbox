@@ -22,9 +22,6 @@
 # Produced by Brew
 /Brewfile.lock.json
 
-# Produced by CocoaPods
-/DesignToolbox/Pods/
-
 # Produced by Xcode
 /DesignToolbox/DesignToolbox.xcodeproj/xcuserdata/
 /DesignToolbox/DesignToolbox.xcodeproj/project.xcworkspace/xcuserdata/

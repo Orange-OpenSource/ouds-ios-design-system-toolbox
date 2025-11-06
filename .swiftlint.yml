@@ -30,7 +30,6 @@ included:
 excluded:
 - DesignToolbox/DesignToolbox/Info.plist
 - DesignToolbox/DesignToolbox/Resources
-- DesignToolbox/Pods
 - DesignToolbox/DerivedData
 
 # ==============

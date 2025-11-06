@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.21.0...develop)
 
+### Removed
+
+- [DesignToolbox] `CocoaPods` tool (Orange-OpenSource/ouds-ios#1103)
+
 ## [0.21.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.20.0...0.21.0) - 2025-11-05
 
 ### Added
