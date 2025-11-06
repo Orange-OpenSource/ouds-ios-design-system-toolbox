@@ -29,6 +29,7 @@ struct CheckboxesItemView: View {
 // MARK: Two-states checkboxes items
 
 // swiftlint:disable accessibility_label_for_image
+// swiftlint:disable closure_body_length
 private struct TwoStatesCheckboxesItemsView: View {
 
     @State private var isOn: Bool = false
@@ -171,10 +172,12 @@ private struct TwoStatesCheckboxesItemsView: View {
 }
 
 // swiftlint:enable accessibility_label_for_image
+// swiftlint:enable closure_body_length
 
 // MARK: Three-states checkboxes items
 
 // swiftlint:disable accessibility_label_for_image
+// swiftlint:disable closure_body_length
 private struct ThreeStatesCheckboxesItemsView: View {
 
     @State private var state: OUDSCheckboxIndicatorState = .indeterminate
@@ -317,3 +320,4 @@ private struct ThreeStatesCheckboxesItemsView: View {
 }
 
 // swiftlint:enable accessibility_label_for_image
+// swiftlint:enable closure_body_length

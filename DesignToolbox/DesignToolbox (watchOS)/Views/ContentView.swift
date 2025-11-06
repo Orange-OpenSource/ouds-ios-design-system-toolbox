@@ -21,7 +21,7 @@ struct ContentView: View {
                 NavigationLink("Badge", destination: BadgesView())
                 NavigationLink("Button", destination: ButtonsView())
                 NavigationLink("Checkbox", destination: CheckboxesView())
-//                NavigationLink("Chip", destination: ChipView())
+                NavigationLink("Chip", destination: ChipsView())
 //                NavigationLink("Colored Background", destination: ColoredBackgroundView())
 //                NavigationLink("Divider", destination: DividerView())
 //                NavigationLink("Link", destination: LinkView())

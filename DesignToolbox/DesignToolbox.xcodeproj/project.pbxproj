@@ -436,6 +436,7 @@
 		950EA6B02EBCE3A30009414A /* CheckboxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6AF2EBCE3A30009414A /* CheckboxesView.swift */; };
 		950EA6B22EBCEC2D0009414A /* CheckboxesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6B12EBCEC2D0009414A /* CheckboxesItemView.swift */; };
 		950EA6B42EBCECA00009414A /* CheckboxesOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6B32EBCECA00009414A /* CheckboxesOnlyView.swift */; };
+		950EA6B62EBCF2F10009414A /* ChipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6B52EBCF2F10009414A /* ChipsView.swift */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95818BC22EB50D70004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
@@ -1131,6 +1132,7 @@
 		950EA6AF2EBCE3A30009414A /* CheckboxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxesView.swift; sourceTree = "<group>"; };
 		950EA6B12EBCEC2D0009414A /* CheckboxesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxesItemView.swift; sourceTree = "<group>"; };
 		950EA6B32EBCECA00009414A /* CheckboxesOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxesOnlyView.swift; sourceTree = "<group>"; };
+		950EA6B52EBCF2F10009414A /* ChipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsView.swift; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		959800602EBCC6E2007BE0EA /* DesignToolbox (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2564,6 +2566,7 @@
 		9598007B2EBCCBB9007BE0EA /* Chip */ = {
 			isa = PBXGroup;
 			children = (
+				950EA6B52EBCF2F10009414A /* ChipsView.swift */,
 			);
 			path = Chip;
 			sourceTree = "<group>";
@@ -3781,6 +3784,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9598008A2EBCCCAD007BE0EA /* BadgesView.swift in Sources */,
+				950EA6B62EBCF2F10009414A /* ChipsView.swift in Sources */,
 				950EA6B02EBCE3A30009414A /* CheckboxesView.swift in Sources */,
 				959800702EBCC714007BE0EA /* ContentView.swift in Sources */,
 				950EA6AE2EBCDF510009414A /* ButtonsView.swift in Sources */,
