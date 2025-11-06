@@ -16,11 +16,26 @@ import SwiftUI
 
 @main
 struct DesignToolbox_Watch_App: App {
+    @State private var selectedThemeIndex: Int = 0
+
+    private let themes: [OUDSTheme] = [
+        OrangeTheme(),
+        OrangeBusinessToolsTheme(),
+        SoshTheme(),
+        WireframeTheme(),
+    ]
+
     var body: some Scene {
         WindowGroup {
-            OUDSThemeableView(theme: WireframeTheme()) {
-                ContentView()
+            TabView(selection: $selectedThemeIndex) {
+                ForEach(themes.indices, id: \.self) { index in
+                    OUDSThemeableView(theme: themes[index]) {
+                        ContentView()
+                    }
+                    .tag(index)
+                }
             }
+            .tabViewStyle(PageTabViewStyle())
         }
     }
 }

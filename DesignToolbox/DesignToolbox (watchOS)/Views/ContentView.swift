@@ -15,6 +15,8 @@ import OUDSSwiftUI
 import SwiftUI
 
 struct ContentView: View {
+
+    @Environment(\.theme) private var theme
     var body: some View {
         NavigationView {
             List {
@@ -24,7 +26,7 @@ struct ContentView: View {
                 NavigationLink("Layouts", destination: LayoutsView())
                 NavigationLink("Navigations", destination: NavigationsView())
             }
-            .navigationTitle("Design Toolbox")
+            .navigationTitle(theme.name)
         }
     }
 }
