@@ -309,7 +309,7 @@ The project contains some unit tests made to test the behavior of some utils in 
 
 To run these UI tests follow some steps:
 1. `cd DesignToolbox`
-2. Open *DesignToolbox.xcodeproje*
+2. Open *DesignToolbox.xcworkspace*
 3. Select *DesignToolboxUnitTests* scheme
 4. Run tests in left pane (target *DesignToolboxUnitTests*)
 
