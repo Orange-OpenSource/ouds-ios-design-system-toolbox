@@ -19,7 +19,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 NavigationLink("Badge", destination: BadgesView())
-//                NavigationLink("Button", destination: ButtonView())
+                NavigationLink("Button", destination: ButtonsView())
 //                NavigationLink("Checkbox", destination: CheckboxView())
 //                NavigationLink("Chip", destination: ChipView())
 //                NavigationLink("Colored Background", destination: ColoredBackgroundView())
