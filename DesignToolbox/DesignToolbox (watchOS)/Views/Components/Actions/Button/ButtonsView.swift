@@ -14,14 +14,15 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// swiftlint:disable accessibility_label_for_image
 struct ButtonsView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 8) {
                 ForEach(kAllButtonStyles, id: \.self) { style in
-                    Text("Style \(String(describing: style))")
+                    Text("Style \(String(describing: style))").font(.headline)
                     ForEach(kAllButtonAppaerances, id: \.self) { appearance in
-                        Text("Appearance \(String(describing: appearance))")
+                        Text("Appearance \(String(describing: appearance))").font(.subheadline)
                         OUDSButton(text: "Button", appearance: appearance, style: style) {}
                         OUDSButton(icon: Image(systemName: "sun.min.fill"), text: "Button", appearance: appearance, style: style) {}
                         OUDSButton(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Button", appearance: appearance, style: style) {}
@@ -32,6 +33,8 @@ struct ButtonsView: View {
         .navigationTitle("Button")
     }
 }
+
+// swiftlint:enable accessibility_label_for_image
 
 private let kAllButtonAppaerances: [OUDSButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
 private let kAllButtonStyles: [OUDSButton.Style] = [.default, .loading]

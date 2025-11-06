@@ -20,7 +20,7 @@ struct ContentView: View {
             List {
                 NavigationLink("Badge", destination: BadgesView())
                 NavigationLink("Button", destination: ButtonsView())
-//                NavigationLink("Checkbox", destination: CheckboxView())
+                NavigationLink("Checkbox", destination: CheckboxesView())
 //                NavigationLink("Chip", destination: ChipView())
 //                NavigationLink("Colored Background", destination: ColoredBackgroundView())
 //                NavigationLink("Divider", destination: DividerView())
@@ -30,7 +30,7 @@ struct ContentView: View {
 //                NavigationLink("Tag", destination: TagView())
 //                NavigationLink("Text Input", destination: TextInputView())
             }
-            .navigationTitle("Demo App")
+            .navigationTitle("Design Toolbox")
         }
     }
 }

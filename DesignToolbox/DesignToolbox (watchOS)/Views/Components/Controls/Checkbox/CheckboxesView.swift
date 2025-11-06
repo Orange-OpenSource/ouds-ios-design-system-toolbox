@@ -14,24 +14,15 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct ButtonsView: View {
+struct CheckboxesView: View {
+
     var body: some View {
-        ScrollView {
-            VStack(spacing: 8) {
-                ForEach(kAllButtonStyles, id: \.self) { style in
-                    Text("Style \(String(describing: style))")
-                    ForEach(kAllButtonAppaerances, id: \.self) { appearance in
-                        Text("Appearance \(String(describing: appearance))")
-                        OUDSButton(text: "Button", appearance: appearance, style: style) {}
-                        OUDSButton(icon: Image(systemName: "sun.min.fill"), text: "Button", appearance: appearance, style: style) {}
-                        OUDSButton(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Button", appearance: appearance, style: style) {}
-                    }
-                }
+        NavigationView {
+            List {
+                NavigationLink("Checkbox", destination: CheckboxesOnlyView())
+                NavigationLink("Checkbox Item", destination: CheckboxesItemView())
             }
         }
-        .navigationTitle("Button")
+        .navigationTitle("Checkboxes")
     }
 }
-
-private let kAllButtonAppaerances: [OUDSButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
-private let kAllButtonStyles: [OUDSButton.Style] = [.default, .loading]

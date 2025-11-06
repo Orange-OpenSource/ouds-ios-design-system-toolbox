@@ -67,6 +67,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         onColoredSurface ? ".oudsColoredSurface(theme.colorModes.onBrandPrimary)" : ""
     }
 
+    // swiftlint:disable line_length
     override func updateCode() {
         switch layout {
         case .textOnly:
@@ -92,6 +93,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
                 """
         }
     }
+    // swiftlint:enable line_length
 }
 
 // MARK: - Button Layout
