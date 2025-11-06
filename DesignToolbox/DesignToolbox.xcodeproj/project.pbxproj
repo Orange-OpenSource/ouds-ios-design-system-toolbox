@@ -770,6 +770,11 @@
 		9589F1B52EB7D67E00134487 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B42CE3AF1500F2EC33 /* style.css */; };
 		9589F1B62EB7D67E00134487 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
 		9589F1B72EB7D67E00134487 /* orange-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */; };
+		9598006F2EBCC714007BE0EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9598006B2EBCC714007BE0EA /* Assets.xcassets */; };
+		959800702EBCC714007BE0EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006C2EBCC714007BE0EA /* ContentView.swift */; };
+		959800712EBCC714007BE0EA /* DesignToolbox_Watch_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006D2EBCC714007BE0EA /* DesignToolbox_Watch_App.swift */; };
+		959800732EBCC780007BE0EA /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 959800722EBCC780007BE0EA /* OUDSSwiftUI */; };
+		9598008A2EBCCCAD007BE0EA /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959800892EBCCCAB007BE0EA /* BadgesView.swift */; };
 		9599CE322EB9040300CFCF3F /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9599CE312EB9040300CFCF3F /* OUDSSwiftUI */; };
 		95C17B892EBCAC64002A7371 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95C17B882EBCAC64002A7371 /* OUDSSwiftUI */; };
 		95C17B8C2EBCAC75002A7371 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95C17B8B2EBCAC75002A7371 /* OUDSSwiftUI */; };
@@ -1120,6 +1125,11 @@
 		6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = accessibility_result.xml; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		959800602EBCC6E2007BE0EA /* DesignToolbox (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9598006B2EBCC714007BE0EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9598006C2EBCC714007BE0EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9598006D2EBCC714007BE0EA /* DesignToolbox_Watch_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolbox_Watch_App.swift; sourceTree = "<group>"; };
+		959800892EBCCCAB007BE0EA /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
 		95CD64F12EB3A371008FAB03 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
 		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
@@ -1178,6 +1188,14 @@
 			files = (
 				9589F19B2EB7D67E00134487 /* DeclarationAccessibility in Frameworks */,
 				95C17B8E2EBCAC7B002A7371 /* OUDSSwiftUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9598005D2EBCC6E2007BE0EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				959800732EBCC780007BE0EA /* OUDSSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1577,6 +1595,7 @@
 				51EB73792DBFD24400F37FEC /* DesignToolboxUITests */,
 				0740A9902C9873500069D24A /* DesignToolboxSnapshotsTests */,
 				51E599B52E27EDD0002BCB27 /* DesignToolboxUnitTests */,
+				9598006E2EBCC714007BE0EA /* DesignToolbox (watchOS) */,
 				95C17B8A2EBCAC75002A7371 /* Frameworks */,
 				07FDCD922C296A500009AA13 /* Products */,
 			);
@@ -1591,6 +1610,7 @@
 				51E599A72E27ED5F002BCB27 /* DesignToolboxUnitTests.xctest */,
 				9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */,
 				9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */,
+				959800602EBCC6E2007BE0EA /* DesignToolbox (watchOS).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2476,6 +2496,161 @@
 			path = accessibilityStatement;
 			sourceTree = "<group>";
 		};
+		9598006E2EBCC714007BE0EA /* DesignToolbox (watchOS) */ = {
+			isa = PBXGroup;
+			children = (
+				959800742EBCCB6C007BE0EA /* Views */,
+				9598006B2EBCC714007BE0EA /* Assets.xcassets */,
+			);
+			path = "DesignToolbox (watchOS)";
+			sourceTree = "<group>";
+		};
+		959800742EBCCB6C007BE0EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				959800752EBCCB81007BE0EA /* Components */,
+				9598006D2EBCC714007BE0EA /* DesignToolbox_Watch_App.swift */,
+				9598006C2EBCC714007BE0EA /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		959800752EBCCB81007BE0EA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				959800872EBCCC13007BE0EA /* Navigations */,
+				959800862EBCCC0E007BE0EA /* Layouts */,
+				959800852EBCCC07007BE0EA /* Indicators */,
+				959800842EBCCC03007BE0EA /* Controls */,
+				959800832EBCCBFE007BE0EA /* Actions */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		959800782EBCCBA8007BE0EA /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				959800892EBCCCAB007BE0EA /* BadgesView.swift */,
+			);
+			path = Badge;
+			sourceTree = "<group>";
+		};
+		959800792EBCCBAE007BE0EA /* Button */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		9598007A2EBCCBB3007BE0EA /* Checkbox */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Checkbox;
+			sourceTree = "<group>";
+		};
+		9598007B2EBCCBB9007BE0EA /* Chip */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chip;
+			sourceTree = "<group>";
+		};
+		9598007C2EBCCBC1007BE0EA /* ColoredSurface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ColoredSurface;
+			sourceTree = "<group>";
+		};
+		9598007D2EBCCBC9007BE0EA /* Divider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Divider;
+			sourceTree = "<group>";
+		};
+		9598007E2EBCCBD0007BE0EA /* Link */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Link;
+			sourceTree = "<group>";
+		};
+		9598007F2EBCCBD8007BE0EA /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Switch;
+			sourceTree = "<group>";
+		};
+		959800802EBCCBDE007BE0EA /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
+		959800822EBCCBE8007BE0EA /* TextInput */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TextInput;
+			sourceTree = "<group>";
+		};
+		959800832EBCCBFE007BE0EA /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				959800792EBCCBAE007BE0EA /* Button */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		959800842EBCCC03007BE0EA /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				959800882EBCCC84007BE0EA /* Radio */,
+				9598007F2EBCCBD8007BE0EA /* Switch */,
+				9598007B2EBCCBB9007BE0EA /* Chip */,
+				9598007A2EBCCBB3007BE0EA /* Checkbox */,
+				959800822EBCCBE8007BE0EA /* TextInput */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		959800852EBCCC07007BE0EA /* Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				959800782EBCCBA8007BE0EA /* Badge */,
+				959800802EBCCBDE007BE0EA /* Tags */,
+			);
+			path = Indicators;
+			sourceTree = "<group>";
+		};
+		959800862EBCCC0E007BE0EA /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				9598007D2EBCCBC9007BE0EA /* Divider */,
+				9598007C2EBCCBC1007BE0EA /* ColoredSurface */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		959800872EBCCC13007BE0EA /* Navigations */ = {
+			isa = PBXGroup;
+			children = (
+				9598007E2EBCCBD0007BE0EA /* Link */,
+			);
+			path = Navigations;
+			sourceTree = "<group>";
+		};
+		959800882EBCCC84007BE0EA /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Radio;
+			sourceTree = "<group>";
+		};
 		95C17B8A2EBCAC75002A7371 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2631,6 +2806,26 @@
 			productReference = 9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */;
 			productType = "com.apple.product-type.application";
 		};
+		9598005F2EBCC6E2007BE0EA /* DesignToolbox (watchOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 959800682EBCC6E3007BE0EA /* Build configuration list for PBXNativeTarget "DesignToolbox (watchOS)" */;
+			buildPhases = (
+				9598005C2EBCC6E2007BE0EA /* Sources */,
+				9598005D2EBCC6E2007BE0EA /* Frameworks */,
+				9598005E2EBCC6E2007BE0EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DesignToolbox (watchOS)";
+			packageProductDependencies = (
+				959800722EBCC780007BE0EA /* OUDSSwiftUI */,
+			);
+			productName = "DesignToolbox (watchOS) Watch App";
+			productReference = 959800602EBCC6E2007BE0EA /* DesignToolbox (watchOS).app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2638,7 +2833,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1640;
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					0740A98E2C9873500069D24A = {
@@ -2658,6 +2853,9 @@
 					51EB73832DBFDC5500F37FEC = {
 						CreatedOnToolsVersion = 16.3;
 						TestTargetID = 07FDCD902C296A500009AA13;
+					};
+					9598005F2EBCC6E2007BE0EA = {
+						CreatedOnToolsVersion = 26.0.1;
 					};
 				};
 			};
@@ -2688,6 +2886,7 @@
 				51E599A62E27ED5F002BCB27 /* DesignToolboxUnitTests */,
 				9589F00A2EB7D67B00134487 /* DesignToolbox (macOS) */,
 				9589F0E42EB7D67E00134487 /* DesignToolbox (visionOS) */,
+				9598005F2EBCC6E2007BE0EA /* DesignToolbox (watchOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -2788,6 +2987,14 @@
 				9589F1B52EB7D67E00134487 /* style.css in Resources */,
 				9589F1B62EB7D67E00134487 /* HelveticaNeueLTArabic-Roman.ttf in Resources */,
 				9589F1B72EB7D67E00134487 /* orange-logo.svg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9598005E2EBCC6E2007BE0EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9598006F2EBCC714007BE0EA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3557,6 +3764,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9598005C2EBCC6E2007BE0EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9598008A2EBCCCAD007BE0EA /* BadgesView.swift in Sources */,
+				959800702EBCC714007BE0EA /* ContentView.swift in Sources */,
+				959800712EBCC714007BE0EA /* DesignToolbox_Watch_App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -4162,6 +4379,74 @@
 			};
 			name = Release;
 		};
+		959800692EBCC6E3007BE0EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 101;
+				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "DesignToolbox (watchOS)";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.22.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.6;
+			};
+			name = Debug;
+		};
+		9598006A2EBCC6E3007BE0EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 101;
+				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "DesignToolbox (watchOS)";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.22.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.6;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -4237,6 +4522,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		959800682EBCC6E3007BE0EA /* Build configuration list for PBXNativeTarget "DesignToolbox (watchOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				959800692EBCC6E3007BE0EA /* Debug */,
+				9598006A2EBCC6E3007BE0EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -4302,6 +4596,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9589F0EC2EB7D67E00134487 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */;
 			productName = DeclarationAccessibility;
+		};
+		959800722EBCC780007BE0EA /* OUDSSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OUDSSwiftUI;
 		};
 		9599CE312EB9040300CFCF3F /* OUDSSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
