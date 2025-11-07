@@ -14,15 +14,18 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct TagsView: View {
+struct InputTagView: View {
+
+    @Environment(\.theme) private var theme
 
     var body: some View {
-        NavigationView {
-            List {
-                NavigationLink("Tag", destination: TagView())
-                NavigationLink("Input tag", destination: InputTagView())
+        ScrollView {
+            VStack(spacing: theme.spaces.scaledXsmallMobile) {
+                Text("Enabled").font(.headline)
+                OUDSInputTag(label: "Input") {}
+                Text("Disabled").font(.headline)
+                OUDSInputTag(label: "Input") {}.disabled(false)
             }
         }
-        .navigationTitle("Tags")
     }
 }

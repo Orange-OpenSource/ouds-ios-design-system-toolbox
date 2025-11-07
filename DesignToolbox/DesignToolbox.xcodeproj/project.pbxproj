@@ -452,6 +452,8 @@
 		950EA6D22EBDFFA50009414A /* SwitchesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6D02EBDFFA50009414A /* SwitchesItemView.swift */; };
 		950EA6D32EBDFFA50009414A /* SwitchesOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6D12EBDFFA50009414A /* SwitchesOnlyView.swift */; };
 		950EA6D72EBE053B0009414A /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6D62EBE053B0009414A /* TagsView.swift */; };
+		950EA6D92EBE24AA0009414A /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6D82EBE24AA0009414A /* TagView.swift */; };
+		950EA6DB2EBE24E10009414A /* InputTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6DA2EBE24E10009414A /* InputTag.swift */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95818BC22EB50D70004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
@@ -1162,6 +1164,8 @@
 		950EA6D02EBDFFA50009414A /* SwitchesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchesItemView.swift; sourceTree = "<group>"; };
 		950EA6D12EBDFFA50009414A /* SwitchesOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchesOnlyView.swift; sourceTree = "<group>"; };
 		950EA6D62EBE053B0009414A /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		950EA6D82EBE24AA0009414A /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		950EA6DA2EBE24E10009414A /* InputTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTag.swift; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		959800602EBCC6E2007BE0EA /* DesignToolbox (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2641,6 +2645,8 @@
 			isa = PBXGroup;
 			children = (
 				950EA6D62EBE053B0009414A /* TagsView.swift */,
+				950EA6D82EBE24AA0009414A /* TagView.swift */,
+				950EA6DA2EBE24E10009414A /* InputTag.swift */,
 			);
 			path = Tags;
 			sourceTree = "<group>";
@@ -3841,6 +3847,8 @@
 				959800712EBCC714007BE0EA /* DesignToolbox_Watch_App.swift in Sources */,
 				950EA6B22EBCEC2D0009414A /* CheckboxesItemView.swift in Sources */,
 				950EA6B42EBCECA00009414A /* CheckboxesOnlyView.swift in Sources */,
+				950EA6D92EBE24AA0009414A /* TagView.swift in Sources */,
+				950EA6DB2EBE24E10009414A /* InputTag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
