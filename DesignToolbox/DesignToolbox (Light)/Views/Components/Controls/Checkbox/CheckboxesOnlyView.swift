@@ -16,8 +16,6 @@ import SwiftUI
 
 struct CheckboxesOnlyView: View {
 
-    @State private var isOn: Bool = false
-
     var body: some View {
         NavigationView {
             List {
@@ -32,7 +30,7 @@ struct CheckboxesOnlyView: View {
 
 private struct TwoStatesCheckboxesOnlyView: View {
 
-    @State private var isOn: Bool = false
+    @State private var isOn: Bool = true
     @Environment(\.theme) private var theme
 
     var body: some View {
@@ -64,7 +62,7 @@ private struct TwoStatesCheckboxesOnlyView: View {
 
 private struct ThreeStatesCheckboxesOnlyView: View {
 
-    @State private var state: OUDSCheckboxIndicatorState = .unselected
+    @State private var state: OUDSCheckboxIndicatorState = .indeterminate
     @Environment(\.theme) private var theme
 
     var body: some View {

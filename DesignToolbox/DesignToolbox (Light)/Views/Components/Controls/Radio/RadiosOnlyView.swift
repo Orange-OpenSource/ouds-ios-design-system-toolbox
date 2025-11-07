@@ -16,7 +16,7 @@ import SwiftUI
 
 struct RadiosOnlyView: View {
 
-    @State private var isOn: Bool = false
+    @State private var isOn: Bool = true
     @Environment(\.theme) private var theme
 
     var body: some View {
