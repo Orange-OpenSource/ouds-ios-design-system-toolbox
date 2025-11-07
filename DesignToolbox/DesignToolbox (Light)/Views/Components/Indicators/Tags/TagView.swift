@@ -72,28 +72,28 @@ struct TagView: View {
         }
         return ""
     }
-}
 
-private let kAllTagAppearances: [OUDSTag.Appearance] = [.emphasized, .muted]
-private let kAllTagShapes: [OUDSTag.Shape] = [.rounded, .square]
-private let kAllBadgeSizes: [OUDSTag.Size] = [.default, .small]
-private let kAllTagStatus: [OUDSTag.Status] = [
-    OUDSTag.Status.positive(leading: .bullet),
-    OUDSTag.Status.positive(leading: .icon),
-    OUDSTag.Status.positive(leading: .none),
-    OUDSTag.Status.negative(leading: .bullet),
-    OUDSTag.Status.negative(leading: .icon),
-    OUDSTag.Status.negative(leading: .none),
-    OUDSTag.Status.warning(leading: .bullet),
-    OUDSTag.Status.warning(leading: .icon),
-    OUDSTag.Status.warning(leading: .none),
-    OUDSTag.Status.info(leading: .bullet),
-    OUDSTag.Status.info(leading: .icon),
-    OUDSTag.Status.info(leading: .none),
-    OUDSTag.Status.neutral(bullet: false),
-    OUDSTag.Status.neutral(bullet: true),
-    OUDSTag.Status.neutral(icon: Image(systemName: "sun.min.fill")),
-    OUDSTag.Status.accent(bullet: false),
-    OUDSTag.Status.accent(bullet: true),
-    OUDSTag.Status.accent(icon: Image(systemName: "sun.min.fill")),
-]
+    private let kAllTagAppearances: [OUDSTag.Appearance] = [.emphasized, .muted]
+    private let kAllTagShapes: [OUDSTag.Shape] = [.rounded, .square]
+    private let kAllBadgeSizes: [OUDSTag.Size] = [.default, .small]
+    private let kAllTagStatus: [OUDSTag.Status] = [
+        OUDSTag.Status.positive(leading: .bullet),
+        OUDSTag.Status.positive(leading: .icon),
+        OUDSTag.Status.positive(leading: .none),
+        OUDSTag.Status.negative(leading: .bullet),
+        OUDSTag.Status.negative(leading: .icon),
+        OUDSTag.Status.negative(leading: .none),
+        OUDSTag.Status.warning(leading: .bullet),
+        OUDSTag.Status.warning(leading: .icon),
+        OUDSTag.Status.warning(leading: .none),
+        OUDSTag.Status.info(leading: .bullet),
+        OUDSTag.Status.info(leading: .icon),
+        OUDSTag.Status.info(leading: .none),
+        OUDSTag.Status.neutral(bullet: false),
+        OUDSTag.Status.neutral(bullet: true),
+        OUDSTag.Status.neutral(icon: Image(systemName: "sun.min.fill")),
+        OUDSTag.Status.accent(bullet: false),
+        OUDSTag.Status.accent(bullet: true),
+        OUDSTag.Status.accent(icon: Image(systemName: "sun.min.fill")),
+    ]
+}

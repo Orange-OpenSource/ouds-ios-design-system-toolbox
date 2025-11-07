@@ -49,10 +49,10 @@ struct BadgesView: View {
         }
         .navigationTitle("Badge")
     }
+
+    private let kAllBadgeStatus: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning, .disabled]
+    private let kAllBadgeStandardSizes: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
+    private let kAllBadgeIllustrationSizes: [OUDSBadge.IllustrationSize] = [.medium, .large]
 }
 
 // swiftlint:enable accessibility_label_for_image
-
-private let kAllBadgeStatus: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning, .disabled]
-private let kAllBadgeStandardSizes: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
-private let kAllBadgeIllustrationSizes: [OUDSBadge.IllustrationSize] = [.medium, .large]

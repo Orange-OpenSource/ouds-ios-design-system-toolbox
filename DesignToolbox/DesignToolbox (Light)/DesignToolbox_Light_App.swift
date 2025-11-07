@@ -15,7 +15,7 @@ import OUDSSwiftUI
 import SwiftUI
 
 @main
-struct DesignToolbox_Watch_App: App {
+struct DesignToolbox_Light_App: App {
 
     @State private var selectedThemeIndex: Int = 0
 
