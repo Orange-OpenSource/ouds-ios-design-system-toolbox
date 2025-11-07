@@ -14,6 +14,9 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// swiftlint:disable accessibility_label_for_image
+// swiftlint:disable function_body_length
+
 struct RadiosItemView: View {
 
     @State private var isOn: Bool = false
@@ -129,4 +132,4 @@ struct RadiosItemView: View {
 }
 
 // swiftlint:enable accessibility_label_for_image
-// swiftlint:enable closure_body_length
+// swiftlint:enable function_body_length

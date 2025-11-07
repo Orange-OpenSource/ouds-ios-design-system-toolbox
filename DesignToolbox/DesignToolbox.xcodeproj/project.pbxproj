@@ -448,6 +448,9 @@
 		950EA6C92EBDF01D0009414A /* RadiosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6C82EBDF01D0009414A /* RadiosView.swift */; };
 		950EA6CC2EBDF0DD0009414A /* RadiosItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6CA2EBDF0DD0009414A /* RadiosItemView.swift */; };
 		950EA6CD2EBDF0DD0009414A /* RadiosOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6CB2EBDF0DD0009414A /* RadiosOnlyView.swift */; };
+		950EA6CF2EBDFF7D0009414A /* SwitchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6CE2EBDFF7D0009414A /* SwitchesView.swift */; };
+		950EA6D22EBDFFA50009414A /* SwitchesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6D02EBDFFA50009414A /* SwitchesItemView.swift */; };
+		950EA6D32EBDFFA50009414A /* SwitchesOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6D12EBDFFA50009414A /* SwitchesOnlyView.swift */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95818BC22EB50D70004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
@@ -1154,6 +1157,9 @@
 		950EA6C82EBDF01D0009414A /* RadiosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiosView.swift; sourceTree = "<group>"; };
 		950EA6CA2EBDF0DD0009414A /* RadiosItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiosItemView.swift; sourceTree = "<group>"; };
 		950EA6CB2EBDF0DD0009414A /* RadiosOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiosOnlyView.swift; sourceTree = "<group>"; };
+		950EA6CE2EBDFF7D0009414A /* SwitchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchesView.swift; sourceTree = "<group>"; };
+		950EA6D02EBDFFA50009414A /* SwitchesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchesItemView.swift; sourceTree = "<group>"; };
+		950EA6D12EBDFFA50009414A /* SwitchesOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchesOnlyView.swift; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		959800602EBCC6E2007BE0EA /* DesignToolbox (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2622,6 +2628,9 @@
 		9598007F2EBCCBD8007BE0EA /* Switch */ = {
 			isa = PBXGroup;
 			children = (
+				950EA6D02EBDFFA50009414A /* SwitchesItemView.swift */,
+				950EA6D12EBDFFA50009414A /* SwitchesOnlyView.swift */,
+				950EA6CE2EBDFF7D0009414A /* SwitchesView.swift */,
 			);
 			path = Switch;
 			sourceTree = "<group>";
@@ -3811,10 +3820,13 @@
 				950EA6CD2EBDF0DD0009414A /* RadiosOnlyView.swift in Sources */,
 				950EA6BA2EBCF8810009414A /* ActionsView.swift in Sources */,
 				9598008A2EBCCCAD007BE0EA /* BadgesView.swift in Sources */,
+				950EA6CF2EBDFF7D0009414A /* SwitchesView.swift in Sources */,
 				950EA6BE2EBCF8D80009414A /* IndicatorsView.swift in Sources */,
 				950EA6B62EBCF2F10009414A /* ChipsView.swift in Sources */,
 				950EA6C02EBCF8E80009414A /* ControlsView.swift in Sources */,
 				950EA6B02EBCE3A30009414A /* CheckboxesView.swift in Sources */,
+				950EA6D22EBDFFA50009414A /* SwitchesItemView.swift in Sources */,
+				950EA6D32EBDFFA50009414A /* SwitchesOnlyView.swift in Sources */,
 				959800702EBCC714007BE0EA /* ContentView.swift in Sources */,
 				950EA6B82EBCF6230009414A /* LinksView.swift in Sources */,
 				950EA6C92EBDF01D0009414A /* RadiosView.swift in Sources */,
