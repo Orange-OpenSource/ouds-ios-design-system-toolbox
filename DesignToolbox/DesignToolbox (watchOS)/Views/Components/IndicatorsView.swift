@@ -19,6 +19,7 @@ struct IndicatorsView: View {
         NavigationView {
             List {
                 NavigationLink("Badge", destination: BadgesView())
+                NavigationLink("Tag", destination: TagsView())
             }
         }
     }
