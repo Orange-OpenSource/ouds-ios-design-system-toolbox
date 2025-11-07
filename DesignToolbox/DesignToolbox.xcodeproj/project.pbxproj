@@ -445,6 +445,9 @@
 		950EA6C32EBCFA390009414A /* LayoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6C22EBCFA360009414A /* LayoutsView.swift */; };
 		950EA6C62EBCFA710009414A /* ColoredBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6C52EBCFA6E0009414A /* ColoredBackgroundView.swift */; };
 		950EA6C72EBCFCBE0009414A /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
+		950EA6C92EBDF01D0009414A /* RadiosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6C82EBDF01D0009414A /* RadiosView.swift */; };
+		950EA6CC2EBDF0DD0009414A /* RadiosItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6CA2EBDF0DD0009414A /* RadiosItemView.swift */; };
+		950EA6CD2EBDF0DD0009414A /* RadiosOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6CB2EBDF0DD0009414A /* RadiosOnlyView.swift */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95818BC22EB50D70004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
@@ -1148,6 +1151,9 @@
 		950EA6BF2EBCF8E50009414A /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
 		950EA6C22EBCFA360009414A /* LayoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutsView.swift; sourceTree = "<group>"; };
 		950EA6C52EBCFA6E0009414A /* ColoredBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredBackgroundView.swift; sourceTree = "<group>"; };
+		950EA6C82EBDF01D0009414A /* RadiosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiosView.swift; sourceTree = "<group>"; };
+		950EA6CA2EBDF0DD0009414A /* RadiosItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiosItemView.swift; sourceTree = "<group>"; };
+		950EA6CB2EBDF0DD0009414A /* RadiosOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiosOnlyView.swift; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		959800602EBCC6E2007BE0EA /* DesignToolbox (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2676,6 +2682,9 @@
 		959800882EBCCC84007BE0EA /* Radio */ = {
 			isa = PBXGroup;
 			children = (
+				950EA6C82EBDF01D0009414A /* RadiosView.swift */,
+				950EA6CA2EBDF0DD0009414A /* RadiosItemView.swift */,
+				950EA6CB2EBDF0DD0009414A /* RadiosOnlyView.swift */,
 			);
 			path = Radio;
 			sourceTree = "<group>";
@@ -3798,6 +3807,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				950EA6C72EBCFCBE0009414A /* NamedColorMode.swift in Sources */,
+				950EA6CC2EBDF0DD0009414A /* RadiosItemView.swift in Sources */,
+				950EA6CD2EBDF0DD0009414A /* RadiosOnlyView.swift in Sources */,
 				950EA6BA2EBCF8810009414A /* ActionsView.swift in Sources */,
 				9598008A2EBCCCAD007BE0EA /* BadgesView.swift in Sources */,
 				950EA6BE2EBCF8D80009414A /* IndicatorsView.swift in Sources */,
@@ -3806,6 +3817,7 @@
 				950EA6B02EBCE3A30009414A /* CheckboxesView.swift in Sources */,
 				959800702EBCC714007BE0EA /* ContentView.swift in Sources */,
 				950EA6B82EBCF6230009414A /* LinksView.swift in Sources */,
+				950EA6C92EBDF01D0009414A /* RadiosView.swift in Sources */,
 				950EA6AE2EBCDF510009414A /* ButtonsView.swift in Sources */,
 				950EA6BC2EBCF8C80009414A /* NavigationsView.swift in Sources */,
 				950EA6C62EBCFA710009414A /* ColoredBackgroundView.swift in Sources */,
