@@ -15,40 +15,140 @@ import OUDSSwiftUI
 import SwiftUI
 
 struct TagView: View {
-
     @State private var isSelected: Bool = true
     @Environment(\.theme) private var theme
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: theme.spaces.scaledXsmallMobile) {
-                ForEach(kAllTagStatus.indices, id: \.self) { statusIndex in
-                    Text("Status " + description(for: statusIndex)).font(.headline)
-                    let status = kAllTagStatus[statusIndex]
-                    ForEach(kAllBadgeSizes, id: \.self) { size in
-                        Text("Size \(String(describing: size))").font(.subheadline)
-                        ForEach(kAllTagShapes, id: \.self) { shape in
-                            Text("Shape \(String(describing: shape))").font(.callout)
-                            ForEach(kAllTagAppearances, id: \.self) { appearance in
-                                OUDSTag(label: "Tag",
-                                        status: status,
-                                        appearance: appearance,
-                                        shape: shape,
-                                        size: size,
-                                        hasLoader: false)
+        ScrollViewReader { proxy in
+            ScrollView {
+                #if os(tvOS)
+                tvOSRowLayout
+                #else
+                watchOSVerticalLayout
+                #endif
+            }
+            .navigationTitle("Tag")
+            #if os(tvOS)
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        proxy.scrollTo("top", anchor: .top)
+                    }
+                }
+            #endif
+        }
+    }
 
-                                OUDSTag(label: "Tag",
-                                        status: status,
-                                        appearance: appearance,
-                                        shape: shape,
-                                        size: size,
-                                        hasLoader: true)
-                            }
+    // MARK: - watchOS Layout (Vertical - votre code actuel)
+    private var watchOSVerticalLayout: some View {
+        VStack(spacing: theme.spaces.scaledXsmallMobile) {
+            ForEach(kAllTagStatus.indices, id: \.self) { statusIndex in
+                Text("Status " + description(for: statusIndex)).font(.headline)
+                let status = kAllTagStatus[statusIndex]
+                ForEach(kAllBadgeSizes, id: \.self) { size in
+                    Text("Size \(String(describing: size))").font(.subheadline)
+                    ForEach(kAllTagShapes, id: \.self) { shape in
+                        Text("Shape \(String(describing: shape))").font(.callout)
+                        ForEach(kAllTagAppearances, id: \.self) { appearance in
+                            OUDSTag(label: "Tag",
+                                    status: status,
+                                    appearance: appearance,
+                                    shape: shape,
+                                    size: size,
+                                    hasLoader: false)
+
+                            OUDSTag(label: "Tag",
+                                    status: status,
+                                    appearance: appearance,
+                                    shape: shape,
+                                    size: size,
+                                    hasLoader: true)
                         }
                     }
                 }
             }
         }
+    }
+
+    // MARK: - tvOS Layout avec HStack
+    private var tvOSRowLayout: some View {
+        LazyVStack(spacing: 30) {
+            Color.clear
+                .frame(height: 1)
+                .id("top")
+
+            ForEach(kAllTagStatus.indices, id: \.self) { statusIndex in
+                let status = kAllTagStatus[statusIndex]
+
+                VStack(spacing: 20) {
+                    Text("Status " + description(for: statusIndex))
+                        .font(.title2)
+                        .fontWeight(.bold)
+
+                    // Utiliser HStack avec Spacer pour un meilleur contrôle
+                    VStack(spacing: 15) {
+                        ForEach(kAllBadgeSizes, id: \.self) { size in
+                            HStack(spacing: 20) {
+                                ForEach(kAllTagShapes, id: \.self) { shape in
+                                    ForEach(kAllTagAppearances, id: \.self) { appearance in
+                                        tagSection(
+                                            title: "\(String(describing: size)) • \(String(describing: shape)) • \(String(describing: appearance))",
+                                            status: status,
+                                            appearance: appearance,
+                                            shape: shape,
+                                            size: size)
+                                    }
+                                }
+                                Spacer() // Évite l'espace vide à droite
+                            }
+                        }
+                    }
+                }
+                .padding()
+                .focusable()
+            }
+
+            Text("Fin du contenu")
+                .font(.caption)
+                .foregroundColor(.secondary)
+                .padding()
+                .id("bottom")
+        }
+        .padding()
+    }
+
+    // MARK: - Helper Views
+    @ViewBuilder
+    private func tagSection(
+        title: String,
+        status: OUDSTag.Status,
+        appearance: OUDSTag.Appearance,
+        shape: OUDSTag.Shape,
+        size: OUDSTag.Size) -> some View
+    {
+        VStack(spacing: 8) {
+            Text(title)
+                .font(.caption)
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+
+            VStack(spacing: 6) {
+                OUDSTag(label: "Tag",
+                        status: status,
+                        appearance: appearance,
+                        shape: shape,
+                        size: size,
+                        hasLoader: false)
+
+                OUDSTag(label: "Tag",
+                        status: status,
+                        appearance: appearance,
+                        shape: shape,
+                        size: size,
+                        hasLoader: true)
+            }
+        }
+        .padding(8)
+        .frame(maxWidth: .infinity) // Centrage des éléments dans leur cellule
     }
 
     private func description(for statusIndex: Int) -> String {
