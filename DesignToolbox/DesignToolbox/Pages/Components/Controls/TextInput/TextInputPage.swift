@@ -81,7 +81,8 @@ struct TextInputDemo: View {
             return nil
         }
 
-        return .init(icon: Image(decorative: "ic_heart"),
+        return .init(icon: Image(systemName: "figure.handball"),
+                     flipIcon: configurationModel.flipTrailingActionIcon,
                      actionHint: "app_components_common_icon_a11y".localized()) {}
     }
 
