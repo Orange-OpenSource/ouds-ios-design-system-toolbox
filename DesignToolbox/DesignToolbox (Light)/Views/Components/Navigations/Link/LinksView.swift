@@ -84,9 +84,6 @@ struct LinksView: View {
                 }
             }
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
-            .focusable()
 
             // Colonne 2 : With Icon
             VStack(spacing: 20) {
@@ -106,9 +103,6 @@ struct LinksView: View {
                 }
             }
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
-            .focusable()
 
             // Colonne 3 : Back Indicator
             VStack(spacing: 20) {
@@ -128,9 +122,6 @@ struct LinksView: View {
                 }
             }
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
-            .focusable()
 
             // Colonne 4 : Next Indicator
             VStack(spacing: 20) {
@@ -150,9 +141,6 @@ struct LinksView: View {
                 }
             }
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
-            .focusable()
         }
         .padding()
     }
