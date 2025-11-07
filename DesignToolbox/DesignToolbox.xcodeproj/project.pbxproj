@@ -5320,7 +5320,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1124-feature-add-flip-option-for-button-with-icon";
+				branch = "1041-bug-trailing-icon-flip-in-the-input-text";
 				kind = branch;
 			};
 		};
