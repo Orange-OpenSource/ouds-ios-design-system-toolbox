@@ -43,12 +43,12 @@ private struct TwoStatesCheckboxesOnlyView: View {
                              accessibilityLabel: "Normal",
                              isError: false)
 
-                Text("Enabled, on error")
+                Text("Enabled, on error").font(.subheadline)
                 OUDSCheckbox(isOn: $isOn,
                              accessibilityLabel: "Error",
                              isError: true)
 
-                Text("Disabled, no error")
+                Text("Disabled, no error").font(.subheadline)
                 OUDSCheckbox(isOn: $isOn,
                              accessibilityLabel: "Disabled",
                              isError: false)
@@ -75,12 +75,12 @@ private struct ThreeStatesCheckboxesOnlyView: View {
                                           accessibilityLabel: "Normal",
                                           isError: false)
 
-                Text("Enabled, on error")
+                Text("Enabled, on error").font(.subheadline)
                 OUDSCheckboxIndeterminate(selection: $state,
                                           accessibilityLabel: "Error",
                                           isError: true)
 
-                Text("Disabled, no error")
+                Text("Disabled, no error").font(.subheadline)
                 OUDSCheckboxIndeterminate(selection: $state,
                                           accessibilityLabel: "Disabled",
                                           isError: false)

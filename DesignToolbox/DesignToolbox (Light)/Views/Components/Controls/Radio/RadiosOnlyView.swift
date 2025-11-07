@@ -26,9 +26,9 @@ struct RadiosOnlyView: View {
                 Text("Enabled, no error").font(.subheadline)
                 OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isError: false)
 
-                Text("Enabled, on error")
+                Text("Enabled, on error").font(.subheadline)
                 OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isError: true)
-
+                    .font(.subheadline)
                 Text("Disabled, no error")
                 OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isError: false)
                     .disabled(true)
