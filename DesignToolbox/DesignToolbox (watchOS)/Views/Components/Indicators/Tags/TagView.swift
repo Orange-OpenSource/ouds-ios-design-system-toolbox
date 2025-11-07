@@ -14,8 +14,6 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// swiftlint:disable accessibility_label_for_image
-
 struct TagView: View {
 
     @State private var isSelected: Bool = true
@@ -32,13 +30,15 @@ struct TagView: View {
                         ForEach(kAllTagShapes, id: \.self) { shape in
                             Text("Shape \(String(describing: shape))").font(.callout)
                             ForEach(kAllTagAppearances, id: \.self) { appearance in
-                                OUDSTag(label: "Tag", status: status,
+                                OUDSTag(label: "Tag",
+                                        status: status,
                                         appearance: appearance,
                                         shape: shape,
                                         size: size,
                                         hasLoader: false)
 
-                                OUDSTag(label: "Tag", status: status,
+                                OUDSTag(label: "Tag",
+                                        status: status,
                                         appearance: appearance,
                                         shape: shape,
                                         size: size,
@@ -97,5 +97,3 @@ private let kAllTagStatus: [OUDSTag.Status] = [
     OUDSTag.Status.accent(bullet: true),
     OUDSTag.Status.accent(icon: Image(systemName: "sun.min.fill")),
 ]
-
-// swiftlint:enable accessibility_label_for_image

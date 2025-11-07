@@ -2651,13 +2651,6 @@
 			path = Tags;
 			sourceTree = "<group>";
 		};
-		959800822EBCCBE8007BE0EA /* TextInput */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TextInput;
-			sourceTree = "<group>";
-		};
 		959800832EBCCBFE007BE0EA /* Actions */ = {
 			isa = PBXGroup;
 			children = (
@@ -2674,7 +2667,6 @@
 				9598007F2EBCCBD8007BE0EA /* Switch */,
 				9598007B2EBCCBB9007BE0EA /* Chip */,
 				9598007A2EBCCBB3007BE0EA /* Checkbox */,
-				959800822EBCCBE8007BE0EA /* TextInput */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
