@@ -2620,9 +2620,7 @@
 				950EA6C12EBCFA2F0009414A /* Layouts */,
 				959800872EBCCC13007BE0EA /* Navigations */,
 				959800852EBCCC07007BE0EA /* Indicators */,
-				950EA6BD2EBCF8D50009414A /* IndicatorsView.swift */,
 				959800842EBCCC03007BE0EA /* Controls */,
-				950EA6BF2EBCF8E50009414A /* ControlsView.swift */,
 				959800832EBCCBFE007BE0EA /* Actions */,
 			);
 			path = Components;
@@ -2704,6 +2702,7 @@
 		959800842EBCCC03007BE0EA /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				950EA6BF2EBCF8E50009414A /* ControlsView.swift */,
 				959800882EBCCC84007BE0EA /* Radio */,
 				9598007F2EBCCBD8007BE0EA /* Switch */,
 				9598007B2EBCCBB9007BE0EA /* Chip */,
@@ -2715,6 +2714,7 @@
 		959800852EBCCC07007BE0EA /* Indicators */ = {
 			isa = PBXGroup;
 			children = (
+				950EA6BD2EBCF8D50009414A /* IndicatorsView.swift */,
 				959800782EBCCBA8007BE0EA /* Badge */,
 				959800802EBCCBDE007BE0EA /* Tags */,
 			);

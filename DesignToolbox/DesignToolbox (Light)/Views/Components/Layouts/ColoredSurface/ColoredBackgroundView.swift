@@ -27,7 +27,7 @@ struct ColoredBackgroundView: View {
                         Text(String(describing: color)).font(.headline)
                         OUDSColoredSurface(color: themedColor) {
                             ColoredSurfaceItems()
-                        }
+                        }.focusable()
                     }
                 }
             }
