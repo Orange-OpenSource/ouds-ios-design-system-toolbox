@@ -22,7 +22,9 @@ struct FixedSpaceProperty: View {
 
     var body: some View {
         SpaceTokenProperty(namedTokens: namedTokens) {
+            #if !os(tvOS) && !os(watchOS)
             SpaceHeaderDescription(text: "app_tokens_dimension_space_fixedHeader_text", paddings: EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0))
+            #endif
         } illustration: { token in
             Illustration(token: token)
         }
@@ -44,9 +46,10 @@ struct ScaledSpaceProperty: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            #if !os(tvOS) && !os(watchOS)
             SpaceHeaderDescription(text: "app_tokens_dimension_space_scaledHeader_text", paddings: EdgeInsets(top: 4, leading: 8, bottom: 0, trailing: 0))
                 .padding(.bottom, theme.spaces.fixedMedium)
-
+            #endif
             ForEach(NamedSpace.Scaled.allCases, id: \.rawValue) { namedSpaceToken in
                 Illustration(for: namedSpaceToken)
             }

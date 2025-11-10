@@ -899,6 +899,8 @@
 		9593907A2EC2519E000DBE95 /* SpacePaddingTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71362CECC3D800B93FC3 /* SpacePaddingTokenIllustrations.swift */; };
 		9593907B2EC251E0000DBE95 /* DesignToolboxTokenIllustrationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A732D3F9D840068B807 /* DesignToolboxTokenIllustrationBackground.swift */; };
 		9593907C2EC251E7000DBE95 /* DesignToolboxTokenIllustrationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A732D3F9D840068B807 /* DesignToolboxTokenIllustrationBackground.swift */; };
+		9593907E2EC254D9000DBE95 /* SpacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593907D2EC254D9000DBE95 /* SpacesView.swift */; };
+		9593907F2EC254D9000DBE95 /* SpacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593907D2EC254D9000DBE95 /* SpacesView.swift */; };
 		9598006F2EBCC714007BE0EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9598006B2EBCC714007BE0EA /* Assets.xcassets */; };
 		959800702EBCC714007BE0EA /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006C2EBCC714007BE0EA /* ComponentsView.swift */; };
 		959800712EBCC714007BE0EA /* DesignToolbox_Light_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006D2EBCC714007BE0EA /* DesignToolbox_Light_App.swift */; };
@@ -1298,6 +1300,7 @@
 		959390452EC249A8000DBE95 /* DimensionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionsView.swift; sourceTree = "<group>"; };
 		959390492EC24A1A000DBE95 /* SizesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizesView.swift; sourceTree = "<group>"; };
 		959390642EC24D1F000DBE95 /* NamedSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedSpace.swift; sourceTree = "<group>"; };
+		9593907D2EC254D9000DBE95 /* SpacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacesView.swift; sourceTree = "<group>"; };
 		959800602EBCC6E2007BE0EA /* DesignToolbox (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9598006B2EBCC714007BE0EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9598006C2EBCC714007BE0EA /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
@@ -2738,6 +2741,7 @@
 			isa = PBXGroup;
 			children = (
 				959390492EC24A1A000DBE95 /* SizesView.swift */,
+				9593907D2EC254D9000DBE95 /* SpacesView.swift */,
 				959390452EC249A8000DBE95 /* DimensionsView.swift */,
 			);
 			path = Dimensions;
@@ -3707,6 +3711,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9593907C2EC251E7000DBE95 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
+				9593907E2EC254D9000DBE95 /* SpacesView.swift in Sources */,
 				959390722EC25190000DBE95 /* SpaceTokenCommonIllustration.swift in Sources */,
 				959390732EC25190000DBE95 /* SpaceBasicTokenIllustrations.swift in Sources */,
 				959390742EC25190000DBE95 /* SpaceGapTokenIllustrations.swift in Sources */,
@@ -4095,6 +4100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9593907B2EC251E0000DBE95 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
+				9593907F2EC254D9000DBE95 /* SpacesView.swift in Sources */,
 				959390762EC2519E000DBE95 /* SpaceTokenPage.swift in Sources */,
 				959390772EC2519E000DBE95 /* SpaceTokenCommonIllustration.swift in Sources */,
 				959390782EC2519E000DBE95 /* SpaceBasicTokenIllustrations.swift in Sources */,

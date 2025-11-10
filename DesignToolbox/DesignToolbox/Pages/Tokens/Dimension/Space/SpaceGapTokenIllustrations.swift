@@ -20,10 +20,12 @@ struct ColumnGapProperty: View {
 
     var body: some View {
         SpaceTokenProperty(namedTokens: NamedSpace.ColumnGap.allCases) {
+            #if !os(tvOS) && !os(watchOS)
             SpaceHeaderDescription(
                 firstText: "app_tokens_dimension_space_columnGapHeader_text",
                 secondText: "app_tokens_dimension_space_columnGapHeader_text",
                 orientation: .horizontal)
+            #endif
         } illustration: { token in
             Illustration(token: token)
         }
@@ -43,10 +45,12 @@ struct RowGapProperty: View {
 
     var body: some View {
         SpaceTokenProperty(namedTokens: NamedSpace.RowGap.allCases) {
+            #if !os(tvOS) && !os(watchOS)
             SpaceHeaderDescription(
                 firstText: "app_tokens_dimension_space_rowGapHeader_text",
                 secondText: "app_tokens_dimension_space_rowGapHeader_text",
                 orientation: .verical)
+            #endif
         } illustration: { token in
             Illustration(token: token)
         }

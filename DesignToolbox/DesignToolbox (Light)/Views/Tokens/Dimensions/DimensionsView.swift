@@ -20,7 +20,7 @@ struct DimensionsView: View {
         NavigationView {
             List {
                 NavigationLink("Sizes", destination: SizesView())
-//                NavigationLink("Spaces", destination: SpacesView())
+                NavigationLink("Spaces", destination: SpacesView())
             }
         }
         .navigationTitle("Dimensions")

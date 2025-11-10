@@ -27,7 +27,7 @@ struct TVGridLayout<TVLayout: View>: View {
     }
 
     var body: some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: count), spacing: theme.spaces.paddingBlock4xlarge) {
+        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), alignment: .top), count: count), spacing: theme.spaces.paddingBlock4xlarge) {
             tvLayout
         }
     }

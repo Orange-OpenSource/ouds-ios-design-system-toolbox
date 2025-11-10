@@ -36,7 +36,7 @@ struct SpaceTokenPage: View {
             Section { FixedSpaceProperty() } header: {
                 header("app_tokens_dimension_space_fixed_label")
             }
-            // Padding Sapce Tokens
+            // Padding Space Tokens
             Section { PaddingInlineProperty() } header: {
                 header("app_tokens_dimension_space_paddingInline_label")
             }
