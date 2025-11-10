@@ -20,11 +20,15 @@ struct BorderTokenPage: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
+            // The BorderTokenPage.swift file is used for tvOS and watchOS targets for light verison of design toolbox
+            // But DesignToolboxCode view cannot be used as is
+            #if !os(tvOS) && !os(watchOS)
             Section {
                 VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                     DesignToolboxCode(code: "theme.borders.widthDefault", titleText: "app_tokens_common_viewCodeExample_label")
                 }
             }
+            #endif
             Section {
                 VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                     ForEach(NamedBorderWidth.allCases, id: \.rawValue) { namedWidth in

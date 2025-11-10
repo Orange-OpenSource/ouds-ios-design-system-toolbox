@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSSwiftUI
 import SwiftUI
 
 struct TVVerticalLayout<WatchLayout: View>: View {

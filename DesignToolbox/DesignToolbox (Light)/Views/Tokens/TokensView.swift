@@ -14,14 +14,10 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct ComponentsView: View {
+struct TokensView: View {
 
     @ViewBuilder
     var body: some View {
-        NavigationLink("Actions", destination: ActionsView())
-        NavigationLink("Controls", destination: ControlsView())
-        NavigationLink("Indicators", destination: IndicatorsView())
-        NavigationLink("Layouts", destination: LayoutsView())
-        NavigationLink("Navigations", destination: NavigationsView())
+        NavigationLink("Borders", destination: BordersView())
     }
 }

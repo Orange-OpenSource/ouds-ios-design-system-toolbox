@@ -817,6 +817,14 @@
 		959390102EC1DA55000DBE95 /* TVGridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593900E2EC1DA55000DBE95 /* TVGridLayoutView.swift */; };
 		959390122EC1DCAC000DBE95 /* TVVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390112EC1DCAC000DBE95 /* TVVerticalLayoutView.swift */; };
 		959390132EC1DCAC000DBE95 /* TVVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390112EC1DCAC000DBE95 /* TVVerticalLayoutView.swift */; };
+		959390162EC1F268000DBE95 /* TokensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390152EC1F268000DBE95 /* TokensView.swift */; };
+		959390172EC1F268000DBE95 /* TokensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390152EC1F268000DBE95 /* TokensView.swift */; };
+		9593901A2EC1F2A0000DBE95 /* BordersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390192EC1F29F000DBE95 /* BordersView.swift */; };
+		9593901B2EC1F2A0000DBE95 /* BordersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390192EC1F29F000DBE95 /* BordersView.swift */; };
+		959390202EC1F4B5000DBE95 /* DesignToolboxTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */; };
+		959390212EC1F4BC000DBE95 /* DesignToolboxTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */; };
+		959390222EC1F4F1000DBE95 /* BorderTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */; };
+		959390232EC1F4F7000DBE95 /* BorderTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */; };
 		9598006F2EBCC714007BE0EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9598006B2EBCC714007BE0EA /* Assets.xcassets */; };
 		959800702EBCC714007BE0EA /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006C2EBCC714007BE0EA /* ComponentsView.swift */; };
 		959800712EBCC714007BE0EA /* DesignToolbox_Light_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006D2EBCC714007BE0EA /* DesignToolbox_Light_App.swift */; };
@@ -1210,6 +1218,8 @@
 		9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchVerticalLayoutView.swift; sourceTree = "<group>"; };
 		9593900E2EC1DA55000DBE95 /* TVGridLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGridLayoutView.swift; sourceTree = "<group>"; };
 		959390112EC1DCAC000DBE95 /* TVVerticalLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVVerticalLayoutView.swift; sourceTree = "<group>"; };
+		959390152EC1F268000DBE95 /* TokensView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensView.swift; sourceTree = "<group>"; };
+		959390192EC1F29F000DBE95 /* BordersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BordersView.swift; sourceTree = "<group>"; };
 		959800602EBCC6E2007BE0EA /* DesignToolbox (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9598006B2EBCC714007BE0EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9598006C2EBCC714007BE0EA /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
@@ -2010,6 +2020,7 @@
 		51BD760E2C466FCF0033365D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */,
 				51F49C812E57434900D50BC4 /* _ */,
 				51F49C822E57435900D50BC4 /* Actions */,
 				51F49C832E57437E00D50BC4 /* Controls */,
@@ -2043,7 +2054,6 @@
 				073543142CA17244001187EA /* Utils */,
 				51BD760C2C466FCF0033365D /* About */,
 				51BD760E2C466FCF0033365D /* Components */,
-				07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */,
 				51BD76102C466FCF0033365D /* Tokens */,
 			);
 			path = Pages;
@@ -2618,6 +2628,23 @@
 			path = _;
 			sourceTree = "<group>";
 		};
+		959390142EC1F25D000DBE95 /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				959390182EC1F28C000DBE95 /* Borders */,
+				959390152EC1F268000DBE95 /* TokensView.swift */,
+			);
+			path = Tokens;
+			sourceTree = "<group>";
+		};
+		959390182EC1F28C000DBE95 /* Borders */ = {
+			isa = PBXGroup;
+			children = (
+				959390192EC1F29F000DBE95 /* BordersView.swift */,
+			);
+			path = Borders;
+			sourceTree = "<group>";
+		};
 		9598006E2EBCC714007BE0EA /* DesignToolbox (Light) */ = {
 			isa = PBXGroup;
 			children = (
@@ -2632,6 +2659,7 @@
 			isa = PBXGroup;
 			children = (
 				959390072EC125A6000DBE95 /* _ */,
+				959390142EC1F25D000DBE95 /* Tokens */,
 				959800752EBCCB81007BE0EA /* Components */,
 			);
 			path = Views;
@@ -3015,8 +3043,8 @@
 				51E599A62E27ED5F002BCB27 /* DesignToolboxUnitTests */,
 				07FDCD902C296A500009AA13 /* DesignToolbox (iOS) */,
 				9589F00A2EB7D67B00134487 /* DesignToolbox (macOS) */,
-				950EA7022EBE3D5D0009414A /* DesignToolbox (tvOS) */,
 				9589F0E42EB7D67E00134487 /* DesignToolbox (visionOS) */,
+				950EA7022EBE3D5D0009414A /* DesignToolbox (tvOS) */,
 				9598005F2EBCC6E2007BE0EA /* DesignToolbox (watchOS) */,
 			);
 		};
@@ -3576,6 +3604,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				959390222EC1F4F1000DBE95 /* BorderTokenPage.swift in Sources */,
+				959390212EC1F4BC000DBE95 /* DesignToolboxTokenIllustration.swift in Sources */,
 				950EA7D12EBE44390009414A /* NamedColorMode.swift in Sources */,
 				950EA7B92EBE3ECB0009414A /* DesignToolbox_Light_App.swift in Sources */,
 				950EA7BA2EBE3ECB0009414A /* ComponentsView.swift in Sources */,
@@ -3592,6 +3622,7 @@
 				950EA7C32EBE3ECB0009414A /* IndicatorsView.swift in Sources */,
 				950EA7C42EBE3ECB0009414A /* RadiosView.swift in Sources */,
 				950EA7C52EBE3ECB0009414A /* RadiosItemView.swift in Sources */,
+				959390172EC1F268000DBE95 /* TokensView.swift in Sources */,
 				959390092EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */,
 				950EA7C62EBE3ECB0009414A /* RadiosOnlyView.swift in Sources */,
 				950EA7C72EBE3ECB0009414A /* SwitchesItemView.swift in Sources */,
@@ -3607,6 +3638,7 @@
 				950EA7CE2EBE3ECB0009414A /* ControlsView.swift in Sources */,
 				950EA7CF2EBE3ECB0009414A /* ButtonsView.swift in Sources */,
 				950EA7D02EBE3ECB0009414A /* ActionsView.swift in Sources */,
+				9593901B2EC1F2A0000DBE95 /* BordersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3924,6 +3956,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				959390232EC1F4F7000DBE95 /* BorderTokenPage.swift in Sources */,
+				959390202EC1F4B5000DBE95 /* DesignToolboxTokenIllustration.swift in Sources */,
 				950EA6C72EBCFCBE0009414A /* NamedColorMode.swift in Sources */,
 				950EA6CC2EBDF0DD0009414A /* RadiosItemView.swift in Sources */,
 				950EA6CD2EBDF0DD0009414A /* RadiosOnlyView.swift in Sources */,
@@ -3940,6 +3974,7 @@
 				950EA6D32EBDFFA50009414A /* SwitchesOnlyView.swift in Sources */,
 				950EA6D72EBE053B0009414A /* TagsView.swift in Sources */,
 				959800702EBCC714007BE0EA /* ComponentsView.swift in Sources */,
+				959390162EC1F268000DBE95 /* TokensView.swift in Sources */,
 				9593900A2EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */,
 				950EA6B82EBCF6230009414A /* LinksView.swift in Sources */,
 				950EA6C92EBDF01D0009414A /* RadiosView.swift in Sources */,
@@ -3955,6 +3990,7 @@
 				950EA6B42EBCECA00009414A /* CheckboxesOnlyView.swift in Sources */,
 				950EA6D92EBE24AA0009414A /* TagView.swift in Sources */,
 				950EA6DB2EBE24E10009414A /* InputTag.swift in Sources */,
+				9593901A2EC1F2A0000DBE95 /* BordersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

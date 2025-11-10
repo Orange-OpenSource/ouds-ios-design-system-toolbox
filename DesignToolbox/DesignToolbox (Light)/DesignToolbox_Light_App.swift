@@ -31,7 +31,15 @@ struct DesignToolbox_Light_App: App {
             TabView(selection: $selectedThemeIndex) {
                 ForEach(themes.indices, id: \.self) { index in
                     OUDSThemeableView(theme: themes[index]) {
-                        ComponentsView()
+                        NavigationView {
+                            List {
+                                Text("Tokens").font(.headline)
+                                TokensView()
+                                Text("Components").font(.headline)
+                                ComponentsView()
+                            }
+                            .navigationTitle(themes[index].name)
+                        }
                     }
                     .tag(index)
                 }
