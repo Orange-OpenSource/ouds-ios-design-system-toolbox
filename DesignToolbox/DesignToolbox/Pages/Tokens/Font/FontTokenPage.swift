@@ -22,10 +22,11 @@ struct FontTokenPage: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            #if !os(tvOS) && !os(watchOS)
             Section {
                 DesignToolboxCode(code: "theme.bodyStrongLarge(theme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
-
+            #endif
             Spacer()
 
             ForEach(NamedFont.allCases, id: \.rawValue) { fontName in

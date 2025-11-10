@@ -475,6 +475,14 @@
 		951458542EC28BB90096BBF1 /* ElevationTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42772CA3F4BE000BD03E /* ElevationTokenPage.swift */; };
 		951458572EC28BC20096BBF1 /* ElevationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458552EC28BC20096BBF1 /* ElevationsView.swift */; };
 		951458582EC28BC20096BBF1 /* ElevationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458552EC28BC20096BBF1 /* ElevationsView.swift */; };
+		9514585B2EC28DF10096BBF1 /* FontsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458592EC28DF10096BBF1 /* FontsView.swift */; };
+		9514585C2EC28DF10096BBF1 /* FontsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458592EC28DF10096BBF1 /* FontsView.swift */; };
+		9514585D2EC28EF40096BBF1 /* FontTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6D02D09C5E2005DAB51 /* FontTokenPage.swift */; };
+		9514585E2EC28EFD0096BBF1 /* FontTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6D02D09C5E2005DAB51 /* FontTokenPage.swift */; };
+		9514585F2EC28F4E0096BBF1 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
+		951458602EC28F570096BBF1 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
+		951458612EC28FB70096BBF1 /* Localizable.xcstrings in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0272D65D18E00CD2857 /* Localizable.xcstrings */; };
+		951458622EC28FBF0096BBF1 /* Localizable.xcstrings in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0272D65D18E00CD2857 /* Localizable.xcstrings */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95818BC22EB50D70004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
@@ -1293,6 +1301,7 @@
 		950EA7D22EBE4D560009414A /* TwoStatesCheckboxesItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoStatesCheckboxesItemsView.swift; sourceTree = "<group>"; };
 		950EA7D52EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeStatesCheckboxesItemsView.swift; sourceTree = "<group>"; };
 		951458552EC28BC20096BBF1 /* ElevationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationsView.swift; sourceTree = "<group>"; };
+		951458592EC28DF10096BBF1 /* FontsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsView.swift; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAndTVLayoutsView.swift; sourceTree = "<group>"; };
@@ -2712,6 +2721,14 @@
 			path = Elevations;
 			sourceTree = "<group>";
 		};
+		9514585A2EC28DF10096BBF1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				951458592EC28DF10096BBF1 /* FontsView.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		959390072EC125A6000DBE95 /* _ */ = {
 			isa = PBXGroup;
 			children = (
@@ -2727,6 +2744,7 @@
 			isa = PBXGroup;
 			children = (
 				959390182EC1F28C000DBE95 /* Borders */,
+				9514585A2EC28DF10096BBF1 /* Fonts */,
 				951458562EC28BC20096BBF1 /* Elevations */,
 				959390462EC249A8000DBE95 /* Dimensions */,
 				959390252EC21FD9000DBE95 /* Colors */,
@@ -3724,6 +3742,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951458622EC28FBF0096BBF1 /* Localizable.xcstrings in Sources */,
+				9514585F2EC28F4E0096BBF1 /* String+extension.swift in Sources */,
+				9514585E2EC28EFD0096BBF1 /* FontTokenPage.swift in Sources */,
 				951458532EC28BAD0096BBF1 /* ElevationTokenPage.swift in Sources */,
 				9593907C2EC251E7000DBE95 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				9593907E2EC254D9000DBE95 /* SpacesView.swift in Sources */,
@@ -3740,6 +3761,7 @@
 				959390592EC24CC5000DBE95 /* NameSpace+RowGap.swift in Sources */,
 				9593905A2EC24CC5000DBE95 /* NameSpace+PaddingInline.swift in Sources */,
 				9593905B2EC24CC5000DBE95 /* NameSpace+PaddingInset.swift in Sources */,
+				9514585B2EC28DF10096BBF1 /* FontsView.swift in Sources */,
 				9593905C2EC24CC5000DBE95 /* NameSpace+PaddingBlock.swift in Sources */,
 				959390552EC24C28000DBE95 /* NamedFont.swift in Sources */,
 				959390562EC24C28000DBE95 /* NamedSpace+Scaled.swift in Sources */,
@@ -4115,6 +4137,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951458612EC28FB70096BBF1 /* Localizable.xcstrings in Sources */,
+				951458602EC28F570096BBF1 /* String+extension.swift in Sources */,
+				9514585D2EC28EF40096BBF1 /* FontTokenPage.swift in Sources */,
 				951458542EC28BB90096BBF1 /* ElevationTokenPage.swift in Sources */,
 				9593907B2EC251E0000DBE95 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				9593907F2EC254D9000DBE95 /* SpacesView.swift in Sources */,
@@ -4131,6 +4156,7 @@
 				959390602EC24CF3000DBE95 /* NameSpace+PaddingInline.swift in Sources */,
 				959390612EC24CF3000DBE95 /* NameSpace+PaddingInset.swift in Sources */,
 				959390622EC24CF3000DBE95 /* NameSpace+PaddingBlock.swift in Sources */,
+				9514585C2EC28DF10096BBF1 /* FontsView.swift in Sources */,
 				959390522EC24C20000DBE95 /* NamedFont.swift in Sources */,
 				959390532EC24C20000DBE95 /* NamedSpace+Scaled.swift in Sources */,
 				959390542EC24C20000DBE95 /* NamedSpace+Fixed.swift in Sources */,
