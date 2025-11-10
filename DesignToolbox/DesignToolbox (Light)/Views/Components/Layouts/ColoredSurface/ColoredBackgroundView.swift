@@ -19,20 +19,23 @@ struct ColoredBackgroundView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: theme.spaces.scaledXsmallMobile) {
-                ForEach(NamedColorMode.allCases, id: \.self) { color in
-                    let themedColor = color.toSurfaceColor(from: theme)
-                    if !themedColor.hasUndefinedValue() {
-                        Text(String(describing: color)).font(.headline)
-                        OUDSColoredSurface(color: themedColor) {
-                            ColoredSurfaceItems()
-                        }.focusable()
-                    }
+        WatchAndTVLayoutsView(title: "Surfaces",
+                              watchLayout: { WatchVerticalLayout { layout } },
+                              tvLayout: { TVVerticalLayout { layout } })
+    }
+
+    private var layout: some View {
+        VStack(spacing: theme.spaces.scaledXsmallMobile) {
+            ForEach(NamedColorMode.allCases, id: \.self) { color in
+                let themedColor = color.toSurfaceColor(from: theme)
+                if !themedColor.hasUndefinedValue() {
+                    Text(String(describing: color)).font(.headline)
+                    OUDSColoredSurface(color: themedColor) {
+                        ColoredSurfaceItems()
+                    }.focusable()
                 }
             }
         }
-        .navigationTitle("Surfaces")
     }
 }
 

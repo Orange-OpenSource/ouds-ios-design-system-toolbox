@@ -18,22 +18,23 @@ import SwiftUI
 // swiftlint:disable function_body_length
 
 struct SwitchesItemView: View {
+
     @State private var isOn: Bool = true
+
     @Environment(\.theme) private var theme
 
     var body: some View {
-        ScrollView {
-            #if os(tvOS)
-            tvOSGridLayout
-            #else
-            watchOSVerticalLayout
-            #endif
-        }
+        WatchAndTVLayoutsView(watchLayout: {
+            watchLayout
+        }, tvLayout: {
+            tvLayout
+        })
     }
 
-    // MARK: - watchOS Layout (Vertical - votre code actuel)
-    private var watchOSVerticalLayout: some View {
-        VStack(spacing: theme.spaces.scaledXsmallMobile) {
+    // MARK: - watchOS
+
+    private var watchLayout: some View {
+        WatchVerticalLayout {
             Text("With icon").font(.headline)
             detailedView(withIcon: true)
 
@@ -44,12 +45,13 @@ struct SwitchesItemView: View {
         }
     }
 
-    // MARK: - tvOS Layout (2 colonnes : Without Icon | With Icon)
-    private var tvOSGridLayout: some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: 30) {
+    // MARK: - tvOS
 
-            // Colonne 1 : Without Icon
-            VStack(spacing: 20) {
+    private var tvLayout: some View {
+        TVGridLayout(count: 2) {
+
+            // Column n°1: without icon
+            VStack(spacing: theme.spaces.scaledMediumMobile) {
                 Text("Without Icon")
                     .font(.title2)
                     .fontWeight(.bold)
@@ -64,8 +66,8 @@ struct SwitchesItemView: View {
             .background(Color.gray.opacity(0.05))
             .cornerRadius(12)
 
-            // Colonne 2 : With Icon
-            VStack(spacing: 20) {
+            // Column n°2: with Icon
+            VStack(spacing: theme.spaces.scaledMediumMobile) {
                 Text("With Icon")
                     .font(.title2)
                     .fontWeight(.bold)
@@ -83,7 +85,8 @@ struct SwitchesItemView: View {
         .padding()
     }
 
-    // MARK: - Helper Views
+    // MARK: - Helpers
+
     @ViewBuilder
     private func switchSection(
         title: String,
@@ -92,13 +95,12 @@ struct SwitchesItemView: View {
         isError: Bool = false,
         isReadOnly: Bool = false) -> some View
     {
-        VStack(spacing: 12) {
+        VStack(spacing: theme.spaces.scaledSmallMobile) {
             Text(title)
                 .font(.headline)
                 .foregroundColor(.primary)
 
-            VStack(spacing: 8) {
-                // Normal (isReversed: false)
+            VStack(spacing: theme.spaces.scaledXsmallMobile) {
                 OUDSSwitchItem(
                     "Label",
                     isOn: $isOn,
@@ -110,7 +112,6 @@ struct SwitchesItemView: View {
                     isReadOnly: isReadOnly)
                     .disabled(isDisabled)
 
-                // Reversed (isReversed: true)
                 OUDSSwitchItem(
                     "Label",
                     isOn: $isOn,

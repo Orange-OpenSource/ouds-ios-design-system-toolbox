@@ -16,62 +16,64 @@ import SwiftUI
 
 // swiftlint:disable accessibility_label_for_image
 struct BadgesView: View {
+
+    private static let kAllBadgeStatus: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning, .disabled]
+    private static let kAllBadgeStandardSizes: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
+    private static let kAllBadgeIllustrationSizes: [OUDSBadge.IllustrationSize] = [.medium, .large]
+
     @Environment(\.theme) private var theme
 
     var body: some View {
-        ScrollView {
-            #if os(tvOS)
-            tvOSRowLayout
-            #else
-            watchOSVerticalLayout
-            #endif
-        }
-        .navigationTitle("Badge")
+        WatchAndTVLayoutsView(title: "Badges",
+                              watchLayout: { WatchVerticalLayout { watchOSLayout } },
+                              tvLayout: { TVVerticalLayout { tvOSLayout } })
     }
 
-    // MARK: - watchOS Layout (Vertical - votre code actuel)
-    private var watchOSVerticalLayout: some View {
-        VStack(spacing: theme.spaces.scaledXsmallMobile) {
-            Text("Status badges").font(.headline)
-            ForEach(kAllBadgeStandardSizes, id: \.self) { size in
-                Text("Standard size \(String(describing: size))").font(.subheadline)
-                ForEach(kAllBadgeStatus, id: \.self) { status in
-                    OUDSBadge(status: status, size: size)
-                }
-            }
+    // MARK: - watchOS
 
-            Text("Icon badges").font(.headline)
-            ForEach(kAllBadgeIllustrationSizes, id: \.self) { size in
-                Text("Illustration size \(String(describing: size))").font(.subheadline)
-                ForEach(kAllBadgeStatus, id: \.self) { status in
-                    OUDSBadge(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Foo", status: status, size: size)
-                }
+    @ViewBuilder
+    private var watchOSLayout: some View {
+        Text("Status badges").font(.headline)
+        ForEach(Self.kAllBadgeStandardSizes, id: \.self) { size in
+            Text("Standard size \(String(describing: size))").font(.subheadline)
+            ForEach(Self.kAllBadgeStatus, id: \.self) { status in
+                OUDSBadge(status: status, size: size)
             }
+        }
 
-            Text("Count badges").font(.headline)
-            ForEach(kAllBadgeIllustrationSizes, id: \.self) { size in
-                Text("Illustration size \(String(describing: size))").font(.subheadline)
-                ForEach(kAllBadgeStatus, id: \.self) { status in
-                    OUDSBadge(count: 100, status: status, size: size)
-                }
+        Text("Icon badges").font(.headline)
+        ForEach(Self.kAllBadgeIllustrationSizes, id: \.self) { size in
+            Text("Illustration size \(String(describing: size))").font(.subheadline)
+            ForEach(Self.kAllBadgeStatus, id: \.self) { status in
+                OUDSBadge(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Foo", status: status, size: size)
+            }
+        }
+
+        Text("Count badges").font(.headline)
+        ForEach(Self.kAllBadgeIllustrationSizes, id: \.self) { size in
+            Text("Illustration size \(String(describing: size))").font(.subheadline)
+            ForEach(Self.kAllBadgeStatus, id: \.self) { status in
+                OUDSBadge(count: 100, status: status, size: size)
             }
         }
     }
 
-    // MARK: - tvOS Layout (3 lignes avec ForEach)
-    private var tvOSRowLayout: some View {
-        VStack(spacing: 30) {
+    // MARK: - tvOS
 
-            // Ligne 1 : Status badges
-            VStack(spacing: 20) {
+    @ViewBuilder
+    private var tvOSLayout: some View {
+        VStack(spacing: theme.spaces.paddingBlock4xlarge) {
+
+            // Row n°1: Status badges
+            VStack(spacing: theme.spaces.scaledMediumMobile) {
                 Text("Status Badges")
                     .font(.title2)
                     .fontWeight(.bold)
 
-                HStack(spacing: 20) {
-                    ForEach(kAllBadgeStandardSizes, id: \.self) { size in
+                HStack(spacing: theme.spaces.scaledMediumMobile) {
+                    ForEach(Self.kAllBadgeStandardSizes, id: \.self) { size in
                         badgeSection(title: "Standard \(String(describing: size))") {
-                            ForEach(kAllBadgeStatus, id: \.self) { status in
+                            ForEach(Self.kAllBadgeStatus, id: \.self) { status in
                                 OUDSBadge(status: status, size: size)
                             }
                         }
@@ -81,16 +83,16 @@ struct BadgesView: View {
             .padding()
             .focusable()
 
-            // Ligne 2 : Icon badges
-            VStack(spacing: 20) {
+            // Row n°2: Icon badges
+            VStack(spacing: theme.spaces.scaledMediumMobile) {
                 Text("Icon Badges")
                     .font(.title2)
                     .fontWeight(.bold)
 
-                HStack(spacing: 20) {
-                    ForEach(kAllBadgeIllustrationSizes, id: \.self) { size in
+                HStack(spacing: theme.spaces.scaledMediumMobile) {
+                    ForEach(Self.kAllBadgeIllustrationSizes, id: \.self) { size in
                         badgeSection(title: "Illustration \(String(describing: size))") {
-                            ForEach(kAllBadgeStatus, id: \.self) { status in
+                            ForEach(Self.kAllBadgeStatus, id: \.self) { status in
                                 OUDSBadge(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Foo", status: status, size: size)
                             }
                         }
@@ -100,16 +102,16 @@ struct BadgesView: View {
             .padding()
             .focusable()
 
-            // Ligne 3 : Count badges
-            VStack(spacing: 20) {
+            // Row n°3: Count badges
+            VStack(spacing: theme.spaces.scaledMediumMobile) {
                 Text("Count Badges")
                     .font(.title2)
                     .fontWeight(.bold)
 
-                HStack(spacing: 20) {
-                    ForEach(kAllBadgeIllustrationSizes, id: \.self) { size in
+                HStack(spacing: theme.spaces.scaledMediumMobile) {
+                    ForEach(Self.kAllBadgeIllustrationSizes, id: \.self) { size in
                         badgeSection(title: "Illustration \(String(describing: size))") {
-                            ForEach(kAllBadgeStatus, id: \.self) { status in
+                            ForEach(Self.kAllBadgeStatus, id: \.self) { status in
                                 OUDSBadge(count: 100, status: status, size: size)
                             }
                         }
@@ -122,28 +124,20 @@ struct BadgesView: View {
         .padding()
     }
 
-    // MARK: - Helper Views
     @ViewBuilder
-    private func badgeSection(
-        title: String,
-        @ViewBuilder content: () -> some View) -> some View
-    {
-        VStack(spacing: 8) {
+    private func badgeSection(title: String, @ViewBuilder content: () -> some View) -> some View {
+        VStack(spacing: theme.spaces.scaledSmallMobile) {
             Text(title)
                 .font(.headline)
                 .foregroundColor(.primary)
 
-            VStack(spacing: 6) {
+            VStack(spacing: theme.spaces.scaledXsmallMobile) {
                 content()
             }
         }
         .padding()
         .frame(maxWidth: .infinity)
     }
-
-    private let kAllBadgeStatus: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning, .disabled]
-    private let kAllBadgeStandardSizes: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
-    private let kAllBadgeIllustrationSizes: [OUDSBadge.IllustrationSize] = [.medium, .large]
 }
 
 // swiftlint:enable accessibility_label_for_image

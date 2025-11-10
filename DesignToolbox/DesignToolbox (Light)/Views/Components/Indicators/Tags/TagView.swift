@@ -14,41 +14,34 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// swiftlint:disable accessibility_label_for_image
+
 struct TagView: View {
+
     @State private var isSelected: Bool = true
+
     @Environment(\.theme) private var theme
 
     var body: some View {
-        ScrollViewReader { proxy in
-            ScrollView {
-                #if os(tvOS)
-                tvOSRowLayout
-                #else
-                watchOSVerticalLayout
-                #endif
-            }
-            .navigationTitle("Tag")
-            #if os(tvOS)
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        proxy.scrollTo("top", anchor: .top)
-                    }
-                }
-            #endif
+        WatchAndTVLayoutsView(title: "Tag") {
+            watchOSLayout
+        } tvLayout: {
+            tvOSLayout
         }
     }
 
-    // MARK: - watchOS Layout (Vertical - votre code actuel)
-    private var watchOSVerticalLayout: some View {
-        VStack(spacing: theme.spaces.scaledXsmallMobile) {
-            ForEach(kAllTagStatus.indices, id: \.self) { statusIndex in
-                Text("Status " + description(for: statusIndex)).font(.headline)
-                let status = kAllTagStatus[statusIndex]
-                ForEach(kAllBadgeSizes, id: \.self) { size in
+    // MARK: - watchOS
+
+    private var watchOSLayout: some View {
+        WatchVerticalLayout {
+            ForEach(Self.kAllTagStatus.indices, id: \.self) { statusIndex in
+                Text("Status " + Self.description(for: statusIndex)).font(.headline)
+                let status = Self.kAllTagStatus[statusIndex]
+                ForEach(Self.kAllBadgeSizes, id: \.self) { size in
                     Text("Size \(String(describing: size))").font(.subheadline)
-                    ForEach(kAllTagShapes, id: \.self) { shape in
+                    ForEach(Self.kAllTagShapes, id: \.self) { shape in
                         Text("Shape \(String(describing: shape))").font(.callout)
-                        ForEach(kAllTagAppearances, id: \.self) { appearance in
+                        ForEach(Self.kAllTagAppearances, id: \.self) { appearance in
                             OUDSTag(label: "Tag",
                                     status: status,
                                     appearance: appearance,
@@ -69,27 +62,23 @@ struct TagView: View {
         }
     }
 
-    // MARK: - tvOS Layout avec HStack
-    private var tvOSRowLayout: some View {
-        LazyVStack(spacing: 30) {
-            Color.clear
-                .frame(height: 1)
-                .id("top")
+    // MARK: - tvOS
 
-            ForEach(kAllTagStatus.indices, id: \.self) { statusIndex in
-                let status = kAllTagStatus[statusIndex]
+    private var tvOSLayout: some View {
+        LazyVStack(spacing: theme.spaces.paddingBlock4xlarge) {
+            ForEach(Self.kAllTagStatus.indices, id: \.self) { statusIndex in
+                let status = Self.kAllTagStatus[statusIndex]
 
-                VStack(spacing: 20) {
-                    Text("Status " + description(for: statusIndex))
+                VStack(spacing: theme.spaces.scaledMediumMobile) {
+                    Text("Status " + Self.description(for: statusIndex))
                         .font(.title2)
                         .fontWeight(.bold)
 
-                    // Utiliser HStack avec Spacer pour un meilleur contrôle
-                    VStack(spacing: 15) {
-                        ForEach(kAllBadgeSizes, id: \.self) { size in
-                            HStack(spacing: 20) {
-                                ForEach(kAllTagShapes, id: \.self) { shape in
-                                    ForEach(kAllTagAppearances, id: \.self) { appearance in
+                    VStack(spacing: theme.spaces.scaledMediumMobile) {
+                        ForEach(Self.kAllBadgeSizes, id: \.self) { size in
+                            HStack(spacing: theme.spaces.scaledMediumMobile) {
+                                ForEach(Self.kAllTagShapes, id: \.self) { shape in
+                                    ForEach(Self.kAllTagAppearances, id: \.self) { appearance in
                                         tagSection(
                                             title: "\(String(describing: size)) • \(String(describing: shape)) • \(String(describing: appearance))",
                                             status: status,
@@ -98,7 +87,7 @@ struct TagView: View {
                                             size: size)
                                     }
                                 }
-                                Spacer() // Évite l'espace vide à droite
+                                Spacer()
                             }
                         }
                     }
@@ -106,17 +95,12 @@ struct TagView: View {
                 .padding()
                 .focusable()
             }
-
-            Text("Fin du contenu")
-                .font(.caption)
-                .foregroundColor(.secondary)
-                .padding()
-                .id("bottom")
         }
         .padding()
     }
 
-    // MARK: - Helper Views
+    // MARK: - Helpers
+
     @ViewBuilder
     private func tagSection(
         title: String,
@@ -125,13 +109,13 @@ struct TagView: View {
         shape: OUDSTag.Shape,
         size: OUDSTag.Size) -> some View
     {
-        VStack(spacing: 8) {
+        VStack(spacing: theme.spaces.scaledSmallMobile) {
             Text(title)
                 .font(.caption)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
 
-            VStack(spacing: 6) {
+            VStack(spacing: theme.spaces.scaledXsmallMobile) {
                 OUDSTag(label: "Tag",
                         status: status,
                         appearance: appearance,
@@ -147,11 +131,11 @@ struct TagView: View {
                         hasLoader: true)
             }
         }
-        .padding(8)
-        .frame(maxWidth: .infinity) // Centrage des éléments dans leur cellule
+        .padding(theme.spaces.scaledSmallMobile)
+        .frame(maxWidth: .infinity)
     }
 
-    private func description(for statusIndex: Int) -> String {
+    private static func description(for statusIndex: Int) -> String {
         if statusIndex <= 2 {
             return "positive"
         }
@@ -173,10 +157,10 @@ struct TagView: View {
         return ""
     }
 
-    private let kAllTagAppearances: [OUDSTag.Appearance] = [.emphasized, .muted]
-    private let kAllTagShapes: [OUDSTag.Shape] = [.rounded, .square]
-    private let kAllBadgeSizes: [OUDSTag.Size] = [.default, .small]
-    private let kAllTagStatus: [OUDSTag.Status] = [
+    private static let kAllTagAppearances: [OUDSTag.Appearance] = [.emphasized, .muted]
+    private static let kAllTagShapes: [OUDSTag.Shape] = [.rounded, .square]
+    private static let kAllBadgeSizes: [OUDSTag.Size] = [.default, .small]
+    private static let kAllTagStatus: [OUDSTag.Status] = [
         OUDSTag.Status.positive(leading: .bullet),
         OUDSTag.Status.positive(leading: .icon),
         OUDSTag.Status.positive(leading: .none),
@@ -197,3 +181,5 @@ struct TagView: View {
         OUDSTag.Status.accent(icon: Image(systemName: "sun.min.fill")),
     ]
 }
+
+// swiftlint:enable accessibility_label_for_image

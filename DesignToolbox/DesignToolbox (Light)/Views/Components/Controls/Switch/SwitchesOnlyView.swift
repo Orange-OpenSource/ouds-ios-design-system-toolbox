@@ -16,20 +16,25 @@ import SwiftUI
 
 struct SwitchesOnlyView: View {
 
+    var body: some View {
+        WatchAndTVLayoutsView(watchLayout: {
+            SwitchOnlyLayout()
+        }, tvLayout: {
+            SwitchOnlyLayout()
+        })
+    }
+}
+
+private struct SwitchOnlyLayout: View {
+
     @State private var isOn: Bool = true
-    @Environment(\.theme) private var theme
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: theme.spaces.scaledXsmallMobile) {
+        Text("Enabled").font(.subheadline)
+        OUDSSwitch(isOn: $isOn, accessibilityLabel: "Radio")
 
-                Text("Enabled").font(.subheadline)
-                OUDSSwitch(isOn: $isOn, accessibilityLabel: "Radio")
-
-                Text("Disabled").font(.subheadline)
-                OUDSSwitch(isOn: $isOn, accessibilityLabel: "Radio")
-                    .disabled(true)
-            }
-        }
+        Text("Disabled").font(.subheadline)
+        OUDSSwitch(isOn: $isOn, accessibilityLabel: "Radio")
+            .disabled(true)
     }
 }

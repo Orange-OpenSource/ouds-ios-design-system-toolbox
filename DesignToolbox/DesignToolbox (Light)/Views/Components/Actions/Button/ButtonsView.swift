@@ -17,35 +17,42 @@ import SwiftUI
 // swiftlint:disable accessibility_label_for_image
 struct ButtonsView: View {
 
+    private static let kAllButtonAppaerances: [OUDSButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
+    private static let kAllButtonStyles: [OUDSButton.Style] = [.default, .loading]
+
     @Environment(\.theme) private var theme
 
     var body: some View {
-        ScrollView {
-            #if os(tvOS)
-            tvOSLayout
-            #else
-            watchOSLayout
-            #endif
-        }
         #if os(tvOS)
-        .navigationTitle("Button (\(theme.name))")
+        WatchAndTVLayoutsView(title: "Button (\(theme.name))",
+                              watchLayout: {
+                                  watchLayout
+                              }, tvLayout: {
+                                  tvLayout
+                              })
         #else
-        .navigationTitle("Button")
+        WatchAndTVLayoutsView(title: "Button",
+                              watchLayout: {
+                                  watchLayout
+                              }, tvLayout: {
+                                  tvLayout
+                              })
         #endif
     }
 
-    #if os(tvOS)
+    // MARK: - tvOS
+
     @ViewBuilder
-    private var tvOSLayout: some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: kAllButtonAppaerances.count), spacing: theme.spaces.paddingInlineXlarge) {
-            ForEach(kAllButtonAppaerances, id: \.self) { appearance in
+    private var tvLayout: some View {
+        TVGridLayout(count: Self.kAllButtonAppaerances.count) {
+            ForEach(Self.kAllButtonAppaerances, id: \.self) { appearance in
                 buttonSection(style: .default, appearance: appearance)
             }
         }
         .padding()
 
-        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: kAllButtonAppaerances.count), spacing: theme.spaces.paddingInlineXlarge) {
-            ForEach(kAllButtonAppaerances, id: \.self) { appearance in
+        TVGridLayout(count: Self.kAllButtonAppaerances.count) {
+            ForEach(Self.kAllButtonAppaerances, id: \.self) { appearance in
                 buttonSection(style: .loading, appearance: appearance)
             }
         }
@@ -74,13 +81,14 @@ struct ButtonsView: View {
         .padding(theme.spaces.paddingInlineMedium)
     }
 
-    #elseif os(watchOS)
+    // MARK: - watchOS
+
     @ViewBuilder
-    private var watchOSLayout: some View {
-        VStack(spacing: theme.spaces.scaledXsmallMobile) {
-            ForEach(kAllButtonStyles, id: \.self) { style in
+    private var watchLayout: some View {
+        WatchVerticalLayout {
+            ForEach(Self.kAllButtonStyles, id: \.self) { style in
                 Text("Style \(String(describing: style))").font(.headline)
-                ForEach(kAllButtonAppaerances, id: \.self) { appearance in
+                ForEach(Self.kAllButtonAppaerances, id: \.self) { appearance in
                     Text("Appearance \(String(describing: appearance))").font(.subheadline)
                     OUDSButton(text: "Button", appearance: appearance, style: style) {}
                     OUDSButton(icon: Image(systemName: "sun.min.fill"), text: "Button", appearance: appearance, style: style) {}
@@ -89,10 +97,6 @@ struct ButtonsView: View {
             }
         }
     }
-    #endif
-
-    private let kAllButtonAppaerances: [OUDSButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
-    private let kAllButtonStyles: [OUDSButton.Style] = [.default, .loading]
 }
 
 // swiftlint:enable accessibility_label_for_image

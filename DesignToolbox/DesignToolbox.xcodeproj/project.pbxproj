@@ -443,7 +443,7 @@
 		950EA79E2EBE3D5D0009414A /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 950EA7052EBE3D5D0009414A /* OUDSSwiftUI */; };
 		950EA7B82EBE3EA80009414A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9598006B2EBCC714007BE0EA /* Assets.xcassets */; };
 		950EA7B92EBE3ECB0009414A /* DesignToolbox_Light_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006D2EBCC714007BE0EA /* DesignToolbox_Light_App.swift */; };
-		950EA7BA2EBE3ECB0009414A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006C2EBCC714007BE0EA /* ContentView.swift */; };
+		950EA7BA2EBE3ECB0009414A /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006C2EBCC714007BE0EA /* ComponentsView.swift */; };
 		950EA7BB2EBE3ECB0009414A /* ColoredBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6C52EBCFA6E0009414A /* ColoredBackgroundView.swift */; };
 		950EA7BC2EBE3ECB0009414A /* LayoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6C22EBCFA360009414A /* LayoutsView.swift */; };
 		950EA7BD2EBE3ECB0009414A /* LinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6B72EBCF6230009414A /* LinksView.swift */; };
@@ -809,8 +809,16 @@
 		9589F1B52EB7D67E00134487 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B42CE3AF1500F2EC33 /* style.css */; };
 		9589F1B62EB7D67E00134487 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
 		9589F1B72EB7D67E00134487 /* orange-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */; };
+		959390092EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */; };
+		9593900A2EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */; };
+		9593900C2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */; };
+		9593900D2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */; };
+		9593900F2EC1DA55000DBE95 /* TVGridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593900E2EC1DA55000DBE95 /* TVGridLayoutView.swift */; };
+		959390102EC1DA55000DBE95 /* TVGridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593900E2EC1DA55000DBE95 /* TVGridLayoutView.swift */; };
+		959390122EC1DCAC000DBE95 /* TVVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390112EC1DCAC000DBE95 /* TVVerticalLayoutView.swift */; };
+		959390132EC1DCAC000DBE95 /* TVVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390112EC1DCAC000DBE95 /* TVVerticalLayoutView.swift */; };
 		9598006F2EBCC714007BE0EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9598006B2EBCC714007BE0EA /* Assets.xcassets */; };
-		959800702EBCC714007BE0EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006C2EBCC714007BE0EA /* ContentView.swift */; };
+		959800702EBCC714007BE0EA /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006C2EBCC714007BE0EA /* ComponentsView.swift */; };
 		959800712EBCC714007BE0EA /* DesignToolbox_Light_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006D2EBCC714007BE0EA /* DesignToolbox_Light_App.swift */; };
 		959800732EBCC780007BE0EA /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 959800722EBCC780007BE0EA /* OUDSSwiftUI */; };
 		9598008A2EBCCCAD007BE0EA /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959800892EBCCCAB007BE0EA /* BadgesView.swift */; };
@@ -1198,9 +1206,13 @@
 		950EA7D52EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeStatesCheckboxesItemsView.swift; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAndTVLayoutsView.swift; sourceTree = "<group>"; };
+		9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchVerticalLayoutView.swift; sourceTree = "<group>"; };
+		9593900E2EC1DA55000DBE95 /* TVGridLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGridLayoutView.swift; sourceTree = "<group>"; };
+		959390112EC1DCAC000DBE95 /* TVVerticalLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVVerticalLayoutView.swift; sourceTree = "<group>"; };
 		959800602EBCC6E2007BE0EA /* DesignToolbox (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9598006B2EBCC714007BE0EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9598006C2EBCC714007BE0EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9598006C2EBCC714007BE0EA /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
 		9598006D2EBCC714007BE0EA /* DesignToolbox_Light_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolbox_Light_App.swift; sourceTree = "<group>"; };
 		959800892EBCCCAB007BE0EA /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
 		95CD64F12EB3A371008FAB03 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
@@ -2595,6 +2607,17 @@
 			path = ColoredSurface;
 			sourceTree = "<group>";
 		};
+		959390072EC125A6000DBE95 /* _ */ = {
+			isa = PBXGroup;
+			children = (
+				959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */,
+				9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */,
+				959390112EC1DCAC000DBE95 /* TVVerticalLayoutView.swift */,
+				9593900E2EC1DA55000DBE95 /* TVGridLayoutView.swift */,
+			);
+			path = _;
+			sourceTree = "<group>";
+		};
 		9598006E2EBCC714007BE0EA /* DesignToolbox (Light) */ = {
 			isa = PBXGroup;
 			children = (
@@ -2608,7 +2631,7 @@
 		959800742EBCCB6C007BE0EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9598006C2EBCC714007BE0EA /* ContentView.swift */,
+				959390072EC125A6000DBE95 /* _ */,
 				959800752EBCCB81007BE0EA /* Components */,
 			);
 			path = Views;
@@ -2622,6 +2645,7 @@
 				959800852EBCCC07007BE0EA /* Indicators */,
 				959800842EBCCC03007BE0EA /* Controls */,
 				959800832EBCCBFE007BE0EA /* Actions */,
+				9598006C2EBCC714007BE0EA /* ComponentsView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -3554,7 +3578,8 @@
 			files = (
 				950EA7D12EBE44390009414A /* NamedColorMode.swift in Sources */,
 				950EA7B92EBE3ECB0009414A /* DesignToolbox_Light_App.swift in Sources */,
-				950EA7BA2EBE3ECB0009414A /* ContentView.swift in Sources */,
+				950EA7BA2EBE3ECB0009414A /* ComponentsView.swift in Sources */,
+				959390122EC1DCAC000DBE95 /* TVVerticalLayoutView.swift in Sources */,
 				950EA7BB2EBE3ECB0009414A /* ColoredBackgroundView.swift in Sources */,
 				950EA7BC2EBE3ECB0009414A /* LayoutsView.swift in Sources */,
 				950EA7BD2EBE3ECB0009414A /* LinksView.swift in Sources */,
@@ -3567,12 +3592,15 @@
 				950EA7C32EBE3ECB0009414A /* IndicatorsView.swift in Sources */,
 				950EA7C42EBE3ECB0009414A /* RadiosView.swift in Sources */,
 				950EA7C52EBE3ECB0009414A /* RadiosItemView.swift in Sources */,
+				959390092EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */,
 				950EA7C62EBE3ECB0009414A /* RadiosOnlyView.swift in Sources */,
 				950EA7C72EBE3ECB0009414A /* SwitchesItemView.swift in Sources */,
 				950EA7C82EBE3ECB0009414A /* SwitchesOnlyView.swift in Sources */,
 				950EA7C92EBE3ECB0009414A /* SwitchesView.swift in Sources */,
 				950EA7D62EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift in Sources */,
 				950EA7CA2EBE3ECB0009414A /* ChipsView.swift in Sources */,
+				9593900C2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift in Sources */,
+				9593900F2EC1DA55000DBE95 /* TVGridLayoutView.swift in Sources */,
 				950EA7CB2EBE3ECB0009414A /* CheckboxesView.swift in Sources */,
 				950EA7CC2EBE3ECB0009414A /* CheckboxesItemView.swift in Sources */,
 				950EA7CD2EBE3ECB0009414A /* CheckboxesOnlyView.swift in Sources */,
@@ -3899,6 +3927,7 @@
 				950EA6C72EBCFCBE0009414A /* NamedColorMode.swift in Sources */,
 				950EA6CC2EBDF0DD0009414A /* RadiosItemView.swift in Sources */,
 				950EA6CD2EBDF0DD0009414A /* RadiosOnlyView.swift in Sources */,
+				959390132EC1DCAC000DBE95 /* TVVerticalLayoutView.swift in Sources */,
 				950EA6BA2EBCF8810009414A /* ActionsView.swift in Sources */,
 				9598008A2EBCCCAD007BE0EA /* BadgesView.swift in Sources */,
 				950EA6CF2EBDFF7D0009414A /* SwitchesView.swift in Sources */,
@@ -3910,13 +3939,16 @@
 				950EA6D22EBDFFA50009414A /* SwitchesItemView.swift in Sources */,
 				950EA6D32EBDFFA50009414A /* SwitchesOnlyView.swift in Sources */,
 				950EA6D72EBE053B0009414A /* TagsView.swift in Sources */,
-				959800702EBCC714007BE0EA /* ContentView.swift in Sources */,
+				959800702EBCC714007BE0EA /* ComponentsView.swift in Sources */,
+				9593900A2EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */,
 				950EA6B82EBCF6230009414A /* LinksView.swift in Sources */,
 				950EA6C92EBDF01D0009414A /* RadiosView.swift in Sources */,
 				950EA6AE2EBCDF510009414A /* ButtonsView.swift in Sources */,
 				950EA6BC2EBCF8C80009414A /* NavigationsView.swift in Sources */,
 				950EA7D72EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift in Sources */,
 				950EA6C62EBCFA710009414A /* ColoredBackgroundView.swift in Sources */,
+				9593900D2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift in Sources */,
+				959390102EC1DA55000DBE95 /* TVGridLayoutView.swift in Sources */,
 				950EA6C32EBCFA390009414A /* LayoutsView.swift in Sources */,
 				959800712EBCC714007BE0EA /* DesignToolbox_Light_App.swift in Sources */,
 				950EA6B22EBCEC2D0009414A /* CheckboxesItemView.swift in Sources */,

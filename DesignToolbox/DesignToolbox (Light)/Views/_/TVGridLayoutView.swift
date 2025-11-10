@@ -11,21 +11,23 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSSwiftUI
 import SwiftUI
 
-struct InputTagView: View {
+struct TVGridLayout<TVLayout: View>: View {
 
-    var body: some View {
-        WatchAndTVLayoutsView(watchLayout: { WatchVerticalLayout { layout } },
-                              tvLayout: { TVVerticalLayout { layout } })
+    private let count: Int
+    private let tvLayout: TVLayout
+
+    @Environment(\.theme) private var theme
+
+    init(count: Int, @ViewBuilder tvLayout: () -> TVLayout) {
+        self.count = count
+        self.tvLayout = tvLayout()
     }
 
-    @ViewBuilder
-    private var layout: some View {
-        Text("Enabled").font(.headline)
-        OUDSInputTag(label: "Input") {}
-        Text("Disabled").font(.headline)
-        OUDSInputTag(label: "Input") {}.disabled(true)
+    var body: some View {
+        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: count), spacing: theme.spaces.paddingBlock4xlarge) {
+            tvLayout
+        }
     }
 }

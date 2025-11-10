@@ -21,9 +21,9 @@ struct DesignToolbox_Light_App: App {
 
     private let themes: [OUDSTheme] = [
         OrangeTheme(),
-        OrangeBusinessToolsTheme(),
         SoshTheme(),
         WireframeTheme(),
+        OrangeBusinessToolsTheme(),
     ]
 
     var body: some Scene {
@@ -31,7 +31,7 @@ struct DesignToolbox_Light_App: App {
             TabView(selection: $selectedThemeIndex) {
                 ForEach(themes.indices, id: \.self) { index in
                     OUDSThemeableView(theme: themes[index]) {
-                        ContentView()
+                        ComponentsView()
                     }
                     .tag(index)
                 }

@@ -31,30 +31,34 @@ struct CheckboxesOnlyView: View {
 private struct TwoStatesCheckboxesOnlyView: View {
 
     @State private var isOn: Bool = true
-    @Environment(\.theme) private var theme
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: theme.spaces.scaledXsmallMobile) {
-                Text("Two-states checkboxes").font(.headline)
+        WatchAndTVLayoutsView(watchLayout: {
+            layout
+        }, tvLayout: {
+            layout
+        })
+    }
 
-                Text("Enabled, no error").font(.subheadline)
-                OUDSCheckbox(isOn: $isOn,
-                             accessibilityLabel: "Normal",
-                             isError: false)
+    @ViewBuilder
+    private var layout: some View {
+        Text("Two-states checkboxes").font(.headline)
 
-                Text("Enabled, on error").font(.subheadline)
-                OUDSCheckbox(isOn: $isOn,
-                             accessibilityLabel: "Error",
-                             isError: true)
+        Text("Enabled, no error").font(.subheadline)
+        OUDSCheckbox(isOn: $isOn,
+                     accessibilityLabel: "Normal",
+                     isError: false)
 
-                Text("Disabled, no error").font(.subheadline)
-                OUDSCheckbox(isOn: $isOn,
-                             accessibilityLabel: "Disabled",
-                             isError: false)
-                    .disabled(true)
-            }
-        }
+        Text("Enabled, on error").font(.subheadline)
+        OUDSCheckbox(isOn: $isOn,
+                     accessibilityLabel: "Error",
+                     isError: true)
+
+        Text("Disabled, no error").font(.subheadline)
+        OUDSCheckbox(isOn: $isOn,
+                     accessibilityLabel: "Disabled",
+                     isError: false)
+            .disabled(true)
     }
 }
 
@@ -63,29 +67,33 @@ private struct TwoStatesCheckboxesOnlyView: View {
 private struct ThreeStatesCheckboxesOnlyView: View {
 
     @State private var state: OUDSCheckboxIndicatorState = .indeterminate
-    @Environment(\.theme) private var theme
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: theme.spaces.scaledXsmallMobile) {
-                Text("Three-states checkboxes").font(.headline)
+        WatchAndTVLayoutsView(watchLayout: {
+            layout
+        }, tvLayout: {
+            layout
+        })
+    }
 
-                Text("Enabled, no error").font(.subheadline)
-                OUDSCheckboxIndeterminate(selection: $state,
-                                          accessibilityLabel: "Normal",
-                                          isError: false)
+    @ViewBuilder
+    private var layout: some View {
+        Text("Three-states checkboxes").font(.headline)
 
-                Text("Enabled, on error").font(.subheadline)
-                OUDSCheckboxIndeterminate(selection: $state,
-                                          accessibilityLabel: "Error",
-                                          isError: true)
+        Text("Enabled, no error").font(.subheadline)
+        OUDSCheckboxIndeterminate(selection: $state,
+                                  accessibilityLabel: "Normal",
+                                  isError: false)
 
-                Text("Disabled, no error").font(.subheadline)
-                OUDSCheckboxIndeterminate(selection: $state,
-                                          accessibilityLabel: "Disabled",
-                                          isError: false)
-                    .disabled(true)
-            }
-        }
+        Text("Enabled, on error").font(.subheadline)
+        OUDSCheckboxIndeterminate(selection: $state,
+                                  accessibilityLabel: "Error",
+                                  isError: true)
+
+        Text("Disabled, no error").font(.subheadline)
+        OUDSCheckboxIndeterminate(selection: $state,
+                                  accessibilityLabel: "Disabled",
+                                  isError: false)
+            .disabled(true)
     }
 }

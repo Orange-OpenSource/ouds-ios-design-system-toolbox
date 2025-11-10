@@ -15,23 +15,22 @@ import OUDSSwiftUI
 import SwiftUI
 
 // swiftlint:disable accessibility_label_for_image
+// swiftlint:disable closure_body_length
+
 struct LinksView: View {
-    @Environment(\.theme) var theme
+
+    @Environment(\.theme) private var theme
 
     var body: some View {
-        ScrollView {
-            #if os(tvOS)
-            tvOSGridLayout
-            #else
-            watchOSVerticalLayout
-            #endif
-        }
-        .navigationTitle("Badge")
+        WatchAndTVLayoutsView(title: "Link",
+                              watchLayout: { watchOSVerticalLayout },
+                              tvLayout: { tvOSGridLayout })
     }
 
-    // MARK: - watchOS Layout (Vertical - votre code actuel)
+    // MARK: - watchOS
+
     private var watchOSVerticalLayout: some View {
-        VStack(spacing: theme.spaces.scaledXsmallMobile) {
+        WatchVerticalLayout {
             Text("Size default").font(.headline)
 
             Text("Enabled").font(.subheadline)
@@ -62,16 +61,17 @@ struct LinksView: View {
         }
     }
 
-    // MARK: - tvOS Layout (4 colonnes)
-    private var tvOSGridLayout: some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 4), spacing: 30) {
+    // MARK: - tvOS
 
-            // Colonne 1 : Text only
-            VStack(spacing: 20) {
+    private var tvOSGridLayout: some View {
+        TVGridLayout(count: 4) {
+
+            // Column n°1: text only
+            VStack(spacing: theme.spaces.paddingBlockLarge) {
                 Text("Text Only")
                     .font(.title2)
                     .fontWeight(.bold)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, theme.spaces.paddingBlockSmall)
 
                 linkSection(title: "Default Size") {
                     OUDSLink(text: "Link", size: .default) {}
@@ -85,12 +85,12 @@ struct LinksView: View {
             }
             .padding()
 
-            // Colonne 2 : With Icon
-            VStack(spacing: 20) {
+            // Column n°2: with icon
+            VStack(spacing: theme.spaces.paddingBlockLarge) {
                 Text("With Icon")
                     .font(.title2)
                     .fontWeight(.bold)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, theme.spaces.paddingBlockSmall)
 
                 linkSection(title: "Default Size") {
                     OUDSLink(text: "Link", icon: Image(systemName: "sun.min.fill"), size: .default) {}
@@ -104,12 +104,12 @@ struct LinksView: View {
             }
             .padding()
 
-            // Colonne 3 : Back Indicator
-            VStack(spacing: 20) {
+            // Column n°3: with back indicator
+            VStack(spacing: theme.spaces.paddingBlockLarge) {
                 Text("Back Indicator")
                     .font(.title2)
                     .fontWeight(.bold)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, theme.spaces.paddingBlockSmall)
 
                 linkSection(title: "Default Size") {
                     OUDSLink(text: "Link", indicator: .back, size: .default) {}
@@ -123,12 +123,12 @@ struct LinksView: View {
             }
             .padding()
 
-            // Colonne 4 : Next Indicator
-            VStack(spacing: 20) {
+            // Column n°4: with next indicator
+            VStack(spacing: theme.spaces.paddingBlockLarge) {
                 Text("Next Indicator")
                     .font(.title2)
                     .fontWeight(.bold)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, theme.spaces.paddingBlockSmall)
 
                 linkSection(title: "Default Size") {
                     OUDSLink(text: "Link", indicator: .next, size: .default) {}
@@ -145,18 +145,14 @@ struct LinksView: View {
         .padding()
     }
 
-    // MARK: - Helper Views
     @ViewBuilder
-    private func linkSection(
-        title: String,
-        @ViewBuilder content: () -> some View) -> some View
-    {
-        VStack(spacing: 12) {
+    private func linkSection(title: String, @ViewBuilder content: () -> some View) -> some View {
+        VStack(spacing: theme.spaces.paddingBlockMedium) {
             Text(title)
                 .font(.headline)
                 .foregroundColor(.primary)
 
-            VStack(spacing: 8) {
+            VStack(spacing: theme.spaces.paddingBlockXsmall) {
                 content()
             }
         }
@@ -165,3 +161,4 @@ struct LinksView: View {
 }
 
 // swiftlint:enable accessibility_label_for_image
+// swiftlint:enable closure_body_length

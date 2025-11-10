@@ -14,165 +14,167 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// swiftlint:disable accessibility_label_for_image
+
 struct ThreeStatesCheckboxesItemsView: View {
+
     @State private var state: OUDSCheckboxIndicatorState = .indeterminate
+
     @Environment(\.theme) private var theme
 
     var body: some View {
-        ScrollView {
-            #if os(tvOS)
-            tvOSGridLayout
-            #else
-            watchOSVerticalLayout
-            #endif
-        }
+        WatchAndTVLayoutsView(watchLayout: {
+            watchLayout
+        }, tvLayout: {
+            tvLayout
+        })
     }
 
-    // MARK: - watchOS Layout (Vertical - votre code actuel)
-    private var watchOSVerticalLayout: some View {
-        VStack(spacing: theme.spaces.scaledXsmallMobile) {
-            Text("3-states checkboxes items").font(.headline)
+    // MARK: - watchOS
 
-            Text("No icons").font(.subheadline)
+    @ViewBuilder
+    private var watchLayout: some View {
+        Text("3-states checkboxes items").font(.headline)
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          isReversed: false,
-                                          isReadOnly: false)
+        Text("No icons").font(.subheadline)
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          isReversed: true,
-                                          isReadOnly: false)
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      isReversed: false,
+                                      isReadOnly: false)
 
-            Text("Disabled").font(.caption)
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      isReversed: true,
+                                      isReadOnly: false)
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          isReversed: false,
-                                          isReadOnly: false)
-                .disabled(true)
+        Text("Disabled").font(.caption)
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          isReversed: true,
-                                          isReadOnly: false)
-                .disabled(true)
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      isReversed: false,
+                                      isReadOnly: false)
+            .disabled(true)
 
-            Text("On error").font(.caption)
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      isReversed: true,
+                                      isReadOnly: false)
+            .disabled(true)
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          isReversed: false,
-                                          isError: true,
-                                          errorText: "Error")
+        Text("On error").font(.caption)
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          isReversed: true,
-                                          isError: true,
-                                          errorText: "Error")
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      isReversed: false,
+                                      isError: true,
+                                      errorText: "Error")
 
-            Text("Read only").font(.subheadline)
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      isReversed: true,
+                                      isError: true,
+                                      errorText: "Error")
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          isReversed: false,
-                                          isReadOnly: true)
+        Text("Read only").font(.subheadline)
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          isReversed: true,
-                                          isReadOnly: true)
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      isReversed: false,
+                                      isReadOnly: true)
 
-            Text("With icons").font(.caption)
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      isReversed: true,
+                                      isReadOnly: true)
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          icon: Image(systemName: "flag.pattern.checkered"),
-                                          isReversed: false,
-                                          isReadOnly: false)
+        Text("With icons").font(.caption)
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          icon: Image(systemName: "flag.pattern.checkered"),
-                                          isReversed: true,
-                                          isReadOnly: false)
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      icon: Image(systemName: "flag.pattern.checkered"),
+                                      isReversed: false,
+                                      isReadOnly: false)
 
-            Text("On error").font(.caption)
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      icon: Image(systemName: "flag.pattern.checkered"),
+                                      isReversed: true,
+                                      isReadOnly: false)
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          icon: Image(systemName: "flag.pattern.checkered"),
-                                          isReversed: false,
-                                          isError: true,
-                                          errorText: "Error")
+        Text("On error").font(.caption)
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          icon: Image(systemName: "flag.pattern.checkered"),
-                                          isReversed: true,
-                                          isError: true,
-                                          errorText: "Error")
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      icon: Image(systemName: "flag.pattern.checkered"),
+                                      isReversed: false,
+                                      isError: true,
+                                      errorText: "Error")
 
-            Text("Disabled").font(.caption)
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      icon: Image(systemName: "flag.pattern.checkered"),
+                                      isReversed: true,
+                                      isError: true,
+                                      errorText: "Error")
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          icon: Image(systemName: "flag.pattern.checkered"),
-                                          isReversed: false,
-                                          isReadOnly: false)
-                .disabled(true)
+        Text("Disabled").font(.caption)
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          icon: Image(systemName: "flag.pattern.checkered"),
-                                          isReversed: true,
-                                          isReadOnly: false)
-                .disabled(true)
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      icon: Image(systemName: "flag.pattern.checkered"),
+                                      isReversed: false,
+                                      isReadOnly: false)
+            .disabled(true)
 
-            Text("Read only").font(.caption)
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      icon: Image(systemName: "flag.pattern.checkered"),
+                                      isReversed: true,
+                                      isReadOnly: false)
+            .disabled(true)
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          icon: Image(systemName: "flag.pattern.checkered"),
-                                          isReversed: false,
-                                          isReadOnly: true)
+        Text("Read only").font(.caption)
 
-            OUDSCheckboxItemIndeterminate(selection: $state,
-                                          label: "Label",
-                                          helper: "Helper",
-                                          icon: Image(systemName: "flag.pattern.checkered"),
-                                          isReversed: true,
-                                          isReadOnly: true)
-        }
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      icon: Image(systemName: "flag.pattern.checkered"),
+                                      isReversed: false,
+                                      isReadOnly: true)
+
+        OUDSCheckboxItemIndeterminate(selection: $state,
+                                      label: "Label",
+                                      helper: "Helper",
+                                      icon: Image(systemName: "flag.pattern.checkered"),
+                                      isReversed: true,
+                                      isReadOnly: true)
     }
 
-    // MARK: - tvOS Layout (2 colonnes : Without Icon | With Icon)
-    private var tvOSGridLayout: some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: 30) {
+    // MARK: - tvOS
 
-            // Colonne 1 : Without Icon
-            VStack(spacing: 20) {
+    private var tvLayout: some View {
+        TVGridLayout(count: 2) {
+            // Column n°1: without icon
+            VStack(spacing: theme.spaces.scaledMediumMobile) {
                 Text("Without Icon")
                     .font(.title2)
                     .fontWeight(.bold)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, theme.spaces.paddingInlineSmall)
 
                 checkboxSection(title: "Normal", withIcon: false)
                 checkboxSection(title: "Disabled", withIcon: false, isDisabled: true)
@@ -183,12 +185,12 @@ struct ThreeStatesCheckboxesItemsView: View {
             .background(Color.gray.opacity(0.05))
             .cornerRadius(12)
 
-            // Colonne 2 : With Icon
-            VStack(spacing: 20) {
+            // Column n°1: with icon
+            VStack(spacing: theme.spaces.scaledMediumMobile) {
                 Text("With Icon")
                     .font(.title2)
                     .fontWeight(.bold)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, theme.spaces.paddingInlineSmall)
 
                 checkboxSection(title: "Normal", withIcon: true)
                 checkboxSection(title: "Disabled", withIcon: true, isDisabled: true)
@@ -202,7 +204,8 @@ struct ThreeStatesCheckboxesItemsView: View {
         .padding()
     }
 
-    // MARK: - Helper Views
+    // MARK: - Helpers
+
     @ViewBuilder
     private func checkboxSection(
         title: String,
@@ -211,13 +214,12 @@ struct ThreeStatesCheckboxesItemsView: View {
         isError: Bool = false,
         isReadOnly: Bool = false) -> some View
     {
-        VStack(spacing: 12) {
+        VStack(spacing: theme.spaces.scaledSmallMobile) {
             Text(title)
                 .font(.headline)
                 .foregroundColor(.primary)
 
-            VStack(spacing: 8) {
-                // Normal (isReversed: false)
+            VStack(spacing: theme.spaces.scaledXsmallMobile) {
                 OUDSCheckboxItemIndeterminate(
                     selection: $state,
                     label: "Label",
@@ -229,7 +231,6 @@ struct ThreeStatesCheckboxesItemsView: View {
                     isReadOnly: isReadOnly)
                     .disabled(isDisabled)
 
-                // Reversed (isReversed: true)
                 OUDSCheckboxItemIndeterminate(
                     selection: $state,
                     label: "Label",
@@ -245,3 +246,5 @@ struct ThreeStatesCheckboxesItemsView: View {
         .padding()
     }
 }
+
+// swiftlint:enable accessibility_label_for_image

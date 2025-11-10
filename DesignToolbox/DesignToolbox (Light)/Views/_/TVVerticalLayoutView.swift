@@ -11,21 +11,21 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSSwiftUI
 import SwiftUI
 
-struct InputTagView: View {
+struct TVVerticalLayout<WatchLayout: View>: View {
 
-    var body: some View {
-        WatchAndTVLayoutsView(watchLayout: { WatchVerticalLayout { layout } },
-                              tvLayout: { TVVerticalLayout { layout } })
+    private let watchLayout: WatchLayout
+
+    @Environment(\.theme) private var theme
+
+    init(@ViewBuilder watchLayout: () -> WatchLayout) {
+        self.watchLayout = watchLayout()
     }
 
-    @ViewBuilder
-    private var layout: some View {
-        Text("Enabled").font(.headline)
-        OUDSInputTag(label: "Input") {}
-        Text("Disabled").font(.headline)
-        OUDSInputTag(label: "Input") {}.disabled(true)
+    var body: some View {
+        VStack(spacing: theme.spaces.scaledMediumMobile) {
+            watchLayout
+        }
     }
 }

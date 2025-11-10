@@ -16,23 +16,28 @@ import SwiftUI
 
 struct RadiosOnlyView: View {
 
+    var body: some View {
+        WatchAndTVLayoutsView(watchLayout: {
+            RadioOnlyLayout()
+        }, tvLayout: {
+            RadioOnlyLayout()
+        })
+    }
+}
+
+private struct RadioOnlyLayout: View {
+
     @State private var isOn: Bool = true
-    @Environment(\.theme) private var theme
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: theme.spaces.scaledXsmallMobile) {
+        Text("Enabled, no error").font(.subheadline)
+        OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isError: false)
 
-                Text("Enabled, no error").font(.subheadline)
-                OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isError: false)
-
-                Text("Enabled, on error").font(.subheadline)
-                OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isError: true)
-                    .font(.subheadline)
-                Text("Disabled, no error")
-                OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isError: false)
-                    .disabled(true)
-            }
-        }
+        Text("Enabled, on error").font(.subheadline)
+        OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isError: true)
+            .font(.subheadline)
+        Text("Disabled, no error")
+        OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isError: false)
+            .disabled(true)
     }
 }

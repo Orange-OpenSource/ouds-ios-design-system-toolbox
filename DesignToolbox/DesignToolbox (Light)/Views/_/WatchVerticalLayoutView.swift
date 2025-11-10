@@ -11,23 +11,21 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSSwiftUI
 import SwiftUI
 
-struct ContentView: View {
+struct WatchVerticalLayout<WatchLayout: View>: View {
+
+    private let watchLayout: WatchLayout
 
     @Environment(\.theme) private var theme
 
+    init(@ViewBuilder watchLayout: () -> WatchLayout) {
+        self.watchLayout = watchLayout()
+    }
+
     var body: some View {
-        NavigationView {
-            List {
-                NavigationLink("Actions", destination: ActionsView())
-                NavigationLink("Controls", destination: ControlsView())
-                NavigationLink("Indicators", destination: IndicatorsView())
-                NavigationLink("Layouts", destination: LayoutsView())
-                NavigationLink("Navigations", destination: NavigationsView())
-            }
-            .navigationTitle(theme.name)
+        VStack(spacing: theme.spaces.scaledXsmallMobile) {
+            watchLayout
         }
     }
 }

@@ -33,21 +33,25 @@ struct ChipsView: View {
 private struct FilterChipView: View {
 
     @State private var isSelected: Bool = true
-    @Environment(\.theme) private var theme
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: theme.spaces.paddingInlineLarge) {
-                Text("Text only").font(.subheadline)
-                OUDSFilterChip(text: "Filter", selected: isSelected) { isSelected.toggle() }
+        WatchAndTVLayoutsView(watchLayout: {
+            layout
+        }, tvLayout: {
+            layout
+        })
+    }
 
-                Text("Text + icon").font(.subheadline)
-                OUDSFilterChip(icon: Image(systemName: "sun.min.fill"), text: "Filter", selected: isSelected) { isSelected.toggle() }
+    @ViewBuilder
+    private var layout: some View {
+        Text("Text only").font(.subheadline)
+        OUDSFilterChip(text: "Filter", selected: isSelected) { isSelected.toggle() }
 
-                Text("Icon only").font(.subheadline)
-                OUDSFilterChip(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Filter", selected: isSelected) { isSelected.toggle() }
-            }
-        }
+        Text("Text + icon").font(.subheadline)
+        OUDSFilterChip(icon: Image(systemName: "sun.min.fill"), text: "Filter", selected: isSelected) { isSelected.toggle() }
+
+        Text("Icon only").font(.subheadline)
+        OUDSFilterChip(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Filter", selected: isSelected) { isSelected.toggle() }
     }
 }
 
@@ -58,21 +62,24 @@ private struct FilterChipView: View {
 // swiftlint:disable accessibility_label_for_image
 private struct SuggestionChipView: View {
 
-    @Environment(\.theme) private var theme
-
     var body: some View {
-        ScrollView {
-            VStack(spacing: theme.spaces.paddingInlineLarge) {
-                Text("Text only").font(.subheadline)
-                OUDSSuggestionChip(text: "Suggestion") {}
+        WatchAndTVLayoutsView(watchLayout: {
+            layout
+        }, tvLayout: {
+            layout
+        })
+    }
 
-                Text("Text + icon").font(.subheadline)
-                OUDSSuggestionChip(icon: Image(systemName: "sun.min.fill"), text: "Suggestion") {}
+    @ViewBuilder
+    private var layout: some View {
+        Text("Text only").font(.subheadline)
+        OUDSSuggestionChip(text: "Suggestion") {}
 
-                Text("Icon only").font(.subheadline)
-                OUDSSuggestionChip(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Suggestion") {}
-            }
-        }
+        Text("Text + icon").font(.subheadline)
+        OUDSSuggestionChip(icon: Image(systemName: "sun.min.fill"), text: "Suggestion") {}
+
+        Text("Icon only").font(.subheadline)
+        OUDSSuggestionChip(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Suggestion") {}
     }
 }
 
