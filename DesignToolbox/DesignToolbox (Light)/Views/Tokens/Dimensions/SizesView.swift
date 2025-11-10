@@ -14,6 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
+/// Using Swift files from DesignToolbox folder, displays simply the sizes tokens
 struct SizesView: View {
 
     @Environment(\.theme) private var theme

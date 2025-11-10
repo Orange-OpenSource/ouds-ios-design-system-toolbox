@@ -14,6 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
+/// Displays content as vertical layout for watchOS dimensions
 struct WatchVerticalLayout<WatchLayout: View>: View {
 
     private let watchLayout: WatchLayout

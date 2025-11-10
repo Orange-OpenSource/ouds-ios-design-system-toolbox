@@ -14,8 +14,10 @@
 import OUDSSwiftUI
 import SwiftUI
 
-@main
-struct DesignToolbox_Light_App: App {
+/// `App` dedicated to watchOS and tvOS with very simple UI.
+/// Displays groups of components without customziation panes, only for debug purposes and quickchecks.
+/// Uses a simple UI, overall becayse current Design System Toolbox is desgined for iOS first.
+@main struct DesignToolbox_Light_App: App {
 
     @State private var selectedThemeIndex: Int = 0
 
@@ -46,7 +48,7 @@ struct DesignToolbox_Light_App: App {
                     .tag(index)
                 }
             }
-            .tabViewStyle(PageTabViewStyle())
+            .tabViewStyle(PageTabViewStyle()) // Let user swipe to change theme and compare
         }
     }
 }

@@ -14,6 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
+/// Using Swift files from DesignToolbox folder, displays simply the colors tokens
 struct ColorsView: View {
 
     @Environment(\.theme) private var theme
@@ -238,8 +239,13 @@ struct ColorsView: View {
         }
     }
 
-    struct ColorCategoriesView: View {
-        let colorCategories = [
+    // MARK: Colors wrappers views
+
+    private struct ColorCategoriesView: View {
+
+        @Environment(\.theme) private var theme
+
+        private let colorCategories = [
             ("Accent", NamedColor.Repository.allCases.filter { $0.rawValue.contains("Accent") && !$0.rawValue.contains("Opacity") }),
             ("Primary", NamedColor.Repository.allCases.filter { $0.rawValue.contains("Primary") && !$0.rawValue.contains("Opacity") }),
             ("Secondary", NamedColor.Repository.allCases.filter { $0.rawValue.contains("Secondary") }),
@@ -250,30 +256,26 @@ struct ColorsView: View {
             ("Warning", NamedColor.Repository.allCases.filter { $0.rawValue.contains("Warning") && !$0.rawValue.contains("Opacity") }),
         ]
 
-        let columns = [
-            GridItem(.flexible(), spacing: 30),
-            GridItem(.flexible(), spacing: 30),
-            GridItem(.flexible(), spacing: 30),
-            GridItem(.flexible(), spacing: 30),
-        ]
-
         var body: some View {
             ScrollView(.vertical, showsIndicators: true) {
-                LazyVGrid(columns: columns, spacing: 40) {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), alignment: .top), count: 4), spacing: theme.spaces.paddingBlock4xlarge) {
                     ForEach(colorCategories, id: \.0) { category, colors in
                         NavigationLink(category) {
                             ColorDetailView(title: category, colors: colors)
                         }
                     }
                 }
-                .padding(60)
+                .padding()
             }
             .navigationTitle("Color Categories")
         }
     }
 
-    struct OpacityCategoriesView: View {
-        let opacityCategories = [
+    private struct OpacityCategoriesView: View {
+
+        @Environment(\.theme) private var theme
+
+        private let opacityCategories = [
             ("Black Opacity", NamedColor.Repository.allCases.filter { $0.rawValue.contains("OpacityBlack") }),
             ("White Opacity", NamedColor.Repository.allCases.filter { $0.rawValue.contains("OpacityWhite") }),
             ("Primary Opacity", NamedColor.Repository.allCases.filter { $0.rawValue.contains("OpacityPrimary") }),
@@ -284,29 +286,22 @@ struct ColorsView: View {
             ("Warning Opacity", NamedColor.Repository.allCases.filter { $0.rawValue.contains("OpacityWarning") }),
         ]
 
-        let columns = [
-            GridItem(.flexible(), spacing: 30),
-            GridItem(.flexible(), spacing: 30),
-            GridItem(.flexible(), spacing: 30),
-            GridItem(.flexible(), spacing: 30),
-        ]
-
         var body: some View {
             ScrollView(.vertical, showsIndicators: true) {
-                LazyVGrid(columns: columns, spacing: 40) {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), alignment: .top), count: 4), spacing: theme.spaces.paddingBlock4xlarge) {
                     ForEach(opacityCategories, id: \.0) { category, colors in
                         NavigationLink(category) {
                             ColorDetailView(title: category, colors: colors)
                         }
                     }
                 }
-                .padding(60)
+                .padding()
             }
             .navigationTitle("Opacity Categories")
         }
     }
 
-    struct NeutralCategoriesView: View {
+    private struct NeutralCategoriesView: View {
         let neutralColors = NamedColor.Repository.allCases.filter {
             $0.rawValue.contains("NeutralEmphasized") || $0.rawValue.contains("NeutralMuted")
         }
@@ -316,22 +311,16 @@ struct ColorsView: View {
         }
     }
 
-    struct ColorDetailView: View {
+    private struct ColorDetailView: View {
+
         let title: String
         let colors: [NamedColor.Repository]
-        @Environment(\.theme) private var theme
 
-        let columns = [
-            GridItem(.flexible(), spacing: 20),
-            GridItem(.flexible(), spacing: 20),
-            GridItem(.flexible(), spacing: 20),
-            GridItem(.flexible(), spacing: 20),
-            GridItem(.flexible(), spacing: 20),
-        ]
+        @Environment(\.theme) private var theme
 
         var body: some View {
             ScrollView(.vertical, showsIndicators: true) {
-                LazyVGrid(columns: columns, spacing: 30) {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), alignment: .top), count: 5), spacing: theme.spaces.paddingBlock4xlarge) {
                     ForEach(colors, id: \.self) { color in
                         if !color.token(from: theme).isForbiddenValueColor() {
                             Illustration(token: color.token(from: theme), name: color.rawValue)
@@ -339,7 +328,7 @@ struct ColorsView: View {
                         }
                     }
                 }
-                .padding(40)
+                .padding()
             }
             .navigationTitle(title)
         }

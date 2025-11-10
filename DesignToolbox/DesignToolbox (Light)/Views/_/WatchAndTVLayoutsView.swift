@@ -13,6 +13,7 @@
 
 import SwiftUI
 
+/// Displays depending to the OS in use the given layout
 struct WatchAndTVLayoutsView<WatchLayout: View, TVLayout: View>: View {
 
     let title: String?

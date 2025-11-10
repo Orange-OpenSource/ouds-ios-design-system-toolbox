@@ -14,6 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
+/// Using Swift files from DesignToolbox folder, displays simply the grids tokens
 struct GridsView: View {
 
     @Environment(\.theme) private var theme

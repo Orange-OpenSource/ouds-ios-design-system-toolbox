@@ -14,12 +14,13 @@
 import OUDSSwiftUI
 import SwiftUI
 
+/// Using Swift files from DesignToolbox folder, displays simply the opacities tokens
 struct OpacitiesView: View {
 
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(title: "Borders",
+        WatchAndTVLayoutsView(title: "Opacities",
                               watchLayout: { watchLayout },
                               tvLayout: { tvLayout })
     }

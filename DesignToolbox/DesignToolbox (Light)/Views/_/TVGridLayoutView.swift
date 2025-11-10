@@ -14,6 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
+/// Displays content as grid layout for tvOS dimensions
 struct TVGridLayout<TVLayout: View>: View {
 
     private let count: Int

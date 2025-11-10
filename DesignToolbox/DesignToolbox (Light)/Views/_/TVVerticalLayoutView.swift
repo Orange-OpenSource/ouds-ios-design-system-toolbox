@@ -14,6 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
+/// Displays content as vertical layout for tvOS dimensions
 struct TVVerticalLayout<TVLayout: View>: View {
 
     private let tvLayout: TVLayout

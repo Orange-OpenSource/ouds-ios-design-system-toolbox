@@ -14,6 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
+/// Using Swift files from DesignToolbox folder, displays simply the borders tokens
 struct BordersView: View {
 
     @Environment(\.theme) private var theme

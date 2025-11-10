@@ -14,6 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
+/// Using Swift files from DesignToolbox folder, displays simply the spaces tokens
 struct SpacesView: View {
 
     @Environment(\.theme) private var theme
@@ -57,74 +58,60 @@ struct SpacesView: View {
     @ViewBuilder
     private var tvLayout: some View {
         TVGridLayout(count: 2) {
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 Text("Scaled").font(.headline)
                 ScaledSpaceProperty()
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
             .focusable()
 
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 Text("Fixed").font(.headline)
                 FixedSpaceProperty()
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
             .focusable()
 
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 Text("Padding inline").font(.headline)
                 PaddingInlineProperty()
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
             .focusable()
 
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 Text("Padding inset").font(.headline)
                 PaddingInsetProperty()
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
             .focusable()
 
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 Text("Padding block").font(.headline)
                 PaddingBlockProperty()
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
             .focusable()
 
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 Text("Column gap").font(.headline)
                 ColumnGapProperty()
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
             .focusable()
 
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 Text("Row gap").font(.headline)
                 RowGapProperty()
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
             .focusable()
         }
     }

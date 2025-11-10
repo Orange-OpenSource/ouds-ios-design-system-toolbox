@@ -14,6 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
+/// Using Swift files from DesignToolbox folder, displays simply the fonts tokens
 struct FontsView: View {
 
     @Environment(\.theme) private var theme
