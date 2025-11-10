@@ -471,6 +471,10 @@
 		950EA7D42EBE4D5C0009414A /* TwoStatesCheckboxesItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA7D22EBE4D560009414A /* TwoStatesCheckboxesItemsView.swift */; };
 		950EA7D62EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA7D52EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift */; };
 		950EA7D72EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA7D52EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift */; };
+		951458532EC28BAD0096BBF1 /* ElevationTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42772CA3F4BE000BD03E /* ElevationTokenPage.swift */; };
+		951458542EC28BB90096BBF1 /* ElevationTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42772CA3F4BE000BD03E /* ElevationTokenPage.swift */; };
+		951458572EC28BC20096BBF1 /* ElevationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458552EC28BC20096BBF1 /* ElevationsView.swift */; };
+		951458582EC28BC20096BBF1 /* ElevationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458552EC28BC20096BBF1 /* ElevationsView.swift */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95818BC22EB50D70004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
@@ -1288,6 +1292,7 @@
 		950EA7B62EBE3D5D0009414A /* DesignToolbox (tvOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (tvOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		950EA7D22EBE4D560009414A /* TwoStatesCheckboxesItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoStatesCheckboxesItemsView.swift; sourceTree = "<group>"; };
 		950EA7D52EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeStatesCheckboxesItemsView.swift; sourceTree = "<group>"; };
+		951458552EC28BC20096BBF1 /* ElevationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationsView.swift; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAndTVLayoutsView.swift; sourceTree = "<group>"; };
@@ -2699,6 +2704,14 @@
 			path = ColoredSurface;
 			sourceTree = "<group>";
 		};
+		951458562EC28BC20096BBF1 /* Elevations */ = {
+			isa = PBXGroup;
+			children = (
+				951458552EC28BC20096BBF1 /* ElevationsView.swift */,
+			);
+			path = Elevations;
+			sourceTree = "<group>";
+		};
 		959390072EC125A6000DBE95 /* _ */ = {
 			isa = PBXGroup;
 			children = (
@@ -2714,6 +2727,7 @@
 			isa = PBXGroup;
 			children = (
 				959390182EC1F28C000DBE95 /* Borders */,
+				951458562EC28BC20096BBF1 /* Elevations */,
 				959390462EC249A8000DBE95 /* Dimensions */,
 				959390252EC21FD9000DBE95 /* Colors */,
 				959390152EC1F268000DBE95 /* TokensView.swift */,
@@ -3710,6 +3724,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951458532EC28BAD0096BBF1 /* ElevationTokenPage.swift in Sources */,
 				9593907C2EC251E7000DBE95 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				9593907E2EC254D9000DBE95 /* SpacesView.swift in Sources */,
 				959390722EC25190000DBE95 /* SpaceTokenCommonIllustration.swift in Sources */,
@@ -3717,6 +3732,7 @@
 				959390742EC25190000DBE95 /* SpaceGapTokenIllustrations.swift in Sources */,
 				959390752EC25190000DBE95 /* SpacePaddingTokenIllustrations.swift in Sources */,
 				959390712EC25168000DBE95 /* SizeTokenPage.swift in Sources */,
+				951458572EC28BC20096BBF1 /* ElevationsView.swift in Sources */,
 				9593906C2EC24DB9000DBE95 /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				9593906B2EC24DB3000DBE95 /* View+Illustration.swift in Sources */,
 				9593905D2EC24CE8000DBE95 /* SpaceTokenPage.swift in Sources */,
@@ -4099,6 +4115,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951458542EC28BB90096BBF1 /* ElevationTokenPage.swift in Sources */,
 				9593907B2EC251E0000DBE95 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				9593907F2EC254D9000DBE95 /* SpacesView.swift in Sources */,
 				959390762EC2519E000DBE95 /* SpaceTokenPage.swift in Sources */,
@@ -4106,6 +4123,7 @@
 				959390782EC2519E000DBE95 /* SpaceBasicTokenIllustrations.swift in Sources */,
 				959390792EC2519E000DBE95 /* SpaceGapTokenIllustrations.swift in Sources */,
 				9593907A2EC2519E000DBE95 /* SpacePaddingTokenIllustrations.swift in Sources */,
+				951458582EC28BC20096BBF1 /* ElevationsView.swift in Sources */,
 				9593906E2EC24DC7000DBE95 /* View+Illustration.swift in Sources */,
 				9593906D2EC24DC2000DBE95 /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				9593905E2EC24CF3000DBE95 /* NameSpace+ColumnGap.swift in Sources */,
