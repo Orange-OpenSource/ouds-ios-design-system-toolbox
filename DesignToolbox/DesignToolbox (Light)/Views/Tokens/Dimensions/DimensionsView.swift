@@ -14,12 +14,15 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct TokensView: View {
+struct DimensionsView: View {
 
-    @ViewBuilder
     var body: some View {
-        NavigationLink("Borders", destination: BordersView())
-        NavigationLink("Colors", destination: ColorsView())
-        NavigationLink("Dimensions", destination: DimensionsView())
+        NavigationView {
+            List {
+                NavigationLink("Sizes", destination: SizesView())
+//                NavigationLink("Spaces", destination: SpacesView())
+            }
+        }
+        .navigationTitle("Dimensions")
     }
 }

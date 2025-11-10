@@ -12,14 +12,12 @@
 //
 
 import OUDSSwiftUI
-import SwiftUI
 
-struct TokensView: View {
+enum NamedSpace {}
 
-    @ViewBuilder
-    var body: some View {
-        NavigationLink("Borders", destination: BordersView())
-        NavigationLink("Colors", destination: ColorsView())
-        NavigationLink("Dimensions", destination: DimensionsView())
-    }
+/// Interface all `NamedSpace` tokens must implement  provide a displayable name and the sementic token
+protocol NamedSpaceToken {
+    var name: String { get }
+
+    func token(from theme: OUDSTheme) -> SpaceSemanticToken
 }

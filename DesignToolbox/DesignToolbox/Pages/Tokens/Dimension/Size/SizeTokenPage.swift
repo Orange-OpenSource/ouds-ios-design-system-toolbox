@@ -22,10 +22,14 @@ struct SizeTokenPage: View {
 
     var body: some View {
         Group {
+            #if !os(tvOS) && !os(watchOS)
+            // SizeTokenPage.swift file imported in watchOS and tvOS targets
+            // But for the Design Toolbox Light app no code section
             Section {
                 DesignToolboxCode(code: "theme.iconWithHeadingXLargeSm.dimension(for: horizontalSizeClass ?? .regular)",
                                   titleText: "app_tokens_common_viewCodeExample_label")
             }
+            #endif
             Section {
                 VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
                     ForEach(NamedSize.IconDecorative.allCases, id: \.rawValue) { namedSize in
@@ -114,7 +118,7 @@ struct SizeTokenPage: View {
 
     // MARK: Illustration Size Icon By Typography Category
 
-    private struct IllustrationSizeIconByTypographyCategory: View {
+    struct IllustrationSizeIconByTypographyCategory: View {
 
         @Environment(\.theme) private var theme
 
