@@ -22,9 +22,11 @@ struct OpacityTokenPage: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            #if !os(tvOS) && !os(watchOS)
             Section {
                 DesignToolboxCode(code: "theme.opacities.invisible", titleText: "app_tokens_common_viewCodeExample_label")
             }
+            #endif
 
             Spacer().frame(height: theme.spaces.fixedMedium)
 
