@@ -18,6 +18,30 @@ import SwiftUI
 
 struct TagView: View {
 
+    private static let allTagAppearances: [OUDSTag.Appearance] = [.emphasized, .muted]
+    private static let allTagShapes: [OUDSTag.Shape] = [.rounded, .square]
+    private static let allBadgeSizes: [OUDSTag.Size] = [.default, .small]
+    private static let allTagStatus: [OUDSTag.Status] = [
+        OUDSTag.Status.positive(leading: .bullet),
+        OUDSTag.Status.positive(leading: .icon),
+        OUDSTag.Status.positive(leading: .none),
+        OUDSTag.Status.negative(leading: .bullet),
+        OUDSTag.Status.negative(leading: .icon),
+        OUDSTag.Status.negative(leading: .none),
+        OUDSTag.Status.warning(leading: .bullet),
+        OUDSTag.Status.warning(leading: .icon),
+        OUDSTag.Status.warning(leading: .none),
+        OUDSTag.Status.info(leading: .bullet),
+        OUDSTag.Status.info(leading: .icon),
+        OUDSTag.Status.info(leading: .none),
+        OUDSTag.Status.neutral(bullet: false),
+        OUDSTag.Status.neutral(bullet: true),
+        OUDSTag.Status.neutral(icon: Image(systemName: "sun.min.fill")),
+        OUDSTag.Status.accent(bullet: false),
+        OUDSTag.Status.accent(bullet: true),
+        OUDSTag.Status.accent(icon: Image(systemName: "sun.min.fill")),
+    ]
+
     @State private var isSelected: Bool = true
 
     @Environment(\.theme) private var theme
@@ -34,14 +58,14 @@ struct TagView: View {
 
     private var watchOSLayout: some View {
         WatchVerticalLayout {
-            ForEach(Self.kAllTagStatus.indices, id: \.self) { statusIndex in
+            ForEach(Self.allTagStatus.indices, id: \.self) { statusIndex in
                 Text("Status " + Self.description(for: statusIndex)).font(.headline)
-                let status = Self.kAllTagStatus[statusIndex]
-                ForEach(Self.kAllBadgeSizes, id: \.self) { size in
+                let status = Self.allTagStatus[statusIndex]
+                ForEach(Self.allBadgeSizes, id: \.self) { size in
                     Text("Size \(String(describing: size))").font(.subheadline)
-                    ForEach(Self.kAllTagShapes, id: \.self) { shape in
+                    ForEach(Self.allTagShapes, id: \.self) { shape in
                         Text("Shape \(String(describing: shape))").font(.callout)
-                        ForEach(Self.kAllTagAppearances, id: \.self) { appearance in
+                        ForEach(Self.allTagAppearances, id: \.self) { appearance in
                             OUDSTag(label: "Tag",
                                     status: status,
                                     appearance: appearance,
@@ -66,8 +90,8 @@ struct TagView: View {
 
     private var tvOSLayout: some View {
         LazyVStack(spacing: theme.spaces.paddingBlock4xlarge) {
-            ForEach(Self.kAllTagStatus.indices, id: \.self) { statusIndex in
-                let status = Self.kAllTagStatus[statusIndex]
+            ForEach(Self.allTagStatus.indices, id: \.self) { statusIndex in
+                let status = Self.allTagStatus[statusIndex]
 
                 VStack(spacing: theme.spaces.scaledMediumMobile) {
                     Text("Status " + Self.description(for: statusIndex))
@@ -75,10 +99,10 @@ struct TagView: View {
                         .fontWeight(.bold)
 
                     VStack(spacing: theme.spaces.scaledMediumMobile) {
-                        ForEach(Self.kAllBadgeSizes, id: \.self) { size in
+                        ForEach(Self.allBadgeSizes, id: \.self) { size in
                             HStack(spacing: theme.spaces.scaledMediumMobile) {
-                                ForEach(Self.kAllTagShapes, id: \.self) { shape in
-                                    ForEach(Self.kAllTagAppearances, id: \.self) { appearance in
+                                ForEach(Self.allTagShapes, id: \.self) { shape in
+                                    ForEach(Self.allTagAppearances, id: \.self) { appearance in
                                         tagSection(
                                             title: "\(String(describing: size)) • \(String(describing: shape)) • \(String(describing: appearance))",
                                             status: status,
@@ -156,30 +180,6 @@ struct TagView: View {
         }
         return ""
     }
-
-    private static let kAllTagAppearances: [OUDSTag.Appearance] = [.emphasized, .muted]
-    private static let kAllTagShapes: [OUDSTag.Shape] = [.rounded, .square]
-    private static let kAllBadgeSizes: [OUDSTag.Size] = [.default, .small]
-    private static let kAllTagStatus: [OUDSTag.Status] = [
-        OUDSTag.Status.positive(leading: .bullet),
-        OUDSTag.Status.positive(leading: .icon),
-        OUDSTag.Status.positive(leading: .none),
-        OUDSTag.Status.negative(leading: .bullet),
-        OUDSTag.Status.negative(leading: .icon),
-        OUDSTag.Status.negative(leading: .none),
-        OUDSTag.Status.warning(leading: .bullet),
-        OUDSTag.Status.warning(leading: .icon),
-        OUDSTag.Status.warning(leading: .none),
-        OUDSTag.Status.info(leading: .bullet),
-        OUDSTag.Status.info(leading: .icon),
-        OUDSTag.Status.info(leading: .none),
-        OUDSTag.Status.neutral(bullet: false),
-        OUDSTag.Status.neutral(bullet: true),
-        OUDSTag.Status.neutral(icon: Image(systemName: "sun.min.fill")),
-        OUDSTag.Status.accent(bullet: false),
-        OUDSTag.Status.accent(bullet: true),
-        OUDSTag.Status.accent(icon: Image(systemName: "sun.min.fill")),
-    ]
 }
 
 // swiftlint:enable accessibility_label_for_image

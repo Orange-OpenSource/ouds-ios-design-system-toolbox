@@ -55,7 +55,7 @@ struct SwitchesItemView: View {
                 Text("Without Icon")
                     .font(.title2)
                     .fontWeight(.bold)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, theme.spaces.scaledSmallMobile)
 
                 switchSection(title: "Enabled", withIcon: false)
                 switchSection(title: "Error", withIcon: false, isError: true)
@@ -63,15 +63,13 @@ struct SwitchesItemView: View {
                 switchSection(title: "Read Only", withIcon: false, isReadOnly: true)
             }
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
 
             // Column n°2: with Icon
             VStack(spacing: theme.spaces.scaledMediumMobile) {
                 Text("With Icon")
                     .font(.title2)
                     .fontWeight(.bold)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, theme.spaces.scaledSmallMobile)
 
                 switchSection(title: "Enabled", withIcon: true)
                 switchSection(title: "Error", withIcon: true, isError: true)
@@ -79,8 +77,6 @@ struct SwitchesItemView: View {
                 switchSection(title: "Read Only", withIcon: true, isReadOnly: true)
             }
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
         }
         .padding()
     }

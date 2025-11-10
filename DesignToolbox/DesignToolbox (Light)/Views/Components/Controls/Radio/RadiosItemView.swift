@@ -63,8 +63,6 @@ struct RadiosItemView: View {
                 radioSection(title: "Read Only", withIcon: false, isReadOnly: true)
             }
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
 
             // Column n°2: with icon
             VStack(spacing: theme.spaces.scaledMediumMobile) {
@@ -80,8 +78,6 @@ struct RadiosItemView: View {
                 radioSection(title: "Read Only", withIcon: true, isReadOnly: true)
             }
             .padding()
-            .background(Color.gray.opacity(0.05))
-            .cornerRadius(12)
         }
     }
 

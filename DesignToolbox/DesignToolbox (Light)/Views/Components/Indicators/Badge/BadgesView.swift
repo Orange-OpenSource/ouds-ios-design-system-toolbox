@@ -17,9 +17,9 @@ import SwiftUI
 // swiftlint:disable accessibility_label_for_image
 struct BadgesView: View {
 
-    private static let kAllBadgeStatus: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning, .disabled]
-    private static let kAllBadgeStandardSizes: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
-    private static let kAllBadgeIllustrationSizes: [OUDSBadge.IllustrationSize] = [.medium, .large]
+    private static let allBadgeStatus: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning, .disabled]
+    private static let allBadgeStandardSizes: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
+    private static let allBadgeIllustrationSizes: [OUDSBadge.IllustrationSize] = [.medium, .large]
 
     @Environment(\.theme) private var theme
 
@@ -34,25 +34,25 @@ struct BadgesView: View {
     @ViewBuilder
     private var watchOSLayout: some View {
         Text("Status badges").font(.headline)
-        ForEach(Self.kAllBadgeStandardSizes, id: \.self) { size in
+        ForEach(Self.allBadgeStandardSizes, id: \.self) { size in
             Text("Standard size \(String(describing: size))").font(.subheadline)
-            ForEach(Self.kAllBadgeStatus, id: \.self) { status in
+            ForEach(Self.allBadgeStatus, id: \.self) { status in
                 OUDSBadge(status: status, size: size)
             }
         }
 
         Text("Icon badges").font(.headline)
-        ForEach(Self.kAllBadgeIllustrationSizes, id: \.self) { size in
+        ForEach(Self.allBadgeIllustrationSizes, id: \.self) { size in
             Text("Illustration size \(String(describing: size))").font(.subheadline)
-            ForEach(Self.kAllBadgeStatus, id: \.self) { status in
+            ForEach(Self.allBadgeStatus, id: \.self) { status in
                 OUDSBadge(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Foo", status: status, size: size)
             }
         }
 
         Text("Count badges").font(.headline)
-        ForEach(Self.kAllBadgeIllustrationSizes, id: \.self) { size in
+        ForEach(Self.allBadgeIllustrationSizes, id: \.self) { size in
             Text("Illustration size \(String(describing: size))").font(.subheadline)
-            ForEach(Self.kAllBadgeStatus, id: \.self) { status in
+            ForEach(Self.allBadgeStatus, id: \.self) { status in
                 OUDSBadge(count: 100, status: status, size: size)
             }
         }
@@ -71,9 +71,9 @@ struct BadgesView: View {
                     .fontWeight(.bold)
 
                 HStack(spacing: theme.spaces.scaledMediumMobile) {
-                    ForEach(Self.kAllBadgeStandardSizes, id: \.self) { size in
+                    ForEach(Self.allBadgeStandardSizes, id: \.self) { size in
                         badgeSection(title: "Standard \(String(describing: size))") {
-                            ForEach(Self.kAllBadgeStatus, id: \.self) { status in
+                            ForEach(Self.allBadgeStatus, id: \.self) { status in
                                 OUDSBadge(status: status, size: size)
                             }
                         }
@@ -90,9 +90,9 @@ struct BadgesView: View {
                     .fontWeight(.bold)
 
                 HStack(spacing: theme.spaces.scaledMediumMobile) {
-                    ForEach(Self.kAllBadgeIllustrationSizes, id: \.self) { size in
+                    ForEach(Self.allBadgeIllustrationSizes, id: \.self) { size in
                         badgeSection(title: "Illustration \(String(describing: size))") {
-                            ForEach(Self.kAllBadgeStatus, id: \.self) { status in
+                            ForEach(Self.allBadgeStatus, id: \.self) { status in
                                 OUDSBadge(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Foo", status: status, size: size)
                             }
                         }
@@ -109,9 +109,9 @@ struct BadgesView: View {
                     .fontWeight(.bold)
 
                 HStack(spacing: theme.spaces.scaledMediumMobile) {
-                    ForEach(Self.kAllBadgeIllustrationSizes, id: \.self) { size in
+                    ForEach(Self.allBadgeIllustrationSizes, id: \.self) { size in
                         badgeSection(title: "Illustration \(String(describing: size))") {
-                            ForEach(Self.kAllBadgeStatus, id: \.self) { status in
+                            ForEach(Self.allBadgeStatus, id: \.self) { status in
                                 OUDSBadge(count: 100, status: status, size: size)
                             }
                         }
