@@ -33,10 +33,12 @@ struct DesignToolbox_Light_App: App {
                     OUDSThemeableView(theme: themes[index]) {
                         NavigationView {
                             List {
-                                Text("Tokens").font(.headline)
-                                TokensView()
-                                Text("Components").font(.headline)
-                                ComponentsView()
+                                Section("Tokens") {
+                                    TokensView()
+                                }
+                                Section("Components") {
+                                    ComponentsView()
+                                }
                             }
                             .navigationTitle(themes[index].name)
                         }

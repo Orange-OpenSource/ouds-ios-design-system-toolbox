@@ -19,5 +19,6 @@ struct TokensView: View {
     @ViewBuilder
     var body: some View {
         NavigationLink("Borders", destination: BordersView())
+        NavigationLink("Colors", destination: ColorsView())
     }
 }

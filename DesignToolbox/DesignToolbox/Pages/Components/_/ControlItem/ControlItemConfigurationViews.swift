@@ -65,7 +65,7 @@ private struct ControlItemConfiguration: View {
                     OUDSSwitchItem(outlinedConfiguration.outlinedConfigurationLabel, isOn: $configurationModel.outlined)
                 }
 
-                OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $configurationModel.divider)
+                OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $configurationModel.hasDivider)
 
                 OUDSSwitchItem("app_components_controlItem_reversed_label", isOn: $configurationModel.isReversed)
 

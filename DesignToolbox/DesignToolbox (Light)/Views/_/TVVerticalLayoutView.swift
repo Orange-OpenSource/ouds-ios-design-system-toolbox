@@ -14,19 +14,19 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct TVVerticalLayout<WatchLayout: View>: View {
+struct TVVerticalLayout<TVLayout: View>: View {
 
-    private let watchLayout: WatchLayout
+    private let tvLayout: TVLayout
 
     @Environment(\.theme) private var theme
 
-    init(@ViewBuilder watchLayout: () -> WatchLayout) {
-        self.watchLayout = watchLayout()
+    init(@ViewBuilder tvLayout: () -> TVLayout) {
+        self.tvLayout = tvLayout()
     }
 
     var body: some View {
         VStack(spacing: theme.spaces.scaledMediumMobile) {
-            watchLayout
+            tvLayout
         }
     }
 }
