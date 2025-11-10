@@ -483,6 +483,10 @@
 		951458602EC28F570096BBF1 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
 		951458612EC28FB70096BBF1 /* Localizable.xcstrings in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0272D65D18E00CD2857 /* Localizable.xcstrings */; };
 		951458622EC28FBF0096BBF1 /* Localizable.xcstrings in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0272D65D18E00CD2857 /* Localizable.xcstrings */; };
+		951458652EC2906B0096BBF1 /* GridsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458642EC2906B0096BBF1 /* GridsView.swift */; };
+		951458662EC2906B0096BBF1 /* GridsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458642EC2906B0096BBF1 /* GridsView.swift */; };
+		951458672EC2909B0096BBF1 /* GridTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AF2CDD07F20043D558 /* GridTokenPage.swift */; };
+		951458682EC290A60096BBF1 /* GridTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AF2CDD07F20043D558 /* GridTokenPage.swift */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95818BC22EB50D70004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
@@ -1302,6 +1306,7 @@
 		950EA7D52EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeStatesCheckboxesItemsView.swift; sourceTree = "<group>"; };
 		951458552EC28BC20096BBF1 /* ElevationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationsView.swift; sourceTree = "<group>"; };
 		951458592EC28DF10096BBF1 /* FontsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsView.swift; sourceTree = "<group>"; };
+		951458642EC2906B0096BBF1 /* GridsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridsView.swift; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAndTVLayoutsView.swift; sourceTree = "<group>"; };
@@ -2729,6 +2734,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		951458632EC290660096BBF1 /* Grids */ = {
+			isa = PBXGroup;
+			children = (
+				951458642EC2906B0096BBF1 /* GridsView.swift */,
+			);
+			path = Grids;
+			sourceTree = "<group>";
+		};
 		959390072EC125A6000DBE95 /* _ */ = {
 			isa = PBXGroup;
 			children = (
@@ -2743,6 +2756,7 @@
 		959390142EC1F25D000DBE95 /* Tokens */ = {
 			isa = PBXGroup;
 			children = (
+				951458632EC290660096BBF1 /* Grids */,
 				959390182EC1F28C000DBE95 /* Borders */,
 				9514585A2EC28DF10096BBF1 /* Fonts */,
 				951458562EC28BC20096BBF1 /* Elevations */,
@@ -3742,6 +3756,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951458672EC2909B0096BBF1 /* GridTokenPage.swift in Sources */,
 				951458622EC28FBF0096BBF1 /* Localizable.xcstrings in Sources */,
 				9514585F2EC28F4E0096BBF1 /* String+extension.swift in Sources */,
 				9514585E2EC28EFD0096BBF1 /* FontTokenPage.swift in Sources */,
@@ -3774,6 +3789,7 @@
 				959390362EC22035000DBE95 /* NamedColor+Background.swift in Sources */,
 				959390372EC22035000DBE95 /* NamedColor+Border.swift in Sources */,
 				959390382EC22035000DBE95 /* NamedColor+Chart.swift in Sources */,
+				951458652EC2906B0096BBF1 /* GridsView.swift in Sources */,
 				959390392EC22035000DBE95 /* NamedColor+Content.swift in Sources */,
 				9593903A2EC22035000DBE95 /* NamedColor+Opacity.swift in Sources */,
 				959390472EC249A8000DBE95 /* DimensionsView.swift in Sources */,
@@ -4137,6 +4153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951458682EC290A60096BBF1 /* GridTokenPage.swift in Sources */,
 				951458612EC28FB70096BBF1 /* Localizable.xcstrings in Sources */,
 				951458602EC28F570096BBF1 /* String+extension.swift in Sources */,
 				9514585D2EC28EF40096BBF1 /* FontTokenPage.swift in Sources */,
@@ -4169,6 +4186,7 @@
 				9593902B2EC2202A000DBE95 /* NamedColor+Background.swift in Sources */,
 				9593902C2EC2202A000DBE95 /* NamedColor+Border.swift in Sources */,
 				9593902D2EC2202A000DBE95 /* NamedColor+Chart.swift in Sources */,
+				951458662EC2906B0096BBF1 /* GridsView.swift in Sources */,
 				9593902E2EC2202A000DBE95 /* NamedColor+Content.swift in Sources */,
 				9593902F2EC2202A000DBE95 /* NamedColor+Opacity.swift in Sources */,
 				959390482EC249A8000DBE95 /* DimensionsView.swift in Sources */,

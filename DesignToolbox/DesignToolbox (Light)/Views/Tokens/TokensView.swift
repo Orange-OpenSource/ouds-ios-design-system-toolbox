@@ -23,5 +23,6 @@ struct TokensView: View {
         NavigationLink("Dimensions", destination: DimensionsView())
         NavigationLink("Elevations", destination: ElevationsView())
         NavigationLink("Fonts", destination: FontsView())
+        NavigationLink("Grids", destination: GridsView())
     }
 }
