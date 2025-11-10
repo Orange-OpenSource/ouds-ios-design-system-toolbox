@@ -14,6 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// swiftlint:disable type_body_length
 /// Using Swift files from DesignToolbox folder, displays simply the colors tokens
 struct ColorsView: View {
 
@@ -78,7 +79,7 @@ struct ColorsView: View {
         ScrollView(.vertical, showsIndicators: true) {
             ForEach(NamedColor.Action.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
                 }
             }
         }
@@ -89,7 +90,7 @@ struct ColorsView: View {
         ScrollView(.vertical, showsIndicators: true) {
             ForEach(NamedColor.Always.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).isForbiddenValueColor() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
                 }
             }
         }
@@ -100,7 +101,7 @@ struct ColorsView: View {
         ScrollView(.vertical, showsIndicators: true) {
             ForEach(NamedColor.Background.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
                 }
             }
         }
@@ -111,7 +112,7 @@ struct ColorsView: View {
         ScrollView(.vertical, showsIndicators: true) {
             ForEach(NamedColor.Chart.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
                 }
             }
         }
@@ -122,7 +123,7 @@ struct ColorsView: View {
         ScrollView(.vertical, showsIndicators: true) {
             ForEach(NamedColor.Border.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
                 }
             }
         }
@@ -133,7 +134,7 @@ struct ColorsView: View {
         ScrollView(.vertical, showsIndicators: true) {
             ForEach(NamedColor.Content.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
                 }
             }
         }
@@ -144,7 +145,7 @@ struct ColorsView: View {
         ScrollView(.vertical, showsIndicators: true) {
             ForEach(NamedColor.Overlay.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
                 }
             }
         }
@@ -155,7 +156,7 @@ struct ColorsView: View {
         ScrollView(.vertical, showsIndicators: true) {
             ForEach(NamedColor.Surface.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
                 }
             }
         }
@@ -166,7 +167,7 @@ struct ColorsView: View {
         ScrollView(.vertical, showsIndicators: true) {
             ForEach(NamedColor.Opacity.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
                 }
             }
         }
@@ -335,3 +336,5 @@ struct ColorsView: View {
     }
     #endif
 }
+
+// swiftlint:enable type_body_length
