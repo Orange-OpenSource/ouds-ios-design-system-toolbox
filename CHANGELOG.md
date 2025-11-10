@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] `actions/dependency-review-action` action from v4.8.1 to v4.8.2 for `dependency-review` workflow
 - [DesignToolbox] `json` RubyGem from v2.15.2 to v2.16.0
 - [Library] `color` semantic tokens (tokens libraries Core v1.9, System v2.2)
 - [Library] `icon` component tokens (tokens libraries Core v1.9, System v2.2)
