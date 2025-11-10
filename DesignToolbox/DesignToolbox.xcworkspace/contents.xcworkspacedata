@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "absolute:/Users/pylapersonne/Documents/5_Projects/17-OUDS/ouds-ios">
-   </FileRef>
-   <FileRef
       location = "container:DesignToolbox.xcodeproj">
    </FileRef>
 </Workspace>

@@ -7,7 +7,7 @@ This file provides guidance to AI coding agents when working with code in this r
 OUDS means Orange Unified Design System and is the new cohesive and unified design system for Orange Group.
 It provides a Swift Package and a demo application (this repository) called Design System Tooblox which embeds the Swift Package to expose its public API.
 The project is open source under MIT license and hosted on GitHub in Orange-OpenSource organization.
-The products support iOS 15, iPadOS 15, macOS 15, visionOS 1 and watchOS 11.
+The products support iOS 15, iPadOS 15, macOS 15, visionOS 1, watchOS 11 and tvOS 16.
 The products are written in Swift with SwiftUI as UI framework and Swift 6 (format, grammar and concurrency).
 
 ## Vocabulary
@@ -43,9 +43,9 @@ Contains the sources of snapshots tests, i.e. unit tests where there are compari
 
 Contains the sources of some unit tests.
 
-### DesignToolbox (watchOS)
+### DesignToolbox (Light)
 
-Contains source code of the design toolbox app but only for watchOS
+Contains source code of the design toolbox app but only for watchOS and tvOS as a light version with few configurations possibilities and more catalogs of components displayed in one time.
 
 ## Architecture details
 
@@ -94,6 +94,7 @@ Here are assets, images, HTML files like legal notices and fonts.
 - **IMPORTANT**: Use `#available` checks when adopting watchOS 11.6+ APIs.
 - **IMPORTANT**: Use `#available` checks when adopting visionOS 1.3+ APIs.
 - **IMPORTANT**: Use `#available` checks when adopting macOS 15.6+ APIs.
+- **IMPORTANT**: Use `#available` checks when adopting tvOS 16.6+ APIs.
 - **IMPORTANT**: The project runs for iOS / iPadOS, macOS, visionOS abd watchOS. Use `#if os` checks to compile only code avaialble for specific API
 - If a third party dependency is added or updated, update the Software Bill of Material
 - If a third party dependency is added or updated, update the 3rd parties list in the Design System Toolbox
@@ -110,7 +111,7 @@ Here are assets, images, HTML files like legal notices and fonts.
 
 - Minimum Swift 6.2
 - Xcode 26 or later 
-- Minimum deployment: iOS 15.0, iPad 0S 15.0, macOS 15.6, visionOS 1.3, watch0S 11.6
+- Minimum deployment: iOS 15.0, iPad0S 15.0, macOS 15.6, visionOS 1.3, watch0S 11.6, tvOS 16.6
 - Apple Developer account for device testing
 
 ## Building commands
@@ -135,6 +136,11 @@ bundle exec fastlane vision build_debug
 To build the Design System Toolbox app for watchOS:
 ```shell
 bundle exec fastlane watch build_debug
+```
+
+To build the Design System Toolbox app for tvOS:
+```shell
+bundle exec fastlane tv build_debug
 ```
 
 ### Run tests
@@ -173,7 +179,12 @@ bundle exec fastlane vision check_dead_code
 
 To check for dead code for watchOS:
 ```shell
-bundle exec fastlane vision check_dead_code
+bundle exec fastlane watch check_dead_code
+```
+
+To check for dead code for tvOS:
+```shell
+bundle exec fastlane tv check_dead_code
 ```
 
 ### Format the sources
