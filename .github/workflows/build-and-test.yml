@@ -63,7 +63,7 @@ jobs:
         run: |
           bundle install
 
-      - name: Build demo app (iOS, macOS, visionOS, watchOS)
+      - name: Build demo app (iOS, macOS, visionOS, watchOS, tvOS)
         run: |
           cd DesignToolbox
           xcrun simctl list # List available simulators
@@ -71,6 +71,7 @@ jobs:
           bundle exec fastlane mac build_debug
           bundle exec fastlane vision build_debug
           bundle exec fastlane watch build_debug
+          bundle exec fastlane tv build_debug
 
   # Test the app with unit tests
   unit-test:
