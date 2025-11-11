@@ -35,12 +35,12 @@ struct RadiosItemView: View {
 
     private var watchOSLayout: some View {
         WatchVerticalLayout {
-            Text("With icon").font(.headline)
+            Text("Without icon").font(.headline)
             detailedView(withIcon: false)
 
             Divider()
 
-            Text("Without icon").font(.headline)
+            Text("With icon").font(.headline)
             detailedView(withIcon: true)
         }
     }
@@ -51,7 +51,7 @@ struct RadiosItemView: View {
         TVGridLayout(count: 2) {
             // Column n°1: without icon
             VStack(spacing: theme.spaces.scaledMediumMobile) {
-                Text("Without Icon")
+                Text("With Icon")
                     .font(.title2)
                     .fontWeight(.bold)
                     .padding(.bottom, theme.spaces.scaledXsmallMobile)
@@ -66,7 +66,7 @@ struct RadiosItemView: View {
 
             // Column n°2: with icon
             VStack(spacing: theme.spaces.scaledMediumMobile) {
-                Text("With Icon")
+                Text("Without Icon")
                     .font(.title2)
                     .fontWeight(.bold)
                     .padding(.bottom, theme.spaces.paddingInlineSmall)
@@ -102,6 +102,7 @@ struct RadiosItemView: View {
                 OUDSRadioItem(
                     isOn: $isOn,
                     label: "Label",
+                    additionalLabel: "Additional",
                     helper: "Helper",
                     icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                     isOutlined: isOutlined,
@@ -115,6 +116,7 @@ struct RadiosItemView: View {
                 OUDSRadioItem(
                     isOn: $isOn,
                     label: "Label",
+                    additionalLabel: "Additional",
                     helper: "Helper",
                     icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                     isOutlined: isOutlined,
@@ -134,6 +136,7 @@ struct RadiosItemView: View {
 
         OUDSRadioItem(isOn: $isOn,
                       label: "Label",
+                      additionalLabel: "Additional",
                       helper: "Helper",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                       isReversed: false,
@@ -141,6 +144,7 @@ struct RadiosItemView: View {
 
         OUDSRadioItem(isOn: $isOn,
                       label: "Label",
+                      additionalLabel: "Additional",
                       helper: "Helper",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                       isReversed: true,
@@ -152,6 +156,7 @@ struct RadiosItemView: View {
 
         OUDSRadioItem(isOn: $isOn,
                       label: "Label",
+                      additionalLabel: "Additional",
                       helper: "Helper",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                       isReversed: false,
@@ -160,6 +165,7 @@ struct RadiosItemView: View {
 
         OUDSRadioItem(isOn: $isOn,
                       label: "Label",
+                      additionalLabel: "Additional",
                       helper: "Helper",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                       isReversed: true,
@@ -170,6 +176,7 @@ struct RadiosItemView: View {
 
         OUDSRadioItem(isOn: $isOn,
                       label: "Label",
+                      additionalLabel: "Additional",
                       helper: "Helper",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                       isOutlined: true,
@@ -179,6 +186,7 @@ struct RadiosItemView: View {
 
         OUDSRadioItem(isOn: $isOn,
                       label: "Label",
+                      additionalLabel: "Additional",
                       helper: "Helper",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                       isOutlined: true,
@@ -190,6 +198,7 @@ struct RadiosItemView: View {
 
         OUDSRadioItem(isOn: $isOn,
                       label: "Label",
+                      additionalLabel: "Additional",
                       helper: "Helper",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                       isReversed: false,
@@ -198,6 +207,7 @@ struct RadiosItemView: View {
 
         OUDSRadioItem(isOn: $isOn,
                       label: "Label",
+                      additionalLabel: "Additional",
                       helper: "Helper",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                       isReversed: true,
@@ -208,6 +218,7 @@ struct RadiosItemView: View {
 
         OUDSRadioItem(isOn: $isOn,
                       label: "Label",
+                      additionalLabel: "Additional",
                       helper: "Helper",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                       isReversed: false,
@@ -215,6 +226,7 @@ struct RadiosItemView: View {
 
         OUDSRadioItem(isOn: $isOn,
                       label: "Label",
+                      additionalLabel: "Additional",
                       helper: "Helper",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                       isReversed: true,
