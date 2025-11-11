@@ -5319,7 +5319,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "experimental/support-watchOS";
+				branch = develop;
 				kind = branch;
 			};
 		};
