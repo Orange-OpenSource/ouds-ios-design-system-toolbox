@@ -30,19 +30,19 @@ struct BordersView: View {
         WatchVerticalLayout {
             Text("Width").font(.headline)
             ForEach(NamedBorderWidth.allCases, id: \.rawValue) { namedWidth in
-                BorderTokenPage.IllustrationWidth(namedWidth: namedWidth)
+                IllustrationWidth(namedWidth: namedWidth)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 
             Text("Radius").font(.headline)
             ForEach(NamedBorderRadius.allCases, id: \.rawValue) { namedRadius in
-                BorderTokenPage.IllustrationRadius(namedRadius: namedRadius)
+                IllustrationRadius(namedRadius: namedRadius)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 
             Text("Styles").font(.headline)
             ForEach(NamedBorderStyle.allCases, id: \.rawValue) { namedStyle in
-                BorderTokenPage.IllustrationStyle(namedStyle: namedStyle)
+                IllustrationStyle(namedStyle: namedStyle)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -54,7 +54,7 @@ struct BordersView: View {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 Text("Width").font(.headline)
                 ForEach(NamedBorderWidth.allCases, id: \.rawValue) { namedWidth in
-                    BorderTokenPage.IllustrationWidth(namedWidth: namedWidth)
+                    IllustrationWidth(namedWidth: namedWidth)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -62,7 +62,7 @@ struct BordersView: View {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 Text("Radius").font(.headline)
                 ForEach(NamedBorderRadius.allCases, id: \.rawValue) { namedRadius in
-                    BorderTokenPage.IllustrationRadius(namedRadius: namedRadius)
+                    IllustrationRadius(namedRadius: namedRadius)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -70,7 +70,7 @@ struct BordersView: View {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 Text("Styles").font(.headline)
                 ForEach(NamedBorderStyle.allCases, id: \.rawValue) { namedStyle in
-                    BorderTokenPage.IllustrationStyle(namedStyle: namedStyle)
+                    IllustrationStyle(namedStyle: namedStyle)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }

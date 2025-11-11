@@ -20,15 +20,12 @@ struct BorderTokenPage: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
-            // The BorderTokenPage.swift file is used for tvOS and watchOS targets for light verison of design toolbox
-            // But DesignToolboxCode view cannot be used as is
-            #if !os(tvOS) && !os(watchOS)
             Section {
                 VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                     DesignToolboxCode(code: "theme.borders.widthDefault", titleText: "app_tokens_common_viewCodeExample_label")
                 }
             }
-            #endif
+
             Section {
                 VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                     ForEach(NamedBorderWidth.allCases, id: \.rawValue) { namedWidth in
@@ -69,148 +66,5 @@ struct BorderTokenPage: View {
             }
         }
         .padding(.horizontal, theme.spaces.fixedMedium)
-    }
-
-    struct RectangleBackground: View {
-        @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
-
-        var body: some View {
-            Rectangle()
-                .fill(theme.colors.bgSecondary.color(for: colorScheme))
-                .frame(width: 64, height: 64)
-        }
-    }
-
-    struct IllustrationWidth: View {
-        @Environment(\.theme) private var theme
-
-        let namedWidth: NamedBorderWidth
-
-        var body: some View {
-            let token = namedWidth.token(from: theme)
-            let name = namedWidth.rawValue
-            let value = String(format: "%.2f pt", token)
-
-            DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
-                RectangleBackground()
-                    .oudsBorder(style: theme.borders.styleDefault,
-                                width: token,
-                                radius: theme.borders.radiusNone,
-                                color: theme.colors.borderFocus)
-            }
-        }
-    }
-
-    struct IllustrationRadius: View {
-        @Environment(\.theme) private var theme
-
-        let namedRadius: NamedBorderRadius
-
-        var body: some View {
-            let token = namedRadius.token(from: theme)
-            let name = namedRadius.rawValue
-            let value = String(format: "%.2f pt", token)
-
-            DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
-                RectangleBackground()
-                    .oudsBorder(style: theme.borders.styleDefault,
-                                width: theme.borders.widthDefault,
-                                radius: token,
-                                color: theme.colors.borderFocus)
-            }
-        }
-    }
-
-    struct IllustrationStyle: View {
-        @Environment(\.theme) private var theme
-
-        let namedStyle: NamedBorderStyle
-
-        var body: some View {
-            let token = namedStyle.token(from: theme)
-            let name = namedStyle.rawValue
-            let value = token
-
-            DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
-                RectangleBackground()
-                    .oudsBorder(style: token,
-                                width: theme.borders.widthDefault,
-                                radius: theme.borders.radiusNone,
-                                color: theme.colors.borderFocus)
-            }
-        }
-    }
-}
-
-enum NamedBorderRadius: String, CaseIterable {
-    case radiusNone
-    case radiusDefault
-    case radiusSmall
-    case radiusMedium
-    case radiusLarge
-    case radiusPill
-
-    func token(from theme: OUDSTheme) -> BorderRadiusSemanticToken {
-        switch self {
-        case .radiusNone:
-            theme.borders.radiusNone
-        case .radiusDefault:
-            theme.borders.radiusDefault
-        case .radiusSmall:
-            theme.borders.radiusSmall
-        case .radiusMedium:
-            theme.borders.radiusMedium
-        case .radiusLarge:
-            theme.borders.radiusLarge
-        case .radiusPill:
-            theme.borders.radiusPill
-        }
-    }
-}
-
-enum NamedBorderWidth: String, CaseIterable {
-    case widthNone
-    case widthDefault
-    case widthThin
-    case widthMedium
-    case widthThick
-    case widthThicker
-    case widthFocus
-    case widthFocusInset
-
-    func token(from theme: OUDSTheme) -> BorderWidthSemanticToken {
-        switch self {
-        case .widthNone:
-            theme.borders.widthNone
-        case .widthDefault:
-            theme.borders.widthDefault
-        case .widthThin:
-            theme.borders.widthThin
-        case .widthMedium:
-            theme.borders.widthMedium
-        case .widthThick:
-            theme.borders.widthThick
-        case .widthThicker:
-            theme.borders.widthThicker
-        case .widthFocus:
-            theme.borders.widthFocus
-        case .widthFocusInset:
-            theme.borders.widthFocusInset
-        }
-    }
-}
-
-enum NamedBorderStyle: String, CaseIterable {
-    case styleDefault
-    case styleDrag
-
-    func token(from theme: OUDSTheme) -> BorderStyleSemanticToken {
-        switch self {
-        case .styleDefault:
-            theme.borders.styleDefault
-        case .styleDrag:
-            theme.borders.styleDrag
-        }
     }
 }
