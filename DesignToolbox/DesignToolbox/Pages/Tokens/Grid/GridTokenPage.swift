@@ -38,11 +38,9 @@ struct GridTokenPage: View {
                     .oudsBackground(theme.colors.surfaceSecondary)
             }
 
-            #if !os(tvOS) && !os(watchOS)
             Section {
                 DesignToolboxCode(code: "theme.gridColumnCount(for: horizontalSizeClass)", titleText: "app_tokens_common_viewCodeExample_label")
             }
-            #endif
 
             Section { illustrationForGridTokens() } header: {
                 Text(horizontalSizeClass.rawValue)
@@ -69,27 +67,6 @@ struct GridTokenPage: View {
 
         return DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
             EmptyView()
-        }
-    }
-}
-
-enum NamedGrid: String, CaseIterable {
-    case minWidth
-    case maxWidth
-    case margin
-    case columnGap
-
-    @MainActor
-    func token(from theme: OUDSTheme, for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
-        switch self {
-        case .minWidth:
-            theme.gridMinWidth(for: sizeClass)
-        case .maxWidth:
-            theme.gridMaxWidth(for: sizeClass)
-        case .margin:
-            theme.gridMargin(for: sizeClass)
-        case .columnGap:
-            theme.gridColumnGap(for: sizeClass)
         }
     }
 }

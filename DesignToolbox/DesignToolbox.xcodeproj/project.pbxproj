@@ -947,6 +947,12 @@
 		95CE05532EC33F1B00ACE41C /* NamedSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05482EC33D6500ACE41C /* NamedSize.swift */; };
 		95CE05542EC33F2300ACE41C /* SizeIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE054D2EC33E9100ACE41C /* SizeIllustrations.swift */; };
 		95CE05552EC33F2300ACE41C /* NamedSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05482EC33D6500ACE41C /* NamedSize.swift */; };
+		95CE05572EC33FA900ACE41C /* NamedGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05562EC33FA600ACE41C /* NamedGrid.swift */; };
+		95CE05582EC33FA900ACE41C /* NamedGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05562EC33FA600ACE41C /* NamedGrid.swift */; };
+		95CE05592EC33FA900ACE41C /* NamedGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05562EC33FA600ACE41C /* NamedGrid.swift */; };
+		95CE055A2EC33FA900ACE41C /* NamedGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05562EC33FA600ACE41C /* NamedGrid.swift */; };
+		95CE055B2EC33FC500ACE41C /* NamedGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05562EC33FA600ACE41C /* NamedGrid.swift */; };
+		95CE055C2EC33FCB00ACE41C /* NamedGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05562EC33FA600ACE41C /* NamedGrid.swift */; };
 		95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95D713EC2EB36B0B00EBB7C2 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
 		95F840D32EB8FAA200CE1FE6 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95F840D22EB8FAA200CE1FE6 /* OUDSSwiftUI */; };
@@ -1352,6 +1358,7 @@
 		95CE05412EC33CE400ACE41C /* FontIllustrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontIllustrations.swift; sourceTree = "<group>"; };
 		95CE05482EC33D6500ACE41C /* NamedSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedSize.swift; sourceTree = "<group>"; };
 		95CE054D2EC33E9100ACE41C /* SizeIllustrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeIllustrations.swift; sourceTree = "<group>"; };
+		95CE05562EC33FA600ACE41C /* NamedGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedGrid.swift; sourceTree = "<group>"; };
 		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
 		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
@@ -1445,6 +1452,7 @@
 		070DF8B02CDD07F20043D558 /* Grid */ = {
 			isa = PBXGroup;
 			children = (
+				95CE05562EC33FA600ACE41C /* NamedGrid.swift */,
 				070DF8AE2CDD07F20043D558 /* GridTokenElement.swift */,
 				070DF8AF2CDD07F20043D558 /* GridTokenPage.swift */,
 			);
@@ -3403,6 +3411,7 @@
 				51952AA02D3FA32E0068B807 /* DimensionTokenElement.swift in Sources */,
 				51A217642E325ED500562BE0 /* OrangeBusinessToolsTheme+ChipsSnapshotsTests.swift in Sources */,
 				51952AA12D3FA32E0068B807 /* ElevationTokenElement.swift in Sources */,
+				95CE055A2EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				51952AA22D3FA32E0068B807 /* GridTokenElement.swift in Sources */,
 				0794FCDB2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift in Sources */,
 				079B4A1A2E49C78F0039FC26 /* OrangeBusinessToolsTheme+TagSnapshotsTests.swift in Sources */,
@@ -3631,6 +3640,7 @@
 				075C713B2CECC7DA00B93FC3 /* SpaceGapTokenIllustrations.swift in Sources */,
 				075114DC2CB7D28D00B8B759 /* SizeTokenPage.swift in Sources */,
 				07F0AFD72CFDB3CC00D334DD /* ComponentPage.swift in Sources */,
+				95CE05572EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				0786A9DB2E0AAB4A00976098 /* CheckboxItemElement.swift in Sources */,
 				0786A9DC2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
 				077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */,
@@ -3790,6 +3800,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CE055C2EC33FCB00ACE41C /* NamedGrid.swift in Sources */,
 				95CE05522EC33F1B00ACE41C /* SizeIllustrations.swift in Sources */,
 				95CE05532EC33F1B00ACE41C /* NamedSize.swift in Sources */,
 				95CE05402EC33C8F00ACE41C /* IllustrationOpacity.swift in Sources */,
@@ -3918,6 +3929,7 @@
 				9589F0482EB7D67B00134487 /* SpaceGapTokenIllustrations.swift in Sources */,
 				9589F0492EB7D67B00134487 /* SizeTokenPage.swift in Sources */,
 				9589F04A2EB7D67B00134487 /* ComponentPage.swift in Sources */,
+				95CE05592EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				9589F04B2EB7D67B00134487 /* CheckboxItemElement.swift in Sources */,
 				9589F04C2EB7D67B00134487 /* CheckboxItemPage.swift in Sources */,
 				9589F04D2EB7D67B00134487 /* DimensionTokenElement.swift in Sources */,
@@ -4079,6 +4091,7 @@
 				9589F1222EB7D67E00134487 /* SpaceGapTokenIllustrations.swift in Sources */,
 				9589F1232EB7D67E00134487 /* SizeTokenPage.swift in Sources */,
 				9589F1242EB7D67E00134487 /* ComponentPage.swift in Sources */,
+				95CE05582EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				9589F1252EB7D67E00134487 /* CheckboxItemElement.swift in Sources */,
 				9589F1262EB7D67E00134487 /* CheckboxItemPage.swift in Sources */,
 				9589F1272EB7D67E00134487 /* DimensionTokenElement.swift in Sources */,
@@ -4197,6 +4210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CE055B2EC33FC500ACE41C /* NamedGrid.swift in Sources */,
 				95CE05542EC33F2300ACE41C /* SizeIllustrations.swift in Sources */,
 				95CE05552EC33F2300ACE41C /* NamedSize.swift in Sources */,
 				95CE053E2EC33C8200ACE41C /* NamedOpacity.swift in Sources */,
