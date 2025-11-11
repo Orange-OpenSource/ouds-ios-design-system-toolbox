@@ -53,7 +53,7 @@ private struct RadioItemDemo: View {
                       isError: configurationModel.isError,
                       errorText: configurationModel.errorText,
                       isReadOnly: configurationModel.isReadOnly,
-                      hasDivider: configurationModel.divider)
+                      hasDivider: configurationModel.hasDivider)
             .disabled(!configurationModel.enabled)
             .padding(.all, theme.spaces.fixedMedium)
             .accessibilityIdentifier(A11YIdentifiers.componentRadioItem)

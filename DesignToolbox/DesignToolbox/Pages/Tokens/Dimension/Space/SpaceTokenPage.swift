@@ -22,9 +22,13 @@ struct SpaceTokenPage: View {
 
     var body: some View {
         Group {
+            #if !os(tvOS) && !os(watchOS)
+            // SizeTokenPage.swift file imported in watchOS and tvOS targets
+            // But for the Design Toolbox Light app no code section
             Section {
                 DesignToolboxCode(code: "theme.scaledMd.dimension(for: horizontalSizeClass ?? .regular)", titleText: "app_tokens_common_viewCodeExample_label")
             }
+            #endif
             // Basic Space Tokens
             Section { ScaledSpaceProperty() } header: {
                 header("app_tokens_dimension_space_scaled_label")
@@ -32,7 +36,7 @@ struct SpaceTokenPage: View {
             Section { FixedSpaceProperty() } header: {
                 header("app_tokens_dimension_space_fixed_label")
             }
-            // Padding Sapce Tokens
+            // Padding Space Tokens
             Section { PaddingInlineProperty() } header: {
                 header("app_tokens_dimension_space_paddingInline_label")
             }
@@ -58,15 +62,4 @@ struct SpaceTokenPage: View {
     private func header(_ text: LocalizedStringKey) -> some View {
         Text(text).designToolboxSectionHeaderStyle()
     }
-}
-
-// MARK: - Named Space
-
-enum NamedSpace {}
-
-/// Interface all `NamedSpace` tokens must implement  provide a displayable name and the sementic token
-protocol NamedSpaceToken {
-    var name: String { get }
-
-    func token(from theme: OUDSTheme) -> SpaceSemanticToken
 }
