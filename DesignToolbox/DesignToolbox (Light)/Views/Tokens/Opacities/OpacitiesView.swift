@@ -29,7 +29,7 @@ struct OpacitiesView: View {
     private var watchLayout: some View {
         WatchVerticalLayout {
             ForEach(NamedOpacity.allCases, id: \.rawValue) { opacityName in
-                OpacityTokenPage.IllustrationOpacity(opacityName: opacityName)
+                IllustrationOpacity(opacityName: opacityName)
             }
         }
     }
@@ -38,7 +38,7 @@ struct OpacitiesView: View {
     private var tvLayout: some View {
         TVVerticalLayout {
             ForEach(NamedOpacity.allCases, id: \.rawValue) { opacityName in
-                OpacityTokenPage.IllustrationOpacity(opacityName: opacityName)
+                IllustrationOpacity(opacityName: opacityName)
             }
         }
     }

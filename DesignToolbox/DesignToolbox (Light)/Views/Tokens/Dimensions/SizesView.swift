@@ -32,13 +32,13 @@ struct SizesView: View {
             Text("Decorative").font(.headline)
             VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
                 ForEach(NamedSize.IconDecorative.allCases, id: \.rawValue) { namedSize in
-                    SizeTokenPage.IllustrationIconDecorative(namedSize: namedSize)
+                    IllustrationIconDecorative(namedSize: namedSize)
                 }
             }
             Text("Typography").font(.headline)
             VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
                 ForEach(NamedSize.iconSizeByTypographyCategories, id: \.namedFont) { category in
-                    SizeTokenPage.IllustrationSizeIconByTypographyCategory(category: category)
+                    IllustrationSizeIconByTypographyCategory(category: category)
                 }
             }
         }
@@ -52,7 +52,7 @@ struct SizesView: View {
             VStack(spacing: theme.spaces.fixedNone) {
                 Text("Decorative").font(.headline)
                 ForEach(NamedSize.IconDecorative.allCases, id: \.rawValue) { namedSize in
-                    SizeTokenPage.IllustrationIconDecorative(namedSize: namedSize).focusable()
+                    IllustrationIconDecorative(namedSize: namedSize).focusable()
                 }
             }
             .frame(maxWidth: .infinity, alignment: .top)
@@ -61,7 +61,7 @@ struct SizesView: View {
             VStack(spacing: theme.spaces.fixedMedium) {
                 Text("Typography").font(.headline)
                 ForEach(NamedSize.iconSizeByTypographyCategories, id: \.namedFont) { category in
-                    SizeTokenPage.IllustrationSizeIconByTypographyCategory(category: category).focusable()
+                    IllustrationSizeIconByTypographyCategory(category: category).focusable()
                 }
             }
             .frame(maxWidth: .infinity, alignment: .top)

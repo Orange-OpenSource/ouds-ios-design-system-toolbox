@@ -29,7 +29,7 @@ struct FontsView: View {
     private var watchLayout: some View {
         WatchVerticalLayout {
             ForEach(NamedFont.allCases, id: \.rawValue) { fontName in
-                FontTokenPage.IllustrationFont(namedFont: fontName)
+                IllustrationFont(namedFont: fontName)
             }
         }
     }
@@ -38,7 +38,7 @@ struct FontsView: View {
     private var tvLayout: some View {
         TVGridLayout(count: 4) {
             ForEach(NamedFont.allCases, id: \.rawValue) { fontName in
-                FontTokenPage.IllustrationFont(namedFont: fontName).focusable()
+                IllustrationFont(namedFont: fontName).focusable()
             }
         }
     }
