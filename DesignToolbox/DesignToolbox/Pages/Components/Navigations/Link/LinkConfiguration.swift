@@ -50,12 +50,12 @@ final class LinkConfigurationModel: ComponentConfiguration {
 
     // MARK: Component Configuration
 
-    private var coloredSurfaceCodeModifier: String {
+    private var coloredSurfaceCodeModifierPattern: String {
         onColoredSurface ? ".oudsColoredSurface(theme.colorModes.onBrandPrimary)" : ""
     }
 
-    private var disableCode: String {
-        ".disabled(\(enabled ? "false" : "true"))"
+    private var disableCodePattern: String {
+        enabled ? "" : ".disabled(true)"
     }
 
     override func updateCode() {
@@ -64,29 +64,29 @@ final class LinkConfigurationModel: ComponentConfiguration {
             code =
                 """
                 OUDSLink(text: \"\(text)\", size: \(size.description.lowercased())) {}
-                \(disableCode)
-                \(coloredSurfaceCodeModifier)
+                \(disableCodePattern)
+                \(coloredSurfaceCodeModifierPattern)
                 """
         case .textAndIcon:
             code =
                 """
                 OUDSLink(text: \"\(text)\", icon: Image(\"ic_heart\"), size: \(size.description.lowercased())) {}
-                \(disableCode)
-                \(coloredSurfaceCodeModifier)
+                \(disableCodePattern)
+                \(coloredSurfaceCodeModifierPattern)
                 """
         case .indicatorNext:
             code =
                 """
                 OUDSLink(text: \"\(text)\", indicator: .next, size: \(size.description.lowercased())) {}
-                \(disableCode)
-                \(coloredSurfaceCodeModifier)
+                \(disableCodePattern)
+                \(coloredSurfaceCodeModifierPattern)
                 """
         case .indicatorBack:
             code =
                 """
                 OUDSLink(text: \"\(text)\", indicator: .back, size: \(size.description.lowercased())) {}
-                \(disableCode)
-                \(coloredSurfaceCodeModifier)
+                \(disableCodePattern)
+                \(coloredSurfaceCodeModifierPattern)
                 """
         }
     }

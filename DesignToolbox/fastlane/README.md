@@ -174,6 +174,48 @@ Build locally the demo app in debug mode without upload
 
 ----
 
+
+## watch
+
+### watch check_dead_code
+
+```sh
+[bundle exec] fastlane watch check_dead_code
+```
+
+Run Periphery to look for dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned.
+
+### watch build_debug
+
+```sh
+[bundle exec] fastlane watch build_debug
+```
+
+Build locally the demo app in debug mode without upload
+
+----
+
+
+## tv
+
+### tv check_dead_code
+
+```sh
+[bundle exec] fastlane tv check_dead_code
+```
+
+Run Periphery to look for dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned.
+
+### tv build_debug
+
+```sh
+[bundle exec] fastlane tv build_debug
+```
+
+Build locally the demo app in debug mode without upload
+
+----
+
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
 
 More information about _fastlane_ can be found on [fastlane.tools](https://fastlane.tools).

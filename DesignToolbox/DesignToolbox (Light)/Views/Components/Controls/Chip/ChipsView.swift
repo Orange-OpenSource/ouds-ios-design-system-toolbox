@@ -1,0 +1,86 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import OUDSSwiftUI
+import SwiftUI
+
+struct ChipsView: View {
+
+    var body: some View {
+        NavigationView {
+            List {
+                NavigationLink("Filter chip", destination: FilterChipView())
+                NavigationLink("Suggestion chip", destination: SuggestionChipView())
+            }
+        }
+        .navigationTitle("Chips")
+    }
+}
+
+// MARK: - Filter chip
+
+// swiftlint:disable accessibility_label_for_image
+private struct FilterChipView: View {
+
+    @State private var isSelected: Bool = true
+
+    var body: some View {
+        WatchAndTVLayoutsView(watchLayout: {
+            layout
+        }, tvLayout: {
+            layout
+        })
+    }
+
+    @ViewBuilder
+    private var layout: some View {
+        Text("Text only").font(.subheadline)
+        OUDSFilterChip(text: "Filter", selected: isSelected) { isSelected.toggle() }
+
+        Text("Text + icon").font(.subheadline)
+        OUDSFilterChip(icon: Image(systemName: "sun.min.fill"), text: "Filter", selected: isSelected) { isSelected.toggle() }
+
+        Text("Icon only").font(.subheadline)
+        OUDSFilterChip(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Filter", selected: isSelected) { isSelected.toggle() }
+    }
+}
+
+// swiftlint:enable accessibility_label_for_image
+
+// MARK: - Suggestion chip
+
+// swiftlint:disable accessibility_label_for_image
+private struct SuggestionChipView: View {
+
+    var body: some View {
+        WatchAndTVLayoutsView(watchLayout: {
+            layout
+        }, tvLayout: {
+            layout
+        })
+    }
+
+    @ViewBuilder
+    private var layout: some View {
+        Text("Text only").font(.subheadline)
+        OUDSSuggestionChip(text: "Suggestion") {}
+
+        Text("Text + icon").font(.subheadline)
+        OUDSSuggestionChip(icon: Image(systemName: "sun.min.fill"), text: "Suggestion") {}
+
+        Text("Icon only").font(.subheadline)
+        OUDSSuggestionChip(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Suggestion") {}
+    }
+}
+
+// swiftlint:enable accessibility_label_for_image
