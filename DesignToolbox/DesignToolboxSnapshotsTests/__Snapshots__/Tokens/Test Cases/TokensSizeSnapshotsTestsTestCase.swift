@@ -31,7 +31,7 @@ open class TokensSizeSnapshotsTestsTestCase: XCTestCase {
         for namedToken in NamedSize.IconDecorative.allCases {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
-                SizeTokenPage.IllustrationIconDecorative(namedSize: namedToken)
+                IllustrationIconDecorative(namedSize: namedToken)
                     .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
@@ -57,7 +57,7 @@ open class TokensSizeSnapshotsTestsTestCase: XCTestCase {
         for namedToken in NamedSize.IconWithTypography.allCases {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
-                SizeTokenPage.IllustrationIconWithTypography(namedSize: namedToken)
+                IllustrationIconWithTypography(namedSize: namedToken)
                     .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.21.0...develop)
 
+### Added
+
+- [DesignToolbox] Support of `watchOS`
+
 ### Changed
 
 - [Library] Update `text input` to display the label on two lines and in the middle when no placeholder and one line at top otherwise (Orange-OpenSource/ouds-ios#1086) 
@@ -13,6 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - [DesignToolbox] `CocoaPods` tool (Orange-OpenSource/ouds-ios#1103)
+
+### Fixed
+
+- [DesignToolbox] Missing or badly named parameters in code samples of components
 
 ## [0.21.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.20.0...0.21.0) - 2025-11-05
 

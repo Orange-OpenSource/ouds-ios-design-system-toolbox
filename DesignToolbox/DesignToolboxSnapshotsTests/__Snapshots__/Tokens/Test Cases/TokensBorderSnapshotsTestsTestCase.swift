@@ -31,7 +31,7 @@ open class TokensBorderSnapshotsTestsTestCase: XCTestCase {
         for namedToken in NamedBorderWidth.allCases {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
-                BorderTokenPage.IllustrationWidth(namedWidth: namedToken)
+                IllustrationWidth(namedWidth: namedToken)
                     .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
@@ -57,7 +57,7 @@ open class TokensBorderSnapshotsTestsTestCase: XCTestCase {
         for namedToken in NamedBorderRadius.allCases {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
-                BorderTokenPage.IllustrationRadius(namedRadius: namedToken)
+                IllustrationRadius(namedRadius: namedToken)
                     .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
@@ -83,7 +83,7 @@ open class TokensBorderSnapshotsTestsTestCase: XCTestCase {
         for namedToken in NamedBorderStyle.allCases {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
-                BorderTokenPage.IllustrationStyle(namedStyle: namedToken)
+                IllustrationStyle(namedStyle: namedToken)
                     .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 

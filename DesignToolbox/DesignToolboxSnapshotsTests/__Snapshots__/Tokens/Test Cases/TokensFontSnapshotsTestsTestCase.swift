@@ -31,7 +31,7 @@ open class TokensFontSnapshotsTestsTestCase: XCTestCase {
         for namedToken in NamedFont.allCases {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
-                FontTokenPage.IllustrationFont(namedFont: namedToken)
+                IllustrationFont(namedFont: namedToken)
                     .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 

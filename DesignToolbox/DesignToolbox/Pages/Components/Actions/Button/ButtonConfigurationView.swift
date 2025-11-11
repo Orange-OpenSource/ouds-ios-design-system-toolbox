@@ -67,6 +67,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         onColoredSurface ? ".oudsColoredSurface(theme.colorModes.onBrandPrimary)" : ""
     }
 
+    // swiftlint:disable line_length
     override func updateCode() {
         switch layout {
         case .textOnly:
@@ -79,7 +80,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .iconOnly:
             code =
                 """
-                OUDSButton(icon: Image(\"ic_heart\"), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
+                OUDSButton(icon: Image(\"ic_heart\"), accessibilityLabel: \"app_components_common_icon_a11y\", appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifier)
                 """
@@ -92,6 +93,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
                 """
         }
     }
+    // swiftlint:enable line_length
 }
 
 // MARK: - Button Layout

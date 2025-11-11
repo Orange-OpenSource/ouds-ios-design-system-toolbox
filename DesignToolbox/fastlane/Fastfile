@@ -61,6 +61,8 @@ OUDS_PROJECT = "DesignToolbox.xcodeproj"
 OUDS_SCHEME_IOS = "DesignToolbox" # Default scheme
 OUDS_SCHEME_MACOS = "DesignToolbox_macOS"
 OUDS_SCHEME_VISIONOS = "DesignToolbox_visionOS"
+OUDS_SCHEME_WATCHOS = "DesignToolbox_watchOS"
+OUDS_SCHEME_TVOS = "DesignToolbox_tvOS"
 OUDS_SCHEME_SNAPSHOTS_TESTS = "DesignToolboxSnapshotsTests"
 OUDS_SCHEME_UI_TESTS = "DesignToolboxUITests"
 OUDS_SCHEME_UNIT_TESTS = "DesignToolboxUnitTests"
@@ -68,6 +70,8 @@ OUDS_SCHEME_UNIT_TESTS = "DesignToolboxUnitTests"
 OUDS_TARGET_IOS = "DesignToolbox (iOS)"
 OUDS_TARGET_MACOS = "DesignToolbox (macOS)"
 OUDS_TARGET_VISIONOS = "DesignToolbox (visionOS)"
+OUDS_TARGET_WATCHOS = "DesignToolbox (watchOS)"
+OUDS_TARGET_TVOS = "DesignToolbox (tvOS)"
 
 OUDS_PROJECT_NAME = "DesignToolbox" # Root for Info.plist, etc.
 OUDS_APP_DISPLAY_NAME = "Design System Toolbox"
@@ -650,6 +654,94 @@ platform :vision do
         version = get_version_number(
             xcodeproj: OUDS_PROJECT,
             target: OUDS_TARGET_VISIONOS
+        )
+        return version
+    end
+end
+
+# watchOS lanes
+# --------------
+
+platform :watch do
+
+    desc "Run Periphery to look for dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned."
+    lane :check_dead_code do
+        puts "👉 Check watchOS dead code with Periphery"
+
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_WATCHOS} --format xcode"
+    end
+
+    desc "Build locally the demo app in debug mode without upload"
+    lane :build_debug do
+        puts "👉 Build debug app"
+
+        Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
+            sh "rm -Rf AppIconRelease.appiconset"
+            sh "cp -R AppIconDebug.appiconset AppIconRelease.appiconset"
+        end
+
+        gym(
+            scheme: OUDS_SCHEME_WATCHOS,
+            output_directory: 'build/',
+            archive_path: 'build/',
+            output_name: 'oudsApp',
+            configuration: 'Debug',
+            include_symbols: true,
+            skip_archive: true,
+            skip_codesigning: true,
+            destination: "platform=watchOS Simulator,OS=26.0,name=Apple Watch Series 11 (46mm)"
+        )
+    end
+    
+    # Get version set in the Xcode project
+    def get_watchOS_app_version()
+        version = get_version_number(
+            xcodeproj: OUDS_PROJECT,
+            target: OUDS_TARGET_WATCHOS
+        )
+        return version
+    end
+end
+
+# tvOS lanes
+# --------------
+
+platform :tv do
+
+    desc "Run Periphery to look for dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned."
+    lane :check_dead_code do
+        puts "👉 Check tvOS dead code with Periphery"
+
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_TVOS} --format xcode"
+    end
+
+    desc "Build locally the demo app in debug mode without upload"
+    lane :build_debug do
+        puts "👉 Build debug app"
+
+        Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
+            sh "rm -Rf AppIconRelease.appiconset"
+            sh "cp -R AppIconDebug.appiconset AppIconRelease.appiconset"
+        end
+
+        gym(
+            scheme: OUDS_SCHEME_TVOS,
+            output_directory: 'build/',
+            archive_path: 'build/',
+            output_name: 'oudsApp',
+            configuration: 'Debug',
+            include_symbols: true,
+            skip_archive: true,
+            skip_codesigning: true,
+            destination: 'generic/platform=tvOS'
+        )
+    end
+    
+    # Get version set in the Xcode project
+    def get_tvOS_app_version()
+        version = get_version_number(
+            xcodeproj: OUDS_PROJECT,
+            target: OUDS_TARGET_TVOS
         )
         return version
     end
