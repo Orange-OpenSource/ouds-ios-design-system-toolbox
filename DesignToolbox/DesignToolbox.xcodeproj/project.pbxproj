@@ -953,6 +953,18 @@
 		95CE055A2EC33FA900ACE41C /* NamedGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05562EC33FA600ACE41C /* NamedGrid.swift */; };
 		95CE055B2EC33FC500ACE41C /* NamedGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05562EC33FA600ACE41C /* NamedGrid.swift */; };
 		95CE055C2EC33FCB00ACE41C /* NamedGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05562EC33FA600ACE41C /* NamedGrid.swift */; };
+		95CE055E2EC33FF800ACE41C /* NamedElevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE055D2EC33FF500ACE41C /* NamedElevation.swift */; };
+		95CE055F2EC33FF800ACE41C /* NamedElevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE055D2EC33FF500ACE41C /* NamedElevation.swift */; };
+		95CE05602EC33FF800ACE41C /* NamedElevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE055D2EC33FF500ACE41C /* NamedElevation.swift */; };
+		95CE05612EC33FF800ACE41C /* NamedElevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE055D2EC33FF500ACE41C /* NamedElevation.swift */; };
+		95CE05632EC3401800ACE41C /* ElevationIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05622EC3401400ACE41C /* ElevationIllustration.swift */; };
+		95CE05642EC3401800ACE41C /* ElevationIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05622EC3401400ACE41C /* ElevationIllustration.swift */; };
+		95CE05652EC3401800ACE41C /* ElevationIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05622EC3401400ACE41C /* ElevationIllustration.swift */; };
+		95CE05662EC3401800ACE41C /* ElevationIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05622EC3401400ACE41C /* ElevationIllustration.swift */; };
+		95CE05672EC3403300ACE41C /* ElevationIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05622EC3401400ACE41C /* ElevationIllustration.swift */; };
+		95CE05682EC3403300ACE41C /* NamedElevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE055D2EC33FF500ACE41C /* NamedElevation.swift */; };
+		95CE05692EC3403C00ACE41C /* ElevationIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05622EC3401400ACE41C /* ElevationIllustration.swift */; };
+		95CE056A2EC3403C00ACE41C /* NamedElevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE055D2EC33FF500ACE41C /* NamedElevation.swift */; };
 		95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95D713EC2EB36B0B00EBB7C2 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
 		95F840D32EB8FAA200CE1FE6 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95F840D22EB8FAA200CE1FE6 /* OUDSSwiftUI */; };
@@ -1359,6 +1371,8 @@
 		95CE05482EC33D6500ACE41C /* NamedSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedSize.swift; sourceTree = "<group>"; };
 		95CE054D2EC33E9100ACE41C /* SizeIllustrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeIllustrations.swift; sourceTree = "<group>"; };
 		95CE05562EC33FA600ACE41C /* NamedGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedGrid.swift; sourceTree = "<group>"; };
+		95CE055D2EC33FF500ACE41C /* NamedElevation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedElevation.swift; sourceTree = "<group>"; };
+		95CE05622EC3401400ACE41C /* ElevationIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationIllustration.swift; sourceTree = "<group>"; };
 		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
 		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
@@ -1723,6 +1737,8 @@
 		07CF42752CA3F461000BD03E /* Elevation */ = {
 			isa = PBXGroup;
 			children = (
+				95CE05622EC3401400ACE41C /* ElevationIllustration.swift */,
+				95CE055D2EC33FF500ACE41C /* NamedElevation.swift */,
 				07CF42762CA3F4BE000BD03E /* ElevationTokenElement.swift */,
 				07CF42772CA3F4BE000BD03E /* ElevationTokenPage.swift */,
 			);
@@ -3401,6 +3417,7 @@
 				51952A9E2D3FA32E0068B807 /* ColorTokenElement.swift in Sources */,
 				518EC0A82E1FF2C000FC77E4 /* BadgeSnapshotsTestsTestCase.swift in Sources */,
 				518EC0A92E1FF2C000FC77E4 /* ButtonSnapshotsTestsTestCase.swift in Sources */,
+				95CE055F2EC33FF800ACE41C /* NamedElevation.swift in Sources */,
 				518EC0AA2E1FF2C000FC77E4 /* LinkSnapshotsTestsTestCase.swift in Sources */,
 				518EC0AB2E1FF2C000FC77E4 /* CheckboxSnapshotsTestsTestCase.swift in Sources */,
 				518EC0AC2E1FF2C000FC77E4 /* RadioButtonSnapshotsTestsTestCase.swift in Sources */,
@@ -3588,6 +3605,7 @@
 				51952A8F2D3FA24C0068B807 /* OrangeTheme+TokensOpacitySnapshotsTests.swift in Sources */,
 				07F0AFDF2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */,
 				078C4C382E01558B00598F75 /* ControlItemConfigurationViews.swift in Sources */,
+				95CE05642EC3401800ACE41C /* ElevationIllustration.swift in Sources */,
 				51D6D5922D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift in Sources */,
 				95CE053A2EC33C4800ACE41C /* IllustrationOpacity.swift in Sources */,
 			);
@@ -3605,6 +3623,7 @@
 				0745C1992D7A0823006B3A1F /* RadioItemPage.swift in Sources */,
 				51952A692D3F9B9E0068B807 /* NamedColor+Overlay.swift in Sources */,
 				51952A6A2D3F9B9E0068B807 /* NamedColor+Repository.swift in Sources */,
+				95CE055E2EC33FF800ACE41C /* NamedElevation.swift in Sources */,
 				51952A6B2D3F9B9E0068B807 /* NamedColor+Surface.swift in Sources */,
 				0745C18E2D7A0596006B3A1F /* RadioPage.swift in Sources */,
 				0745C18F2D7A0596006B3A1F /* RadioConfiguration.swift in Sources */,
@@ -3713,6 +3732,7 @@
 				0762276A2DA90C65009C3632 /* DividerPage.swift in Sources */,
 				07F75A412CC653EB0004F1AD /* NameSpace+RowGap.swift in Sources */,
 				5122E02A2D65E7AC00CD2857 /* String+extension.swift in Sources */,
+				95CE05662EC3401800ACE41C /* ElevationIllustration.swift in Sources */,
 				07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */,
 				07CF427F2CA41325000BD03E /* OpacityTokenElement.swift in Sources */,
 				07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */,
@@ -3800,6 +3820,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CE05672EC3403300ACE41C /* ElevationIllustration.swift in Sources */,
+				95CE05682EC3403300ACE41C /* NamedElevation.swift in Sources */,
 				95CE055C2EC33FCB00ACE41C /* NamedGrid.swift in Sources */,
 				95CE05522EC33F1B00ACE41C /* SizeIllustrations.swift in Sources */,
 				95CE05532EC33F1B00ACE41C /* NamedSize.swift in Sources */,
@@ -3894,6 +3916,7 @@
 				9589F0272EB7D67B00134487 /* RadioItemPage.swift in Sources */,
 				9589F0282EB7D67B00134487 /* NamedColor+Overlay.swift in Sources */,
 				9589F0292EB7D67B00134487 /* NamedColor+Repository.swift in Sources */,
+				95CE05612EC33FF800ACE41C /* NamedElevation.swift in Sources */,
 				9589F02A2EB7D67B00134487 /* NamedColor+Surface.swift in Sources */,
 				9589F02B2EB7D67B00134487 /* RadioPage.swift in Sources */,
 				9589F02C2EB7D67B00134487 /* RadioConfiguration.swift in Sources */,
@@ -4002,6 +4025,7 @@
 				9589F08F2EB7D67B00134487 /* DividerPage.swift in Sources */,
 				9589F0902EB7D67B00134487 /* NameSpace+RowGap.swift in Sources */,
 				9589F0912EB7D67B00134487 /* String+extension.swift in Sources */,
+				95CE05632EC3401800ACE41C /* ElevationIllustration.swift in Sources */,
 				9589F0922EB7D67B00134487 /* ThemeSelection.swift in Sources */,
 				9589F0932EB7D67B00134487 /* OpacityTokenElement.swift in Sources */,
 				9589F0942EB7D67B00134487 /* TokensPage.swift in Sources */,
@@ -4056,6 +4080,7 @@
 				9589F1012EB7D67E00134487 /* RadioItemPage.swift in Sources */,
 				9589F1022EB7D67E00134487 /* NamedColor+Overlay.swift in Sources */,
 				9589F1032EB7D67E00134487 /* NamedColor+Repository.swift in Sources */,
+				95CE05602EC33FF800ACE41C /* NamedElevation.swift in Sources */,
 				9589F1042EB7D67E00134487 /* NamedColor+Surface.swift in Sources */,
 				9589F1052EB7D67E00134487 /* RadioPage.swift in Sources */,
 				9589F1062EB7D67E00134487 /* RadioConfiguration.swift in Sources */,
@@ -4164,6 +4189,7 @@
 				9589F1692EB7D67E00134487 /* DividerPage.swift in Sources */,
 				9589F16A2EB7D67E00134487 /* NameSpace+RowGap.swift in Sources */,
 				9589F16B2EB7D67E00134487 /* String+extension.swift in Sources */,
+				95CE05652EC3401800ACE41C /* ElevationIllustration.swift in Sources */,
 				9589F16C2EB7D67E00134487 /* ThemeSelection.swift in Sources */,
 				9589F16D2EB7D67E00134487 /* OpacityTokenElement.swift in Sources */,
 				9589F16E2EB7D67E00134487 /* TokensPage.swift in Sources */,
@@ -4210,6 +4236,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CE05692EC3403C00ACE41C /* ElevationIllustration.swift in Sources */,
+				95CE056A2EC3403C00ACE41C /* NamedElevation.swift in Sources */,
 				95CE055B2EC33FC500ACE41C /* NamedGrid.swift in Sources */,
 				95CE05542EC33F2300ACE41C /* SizeIllustrations.swift in Sources */,
 				95CE05552EC33F2300ACE41C /* NamedSize.swift in Sources */,

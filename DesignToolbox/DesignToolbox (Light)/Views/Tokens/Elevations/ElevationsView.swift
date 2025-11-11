@@ -29,7 +29,7 @@ struct ElevationsView: View {
     private var watchLayout: some View {
         WatchVerticalLayout {
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
-                ElevationTokenPage.IllustrationElevation(namedElevation: elevationName)
+                IllustrationElevation(namedElevation: elevationName)
             }
         }
     }
@@ -38,7 +38,7 @@ struct ElevationsView: View {
     private var tvLayout: some View {
         TVVerticalLayout {
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
-                ElevationTokenPage.IllustrationElevation(namedElevation: elevationName)
+                IllustrationElevation(namedElevation: elevationName)
             }
         }
     }
