@@ -53,22 +53,22 @@ struct ColorsView: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: true) {
                 TVGridLayout(count: 4) {
-                    NavigationLink("Action") { TVGridLayout(count: 4) { illustrationForAction() } }
-                    NavigationLink("Always") { TVGridLayout(count: 4) { illustrationForAlways() } }
-                    NavigationLink("Background") { TVGridLayout(count: 4) { illustrationForBackground() } }
-                    NavigationLink("Border") { TVGridLayout(count: 4) { illustrationForBorder() } }
+                    NavigationLink("Action") { illustrationForAction() }
+                    NavigationLink("Always") { illustrationForAlways() }
+                    NavigationLink("Background") { illustrationForBackground() }
+                    NavigationLink("Border") { illustrationForBorder() }
                     if theme.charts != nil {
-                        NavigationLink("Chart") { TVGridLayout(count: 4) { illustrationForChart() } }
+                        NavigationLink("Chart") { illustrationForChart() }
                     }
-                    NavigationLink("Content") { TVGridLayout(count: 4) { illustrationForContent() } }
-                    NavigationLink("Overlay") { TVGridLayout(count: 4) { illustrationForOverlay() } }
-                    NavigationLink("Surface") { TVGridLayout(count: 4) { illustrationForSurface() } }
-                    NavigationLink("Opacity") { TVGridLayout(count: 4) { illustrationForOpacity() } }
-                    NavigationLink("Repository") { TVGridLayout(count: 3) { illustrationForRepository() } }
+                    NavigationLink("Content") { illustrationForContent() }
+                    NavigationLink("Overlay") { illustrationForOverlay() }
+                    NavigationLink("Surface") { illustrationForSurface() }
+                    NavigationLink("Opacity") { illustrationForOpacity() }
+                    NavigationLink("Repository") { illustrationForRepository() }
                 }
                 .padding()
             }
-            .navigationTitle("Illustrations")
+            .navigationTitle("Colors")
         }
     }
 
@@ -76,7 +76,7 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForAction() -> some View {
-        ScrollView(.vertical, showsIndicators: true) {
+        TVGridLayout(count: 4) {
             ForEach(NamedColor.Action.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
                     Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
@@ -87,7 +87,7 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForAlways() -> some View {
-        ScrollView(.vertical, showsIndicators: true) {
+        TVGridLayout(count: 4) {
             ForEach(NamedColor.Always.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).isForbiddenValueColor() {
                     Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
@@ -98,7 +98,7 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForBackground() -> some View {
-        ScrollView(.vertical, showsIndicators: true) {
+        TVGridLayout(count: 4) {
             ForEach(NamedColor.Background.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
                     Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
@@ -109,7 +109,7 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForChart() -> some View {
-        ScrollView(.vertical, showsIndicators: true) {
+        TVGridLayout(count: 4) {
             ForEach(NamedColor.Chart.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
                     Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
@@ -120,7 +120,7 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForBorder() -> some View {
-        ScrollView(.vertical, showsIndicators: true) {
+        TVGridLayout(count: 4) {
             ForEach(NamedColor.Border.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
                     Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
@@ -131,7 +131,7 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForContent() -> some View {
-        ScrollView(.vertical, showsIndicators: true) {
+        TVGridLayout(count: 4) {
             ForEach(NamedColor.Content.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
                     Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
@@ -142,7 +142,7 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForOverlay() -> some View {
-        ScrollView(.vertical, showsIndicators: true) {
+        TVGridLayout(count: 4) {
             ForEach(NamedColor.Overlay.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
                     Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
@@ -153,7 +153,7 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForSurface() -> some View {
-        ScrollView(.vertical, showsIndicators: true) {
+        TVGridLayout(count: 4) {
             ForEach(NamedColor.Surface.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
                     Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
@@ -164,7 +164,7 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForOpacity() -> some View {
-        ScrollView(.vertical, showsIndicators: true) {
+        TVGridLayout(count: 4) {
             ForEach(NamedColor.Opacity.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
                     Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
