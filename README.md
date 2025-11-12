@@ -160,7 +160,7 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 &nbsp;
 <img src="./images/watchOS/Colors.png" alt="List of colors on Watch Series 11 (46mm) (english)" height="350" />
 &nbsp;
-<img src="./images/watchOS/Components list.png" alt="List of components on Watch Series 11 (46mm) (english)  height="350" />
+<img src="./images/watchOS/Components list.png" alt="List of components on Watch Series 11 (46mm) (english)"  height="350" />
 &nbsp;
 <img src="./images/watchOS/Buttons.png" alt="Button components on Watch Series 11 (46mm) (english)" height="350" />
 </p>
