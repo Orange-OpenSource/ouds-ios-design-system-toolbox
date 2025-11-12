@@ -36,10 +36,26 @@ open class TextInputSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllTextInputs(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for outlined in [true, false] {
-            // Drop the loading status still the progress indicator is done
-            for status in OUDSTextInput.Status.allCases where status != .loading {
-                testTextInput(theme: theme, interfaceStyle: interfaceStyle, testType: .styleAndStatus, status: status, outlined: outlined)
-                testTextInput(theme: theme, interfaceStyle: interfaceStyle, testType: .helpers, status: status, outlined: outlined)
+            for flipLeadingIcon in [true, false] {
+                for flipTrailingActionIcon in [true, false] {
+                    // Drop the loading status still the progress indicator is done
+                    for status in OUDSTextInput.Status.allCases where status != .loading {
+                        testTextInput(theme: theme,
+                                      interfaceStyle: interfaceStyle,
+                                      testType: .styleAndStatus,
+                                      flipLeadingIcon: flipLeadingIcon,
+                                      flipTrailingActionIcon: flipTrailingActionIcon,
+                                      status: status,
+                                      outlined: outlined)
+                        testTextInput(theme: theme,
+                                      interfaceStyle: interfaceStyle,
+                                      testType: .helpers,
+                                      flipLeadingIcon: flipLeadingIcon,
+                                      flipTrailingActionIcon: flipTrailingActionIcon,
+                                      status: status,
+                                      outlined: outlined)
+                    }
+                }
             }
         }
     }
@@ -60,27 +76,37 @@ open class TextInputSnapshotsTestsTestCase: XCTestCase {
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     ///   - testStyle: the type of test expected
+    ///   - flipLeadingIcon: to flip the leading icon
+    ///   - flipTrailingActionIcon: to flip the trailing action icon
     ///   - status: the status of the text input
     ///   - outlined: flag to know if outlined
     @MainActor private func testTextInput(theme: OUDSTheme,
                                           interfaceStyle: UIUserInterfaceStyle,
                                           testType: TestTextInputView.TestType,
+                                          flipLeadingIcon: Bool,
+                                          flipTrailingActionIcon: Bool,
                                           status: OUDSTextInput.Status,
                                           outlined: Bool)
     {
         // Generate the illustration for configuration elements
         let illustration = OUDSThemeableView(theme: theme) {
-            TestTextInputView(type: testType, status: status, outlined: outlined)
+            TestTextInputView(type: testType,
+                              flipLeadingIcon: flipLeadingIcon,
+                              flipTrailingActionIcon: flipTrailingActionIcon,
+                              status: status,
+                              outlined: outlined)
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
         // Create a unique snapshot name based on the current configuration :
         // test<testType>_<themeName>_<colorScheme>.<roundedPattern><stylePattern><statusPattern>
         let testName = "test-\(testType)_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let outlinedPattern = outlined ? ".outlined" : ""
+        let flipLeadingIconPattern = flipLeadingIcon ? "_LeadingFlipped" : ""
+        let flipTrailingActionIconPattern = flipTrailingActionIcon ? "_TrailingActionFlipped" : ""
+        let outlinedPattern = outlined ? "_Outlined" : ""
         let statusPattern = status.technicalDescription.contains("error") ? "error" : status.technicalDescription
 
-        let named = "\(outlinedPattern)\(statusPattern)"
+        let named = "\(flipLeadingIconPattern)\(flipTrailingActionIconPattern)\(outlinedPattern)\(statusPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
@@ -105,8 +131,11 @@ struct TestTextInputView: View {
     // MARK: - Stored properties
 
     let type: TestType
+    let flipLeadingIcon: Bool
+    let flipTrailingActionIcon: Bool
     let status: OUDSTextInput.Status
     let outlined: Bool
+
     private let icon = Image(decorative: "ic_heart")
     @State private var text = ""
 
@@ -137,6 +166,7 @@ struct TestTextInputView: View {
             OUDSTextInput(label: "Label",
                           text: $text,
                           leadingIcon: icon,
+                          flipLeadingIcon: flipLeadingIcon,
                           isOutlined: outlined,
                           status: status)
 
@@ -151,6 +181,7 @@ struct TestTextInputView: View {
             OUDSTextInput(label: "Label",
                           text: $text,
                           leadingIcon: icon,
+                          flipLeadingIcon: flipLeadingIcon,
                           trailingAction: trailingAction,
                           isOutlined: outlined,
                           status: status)
@@ -171,6 +202,7 @@ struct TestTextInputView: View {
                           prefix: "£",
                           suffix: "$",
                           leadingIcon: icon,
+                          flipLeadingIcon: flipLeadingIcon,
                           isOutlined: outlined,
                           status: status)
 
@@ -191,6 +223,7 @@ struct TestTextInputView: View {
                           prefix: "£",
                           suffix: "$",
                           leadingIcon: icon,
+                          flipLeadingIcon: flipLeadingIcon,
                           trailingAction: trailingAction,
                           isOutlined: outlined,
                           status: status)
@@ -226,7 +259,7 @@ struct TestTextInputView: View {
     // MARK: - Heleprs
 
     private var trailingAction: OUDSTextInput.TrailingAction {
-        .init(icon: icon, actionHint: "", action: {})
+        .init(icon: icon, actionHint: "", flipIcon: flipTrailingActionIcon, action: {})
     }
 
     private var helperLink: OUDSTextInput.Helperlink {
