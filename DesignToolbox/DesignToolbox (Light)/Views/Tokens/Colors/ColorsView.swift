@@ -33,36 +33,36 @@ struct ColorsView: View {
         NavigationView {
             List {
                 NavigationLink("Action") {
-                    WatchVerticalLayout { illustrationForAction() }
+                    WatchVerticalLayout { ScrollView { illustrationForAction() } }
                 }
                 NavigationLink("Always") {
-                    WatchVerticalLayout { illustrationForAlways() }
+                    WatchVerticalLayout { ScrollView { illustrationForAlways() } }
                 }
                 NavigationLink("Background") {
-                    WatchVerticalLayout { illustrationForBackground() }
+                    WatchVerticalLayout { ScrollView { illustrationForBackground() } }
                 }
                 NavigationLink("Border") {
-                    WatchVerticalLayout { illustrationForBorder() }
+                    WatchVerticalLayout { ScrollView { illustrationForBorder() } }
                 }
                 if theme.charts != nil {
                     NavigationLink("Chart") {
-                        WatchVerticalLayout { illustrationForChart() }
+                        WatchVerticalLayout { ScrollView { illustrationForChart() } }
                     }
                 }
                 NavigationLink("Content") {
-                    WatchVerticalLayout { illustrationForContent() }
+                    WatchVerticalLayout { ScrollView { illustrationForContent() } }
                 }
                 NavigationLink("Overlay") {
-                    WatchVerticalLayout { illustrationForOverlay() }
+                    WatchVerticalLayout { ScrollView { illustrationForOverlay() } }
                 }
                 NavigationLink("Surface") {
-                    WatchVerticalLayout { illustrationForSurface() }
+                    WatchVerticalLayout { ScrollView { illustrationForSurface() } }
                 }
                 NavigationLink("Opacity") {
-                    WatchVerticalLayout { illustrationForOpacity() }
+                    WatchVerticalLayout { ScrollView { illustrationForOpacity() } }
                 }
                 NavigationLink("Repository") {
-                    WatchVerticalLayout { illustrationForRepository() }
+                    WatchVerticalLayout { ScrollView { illustrationForRepository() } }
                 }
             }
         }
@@ -138,8 +138,7 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForBackground() -> some View {
-        ForEach(NamedColor.Background.allCases, id: \.rawValue) {
-            namedColorToken in
+        ForEach(NamedColor.Background.allCases, id: \.rawValue) { namedColorToken in
             if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
                 Illustration(
                     token: namedColorToken.token(from: theme),
@@ -172,8 +171,7 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForContent() -> some View {
-        ForEach(NamedColor.Content.allCases, id: \.rawValue) {
-            namedColorToken in
+        ForEach(NamedColor.Content.allCases, id: \.rawValue) { namedColorToken in
             if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
                 Illustration(
                     token: namedColorToken.token(from: theme),
@@ -184,8 +182,7 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForOverlay() -> some View {
-        ForEach(NamedColor.Overlay.allCases, id: \.rawValue) {
-            namedColorToken in
+        ForEach(NamedColor.Overlay.allCases, id: \.rawValue) { namedColorToken in
             if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
                 Illustration(
                     token: namedColorToken.token(from: theme),
@@ -196,8 +193,7 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForSurface() -> some View {
-        ForEach(NamedColor.Surface.allCases, id: \.rawValue) {
-            namedColorToken in
+        ForEach(NamedColor.Surface.allCases, id: \.rawValue) { namedColorToken in
             if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
                 Illustration(
                     token: namedColorToken.token(from: theme),
@@ -208,8 +204,7 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForOpacity() -> some View {
-        ForEach(NamedColor.Opacity.allCases, id: \.rawValue) {
-            namedColorToken in
+        ForEach(NamedColor.Opacity.allCases, id: \.rawValue) { namedColorToken in
             if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
                 Illustration(
                     token: namedColorToken.token(from: theme),
@@ -261,8 +256,7 @@ struct ColorsView: View {
     @ViewBuilder
     private func illustrationForRepository() -> some View {
         ScrollView(.vertical, showsIndicators: true) {
-            ForEach(NamedColor.Repository.allCases, id: \.rawValue) {
-                namedColorToken in
+            ForEach(NamedColor.Repository.allCases, id: \.rawValue) { namedColorToken in
                 if !namedColorToken.token(from: theme)
                     .isForbiddenValueColor()
                 {
@@ -423,9 +417,7 @@ struct ColorsView: View {
                         count: 4),
                     spacing: theme.spaces.paddingBlock4xlarge)
                 {
-                    ForEach(opacityCategories, id: \.0) {
-                        category,
-                            colors in
+                    ForEach(opacityCategories, id: \.0) { category, colors in
                         NavigationLink(category) {
                             ColorDetailView(title: category, colors: colors)
                         }
