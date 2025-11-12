@@ -1887,15 +1887,21 @@
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Appearances"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Appereances"
+            "value" : "Appearances"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Apparences"
           }
         }
@@ -2018,6 +2024,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Error message"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_flipIcon_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip icon"
           }
         }
       },
@@ -2512,31 +2543,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Divider"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_controlItem_flipIcon_label" : {
-      "comment" : "Component - ControlItem",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Flip icon"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Flip icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Flip icon"
           }
         }
       },

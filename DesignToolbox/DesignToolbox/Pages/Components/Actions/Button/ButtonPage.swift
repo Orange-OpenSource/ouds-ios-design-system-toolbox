@@ -41,6 +41,7 @@ private struct ButtonDemo: View {
 
     @Environment(\.theme) private var theme
 
+    // swiftlint:disable accessibility_label_for_image
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
@@ -51,8 +52,9 @@ private struct ButtonDemo: View {
             } else {
                 switch configurationModel.layout {
                 case .iconOnly:
-                    OUDSButton(icon: Image(decorative: "ic_heart"),
+                    OUDSButton(icon: Image(systemName: "figure.handball"),
                                accessibilityLabel: "app_components_common_icon_a11y".localized(),
+                               flipIcon: configurationModel.flipIcon,
                                appearance: configurationModel.appearance,
                                style: configurationModel.style) {}
                 case .textOnly:
@@ -60,8 +62,9 @@ private struct ButtonDemo: View {
                                appearance: configurationModel.appearance,
                                style: configurationModel.style) {}
                 case .textAndIcon:
-                    OUDSButton(icon: Image(decorative: "ic_heart"),
-                               text: configurationModel.text,
+                    OUDSButton(text: configurationModel.text,
+                               icon: Image(systemName: "figure.handball"),
+                               flipIcon: configurationModel.flipIcon,
                                appearance: configurationModel.appearance,
                                style: configurationModel.style) {}
                 }
@@ -72,4 +75,5 @@ private struct ButtonDemo: View {
         .disabled(!configurationModel.enabled)
         .padding(.all, theme.spaces.fixedMedium)
     }
+    // swiftlint:enable accessibility_label_for_image
 }

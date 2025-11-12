@@ -33,6 +33,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var flipIcon: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var appearance: OUDSButton.Appearance {
         didSet { updateCode() }
     }
@@ -47,6 +51,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         enabled = true
         text = String(localized: "app_components_button_label")
         layout = .textOnly
+        flipIcon = false
         appearance = .default
         style = .default
     }
@@ -205,6 +210,9 @@ struct ButtonConfigurationView: View {
                 OUDSChipPicker(title: "app_components_common_layout_label",
                                selection: $configurationModel.layout,
                                chips: ButtonLayout.chips)
+
+                OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
+                    .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
             }
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
