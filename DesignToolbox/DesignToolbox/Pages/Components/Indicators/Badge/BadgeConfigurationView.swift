@@ -53,7 +53,7 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     }
 
     var enableFlipIcon: Bool {
-        badgeType == .icon && (status == .negative || status == .accent)
+        badgeType == .icon && (status == .neutral || status == .accent)
     }
 
     var statusWithIcon: OUDSBadge.StatusWithIcon {
@@ -185,8 +185,8 @@ struct BadgeConfigurationView: View {
                            selection: $configurationModel.status,
                            chips: OUDSBadge.Status.chips)
 
-            // TODO: wording key
-            OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
+
+            OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
                     .disabled(!configurationModel.enableFlipIcon)
 
             if configurationModel.badgeType == .count {
