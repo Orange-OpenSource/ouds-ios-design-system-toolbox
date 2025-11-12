@@ -32,18 +32,38 @@ struct ColorsView: View {
     private var watchLayout: some View {
         NavigationView {
             List {
-                NavigationLink("Action") { WatchVerticalLayout { illustrationForAction() } }
-                NavigationLink("Always") { illustrationForAlways() }
-                NavigationLink("Background") { illustrationForBackground() }
-                NavigationLink("Border") { illustrationForBorder() }
-                if theme.charts != nil {
-                    NavigationLink("Chart") { illustrationForChart() }
+                NavigationLink("Action") {
+                    WatchVerticalLayout { illustrationForAction() }
                 }
-                NavigationLink("Content") { illustrationForContent() }
-                NavigationLink("Overlay") { illustrationForOverlay() }
-                NavigationLink("Surface") { illustrationForSurface() }
-                NavigationLink("Opacity") { illustrationForOpacity() }
-                NavigationLink("Repository") { illustrationForRepository() }
+                NavigationLink("Always") {
+                    WatchVerticalLayout { illustrationForAlways() }
+                }
+                NavigationLink("Background") {
+                    WatchVerticalLayout { illustrationForBackground() }
+                }
+                NavigationLink("Border") {
+                    WatchVerticalLayout { illustrationForBorder() }
+                }
+                if theme.charts != nil {
+                    NavigationLink("Chart") {
+                        WatchVerticalLayout { illustrationForChart() }
+                    }
+                }
+                NavigationLink("Content") {
+                    WatchVerticalLayout { illustrationForContent() }
+                }
+                NavigationLink("Overlay") {
+                    WatchVerticalLayout { illustrationForOverlay() }
+                }
+                NavigationLink("Surface") {
+                    WatchVerticalLayout { illustrationForSurface() }
+                }
+                NavigationLink("Opacity") {
+                    WatchVerticalLayout { illustrationForOpacity() }
+                }
+                NavigationLink("Repository") {
+                    WatchVerticalLayout { illustrationForRepository() }
+                }
             }
         }
     }
@@ -53,18 +73,38 @@ struct ColorsView: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: true) {
                 TVGridLayout(count: 4) {
-                    NavigationLink("Action") { illustrationForAction() }
-                    NavigationLink("Always") { illustrationForAlways() }
-                    NavigationLink("Background") { illustrationForBackground() }
-                    NavigationLink("Border") { illustrationForBorder() }
-                    if theme.charts != nil {
-                        NavigationLink("Chart") { illustrationForChart() }
+                    NavigationLink("Action") {
+                        TVGridLayout(count: 4) { illustrationForAction() }
                     }
-                    NavigationLink("Content") { illustrationForContent() }
-                    NavigationLink("Overlay") { illustrationForOverlay() }
-                    NavigationLink("Surface") { illustrationForSurface() }
-                    NavigationLink("Opacity") { illustrationForOpacity() }
-                    NavigationLink("Repository") { illustrationForRepository() }
+                    NavigationLink("Always") {
+                        TVGridLayout(count: 4) { illustrationForAlways() }
+                    }
+                    NavigationLink("Background") {
+                        TVGridLayout(count: 4) { illustrationForBackground() }
+                    }
+                    NavigationLink("Border") {
+                        TVGridLayout(count: 4) { illustrationForBorder() }
+                    }
+                    if theme.charts != nil {
+                        NavigationLink("Chart") {
+                            TVGridLayout(count: 4) { illustrationForChart() }
+                        }
+                    }
+                    NavigationLink("Content") {
+                        TVGridLayout(count: 4) { illustrationForContent() }
+                    }
+                    NavigationLink("Overlay") {
+                        TVGridLayout(count: 4) { illustrationForOverlay() }
+                    }
+                    NavigationLink("Surface") {
+                        TVGridLayout(count: 4) { illustrationForSurface() }
+                    }
+                    NavigationLink("Opacity") {
+                        TVGridLayout(count: 4) { illustrationForOpacity() }
+                    }
+                    NavigationLink("Repository") {
+                        TVGridLayout(count: 4) { illustrationForRepository() }
+                    }
                 }
                 .padding()
             }
@@ -76,99 +116,104 @@ struct ColorsView: View {
 
     @ViewBuilder
     private func illustrationForAction() -> some View {
-        TVGridLayout(count: 4) {
-            ForEach(NamedColor.Action.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
-                }
+        ForEach(NamedColor.Action.allCases, id: \.rawValue) { namedColorToken in
+            if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
+                Illustration(
+                    token: namedColorToken.token(from: theme),
+                    name: namedColorToken.rawValue).focusable()
             }
         }
     }
 
     @ViewBuilder
     private func illustrationForAlways() -> some View {
-        TVGridLayout(count: 4) {
-            ForEach(NamedColor.Always.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).isForbiddenValueColor() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
-                }
+        ForEach(NamedColor.Always.allCases, id: \.rawValue) { namedColorToken in
+            if !namedColorToken.token(from: theme).isForbiddenValueColor() {
+                Illustration(
+                    token: namedColorToken.token(from: theme),
+                    name: namedColorToken.rawValue).focusable()
             }
         }
     }
 
     @ViewBuilder
     private func illustrationForBackground() -> some View {
-        TVGridLayout(count: 4) {
-            ForEach(NamedColor.Background.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
-                }
+        ForEach(NamedColor.Background.allCases, id: \.rawValue) {
+            namedColorToken in
+            if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
+                Illustration(
+                    token: namedColorToken.token(from: theme),
+                    name: namedColorToken.rawValue).focusable()
             }
         }
     }
 
     @ViewBuilder
     private func illustrationForChart() -> some View {
-        TVGridLayout(count: 4) {
-            ForEach(NamedColor.Chart.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
-                }
+        ForEach(NamedColor.Chart.allCases, id: \.rawValue) { namedColorToken in
+            if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
+                Illustration(
+                    token: namedColorToken.token(from: theme),
+                    name: namedColorToken.rawValue).focusable()
             }
         }
     }
 
     @ViewBuilder
     private func illustrationForBorder() -> some View {
-        TVGridLayout(count: 4) {
-            ForEach(NamedColor.Border.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
-                }
+        ForEach(NamedColor.Border.allCases, id: \.rawValue) { namedColorToken in
+            if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
+                Illustration(
+                    token: namedColorToken.token(from: theme),
+                    name: namedColorToken.rawValue).focusable()
             }
         }
     }
 
     @ViewBuilder
     private func illustrationForContent() -> some View {
-        TVGridLayout(count: 4) {
-            ForEach(NamedColor.Content.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
-                }
+        ForEach(NamedColor.Content.allCases, id: \.rawValue) {
+            namedColorToken in
+            if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
+                Illustration(
+                    token: namedColorToken.token(from: theme),
+                    name: namedColorToken.rawValue).focusable()
             }
         }
     }
 
     @ViewBuilder
     private func illustrationForOverlay() -> some View {
-        TVGridLayout(count: 4) {
-            ForEach(NamedColor.Overlay.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
-                }
+        ForEach(NamedColor.Overlay.allCases, id: \.rawValue) {
+            namedColorToken in
+            if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
+                Illustration(
+                    token: namedColorToken.token(from: theme),
+                    name: namedColorToken.rawValue).focusable()
             }
         }
     }
 
     @ViewBuilder
     private func illustrationForSurface() -> some View {
-        TVGridLayout(count: 4) {
-            ForEach(NamedColor.Surface.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
-                }
+        ForEach(NamedColor.Surface.allCases, id: \.rawValue) {
+            namedColorToken in
+            if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
+                Illustration(
+                    token: namedColorToken.token(from: theme),
+                    name: namedColorToken.rawValue).focusable()
             }
         }
     }
 
     @ViewBuilder
     private func illustrationForOpacity() -> some View {
-        TVGridLayout(count: 4) {
-            ForEach(NamedColor.Opacity.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue).focusable()
-                }
+        ForEach(NamedColor.Opacity.allCases, id: \.rawValue) {
+            namedColorToken in
+            if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
+                Illustration(
+                    token: namedColorToken.token(from: theme),
+                    name: namedColorToken.rawValue).focusable()
             }
         }
     }
@@ -196,7 +241,10 @@ struct ColorsView: View {
 
         var body: some View {
             let colorRawToken = colorScheme == .dark ? darkValue : lightValue
-            DesignToolboxTokenIllustration(tokenName: name, tokenValue: colorRawToken) {
+            DesignToolboxTokenIllustration(
+                tokenName: name,
+                tokenValue: colorRawToken)
+            {
                 Rectangle()
                     .fill(colorRawToken.color)
                     .frame(width: 64, height: 64)
@@ -213,9 +261,14 @@ struct ColorsView: View {
     @ViewBuilder
     private func illustrationForRepository() -> some View {
         ScrollView(.vertical, showsIndicators: true) {
-            ForEach(NamedColor.Repository.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).isForbiddenValueColor() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+            ForEach(NamedColor.Repository.allCases, id: \.rawValue) {
+                namedColorToken in
+                if !namedColorToken.token(from: theme)
+                    .isForbiddenValueColor()
+                {
+                    Illustration(
+                        token: namedColorToken.token(from: theme),
+                        name: namedColorToken.rawValue)
                         .focusable()
                 }
             }
@@ -247,19 +300,62 @@ struct ColorsView: View {
         @Environment(\.theme) private var theme
 
         private let colorCategories = [
-            ("Accent", NamedColor.Repository.allCases.filter { $0.rawValue.contains("Accent") && !$0.rawValue.contains("Opacity") }),
-            ("Primary", NamedColor.Repository.allCases.filter { $0.rawValue.contains("Primary") && !$0.rawValue.contains("Opacity") }),
-            ("Secondary", NamedColor.Repository.allCases.filter { $0.rawValue.contains("Secondary") }),
-            ("Tertiary", NamedColor.Repository.allCases.filter { $0.rawValue.contains("Tertiary") }),
-            ("Info", NamedColor.Repository.allCases.filter { $0.rawValue.contains("Info") && !$0.rawValue.contains("Opacity") }),
-            ("Positive", NamedColor.Repository.allCases.filter { $0.rawValue.contains("Positive") && !$0.rawValue.contains("Opacity") }),
-            ("Negative", NamedColor.Repository.allCases.filter { $0.rawValue.contains("Negative") && !$0.rawValue.contains("Opacity") }),
-            ("Warning", NamedColor.Repository.allCases.filter { $0.rawValue.contains("Warning") && !$0.rawValue.contains("Opacity") }),
+            (
+                "Accent",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("Accent")
+                        && !$0.rawValue.contains("Opacity")
+                }),
+            (
+                "Primary",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("Primary")
+                        && !$0.rawValue.contains("Opacity")
+                }),
+            (
+                "Secondary",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("Secondary")
+                }),
+            (
+                "Tertiary",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("Tertiary")
+                }),
+            (
+                "Info",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("Info")
+                        && !$0.rawValue.contains("Opacity")
+                }),
+            (
+                "Positive",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("Positive")
+                        && !$0.rawValue.contains("Opacity")
+                }),
+            (
+                "Negative",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("Negative")
+                        && !$0.rawValue.contains("Opacity")
+                }),
+            (
+                "Warning",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("Warning")
+                        && !$0.rawValue.contains("Opacity")
+                }),
         ]
 
         var body: some View {
             ScrollView(.vertical, showsIndicators: true) {
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), alignment: .top), count: 4), spacing: theme.spaces.paddingBlock4xlarge) {
+                LazyVGrid(
+                    columns: Array(
+                        repeating: GridItem(.flexible(), alignment: .top),
+                        count: 4),
+                    spacing: theme.spaces.paddingBlock4xlarge)
+                {
                     ForEach(colorCategories, id: \.0) { category, colors in
                         NavigationLink(category) {
                             ColorDetailView(title: category, colors: colors)
@@ -277,20 +373,59 @@ struct ColorsView: View {
         @Environment(\.theme) private var theme
 
         private let opacityCategories = [
-            ("Black Opacity", NamedColor.Repository.allCases.filter { $0.rawValue.contains("OpacityBlack") }),
-            ("White Opacity", NamedColor.Repository.allCases.filter { $0.rawValue.contains("OpacityWhite") }),
-            ("Primary Opacity", NamedColor.Repository.allCases.filter { $0.rawValue.contains("OpacityPrimary") }),
-            ("Accent Opacity", NamedColor.Repository.allCases.filter { $0.rawValue.contains("OpacityAccent") }),
-            ("Info Opacity", NamedColor.Repository.allCases.filter { $0.rawValue.contains("OpacityInfo") }),
-            ("Positive Opacity", NamedColor.Repository.allCases.filter { $0.rawValue.contains("OpacityPositive") }),
-            ("Negative Opacity", NamedColor.Repository.allCases.filter { $0.rawValue.contains("OpacityNegative") }),
-            ("Warning Opacity", NamedColor.Repository.allCases.filter { $0.rawValue.contains("OpacityWarning") }),
+            (
+                "Black Opacity",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("OpacityBlack")
+                }),
+            (
+                "White Opacity",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("OpacityWhite")
+                }),
+            (
+                "Primary Opacity",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("OpacityPrimary")
+                }),
+            (
+                "Accent Opacity",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("OpacityAccent")
+                }),
+            (
+                "Info Opacity",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("OpacityInfo")
+                }),
+            (
+                "Positive Opacity",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("OpacityPositive")
+                }),
+            (
+                "Negative Opacity",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("OpacityNegative")
+                }),
+            (
+                "Warning Opacity",
+                NamedColor.Repository.allCases.filter {
+                    $0.rawValue.contains("OpacityWarning")
+                }),
         ]
 
         var body: some View {
             ScrollView(.vertical, showsIndicators: true) {
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), alignment: .top), count: 4), spacing: theme.spaces.paddingBlock4xlarge) {
-                    ForEach(opacityCategories, id: \.0) { category, colors in
+                LazyVGrid(
+                    columns: Array(
+                        repeating: GridItem(.flexible(), alignment: .top),
+                        count: 4),
+                    spacing: theme.spaces.paddingBlock4xlarge)
+                {
+                    ForEach(opacityCategories, id: \.0) {
+                        category,
+                            colors in
                         NavigationLink(category) {
                             ColorDetailView(title: category, colors: colors)
                         }
@@ -304,7 +439,8 @@ struct ColorsView: View {
 
     private struct NeutralCategoriesView: View {
         let neutralColors = NamedColor.Repository.allCases.filter {
-            $0.rawValue.contains("NeutralEmphasized") || $0.rawValue.contains("NeutralMuted")
+            $0.rawValue.contains("NeutralEmphasized")
+                || $0.rawValue.contains("NeutralMuted")
         }
 
         var body: some View {
@@ -321,10 +457,17 @@ struct ColorsView: View {
 
         var body: some View {
             ScrollView(.vertical, showsIndicators: true) {
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), alignment: .top), count: 5), spacing: theme.spaces.paddingBlock4xlarge) {
+                LazyVGrid(
+                    columns: Array(
+                        repeating: GridItem(.flexible(), alignment: .top),
+                        count: 5),
+                    spacing: theme.spaces.paddingBlock4xlarge)
+                {
                     ForEach(colors, id: \.self) { color in
                         if !color.token(from: theme).isForbiddenValueColor() {
-                            Illustration(token: color.token(from: theme), name: color.rawValue)
+                            Illustration(
+                                token: color.token(from: theme),
+                                name: color.rawValue)
                                 .focusable(true)
                         }
                     }
