@@ -172,7 +172,7 @@ struct TagConfigurationView: View {
             OUDSSwitchItem("app_components_common_loader_label", isOn: $configurationModel.loader)
                 .disabled(!configurationModel.enabled)
 
-            OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
+            OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
                 .disabled(!configurationModel.enableFlipIcon)
 
             OUDSChipPicker(title: "app_components_common_layout_label",

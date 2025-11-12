@@ -129,7 +129,6 @@
 		07CF427F2CA41325000BD03E /* OpacityTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF427D2CA41325000BD03E /* OpacityTokenElement.swift */; };
 		07CF42802CA41325000BD03E /* OpacityTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF427E2CA41325000BD03E /* OpacityTokenPage.swift */; };
 		07CF42842CA45DA9000BD03E /* BorderTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42812CA45DA9000BD03E /* BorderTokenElement.swift */; };
-		07CF42852CA45DA9000BD03E /* BorderTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */; };
 		07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42882CA55BC8000BD03E /* ThemeSelection.swift */; };
 		07D3DBF12DA5084500D8A57F /* ColoredSurfaceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3DBED2DA5084500D8A57F /* ColoredSurfaceConfiguration.swift */; };
 		07D3DBF22DA5084500D8A57F /* ColoredSurfacePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3DBEF2DA5084500D8A57F /* ColoredSurfacePage.swift */; };
@@ -263,7 +262,6 @@
 		51952A6A2D3F9B9E0068B807 /* NamedColor+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6DC2D09C680005DAB51 /* NamedColor+Repository.swift */; };
 		51952A6B2D3F9B9E0068B807 /* NamedColor+Surface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6DD2D09C680005DAB51 /* NamedColor+Surface.swift */; };
 		51952A712D3F9D720068B807 /* DesignToolboxTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */; };
-		51952A722D3F9D720068B807 /* DesignToolboxTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */; };
 		51952A742D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A732D3F9D840068B807 /* DesignToolboxTokenIllustrationBackground.swift */; };
 		51952A752D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A732D3F9D840068B807 /* DesignToolboxTokenIllustrationBackground.swift */; };
 		51952A7C2D3FA1510068B807 /* OrangeTheme+TokensBorderSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A7B2D3FA1490068B807 /* OrangeTheme+TokensBorderSnapshotsTests.swift */; };
@@ -483,6 +481,8 @@
 		951458662EC2906B0096BBF1 /* GridsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458642EC2906B0096BBF1 /* GridsView.swift */; };
 		9514586B2EC2920C0096BBF1 /* OpacitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458692EC2920C0096BBF1 /* OpacitiesView.swift */; };
 		9514586C2EC2920C0096BBF1 /* OpacitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458692EC2920C0096BBF1 /* OpacitiesView.swift */; };
+		95196E302EC4812E003133EF /* BorderTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */; };
+		95196E312EC4816A003133EF /* DesignToolboxTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95818BC22EB50D70004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
@@ -3721,6 +3721,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95196E312EC4816A003133EF /* DesignToolboxTokenIllustration.swift in Sources */,
+				95196E302EC4812E003133EF /* BorderTokenPage.swift in Sources */,
 				0762276D2DA93D62009C3632 /* DesignToolboxColorPicker.swift in Sources */,
 				51E5999F2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */,
 				51952A672D3F9B9E0068B807 /* DesignToolboxConfiguration.swift in Sources */,
@@ -3771,8 +3773,6 @@
 				0786A9DB2E0AAB4A00976098 /* CheckboxItemElement.swift in Sources */,
 				0786A9DC2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
 				077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */,
-				07CF42852CA45DA9000BD03E /* BorderTokenPage.swift in Sources */,
-				51952A722D3F9D720068B807 /* DesignToolboxTokenIllustration.swift in Sources */,
 				0765B4982CC15A4000E69359 /* NamedColor+Always.swift in Sources */,
 				07F75A392CC6462D0004F1AD /* NamedSpace+Fixed.swift in Sources */,
 				078C4C372E01558B00598F75 /* ControlItemConfigurationViews.swift in Sources */,
