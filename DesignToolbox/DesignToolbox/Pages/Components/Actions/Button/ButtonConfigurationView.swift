@@ -72,6 +72,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         onColoredSurface ? ".oudsColoredSurface(theme.colorModes.onBrandPrimary)" : ""
     }
 
+    private var flipIconPattern: String {
+        flipIcon ? ", flipIcon: true" : ""
+    }
+
     // swiftlint:disable line_length
     override func updateCode() {
         switch layout {
@@ -85,14 +89,14 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .iconOnly:
             code =
                 """
-                OUDSButton(icon: Image(\"ic_heart\"), accessibilityLabel: \"app_components_common_icon_a11y\", appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
+                OUDSButton(icon: Image(systemName: "figure.handball")\(flipIconPattern), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifier)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSButton(icon: Image(\"ic_heart\", text: \"\(text)\"), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
+                OUDSButton(text: \"\(text)\"), Image(systemName: "figure.handball")\(flipIconPattern), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifier)
                 """

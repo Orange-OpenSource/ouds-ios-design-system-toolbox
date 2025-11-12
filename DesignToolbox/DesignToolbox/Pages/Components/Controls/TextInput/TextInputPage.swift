@@ -81,8 +81,11 @@ struct TextInputDemo: View {
             return nil
         }
 
-        return .init(icon: Image(decorative: "ic_heart"),
-                     actionHint: "app_components_common_icon_a11y".localized()) {}
+        // swiftlint:disable accessibility_label_for_image
+        return .init(icon: Image(systemName: "figure.handball"),
+                     actionHint: "app_components_common_icon_a11y".localized(),
+                     flipIcon: configurationModel.flipTrailingActionIcon) {}
+        // swiftlint:enable accessibility_label_for_image
     }
 
     private var helperLink: OUDSTextInput.Helperlink? {
