@@ -3457,9 +3457,33 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_textInput_flipTrailingActionIcon_label" : {
+      "comment" : "Component - Text input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip trailing action icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip trailing action icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip trailing action icon"
+          }
+        }
+      }
+    },
     "app_components_textInput_helperLink_label" : {
       "comment" : "Component - Text Input",
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -3479,7 +3503,8 @@
             "value" : "Helper link"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_textInput_label" : {
       "comment" : "Component - Text Input",
