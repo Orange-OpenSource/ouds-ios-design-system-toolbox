@@ -23,6 +23,7 @@ extension NamedColor {
         case borderFocus
         case borderFocusInset
         case borderOnBrandPrimary
+        case borderMinimal
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
@@ -40,6 +41,8 @@ extension NamedColor {
                 theme.colors.borderFocusInset
             case .borderOnBrandPrimary:
                 theme.colors.borderOnBrandPrimary
+            case .borderMinimal:
+                theme.colors.borderMinimal
             }
         }
     }
