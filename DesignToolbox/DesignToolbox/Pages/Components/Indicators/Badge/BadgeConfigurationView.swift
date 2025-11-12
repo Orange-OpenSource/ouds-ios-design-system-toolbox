@@ -125,7 +125,6 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         }
     }
 
-    
     private var disablePattern: String {
         !enabled ? ".disabled(true)" : ""
     }
@@ -133,7 +132,7 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     private var statusPattern: String {
         "status: \(status.technicalDescription)"
     }
-    
+
     private var statusWithIconPattern: String {
         switch status {
         case .neutral:
@@ -180,11 +179,10 @@ struct BadgeConfigurationView: View {
                                selection: $configurationModel.illustrationSize,
                                chips: OUDSBadge.IllustrationSize.chips)
             }
-            
+
             OUDSChipPicker(title: "app_components_common_status_label",
                            selection: $configurationModel.status,
                            chips: OUDSBadge.Status.chips)
-
 
             OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
                     .disabled(!configurationModel.enableFlipIcon)

@@ -1389,6 +1389,7 @@
 		95CE057B2EC3D2AA00ACE41C /* NamedBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedBorders.swift; sourceTree = "<group>"; };
 		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
 		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
+		FC7929AD2EC537C800945B2F /* ouds-ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "ouds-ios"; path = "/Users/ludoviepinelleroux/PROJETS/DEVELOPPEMENT/OUDS/ouds-ios"; sourceTree = "<absolute>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
 		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
 		FCA849132E9FF00500DBCE76 /* InputTagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagPage.swift; sourceTree = "<group>"; };
@@ -1851,6 +1852,7 @@
 				9598006E2EBCC714007BE0EA /* DesignToolbox (Light) */,
 				95C17B8A2EBCAC75002A7371 /* Frameworks */,
 				07FDCD922C296A500009AA13 /* Products */,
+				FC7929AD2EC537C800945B2F /* ouds-ios */,
 			);
 			sourceTree = "<group>";
 		};
