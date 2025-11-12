@@ -32,7 +32,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     @Published var layout: ButtonLayout {
         didSet { updateCode() }
     }
-    
+
     @Published var flipIcon: Bool {
         didSet { updateCode() }
     }
@@ -210,7 +210,7 @@ struct ButtonConfigurationView: View {
                 OUDSChipPicker(title: "app_components_common_layout_label",
                                selection: $configurationModel.layout,
                                chips: ButtonLayout.chips)
-                
+
                 OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
                     .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
             }

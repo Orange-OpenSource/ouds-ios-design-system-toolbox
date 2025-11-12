@@ -41,6 +41,7 @@ private struct ButtonDemo: View {
 
     @Environment(\.theme) private var theme
 
+    // swiftlint:disable accessibility_label_for_image
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
@@ -74,4 +75,5 @@ private struct ButtonDemo: View {
         .disabled(!configurationModel.enabled)
         .padding(.all, theme.spaces.fixedMedium)
     }
+    // swiftlint:enable accessibility_label_for_image
 }
