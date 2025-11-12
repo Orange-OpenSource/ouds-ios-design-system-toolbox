@@ -100,6 +100,8 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
+    // swiftlint:disable function_parameter_count
+    // swiftlint:disable line_length
     /// This function tests button according to all parameters of the configutation available on a `OUDButton`
     /// for the given theme and color schemes and on a colored surface or not.
     ///
@@ -148,6 +150,8 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
                            named: name,
                            testName: testName)
     }
+    // swiftlint:enable function_parameter_count
+    // swiftlint:enable line_length
 }
 
 // MARK: - Button Test

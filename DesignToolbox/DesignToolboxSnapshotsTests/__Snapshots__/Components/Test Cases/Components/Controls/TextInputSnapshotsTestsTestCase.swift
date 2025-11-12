@@ -60,6 +60,7 @@ open class TextInputSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
+    // swiftlint:disable function_parameter_count
     /// This function tests some Text input configuration for the given theme and color schemes on a standard surface.
     ///
     /// **/!\ It does not test the hover and pressed states.**
@@ -114,6 +115,7 @@ open class TextInputSnapshotsTestsTestCase: XCTestCase {
                            named: named,
                            testName: testName)
     }
+    // swiftlint:enable function_parameter_count
 }
 
 // swiftlint:enable required_deinit
