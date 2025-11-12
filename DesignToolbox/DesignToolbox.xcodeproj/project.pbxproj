@@ -5320,7 +5320,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1136-component-update-badge-to-use-internal-icons-for-some-status";
 				kind = branch;
 			};
 		};

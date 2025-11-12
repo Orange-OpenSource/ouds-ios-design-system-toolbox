@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "0f272db29d31da2be2b28698975a2d1d499e1a89"
+        "branch" : "1136-component-update-badge-to-use-internal-icons-for-some-status",
+        "revision" : "bd70c4b4c667de6629f31ec6415449009a593a70"
       }
     },
     {

@@ -49,15 +49,17 @@ struct BadgeDemo: View {
             case .standard:
                 OUDSBadge(status: configurationModel.status,
                           size: configurationModel.standardSize)
+                .disabled(!configurationModel.enabled)
             case .count:
                 OUDSBadge(count: configurationModel.count,
                           status: configurationModel.status,
                           size: configurationModel.illustrationSize)
+                .disabled(!configurationModel.enabled)
             case .icon:
-                OUDSBadge(icon: Image(decorative: "ic_heart"),
+                OUDSBadge(status: configurationModel.statusWithIcon,
                           accessibilityLabel: "app_components_badge_hint_a11y".localized(),
-                          status: configurationModel.status,
                           size: configurationModel.illustrationSize)
+                .disabled(!configurationModel.enabled)
             }
 
             Spacer()
