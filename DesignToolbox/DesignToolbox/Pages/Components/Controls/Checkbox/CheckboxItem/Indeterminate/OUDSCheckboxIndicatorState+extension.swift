@@ -13,7 +13,7 @@
 
 import OUDSSwiftUI
 
-// MARK: - OUDSThemesContract Checkbox Indicator State extension
+// MARK: - OUDS Checkbox Indicator State extension
 
 extension OUDSCheckboxIndicatorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Update `badge` to use internal icons for some status (Orange-OpenSource/ouds-ios#1136)
 - [DesignToolbox] Page of color semantic tokens (tokens libraries Core v1.9, System v2.2) 
 - [Library] `color` semantic tokens (tokens libraries Core v1.9, System v2.2)
 - [Library] `icon` component tokens (tokens libraries Core v1.9, System v2.2)
