@@ -17,7 +17,9 @@ import SwiftUI
 // swiftlint:disable accessibility_label_for_image
 struct BadgesView: View {
 
-    private static let allBadgeStatus: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning, .disabled]
+    private static let allBadgeStatus: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
+    private static let allBadgeStatusWithIcon: [OUDSBadge.StatusWithIcon]
+        = [.accent(icon: Image(systemName: "sun.min.fill")), .info, .negative, .positive, .neutral(icon: Image(systemName: "sun.min.fill")), .warning]
     private static let allBadgeStandardSizes: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
     private static let allBadgeIllustrationSizes: [OUDSBadge.IllustrationSize] = [.medium, .large]
 
@@ -44,8 +46,9 @@ struct BadgesView: View {
         Text("Icon badges").font(.headline)
         ForEach(Self.allBadgeIllustrationSizes, id: \.self) { size in
             Text("Illustration size \(String(describing: size))").font(.subheadline)
-            ForEach(Self.allBadgeStatus, id: \.self) { status in
-                OUDSBadge(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Foo", status: status, size: size)
+            ForEach(0 ..< Self.allBadgeStatusWithIcon.count, id: \.self) { index in
+                let status = Self.allBadgeStatusWithIcon[index]
+                OUDSBadge(status: status, accessibilityLabel: "Foo", size: size)
             }
         }
 
@@ -92,8 +95,9 @@ struct BadgesView: View {
                 HStack(spacing: theme.spaces.scaledMediumMobile) {
                     ForEach(Self.allBadgeIllustrationSizes, id: \.self) { size in
                         badgeSection(title: "Illustration \(String(describing: size))") {
-                            ForEach(Self.allBadgeStatus, id: \.self) { status in
-                                OUDSBadge(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Foo", status: status, size: size)
+                            ForEach(0 ..< Self.allBadgeStatusWithIcon.count, id: \.self) { index in
+                                let status = Self.allBadgeStatusWithIcon[index]
+                                OUDSBadge(status: status, accessibilityLabel: "Foo", size: size)
                             }
                         }
                     }
