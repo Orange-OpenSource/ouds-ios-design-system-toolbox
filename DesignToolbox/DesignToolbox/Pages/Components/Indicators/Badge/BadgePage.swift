@@ -49,17 +49,17 @@ struct BadgeDemo: View {
             case .standard:
                 OUDSBadge(status: configurationModel.status,
                           size: configurationModel.standardSize)
-                .disabled(!configurationModel.enabled)
+                    .disabled(!configurationModel.enabled)
             case .count:
                 OUDSBadge(count: configurationModel.count,
                           status: configurationModel.status,
                           size: configurationModel.illustrationSize)
-                .disabled(!configurationModel.enabled)
+                    .disabled(!configurationModel.enabled)
             case .icon:
                 OUDSBadge(status: configurationModel.statusWithIcon,
                           accessibilityLabel: "app_components_badge_hint_a11y".localized(),
                           size: configurationModel.illustrationSize)
-                .disabled(!configurationModel.enabled)
+                    .disabled(!configurationModel.enabled)
             }
 
             Spacer()

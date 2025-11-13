@@ -59,17 +59,17 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     var statusWithIcon: OUDSBadge.StatusWithIcon {
         switch status {
         case .neutral:
-                .neutral(icon: Image(systemName: "figure.handball"), flipped: flipIcon)
+            .neutral(icon: Image(systemName: "figure.handball"), flipped: flipIcon)
         case .accent:
-                .accent(icon: Image(systemName: "figure.handball"), flipped: flipIcon)
+            .accent(icon: Image(systemName: "figure.handball"), flipped: flipIcon)
         case .positive:
-                .positive
+            .positive
         case .info:
-                .info
+            .info
         case .warning:
-                .warning
+            .warning
         case .negative:
-                .negative
+            .negative
         }
     }
 
@@ -109,19 +109,19 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         switch badgeType {
         case .standard:
             code = """
-                    OUDSBadge(\(statusPattern), \(sizePattern))
-                    \(disablePattern)
-                    """
+            OUDSBadge(\(statusPattern), \(sizePattern))
+            \(disablePattern)
+            """
         case .count:
             code = """
-                    OUDSBadge(count: \(count), \(statusPattern), \(sizePattern))
-                    \(disablePattern)
-                    """
+            OUDSBadge(count: \(count), \(statusPattern), \(sizePattern))
+            \(disablePattern)
+            """
         case .icon:
             code = """
-                    OUDSBadge(\(statusWithIconPattern), accessibilityLabel: \("app_components_badge_hint_a11y".localized()), \(sizePattern))
-                    \(disablePattern)
-                    """
+            OUDSBadge(\(statusWithIconPattern), accessibilityLabel: \"app_components_badge_hint_a11y\", \(sizePattern))
+            \(disablePattern)
+            """
         }
     }
 
@@ -136,11 +136,11 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     private var statusWithIconPattern: String {
         switch status {
         case .neutral:
-            return "status: .neutral(icon: Image(systemName: \"figure.handball\"), flipped: \(flipIcon))"
+            "status: .neutral(icon: Image(systemName: \"figure.handball\")\(flipIcon ? ", flipped: true" : "")"
         case .accent:
-            return "status: .accent(icon: Image(systemName: \"figure.handball\"), flipped: \(flipIcon))"
+            "status: .accent(icon: Image(systemName: \"figure.handball\")\(flipIcon ? ", flipped: true" : "")"
         default:
-            return "status: \(status.technicalDescription)"
+            "status: \(status.technicalDescription)"
         }
     }
 
@@ -185,7 +185,7 @@ struct BadgeConfigurationView: View {
                            chips: OUDSBadge.Status.chips)
 
             OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
-                    .disabled(!configurationModel.enableFlipIcon)
+                .disabled(!configurationModel.enableFlipIcon)
 
             if configurationModel.badgeType == .count {
                 DesignToolboxEditContentDisclosure {
