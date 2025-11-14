@@ -60,7 +60,7 @@ private struct CheckboxItemDemo: View {
     // Need here that system name, a11y managed in component
     // swiftlint:disable accessibility_label_for_image
     private var icon: Image? {
-        configurationModel.icon ? Image(systemName: "figure.handball") : nil
+        configurationModel.icon ? Image.defaultImage(prefixedBy: theme.name) : nil
     }
     // swiftlint:enable accessibility_label_for_image
 }

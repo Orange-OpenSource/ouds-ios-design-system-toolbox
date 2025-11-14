@@ -19,8 +19,10 @@ import SwiftUI
 struct TagPage: View {
 
     @StateObject private var configurationModel: TagConfigurationModel
+    @Environment(\.theme) private var theme
 
     init() {
+        @Environment(\.theme) var theme
         _configurationModel = StateObject(wrappedValue: TagConfigurationModel())
     }
 
@@ -29,6 +31,8 @@ struct TagPage: View {
             TagDemo(configurationModel: configurationModel)
         } configurationView: {
             TagConfigurationView(configurationModel: configurationModel)
+        }.onAppear {
+            configurationModel.themeName = theme.name
         }
     }
 }

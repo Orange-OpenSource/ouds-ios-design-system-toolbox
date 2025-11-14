@@ -20,6 +20,7 @@ import SwiftUI
 final class BadgeConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
+
     @Published var enabled: Bool {
         didSet { updateCode() }
     }
@@ -48,6 +49,10 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    // MARK: - Properties
+
+    var themeName: String
+
     var count: UInt {
         UInt(countText) ?? 1
     }
@@ -59,9 +64,9 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     var statusWithIcon: OUDSBadge.StatusWithIcon {
         switch status {
         case .neutral:
-            .neutral(icon: Image(systemName: "figure.handball"), flipped: flipIcon)
+            .neutral(icon: Image.defaultImage(prefixedBy: themeName), flipped: flipIcon)
         case .accent:
-            .accent(icon: Image(systemName: "figure.handball"), flipped: flipIcon)
+            .accent(icon: Image.defaultImage(prefixedBy: themeName), flipped: flipIcon)
         case .positive:
             .positive
         case .info:
@@ -99,6 +104,7 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         badgeType = .count
         flipIcon = false
         countText = "1"
+        themeName = ""
     }
 
     deinit {}
@@ -136,9 +142,9 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     private var statusWithIconPattern: String {
         switch status {
         case .neutral:
-            "status: .neutral(icon: Image(systemName: \"figure.handball\")\(flipIcon ? ", flipped: true" : "")"
+            "status: .neutral(icon: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : "")"
         case .accent:
-            "status: .accent(icon: Image(systemName: \"figure.handball\")\(flipIcon ? ", flipped: true" : "")"
+            "status: .accent(icon: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : "")"
         default:
             "status: \(status.technicalDescription)"
         }

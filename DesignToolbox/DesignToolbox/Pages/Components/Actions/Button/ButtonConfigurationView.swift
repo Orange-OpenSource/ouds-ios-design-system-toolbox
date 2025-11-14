@@ -89,14 +89,14 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .iconOnly:
             code =
                 """
-                OUDSButton(icon: Image(systemName: "figure.handball")\(flipIconPattern), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
+                OUDSButton(icon: \(Image.defaultImageSample())\(flipIconPattern), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifier)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSButton(text: \"\(text)\"), Image(systemName: "figure.handball")\(flipIconPattern), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
+                OUDSButton(text: \"\(text)\"), \(Image.defaultImageSample())\(flipIconPattern), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifier)
                 """

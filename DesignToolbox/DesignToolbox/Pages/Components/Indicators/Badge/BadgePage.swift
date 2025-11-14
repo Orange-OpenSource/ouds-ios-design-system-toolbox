@@ -14,11 +14,12 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: Badge page
+// MARK: Badge Page
 
 struct BadgePage: View {
 
     @StateObject private var configurationModel: BadgeConfigurationModel
+    @Environment(\.theme) private var theme
 
     init() {
         _configurationModel = StateObject(wrappedValue: BadgeConfigurationModel())
@@ -29,6 +30,8 @@ struct BadgePage: View {
             BadgeDemo(configurationModel: configurationModel)
         } configurationView: {
             BadgeConfigurationView(configurationModel: configurationModel)
+        }.onAppear {
+            configurationModel.themeName = theme.name
         }
     }
 }

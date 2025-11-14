@@ -71,7 +71,7 @@ struct TextInputDemo: View {
     // Need here that system name, a11y managed in component
     // swiftlint:disable accessibility_label_for_image
     private var leadingIcon: Image? {
-        configurationModel.leadingIcon ? Image(systemName: "figure.handball") : nil
+        configurationModel.leadingIcon ? Image.defaultImage(prefixedBy: theme.name) : nil
     }
 
     // swiftlint:enable accessibility_label_for_image
@@ -82,7 +82,7 @@ struct TextInputDemo: View {
         }
 
         // swiftlint:disable accessibility_label_for_image
-        return .init(icon: Image(systemName: "figure.handball"),
+        return .init(icon: Image.defaultImage(prefixedBy: theme.name),
                      actionHint: "app_components_common_icon_a11y".localized(),
                      flipIcon: configurationModel.flipTrailingActionIcon) {}
         // swiftlint:enable accessibility_label_for_image

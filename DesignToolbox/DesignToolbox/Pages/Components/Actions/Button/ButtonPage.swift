@@ -52,7 +52,7 @@ private struct ButtonDemo: View {
             } else {
                 switch configurationModel.layout {
                 case .iconOnly:
-                    OUDSButton(icon: Image(systemName: "figure.handball"),
+                    OUDSButton(icon: Image.defaultImage(prefixedBy: theme.name),
                                accessibilityLabel: "app_components_common_icon_a11y".localized(),
                                flipIcon: configurationModel.flipIcon,
                                appearance: configurationModel.appearance,
@@ -63,7 +63,7 @@ private struct ButtonDemo: View {
                                style: configurationModel.style) {}
                 case .textAndIcon:
                     OUDSButton(text: configurationModel.text,
-                               icon: Image(systemName: "figure.handball"),
+                               icon: Image.defaultImage(prefixedBy: theme.name),
                                flipIcon: configurationModel.flipIcon,
                                appearance: configurationModel.appearance,
                                style: configurationModel.style) {}
