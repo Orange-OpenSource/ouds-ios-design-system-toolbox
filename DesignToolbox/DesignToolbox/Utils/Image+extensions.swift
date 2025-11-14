@@ -18,7 +18,11 @@ extension Image {
 
     /// Returns a decorative `Image` with the given named loaded form the suitable workspace depending to the theme name
     static func decorativeImage(named: String, prefixedBy themeName: String) -> Image {
-        Image(decorative: "\(themeName)/\(named)")
+        if themeName.contains("Orange") { // "Orange" and "Orange Business Tools" themes
+            Image(decorative: "Orange/\(named)")
+        } else {
+            Image(decorative: "\(themeName)/\(named)")
+        }
     }
 
     /// Returns a decorative default `Image` view with Orange asset
@@ -29,7 +33,11 @@ extension Image {
     /// Returns a decorative default `Image` view with a prefix in the name, upposed to be theme assets folder.
     /// Supposed ot have in the Design System Toolbox, in assets folder, folders with assets "providing namespaces".
     static func defaultImage(prefixedBy themeName: String) -> Image {
-        Image(decorative: "\(themeName)/tips-and-tricks")
+        if themeName.contains("Orange") { // "Orange" and "Orange Business Tools" themes
+            Image(decorative: "Orange/tips-and-tricks")
+        } else {
+            Image(decorative: "\(themeName)/tips-and-tricks")
+        }
     }
 
     /// Returns a Swift sample code for design toolbox app faking the use of an image

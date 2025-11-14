@@ -5336,7 +5336,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "805-design-system-toolbox-use-solaris-icons-in-demos";
 				kind = branch;
 			};
 		};
