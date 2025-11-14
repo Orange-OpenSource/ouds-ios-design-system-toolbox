@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Library] `Wireframe` theme `border` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
 - [Library] `size` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
+- [DesignToolbox] Use of Solaris and themed icons (Orange-OpenSource/ouds-ios#805) (Orange-OpenSource/ouds-ios#1127) 
 - [Library] Update `badge` to use internal icons for some status (Orange-OpenSource/ouds-ios#1136)
 - [DesignToolbox] Page of color semantic tokens (tokens libraries Core v1.9, System v2.2) 
 - [Library] `color` semantic tokens (tokens libraries Core v1.9, System v2.2)
