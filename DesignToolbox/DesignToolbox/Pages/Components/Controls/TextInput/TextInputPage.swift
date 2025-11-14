@@ -68,24 +68,17 @@ struct TextInputDemo: View {
             }
     }
 
-    // Need here that system name, a11y managed in component
-    // swiftlint:disable accessibility_label_for_image
     private var leadingIcon: Image? {
         configurationModel.leadingIcon ? Image.defaultImage(prefixedBy: theme.name) : nil
     }
-
-    // swiftlint:enable accessibility_label_for_image
 
     private var trailingAction: OUDSTextInput.TrailingAction? {
         guard configurationModel.trailingAction else {
             return nil
         }
-
-        // swiftlint:disable accessibility_label_for_image
         return .init(icon: Image.defaultImage(prefixedBy: theme.name),
                      actionHint: "app_components_common_icon_a11y".localized(),
                      flipIcon: configurationModel.flipTrailingActionIcon) {}
-        // swiftlint:enable accessibility_label_for_image
     }
 
     private var helperLink: OUDSTextInput.Helperlink? {
