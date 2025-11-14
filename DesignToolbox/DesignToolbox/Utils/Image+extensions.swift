@@ -10,12 +10,17 @@ import SwiftUI
 
 extension Image {
 
-    /// Returns a default `Image` view with Orange asset
+    /// Returns a decorative `Image` with the given named loaded form the suitable workspace depending to the theme name
+    static func decorativeImage(named: String, prefixedBy themeName: String) -> Image {
+        Image(decorative: "\(themeName)/\(named)")
+    }
+
+    /// Returns a decorative default `Image` view with Orange asset
     static func defaultImage() -> Image {
         Image(decorative: "Orange/tips-and-tricks")
     }
 
-    /// Returns a default `Image` view with a prefix in the name, upposed to be theme assets folder.
+    /// Returns a decorative default `Image` view with a prefix in the name, upposed to be theme assets folder.
     /// Supposed ot have in the Design System Toolbox, in assets folder, folders with assets "providing namespaces".
     static func defaultImage(prefixedBy themeName: String) -> Image {
         Image(decorative: "\(themeName)/tips-and-tricks")
