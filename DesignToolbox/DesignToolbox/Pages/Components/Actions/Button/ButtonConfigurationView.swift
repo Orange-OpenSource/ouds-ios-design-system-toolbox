@@ -201,6 +201,9 @@ struct ButtonConfigurationView: View {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
                     .disabled(configurationModel.style != .default)
 
+                OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
+                    .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
+
                 OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $configurationModel.onColoredSurface)
 
                 OUDSChipPicker(title: "app_components_common_appearance_label",
@@ -214,9 +217,6 @@ struct ButtonConfigurationView: View {
                 OUDSChipPicker(title: "app_components_common_layout_label",
                                selection: $configurationModel.layout,
                                chips: ButtonLayout.chips)
-
-                OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
-                    .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
             }
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {

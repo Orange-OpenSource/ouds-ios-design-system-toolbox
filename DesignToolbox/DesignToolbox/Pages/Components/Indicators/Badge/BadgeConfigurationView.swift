@@ -170,6 +170,9 @@ struct BadgeConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
 
+            OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
+                .disabled(!configurationModel.enableFlipIcon)
+
             OUDSChipPicker(title: "app_components_badge_type_label",
                            selection: $configurationModel.badgeType,
                            chips: BadgeConfigurationModel.BadgeType.chips)
@@ -189,9 +192,6 @@ struct BadgeConfigurationView: View {
             OUDSChipPicker(title: "app_components_common_status_label",
                            selection: $configurationModel.status,
                            chips: OUDSBadge.Status.chips)
-
-            OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
-                .disabled(!configurationModel.enableFlipIcon)
 
             if configurationModel.badgeType == .count {
                 DesignToolboxEditContentDisclosure {
