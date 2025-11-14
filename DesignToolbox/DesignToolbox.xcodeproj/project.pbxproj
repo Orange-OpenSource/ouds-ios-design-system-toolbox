@@ -483,6 +483,8 @@
 		9514586C2EC2920C0096BBF1 /* OpacitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458692EC2920C0096BBF1 /* OpacitiesView.swift */; };
 		95196E302EC4812E003133EF /* BorderTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */; };
 		95196E312EC4816A003133EF /* DesignToolboxTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */; };
+		955A40DB2EC788CE001D7F84 /* Image+extensions Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */; };
+		955A40DC2EC7894C001D7F84 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95818BC22EB50D70004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
@@ -1363,6 +1365,7 @@
 		951458592EC28DF10096BBF1 /* FontsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsView.swift; sourceTree = "<group>"; };
 		951458642EC2906B0096BBF1 /* GridsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridsView.swift; sourceTree = "<group>"; };
 		951458692EC2920C0096BBF1 /* OpacitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacitiesView.swift; sourceTree = "<group>"; };
+		955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions Tests.swift"; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAndTVLayoutsView.swift; sourceTree = "<group>"; };
@@ -2283,6 +2286,7 @@
 		51E599B42E27EDD0002BCB27 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */,
 				51E599B32E27EDD0002BCB27 /* StringTests.swift */,
 			);
 			path = Utils;
@@ -3896,8 +3900,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				955A40DC2EC7894C001D7F84 /* Image+extensions.swift in Sources */,
 				51E599B82E27F05A002BCB27 /* String+extension.swift in Sources */,
 				51E599B72E27EE3B002BCB27 /* StringTests.swift in Sources */,
+				955A40DB2EC788CE001D7F84 /* Image+extensions Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
