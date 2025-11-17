@@ -10,11 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Library] Icon flip option for `text input` component trailing action (Orange-OpenSource/ouds-ios#1041)
 - [Library] Icon flip option for `button` component (Orange-OpenSource/ouds-ios#1124)
-- [DesignToolbox] Support of `watchOS`
-- [DesignToolbox] Support of `tvOS`
+- [DesignToolbox] Support for `watchOS` (Orange-OpenSource/ouds-ios#1110)
+- [DesignToolbox] Support for `tvOS` (Orange-OpenSource/ouds-ios#1109)
 
 ### Changed
 
+- [Library] `Wireframe` theme `border` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
+- [Library] `size` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
 - [Library] Update `badge` to use internal icons for some status (Orange-OpenSource/ouds-ios#1136)
 - [DesignToolbox] Page of color semantic tokens (tokens libraries Core v1.9, System v2.2) 
 - [Library] `color` semantic tokens (tokens libraries Core v1.9, System v2.2)
