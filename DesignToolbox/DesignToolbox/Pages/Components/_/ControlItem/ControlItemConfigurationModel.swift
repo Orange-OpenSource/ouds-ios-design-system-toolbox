@@ -60,7 +60,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var helperText: String {
+    @Published var descriptionText: String {
         didSet { updateCode() }
     }
 
@@ -92,7 +92,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         isReversed = false
         hasDivider = false
         labelText = String(localized: "app_components_common_label_label")
-        helperText = String(localized: "app_components_common_helperText_label")
+        descriptionText = String(localized: "app_components_common_description_label")
         errorText = String(localized: "app_components_common_errorText_label")
         self.outlinedConfiguration = outlinedConfiguration
         self.additionalLabelConfiguration = additionalLabelConfiguration
@@ -108,7 +108,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            \(componentInitCode), label: "\(labelText)"\(additionalLabelTextPattern)\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern))
+            \(componentInitCode), label: "\(labelText)"\(additionalLabelTextPattern)\(descriptionTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern))
             \(disableCodePattern)
             """
     }
@@ -119,8 +119,8 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         !enabled ? ".disabled(true)" : ""
     }
 
-    private var helperTextPattern: String {
-        helperText.isEmpty ? "" : ", helper: \"\(helperText)\""
+    private var descriptionTextPattern: String {
+        descriptionText.isEmpty ? "" : ", description: \"\(descriptionText)\""
     }
 
     private var iconPattern: String {

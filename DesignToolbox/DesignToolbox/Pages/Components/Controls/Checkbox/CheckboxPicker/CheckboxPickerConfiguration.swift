@@ -111,13 +111,13 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
         [
             OUDSCheckboxPickerData<String>(tag: "Choice_1",
                                            label: "Virgin Holy Lava",
-                                           helper: "No alcohol, only tasty flavors",
+                                           description: "No alcohol, only tasty flavors",
                                            icon: Image(systemName: "flame"),
                                            accessibilityIdentifier: "Virgin Holy Lava"),
 
             OUDSCheckboxPickerData<String>(tag: "Choice_2",
                                            label: "IPA beer",
-                                           helper: "From Brewdog company",
+                                           description: "From Brewdog company",
                                            icon: Image(systemName: "dog.fill"),
                                            accessibilityIdentifier: "IPA beer"),
 

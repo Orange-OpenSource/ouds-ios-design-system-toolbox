@@ -43,7 +43,7 @@ private struct CheckboxItemIndeterminateDemo: View {
     var body: some View {
         OUDSCheckboxItemIndeterminate(selection: $configurationModel.selection,
                                       label: configurationModel.labelText,
-                                      helper: configurationModel.helperText,
+                                      description: configurationModel.descriptionText,
                                       icon: icon,
                                       flipIcon: configurationModel.flipIcon,
                                       isReversed: configurationModel.isReversed,
