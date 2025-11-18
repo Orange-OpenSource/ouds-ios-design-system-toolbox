@@ -140,7 +140,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 
     private var leadingIconPattern: String {
-        leadingIcon ? ", leadingIcon: Image(systemName: \"figure.handball\")" : ""
+        leadingIcon ? ", leadingIcon: \(Image.defaultImageSample())" : ""
     }
 
     private var flipLeadingIconPattern: String {
@@ -150,7 +150,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     private var trailingActionPattern: String {
         let accessibilityLabel = "app_components_common_icon_a11y".localized()
         let flipIconPattern = flipTrailingActionIcon ? ", flipIcon: true" : ""
-        return trailingAction ? ", trailingAction: .init(icon: Image(systemName: \"figure.handball\")\(flipIconPattern), actionHint: \"\(accessibilityLabel)\") {}" : ""
+        return trailingAction ? ", trailingAction: .init(icon: \(Image.defaultImageSample())\(flipIconPattern), actionHint: \"\(accessibilityLabel)\") {}" : ""
     }
 
     private var helperTextPattern: String {

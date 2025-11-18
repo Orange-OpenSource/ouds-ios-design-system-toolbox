@@ -124,7 +124,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     }
 
     private var iconPattern: String {
-        icon ? ", icon: Image(systemName: \"figure.handball\")" : ""
+        icon ? ", icon: \(Image.defaultImageSample())" : ""
     }
 
     private var flipIconPattern: String {
