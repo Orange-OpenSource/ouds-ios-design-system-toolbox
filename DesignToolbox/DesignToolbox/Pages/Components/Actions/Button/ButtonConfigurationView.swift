@@ -89,14 +89,14 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .iconOnly:
             code =
                 """
-                OUDSButton(icon: Image(systemName: "figure.handball")\(flipIconPattern), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
+                OUDSButton(icon: \(Image.defaultImageSample())\(flipIconPattern), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifier)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSButton(text: \"\(text)\"), Image(systemName: "figure.handball")\(flipIconPattern), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
+                OUDSButton(text: \"\(text)\"), \(Image.defaultImageSample())\(flipIconPattern), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifier)
                 """
@@ -201,6 +201,9 @@ struct ButtonConfigurationView: View {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
                     .disabled(configurationModel.style != .default)
 
+                OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
+                    .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
+
                 OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $configurationModel.onColoredSurface)
 
                 OUDSChipPicker(title: "app_components_common_appearance_label",
@@ -214,9 +217,6 @@ struct ButtonConfigurationView: View {
                 OUDSChipPicker(title: "app_components_common_layout_label",
                                selection: $configurationModel.layout,
                                chips: ButtonLayout.chips)
-
-                OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
-                    .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
             }
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
