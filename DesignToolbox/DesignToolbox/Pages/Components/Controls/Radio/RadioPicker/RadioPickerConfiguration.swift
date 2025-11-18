@@ -118,7 +118,7 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
         [
             OUDSRadioPickerData<String>(tag: "Choice_1",
                                         label: "Virgin Holy Lava",
-                                        additionalLabel: "Very spicy",
+                                        extraLabel: "Very spicy",
                                         description: "No alcohol, only tasty flavors",
                                         icon: Image(systemName: "flame"),
                                         accessibilityIdentifier: "Virgin Holy Lava"),

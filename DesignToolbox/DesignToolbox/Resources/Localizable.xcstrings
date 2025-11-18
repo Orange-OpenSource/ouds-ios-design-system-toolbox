@@ -3014,31 +3014,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_radioButton_radioButtonItem_additionalLabel_label" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Additional label"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Additional label"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Additional label"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_radioButton_radioButtonItem_description_text" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
@@ -3062,6 +3037,31 @@
           }
         }
       }
+    },
+    "app_components_radioButton_radioButtonItem_extraLabel_label" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extra label"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extra label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extra label"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_components_radioButton_radioButtonItem_label" : {
       "comment" : "Component - Radio",
