@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "805-design-system-toolbox-use-solaris-icons-in-demos",
-        "revision" : "fc12714f3c28170b3f3b848e13c2d6c3a21d9923"
+        "branch" : "develop",
+        "revision" : "f7bff2bee4007a0bcb443480a01f545742d3ed05"
       }
     },
     {

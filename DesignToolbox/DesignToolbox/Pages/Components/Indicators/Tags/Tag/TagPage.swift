@@ -22,7 +22,6 @@ struct TagPage: View {
     @Environment(\.theme) private var theme
 
     init() {
-        @Environment(\.theme) var theme
         _configurationModel = StateObject(wrappedValue: TagConfigurationModel())
     }
 
