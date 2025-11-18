@@ -5342,7 +5342,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "914-buga11y-keyboard-focus-and-voiceover-focus-issue-on-chip-component";
+				branch = develop;
 				kind = branch;
 			};
 		};
