@@ -42,7 +42,7 @@ private struct SwitchItemDemo: View {
     var body: some View {
         OUDSSwitchItem(configurationModel.labelText,
                        isOn: $configurationModel.isOn,
-                       helper: configurationModel.helperText,
+                       description: configurationModel.descriptionText,
                        icon: icon,
                        flipIcon: configurationModel.flipIcon,
                        isReversed: !configurationModel.isReversed,
