@@ -167,7 +167,7 @@ open class RadioButtonSnapshotsTestsTestCase: XCTestCase {
     // swiftlint:disable function_default_parameter_at_end
     private func availableLayouts(isError: Bool, errorText: String? = nil, isReadOnly: Bool) -> [RadioTest.Layout] {
         [
-            RadioTest.Layout.indicatorOnly(isError: isError),
+            RadioTest.Layout.indicatorOnly(isError: isError, isReadOnly: isReadOnly),
 
             RadioTest.Layout.default(labelText: "Takoyaki", extraLabelText: nil, helperText: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
             RadioTest.Layout.default(labelText: "Takoyaki", extraLabelText: nil, helperText: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
@@ -228,7 +228,7 @@ open class RadioButtonSnapshotsTestsTestCase: XCTestCase {
 struct RadioTest: View {
 
     enum Layout { // ControlItemLabel.LayoutData is not accessible, need to fake it here
-        case indicatorOnly(isError: Bool)
+        case indicatorOnly(isError: Bool, isReadOnly: Bool)
         case `default`(labelText: String,
                        extraLabelText: String?,
                        helperText: String?,
@@ -251,8 +251,8 @@ struct RadioTest: View {
         // swiftlint:disable line_length
         var description: String {
             switch self {
-            case let .indicatorOnly(isError):
-                "layout-indicatorOnly-\(isError ? "error" : "")"
+            case let .indicatorOnly(isError, isReadOnly):
+                "layout-indicatorOnly-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")"
             case let .default(_, extraLabelText, helperText, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
                 "layout-default-label-\(extraLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(flipIcon ? "flipIcon" : "")-\(isError ? "error-\(errorText != nil ? "withText" : "")" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
             case let .reversed(_, extraLabelText, helperText, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
@@ -273,16 +273,17 @@ struct RadioTest: View {
     @ViewBuilder
     func radioButton() -> some View {
         switch layout {
-        case let .indicatorOnly(isError):
+        case let .indicatorOnly(isError, isReadOnly):
             OUDSRadio(isOn: .constant(indicatorState),
                       accessibilityLabel: "Bazinga!",
-                      isError: isError)
+                      isError: isError,
+                      isReadOnly: isReadOnly)
                 .disabled(isDisabled)
-        case let .default(labelText, extraLabelText, helperText, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
+        case let .default(labelText, extraLabelText, descriptionText, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
             OUDSRadioItem(isOn: .constant(indicatorState),
                           label: labelText,
                           extraLabel: extraLabelText,
-                          helper: helperText,
+                          description: descriptionText,
                           icon: icon,
                           flipIcon: flipIcon,
                           isReversed: false,
@@ -291,11 +292,11 @@ struct RadioTest: View {
                           isReadOnly: isReadOnly,
                           hasDivider: hasDivider)
                 .disabled(isDisabled)
-        case let .reversed(labelText, extraLabelText, helperText, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
+        case let .reversed(labelText, extraLabelText, descriptionText, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
             OUDSRadioItem(isOn: .constant(indicatorState),
                           label: labelText,
                           extraLabel: extraLabelText,
-                          helper: helperText,
+                          description: descriptionText,
                           icon: icon,
                           flipIcon: flipIcon,
                           isReversed: true,
