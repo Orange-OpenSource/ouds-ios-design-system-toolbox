@@ -45,7 +45,7 @@ private struct RadioItemDemo: View {
         OUDSRadioItem(isOn: $configurationModel.isOn,
                       label: configurationModel.labelText,
                       additionalLabel: configurationModel.additionalLabelText,
-                      helper: configurationModel.helperText,
+                      description: configurationModel.descriptionText,
                       icon: icon,
                       flipIcon: configurationModel.flipIcon,
                       isOutlined: configurationModel.outlined,
