@@ -179,54 +179,30 @@ open class CheckboxSnapshotsTestsTestCase: XCTestCase {
             CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
             CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
-<<<<<<< HEAD
-            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", helperText: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", helperText: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", helperText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", helperText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", descriptionText: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", descriptionText: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
-            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", helperText: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", helperText: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", helperText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", helperText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-=======
-            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", descriptionText: nil, icon: Image(systemName: "figure.handball"), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", descriptionText: nil, icon: Image(systemName: "figure.handball"), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", icon: Image(systemName: "figure.handball"), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", icon: Image(systemName: "figure.handball"), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-
-            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", descriptionText: nil, icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", descriptionText: nil, icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
->>>>>>> 9cd671e2e (test: update snapshots)
+            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", descriptionText: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", descriptionText: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
             CheckboxIndeterminateTest.Layout.reversed(labelText: "Takoyaki", descriptionText: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
             CheckboxIndeterminateTest.Layout.reversed(labelText: "Takoyaki", descriptionText: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
             CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
             CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
-<<<<<<< HEAD
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", helperText: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", helperText: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", helperText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", helperText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", descriptionText: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", descriptionText: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", helperText: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", helperText: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", helperText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", helperText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-=======
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", descriptionText: nil, icon: Image(systemName: "figure.handball"), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", descriptionText: nil, icon: Image(systemName: "figure.handball"), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", icon: Image(systemName: "figure.handball"), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", icon: Image(systemName: "figure.handball"), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", descriptionText: nil, icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", descriptionText: nil, icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", icon: Image(systemName: "figure.handball"), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
->>>>>>> 9cd671e2e (test: update snapshots)
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", descriptionText: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", descriptionText: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
         ]
     }
     // swiftlint:enable line_length
