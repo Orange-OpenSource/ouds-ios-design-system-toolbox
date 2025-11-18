@@ -36,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] Keyboard focus and VoiceOver focus issue on chip component (Orange-OpenSource/ouds-ios#914)
 - [DesignToolbox] Missing or badly named parameters in code samples of components
 
 ## [0.21.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.20.0...0.21.0) - 2025-11-05
