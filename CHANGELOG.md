@@ -38,6 +38,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] `font` composite semantic tokens
+- [Library] View modifiers for typography 
+- [Library] `font` composite raw tokens
 - [Library] Keyboard focus and VoiceOver focus issue on chip component (Orange-OpenSource/ouds-ios#914)
 - [DesignToolbox] Missing or badly named parameters in code samples of components
 
