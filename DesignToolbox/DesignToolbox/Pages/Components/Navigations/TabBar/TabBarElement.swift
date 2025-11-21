@@ -22,7 +22,7 @@ struct TabBarElement: DesignToolboxElement {
     init() {
         name = "app_components_tabBar_label".localized()
         illustration = AnyView(TabBarIllustration())
-        pageDescription = AnyView(DesignToolboxElementPage(
+        pageDescription = AnyView(DesignToolboxElementModal(
             name: name,
             description: "app_components_tabBar_description_text",
             version: "(WIP)",

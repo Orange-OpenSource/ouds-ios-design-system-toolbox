@@ -507,6 +507,10 @@
 		953DC15F2ED0995600D14D44 /* TabBarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1532ED0995600D14D44 /* TabBarConfiguration.swift */; };
 		953DC1602ED0995600D14D44 /* TabBarElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1542ED0995600D14D44 /* TabBarElement.swift */; };
 		953DC1612ED0995600D14D44 /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1552ED0995600D14D44 /* TabBarPage.swift */; };
+		953DC1632ED0A7D400D14D44 /* DesignToolboxElementModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1622ED0A7D400D14D44 /* DesignToolboxElementModal.swift */; };
+		953DC1642ED0A7D400D14D44 /* DesignToolboxElementModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1622ED0A7D400D14D44 /* DesignToolboxElementModal.swift */; };
+		953DC1652ED0A7D400D14D44 /* DesignToolboxElementModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1622ED0A7D400D14D44 /* DesignToolboxElementModal.swift */; };
+		953DC1662ED0A7D400D14D44 /* DesignToolboxElementModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1622ED0A7D400D14D44 /* DesignToolboxElementModal.swift */; };
 		955A40DB2EC788CE001D7F84 /* Image+extensions Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */; };
 		955A40DC2EC7894C001D7F84 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
@@ -1394,6 +1398,7 @@
 		953DC1532ED0995600D14D44 /* TabBarConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfiguration.swift; sourceTree = "<group>"; };
 		953DC1542ED0995600D14D44 /* TabBarElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarElement.swift; sourceTree = "<group>"; };
 		953DC1552ED0995600D14D44 /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
+		953DC1622ED0A7D400D14D44 /* DesignToolboxElementModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxElementModal.swift; sourceTree = "<group>"; };
 		955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions Tests.swift"; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1509,6 +1514,7 @@
 			children = (
 				073543152CA17275001187EA /* DesignToolboxElement.swift */,
 				51E3FF0A2CAFD9AE00F1BC59 /* DesignToolboxElementPage.swift */,
+				953DC1622ED0A7D400D14D44 /* DesignToolboxElementModal.swift */,
 				51BD760F2C466FCF0033365D /* DesignToolboxElementsPage.swift */,
 				077CCE5B2CB431C50059CC28 /* DesignToolboxVariantElement.swift */,
 			);
@@ -3718,6 +3724,7 @@
 				515EE9892E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */,
 				515EE98A2E21329B00A60E96 /* ChipPickerElement.swift in Sources */,
 				515EE98B2E21329B00A60E96 /* ChipPickerPage.swift in Sources */,
+				953DC1632ED0A7D400D14D44 /* DesignToolboxElementModal.swift in Sources */,
 				515EE98C2E21329B00A60E96 /* SuggestionChipConfigurationView.swift in Sources */,
 				51A2176F2E325F7F00562BE0 /* WireframeTheme+ButtonSnapshotsTests.swift in Sources */,
 				51A2177F2E325FE600562BE0 /* WireframeTheme+TokensSizeSnapshotsTests.swift in Sources */,
@@ -3940,6 +3947,7 @@
 				07D3DBF42DA5084500D8A57F /* ColoredSurfaceConfiguration.swift in Sources */,
 				07D3DBF52DA5084500D8A57F /* ColoredSurfacePage.swift in Sources */,
 				07D3DBF62DA5084500D8A57F /* ColoredSurfaceElement.swift in Sources */,
+				953DC1642ED0A7D400D14D44 /* DesignToolboxElementModal.swift in Sources */,
 				513442122D75B880000B5DE4 /* CheckboxConfiguration.swift in Sources */,
 				513442132D75B880000B5DE4 /* CheckboxElements.swift in Sources */,
 				0784B2712CCB86C500299C10 /* NamedSize+IconWithTypography.swift in Sources */,
@@ -4248,6 +4256,7 @@
 				9589F0AE2EB7D67B00134487 /* ColoredSurfaceConfiguration.swift in Sources */,
 				9589F0AF2EB7D67B00134487 /* ColoredSurfacePage.swift in Sources */,
 				9589F0B02EB7D67B00134487 /* ColoredSurfaceElement.swift in Sources */,
+				953DC1652ED0A7D400D14D44 /* DesignToolboxElementModal.swift in Sources */,
 				9589F0B12EB7D67B00134487 /* CheckboxConfiguration.swift in Sources */,
 				9589F0B22EB7D67B00134487 /* CheckboxElements.swift in Sources */,
 				9589F0B32EB7D67B00134487 /* NamedSize+IconWithTypography.swift in Sources */,
@@ -4420,6 +4429,7 @@
 				9589F1882EB7D67E00134487 /* ColoredSurfaceConfiguration.swift in Sources */,
 				9589F1892EB7D67E00134487 /* ColoredSurfacePage.swift in Sources */,
 				9589F18A2EB7D67E00134487 /* ColoredSurfaceElement.swift in Sources */,
+				953DC1662ED0A7D400D14D44 /* DesignToolboxElementModal.swift in Sources */,
 				9589F18B2EB7D67E00134487 /* CheckboxConfiguration.swift in Sources */,
 				9589F18C2EB7D67E00134487 /* CheckboxElements.swift in Sources */,
 				9589F18D2EB7D67E00134487 /* NamedSize+IconWithTypography.swift in Sources */,
@@ -5408,7 +5418,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1135-component-add-bottom-tab-bar";
 				kind = branch;
 			};
 		};

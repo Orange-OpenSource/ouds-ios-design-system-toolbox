@@ -19,6 +19,7 @@ import SwiftUI
 struct TabBarPage: View {
 
     @StateObject private var configurationModel: TabBarConfigurationModel
+    @State private var showModal = false
 
     init() {
         _configurationModel = StateObject(wrappedValue: TabBarConfigurationModel())
@@ -26,7 +27,7 @@ struct TabBarPage: View {
 
     var body: some View {
         ComponentConfigurationView(configuration: configurationModel) {
-            TabBarDemo(configurationModel: configurationModel)
+            TabBarDemo(showModal: $showModal, configurationModel: configurationModel)
         } configurationView: {
             TabBarConfiguration(configurationModel: configurationModel)
         }
@@ -35,19 +36,41 @@ struct TabBarPage: View {
 
 // MARK: - Tab bar Demo
 
-private struct TabBarDemo: View {
+struct TabBarDemo: View {
 
+    @Binding var showModal: Bool
     @Environment(\.theme) private var theme
-    @StateObject var configurationModel: TabBarConfigurationModel
+    @ObservedObject var configurationModel: TabBarConfigurationModel
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-
-            Text("Tab bar")
-
-            Spacer()
+        NavigationView {
+            VStack {
+                OUDSTabBar {
+                    ForEach(configurationModel.limitedItems.indices, id: \.self) { index in
+                        let item = configurationModel.limitedItems[index]
+                        TabBarItemDemo(text: item.content)
+                            .tabItem {
+                                Label {
+                                    Text(item.label)
+                                } icon: {
+                                    Image("Orange/tips-and-tricks")
+                                        .renderingMode(.template)
+                                        .foregroundColor(Color.yellow)
+                                }
+                            }
+                    }
+                }
+            }
         }
         .padding(.all, theme.spaces.fixedMedium)
+    }
+}
+
+private struct TabBarItemDemo: View {
+
+    let text: String
+
+    var body: some View {
+        Text(text)
     }
 }

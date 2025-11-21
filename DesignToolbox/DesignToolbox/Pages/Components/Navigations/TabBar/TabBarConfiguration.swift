@@ -19,6 +19,24 @@ import SwiftUI
 /// The model shared between `TabBarPageConfiguration` view and `TabBarPageComponent` view.
 final class TabBarConfigurationModel: ComponentConfiguration {
 
+    typealias TabBarItemConfiguration = (label: String, content: String)
+
+    // MARK: Properties
+
+    @Published var numberOfItems = 1
+
+    var limitedItems: [TabBarItemConfiguration] {
+        Array(Self.tabBarItems.prefix(numberOfItems))
+    }
+
+    private static let tabBarItems: [TabBarItemConfiguration] = [
+        (label: "Favorites", content: "Favorites content view"),
+        (label: "Search", content: "Search content view"),
+        (label: "Information", content: "Information content view"),
+        (label: "Notifications", content: "Favorites content view"),
+        (label: "Settings", content: "Settings content view"),
+    ]
+
     // MARK: Initializer
 
     override init() {}
@@ -29,7 +47,7 @@ final class TabBarConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         code = """
-        OUDSTabBar() {}
+        OUDSTabBar() { /* SomeView().tabItem { ... } */ }
         """
     }
 }
@@ -48,7 +66,7 @@ struct TabBarConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                Text("Configuration")
+                Stepper("Valeur: \(configurationModel.numberOfItems)", value: $configurationModel.numberOfItems, in: 1 ... 5)
             }
         }
     }
