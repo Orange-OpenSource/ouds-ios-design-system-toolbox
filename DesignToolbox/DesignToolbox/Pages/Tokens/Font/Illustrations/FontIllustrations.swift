@@ -18,7 +18,7 @@ struct IllustrationFont: View {
 
     let namedFont: NamedFont
 
-    private var token: FontCompositeRawToken {
+    private var token: FontCompositeSemanticToken {
         namedFont.token(from: theme).fontToken(for: horizontalSizeClass ?? .regular)
     }
 
