@@ -48,11 +48,10 @@ enum NamedFont: String, CaseIterable {
     case labelStrongMedium
     case labelStrongSmall
     case codeMedium
-    case codeSmall
 
     // MARK: - Token Values
 
-    func token(from theme: OUDSTheme) -> MultipleFontCompositeRawTokens {
+    func token(from theme: OUDSTheme) -> MultipleFontCompositeSemanticTokens {
         switch self {
         case .displayLarge:
             theme.fonts.displayLarge
@@ -110,8 +109,6 @@ enum NamedFont: String, CaseIterable {
             theme.fonts.labelStrongMedium
         case .labelStrongSmall:
             theme.fonts.labelStrongSmall
-        case .codeSmall:
-            theme.fonts.codeSmall
         case .codeMedium:
             theme.fonts.codeMedium
         }

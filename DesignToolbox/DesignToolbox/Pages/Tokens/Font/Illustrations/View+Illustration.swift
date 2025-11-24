@@ -80,8 +80,6 @@ extension View {
             Text(namedFont.rawValue.camelCase).labelStrongMedium(theme)
         case .labelStrongSmall:
             Text(namedFont.rawValue.camelCase).labelStrongSmall(theme)
-        case .codeSmall:
-            Text(namedFont.rawValue.camelCase).codeMedium(theme)
         case .codeMedium:
             Text(namedFont.rawValue.camelCase).codeMedium(theme)
         }
