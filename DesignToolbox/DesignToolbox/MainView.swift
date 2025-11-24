@@ -13,27 +13,40 @@
 
 import OUDSSwiftUI
 import SwiftUI
+import OUDSComponents
 
 struct MainView: View {
 
     @Environment(\.theme) private var theme
-
+    let debug = false
+//    let debug = true
+    
     var body: some View {
-        TabView {
-            TokensPage()
-                .tabItem {
-                    Label("app_bottomBar_tokens_label", image: "ic_token")
+        if debug {
+            Text("Label")
+                .labelDefaultLarge(theme)
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .readSize {
+                    print("Size: \($0)")
                 }
-            ComponentsPage()
-                .tabItem {
-                    Label("app_bottomBar_components_label", image: "ic_component_atom")
-                }
-            AboutPage()
-                .tabItem {
-                    Label("app_bottomBar_about_label", image: "ic_info")
-                }
+        } else {
+            TabView {
+                TokensPage()
+                    .tabItem {
+                        Label("app_bottomBar_tokens_label", image: "ic_token")
+                    }
+                ComponentsPage()
+                    .tabItem {
+                        Label("app_bottomBar_components_label", image: "ic_component_atom")
+                    }
+                AboutPage()
+                    .tabItem {
+                        Label("app_bottomBar_about_label", image: "ic_info")
+                    }
+            }
+            .oudsAccentColor(theme.colors.contentBrandPrimary)
         }
-        .oudsAccentColor(theme.colors.contentBrandPrimary)
     }
 }
 
