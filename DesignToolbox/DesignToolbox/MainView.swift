@@ -13,12 +13,11 @@
 
 import OUDSSwiftUI
 import SwiftUI
-import OUDSComponents
 
 struct MainView: View {
 
     @Environment(\.theme) private var theme
-    
+
     var body: some View {
         TabView {
             TokensPage()
