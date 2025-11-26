@@ -51,6 +51,7 @@ struct BadgeDemo: View {
             switch configurationModel.badgeType {
             case .standard:
                 OUDSBadge(status: configurationModel.status,
+                          accessibilityLabel: "app_components_badge_hint_a11y".localized(),
                           size: configurationModel.standardSize)
                     .disabled(!configurationModel.enabled)
             case .count:
