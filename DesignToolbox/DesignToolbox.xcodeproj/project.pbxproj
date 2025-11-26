@@ -5342,7 +5342,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "594-bug-typography-interline-is-wrong";
+				branch = develop;
 				kind = branch;
 			};
 		};
