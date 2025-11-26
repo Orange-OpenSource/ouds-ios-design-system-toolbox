@@ -39,27 +39,32 @@ struct TabBarPage: View {
 struct TabBarDemo: View {
 
     @Binding var showModal: Bool
-    @Environment(\.theme) private var theme
     @ObservedObject var configurationModel: TabBarConfigurationModel
+
+    @State private var selectedTabId = 0
+    @Environment(\.theme) private var theme
 
     var body: some View {
         NavigationView {
             VStack {
-                OUDSTabBar {
-                    ForEach(configurationModel.limitedItems.indices, id: \.self) { index in
-                        let item = configurationModel.limitedItems[index]
-                        TabBarItemDemo(text: item.content)
+                TabView(selection: $selectedTabId) {
+                    ForEach(configurationModel.limitedItems, id: \.id) { item in
+                        TabBarItemDemo(text: item.content, badge: configurationModel.badgeConfiguration)
                             .tabItem {
                                 Label {
                                     Text(item.label)
                                 } icon: {
-                                    Image("Orange/tips-and-tricks")
-                                        .renderingMode(.template)
-                                        .foregroundColor(Color.yellow)
+                                    Image(systemName: selectedTabId == item.id ? "\(item.imageName).fill" : "\(item.imageName)")
+                                        .accessibilityHidden(true)
                                 }
                             }
+                            .tag(item.id)
                     }
                 }
+                .onChange(of: selectedTabId) { newValue in
+                    print("🔄 Selection changée: \(newValue)")
+                }
+                .modifier(OUDSTabBarViewModifier())
             }
         }
         .padding(.all, theme.spaces.fixedMedium)
@@ -69,8 +74,15 @@ struct TabBarDemo: View {
 private struct TabBarItemDemo: View {
 
     let text: String
+    let badge: TabBarConfigurationModel.BadgeConfiguration
 
     var body: some View {
-        Text(text)
+        if badge == .empty {
+            Text(text).badge("")
+        } else if case let .text(someText) = badge {
+            Text(text).badge(someText)
+        } else {
+            Text(text)
+        }
     }
 }

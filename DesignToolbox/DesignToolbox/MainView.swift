@@ -19,7 +19,7 @@ struct MainView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        TabView {
+        OUDSTabBar {
             TokensPage()
                 .tabItem {
                     Label("app_bottomBar_tokens_label", image: "ic_token")
