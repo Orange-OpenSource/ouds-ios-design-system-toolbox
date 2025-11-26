@@ -36,7 +36,3 @@ struct MainView: View {
         .oudsAccentColor(theme.colors.contentBrandPrimary)
     }
 }
-
-#Preview {
-    MainView()
-}
