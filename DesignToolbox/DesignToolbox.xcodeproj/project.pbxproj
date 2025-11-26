@@ -5342,7 +5342,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "995-bug-switch-control-cannot-be-toggled-by-swipe";
 				kind = branch;
 			};
 		};
