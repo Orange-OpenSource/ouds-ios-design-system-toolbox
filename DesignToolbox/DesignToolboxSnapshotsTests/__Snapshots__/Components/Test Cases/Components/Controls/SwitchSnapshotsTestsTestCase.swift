@@ -144,7 +144,7 @@ open class SwitchSnapshotsTestsTestCase: XCTestCase {
 
             SwitchTest.Layout.default(label: "Kammthaar", description: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
             SwitchTest.Layout.default(label: "Kammthaar", description: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDividecd Dr: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
             SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
             SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
             SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
