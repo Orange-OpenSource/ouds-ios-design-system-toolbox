@@ -44,6 +44,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
         text = String(localized: "app_components_link_label")
         layout = .textOnly
         size = .default
+        super.init()
     }
 
     deinit {}

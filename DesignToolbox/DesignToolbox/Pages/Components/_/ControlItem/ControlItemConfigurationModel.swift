@@ -102,7 +102,12 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         self.outlinedConfiguration = outlinedConfiguration
         self.extraLabelConfiguration = extraLabelConfiguration
         outlined = outlinedConfiguration?.value ?? false
+<<<<<<< HEAD
         extraLabelText = extraLabelConfiguration ?? ""
+=======
+        additionalLabelText = additionalLabelConfiguration ?? ""
+        super.init()
+>>>>>>> a9382429a (chore: update demo)
     }
 
     deinit {}

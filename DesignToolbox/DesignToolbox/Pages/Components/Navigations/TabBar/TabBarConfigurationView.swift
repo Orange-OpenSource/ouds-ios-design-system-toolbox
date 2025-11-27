@@ -19,30 +19,33 @@ import SwiftUI
 /// The model shared between `TabBarPageConfiguration` view and `TabBarPageComponent` view.
 final class TabBarConfigurationModel: ComponentConfiguration {
 
-    struct TabBarItemConfiguration {
-        let id: Int
+    // MARK: Properties
+
+    @Published var numberOfItems: Int
+    @Published var badgeConfiguration: BadgeConfiguration = .none
+    @Published var badgeText: String
+
+    // MARK: Tab bar items
+
+    /// To store some details about tabs
+    struct TabBarItemConfiguration: Hashable {
         let label: String
         let content: String
         let imageName: String
     }
 
-    // MARK: Properties
-
-    @Published var numberOfItems = 1
-    @Published var badgeConfiguration: BadgeConfiguration = .none
-    @Published var badgeText: String
-
     var limitedItems: [TabBarItemConfiguration] {
-        // Array(Self.tabBarItems.prefix(numberOfItems))
-        Self.tabBarItems
+        Array(Self.tabBarItems.prefix(numberOfItems))
     }
 
     private static let tabBarItems: [TabBarItemConfiguration] = [
-        TabBarItemConfiguration(id: 0, label: "Call", content: "Call view", imageName: "phone"),
-        TabBarItemConfiguration(id: 1, label: "Email", content: "Email view", imageName: "mail"),
-        TabBarItemConfiguration(id: 2, label: "Note", content: "Note view", imageName: "long.text.page.and.pencil"),
-        TabBarItemConfiguration(id: 3, label: "Settings", content: "Settings view", imageName: "gearshape"),
+        TabBarItemConfiguration(label: "Call", content: "Call view", imageName: "phone"),
+        TabBarItemConfiguration(label: "Email", content: "Email view", imageName: "mail"),
+        TabBarItemConfiguration(label: "Note", content: "Note view", imageName: "long.text.page.and.pencil"),
+        TabBarItemConfiguration(label: "Settings", content: "Settings view", imageName: "gearshape"),
     ]
+
+    // MARK: Badges
 
     enum BadgeConfiguration: Hashable {
         case none
@@ -60,10 +63,11 @@ final class TabBarConfigurationModel: ComponentConfiguration {
 
     // MARK: Initializer
 
-    override init() {
-        numberOfItems = 1
+    override init(useOneColorSchemedDemo: Bool) {
+        numberOfItems = 3
         badgeConfiguration = .none
         badgeText = "1"
+        super.init(useOneColorSchemedDemo: useOneColorSchemedDemo)
     }
 
     deinit {}
@@ -91,11 +95,17 @@ struct TabBarConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                Stepper("Valeur: \(configurationModel.numberOfItems)", value: $configurationModel.numberOfItems, in: 1 ... 5)
-                OUDSChipPicker(title: "With badges",
+                Stepper("Count: " + "\($configurationModel.numberOfItems.wrappedValue)", value: $configurationModel.numberOfItems, in: 1 ... 5)
+                    .padding(.horizontal, theme.spaces.fixedMedium)
+                    .bodyDefaultMedium(theme)
+
+                OUDSChipPicker(title: "Badges",
                                selection: $configurationModel.badgeConfiguration,
                                chips: configurationModel.badgeConfigurations)
-                DesignToolboxTextField(text: $configurationModel.badgeText, label: "Badge text")
+
+                DesignToolboxEditContentDisclosure {
+                    DesignToolboxTextField(text: $configurationModel.badgeText, label: "Badge text")
+                }
             }
         }
     }

@@ -19,70 +19,86 @@ import SwiftUI
 struct TabBarPage: View {
 
     @StateObject private var configurationModel: TabBarConfigurationModel
-    @State private var showModal = false
 
     init() {
-        _configurationModel = StateObject(wrappedValue: TabBarConfigurationModel())
+        _configurationModel = StateObject(wrappedValue: TabBarConfigurationModel(useOneColorSchemedDemo: true))
     }
 
     var body: some View {
         ComponentConfigurationView(configuration: configurationModel) {
-            TabBarDemo(showModal: $showModal, configurationModel: configurationModel)
+            TabBarDemo(configurationModel: configurationModel)
         } configurationView: {
             TabBarConfiguration(configurationModel: configurationModel)
         }
     }
 }
 
-// MARK: - Tab bar Demo
+// MARK: - Tab bar demo
 
 struct TabBarDemo: View {
 
-    @Binding var showModal: Bool
     @ObservedObject var configurationModel: TabBarConfigurationModel
-
-    @State private var selectedTabId = 0
     @Environment(\.theme) private var theme
 
     var body: some View {
         NavigationView {
-            VStack {
-                TabView(selection: $selectedTabId) {
-                    ForEach(configurationModel.limitedItems, id: \.id) { item in
-                        TabBarItemDemo(text: item.content, badge: configurationModel.badgeConfiguration)
+            VStack(alignment: .center) {
+                Spacer()
+                TabView {
+                    ForEach(configurationModel.limitedItems, id: \.self) { item in
+                        TabBarItemDemo(item: item, badge: configurationModel.badgeConfiguration)
                             .tabItem {
                                 Label {
                                     Text(item.label)
                                 } icon: {
-                                    Image(systemName: selectedTabId == item.id ? "\(item.imageName).fill" : "\(item.imageName)")
+                                    Image(systemName: item.imageName)
                                         .accessibilityHidden(true)
                                 }
                             }
-                            .tag(item.id)
                     }
                 }
-                .onChange(of: selectedTabId) { newValue in
-                    print("🔄 Selection changée: \(newValue)")
-                }
+                #if canImport(UIKit) // OUDSTabBarViewModifier relies on UIKit
                 .modifier(OUDSTabBarViewModifier())
+                #endif
+                .frame(maxHeight: .infinity)
+                Spacer()
             }
         }
         .padding(.all, theme.spaces.fixedMedium)
     }
 }
 
+// MARK: - Tab bar item demo
+
+/// The view attached to the tab
 private struct TabBarItemDemo: View {
 
-    let text: String
+    /// Things to display as tab target
+    let item: TabBarConfigurationModel.TabBarItemConfiguration
+
+    /// Badge to display to the associated tab
     let badge: TabBarConfigurationModel.BadgeConfiguration
 
     var body: some View {
-        if badge == .empty {
-            Text(text).badge("")
-        } else if case let .text(someText) = badge {
-            Text(text).badge(someText)
-        } else {
-            Text(text)
+        HStack {
+            Image(systemName: item.imageName).accessibilityHidden(true)
+            Text(item.label)
+        }.modifier(BadgeModifier(configuration: badge))
+    }
+
+    /// To add a bad in the tab bar item
+    private struct BadgeModifier: ViewModifier {
+
+        let configuration: TabBarConfigurationModel.BadgeConfiguration
+
+        func body(content: Content) -> some View {
+            if configuration == .empty { // Empty badge
+                content.badge("")
+            } else if case let .text(text) = configuration { // Circle with count, text, etc.
+                content.badge(text)
+            } else { // No badge
+                content
+            }
         }
     }
 }

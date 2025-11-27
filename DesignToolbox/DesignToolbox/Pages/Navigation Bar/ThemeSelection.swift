@@ -16,15 +16,6 @@ import SwiftUI
 
 // MARK: - Extensions of OUDSTheme
 
-extension OUDSTheme: @retroactive Equatable {
-
-    // MARK: Equtabable
-
-    public static func == (lhs: OUDSTheme, rhs: OUDSTheme) -> Bool {
-        lhs.id == rhs.id
-    }
-}
-
 /// Extension of the `OUDSTheme` to add both `Identifiable` and `Hashable`.
 /// An `OUDSTheme` must be `Identifiable` to be enumerated like in `ForEach`(e.g. used to build the list of elements in picker).
 /// It must be `Hashable` because it is used in a picker than need `Hashable` element.
@@ -116,13 +107,13 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
         // Init all themes
 
-        let orangeFranceOrangeTheme = OrangeTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeTheme = OrangeTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
-        let maxItOrangeTheme = OrangeTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
+        let orangeFranceOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
+        let maxItOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
 
-        let orangeFranceOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
-        let maxItOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(family: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
+        let orangeFranceOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
+        let maxItOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
 
         let soshTheme = SoshTheme()
         let wireframeTheme = WireframeTheme()

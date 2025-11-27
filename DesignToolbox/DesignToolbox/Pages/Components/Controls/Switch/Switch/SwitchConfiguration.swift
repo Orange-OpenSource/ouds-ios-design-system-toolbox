@@ -38,7 +38,11 @@ final class SwitchConfigurationModel: ComponentConfiguration {
     override init() {
         selection = true
         enabled = true
+<<<<<<< HEAD
         isReadOnly = false
+=======
+        super.init()
+>>>>>>> a9382429a (chore: update demo)
     }
 
     deinit {}

@@ -92,6 +92,11 @@ struct DesignToolboxElementModal: View {
         .oudsRequestAccessibleFocus(_requestFocus)
         .sheet(isPresented: $showModal) {
             demoScreen
+                .listRowInsets(EdgeInsets())
+                .listRowSeparator(Visibility.hidden)
+                .padding(.bottom, theme.spaces.fixedMedium)
+                .oudsBackground(theme.colors.bgPrimary)
         }
+        .navigationBarMenus()
     }
 }

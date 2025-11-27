@@ -59,6 +59,7 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
         isReversed = false
         isOutlined = false
         isEnabled = true
+        super.init()
     }
 
     deinit {}

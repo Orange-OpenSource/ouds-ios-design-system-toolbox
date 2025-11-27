@@ -105,6 +105,7 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         flipIcon = false
         countText = "1"
         themeName = ""
+        super.init()
     }
 
     deinit {}

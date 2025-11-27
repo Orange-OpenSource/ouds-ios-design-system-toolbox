@@ -15,7 +15,7 @@ import SwiftUI
 
 struct ComponentsPage: View {
 
-    let componentElements: [DesignToolboxElement] = [
+    var componentElements: [DesignToolboxElement] = [
         BadgeElement(),
         ButtonElement(),
         ColoredSurfaceElement(),
@@ -29,6 +29,12 @@ struct ComponentsPage: View {
         TagElements(),
         TextInputElement(),
     ]
+
+    init() {
+        #if os(visionOS)
+        componentElements.removeAll(where: { $0 is TabBarElement })
+        #endif
+    }
 
     var body: some View {
         DesignToolboxElementsPage(title: "app_bottomBar_components_label",

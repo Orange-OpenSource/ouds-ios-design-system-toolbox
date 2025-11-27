@@ -42,8 +42,12 @@ final class RadioConfigurationModel: ComponentConfiguration {
     override init() {
         selection = false
         enabled = true
+<<<<<<< HEAD
         isError = false
         isReadOnly = false
+=======
+        super.init()
+>>>>>>> a9382429a (chore: update demo)
     }
 
     deinit {}
