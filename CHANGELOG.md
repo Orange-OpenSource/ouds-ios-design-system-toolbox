@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.22.0..develop)
 
+### Changed
+
+- [Library] Update `switch` components to v1.5.0 (Orange-OpenSource/ouds-ios#1138)
+- [Library] Update `radio` components to v1.4.0 (Orange-OpenSource/ouds-ios#1139)
+- [Library] Update `checkbox` components to v2.4.0 (Orange-OpenSource/ouds-ios#1137)
+
 ## [0.22.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.21.0...0.22.0) - 2025-11-28
 
 ### Added
@@ -27,9 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] `Wireframe` theme `border` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
 - [Library] `size` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
 - [DesignToolbox] Use of Solaris and themed icons (Orange-OpenSource/ouds-ios#805) (Orange-OpenSource/ouds-ios#1127) 
-- [Library] Update `switch` components to v1.5.0 (Orange-OpenSource/ouds-ios#1138)
-- [Library] Update `radio` components to v1.4.0 (Orange-OpenSource/ouds-ios#1139)
-- [Library] Update `checkbox` components to v2.4.0 (Orange-OpenSource/ouds-ios#1137)
 - [Library] Update `badge` to use internal icons for some status (Orange-OpenSource/ouds-ios#1136)
 - [DesignToolbox] Page of color semantic tokens (tokens libraries Core v1.9, System v2.2) 
 - [Library] `color` semantic tokens (tokens libraries Core v1.9, System v2.2)
