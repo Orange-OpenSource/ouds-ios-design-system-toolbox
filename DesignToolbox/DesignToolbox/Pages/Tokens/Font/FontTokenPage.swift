@@ -25,7 +25,6 @@ struct FontTokenPage: View {
             Section {
                 DesignToolboxCode(code: "theme.bodyStrongLarge(theme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
-
             Spacer()
 
             ForEach(NamedFont.allCases, id: \.rawValue) { fontName in
@@ -34,60 +33,5 @@ struct FontTokenPage: View {
         }
         .padding(.horizontal, theme.spaces.fixedMedium)
         .navigationTitle(LocalizedStringKey("app_tokens_typography_label"))
-    }
-
-    // MARK: - Illustration Font
-
-    struct IllustrationFont: View {
-
-        let namedFont: NamedFont
-
-        private var token: FontCompositeRawToken {
-            namedFont.token(from: theme).fontToken(for: horizontalSizeClass ?? .regular)
-        }
-
-        @Environment(\.theme) private var theme
-        @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-
-        var body: some View {
-            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                illustration(for: namedFont, in: theme)
-                    .oudsForegroundStyle(theme.colors.contentDefault)
-
-                Group {
-                    Text(familyText)
-                        + Text(weightText)
-                        + Text(sizeText)
-                        + Text(lineHeightText)
-                        + Text(letterSpacingText)
-                }
-                .bodyDefaultMedium(theme)
-                .fixedSize(horizontal: false, vertical: true)
-                .oudsForegroundStyle(theme.colors.contentMuted)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.vertical, theme.spaces.fixedXsmall)
-            .accessibilityElement(children: .combine)
-        }
-
-        private var familyText: String {
-            "app_tokens_typography_familyAttribute" <- "\(theme.family ?? "system")"
-        }
-
-        private var weightText: String {
-            "app_tokens_typography_weightAttribute" <- token.weight
-        }
-
-        private var sizeText: String {
-            "app_tokens_typography_sizeAttribute" <- token.size
-        }
-
-        private var lineHeightText: String {
-            "app_tokens_typography_lineHeightAttribute" <- token.lineHeight
-        }
-
-        private var letterSpacingText: String {
-            "app_tokens_typography_letterSpacingAttribute" <- token.letterSpacing
-        }
     }
 }

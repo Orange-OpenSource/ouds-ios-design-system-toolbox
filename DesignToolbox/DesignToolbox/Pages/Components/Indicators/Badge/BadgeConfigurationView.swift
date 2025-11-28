@@ -21,6 +21,10 @@ final class BadgeConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
+    @Published var enabled: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var standardSize: OUDSBadge.StandardSize {
         didSet { updateCode() }
     }
@@ -41,8 +45,37 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var flipIcon: Bool {
+        didSet { updateCode() }
+    }
+
+    // MARK: - Properties
+
+    var themeName: String
+
     var count: UInt {
         UInt(countText) ?? 1
+    }
+
+    var enableFlipIcon: Bool {
+        badgeType == .icon && (status == .neutral || status == .accent)
+    }
+
+    var statusWithIcon: OUDSBadge.StatusWithIcon {
+        switch status {
+        case .neutral:
+            .neutral(icon: Image.defaultImage(prefixedBy: themeName), flipped: flipIcon)
+        case .accent:
+            .accent(icon: Image.defaultImage(prefixedBy: themeName), flipped: flipIcon)
+        case .positive:
+            .positive
+        case .info:
+            .info
+        case .warning:
+            .warning
+        case .negative:
+            .negative
+        }
     }
 
     // MARK: - Types
@@ -64,11 +97,14 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
+        enabled = true
         standardSize = .medium
         illustrationSize = .medium
         status = .neutral
         badgeType = .count
+        flipIcon = false
         countText = "1"
+        themeName = ""
     }
 
     deinit {}
@@ -78,16 +114,40 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         switch badgeType {
         case .standard:
-            code = "OUDSBadge(\(statusPattern), \(sizePattern))"
+            code = """
+            OUDSBadge(\(statusPattern), \(sizePattern))
+            \(disablePattern)
+            """
         case .count:
-            code = "OUDSBadge(count: \(count), \(statusPattern), \(sizePattern))"
+            code = """
+            OUDSBadge(count: \(count), \(statusPattern), \(sizePattern))
+            \(disablePattern)
+            """
         case .icon:
-            code = "OUDSBadge(icon: Image(\"ic_heart\"), \(statusPattern), \(sizePattern))"
+            code = """
+            OUDSBadge(\(statusWithIconPattern), accessibilityLabel: \"app_components_badge_hint_a11y\", \(sizePattern))
+            \(disablePattern)
+            """
         }
+    }
+
+    private var disablePattern: String {
+        !enabled ? ".disabled(true)" : ""
     }
 
     private var statusPattern: String {
         "status: \(status.technicalDescription)"
+    }
+
+    private var statusWithIconPattern: String {
+        switch status {
+        case .neutral:
+            "status: .neutral(icon: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : "")"
+        case .accent:
+            "status: .accent(icon: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : "")"
+        default:
+            "status: \(status.technicalDescription)"
+        }
     }
 
     private var sizePattern: String {
@@ -108,6 +168,11 @@ struct BadgeConfigurationView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+
+            OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
+                .disabled(!configurationModel.enableFlipIcon)
+
             OUDSChipPicker(title: "app_components_badge_type_label",
                            selection: $configurationModel.badgeType,
                            chips: BadgeConfigurationModel.BadgeType.chips)
@@ -210,7 +275,7 @@ extension OUDSBadge.IllustrationSize: @retroactive CaseIterable, @retroactive Cu
 
 extension OUDSBadge.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning, .disabled]
+    nonisolated(unsafe) public static let allCases: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
 
     public var description: String {
         switch self {
@@ -226,8 +291,6 @@ extension OUDSBadge.Status: @retroactive CaseIterable, @retroactive CustomString
             "Positive"
         case .warning:
             "Warning"
-        case .disabled:
-            "Disabled"
         }
     }
 

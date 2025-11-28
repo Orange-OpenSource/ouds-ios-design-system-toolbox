@@ -24,31 +24,43 @@ Any use or displaying shall constitute an infringement under intellectual proper
 
 ## Images
 
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_token.imageset/ic_token.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_component_atom.imageset/ic_component_atom.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_info.imageset/ic_info.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_heart.imageset/ic_heart.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_theme.imageset/ic_theme.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_theme_dark.imageset/ic_theme_dark.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_theme_light.imageset/ic_theme_light.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/ic_theme_system.imageset/ic_theme_system.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin_dark.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width_dark.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width_dark.png
+
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_chevron-down.imageset/ic_chevron-down.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_chevron-up.imageset/ic_chevron-up.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_copy.imageset/ic_copy.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_border.imageset/ic_border.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_dimension.imageset/ic_dimension.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_filter_effects.imageset/ic_filter_effects.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_grid.imageset/ic_grid.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_layers.imageset/ic_layers.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_palette.imageset/ic_palette.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_vector.imageset/ic_vector.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_typography.imageset/ic_typography.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_union.imageset/ic_union.svg
+
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_token.imageset/ic_token.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_component_atom.imageset/ic_component_atom.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_info.imageset/ic_info.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_heart.imageset/ic_heart.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_theme.imageset/ic_theme.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_theme_dark.imageset/ic_theme_dark.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_theme_light.imageset/ic_theme_light.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_theme_system.imageset/ic_theme_system.svg
+
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Orange/menu-grid.imageset/menu-grid.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Orange/palette.imageset/palette.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Orange/tips-and-tricks.imageset/tips-and-tricks.svg
+
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Sosh/menu-grid.imageset/menu-grid.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Sosh/palette.imageset/palette.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Sosh/tips-and-tricks.imageset/tips-and-tricks.svg
+
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Wireframe/menu-grid.imageset/menu-grid.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Wireframe/palette.imageset/palette.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Wireframe/tips-and-tricks.imageset/tips-and-tricks.svg
 
 End of the parts list under Orange SA Copyright

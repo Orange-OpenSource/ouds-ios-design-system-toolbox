@@ -70,24 +70,3 @@ struct GridTokenPage: View {
         }
     }
 }
-
-private enum NamedGrid: String, CaseIterable {
-    case minWidth
-    case maxWidth
-    case margin
-    case columnGap
-
-    @MainActor
-    func token(from theme: OUDSTheme, for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
-        switch self {
-        case .minWidth:
-            theme.gridMinWidth(for: sizeClass)
-        case .maxWidth:
-            theme.gridMaxWidth(for: sizeClass)
-        case .margin:
-            theme.gridMargin(for: sizeClass)
-        case .columnGap:
-            theme.gridColumnGap(for: sizeClass)
-        }
-    }
-}

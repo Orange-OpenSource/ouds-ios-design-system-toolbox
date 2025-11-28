@@ -13,7 +13,7 @@
 
 --swiftversion 6.2
 
---exclude Resources/CodeGen/**,Pods/**
+--exclude Resources/CodeGen/**
 
 --disable blankLinesAroundMark,blankLinesAtStartOfScope,redundantRawValues,modifierOrder
 

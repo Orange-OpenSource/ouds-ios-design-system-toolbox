@@ -48,7 +48,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var divider: Bool {
+    @Published var hasDivider: Bool {
         didSet { updateCode() }
     }
 
@@ -90,7 +90,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         icon = true
         flipIcon = false
         isReversed = false
-        divider = false
+        hasDivider = false
         labelText = String(localized: "app_components_common_label_label")
         helperText = String(localized: "app_components_common_helperText_label")
         errorText = String(localized: "app_components_common_errorText_label")
@@ -108,7 +108,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            \(componentInitCode), label: "\(labelText)"\(additionalLabelTextPattern)\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(dividerPattern))
+            \(componentInitCode), label: "\(labelText)"\(additionalLabelTextPattern)\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern))
             \(disableCodePattern)
             """
     }
@@ -124,7 +124,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     }
 
     private var iconPattern: String {
-        icon ? ", icon: Image(systemName: \"figure.handball\")" : ""
+        icon ? ", icon: \(Image.defaultImageSample())" : ""
     }
 
     private var flipIconPattern: String {
@@ -147,8 +147,8 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         isReadOnly ? ", isReadOnly: true" : ""
     }
 
-    private var dividerPattern: String {
-        divider ? ", divider: true" : ""
+    private var hasDividerPattern: String {
+        hasDivider ? ", hasDivider: true" : ""
     }
 
     private var additionalLabelTextPattern: String {

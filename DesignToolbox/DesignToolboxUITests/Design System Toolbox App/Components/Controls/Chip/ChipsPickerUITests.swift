@@ -15,7 +15,7 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To make UI tests on some chips picker from OUDSThemesContract
+/// To make UI tests on some chips picker from OUDS
 /// Tests the accessibility identifiers, labels or values of the items depending to their states and user actions.
 final class ChipsPickerUITests: AppTestCase {
 

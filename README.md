@@ -40,10 +40,12 @@
 ![iPadOS 15.0](https://img.shields.io/badge/iPadOS-15.0-FF1AB2?style=for-the-badge)
 ![macOS 15.0](https://img.shields.io/badge/macOS-15.0-FF1AB2?style=for-the-badge)
 ![visionOS 1.3](https://img.shields.io/badge/visionOS-1.3-FF1AB2?style=for-the-badge)
+![watchOS 11.6](https://img.shields.io/badge/watchOS-11.6-FF1AB2?style=for-the-badge)
+![tvOS 16.6](https://img.shields.io/badge/tvOS-16.6-FF1AB2?style=for-the-badge)
 
 ## Content
 
-Source code of the app showcasing the design system for iOS, iPadOS, macOS and visionOS.
+Source code of the app sshowcasing the design system for iOS, iPadOS, macOS, visionOS, watchOS and tvOS.
 
 > [!NOTE]
 > This repository contains the design system toolbox app which contains the OUDS iOS Swift Package and displays its features.
@@ -93,13 +95,13 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 <!-- Mockups designed thanks to https://mockuphone.com/model/iphone-15-pro-max/ -->
 
 <p align="center">
-<img src="./images/iOS/Tokens list - en - light - portrait.png" alt="List of tokens on iPhone 15 Pro Max (english, light mode, portrait)"  height="350" />
+<img src="./images/iOS/Tokens list - en - light - portrait.png" alt="List of tokens on iPhone 15 Pro Max (english, light mode, portrait)" height="350" />
 &nbsp;
-<img src="./images/iOS/Colors - en - light - portrait.png" alt="List of colors on iPhone 15 Pro Max (english, light mode, portrait)"  height="350" />
+<img src="./images/iOS/Colors - en - light - portrait.png" alt="List of colors on iPhone 15 Pro Max (english, light mode, portrait)" height="350" />
 &nbsp;
-<img src="./images/iOS/Components list - en - light - portrait.png" alt="List of components on iPhone 15 Pro Max (english, light mode, portrait)"  height="350" />
+<img src="./images/iOS/Components list - en - light - portrait.png" alt="List of components on iPhone 15 Pro Max (english, light mode, portrait)" height="350" />
 &nbsp;
-<img src="./images/iOS/Button - en - light - portrait.png" alt="Button component on iPhone 15 Pro Max (english, light mode, portrait)"  height="350" />
+<img src="./images/iOS/Button - en - light - portrait.png" alt="Button component on iPhone 15 Pro Max (english, light mode, portrait)" height="350" />
 </p>
 
 ### iPadOS
@@ -107,13 +109,13 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 <!-- Mockups designed thanks to https://mockuphone.com/model/ipad-pro-13-inch/ -->
 
 <p align="center">
-<img src="./images/iPadOS/Tokens list - en - light - portrait.png" alt="List of tokens on iPad (A16) (english, light mode, portrait)"  height="350" />
+<img src="./images/iPadOS/Tokens list - en - light - portrait.png" alt="List of tokens on iPad (A16) (english, light mode, portrait)" height="350" />
 &nbsp;
-<img src="./images/iPadOS/Colors - en - light - portrait.png" alt="List of colors on iPad (A16) (english, light mode, portrait)"  height="350" />
+<img src="./images/iPadOS/Colors - en - light - portrait.png" alt="List of colors on iPad (A16) (english, light mode, portrait)" height="350" />
 &nbsp;
-<img src="./images/iPadOS/Components list - en - light - portrait.png" alt="List of components on iPad (A16) (english, light mode, portrait)"  height="350" />
+<img src="./images/iPadOS/Components list - en - light - portrait.png" alt="List of components on iPad (A16) (english, light mode, portrait)" height="350" />
 &nbsp;
-<img src="./images/iPadOS/Button - en - light - portrait.png" alt="Button component on iPad (A16) (english, light mode, portrait)"  height="350" />
+<img src="./images/iPadOS/Button - en - light - portrait.png" alt="Button component on iPad (A16) (english, light mode, portrait)" height="350" />
 </p>
 
 ### macOS
@@ -122,13 +124,13 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 > The macOS app is not yet available on TestFlight nor the AppStore
 
 <p align="center">
-<img src="./images/macOS/Tokens list - en - light.png" alt="List of tokens on MacBook Pro 16'' inch'' (english, light mode)"  height="350" />
+<img src="./images/macOS/Tokens list - en - light.png" alt="List of tokens on MacBook Pro 16'' inch'' (english, light mode)" height="350" />
 &nbsp;
-<img src="./images/macOS/Colors - en - light.png" alt="List of colors on MacBook Pro 16'' (english, light mode)"  height="350" />
+<img src="./images/macOS/Colors - en - light.png" alt="List of colors on MacBook Pro 16'' (english, light mode)" height="350" />
 &nbsp;
-<img src="./images/macOS/Components list - en - light.png" alt="List of components on MacBook Pro 16'' (english, light mode)"  height="350" />
+<img src="./images/macOS/Components list - en - light.png" alt="List of components on MacBook Pro 16'' (english, light mode)" height="350" />
 &nbsp;
-<img src="./images/macOS/Button - en - light.png" alt="Button component on MacBook Pro 16'' (english, light mode)"  height="350" />
+<img src="./images/macOS/Button - en - light.png" alt="Button component on MacBook Pro 16'' (english, light mode)" height="350" />
 </p>
 
 ### visionOS 
@@ -137,13 +139,45 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 > The visionOS app is not yet available on TestFlight nor the AppStore
 
 <p align="center">
-<img src="./images/visionOS/Tokens list - en - light.png" alt="List of tokens on Vision Pro (english, light mode)"  height="350" />
+<img src="./images/visionOS/Tokens list - en - light.png" alt="List of tokens on Vision Pro (english, light mode)" height="350" />
 &nbsp;
-<img src="./images/visionOS/Colors - en - light.png" alt="List of colors on Vision Pro (english, light mode)"  height="350" />
+<img src="./images/visionOS/Colors - en - light.png" alt="List of colors on Vision Pro (english, light mode)" height="350" />
 &nbsp;
-<img src="./images/visionOS/Components list - en - light.png" alt="List of components on Vision Pro (english, light mode)"  height="350" />
+<img src="./images/visionOS/Components list - en - light.png" alt="List of components on Vision Pro (english, light mode)" height="350" />
 &nbsp;
-<img src="./images/visionOS/Button - en - light.png" alt="Button component on Vision Pro (english, light mode)"  height="350" />
+<img src="./images/visionOS/Button - en - light.png" alt="Button component on Vision Pro (english, light mode)" height="350" />
+</p>
+
+### watchOS
+
+<!-- Mockups designed thanks to https://mockuphone.com/model/apple-watch-ultra-2/ -->
+
+> [!NOTE]
+> The watchOS app is not yet available on TestFlight nor the AppStore
+
+<p align="center">
+<img src="./images/watchOS/Tokens list.png" alt="List of tokens on Watch Series 11 (46mm) (english)" height="350" />
+&nbsp;
+<img src="./images/watchOS/Colors.png" alt="List of colors on Watch Series 11 (46mm) (english)" height="350" />
+&nbsp;
+<img src="./images/watchOS/Components list.png" alt="List of components on Watch Series 11 (46mm) (english)"  height="350" />
+&nbsp;
+<img src="./images/watchOS/Buttons.png" alt="Button components on Watch Series 11 (46mm) (english)" height="350" />
+</p>
+
+### tvOS
+
+> [!NOTE]
+> The tvOS app is not yet available on TestFlight nor the AppStore
+
+<p align="center">
+<img src="./images/tvOS/Tokens list.png" alt="List of tokens on Apple TV 4K (3rd generation) (english)" height="350" />
+&nbsp;
+<img src="./images/tvOS/Colors.png" alt="List of colors on Apple TV 4K (3rd generation) (english)" height="350" />
+&nbsp;
+<img src="./images/tvOS/Buttons.png" alt="Button components on Apple TV 4K (3rd generation) (english)" height="350" />
+&nbsp;
+<img src="./images/tvOS/Badges.png" alt="Badge components on Apple TV 4K (3rd generation) (english)" height="350" />
 </p>
 
 ### Get the app
