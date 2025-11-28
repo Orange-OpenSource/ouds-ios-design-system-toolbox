@@ -4,6 +4,55 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.22.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.21.0...0.22.0) - 2025-11-28
+
+### Added
+
+- [Library] `bar` component tokens (Orange-OpenSource/ouds-ios#1169)
+- [Library] `effect` raw and semantic tokens (Orange-OpenSource/ouds-ios#1169)
+- [Library] Icon flip option for `text input` component trailing action (Orange-OpenSource/ouds-ios#1041)
+- [Library] Icon flip option for `button` component (Orange-OpenSource/ouds-ios#1124)
+- [DesignToolbox] Support for `watchOS` (Orange-OpenSource/ouds-ios#1110)
+- [DesignToolbox] Support for `tvOS` (Orange-OpenSource/ouds-ios#1109)
+
+### Changed
+
+- [DesignToolbox] Update `net-http` gem from v0.7.0 to v0.8.0
+- [DesignToolbox] `github/codeql-action/upload-sarif` action for `scorecard` workflow
+- [DesignToolbox] `ruby/setup-ruby` action from v1.267.0 to v1.268.0 for `build-and-test` workflow
+- [DesignToolbox] Update GitHub Actions `checkout` action from v5 to v6
+- [DesignToolbox] Update `fastlane` gem from v2.228.0 to v2.229.1
+- [Library] `Wireframe` theme `border` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
+- [Library] `size` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
+- [DesignToolbox] Use of Solaris and themed icons (Orange-OpenSource/ouds-ios#805) (Orange-OpenSource/ouds-ios#1127) 
+- [Library] Update `badge` to use internal icons for some status (Orange-OpenSource/ouds-ios#1136)
+- [DesignToolbox] Page of color semantic tokens (tokens libraries Core v1.9, System v2.2) 
+- [Library] `color` semantic tokens (tokens libraries Core v1.9, System v2.2)
+- [Library] `icon` component tokens (tokens libraries Core v1.9, System v2.2)
+- [Library] `control item` component tokens (tokens libraries Core v1.9, System v2.2) 
+- [DesignToolbox] `actions/dependency-review-action` action from v4.8.1 to v4.8.2 for `dependency-review` workflow
+- [DesignToolbox] `json` RubyGem from v2.15.2 to v2.16.0
+- [Library] `color` semantic tokens (tokens libraries Core v1.9, System v2.2)
+- [Library] `icon` component tokens (tokens libraries Core v1.9, System v2.2)
+- [Library] `control item` component tokens (tokens libraries Core v1.9, System v2.2) 
+- [Library] Update `text input` to display the label on two lines and in the middle when no placeholder and one line at top otherwise (Orange-OpenSource/ouds-ios#1086) 
+
+### Removed
+
+- [DesignToolbox] `CocoaPods` tool (Orange-OpenSource/ouds-ios#1103)
+
+### Fixed
+
+- [Library] Switch control cannot be toggled by swipe (Orange-OpenSource/ouds-ios#995)
+- [Library] Fonts and typography not applied (Orange, Sosh, Wireframe) on watchOS (Orange-OpenSource/ouds-ios#1142)
+- [Library] Fonts and typography not applied (Orange, Sosh, Wireframe) on tvOS (Orange-OpenSource/ouds-ios#1145)
+- [Library] Typography with line height token and dedicated line spacing and paddings (Orange-OpenSource/ouds-ios#594)
+- [Library] `font` composite semantic tokens
+- [Library] View modifiers for typography 
+- [Library] `font` composite raw tokens
+- [Library] Keyboard focus and VoiceOver focus issue on chip component (Orange-OpenSource/ouds-ios#914)
+- [DesignToolbox] Missing or badly named parameters in code samples of components
+
 ## [0.21.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.20.0...0.21.0) - 2025-11-05
 
 ### Added

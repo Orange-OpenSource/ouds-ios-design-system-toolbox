@@ -65,7 +65,7 @@ open class DividerSnapshotsTestsTestCase: XCTestCase {
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let dividerColorPatern = dividerColor.description
         let orientationPatern = orientation == .horizontal ? "Horizontal" : "Vertical"
-        let name = "\(orientationPatern).\(dividerColorPatern)"
+        let name = "\(orientationPatern)_\(dividerColorPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,

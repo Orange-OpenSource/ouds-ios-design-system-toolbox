@@ -56,6 +56,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var flipTrailingActionIcon: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var text: String {
         didSet { updateCode() }
     }
@@ -95,6 +99,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         leadingIcon = false
         flipLeadingIcon = false
         trailingAction = false
+        flipTrailingActionIcon = false
         text = ""
         helperLinkText = ""
         isOutlined = false
@@ -135,7 +140,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 
     private var leadingIconPattern: String {
-        leadingIcon ? ", leadingIcon: Image(systemName: \"figure.handball\")" : ""
+        leadingIcon ? ", leadingIcon: \(Image.defaultImageSample())" : ""
     }
 
     private var flipLeadingIconPattern: String {
@@ -144,7 +149,8 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
     private var trailingActionPattern: String {
         let accessibilityLabel = "app_components_common_icon_a11y".localized()
-        return trailingAction ? ", trailingAction: .init(icon: Image(decorative: \"ic_heart\"), actionHint: \"\(accessibilityLabel)\") {}" : ""
+        let flipIconPattern = flipTrailingActionIcon ? ", flipIcon: true" : ""
+        return trailingAction ? ", trailingAction: .init(icon: \(Image.defaultImageSample())\(flipIconPattern), actionHint: \"\(accessibilityLabel)\") {}" : ""
     }
 
     private var helperTextPattern: String {
@@ -183,6 +189,9 @@ struct TextInputConfigurationView: View {
                     .disabled(!configurationModel.leadingIcon)
 
                 OUDSSwitchItem("app_components_textInput_trailingAction_label", isOn: $configurationModel.trailingAction)
+
+                OUDSSwitchItem("app_components_textInput_flipTrailingActionIcon_label", isOn: $configurationModel.flipTrailingActionIcon)
+                    .disabled(!configurationModel.trailingAction)
 
                 OUDSChipPicker(title: "app_components_common_status_label",
                                selection: $configurationModel.status,

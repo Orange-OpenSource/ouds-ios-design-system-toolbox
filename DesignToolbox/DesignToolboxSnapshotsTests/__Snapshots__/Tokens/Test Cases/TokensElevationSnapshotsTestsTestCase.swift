@@ -31,7 +31,7 @@ open class TokensElevationSnapshotsTestsTestCase: XCTestCase {
         for namedToken in NamedElevation.allCases {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
-                ElevationTokenPage.IllustrationElevation(namedElevation: namedToken)
+                IllustrationElevation(namedElevation: namedToken)
                     .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 

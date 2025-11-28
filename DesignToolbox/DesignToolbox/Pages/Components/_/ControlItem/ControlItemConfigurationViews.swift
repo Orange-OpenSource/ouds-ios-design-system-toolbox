@@ -58,14 +58,14 @@ private struct ControlItemConfiguration: View {
 
                 OUDSSwitchItem("app_components_controlItem_icon_label", isOn: $configurationModel.icon)
 
-                OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
+                OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
                     .disabled(!configurationModel.icon || configurationModel.isError)
 
                 if let outlinedConfiguration = configurationModel.outlinedConfiguration {
                     OUDSSwitchItem(outlinedConfiguration.outlinedConfigurationLabel, isOn: $configurationModel.outlined)
                 }
 
-                OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $configurationModel.divider)
+                OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $configurationModel.hasDivider)
 
                 OUDSSwitchItem("app_components_controlItem_reversed_label", isOn: $configurationModel.isReversed)
 

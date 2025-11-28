@@ -15,18 +15,22 @@ import SwiftUI
 
 struct TokensPage: View {
 
-    let tokenElements: [DesignToolboxElement] = [
-        BorderTokenElement(),
-        ColorTokenElement(),
-        DimensionTokenElement(),
-        ElevationTokenElement(),
-        GridTokenElement(),
-        OpacityTokenElement(),
-        FontTokenElement(),
-    ]
+    @Environment(\.theme) private var theme
 
     var body: some View {
         DesignToolboxElementsPage(title: "app_bottomBar_tokens_label",
-                                  elements: tokenElements.sorted(by: { $0.name < $1.name }))
+                                  elements: tokenElements(theme.name).sorted(by: { $0.name < $1.name }))
+    }
+
+    private func tokenElements(_ themeName: String) -> [DesignToolboxElement] {
+        [
+            BorderTokenElement(),
+            ColorTokenElement(themeName: themeName),
+            DimensionTokenElement(),
+            ElevationTokenElement(),
+            GridTokenElement(themeName: themeName),
+            OpacityTokenElement(),
+            FontTokenElement(),
+        ]
     }
 }

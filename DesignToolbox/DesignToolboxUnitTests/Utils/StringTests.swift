@@ -14,7 +14,7 @@
 import Foundation
 import Testing
 
-/// Some tests on String boilerpaltes
+/// Some tests on String boilerplates
 struct StringTests {
 
     @Test func toGitHubRelease() {

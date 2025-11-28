@@ -22,10 +22,11 @@ struct ElevationTokenPage: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            #if !os(tvOS) && !os(watchOS)
             Section {
                 DesignToolboxCode(code: "theme.elevations.none.elevation(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
-
+            #endif
             Spacer().frame(height: theme.spaces.fixedMedium)
 
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
@@ -34,64 +35,5 @@ struct ElevationTokenPage: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.horizontal, theme.spaces.fixedMedium)
-    }
-
-    struct IllustrationElevation: View {
-
-        let namedElevation: NamedElevation
-
-        @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
-
-        var body: some View {
-            let token = namedElevation.token(from: theme)
-            let name = namedElevation.rawValue
-            let value = description(for: token)
-
-            DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
-                Rectangle()
-                    .frame(width: theme.sizes.iconDecorative2xlarge, height: theme.sizes.iconDecorative2xlarge)
-                    .oudsForegroundColor(theme.colors.bgSecondary)
-                    .oudsShadow(token)
-                    .padding(.bottom, 2)
-            }
-        }
-
-        private func description(for token: ElevationCompositeSemanticToken) -> String {
-            let colorBasedToken = colorScheme == .light ? token.light : token.dark
-            let x = colorBasedToken.x
-            let y = colorBasedToken.y
-            let radius = colorBasedToken.radius
-            let color = colorBasedToken.color
-            return String(format: "x: %.2f, y: %.2f, radius: %.2f\nColor: %@", x, y, radius, color)
-        }
-    }
-}
-
-// MARK: - Named Elevation
-
-enum NamedElevation: String, CaseIterable {
-    case none
-    case raised
-    case drag
-    case `default`
-    case emphasized
-    case sticky
-
-    func token(from theme: OUDSTheme) -> ElevationCompositeSemanticToken {
-        switch self {
-        case .none:
-            theme.elevations.none
-        case .raised:
-            theme.elevations.raised
-        case .drag:
-            theme.elevations.drag
-        case .default:
-            theme.elevations.default
-        case .emphasized:
-            theme.elevations.emphasized
-        case .sticky:
-            theme.elevations.sticky
-        }
     }
 }

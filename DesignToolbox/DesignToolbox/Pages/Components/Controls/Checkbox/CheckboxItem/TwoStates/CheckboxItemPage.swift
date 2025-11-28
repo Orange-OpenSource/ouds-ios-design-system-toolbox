@@ -50,17 +50,14 @@ private struct CheckboxItemDemo: View {
                          isError: configurationModel.isError,
                          errorText: configurationModel.errorText,
                          isReadOnly: configurationModel.isReadOnly,
-                         hasDivider: configurationModel.divider)
+                         hasDivider: configurationModel.hasDivider)
             .disabled(!configurationModel.enabled)
             .padding(.all, theme.spaces.fixedMedium)
             .designToolboxColoredSurface(false)
             .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
     }
 
-    // Need here that system name, a11y managed in component
-    // swiftlint:disable accessibility_label_for_image
     private var icon: Image? {
-        configurationModel.icon ? Image(systemName: "figure.handball") : nil
+        configurationModel.icon ? Image.defaultImage(prefixedBy: theme.name) : nil
     }
-    // swiftlint:enable accessibility_label_for_image
 }

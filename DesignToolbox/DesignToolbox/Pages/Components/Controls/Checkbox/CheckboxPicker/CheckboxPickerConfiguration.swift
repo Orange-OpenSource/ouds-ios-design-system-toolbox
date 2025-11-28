@@ -157,7 +157,7 @@ struct CheckboxPickerConfiguration: View {
     }
 }
 
-// MARK: - Extension of OUDSThemesContract Checkbox Picker Placement
+// MARK: - Extension of OUDS Checkbox Picker Placement
 
 extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Equatable, @retroactive Hashable {
 

@@ -69,6 +69,7 @@ final class TagConfigurationModel: ComponentConfiguration {
         statusCategory = .neutral
         shape = .rounded
         appearance = .emphasized
+        themeName = ""
     }
 
     deinit {}
@@ -82,7 +83,7 @@ final class TagConfigurationModel: ComponentConfiguration {
             case .none:
                 .accent(bullet: false)
             case .icon:
-                .accent(icon: Image(systemName: "figure.handball"), flipIcon: flipIcon)
+                .accent(icon: Image.defaultImage(prefixedBy: themeName), flipIcon: flipIcon)
             }
         case .neutral:
             switch layout.statusLeading {
@@ -91,7 +92,7 @@ final class TagConfigurationModel: ComponentConfiguration {
             case .none:
                 .neutral(bullet: false)
             case .icon:
-                .neutral(icon: Image(systemName: "figure.handball"), flipIcon: flipIcon)
+                .neutral(icon: Image.defaultImage(prefixedBy: themeName), flipIcon: flipIcon)
             }
         case .positive:
             .positive(leading: layout.statusLeading)
@@ -107,6 +108,8 @@ final class TagConfigurationModel: ComponentConfiguration {
     var enableFlipIcon: Bool {
         !loader && (layout == .textAndIcon && (statusCategory == .accent || statusCategory == .neutral))
     }
+
+    var themeName: String
 
     // MARK: Component Configuration
 
@@ -133,7 +136,7 @@ final class TagConfigurationModel: ComponentConfiguration {
                 return ", status: \(statusCategory.technicalDescription)(bullet: true)"
             } else if layout == .textAndIcon {
                 let flipIconPattern = flipIcon ? ", flipIcon: true" : ""
-                return ", status: \(statusCategory.technicalDescription)(icon: Image(systemName: \"figure.handball\")\(flipIconPattern))"
+                return ", status: \(statusCategory.technicalDescription)(icon: \(Image.defaultImageSample())\(flipIconPattern))"
             } else {
                 return ", status: \(statusCategory.technicalDescription)()"
             }
@@ -172,7 +175,7 @@ struct TagConfigurationView: View {
             OUDSSwitchItem("app_components_common_loader_label", isOn: $configurationModel.loader)
                 .disabled(!configurationModel.enabled)
 
-            OUDSSwitchItem("app_components_controlItem_flipIcon_label", isOn: $configurationModel.flipIcon)
+            OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
                 .disabled(!configurationModel.enableFlipIcon)
 
             OUDSChipPicker(title: "app_components_common_layout_label",

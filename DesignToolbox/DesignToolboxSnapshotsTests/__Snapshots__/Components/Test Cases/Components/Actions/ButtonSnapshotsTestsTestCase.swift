@@ -37,21 +37,25 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
     @MainActor func testAllButtons(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for appearance in OUDSButton.Appearance.allCases {
             for layout in ButtonTest.Layout.allCases {
-                for disabled in [true, false] {
-                    testButton(theme: theme,
-                               interfaceStyle: interfaceStyle,
-                               a11yContrast: .normal,
-                               layout: layout,
-                               appearance: appearance,
-                               disabled: disabled,
-                               onColoredSurface: false)
-                    testButton(theme: theme,
-                               interfaceStyle: interfaceStyle,
-                               a11yContrast: .high,
-                               layout: layout,
-                               appearance: appearance,
-                               disabled: disabled,
-                               onColoredSurface: false)
+                for flipIcon in [true, false] {
+                    for disabled in [true, false] {
+                        testButton(theme: theme,
+                                   interfaceStyle: interfaceStyle,
+                                   a11yContrast: .normal,
+                                   layout: layout,
+                                   flipIcon: flipIcon,
+                                   appearance: appearance,
+                                   disabled: disabled,
+                                   onColoredSurface: false)
+                        testButton(theme: theme,
+                                   interfaceStyle: interfaceStyle,
+                                   a11yContrast: .high,
+                                   layout: layout,
+                                   flipIcon: flipIcon,
+                                   appearance: appearance,
+                                   disabled: disabled,
+                                   onColoredSurface: false)
+                    }
                 }
             }
         }
@@ -72,26 +76,32 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
         // Skip test for negative and brand appearance because it is not allowed on colored surface
         for appearance in OUDSButton.Appearance.allCases where appearance != .negative && appearance != .brand {
             for layout in ButtonTest.Layout.allCases {
-                for disabled in [true, false] {
-                    testButton(theme: theme,
-                               interfaceStyle: interfaceStyle,
-                               a11yContrast: .normal,
-                               layout: layout,
-                               appearance: appearance,
-                               disabled: disabled,
-                               onColoredSurface: true)
-                    testButton(theme: theme,
-                               interfaceStyle: interfaceStyle,
-                               a11yContrast: .high,
-                               layout: layout,
-                               appearance: appearance,
-                               disabled: disabled,
-                               onColoredSurface: true)
+                for flipIcon in [true, false] {
+                    for disabled in [true, false] {
+                        testButton(theme: theme,
+                                   interfaceStyle: interfaceStyle,
+                                   a11yContrast: .normal,
+                                   layout: layout,
+                                   flipIcon: flipIcon,
+                                   appearance: appearance,
+                                   disabled: disabled,
+                                   onColoredSurface: true)
+                        testButton(theme: theme,
+                                   interfaceStyle: interfaceStyle,
+                                   a11yContrast: .high,
+                                   layout: layout,
+                                   flipIcon: flipIcon,
+                                   appearance: appearance,
+                                   disabled: disabled,
+                                   onColoredSurface: true)
+                    }
                 }
             }
         }
     }
 
+    // swiftlint:disable function_parameter_count
+    // swiftlint:disable line_length
     /// This function tests button according to all parameters of the configutation available on a `OUDButton`
     /// for the given theme and color schemes and on a colored surface or not.
     ///
@@ -105,6 +115,7 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - a11yContrast:Contrast mode (high or not)
     ///   - layout: the layout of the button
+    ///   - flipIcon: flip the icon of the button or not
     ///   - appearance; the appearance of the button
     ///   - disabled: the disabled flag
     ///   - onColoredSurface: a flag to know if button is on a colored surface or not
@@ -112,13 +123,14 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
                                        interfaceStyle: UIUserInterfaceStyle,
                                        a11yContrast: UIAccessibilityContrast,
                                        layout: ButtonTest.Layout,
+                                       flipIcon: Bool,
                                        appearance: OUDSButton.Appearance,
                                        disabled: Bool,
                                        onColoredSurface: Bool = false)
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
-            ButtonTest(layout: layout, appearance: appearance, style: .default, onColoredSurface: onColoredSurface)
+            ButtonTest(layout: layout, flipIcon: flipIcon, appearance: appearance, style: .default, onColoredSurface: onColoredSurface)
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
                 .disabled(disabled)
         }
@@ -126,9 +138,10 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
         // Create a unique snapshot name based on the current configuration
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")_\(a11yContrast == .high ? "HighContrast" : "")"
         let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
+        let flipIconPattern = flipIcon ? "_FlipIcon" : ""
         let disabledPatern = disabled ? "_Disabled" : ""
         let roundedPattern = theme.tuning.hasRoundedButtons ? "_Rounded" : ""
-        let name = "\(coloredSurfacePatern)\(layout.rawValue.camelCase)_\(appearance.description)_\(OUDSButton.Style.default.description)\(disabledPatern)\(roundedPattern)"
+        let name = "\(coloredSurfacePatern)\(flipIconPattern)\(layout.rawValue.camelCase)_\(appearance.description)_\(OUDSButton.Style.default.description)\(disabledPatern)\(roundedPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
@@ -137,6 +150,8 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
                            named: name,
                            testName: testName)
     }
+    // swiftlint:enable function_parameter_count
+    // swiftlint:enable line_length
 }
 
 // MARK: - Button Test
@@ -150,6 +165,7 @@ struct ButtonTest: View {
     }
 
     let layout: Layout
+    let flipIcon: Bool
     let appearance: OUDSButton.Appearance
     let style: OUDSButton.Style
     let onColoredSurface: Bool
@@ -169,9 +185,9 @@ struct ButtonTest: View {
         case .text:
             OUDSButton(text: "Button", appearance: appearance, style: style) {}
         case .textAndIcon:
-            OUDSButton(icon: Image(decorative: "ic_heart"), text: "Button", appearance: appearance, style: style) {}
+            OUDSButton(text: "Button", icon: Image(decorative: "ic_heart"), flipIcon: flipIcon, appearance: appearance, style: style) {}
         case .icon:
-            OUDSButton(icon: Image(decorative: "ic_heart"), accessibilityLabel: "Icon", appearance: appearance, style: style) {}
+            OUDSButton(icon: Image(decorative: "ic_heart"), accessibilityLabel: "Icon", flipIcon: flipIcon, appearance: appearance, style: style) {}
         }
     }
 }
