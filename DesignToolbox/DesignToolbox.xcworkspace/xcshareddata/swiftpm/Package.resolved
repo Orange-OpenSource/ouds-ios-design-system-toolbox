@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "995-bug-switch-control-cannot-be-toggled-by-swipe",
-        "revision" : "8f8663e65f85e4ab93c8d3dff5b7fb40c695bb18"
+        "branch" : "develop",
+        "revision" : "c23cda59efbd2ae3be0dc4d77af9200d782c544a"
       }
     },
     {
