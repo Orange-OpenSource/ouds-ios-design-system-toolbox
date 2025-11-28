@@ -58,7 +58,7 @@ struct TabBarDemo: View {
                     }
                 }
                 #if canImport(UIKit) // OUDSTabBarViewModifier relies on UIKit
-                .modifier(OUDSTabBarViewModifier())
+                .modifier(OUDSTabBarViewModifier()) // TODO: #1135 - Use OUDSTabBar instead
                 #endif
                 .frame(maxHeight: .infinity)
                 Spacer()
@@ -71,7 +71,7 @@ struct TabBarDemo: View {
 // MARK: - Tab bar item demo
 
 /// The view attached to the tab
-private struct TabBarItemDemo: View {
+private struct TabBarItemDemo: View { // TODO: #1135 - Improve / enrich
 
     /// Things to display as tab target
     let item: TabBarConfigurationModel.TabBarItemConfiguration

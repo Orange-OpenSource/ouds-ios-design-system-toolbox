@@ -14,7 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct TabBarElement: DesignToolboxElement {
+struct TabBarElement: DesignToolboxElement { // TODO: #1135 - Improve
     let name: String
     let illustration: AnyView
     let pageDescription: AnyView
@@ -35,6 +35,6 @@ private struct TabBarIllustration: View {
     @Environment(\.layoutDirection) var direction
 
     var body: some View {
-        Text("Tab bar (WIP)")
+        Text("Tab bar (WIP)") // TODO: #1135 - Improve
     }
 }
