@@ -16,7 +16,7 @@
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
         "branch" : "develop",
-        "revision" : "d61f9ebf7c080652a4c5580ce30360f3a2ad2bb6"
+        "revision" : "c23cda59efbd2ae3be0dc4d77af9200d782c544a"
       }
     },
     {
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",
       "state" : {
-        "revision" : "39de59b2d47f7ef3ca88a039dff3084688fe27f4",
-        "version" : "1.5.2"
+        "revision" : "4c27acf5394b645b70d8ba19dc249c0472d5f618",
+        "version" : "1.7.0"
       }
     }
   ],
