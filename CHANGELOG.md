@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - [Library] Add an accessibility label for badge "standard" and "count" types (Orange-OpenSource/ouds-ios#1060)
+- [Library] Scale icons with information for tag and badge components (Orange-OpenSource/ouds-ios#1179)
 
 ## [0.22.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.21.0...0.22.0) - 2025-11-28
 
