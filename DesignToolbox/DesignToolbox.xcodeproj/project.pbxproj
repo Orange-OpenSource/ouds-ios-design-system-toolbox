@@ -5342,7 +5342,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1087-a11ytext-input-trailing-action-button-should-have-its-own-accessibility-label";
 				kind = branch;
 			};
 		};
