@@ -47,8 +47,7 @@ private struct CheckboxDemo: View {
             Spacer()
             OUDSCheckbox(isOn: $configurationModel.indicatorState,
                          accessibilityLabel: "app_components_checkbox_hint_a11y".localized(), // No LocalizedStringKey inference in the component
-                         isError: configurationModel.isError,
-                         isReadOnly: configurationModel.isReadOnly)
+                         isError: configurationModel.isError)
                 .disabled(!configurationModel.enabled)
                 .accessibilityIdentifier(A11YIdentifiers.componentCheckbox)
             Spacer()

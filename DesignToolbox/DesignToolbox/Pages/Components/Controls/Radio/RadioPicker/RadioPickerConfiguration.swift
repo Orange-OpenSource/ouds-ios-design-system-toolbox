@@ -125,7 +125,7 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
 
             OUDSRadioPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
-                                        description: "From Brewdog company",
+                                        extraLabel: "From Brewdog company",
                                         icon: Image(systemName: "dog.fill"),
                                         accessibilityIdentifier: "IPA beer"),
 
