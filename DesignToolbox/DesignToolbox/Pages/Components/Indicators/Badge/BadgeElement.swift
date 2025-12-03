@@ -21,7 +21,7 @@ struct BadgeElement: DesignToolboxElement {
 
     init() {
         name = "app_components_badge_label".localized()
-        illustration = AnyView(OUDSBadge(count: 1, accessibilityLabel: "", status: .negative, size: .medium))
+        illustration = AnyView(OUDSBadge(count: 1, status: .negative, size: .medium))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_badge_description_text",
