@@ -5342,7 +5342,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1179-component-scale-icons-with-information-for-tag-and-badge-components";
+				branch = develop;
 				kind = branch;
 			};
 		};

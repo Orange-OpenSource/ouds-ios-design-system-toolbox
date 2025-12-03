@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1179-component-scale-icons-with-information-for-tag-and-badge-components",
-        "revision" : "849b6c158be17a0f510ae9d570d3a35571d84830"
+        "branch" : "develop",
+        "revision" : "da48cb5ada5d5caabdc97a84ddff2e7ee7a07655"
       }
     },
     {
