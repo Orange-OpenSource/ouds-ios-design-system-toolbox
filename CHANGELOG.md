@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Update `checkbox` components to v2.4.0 (Orange-OpenSource/ouds-ios#1137)
 - [Library] Read only variant for `checkbox` and  `checkbox indeterminate` components (Orange-OpenSource/ouds-ios#1137)
 
+### Fixed
+
+- [Library] Add an accessibility label for badge "standard" and "count" types (Orange-OpenSource/ouds-ios#1060)
+
 ## [0.22.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.21.0...0.22.0) - 2025-11-28
 
 ### Added
@@ -31,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] `ruby/setup-ruby` action from v1.267.0 to v1.268.0 for `build-and-test` workflow
 - [DesignToolbox] Update GitHub Actions `checkout` action from v5 to v6
 - [DesignToolbox] Update `fastlane` gem from v2.228.0 to v2.229.1
+- [Library] Add an accessible label for badge standard type (Orange-OpenSource/ouds-ios#1056)
 - [Library] `Wireframe` theme `border` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
 - [Library] `size` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
 - [DesignToolbox] Use of Solaris and themed icons (Orange-OpenSource/ouds-ios#805) (Orange-OpenSource/ouds-ios#1127) 
