@@ -60,9 +60,9 @@ private struct TwoStatesCheckboxesOnlyView: View {
                      isError: false)
             .disabled(true)
 
-        Text("Read-only").font(.subheadline)
+        Text("Read only").font(.subheadline)
         OUDSCheckbox(isOn: $isOn,
-                     accessibilityLabel: "Read-only",
+                     accessibilityLabel: "Read only",
                      isReadOnly: true)
     }
 }
@@ -101,9 +101,9 @@ private struct ThreeStatesCheckboxesOnlyView: View {
                                   isError: false)
             .disabled(true)
 
-        Text("Read-only").font(.subheadline)
+        Text("Read only").font(.subheadline)
         OUDSCheckboxIndeterminate(selection: $state,
-                                  accessibilityLabel: "Read-only",
+                                  accessibilityLabel: "Read only",
                                   isReadOnly: true)
     }
 }

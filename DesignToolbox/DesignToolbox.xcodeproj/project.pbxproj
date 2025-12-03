@@ -5342,7 +5342,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "refactor/update-control-items";
+				branch = develop;
 				kind = branch;
 			};
 		};
