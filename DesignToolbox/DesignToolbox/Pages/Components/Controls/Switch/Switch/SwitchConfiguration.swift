@@ -25,6 +25,10 @@ final class SwitchConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var isReadOnly: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var selection: Bool {
         didSet { updateCode() }
     }
@@ -34,6 +38,7 @@ final class SwitchConfigurationModel: ComponentConfiguration {
     override init() {
         selection = true
         enabled = true
+        isReadOnly = false
     }
 
     deinit {}
@@ -43,13 +48,17 @@ final class SwitchConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            OUDSSwitch(isOn: $isOn, accessibilityLabel: "A label for accessibility")
+            OUDSSwitch(isOn: $isOn, accessibilityLabel: "A label for accessibility"\(isReadOnlyPattern))
             \(disableCodePattern)
             """
     }
 
     private var disableCodePattern: String {
         !enabled ? ".disabled(true)" : ""
+    }
+
+    private var isReadOnlyPattern: String {
+        isReadOnly ? ", isReadOnly: true" : ""
     }
 }
 
@@ -64,9 +73,13 @@ struct SwitchConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.selection)
-                .disabled(!configurationModel.enabled)
+                .disabled(!configurationModel.enabled || configurationModel.isReadOnly)
 
             OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+                .disabled(configurationModel.isReadOnly)
+
+            OUDSSwitchItem("app_components_common_readOnly_label", isOn: $configurationModel.isReadOnly)
+                .disabled(!configurationModel.enabled)
         }
     }
 }

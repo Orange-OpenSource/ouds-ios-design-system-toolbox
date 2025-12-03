@@ -44,7 +44,8 @@ private struct SwitchDemo: View {
         HStack(alignment: .center) {
             Spacer()
             OUDSSwitch(isOn: $configurationModel.selection,
-                       accessibilityLabel: "app_components_switch_hint_a11y".localized()) // No LocalizedStringKey type inference in the component
+                       accessibilityLabel: "app_components_switch_hint_a11y".localized(),
+                       isReadOnly: configurationModel.isReadOnly) // No LocalizedStringKey type inference in the component
                 .disabled(!configurationModel.enabled)
                 .accessibilityIdentifier(A11YIdentifiers.componentSwitch)
             Spacer()

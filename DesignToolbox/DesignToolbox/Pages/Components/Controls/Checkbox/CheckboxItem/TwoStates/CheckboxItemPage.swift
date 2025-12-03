@@ -43,7 +43,7 @@ private struct CheckboxItemDemo: View {
     var body: some View {
         OUDSCheckboxItem(isOn: $configurationModel.isOn,
                          label: configurationModel.labelText,
-                         helper: configurationModel.helperText,
+                         description: configurationModel.descriptionText,
                          icon: icon,
                          flipIcon: configurationModel.flipIcon,
                          isReversed: configurationModel.isReversed,

@@ -31,10 +31,13 @@ private struct SwitchOnlyLayout: View {
 
     var body: some View {
         Text("Enabled").font(.subheadline)
-        OUDSSwitch(isOn: $isOn, accessibilityLabel: "Radio")
+        OUDSSwitch(isOn: $isOn, accessibilityLabel: "Switch")
+
+        Text("Read only").font(.subheadline)
+        OUDSSwitch(isOn: $isOn, accessibilityLabel: "Switch", isReadOnly: true)
 
         Text("Disabled").font(.subheadline)
-        OUDSSwitch(isOn: $isOn, accessibilityLabel: "Radio")
+        OUDSSwitch(isOn: $isOn, accessibilityLabel: "Switch")
             .disabled(true)
     }
 }

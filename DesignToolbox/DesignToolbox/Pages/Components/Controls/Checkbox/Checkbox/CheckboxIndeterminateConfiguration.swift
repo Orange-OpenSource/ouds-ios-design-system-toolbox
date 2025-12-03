@@ -34,12 +34,17 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var isReadOnly: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
+        enabled = true
         indicatorState = .selected
         isError = false
-        enabled = true
+        isReadOnly = false
     }
 
     deinit {}
@@ -49,7 +54,7 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            OUDSCheckboxInterminate(selection: $selection\(isErrorPattern))
+            OUDSCheckboxInterminate(selection: $selection\(isErrorPattern)\(isReadOnlyPattern))
             \(disableCodePattern)
             """
     }
@@ -65,6 +70,10 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
             ""
         }
     }
+
+    private var isReadOnlyPattern: String {
+        isReadOnly ? ", isReadOnly: true" : ""
+    }
 }
 
 // MARK: - Checkbox Indeterminate Configuration View
@@ -78,14 +87,18 @@ struct CheckboxIndeterminateConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
-                .disabled(configurationModel.isError)
+                .disabled(configurationModel.isReadOnly || configurationModel.isError)
+
+            OUDSSwitchItem("app_components_common_readOnly_label", isOn: $configurationModel.isReadOnly)
+                .disabled(!configurationModel.enabled || configurationModel.isError)
 
             OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
-                .disabled(!configurationModel.enabled)
+                .disabled(!configurationModel.enabled || configurationModel.isReadOnly)
 
             OUDSChipPicker(title: "app_components_common_selection_label",
                            selection: $configurationModel.indicatorState,
                            chips: OUDSCheckboxIndicatorState.chips)
+                .disabled(!configurationModel.enabled || configurationModel.isReadOnly)
         }
     }
 }
