@@ -21,7 +21,7 @@ struct CheckboxItemIndeterminatePage: View {
     @StateObject private var configurationModel: IndicatorControlItemConfigurationModel
 
     init() {
-        let model = IndicatorControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItemIndeterminate(selection: $selection,")
+        let model = IndicatorControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItemIndeterminate(selection: $selection")
         _configurationModel = StateObject(wrappedValue: model)
     }
 
@@ -43,7 +43,7 @@ private struct CheckboxItemIndeterminateDemo: View {
     var body: some View {
         OUDSCheckboxItemIndeterminate(selection: $configurationModel.selection,
                                       label: configurationModel.labelText,
-                                      helper: configurationModel.helperText,
+                                      description: configurationModel.descriptionText,
                                       icon: icon,
                                       flipIcon: configurationModel.flipIcon,
                                       isReversed: configurationModel.isReversed,

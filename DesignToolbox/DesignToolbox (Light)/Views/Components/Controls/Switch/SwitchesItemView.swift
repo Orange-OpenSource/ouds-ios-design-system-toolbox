@@ -100,7 +100,7 @@ struct SwitchesItemView: View {
                 OUDSSwitchItem(
                     "Label",
                     isOn: $isOn,
-                    helper: "Helper",
+                    description: "Description",
                     icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                     isReversed: false,
                     isError: isError,
@@ -111,7 +111,7 @@ struct SwitchesItemView: View {
                 OUDSSwitchItem(
                     "Label",
                     isOn: $isOn,
-                    helper: "Helper",
+                    description: "Description",
                     icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                     isReversed: true,
                     isError: isError,
@@ -129,14 +129,14 @@ struct SwitchesItemView: View {
 
         OUDSSwitchItem("Label",
                        isOn: $isOn,
-                       helper: "Helper",
+                       description: "Description",
                        icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                        isReversed: false,
                        isReadOnly: false)
 
         OUDSSwitchItem("Label",
                        isOn: $isOn,
-                       helper: "Helper",
+                       description: "Description",
                        icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                        isReversed: true,
                        isReadOnly: false)
@@ -145,7 +145,7 @@ struct SwitchesItemView: View {
 
         OUDSSwitchItem("Label",
                        isOn: $isOn,
-                       helper: "Helper",
+                       description: "Description",
                        icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                        isReversed: false,
                        isError: true,
@@ -153,7 +153,7 @@ struct SwitchesItemView: View {
 
         OUDSSwitchItem("Label",
                        isOn: $isOn,
-                       helper: "Helper",
+                       description: "Description",
                        icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                        isReversed: true,
                        isError: true,
@@ -163,7 +163,7 @@ struct SwitchesItemView: View {
 
         OUDSSwitchItem("Label",
                        isOn: $isOn,
-                       helper: "Helper",
+                       description: "Description",
                        icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                        isReversed: false,
                        isReadOnly: false)
@@ -171,7 +171,7 @@ struct SwitchesItemView: View {
 
         OUDSSwitchItem("Label",
                        isOn: $isOn,
-                       helper: "Helper",
+                       description: "Description",
                        icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                        isReversed: true,
                        isReadOnly: false)
@@ -181,14 +181,14 @@ struct SwitchesItemView: View {
 
         OUDSSwitchItem("Label",
                        isOn: $isOn,
-                       helper: "Helper",
+                       description: "Description",
                        icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                        isReversed: false,
                        isReadOnly: true)
 
         OUDSSwitchItem("Label",
                        isOn: $isOn,
-                       helper: "Helper",
+                       description: "Description",
                        icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                        isReversed: true,
                        isReadOnly: true)

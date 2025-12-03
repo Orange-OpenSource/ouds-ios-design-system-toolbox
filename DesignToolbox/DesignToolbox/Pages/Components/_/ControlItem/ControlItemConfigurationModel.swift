@@ -20,12 +20,12 @@ import SwiftUI
 class ControlItemConfigurationModel: ComponentConfiguration {
 
     typealias OutlinedConfiguration = (value: Bool, outlinedConfigurationLabel: String)
-    typealias AdditionalLabelConfiguration = String
+    typealias ExtraLabelConfiguration = String
 
     // MARK: - Properties
 
     var componentInitCode: String = ""
-    var additionalLabelConfiguration: AdditionalLabelConfiguration?
+    var extraLabelConfiguration: ExtraLabelConfiguration?
     var outlinedConfiguration: OutlinedConfiguration?
 
     @Published var enabled: Bool {
@@ -60,7 +60,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var helperText: String {
+    @Published var descriptionText: String {
         didSet { updateCode() }
     }
 
@@ -72,7 +72,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var additionalLabelText: String {
+    @Published var extraLabelText: String {
         didSet { updateCode() }
     }
 
@@ -81,7 +81,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     // NOTE: "unused" false-positive for periphery (https://github.com/peripheryapp/periphery/issues/957)
     init(componentInitCode: String,
          outlinedConfiguration: OutlinedConfiguration? = nil,
-         additionalLabelConfiguration: AdditionalLabelConfiguration? = nil)
+         extraLabelConfiguration: ExtraLabelConfiguration? = nil)
     {
         self.componentInitCode = componentInitCode
         isError = false
@@ -92,12 +92,12 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         isReversed = false
         hasDivider = false
         labelText = String(localized: "app_components_common_label_label")
-        helperText = String(localized: "app_components_common_helperText_label")
+        descriptionText = String(localized: "app_components_common_description_label")
         errorText = String(localized: "app_components_common_errorText_label")
         self.outlinedConfiguration = outlinedConfiguration
-        self.additionalLabelConfiguration = additionalLabelConfiguration
+        self.extraLabelConfiguration = extraLabelConfiguration
         outlined = outlinedConfiguration?.value ?? false
-        additionalLabelText = additionalLabelConfiguration ?? ""
+        extraLabelText = extraLabelConfiguration ?? ""
     }
 
     deinit {}
@@ -108,7 +108,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            \(componentInitCode), label: "\(labelText)"\(additionalLabelTextPattern)\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern))
+            \(componentInitCode), label: "\(labelText)"\(extraLabelTextPattern)\(descriptionTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern))
             \(disableCodePattern)
             """
     }
@@ -119,8 +119,8 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         !enabled ? ".disabled(true)" : ""
     }
 
-    private var helperTextPattern: String {
-        helperText.isEmpty ? "" : ", helper: \"\(helperText)\""
+    private var descriptionTextPattern: String {
+        descriptionText.isEmpty ? "" : ", description: \"\(descriptionText)\""
     }
 
     private var iconPattern: String {
@@ -151,8 +151,8 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         hasDivider ? ", hasDivider: true" : ""
     }
 
-    private var additionalLabelTextPattern: String {
-        !additionalLabelText.isEmpty ? ", additionalLabel: \"\(additionalLabelText)\"" : ""
+    private var extraLabelTextPattern: String {
+        !extraLabelText.isEmpty ? ", extraLabel: \"\(extraLabelText)\"" : ""
     }
 
     private var outlinedPattern: String {

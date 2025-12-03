@@ -82,11 +82,11 @@ private struct ControlItemConfiguration: View {
             DesignToolboxEditContentDisclosure {
                 DesignToolboxTextField(text: $configurationModel.labelText, label: "app_components_common_label_label")
 
-                if configurationModel.additionalLabelConfiguration != nil {
-                    DesignToolboxTextField(text: $configurationModel.additionalLabelText, label: "app_components_radioButton_radioButtonItem_additionalLabel_label")
+                if configurationModel.extraLabelConfiguration != nil {
+                    DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_radioButton_radioButtonItem_extraLabel_label")
                 }
 
-                DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_label")
+                DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_common_description_label")
 
                 if configurationModel.isError {
                     DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_common_errorText_label")
