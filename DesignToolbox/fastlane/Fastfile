@@ -523,6 +523,8 @@ platform :ios do
                 end
             end
 
+            ENV["DELIVER_ALTOOL_ADDITIONAL_UPLOAD_PARAMETERS"] = "--apple-id #{DEVELOPER_APP_IDENTIFIER} --use-old-altool"
+
             upload_to_testflight(
                 changelog: news,
                 app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
