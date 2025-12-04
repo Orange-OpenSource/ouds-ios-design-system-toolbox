@@ -501,7 +501,6 @@ platform :ios do
                 key_id: APPLE_KEY_ID,
                 issuer_id: APPLE_ISSUER_ID,
                 key_content: APPLE_KEY_CONTENT,
-                duration: 500,
                 in_house: false
             )
             
