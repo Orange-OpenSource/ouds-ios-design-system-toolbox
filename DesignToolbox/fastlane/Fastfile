@@ -160,10 +160,6 @@ lane :update_build_number do
     increment_build_number(xcodeproj: OUDS_PROJECT, build_number: timestamp)
 end
 
-#before_all do
-#    ENV["DELIVER_ALTOOL_ADDITIONAL_UPLOAD_PARAMETERS"] = "--use-old-altool"  
-#end 
-
 # iOS Lanes
 # ---------
 
@@ -504,7 +500,6 @@ platform :ios do
                 duration: 1200,
                 in_house: false
             )
-            puts "ℹ️ api_key : '#{api_key}'"
             
             TESTFLIGHT_GROUPS = ENV['TESTFLIGHT_GROUPS'] # Defined in Appfile
             
@@ -525,18 +520,21 @@ platform :ios do
                 end
             end
 
-            ENV["DELIVER_ALTOOL_ADDITIONAL_UPLOAD_PARAMETERS"] = "--apple-id #{DEVELOPER_APP_IDENTIFIER} --use-old-altool"
-
-            upload_to_testflight(
-                changelog: news,
-                app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
-                skip_submission: false,
-                skip_waiting_for_build_processing: false,
-                distribute_external: true,
-                notify_external_testers: true,
-                groups: TESTFLIGHT_GROUPS,
-                api_key: api_key
-            )
+            ipa_path="../build/Design\\ System\\ Toolbox.ipa "
+            sh "xcrun altool --upload-package #{ipa_path} --apiKey \"#{APPLE_KEY_ID}\" --apiIssuer \"#{APPLE_ISSUER_ID}\""
+            #sh "xcrun altool --upload-package build/oudsApp.xcarchive --apiKey \"#{APPLE_KEY_ID}\" --apiIssuer \"#{APPLE_ISSUER_ID}\""
+       
+            #
+            #upload_to_testflight(
+            #    changelog: news,
+            #    app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+            #    skip_submission: false,
+            #    skip_waiting_for_build_processing: false,
+            #    distribute_external: true,
+            #    notify_external_testers: true,
+            #    groups: TESTFLIGHT_GROUPS,
+            #    api_key: api_key
+            #)
             
             publish_mattermost_notification("📦 ✅ @here The upload to TestFlight has been done successfully (version = '#{version}', build number = '#{build_number}')")    
         rescue => error
