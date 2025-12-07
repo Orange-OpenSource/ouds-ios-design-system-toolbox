@@ -20,6 +20,13 @@
 # TODO The 3 teams need to be created in the TestFlight page of the app in App Store Connect
 
 apple_id(ENV["OUDS_FASTLANE_APPLE_ID"])
+
+# It seems there are troubles with authentication of the Apple account for Test Flight upload using this Fastlane upload_to_testflight lane.
+# As a workaround, altool is used instead and make uploads needed to be then assigned to test teams.
+# Thus until clean resolution this team ID are not used anymore.
+# Still keep them a bit hoping things will be go back to normal soon.
+# See https://github.com/Orange-OpenSource/ouds-ios/issues/1195
+# See https://github.com/fastlane/fastlane/issues/29803
 team_id(ENV["OUDS_DEVELOPER_PORTAL_TEAM_ID"])
 
 for_lane :build_alpha do
