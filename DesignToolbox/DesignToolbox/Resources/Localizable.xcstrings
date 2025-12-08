@@ -2526,7 +2526,14 @@
     },
     "app_components_common_version_label" : {
       "comment" : "Component - Common",
+      "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار تصميم المكونات"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
