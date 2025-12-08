@@ -38,7 +38,7 @@ struct DesignToolboxTextField: View {
             return nil
         }
 
-        return .init(icon: Image(decorative: "ic_delete", bundle: theme.resourcesBundle), actionHint: "") {
+        return .init(icon: Image(decorative: "ic_tag_close", bundle: theme.resourcesBundle), actionHint: "") {
             text.wrappedValue = ""
         }
     }
