@@ -79,17 +79,25 @@ struct DesignToolboxElementPage: View {
             demoScreen
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
-                .padding(.bottom, theme.spaces.fixedMedium)
                 .oudsBackground(theme.colors.bgPrimary)
 
             if let version {
-                HStack {
-                    Spacer()
-                    Text("app_common_design_version" <- version)
-                        .labelDefaultSmall(theme)
-                    Spacer()
+                HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
+                    
+                    Text("app_components_common_version_label")
+                        .labelStrongLarge(theme)
+                        .oudsForegroundColor(theme.colors.contentDefault)
+                    
+                    OUDSTag(label: version,
+                            status: .info(leading: .none),
+                            appearance: .muted,
+                            shape: .rounded,
+                            size: .small,
+                            hasLoader: false)
                 }
+                .padding(.horizontal, theme.spaces.fixedMedium)
                 .padding(.bottom, theme.spaces.fixedMedium)
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
         .listStyle(.plain)
