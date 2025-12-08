@@ -21,8 +21,18 @@ final class TabBarConfigurationModel: ComponentConfiguration {
 
     // MARK: Properties
 
-    @Published var numberOfItems: Int
-    @Published var badgeConfiguration: BadgeConfiguration = .none
+    @Published var numberOfItems: Int {
+        didSet {
+            updateCode()
+        }
+    }
+
+    @Published var badgeConfiguration: BadgeConfiguration = .none {
+        didSet {
+            updateCode()
+        }
+    }
+
     @Published var badgeText: String
 
     // MARK: Tab bar items
@@ -74,9 +84,22 @@ final class TabBarConfigurationModel: ComponentConfiguration {
 
     // MARK: Component Configuration
 
+    private var badgePattern: String {
+        if badgeConfiguration == .empty {
+            return "// and .badge(\"\")"
+        }
+        if case let .text(text) = badgeConfiguration {
+            return "// and .badge(\"\(text)\")"
+        }
+        return "" // e.g. == .none
+    }
+
     override func updateCode() {
         code = """
-        OUDSTabBar() { /* SomeView().tabItem { ... } */ }
+        OUDSTabBar(selected: 0, count: \(numberOfItems)) {
+            // Views with .tabItem and .tag calls
+            \(badgePattern)
+        }
         """
     }
 }
@@ -95,7 +118,7 @@ struct TabBarConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                Stepper("Count: " + "\($configurationModel.numberOfItems.wrappedValue)", value: $configurationModel.numberOfItems, in: 1 ... 5)
+                Stepper("Count: " + "\($configurationModel.numberOfItems.wrappedValue)", value: $configurationModel.numberOfItems, in: 1 ... 4)
                     .padding(.horizontal, theme.spaces.fixedMedium)
                     .bodyDefaultMedium(theme)
 

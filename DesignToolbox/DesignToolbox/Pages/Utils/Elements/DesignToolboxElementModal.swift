@@ -70,7 +70,7 @@ struct DesignToolboxElementModal: View {
             .padding(.bottom, theme.spaces.fixedMedium)
             .oudsBackground(theme.colors.bgPrimary)
 
-            Button("Afficher TabView Demo") {
+            OUDSButton(text: "app_components_tabBar_test_button") {
                 showModal = true
             }
 

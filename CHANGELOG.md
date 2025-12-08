@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Library] `constrainedMaxWidth` parameter to control items and text input components (Orange-OpenSource/ouds-ios#1211)
+- [Library] `tab bar` component (Orange-OpenSource/ouds-ios#1135)
 
 ### Changed
 

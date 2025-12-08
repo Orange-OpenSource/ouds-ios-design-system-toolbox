@@ -14,7 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct TabBarElement: DesignToolboxElement { // TODO: #1135 - Improve
+struct TabBarElement: DesignToolboxElement {
     let name: String
     let illustration: AnyView
     let pageDescription: AnyView
@@ -22,7 +22,7 @@ struct TabBarElement: DesignToolboxElement { // TODO: #1135 - Improve
     init() {
         name = "app_components_tabBar_label".localized()
         illustration = AnyView(TabBarIllustration())
-        pageDescription = AnyView(DesignToolboxElementModal(
+        pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_tabBar_description_text",
             version: OUDSVersions.componentNavigationBarVersion,
@@ -32,9 +32,32 @@ struct TabBarElement: DesignToolboxElement { // TODO: #1135 - Improve
 
 private struct TabBarIllustration: View {
 
-    @Environment(\.layoutDirection) var direction
-
     var body: some View {
-        Text("Tab bar (WIP)") // TODO: #1135 - Improve
+        OUDSTabBar(count: 3) {
+            FakeTabItem(title: "Call", imageName: "phone", tag: 0)
+            FakeTabItem(title: "Email", imageName: "mail", tag: 1)
+            FakeTabItem(title: "Settings", imageName: "gearshape", tag: 2)
+        }
+        .frame(maxHeight: 100)
+    }
+
+    private struct FakeTabItem: View {
+        let title: String
+        let imageName: String
+        let tag: Int
+
+        var body: some View {
+            Text("")
+                .tabItem {
+                    Label {
+                        Text(title)
+                    } icon: {
+                        Image(systemName: imageName)
+                            .accessibilityHidden(true)
+                    }
+                }
+                .tag(tag)
+                .badge(tag == 0 ? "" : nil) // Display empty badge only for first tag
+        }
     }
 }

@@ -23,15 +23,18 @@ struct MainView: View {
             TokensPage()
                 .tabItem {
                     Label("app_bottomBar_tokens_label", image: "ic_token")
-                }.tag(0)
+                }
+                .tag(0)
             ComponentsPage()
                 .tabItem {
                     Label("app_bottomBar_components_label", image: "ic_component_atom")
-                }.tag(1)
+                }
+                .tag(1)
             AboutPage()
                 .tabItem {
                     Label("app_bottomBar_about_label", image: "ic_info")
-                }.tag(2)
+                }
+                .tag(2)
         }
         .oudsAccentColor(theme.colors.contentBrandPrimary)
     }

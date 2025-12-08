@@ -31,8 +31,14 @@ struct ComponentsPage: View {
     ]
 
     init() {
-        #if os(visionOS)
+        // Tab bar element demo designed for iOS / iPhones
+        // Demo is broken for other platforms (navigation troubles with this tab view integrate elsewhere)
+        #if !os(iOS)
         componentElements.removeAll(where: { $0 is TabBarElement })
+        #elseif canImport(UIKit)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            componentElements.removeAll(where: { $0 is TabBarElement })
+        }
         #endif
     }
 

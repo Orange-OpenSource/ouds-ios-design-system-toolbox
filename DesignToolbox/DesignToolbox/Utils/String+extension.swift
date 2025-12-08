@@ -70,6 +70,14 @@ extension String {
 
     // swiftlint:enable nslocalizedstring_key
 
+    // MARK: - Types
+
+    /// - Returns: True if number, false otherwise
+    public var isNumber: Bool {
+        let digitsCharacters = CharacterSet(charactersIn: "0123456789")
+        return CharacterSet(charactersIn: self).isSubset(of: digitsCharacters)
+    }
+
     // MARK: - GitHub boilerplates
 
     /// - Returns: The URL for the given GitHub release

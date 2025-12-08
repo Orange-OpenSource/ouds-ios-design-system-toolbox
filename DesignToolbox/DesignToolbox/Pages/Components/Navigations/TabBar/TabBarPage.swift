@@ -21,7 +21,7 @@ struct TabBarPage: View {
     @StateObject private var configurationModel: TabBarConfigurationModel
 
     init() {
-        _configurationModel = StateObject(wrappedValue: TabBarConfigurationModel(useOneColorSchemedDemo: true))
+        _configurationModel = StateObject(wrappedValue: TabBarConfigurationModel(useOneColorSchemedDemo: true)) // Issues with color scheme with tab bar
     }
 
     var body: some View {
@@ -40,38 +40,56 @@ struct TabBarDemo: View {
     @ObservedObject var configurationModel: TabBarConfigurationModel
     @Environment(\.theme) private var theme
 
+    // Example of accessibility label for a tab:
+    // - empty: just say there is something new
+    // - text: differentiate if count of pure text
+    // - otherwise: nothing
+    private var a11yLabelForTab: String {
+        if configurationModel.badgeConfiguration == .empty {
+            return "New elements"
+        }
+        if case let .text(text) = configurationModel.badgeConfiguration {
+            if text.isNumber {
+                return "\(text) new elements"
+            } else if !text.trimmingCharacters(in: .whitespaces).isEmpty {
+                return text
+            }
+        }
+        return ""
+    }
+
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
-                Spacer()
-                TabView {
-                    ForEach(configurationModel.limitedItems, id: \.self) { item in
+                OUDSTabBar(selected: 0, count: configurationModel.numberOfItems) {
+                    ForEach(configurationModel.limitedItems.indices, id: \.self) { index in
+                        let item = configurationModel.limitedItems[index]
                         TabBarItemDemo(item: item, badge: configurationModel.badgeConfiguration)
                             .tabItem {
                                 Label {
                                     Text(item.label)
+                                        .accessibilityValue(a11yLabelForTab)
                                 } icon: {
                                     Image(systemName: item.imageName)
                                         .accessibilityHidden(true)
                                 }
                             }
+                            .tag(index)
                     }
                 }
-                #if canImport(UIKit) // OUDSTabBarViewModifier relies on UIKit
-                .modifier(OUDSTabBarViewModifier()) // TODO: #1135 - Use OUDSTabBar instead
-                #endif
-                .frame(maxHeight: .infinity)
-                Spacer()
             }
         }
         .padding(.all, theme.spaces.fixedMedium)
+        #if canImport(UIKit)
+            .frame(maxHeight: UIDevice.current.userInterfaceIdiom == .pad ? 600 : 300)
+        #endif
     }
 }
 
 // MARK: - Tab bar item demo
 
 /// The view attached to the tab
-private struct TabBarItemDemo: View { // TODO: #1135 - Improve / enrich
+private struct TabBarItemDemo: View {
 
     /// Things to display as tab target
     let item: TabBarConfigurationModel.TabBarItemConfiguration
