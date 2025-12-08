@@ -791,30 +791,6 @@
         }
       }
     },
-    "app_common_design_version" : {
-      "comment" : "Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "إصدار التصميم المرجعي: %@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reference design version: %@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version du design de référence : %@"
-          }
-        }
-      }
-    },
     "app_common_disabled_label" : {
       "comment" : "Common",
       "extractionState" : "manual",
@@ -2547,6 +2523,30 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_common_version_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار تصميم المكونات"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Component design version"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version design du composant"
+          }
+        }
+      }
     },
     "app_components_common_viewCodeExample_label" : {
       "comment" : "Component - Common",

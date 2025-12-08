@@ -69,7 +69,6 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
             DesignToolboxCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
                 .padding(.horizontal, theme.spaces.fixedMedium)
         }
-        .padding(.bottom, theme.spaces.fixedMedium)
     }
 }
 
