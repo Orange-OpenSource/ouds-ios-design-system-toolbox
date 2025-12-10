@@ -46,11 +46,11 @@ struct TabBarDemo: View {
     // - otherwise: nothing
     private var a11yLabelForTab: String {
         if configurationModel.badgeConfiguration == .empty {
-            return "New elements"
+            return "app_components_tabBar_newElements_label".localized()
         }
         if case let .text(text) = configurationModel.badgeConfiguration {
             if text.isNumber {
-                return "\(text) new elements"
+                return "app_components_tabBar_newElementsCount_label" <- text
             } else if !text.trimmingCharacters(in: .whitespaces).isEmpty {
                 return text
             }
@@ -67,7 +67,7 @@ struct TabBarDemo: View {
                         TabBarItemDemo(item: item, badge: configurationModel.badgeConfiguration)
                             .tabItem {
                                 Label {
-                                    Text(item.label)
+                                    Text(item.label.localized())
                                         .accessibilityValue(a11yLabelForTab)
                                 } icon: {
                                     Image(systemName: item.imageName)
@@ -98,10 +98,8 @@ private struct TabBarItemDemo: View {
     let badge: TabBarConfigurationModel.BadgeConfiguration
 
     var body: some View {
-        HStack {
-            Image(systemName: item.imageName).accessibilityHidden(true)
-            Text(item.label)
-        }.modifier(BadgeModifier(configuration: badge))
+        Image(systemName: item.imageName).accessibilityHidden(true)
+            .modifier(BadgeModifier(configuration: badge))
     }
 
     /// To add a bad in the tab bar item

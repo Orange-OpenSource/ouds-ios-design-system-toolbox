@@ -3314,6 +3314,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_tabBar_callItem_label" : {
+      "comment" : "Component - Tab bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هاتف"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Call"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appels"
+          }
+        }
+      }
+    },
     "app_components_tabBar_description_text" : {
       "comment" : "Component - Tab bar",
       "extractionState" : "manual",
@@ -3334,6 +3358,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Une barre d’onglets est un élément de navigation proposant à l’utilisateur différents écrans et univers dans l’application. Cette barre est en bas de l’appareil sur iOS, ou sur le côté pour visionOS, ou en haut sur macOS et iPadOS. La barre d’onglets a également un style visuel changeant selon la version de l’OS : pour à partir de la version 26 Liquid Glass est implémenté, autrement l’ancien style visuel est appliqué. OUDS fournit d’ailleurs une barre d’onglet se reposant sur les éléments standards Apple, notamment pour avoir le même niveau d’accessibilité et de compatibilité entre plateformes."
+          }
+        }
+      }
+    },
+    "app_components_tabBar_homeItem_label" : {
+      "comment" : "Component - Tab bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مرحباً"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accueil"
+          }
+        }
+      }
+    },
+    "app_components_tabBar_itemCount_label" : {
+      "comment" : "Component - Tab bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عدد العناصر: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item count: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre d’items : %@"
           }
         }
       }
@@ -3363,26 +3435,122 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_tabBar_test_button" : {
-      "comment" : "Components - Tab Bar",
+    "app_components_tabBar_mailItem_label" : {
+      "comment" : "Component - Tab bar",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "اختبار شريط علامات التبويب"
+            "value" : "رسائل البريد الإلكتروني"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Test the tab bar"
+            "value" : "Emails"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tester la barre d’onglet"
+            "value" : "Emails"
+          }
+        }
+      }
+    },
+    "app_components_tabBar_newElements_label" : {
+      "comment" : "Component - Tab bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عناصر جديدة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New elements"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveaux éléments"
+          }
+        }
+      }
+    },
+    "app_components_tabBar_newElementsCount_label" : {
+      "comment" : "Component - Tab bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ عنصر (عناصر) جديد"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ new element(s)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ nouveau(x) élément(s)"
+          }
+        }
+      }
+    },
+    "app_components_tabBar_noteItem_label" : {
+      "comment" : "Component - Tab bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ملحوظات"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notes"
+          }
+        }
+      }
+    },
+    "app_components_tabBar_settingsItem_label" : {
+      "comment" : "Component - Tab bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إعدادات"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages"
           }
         }
       }

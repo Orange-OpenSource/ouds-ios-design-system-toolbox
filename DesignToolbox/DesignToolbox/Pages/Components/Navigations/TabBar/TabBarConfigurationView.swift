@@ -40,7 +40,6 @@ final class TabBarConfigurationModel: ComponentConfiguration {
     /// To store some details about tabs
     struct TabBarItemConfiguration: Hashable {
         let label: String
-        let content: String
         let imageName: String
     }
 
@@ -48,11 +47,12 @@ final class TabBarConfigurationModel: ComponentConfiguration {
         Array(Self.tabBarItems.prefix(numberOfItems))
     }
 
-    private static let tabBarItems: [TabBarItemConfiguration] = [
-        TabBarItemConfiguration(label: "Call", content: "Call view", imageName: "phone"),
-        TabBarItemConfiguration(label: "Email", content: "Email view", imageName: "mail"),
-        TabBarItemConfiguration(label: "Note", content: "Note view", imageName: "long.text.page.and.pencil"),
-        TabBarItemConfiguration(label: "Settings", content: "Settings view", imageName: "gearshape"),
+    static let tabBarItems: [TabBarItemConfiguration] = [
+        TabBarItemConfiguration(label: "app_components_tabBar_homeItem_label", imageName: "house"),
+        TabBarItemConfiguration(label: "app_components_tabBar_callItem_label", imageName: "phone"),
+        TabBarItemConfiguration(label: "app_components_tabBar_mailItem_label", imageName: "mail"),
+        TabBarItemConfiguration(label: "app_components_tabBar_noteItem_label", imageName: "long.text.page.and.pencil"),
+        TabBarItemConfiguration(label: "app_components_tabBar_settingsItem_label", imageName: "gearshape"),
     ]
 
     // MARK: Badges
@@ -118,7 +118,9 @@ struct TabBarConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                Stepper("Count: " + "\($configurationModel.numberOfItems.wrappedValue)", value: $configurationModel.numberOfItems, in: 1 ... 4)
+                Stepper("app_components_tabBar_itemCount_label" <- "\($configurationModel.numberOfItems.wrappedValue)",
+                        value: $configurationModel.numberOfItems,
+                        in: 1 ... TabBarConfigurationModel.tabBarItems.count)
                     .padding(.horizontal, theme.spaces.fixedMedium)
                     .bodyDefaultMedium(theme)
 
