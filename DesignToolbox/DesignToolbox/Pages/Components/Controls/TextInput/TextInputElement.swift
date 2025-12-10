@@ -37,6 +37,6 @@ private struct TextInputIllustration: View {
     var body: some View {
         OUDSTextInput(label: "Label",
                       text: $text,
-                      helperText: "Helper text.")
+                      helperText: String(localized: "app_components_textInputHelperText_label"))
     }
 }
