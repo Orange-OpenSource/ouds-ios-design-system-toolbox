@@ -17,23 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [Library] Scale icons with information for tag and badge components (Orange-OpenSource/ouds-ios#1179)
-- [Library] Add an accessibility label for badge "standard" and "count" types (Orange-OpenSource/ouds-ios#1060)
-### Fixed
-
-- Set own accessibility label to trailing action in `TextInput` (Orange-OpenSource/ouds-ios#1087)
-### Changed
-
-- [Library] Update `switch` components to v1.5.0 (Orange-OpenSource/ouds-ios#1138)
-- [Library] Update `radio` components to v1.4.0 (Orange-OpenSource/ouds-ios#1139)
-- [Library] Update `checkbox` components to v2.4.0 (Orange-OpenSource/ouds-ios#1137)
-- [Library] Read only variant for `checkbox` and  `checkbox indeterminate` components (Orange-OpenSource/ouds-ios#1137)
-
-### Fixed
-
 - [Library] Set own accessibility label to trailing action in `TextInput` (Orange-OpenSource/ouds-ios#1087)
 - [Library] Scale icons with information for tag and badge components (Orange-OpenSource/ouds-ios#1179)
-- [Library] Add an accessibility label for badge `standard` and `count` types (Orange-OpenSource/ouds-ios#1060)
+- [Library] Add an accessibility label for badge "standard" and "count" types (Orange-OpenSource/ouds-ios#1060)
 
 ## [0.22.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.21.0...0.22.0) - 2025-11-28
 
