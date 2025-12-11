@@ -35,10 +35,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Icon not shown for negative `tag` and `badge` types (Orange-OpenSource/ouds-ios#1216)
 - [DesignToolbox] `radio` and `switch` in read-only mode are still active (Orange-OpenSource/ouds-ios#1224)
 - [Library] Missing accessibility label for badge `standard` and `count` types (Orange-OpenSource/ouds-ios#1060) (Orange-OpenSource/ouds-ios#1222)
+- [Library] Separate label from trait, state, value and error message in `text input`, `checkbox`, `radio and `switch` (Orange-OpenSource/ouds-ios#1188)
 - [Library] Set own accessibility label to trailing action in `TextInput` (Orange-OpenSource/ouds-ios#1087)
 - [Library] Scale icons with information for tag and badge components (Orange-OpenSource/ouds-ios#1179) 
 - [Library] Set accessibility hint on placeholder if no helper text in `text input` (Orange-OpenSource/ouds-ios#1083)
-- [Library] Separate label from trait, state, value and error message in `text input`, `checkbox`, `radio and `switch` (Orange-OpenSource/ouds-ios#1188)
 - [Library] Scale icons with information for tag and badge components (Orange-OpenSource/ouds-ios#1179)
 - [Library] Add an accessibility label for badge "standard" and "count" types (Orange-OpenSource/ouds-ios#1060)
 
