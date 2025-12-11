@@ -166,6 +166,7 @@ struct ColorTokenPage: View {
             }
         }
 
+<<<<<<< HEAD
         // MARK: Body
 
         var body: some View {
@@ -192,7 +193,22 @@ struct ColorTokenPage: View {
                     width: theme.borders.widthThin,
                     radius: theme.borders.radiusNone,
                     color: theme.colors.borderDefault)
+=======
+        // swiftlint:disable force_unwrapping
+        var body: some View {
+            let colorRawToken = colorScheme == .dark ? darkValue : lightValue
+            DesignToolboxTokenIllustration(tokenName: name, tokenValue: colorRawToken) {
+                Rectangle()
+                    .fill(Color(hexadecimalCode: colorRawToken)!) // If color cannot be managed, issue with tokenator or tokens
+                    .frame(width: 64, height: 64)
+                    .oudsBorder(
+                        style: theme.borders.styleDefault,
+                        width: theme.borders.widthThin,
+                        radius: theme.borders.radiusNone,
+                        color: theme.colors.borderDefault)
+>>>>>>> e026910c0 (test: update snapshots)
             }
         }
+        // swiftlint:enable force_unwrapping
     }
 }
