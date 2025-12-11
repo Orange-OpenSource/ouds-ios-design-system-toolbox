@@ -172,7 +172,7 @@ platform :ios do
     lane :check_dead_code do
         puts "👉 Check iOS dead code with Periphery"
 
-        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_IOS} --format xcode"
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_IOS} --format xcode --clean-build"
     end
     
     desc "Run snapshots tests in the demo app to look for visual regressions of components defined in OUDS package"
@@ -589,7 +589,7 @@ platform :mac do
     lane :check_dead_code do
         puts "👉 Check macOS dead code with Periphery"
 
-        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_MACOS} --format xcode"
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_MACOS} --format xcode --clean-build"
     end
 
     desc "Build locally the demo app in debug mode without upload"
@@ -633,7 +633,7 @@ platform :vision do
     lane :check_dead_code do
         puts "👉 Check visionOS dead code with Periphery"
 
-        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_VISIONOS} --format xcode"
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_VISIONOS} --format xcode --clean-build"
     end
 
     desc "Build locally the demo app in debug mode without upload"
@@ -677,7 +677,7 @@ platform :watch do
     lane :check_dead_code do
         puts "👉 Check watchOS dead code with Periphery"
 
-        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_WATCHOS} --format xcode"
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_WATCHOS} --format xcode --clean-build"
     end
 
     desc "Build locally the demo app in debug mode without upload"
@@ -721,7 +721,7 @@ platform :tv do
     lane :check_dead_code do
         puts "👉 Check tvOS dead code with Periphery"
 
-        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_TVOS} --format xcode"
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_TVOS} --format xcode --clean-build"
     end
 
     desc "Build locally the demo app in debug mode without upload"
