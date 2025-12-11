@@ -25,6 +25,7 @@ extension Image {
         }
     }
 
+    // Note: Warning, seen as false positive by Periphery, this method is used in tests cases
     /// Returns a decorative default `Image` view with Orange asset
     static func defaultImage() -> Image {
         Image(decorative: "Orange/tips-and-tricks")
