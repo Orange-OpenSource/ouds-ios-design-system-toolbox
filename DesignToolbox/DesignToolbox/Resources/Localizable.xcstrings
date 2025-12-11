@@ -2,7 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "shouldTranslate" : false
     },
     "app_about_accessibilityStatement_label" : {
       "comment" : "About screen",
