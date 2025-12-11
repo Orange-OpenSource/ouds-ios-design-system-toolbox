@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1193-update-icons-used-in-component-to-v14",
-        "revision" : "c31824f1e13b025d7d116c09d00fe97443e907f4"
+        "branch" : "develop",
+        "revision" : "a720203d17f45ec1e30712ea76c44c7ccdfaedf1"
       }
     },
     {
