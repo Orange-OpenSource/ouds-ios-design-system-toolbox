@@ -2377,11 +2377,11 @@
 		51F49C832E57437E00D50BC4 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				075045F52E58715D00D98587 /* TextInput */,
 				513442062D75B880000B5DE4 /* Checkbox */,
 				515EE9842E21329B00A60E96 /* Chip */,
 				0745C1852D7A0351006B3A1F /* Radio */,
 				07CC9AEB2DB0F7DD001BC929 /* Switch */,
+				075045F52E58715D00D98587 /* TextInput */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
