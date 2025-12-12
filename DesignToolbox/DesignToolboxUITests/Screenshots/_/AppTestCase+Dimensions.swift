@@ -170,18 +170,25 @@ extension AppTestCase {
         static let verticalDividerWidth = deviceWidth + offsetWidth
         static let verticalDividerHeight = 500 + offsetHeight
 
-        // MARK: - Layouts - Colored surface
+        // MARK: - Layouts - Colored Surface
 
         static let coloredSurfaceX = screenStartX + offsetX
         static let coloredSurfaceY = 620 + offsetY
         static let coloredSurfaceWidth = deviceWidth + offsetWidth
         static let coloredSurfaceHeight = 1_380 + offsetHeight
 
-        // MARK: - Navigations - Lin
+        // MARK: - Navigations - Link
 
         static let linkX = screenStartX + offsetX
         static let linkY = 600 + offsetY
         static let linkWidth = deviceWidth + offsetWidth
         static let linkHeight = 470 + offsetHeight
+
+        // MARK: - Navigations - Tab bar
+
+        static let tabBarX = screenStartX + offsetX
+        static let tabBarY = 850 + offsetY
+        static let tabBarWidth = deviceWidth + offsetWidth
+        static let tabBarHeight = 230 + offsetHeight
     }
 }
