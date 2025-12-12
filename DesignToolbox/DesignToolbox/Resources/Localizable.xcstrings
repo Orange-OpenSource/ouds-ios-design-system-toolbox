@@ -269,7 +269,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "إصدار التطبيق: %@"
           }
         },
@@ -293,7 +293,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "رقم البناء: %@"
           }
         },
@@ -317,7 +317,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "نوع البناء: %@"
           }
         },
@@ -365,7 +365,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "إصدار SDK: %@"
           }
         },
