@@ -34,9 +34,9 @@ private struct TabBarIllustration: View {
 
     var body: some View {
         OUDSTabBar(count: 3) {
-            FakeTabItem(title: "Call", imageName: "phone", tag: 0)
-            FakeTabItem(title: "Email", imageName: "mail", tag: 1)
-            FakeTabItem(title: "Settings", imageName: "gearshape", tag: 2)
+            FakeTabItem(title: "Label", imageName: "ic_heart", tag: 0)
+            FakeTabItem(title: "Label", imageName: "ic_heart", tag: 1)
+            FakeTabItem(title: "Label", imageName: "ic_heart", tag: 2)
         }
         .frame(maxHeight: 100)
     }
@@ -52,12 +52,11 @@ private struct TabBarIllustration: View {
                     Label {
                         Text(title)
                     } icon: {
-                        Image(systemName: imageName)
-                            .accessibilityHidden(true)
+                        Image(decorative: imageName)
+                            .renderingMode(.template)
                     }
                 }
                 .tag(tag)
-                .badge(tag == 0 ? "" : nil) // Display empty badge only for first tag
         }
     }
 }
