@@ -1282,12 +1282,12 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تسمح Checkboxes للمستخدمين باختيار خيار واحد أو أكثر من قائمة، أو تبديل الإعدادات بين التشغيل والإيقاف، أو تأكيد إجراء معين."
+            "value" : "تسمح checkboxes للمستخدمين باختيار خيار واحد أو أكثر من قائمة، أو تبديل الإعدادات بين التشغيل والإيقاف، أو تأكيد إجراء معين."
           }
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Checkboxes allows users to select one or multiple options from a list, toggle settings on or off, or confirm an action."
           }
         },
@@ -1355,7 +1355,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "هذه علامة مزيفة مستخدمة في التطبيق التجريبي"
+            "value" : "هذه تسمية زائفة لتطبيق صندوق أدوات نظام التصميم"
           }
         },
         "en" : {
@@ -1502,7 +1502,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يجعل منتقي خانات الاختيار المستخدم قادرا على التحديد بين 0 وجميع العناصر المتوفرة في القائمة"
+            "value" : "يتيح checkbox picker للمستخدم اختيار بين 0 وجميع العناصر الموجودة في القائمة."
           }
         },
         "en" : {
@@ -1551,7 +1551,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "اختياراتك\""
+            "value" : "اختياراتك"
           }
         },
         "en" : {
@@ -1746,7 +1746,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suggestion Chip هو مكون صغير في واجهة المستخدم يُستخدم لعرض خيارات مقترحة أو تنبؤية بناءً على إدخال المستخدم أو السياق. غالبًا ما يظهر في شريط البحث، النماذج، أو واجهات المحادثة، ويساعد المستخدمين على اختيار اقتراحات ذات صلة بسرعة. عادةً ما يكون غير محدد بشكل افتراضي، ويمكن النقر عليه لتطبيق الاقتراح، مما يُبسّط إدخال البيانات ويحسن من سهولة الاستخدام.\r\n"
+            "value" : "Suggestion Chip هو مكون صغير في واجهة المستخدم يُستخدم لعرض خيارات مقترحة أو تنبؤية بناءً على إدخال المستخدم أو السياق. غالبًا ما يظهر في شريط البحث، النماذج، أو واجهات المحادثة، ويساعد المستخدمين على اختيار اقتراحات ذات صلة بسرعة. عادةً ما يكون غير محدد بشكل افتراضي، ويمكن النقر عليه لتطبيق الاقتراح، مما يُبسّط إدخال البيانات ويحسن من سهولة الاستخدام."
           }
         },
         "en" : {
@@ -1787,30 +1787,6 @@
         }
       },
       "shouldTranslate" : false
-    },
-    "app_components_chip_suggestionChip_suggestionChip_label" : {
-      "comment" : "Component - Chip",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suggestion"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suggestion"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suggestion"
-          }
-        }
-      }
     },
     "app_components_chipPicker_description_text" : {
       "comment" : "Component - Chip Picker",
@@ -2727,7 +2703,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "  ينظم divider واجهة المستخدم بصريًا عن طريق فصل أقسام المحتوى بوضوح. يساعد على تحسين قابلية القراءة وتنظيم المحتوى دون إضافة تسلسل هرمي قوي كما في العناوين أو الحاويات.\r\n"
+            "value" : "  ينظم divider واجهة المستخدم بصريًا عن طريق فصل أقسام المحتوى بوضوح. يساعد على تحسين قابلية القراءة وتنظيم المحتوى دون إضافة تسلسل هرمي قوي كما في العناوين أو الحاويات."
           }
         },
         "en" : {
@@ -2867,30 +2843,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_inputTag_description_text" : {
-      "comment" : "Component - Input Tag",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Input Tag هو مكوّن يسمح للمستخدمين بإدخال عدة قيم، حيث يتم تمثيل كل قيمة كوسم. عند الكتابة والضغط على زر الإدخال (Enter) أو الفاصلة أو زر الجدولة (Tab)، يتم تحويل كل قيمة إلى وسم."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "An Input Tag is a component that allows users to enter multiple values, each represented as a tag. As users type and submit values (usually by pressing enter, comma, or tab), each value is transformed into a Tag."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Le composent InputTag permet aux utilisateurs de saisir plusieurs valeurs, chacune représentée par une balise. À mesure que les utilisateurs saisissent et valident des valeurs (généralement en appuyant sur Entrée, une virgule ou une tabulation), chaque valeur est transformée en balise."
-          }
-        }
-      }
-    },
     "app_components_link_backLayout_label" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",
@@ -3021,7 +2973,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "هذه علامة مزيفة مستخدمة في التطبيق التجريبي"
+            "value" : "هذه تسمية زائفة لتطبيق صندوق أدوات نظام التصميم"
           }
         },
         "en" : {
@@ -3095,7 +3047,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تسمح أزرار الاختيار للمستخدمين بتحديد خيار واحد من القائمة."
+            "value" : " تتيح Radio buttons للمستخدمين اختيار خيار واحد من قائمة."
           }
         },
         "en" : {
@@ -3169,7 +3121,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يسمح منتقي الراديو للمستخدمين بالاختيار على عنصر ضمن مجموعة من العديد من العناصر الأخرى باستخدام أزرار الاختيار"
+            "value" : " يتيح  Radio picker للمستخدمين اختيار عنصر واحد من مجموعة من أزرار الراديو."
           }
         },
         "en" : {
@@ -3218,7 +3170,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتيح switch للمستخدم التبديل بين حالتين، عادةً تشغيل و إيقاف. يتم تمثيله غالبًا كزر أو شريط منزلق يتغير موقعه أو لونه للإشارة إلى الحالة الحالية. تُستخدم المفاتيح لتمكين أو تعطيل الميزات أو الخيارات أو الإعدادات بطريقة بصرية وفهمها بسهولة.\r\n"
+            "value" : "يتيح switch للمستخدم التبديل بين حالتين، عادةً تشغيل و إيقاف. يتم تمثيله غالبًا كزر أو شريط منزلق يتغير موقعه أو لونه للإشارة إلى الحالة الحالية. تُستخدم المفاتيح لتمكين أو تعطيل الميزات أو الخيارات أو الإعدادات بطريقة بصرية وفهمها بسهولة."
           }
         },
         "en" : {
@@ -3242,7 +3194,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "هذا تلميح مزيف لتطبيق صندوق أدوات نظام التصميم"
+            "value" : "هذه تلميح زائف لتطبيق صندوق أدوات نظام التصميم"
           }
         },
         "en" : {
@@ -3316,7 +3268,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتيح switch للمستخدم التبديل بين حالتين، عادةً تشغيل و إيقاف. يتم تمثيله غالبًا كزر أو شريط منزلق يتغير موقعه أو لونه للإشارة إلى الحالة الحالية. تُستخدم المفاتيح لتمكين أو تعطيل الميزات أو الخيارات أو الإعدادات بطريقة بصرية وفهمها بسهولة.\r\n"
+            "value" : "يتيح التبديل للمستخدم تفعيل أو تعطيل الميزات، الخيارات، أو الإعدادات."
           }
         },
         "en" : {
@@ -3378,6 +3330,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Le composant Tag est un petit élément qui affiche de brèves informations comme une étiquette, un mot-clé ou une catégorie. Elle aide les utilisateurs à trouver, regrouper ou comprendre rapidement du contenu."
+          }
+        }
+      }
+    },
+    "app_components_tag_inputTag_description_text" : {
+      "comment" : "Component - Input Tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input Tag هو مكوّن يسمح للمستخدمين بإدخال عدة قيم، حيث يتم تمثيل كل قيمة كوسم. عند الكتابة والضغط على زر الإدخال (Enter) أو الفاصلة أو زر الجدولة (Tab)، يتم تحويل كل قيمة إلى وسم."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An Input Tag is a component that allows users to enter multiple values, each represented as a tag. As users type and submit values (usually by pressing enter, comma, or tab), each value is transformed into a Tag."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Le composent InputTag permet aux utilisateurs de saisir plusieurs valeurs, chacune représentée par une balise. À mesure que les utilisateurs saisissent et valident des valeurs (généralement en appuyant sur Entrée, une virgule ou une tabulation), chaque valeur est transformée en balise."
           }
         }
       }
