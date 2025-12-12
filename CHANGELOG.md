@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Define timeout of 2 hours for all GitHub Actions workflows
 - [DesignToolbox] Display of colors and size semantic tokens (Orange-OpenSource/ouds-ios#1206)
 - [Library] Color semantic tokens (Orange-OpenSource/ouds-ios#1206)
+- [DesignToolbox] Define timeout of 2 hours for all GitHub Actions workflows
 - [Library] Update icons to v1.4.0 (Orange-OpenSource/ouds-ios#1193)
 - [DesignToolbox] Use the OUDS `tag` component to show the component design version in pages (Orange-OpenSource/ouds-ios#1176)
 - [Library] Update `switch` components to v1.5.0 (Orange-OpenSource/ouds-ios#1138)
