@@ -135,6 +135,8 @@ struct ColorTokenPage: View {
         private let darkValue: ColorSemanticToken?
         private let name: String
 
+        private static let colorIllustrationDimension: CGFloat = 64
+
         @Environment(\.theme) private var theme
         @Environment(\.colorScheme) private var colorScheme
 
@@ -154,7 +156,7 @@ struct ColorTokenPage: View {
 
         init(token: MultipleColorSemanticTokens, name: String) {
             self.name = name
-            
+
             if token.hasForbiddenColorValue() {
                 lightValue = nil
                 darkValue = nil
@@ -168,24 +170,23 @@ struct ColorTokenPage: View {
 
         var body: some View {
             let colorRawToken = colorScheme == .dark ? darkValue : lightValue
-            let value: String = colorRawToken ?? "app_tokens_color_unspecified_label"
+            let value: String = colorRawToken ?? "app_tokens_color_unspecified_label".localized()
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 Group {
                     if let colorRawToken {
                         Rectangle().fill(colorRawToken.color)
                     } else {
-                        Canvas { ctx, size in
+                        Canvas { ctx, _ in
                             var path = Path()
-
                             // `move` without drawing
-                            path.move(to: CGPoint(x: 0, y: 64))
+                            path.move(to: CGPoint(x: 0, y: Self.colorIllustrationDimension))
                             // `draw` a line
-                            path.addLine(to: CGPoint(x: 64, y: 0))
-                            ctx.stroke(path, with: .color(.red), lineWidth: 2)
+                            path.addLine(to: CGPoint(x: Self.colorIllustrationDimension, y: 0))
+                            ctx.stroke(path, with: .color(theme.colors.contentDisabled.color(for: colorScheme)), lineWidth: 2)
                         }
                     }
                 }
-                .frame(width: 64, height: 64)
+                .frame(width: Self.colorIllustrationDimension, height: Self.colorIllustrationDimension)
                 .oudsBorder(
                     style: theme.borders.styleDefault,
                     width: theme.borders.widthThin,
