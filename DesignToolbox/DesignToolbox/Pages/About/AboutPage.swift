@@ -157,7 +157,7 @@ struct AboutPage: View {
             VersionItem(title: "app_about_details_appVersion", version: Bundle.main.marketingVersion)
         }
 
-        VersionItem(title: "app_about_details_buildNumber", version:Bundle.main.buildNumber)
+        VersionItem(title: "app_about_details_buildNumber", version: Bundle.main.buildNumber)
 
         OpenableText("app_about_details_buildType" <- Bundle.main.fullBuildType, anchor: Bundle.main.fullBuildType, type: .githubBuild)
             .modifier(CopyableTextViewModifier(Bundle.main.fullBuildType))
@@ -194,7 +194,7 @@ struct AboutPage: View {
                     version: OUDSVersions.themeOrangeBusinessToolsBrandVersion)
 
         VersionItem(title: "app_about_details_themeWireframeBrandVersion",
-                    version:  OUDSVersions.themeWireframeBrandVersion)
+                    version: OUDSVersions.themeWireframeBrandVersion)
     }
 
     @ViewBuilder
@@ -237,17 +237,16 @@ struct AboutPage: View {
     }
 }
 
+private struct VersionItem: View {
 
-struct VersionItem: View {
-    
     // MARK: Properties
 
     let title: String
     let version: String
-    @Environment(\.theme) var theme
-    
+    @Environment(\.theme) private var theme
+
     // MARK: Body
-    
+
     var body: some View {
         HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
             Text(title.localized())
