@@ -127,11 +127,11 @@ extension NamedSize {
                 theme.sizes.iconWithBodySmallSizeLarge.dimension(for: userInterfaceSizeClass)
             // With Label
             case .iconWithLabelXlargeSizeSmall:
-                theme.sizes.iconWithLabelLargeSizeSmall
+                theme.sizes.iconWithLabelXlargeSizeSmall
             case .iconWithLabelXlargeSizeMedium:
-                theme.sizes.iconWithLabelLargeSizeMedium
+                theme.sizes.iconWithLabelXlargeSizeMedium
             case .iconWithLabelXlargeSizeLarge:
-                theme.sizes.iconWithLabelLargeSizeLarge
+                theme.sizes.iconWithLabelXlargeSizeLarge
             case .iconWithLabelLargeSizeXsmall:
                 theme.sizes.iconWithLabelLargeSizeXsmall
             case .iconWithLabelLargeSizeSmall:
