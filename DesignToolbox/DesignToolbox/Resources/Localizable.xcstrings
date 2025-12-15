@@ -4168,6 +4168,55 @@
       },
       "shouldTranslate" : false
     },
+    "app_tokens_dimension_size_maxWidth_label" : {
+      "comment" : "Token - Dimension - Size",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max width"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max width"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max width"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_tokens_dimension_size_minWidth_label" : {
+      "comment" : "Token - Dimension - Size",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Min interactive area"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Min interactive area"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Min interactive area"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_tokens_dimension_space_columnGap_label" : {
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",

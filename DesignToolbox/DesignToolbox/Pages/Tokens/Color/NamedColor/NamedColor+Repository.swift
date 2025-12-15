@@ -19,10 +19,10 @@ import OUDSSwiftUI
 extension NamedColor {
 
     enum Repository: String, CaseIterable {
-        case repositoryAccentMedium
         case repositoryAccentHigh
         case repositoryAccentHigher
         case repositoryAccentHighest
+        case repositoryAccentMedium
         case repositoryAccentLow
         case repositoryAccentLower
         case repositoryAccentLowest
@@ -33,10 +33,10 @@ extension NamedColor {
         case repositoryInfoLow
         case repositoryInfoLower
         case repositoryInfoLowest
-        case repositoryNegativeMedium
         case repositoryNegativeHigh
         case repositoryNegativeHigher
         case repositoryNegativeHighest
+        case repositoryNegativeMedium
         case repositoryNegativeLow
         case repositoryNegativeLower
         case repositoryNegativeLowest
@@ -46,6 +46,13 @@ extension NamedColor {
         case repositoryNeutralEmphasizedHighest
         case repositoryNeutralEmphasizedMedium
         case repositoryNeutralEmphasizedLow
+        case repositoryNeutralEmphasizedLower
+        case repositoryNeutralEmphasizedLowest
+        case repositoryNeutralMutedHigh
+        case repositoryNeutralMutedHigher
+        case repositoryNeutralMutedHighest
+        case repositoryNeutralMutedMedium
+        case repositoryNeutralMutedLow
         case repositoryNeutralMutedLower
         case repositoryNeutralMutedLowest
         case repositoryNeutralMutedWhite
@@ -78,6 +85,7 @@ extension NamedColor {
         case repositoryOpacityWhiteLower
         case repositoryOpacityWhiteLowest
         case repositoryOpacityWhiteTransparent
+        case repositoryOpacityPrimaryTransparent
         case repositoryOpacityPrimaryLow
         case repositoryOpacityPrimaryLower
         case repositoryOpacityPrimaryLowest
@@ -177,6 +185,20 @@ extension NamedColor {
                 theme.colors.repositoryNeutralEmphasizedMedium
             case .repositoryNeutralEmphasizedLow:
                 theme.colors.repositoryNeutralEmphasizedLow
+            case .repositoryNeutralEmphasizedLower:
+                theme.colors.repositoryNeutralEmphasizedLower
+            case .repositoryNeutralEmphasizedLowest:
+                theme.colors.repositoryNeutralEmphasizedLowest
+            case .repositoryNeutralMutedHigh:
+                theme.colors.repositoryNeutralMutedHigh
+            case .repositoryNeutralMutedHigher:
+                theme.colors.repositoryNeutralMutedHigher
+            case .repositoryNeutralMutedHighest:
+                theme.colors.repositoryNeutralMutedHighest
+            case .repositoryNeutralMutedMedium:
+                theme.colors.repositoryNeutralMutedMedium
+            case .repositoryNeutralMutedLow:
+                theme.colors.repositoryNeutralMutedLow
             case .repositoryNeutralMutedLower:
                 theme.colors.repositoryNeutralMutedLower
             case .repositoryNeutralMutedLowest:
@@ -241,6 +263,8 @@ extension NamedColor {
                 theme.colors.repositoryOpacityWhiteLowest
             case .repositoryOpacityWhiteTransparent:
                 theme.colors.repositoryOpacityWhiteTransparent
+            case .repositoryOpacityPrimaryTransparent:
+                theme.colors.repositoryOpacityPrimaryTransparent
             case .repositoryOpacityPrimaryLow:
                 theme.colors.repositoryOpacityPrimaryLow
             case .repositoryOpacityPrimaryLower:

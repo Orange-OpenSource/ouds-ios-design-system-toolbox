@@ -17,6 +17,8 @@ extension NamedColor {
 
     enum Surface: String, CaseIterable {
         case surfaceBrandPrimary
+        case surfaceBrandSecondary
+        case surfaceBrandTertiary
         case surfaceStatusAccentEmphasized
         case surfaceStatusAccentMuted
         case surfaceStatusInfoEmphasized
@@ -37,6 +39,10 @@ extension NamedColor {
             switch self {
             case .surfaceBrandPrimary:
                 theme.colors.surfaceBrandPrimary
+            case .surfaceBrandSecondary:
+                theme.colors.surfaceBrandSecondary
+            case .surfaceBrandTertiary:
+                theme.colors.surfaceBrandTertiary
             case .surfaceStatusAccentEmphasized:
                 theme.colors.surfaceStatusAccentEmphasized
             case .surfaceStatusAccentMuted:
