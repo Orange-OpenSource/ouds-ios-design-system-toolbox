@@ -34,6 +34,7 @@ struct AboutPage: View {
 
     // NOTE: "unused" false-positive for periphery (https://github.com/peripheryapp/periphery/issues/993)
     @Environment(\.layoutDirection) private var layoutDirection
+    @Environment(\.theme) private var theme
 
     // MARK: Initializer
 
@@ -153,12 +154,10 @@ struct AboutPage: View {
             OpenableText("app_about_details_appVersion" <- Bundle.main.marketingVersion, anchor: Bundle.main.marketingVersion, type: .githubRelease)
                 .modifier(CopyableTextViewModifier(Bundle.main.marketingVersion))
         } else {
-            Text("app_about_details_appVersion" <- Bundle.main.marketingVersion)
-                .modifier(CopyableTextViewModifier(Bundle.main.marketingVersion))
+            VersionItem(title: "app_about_details_appVersion", version: Bundle.main.marketingVersion)
         }
 
-        Text("app_about_details_buildNumber" <- Bundle.main.buildNumber)
-            .modifier(CopyableTextViewModifier(Bundle.main.buildNumber))
+        VersionItem(title: "app_about_details_buildNumber", version: Bundle.main.buildNumber)
 
         OpenableText("app_about_details_buildType" <- Bundle.main.fullBuildType, anchor: Bundle.main.fullBuildType, type: .githubBuild)
             .modifier(CopyableTextViewModifier(Bundle.main.fullBuildType))
@@ -173,29 +172,29 @@ struct AboutPage: View {
                 .modifier(CopyableTextViewModifier(sdkVersion))
         }
 
-        Text("app_about_details_themeCoreVersion" <- OUDSVersions.themeCoreVersion)
-            .modifier(CopyableTextViewModifier(OUDSVersions.themeCoreVersion))
+        VersionItem(title: "app_about_details_themeCoreVersion",
+                    version: OUDSVersions.themeCoreVersion)
 
-        Text("app_about_details_themeOrangeCoreVersion" <- OUDSVersions.themeOrangeCoreVersion)
-            .modifier(CopyableTextViewModifier(OUDSVersions.themeOrangeCoreVersion))
+        VersionItem(title: "app_about_details_themeOrangeCoreVersion",
+                    version: OUDSVersions.themeOrangeCoreVersion)
 
-        Text("app_about_details_themeSoshCoreVersion" <- OUDSVersions.themeSoshCoreVersion)
-            .modifier(CopyableTextViewModifier(OUDSVersions.themeSoshCoreVersion))
+        VersionItem(title: "app_about_details_themeSoshCoreVersion",
+                    version: OUDSVersions.themeSoshCoreVersion)
 
-        Text("app_about_details_themeWireframeCoreVersion" <- OUDSVersions.themeWireframeCoreVersion)
-            .modifier(CopyableTextViewModifier(OUDSVersions.themeWireframeCoreVersion))
+        VersionItem(title: "app_about_details_themeWireframeCoreVersion",
+                    version: OUDSVersions.themeWireframeCoreVersion)
 
-        Text("app_about_details_themeOrangeBrandVersion" <- OUDSVersions.themeOrangeBrandVersion)
-            .modifier(CopyableTextViewModifier(OUDSVersions.themeOrangeBrandVersion))
+        VersionItem(title: "app_about_details_themeOrangeBrandVersion",
+                    version: OUDSVersions.themeOrangeBrandVersion)
 
-        Text("app_about_details_themeSoshBrandVersion" <- OUDSVersions.themeSoshBrandVersion)
-            .modifier(CopyableTextViewModifier(OUDSVersions.themeSoshBrandVersion))
+        VersionItem(title: "app_about_details_themeSoshBrandVersion",
+                    version: OUDSVersions.themeSoshBrandVersion)
 
-        Text("app_about_details_themeOrangeBusinessToolsBrandVersion" <- OUDSVersions.themeOrangeBusinessToolsBrandVersion)
-            .modifier(CopyableTextViewModifier(OUDSVersions.themeOrangeBusinessToolsBrandVersion))
+        VersionItem(title: "app_about_details_themeOrangeBusinessToolsBrandVersion",
+                    version: OUDSVersions.themeOrangeBusinessToolsBrandVersion)
 
-        Text("app_about_details_themeWireframeBrandVersion" <- OUDSVersions.themeWireframeBrandVersion)
-            .modifier(CopyableTextViewModifier(OUDSVersions.themeWireframeBrandVersion))
+        VersionItem(title: "app_about_details_themeWireframeBrandVersion",
+                    version: OUDSVersions.themeWireframeBrandVersion)
     }
 
     @ViewBuilder
@@ -235,5 +234,34 @@ struct AboutPage: View {
         }
         .accessibilityHint(hint.localized())
         .accessibilityRemoveTraits([.isButton]) // Has also link trait
+    }
+}
+
+private struct VersionItem: View {
+
+    // MARK: Properties
+
+    let title: String
+    let version: String
+    @Environment(\.theme) private var theme
+
+    // MARK: Body
+
+    var body: some View {
+        HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
+            Text(title.localized())
+                .oudsForegroundColor(theme.colors.contentDefault)
+
+            Spacer()
+
+            OUDSTag(label: version,
+                    status: .info(leading: .none),
+                    appearance: .muted,
+                    shape: .rounded,
+                    size: .small,
+                    hasLoader: false)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .modifier(CopyableTextViewModifier(version))
     }
 }
