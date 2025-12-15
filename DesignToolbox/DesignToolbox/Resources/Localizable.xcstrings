@@ -276,13 +276,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "App version: %@"
+            "value" : "App version:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version de l’app : %@"
+            "value" : "Version de l’app :"
           }
         }
       }
@@ -300,13 +300,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Build number: %@"
+            "value" : "Build number: "
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Numéro du build : %@"
+            "value" : "Numéro du build :"
           }
         }
       }
@@ -324,13 +324,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Build type: %@"
+            "value" : "Build type:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Type de build : %@"
+            "value" : "Type de build :"
           }
         }
       }
@@ -372,13 +372,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDK version: %@"
+            "value" : "SDK version:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version du SDK : %@"
+            "value" : "Version du SDK :"
           }
         }
       }
@@ -390,19 +390,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز OUDS الأساسية: %@"
+            "value" : "إصدار مكتبة رموز OUDS الأساسية:"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "OUDS core tokens library version: %@"
+            "value" : "OUDS core tokens library version:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens core OUDS : %@"
+            "value" : "Version des tokens core OUDS :"
           }
         }
       }
@@ -414,19 +414,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز العلامة التجارية Orange: %@"
+            "value" : "إصدار مكتبة رموز العلامة التجارية Orange:"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Orange brand tokens library version: %@"
+            "value" : "Orange brand tokens library version:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens brand Orange : %@"
+            "value" : "Version des tokens brand Orange :"
           }
         }
       }
@@ -438,19 +438,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة الرموز المميزة للعلامة التجارية Orange Business Tools: %@"
+            "value" : "إصدار مكتبة الرموز المميزة للعلامة التجارية Orange Business Tools:"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Orange Business Tools brand tokens library version: %@"
+            "value" : "Orange Business Tools brand tokens library version:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens brand Orange Business Tools : %@"
+            "value" : "Version des tokens brand Orange Business Tools :"
           }
         }
       }
@@ -462,19 +462,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز Orange core: %@"
+            "value" : "إصدار مكتبة رموز Orange core:"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Orange core tokens library version: %@"
+            "value" : "Orange core tokens library version:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens core Orange : %@"
+            "value" : "Version des tokens core Orange :"
           }
         }
       }
@@ -486,19 +486,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز العلامة التجارية Sosh: %@"
+            "value" : "إصدار مكتبة رموز العلامة التجارية Sosh:"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sosh brand tokens library version: %@"
+            "value" : "Sosh brand tokens library version:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens brand Sosh : %@"
+            "value" : "Version des tokens brand Sosh :"
           }
         }
       }
@@ -510,19 +510,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز Sosh الأساسية: %@"
+            "value" : "إصدار مكتبة رموز Sosh الأساسية:"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sosh core tokens library version: %@"
+            "value" : "Sosh core tokens library version:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens core Sosh : %@"
+            "value" : "Version des tokens core Sosh :"
           }
         }
       }
@@ -534,19 +534,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز العلامة التجارية Wireframe: %@"
+            "value" : "إصدار مكتبة رموز العلامة التجارية Wireframe:"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wireframe brand tokens library version: %@"
+            "value" : "Wireframe brand tokens library version:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens brand Wireframe : %@"
+            "value" : "Version des tokens brand Wireframe :"
           }
         }
       }
@@ -558,19 +558,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز النواة للإطار السلكي: %@"
+            "value" : "إصدار مكتبة رموز النواة للإطار السلكي:"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wireframe core tokens library version: %@"
+            "value" : "Wireframe core tokens library version:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens core Wireframe : %@"
+            "value" : "Version des tokens core Wireframe :"
           }
         }
       }
