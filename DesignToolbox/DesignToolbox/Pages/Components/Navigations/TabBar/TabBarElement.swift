@@ -34,9 +34,9 @@ private struct TabBarIllustration: View {
 
     var body: some View {
         OUDSTabBar(count: 3) {
-            FakeTabItem(title: "Label", imageName: "ic_heart", tag: 0)
-            FakeTabItem(title: "Label", imageName: "ic_heart", tag: 1)
-            FakeTabItem(title: "Label", imageName: "ic_heart", tag: 2)
+            FakeTabItem(title: "Label", imageName: "heart-empty", tag: 0)
+            FakeTabItem(title: "Label", imageName: "heart-empty", tag: 1)
+            FakeTabItem(title: "Label", imageName: "heart-empty", tag: 2)
         }
         .frame(maxHeight: 100)
     }
@@ -46,13 +46,15 @@ private struct TabBarIllustration: View {
         let imageName: String
         let tag: Int
 
+        @Environment(\.theme) private var theme
+
         var body: some View {
             Text("")
                 .tabItem {
                     Label {
                         Text(title)
                     } icon: {
-                        Image(decorative: imageName)
+                        Image.decorativeImage(named: imageName, prefixedBy: theme.name)
                             .renderingMode(.template)
                     }
                 }

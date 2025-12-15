@@ -70,8 +70,8 @@ struct TabBarDemo: View {
                                     Text(item.label.localized())
                                         .accessibilityValue(a11yLabelForTab)
                                 } icon: {
-                                    Image(systemName: item.imageName)
-                                        .accessibilityHidden(true)
+                                    Image.decorativeImage(named: item.imageName, prefixedBy: theme.name)
+                                        .renderingMode(.template)
                                 }
                             }
                             .tag(index)
@@ -97,8 +97,10 @@ private struct TabBarItemDemo: View {
     /// Badge to display to the associated tab
     let badge: TabBarConfigurationModel.BadgeConfiguration
 
+    @Environment(\.theme) private var theme
+
     var body: some View {
-        Image(systemName: item.imageName).accessibilityHidden(true)
+        Image.decorativeImage(named: item.imageName, prefixedBy: theme.name)
             .modifier(BadgeModifier(configuration: badge))
     }
 

@@ -51,14 +51,17 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_theme_light.imageset/ic_theme_light.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_theme_system.imageset/ic_theme_system.svg
 
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Orange/heart-empty/heart-empty.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Orange/menu-grid.imageset/menu-grid.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Orange/palette.imageset/palette.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Orange/tips-and-tricks.imageset/tips-and-tricks.svg
 
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Sosh/heart-empty/heart-empty.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Sosh/menu-grid.imageset/menu-grid.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Sosh/palette.imageset/palette.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Sosh/tips-and-tricks.imageset/tips-and-tricks.svg
 
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Wireframe/heart-empty/heart-empty.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Wireframe/menu-grid.imageset/menu-grid.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Wireframe/palette.imageset/palette.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Wireframe/tips-and-tricks.imageset/tips-and-tricks.svg

@@ -48,11 +48,11 @@ final class TabBarConfigurationModel: ComponentConfiguration {
     }
 
     static let tabBarItems: [TabBarItemConfiguration] = [
-        TabBarItemConfiguration(label: "app_components_tabBar_homeItem_label", imageName: "house"),
-        TabBarItemConfiguration(label: "app_components_tabBar_callItem_label", imageName: "phone"),
-        TabBarItemConfiguration(label: "app_components_tabBar_mailItem_label", imageName: "mail"),
-        TabBarItemConfiguration(label: "app_components_tabBar_noteItem_label", imageName: "long.text.page.and.pencil"),
-        TabBarItemConfiguration(label: "app_components_tabBar_settingsItem_label", imageName: "gearshape"),
+        TabBarItemConfiguration(label: "app_components_tabBar_labeltem_label", imageName: "heart-empty"),
+        TabBarItemConfiguration(label: "app_components_tabBar_labeltem_label", imageName: "heart-empty"),
+        TabBarItemConfiguration(label: "app_components_tabBar_labeltem_label", imageName: "heart-empty"),
+        TabBarItemConfiguration(label: "app_components_tabBar_labeltem_label", imageName: "heart-empty"),
+        TabBarItemConfiguration(label: "app_components_tabBar_labeltem_label", imageName: "heart-empty"),
     ]
 
     // MARK: Badges
