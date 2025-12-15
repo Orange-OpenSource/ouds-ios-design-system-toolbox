@@ -5370,7 +5370,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1206-add-missing-illustrations-for-tokens";
+				branch = develop;
 				kind = branch;
 			};
 		};
