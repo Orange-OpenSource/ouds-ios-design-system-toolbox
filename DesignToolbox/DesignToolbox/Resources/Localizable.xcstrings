@@ -3997,6 +3997,29 @@
       },
       "shouldTranslate" : false
     },
+    "app_tokens_color_unspecified_label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "غير محدد"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unspecified"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non spécifié"
+          }
+        }
+      }
+    },
     "app_tokens_common_viewCodeExample_label" : {
       "comment" : "Token - Common",
       "extractionState" : "manual",
