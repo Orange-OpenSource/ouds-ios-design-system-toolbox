@@ -75,6 +75,7 @@ struct TabBarDemo: View {
                                 }
                             }
                             .tag(index)
+                            .modifier(BadgeModifier(index: index, configuration: configurationModel.badgeConfiguration))
                     }
                 }
             }
@@ -101,15 +102,19 @@ private struct TabBarItemDemo: View {
 
     var body: some View {
         Image.decorativeImage(named: item.imageName, prefixedBy: theme.name)
-            .modifier(BadgeModifier(configuration: badge))
     }
+}
 
-    /// To add a bad in the tab bar item
-    private struct BadgeModifier: ViewModifier {
+// MARK: - Badge modifier
 
-        let configuration: TabBarConfigurationModel.BadgeConfiguration
+/// To add a bad in the tab bar item
+private struct BadgeModifier: ViewModifier {
 
-        func body(content: Content) -> some View {
+    let index: Int
+    let configuration: TabBarConfigurationModel.BadgeConfiguration
+
+    func body(content: Content) -> some View {
+        if index == 0 {
             if configuration == .empty { // Empty badge
                 content.badge("")
             } else if case let .text(text) = configuration { // Circle with count, text, etc.
@@ -117,6 +122,8 @@ private struct TabBarItemDemo: View {
             } else { // No badge
                 content
             }
+        } else {
+            content
         }
     }
 }
