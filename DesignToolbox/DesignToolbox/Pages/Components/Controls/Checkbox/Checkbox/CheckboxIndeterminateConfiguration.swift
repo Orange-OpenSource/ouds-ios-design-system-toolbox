@@ -76,12 +76,10 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
     }
 
     var accessibilityLabel: String {
-        
         // No LocalizedStringKey inference in the component
         (isError ? "app_components_common_error_a11y" : "app_components_checkbox_accessibility_label")
             .localized()
     }
-
 }
 
 // MARK: - Checkbox Indeterminate Configuration View
