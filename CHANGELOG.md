@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.22.0..develop)
 
+### Added
+
+- [Library] `constrainedMaxWidth parameter to control items and text input components (Orange-OpenSource/ouds-ios#1211)
+
 ### Changed
 
 - [DesignToolbox] Update color screen to display in list undefined (Orange-OpenSource/ouds-ios#1217)

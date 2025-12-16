@@ -67,6 +67,8 @@ private struct ControlItemConfiguration: View {
 
                 OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $configurationModel.hasDivider)
 
+                OUDSSwitchItem("app_components_common_constrainedMaxWidth_label", isOn: $configurationModel.constrainedMaxWidth)
+
                 OUDSSwitchItem("app_components_controlItem_reversed_label", isOn: $configurationModel.isReversed)
 
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)

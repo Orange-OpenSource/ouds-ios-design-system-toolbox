@@ -105,5 +105,6 @@ private struct ComponentShowcases<ComponentDemo>: View where ComponentDemo: View
                     .colorScheme(colorScheme == .dark ? .light : .dark)
             }
         }
+        .frame(alignment: .center)
     }
 }
