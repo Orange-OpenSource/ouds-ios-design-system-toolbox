@@ -83,6 +83,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var constrainedMaxWidth: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var status: OUDSTextInput.Status {
         didSet { updateCode() }
     }
@@ -103,6 +107,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         text = ""
         helperLinkText = ""
         isOutlined = false
+        constrainedMaxWidth = false
         status = .enabled
     }
 
@@ -182,6 +187,8 @@ struct TextInputConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 OUDSSwitchItem("app_components_common_outlined_label", isOn: $configurationModel.isOutlined)
+
+                OUDSSwitchItem("app_components_common_constrainedMaxWidth_label", isOn: $configurationModel.constrainedMaxWidth)
 
                 OUDSSwitchItem("app_components_textInput_leadingIcon_label", isOn: $configurationModel.leadingIcon)
 

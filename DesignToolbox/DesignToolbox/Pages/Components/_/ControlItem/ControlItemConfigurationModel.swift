@@ -48,6 +48,10 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var constrainedMaxWidth: Bool {
+        didSet { updateCode() }
+    }
+    
     @Published var hasDivider: Bool {
         didSet { updateCode() }
     }
@@ -91,6 +95,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         flipIcon = false
         isReversed = false
         hasDivider = false
+        constrainedMaxWidth = false
         labelText = String(localized: "app_components_common_label_label")
         descriptionText = String(localized: "app_components_common_description_label")
         errorText = String(localized: "app_components_common_errorText_label")
@@ -108,13 +113,13 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            \(componentInitCode), label: "\(labelText)"\(extraLabelTextPattern)\(descriptionTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern))
+            \(componentInitCode), label: "\(labelText)"\(extraLabelTextPattern)\(descriptionTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern)\(constrainedMaxWidthPattern))
             \(disableCodePattern)
             """
     }
 
     // swiftlint:enable line_length
-
+    
     private var disableCodePattern: String {
         !enabled ? ".disabled(true)" : ""
     }
@@ -149,6 +154,10 @@ class ControlItemConfigurationModel: ComponentConfiguration {
 
     private var hasDividerPattern: String {
         hasDivider ? ", hasDivider: true" : ""
+    }
+
+    private var constrainedMaxWidthPattern: String {
+        constrainedMaxWidth ? ", constrainedMaxWidth: true" : ""
     }
 
     private var extraLabelTextPattern: String {
