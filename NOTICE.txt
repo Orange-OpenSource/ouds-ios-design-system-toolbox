@@ -43,13 +43,14 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_union.imageset/ic_union.svg
 
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_token.imageset/ic_token.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_component_atom.imageset/ic_component_atom.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_info.imageset/ic_info.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_heart.imageset/ic_heart.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_theme.imageset/ic_theme.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_theme_dark.imageset/ic_theme_dark.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_theme_light.imageset/ic_theme_light.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_theme_system.imageset/ic_theme_system.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/design-token.imageset/design-token.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/component-atom.imageset/component-atom.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/info-fill.imageset/info-fill.svg
 
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Orange/heart-empty/heart-empty.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Orange/menu-grid.imageset/menu-grid.svg
