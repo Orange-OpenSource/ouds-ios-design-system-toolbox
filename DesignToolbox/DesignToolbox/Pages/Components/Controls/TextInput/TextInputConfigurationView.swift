@@ -83,6 +83,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var constrainedMaxWidth: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var status: OUDSTextInput.Status {
         didSet { updateCode() }
     }
@@ -103,6 +107,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         text = ""
         helperLinkText = ""
         isOutlined = false
+        constrainedMaxWidth = false
         status = .enabled
     }
 
@@ -114,7 +119,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         // swiftlint:disable line_length
         code =
             """
-            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(suffixPattern)\(leadingIconPattern)\(flipLeadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(statusPattern))
+            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(suffixPattern)\(leadingIconPattern)\(flipLeadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
             """
         // swiftlint:enable line_length
     }
@@ -165,6 +170,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         isOutlined ? ", isOutlined: true" : ""
     }
 
+    private var constrainedMaxWidthPattern: String {
+        constrainedMaxWidth ? ", constrainedMaxWidth: true" : ""
+    }
+
     private var statusPattern: String {
         status != .enabled ? ", status: \(status.technicalDescription)" : ""
     }
@@ -182,6 +191,8 @@ struct TextInputConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 OUDSSwitchItem("app_components_common_outlined_label", isOn: $configurationModel.isOutlined)
+
+                OUDSSwitchItem("app_components_common_constrainedMaxWidth_label", isOn: $configurationModel.constrainedMaxWidth)
 
                 OUDSSwitchItem("app_components_textInput_leadingIcon_label", isOn: $configurationModel.leadingIcon)
 
