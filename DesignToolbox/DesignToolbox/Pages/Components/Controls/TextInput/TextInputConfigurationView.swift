@@ -119,7 +119,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         // swiftlint:disable line_length
         code =
             """
-            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(suffixPattern)\(leadingIconPattern)\(flipLeadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(statusPattern))
+            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(suffixPattern)\(leadingIconPattern)\(flipLeadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
             """
         // swiftlint:enable line_length
     }
@@ -168,6 +168,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
     private var outlinedPattern: String {
         isOutlined ? ", isOutlined: true" : ""
+    }
+
+    private var constrainedMaxWidthPattern: String {
+        constrainedMaxWidth ? ", constrainedMaxWidth: true" : ""
     }
 
     private var statusPattern: String {

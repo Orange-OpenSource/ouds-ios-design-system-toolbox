@@ -51,7 +51,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     @Published var constrainedMaxWidth: Bool {
         didSet { updateCode() }
     }
-    
+
     @Published var hasDivider: Bool {
         didSet { updateCode() }
     }
@@ -119,7 +119,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     }
 
     // swiftlint:enable line_length
-    
+
     private var disableCodePattern: String {
         !enabled ? ".disabled(true)" : ""
     }

@@ -5370,7 +5370,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1211-component-update-update-control-items-and-text-input-api-to-allow-max-width-management";
+				branch = develop;
 				kind = branch;
 			};
 		};

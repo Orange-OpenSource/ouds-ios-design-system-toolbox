@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1211-component-update-update-control-items-and-text-input-api-to-allow-max-width-management",
-        "revision" : "d12492207d8b2a2edb8de322a238b2e79ea4d381"
+        "branch" : "develop",
+        "revision" : "161bdcf9bbbdde8f91419de4d560d8a436ba1a34"
       }
     },
     {

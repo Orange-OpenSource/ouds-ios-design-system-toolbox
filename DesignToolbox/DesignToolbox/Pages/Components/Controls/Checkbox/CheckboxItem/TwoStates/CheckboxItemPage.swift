@@ -55,10 +55,10 @@ private struct CheckboxItemDemo: View {
                              isReadOnly: configurationModel.isReadOnly,
                              hasDivider: configurationModel.hasDivider,
                              constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-            .disabled(!configurationModel.enabled)
-            .padding(.all, theme.spaces.fixedMedium)
-            .designToolboxColoredSurface(false)
-            .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
+                .disabled(!configurationModel.enabled)
+                .padding(.all, theme.spaces.fixedMedium)
+                .designToolboxColoredSurface(false)
+                .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
 
             Spacer()
         }
