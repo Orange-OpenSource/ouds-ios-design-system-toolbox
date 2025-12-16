@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "161bdcf9bbbdde8f91419de4d560d8a436ba1a34"
+        "branch" : "1222-bug-a11y-badge-add-an-accessible-label-for-badge-standard",
+        "revision" : "2fd554c5c859d01f5394d792ecb268a821dbe938"
       }
     },
     {

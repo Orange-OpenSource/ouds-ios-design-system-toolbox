@@ -5370,7 +5370,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1222-bug-a11y-badge-add-an-accessible-label-for-badge-standard";
 				kind = branch;
 			};
 		};
