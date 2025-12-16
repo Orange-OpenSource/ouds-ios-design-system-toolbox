@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] `github/codeql-action/upload-sarif` action for `scorecard` workflow
 - [DesignToolbox] Change TestFlight upload process to use `altool` (Orange-OpenSource/ouds-ios#1195)
 - [DesignToolbox] Define timeout of 1 hour for all GitHub Actions workflows
 - [DesignToolbox] Update wording keys and translations (Orange-OpenSource/ouds-ios#1200)
