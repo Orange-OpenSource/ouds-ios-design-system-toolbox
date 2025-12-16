@@ -16,7 +16,7 @@
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
         "branch" : "1211-component-update-update-control-items-and-text-input-api-to-allow-max-width-management",
-        "revision" : "a3501b6e5776908de666c1b0547bbf22af3f2bd1"
+        "revision" : "4ce5d36fb192ac5fc1c5d66b4dc516aab0a78753"
       }
     },
     {
