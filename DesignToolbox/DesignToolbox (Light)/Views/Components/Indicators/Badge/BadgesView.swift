@@ -39,7 +39,7 @@ struct BadgesView: View {
         ForEach(Self.allBadgeStandardSizes, id: \.self) { size in
             Text("Standard size \(String(describing: size))").font(.subheadline)
             ForEach(Self.allBadgeStatus, id: \.self) { status in
-                OUDSBadge(status: status, size: size)
+                OUDSBadge(accessibilityLabel: "Foo", status: status, size: size)
             }
         }
 
@@ -56,7 +56,7 @@ struct BadgesView: View {
         ForEach(Self.allBadgeIllustrationSizes, id: \.self) { size in
             Text("Illustration size \(String(describing: size))").font(.subheadline)
             ForEach(Self.allBadgeStatus, id: \.self) { status in
-                OUDSBadge(count: 100, status: status, size: size)
+                OUDSBadge(count: 100, accessibilityLabel: "Foo", status: status, size: size)
             }
         }
     }
@@ -77,7 +77,7 @@ struct BadgesView: View {
                     ForEach(Self.allBadgeStandardSizes, id: \.self) { size in
                         badgeSection(title: "Standard \(String(describing: size))") {
                             ForEach(Self.allBadgeStatus, id: \.self) { status in
-                                OUDSBadge(status: status, size: size)
+                                OUDSBadge(accessibilityLabel: "Foo", status: status, size: size)
                             }
                         }
                     }
@@ -116,7 +116,7 @@ struct BadgesView: View {
                     ForEach(Self.allBadgeIllustrationSizes, id: \.self) { size in
                         badgeSection(title: "Illustration \(String(describing: size))") {
                             ForEach(Self.allBadgeStatus, id: \.self) { status in
-                                OUDSBadge(count: 100, status: status, size: size)
+                                OUDSBadge(count: 100, accessibilityLabel: "Foo", status: status, size: size)
                             }
                         }
                     }
