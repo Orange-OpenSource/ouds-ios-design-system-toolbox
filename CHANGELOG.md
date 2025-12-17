@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Update wording keys and translations (Orange-OpenSource/ouds-ios#1200)
 - [DesignToolbox] Update color screen to display in list undefined (Orange-OpenSource/ouds-ios#1217)
 - [DesignToolbox] Components illustrations (Orange-OpenSource/ouds-ios#1207)
 - [DesignToolbox] Display versions using OUDS tag in about menu (Orange-OpenSource/ouds-ios#1203)

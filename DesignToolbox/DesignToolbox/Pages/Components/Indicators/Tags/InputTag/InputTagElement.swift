@@ -24,7 +24,7 @@ struct InputTagElement: DesignToolboxElement {
         illustration = AnyView(OUDSTag(label: "Label", status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            description: "app_components_inoputTag_description_text",
+            description: "app_components_tag_inputTag_description_text",
             version: OUDSVersions.componentTagVersion,
             demoScreen: AnyView(InputTagPage())))
     }

@@ -83,7 +83,6 @@ struct DesignToolboxElementPage: View {
 
             if let version {
                 HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
-
                     Text("app_components_common_version_label")
                         .labelStrongLarge(theme)
                         .oudsForegroundColor(theme.colors.contentDefault)

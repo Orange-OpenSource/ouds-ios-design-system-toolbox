@@ -24,7 +24,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     private let defaultLabel = String(localized: "app_components_common_label_label")
     private let defaultHelperText = String(localized: "app_components_common_helperText_label")
     private let defaultPlaceholderText = String(localized: "app_components_textInput_placeholder_label")
-    private let defaultErrorText = String(localized: "app_components_common_errorText_label")
+    private let defaultErrorText = String(localized: "app_components_common_errorMessage_label")
 
     // MARK: Published properties
 

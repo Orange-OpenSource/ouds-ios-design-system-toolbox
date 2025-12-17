@@ -630,7 +630,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عن"
+            "value" : "حول"
           }
         },
         "en" : {
@@ -654,7 +654,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عناصر"
+            "value" : "مكونات"
           }
         },
         "en" : {
@@ -678,7 +678,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الرموز"
+            "value" : "رموز"
           }
         },
         "en" : {
@@ -936,31 +936,6 @@
         }
       }
     },
-    "app_component_common_description_label" : {
-      "comment" : "Component - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Description"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Description"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Description"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_component_emptyContent_description_text" : {
       "comment" : "Common",
       "extractionState" : "manual",
@@ -1064,7 +1039,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الشارة عنصر واجهة مستخدم صغير يُستخدم لتسليط الضوء على الحالة أو الإشعارات أو التصنيفات داخل واجهة المستخدم. غالبًا ما تُعرض كعلامة أو مؤشر بلون خلفية ونص مميزين."
+            "value" : "badge هي عنصر صغير في واجهة المستخدم يُستخدم لتسليط الضوء على الحالة أو الإشعارات أو التصنيف داخل الواجهة. غالبًا ما يتم عرضها كعلامة أو مؤشر بلون خلفية مميز ونص.\r\n"
           }
         },
         "en" : {
@@ -1202,6 +1177,30 @@
         }
       }
     },
+    "app_components_button_appearence_notAllowed_text" : {
+      "comment" : "Component - Button",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "غير مسموح به على الأسطح الملونة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not allowed on colored surface"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non autorisé sur fond de couleur"
+          }
+        }
+      }
+    },
     "app_components_button_description_text" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",
@@ -1209,7 +1208,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تتيح الأزرار للمستخدمين اختيار ما يريدونه أو تنفيذ إجراء ما. وتتوفر بأنماط متعددة لتلبية احتياجات متنوعة."
+            "value" : "تسمح Buttons للمستخدمين باتخاذ قرارات أو تنفيذ إجراءات. وتتوفر بأنماط متعددة لتلبية احتياجات مختلفة."
           }
         },
         "en" : {
@@ -1251,26 +1250,51 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_button_negative_hierary_notAllowed_text" : {
-      "comment" : "Component - Button",
+    "app_components_checkbox_checkbox_label" : {
+      "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "غير مسموح به على الأسطح الملونة"
+            "value" : "Checkbox"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Not allowed on colored surface"
+            "value" : "Checkbox"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Non autorisé sur fond de couleur"
+            "value" : "Checkbox"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_checkbox_checkboxItem_description_text" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تسمح checkboxes للمستخدمين باختيار خيار واحد أو أكثر من قائمة، أو تبديل الإعدادات بين التشغيل والإيقاف، أو تأكيد إجراء معين."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkboxes allows users to select one or multiple options from a list, toggle settings on or off, or confirm an action."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composant CheckboxItem permet aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action."
           }
         }
       }
@@ -1300,30 +1324,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_checkbox_controlItem_description_text" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تتيح مربعات الاختيار للمستخدمين تحديد خيار واحد أو خيارات متعددة من القائمة، أو تشغيل الإعدادات أو إيقاف تشغيلها، أو تأكيد إجراء ما."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Checkboxes allows users to select one or multiple options from a list, toggle settings on or off, or confirm an action."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Le composant CheckboxItem permet aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action."
-          }
-        }
-      }
-    },
     "app_components_checkbox_description_text" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
@@ -1331,7 +1331,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تتيح مربعات الاختيار للمستخدمين تحديد خيار واحد أو خيارات متعددة من القائمة، أو تشغيل الإعدادات أو إيقاف تشغيلها، أو تأكيد إجراء ما."
+            "value" : "تتيح checkboxs للمستخدمين تحديد خيار واحد أو خيارات متعددة من القائمة، أو تشغيل الإعدادات أو إيقاف تشغيلها، أو تأكيد إجراء ما."
           }
         },
         "en" : {
@@ -1355,7 +1355,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "هذه علامة مزيفة مستخدمة في التطبيق التجريبي"
+            "value" : "هذه تسمية زائفة لتطبيق صندوق أدوات نظام التصميم"
           }
         },
         "en" : {
@@ -1379,7 +1379,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تسمح مربعات الاختيار غير المحددة للمستخدمين على سبيل المثال داخل بنية شجرة المجلدات والملفات بتحديد عنصر واحد أو عدة عناصر أو إلغاء تحديدها أو تحديدها جزئيًا."
+            "value" : "Indeterminate checkboxes  تسمح للمستخدمين، على سبيل المثال، ضمن بنية المجلدات والملفات، باختيار أو إلغاء اختيار عنصر واحد أو أكثر، أو اختيار جزئي لعدة عناصر."
           }
         },
         "en" : {
@@ -1428,7 +1428,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تسمح مربعات الاختيار غير المحددة للمستخدمين على سبيل المثال داخل بنية شجرة المجلدات والملفات بتحديد عنصر واحد أو عدة عناصر أو إلغاء تحديدها أو تحديدها جزئيًا."
+            "value" : "Indeterminate checkboxes  تسمح للمستخدمين، على سبيل المثال، ضمن بنية المجلدات والملفات، باختيار أو إلغاء اختيار عنصر واحد أو أكثر، أو اختيار جزئي لعدة عناصر."
           }
         },
         "en" : {
@@ -1502,7 +1502,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يجعل منتقي خانات الاختيار المستخدم قادرا على التحديد بين 0 وجميع العناصر المتوفرة في القائمة"
+            "value" : "يتيح checkbox picker للمستخدم اختيار بين 0 وجميع العناصر الموجودة في القائمة."
           }
         },
         "en" : {
@@ -1551,7 +1551,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "اختياراتك\""
+            "value" : "اختياراتك"
           }
         },
         "en" : {
@@ -1600,7 +1600,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تساعد الشرائح الأشخاص على إدخال المعلومات، أو إجراء التحديدات، أو تصفية المحتوى، أو تشغيل الإجراءات."
+            "value" : "تساعد Chips   المستخدمين على إدخال المعلومات، القيام باختيارات، تصفية المحتوى، أو تنفيذ إجراءات."
           }
         },
         "en" : {
@@ -1648,7 +1648,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مُكوّن \"شريحة المُرشِّح\" هو عنصر مُدمج في واجهة المستخدم، يُستخدم في نظام التصميم، لعرض خيار مُرشِّح يُمكن للمستخدم تحديده أو إلغاء تحديده. يُتيح هذا المُكوّن للمستخدمين تحسين المحتوى أو البيانات من خلال تطبيق مُرشِّح واحد أو أكثر بطريقة تفاعلية وسهلة الوصول بصريًا."
+            "value" : "Filter Chip هو مكون صغير في واجهة المستخدم يُمثل خيار تصفية يمكن للمستخدم تحديده أو إلغاء تحديده. يُستخدم هذا النوع من العناصر لتصفية المحتوى أو البيانات بطريقة تفاعلية وبصرية، ويُساهم في تحسين تجربة المستخدم من خلال التحكم في عرض المعلومات."
           }
         },
         "en" : {
@@ -1746,7 +1746,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "شريحة الاقتراحات هي عنصر واجهة مستخدم مدمج يُستخدم لعرض الخيارات المُوصى بها أو التنبؤية بناءً على مدخلات المستخدم أو السياق. غالبًا ما توجد شرائح الاقتراحات في أشرطة البحث أو النماذج أو واجهات البريد الإلكتروني، وتساعد المستخدمين على اختيار الاقتراحات المناسبة بسرعة. عادةً ما لا يتم اختيارها افتراضيًا، ويمكن تطبيقها بنقرة واحدة، مما يُبسط مدخلات المستخدم ويُحسّن سهولة الاستخدام."
+            "value" : "Suggestion Chip هو مكون صغير في واجهة المستخدم يُستخدم لعرض خيارات مقترحة أو تنبؤية بناءً على إدخال المستخدم أو السياق. غالبًا ما يظهر في شريط البحث، النماذج، أو واجهات المحادثة، ويساعد المستخدمين على اختيار اقتراحات ذات صلة بسرعة. عادةً ما يكون غير محدد بشكل افتراضي، ويمكن النقر عليه لتطبيق الاقتراح، مما يُبسّط إدخال البيانات ويحسن من سهولة الاستخدام."
           }
         },
         "en" : {
@@ -1787,30 +1787,6 @@
         }
       },
       "shouldTranslate" : false
-    },
-    "app_components_chip_suggestionChip_suggestionChip_label" : {
-      "comment" : "Component - Chip",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suggestion"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suggestion"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suggestion"
-          }
-        }
-      }
     },
     "app_components_chipPicker_description_text" : {
       "comment" : "Component - Chip Picker",
@@ -1890,20 +1866,20 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Appearances"
+            "state" : "translated",
+            "value" : "Appearance"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Appearances"
+            "value" : "Appearance"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Apparences"
+            "state" : "translated",
+            "value" : "Apparence"
           }
         }
       },
@@ -1960,6 +1936,7 @@
     },
     "app_components_common_description_label" : {
       "comment" : "Text displayed in a control item.",
+      "extractionState" : "stale",
       "isCommentAutoGenerated" : true,
       "localizations" : {
         "ar" : {
@@ -2014,7 +1991,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "أدخل النص"
+            "value" : "أدخل نصًا"
           }
         },
         "en" : {
@@ -2031,13 +2008,37 @@
         }
       }
     },
-    "app_components_common_error_label" : {
+    "app_components_common_error_a11y" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "رسالة خطأ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error Message"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Message d’erreur"
+          }
+        }
+      }
+    },
+    "app_components_common_error_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Error"
           }
         },
@@ -2049,32 +2050,33 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Error"
           }
         }
       },
       "shouldTranslate" : false
     },
-    "app_components_common_errorText_label" : {
-      "comment" : "Component - Common - Text displayed in a text input when there is an error.",
+    "app_components_common_errorMessage_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Error message"
+            "value" : "Error description"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Error message"
+            "value" : "Error description"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Error message"
+            "value" : "Error description"
           }
         }
       },
@@ -2124,31 +2126,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Helper text"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_common_hierarchy_label" : {
-      "comment" : "Component - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hierarchy"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hierarchy"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hierarchy"
           }
         }
       },
@@ -2524,6 +2501,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_textInputClearIcon_a11y" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مسح المدخلات"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear value"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effacer le contenu"
+          }
+        }
+      }
+    },
     "app_components_common_textOnlyLayout_label" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
@@ -2556,7 +2557,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار تصميم المكونات"
+            "value" : "نسخة تصميم المكون"
           }
         },
         "en" : {
@@ -2580,7 +2581,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عرض مثال على كود المكون"
+            "value" : "مثال على كود مكون العرض"
           }
         },
         "en" : {
@@ -2596,6 +2597,31 @@
           }
         }
       }
+    },
+    "app_components_controlItem_description_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_components_controlItem_divider_label" : {
       "comment" : "Component - ControlItem",
@@ -2678,7 +2704,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يُنظّم الفاصل الواجهة بصريًا من خلال فصل أقسام المحتوى بوضوح. يُحسّن هذا الفاصل سهولة القراءة وتنظيم المحتوى دون الحاجة إلى تسلسل هرمي مُحكم كما هو الحال في العناوين أو الحاويات."
+            "value" : "  ينظم divider واجهة المستخدم بصريًا عن طريق فصل أقسام المحتوى بوضوح. يساعد على تحسين قابلية القراءة وتنظيم المحتوى دون إضافة تسلسل هرمي قوي كما في العناوين أو الحاويات."
           }
         },
         "en" : {
@@ -2818,30 +2844,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_inoputTag_description_text" : {
-      "comment" : "Component - Input Tag",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "إدخال الوسوم هو مُكوِّن يسمح للمستخدمين بإدخال قيم متعددة، كلٌّ منها مُمَثَّل بوسم. عند كتابة المستخدمين للقيم وإرسالها (عادةً بالضغط على مفتاح الإدخال أو الفاصلة أو علامة التبويب)، تُحوَّل كل قيمة إلى وسم."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A Tag Input is a component that allows users to enter multiple values, each represented as a tag. As users type and submit values (usually by pressing enter, comma, or tab), each value is transformed into a Tag."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Le composent InputTag permet aux utilisateurs de saisir plusieurs valeurs, chacune représentée par une balise. À mesure que les utilisateurs saisissent et valident des valeurs (généralement en appuyant sur Entrée, une virgule ou une tabulation), chaque valeur est transformée en balise."
-          }
-        }
-      }
-    },
     "app_components_link_backLayout_label" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",
@@ -2874,7 +2876,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تؤدي الروابط إلى توجيه المستخدمين إلى موارد أو أقسام أخرى، سواء داخلية (ضمن نفس التطبيق) أو خارجية (إلى موقع ويب أو مستند)."
+            "value" : "تُستخدم links لتوجيه المستخدمين إلى موارد أو أقسام إضافية، سواء كانت داخلية (ضمن نفس التطبيق) أو خارجية (مثل موقع إلكتروني أو مستند)."
           }
         },
         "en" : {
@@ -2948,7 +2950,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتيح الراديو للمستخدمين اختيار خيار من القائمة."
+            "value" : "يُستخدم Radio button لتمكين المستخدم من تحديد خيار واحد فقط من بين مجموعة خيارات حصرية. يُعرض عادةً كدائرة صغيرة مع تسمية، وتُملأ عند التحديد."
           }
         },
         "en" : {
@@ -2972,7 +2974,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "هذه علامة مزيفة مستخدمة في التطبيق التجريبي"
+            "value" : "هذه تسمية زائفة لتطبيق صندوق أدوات نظام التصميم"
           }
         },
         "en" : {
@@ -3046,7 +3048,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تسمح أزرار الاختيار للمستخدمين بتحديد خيار واحد من القائمة."
+            "value" : " تتيح Radio buttons للمستخدمين اختيار خيار واحد من قائمة."
           }
         },
         "en" : {
@@ -3120,7 +3122,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يسمح منتقي الراديو للمستخدمين بالاختيار على عنصر ضمن مجموعة من العديد من العناصر الأخرى باستخدام أزرار الاختيار"
+            "value" : " يتيح  Radio picker للمستخدمين اختيار عنصر واحد من مجموعة من أزرار الراديو."
           }
         },
         "en" : {
@@ -3169,7 +3171,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتيح المفتاح للمستخدم تمكين أو تعطيل الميزات أو الخيارات أو الإعدادات."
+            "value" : "يتيح switch للمستخدم التبديل بين حالتين، عادةً تشغيل و إيقاف. يتم تمثيله غالبًا كزر أو شريط منزلق يتغير موقعه أو لونه للإشارة إلى الحالة الحالية. تُستخدم المفاتيح لتمكين أو تعطيل الميزات أو الخيارات أو الإعدادات بطريقة بصرية وفهمها بسهولة."
           }
         },
         "en" : {
@@ -3193,7 +3195,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "هذا تلميح مزيف لتطبيق صندوق أدوات نظام التصميم"
+            "value" : "هذه تلميح زائف لتطبيق صندوق أدوات نظام التصميم"
           }
         },
         "en" : {
@@ -3267,7 +3269,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتيح المفتاح للمستخدم تمكين أو تعطيل الميزات أو الخيارات أو الإعدادات."
+            "value" : "يتيح التبديل للمستخدم تفعيل أو تعطيل الميزات، الخيارات، أو الإعدادات."
           }
         },
         "en" : {
@@ -3316,7 +3318,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الوسم هو عنصر صغير يُستخدم لعرض معلومات قصيرة مثل تسمية أو كلمة مفتاحية أو تصنيف. يساعد المستخدمين على العثور على المحتوى بسرعة أو تجميعه أو فهمه."
+            "value" : "Tag هو عنصر صغير يُستخدم لعرض معلومات قصيرة مثل تسمية أو كلمة مفتاحية أو تصنيف. يساعد المستخدمين على العثور على المحتوى بسرعة أو تجميعه أو فهمه."
           }
         },
         "en" : {
@@ -3329,6 +3331,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Le composant Tag est un petit élément qui affiche de brèves informations comme une étiquette, un mot-clé ou une catégorie. Elle aide les utilisateurs à trouver, regrouper ou comprendre rapidement du contenu."
+          }
+        }
+      }
+    },
+    "app_components_tag_inputTag_description_text" : {
+      "comment" : "Component - Input Tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input Tag هو مكوّن يسمح للمستخدمين بإدخال عدة قيم، حيث يتم تمثيل كل قيمة كوسم. عند الكتابة والضغط على زر الإدخال (Enter) أو الفاصلة أو زر الجدولة (Tab)، يتم تحويل كل قيمة إلى وسم."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An Input Tag is a component that allows users to enter multiple values, each represented as a tag. As users type and submit values (usually by pressing enter, comma, or tab), each value is transformed into a Tag."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composent InputTag permet aux utilisateurs de saisir plusieurs valeurs, chacune représentée par une balise. À mesure que les utilisateurs saisissent et valident des valeurs (généralement en appuyant sur Entrée, une virgule ou une tabulation), chaque valeur est transformée en balise."
           }
         }
       }
@@ -3465,7 +3491,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتيح مُكوِّن إدخال النص للمستخدمين إدخال بيانات نصية أو تحريرها أو تحديدها في سطر واحد. وهو أحد أهم عناصر النموذج لإدخال بيانات المستخدم، مثل الأسماء وعناوين البريد الإلكتروني وكلمات المرور واستعلامات البحث."
+            "value" : "Text Input هو أحد مكونات واجهة المستخدم، ويُتيح للمستخدمين إدخال بيانات نصية أحادية السطر أو تحريرها أو تحديدها. وهو أحد أهم عناصر النموذج المستخدمة لتسجيل بيانات المستخدم، مثل الأسماء ورسائل البريد الإلكتروني وكلمات المرور واستعلامات البحث"
           }
         },
         "en" : {
@@ -3575,31 +3601,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Helper link"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_textInput_helperText_label" : {
-      "comment" : "Component - Text Input",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "نص مساعد."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Helper text"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Texte d'aide."
           }
         }
       },
@@ -3754,6 +3755,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_textInputHelperText_label" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص مساعد."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte d'aide."
+          }
+        }
+      }
+    },
     "app_settings_themeSwitch_cancel" : {
       "comment" : "App - Settings",
       "extractionState" : "manual",
@@ -3856,7 +3881,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتم استخدام الحدود لألوان الخطوط على المكونات وكذلك لألوان خطوط التقسيم للمكونات مثل الجداول."
+            "value" : "الحدود تستخدم لألوان الإطار على المكونات وكذلك لألوان خطوط الفواصل للمكونات مثل الجداول."
           }
         },
         "en" : {
@@ -4052,7 +4077,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عرض مثال رمز الرمز المميز"
+            "value" : "عرض مثال على رمز التوكن"
           }
         },
         "en" : {
@@ -4076,7 +4101,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يوفر البعد أحجامًا ومسافات قياسية لضمان الاتساق البصري عبر واجهة المستخدم."
+            "value" : "توفر الأبعاد قياسات ومسافات قياسية لضمان التناسق البصري عبر واجهة المستخدم."
           }
         },
         "en" : {
@@ -4125,7 +4150,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يشير الحجم إلى القياسات المحددة المستخدمة لتحديد أبعاد عناصر واجهة المستخدم ضمن نظام التصميم."
+            "value" : "الحجم يشير إلى القياسات المحددة المستخدمة لتعريف أبعاد عناصر واجهة المستخدم ضمن نظام التصميم."
           }
         },
         "en" : {
@@ -4297,7 +4322,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تتضمن فجوة العمود المسافة الرأسية بين الكائنات."
+            "value" : "الفاصل الأفقي يشمل المسافة الرأسية بين العناصر."
           }
         },
         "en" : {
@@ -4321,7 +4346,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تشير المساحة إلى القياسات المستخدمة لتحديد المسافة بين عناصر واجهة المستخدم."
+            "value" : " تشير المسافة إلى القياسات المستخدمة لتحديد المسافات بين عناصر واجهة المستخدم"
           }
         },
         "en" : {
@@ -4370,7 +4395,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تشير المسافة الثابتة إلى مسافة ثابتة بين العناصر تظل كما هي بغض النظر عن عوامل مثل حجم الحاوية أو دقة الشاشة أو تغييرات التخطيط."
+            "value" : "ثابت يشير إلى مسافة ثابتة بين العناصر تظل كما هي بغض النظر عن عوامل مثل حجم الحاوية، دقة الشاشة، أو تغييرات التخطيط."
           }
         },
         "en" : {
@@ -4383,6 +4408,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les tokens Fixed font référence à une distance constante entre les éléments qui reste la même quels que soient des facteurs tels que la taille du conteneur, la résolution de l'écran ou les changements de mise en page."
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_inset_label" : {
+      "comment" : "Token - Dimension - Space",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Inset"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inset"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inset"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_tokens_dimension_space_insetHeader_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الهوامش الداخلية تتضمن الحشو من اليسار واليمين والأعلى والأسفل، مع جميع المعلمات متساوية."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inset includes the left, right, top, and bottom padding, with all parameters being equal."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les tokens Inset correspondent au remplissage équivalant autour d’un objet (gauche, droit, supérieur et inférieur)."
           }
         }
       }
@@ -4441,7 +4514,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تتضمن مجموعة الحشو الحشو العلوي والسفلي."
+            "value" : "تتضمن مساحة الحشو للكتلة الحشو من الأعلى والأسفل."
           }
         },
         "en" : {
@@ -4490,7 +4563,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تتضمن الحشوة المضمنة الحشوة اليمنى واليسرى لكائن أو مجموعة من الكائنات."
+            "value" : "الحشو الأفقي يشمل الحشو الأيسر والأيمن لعنصر أو مجموعة من العناصر."
           }
         },
         "en" : {
@@ -4514,47 +4587,23 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Padding inset"
+            "value" : "Inset"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Padding inset"
+            "value" : "Inset"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Padding inset"
+            "value" : "Inset"
           }
         }
       },
       "shouldTranslate" : false
-    },
-    "app_tokens_dimension_space_paddingInsetHeader_text" : {
-      "comment" : "Token - Dimension - Space",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تتضمن الحشوة المضمنة الحشوة اليسرى واليمنى والعلوية والسفلية، مع تساوي جميع المعلمات."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Padding inset includes the left, right, top, and bottom padding, with all parameters being equal."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Les tokens Padding Inset correspondent au remplissage équivalant autour d’un objet (gauche, droit, supérieur et inférieur)."
-          }
-        }
-      }
     },
     "app_tokens_dimension_space_rowGap_label" : {
       "comment" : "Token - Dimension - Space",
@@ -4588,7 +4637,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تتضمن فجوة الصفوف المسافة الأفقية بين الكائنات."
+            "value" : "الفاصل بين الصفوف هو المسافة الرأسية بين العناصر."
           }
         },
         "en" : {
@@ -4637,7 +4686,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تشير المسافة المقاسة إلى المسافة التي يتم تعديلها ديناميكيًا استنادًا إلى عوامل مثل حجم الحاوية أو دقة الشاشة أو عناصر التخطيط."
+            "value" : "مقاس نسبياً يشير إلى المسافات التي تتكيف ديناميكياً بناءً على عوامل مثل حجم الحاوية، دقة الشاشة، أو عناصر التخطيط."
           }
         },
         "en" : {
@@ -4661,7 +4710,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتم استخدام الظلال لإعطاء انطباع بالمسافة أو الارتفاع بين الأسطح، مما يضيف عمقًا إلى تصميماتنا."
+            "value" : "تُستخدم الظلال لإعطاء انطباع بالمسافة أو الارتفاع بين الأسطح، مما يضيف عمقًا إلى تصاميمنا."
           }
         },
         "en" : {
@@ -4710,7 +4759,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتم استخدام الشبكات لتحديد موضع المحتوى وإنشاء تخطيطات صفحات متسقة"
+            "value" : "يتم استخدام الشبكات لتنظيم المحتوى وضمان تنسيق موحد لصفحات الموقع."
           }
         },
         "en" : {
@@ -4759,7 +4808,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يمكن أن تساعد العتامة في التمييز بين عناصر المقدمة وعناصر الخلفية، مما يجعل المحتوى أسهل في القراءة والإجراءات المهمة أكثر وضوحًا."
+            "value" : "يمكن أن تساعد Opacity في تمييز عناصر المقدمة عن عناصر الخلفية، مما يجعل المحتوى أسهل في القراءة ويجعل الإجراءات المهمة أكثر وضوحًا."
           }
         },
         "en" : {
@@ -4808,7 +4857,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الخط هو نظامنا من الخطوط وأنماط النصوص. يُحسّن هذا النظام التواصل ويُعزز أسلوب علامتنا التجارية."
+            "value" : " الخط هي نظام خطوطنا وأنماط النصوص لدينا. فهي تعزز التواصل وتؤكد على نمط العلامة التجارية."
           }
         },
         "en" : {
@@ -4871,7 +4920,8 @@
             "value" : "Font"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_typography_letterSpacingAttribute" : {
       "comment" : "Token - Typography",

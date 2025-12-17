@@ -36,12 +36,12 @@ struct SpaceTokenPage: View {
             Section { FixedSpaceProperty() } header: {
                 header("app_tokens_dimension_space_fixed_label")
             }
+            Section { InsetSpaceProperty() } header: {
+                header("app_tokens_dimension_space_inset_label")
+            }
             // Padding Space Tokens
             Section { PaddingInlineProperty() } header: {
                 header("app_tokens_dimension_space_paddingInline_label")
-            }
-            Section { PaddingInsetProperty() } header: {
-                header("app_tokens_dimension_space_paddingInset_label")
             }
             Section { PaddingBlockProperty() } header: {
                 header("app_tokens_dimension_space_paddingBlock_label")
