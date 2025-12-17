@@ -109,6 +109,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         isOutlined = false
         constrainedMaxWidth = false
         status = .enabled
+        super.init()
     }
 
     deinit {}

@@ -19,6 +19,10 @@ import SwiftUI
 /// The common class used to define the configuration of each component.
 open class ComponentConfiguration: ObservableObject {
 
+    /// Flag to rise of the component to show must not be duplicated with forced color scheme
+    /// like for tab bars
+    let useOneColorSchemedDemo: Bool
+
     @Published var code: String = ""
 
     @Published var onColoredSurface: Bool = false {
@@ -26,12 +30,18 @@ open class ComponentConfiguration: ObservableObject {
     }
 
     init() {
+        useOneColorSchemedDemo = false
+        updateCode()
+    }
+
+    init(useOneColorSchemedDemo: Bool = false) {
+        self.useOneColorSchemedDemo = useOneColorSchemedDemo
         updateCode()
     }
 
     deinit {}
 
-    // Overwride this function and update code when configuration changed
+    // Override this function and update code when configuration changed
     func updateCode() {}
 }
 
@@ -58,7 +68,7 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
-            ComponentShowcases(onColoredSurface: configuration.onColoredSurface, componentDemo: componentView)
+            ComponentShowcases(onColoredSurface: configuration.onColoredSurface, useOneColorSchemedDemo: configuration.useOneColorSchemedDemo, componentDemo: componentView)
             // No padding here, the component area keeps all the frame horizontaly
 
             DesignToolboxConfiguration {
@@ -83,7 +93,10 @@ private struct ComponentShowcases<ComponentDemo>: View where ComponentDemo: View
     // MARK: Stored properties
 
     /// Flag to indicates if component is demonstrated on a colored surface
-    var onColoredSurface: Bool
+    let onColoredSurface: Bool
+
+    /// Flag to rise to display only one component without forced color scheme
+    let useOneColorSchemedDemo: Bool
 
     /// The view of the component in the desired configuration.
     @ViewBuilder var componentDemo: () -> ComponentDemo
@@ -96,13 +109,18 @@ private struct ComponentShowcases<ComponentDemo>: View where ComponentDemo: View
                 componentDemo()
                     .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: true))
             } else {
-                componentDemo()
-                    .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
+                if useOneColorSchemedDemo {
+                    componentDemo()
+                        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
+                } else {
+                    componentDemo()
+                        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
 
-                // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-                componentDemo()
-                    .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
-                    .colorScheme(colorScheme == .dark ? .light : .dark)
+                    // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
+                    componentDemo()
+                        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
+                        .colorScheme(colorScheme == .dark ? .light : .dark)
+                }
             }
         }
         .frame(alignment: .center)

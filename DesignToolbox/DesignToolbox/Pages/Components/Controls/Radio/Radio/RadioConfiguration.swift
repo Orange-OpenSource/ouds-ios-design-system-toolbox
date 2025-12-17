@@ -44,6 +44,7 @@ final class RadioConfigurationModel: ComponentConfiguration {
         enabled = true
         isError = false
         isReadOnly = false
+        super.init()
     }
 
     deinit {}

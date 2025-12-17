@@ -39,6 +39,7 @@ final class SwitchConfigurationModel: ComponentConfiguration {
         selection = true
         enabled = true
         isReadOnly = false
+        super.init()
     }
 
     deinit {}

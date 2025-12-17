@@ -168,13 +168,14 @@ struct ColorTokenPage: View {
 
         // MARK: Body
 
+        // swiftlint:disable force_unwrapping
         var body: some View {
             let colorRawToken = colorScheme == .dark ? darkValue : lightValue
             let value: String = colorRawToken ?? "app_tokens_color_unspecified_label".localized()
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 Group {
                     if let colorRawToken {
-                        Rectangle().fill(colorRawToken.color)
+                        Rectangle().fill(Color(hexadecimalCode: colorRawToken)!)
                     } else {
                         Canvas { ctx, _ in
                             var path = Path()
@@ -194,5 +195,6 @@ struct ColorTokenPage: View {
                     color: theme.colors.borderDefault)
             }
         }
+        // swiftlint:enable force_unwrapping
     }
 }

@@ -14,7 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: Button page
+// MARK: Link page
 
 struct LinkPage: View {
 
@@ -33,7 +33,7 @@ struct LinkPage: View {
     }
 }
 
-// MARK: - Button Demo
+// MARK: - Link Demo
 
 private struct LinkDemo: View {
 

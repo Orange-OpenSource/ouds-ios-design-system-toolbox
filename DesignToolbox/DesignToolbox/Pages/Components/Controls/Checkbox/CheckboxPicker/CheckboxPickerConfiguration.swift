@@ -54,6 +54,7 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
         isError = false
         isReversed = false
         isEnabled = true
+        super.init()
     }
 
     deinit {}
