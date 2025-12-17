@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - [DesignToolbox] `radio` and `switch` in read-only mode are still active (Orange-OpenSource/ouds-ios#1224)
+- [Librayr] The orange warning icon is not the right one used on `tag` and `badge` (Orange-OpenSource/ouds-ios#1219)
 - [Library] Icon not shown for negative `tag` and `badge` types (Orange-OpenSource/ouds-ios#1216)
 - [Library] Missing accessibility label for badge `standard` and `count` types (Orange-OpenSource/ouds-ios#1060) (Orange-OpenSource/ouds-ios#1222)
 - [Library] Set own accessibility label to trailing action in `TextInput` (Orange-OpenSource/ouds-ios#1087)
