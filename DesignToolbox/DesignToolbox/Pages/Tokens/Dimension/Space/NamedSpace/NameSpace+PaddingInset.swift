@@ -15,7 +15,7 @@ import OUDSSwiftUI
 
 extension NamedSpace {
 
-    enum PaddingInset: String, CaseIterable, NamedSpaceToken {
+    enum Inset: String, CaseIterable, NamedSpaceToken {
         case insetNone
         case inset4xsmall
         case inset3xsmall

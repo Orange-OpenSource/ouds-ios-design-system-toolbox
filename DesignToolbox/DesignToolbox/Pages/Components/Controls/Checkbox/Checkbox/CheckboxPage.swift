@@ -46,7 +46,7 @@ private struct CheckboxDemo: View {
         HStack(alignment: .center) {
             Spacer()
             OUDSCheckbox(isOn: $configurationModel.indicatorState,
-                         accessibilityLabel: "app_components_checkbox_hint_a11y".localized(), // No LocalizedStringKey inference in the component
+                         accessibilityLabel: configurationModel.accessibilityLabel,
                          isError: configurationModel.isError,
                          isReadOnly: configurationModel.isReadOnly)
                 .disabled(!configurationModel.enabled)

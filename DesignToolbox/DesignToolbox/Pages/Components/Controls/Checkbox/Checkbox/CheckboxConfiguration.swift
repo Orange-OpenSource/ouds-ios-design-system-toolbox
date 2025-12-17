@@ -38,6 +38,11 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    var accessibilityLabel: String {
+        (isError ? "app_components_common_error_a11y" : "app_components_checkbox_hint_a11y")
+            .localized()
+    }
+
     // MARK: Initializer
 
     override init() {

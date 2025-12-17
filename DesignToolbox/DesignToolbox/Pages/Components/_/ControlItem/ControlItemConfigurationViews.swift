@@ -88,10 +88,10 @@ private struct ControlItemConfiguration: View {
                     DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_radioButton_radioButtonItem_extraLabel_label")
                 }
 
-                DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_common_description_label")
+                DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_controlItem_description_label")
 
                 if configurationModel.isError {
-                    DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_common_errorText_label")
+                    DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_common_errorMessage_label")
                 }
             }
         }
