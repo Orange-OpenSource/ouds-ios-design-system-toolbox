@@ -64,7 +64,7 @@ struct SizeTokenPage: View {
                     }
                 }
             } header: {
-                sectionHeader("app_tokens_dimension_size_minWidth_label")
+                sectionHeader("app_tokens_dimension_size_minInteractiveArea_label")
             }
         }
         .padding(.horizontal, theme.spaces.fixedMedium)
