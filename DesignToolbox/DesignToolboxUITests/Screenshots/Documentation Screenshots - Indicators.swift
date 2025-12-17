@@ -49,6 +49,7 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
         goToComponentsSheet(app)
         waitForButtonToAppear(withWording: "app_components_badge_label", app)
         tapButton(withWording: "app_components_badge_label", app)
+        swipeFromDownToUp(app)
 
         tapButton(withWording: "Large", app)
         tapButton(withWording: "Accent", app)
