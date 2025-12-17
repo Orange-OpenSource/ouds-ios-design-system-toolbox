@@ -37,6 +37,7 @@ final class DividerConfigurationModel: ComponentConfiguration {
     init(orientation: Orientation, selectedColor: OUDSDividerColor = .default) {
         self.selectedColor = selectedColor
         self.orientation = orientation
+        super.init()
     }
 
     deinit {}

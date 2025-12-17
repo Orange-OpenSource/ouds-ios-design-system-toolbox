@@ -50,6 +50,8 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         indicatorState = true
         isError = false
         isReadOnly = false
+        enabled = true
+        super.init()
     }
 
     deinit {}

@@ -47,7 +47,7 @@ struct IllustrationFont: View {
     }
 
     private var familyText: String {
-        "app_tokens_typography_familyAttribute" <- "\(theme.family ?? "system")"
+        "app_tokens_typography_familyAttribute" <- "\(theme.fontFamily ?? "system")"
     }
 
     private var weightText: String {

@@ -50,6 +50,8 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
         indicatorState = .selected
         isError = false
         isReadOnly = false
+        enabled = true
+        super.init()
     }
 
     deinit {}
