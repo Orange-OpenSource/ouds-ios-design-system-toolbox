@@ -33,7 +33,7 @@ struct TabBarElement: DesignToolboxElement {
 private struct TabBarIllustration: View {
 
     var body: some View {
-        OUDSTabBar(count: 3) {
+        OUDSTabBar(selected: 0, count: 3) {
             FakeTabItem(title: "Label", imageName: "heart-empty", tag: 0)
             FakeTabItem(title: "Label", imageName: "heart-empty", tag: 1)
             FakeTabItem(title: "Label", imageName: "heart-empty", tag: 2)

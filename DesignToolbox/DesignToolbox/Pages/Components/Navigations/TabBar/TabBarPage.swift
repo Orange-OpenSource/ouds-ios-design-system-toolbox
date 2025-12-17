@@ -64,7 +64,7 @@ struct TabBarDemo: View {
                 OUDSTabBar(selected: 0, count: configurationModel.numberOfItems) {
                     ForEach(configurationModel.limitedItems.indices, id: \.self) { index in
                         let item = configurationModel.limitedItems[index]
-                        TabBarItemDemo(item: item, badge: configurationModel.badgeConfiguration)
+                        TabBarItemDemo(index: index, imageName: item.imageName)
                             .tabItem {
                                 Label {
                                     Text(item.label.localized())
@@ -92,16 +92,16 @@ struct TabBarDemo: View {
 /// The view attached to the tab
 private struct TabBarItemDemo: View {
 
-    /// Things to display as tab target
-    let item: TabBarConfigurationModel.TabBarItemConfiguration
-
-    /// Badge to display to the associated tab
-    let badge: TabBarConfigurationModel.BadgeConfiguration
+    let index: Int
+    let imageName: String
 
     @Environment(\.theme) private var theme
 
     var body: some View {
-        Image.decorativeImage(named: item.imageName, prefixedBy: theme.name)
+        HStack {
+            Text("Item \(index + 1)")
+            Image.decorativeImage(named: imageName, prefixedBy: theme.name)
+        }
     }
 }
 

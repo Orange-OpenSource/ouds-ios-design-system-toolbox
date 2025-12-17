@@ -19,7 +19,7 @@ struct MainView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSTabBar(count: 3) {
+        OUDSTabBar(selected: 0, count: 3) {
             TokensPage()
                 .tabItem {
                     Label("app_bottomBar_tokens_label", image: "design-token")

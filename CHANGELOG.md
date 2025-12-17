@@ -8,17 +8,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] `constrainedMaxWidth` parameter to control items and text input components (Orange-OpenSource/ouds-ios#1211)
 - [Library] `tab bar` component (Orange-OpenSource/ouds-ios#1135)
+- [Library] `constrainedMaxWidth` parameter to control items and text input components (Orange-OpenSource/ouds-ios#1211)
 
 ### Changed
 
+- [DesignToolbox] Define timeout of 1 hour for all GitHub Actions workflows
 - [DesignToolbox] Update wording keys and translations (Orange-OpenSource/ouds-ios#1200)
 - [DesignToolbox] Use v1.4 icons with appropriate size in tab app bar items
 - [DesignToolbox] Update color screen to display in list undefined (Orange-OpenSource/ouds-ios#1217)
 - [DesignToolbox] Components illustrations (Orange-OpenSource/ouds-ios#1207)
 - [DesignToolbox] Display versions using OUDS tag in about menu (Orange-OpenSource/ouds-ios#1203)
-- [DesignToolbox] Define timeout of 2 hours for all GitHub Actions workflows
 - [DesignToolbox] Display of colors and size semantic tokens (Orange-OpenSource/ouds-ios#1206)
 - [Library] Color semantic tokens (Orange-OpenSource/ouds-ios#1206)
 - [DesignToolbox] Define timeout of 2 hours for all GitHub Actions workflows
