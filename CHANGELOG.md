@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Update `net-http` gem from v0.8.0 to v0.9.1
 - [DesignToolbox] `Ruby` version from v3.4.7 to v3.4.8 for `build-and-test` workflows
 - [DesignToolbox] `actions/upload-artifact` action from v5.0.0 to v6.0.0 for `scorecard` workflow
 - [DesignToolbox] `ruby/setup-ruby` action from v1.268.0 to v1.271.0 for `build-and-test` workflow
