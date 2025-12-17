@@ -51,7 +51,7 @@ jobs:
   # Build the app (if there are linter errors or compiler issues, it will fail)
   build:
     runs-on: macos-26
-    timeout-minutes: 120
+    timeout-minutes: 60
     steps:
       - name: Checkout code
         uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
@@ -82,7 +82,7 @@ jobs:
   # Test the app with unit tests
   unit-test:
     runs-on: macos-26
-    timeout-minutes: 120
+    timeout-minutes: 60
     steps:
       - name: Checkout code
         uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
@@ -108,7 +108,7 @@ jobs:
   # Test the app / library with UI tests
   ui-test:
     runs-on: macos-26
-    timeout-minutes: 120
+    timeout-minutes: 60
     steps:
       - name: Checkout code
         uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
@@ -134,7 +134,7 @@ jobs:
   # Test the app / library with snapshots tests
   snapshots-test:
     runs-on: macos-26
-    timeout-minutes: 120
+    timeout-minutes: 60
     steps:
       - name: Checkout code
         uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
