@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1188-buga11y-separate-label-from-trait-state-value-and-error-message",
-        "revision" : "56d5c158c392b7552f6f28a7b39ac3186bbdeed0"
+        "branch" : "develop",
+        "revision" : "ab8fe2942361935856dd79823a01bbbb615b2950"
       }
     },
     {

@@ -5408,7 +5408,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1188-buga11y-separate-label-from-trait-state-value-and-error-message";
+				branch = develop;
 				kind = branch;
 			};
 		};
