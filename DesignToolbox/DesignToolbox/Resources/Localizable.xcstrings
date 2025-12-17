@@ -3353,7 +3353,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Le composent InputTag permet aux utilisateurs de saisir plusieurs valeurs, chacune représentée par une balise. À mesure que les utilisateurs saisissent et valident des valeurs (généralement en appuyant sur Entrée, une virgule ou une tabulation), chaque valeur est transformée en balise."
           }
         }
@@ -3773,7 +3773,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Texte d'aide."
           }
         }
