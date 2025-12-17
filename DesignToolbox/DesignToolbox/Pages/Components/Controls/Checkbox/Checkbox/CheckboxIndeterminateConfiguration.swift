@@ -75,7 +75,7 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
         isReadOnly ? ", isReadOnly: true" : ""
     }
 
-    var accessibilityLabel: String {
+    private var accessibilityLabel: String {
         // No LocalizedStringKey inference in the component
         (isError ? "app_components_common_error_a11y" : "app_components_checkbox_accessibility_label")
             .localized()
