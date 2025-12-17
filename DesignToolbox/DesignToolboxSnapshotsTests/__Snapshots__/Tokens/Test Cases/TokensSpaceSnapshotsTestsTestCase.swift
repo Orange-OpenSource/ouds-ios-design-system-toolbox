@@ -75,17 +75,18 @@ open class TokensSpaceSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// Tests all padding inline `PaddingInline` spaces by capturing their snapshots.
+    /// Tests all padding inset `Inset` spaces by capturing their snapshots.
     /// - Parameters:
     ///   - theme: Theme used for rendering tokens (e.g. `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor func testPaddingInline(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        // Iterate through all background color cases defined in NamedSpace.PaddingInline
-        for namedToken in NamedSpace.PaddingInline.allCases {
+    @MainActor func testInset(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+
+        // Iterate through all background color cases defined in NamedSpace.Inset
+        for namedToken in NamedSpace.Inset.allCases {
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
-                    PaddingInlineProperty.Illustration(token: token)
+                    InsetSpaceProperty.Illustration(token: token)
                 }
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
@@ -102,18 +103,17 @@ open class TokensSpaceSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// Tests all padding inset `Inset` spaces by capturing their snapshots.
+    /// Tests all padding inline `PaddingInline` spaces by capturing their snapshots.
     /// - Parameters:
     ///   - theme: Theme used for rendering tokens (e.g. `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor func testInset(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-
-        // Iterate through all background color cases defined in NamedSpace.Inset
-        for namedToken in NamedSpace.Inset.allCases {
+    @MainActor func testPaddingInline(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        // Iterate through all background color cases defined in NamedSpace.PaddingInline
+        for namedToken in NamedSpace.PaddingInline.allCases {
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
-                    InsetProperty.Illustration(token: token)
+                    PaddingInlineProperty.Illustration(token: token)
                 }
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
