@@ -5408,7 +5408,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1219-bug-the-orange-warning-icon-is-not-the-right-one";
 				kind = branch;
 			};
 		};
