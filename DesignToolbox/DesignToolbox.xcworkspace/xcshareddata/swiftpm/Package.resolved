@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "c457c5e0e62be6a5320d04276d898e5833924015"
+        "branch" : "1219-bug-the-orange-warning-icon-is-not-the-right-one",
+        "revision" : "bc3492f28ad672725ef873744b1b527c16aa89a1"
       }
     },
     {
