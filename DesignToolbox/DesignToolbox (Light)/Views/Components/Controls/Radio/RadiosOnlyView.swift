@@ -36,6 +36,10 @@ private struct RadioOnlyLayout: View {
         Text("Enabled, on error").font(.subheadline)
         OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isError: true)
             .font(.subheadline)
+
+        Text("Read only").font(.subheadline)
+        OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isReadOnly: true)
+
         Text("Disabled, no error")
         OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isError: false)
             .disabled(true)

@@ -32,26 +32,18 @@ struct ButtonElement: DesignToolboxElement {
 
 private struct ButtonIllustration: View {
 
-    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(spacing: theme.spaces.fixedSmall) {
             #if !os(visionOS)
-            // Dont translate default text for all
-            OUDSButton(text: "Label", appearance: firstButtonAppearance) {}
-            OUDSButton(text: "Label", appearance: secondButtonAppearance) {}
+            // Don't translate default text for all
+            OUDSButton(text: "Label", appearance: colorScheme == .light ? .strong : .default) {}
+            OUDSButton(text: "Label", appearance: colorScheme == .light ? .default : .strong) {}
             #else
-            OUDSButton(text: "Label", appearance: firstButtonAppearance) {}
+            OUDSButton(text: "Label", appearance: .default) {}
             #endif
         }
-    }
-
-    private var firstButtonAppearance: OUDSButton.Appearance {
-        colorScheme == .light ? .strong : .default
-    }
-
-    private var secondButtonAppearance: OUDSButton.Appearance {
-        colorScheme == .light ? .default : .strong
     }
 }

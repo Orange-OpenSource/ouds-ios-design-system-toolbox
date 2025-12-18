@@ -35,11 +35,11 @@ struct SpacesView: View {
             Section("Fixed") {
                 FixedSpaceProperty()
             }
+            Section("Inset") {
+                InsetSpaceProperty()
+            }
             Section("Padding inline") {
                 PaddingInlineProperty()
-            }
-            Section("Padding inset") {
-                PaddingInsetProperty()
             }
             Section("Padding block") {
                 PaddingBlockProperty()
@@ -75,16 +75,16 @@ struct SpacesView: View {
             .focusable()
 
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                Text("Padding inline").font(.headline)
-                PaddingInlineProperty()
+                Text("Inset").font(.headline)
+                InsetSpaceProperty()
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
             .padding()
             .focusable()
 
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                Text("Padding inset").font(.headline)
-                PaddingInsetProperty()
+                Text("Padding inline").font(.headline)
+                PaddingInlineProperty()
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
             .padding()

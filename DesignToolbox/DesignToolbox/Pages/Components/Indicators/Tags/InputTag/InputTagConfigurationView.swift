@@ -30,6 +30,7 @@ final class InputTagConfigurationModel: ComponentConfiguration {
     override init() {
         enabled = true
         label = String(localized: "app_components_common_label_label")
+        super.init()
     }
 
     deinit {}

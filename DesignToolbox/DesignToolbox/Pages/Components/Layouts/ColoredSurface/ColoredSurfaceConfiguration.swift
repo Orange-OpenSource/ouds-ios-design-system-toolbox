@@ -29,6 +29,7 @@ final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
 
     override init() {
         selectedColor = NamedColorMode.onBrandPrimary
+        super.init()
     }
 
     deinit {}

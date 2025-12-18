@@ -46,8 +46,9 @@ private struct CheckboxIndeterminateDemo: View {
         HStack(alignment: .center) {
             Spacer()
             OUDSCheckboxIndeterminate(selection: $configurationModel.indicatorState,
-                                      accessibilityLabel: "app_components_checkbox_hint_a11y".localized(), // No LocalizedStringKey inference in the component
-                                      isError: configurationModel.isError)
+                                      accessibilityLabel: configurationModel.accessibilityLabel,
+                                      isError: configurationModel.isError,
+                                      isReadOnly: configurationModel.isReadOnly)
                 .disabled(!configurationModel.enabled)
                 .accessibilityIdentifier(A11YIdentifiers.componentCheckboxIndeterminate)
             Spacer()

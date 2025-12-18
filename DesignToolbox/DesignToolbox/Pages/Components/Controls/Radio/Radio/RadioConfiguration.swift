@@ -33,12 +33,18 @@ final class RadioConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var isReadOnly: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: - Initializer
 
     override init() {
         selection = false
-        isError = false
         enabled = true
+        isError = false
+        isReadOnly = false
+        super.init()
     }
 
     deinit {}
@@ -48,7 +54,7 @@ final class RadioConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            OUDSRadio(isOn: $isOn, accessibilityLabel: "A label for accessibility"\(isErrorPattern))
+            OUDSRadio(isOn: $isOn, accessibilityLabel: "A label for accessibility"\(isErrorPattern)\(isReadOnlyPattern))
             \(disableCodePattern)
             """
     }
@@ -59,6 +65,10 @@ final class RadioConfigurationModel: ComponentConfiguration {
 
     private var isErrorPattern: String {
         isError && enabled ? ", isError: true" : ""
+    }
+
+    private var isReadOnlyPattern: String {
+        isReadOnly ? ", isReadOnly: true" : ""
     }
 }
 
@@ -74,13 +84,16 @@ struct RadioConfiguration: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.selection)
                 .accessibilityIdentifier(A11YIdentifiers.configurationSwitchSelection)
-                .disabled(!configurationModel.enabled || configurationModel.isError)
+                .disabled(!configurationModel.enabled || configurationModel.isError || configurationModel.isReadOnly)
 
             OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
-                .disabled(configurationModel.isError)
+                .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
             OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
-                .disabled(!configurationModel.enabled)
+                .disabled(!configurationModel.enabled || configurationModel.isReadOnly)
+
+            OUDSSwitchItem("app_components_common_readOnly_label", isOn: $configurationModel.isReadOnly)
+                .disabled(!configurationModel.enabled || configurationModel.isError)
         }
     }
 }

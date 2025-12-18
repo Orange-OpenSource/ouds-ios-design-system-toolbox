@@ -21,6 +21,11 @@ final class SwitchUITests: AppTestCase {
     /// Check the a11y configurations of the switch depending to its state
     @MainActor func testSwitchA11yConfigurations() throws {
 
+        // 'Switch button. Selected. '
+        let selectedSwitchA11YValue = wording(for: "core_switch_trait_a11y") + ". " + wording(for: "core_common_selected_a11y") + ". "
+        // 'Switch button. Unselected. '
+        let unselectedSwitchA11YValue = wording(for: "core_switch_trait_a11y") + ". " + wording(for: "core_common_unselected_a11y") + ". "
+
         // GIVEN
 
         let app = launchApp()
@@ -33,7 +38,7 @@ final class SwitchUITests: AppTestCase {
 
         let `switch` = otherElements(withA11yIdentifier: A11YIdentifiers.componentSwitch, app).firstMatch
         XCTAssertTrue(`switch`.exists)
-        check(value: "core_common_selected_a11y", ofElementWithIdentifier: A11YIdentifiers.componentSwitch, app)
+        check(value: selectedSwitchA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentSwitch, app)
 
         // WHEN
 
@@ -41,7 +46,7 @@ final class SwitchUITests: AppTestCase {
 
         // THEN
 
-        check(value: "core_common_unselected_a11y", ofElementWithIdentifier: A11YIdentifiers.componentSwitch, app)
+        check(value: unselectedSwitchA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentSwitch, app)
 
         // WHEN
 
@@ -49,7 +54,7 @@ final class SwitchUITests: AppTestCase {
 
         // THEN
 
-        check(value: "core_common_selected_a11y", ofElementWithIdentifier: A11YIdentifiers.componentSwitch, app)
+        check(value: selectedSwitchA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentSwitch, app)
     }
 
     // TODO: Test hints and labels

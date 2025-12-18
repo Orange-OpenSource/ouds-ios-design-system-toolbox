@@ -234,6 +234,7 @@ struct ColorsView: View {
             self.name = name
         }
 
+        // swiftlint:disable force_unwrapping
         var body: some View {
             let colorRawToken = colorScheme == .dark ? darkValue : lightValue
             DesignToolboxTokenIllustration(
@@ -241,7 +242,7 @@ struct ColorsView: View {
                 tokenValue: colorRawToken)
             {
                 Rectangle()
-                    .fill(colorRawToken.color)
+                    .fill(Color(hexadecimalCode: colorRawToken)!) // If color not managed, issue with tokenator or token
                     .frame(width: 64, height: 64)
                     .oudsBorder(
                         style: theme.borders.styleDefault,
@@ -250,6 +251,7 @@ struct ColorsView: View {
                         color: theme.colors.borderDefault)
             }
         }
+        // swiftlint:enable force_unwrapping
     }
 
     #if !os(tvOS) // Supposed to be watchOS

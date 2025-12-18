@@ -416,6 +416,18 @@
 		6DFC20C12CE3D39D00F2EC33 /* accessibility_detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */; };
 		6DFC20C22CE3D39D00F2EC33 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
 		6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */; };
+		950288A12EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A02EEC60CB00510C32 /* NamedSize+MaxWidth.swift */; };
+		950288A22EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A02EEC60CB00510C32 /* NamedSize+MaxWidth.swift */; };
+		950288A32EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A02EEC60CB00510C32 /* NamedSize+MaxWidth.swift */; };
+		950288A42EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A02EEC60CB00510C32 /* NamedSize+MaxWidth.swift */; };
+		950288A52EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A02EEC60CB00510C32 /* NamedSize+MaxWidth.swift */; };
+		950288A62EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A02EEC60CB00510C32 /* NamedSize+MaxWidth.swift */; };
+		950288A82EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A72EEC629300510C32 /* NamedSize+MinWidth.swift */; };
+		950288A92EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A72EEC629300510C32 /* NamedSize+MinWidth.swift */; };
+		950288AA2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A72EEC629300510C32 /* NamedSize+MinWidth.swift */; };
+		950288AB2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A72EEC629300510C32 /* NamedSize+MinWidth.swift */; };
+		950288AC2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A72EEC629300510C32 /* NamedSize+MinWidth.swift */; };
+		950288AD2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A72EEC629300510C32 /* NamedSize+MinWidth.swift */; };
 		950EA6AE2EBCDF510009414A /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6AD2EBCDF4B0009414A /* ButtonsView.swift */; };
 		950EA6B02EBCE3A30009414A /* CheckboxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6AF2EBCE3A30009414A /* CheckboxesView.swift */; };
 		950EA6B22EBCEC2D0009414A /* CheckboxesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6B12EBCEC2D0009414A /* CheckboxesItemView.swift */; };
@@ -483,6 +495,18 @@
 		9514586C2EC2920C0096BBF1 /* OpacitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458692EC2920C0096BBF1 /* OpacitiesView.swift */; };
 		95196E302EC4812E003133EF /* BorderTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */; };
 		95196E312EC4816A003133EF /* DesignToolboxTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */; };
+		953DC1562ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1532ED0995600D14D44 /* TabBarConfigurationView.swift */; };
+		953DC1572ED0995600D14D44 /* TabBarElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1542ED0995600D14D44 /* TabBarElement.swift */; };
+		953DC1582ED0995600D14D44 /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1552ED0995600D14D44 /* TabBarPage.swift */; };
+		953DC1592ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1532ED0995600D14D44 /* TabBarConfigurationView.swift */; };
+		953DC15A2ED0995600D14D44 /* TabBarElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1542ED0995600D14D44 /* TabBarElement.swift */; };
+		953DC15B2ED0995600D14D44 /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1552ED0995600D14D44 /* TabBarPage.swift */; };
+		953DC15C2ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1532ED0995600D14D44 /* TabBarConfigurationView.swift */; };
+		953DC15D2ED0995600D14D44 /* TabBarElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1542ED0995600D14D44 /* TabBarElement.swift */; };
+		953DC15E2ED0995600D14D44 /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1552ED0995600D14D44 /* TabBarPage.swift */; };
+		953DC15F2ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1532ED0995600D14D44 /* TabBarConfigurationView.swift */; };
+		953DC1602ED0995600D14D44 /* TabBarElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1542ED0995600D14D44 /* TabBarElement.swift */; };
+		953DC1612ED0995600D14D44 /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1552ED0995600D14D44 /* TabBarPage.swift */; };
 		955A40DB2EC788CE001D7F84 /* Image+extensions Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */; };
 		955A40DC2EC7894C001D7F84 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
@@ -1337,6 +1361,8 @@
 		6DFC20B42CE3AF1500F2EC33 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = accessibility_detail.html; sourceTree = "<group>"; };
 		6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = accessibility_result.xml; sourceTree = "<group>"; };
+		950288A02EEC60CB00510C32 /* NamedSize+MaxWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+MaxWidth.swift"; sourceTree = "<group>"; };
+		950288A72EEC629300510C32 /* NamedSize+MinWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+MinWidth.swift"; sourceTree = "<group>"; };
 		950EA6AD2EBCDF4B0009414A /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		950EA6AF2EBCE3A30009414A /* CheckboxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxesView.swift; sourceTree = "<group>"; };
 		950EA6B12EBCEC2D0009414A /* CheckboxesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxesItemView.swift; sourceTree = "<group>"; };
@@ -1365,6 +1391,9 @@
 		951458592EC28DF10096BBF1 /* FontsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsView.swift; sourceTree = "<group>"; };
 		951458642EC2906B0096BBF1 /* GridsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridsView.swift; sourceTree = "<group>"; };
 		951458692EC2920C0096BBF1 /* OpacitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacitiesView.swift; sourceTree = "<group>"; };
+		953DC1532ED0995600D14D44 /* TabBarConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurationView.swift; sourceTree = "<group>"; };
+		953DC1542ED0995600D14D44 /* TabBarElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarElement.swift; sourceTree = "<group>"; };
+		953DC1552ED0995600D14D44 /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions Tests.swift"; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2377,11 +2406,11 @@
 		51F49C832E57437E00D50BC4 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				075045F52E58715D00D98587 /* TextInput */,
 				513442062D75B880000B5DE4 /* Checkbox */,
 				515EE9842E21329B00A60E96 /* Chip */,
 				0745C1852D7A0351006B3A1F /* Radio */,
 				07CC9AEB2DB0F7DD001BC929 /* Switch */,
+				075045F52E58715D00D98587 /* TextInput */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -2407,6 +2436,7 @@
 		51F49C862E5743F600D50BC4 /* Navigations */ = {
 			isa = PBXGroup;
 			children = (
+				953DC1522ED0994E00D14D44 /* TabBar */,
 				07B3CCAD2D40E14C00DBB10A /* Link */,
 			);
 			path = Navigations;
@@ -2810,6 +2840,16 @@
 			path = Opacities;
 			sourceTree = "<group>";
 		};
+		953DC1522ED0994E00D14D44 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				953DC1532ED0995600D14D44 /* TabBarConfigurationView.swift */,
+				953DC1542ED0995600D14D44 /* TabBarElement.swift */,
+				953DC1552ED0995600D14D44 /* TabBarPage.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		959390072EC125A6000DBE95 /* _ */ = {
 			isa = PBXGroup;
 			children = (
@@ -3032,6 +3072,8 @@
 			children = (
 				0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */,
 				0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */,
+				950288A02EEC60CB00510C32 /* NamedSize+MaxWidth.swift */,
+				950288A72EEC629300510C32 /* NamedSize+MinWidth.swift */,
 				95CE05482EC33D6500ACE41C /* NamedSize.swift */,
 			);
 			path = NamedSize;
@@ -3566,6 +3608,7 @@
 				07EB47042E1801D000B94EC2 /* BadgeElement.swift in Sources */,
 				07EB47052E1801D000B94EC2 /* BadgeConfigurationView.swift in Sources */,
 				51E015A12E2AA82C00A86512 /* OrangeBusinessToolsTheme+TokensColorSnapshotsTests.swift in Sources */,
+				950288A82EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */,
 				51ABCD272E183226006CD6C0 /* SoshTheme+TokensBorderSnapshotsTests.swift in Sources */,
 				0745C18A2D7A03B8006B3A1F /* RadioElements.swift in Sources */,
 				51952A7C2D3FA1510068B807 /* OrangeTheme+TokensBorderSnapshotsTests.swift in Sources */,
@@ -3627,6 +3670,7 @@
 				076227652DA90C65009C3632 /* DividerElements.swift in Sources */,
 				95CE054A2EC33D6A00ACE41C /* NamedSize.swift in Sources */,
 				51A217702E325F7F00562BE0 /* WireframeTheme+SwitchSnapshotsTests.swift in Sources */,
+				950288A12EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */,
 				076227662DA90C65009C3632 /* DividerPage.swift in Sources */,
 				6DB260DA2CD0EF9D0091F72E /* NamedSize+IconDecorative.swift in Sources */,
 				07AB458A2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */,
@@ -3667,6 +3711,9 @@
 				515EE9862E21329B00A60E96 /* FilterChipConfigurationView.swift in Sources */,
 				515EE9872E21329B00A60E96 /* FilterChipElement.swift in Sources */,
 				515EE9882E21329B00A60E96 /* FilterChipPage.swift in Sources */,
+				953DC15C2ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */,
+				953DC15D2ED0995600D14D44 /* TabBarElement.swift in Sources */,
+				953DC15E2ED0995600D14D44 /* TabBarPage.swift in Sources */,
 				079B4A162E49C6EB0039FC26 /* SoshTheme+TagSnapshotsTests.swift in Sources */,
 				515EE9892E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */,
 				515EE98A2E21329B00A60E96 /* ChipPickerElement.swift in Sources */,
@@ -3733,6 +3780,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950288A92EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */,
 				95196E312EC4816A003133EF /* DesignToolboxTokenIllustration.swift in Sources */,
 				95196E302EC4812E003133EF /* BorderTokenPage.swift in Sources */,
 				0762276D2DA93D62009C3632 /* DesignToolboxColorPicker.swift in Sources */,
@@ -3851,6 +3899,9 @@
 				076227692DA90C65009C3632 /* DividerElements.swift in Sources */,
 				0762276A2DA90C65009C3632 /* DividerPage.swift in Sources */,
 				07F75A412CC653EB0004F1AD /* NameSpace+RowGap.swift in Sources */,
+				953DC15F2ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */,
+				953DC1602ED0995600D14D44 /* TabBarElement.swift in Sources */,
+				953DC1612ED0995600D14D44 /* TabBarPage.swift in Sources */,
 				5122E02A2D65E7AC00CD2857 /* String+extension.swift in Sources */,
 				95CE05662EC3401800ACE41C /* ElevationIllustration.swift in Sources */,
 				07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */,
@@ -3869,6 +3920,7 @@
 				07523E7F2E00173D00A7C87C /* ControlItemConfigurationModel.swift in Sources */,
 				07CC9AF92DB0F7DD001BC929 /* SwitchConfiguration.swift in Sources */,
 				073543112CA154DE001187EA /* Card.swift in Sources */,
+				950288A22EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */,
 				51BD76212C466FCF0033365D /* AboutPage.swift in Sources */,
 				075C71392CECC50F00B93FC3 /* SpaceBasicTokenIllustrations.swift in Sources */,
 				0784B2732CCB8CC800299C10 /* NamedSize+IconDecorative.swift in Sources */,
@@ -3946,6 +3998,7 @@
 			files = (
 				95CE05822EC3D30500ACE41C /* NamedBorders.swift in Sources */,
 				95CE05832EC3D30500ACE41C /* BorderIllustrations.swift in Sources */,
+				950288AC2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */,
 				95CE05672EC3403300ACE41C /* ElevationIllustration.swift in Sources */,
 				95CE05682EC3403300ACE41C /* NamedElevation.swift in Sources */,
 				95CE055C2EC33FCB00ACE41C /* NamedGrid.swift in Sources */,
@@ -4010,6 +4063,7 @@
 				959390172EC1F268000DBE95 /* TokensView.swift in Sources */,
 				959390092EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */,
 				950EA7C62EBE3ECB0009414A /* RadiosOnlyView.swift in Sources */,
+				950288A52EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */,
 				950EA7C72EBE3ECB0009414A /* SwitchesItemView.swift in Sources */,
 				950EA7C82EBE3ECB0009414A /* SwitchesOnlyView.swift in Sources */,
 				950EA7C92EBE3ECB0009414A /* SwitchesView.swift in Sources */,
@@ -4034,6 +4088,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950288AA2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */,
 				9589F0222EB7D67B00134487 /* DesignToolboxColorPicker.swift in Sources */,
 				9589F0232EB7D67B00134487 /* UserDefaultsWrapper.swift in Sources */,
 				9589F0242EB7D67B00134487 /* DesignToolboxConfiguration.swift in Sources */,
@@ -4152,6 +4207,9 @@
 				9589F08E2EB7D67B00134487 /* DividerElements.swift in Sources */,
 				9589F08F2EB7D67B00134487 /* DividerPage.swift in Sources */,
 				9589F0902EB7D67B00134487 /* NameSpace+RowGap.swift in Sources */,
+				953DC1562ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */,
+				953DC1572ED0995600D14D44 /* TabBarElement.swift in Sources */,
+				953DC1582ED0995600D14D44 /* TabBarPage.swift in Sources */,
 				9589F0912EB7D67B00134487 /* String+extension.swift in Sources */,
 				95CE05632EC3401800ACE41C /* ElevationIllustration.swift in Sources */,
 				9589F0922EB7D67B00134487 /* ThemeSelection.swift in Sources */,
@@ -4170,6 +4228,7 @@
 				9589F09E2EB7D67B00134487 /* ControlItemConfigurationModel.swift in Sources */,
 				9589F09F2EB7D67B00134487 /* SwitchConfiguration.swift in Sources */,
 				9589F0A02EB7D67B00134487 /* Card.swift in Sources */,
+				950288A32EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */,
 				9589F0A12EB7D67B00134487 /* AboutPage.swift in Sources */,
 				9589F0A22EB7D67B00134487 /* SpaceBasicTokenIllustrations.swift in Sources */,
 				9589F0A32EB7D67B00134487 /* NamedSize+IconDecorative.swift in Sources */,
@@ -4201,6 +4260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950288AB2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */,
 				9589F0FC2EB7D67E00134487 /* DesignToolboxColorPicker.swift in Sources */,
 				9589F0FD2EB7D67E00134487 /* UserDefaultsWrapper.swift in Sources */,
 				9589F0FE2EB7D67E00134487 /* DesignToolboxConfiguration.swift in Sources */,
@@ -4319,6 +4379,9 @@
 				9589F1682EB7D67E00134487 /* DividerElements.swift in Sources */,
 				9589F1692EB7D67E00134487 /* DividerPage.swift in Sources */,
 				9589F16A2EB7D67E00134487 /* NameSpace+RowGap.swift in Sources */,
+				953DC1592ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */,
+				953DC15A2ED0995600D14D44 /* TabBarElement.swift in Sources */,
+				953DC15B2ED0995600D14D44 /* TabBarPage.swift in Sources */,
 				9589F16B2EB7D67E00134487 /* String+extension.swift in Sources */,
 				95CE05652EC3401800ACE41C /* ElevationIllustration.swift in Sources */,
 				9589F16C2EB7D67E00134487 /* ThemeSelection.swift in Sources */,
@@ -4337,6 +4400,7 @@
 				9589F1782EB7D67E00134487 /* ControlItemConfigurationModel.swift in Sources */,
 				9589F1792EB7D67E00134487 /* SwitchConfiguration.swift in Sources */,
 				9589F17A2EB7D67E00134487 /* Card.swift in Sources */,
+				950288A42EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */,
 				9589F17B2EB7D67E00134487 /* AboutPage.swift in Sources */,
 				9589F17C2EB7D67E00134487 /* SpaceBasicTokenIllustrations.swift in Sources */,
 				9589F17D2EB7D67E00134487 /* NamedSize+IconDecorative.swift in Sources */,
@@ -4370,6 +4434,7 @@
 			files = (
 				95CE05802EC3D2FD00ACE41C /* NamedBorders.swift in Sources */,
 				95CE05812EC3D2FD00ACE41C /* BorderIllustrations.swift in Sources */,
+				950288AD2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */,
 				95CE05692EC3403C00ACE41C /* ElevationIllustration.swift in Sources */,
 				95CE056A2EC3403C00ACE41C /* NamedElevation.swift in Sources */,
 				95CE055B2EC33FC500ACE41C /* NamedGrid.swift in Sources */,
@@ -4434,6 +4499,7 @@
 				959390162EC1F268000DBE95 /* TokensView.swift in Sources */,
 				9593900A2EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */,
 				950EA6B82EBCF6230009414A /* LinksView.swift in Sources */,
+				950288A62EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */,
 				950EA6C92EBDF01D0009414A /* RadiosView.swift in Sources */,
 				950EA6AE2EBCDF510009414A /* ButtonsView.swift in Sources */,
 				950EA6BC2EBCF8C80009414A /* NavigationsView.swift in Sources */,
@@ -4681,7 +4747,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 101;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_APP_SANDBOX = YES;
@@ -4701,7 +4767,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 0.22.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "Design System Toolbox";
@@ -4727,7 +4793,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 101;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -4747,7 +4813,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 0.22.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "Design System Toolbox";
@@ -4871,7 +4937,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 101;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_APP_SANDBOX = YES;
@@ -4891,7 +4957,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 0.22.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4919,7 +4985,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 101;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -4939,7 +5005,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 0.22.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4967,7 +5033,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 101;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_APP_SANDBOX = YES;
@@ -4987,7 +5053,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 0.22.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5012,7 +5078,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 101;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -5032,7 +5098,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 0.22.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5058,7 +5124,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 101;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_APP_SANDBOX = YES;
@@ -5078,7 +5144,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 0.22.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5104,7 +5170,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "Apple Distribution: France Telecom (MG2LSJNJB6)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 101;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -5124,7 +5190,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 0.22.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5149,7 +5215,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 101;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -5161,7 +5227,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.22.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -5183,7 +5249,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 101;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -5195,7 +5261,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.22.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -5343,7 +5409,7 @@
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
 				kind = exactVersion;
-				version = 0.22.0;
+				version = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

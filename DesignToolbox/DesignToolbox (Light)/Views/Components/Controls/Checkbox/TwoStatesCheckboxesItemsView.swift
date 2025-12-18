@@ -40,13 +40,13 @@ struct TwoStatesCheckboxesItemsView: View {
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          isReversed: false,
                          isReadOnly: false)
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          isReversed: true,
                          isReadOnly: false)
 
@@ -54,14 +54,14 @@ struct TwoStatesCheckboxesItemsView: View {
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          isReversed: false,
                          isReadOnly: false)
             .disabled(true)
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          isReversed: true,
                          isReadOnly: false)
             .disabled(true)
@@ -70,14 +70,14 @@ struct TwoStatesCheckboxesItemsView: View {
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          isReversed: false,
                          isError: true,
                          errorText: "Error")
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          isReversed: true,
                          isError: true,
                          errorText: "Error")
@@ -86,13 +86,13 @@ struct TwoStatesCheckboxesItemsView: View {
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          isReversed: false,
                          isReadOnly: true)
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          isReversed: true,
                          isReadOnly: true)
 
@@ -100,14 +100,14 @@ struct TwoStatesCheckboxesItemsView: View {
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: false,
                          isReadOnly: false)
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: true,
                          isReadOnly: false)
@@ -116,7 +116,7 @@ struct TwoStatesCheckboxesItemsView: View {
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: false,
                          isError: true,
@@ -124,7 +124,7 @@ struct TwoStatesCheckboxesItemsView: View {
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: true,
                          isError: true,
@@ -134,7 +134,7 @@ struct TwoStatesCheckboxesItemsView: View {
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: false,
                          isReadOnly: false)
@@ -142,7 +142,7 @@ struct TwoStatesCheckboxesItemsView: View {
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: true,
                          isReadOnly: false)
@@ -152,14 +152,14 @@ struct TwoStatesCheckboxesItemsView: View {
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: false,
                          isReadOnly: true)
 
         OUDSCheckboxItem(isOn: $isOn,
                          label: "Label",
-                         helper: "Helper",
+                         description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: true,
                          isReadOnly: true)
@@ -218,7 +218,7 @@ struct TwoStatesCheckboxesItemsView: View {
                 OUDSCheckboxItem(
                     isOn: $isOn,
                     label: "Label",
-                    helper: "Helper",
+                    description: "Description",
                     icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                     isReversed: false,
                     isError: isError,
@@ -229,7 +229,7 @@ struct TwoStatesCheckboxesItemsView: View {
                 OUDSCheckboxItem(
                     isOn: $isOn,
                     label: "Label",
-                    helper: "Helper",
+                    description: "Description",
                     icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                     isReversed: true,
                     isError: isError,

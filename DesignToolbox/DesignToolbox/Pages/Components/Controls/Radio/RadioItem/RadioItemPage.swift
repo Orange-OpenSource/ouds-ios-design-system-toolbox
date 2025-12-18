@@ -23,7 +23,7 @@ struct RadioItemPage: View {
         let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSRadioItem(isOn: $isOn",
                                                          outlinedConfiguration: (value: false,
                                                                                  outlinedConfigurationLabel: "app_components_common_outlined_label"),
-                                                         additionalLabelConfiguration: "app_components_radioButton_radioButtonItem_additionalLabel_label".localized())
+                                                         extraLabelConfiguration: "app_components_radioButton_radioButtonItem_extraLabel_label".localized())
         _configurationModel = StateObject(wrappedValue: model)
     }
 
@@ -44,8 +44,8 @@ private struct RadioItemDemo: View {
     var body: some View {
         OUDSRadioItem(isOn: $configurationModel.isOn,
                       label: configurationModel.labelText,
-                      additionalLabel: configurationModel.additionalLabelText,
-                      helper: configurationModel.helperText,
+                      extraLabel: configurationModel.extraLabelText,
+                      description: configurationModel.descriptionText,
                       icon: icon,
                       flipIcon: configurationModel.flipIcon,
                       isOutlined: configurationModel.outlined,
@@ -53,7 +53,8 @@ private struct RadioItemDemo: View {
                       isError: configurationModel.isError,
                       errorText: configurationModel.errorText,
                       isReadOnly: configurationModel.isReadOnly,
-                      hasDivider: configurationModel.hasDivider)
+                      hasDivider: configurationModel.hasDivider,
+                      constrainedMaxWidth: configurationModel.constrainedMaxWidth)
             .disabled(!configurationModel.enabled)
             .padding(.all, theme.spaces.fixedMedium)
             .accessibilityIdentifier(A11YIdentifiers.componentRadioItem)

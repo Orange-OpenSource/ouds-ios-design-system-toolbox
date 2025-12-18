@@ -50,9 +50,7 @@ struct ColorTokenPage: View {
     private func illustrationForBackground() -> some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             ForEach(NamedColor.Background.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
-                }
+                Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
             }
         }
     }
@@ -60,9 +58,7 @@ struct ColorTokenPage: View {
     private func illustrationForAction() -> some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             ForEach(NamedColor.Action.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
-                }
+                Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
             }
         }
     }
@@ -70,9 +66,7 @@ struct ColorTokenPage: View {
     private func illustrationForAlways() -> some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             ForEach(NamedColor.Always.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).isForbiddenValueColor() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
-                }
+                Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
             }
         }
     }
@@ -80,9 +74,7 @@ struct ColorTokenPage: View {
     private func illustrationForChart() -> some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             ForEach(NamedColor.Chart.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
-                }
+                Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
             }
         }
     }
@@ -90,9 +82,7 @@ struct ColorTokenPage: View {
     private func illustrationForBorder() -> some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             ForEach(NamedColor.Border.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
-                }
+                Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
             }
         }
     }
@@ -100,9 +90,7 @@ struct ColorTokenPage: View {
     private func illustrationForContent() -> some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             ForEach(NamedColor.Content.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
-                }
+                Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
             }
         }
     }
@@ -110,9 +98,7 @@ struct ColorTokenPage: View {
     private func illustrationForOverlay() -> some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             ForEach(NamedColor.Overlay.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
-                }
+                Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
             }
         }
     }
@@ -120,9 +106,7 @@ struct ColorTokenPage: View {
     private func illustrationForSurface() -> some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             ForEach(NamedColor.Surface.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
-                }
+                Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
             }
         }
     }
@@ -130,9 +114,7 @@ struct ColorTokenPage: View {
     private func illustrationForOpacity() -> some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             ForEach(NamedColor.Opacity.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
-                }
+                Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
             }
         }
     }
@@ -140,46 +122,79 @@ struct ColorTokenPage: View {
     private func illustrationForRepository() -> some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             ForEach(NamedColor.Repository.allCases, id: \.rawValue) { namedColorToken in
-                if !namedColorToken.token(from: theme).isForbiddenValueColor() {
-                    Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
-                }
+                Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
             }
         }
     }
 
     struct Illustration: View {
 
-        private let lightValue: ColorSemanticToken
-        private let darkValue: ColorSemanticToken
+        // MARK: Properties
+
+        private let lightValue: ColorSemanticToken?
+        private let darkValue: ColorSemanticToken?
         private let name: String
+
+        private static let colorIllustrationDimension: CGFloat = 64
 
         @Environment(\.theme) private var theme
         @Environment(\.colorScheme) private var colorScheme
 
+        // MARK: Initializers
+
         init(token: ColorSemanticToken, name: String) {
-            lightValue = token
-            darkValue = token
             self.name = name
+
+            if token.isForbiddenValueColor() {
+                lightValue = nil
+                darkValue = nil
+            } else {
+                lightValue = token
+                darkValue = token
+            }
         }
 
         init(token: MultipleColorSemanticTokens, name: String) {
-            lightValue = token.light
-            darkValue = token.dark
             self.name = name
-        }
 
-        var body: some View {
-            let colorRawToken = colorScheme == .dark ? darkValue : lightValue
-            DesignToolboxTokenIllustration(tokenName: name, tokenValue: colorRawToken) {
-                Rectangle()
-                    .fill(colorRawToken.color)
-                    .frame(width: 64, height: 64)
-                    .oudsBorder(
-                        style: theme.borders.styleDefault,
-                        width: theme.borders.widthThin,
-                        radius: theme.borders.radiusNone,
-                        color: theme.colors.borderDefault)
+            if token.hasForbiddenColorValue() {
+                lightValue = nil
+                darkValue = nil
+            } else {
+                lightValue = token.light
+                darkValue = token.dark
             }
         }
+
+        // MARK: Body
+
+        // swiftlint:disable force_unwrapping
+        var body: some View {
+            let colorRawToken = colorScheme == .dark ? darkValue : lightValue
+            let value: String = colorRawToken ?? "app_tokens_color_unspecified_label".localized()
+            DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
+                Group {
+                    if let colorRawToken {
+                        Rectangle().fill(Color(hexadecimalCode: colorRawToken)!)
+                    } else {
+                        Canvas { ctx, _ in
+                            var path = Path()
+                            // `move` without drawing
+                            path.move(to: CGPoint(x: 0, y: Self.colorIllustrationDimension))
+                            // `draw` a line
+                            path.addLine(to: CGPoint(x: Self.colorIllustrationDimension, y: 0))
+                            ctx.stroke(path, with: .color(theme.colors.contentDisabled.color(for: colorScheme)), lineWidth: 2)
+                        }
+                    }
+                }
+                .frame(width: Self.colorIllustrationDimension, height: Self.colorIllustrationDimension)
+                .oudsBorder(
+                    style: theme.borders.styleDefault,
+                    width: theme.borders.widthThin,
+                    radius: theme.borders.radiusNone,
+                    color: theme.colors.borderDefault)
+            }
+        }
+        // swiftlint:enable force_unwrapping
     }
 }

@@ -41,20 +41,27 @@ private struct CheckboxItemDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSCheckboxItem(isOn: $configurationModel.isOn,
-                         label: configurationModel.labelText,
-                         helper: configurationModel.helperText,
-                         icon: icon,
-                         flipIcon: configurationModel.flipIcon,
-                         isReversed: configurationModel.isReversed,
-                         isError: configurationModel.isError,
-                         errorText: configurationModel.errorText,
-                         isReadOnly: configurationModel.isReadOnly,
-                         hasDivider: configurationModel.hasDivider)
-            .disabled(!configurationModel.enabled)
-            .padding(.all, theme.spaces.fixedMedium)
-            .designToolboxColoredSurface(false)
-            .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
+        HStack(alignment: .center) {
+            Spacer()
+
+            OUDSCheckboxItem(isOn: $configurationModel.isOn,
+                             label: configurationModel.labelText,
+                             description: configurationModel.descriptionText,
+                             icon: icon,
+                             flipIcon: configurationModel.flipIcon,
+                             isReversed: configurationModel.isReversed,
+                             isError: configurationModel.isError,
+                             errorText: configurationModel.errorText,
+                             isReadOnly: configurationModel.isReadOnly,
+                             hasDivider: configurationModel.hasDivider,
+                             constrainedMaxWidth: configurationModel.constrainedMaxWidth)
+                .disabled(!configurationModel.enabled)
+                .padding(.all, theme.spaces.fixedMedium)
+                .designToolboxColoredSurface(false)
+                .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
+
+            Spacer()
+        }
     }
 
     private var icon: Image? {

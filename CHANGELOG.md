@@ -4,6 +4,50 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.22.0...1.0.0) - 2025-12-18
+
+### Added
+
+- [Library] `tab bar` component (Orange-OpenSource/ouds-ios#1135)
+- [Library] `constrainedMaxWidth` parameter to control items and text input components (Orange-OpenSource/ouds-ios#1211)
+
+### Changed
+
+- [DesignToolbox] Update `net-http` gem from v0.8.0 to v0.9.1
+- [DesignToolbox] `Ruby` version from v3.4.7 to v3.4.8 for `build-and-test` workflows
+- [DesignToolbox] `actions/upload-artifact` action from v5.0.0 to v6.0.0 for `scorecard` workflow
+- [DesignToolbox] `ruby/setup-ruby` action from v1.268.0 to v1.271.0 for `build-and-test` workflow
+- [DesignToolbox] `json` RubyGem from v2.16.0 to v2.18.0
+- [DesignToolbox] Update GitHub Actions `checkout` action from v6.0.0 to v6.0.1
+- [DesignToolbox] `github/codeql-action/upload-sarif` action for `scorecard` workflow
+- [DesignToolbox] Change TestFlight upload process to use `altool` (Orange-OpenSource/ouds-ios#1195)
+- [DesignToolbox] Define timeout of 1 hour for all GitHub Actions workflows
+- [DesignToolbox] Update wording keys and translations (Orange-OpenSource/ouds-ios#1200)
+- [DesignToolbox] Use v1.4 icons with appropriate size in tab app bar items
+- [DesignToolbox] Update color screen to display in list undefined (Orange-OpenSource/ouds-ios#1217)
+- [DesignToolbox] Components illustrations (Orange-OpenSource/ouds-ios#1207)
+- [DesignToolbox] Display versions using OUDS tag in about menu (Orange-OpenSource/ouds-ios#1203)
+- [DesignToolbox] Display of colors and size semantic tokens (Orange-OpenSource/ouds-ios#1206)
+- [Library] Color semantic tokens (Orange-OpenSource/ouds-ios#1206)
+- [DesignToolbox] Define timeout of 2 hours for all GitHub Actions workflows
+- [Library] Update icons to v1.4.0 (Orange-OpenSource/ouds-ios#1193)
+- [DesignToolbox] Use the OUDS `tag` component to show the component design version in pages (Orange-OpenSource/ouds-ios#1176)
+- [Library] Update `switch` components to v1.5.0 (Orange-OpenSource/ouds-ios#1138)
+- [Library] Update `radio` components to v1.4.0 (Orange-OpenSource/ouds-ios#1139)
+- [Library] Update `checkbox` components to v2.4.0 (Orange-OpenSource/ouds-ios#1137)
+- [Library] Read only variant for `checkbox` and  `checkbox indeterminate` components (Orange-OpenSource/ouds-ios#1137)
+
+### Fixed
+
+- [Library] The warning icon for Orange theme is not the right one used on `tag` and `badge` (Orange-OpenSource/ouds-ios#1219)
+- [Library] Icon not shown for negative `tag` and `badge` types (Orange-OpenSource/ouds-ios#1216)
+- [Library] Set accessibility hint on placeholder if no helper text in `text input` (Orange-OpenSource/ouds-ios#1083)
+- [Library] Separate label from trait, state, value and error message in `text input`, `checkbox`, `radio and `switch` (Orange-OpenSource/ouds-ios#1188)
+- [DesignToolbox] `radio` and `switch` in read-only mode are still active (Orange-OpenSource/ouds-ios#1224)
+- [Library] Missing accessibility label for badge `standard` and `count` types (Orange-OpenSource/ouds-ios#1060) (Orange-OpenSource/ouds-ios#1222)
+- [Library] Set own accessibility label to trailing action in `TextInput` (Orange-OpenSource/ouds-ios#1087)
+- [Library] Scale icons with information for tag and badge components (Orange-OpenSource/ouds-ios#1179) 
+
 ## [0.22.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.21.0...0.22.0) - 2025-11-28
 
 ### Added
@@ -22,6 +66,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] `ruby/setup-ruby` action from v1.267.0 to v1.268.0 for `build-and-test` workflow
 - [DesignToolbox] Update GitHub Actions `checkout` action from v5 to v6
 - [DesignToolbox] Update `fastlane` gem from v2.228.0 to v2.229.1
+- [Library] Add an accessible label for badge standard type (Orange-OpenSource/ouds-ios#1056)
 - [Library] `Wireframe` theme `border` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
 - [Library] `size` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
 - [DesignToolbox] Use of Solaris and themed icons (Orange-OpenSource/ouds-ios#805) (Orange-OpenSource/ouds-ios#1127) 

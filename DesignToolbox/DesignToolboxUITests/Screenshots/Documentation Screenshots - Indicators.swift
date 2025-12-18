@@ -49,6 +49,7 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
         goToComponentsSheet(app)
         waitForButtonToAppear(withWording: "app_components_badge_label", app)
         tapButton(withWording: "app_components_badge_label", app)
+        swipeFromDownToUp(app)
 
         tapButton(withWording: "Large", app)
         tapButton(withWording: "Accent", app)
@@ -58,12 +59,13 @@ final class 📄_IndicatorsDocumentationScreenshots: AppTestCase {
         tapButton(withWording: "app_components_common_editContent_label", app)
         wait(1)
 
-        buttons(withA11yIdentifier: A11YIdentifiers.configurationTextField, app).firstMatch.tap()
+        otherElements(withA11yIdentifier: A11YIdentifiers.configurationTextField, app).firstMatch.tap()
         wait(1)
 
-        textFields(withA11yIdentifier: A11YIdentifiers.configurationTextField, app).firstMatch.tap()
+        otherElements(withA11yIdentifier: A11YIdentifiers.configurationTextField, app).firstMatch.tap()
         wait(2)
-        textField(write: "999", in: A11YIdentifiers.configurationTextField, app)
+
+        otherElements(withA11yIdentifier: A11YIdentifiers.configurationTextField, app).firstMatch.typeText("999")
 
         swipeFromUpToDown(app) // Keyboard does not close, so swipe to get component to capture
 

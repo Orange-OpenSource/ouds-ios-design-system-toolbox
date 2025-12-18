@@ -42,14 +42,15 @@ private struct SwitchItemDemo: View {
     var body: some View {
         OUDSSwitchItem(configurationModel.labelText,
                        isOn: $configurationModel.isOn,
-                       helper: configurationModel.helperText,
+                       description: configurationModel.descriptionText,
                        icon: icon,
                        flipIcon: configurationModel.flipIcon,
                        isReversed: !configurationModel.isReversed,
                        isError: configurationModel.isError,
                        errorText: configurationModel.errorText,
                        isReadOnly: configurationModel.isReadOnly,
-                       hasDivider: configurationModel.hasDivider)
+                       hasDivider: configurationModel.hasDivider,
+                       constrainedMaxWidth: configurationModel.constrainedMaxWidth)
             .disabled(!configurationModel.enabled)
             .padding(.all, theme.spaces.fixedMedium)
             .accessibilityIdentifier(A11YIdentifiers.componentSwitchItem)

@@ -55,6 +55,24 @@ final class 📄_NavigationsDocumentationScreenshots: AppTestCase {
 
         takeScreenshot(named: "component_link_", ACDC.linkX, ACDC.linkY, ACDC.linkWidth, ACDC.linkHeight, app)
     }
+
+    @MainActor
+    func testMakeScreenshotsForDocumentation_TabBar() {
+        let app = launchApp()
+        goToComponentsSheet(app)
+        swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
+        waitForButtonToAppear(withWording: "app_components_tabBar_label", app)
+        tapButton(withWording: "app_components_tabBar_label", app)
+
+        swipeFromDownToUp(app)
+
+        tapButton(withWording: "text (1)", app)
+
+        wait(2) // Let scroll indicator disappear
+
+        takeScreenshot(named: "component_tabBar_", ACDC.tabBarX, ACDC.tabBarY, ACDC.tabBarWidth, ACDC.tabBarHeight, app)
+    }
 }
 
 // swiftlint:enable required_deinit

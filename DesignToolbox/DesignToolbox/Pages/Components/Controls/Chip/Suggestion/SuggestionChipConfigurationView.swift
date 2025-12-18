@@ -39,6 +39,7 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
         enabled = true
         text = "app_components_chip_suggestionChip_chipContent_label".localized()
         layout = .textOnly
+        super.init()
     }
 
     deinit {}

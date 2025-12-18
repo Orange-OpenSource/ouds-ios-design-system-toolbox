@@ -83,6 +83,7 @@ struct OpenableText: View {
     var body: some View {
         HStack(spacing: theme.spaces.insetNone) {
             Text(rawText.replacingOccurrences(of: anchor, with: ""))
+            Spacer()
             anchorLinkView
         }
     }
@@ -91,24 +92,16 @@ struct OpenableText: View {
     @ViewBuilder
     private var anchorLinkView: some View {
         if type != .githubIssue {
-            Text(anchor)
-                .underline()
-                .oudsForegroundStyle(theme.link.colorContentEnabled)
-                .onTapGesture {
-                    OSUtilities.open(url: type.destination(for: anchor).first!)
-                }
-                .accessibilityAddTraits([.isLink])
+            OUDSLink(text: anchor) {
+                OSUtilities.open(url: type.destination(for: anchor).first!)
+            }
         } else {
             let anchors = anchor.split(separator: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
             ForEach(anchors, id: \.self) { someAnchor in
                 if let url = urlFor(String(someAnchor)) {
-                    Text(someAnchor)
-                        .underline()
-                        .oudsForegroundStyle(theme.link.colorContentEnabled)
-                        .onTapGesture {
-                            OSUtilities.open(url: url)
-                        }
-                        .accessibilityAddTraits([.isLink])
+                    OUDSLink(text: someAnchor) {
+                        OSUtilities.open(url: url)
+                    }
                 } else {
                     Text(anchor)
                 }

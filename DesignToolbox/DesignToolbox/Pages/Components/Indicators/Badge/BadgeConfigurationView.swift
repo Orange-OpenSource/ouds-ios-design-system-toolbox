@@ -53,8 +53,8 @@ final class BadgeConfigurationModel: ComponentConfiguration {
 
     var themeName: String
 
-    var count: UInt {
-        UInt(countText) ?? 1
+    var count: UInt8 {
+        UInt8(countText) ?? 1
     }
 
     var enableFlipIcon: Bool {
@@ -105,6 +105,7 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         flipIcon = false
         countText = "1"
         themeName = ""
+        super.init()
     }
 
     deinit {}

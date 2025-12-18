@@ -113,7 +113,6 @@ struct InternalDisclosure<Label, Content>: View where Label: View, Content: View
             }
             .buttonStyle(.plain)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.bottom, theme.spaces.paddingBlockSmall)
 
             if isExpanded {
                 content()

@@ -33,7 +33,7 @@ struct DividerPage: View {
     }
 }
 
-// MARK: - Button Demo
+// MARK: - Divider Demo
 
 struct DividerDemo: View {
 

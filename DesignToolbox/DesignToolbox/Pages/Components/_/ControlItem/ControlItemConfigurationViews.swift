@@ -67,6 +67,8 @@ private struct ControlItemConfiguration: View {
 
                 OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $configurationModel.hasDivider)
 
+                OUDSSwitchItem("app_components_common_constrainedMaxWidth_label", isOn: $configurationModel.constrainedMaxWidth)
+
                 OUDSSwitchItem("app_components_controlItem_reversed_label", isOn: $configurationModel.isReversed)
 
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
@@ -82,14 +84,14 @@ private struct ControlItemConfiguration: View {
             DesignToolboxEditContentDisclosure {
                 DesignToolboxTextField(text: $configurationModel.labelText, label: "app_components_common_label_label")
 
-                if configurationModel.additionalLabelConfiguration != nil {
-                    DesignToolboxTextField(text: $configurationModel.additionalLabelText, label: "app_components_radioButton_radioButtonItem_additionalLabel_label")
+                if configurationModel.extraLabelConfiguration != nil {
+                    DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_radioButton_radioButtonItem_extraLabel_label")
                 }
 
-                DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_label")
+                DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_controlItem_description_label")
 
                 if configurationModel.isError {
-                    DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_common_errorText_label")
+                    DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_common_errorMessage_label")
                 }
             }
         }

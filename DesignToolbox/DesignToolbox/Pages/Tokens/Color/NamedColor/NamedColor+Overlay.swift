@@ -16,14 +16,17 @@ import OUDSSwiftUI
 extension NamedColor {
 
     enum Overlay: String, CaseIterable {
-        case overlayDropDown
+        case overlayDropdown
+        case overlayTooltip
         case overlayDrag
         case overlayModal
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
-            case .overlayDropDown:
+            case .overlayDropdown:
                 theme.colors.overlayDropdown
+            case .overlayTooltip:
+                theme.colors.overlayTooltip
             case .overlayDrag:
                 theme.colors.overlayDrag
             case .overlayModal:
