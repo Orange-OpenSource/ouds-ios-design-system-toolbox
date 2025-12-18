@@ -22,7 +22,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/ouds-ios</string>
 			<key>Title</key>
-			<string>OUDS (0.22.0)</string>
+			<string>OUDS (1.0.0)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -54,7 +54,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/xctest-dynamic-overlay</string>
 			<key>Title</key>
-			<string>xctest-dynamic-overlay (1.7.0)</string>
+			<string>xctest-dynamic-overlay (1.8.0)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
