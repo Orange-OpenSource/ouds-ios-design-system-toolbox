@@ -23,8 +23,10 @@ final class RadioPickerUITests: AppTestCase {
     /// selects the items and checks if the others are unselected.
     @MainActor func testRadioPickerA11YSelection() throws {
 
-        let selectedA11Yvalue = "core_common_selected_a11y"
-        let unselectedA11Yvalue = "core_common_unselected_a11y"
+        // 'Radio button. Selected. . '
+        let selectedRadioA11YValue = wording(for: "core_radio_trait_a11y") + ". " + wording(for: "core_common_selected_a11y") + ". . "
+        // 'Radio button. Unselected. . '
+        let unselectedRadioA11YValue = wording(for: "core_radio_trait_a11y") + ". " + wording(for: "core_common_unselected_a11y") + ". . "
 
         let firstItemA11YIdentifier = "Virgin Holy Lava"
         let secondItemA11YIdentifier = "IPA beer"
@@ -38,9 +40,9 @@ final class RadioPickerUITests: AppTestCase {
         tapButton(withWording: "app_components_radioButton_label", app)
         tapButton(withWording: "app_components_radioPicker_label", app)
 
-        check(value: selectedA11Yvalue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
+        check(value: selectedRadioA11YValue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
+        check(value: unselectedRadioA11YValue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
+        check(value: unselectedRadioA11YValue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
 
         // WHEN
 
@@ -49,9 +51,9 @@ final class RadioPickerUITests: AppTestCase {
 
         // THEN
 
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
-        check(value: selectedA11Yvalue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
+        check(value: unselectedRadioA11YValue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
+        check(value: selectedRadioA11YValue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
+        check(value: unselectedRadioA11YValue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
 
         // WHEN
 
@@ -60,9 +62,9 @@ final class RadioPickerUITests: AppTestCase {
 
         // THEN
 
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
-        check(value: selectedA11Yvalue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
+        check(value: unselectedRadioA11YValue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
+        check(value: unselectedRadioA11YValue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
+        check(value: selectedRadioA11YValue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
 
         // WHEN
 
@@ -71,9 +73,9 @@ final class RadioPickerUITests: AppTestCase {
 
         // THEN
 
-        check(value: selectedA11Yvalue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
+        check(value: selectedRadioA11YValue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
+        check(value: unselectedRadioA11YValue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
+        check(value: unselectedRadioA11YValue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
     }
 }
 

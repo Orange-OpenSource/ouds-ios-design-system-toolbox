@@ -72,6 +72,7 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         layout = .textAndIcon
         titleText = "Select a drink"
         selectionType = .single
+        super.init()
     }
 
     deinit {}

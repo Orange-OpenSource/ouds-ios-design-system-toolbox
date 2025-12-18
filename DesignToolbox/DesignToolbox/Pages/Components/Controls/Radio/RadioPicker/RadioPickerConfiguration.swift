@@ -59,6 +59,7 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
         isReversed = false
         isOutlined = false
         isEnabled = true
+        super.init()
     }
 
     deinit {}
@@ -118,14 +119,14 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
         [
             OUDSRadioPickerData<String>(tag: "Choice_1",
                                         label: "Virgin Holy Lava",
-                                        additionalLabel: "Very spicy",
-                                        helper: "No alcohol, only tasty flavors",
+                                        extraLabel: "Very spicy",
+                                        description: "No alcohol, only tasty flavors",
                                         icon: Image(systemName: "flame"),
                                         accessibilityIdentifier: "Virgin Holy Lava"),
 
             OUDSRadioPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
-                                        helper: "From Brewdog company",
+                                        extraLabel: "From Brewdog company",
                                         icon: Image(systemName: "dog.fill"),
                                         accessibilityIdentifier: "IPA beer"),
 

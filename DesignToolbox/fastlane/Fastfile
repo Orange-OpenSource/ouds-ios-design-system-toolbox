@@ -172,7 +172,7 @@ platform :ios do
     lane :check_dead_code do
         puts "👉 Check iOS dead code with Periphery"
 
-        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_IOS} --format xcode"
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_IOS} --format xcode --clean-build"
     end
     
     desc "Run snapshots tests in the demo app to look for visual regressions of components defined in OUDS package"
@@ -492,15 +492,7 @@ platform :ios do
     private_lane :upload_2_testflight do |params|
         puts "👉 Upload"
 
-        begin
-            api_key = app_store_connect_api_key(
-                key_id: APPLE_KEY_ID,
-                issuer_id: APPLE_ISSUER_ID,
-                key_content: APPLE_KEY_CONTENT,
-                duration: 500,
-                in_house: false
-            )
-            
+        begin            
             TESTFLIGHT_GROUPS = ENV['TESTFLIGHT_GROUPS'] # Defined in Appfile
             
             version = get_iOS_app_version
@@ -515,25 +507,47 @@ platform :ios do
                 puts "ℹ️ Upload type: '#{uploadType}'"
                 if uploadType == BuildType::ALPHA
                     news = "⚠️ Warning: this is alpha build for issues '#{issues_numbers}'\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
+                    mattermost_build_type_details = "(alpha build)"
                 else
                     news = "This is a beta build\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight, beta build here ebcause not alpha and stable are not in TestFlight
+                    mattermost_build_type_details = "(beta build)"
                 end
+            else
+                mattermost_build_type_details = "(unknown build)"
             end
+       
+            # It seems there are troubles with authentication of the Apple account for Test Flight upload using this Fastlane upload_to_testflight lane.
+            # As a workaround, altool is used instead and make uploads needed to be then assigned to test teams.
+            # See https://github.com/Orange-OpenSource/ouds-ios/issues/1195
+            # See https://github.com/fastlane/fastlane/issues/29803
 
-            upload_to_testflight(
-                changelog: news,
-                app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
-                skip_submission: false,
-                skip_waiting_for_build_processing: false,
-                distribute_external: true,
-                notify_external_testers: true,
-                groups: TESTFLIGHT_GROUPS,
-                api_key: api_key
-            )
+            ipa_path="../build/Design\\ System\\ Toolbox.ipa "
+            sh "xcrun altool --upload-package #{ipa_path} --apiKey \"#{APPLE_KEY_ID}\" --apiIssuer \"#{APPLE_ISSUER_ID}\""
+            puts "⚠️ Warning: Do not forget then on App Store Connect (https://appstoreconnect.apple.com/) to add the uploaded build to the suitable test team!"
+
+            #api_key = app_store_connect_api_key(
+            #    key_id: APPLE_KEY_ID,
+            #    issuer_id: APPLE_ISSUER_ID,
+            #    key_content: APPLE_KEY_CONTENT,
+            #    duration: 1200,
+            #    in_house: false
+            #)
+
+            #upload_to_testflight(
+            #    changelog: news,
+            #    app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+            #    skip_submission: false,
+            #    skip_waiting_for_build_processing: false,
+            #    distribute_external: true,
+            #    notify_external_testers: true,
+            #    groups: TESTFLIGHT_GROUPS,
+            #    api_key: api_key
+            #)
             
-            publish_mattermost_notification("📦 ✅ @here The upload to TestFlight has been done successfully (version = '#{version}', build number = '#{build_number}')")    
+            isAlpha = params[:type] == BuildType::ALPHA
+            publish_mattermost_notification("📦 ✅ @here The upload to TestFlight #{mattermost_build_type_details} has been done successfully (version = '#{version}', build number = '#{build_number}')")    
         rescue => error
-            publish_mattermost_notification("📦 🚨 @channel Some issue occurred during the upload step (:upload)")
+            publish_mattermost_notification("📦 🚨 @channel Some issue occurred during the upload step #{mattermost_build_type_details} (:upload)")
             raise error
         end
     end
@@ -580,7 +594,7 @@ platform :mac do
     lane :check_dead_code do
         puts "👉 Check macOS dead code with Periphery"
 
-        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_MACOS} --format xcode"
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_MACOS} --format xcode --clean-build"
     end
 
     desc "Build locally the demo app in debug mode without upload"
@@ -624,7 +638,7 @@ platform :vision do
     lane :check_dead_code do
         puts "👉 Check visionOS dead code with Periphery"
 
-        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_VISIONOS} --format xcode"
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_VISIONOS} --format xcode --clean-build"
     end
 
     desc "Build locally the demo app in debug mode without upload"
@@ -668,7 +682,7 @@ platform :watch do
     lane :check_dead_code do
         puts "👉 Check watchOS dead code with Periphery"
 
-        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_WATCHOS} --format xcode"
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_WATCHOS} --format xcode --clean-build"
     end
 
     desc "Build locally the demo app in debug mode without upload"
@@ -712,7 +726,7 @@ platform :tv do
     lane :check_dead_code do
         puts "👉 Check tvOS dead code with Periphery"
 
-        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_TVOS} --format xcode"
+        sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_TVOS} --format xcode --clean-build"
     end
 
     desc "Build locally the demo app in debug mode without upload"

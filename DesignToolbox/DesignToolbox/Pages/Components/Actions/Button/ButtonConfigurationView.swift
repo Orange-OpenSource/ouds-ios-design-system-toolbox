@@ -54,6 +54,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         flipIcon = false
         appearance = .default
         style = .default
+        super.init()
     }
 
     deinit {}

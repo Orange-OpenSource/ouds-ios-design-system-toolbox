@@ -45,6 +45,45 @@ struct IllustrationIconDecorative: View {
     }
 }
 
+// MARK: Illustration Min Width
+
+struct IllustrationMinWidth: View {
+
+    let namedSize: NamedSize.MinWidth
+
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        let token = namedSize.token(for: theme)
+        let name = namedSize.rawValue
+        let value = String(format: "%.2f pt", token)
+
+        DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
+            EmptyView()
+        }
+    }
+}
+
+// MARK: Illustration Max Width
+
+struct IllustrationMaxWidth: View {
+
+    let namedSize: NamedSize.MaxWidth
+
+    @Environment(\.theme) private var theme
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    var body: some View {
+        let token = namedSize.token(for: theme, userInterfaceSizeClass: horizontalSizeClass ?? .regular)
+        let name = namedSize.rawValue
+        let value = String(format: "%.2f pt", token)
+
+        DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
+            EmptyView()
+        }
+    }
+}
+
 // MARK: Illustration Icon With Typography
 
 struct IllustrationIconWithTypography: View {
@@ -65,6 +104,7 @@ struct IllustrationIconWithTypography: View {
                 Rectangle()
                     .fill(theme.colors.surfaceSecondary.color(for: colorScheme))
                     .frame(width: 82, height: 82, alignment: .center)
+
                 Image("ic_token")
                     .resizable()
                     .renderingMode(.template)

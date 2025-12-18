@@ -21,6 +21,11 @@ final class RadioUITests: AppTestCase {
     /// Check the a11y configurations of the radio item depending to its state
     @MainActor func testRadioA11yConfigurations() throws {
 
+        // 'Radio button. Selected. . '
+        let selectedRadioA11YValue = wording(for: "core_radio_trait_a11y") + ". " + wording(for: "core_common_selected_a11y") + ". . "
+        // 'Radio button. Unselected. . '
+        let unselectedRadioA11YValue = wording(for: "core_radio_trait_a11y") + ". " + wording(for: "core_common_unselected_a11y") + ". . "
+
         // GIVEN
 
         let app = launchApp()
@@ -31,7 +36,7 @@ final class RadioUITests: AppTestCase {
 
         let radio = otherElements(withA11yIdentifier: A11YIdentifiers.componentRadio, app).firstMatch
         XCTAssertTrue(radio.exists)
-        check(value: "core_common_unselected_a11y", ofElementWithIdentifier: A11YIdentifiers.componentRadio, app)
+        check(value: unselectedRadioA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentRadio, app)
 
         // WHEN
 
@@ -40,7 +45,7 @@ final class RadioUITests: AppTestCase {
 
         // THEN
 
-        check(value: "core_common_selected_a11y", ofElementWithIdentifier: A11YIdentifiers.componentRadio, app)
+        check(value: selectedRadioA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentRadio, app)
 
         // WHEN
 
@@ -49,7 +54,7 @@ final class RadioUITests: AppTestCase {
 
         // THEN
 
-        check(value: "core_common_unselected_a11y", ofElementWithIdentifier: A11YIdentifiers.componentRadio, app)
+        check(value: unselectedRadioA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentRadio, app)
     }
 
     // TODO: Test hints and labels

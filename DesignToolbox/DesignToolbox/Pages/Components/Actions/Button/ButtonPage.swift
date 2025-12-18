@@ -47,7 +47,7 @@ private struct ButtonDemo: View {
 
             // It is not allowed to place a Negative or Brand button on colored surface
             if configurationModel.onColoredSurface, configurationModel.appearance == .negative || configurationModel.appearance == .brand {
-                Text("app_components_button_negative_hierary_notAllowed_text")
+                Text("app_components_button_appearence_notAllowed_text")
             } else {
                 switch configurationModel.layout {
                 case .iconOnly:

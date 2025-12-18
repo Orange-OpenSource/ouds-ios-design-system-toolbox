@@ -41,10 +41,10 @@ private struct ChipIllustration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: theme.spaces.fixedSmall) {
+        HStack(spacing: theme.spaces.fixedSmall) {
             #if !os(visionOS)
-            OUDSFilterChip(text: "Filter", selected: true) {}
-            OUDSSuggestionChip(text: "Suggestion") {}
+            OUDSFilterChip(text: "Label", selected: true) {}
+            OUDSSuggestionChip(text: "Label") {}
             #else
             OUDSFilterChip(text: "🥜", selected: true) {}
             #endif

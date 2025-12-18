@@ -124,53 +124,53 @@ open class SwitchSnapshotsTestsTestCase: XCTestCase {
     // swiftlint:disable function_default_parameter_at_end
     private func availableLayouts(isError: Bool, errorText: String? = nil, isReadOnly: Bool) -> [SwitchTest.Layout] {
         [
-            SwitchTest.Layout.indicatorOnly,
+            SwitchTest.Layout.indicatorOnly(isReadOnly: isReadOnly),
 
-            SwitchTest.Layout.default(label: "Takoyaki", helper: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Takoyaki", helper: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Takoyaki", description: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Takoyaki", description: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
-            SwitchTest.Layout.default(label: "Kammthaar", helper: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Kammthaar", helper: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Kammthaar", description: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Kammthaar", description: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
-            SwitchTest.Layout.default(label: "Kammthaar", helper: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Kammthaar", helper: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Kammthaar", description: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Kammthaar", description: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
-            SwitchTest.Layout.inverse(label: "Takoyaki", helper: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Takoyaki", helper: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Takoyaki", description: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Takoyaki", description: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", description: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", description: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", description: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", description: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", description: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", description: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
-            SwitchTest.Layout.inverse(label: "Kammthaar", helper: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Kammthaar", helper: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Kammthaar", description: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Kammthaar", description: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
-            SwitchTest.Layout.inverse(label: "Kammthaar", helper: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Kammthaar", helper: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(label: "Patatas", helper: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Kammthaar", description: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Kammthaar", description: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(label: "Patatas", description: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
         ]
     }
     // swiftlint:enable line_length
@@ -185,9 +185,9 @@ open class SwitchSnapshotsTestsTestCase: XCTestCase {
 struct SwitchTest: View {
 
     enum Layout { // ControlItemLabel.LayoutData is not accessible, need to fake it here
-        case indicatorOnly
+        case indicatorOnly(isReadOnly: Bool)
         case `default`(label: String,
-                       helper: String?,
+                       description: String?,
                        icon: Image?,
                        flipIcon: Bool = false,
                        isError: Bool,
@@ -195,7 +195,7 @@ struct SwitchTest: View {
                        hasDivider: Bool,
                        isReadOnly: Bool)
         case inverse(label: String,
-                     helper: String?,
+                     description: String?,
                      icon: Image?,
                      flipIcon: Bool = false,
                      isError: Bool,
@@ -206,12 +206,12 @@ struct SwitchTest: View {
         // swiftlint:disable line_length
         var description: String {
             switch self {
-            case .indicatorOnly:
-                "layout-indicatorOnly"
-            case let .default(_, helper, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
-                "layout-default-label-\(helper != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(flipIcon ? "flipIcon" : "")-\(isError ? "error-\(errorText != nil ? "withText" : "")" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
-            case let .inverse(_, helper, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
-                "layout-inverse-label-\(helper != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(flipIcon ? "flipIcon" : "")-\(isError ? "error-\(errorText != nil ? "withText" : "")" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
+            case let .indicatorOnly(isReadOnly):
+                "layout-indicatorOnly-\(isReadOnly ? "readOnly" : "")"
+            case let .default(_, description, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
+                "layout-default-label-\(description != nil ? "withDescription" : "")-\(icon != nil ? "withIcon" : "")-\(flipIcon ? "flipIcon" : "")-\(isError ? "error-\(errorText != nil ? "withError" : "")" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
+            case let .inverse(_, description, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
+                "layout-inverse-label-\(description != nil ? "withDescription" : "")-\(icon != nil ? "withIcon" : "")-\(flipIcon ? "flipIcon" : "")-\(isError ? "error-\(errorText != nil ? "withError" : "")" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
             }
         }
         // swiftlint:enable line_length
@@ -226,13 +226,13 @@ struct SwitchTest: View {
 
     var body: some View {
         switch layout {
-        case .indicatorOnly:
-            OUDSSwitch(isOn: .constant(indicatorState), accessibilityLabel: "Bazinga!")
+        case let .indicatorOnly(isReadOnly):
+            OUDSSwitch(isOn: .constant(indicatorState), accessibilityLabel: "Bazinga!", isReadOnly: isReadOnly)
                 .disabled(isDisabled)
-        case let .default(label, helper, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
+        case let .default(label, description, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
             OUDSSwitchItem(label,
                            isOn: .constant(indicatorState),
-                           helper: helper,
+                           description: description,
                            icon: icon,
                            flipIcon: flipIcon,
                            isReversed: false,
@@ -241,10 +241,10 @@ struct SwitchTest: View {
                            isReadOnly: isReadOnly,
                            hasDivider: hasDivider)
                 .disabled(isDisabled)
-        case let .inverse(label, helper, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
+        case let .inverse(label, description, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
             OUDSSwitchItem(label,
                            isOn: .constant(indicatorState),
-                           helper: helper,
+                           description: description,
                            icon: icon,
                            flipIcon: flipIcon,
                            isReversed: true,

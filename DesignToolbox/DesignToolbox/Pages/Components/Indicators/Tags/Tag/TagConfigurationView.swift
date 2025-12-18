@@ -70,6 +70,7 @@ final class TagConfigurationModel: ComponentConfiguration {
         shape = .rounded
         appearance = .emphasized
         themeName = ""
+        super.init()
     }
 
     deinit {}

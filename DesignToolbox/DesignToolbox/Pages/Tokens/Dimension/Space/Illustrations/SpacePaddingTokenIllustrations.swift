@@ -36,29 +36,7 @@ struct PaddingInlineProperty: View {
     }
 }
 
-// MARK: - Padding Inset property
-
-struct PaddingInsetProperty: View {
-
-    var body: some View {
-        SpaceTokenProperty(namedTokens: NamedSpace.PaddingInset.allCases) {
-            #if !os(tvOS) && !os(watchOS)
-            SpaceHeaderDescription(text: "app_tokens_dimension_space_paddingInsetHeader_text", paddings: EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
-            #endif
-        } illustration: { token in
-            Illustration(token: token)
-        }
-    }
-
-    struct Illustration: View {
-        let token: SpaceSemanticToken
-        var body: some View {
-            SpaceCommonIllustration(dimension: token, padding: .topLeading)
-        }
-    }
-}
-
-// MARK: - Padding Stack property
+// MARK: - Padding Block property
 
 struct PaddingBlockProperty: View {
 

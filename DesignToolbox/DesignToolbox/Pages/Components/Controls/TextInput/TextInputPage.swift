@@ -57,6 +57,7 @@ struct TextInputDemo: View {
                       helperText: configurationModel.helperText,
                       helperLink: helperLink,
                       isOutlined: configurationModel.isOutlined,
+                      constrainedMaxWidth: configurationModel.constrainedMaxWidth,
                       status: configurationModel.status)
             .autocorrectionDisabled()
             .textInputDisableAutocapitalization()

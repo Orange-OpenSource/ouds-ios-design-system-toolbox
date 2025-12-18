@@ -19,19 +19,22 @@ struct MainView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        TabView {
+        OUDSTabBar(selected: 0, count: 3) {
             TokensPage()
                 .tabItem {
-                    Label("app_bottomBar_tokens_label", image: "ic_token")
+                    Label("app_bottomBar_tokens_label", image: "design-token")
                 }
+                .tag(0)
             ComponentsPage()
                 .tabItem {
-                    Label("app_bottomBar_components_label", image: "ic_component_atom")
+                    Label("app_bottomBar_components_label", image: "component-atom")
                 }
+                .tag(1)
             AboutPage()
                 .tabItem {
-                    Label("app_bottomBar_about_label", image: "ic_info")
+                    Label("app_bottomBar_about_label", image: "info-fill")
                 }
+                .tag(2)
         }
         .oudsAccentColor(theme.colors.contentBrandPrimary)
     }

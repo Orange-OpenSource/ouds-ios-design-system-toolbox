@@ -53,8 +53,10 @@ final class CheckboxPickerUITests: AppTestCase {
     /// selects the items and checks if the others ahvec the suitable states
     @MainActor func testCheckboxPickerA11YSelection() throws {
 
-        let selectedA11Yvalue = "core_checkbox_checked_a11y"
-        let unselectedA11Yvalue = "core_checkbox_unchecked_a11y"
+        // 'Checkbox. Checked. . '
+        let checkedCheckboxA11YValue = wording(for: "core_checkbox_trait_a11y") + ". " + wording(for: "core_checkbox_checked_a11y") + ". . "
+        // 'Checkbox. Unchecked. . '
+        let uncheckedCheckboxA11YValue = wording(for: "core_checkbox_trait_a11y") + ". " + wording(for: "core_checkbox_unchecked_a11y") + ". . "
 
         let rootItemA11YLabel = wording(for: "app_components_checkboxPicker_root")
         let firstItemA11YIdentifier = "Virgin Holy Lava"
@@ -68,9 +70,9 @@ final class CheckboxPickerUITests: AppTestCase {
         tapButton(withWording: "app_components_checkbox_label", app)
         tapButton(withWording: "app_components_checkboxPicker_label", app)
 
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
+        check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
+        check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
+        check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
 
         // WHEN
 
@@ -80,9 +82,9 @@ final class CheckboxPickerUITests: AppTestCase {
         // THEN
 
         check(value: pickerRootItemA11yValue(with: 1), ofElementWithLabel: rootItemA11YLabel, app)
-        check(value: selectedA11Yvalue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
+        check(value: checkedCheckboxA11YValue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
+        check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
+        check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
 
         // WHEN
 
@@ -92,9 +94,9 @@ final class CheckboxPickerUITests: AppTestCase {
         // THEN
 
         check(value: pickerRootItemA11yValue(with: 2), ofElementWithLabel: rootItemA11YLabel, app)
-        check(value: selectedA11Yvalue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
-        check(value: selectedA11Yvalue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
+        check(value: checkedCheckboxA11YValue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
+        check(value: checkedCheckboxA11YValue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
+        check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
 
         // WHEN
 
@@ -104,9 +106,9 @@ final class CheckboxPickerUITests: AppTestCase {
         // THEN
 
         check(value: pickerRootItemA11yValue(with: 3), ofElementWithLabel: rootItemA11YLabel, app)
-        check(value: selectedA11Yvalue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
-        check(value: selectedA11Yvalue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
-        check(value: selectedA11Yvalue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
+        check(value: checkedCheckboxA11YValue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
+        check(value: checkedCheckboxA11YValue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
+        check(value: checkedCheckboxA11YValue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
 
         // WHEN
 
@@ -116,9 +118,9 @@ final class CheckboxPickerUITests: AppTestCase {
         // THEN
 
         check(value: pickerRootItemA11yValue(with: 0), ofElementWithLabel: rootItemA11YLabel, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
-        check(value: unselectedA11Yvalue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
+        check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
+        check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
+        check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: thirdItemA11YIdentifier, app)
     }
 
     // MARK: - Helpers
