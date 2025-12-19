@@ -51,8 +51,6 @@ final class BadgeConfigurationModel: ComponentConfiguration {
 
     // MARK: - Properties
 
-    var themeName: String
-
     var count: UInt8 {
         UInt8(countText) ?? 1
     }
@@ -61,12 +59,12 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         badgeType == .icon && (status == .neutral || status == .accent)
     }
 
-    var statusWithIcon: OUDSBadge.StatusWithIcon {
+    func statusWithIcon(from theme: OUDSTheme) -> OUDSBadge.StatusWithIcon {
         switch status {
         case .neutral:
-            .neutral(icon: Image.defaultImage(prefixedBy: themeName), flipped: flipIcon)
+                .neutral(icon: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon)
         case .accent:
-            .accent(icon: Image.defaultImage(prefixedBy: themeName), flipped: flipIcon)
+                .accent(icon: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon)
         case .positive:
             .positive
         case .info:
@@ -104,7 +102,6 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         badgeType = .count
         flipIcon = false
         countText = "1"
-        themeName = ""
         super.init()
     }
 
