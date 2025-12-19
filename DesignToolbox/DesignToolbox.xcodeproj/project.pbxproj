@@ -5408,7 +5408,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1187-use-dynamictypesize-instead-of-contentsizecategory";
 				kind = branch;
 			};
 		};

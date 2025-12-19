@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "9b2eee72bd13f81b1482c97e7ed1954815ea2476"
+        "branch" : "1187-use-dynamictypesize-instead-of-contentsizecategory",
+        "revision" : "283785363d427d318041385acbcd9e508307b03c"
       }
     },
     {

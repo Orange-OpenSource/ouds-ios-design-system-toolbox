@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.0.0...develop)
 
+### Changed
+
+- [Library] Use DynamicTypeSize instead of ContentSizeCategory (Orange-OpenSource/ouds-ios#1187)
 
 ## [1.0.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.22.0...1.0.0) - 2025-12-18
 
