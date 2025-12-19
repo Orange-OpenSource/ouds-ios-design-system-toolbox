@@ -62,9 +62,9 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     func statusWithIcon(from theme: OUDSTheme) -> OUDSBadge.StatusWithIcon {
         switch status {
         case .neutral:
-                .neutral(icon: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon)
+            .neutral(icon: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon)
         case .accent:
-                .accent(icon: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon)
+            .accent(icon: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon)
         case .positive:
             .positive
         case .info:
