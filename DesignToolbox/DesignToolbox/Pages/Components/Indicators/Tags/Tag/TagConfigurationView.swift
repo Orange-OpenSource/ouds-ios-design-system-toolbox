@@ -69,13 +69,12 @@ final class TagConfigurationModel: ComponentConfiguration {
         statusCategory = .neutral
         shape = .rounded
         appearance = .emphasized
-        themeName = ""
         super.init()
     }
 
     deinit {}
 
-    var status: OUDSTag.Status {
+    func status(from theme: OUDSTheme) -> OUDSTag.Status {
         switch statusCategory {
         case .accent:
             switch layout.statusLeading {
@@ -84,7 +83,7 @@ final class TagConfigurationModel: ComponentConfiguration {
             case .none:
                 .accent(bullet: false)
             case .icon:
-                .accent(icon: Image.defaultImage(prefixedBy: themeName), flipIcon: flipIcon)
+                .accent(icon: Image.defaultImage(prefixedBy: theme.name), flipIcon: flipIcon)
             }
         case .neutral:
             switch layout.statusLeading {
@@ -93,7 +92,7 @@ final class TagConfigurationModel: ComponentConfiguration {
             case .none:
                 .neutral(bullet: false)
             case .icon:
-                .neutral(icon: Image.defaultImage(prefixedBy: themeName), flipIcon: flipIcon)
+                .neutral(icon: Image.defaultImage(prefixedBy: theme.name), flipIcon: flipIcon)
             }
         case .positive:
             .positive(leading: layout.statusLeading)
@@ -109,8 +108,6 @@ final class TagConfigurationModel: ComponentConfiguration {
     var enableFlipIcon: Bool {
         !loader && (layout == .textAndIcon && (statusCategory == .accent || statusCategory == .neutral))
     }
-
-    var themeName: String
 
     // MARK: Component Configuration
 
