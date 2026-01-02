@@ -1,4 +1,13 @@
-# Agents.md
+---
+type: ai-agent-guide
+framework: OUDS-iOS-Design-System-Toolbox
+language: Swift
+ui-framework: SwiftUI
+platforms: [iOS, iPadOS, macOS, visionOS, watchOS, tvOS]
+min-deployment: iOS 15.0
+---
+
+# OUDS iOS Design System Toolbox app - AI Agent Guide
 
 This file provides guidance to AI coding agents when working with code in this repository or with OUDS iOS products.
 
@@ -20,6 +29,7 @@ The products are written in Swift with SwiftUI as UI framework and Swift 6 (form
 - *theme*: a set of tokens, assets like fonts and images, to use in app to style it and change their look and feels
 - *tuning*: some small configuration elements for a theme like rounded corners
 - *token provider*: an object in a theme gathering tokens (semantics and components)
+- *component*: mainly a SwiftUI view with specific features and layouts like buttons, switch, link etc.
 
 ## Code formating
 
@@ -229,82 +239,13 @@ To update the build number of the app:
 bundle exec fastlane update_build_number
 ```
 
-## Code samples
+## Review guidelines
 
-### Import OUDS product
-
-Import OUDS umbrella product gathering all other librairies:
-```swift
-import OUDSSwiftUI
-```
-
-### Instanciate a theme object
-
-Create a theme for Orange product:
-```swift
-    let theme = OrangeTheme()
-```
-
-### Inject a theme in an app
-
-Use an `OUDSThemeableView` to inject the theme:
-
-```swift
-OUDSThemeableView(theme: theme) {
-
-}
-```
-
-### Get the theme object
-
-Get the theme object as environement object:
-```swift
-@Environment(\.theme) private var theme
-```
-
-### Use tokens from theme
-
-Use colors (semantic tokens) defined in a theme:
-```swift
-theme.colors
-```
-
-Use borders (semantic tokens) defined in a theme:
-```swift
-theme.borders
-```
-
-Use fonts (semantic tokens) defined in a theme:
-```swift
-theme.fonts
-```
-
-Use sizes (semantic tokens) defined in a theme:
-```swift
-theme.sizes
-```
-
-Use spaces (semantic tokens) defined in a theme:
-```swift
-theme.spaces
-```
-
-Use dimensions (semantic tokens) defined in a theme:
-```swift
-theme.dimensions
-```
-
-Use elevations (semantic tokens) defined in a theme:
-```swift
-theme.elevations
-```
-
-Use grids (semantic tokens) defined in a theme:
-```swift
-theme.grids
-```
-
-Use opacities (semantic tokens) defined in a theme:
-```swift
-theme.opacities
-```
+- Check if sources are formatted
+- Run linter, no error must appear
+- Run tests, they must all pass
+- Check if there is dead coden and leave a comment saying the elements which seem toi be dead / not used
+- Build documentation, no error must appear
+- Check leaks, no leak must appear
+- Check if functions are too long or too complicated,  must be low
+- Check if the commit has been designed-off (i.e. DCO appplied) by all commits authors
