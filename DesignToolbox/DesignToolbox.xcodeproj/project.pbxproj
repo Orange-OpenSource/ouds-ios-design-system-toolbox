@@ -5408,7 +5408,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1233-status-and-size-properties-of-badge-component-not-used";
 				kind = branch;
 			};
 		};

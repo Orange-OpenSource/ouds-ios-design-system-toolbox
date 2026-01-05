@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Library] **BREAKING**: Rename component tokens `buttonBorder*` to `border*`
 - [Library] **BREAKING**: Rename some multiple token object (from plural to singular form)
+- [Library] `status` and `size` properties of `badge` component not used (Orange-OpenSource/ouds-ios#1233)
 - [Library] Use `DynamicTypeSize` instead of `ContentSizeCategory` (Orange-OpenSource/ouds-ios#1187)
 
 ### Fixed
