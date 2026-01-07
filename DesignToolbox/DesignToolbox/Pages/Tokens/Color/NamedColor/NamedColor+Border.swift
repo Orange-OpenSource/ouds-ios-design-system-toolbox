@@ -34,7 +34,7 @@ extension NamedColor {
         case borderStatusNegative
         case borderStatusAccent
 
-        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
+        func token(from theme: OUDSTheme) -> MultipleColorSemanticToken {
             switch self {
             case .borderBrandPrimary:
                 theme.colors.borderBrandPrimary

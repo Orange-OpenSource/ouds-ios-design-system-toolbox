@@ -40,7 +40,7 @@ extension NamedColor {
         case actionReadOnlySecondary
         case actionAccent
 
-        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
+        func token(from theme: OUDSTheme) -> MultipleColorSemanticToken {
             switch self {
             case .actionDisabled:
                 theme.colors.actionDisabled

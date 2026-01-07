@@ -27,7 +27,7 @@ extension NamedSpace {
         case scaled2xlarge
         case scaled3xlarge
 
-        func token(from theme: OUDSTheme) -> MultipleSpaceSemanticTokens {
+        func token(from theme: OUDSTheme) -> MultipleSpaceSemanticToken {
             switch self {
             case .scaledNone:
                 theme.spaces.scaledNone

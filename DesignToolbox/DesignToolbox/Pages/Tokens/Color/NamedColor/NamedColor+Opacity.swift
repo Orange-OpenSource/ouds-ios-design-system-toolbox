@@ -20,7 +20,7 @@ extension NamedColor {
         case opacityLower
         case opacityTransparent
 
-        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
+        func token(from theme: OUDSTheme) -> MultipleColorSemanticToken {
             switch self {
             case .opacityLowest:
                 theme.colors.opacityLowest

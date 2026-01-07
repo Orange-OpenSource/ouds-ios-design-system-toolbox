@@ -22,7 +22,7 @@ extension NamedColor {
         case bgInverseHigh
         case bgInverseLow
 
-        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
+        func token(from theme: OUDSTheme) -> MultipleColorSemanticToken {
             switch self {
             case .bgPrimary:
                 theme.colors.bgPrimary
