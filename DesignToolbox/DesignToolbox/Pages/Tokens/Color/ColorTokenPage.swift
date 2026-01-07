@@ -154,7 +154,7 @@ struct ColorTokenPage: View {
             }
         }
 
-        init(token: MultipleColorSemanticTokens, name: String) {
+        init(token: MultipleColorSemanticToken, name: String) {
             self.name = name
 
             if token.hasForbiddenColorValue() {

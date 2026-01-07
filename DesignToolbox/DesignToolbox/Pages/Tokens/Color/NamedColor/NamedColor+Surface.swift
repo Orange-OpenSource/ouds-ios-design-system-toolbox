@@ -35,7 +35,7 @@ extension NamedColor {
         case surfaceSecondary
         case surfaceTertiary
 
-        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
+        func token(from theme: OUDSTheme) -> MultipleColorSemanticToken {
             switch self {
             case .surfaceBrandPrimary:
                 theme.colors.surfaceBrandPrimary

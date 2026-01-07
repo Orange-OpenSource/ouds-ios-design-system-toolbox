@@ -38,7 +38,7 @@ extension NamedColor {
 
         // We can bang! theme.charts here because controls on the existence of theme.charts have been previosuly done
         // swiftlint:disable force_unwrapping
-        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
+        func token(from theme: OUDSTheme) -> MultipleColorSemanticToken {
             switch self {
             case .border:
                 theme.charts!.border
