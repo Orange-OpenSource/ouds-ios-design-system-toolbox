@@ -17,7 +17,7 @@ import SwiftUI
 @main
 struct DesignToolbox: App {
 
-    @StateObject private var themeProvider = ThemeProvider()
+    @ObservedObject private var themeProvider = ThemeProvider()
     @AppStorage("colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
 
     #if os(macOS)
