@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Migration from Xcode 26.0 to Xcode 26.1.1
 - [Library] Unused `status` and `size` properties of `badge` component (count and icon variants) removed (Orange-OpenSource/ouds-ios#1233)
 - [Library] Various cleanings in the documentation
 - [Library] Update constants file with versions values in comments for documentation
