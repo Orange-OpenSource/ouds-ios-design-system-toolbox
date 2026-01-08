@@ -86,7 +86,7 @@ end
 # Devices configuration
 # ---------------------
 
-OUDS_TEST_DEVICE = "iPhone 17 Pro" # "iPhone 17 Pro (26.1)"
+OUDS_TEST_DEVICE = "iPhone 17 Pro" # "iPhone 17 Pro (21)"
 
 # Non-platform specific lanes
 # ---------------------------
