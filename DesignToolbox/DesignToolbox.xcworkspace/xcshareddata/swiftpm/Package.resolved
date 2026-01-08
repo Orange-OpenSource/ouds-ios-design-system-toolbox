@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1233-status-and-size-properties-of-badge-component-not-used",
-        "revision" : "a145ec5537e5a72a3e7745c6e46f8289735bd779"
+        "branch" : "develop",
+        "revision" : "a51ee50d1a694f8d417d2745ad16507d1bc525ca"
       }
     },
     {
