@@ -1042,19 +1042,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "badge هي عنصر صغير في واجهة المستخدم يُستخدم لتسليط الضوء على الحالة أو الإشعارات أو التصنيف داخل الواجهة. غالبًا ما يتم عرضها كعلامة أو مؤشر بلون خلفية مميز ونص.\r\n"
+            "value" : "الشارة عنصر من عناصر واجهة المستخدم يُستخدم لتسليط الضوء على إشعارات النظام، أو الحالة، أو تصنيف المعلومات، وذلك من خلال اللون فقط. تُعرض الشارة كشكل ملون، بدون أيقونة أو نص أو رقم؛ ويبقى حجمها ثابتًا بغض النظر عن تغيير حجم واجهة المستخدم."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "The badge is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text."
+            "value" : "Badge is a UI element that emphasizes system notifications, status, or the categorization of an information, throughout colour only. Badge is rendered as a coloured shape, without icon, text or number; and its chosen size remains unchanged regardless of the changes of the interface size."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Badge est un petit élément d'interface utilisateur permettant de mettre en évidence un statut, des notifications ou une catégorisation au sein d'une interface. Il est souvent affiché sous forme d'étiquette ou d'indicateur avec une couleur d'arrière-plan et un texte distincts."
+            "value" : "Le badge est un élément de l'interface utilisateur qui met l'accent sur les notifications du système, l'état ou la catégorisation d'une information, uniquement par la couleur. Le badge est rendu sous la forme d'une forme colorée, sans icône, texte ou numéro ; et sa taille choisie reste inchangée quels que soient les changements de taille de l'interface."
           }
         }
       }
