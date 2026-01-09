@@ -298,13 +298,26 @@ To run these UI tests follow some steps:
 1. `cd DesignToolbox`
 2. Open *DesignToolbox.xcworkspace*
 3. Select *DesignToolboxUITests* scheme
-4. Select *iPhone 17 Pro* simulator (the device used to tests and views rendering) (iOS 26.2 (23C54))
+4. Select *iPhone 16e (18.6)* simulator (the device used for tests and views rendering) (iOS 18.6 (22G86))
 5. Run tests (Product -> Test)
 
 Or run in terminal:
 ```shell
 bundle exec fastlane ios test_ui
 ```
+
+> [!CAUTION]
+> Even if everything worked fine with Xcode 26.0, we face big troubles with Xcode 26.1 and Xcode 26.2
+>
+> Indeed with those versions:
+> - the accessibility inspector tool does not work
+> - almost all the UI tests failed because of not foundable elements
+> - but only for devices and simulators with iOS 26+
+> - so UI tests are made on iOS 18.6
+>
+> So UI tests must be run on iOS lower than 26!
+>
+> See https://github.com/Orange-OpenSource/ouds-ios/issues/1247
 
 ### Unit tests in demo app
 
