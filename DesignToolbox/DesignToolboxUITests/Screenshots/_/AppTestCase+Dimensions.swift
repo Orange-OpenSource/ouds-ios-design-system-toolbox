@@ -11,6 +11,11 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+// WARNING: Not possible to trigger UI tests with Xcode 26.2 on iOS 26
+// See: https://github.com/Orange-OpenSource/ouds-ios/issues/1247
+// This file sould not be modified until a definitive solution has been found
+// (┛◉Д◉)┛彡┻━┻.
+
 typealias ACDC = AppTestCase.DocumentationCaptures // ⚡
 
 /// ## Device for test
@@ -21,6 +26,7 @@ typealias ACDC = AppTestCase.DocumentationCaptures // ⚡
 /// - portrait mode
 /// - english app
 /// - no increased text
+/// - iOS 26+
 ///
 /// **Beware, values are for iPhone 12 Pro in portrait mode and only to make screenshots for documentations, so only one device is enough**
 extension AppTestCase {

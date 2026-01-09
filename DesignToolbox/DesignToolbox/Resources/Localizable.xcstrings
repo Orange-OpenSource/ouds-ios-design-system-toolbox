@@ -1042,19 +1042,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "badge هي عنصر صغير في واجهة المستخدم يُستخدم لتسليط الضوء على الحالة أو الإشعارات أو التصنيف داخل الواجهة. غالبًا ما يتم عرضها كعلامة أو مؤشر بلون خلفية مميز ونص.\r\n"
+            "value" : "الشارة عنصر من عناصر واجهة المستخدم يُستخدم لتسليط الضوء على إشعارات النظام، أو الحالة، أو تصنيف المعلومات، وذلك من خلال اللون فقط. تُعرض الشارة كشكل ملون، بدون أيقونة أو نص أو رقم؛ ويبقى حجمها ثابتًا بغض النظر عن تغيير حجم واجهة المستخدم."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "The badge is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text."
+            "value" : "Badge is a UI element that emphasizes system notifications, status, or the categorization of an information, throughout colour only. Badge is rendered as a coloured shape, without icon, text or number; and its chosen size remains unchanged regardless of the changes of the interface size."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Badge est un petit élément d'interface utilisateur permettant de mettre en évidence un statut, des notifications ou une catégorisation au sein d'une interface. Il est souvent affiché sous forme d'étiquette ou d'indicateur avec une couleur d'arrière-plan et un texte distincts."
+            "value" : "Le badge est un élément de l'interface utilisateur qui met l'accent sur les notifications du système, l'état ou la catégorisation d'une information, uniquement par la couleur. Le badge est rendu sous la forme d'une forme colorée, sans icône, texte ou numéro ; et sa taille choisie reste inchangée quels que soient les changements de taille de l'interface."
           }
         }
       }
@@ -1211,19 +1211,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تسمح Buttons للمستخدمين باتخاذ قرارات أو تنفيذ إجراءات. وتتوفر بأنماط متعددة لتلبية احتياجات مختلفة."
+            "value" : "الزر هو عنصر من عناصر واجهة المستخدم يُفعّل إجراءً أو حدثًا، ويُستخدم لبدء المهام أو تأكيد إجراء ما. يظهر الزر بتصميمات وأنماط وحالات مختلفة للإشارة إلى التسلسل الهرمي أو التركيز."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buttons allow users to make choices or perform an action. They have multiple styles for various needs."
+            "value" : "Button is a UI element that triggers an action or event, and is used to initiate tasks or confirming an action. Button appears in different layouts, styles and states to indicate hierarchy or emphasis."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Button permet aux utilisateurs de faire des choix ou d'effectuer une action. Ils ont plusieurs styles pour divers besoins."
+            "value" : "Le bouton est un élément de l'interface utilisateur qui déclenche une action ou un événement et est utilisé pour lancer des tâches ou confirmer une action. Le bouton apparaît dans différentes mises en page, styles et états pour indiquer la hiérarchie ou l'accent."
           }
         }
       }
@@ -1252,6 +1252,30 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_checkbox_checkbox_description_text" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مربع الاختيار هو عنصر واجهة مستخدم يسمح بتحديد خيارات متعددة من مجموعة خيارات غير حصرية. يوفر مربع الاختيار الذي لا يعرض أيقونة أو نصًا مرونة أكبر عند إنشاء مكونات أخرى تتطلب عرض مربع اختيار."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices. Checkbox that does not show icon or text, provides greater flexibility when creating other components that require a checkbox to be displayed. "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La case à cocher est un élément d'interface utilisateur permettant de sélectionner plusieurs options parmi un ensemble de choix non exclusifs. Une case à cocher sans icône ni texte offre une plus grande flexibilité lors de la création d'autres composants nécessitant son affichage."
+          }
+        }
+      }
     },
     "app_components_checkbox_checkbox_label" : {
       "comment" : "Component - Checkbox",
@@ -1285,19 +1309,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تسمح checkboxes للمستخدمين باختيار خيار واحد أو أكثر من قائمة، أو تبديل الإعدادات بين التشغيل والإيقاف، أو تأكيد إجراء معين."
+            "value" : "مربع الاختيار المتقدم هو عنصر في واجهة المستخدم يتيح لك تحديد خيارات متعددة من مجموعة خيارات غير حصرية. يغطي مربع الاختيار المتقدم نطاقًا أوسع من السياقات من خلال السماح لك بتفعيل/إيقاف ظهور تسميات نصية وأيقونات إضافية."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Checkboxes allows users to select one or multiple options from a list, toggle settings on or off, or confirm an action."
+            "value" : "Checkbox item is a UI element that allows to select multiple options from a set of mutually non exclusive choices. Checkbox item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant CheckboxItem permet aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action."
+            "value" : "La case à cocher enrichie est un élément d'interface utilisateur qui permet de sélectionner plusieurs options parmi un ensemble de choix mutuellement non exclusifs. La case à cocher enriche couvre un plus large éventail de contextes en permettant de basculer la visibilité d’étiquettes de texte et d’icônes supplémentaires."
           }
         }
       }
@@ -1334,19 +1358,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تتيح checkboxs للمستخدمين تحديد خيار واحد أو خيارات متعددة من القائمة، أو تشغيل الإعدادات أو إيقاف تشغيلها، أو تأكيد إجراء ما."
+            "value" : "مربع الاختيار هو عنصر من عناصر واجهة المستخدم يسمح بتحديد خيارات متعددة من مجموعة من الخيارات غير الحصرية المتبادلة."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Checkboxes allows users to select one or multiple options from a list, toggle settings on or off, or confirm an action."
+            "value" : "Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant CheckBox permet aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action."
+            "value" : "La case à cocher est un élément de l'interface utilisateur qui permet de sélectionner plusieurs options parmi un ensemble de choix mutuellement non exclusifs."
           }
         }
       }
@@ -1651,19 +1675,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Filter Chip هو مكون صغير في واجهة المستخدم يُمثل خيار تصفية يمكن للمستخدم تحديده أو إلغاء تحديده. يُستخدم هذا النوع من العناصر لتصفية المحتوى أو البيانات بطريقة تفاعلية وبصرية، ويُساهم في تحسين تجربة المستخدم من خلال التحكم في عرض المعلومات."
+            "value" : "شريحة التصفية هي عنصر من عناصر واجهة المستخدم يسمح بتحديد أو إلغاء تحديد خيار ضمن سلسلة، وتُستخدم عادةً لتسجيل قرارات التصفية. تتيح شريحة التصفية تصفية المحتوى عن طريق تحديدها أو إلغاء تحديدها. يمكن تفعيلها أو تعطيلها لتحسين النتائج المعروضة، وتبقى شرائح التصفية المحددة مميزة بصريًا للإشارة إلى عوامل التصفية النشطة."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A filter chip is a compact UI element used in a design system to represent a filter option that can be selected or deselected by the user. Filter chips allow users to refine content or data by applying one or more filters in a visually accessible and interactive way."
+            "value" : "Filter chip is a UI element that allows to select or deselect an option within a series, and is commonly used to capture filtering decisions. Filter chip allows to filter content by being selected or deselected. It can be toggled \"On\" or \"Off\" to refine displayed results, and selected Filter Chips remain visually distinct to indicate active filters."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composent Filter Chip est un élément d'interface utilisateur compact utilisé dans un système de conception pour représenter une option de filtre qui peut être sélectionnée ou désélectionnée par l'utilisateur. Ils permettent aux utilisateurs d'affiner le contenu ou les données en appliquant un ou plusieurs filtres de manière visuellement accessible et interactive."
+            "value" : "La puce de filtre est un élément d'interface utilisateur qui permet de sélectionner ou de désélectionner une option au sein d'une série et est couramment utilisée pour capturer les décisions de filtrage. La puce de filtre permet de filtrer le contenu en étant sélectionné ou désélectionné. Il peut être activé ou désactivé pour affiner les résultats affichés, et les puces de filtre sélectionnées restent visuellement distinctes pour indiquer les filtres actifs."
           }
         }
       }
@@ -1749,19 +1773,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suggestion Chip هو مكون صغير في واجهة المستخدم يُستخدم لعرض خيارات مقترحة أو تنبؤية بناءً على إدخال المستخدم أو السياق. غالبًا ما يظهر في شريط البحث، النماذج، أو واجهات المحادثة، ويساعد المستخدمين على اختيار اقتراحات ذات صلة بسرعة. عادةً ما يكون غير محدد بشكل افتراضي، ويمكن النقر عليه لتطبيق الاقتراح، مما يُبسّط إدخال البيانات ويحسن من سهولة الاستخدام."
+            "value" : "شريحة الاقتراحات هي عنصر من عناصر واجهة المستخدم يسمح بعرض خيارات مُوصى بها أو تنبؤية بناءً على مدخلات المستخدم أو سياقه، وتُستخدم عادةً لتسجيل قرارات التصفية. عادةً ما تكون شريحة الاقتراحات غير مُحددة افتراضيًا، ويمكن النقر عليها أو الضغط عليها لتطبيق الاقتراح، مما يُبسط عملية الإدخال ويُحسّن سهولة الاستخدام."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A suggestion chip is a compact UI element used to present recommended or predictive options based on user input or context. Often found in search bars, forms, or messaging interfaces, suggestion chips help users quickly select from relevant suggestions. They are typically non-selected by default and can be tapped or clicked to apply the suggestion, streamlining user input and enhancing usability."
+            "value" : "Suggestion chip is a UI element that allows to present recommended or predictive options based on user's input or context, and is commonly used to capture filtering decisions. Suggestion chip is typically non-selected by default and can be tapped or clicked to apply the suggestion, streamlining input and enhancing usability."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Suggestion Chip est un élément d'interface utilisateur compact utilisé pour présenter des options recommandées ou prédictives en fonction de la saisie utilisateur ou du contexte. Souvent présentes dans les barres de recherche, les formulaires ou les interfaces de messagerie, les puces de suggestion aident les utilisateurs à sélectionner rapidement des suggestions pertinentes. Elles ne sont généralement pas sélectionnées par défaut et peuvent être appliquées d'un simple clic, ce qui simplifie la saisie utilisateur et améliore la convivialité."
+            "value" : "La puce de suggestion est un élément de l'interface utilisateur qui permet de présenter des options recommandées ou prédictives en fonction de la saisie ou du contexte de l'utilisateur, et est couramment utilisée pour capturer les décisions de filtrage. La puce de suggestion n'est généralement pas sélectionnée par défaut et peut être appuyée ou cliquée pour appliquer la suggestion, rationalisant ainsi la saisie et améliorant la convivialité."
           }
         }
       }
@@ -2681,19 +2705,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "  ينظم divider واجهة المستخدم بصريًا عن طريق فصل أقسام المحتوى بوضوح. يساعد على تحسين قابلية القراءة وتنظيم المحتوى دون إضافة تسلسل هرمي قوي كما في العناوين أو الحاويات."
+            "value" : "الفاصل هو عنصر من عناصر واجهة المستخدم يساعد في تنظيم المحتوى من خلال الفصل البصري بين أقسامه. يُحسّن الفاصل من سهولة القراءة وتنظيم المحتوى دون إضافة تسلسل هرمي بصري أقوى كما هو الحال مع العناوين أو الحاويات."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A divider visually structures an interface by clearly separating content sections. It helps to improve readability and content organization without introducing a strong hierarchy like a heading or a container would. "
+            "value" : "Divider is a UI element that allows to structure the content by visually separating the content zones. Divider improves readability and content organization without introducing a stronger visual hierarchy like a heading or a container would.\n"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Divider structure visuellement une interface en séparant clairement les sections de contenu. Il améliore la lisibilité et l'organisation du contenu sans introduire une hiérarchie trop marquée comme le feraient un titre ou un conteneur."
+            "value" : "Le séparateur est un élément d'interface utilisateur qui permet de structurer le contenu en séparant visuellement les zones de contenu. Le séparateur améliore la lisibilité et l'organisation du contenu sans introduire une hiérarchie visuelle plus forte comme le ferait un titre ou un conteneur."
           }
         }
       }
@@ -2717,7 +2741,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le variant horizontal du composant Divider est utilisé pour séparer des contenus positionnés côte à côte"
+            "value" : "Le variant horizontal du composant est utilisé pour séparer des contenus positionnés côte à côte"
           }
         }
       }
@@ -2853,19 +2877,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تُستخدم links لتوجيه المستخدمين إلى موارد أو أقسام إضافية، سواء كانت داخلية (ضمن نفس التطبيق) أو خارجية (مثل موقع إلكتروني أو مستند)."
+            "value" : "الرابط هو عنصر من عناصر واجهة المستخدم يسمح بالتنقل من مكان إلى آخر، سواء داخل الصفحة نفسها، أو عبر صفحات مختلفة من نفس المصدر، أو إلى مصدر خارجي. تتمثل الوظيفة الأساسية للرابط في التنقل، وهو يُظهر طبيعته التفاعلية بصريًا ودلاليًا."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Links direct users to other resources or sections, whether internal (within the same application) or external (to a website or document)."
+            "value" : "Link is a UI element that allows to navigate from one location to another, either within the same page or across different pages in the same resource, or to an external resource. Link's primary function is navigation and it communicates its interactive nature visually and semantically."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Link dirige les utilisateurs vers d'autres ressources ou sections, qu'elles soient internes (dans la même application) ou externes (vers un site web ou un document)."
+            "value" : "Le lien est un élément d'interface utilisateur qui permet de naviguer d'un emplacement à un autre, soit au sein de la même page, soit à travers différentes pages de la même ressource, soit vers une ressource externe. La fonction principale du lien est la navigation et communique sa nature interactive visuellement et sémantiquement."
           }
         }
       }
@@ -2927,19 +2951,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يُستخدم Radio button لتمكين المستخدم من تحديد خيار واحد فقط من بين مجموعة خيارات حصرية. يُعرض عادةً كدائرة صغيرة مع تسمية، وتُملأ عند التحديد."
+            "value" : "زر الاختيار هو عنصر من عناصر واجهة المستخدم يسمح بتحديد خيار واحد من مجموعة من الخيارات الحصرية المتبادلة."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A radio button allows users to select a single option from a set of mutually exclusive choices, typically displayed as a circular input with a label that becomes filled when selected."
+            "value" : "Radio button is a UI element that allows to select a single option from a set of mutually exclusive choices."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Radio Button permettent aux utilisateurs de sélectionner une option dans une liste."
+            "value" : "Le bouton radio est un élément de l'interface utilisateur qui permet de sélectionner une seule option parmi un ensemble de choix mutuellement exclusifs."
           }
         }
       }
@@ -2993,6 +3017,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_radioButton_radioButton_description_text" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "زر الاختيار هو عنصر في واجهة المستخدم يسمح باختيار خيار واحد من بين مجموعة من الخيارات الحصرية. يوفر زر الاختيار الذي لا يعرض أيقونة أو نصًا مرونة أكبر عند إنشاء مكونات أخرى تتطلب عرض زر اختيار."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio button is a UI element that allows to select a single option from a set of mutually exclusive choices. Radio button that does not show icon or text, provides greater flexibility when creating other components that require a Radio button to be displayed."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le bouton radio est un élément de l'interface utilisateur qui permet de sélectionner une seule option parmi un ensemble de choix mutuellement exclusifs. Le bouton radio qui n'affiche pas d'icône ou de texte offre une plus grande flexibilité lors de la création d'autres composants nécessitant l'affichage d'un bouton radio."
+          }
+        }
+      }
+    },
     "app_components_radioButton_radioButton_label" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
@@ -3025,19 +3073,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : " تتيح Radio buttons للمستخدمين اختيار خيار واحد من قائمة."
+            "value" : "زر الاختيار المتقدم هو عنصر في واجهة المستخدم يتيح لك اختيار خيار واحد من بين مجموعة من الخيارات الحصرية. يغطي زر الاختيار المتقدم نطاقًا أوسع من السياقات من خلال السماح لك بتفعيل/إيقاف ظهور النصوص والأيقونات الإضافية."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Radio buttons allow users to select one option from a list."
+            "value" : "Radio button Item is a UI element that allows to select a single option from a set of mutually exclusive choices. Radio button Item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Radio Button Item permet aux utilisateurs de sélectionner une options dans une liste."
+            "value" : "Le bouton radio enrichi est un élément d'interface utilisateur qui permet de sélectionner une seule option parmi un ensemble de choix mutuellement exclusifs. Le bouton radio enrichi couvre un plus large éventail de contextes en permettant de basculer la visibilité des étiquettes de texte et des icônes supplémentaires."
           }
         }
       }
@@ -3148,19 +3196,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتيح switch للمستخدم التبديل بين حالتين، عادةً تشغيل و إيقاف. يتم تمثيله غالبًا كزر أو شريط منزلق يتغير موقعه أو لونه للإشارة إلى الحالة الحالية. تُستخدم المفاتيح لتمكين أو تعطيل الميزات أو الخيارات أو الإعدادات بطريقة بصرية وفهمها بسهولة."
+            "value" : "المفتاح هو عنصر واجهة مستخدم يسمح بالتبديل بين حالتين، عادةً \"تشغيل\" و \"إيقاف\"، ويستخدم لتمكين أو تعطيل الميزات أو الخيارات أو الإعدادات."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A switch allows user to enable or disable a feature, option, or setting."
+            "value" : "Switch is a UI element that allows to toggle between two states, typically “On” and “Off”, and used to enable or disable features, options or settings."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Switch permet aux utilisateurs d’activer ou désactiver une fonctionnalité, une option ou un paramètre. "
+            "value" : "Un interrupteur est un élément d'interface utilisateur qui permet de basculer entre deux états, généralement « Marche » et « Arrêt », et qui sert à activer ou désactiver des fonctionnalités, des options ou des paramètres."
           }
         }
       }
@@ -3214,6 +3262,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_switch_switch_description_text" : {
+      "comment" : "Component - Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المفتاح هو عنصر واجهة مستخدم يسمح بالتبديل بين حالتين، عادةً \"تشغيل\" و\"إيقاف\"، ويُستخدم لتمكين أو تعطيل الميزات أو الخيارات أو الإعدادات. يوفر المفتاح الذي لا يعرض أيقونة أو نصًا مرونة أكبر عند إنشاء مكونات أخرى تتطلب عرض المفتاح."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch is a UI element that allows to toggle between two states, typically \"On\" and \"Off\", and used to enable or disable features, options or settings. Switch that does not show icon or text, provides greater flexibility when creating other components that require a Switch to be displayed."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un interrupteur est un élément d'interface utilisateur permettant de basculer entre deux états, généralement « Activé » et « Désactivé », et servant à activer ou désactiver des fonctionnalités, des options ou des paramètres. Un interrupteur sans icône ni texte offre une plus grande flexibilité lors de la création d'autres composants nécessitant son affichage."
+          }
+        }
+      }
+    },
     "app_components_switch_switch_label" : {
       "comment" : "Component - Switch",
       "extractionState" : "manual",
@@ -3246,19 +3318,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتيح التبديل للمستخدم تفعيل أو تعطيل الميزات، الخيارات، أو الإعدادات."
+            "value" : "يُتيح لك مفتاح التبديل المُحسّن التبديل بين حالتين، عادةً \"تشغيل\" و\"إيقاف\"، ويُستخدم لتمكين أو تعطيل الميزات أو الخيارات أو الإعدادات. كما يُغطي هذا العنصر نطاقًا أوسع من السياقات، حيث يُتيح لك أيضًا إدارة عرض تسميات نصية وأيقونات إضافية."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Swith allows user to enable or disable features, options, or settings."
+            "value" : "Switch item is a UI element that allows to toggle between two states, typically \"On\" and \"Off\", and used to enable or disable features, options or settings. Switch Item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Switch Item permet aux utilisateurs d’activer ou désactiver une fonctionnalité, une option ou un paramètre."
+            "value" : "Un interrupteur enrichi permet de basculer entre deux états, généralement « Activé » et « Désactivé », et sert à activer ou désactiver des fonctionnalités, des options ou des paramètres. Cet élément couvre un plus large éventail de contextes en permettant également de gérer l'affichage d'étiquettes textuelles et d'icônes supplémentaires."
           }
         }
       }
@@ -3440,19 +3512,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tag هو عنصر صغير يُستخدم لعرض معلومات قصيرة مثل تسمية أو كلمة مفتاحية أو تصنيف. يساعد المستخدمين على العثور على المحتوى بسرعة أو تجميعه أو فهمه."
+            "value" : "الوسم هو عنصر من عناصر واجهة المستخدم يعرض معلومات قصيرة مثل التسمية أو الكلمة الرئيسية أو الفئة."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A tag is a small element that shows short info like a label, keyword, or category.It helps users quickly find, group, or understand content."
+            "value" : "Tag is a UI element that displays short information such as a label, a keyword or a category."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Tag est un petit élément qui affiche de brèves informations comme une étiquette, un mot-clé ou une catégorie. Elle aide les utilisateurs à trouver, regrouper ou comprendre rapidement du contenu."
+            "value" : "Une étiquette est un élément d'interface utilisateur qui affiche de courtes informations telles qu'un libellé, un mot-clé ou une catégorie."
           }
         }
       }
@@ -3464,19 +3536,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Input Tag هو مكوّن يسمح للمستخدمين بإدخال عدة قيم، حيث يتم تمثيل كل قيمة كوسم. عند الكتابة والضغط على زر الإدخال (Enter) أو الفاصلة أو زر الجدولة (Tab)، يتم تحويل كل قيمة إلى وسم."
+            "value" : "حقل الإدخال هو عنصر في واجهة المستخدم يسمح للمستخدمين بإدخال قيم متعددة، كل قيمة ممثلة بتسمية. عند إدخال المستخدم للقيم وتأكيدها (عادةً بالضغط على مفتاح الإدخال أو الفاصلة أو مفتاح الجدولة)، تُحوّل كل قيمة إلى تسمية. تُستخدم حقول الإدخال غالبًا لإضافة تسميات أو فئات أو مشاركين."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "An Input Tag is a component that allows users to enter multiple values, each represented as a tag. As users type and submit values (usually by pressing enter, comma, or tab), each value is transformed into a Tag."
+            "value" : "Input tag is a UI element that allows to enter multiple values, each represented as a tag. As users type and submit values (usually by pressing enter, comma, or tab), each value is transformed into a tag. Input tag is often used for adding labels, categories, or participants."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composent InputTag permet aux utilisateurs de saisir plusieurs valeurs, chacune représentée par une balise. À mesure que les utilisateurs saisissent et valident des valeurs (généralement en appuyant sur Entrée, une virgule ou une tabulation), chaque valeur est transformée en balise."
+            "value" : "L’étiquette de saisie est un élément d'interface utilisateur permettant de saisir plusieurs valeurs, chacune étant représentée par une étiquette. Lorsque l'utilisateur saisit et valide des valeurs (généralement en appuyant sur Entrée, virgule ou tabulation), chaque valeur est transformée en une étiquette. Le champ de saisie est souvent utilisé pour ajouter des libellés, des catégories ou des participants."
           }
         }
       }
@@ -3556,6 +3628,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_tag_tag_description_text" : {
+      "comment" : "Component - Tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الوسم هو عنصر من عناصر واجهة المستخدم يسمح بعرض معلومات مختصرة مثل التسمية أو الكلمة المفتاحية أو الفئة. يساعد الوسم المستخدمين على إيجاد المحتوى وتصنيفه وفهمه بسرعة."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag is a UI element that allows to display short info like a label, keyword, or category. Tag helps users quickly find, group, or understand content."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une étiquette est un élément d'interface utilisateur permettant d'afficher des informations concises telles qu'un libellé, un mot-clé ou une catégorie. Elle aide les utilisateurs à trouver, regrouper ou comprendre rapidement du contenu."
+          }
+        }
+      }
+    },
     "app_components_tag_tag_label" : {
       "comment" : "Component - Tag",
       "extractionState" : "manual",
@@ -3613,19 +3709,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Text Input هو أحد مكونات واجهة المستخدم، ويُتيح للمستخدمين إدخال بيانات نصية أحادية السطر أو تحريرها أو تحديدها. وهو أحد أهم عناصر النموذج المستخدمة لتسجيل بيانات المستخدم، مثل الأسماء ورسائل البريد الإلكتروني وكلمات المرور واستعلامات البحث"
+            "value" : "حقل إدخال النص هو عنصر من عناصر واجهة المستخدم يسمح بإدخال البيانات النصية المكونة من سطر واحد أو تعديلها أو تحديدها. يُعد حقل إدخال النص أحد أهم عناصر النماذج المستخدمة لالتقاط مدخلات المستخدم مثل الأسماء وعناوين البريد الإلكتروني وكلمات المرور أو استعلامات البحث. يوفر هذا الحقل تجربة مرئية وتفاعلية لإدخال النصوص، مع دعمه للعلامات والرموز التوضيحية والأوصاف وملاحظات التحقق."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A Text Input is a user interface component that allows users to enter, edit, or select single-line textual data. It's one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries."
+            "value" : "Text input is a UI element that allows to enter, edit, or select single-line textual data. Text input is one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries. It provides a visual and interactive affordance for text entry while supporting labels, placeholders, icons, descriptions, and validation feedback."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant TextInput permettant aux utilisateurs de saisir, de modifier ou de sélectionner des données textuelles sur une seule ligne. C'est l'un des éléments de formulaire les plus fondamentaux pour saisir des données utilisateur telles que des noms, des adresses e-mail, des mots de passe ou des requêtes de recherche."
+            "value" : "Le champ de saisie de texte est un élément d'interface utilisateur permettant de saisir, modifier ou sélectionner des données textuelles sur une seule ligne. C'est l'un des éléments de formulaire les plus fondamentaux pour recueillir les informations saisies par l'utilisateur, telles que les noms, adresses e-mail, mots de passe ou requêtes de recherche. Il offre une interface visuelle et interactive pour la saisie de texte et prend en charge les étiquettes, les espaces réservés, les icônes, les descriptions et les retours de validation."
           }
         }
       }
