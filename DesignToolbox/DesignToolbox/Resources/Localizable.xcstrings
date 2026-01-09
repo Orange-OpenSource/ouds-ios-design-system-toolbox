@@ -2853,19 +2853,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تُستخدم links لتوجيه المستخدمين إلى موارد أو أقسام إضافية، سواء كانت داخلية (ضمن نفس التطبيق) أو خارجية (مثل موقع إلكتروني أو مستند)."
+            "value" : "الرابط هو عنصر واجهة مستخدم يسمح بالتنقل من مكان إلى آخر، سواء داخل الصفحة نفسها أو عبر صفحات مختلفة في نفس المصدر، أو إلى مصدر خارجي. تتمثل الوظيفة الأساسية للرابط في التنقل، وهو يُظهر طبيعته التفاعلية بصريًا ودلاليًا."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Links direct users to other resources or sections, whether internal (within the same application) or external (to a website or document)."
+            "value" : "Link is a UI element that allows to navigate from one location to another, either within the same page or across different pages in the same resource, or to an external resource. Link's primary function is navigation and it communicates its interactive nature visually and semantically."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Link dirige les utilisateurs vers d'autres ressources ou sections, qu'elles soient internes (dans la même application) ou externes (vers un site web ou un document)."
+            "value" : "Le lien est un élément d'interface utilisateur qui permet de naviguer d'un emplacement à un autre, soit au sein de la même page, soit à travers différentes pages de la même ressource, soit vers une ressource externe. La fonction principale de Link est la navigation et communique sa nature interactive visuellement et sémantiquement."
           }
         }
       }
