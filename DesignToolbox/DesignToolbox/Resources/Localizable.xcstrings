@@ -3709,19 +3709,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Text Input هو أحد مكونات واجهة المستخدم، ويُتيح للمستخدمين إدخال بيانات نصية أحادية السطر أو تحريرها أو تحديدها. وهو أحد أهم عناصر النموذج المستخدمة لتسجيل بيانات المستخدم، مثل الأسماء ورسائل البريد الإلكتروني وكلمات المرور واستعلامات البحث"
+            "value" : "حقل إدخال النص هو عنصر من عناصر واجهة المستخدم يسمح بإدخال البيانات النصية المكونة من سطر واحد أو تعديلها أو تحديدها. يُعد حقل إدخال النص أحد أهم عناصر النماذج المستخدمة لالتقاط مدخلات المستخدم مثل الأسماء وعناوين البريد الإلكتروني وكلمات المرور أو استعلامات البحث. يوفر هذا الحقل تجربة مرئية وتفاعلية لإدخال النصوص، مع دعمه للعلامات والرموز التوضيحية والأوصاف وملاحظات التحقق."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A Text Input is a user interface component that allows users to enter, edit, or select single-line textual data. It's one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries."
+            "value" : "Text input is a UI element that allows to enter, edit, or select single-line textual data. Text input is one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries. It provides a visual and interactive affordance for text entry while supporting labels, placeholders, icons, descriptions, and validation feedback."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant TextInput permettant aux utilisateurs de saisir, de modifier ou de sélectionner des données textuelles sur une seule ligne. C'est l'un des éléments de formulaire les plus fondamentaux pour saisir des données utilisateur telles que des noms, des adresses e-mail, des mots de passe ou des requêtes de recherche."
+            "value" : "Le champ de saisie de texte est un élément d'interface utilisateur permettant de saisir, modifier ou sélectionner des données textuelles sur une seule ligne. C'est l'un des éléments de formulaire les plus fondamentaux pour recueillir les informations saisies par l'utilisateur, telles que les noms, adresses e-mail, mots de passe ou requêtes de recherche. Il offre une interface visuelle et interactive pour la saisie de texte et prend en charge les étiquettes, les espaces réservés, les icônes, les descriptions et les retours de validation."
           }
         }
       }
