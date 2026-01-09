@@ -1272,7 +1272,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مربع الاختيار هو عنصر واجهة مستخدم يسمح بتحديد خيارات متعددة من مجموعة خيارات غير حصرية. يوفر مربع الاختيار الذي لا يعرض أيقونة أو نصًا مرونة أكبر عند إنشاء مكونات أخرى تتطلب عرض مربع اختيار."
+            "value" : "La case à cocher est un élément d'interface utilisateur permettant de sélectionner plusieurs options parmi un ensemble de choix non exclusifs. Une case à cocher sans icône ni texte offre une plus grande flexibilité lors de la création d'autres composants nécessitant son affichage."
           }
         }
       }
@@ -1309,7 +1309,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عنصر مربع الاختيار هو عنصر واجهة مستخدم يسمح بتحديد خيارات متعددة من مجموعة خيارات غير حصرية. يغطي عنصر مربع الاختيار نطاقًا أوسع من السياقات من خلال السماح بتبديل رؤية تسميات نصية إضافية وأيقونات."
+            "value" : "مربع الاختيار المتقدم هو عنصر في واجهة المستخدم يتيح لك تحديد خيارات متعددة من مجموعة خيارات غير حصرية. يغطي مربع الاختيار المتقدم نطاقًا أوسع من السياقات من خلال السماح لك بتفعيل/إيقاف ظهور تسميات نصية وأيقونات إضافية."
           }
         },
         "en" : {
@@ -1321,7 +1321,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "L'élément de case à cocher est un élément d'interface utilisateur qui permet de sélectionner plusieurs options parmi un ensemble de choix mutuellement non exclusifs. L’élément de case à cocher couvre un plus large éventail de contextes en permettant de basculer la visibilité d’étiquettes de texte et d’icônes supplémentaires."
+            "value" : "La case à cocher enrichie est un élément d'interface utilisateur qui permet de sélectionner plusieurs options parmi un ensemble de choix mutuellement non exclusifs. La case à cocher enriche couvre un plus large éventail de contextes en permettant de basculer la visibilité d’étiquettes de texte et d’icônes supplémentaires."
           }
         }
       }
@@ -2705,7 +2705,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الفاصل هو عنصر من عناصر واجهة المستخدم يسمح بتنظيم المحتوى من خلال فصل مناطق المحتوى بصريًا. يُحسّن الفاصل من سهولة القراءة وتنظيم المحتوى دون إضافة تسلسل هرمي بصري أقوى كما هو الحال مع العناوين أو الحاويات."
+            "value" : "الفاصل هو عنصر من عناصر واجهة المستخدم يساعد في تنظيم المحتوى من خلال الفصل البصري بين أقسامه. يُحسّن الفاصل من سهولة القراءة وتنظيم المحتوى دون إضافة تسلسل هرمي بصري أقوى كما هو الحال مع العناوين أو الحاويات."
           }
         },
         "en" : {
@@ -2717,7 +2717,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le séparateur est un élément d'interface utilisateur qui permet de structurer le contenu en séparant visuellement les zones de contenu. Divider améliore la lisibilité et l'organisation du contenu sans introduire une hiérarchie visuelle plus forte comme le ferait un titre ou un conteneur."
+            "value" : "Le séparateur est un élément d'interface utilisateur qui permet de structurer le contenu en séparant visuellement les zones de contenu. Le séparateur améliore la lisibilité et l'organisation du contenu sans introduire une hiérarchie visuelle plus forte comme le ferait un titre ou un conteneur."
           }
         }
       }
@@ -2877,7 +2877,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الرابط هو عنصر واجهة مستخدم يسمح بالتنقل من مكان إلى آخر، سواء داخل الصفحة نفسها أو عبر صفحات مختلفة في نفس المصدر، أو إلى مصدر خارجي. تتمثل الوظيفة الأساسية للرابط في التنقل، وهو يُظهر طبيعته التفاعلية بصريًا ودلاليًا."
+            "value" : "الرابط هو عنصر من عناصر واجهة المستخدم يسمح بالتنقل من مكان إلى آخر، سواء داخل الصفحة نفسها، أو عبر صفحات مختلفة من نفس المصدر، أو إلى مصدر خارجي. تتمثل الوظيفة الأساسية للرابط في التنقل، وهو يُظهر طبيعته التفاعلية بصريًا ودلاليًا."
           }
         },
         "en" : {
@@ -2889,7 +2889,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le lien est un élément d'interface utilisateur qui permet de naviguer d'un emplacement à un autre, soit au sein de la même page, soit à travers différentes pages de la même ressource, soit vers une ressource externe. La fonction principale de Link est la navigation et communique sa nature interactive visuellement et sémantiquement."
+            "value" : "Le lien est un élément d'interface utilisateur qui permet de naviguer d'un emplacement à un autre, soit au sein de la même page, soit à travers différentes pages de la même ressource, soit vers une ressource externe. La fonction principale du lien est la navigation et communique sa nature interactive visuellement et sémantiquement."
           }
         }
       }
@@ -3073,7 +3073,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عنصر زر الاختيار هو عنصر واجهة مستخدم يسمح باختيار خيار واحد من بين مجموعة من الخيارات الحصرية. يغطي عنصر زر الاختيار نطاقًا أوسع من السياقات من خلال السماح بتفعيل/إلغاء تفعيل رؤية النصوص الإضافية والرموز."
+            "value" : "زر الاختيار المتقدم هو عنصر في واجهة المستخدم يتيح لك اختيار خيار واحد من بين مجموعة من الخيارات الحصرية. يغطي زر الاختيار المتقدم نطاقًا أوسع من السياقات من خلال السماح لك بتفعيل/إيقاف ظهور النصوص والأيقونات الإضافية."
           }
         },
         "en" : {
@@ -3085,7 +3085,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le bouton radio Item est un élément d'interface utilisateur qui permet de sélectionner une seule option parmi un ensemble de choix mutuellement exclusifs. Le bouton radio Item couvre un plus large éventail de contextes en permettant de basculer la visibilité des étiquettes de texte et des icônes supplémentaires."
+            "value" : "Le bouton radio enrichi est un élément d'interface utilisateur qui permet de sélectionner une seule option parmi un ensemble de choix mutuellement exclusifs. Le bouton radio enrichi couvre un plus large éventail de contextes en permettant de basculer la visibilité des étiquettes de texte et des icônes supplémentaires."
           }
         }
       }
@@ -3318,7 +3318,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عنصر التبديل هو عنصر في واجهة المستخدم يسمح بالتبديل بين حالتين، عادةً \"تشغيل\" و\"إيقاف\"، ويُستخدم لتمكين أو تعطيل الميزات أو الخيارات أو الإعدادات. يغطي عنصر التبديل نطاقًا أوسع من السياقات من خلال السماح بتبديل رؤية تسميات نصية إضافية ورموز."
+            "value" : "يُتيح لك مفتاح التبديل المُحسّن التبديل بين حالتين، عادةً \"تشغيل\" و\"إيقاف\"، ويُستخدم لتمكين أو تعطيل الميزات أو الخيارات أو الإعدادات. كما يُغطي هذا العنصر نطاقًا أوسع من السياقات، حيث يُتيح لك أيضًا إدارة عرض تسميات نصية وأيقونات إضافية."
           }
         },
         "en" : {
@@ -3330,7 +3330,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Un interrupteur « switch item » permet de basculer entre deux états, généralement « Activé » et « Désactivé », et sert à activer ou désactiver des fonctionnalités, des options ou des paramètres. Cet élément couvre un plus large éventail de contextes en permettant également de gérer l'affichage d'étiquettes textuelles et d'icônes supplémentaires."
+            "value" : "Un interrupteur enrichi permet de basculer entre deux états, généralement « Activé » et « Désactivé », et sert à activer ou désactiver des fonctionnalités, des options ou des paramètres. Cet élément couvre un plus large éventail de contextes en permettant également de gérer l'affichage d'étiquettes textuelles et d'icônes supplémentaires."
           }
         }
       }
@@ -3536,7 +3536,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عنصر إدخال البيانات هو عنصر واجهة مستخدم يسمح بإدخال قيم متعددة، كل منها ممثل بعلامة. أثناء كتابة المستخدمين للقيم وإرسالها (عادةً بالضغط على مفتاح الإدخال أو الفاصلة أو مفتاح الجدولة)، تتحول كل قيمة إلى علامة. يُستخدم عنصر إدخال البيانات غالبًا لإضافة التصنيفات أو الفئات أو المشاركين."
+            "value" : "حقل الإدخال هو عنصر في واجهة المستخدم يسمح للمستخدمين بإدخال قيم متعددة، كل قيمة ممثلة بتسمية. عند إدخال المستخدم للقيم وتأكيدها (عادةً بالضغط على مفتاح الإدخال أو الفاصلة أو مفتاح الجدولة)، تُحوّل كل قيمة إلى تسمية. تُستخدم حقول الإدخال غالبًا لإضافة تسميات أو فئات أو مشاركين."
           }
         },
         "en" : {
@@ -3548,7 +3548,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le « input tag » est un élément d'interface utilisateur permettant de saisir plusieurs valeurs, chacune étant représentée par une étiquette. Lorsque l'utilisateur saisit et valide des valeurs (généralement en appuyant sur Entrée, virgule ou tabulation), chaque valeur est transformée en une étiquette. Le champ de saisie est souvent utilisé pour ajouter des libellés, des catégories ou des participants."
+            "value" : "L’étiquette de saisie est un élément d'interface utilisateur permettant de saisir plusieurs valeurs, chacune étant représentée par une étiquette. Lorsque l'utilisateur saisit et valide des valeurs (généralement en appuyant sur Entrée, virgule ou tabulation), chaque valeur est transformée en une étiquette. Le champ de saisie est souvent utilisé pour ajouter des libellés, des catégories ou des participants."
           }
         }
       }
