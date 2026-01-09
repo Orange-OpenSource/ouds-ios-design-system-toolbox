@@ -3196,19 +3196,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتيح switch للمستخدم التبديل بين حالتين، عادةً تشغيل و إيقاف. يتم تمثيله غالبًا كزر أو شريط منزلق يتغير موقعه أو لونه للإشارة إلى الحالة الحالية. تُستخدم المفاتيح لتمكين أو تعطيل الميزات أو الخيارات أو الإعدادات بطريقة بصرية وفهمها بسهولة."
+            "value" : "المفتاح هو عنصر واجهة مستخدم يسمح بالتبديل بين حالتين، عادةً \"تشغيل\" و \"إيقاف\"، ويستخدم لتمكين أو تعطيل الميزات أو الخيارات أو الإعدادات."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A switch allows user to enable or disable a feature, option, or setting."
+            "value" : "Switch is a UI element that allows to toggle between two states, typically “On” and “Off”, and used to enable or disable features, options or settings."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Switch permet aux utilisateurs d’activer ou désactiver une fonctionnalité, une option ou un paramètre. "
+            "value" : "Un interrupteur est un élément d'interface utilisateur qui permet de basculer entre deux états, généralement « Marche » et « Arrêt », et qui sert à activer ou désactiver des fonctionnalités, des options ou des paramètres."
           }
         }
       }
@@ -3262,6 +3262,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_switch_switch_description_text" : {
+      "comment" : "Component - Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المفتاح هو عنصر واجهة مستخدم يسمح بالتبديل بين حالتين، عادةً \"تشغيل\" و\"إيقاف\"، ويُستخدم لتمكين أو تعطيل الميزات أو الخيارات أو الإعدادات. يوفر المفتاح الذي لا يعرض أيقونة أو نصًا مرونة أكبر عند إنشاء مكونات أخرى تتطلب عرض المفتاح."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch is a UI element that allows to toggle between two states, typically \"On\" and \"Off\", and used to enable or disable features, options or settings. Switch that does not show icon or text, provides greater flexibility when creating other components that require a Switch to be displayed."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un interrupteur est un élément d'interface utilisateur permettant de basculer entre deux états, généralement « Activé » et « Désactivé », et servant à activer ou désactiver des fonctionnalités, des options ou des paramètres. Un interrupteur sans icône ni texte offre une plus grande flexibilité lors de la création d'autres composants nécessitant son affichage."
+          }
+        }
+      }
+    },
     "app_components_switch_switch_label" : {
       "comment" : "Component - Switch",
       "extractionState" : "manual",
@@ -3294,19 +3318,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتيح التبديل للمستخدم تفعيل أو تعطيل الميزات، الخيارات، أو الإعدادات."
+            "value" : "عنصر التبديل هو عنصر في واجهة المستخدم يسمح بالتبديل بين حالتين، عادةً \"تشغيل\" و\"إيقاف\"، ويُستخدم لتمكين أو تعطيل الميزات أو الخيارات أو الإعدادات. يغطي عنصر التبديل نطاقًا أوسع من السياقات من خلال السماح بتبديل رؤية تسميات نصية إضافية ورموز."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Swith allows user to enable or disable features, options, or settings."
+            "value" : "Switch item is a UI element that allows to toggle between two states, typically \"On\" and \"Off\", and used to enable or disable features, options or settings. Switch Item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Switch Item permet aux utilisateurs d’activer ou désactiver une fonctionnalité, une option ou un paramètre."
+            "value" : "Un interrupteur « switch item » permet de basculer entre deux états, généralement « Activé » et « Désactivé », et sert à activer ou désactiver des fonctionnalités, des options ou des paramètres. Cet élément couvre un plus large éventail de contextes en permettant également de gérer l'affichage d'étiquettes textuelles et d'icônes supplémentaires."
           }
         }
       }
