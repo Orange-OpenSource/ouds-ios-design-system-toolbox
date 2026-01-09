@@ -1253,6 +1253,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_checkbox_checkbox_description_text" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مربع الاختيار هو عنصر واجهة مستخدم يسمح بتحديد خيارات متعددة من مجموعة خيارات غير حصرية. يوفر مربع الاختيار الذي لا يعرض أيقونة أو نصًا مرونة أكبر عند إنشاء مكونات أخرى تتطلب عرض مربع اختيار."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices. Checkbox that does not show icon or text, provides greater flexibility when creating other components that require a checkbox to be displayed. "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مربع الاختيار هو عنصر واجهة مستخدم يسمح بتحديد خيارات متعددة من مجموعة خيارات غير حصرية. يوفر مربع الاختيار الذي لا يعرض أيقونة أو نصًا مرونة أكبر عند إنشاء مكونات أخرى تتطلب عرض مربع اختيار."
+          }
+        }
+      }
+    },
     "app_components_checkbox_checkbox_label" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
@@ -1285,19 +1309,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تسمح checkboxes للمستخدمين باختيار خيار واحد أو أكثر من قائمة، أو تبديل الإعدادات بين التشغيل والإيقاف، أو تأكيد إجراء معين."
+            "value" : "عنصر مربع الاختيار هو عنصر واجهة مستخدم يسمح بتحديد خيارات متعددة من مجموعة خيارات غير حصرية. يغطي عنصر مربع الاختيار نطاقًا أوسع من السياقات من خلال السماح بتبديل رؤية تسميات نصية إضافية وأيقونات."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Checkboxes allows users to select one or multiple options from a list, toggle settings on or off, or confirm an action."
+            "value" : "Checkbox item is a UI element that allows to select multiple options from a set of mutually non exclusive choices. Checkbox item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant CheckboxItem permet aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action."
+            "value" : "L'élément de case à cocher est un élément d'interface utilisateur qui permet de sélectionner plusieurs options parmi un ensemble de choix mutuellement non exclusifs. L’élément de case à cocher couvre un plus large éventail de contextes en permettant de basculer la visibilité d’étiquettes de texte et d’icônes supplémentaires."
           }
         }
       }
@@ -1334,19 +1358,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مربع الاختيار هو عنصر واجهة مستخدم يسمح بتحديد خيارات متعددة من مجموعة خيارات غير حصرية. يوفر مربع الاختيار الذي لا يعرض أيقونة أو نصًا مرونة أكبر عند إنشاء مكونات أخرى تتطلب عرض مربع اختيار. عنصر مربع الاختيار هو عنصر واجهة مستخدم يسمح بتحديد خيارات متعددة من مجموعة خيارات غير حصرية. يغطي عنصر مربع الاختيار نطاقًا أوسع من السياقات من خلال السماح بتبديل رؤية تسميات نصية إضافية وأيقونات."
+            "value" : "مربع الاختيار هو عنصر من عناصر واجهة المستخدم يسمح بتحديد خيارات متعددة من مجموعة من الخيارات غير الحصرية المتبادلة."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices. Checkbox that does not show icon or text, provides greater flexibility when creating other components that require a checkbox to be displayed. Checkbox item is a UI element that allows to select multiple options from a set of mutually non exclusive choices. Checkbox item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets."
+            "value" : "Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La case à cocher est un élément de l'interface utilisateur qui permet de sélectionner plusieurs options parmi un ensemble de choix mutuellement non exclusifs. La case à cocher qui n'affiche ni icône ni texte offre une plus grande flexibilité lors de la création d'autres composants nécessitant l'affichage d'une case à cocher. L'élément de case à cocher est un élément d'interface utilisateur qui permet de sélectionner plusieurs options parmi un ensemble de choix mutuellement non exclusifs. L’élément de case à cocher couvre un plus large éventail de contextes en permettant de basculer la visibilité d’étiquettes de texte et d’icônes supplémentaires."
+            "value" : "La case à cocher est un élément de l'interface utilisateur qui permet de sélectionner plusieurs options parmi un ensemble de choix mutuellement non exclusifs."
           }
         }
       }
@@ -2927,19 +2951,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يُستخدم Radio button لتمكين المستخدم من تحديد خيار واحد فقط من بين مجموعة خيارات حصرية. يُعرض عادةً كدائرة صغيرة مع تسمية، وتُملأ عند التحديد."
+            "value" : "زر الاختيار هو عنصر من عناصر واجهة المستخدم يسمح بتحديد خيار واحد من مجموعة من الخيارات الحصرية المتبادلة."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A radio button allows users to select a single option from a set of mutually exclusive choices, typically displayed as a circular input with a label that becomes filled when selected."
+            "value" : "Radio button is a UI element that allows to select a single option from a set of mutually exclusive choices."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Radio Button permettent aux utilisateurs de sélectionner une option dans une liste."
+            "value" : "Le bouton radio est un élément de l'interface utilisateur qui permet de sélectionner une seule option parmi un ensemble de choix mutuellement exclusifs."
           }
         }
       }
@@ -2993,6 +3017,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_radioButton_radioButton_description_text" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "زر الاختيار هو عنصر في واجهة المستخدم يسمح باختيار خيار واحد من بين مجموعة من الخيارات الحصرية. يوفر زر الاختيار الذي لا يعرض أيقونة أو نصًا مرونة أكبر عند إنشاء مكونات أخرى تتطلب عرض زر اختيار."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio button is a UI element that allows to select a single option from a set of mutually exclusive choices. Radio button that does not show icon or text, provides greater flexibility when creating other components that require a Radio button to be displayed."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le bouton radio est un élément de l'interface utilisateur qui permet de sélectionner une seule option parmi un ensemble de choix mutuellement exclusifs. Le bouton radio qui n'affiche pas d'icône ou de texte offre une plus grande flexibilité lors de la création d'autres composants nécessitant l'affichage d'un bouton radio."
+          }
+        }
+      }
+    },
     "app_components_radioButton_radioButton_label" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
@@ -3025,19 +3073,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : " تتيح Radio buttons للمستخدمين اختيار خيار واحد من قائمة."
+            "value" : "عنصر زر الاختيار هو عنصر واجهة مستخدم يسمح باختيار خيار واحد من بين مجموعة من الخيارات الحصرية. يغطي عنصر زر الاختيار نطاقًا أوسع من السياقات من خلال السماح بتفعيل/إلغاء تفعيل رؤية النصوص الإضافية والرموز."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Radio buttons allow users to select one option from a list."
+            "value" : "Radio button Item is a UI element that allows to select a single option from a set of mutually exclusive choices. Radio button Item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Radio Button Item permet aux utilisateurs de sélectionner une options dans une liste."
+            "value" : "Le bouton radio Item est un élément d'interface utilisateur qui permet de sélectionner une seule option parmi un ensemble de choix mutuellement exclusifs. Le bouton radio Item couvre un plus large éventail de contextes en permettant de basculer la visibilité des étiquettes de texte et des icônes supplémentaires."
           }
         }
       }
