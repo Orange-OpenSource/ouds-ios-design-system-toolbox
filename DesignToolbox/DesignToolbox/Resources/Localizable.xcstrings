@@ -1651,19 +1651,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Filter Chip هو مكون صغير في واجهة المستخدم يُمثل خيار تصفية يمكن للمستخدم تحديده أو إلغاء تحديده. يُستخدم هذا النوع من العناصر لتصفية المحتوى أو البيانات بطريقة تفاعلية وبصرية، ويُساهم في تحسين تجربة المستخدم من خلال التحكم في عرض المعلومات."
+            "value" : "شريحة التصفية هي عنصر من عناصر واجهة المستخدم يسمح بتحديد أو إلغاء تحديد خيار ضمن سلسلة، وتُستخدم عادةً لتسجيل قرارات التصفية. تتيح شريحة التصفية تصفية المحتوى عن طريق تحديدها أو إلغاء تحديدها. يمكن تفعيلها أو تعطيلها لتحسين النتائج المعروضة، وتبقى شرائح التصفية المحددة مميزة بصريًا للإشارة إلى عوامل التصفية النشطة."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A filter chip is a compact UI element used in a design system to represent a filter option that can be selected or deselected by the user. Filter chips allow users to refine content or data by applying one or more filters in a visually accessible and interactive way."
+            "value" : "Filter chip is a UI element that allows to select or deselect an option within a series, and is commonly used to capture filtering decisions. Filter chip allows to filter content by being selected or deselected. It can be toggled \"On\" or \"Off\" to refine displayed results, and selected Filter Chips remain visually distinct to indicate active filters."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composent Filter Chip est un élément d'interface utilisateur compact utilisé dans un système de conception pour représenter une option de filtre qui peut être sélectionnée ou désélectionnée par l'utilisateur. Ils permettent aux utilisateurs d'affiner le contenu ou les données en appliquant un ou plusieurs filtres de manière visuellement accessible et interactive."
+            "value" : "La puce de filtre est un élément d'interface utilisateur qui permet de sélectionner ou de désélectionner une option au sein d'une série et est couramment utilisée pour capturer les décisions de filtrage. La puce de filtre permet de filtrer le contenu en étant sélectionné ou désélectionné. Il peut être activé ou désactivé pour affiner les résultats affichés, et les puces de filtre sélectionnées restent visuellement distinctes pour indiquer les filtres actifs."
           }
         }
       }
@@ -1749,19 +1749,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suggestion Chip هو مكون صغير في واجهة المستخدم يُستخدم لعرض خيارات مقترحة أو تنبؤية بناءً على إدخال المستخدم أو السياق. غالبًا ما يظهر في شريط البحث، النماذج، أو واجهات المحادثة، ويساعد المستخدمين على اختيار اقتراحات ذات صلة بسرعة. عادةً ما يكون غير محدد بشكل افتراضي، ويمكن النقر عليه لتطبيق الاقتراح، مما يُبسّط إدخال البيانات ويحسن من سهولة الاستخدام."
+            "value" : "شريحة الاقتراحات هي عنصر من عناصر واجهة المستخدم يسمح بعرض خيارات مُوصى بها أو تنبؤية بناءً على مدخلات المستخدم أو سياقه، وتُستخدم عادةً لتسجيل قرارات التصفية. عادةً ما تكون شريحة الاقتراحات غير مُحددة افتراضيًا، ويمكن النقر عليها أو الضغط عليها لتطبيق الاقتراح، مما يُبسط عملية الإدخال ويُحسّن سهولة الاستخدام."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A suggestion chip is a compact UI element used to present recommended or predictive options based on user input or context. Often found in search bars, forms, or messaging interfaces, suggestion chips help users quickly select from relevant suggestions. They are typically non-selected by default and can be tapped or clicked to apply the suggestion, streamlining user input and enhancing usability."
+            "value" : "Suggestion chip is a UI element that allows to present recommended or predictive options based on user's input or context, and is commonly used to capture filtering decisions. Suggestion chip is typically non-selected by default and can be tapped or clicked to apply the suggestion, streamlining input and enhancing usability."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Suggestion Chip est un élément d'interface utilisateur compact utilisé pour présenter des options recommandées ou prédictives en fonction de la saisie utilisateur ou du contexte. Souvent présentes dans les barres de recherche, les formulaires ou les interfaces de messagerie, les puces de suggestion aident les utilisateurs à sélectionner rapidement des suggestions pertinentes. Elles ne sont généralement pas sélectionnées par défaut et peuvent être appliquées d'un simple clic, ce qui simplifie la saisie utilisateur et améliore la convivialité."
+            "value" : "La puce de suggestion est un élément de l'interface utilisateur qui permet de présenter des options recommandées ou prédictives en fonction de la saisie ou du contexte de l'utilisateur, et est couramment utilisée pour capturer les décisions de filtrage. La puce de suggestion n'est généralement pas sélectionnée par défaut et peut être appuyée ou cliquée pour appliquer la suggestion, rationalisant ainsi la saisie et améliorant la convivialité."
           }
         }
       }
@@ -2681,19 +2681,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "  ينظم divider واجهة المستخدم بصريًا عن طريق فصل أقسام المحتوى بوضوح. يساعد على تحسين قابلية القراءة وتنظيم المحتوى دون إضافة تسلسل هرمي قوي كما في العناوين أو الحاويات."
+            "value" : "الفاصل هو عنصر من عناصر واجهة المستخدم يسمح بتنظيم المحتوى من خلال فصل مناطق المحتوى بصريًا. يُحسّن الفاصل من سهولة القراءة وتنظيم المحتوى دون إضافة تسلسل هرمي بصري أقوى كما هو الحال مع العناوين أو الحاويات."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A divider visually structures an interface by clearly separating content sections. It helps to improve readability and content organization without introducing a strong hierarchy like a heading or a container would. "
+            "value" : "Divider is a UI element that allows to structure the content by visually separating the content zones. Divider improves readability and content organization without introducing a stronger visual hierarchy like a heading or a container would.\n"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Divider structure visuellement une interface en séparant clairement les sections de contenu. Il améliore la lisibilité et l'organisation du contenu sans introduire une hiérarchie trop marquée comme le feraient un titre ou un conteneur."
+            "value" : "Le séparateur est un élément d'interface utilisateur qui permet de structurer le contenu en séparant visuellement les zones de contenu. Divider améliore la lisibilité et l'organisation du contenu sans introduire une hiérarchie visuelle plus forte comme le ferait un titre ou un conteneur."
           }
         }
       }
@@ -2717,7 +2717,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le variant horizontal du composant Divider est utilisé pour séparer des contenus positionnés côte à côte"
+            "value" : "Le variant horizontal du composant est utilisé pour séparer des contenus positionnés côte à côte"
           }
         }
       }
