@@ -3512,19 +3512,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tag هو عنصر صغير يُستخدم لعرض معلومات قصيرة مثل تسمية أو كلمة مفتاحية أو تصنيف. يساعد المستخدمين على العثور على المحتوى بسرعة أو تجميعه أو فهمه."
+            "value" : "الوسم هو عنصر من عناصر واجهة المستخدم يعرض معلومات قصيرة مثل التسمية أو الكلمة الرئيسية أو الفئة."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A tag is a small element that shows short info like a label, keyword, or category.It helps users quickly find, group, or understand content."
+            "value" : "Tag is a UI element that displays short information such as a label, a keyword or a category."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Tag est un petit élément qui affiche de brèves informations comme une étiquette, un mot-clé ou une catégorie. Elle aide les utilisateurs à trouver, regrouper ou comprendre rapidement du contenu."
+            "value" : "Une étiquette est un élément d'interface utilisateur qui affiche de courtes informations telles qu'un libellé, un mot-clé ou une catégorie."
           }
         }
       }
@@ -3536,19 +3536,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Input Tag هو مكوّن يسمح للمستخدمين بإدخال عدة قيم، حيث يتم تمثيل كل قيمة كوسم. عند الكتابة والضغط على زر الإدخال (Enter) أو الفاصلة أو زر الجدولة (Tab)، يتم تحويل كل قيمة إلى وسم."
+            "value" : "عنصر إدخال البيانات هو عنصر واجهة مستخدم يسمح بإدخال قيم متعددة، كل منها ممثل بعلامة. أثناء كتابة المستخدمين للقيم وإرسالها (عادةً بالضغط على مفتاح الإدخال أو الفاصلة أو مفتاح الجدولة)، تتحول كل قيمة إلى علامة. يُستخدم عنصر إدخال البيانات غالبًا لإضافة التصنيفات أو الفئات أو المشاركين."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "An Input Tag is a component that allows users to enter multiple values, each represented as a tag. As users type and submit values (usually by pressing enter, comma, or tab), each value is transformed into a Tag."
+            "value" : "Input tag is a UI element that allows to enter multiple values, each represented as a tag. As users type and submit values (usually by pressing enter, comma, or tab), each value is transformed into a tag. Input tag is often used for adding labels, categories, or participants."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composent InputTag permet aux utilisateurs de saisir plusieurs valeurs, chacune représentée par une balise. À mesure que les utilisateurs saisissent et valident des valeurs (généralement en appuyant sur Entrée, une virgule ou une tabulation), chaque valeur est transformée en balise."
+            "value" : "Le « input tag » est un élément d'interface utilisateur permettant de saisir plusieurs valeurs, chacune étant représentée par une étiquette. Lorsque l'utilisateur saisit et valide des valeurs (généralement en appuyant sur Entrée, virgule ou tabulation), chaque valeur est transformée en une étiquette. Le champ de saisie est souvent utilisé pour ajouter des libellés, des catégories ou des participants."
           }
         }
       }
@@ -3627,6 +3627,30 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_tag_tag_description_text" : {
+      "comment" : "Component - Tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الوسم هو عنصر من عناصر واجهة المستخدم يسمح بعرض معلومات مختصرة مثل التسمية أو الكلمة المفتاحية أو الفئة. يساعد الوسم المستخدمين على إيجاد المحتوى وتصنيفه وفهمه بسرعة."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag is a UI element that allows to display short info like a label, keyword, or category. Tag helps users quickly find, group, or understand content."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une étiquette est un élément d'interface utilisateur permettant d'afficher des informations concises telles qu'un libellé, un mot-clé ou une catégorie. Elle aide les utilisateurs à trouver, regrouper ou comprendre rapidement du contenu."
+          }
+        }
+      }
     },
     "app_components_tag_tag_label" : {
       "comment" : "Component - Tag",
