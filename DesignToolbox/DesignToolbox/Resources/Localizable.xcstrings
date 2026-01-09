@@ -1211,19 +1211,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تسمح Buttons للمستخدمين باتخاذ قرارات أو تنفيذ إجراءات. وتتوفر بأنماط متعددة لتلبية احتياجات مختلفة."
+            "value" : "الزر هو عنصر من عناصر واجهة المستخدم يُفعّل إجراءً أو حدثًا، ويُستخدم لبدء المهام أو تأكيد إجراء ما. يظهر الزر بتصميمات وأنماط وحالات مختلفة للإشارة إلى التسلسل الهرمي أو التركيز."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buttons allow users to make choices or perform an action. They have multiple styles for various needs."
+            "value" : "Button is a UI element that triggers an action or event, and is used to initiate tasks or confirming an action. Button appears in different layouts, styles and states to indicate hierarchy or emphasis."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant Button permet aux utilisateurs de faire des choix ou d'effectuer une action. Ils ont plusieurs styles pour divers besoins."
+            "value" : "Le bouton est un élément de l'interface utilisateur qui déclenche une action ou un événement et est utilisé pour lancer des tâches ou confirmer une action. Le bouton apparaît dans différentes mises en page, styles et états pour indiquer la hiérarchie ou l'accent."
           }
         }
       }
@@ -1334,19 +1334,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تتيح checkboxs للمستخدمين تحديد خيار واحد أو خيارات متعددة من القائمة، أو تشغيل الإعدادات أو إيقاف تشغيلها، أو تأكيد إجراء ما."
+            "value" : "مربع الاختيار هو عنصر واجهة مستخدم يسمح بتحديد خيارات متعددة من مجموعة خيارات غير حصرية. يوفر مربع الاختيار الذي لا يعرض أيقونة أو نصًا مرونة أكبر عند إنشاء مكونات أخرى تتطلب عرض مربع اختيار. عنصر مربع الاختيار هو عنصر واجهة مستخدم يسمح بتحديد خيارات متعددة من مجموعة خيارات غير حصرية. يغطي عنصر مربع الاختيار نطاقًا أوسع من السياقات من خلال السماح بتبديل رؤية تسميات نصية إضافية وأيقونات."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Checkboxes allows users to select one or multiple options from a list, toggle settings on or off, or confirm an action."
+            "value" : "Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices. Checkbox that does not show icon or text, provides greater flexibility when creating other components that require a checkbox to be displayed. Checkbox item is a UI element that allows to select multiple options from a set of mutually non exclusive choices. Checkbox item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant CheckBox permet aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action."
+            "value" : "La case à cocher est un élément de l'interface utilisateur qui permet de sélectionner plusieurs options parmi un ensemble de choix mutuellement non exclusifs. La case à cocher qui n'affiche ni icône ni texte offre une plus grande flexibilité lors de la création d'autres composants nécessitant l'affichage d'une case à cocher. L'élément de case à cocher est un élément d'interface utilisateur qui permet de sélectionner plusieurs options parmi un ensemble de choix mutuellement non exclusifs. L’élément de case à cocher couvre un plus large éventail de contextes en permettant de basculer la visibilité d’étiquettes de texte et d’icônes supplémentaires."
           }
         }
       }
