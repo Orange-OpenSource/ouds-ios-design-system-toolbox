@@ -88,7 +88,7 @@ end
 
 OUDS_SNAPSHOTS_TEST_DEVICE = "iPhone 17 Pro"
 OUDS_UNIT_TEST_DEVICE = OUDS_SNAPSHOTS_TEST_DEVICE
-OUDS_UI_TEST_DEVICE = "iPhone 16e (18.6)"
+OUDS_UI_TEST_DEVICE = OUDS_SNAPSHOTS_TEST_DEVICE
 
 # Non-platform specific lanes
 # ---------------------------
