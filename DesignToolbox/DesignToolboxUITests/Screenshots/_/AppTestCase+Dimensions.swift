@@ -11,11 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-// WARNING: Not possible to trigger UI tests with Xcode 26.2 on iOS 26
-// See: https://github.com/Orange-OpenSource/ouds-ios/issues/1247
-// This file sould not be modified until a definitive solution has been found
-// (┛◉Д◉)┛彡┻━┻.
-
 typealias ACDC = AppTestCase.DocumentationCaptures // ⚡
 
 /// ## Device for test

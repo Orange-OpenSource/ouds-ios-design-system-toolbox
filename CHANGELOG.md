@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] Cycle in attribute graph with OUDS tab bar and Xcode 26.2 (Orange-OpenSource/ouds-ios#1247) (Orange-OpenSource/ouds-ios#1249)
 - [DesignToolbox] Custom icon does not change on theme switch on `badge` and `tag` components pages (Orange-OpenSource/ouds-ios#1218)
 
 ## [1.0.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.22.0...1.0.0) - 2025-12-18
