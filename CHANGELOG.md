@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Stop animation of switch if defined in accessibility settings (Orange-OpenSource/ouds-ios#660)
 - [Library] Display in logs components versions
 
 ### Changed
