@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] `Ruby` version from v3.4.8 to v4.0.1 for `build-and-test` workflows
 - [DesignToolbox] `github/codeql-action/upload-sarif` action for `scorecard` workflow
 - [DesignToolbox] Update GitHub Actions `checkout` action from v6.0.1 to v6.0.2
 - [DesignToolbox] Accessibility statement library v2.1.1
