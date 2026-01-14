@@ -55,17 +55,20 @@ private struct ButtonDemo: View {
                                accessibilityLabel: "app_components_common_icon_a11y".localized(),
                                flipIcon: configurationModel.flipIcon,
                                appearance: configurationModel.appearance,
-                               style: configurationModel.style) {}
+                               style: configurationModel.style,
+                               fullWidth: configurationModel.fullWidth) {}
                 case .textOnly:
                     OUDSButton(text: configurationModel.text,
                                appearance: configurationModel.appearance,
-                               style: configurationModel.style) {}
+                               style: configurationModel.style,
+                               fullWidth: configurationModel.fullWidth) {}
                 case .textAndIcon:
                     OUDSButton(text: configurationModel.text,
                                icon: Image.defaultImage(prefixedBy: theme.name),
                                flipIcon: configurationModel.flipIcon,
                                appearance: configurationModel.appearance,
-                               style: configurationModel.style) {}
+                               style: configurationModel.style,
+                               fullWidth: configurationModel.fullWidth) {}
                 }
             }
 

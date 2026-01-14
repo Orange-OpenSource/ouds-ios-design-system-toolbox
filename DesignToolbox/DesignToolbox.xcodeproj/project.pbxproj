@@ -5408,7 +5408,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1252-component-update-let-button-takes-the-screen-full-width";
 				kind = branch;
 			};
 		};
