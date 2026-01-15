@@ -43,13 +43,12 @@ struct ContentView: View {
     }
 
     var body: some View {
-        
         OUDSThemeableView(theme: themeProvider.currentTheme) {
             MainView().environmentObject(themeProvider)
         }
         .preferredColorScheme(colorScheme)
-#if os(macOS)
+        #if os(macOS)
         .environmentObject(windowManager)
-#endif
+        #endif
     }
 }
