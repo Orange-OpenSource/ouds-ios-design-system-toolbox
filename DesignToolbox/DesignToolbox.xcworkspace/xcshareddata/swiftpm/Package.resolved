@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1252-component-update-let-button-takes-the-screen-full-width",
-        "revision" : "e5d8bc437b6c65c15c4cb415dd3eb167435b0f22"
+        "branch" : "develop",
+        "revision" : "a1761a50e3c1638d1502ca66614d8a54e165e724"
       }
     },
     {
