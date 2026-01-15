@@ -1228,6 +1228,31 @@
         }
       }
     },
+    "app_components_button_fullWidth_label" : {
+      "comment" : "Component - Button",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full width"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full width"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full width"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_button_label" : {
       "comment" : "Component - Button",
       "extractionState" : "manual",
