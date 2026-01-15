@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [DesignToolbox] Toolbar buttons for theme and color scheme indicators do not work anymore (Orange-OpenSource/ouds-ios#1244)
 - [Library] Cycle in attribute graph with OUDS tab bar and Xcode 26.2 (Orange-OpenSource/ouds-ios#1247) (Orange-OpenSource/ouds-ios#1249)
 - [DesignToolbox] Custom icon does not change on theme switch on `badge` and `tag` components pages (Orange-OpenSource/ouds-ios#1218)
 - [DesigOrangenToolbox] Since Xcode 26.1, toolbar buttons for theme and color scheme indicators do not work anymore (Orange-OpenSource/ouds-ios#1244)
