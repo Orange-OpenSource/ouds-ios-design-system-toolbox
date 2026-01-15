@@ -45,7 +45,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var fullWidth: Bool {
+    @Published var isFullWidth: Bool {
         didSet { updateCode() }
     }
 
@@ -58,7 +58,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         flipIcon = false
         appearance = .default
         style = .default
-        fullWidth = false
+        isFullWidth = false
         super.init()
     }
 
@@ -73,7 +73,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
             ""
         }
     }
-    
+
     private var layoutPattern: String {
         switch layout {
         case .textOnly:
@@ -88,7 +88,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     private var appearancePattern: String {
         ", appearance: .\(appearance.description.lowercased())"
     }
-    
+
     private var stylePattern: String {
         ", style: .\(style.description.lowercased())"
     }
@@ -101,20 +101,18 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         flipIcon ? ", flipIcon: true" : ""
     }
 
-    private var fullWidthPattern: String {
-        fullWidth ? ", fullWidth: true" : ""
+    private var isFullWidthPattern: String {
+        isFullWidth ? ", isFullWidth: true" : ""
     }
 
-    // swiftlint:disable line_length
     override func updateCode() {
         code =
-                """
-                OUDSButton(\(layoutPattern)\(appearancePattern)\(stylePattern)\(fullWidthPattern)) {}
-                \(disableCodePattern)
-                \(coloredSurfaceCodeModifier)
-                """
+            """
+            OUDSButton(\(layoutPattern)\(appearancePattern)\(stylePattern)\(isFullWidthPattern)) {}
+            \(disableCodePattern)
+            \(coloredSurfaceCodeModifier)
+            """
     }
-    // swiftlint:enable line_length
 }
 
 // MARK: - Button Layout
@@ -213,8 +211,8 @@ struct ButtonConfigurationView: View {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
                     .disabled(configurationModel.style != .default)
 
-                OUDSSwitchItem("app_components_button_fullWidth_label", isOn: $configurationModel.fullWidth)
-                
+                OUDSSwitchItem("app_components_button_fullWidth_label", isOn: $configurationModel.isFullWidth)
+
                 OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
                     .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
 

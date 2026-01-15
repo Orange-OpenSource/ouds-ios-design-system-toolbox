@@ -56,19 +56,19 @@ private struct ButtonDemo: View {
                                flipIcon: configurationModel.flipIcon,
                                appearance: configurationModel.appearance,
                                style: configurationModel.style,
-                               fullWidth: configurationModel.fullWidth) {}
+                               isFullWidth: configurationModel.isFullWidth) {}
                 case .textOnly:
                     OUDSButton(text: configurationModel.text,
                                appearance: configurationModel.appearance,
                                style: configurationModel.style,
-                               fullWidth: configurationModel.fullWidth) {}
+                               isFullWidth: configurationModel.isFullWidth) {}
                 case .textAndIcon:
                     OUDSButton(text: configurationModel.text,
                                icon: Image.defaultImage(prefixedBy: theme.name),
                                flipIcon: configurationModel.flipIcon,
                                appearance: configurationModel.appearance,
                                style: configurationModel.style,
-                               fullWidth: configurationModel.fullWidth) {}
+                               isFullWidth: configurationModel.isFullWidth) {}
                 }
             }
 
