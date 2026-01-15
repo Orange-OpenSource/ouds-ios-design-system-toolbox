@@ -92,16 +92,32 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 
 ### iOS
 
+#### Liquid Glass
+
 <!-- Mockups designed thanks to https://mockuphone.com/model/iphone-15-pro-max/ -->
 
 <p align="center">
-<img src="./images/iOS/Tokens list - en - light - portrait.png" alt="List of tokens on iPhone 15 Pro Max (english, light mode, portrait)" height="350" />
+<img src="./images/iOS/26/Tokens list - en - light - portrait.png" alt="List of tokens on iPhone 15 Pro Max (english, light mode, portrait, iOS 26+)" height="350" />
 &nbsp;
-<img src="./images/iOS/Colors - en - light - portrait.png" alt="List of colors on iPhone 15 Pro Max (english, light mode, portrait)" height="350" />
+<img src="./images/iOS/26/Colors - en - light - portrait.png" alt="List of colors on iPhone 15 Pro Max (english, light mode, portrait, iOS 26+)" height="350" />
 &nbsp;
-<img src="./images/iOS/Components list - en - light - portrait.png" alt="List of components on iPhone 15 Pro Max (english, light mode, portrait)" height="350" />
+<img src="./images/iOS/26/Components list - en - light - portrait.png" alt="List of components on iPhone 15 Pro Max (english, light mode, portrait, iOS 26+)" height="350" />
 &nbsp;
-<img src="./images/iOS/Button - en - light - portrait.png" alt="Button component on iPhone 15 Pro Max (english, light mode, portrait)" height="350" />
+<img src="./images/iOS/26/Button - en - light - portrait.png" alt="Button component on iPhone 15 Pro Max (english, light mode, portrait, iOS 26+)" height="350" />
+</p>
+
+#### Not Liquid Glass
+
+<!-- Mockups designed thanks to https://mockuphone.com/model/iphone-15-pro-max/ -->
+
+<p align="center">
+<img src="./images/iOS/18/Tokens list - en - light - portrait.png" alt="List of tokens on iPhone 15 Pro Max (english, light mode, portrait, iOS 18)" height="350" />
+&nbsp;
+<img src="./images/iOS/18/Colors - en - light - portrait.png" alt="List of colors on iPhone 15 Pro Max (english, light mode, portrait, iOS 18)" height="350" />
+&nbsp;
+<img src="./images/iOS/18/Components list - en - light - portrait.png" alt="List of components on iPhone 15 Pro Max (english, light mode, portrait, iOS 18)" height="350" />
+&nbsp;
+<img src="./images/iOS/18/Button - en - light - portrait.png" alt="Button component on iPhone 15 Pro Max (english, light mode, portrait, iOS 18)" height="350" />
 </p>
 
 ### iPadOS
