@@ -48,7 +48,7 @@ struct ContentView: View {
         }
         .preferredColorScheme(colorScheme)
         #if os(macOS)
-        .environmentObject(windowManager)
+            .environmentObject(windowManager)
         #endif
     }
 }
