@@ -26,7 +26,7 @@
 <a href="https://renovatebot.com" title="Renovate status"><img src="https://img.shields.io/badge/renovate-enabled-brightgreen.svg" alt="Renovate status"></a>
 </p>
 
-## Status
+## ⚙️ Status
 
 [![MIT license](https://img.shields.io/github/license/Orange-OpenSource/ouds-ios-design-system-toolbox?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/main/LICENSE)
 
@@ -43,7 +43,7 @@
 ![watchOS 11.6](https://img.shields.io/badge/watchOS-11.6-FF1AB2?style=for-the-badge)
 ![tvOS 16.6](https://img.shields.io/badge/tvOS-16.6-FF1AB2?style=for-the-badge)
 
-## Content
+## 📦 Content
 
 Source code of the app sshowcasing the design system for iOS, iPadOS, macOS, visionOS, watchOS and tvOS.
 
@@ -71,7 +71,7 @@ gh release verify-asset x.y.z asset --repo Orange-OpenSource/ouds-ios-design-sys
 
 For these commands a message should say release is verified or asset verification succeeded.
 
-## Bugs, feature requests and discussions
+## 🪲 Bugs, feature requests and discussions
 
 > [!CAUTION]
 > So as to help management team and have in one board all issues related to OUDS iOS, 
@@ -79,16 +79,16 @@ For these commands a message should say release is verified or asset verificatio
 > any discussions and issues about this app, and in the end, content of this repository, 
 > must remain in the [library project](https://github.com/Orange-OpenSource/ouds-ios).
 
-## Contributing
+## 🤝 Contributing
 
 Please read through our [contributing guidelines](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/main/.github/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development. More technical details are available also in the [DEVELOP](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/main/.github/DEVELOP.md) file.
 
-## Copyright and license
+## ⚖️ Copyright and license
 
 Code released under the [MIT License](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/main/LICENSE).
 For images and other assets, please [refer to the NOTICE.txt](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/ain/NOTICE.txt).
 
-## Design System Toolbox
+## 📱 Design System Toolbox App
 
 ### iOS
 
@@ -196,7 +196,7 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 <img src="./images/tvOS/Badges.png" alt="Badge components on Apple TV 4K (3rd generation) (english)" height="350" />
 </p>
 
-### Get the app
+## 📲 Get the app
 
 Flash the QrCode below or click on it to download the *Design System Toolbox* app.
 
