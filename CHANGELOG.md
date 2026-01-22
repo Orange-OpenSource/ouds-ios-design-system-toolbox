@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Update GitHub Actions `checkout` action from v6.0.1 to v6.0.2
 - [DesignToolbox] Accessibility statement library v2.1.1
 - [DesignToolbox] Update `swift-snapshot-testing` from 1.18.1 to 1.18.7
 - [DesignToolbox] Update components definitions using available DSM definitions (Orange-OpenSource/ouds-ios#1238)
