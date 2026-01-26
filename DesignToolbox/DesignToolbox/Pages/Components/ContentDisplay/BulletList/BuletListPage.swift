@@ -35,7 +35,7 @@ struct BulletListPage: View {
 
 // MARK: - BulletList Demo
 
-private struct BulletListDemo: View {
+struct BulletListDemo: View {
 
     @StateObject var configurationModel: BulletListConfigurationModel
 
@@ -45,10 +45,10 @@ private struct BulletListDemo: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             ForEach(Array(levels.enumerated()), id: \.offset) { offset, level in
                 OUDSBulletList(label: configurationModel.label,
-                                 type: type(for: UInt8(offset + 1)),
-                                 textStyle: configurationModel.textStyle,
-                                 level: level,
-                                 isBold: configurationModel.isBold)
+                               type: type(for: UInt8(offset + 1)),
+                               textStyle: configurationModel.textStyle,
+                               level: level,
+                               isBold: configurationModel.isBold)
             }
         }
         .padding(.all, theme.spaces.fixedMedium)

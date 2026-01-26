@@ -1011,6 +1011,11 @@
 		FCA849192E9FF00500DBCE76 /* InputTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849132E9FF00500DBCE76 /* InputTagPage.swift */; };
 		FCA8491C2E9FF35700DBCE76 /* TagElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8491B2E9FF35700DBCE76 /* TagElements.swift */; };
 		FCA8491D2E9FF35700DBCE76 /* TagElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8491B2E9FF35700DBCE76 /* TagElements.swift */; };
+		FCB8B18D2F27918E00ADBAB8 /* BulletListSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B18C2F27918E00ADBAB8 /* BulletListSnapshotsTestsTestCase.swift */; };
+		FCB8B1932F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1922F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift */; };
+		FCB8B1952F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1942F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift */; };
+		FCB8B1972F27981700ADBAB8 /* OrangeBusinessToolsTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1962F27981700ADBAB8 /* OrangeBusinessToolsTheme+BulletListSnapshotsTests.swift */; };
+		FCB8B19A2F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1982F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift */; };
 		FCEEB18B2F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BuletListConfigurationView.swift */; };
 		FCEEB18C2F1A877300C9BD46 /* BuletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BuletListPage.swift */; };
 		FCEEB18D2F1A877300C9BD46 /* BuletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BuletListElement.swift */; };
@@ -1427,6 +1432,11 @@
 		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
 		FCA849132E9FF00500DBCE76 /* InputTagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagPage.swift; sourceTree = "<group>"; };
 		FCA8491B2E9FF35700DBCE76 /* TagElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagElements.swift; sourceTree = "<group>"; };
+		FCB8B18C2F27918E00ADBAB8 /* BulletListSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListSnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
+		FCB8B1922F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FCB8B1942F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FCB8B1962F27981700ADBAB8 /* OrangeBusinessToolsTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FCB8B1982F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FCEEB1872F1A877300C9BD46 /* BuletListConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuletListConfigurationView.swift; sourceTree = "<group>"; };
 		FCEEB1882F1A877300C9BD46 /* BuletListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuletListElement.swift; sourceTree = "<group>"; };
 		FCEEB1892F1A877300C9BD46 /* BuletListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuletListPage.swift; sourceTree = "<group>"; };
@@ -2432,6 +2442,7 @@
 		51F49C882E57449500D50BC4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FCB8B18A2F27916F00ADBAB8 /* ContentDisplay */,
 				51F49CA82E5745F300D50BC4 /* Navigations */,
 				51F49CA22E5745C400D50BC4 /* Layouts */,
 				51F49C9C2E57458100D50BC4 /* Indicators */,
@@ -2444,6 +2455,7 @@
 		51F49C892E57449C00D50BC4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FCB8B18E2F2791C900ADBAB8 /* ContentDisplay */,
 				51F49CA92E5745FD00D50BC4 /* Navigations */,
 				51F49CA32E5745CD00D50BC4 /* Layouts */,
 				51F49C9D2E57458800D50BC4 /* Indicators */,
@@ -2456,6 +2468,7 @@
 		51F49C8A2E5744A200D50BC4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FCB8B18F2F2791DA00ADBAB8 /* ContentDisplay */,
 				51F49CAA2E57460100D50BC4 /* Navigations */,
 				51F49CA42E5745CF00D50BC4 /* Layouts */,
 				51F49C9E2E57458A00D50BC4 /* Indicators */,
@@ -2468,6 +2481,7 @@
 		51F49C8B2E5744A500D50BC4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FCB8B1902F2791DE00ADBAB8 /* ContentDisplay */,
 				51F49CAB2E57460300D50BC4 /* Navigations */,
 				51F49CA52E5745D200D50BC4 /* Layouts */,
 				51F49C9F2E57458C00D50BC4 /* Indicators */,
@@ -2480,6 +2494,7 @@
 		51F49C8F2E5744B800D50BC4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FCB8B1992F27984B00ADBAB8 /* ContentDisplay */,
 				51F49CAD2E57460900D50BC4 /* Navigations */,
 				51F49CA72E5745D600D50BC4 /* Layouts */,
 				51F49CA12E57458F00D50BC4 /* Indicators */,
@@ -3148,6 +3163,46 @@
 			path = Tag;
 			sourceTree = "<group>";
 		};
+		FCB8B18A2F27916F00ADBAB8 /* ContentDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				FCB8B18C2F27918E00ADBAB8 /* BulletListSnapshotsTestsTestCase.swift */,
+			);
+			path = ContentDisplay;
+			sourceTree = "<group>";
+		};
+		FCB8B18E2F2791C900ADBAB8 /* ContentDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				FCB8B1922F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift */,
+			);
+			path = ContentDisplay;
+			sourceTree = "<group>";
+		};
+		FCB8B18F2F2791DA00ADBAB8 /* ContentDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				FCB8B1942F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift */,
+			);
+			path = ContentDisplay;
+			sourceTree = "<group>";
+		};
+		FCB8B1902F2791DE00ADBAB8 /* ContentDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				FCB8B1962F27981700ADBAB8 /* OrangeBusinessToolsTheme+BulletListSnapshotsTests.swift */,
+			);
+			path = ContentDisplay;
+			sourceTree = "<group>";
+		};
+		FCB8B1992F27984B00ADBAB8 /* ContentDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				FCB8B1982F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift */,
+			);
+			path = ContentDisplay;
+			sourceTree = "<group>";
+		};
 		FCEEB1862F1A877300C9BD46 /* BulletList */ = {
 			isa = PBXGroup;
 			children = (
@@ -3586,6 +3641,7 @@
 				51952AA32D3FA32E0068B807 /* GridTokenPage.swift in Sources */,
 				515EE9A42E2133F200A60E96 /* SoshTheme+ChipsSnapshotsTests.swift in Sources */,
 				51952AA42D3FA32E0068B807 /* TokensPage.swift in Sources */,
+				FCB8B1972F27981700ADBAB8 /* OrangeBusinessToolsTheme+BulletListSnapshotsTests.swift in Sources */,
 				0745C1912D7A0596006B3A1F /* RadioPage.swift in Sources */,
 				51A217612E325ED500562BE0 /* OrangeCompactTheme+LinkSnapshotsTests.swift in Sources */,
 				0745C1922D7A0596006B3A1F /* RadioConfiguration.swift in Sources */,
@@ -3681,6 +3737,7 @@
 				07D3DBF12DA5084500D8A57F /* ColoredSurfaceConfiguration.swift in Sources */,
 				07D3DBF22DA5084500D8A57F /* ColoredSurfacePage.swift in Sources */,
 				07D3DBF32DA5084500D8A57F /* ColoredSurfaceElement.swift in Sources */,
+				FCB8B19A2F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift in Sources */,
 				51417C292E1BF70F000266C8 /* TokensColorSnapshotsTestsTestCase.swift in Sources */,
 				515EE9A62E21347200A60E96 /* OrangeTheme+ChipsSnapshotsTests.swift in Sources */,
 				51952A7F2D3FA17E0068B807 /* OrangeTheme+TokensColorSnapshotsTests.swift in Sources */,
@@ -3713,11 +3770,13 @@
 				953DC15E2ED0995600D14D44 /* TabBarPage.swift in Sources */,
 				079B4A162E49C6EB0039FC26 /* SoshTheme+TagSnapshotsTests.swift in Sources */,
 				515EE9892E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */,
+				FCB8B1932F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift in Sources */,
 				515EE98A2E21329B00A60E96 /* ChipPickerElement.swift in Sources */,
 				515EE98B2E21329B00A60E96 /* ChipPickerPage.swift in Sources */,
 				515EE98C2E21329B00A60E96 /* SuggestionChipConfigurationView.swift in Sources */,
 				51A2176F2E325F7F00562BE0 /* WireframeTheme+ButtonSnapshotsTests.swift in Sources */,
 				51A2177F2E325FE600562BE0 /* WireframeTheme+TokensSizeSnapshotsTests.swift in Sources */,
+				FCB8B18D2F27918E00ADBAB8 /* BulletListSnapshotsTestsTestCase.swift in Sources */,
 				515EE98D2E21329B00A60E96 /* SuggestionChipElement.swift in Sources */,
 				51A2175F2E325ED500562BE0 /* OrangeCompactTheme+CheckboxSnapshotsTests.swift in Sources */,
 				515EE98E2E21329B00A60E96 /* SuggestionChipPage.swift in Sources */,
@@ -3748,6 +3807,7 @@
 				5180FE732DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */,
 				51E0159E2E2AA82C00A86512 /* OrangeCompactTheme+TokensBorderSnapshotsTests.swift in Sources */,
 				51A217602E325ED500562BE0 /* OrangeCompactTheme+DividerSnapshotsTests.swift in Sources */,
+				FCB8B1952F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift in Sources */,
 				07304A6C2D429F9F009320BA /* LinkPage.swift in Sources */,
 				07D7E1982D035566006472EB /* ButtonConfigurationView.swift in Sources */,
 				51E015A22E2AA82C00A86512 /* OrangeCompactTheme+TokensFontSnapshotsTests.swift in Sources */,
