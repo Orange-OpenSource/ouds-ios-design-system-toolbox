@@ -1011,6 +1011,18 @@
 		FCA849192E9FF00500DBCE76 /* InputTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849132E9FF00500DBCE76 /* InputTagPage.swift */; };
 		FCA8491C2E9FF35700DBCE76 /* TagElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8491B2E9FF35700DBCE76 /* TagElements.swift */; };
 		FCA8491D2E9FF35700DBCE76 /* TagElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8491B2E9FF35700DBCE76 /* TagElements.swift */; };
+		FCEEB18B2F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BuletListConfigurationView.swift */; };
+		FCEEB18C2F1A877300C9BD46 /* BuletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BuletListPage.swift */; };
+		FCEEB18D2F1A877300C9BD46 /* BuletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BuletListElement.swift */; };
+		FCEEB18E2F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BuletListConfigurationView.swift */; };
+		FCEEB18F2F1A877300C9BD46 /* BuletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BuletListPage.swift */; };
+		FCEEB1902F1A877300C9BD46 /* BuletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BuletListElement.swift */; };
+		FCEEB1912F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BuletListConfigurationView.swift */; };
+		FCEEB1922F1A877300C9BD46 /* BuletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BuletListPage.swift */; };
+		FCEEB1932F1A877300C9BD46 /* BuletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BuletListElement.swift */; };
+		FCEEB1942F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BuletListConfigurationView.swift */; };
+		FCEEB1952F1A877300C9BD46 /* BuletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BuletListPage.swift */; };
+		FCEEB1962F1A877300C9BD46 /* BuletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BuletListElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1415,6 +1427,9 @@
 		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
 		FCA849132E9FF00500DBCE76 /* InputTagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagPage.swift; sourceTree = "<group>"; };
 		FCA8491B2E9FF35700DBCE76 /* TagElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagElements.swift; sourceTree = "<group>"; };
+		FCEEB1872F1A877300C9BD46 /* BuletListConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuletListConfigurationView.swift; sourceTree = "<group>"; };
+		FCEEB1882F1A877300C9BD46 /* BuletListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuletListElement.swift; sourceTree = "<group>"; };
+		FCEEB1892F1A877300C9BD46 /* BuletListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuletListPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2195,6 +2210,7 @@
 				07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */,
 				51F49C812E57434900D50BC4 /* _ */,
 				51F49C822E57435900D50BC4 /* Actions */,
+				FCEEB18A2F1A877300C9BD46 /* ContentDisplay */,
 				51F49C832E57437E00D50BC4 /* Controls */,
 				51F49C842E5743B800D50BC4 /* Indicators */,
 				51F49C852E5743D900D50BC4 /* Layouts */,
@@ -2222,10 +2238,10 @@
 		51BD76112C466FCF0033365D /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				07CF42872CA55BB4000BD03E /* Navigation Bar */,
-				073543142CA17244001187EA /* Utils */,
 				51BD760C2C466FCF0033365D /* About */,
 				51BD760E2C466FCF0033365D /* Components */,
+				07CF42872CA55BB4000BD03E /* Navigation Bar */,
+				073543142CA17244001187EA /* Utils */,
 				51BD76102C466FCF0033365D /* Tokens */,
 			);
 			path = Pages;
@@ -3132,6 +3148,24 @@
 			path = Tag;
 			sourceTree = "<group>";
 		};
+		FCEEB1862F1A877300C9BD46 /* BulletList */ = {
+			isa = PBXGroup;
+			children = (
+				FCEEB1872F1A877300C9BD46 /* BuletListConfigurationView.swift */,
+				FCEEB1882F1A877300C9BD46 /* BuletListElement.swift */,
+				FCEEB1892F1A877300C9BD46 /* BuletListPage.swift */,
+			);
+			path = BulletList;
+			sourceTree = "<group>";
+		};
+		FCEEB18A2F1A877300C9BD46 /* ContentDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				FCEEB1862F1A877300C9BD46 /* BulletList */,
+			);
+			path = ContentDisplay;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3629,6 +3663,9 @@
 				0786A9DE2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
 				076227652DA90C65009C3632 /* DividerElements.swift in Sources */,
 				95CE054A2EC33D6A00ACE41C /* NamedSize.swift in Sources */,
+				FCEEB1942F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */,
+				FCEEB1952F1A877300C9BD46 /* BuletListPage.swift in Sources */,
+				FCEEB1962F1A877300C9BD46 /* BuletListElement.swift in Sources */,
 				51A217702E325F7F00562BE0 /* WireframeTheme+SwitchSnapshotsTests.swift in Sources */,
 				950288A12EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */,
 				076227662DA90C65009C3632 /* DividerPage.swift in Sources */,
@@ -3846,6 +3883,9 @@
 				075114DB2CB7D28D00B8B759 /* SizeTokenElement.swift in Sources */,
 				0765B4A02CC15BBC00E69359 /* NamedColor+Content.swift in Sources */,
 				0765B49A2CC15ACE00E69359 /* NamedColor+Border.swift in Sources */,
+				FCEEB18B2F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */,
+				FCEEB18C2F1A877300C9BD46 /* BuletListPage.swift in Sources */,
+				FCEEB18D2F1A877300C9BD46 /* BuletListElement.swift in Sources */,
 				07B3CCB62D40F37000DBB10A /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				51952A742D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */,
@@ -4146,6 +4186,9 @@
 				9589F0812EB7D67B00134487 /* SizeTokenElement.swift in Sources */,
 				9589F0822EB7D67B00134487 /* NamedColor+Content.swift in Sources */,
 				9589F0832EB7D67B00134487 /* NamedColor+Border.swift in Sources */,
+				FCEEB1912F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */,
+				FCEEB1922F1A877300C9BD46 /* BuletListPage.swift in Sources */,
+				FCEEB1932F1A877300C9BD46 /* BuletListElement.swift in Sources */,
 				9589F0842EB7D67B00134487 /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				9589F0852EB7D67B00134487 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				9589F0862EB7D67B00134487 /* Bundle+extension.swift in Sources */,
@@ -4318,6 +4361,9 @@
 				9589F15B2EB7D67E00134487 /* SizeTokenElement.swift in Sources */,
 				9589F15C2EB7D67E00134487 /* NamedColor+Content.swift in Sources */,
 				9589F15D2EB7D67E00134487 /* NamedColor+Border.swift in Sources */,
+				FCEEB18E2F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */,
+				FCEEB18F2F1A877300C9BD46 /* BuletListPage.swift in Sources */,
+				FCEEB1902F1A877300C9BD46 /* BuletListElement.swift in Sources */,
 				9589F15E2EB7D67E00134487 /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				9589F15F2EB7D67E00134487 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				9589F1602EB7D67E00134487 /* Bundle+extension.swift in Sources */,
@@ -5360,7 +5406,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "513-component-create-component---bullet-list";
 				kind = branch;
 			};
 		};
