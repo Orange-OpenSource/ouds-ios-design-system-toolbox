@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git",
       "state" : {
-        "branch" : "2.1.0",
-        "revision" : "bce3b2b47cc97b2149951a2309ad539f62a352d1"
+        "revision" : "750f8198a0bed9a7452f8a58f285073535feeb7b",
+        "version" : "2.1.1"
       }
     },
     {
