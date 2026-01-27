@@ -5376,7 +5376,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git";
 			requirement = {
-				branch = 2.1.0;
+				branch = develop;
 				kind = branch;
 			};
 		};
