@@ -4,6 +4,40 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.0.0...1.1.0) - 2026-01-27
+
+### Added
+
+- [Library] Add flag to let `button` takes the screen full width (Orange-OpenSource/ouds-ios#1252)
+- [Library] Stop animation of switch if defined in accessibility settings (Orange-OpenSource/ouds-ios#660)
+- [Library] Display in logs components versions
+
+### Changed
+
+- [DesignToolbox] Update `fastlane` gem from v2.229.1 to v2.231.1
+- [DesignToolbox] `ruby/setup-ruby` action from v1.271.0 to v1.286.0 for `build-and-test` workflow
+- [DesignToolbox] `Ruby` version from v3.4.8 to v4.0.1 for `build-and-test` workflows
+- [DesignToolbox] `github/codeql-action/upload-sarif` action for `scorecard` workflow
+- [DesignToolbox] Update GitHub Actions `checkout` action from v6.0.1 to v6.0.2
+- [DesignToolbox] Accessibility statement library v2.1.1
+- [DesignToolbox] Update `swift-snapshot-testing` from 1.18.1 to 1.18.7
+- [DesignToolbox] Update components definitions using available DSM definitions (Orange-OpenSource/ouds-ios#1238)
+- [DesignToolbox] Migration from Xcode 26.1 to Xcode 26.2
+- [DesignToolbox] Migration from Xcode 26.0 to Xcode 26.1.1
+- [Library] Unused `status` and `size` properties of `badge` component (count and icon variants) removed (Orange-OpenSource/ouds-ios#1233)
+- [Library] Various cleanings in the documentation
+- [Library] Update constants file with versions values in comments for documentation
+- [Library] Display tokens librairies versions in themes Swift files
+- [Library] **BREAKING**: Rename component tokens `buttonBorder*` to `border*`
+- [Library] **BREAKING**: Rename some multiple token object (from plural to singular form)
+- [Library] Use `DynamicTypeSize` instead of `ContentSizeCategory` (Orange-OpenSource/ouds-ios#1187)
+
+### Fixed
+
+- [DesignToolbox] Toolbar buttons for theme and color scheme indicators do not work anymore (Orange-OpenSource/ouds-ios#1244)
+- [Library] Cycle in attribute graph with OUDS tab bar and Xcode 26.2 (Orange-OpenSource/ouds-ios#1247) (Orange-OpenSource/ouds-ios#1249)
+- [DesignToolbox] Custom icon does not change on theme switch on `badge` and `tag` components pages (Orange-OpenSource/ouds-ios#1218)
+
 ## [1.0.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/0.22.0...1.0.0) - 2025-12-18
 
 ### Added

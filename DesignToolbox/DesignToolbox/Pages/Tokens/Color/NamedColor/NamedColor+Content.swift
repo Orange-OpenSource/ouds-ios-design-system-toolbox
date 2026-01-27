@@ -51,7 +51,7 @@ extension NamedColor {
         case contentStatusWarning
         case contentStatusAccent
 
-        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
+        func token(from theme: OUDSTheme) -> MultipleColorSemanticToken {
             switch self {
             case .contentBrandPrimary:
                 theme.colors.contentBrandPrimary

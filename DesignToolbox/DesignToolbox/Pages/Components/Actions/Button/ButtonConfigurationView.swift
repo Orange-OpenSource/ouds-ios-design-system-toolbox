@@ -45,6 +45,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var isFullWidth: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -54,6 +58,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         flipIcon = false
         appearance = .default
         style = .default
+        isFullWidth = false
         super.init()
     }
 
@@ -69,6 +74,25 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         }
     }
 
+    private var layoutPattern: String {
+        switch layout {
+        case .textOnly:
+            "text: \"\(text)\""
+        case .iconOnly:
+            "icon: \(Image.defaultImageSample())\(flipIconPattern), accessibilityLabel: \"accessibility label\""
+        case .textAndIcon:
+            "text: \"\(text)\", icon: \(Image.defaultImageSample())\(flipIconPattern)"
+        }
+    }
+
+    private var appearancePattern: String {
+        ", appearance: .\(appearance.description.lowercased())"
+    }
+
+    private var stylePattern: String {
+        ", style: .\(style.description.lowercased())"
+    }
+
     private var coloredSurfaceCodeModifier: String {
         onColoredSurface ? ".oudsColoredSurface(theme.colorModes.onBrandPrimary)" : ""
     }
@@ -77,33 +101,18 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         flipIcon ? ", flipIcon: true" : ""
     }
 
-    // swiftlint:disable line_length
-    override func updateCode() {
-        switch layout {
-        case .textOnly:
-            code =
-                """
-                OUDSButton(text: \"\(text)\", appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
-                \(disableCodePattern)
-                \(coloredSurfaceCodeModifier)
-                """
-        case .iconOnly:
-            code =
-                """
-                OUDSButton(icon: \(Image.defaultImageSample())\(flipIconPattern), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
-                \(disableCodePattern)
-                \(coloredSurfaceCodeModifier)
-                """
-        case .textAndIcon:
-            code =
-                """
-                OUDSButton(text: \"\(text)\"), \(Image.defaultImageSample())\(flipIconPattern), appearance: .\(appearance.description.lowercased()), style: .\(style.description.lowercased())) {}
-                \(disableCodePattern)
-                \(coloredSurfaceCodeModifier)
-                """
-        }
+    private var isFullWidthPattern: String {
+        isFullWidth ? ", isFullWidth: true" : ""
     }
-    // swiftlint:enable line_length
+
+    override func updateCode() {
+        code =
+            """
+            OUDSButton(\(layoutPattern)\(appearancePattern)\(stylePattern)\(isFullWidthPattern)) {}
+            \(disableCodePattern)
+            \(coloredSurfaceCodeModifier)
+            """
+    }
 }
 
 // MARK: - Button Layout
@@ -201,6 +210,8 @@ struct ButtonConfigurationView: View {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
                     .disabled(configurationModel.style != .default)
+
+                OUDSSwitchItem("app_components_button_fullWidth_label", isOn: $configurationModel.isFullWidth)
 
                 OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
                     .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))

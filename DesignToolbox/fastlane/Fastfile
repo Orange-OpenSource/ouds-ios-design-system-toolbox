@@ -86,7 +86,9 @@ end
 # Devices configuration
 # ---------------------
 
-OUDS_TEST_DEVICE = "iPhone 17 Pro (26.0)"
+OUDS_SNAPSHOTS_TEST_DEVICE = "iPhone 17 Pro"
+OUDS_UNIT_TEST_DEVICE = OUDS_SNAPSHOTS_TEST_DEVICE
+OUDS_UI_TEST_DEVICE = OUDS_SNAPSHOTS_TEST_DEVICE
 
 # Non-platform specific lanes
 # ---------------------------
@@ -184,7 +186,7 @@ platform :ios do
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
             scan(scheme: OUDS_SCHEME_SNAPSHOTS_TESTS,
-                device: OUDS_TEST_DEVICE,
+                device: OUDS_SNAPSHOTS_TEST_DEVICE,
                 skip_build: true
             )
 
@@ -212,7 +214,7 @@ platform :ios do
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
             scan(scheme: OUDS_SCHEME_UI_TESTS,
-                device: OUDS_TEST_DEVICE,
+                device: OUDS_UI_TEST_DEVICE,
                 skip_build: true
             )
 
@@ -240,7 +242,7 @@ platform :ios do
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
             scan(scheme: OUDS_SCHEME_UNIT_TESTS,
-                device: OUDS_TEST_DEVICE,
+                device: OUDS_UNIT_TEST_DEVICE,
                 skip_build: true
             )
 

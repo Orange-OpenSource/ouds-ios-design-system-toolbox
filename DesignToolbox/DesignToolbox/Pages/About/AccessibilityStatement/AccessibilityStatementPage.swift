@@ -22,11 +22,8 @@ import SwiftUI
 
 struct AccessibilityStatementPage: View {
 
-    // MARK: Stored properties
-
     let detailsPageURL: URL
-
-    // MARK: Initializer
+    @Environment(\.theme) var theme
 
     init() {
         guard let detailsPageURL = Bundle.main.url(forResource: "accessibility_detail", withExtension: "html") else {
@@ -36,11 +33,9 @@ struct AccessibilityStatementPage: View {
         self.detailsPageURL = detailsPageURL
     }
 
-    // MARK: Body
-
     var body: some View {
         VStack {
-            DeclarationView(xmlFileName: "accessibility_result", selectedTheme: .orange, url: detailsPageURL.absoluteString, useWebView: true)
+            StatementView(xmlFile: "accessibility_result", localUrl: detailsPageURL.absoluteString, theme: theme)
         }
     }
 }

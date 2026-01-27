@@ -24,7 +24,7 @@ struct TagElement: DesignToolboxElement {
         illustration = AnyView(OUDSTag(label: "Label", status: .positive(leading: .icon), appearance: .emphasized, shape: .rounded, size: .default))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            description: "app_components_tag_description_text",
+            description: "app_components_tag_tag_description_text",
             version: OUDSVersions.componentTagVersion,
             demoScreen: AnyView(TagPage())))
     }

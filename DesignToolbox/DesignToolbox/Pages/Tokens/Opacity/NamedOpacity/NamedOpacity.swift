@@ -11,12 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-//
-//  NamedOpacity.swift
-//  DesignToolbox
-//
-//  Created by Pierre-Yves Lapersonne on 11/11/2025.
-//
 import OUDSSwiftUI
 
 enum NamedOpacity: String, CaseIterable {

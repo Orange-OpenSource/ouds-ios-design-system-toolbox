@@ -17,8 +17,16 @@ import SwiftUI
 @main
 struct DesignToolbox: App {
 
-    @StateObject private var themeProvider = ThemeProvider()
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
+
+struct ContentView: View {
     @AppStorage("colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
+    @StateObject private var themeProvider = ThemeProvider()
 
     #if os(macOS)
     @StateObject private var windowManager = WindowManager()
@@ -34,15 +42,13 @@ struct DesignToolbox: App {
         return nil
     }
 
-    var body: some Scene {
-        WindowGroup {
-            OUDSThemeableView(theme: themeProvider.currentTheme) {
-                MainView().environmentObject(themeProvider)
-            }
-            .preferredColorScheme(colorScheme)
-            #if os(macOS)
-                .environmentObject(windowManager)
-            #endif
+    var body: some View {
+        OUDSThemeableView(theme: themeProvider.currentTheme) {
+            MainView().environmentObject(themeProvider)
         }
+        .preferredColorScheme(colorScheme)
+        #if os(macOS)
+            .environmentObject(windowManager)
+        #endif
     }
 }

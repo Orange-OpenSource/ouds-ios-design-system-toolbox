@@ -243,14 +243,21 @@ Signed-off-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
 Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 ```
 
-Finaly, if you want to note somewhere you used *generative AI* tool, you can add the field "Assisted-by" in your commit with the model in use and in parenthsies some commercial name.
+Finaly, if you want to note somewhere you used *generative AI* tool, you can add the field "Assisted-by" in your commit with the model in use and in parenthesis some commercial name.
 
 ```text
 feat: add thousands of tokens (Orange-OpenSource/ouds-ios#123)
 
 Add thousands of tokens and hundreds of tests.
 
-Assisted-by: GPT-4o-mini (Dinootoo)
+Assisted-by: GPT-4o-mini (Orange Dinootoo)
+```
+
+If bot accounts reviewed your pull requests or add code in your commits, add this information, for example depending to your case:
+```text
+Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
+Reviewed-by: Copilot <198982749+Copilot@users.noreply.github.com>
+Signed-off-by: StepSecurity Bot <bot@stepsecurity.io>
 ```
 
 ## Developer Certificate of Origin

@@ -21,7 +21,7 @@ extension NamedColor {
         case overlayDrag
         case overlayModal
 
-        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
+        func token(from theme: OUDSTheme) -> MultipleColorSemanticToken {
             switch self {
             case .overlayDropdown:
                 theme.colors.overlayDropdown
