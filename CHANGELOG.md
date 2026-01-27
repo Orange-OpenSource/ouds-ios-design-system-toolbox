@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [DesignToolbox] Accessibility statement library v2.1.0
+- [DesignToolbox] Accessibility statement library v2.1.1
 - [DesignToolbox] Update `swift-snapshot-testing` from 1.18.1 to 1.18.7
 - [DesignToolbox] Update components definitions using available DSM definitions (Orange-OpenSource/ouds-ios#1238)
 - [DesignToolbox] Migration from Xcode 26.1 to Xcode 26.2
