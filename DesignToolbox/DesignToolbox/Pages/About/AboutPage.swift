@@ -34,7 +34,6 @@ struct AboutPage: View {
 
     // NOTE: "unused" false-positive for periphery (https://github.com/peripheryapp/periphery/issues/993)
     @Environment(\.layoutDirection) private var layoutDirection
-    @Environment(\.theme) private var theme
 
     // MARK: Initializer
 

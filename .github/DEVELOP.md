@@ -33,6 +33,8 @@
 - [Update of dependencies](#update-of-dependencies)
 - [Update 3rd parties](#update-3rd-parties)
 - [CI/CD](#cicd)
+- [Use of GenAI](#use-of-genai)
+- [Use of robots](#use-of-robots)
 
 ## Technical preconditions
 
@@ -124,10 +126,10 @@ source ~/.zshrc
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 26.0.1**, we suggest you use this version or newer if you want (even if not recommended).
+We use also for our GitLab CI runners **Xcode 26.2**, we suggest you use this version or newer if you want (even if not recommended).
 
 > [!IMPORTANT]
-> Xcode 26.0.1 and Swift 6.2 are used for this project. You should use this configuration.
+> Xcode 26.2 and Swift 6.2 are used for this project. You should use this configuration.
 > Not retrocompatibility is planned yet.
 > If need you can contact us and open a discussion on GitHub Orange-OpenSource/ouds-ios
 
@@ -213,7 +215,7 @@ To run these snapshots tests follow some steps:
 1. `cd DesignToolbox`
 2. Open *DesignToolbox.xcworkspace*
 3. Select *DesignToolboxSnapshotsTests* scheme
-4. Select *iPhone 17 Pro* simulator (the device used to tests and views rendering) (iOS 26.0 (23A339))
+4. Select *iPhone 17 Pro* simulator (the device used to tests and views rendering) (iOS 26.2 (23C54))
 5. Run tests (Product -> Test)
 
 Or run in terminal:
@@ -230,7 +232,7 @@ Such tests here are used to as to be sure the look and feel of any components an
 Any interface modifications require regenerating the illustrations using the tool, i.e. run the tests twice. The reference illustrations have already been saved within the project.
 
 > [!IMPORTANT]
-> The device under tests is a simulator of iPhone 17 Pro (26.0), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
+> The device under tests is a simulator of iPhone 17 Pro (26.2), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
 
 #### How to use to use swift-snapshot-testing library
 
@@ -295,7 +297,7 @@ To run these UI tests follow some steps:
 1. `cd DesignToolbox`
 2. Open *DesignToolbox.xcworkspace*
 3. Select *DesignToolboxUITests* scheme
-4. Select *iPhone 17 Pro* simulator (the device used to tests and views rendering) (iOS 26.0 (23A339))
+4. Select *iPhone 17 Pro* simulator (the device used for tests and views rendering) (iOS 26.2 (23C54))
 5. Run tests (Product -> Test)
 
 Or run in terminal:
@@ -333,7 +335,7 @@ We try to cover several devices types and OS max version according to [iosref.co
 
 #### iPhone / iOS
 
-- iPhone 17 Pro (iOS 26.1)
+- iPhone 17 Pro (iOS 26.2)
 - iPhone 14 Pro (iOS 17.5)
 - iPhone Xs Max (iOS 18.6)
 - iPhone 8 Plus (iOS 16.4)
@@ -734,3 +736,61 @@ However of course you will have to define all the variables, secrets and have th
 You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/wiki/51-%E2%80%90-About-continuous-integration-and-delivery).
 
 In few words, there is a pipeline containing some stages and HIRDjobs to build alpha, nightly/beta and production releases.
+
+## Use of GenAI
+
+The use of generative artifical intelligence (in short "GenAI") is not forbidden, but must be used with care.
+However, to keep records of this new usage, contributors and maintainers must add inside the commit body if they use GenAI, which model and how (when possible).
+Indeed GenAI can be used to generate source code and also review pull requests or process issues.
+In all cases, the field *Assisted-by* must be added with the Large Language Model ("LLM") name and product.
+
+For example, if the Orange tool named _Dinootoo_ has been used with GPT-4o-mini as LLM to generate some code:
+
+```text
+Assisted-by: GPT-4o-mini (Orange Dinootoo)
+```
+
+Or if the [Codex (OpenAI product)](https://chatgpt.com/codex) product has been used to make some pull request reviews or to work on issues, 
+using the GitHub Connector (see [here for LLM for Codex cloud details](https://openai.com/fr-FR/index/introducing-codex/)):
+
+```text
+Assisted-by: codex-1 (OpenAI Codex)
+```
+
+If otherwise you use the GitHub Copilot agent, which does not precise every time which LLM is used:
+
+```text
+Assisted-by: GitHub Copilot
+```
+
+Or if it is mentioned:
+```text
+Assisted-by: Claude 3.7 Sonnet (GitHub Copilot)
+```
+
+The main things to note are the LLM in use and the products behind with, if relevant, company name to have no doubt.
+
+> [!CAUTION]
+> Always review the source code
+> and avoid use of GenAI if possible.
+> GenAI has a real environmental footprint and is based on predatory and colonialist techniques (theft, exploitation, stifling of producers).
+
+> [!TIP]
+> If you use [OpenAI Codex](https://developers.openai.com/codex/quickstart), you can mention @codex to "review" of "fix the issue".
+> If you use [GitHub Copilot Coding Agent](https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent), assign the issue or the PR, or tag @copilot
+
+## Use of robots
+
+Bots accounts can be used, e.g. to update dependencies with *Dependabot*, *Snyk* or *Renovate*, or also to provide new tokens with the [boosted-bot](https://github.com/boosted-bot).
+It could be interesting to keep traces of what they did, e.g. review pull requests or provide source code.
+The suitable field must be used and also the bot name and associated email.
+By doing so be add useful details about commits origin and content, and are aligned with for example some specific [GitHub view about contributors](https://github.com/Orange-OpenSource/ouds-ios/graphs/contributors).
+
+For example:
+```text
+Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
+Co-authored-by: StepSecurity Bot <bot@stepsecurity.io>
+Co-authored-by: Copilot <198982749+Copilot@users.noreply.github.com>
+Reviewed-by: Copilot <198982749+Copilot@users.noreply.github.com>
+Signed-off-by: StepSecurity Bot <bot@stepsecurity.io>
+```

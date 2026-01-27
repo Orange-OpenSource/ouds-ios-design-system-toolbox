@@ -21,6 +21,7 @@ typealias ACDC = AppTestCase.DocumentationCaptures // ⚡
 /// - portrait mode
 /// - english app
 /// - no increased text
+/// - iOS 26+
 ///
 /// **Beware, values are for iPhone 12 Pro in portrait mode and only to make screenshots for documentations, so only one device is enough**
 extension AppTestCase {

@@ -19,7 +19,6 @@ import SwiftUI
 struct BadgePage: View {
 
     @StateObject private var configurationModel: BadgeConfigurationModel
-    @Environment(\.theme) private var theme
 
     init() {
         _configurationModel = StateObject(wrappedValue: BadgeConfigurationModel())
@@ -30,8 +29,6 @@ struct BadgePage: View {
             BadgeDemo(configurationModel: configurationModel)
         } configurationView: {
             BadgeConfigurationView(configurationModel: configurationModel)
-        }.onAppear {
-            configurationModel.themeName = theme.name
         }
     }
 }
@@ -61,7 +58,7 @@ struct BadgeDemo: View {
                           size: configurationModel.illustrationSize)
                     .disabled(!configurationModel.enabled)
             case .icon:
-                OUDSBadge(status: configurationModel.statusWithIcon,
+                OUDSBadge(status: configurationModel.statusWithIcon(from: theme),
                           accessibilityLabel: "app_components_badge_hint_a11y".localized(),
                           size: configurationModel.illustrationSize)
                     .disabled(!configurationModel.enabled)

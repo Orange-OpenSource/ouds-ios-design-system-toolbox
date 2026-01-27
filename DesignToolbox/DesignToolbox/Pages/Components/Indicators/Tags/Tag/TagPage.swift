@@ -19,7 +19,6 @@ import SwiftUI
 struct TagPage: View {
 
     @StateObject private var configurationModel: TagConfigurationModel
-    @Environment(\.theme) private var theme
 
     init() {
         _configurationModel = StateObject(wrappedValue: TagConfigurationModel())
@@ -30,8 +29,6 @@ struct TagPage: View {
             TagDemo(configurationModel: configurationModel)
         } configurationView: {
             TagConfigurationView(configurationModel: configurationModel)
-        }.onAppear {
-            configurationModel.themeName = theme.name
         }
     }
 }
@@ -50,7 +47,7 @@ struct TagDemo: View {
 
             OUDSTag(
                 label: configurationModel.label,
-                status: configurationModel.status,
+                status: configurationModel.status(from: theme),
                 appearance: configurationModel.appearance,
                 shape: configurationModel.shape,
                 size: configurationModel.size,

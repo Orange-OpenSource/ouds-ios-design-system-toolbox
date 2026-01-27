@@ -228,7 +228,7 @@ struct ColorsView: View {
             self.name = name
         }
 
-        init(token: MultipleColorSemanticTokens, name: String) {
+        init(token: MultipleColorSemanticToken, name: String) {
             lightValue = token.light
             darkValue = token.dark
             self.name = name
