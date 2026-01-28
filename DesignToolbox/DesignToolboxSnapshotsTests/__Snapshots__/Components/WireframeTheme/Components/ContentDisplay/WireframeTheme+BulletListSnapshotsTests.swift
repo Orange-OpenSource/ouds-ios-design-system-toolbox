@@ -18,49 +18,27 @@ import SwiftUI
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSBulletList` for each parameter for `WireframeTheme`.
+/// Tests the UI rendering of the `OUDSBulletList` components for each parameter with `WireframeTheme`
 final class WireframeThemeBulletListSnapshotsTests: BulletListSnapshotsTestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
-    private var standardTheme: OUDSTheme!
-    private var tunedTheme: OUDSTheme!
+    private var theme: OUDSTheme!
     // swiftlint:enable implicitly_unwrapped_optional
 
     override func setUp() {
-        standardTheme = WireframeTheme() // Default tuning do not have rounded corners
-        tunedTheme = WireframeTheme(tuning: Tuning(hasRoundedBulletLists: true))
+        theme = WireframeTheme()
     }
 
-    // MARK: Orange theme - no tuning
-
-    /// Tests all BulletLists configuration in the `WireframeTheme` with the `light` color schemes
-    /// with default tuning.
-    @MainActor func testAllBulletListsOrangeStandardThemeLight() {
+    /// Tests all bullet lists configuration in the `WireframeTheme` with the `light` color schemes.
+    @MainActor func testAllBulletListsWireframeThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
-        testAllBulletLists(theme: standardTheme, interfaceStyle: interfaceStyle)
+        testAllBulletLists(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all BulletLists configuration in the `WireframeTheme` with the `dark` color schemes
-    /// with default tuning.
-    @MainActor func testAllBulletListsOrangeStandardThemeDark() {
+    /// Tests all bullet lists configuration in the `WireframeTheme` with the `dark` color schemes.
+    @MainActor func testAllBulletListsWireframeThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllBulletLists(theme: standardTheme, interfaceStyle: interfaceStyle)
-    }
-
-    // MARK: Orange theme - with tuning
-
-    /// Tests all BulletLists configuration in the `WireframeTheme` with the `light` color schemes
-    /// with special tuning (rounded corners)
-    @MainActor func testAllBulletListsOrangeTunedThemeLight() {
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testAllBulletLists(theme: tunedTheme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all BulletLists configuration in the `WireframeTheme` with the `dark` color schemes
-    /// with special tuning (rounded corners)
-    @MainActor func testAllBulletListsOrangeTunedThemeDark() {
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllBulletLists(theme: tunedTheme, interfaceStyle: interfaceStyle)
+        testAllBulletLists(theme: theme, interfaceStyle: interfaceStyle)
     }
 }
 

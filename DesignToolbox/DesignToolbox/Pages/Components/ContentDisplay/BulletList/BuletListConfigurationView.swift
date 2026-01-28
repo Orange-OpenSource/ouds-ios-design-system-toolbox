@@ -25,7 +25,7 @@ final class BulletListConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
     
-    @Published var level: BulletListLevel {
+    @Published var levelCount: BulletListLevelCount {
         didSet { updateCode() }
     }
 
@@ -53,7 +53,7 @@ final class BulletListConfigurationModel: ComponentConfiguration {
 
     override init() {
         label = String(localized: "app_components_common_label_label")
-        level = .zero
+        levelCount = .one
         bulletType = .unordered
         unorderedBulletIcon = .bullet
         unorderedBulletIsBranded = false
@@ -68,20 +68,7 @@ final class BulletListConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     // swiftlint:disable line_length
-    
-    private var levelPattern: String {
-        let value = switch level {
-        case .zero:
-            ".zero"
-        case .one:
-            ".one"
-        case .two:
-            ".two"
-        }
         
-        return ", level: \(value)"
-    }
-    
     private var iconPattern: String {
         switch unorderedBulletIcon {
         case .bullet:
@@ -122,7 +109,7 @@ final class BulletListConfigurationModel: ComponentConfiguration {
     }
 
     override func updateCode() {
-        code = "OUDSBulletList(label: \(label)\(typePattern)\(textStylePattern)\(levelPattern)\(isBoldPattern))"
+        code = "OudsBulletList(label: \(label)\(typePattern)\(textStylePattern)\(isBoldPattern))"
     }
     // swiftlint:enable line_length
 }
@@ -149,18 +136,18 @@ struct BulletListConfigurationView: View {
                                    selection: $configurationModel.unorderedBulletIcon,
                                    chips: BulletListUnorderedIcon.chips)
                     
-                    OUDSSwitchItem("app_components_bulletList_unorderedIcon_branded_label", isOn: $configurationModel.unorderedBulletIsBranded)
+                    OUDSSwitchItem("app_components_bulletList_unorderedIconBrandColor_label", isOn: $configurationModel.unorderedBulletIsBranded)
                 }
 
-                OUDSChipPicker(title: "app_components_bulletList_nestedLevel_label",
-                               selection: $configurationModel.level,
-                               chips: OUDSBulletList.NestedLevel.chips)
+                OUDSChipPicker(title: "app_components_bulletList_levelCount_label",
+                               selection: $configurationModel.levelCount,
+                               chips: BulletListLevelCount.chips)
 
                 OUDSChipPicker(title: "app_components_bulletList_textStyle_label",
                                selection: $configurationModel.textStyle,
-                               chips: OUDSBulletList.TextStyle.chips)
+                               chips: OudsBulletList.TextStyle.chips)
                 
-                OUDSSwitchItem("app_components_bulletList_isBold_label", isOn: $configurationModel.isBold)
+                OUDSSwitchItem("app_components_bulletList_bold_label", isOn: $configurationModel.isBold)
 
 
                 DesignToolboxEditContentDisclosure {
@@ -172,20 +159,17 @@ struct BulletListConfigurationView: View {
 }
 
 // MARK: Bullet List Nested Level extension
-typealias BulletListLevel = OUDSBulletList.NestedLevel
-extension OUDSBulletList.NestedLevel: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
-    nonisolated(unsafe) public static let allCases: [OUDSBulletList.NestedLevel] = [.zero, .one, .two]
-
-    // Note: Not localized because it is a technical name
+enum BulletListLevelCount: CaseIterable, CustomStringConvertible {
+    case one, two, three
+    
     public var description: String {
         switch self {
-        case .zero:
-            "Zero"
         case .one:
-            "One"
+            "app_components_bulletList_oneLevel_label"
         case .two:
-            "Two"
+            "app_components_bulletList_twoLevel_label"
+        case .three:
+            "app_components_bulletList_threeLevel_label"
         }
     }
 
@@ -201,19 +185,19 @@ extension OUDSBulletList.NestedLevel: @retroactive CaseIterable, @retroactive Cu
 // MARK: Bullet List Type extension
 
 enum BulletListType: CaseIterable, CustomStringConvertible {
-    case unordered
     case bare
     case ordered
+    case unordered
 
     // Note: Not localized because it is a technical name
     var description: String {
         switch self {
-        case .unordered:
-            "Unordered"
         case .bare:
             "Bare"
         case .ordered:
             "Ordered"
+        case .unordered:
+            "Unordered"
         }
     }
 
@@ -227,10 +211,10 @@ enum BulletListType: CaseIterable, CustomStringConvertible {
 }
 
 // MARK: Bullet List Type extension
-typealias BulletListTextStyle = OUDSBulletList.TextStyle
-extension OUDSBulletList.TextStyle: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+typealias BulletListTextStyle = OudsBulletList.TextStyle
+extension OudsBulletList.TextStyle: @retroactive CaseIterable, @retroactive CustomStringConvertible {
     
-    nonisolated(unsafe) public static let allCases: [OUDSBulletList.TextStyle] = [.bodyLarge, .bodyMedium]
+    nonisolated(unsafe) public static let allCases: [OudsBulletList.TextStyle] = [.bodyLarge, .bodyMedium]
     
     // Note: Not localized because it is a technical name
     public var description: String {

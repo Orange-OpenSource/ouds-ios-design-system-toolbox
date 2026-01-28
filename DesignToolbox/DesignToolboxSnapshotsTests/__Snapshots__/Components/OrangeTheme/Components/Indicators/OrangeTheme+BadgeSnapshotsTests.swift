@@ -29,8 +29,8 @@ final class OrangeThemeBadgeSnapshotsTests: BadgeSnapshotsTestsTestCase {
         theme = OrangeTheme()
     }
 
-    /// Tests all bages configuration in the `OrangeTheme` with the `light` color schemes.
-    @MainActor func testAllBagesOrangeThemeLight() {
+    /// Tests all badges configuration in the `OrangeTheme` with the `light` color schemes.
+    @MainActor func testAllBadgesOrangeThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllBadges(theme: theme, interfaceStyle: interfaceStyle)
     }

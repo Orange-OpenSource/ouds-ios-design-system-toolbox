@@ -15,53 +15,33 @@ import OUDSSwiftUI
 import SwiftUI
 
 // swiftlint:disable required_deinit
+// swiftlint:disable type_name
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSBulletList` for each parameter for `OrangeBusinessToolsTheme`.
+/// Tests the UI rendering of the `OUDSBulletList` components for each parameter with `OrangeBusinessToolsTheme`
 final class OrangeBusinessToolsThemeBulletListSnapshotsTests: BulletListSnapshotsTestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
-    private var standardTheme: OUDSTheme!
-    private var tunedTheme: OUDSTheme!
+    private var theme: OUDSTheme!
     // swiftlint:enable implicitly_unwrapped_optional
 
     override func setUp() {
-        standardTheme = OrangeBusinessToolsTheme() // Default tuning do not have rounded corners
-        tunedTheme = OrangeBusinessToolsTheme(tuning: Tuning(hasRoundedBulletLists: true))
+        theme = OrangeBusinessToolsTheme()
     }
 
-    // MARK: Orange theme - no tuning
-
-    /// Tests all BulletLists configuration in the `OrangeBusinessToolsTheme` with the `light` color schemes
-    /// with default tuning.
-    @MainActor func testAllBulletListsOrangeStandardThemeLight() {
+    /// Tests all bullet lists configuration in the `OrangeBusinessToolsTheme` with the `light` color schemes.
+    @MainActor func testAllBulletListsOrangeBusinessToolsThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
-        testAllBulletLists(theme: standardTheme, interfaceStyle: interfaceStyle)
+        testAllBulletLists(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all BulletLists configuration in the `OrangeBusinessToolsTheme` with the `dark` color schemes
-    /// with default tuning.
-    @MainActor func testAllBulletListsOrangeStandardThemeDark() {
+    /// Tests all bullet lists configuration in the `OrangeBusinessToolsTheme` with the `dark` color schemes.
+    @MainActor func testAllBulletListsOrangeBusinessToolsThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllBulletLists(theme: standardTheme, interfaceStyle: interfaceStyle)
-    }
-
-    // MARK: Orange theme - with tuning
-
-    /// Tests all BulletLists configuration in the `OrangeBusinessToolsTheme` with the `light` color schemes
-    /// with special tuning (rounded corners)
-    @MainActor func testAllBulletListsOrangeTunedThemeLight() {
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testAllBulletLists(theme: tunedTheme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all BulletLists configuration in the `OrangeBusinessToolsTheme` with the `dark` color schemes
-    /// with special tuning (rounded corners)
-    @MainActor func testAllBulletListsOrangeTunedThemeDark() {
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllBulletLists(theme: tunedTheme, interfaceStyle: interfaceStyle)
+        testAllBulletLists(theme: theme, interfaceStyle: interfaceStyle)
     }
 }
 
 // swiftlint:enable required_deinit
+// swiftlint:enable type_name

@@ -36,7 +36,7 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
             for textType in BulletListTextStyle.allCases {
                 for isBold in [true, false] {
                     let model = BulletListConfigurationModel()
-                    model.level = .two
+                    model.levelCount = .three
                     model.textStyle = textType
                     model.isBold = isBold
                     model.bulletType = type
@@ -84,7 +84,7 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
     /// for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
-    ///    test_<themeName>_<colorScheme>_<type>_<level>_<textStyle>_<isBold>
+    ///    test_<themeName>_<colorScheme>_<type>_<textStyle>_<isBold>
     ///
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme)
@@ -101,17 +101,16 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
         }
 
         // Create a unique snapshot name based on the current configuration :
-        //    test_<themeName>_<colorScheme>.<orientation>.<BulletListColor>
+        //    test_<themeName>_<colorScheme>_<type>_<textStyle>_<isBold>
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let typePattern = model.bulletType.description
         let bulletTypePattern = model.bulletType == .unordered ? "_\(model.unorderedBulletIcon.description)" : ""
         let brandedBulletPattern = model.bulletType == .unordered && model.unorderedBulletIsBranded ? "_Branded" : ""
         let unorderedBulletTypePattern = model.bulletType == .unordered ? bulletTypePattern + brandedBulletPattern : ""
-        let level = model.level.description
         let textStylePattern = model.textStyle.description
         let isBoldPattern = model.isBold ? "Bold" : ""
         
-        let name = "\(typePattern)\(unorderedBulletTypePattern)_\(level)_\(textStylePattern)_\(isBoldPattern)"
+        let name = "\(typePattern)\(unorderedBulletTypePattern)_\(textStylePattern)_\(isBoldPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,

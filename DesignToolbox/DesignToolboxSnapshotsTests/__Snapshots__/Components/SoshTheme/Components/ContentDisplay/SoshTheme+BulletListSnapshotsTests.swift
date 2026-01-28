@@ -29,14 +29,14 @@ final class SoshThemeBulletListSnapshotsTests: BulletListSnapshotsTestsTestCase 
         theme = SoshTheme()
     }
 
-    /// Tests all BulletLists configuration in the `SoshTheme` with the `light` color schemes.
-    @MainActor func testAllBulletListsSoshThemeLight() {
+    /// Tests all bullet lists configuration in the `OrangeTheme` with the `light` color schemes.
+    @MainActor func testAllBulletListOrangeThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllBulletLists(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all BulletLists configuration in the `SoshTheme` with the `dark` color schemes.
-    @MainActor func testAllBulletListsSoshThemeDark() {
+    /// Tests all bullet lists configuration in the `OrangeTheme` with the `dark` color schemes.
+    @MainActor func testAllBulletListsOrangeThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllBulletLists(theme: theme, interfaceStyle: interfaceStyle)
     }

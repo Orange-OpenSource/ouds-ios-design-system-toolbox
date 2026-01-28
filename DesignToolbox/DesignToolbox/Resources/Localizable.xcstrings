@@ -1156,31 +1156,7 @@
         }
       }
     },
-    "app_components_bulletList_description_text" : {
-      "comment" : "Component - Bullet List",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "القائمة النقطية هي عنصر واجهة مستخدم يُساعد على عرض عناصر نصية فردية مترابطة مُجمّعة معًا؛ تبدأ العناصر عادةً برقم أو نقطة. تُعرف القائمة النقطية أيضًا باسم \"القائمة غير المرتبة\" أو \"القائمة المرتبة\"، وهي ليست عنصرًا تفاعليًا افتراضيًا، على الرغم من أن عناصر النص تدعم روابط النص التشعبي."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bullet list is a UI element that helps to view in related individual text items grouped together; items usually starting with a number or a bullet. Bullet list is also known as “Unordered list” or “Ordered list” and is not an interactive element by default, although text items can support hypertext links."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La liste à puces est un élément d'interface utilisateur permettant d'afficher des éléments de texte individuels regroupés par thèmes ; ces éléments commencent généralement par un chiffre ou une puce. Également appelée « liste non ordonnée » ou « liste ordonnée », la liste à puces n'est pas interactive par défaut, bien que ses éléments puissent contenir des liens hypertextes."
-          }
-        }
-      }
-    },
-    "app_components_bulletList_isBold_label" : {
+    "app_components_bulletList_bold_label" : {
       "comment" : "Component - Bullet List",
       "extractionState" : "manual",
       "localizations" : {
@@ -1204,6 +1180,30 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_bulletList_description_text" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "القائمة النقطية هي عنصر واجهة مستخدم يُساعد على عرض عناصر نصية فردية مترابطة مُجمّعة معًا؛ تبدأ العناصر عادةً برقم أو نقطة. تُعرف القائمة النقطية أيضًا باسم \"القائمة غير المرتبة\" أو \"القائمة المرتبة\"، وهي ليست عنصرًا تفاعليًا افتراضيًا، على الرغم من أن عناصر النص تدعم روابط النص التشعبي."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet list is a UI element that helps to view in related individual text items grouped together; items usually starting with a number or a bullet. Bullet list is also known as “Unordered list” or “Ordered list” and is not an interactive element by default, although text items can support hypertext links."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La liste à puces est un élément d'interface utilisateur permettant d'afficher des éléments de texte individuels regroupés par thèmes ; ces éléments commencent généralement par un chiffre ou une puce. Également appelée « liste non ordonnée » ou « liste ordonnée », la liste à puces n'est pas interactive par défaut, bien que ses éléments puissent contenir des liens hypertextes."
+          }
+        }
+      }
     },
     "app_components_bulletList_label" : {
       "comment" : "Component - Bullet List",
@@ -1230,6 +1230,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_bulletList_levelCount_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عد المستوى"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Level count"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre de nioveaux"
+          }
+        }
+      }
+    },
     "app_components_bulletList_nestedLevel_label" : {
       "comment" : "Component - Bullet List",
       "extractionState" : "manual",
@@ -1254,6 +1278,30 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_bulletList_oneLevel_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "واحد"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un"
+          }
+        }
+      }
     },
     "app_components_bulletList_textStyle_label" : {
       "comment" : "Component - Bullet List",
@@ -1280,6 +1328,54 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_bulletList_threeLevel_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ثلاثة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Three"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trois"
+          }
+        }
+      }
+    },
+    "app_components_bulletList_twoLevel_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اثنين"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Two"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deux"
+          }
+        }
+      }
+    },
     "app_components_bulletList_unorderedIcon_branded_label" : {
       "comment" : "Component - Bullet List",
       "extractionState" : "manual",
@@ -1287,22 +1383,23 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Branded"
+            "value" : "Brand color icon"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Branded"
+            "value" : "Brand color icon"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Branded"
+            "value" : "Brand color icon"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_bulletList_unorderedIcon_label" : {
       "comment" : "Component - Bullet List",

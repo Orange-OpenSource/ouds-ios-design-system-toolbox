@@ -37,8 +37,7 @@ private struct BulletListIllustration: View {
 
     var body: some View {
         VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
-            OUDSBulletList(label: "Label", type: .unordered(icon: .bullet, isBranded: false), textStyle: .bodyMedium, level: .zero, isBold: false)
-            OUDSBulletList(label: "Label", type: .unordered(icon: .bullet, isBranded: false), textStyle: .bodyMedium, level: .zero, isBold: false)
+            OudsBulletList(type: .unordered(icon: .bullet, isBranded: false), textStyle: .bodyMedium, isBold: false, items: [.init("Label"), .init("Label") ])
         }
         .padding(.leading, 120)
     }

@@ -42,48 +42,59 @@ struct BulletListDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            ForEach(Array(levels.enumerated()), id: \.offset) { offset, level in
-                OUDSBulletList(label: configurationModel.label,
-                               type: type(for: UInt8(offset + 1)),
-                               textStyle: configurationModel.textStyle,
-                               level: level,
-                               isBold: configurationModel.isBold)
-            }
-        }
+        OudsBulletList(type: bulletType,
+                       textStyle: configurationModel.textStyle,
+                       isBold: configurationModel.isBold,
+                       items: items)
         .padding(.all, theme.spaces.fixedMedium)
     }
+
     
-    private var levels: [BulletListLevel] {
-        switch configurationModel.level {
-        case .zero:
-            return [.zero, .zero, .zero]
+    private var items: [OudsBulletList.Item] {
+        switch configurationModel.levelCount {
         case .one:
-            return [.zero, .one, .one]
+            [ .init(configurationModel.label),
+              .init(configurationModel.label),
+              .init(configurationModel.label),
+            ]
         case .two:
-            return [.zero, .one, .two]
+            [ .init(configurationModel.label,
+                    subItems: [
+                        .init(configurationModel.label),
+                        .init(configurationModel.label)
+                    ])
+            ]
+        case .three:
+            [ .init(configurationModel.label,
+                    subItems: [
+                        .init(configurationModel.label,
+                              subItems: [
+                                .init(configurationModel.label)
+                              ])
+                    ])
+            ]
         }
     }
-    
-    private func type(for index: UInt8) -> OUDSBulletList.`Type` {
+
+    private var bulletType: OudsBulletList.`Type` {
         switch configurationModel.bulletType {
         case .unordered:
             .unordered(icon: unorderedIcon, isBranded: configurationModel.unorderedBulletIsBranded)
         case .bare:
             .bare
         case .ordered:
-            .ordered(index: index)
+            .ordered
         }
     }
     
-    private var unorderedIcon: OUDSBulletList.UnorderedIcon {
+    private var unorderedIcon: OudsBulletList.UnorderedIcon {
         switch configurationModel.unorderedBulletIcon {
         case .bullet:
             .bullet
         case .tick:
             .tick
         case .free:
-            .free(image: Image.defaultImage(prefixedBy: theme.name))
+            .free(Image.defaultImage(prefixedBy: theme.name))
         }
     }
 }
