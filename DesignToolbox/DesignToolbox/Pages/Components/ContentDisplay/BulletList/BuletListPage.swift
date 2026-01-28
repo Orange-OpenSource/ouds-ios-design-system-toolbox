@@ -80,7 +80,7 @@ struct BulletListDemo: View {
             .ordered
         }
     }
-    
+
     private var unorderedIcon: OUDSBulletList.UnorderedIcon {
         switch configurationModel.unorderedBulletIcon {
         case .bullet:

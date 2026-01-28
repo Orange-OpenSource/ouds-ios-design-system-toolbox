@@ -13,7 +13,6 @@
 
 import OUDSSwiftUI
 import SwiftUI
-import StoreKit
 
 // MARK: - BulletList Configuration Model
 
@@ -24,7 +23,7 @@ final class BulletListConfigurationModel: ComponentConfiguration {
     @Published var label: String {
         didSet { updateCode() }
     }
-    
+
     @Published var levelCount: BulletListLevelCount {
         didSet { updateCode() }
     }
@@ -48,7 +47,7 @@ final class BulletListConfigurationModel: ComponentConfiguration {
     @Published var isBold: Bool {
         didSet { updateCode() }
     }
-        
+
     // MARK: Initializer
 
     override init() {
@@ -68,15 +67,15 @@ final class BulletListConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     // swiftlint:disable line_length
-        
+
     private var iconPattern: String {
         switch unorderedBulletIcon {
         case .bullet:
-            ".bullet"
+        ".bullet"
         case .tick:
-            ".tick"
+        ".tick"
         case .free:
-            ".free(\(Image.defaultImageSample()))"
+        ".free(\(Image.defaultImageSample()))"
         }
     }
 
@@ -103,7 +102,7 @@ final class BulletListConfigurationModel: ComponentConfiguration {
 
         return ", textStyle: \(value)"
     }
-    
+
     private var isBoldPattern: String {
         isBold ? ", isBold: true" : ""
     }
@@ -138,8 +137,8 @@ final class BulletListConfigurationModel: ComponentConfiguration {
             }
             """
         }
-
     }
+
     override func updateCode() {
         code =
         """
@@ -248,9 +247,9 @@ enum BulletListType: CaseIterable, CustomStringConvertible {
 // MARK: Bullet List Type extension
 typealias BulletListTextStyle = OUDSBulletList.TextStyle
 extension OUDSBulletList.TextStyle: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    
+
     nonisolated(unsafe) public static let allCases: [OUDSBulletList.TextStyle] = [.bodyLarge, .bodyMedium]
-    
+
     // Note: Not localized because it is a technical name
     public var description: String {
         switch self {
@@ -295,4 +294,3 @@ enum BulletListUnorderedIcon: CaseIterable, CustomStringConvertible {
         allCases.map(\.chipData)
     }
 }
-
