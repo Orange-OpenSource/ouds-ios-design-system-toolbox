@@ -34,22 +34,26 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
     @MainActor func testAllBulletLists(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for type in BulletListType.allCases {
             for textType in BulletListTextStyle.allCases {
-                for isBold in [true, false] {
-                    let model = BulletListConfigurationModel()
-                    model.levelCount = .three
-                    model.textStyle = textType
-                    model.isBold = isBold
-                    model.bulletType = type
+                for levelCount in BulletListLevelCount.allCases {
                     
-                    switch type {
-                    case .unordered:
-                        testUnorderedBulletList(theme: theme,
-                                                interfaceStyle: interfaceStyle,
-                                                model: model)
-                    case .ordered, .bare:
-                        testBulletList(theme: theme,
-                                       interfaceStyle: interfaceStyle,
-                                       model: model)
+                    for isBold in [true, false] {
+                        let model = BulletListConfigurationModel()
+                        model.levelCount = .three
+                        model.textStyle = textType
+                        model.isBold = isBold
+                        model.bulletType = type
+                        model.levelCount = levelCount
+                        
+                        switch type {
+                        case .unordered:
+                            testUnorderedBulletList(theme: theme,
+                                                    interfaceStyle: interfaceStyle,
+                                                    model: model)
+                        case .ordered, .bare:
+                            testBulletList(theme: theme,
+                                           interfaceStyle: interfaceStyle,
+                                           model: model)
+                        }
                     }
                 }
             }

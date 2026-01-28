@@ -1188,19 +1188,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "القائمة النقطية هي عنصر واجهة مستخدم يُساعد على عرض عناصر نصية فردية مترابطة مُجمّعة معًا؛ تبدأ العناصر عادةً برقم أو نقطة. تُعرف القائمة النقطية أيضًا باسم \"القائمة غير المرتبة\" أو \"القائمة المرتبة\"، وهي ليست عنصرًا تفاعليًا افتراضيًا، على الرغم من أن عناصر النص تدعم روابط النص التشعبي."
+            "value" : "Bullet list هي عنصر واجهة مستخدم يساعد على عرض عناصر نصية فردية ذات صلة مجمعة معًا؛ عادةً ما تبدأ برقم أو برمز نقطي."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bullet list is a UI element that helps to view in related individual text items grouped together; items usually starting with a number or a bullet. Bullet list is also known as “Unordered list” or “Ordered list” and is not an interactive element by default, although text items can support hypertext links."
+            "value" : "Bullet list is a UI element that helps to view in related individual text items grouped together; items usually starting with a number or a bullet."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La liste à puces est un élément d'interface utilisateur permettant d'afficher des éléments de texte individuels regroupés par thèmes ; ces éléments commencent généralement par un chiffre ou une puce. Également appelée « liste non ordonnée » ou « liste ordonnée », la liste à puces n'est pas interactive par défaut, bien que ses éléments puissent contenir des liens hypertextes."
+            "value" : "Le composant BulletList est un élément d'interface utilisateur qui permet de visualiser des éléments de texte individuels liés, regroupés par ordre alphabétique ; ces éléments commencent généralement par un chiffre ou une puce."
           }
         }
       }
@@ -1376,31 +1376,6 @@
         }
       }
     },
-    "app_components_bulletList_unorderedIcon_branded_label" : {
-      "comment" : "Component - Bullet List",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brand color icon"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brand color icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brand color icon"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_bulletList_unorderedIcon_label" : {
       "comment" : "Component - Bullet List",
       "extractionState" : "manual",
@@ -1421,6 +1396,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Unordered icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_bulletList_unorderedIconBrandColor_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brand color icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brand color icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brand color icon"
           }
         }
       },

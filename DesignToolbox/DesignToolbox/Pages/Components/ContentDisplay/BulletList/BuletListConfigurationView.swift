@@ -90,7 +90,7 @@ final class BulletListConfigurationModel: ComponentConfiguration {
             ".unordered(icon: \(iconPattern), isBranded: \(unorderedBulletIsBranded))"
         }
 
-        return ", type: \(value)"
+        return "type: \(value)"
     }
 
     private var textStylePattern: String {
@@ -108,8 +108,44 @@ final class BulletListConfigurationModel: ComponentConfiguration {
         isBold ? ", isBold: true" : ""
     }
 
+    private var itemsPattern: String {
+        switch levelCount {
+        case .one:
+            """
+            {
+                OUDSBulletList.Item(\(label))
+                OUDSBulletList.Item(\(label))
+                OUDSBulletList.Item(\(label))
+            }
+            """
+        case .two:
+            """
+            {
+                OUDSBulletList.Item(\(label)) {
+                    OUDSBulletList.Item(\(label))
+                    OUDSBulletList.Item(\(label))
+                }
+            }
+            """
+        case .three:
+            """
+            {
+                OUDSBulletList.Item(\(label)) {
+                    OUDSBulletList.Item(\(label)) {
+                        OUDSBulletList.Item(\(label))
+                    }
+                }
+            }
+            """
+        }
+
+    }
     override func updateCode() {
-        code = "OudsBulletList(label: \(label)\(typePattern)\(textStylePattern)\(isBoldPattern))"
+        code =
+        """
+        OUDSBulletList(\(typePattern)\(textStylePattern)\(isBoldPattern))
+        \(itemsPattern)
+        """
     }
     // swiftlint:enable line_length
 }
@@ -139,16 +175,15 @@ struct BulletListConfigurationView: View {
                     OUDSSwitchItem("app_components_bulletList_unorderedIconBrandColor_label", isOn: $configurationModel.unorderedBulletIsBranded)
                 }
 
-                OUDSChipPicker(title: "app_components_bulletList_levelCount_label",
-                               selection: $configurationModel.levelCount,
-                               chips: BulletListLevelCount.chips)
-
                 OUDSChipPicker(title: "app_components_bulletList_textStyle_label",
                                selection: $configurationModel.textStyle,
-                               chips: OudsBulletList.TextStyle.chips)
+                               chips: OUDSBulletList.TextStyle.chips)
                 
                 OUDSSwitchItem("app_components_bulletList_bold_label", isOn: $configurationModel.isBold)
 
+                OUDSChipPicker(title: "app_components_bulletList_levelCount_label",
+                               selection: $configurationModel.levelCount,
+                               chips: BulletListLevelCount.chips)
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_label")
@@ -211,10 +246,10 @@ enum BulletListType: CaseIterable, CustomStringConvertible {
 }
 
 // MARK: Bullet List Type extension
-typealias BulletListTextStyle = OudsBulletList.TextStyle
-extension OudsBulletList.TextStyle: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+typealias BulletListTextStyle = OUDSBulletList.TextStyle
+extension OUDSBulletList.TextStyle: @retroactive CaseIterable, @retroactive CustomStringConvertible {
     
-    nonisolated(unsafe) public static let allCases: [OudsBulletList.TextStyle] = [.bodyLarge, .bodyMedium]
+    nonisolated(unsafe) public static let allCases: [OUDSBulletList.TextStyle] = [.bodyLarge, .bodyMedium]
     
     // Note: Not localized because it is a technical name
     public var description: String {
