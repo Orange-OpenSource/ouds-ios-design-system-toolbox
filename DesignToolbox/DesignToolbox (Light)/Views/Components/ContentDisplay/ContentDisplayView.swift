@@ -11,18 +11,15 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSSwiftUI
 import SwiftUI
 
-struct ComponentsView: View {
+struct ContentDisplayView: View {
 
-    @ViewBuilder
     var body: some View {
-        NavigationLink("Actions", destination: ActionsView())
-        NavigationLink("Content Display", destination: ContentDisplayView())
-        NavigationLink("Controls", destination: ControlsView())
-        NavigationLink("Indicators", destination: IndicatorsView())
-        NavigationLink("Layouts", destination: LayoutsView())
-        NavigationLink("Navigations", destination: NavigationsView())
+        NavigationView {
+            List {
+                NavigationLink("Bullet List", destination: BulletListsView())
+            }
+        }
     }
 }

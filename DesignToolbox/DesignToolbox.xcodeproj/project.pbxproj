@@ -498,6 +498,10 @@
 		955A40DC2EC7894C001D7F84 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
+		957D5EE12F2BB27D0055128A /* BulletListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE02F2BB2740055128A /* BulletListsView.swift */; };
+		957D5EE22F2BB27D0055128A /* BulletListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE02F2BB2740055128A /* BulletListsView.swift */; };
+		957D5EE52F2BB29A0055128A /* ContentDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE42F2BB2940055128A /* ContentDisplayView.swift */; };
+		957D5EE62F2BB29A0055128A /* ContentDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE42F2BB2940055128A /* ContentDisplayView.swift */; };
 		95818BC22EB50D70004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
 		95818BC32EB50D7F004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
 		9589F0222EB7D67B00134487 /* DesignToolboxColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762276B2DA93D62009C3632 /* DesignToolboxColorPicker.swift */; };
@@ -1408,6 +1412,8 @@
 		953DC1542ED0995600D14D44 /* TabBarElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarElement.swift; sourceTree = "<group>"; };
 		953DC1552ED0995600D14D44 /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions Tests.swift"; sourceTree = "<group>"; };
+		957D5EE02F2BB2740055128A /* BulletListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListsView.swift; sourceTree = "<group>"; };
+		957D5EE42F2BB2940055128A /* ContentDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDisplayView.swift; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAndTVLayoutsView.swift; sourceTree = "<group>"; };
@@ -2869,6 +2875,23 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		957D5EDF2F2BB2660055128A /* ContentDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				957D5EE42F2BB2940055128A /* ContentDisplayView.swift */,
+				957D5EE32F2BB28B0055128A /* BulletLists */,
+			);
+			path = ContentDisplay;
+			sourceTree = "<group>";
+		};
+		957D5EE32F2BB28B0055128A /* BulletLists */ = {
+			isa = PBXGroup;
+			children = (
+				957D5EE02F2BB2740055128A /* BulletListsView.swift */,
+			);
+			path = BulletLists;
+			sourceTree = "<group>";
+		};
 		959390072EC125A6000DBE95 /* _ */ = {
 			isa = PBXGroup;
 			children = (
@@ -2944,6 +2967,7 @@
 		959800752EBCCB81007BE0EA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				957D5EDF2F2BB2660055128A /* ContentDisplay */,
 				950EA6C12EBCFA2F0009414A /* Layouts */,
 				959800872EBCCC13007BE0EA /* Navigations */,
 				959800852EBCCC07007BE0EA /* Indicators */,
@@ -4111,6 +4135,7 @@
 				95CE05402EC33C8F00ACE41C /* OpacityIllustration.swift in Sources */,
 				95CE053F2EC33C8900ACE41C /* NamedOpacity.swift in Sources */,
 				9514585F2EC28F4E0096BBF1 /* String+extension.swift in Sources */,
+				957D5EE52F2BB29A0055128A /* ContentDisplayView.swift in Sources */,
 				9593907C2EC251E7000DBE95 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				9593907E2EC254D9000DBE95 /* SpacesView.swift in Sources */,
 				959390722EC25190000DBE95 /* SpaceTokenCommonIllustration.swift in Sources */,
@@ -4161,6 +4186,7 @@
 				950EA7D42EBE4D5C0009414A /* TwoStatesCheckboxesItemsView.swift in Sources */,
 				950EA7C22EBE3ECB0009414A /* InputTag.swift in Sources */,
 				950EA7C32EBE3ECB0009414A /* IndicatorsView.swift in Sources */,
+				957D5EE22F2BB27D0055128A /* BulletListsView.swift in Sources */,
 				950EA7C42EBE3ECB0009414A /* RadiosView.swift in Sources */,
 				950EA7C52EBE3ECB0009414A /* RadiosItemView.swift in Sources */,
 				959390172EC1F268000DBE95 /* TokensView.swift in Sources */,
@@ -4558,6 +4584,7 @@
 				95CE053E2EC33C8200ACE41C /* NamedOpacity.swift in Sources */,
 				95CE053D2EC33C7A00ACE41C /* OpacityIllustration.swift in Sources */,
 				951458602EC28F570096BBF1 /* String+extension.swift in Sources */,
+				957D5EE62F2BB29A0055128A /* ContentDisplayView.swift in Sources */,
 				9593907B2EC251E0000DBE95 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				9593907F2EC254D9000DBE95 /* SpacesView.swift in Sources */,
 				959390772EC2519E000DBE95 /* SpaceTokenCommonIllustration.swift in Sources */,
@@ -4608,6 +4635,7 @@
 				950EA7D32EBE4D5C0009414A /* TwoStatesCheckboxesItemsView.swift in Sources */,
 				950EA6D22EBDFFA50009414A /* SwitchesItemView.swift in Sources */,
 				950EA6D32EBDFFA50009414A /* SwitchesOnlyView.swift in Sources */,
+				957D5EE12F2BB27D0055128A /* BulletListsView.swift in Sources */,
 				950EA6D72EBE053B0009414A /* TagsView.swift in Sources */,
 				959800702EBCC714007BE0EA /* ComponentsView.swift in Sources */,
 				959390162EC1F268000DBE95 /* TokensView.swift in Sources */,
