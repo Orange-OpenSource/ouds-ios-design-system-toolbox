@@ -1028,6 +1028,18 @@
 		FCEEB1942F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
 		FCEEB1952F1A877300C9BD46 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
 		FCEEB1962F1A877300C9BD46 /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
+		FCDDFBB62F2B69E700389D8D /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */; };
+		FCDDFBB72F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */; };
+		FCDDFBB82F2B69E700389D8D /* PasswordInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */; };
+		FCDDFBB92F2B69E700389D8D /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */; };
+		FCDDFBBA2F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */; };
+		FCDDFBBB2F2B69E700389D8D /* PasswordInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */; };
+		FCDDFBBC2F2B69E700389D8D /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */; };
+		FCDDFBBD2F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */; };
+		FCDDFBBE2F2B69E700389D8D /* PasswordInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */; };
+		FCDDFBBF2F2B69E700389D8D /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */; };
+		FCDDFBC02F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */; };
+		FCDDFBC12F2B69E700389D8D /* PasswordInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1440,6 +1452,9 @@
 		FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListConfigurationView.swift; sourceTree = "<group>"; };
 		FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListElement.swift; sourceTree = "<group>"; };
 		FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListPage.swift; sourceTree = "<group>"; };
+		FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputConfigurationView.swift; sourceTree = "<group>"; };
+		FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputElement.swift; sourceTree = "<group>"; };
+		FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2392,6 +2407,7 @@
 		51F49C832E57437E00D50BC4 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				FCDDFBB22F2B69DA00389D8D /* PasswordInput */,
 				513442062D75B880000B5DE4 /* Checkbox */,
 				515EE9842E21329B00A60E96 /* Chip */,
 				0745C1852D7A0351006B3A1F /* Radio */,
@@ -3219,6 +3235,14 @@
 				FCEEB1862F1A877300C9BD46 /* BulletList */,
 			);
 			path = ContentDisplay;
+		FCDDFBB22F2B69DA00389D8D /* PasswordInput */ = {
+			isa = PBXGroup;
+			children = (
+				FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */,
+				FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */,
+				FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */,
+			);
+			path = PasswordInput;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3754,6 +3778,9 @@
 				0786A9E62E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				0786A9E72E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
 				95CE056E2EC3D10700ACE41C /* BorderIllustrations.swift in Sources */,
+				FCDDFBB92F2B69E700389D8D /* PasswordInputPage.swift in Sources */,
+				FCDDFBBA2F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */,
+				FCDDFBBB2F2B69E700389D8D /* PasswordInputElement.swift in Sources */,
 				51417C252E1BF661000266C8 /* TokensBorderSnapshotsTestsTestCase.swift in Sources */,
 				07B3CCB52D40F37000DBB10A /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				07FB2A332E454D7900361ECA /* TagPage.swift in Sources */,
@@ -3950,6 +3977,9 @@
 				51952A742D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */,
 				0765B4962CC159F600E69359 /* NamedColor+Action.swift in Sources */,
+				FCDDFBBF2F2B69E700389D8D /* PasswordInputPage.swift in Sources */,
+				FCDDFBC02F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */,
+				FCDDFBC12F2B69E700389D8D /* PasswordInputElement.swift in Sources */,
 				FCA849172E9FF00500DBCE76 /* InputTagElement.swift in Sources */,
 				FCA849182E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */,
 				FCA849192E9FF00500DBCE76 /* InputTagPage.swift in Sources */,
@@ -4253,6 +4283,9 @@
 				9589F0852EB7D67B00134487 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				9589F0862EB7D67B00134487 /* Bundle+extension.swift in Sources */,
 				9589F0872EB7D67B00134487 /* NamedColor+Action.swift in Sources */,
+				FCDDFBBC2F2B69E700389D8D /* PasswordInputPage.swift in Sources */,
+				FCDDFBBD2F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */,
+				FCDDFBBE2F2B69E700389D8D /* PasswordInputElement.swift in Sources */,
 				9589F0882EB7D67B00134487 /* InputTagElement.swift in Sources */,
 				9589F0892EB7D67B00134487 /* InputTagConfigurationView.swift in Sources */,
 				9589F08A2EB7D67B00134487 /* InputTagPage.swift in Sources */,
@@ -4428,6 +4461,9 @@
 				9589F15F2EB7D67E00134487 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				9589F1602EB7D67E00134487 /* Bundle+extension.swift in Sources */,
 				9589F1612EB7D67E00134487 /* NamedColor+Action.swift in Sources */,
+				FCDDFBB62F2B69E700389D8D /* PasswordInputPage.swift in Sources */,
+				FCDDFBB72F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */,
+				FCDDFBB82F2B69E700389D8D /* PasswordInputElement.swift in Sources */,
 				9589F1622EB7D67E00134487 /* InputTagElement.swift in Sources */,
 				9589F1632EB7D67E00134487 /* InputTagConfigurationView.swift in Sources */,
 				9589F1642EB7D67E00134487 /* InputTagPage.swift in Sources */,

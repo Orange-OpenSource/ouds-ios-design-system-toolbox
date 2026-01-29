@@ -14,10 +14,10 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: - TextInput Configuration Model
+// MARK: - PasswordInput Configuration Model
 
-/// The model shared between `TextInputPageConfiguration` view and `TextInputPageComponent` view.
-final class TextInputConfigurationModel: ComponentConfiguration {
+/// The model shared between `PasswordInputPageConfiguration` view and `PasswordInputPageComponent` view.
+final class PasswordInputConfigurationModel: ComponentConfiguration {
 
     // MARK: Stored properties
 
@@ -40,23 +40,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var suffixText: String {
-        didSet { updateCode() }
-    }
-
     @Published var leadingIcon: Bool {
-        didSet { updateCode() }
-    }
-
-    @Published var flipLeadingIcon: Bool {
-        didSet { updateCode() }
-    }
-
-    @Published var trailingAction: Bool {
-        didSet { updateCode() }
-    }
-
-    @Published var flipTrailingActionIcon: Bool {
         didSet { updateCode() }
     }
 
@@ -75,10 +59,6 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         }
     }
 
-    @Published var helperLinkText: String {
-        didSet { updateCode() }
-    }
-
     @Published var isOutlined: Bool {
         didSet { updateCode() }
     }
@@ -87,7 +67,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var status: OUDSTextInput.Status {
+    @Published var status: OUDSPasswordInput.Status {
         didSet { updateCode() }
     }
 
@@ -99,13 +79,8 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         errorText = defaultErrorText
         placeholderText = defaultPlaceholderText
         prefixText = ""
-        suffixText = ""
         leadingIcon = false
-        flipLeadingIcon = false
-        trailingAction = false
-        flipTrailingActionIcon = false
         text = ""
-        helperLinkText = ""
         isOutlined = false
         constrainedMaxWidth = false
         status = .enabled
@@ -120,7 +95,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         // swiftlint:disable line_length
         code =
             """
-            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(suffixPattern)\(leadingIconPattern)\(flipLeadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
+            OUDSPasswordInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(leadingIconPattern)\(helperTextPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
             """
         // swiftlint:enable line_length
     }
@@ -137,34 +112,16 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         prefixText.isEmpty ? "" : ", prefix: \"\(prefixText)\""
     }
 
-    private var suffixPattern: String {
-        suffixText.isEmpty ? "" : ", suffix: \"\(suffixText)\""
-    }
-
     private var placeholderPattern: String {
         placeholderText.isEmpty ? "" : ", placeholder: \"\(placeholderText)\""
     }
 
     private var leadingIconPattern: String {
-        leadingIcon ? ", leadingIcon: \(Image.defaultImageSample())" : ""
-    }
-
-    private var flipLeadingIconPattern: String {
-        flipLeadingIcon ? ", flipLeadingIcon: true" : ""
-    }
-
-    private var trailingActionPattern: String {
-        let accessibilityLabel = "app_components_common_icon_a11y".localized()
-        let flipIconPattern = flipTrailingActionIcon ? ", flipIcon: true" : ""
-        return trailingAction ? ", trailingAction: .init(icon: \(Image.defaultImageSample())\(flipIconPattern), actionHint: \"\(accessibilityLabel)\") {}" : ""
+        leadingIcon ? ", hasLeadingIcon: true" : ""
     }
 
     private var helperTextPattern: String {
         helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
-    }
-
-    private var helperLinkPattern: String {
-        helperLinkText.isEmpty ? "" : ", helperLink: .init(text: \"\(helperLinkText)\") {}"
     }
 
     private var outlinedPattern: String {
@@ -180,11 +137,11 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 }
 
-// MARK: - TextInput Configuration View
+// MARK: - PasswordInput Configuration View
 
-struct TextInputConfigurationView: View {
+struct PasswordInputConfigurationView: View {
 
-    @StateObject var configurationModel: TextInputConfigurationModel
+    @StateObject var configurationModel: PasswordInputConfigurationModel
 
     @Environment(\.theme) private var theme
 
@@ -197,17 +154,9 @@ struct TextInputConfigurationView: View {
 
                 OUDSSwitchItem("app_components_common_leadingIcon_label", isOn: $configurationModel.leadingIcon)
 
-                OUDSSwitchItem("app_components_textInput_flipLeadingIcon_label", isOn: $configurationModel.flipLeadingIcon)
-                    .disabled(!configurationModel.leadingIcon)
-
-                OUDSSwitchItem("app_components_textInput_trailingAction_label", isOn: $configurationModel.trailingAction)
-
-                OUDSSwitchItem("app_components_textInput_flipTrailingActionIcon_label", isOn: $configurationModel.flipTrailingActionIcon)
-                    .disabled(!configurationModel.trailingAction)
-
                 OUDSChipPicker(title: "app_components_common_status_label",
                                selection: $configurationModel.status,
-                               chips: OUDSTextInput.Status.chips)
+                               chips: OUDSPasswordInput.Status.chips)
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_label")
@@ -221,18 +170,15 @@ struct TextInputConfigurationView: View {
 
                     DesignToolboxTextField(text: $configurationModel.placeholderText, label: "app_components_common_placeholder_label")
                     DesignToolboxTextField(text: $configurationModel.prefixText, label: "app_components_common_prefix_label")
-                    DesignToolboxTextField(text: $configurationModel.suffixText, label: "app_components_textInput_suffix_label")
-
-                    DesignToolboxTextField(text: $configurationModel.helperLinkText, label: "app_components_textInput_helperLink_label")
                 }
             }
         }
     }
 }
 
-extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
+extension OUDSPasswordInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
 
-    nonisolated(unsafe) public static var allCases: [OUDSTextInput.Status] =
+    nonisolated(unsafe) public static var allCases: [OUDSPasswordInput.Status] =
         [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading, .readOnly, .disabled]
 
     public var description: String {
