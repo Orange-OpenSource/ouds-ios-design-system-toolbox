@@ -141,14 +141,13 @@ final class BulletListConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         code =
-        """
-        OUDSBulletList(\(typePattern)\(textStylePattern)\(isBoldPattern))
-        \(itemsPattern)
-        """
+            """
+            OUDSBulletList(\(typePattern)\(textStylePattern)\(isBoldPattern))
+            \(itemsPattern)
+            """
     }
     // swiftlint:enable line_length
 }
-
 
 // MARK: - BulletList Configuration View
 
@@ -195,7 +194,7 @@ struct BulletListConfigurationView: View {
 enum BulletListLevelCount: CaseIterable, CustomStringConvertible {
     case one, two, three
 
-    public var description: String {
+    var description: String {
         switch self {
         case .one:
             "app_components_bulletList_oneLevel_label"
@@ -274,7 +273,7 @@ enum BulletListUnorderedIcon: CaseIterable, CustomStringConvertible {
     case free
 
     // Note: Not localized because it is a technical name
-    public var description: String {
+    var description: String {
         switch self {
         case .bullet:
             "Bullet"

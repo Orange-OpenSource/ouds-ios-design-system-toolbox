@@ -35,7 +35,7 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
         for type in BulletListType.allCases {
             for textType in BulletListTextStyle.allCases {
                 for levelCount in BulletListLevelCount.allCases {
-                    
+
                     for isBold in [true, false] {
                         let model = BulletListConfigurationModel()
                         model.levelCount = .three
@@ -43,7 +43,7 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
                         model.isBold = isBold
                         model.bulletType = type
                         model.levelCount = levelCount
-                        
+
                         switch type {
                         case .unordered:
                             testUnorderedBulletList(theme: theme,
@@ -59,7 +59,7 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
             }
         }
     }
-    
+
     /// This function tests Unordered Bullet List with some additionnal parameter like bullet type,
     /// and flag to know if bullet is branded.
     ///
@@ -68,21 +68,20 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - model: The model contains sommon common element of configuration
     @MainActor private func testUnorderedBulletList(theme: OUDSTheme,
-                                            interfaceStyle: UIUserInterfaceStyle,
+                                                    interfaceStyle: UIUserInterfaceStyle,
                                                     model: BulletListConfigurationModel)
     {
         for icon in BulletListUnorderedIcon.allCases {
             for isBranded in [true, false] {
                 model.unorderedBulletIcon = icon
                 model.unorderedBulletIsBranded = isBranded
-                
+
                 testBulletList(theme: theme,
                                interfaceStyle: interfaceStyle,
                                model: model)
             }
         }
     }
-
 
     /// This function tests BulletList according to all parameters of the configutation available on a `OUDSBulletList`
     /// for the given theme and color schemes.
@@ -113,7 +112,7 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
         let unorderedBulletTypePattern = model.bulletType == .unordered ? bulletTypePattern + brandedBulletPattern : ""
         let textStylePattern = model.textStyle.description
         let isBoldPattern = model.isBold ? "Bold" : ""
-        
+
         let name = "\(typePattern)\(unorderedBulletTypePattern)_\(textStylePattern)_\(isBoldPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name

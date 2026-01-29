@@ -46,7 +46,7 @@ struct BulletListDemo: View {
                        textStyle: configurationModel.textStyle,
                        isBold: configurationModel.isBold,
                        items: items)
-        .padding(.all, theme.spaces.fixedMedium)
+            .padding(.all, theme.spaces.fixedMedium)
     }
 
     @OUDSBulletListItemBuilder
