@@ -1016,18 +1016,18 @@
 		FCB8B1952F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1942F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift */; };
 		FCB8B1972F27981700ADBAB8 /* OrangeBusinessToolsTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1962F27981700ADBAB8 /* OrangeBusinessToolsTheme+BulletListSnapshotsTests.swift */; };
 		FCB8B19A2F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1982F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift */; };
-		FCEEB18B2F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BuletListConfigurationView.swift */; };
-		FCEEB18C2F1A877300C9BD46 /* BuletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BuletListPage.swift */; };
-		FCEEB18D2F1A877300C9BD46 /* BuletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BuletListElement.swift */; };
-		FCEEB18E2F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BuletListConfigurationView.swift */; };
-		FCEEB18F2F1A877300C9BD46 /* BuletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BuletListPage.swift */; };
-		FCEEB1902F1A877300C9BD46 /* BuletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BuletListElement.swift */; };
-		FCEEB1912F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BuletListConfigurationView.swift */; };
-		FCEEB1922F1A877300C9BD46 /* BuletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BuletListPage.swift */; };
-		FCEEB1932F1A877300C9BD46 /* BuletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BuletListElement.swift */; };
-		FCEEB1942F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BuletListConfigurationView.swift */; };
-		FCEEB1952F1A877300C9BD46 /* BuletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BuletListPage.swift */; };
-		FCEEB1962F1A877300C9BD46 /* BuletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BuletListElement.swift */; };
+		FCEEB18B2F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
+		FCEEB18C2F1A877300C9BD46 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
+		FCEEB18D2F1A877300C9BD46 /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
+		FCEEB18E2F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
+		FCEEB18F2F1A877300C9BD46 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
+		FCEEB1902F1A877300C9BD46 /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
+		FCEEB1912F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
+		FCEEB1922F1A877300C9BD46 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
+		FCEEB1932F1A877300C9BD46 /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
+		FCEEB1942F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
+		FCEEB1952F1A877300C9BD46 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
+		FCEEB1962F1A877300C9BD46 /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1437,9 +1437,9 @@
 		FCB8B1942F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FCB8B1962F27981700ADBAB8 /* OrangeBusinessToolsTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeBusinessToolsTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FCB8B1982F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
-		FCEEB1872F1A877300C9BD46 /* BuletListConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuletListConfigurationView.swift; sourceTree = "<group>"; };
-		FCEEB1882F1A877300C9BD46 /* BuletListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuletListElement.swift; sourceTree = "<group>"; };
-		FCEEB1892F1A877300C9BD46 /* BuletListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuletListPage.swift; sourceTree = "<group>"; };
+		FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListConfigurationView.swift; sourceTree = "<group>"; };
+		FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListElement.swift; sourceTree = "<group>"; };
+		FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3206,9 +3206,9 @@
 		FCEEB1862F1A877300C9BD46 /* BulletList */ = {
 			isa = PBXGroup;
 			children = (
-				FCEEB1872F1A877300C9BD46 /* BuletListConfigurationView.swift */,
-				FCEEB1882F1A877300C9BD46 /* BuletListElement.swift */,
-				FCEEB1892F1A877300C9BD46 /* BuletListPage.swift */,
+				FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */,
+				FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */,
+				FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */,
 			);
 			path = BulletList;
 			sourceTree = "<group>";
@@ -3719,9 +3719,9 @@
 				0786A9DE2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
 				076227652DA90C65009C3632 /* DividerElements.swift in Sources */,
 				95CE054A2EC33D6A00ACE41C /* NamedSize.swift in Sources */,
-				FCEEB1942F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */,
-				FCEEB1952F1A877300C9BD46 /* BuletListPage.swift in Sources */,
-				FCEEB1962F1A877300C9BD46 /* BuletListElement.swift in Sources */,
+				FCEEB1942F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */,
+				FCEEB1952F1A877300C9BD46 /* BulletListPage.swift in Sources */,
+				FCEEB1962F1A877300C9BD46 /* BulletListElement.swift in Sources */,
 				51A217702E325F7F00562BE0 /* WireframeTheme+SwitchSnapshotsTests.swift in Sources */,
 				950288A12EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */,
 				076227662DA90C65009C3632 /* DividerPage.swift in Sources */,
@@ -3943,9 +3943,9 @@
 				075114DB2CB7D28D00B8B759 /* SizeTokenElement.swift in Sources */,
 				0765B4A02CC15BBC00E69359 /* NamedColor+Content.swift in Sources */,
 				0765B49A2CC15ACE00E69359 /* NamedColor+Border.swift in Sources */,
-				FCEEB18B2F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */,
-				FCEEB18C2F1A877300C9BD46 /* BuletListPage.swift in Sources */,
-				FCEEB18D2F1A877300C9BD46 /* BuletListElement.swift in Sources */,
+				FCEEB18B2F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */,
+				FCEEB18C2F1A877300C9BD46 /* BulletListPage.swift in Sources */,
+				FCEEB18D2F1A877300C9BD46 /* BulletListElement.swift in Sources */,
 				07B3CCB62D40F37000DBB10A /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				51952A742D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */,
@@ -4246,9 +4246,9 @@
 				9589F0812EB7D67B00134487 /* SizeTokenElement.swift in Sources */,
 				9589F0822EB7D67B00134487 /* NamedColor+Content.swift in Sources */,
 				9589F0832EB7D67B00134487 /* NamedColor+Border.swift in Sources */,
-				FCEEB1912F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */,
-				FCEEB1922F1A877300C9BD46 /* BuletListPage.swift in Sources */,
-				FCEEB1932F1A877300C9BD46 /* BuletListElement.swift in Sources */,
+				FCEEB1912F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */,
+				FCEEB1922F1A877300C9BD46 /* BulletListPage.swift in Sources */,
+				FCEEB1932F1A877300C9BD46 /* BulletListElement.swift in Sources */,
 				9589F0842EB7D67B00134487 /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				9589F0852EB7D67B00134487 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				9589F0862EB7D67B00134487 /* Bundle+extension.swift in Sources */,
@@ -4421,9 +4421,9 @@
 				9589F15B2EB7D67E00134487 /* SizeTokenElement.swift in Sources */,
 				9589F15C2EB7D67E00134487 /* NamedColor+Content.swift in Sources */,
 				9589F15D2EB7D67E00134487 /* NamedColor+Border.swift in Sources */,
-				FCEEB18E2F1A877300C9BD46 /* BuletListConfigurationView.swift in Sources */,
-				FCEEB18F2F1A877300C9BD46 /* BuletListPage.swift in Sources */,
-				FCEEB1902F1A877300C9BD46 /* BuletListElement.swift in Sources */,
+				FCEEB18E2F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */,
+				FCEEB18F2F1A877300C9BD46 /* BulletListPage.swift in Sources */,
+				FCEEB1902F1A877300C9BD46 /* BulletListElement.swift in Sources */,
 				9589F15E2EB7D67E00134487 /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				9589F15F2EB7D67E00134487 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				9589F1602EB7D67E00134487 /* Bundle+extension.swift in Sources */,

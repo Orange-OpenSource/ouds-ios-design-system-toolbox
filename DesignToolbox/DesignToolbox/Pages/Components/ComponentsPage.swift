@@ -17,7 +17,7 @@ struct ComponentsPage: View {
 
     var componentElements: [DesignToolboxElement] = [
         BadgeElement(),
-        BulletListlement(),
+        BulletListElement(),
         ButtonElement(),
         ColoredSurfaceElement(),
         CheckboxElements(),

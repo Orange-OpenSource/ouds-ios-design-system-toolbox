@@ -112,8 +112,9 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
         let unorderedBulletTypePattern = model.bulletType == .unordered ? bulletTypePattern + brandedBulletPattern : ""
         let textStylePattern = model.textStyle.description
         let isBoldPattern = model.isBold ? "Bold" : ""
+        let countPattern = "Count-\(model.levelCount)"
 
-        let name = "\(typePattern)\(unorderedBulletTypePattern)_\(textStylePattern)_\(isBoldPattern)"
+        let name = "\(typePattern)\(unorderedBulletTypePattern)_\(textStylePattern)_\(isBoldPattern)_\(countPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
