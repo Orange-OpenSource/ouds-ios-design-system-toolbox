@@ -38,7 +38,7 @@ open class DividerSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests divider according to all parameters of the configutation available on a `OUDSDivider`
+    /// This function tests divider according to all parameters of the configuration available on a `OUDSDivider`
     /// for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters

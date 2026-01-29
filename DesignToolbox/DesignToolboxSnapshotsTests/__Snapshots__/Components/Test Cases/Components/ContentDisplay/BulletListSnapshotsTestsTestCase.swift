@@ -25,8 +25,8 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
 
     /// This function tests all BulletList configuration for the given theme and color schemes on a standard surface.
     ///
-    /// It iterates through all elments of configuraiton `BulletListType`, `BulletListTextStyle`, `isBold` flag.
-    /// For unordered list, additionnal elements are iterated in `testUnorderedBulletList`
+    /// It iterates through all elements of configuration `BulletListType`, `BulletListTextStyle`, `isBold` flag.
+    /// For unordered list, additional elements are iterated in `testUnorderedBulletList`
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`).
@@ -38,7 +38,6 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
 
                     for isBold in [true, false] {
                         let model = BulletListConfigurationModel()
-                        model.levelCount = .three
                         model.textStyle = textType
                         model.isBold = isBold
                         model.bulletType = type
@@ -60,7 +59,7 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests Unordered Bullet List with some additionnal parameter like bullet type,
+    /// This function tests Unordered Bullet List with some additional parameter like bullet type,
     /// and flag to know if bullet is branded.
     ///
     /// - Parameters:
@@ -83,7 +82,7 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests BulletList according to all parameters of the configutation available on a `OUDSBulletList`
+    /// This function tests BulletList according to all parameters of the configuration available on a `OUDSBulletList`
     /// for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
