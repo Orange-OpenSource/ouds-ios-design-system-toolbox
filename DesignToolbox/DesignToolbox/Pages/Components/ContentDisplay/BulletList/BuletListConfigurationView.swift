@@ -71,11 +71,11 @@ final class BulletListConfigurationModel: ComponentConfiguration {
     private var iconPattern: String {
         switch unorderedBulletIcon {
         case .bullet:
-        ".bullet"
+            ".bullet"
         case .tick:
-        ".tick"
+            ".tick"
         case .free:
-        ".free(\(Image.defaultImageSample()))"
+            ".free(\(Image.defaultImageSample()))"
         }
     }
 
@@ -161,23 +161,22 @@ struct BulletListConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-
                 OUDSChipPicker(title: "app_components_common_type_label",
                                selection: $configurationModel.bulletType,
                                chips: BulletListType.chips)
-                
+
                 if configurationModel.bulletType == .unordered {
                     OUDSChipPicker(title: "app_components_bulletList_unorderedIcon_label",
                                    selection: $configurationModel.unorderedBulletIcon,
                                    chips: BulletListUnorderedIcon.chips)
-                    
+
                     OUDSSwitchItem("app_components_bulletList_unorderedIconBrandColor_label", isOn: $configurationModel.unorderedBulletIsBranded)
                 }
 
                 OUDSChipPicker(title: "app_components_bulletList_textStyle_label",
                                selection: $configurationModel.textStyle,
                                chips: OUDSBulletList.TextStyle.chips)
-                
+
                 OUDSSwitchItem("app_components_bulletList_bold_label", isOn: $configurationModel.isBold)
 
                 OUDSChipPicker(title: "app_components_bulletList_levelCount_label",
@@ -195,7 +194,7 @@ struct BulletListConfigurationView: View {
 // MARK: Bullet List Nested Level extension
 enum BulletListLevelCount: CaseIterable, CustomStringConvertible {
     case one, two, three
-    
+
     public var description: String {
         switch self {
         case .one:
@@ -277,12 +276,12 @@ enum BulletListUnorderedIcon: CaseIterable, CustomStringConvertible {
     // Note: Not localized because it is a technical name
     public var description: String {
         switch self {
-            case .bullet:
-                "Bullet"
-            case .tick:
-                "Tick"
-            case .free:
-                "Free"
+        case .bullet:
+            "Bullet"
+        case .tick:
+            "Tick"
+        case .free:
+            "Free"
         }
     }
 
