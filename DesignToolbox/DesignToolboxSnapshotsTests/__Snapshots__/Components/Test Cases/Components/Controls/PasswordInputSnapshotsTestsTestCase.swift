@@ -82,7 +82,7 @@ open class PasswordInputSnapshotsTestsTestCase: XCTestCase {
         // Create a unique snapshot name based on the current configuration :
         // test<testType>_<themeName>_<colorScheme>.<roundedPattern><stylePattern><statusPattern>
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let lockIconPattern = lockIcon ? "_LockIcon" : ""
+        let lockIconPattern = lockIcon ? "LockIcon" : ""
         let outlinedPattern = outlined ? "_Outlined" : ""
         let statusPattern = status.technicalDescription.contains("error") ? "error" : status.technicalDescription
 
@@ -128,5 +128,6 @@ struct TestPasswordInputView: View {
                               isOutlined: outlined,
                               status: status)
         }
+        .padding()
     }
 }
