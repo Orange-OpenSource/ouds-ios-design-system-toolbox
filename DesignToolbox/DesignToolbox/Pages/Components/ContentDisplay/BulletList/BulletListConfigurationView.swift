@@ -56,7 +56,7 @@ final class BulletListConfigurationModel: ComponentConfiguration {
         levelCount = .one
         bulletType = .unordered
         unorderedBulletIcon = .bullet
-        unorderedBulletIsBranded = false
+        unorderedBulletIsBranded = true
         textStyle = .bodyLarge
         isBold = true
 
