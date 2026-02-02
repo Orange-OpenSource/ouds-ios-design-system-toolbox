@@ -40,7 +40,7 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var leadingIcon: Bool {
+    @Published var lockIcon: Bool {
         didSet { updateCode() }
     }
 
@@ -67,7 +67,7 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var status: OUDSPasswordInput.Status {
+    @Published var status: OUDSTextInput.Status {
         didSet { updateCode() }
     }
 
@@ -79,7 +79,7 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         errorText = defaultErrorText
         placeholderText = defaultPlaceholderText
         prefixText = ""
-        leadingIcon = false
+        lockIcon = false
         text = ""
         isOutlined = false
         constrainedMaxWidth = false
@@ -95,7 +95,7 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         // swiftlint:disable line_length
         code =
             """
-            OUDSPasswordInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(leadingIconPattern)\(helperTextPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
+            OUDSPasswordInput(\(labelPattern)\(passwordPattern)\(placeholderPattern)\(prefixPattern)\(lockIconPattern)\(helperTextPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
             """
         // swiftlint:enable line_length
     }
@@ -104,8 +104,8 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         "label: \"\(label)\""
     }
 
-    private var textPattern: String {
-        ", text: $text"
+    private var passwordPattern: String {
+        ", password: $password"
     }
 
     private var prefixPattern: String {
@@ -116,8 +116,8 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         placeholderText.isEmpty ? "" : ", placeholder: \"\(placeholderText)\""
     }
 
-    private var leadingIconPattern: String {
-        leadingIcon ? ", hasLeadingIcon: true" : ""
+    private var lockIconPattern: String {
+        lockIcon ? ", lockIcon: true" : ""
     }
 
     private var helperTextPattern: String {
@@ -152,11 +152,11 @@ struct PasswordInputConfigurationView: View {
 
                 OUDSSwitchItem("app_components_common_constrainedMaxWidth_label", isOn: $configurationModel.constrainedMaxWidth)
 
-                OUDSSwitchItem("app_components_common_leadingIcon_label", isOn: $configurationModel.leadingIcon)
+                OUDSSwitchItem("app_components_passwordInput_lockIcon_label", isOn: $configurationModel.lockIcon)
 
                 OUDSChipPicker(title: "app_components_common_status_label",
                                selection: $configurationModel.status,
-                               chips: OUDSPasswordInput.Status.chips)
+                               chips: OUDSTextInput.Status.chips)
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_label")
@@ -173,49 +173,5 @@ struct PasswordInputConfigurationView: View {
                 }
             }
         }
-    }
-}
-
-extension OUDSPasswordInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
-
-    nonisolated(unsafe) public static var allCases: [OUDSPasswordInput.Status] =
-        [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading, .readOnly, .disabled]
-
-    public var description: String {
-        switch self {
-        case .enabled:
-            String(localized: "app_common_enabled_label")
-        case .error:
-            String(localized: "app_components_common_error_label")
-        case .loading:
-            String(localized: "app_components_common_loader_label")
-        case .readOnly:
-            String(localized: "app_components_common_readOnly_label")
-        case .disabled:
-            String(localized: "app_common_disabled_label")
-        }
-    }
-
-    public var technicalDescription: String {
-        if self == .readOnly {
-            return ".readOnly"
-        }
-        if case let .error(message) = self {
-            return ".error(message: \"\(message)\")"
-        } else {
-            return ".\(description.lowercased())"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(description)
     }
 }

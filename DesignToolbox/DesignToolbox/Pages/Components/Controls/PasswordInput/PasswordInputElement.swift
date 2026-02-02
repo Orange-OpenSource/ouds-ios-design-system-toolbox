@@ -32,11 +32,11 @@ struct PasswordInputElement: DesignToolboxElement {
 
 private struct PasswordInputIllustration: View {
 
-    @State private var text: String = ""
+    @State private var password: String = ""
 
     var body: some View {
-        OUDSPasswordInput(label: "Label",
-                      text: $text,
-                      helperText: String(localized: "app_components_passwordInputHelperText_label"))
+        OUDSPasswordInput(label: "app_components_passwordInput_password_label".localized(),
+                          password: $password,
+                          helperText: String(localized: "app_components_passwordInputHelperText_label"))
     }
 }

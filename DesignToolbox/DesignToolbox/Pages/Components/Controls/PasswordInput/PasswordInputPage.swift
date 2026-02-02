@@ -47,10 +47,10 @@ struct PasswordInputDemo: View {
 
     var body: some View {
         OUDSPasswordInput(label: configurationModel.label,
-                          text: $configurationModel.text,
+                          password: $configurationModel.text,
                           placeholder: configurationModel.placeholderText,
                           prefix: configurationModel.prefixText,
-                          hasLeadingIcon: configurationModel.leadingIcon,
+                          lockIcon: configurationModel.lockIcon,
                           helperText: configurationModel.helperText,
                           isOutlined: configurationModel.isOutlined,
                           constrainedMaxWidth: configurationModel.constrainedMaxWidth,
