@@ -177,20 +177,14 @@ the online version based on [_GitHub Pages_](https://pages.github.com/), this ve
 
 ### Illustrations
 
-The illustrations in use for the documentation is versioned in the [Swift Package project](https://github.com/Orange-OpenSource/ouds-ios).
-However it is this very project which updates it using UI tests.
+The illustrations in use for the documentation are versioned in the [Swift Package project](https://github.com/Orange-OpenSource/ouds-ios).
+They are made manulay with iPhone 17 Pro, in english, portrait, light mode without icnreased size text.
+Because 4 themes are available with dedicated fonts and tokens, it was not possible to implement and maintain a test suite with one codebase for all cases.
 
 To update the illustrations, you have to:
-- select the device from Xcode (i.e. *iPhone 12 Pro*) (see details in `AppTestCase+Dimensions.swift` file)
-- keep the device in portrait mode
-- check the color scheme in use you need (light or dark mode)
-- run the debug app: this is the app wich will be compiled and used for tests and screenshots
-- select the theme you want from the app; your choice will be kept in user defaults
-- then run the UI tests (*DesignToolboxUITests* scheme), all *DocumentationScreenshots* test cases
-
-Xcode will then run the tests and put the illustrations, here cropped screenshots of the app in selected device, in attachments of tests.
-
-Then copy/paste these files in the location you want for the Swift Package library. having a local reference of it in your Xcode is more comfortable.
+- have such iPhone (e.g. simulator or real device)
+- configure it with the theme you want
+- make screenshots and crop them ten
 
 Repeat this process for the other themes if needed.
 
