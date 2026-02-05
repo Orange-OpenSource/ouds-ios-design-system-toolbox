@@ -434,26 +434,26 @@
         }
       }
     },
-    "app_about_details_themeOrangeBusinessToolsBrandVersion" : {
-      "comment" : "About screen - Tokens library version (Orange Business Tools)",
+    "app_about_details_themeOrangeCompactBrandVersion" : {
+      "comment" : "About screen - Tokens library version (Orange Compact)",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة الرموز المميزة للعلامة التجارية Orange Business Tools:"
+            "value" : "إصدار مكتبة الرموز المميزة للعلامة التجارية Orange Compact :"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Orange Business Tools brand tokens library version:"
+            "value" : "Orange Compact brand tokens library version:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens brand Orange Business Tools :"
+            "value" : "Version des tokens brand Orange Compact :"
           }
         }
       }
@@ -5439,7 +5439,8 @@
     "Orange" : {
       "shouldTranslate" : false
     },
-    "Orange Business Tools" : {
+    "Orange Compact" : {
+      "extractionState" : "manual",
       "shouldTranslate" : false
     }
   },

@@ -25,7 +25,7 @@ import SwiftUI
         OrangeTheme(),
         SoshTheme(),
         WireframeTheme(),
-        OrangeBusinessToolsTheme(),
+        OrangeCompactTheme(),
     ]
 
     var body: some Scene {
