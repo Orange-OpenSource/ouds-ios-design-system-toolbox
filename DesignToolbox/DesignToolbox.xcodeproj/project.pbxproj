@@ -5328,7 +5328,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git";
 			requirement = {
-				branch = "refactor/use-OUDS-v1.2-beta.1";
+				branch = develop;
 				kind = branch;
 			};
 		};
@@ -5360,7 +5360,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1292-change-orange-business-tools-name-to-orange-compact";
+				branch = develop;
 				kind = branch;
 			};
 		};

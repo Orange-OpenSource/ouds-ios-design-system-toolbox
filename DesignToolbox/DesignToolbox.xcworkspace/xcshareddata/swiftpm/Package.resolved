@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git",
       "state" : {
-        "branch" : "refactor/use-OUDS-v1.2-beta.1",
-        "revision" : "10728dbc1902b9f1041ae08fd578dff3f89b1873"
+        "branch" : "develop",
+        "revision" : "e4a5e8e598361c0f8e30fb6d3deb680c4a065b2b"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1292-change-orange-business-tools-name-to-orange-compact",
-        "revision" : "c3451b2a980cc709aa10faf8b5b2f1135dc8c58e"
+        "branch" : "develop",
+        "revision" : "77463e0dde76731438ca819aaa043517688ef1f6"
       }
     },
     {
