@@ -48,6 +48,7 @@ struct PasswordInputDemo: View {
     var body: some View {
         OUDSPasswordInput(label: configurationModel.label,
                           password: $configurationModel.text,
+                          isHiddenPassword: $configurationModel.isHiddenPassword,
                           placeholder: configurationModel.placeholderText,
                           prefix: configurationModel.prefixText,
                           lockIcon: configurationModel.lockIcon,

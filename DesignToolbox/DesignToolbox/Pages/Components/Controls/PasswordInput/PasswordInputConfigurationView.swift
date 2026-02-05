@@ -71,6 +71,10 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var isHiddenPassword: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -84,6 +88,7 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         isOutlined = false
         constrainedMaxWidth = false
         status = .enabled
+        isHiddenPassword = true
         super.init()
     }
 
@@ -95,7 +100,7 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         // swiftlint:disable line_length
         code =
             """
-            OUDSPasswordInput(\(labelPattern)\(passwordPattern)\(placeholderPattern)\(prefixPattern)\(lockIconPattern)\(helperTextPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
+            OUDSPasswordInput(\(labelPattern)\(passwordPattern)\(isHiddenPasswordPattern)\(placeholderPattern)\(prefixPattern)\(lockIconPattern)\(helperTextPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
             """
         // swiftlint:enable line_length
     }
@@ -106,6 +111,10 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
 
     private var passwordPattern: String {
         ", password: $password"
+    }
+
+    private var isHiddenPasswordPattern: String {
+        !isHiddenPassword ? ", isHiddenPassword: false" : ""
     }
 
     private var prefixPattern: String {
@@ -148,6 +157,8 @@ struct PasswordInputConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                OUDSSwitchItem("app_components_passwordInput_hiddenPassword__label", isOn: $configurationModel.isHiddenPassword)
+
                 OUDSSwitchItem("app_components_common_outlined_label", isOn: $configurationModel.isOutlined)
 
                 OUDSSwitchItem("app_components_common_constrainedMaxWidth_label", isOn: $configurationModel.constrainedMaxWidth)

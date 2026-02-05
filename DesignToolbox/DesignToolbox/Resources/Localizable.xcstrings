@@ -3338,6 +3338,30 @@
         }
       }
     },
+    "app_components_passwordInput_hiddenPassword__label" : {
+      "comment" : "Component - Password Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Hidden password"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden password"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Hidden password"
+          }
+        }
+      }
+    },
     "app_components_passwordInput_label" : {
       "comment" : "Component - Password Input",
       "extractionState" : "manual",
