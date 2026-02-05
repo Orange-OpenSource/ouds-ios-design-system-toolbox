@@ -20,8 +20,8 @@ extension OUDSTheme {
         if self is OrangeTheme {
             return "Orange"
         }
-        if self is OrangeBusinessToolsTheme {
-            return "Orange Business Tools"
+        if self is OrangeCompactTheme {
+            return "Orange Compact"
         }
         if self is SoshTheme {
             return "Sosh"
