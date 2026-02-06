@@ -1046,6 +1046,18 @@
 		FCF02BB62F30EC4B00F2013F /* SoshTheme+PasswordInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF02BB52F30EC4B00F2013F /* SoshTheme+PasswordInputSnapshotsTests.swift */; };
 		FCF02BB82F30EC7700F2013F /* OrangeTheme+PasswordInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF02BB72F30EC7700F2013F /* OrangeTheme+PasswordInputSnapshotsTests.swift */; };
 		FCF02BBC2F30ECAB00F2013F /* WireframeTheme+PasswordInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF02BBB2F30ECAB00F2013F /* WireframeTheme+PasswordInputSnapshotsTests.swift */; };
+		FCEAC3D82F35055C009D70DA /* AlertMessageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC3D62F35055C009D70DA /* AlertMessageElement.swift */; };
+		FCEAC3D92F35055C009D70DA /* AlertMessageConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC3D52F35055C009D70DA /* AlertMessageConfigurationView.swift */; };
+		FCEAC3DA2F35055C009D70DA /* AlertMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC3D72F35055C009D70DA /* AlertMessagePage.swift */; };
+		FCEAC3DB2F35055C009D70DA /* AlertMessageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC3D62F35055C009D70DA /* AlertMessageElement.swift */; };
+		FCEAC3DC2F35055C009D70DA /* AlertMessageConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC3D52F35055C009D70DA /* AlertMessageConfigurationView.swift */; };
+		FCEAC3DD2F35055C009D70DA /* AlertMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC3D72F35055C009D70DA /* AlertMessagePage.swift */; };
+		FCEAC3DE2F35055C009D70DA /* AlertMessageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC3D62F35055C009D70DA /* AlertMessageElement.swift */; };
+		FCEAC3DF2F35055C009D70DA /* AlertMessageConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC3D52F35055C009D70DA /* AlertMessageConfigurationView.swift */; };
+		FCEAC3E02F35055C009D70DA /* AlertMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC3D72F35055C009D70DA /* AlertMessagePage.swift */; };
+		FCEAC3E12F35055C009D70DA /* AlertMessageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC3D62F35055C009D70DA /* AlertMessageElement.swift */; };
+		FCEAC3E22F35055C009D70DA /* AlertMessageConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC3D52F35055C009D70DA /* AlertMessageConfigurationView.swift */; };
+		FCEAC3E32F35055C009D70DA /* AlertMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC3D72F35055C009D70DA /* AlertMessagePage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1468,6 +1480,9 @@
 		FCF02BB52F30EC4B00F2013F /* SoshTheme+PasswordInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+PasswordInputSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FCF02BB72F30EC7700F2013F /* OrangeTheme+PasswordInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+PasswordInputSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FCF02BBB2F30ECAB00F2013F /* WireframeTheme+PasswordInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+PasswordInputSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FCEAC3D52F35055C009D70DA /* AlertMessageConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageConfigurationView.swift; sourceTree = "<group>"; };
+		FCEAC3D62F35055C009D70DA /* AlertMessageElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageElement.swift; sourceTree = "<group>"; };
+		FCEAC3D72F35055C009D70DA /* AlertMessagePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessagePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2251,6 +2266,7 @@
 				51F49C822E57435900D50BC4 /* Actions */,
 				FCEEB18A2F1A877300C9BD46 /* ContentDisplay */,
 				51F49C832E57437E00D50BC4 /* Controls */,
+				FCEAC3D32F35052C009D70DA /* Dialog */,
 				51F49C842E5743B800D50BC4 /* Indicators */,
 				51F49C852E5743D900D50BC4 /* Layouts */,
 				51F49C862E5743F600D50BC4 /* Navigations */,
@@ -3289,6 +3305,22 @@
 			children = (
 			);
 			name = "Recovered References";
+		FCEAC3D32F35052C009D70DA /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				FCEAC3D42F350538009D70DA /* Alert */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
+		FCEAC3D42F350538009D70DA /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				FCEAC3D52F35055C009D70DA /* AlertMessageConfigurationView.swift */,
+				FCEAC3D62F35055C009D70DA /* AlertMessageElement.swift */,
+				FCEAC3D72F35055C009D70DA /* AlertMessagePage.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3863,6 +3895,9 @@
 				FCA8491D2E9FF35700DBCE76 /* TagElements.swift in Sources */,
 				51A217812E325FE600562BE0 /* WireframeTheme+TokensElevationSnapshotsTests.swift in Sources */,
 				515EE98F2E21329B00A60E96 /* ChipElements.swift in Sources */,
+				FCEAC3DB2F35055C009D70DA /* AlertMessageElement.swift in Sources */,
+				FCEAC3DC2F35055C009D70DA /* AlertMessageConfigurationView.swift in Sources */,
+				FCEAC3DD2F35055C009D70DA /* AlertMessagePage.swift in Sources */,
 				51417C1F2E1BF4FB000266C8 /* TokensElevationSnapshotsTestsTestCase.swift in Sources */,
 				51952A832D3FA1AC0068B807 /* OrangeTheme+TokensSizeSnapshotsTests.swift in Sources */,
 				51952A712D3F9D720068B807 /* DesignToolboxTokenIllustration.swift in Sources */,
@@ -4043,6 +4078,9 @@
 				953DC1602ED0995600D14D44 /* TabBarElement.swift in Sources */,
 				953DC1612ED0995600D14D44 /* TabBarPage.swift in Sources */,
 				5122E02A2D65E7AC00CD2857 /* String+extension.swift in Sources */,
+				FCEAC3D82F35055C009D70DA /* AlertMessageElement.swift in Sources */,
+				FCEAC3D92F35055C009D70DA /* AlertMessageConfigurationView.swift in Sources */,
+				FCEAC3DA2F35055C009D70DA /* AlertMessagePage.swift in Sources */,
 				95CE05662EC3401800ACE41C /* ElevationIllustration.swift in Sources */,
 				07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */,
 				07CF427F2CA41325000BD03E /* OpacityTokenElement.swift in Sources */,
@@ -4350,6 +4388,9 @@
 				953DC1572ED0995600D14D44 /* TabBarElement.swift in Sources */,
 				953DC1582ED0995600D14D44 /* TabBarPage.swift in Sources */,
 				9589F0912EB7D67B00134487 /* String+extension.swift in Sources */,
+				FCEAC3DE2F35055C009D70DA /* AlertMessageElement.swift in Sources */,
+				FCEAC3DF2F35055C009D70DA /* AlertMessageConfigurationView.swift in Sources */,
+				FCEAC3E02F35055C009D70DA /* AlertMessagePage.swift in Sources */,
 				95CE05632EC3401800ACE41C /* ElevationIllustration.swift in Sources */,
 				9589F0922EB7D67B00134487 /* ThemeSelection.swift in Sources */,
 				9589F0932EB7D67B00134487 /* OpacityTokenElement.swift in Sources */,
@@ -4528,6 +4569,9 @@
 				953DC15A2ED0995600D14D44 /* TabBarElement.swift in Sources */,
 				953DC15B2ED0995600D14D44 /* TabBarPage.swift in Sources */,
 				9589F16B2EB7D67E00134487 /* String+extension.swift in Sources */,
+				FCEAC3E12F35055C009D70DA /* AlertMessageElement.swift in Sources */,
+				FCEAC3E22F35055C009D70DA /* AlertMessageConfigurationView.swift in Sources */,
+				FCEAC3E32F35055C009D70DA /* AlertMessagePage.swift in Sources */,
 				95CE05652EC3401800ACE41C /* ElevationIllustration.swift in Sources */,
 				9589F16C2EB7D67E00134487 /* ThemeSelection.swift in Sources */,
 				9589F16D2EB7D67E00134487 /* OpacityTokenElement.swift in Sources */,
