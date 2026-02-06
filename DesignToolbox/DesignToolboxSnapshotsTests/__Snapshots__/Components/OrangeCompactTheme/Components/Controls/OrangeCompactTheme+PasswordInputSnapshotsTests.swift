@@ -18,25 +18,25 @@ import SwiftUI
 // swiftlint:disable type_name
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSPasswordInput` for each parameter for `OrangeBusinessToolsTheme`.
-final class OrangeBusinessToolsThemePasswordInputSnapshotsTests: PasswordInputSnapshotsTestsTestCase {
+/// Tests the UI rendering of the `OUDSPasswordInput` for each parameter for `OrangeCompactTheme`.
+final class OrangeCompactThemePasswordInputSnapshotsTests: PasswordInputSnapshotsTestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
     private var theme: OUDSTheme!
     // swiftlint:enable implicitly_unwrapped_optional
 
     override func setUp() {
-        theme = OrangeBusinessToolsTheme()
+        theme = OrangeCompactTheme()
     }
 
-    /// Tests all switches configuration in the `OrangeBusinessToolsTheme` with the `light` color schemes.
-    @MainActor func testAllPasswordInputsOrangeBusinessToolsThemeLight() {
+    /// Tests all switches configuration in the `OrangeCompactTheme` with the `light` color schemes.
+    @MainActor func testAllPasswordInputsOrangeCompactThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllPasswordInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all switches configuration in the `OrangeBusinessToolsTheme` with the `dark` color schemes.
-    @MainActor func testAllPasswordInputsOrangeBusinessToolsThemeDark() {
+    /// Tests all switches configuration in the `OrangeCompactTheme` with the `dark` color schemes.
+    @MainActor func testAllPasswordInputsOrangeCompactThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllPasswordInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
