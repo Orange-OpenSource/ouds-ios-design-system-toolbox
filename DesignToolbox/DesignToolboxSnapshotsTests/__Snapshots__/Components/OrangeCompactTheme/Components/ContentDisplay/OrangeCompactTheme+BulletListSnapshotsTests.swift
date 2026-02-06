@@ -19,25 +19,25 @@ import SwiftUI
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSBulletList` components for each parameter with `OrangeBusinessToolsTheme`
-final class OrangeBusinessToolsThemeBulletListSnapshotsTests: BulletListSnapshotsTestsTestCase {
+/// Tests the UI rendering of the `OUDSBulletList` components for each parameter with `OrangeCompactTheme`
+final class OrangeCompactThemeBulletListSnapshotsTests: BulletListSnapshotsTestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
     private var theme: OUDSTheme!
     // swiftlint:enable implicitly_unwrapped_optional
 
     override func setUp() {
-        theme = OrangeBusinessToolsTheme()
+        theme = OrangeCompactTheme()
     }
 
-    /// Tests all bullet lists configuration in the `OrangeBusinessToolsTheme` with the `light` color schemes.
-    @MainActor func testAllBulletListsOrangeBusinessToolsThemeLight() {
+    /// Tests all bullet lists configuration in the `OrangeCompactTheme` with the `light` color schemes.
+    @MainActor func testAllBulletListsOrangeCompactThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllBulletLists(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all bullet lists configuration in the `OrangeBusinessToolsTheme` with the `dark` color schemes.
-    @MainActor func testAllBulletListsOrangeBusinessToolsThemeDark() {
+    /// Tests all bullet lists configuration in the `OrangeCompactTheme` with the `dark` color schemes.
+    @MainActor func testAllBulletListsOrangeCompactThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllBulletLists(theme: theme, interfaceStyle: interfaceStyle)
     }
