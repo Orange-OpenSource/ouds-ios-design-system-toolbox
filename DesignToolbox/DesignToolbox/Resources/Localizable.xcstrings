@@ -1156,29 +1156,275 @@
         }
       }
     },
-    "app_components_badge_type_label" : {
-      "comment" : "Component - Badge",
+    "app_components_bulletList_bold_label" : {
+      "comment" : "Component - Bullet List",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Type"
+            "value" : "Bold"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Type"
+            "value" : "Bold"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Type"
+            "value" : "Bold"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_bulletList_description_text" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet list هي عنصر واجهة مستخدم يساعد على عرض عناصر نصية فردية ذات صلة مجمعة معًا؛ عادةً ما تبدأ برقم أو برمز نقطي."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet list is a UI element that helps to view in related individual text items grouped together; items usually starting with a number or a bullet."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composant BulletList est un élément d'interface utilisateur qui permet de visualiser des éléments de texte individuels liés, regroupés par ordre alphabétique ; ces éléments commencent généralement par un chiffre ou une puce."
           }
         }
       }
+    },
+    "app_components_bulletList_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet List"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet List"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet List"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_bulletList_levelCount_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عد المستوى"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Level count"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre de niveaux"
+          }
+        }
+      }
+    },
+    "app_components_bulletList_nestedLevel_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Level"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Level"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Level"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_bulletList_oneLevel_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "واحد"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un"
+          }
+        }
+      }
+    },
+    "app_components_bulletList_textStyle_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text style"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text style"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text style"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_bulletList_threeLevel_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ثلاثة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Three"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trois"
+          }
+        }
+      }
+    },
+    "app_components_bulletList_twoLevel_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اثنين"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Two"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deux"
+          }
+        }
+      }
+    },
+    "app_components_bulletList_unorderedIcon_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unordered icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unordered icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unordered icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_bulletList_unorderedIconBrandColor_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brand color icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brand color icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brand color icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_components_button_appearence_notAllowed_text" : {
       "comment" : "Component - Button",
@@ -2213,7 +2459,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Label"
+            "value" : "تسمية"
           }
         },
         "en" : {
@@ -2571,6 +2817,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Text only"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_type_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Type"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type"
           }
         }
       },
