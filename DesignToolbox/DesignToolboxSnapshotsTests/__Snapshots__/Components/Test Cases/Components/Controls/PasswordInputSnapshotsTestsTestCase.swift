@@ -19,6 +19,7 @@ import XCTest
 // MARK: - Test Cases
 
 // swiftlint:disable required_deinit
+
 /// Tests the UI rendering of the `OUDSPasswordInput` for each parameter
 open class PasswordInputSnapshotsTestsTestCase: XCTestCase {
 
@@ -37,7 +38,7 @@ open class PasswordInputSnapshotsTestsTestCase: XCTestCase {
     @MainActor func testAllPasswordInputs(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for outlined in [true, false] {
             for lockIcon in [true, false] {
-                    // Drop the loading status still the progress indicator is done
+                // Drop the loading status still the progress indicator is done
                 for status in OUDSTextInput.Status.allCases where status != .loading {
                     testPasswordInput(theme: theme,
                                       interfaceStyle: interfaceStyle,
@@ -49,7 +50,6 @@ open class PasswordInputSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    // swiftlint:disable function_parameter_count
     /// This function tests some Password input configuration for the given theme and color schemes on a standard surface.
     ///
     /// **/!\ It does not test the hover and pressed states.**
@@ -66,10 +66,10 @@ open class PasswordInputSnapshotsTestsTestCase: XCTestCase {
     ///   - status: the status of the text input
     ///   - outlined: flag to know if outlined
     @MainActor private func testPasswordInput(theme: OUDSTheme,
-                                          interfaceStyle: UIUserInterfaceStyle,
-                                          lockIcon: Bool,
-                                          status: OUDSTextInput.Status,
-                                          outlined: Bool)
+                                              interfaceStyle: UIUserInterfaceStyle,
+                                              lockIcon: Bool,
+                                              status: OUDSTextInput.Status,
+                                              outlined: Bool)
     {
         // Generate the illustration for configuration elements
         let illustration = OUDSThemeableView(theme: theme) {
@@ -94,7 +94,6 @@ open class PasswordInputSnapshotsTestsTestCase: XCTestCase {
                            named: named,
                            testName: testName)
     }
-    // swiftlint:enable function_parameter_count
 }
 
 // swiftlint:enable required_deinit

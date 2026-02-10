@@ -14,7 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: PasswordInput page
+// MARK: Password Input Page
 
 struct PasswordInputPage: View {
 
@@ -33,7 +33,7 @@ struct PasswordInputPage: View {
     }
 }
 
-// MARK: - PasswordInput Demo
+// MARK: - Password Input Demo
 
 struct PasswordInputDemo: View {
 
@@ -41,7 +41,6 @@ struct PasswordInputDemo: View {
 
     @StateObject var configurationModel: PasswordInputConfigurationModel
     @Environment(\.theme) private var theme
-    @Environment(\.openURL) private var openUrl
 
     // MARK: - Body
 
@@ -61,7 +60,7 @@ struct PasswordInputDemo: View {
             .padding(.all, theme.spaces.fixedMedium)
             .onSubmit {
                 if configurationModel.text == "error" {
-                    configurationModel.status = .error(message: "Error text detecte")
+                    configurationModel.status = .error(message: "Error text")
                 }
             }
     }

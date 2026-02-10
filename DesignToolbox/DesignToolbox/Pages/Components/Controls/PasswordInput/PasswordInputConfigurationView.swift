@@ -14,17 +14,17 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: - PasswordInput Configuration Model
+// MARK: - Password Input Configuration Model
 
 /// The model shared between `PasswordInputPageConfiguration` view and `PasswordInputPageComponent` view.
 final class PasswordInputConfigurationModel: ComponentConfiguration {
 
     // MARK: Stored properties
 
-    private let defaultLabel = String(localized: "app_components_common_label_label")
-    private let defaultHelperText = String(localized: "app_components_common_helperText_label")
-    private let defaultPlaceholderText = String(localized: "app_components_common_placeholder_label")
-    private let defaultErrorText = String(localized: "app_components_common_errorMessage_label")
+    private static let defaultLabel = String(localized: "app_components_common_label_label")
+    private static let defaultHelperText = String(localized: "app_components_common_helperText_label")
+    private static let defaultPlaceholderText = String(localized: "app_components_common_placeholder_label")
+    private static let defaultErrorText = String(localized: "app_components_common_errorMessage_label")
 
     // MARK: Published properties
 
@@ -78,10 +78,10 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        label = defaultLabel
-        helperText = defaultHelperText
-        errorText = defaultErrorText
-        placeholderText = defaultPlaceholderText
+        label = Self.defaultLabel
+        helperText = Self.defaultHelperText
+        errorText = Self.defaultErrorText
+        placeholderText = Self.defaultPlaceholderText
         prefixText = ""
         lockIcon = false
         text = ""
@@ -146,7 +146,7 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
     }
 }
 
-// MARK: - PasswordInput Configuration View
+// MARK: - Password Input Configuration View
 
 struct PasswordInputConfigurationView: View {
 

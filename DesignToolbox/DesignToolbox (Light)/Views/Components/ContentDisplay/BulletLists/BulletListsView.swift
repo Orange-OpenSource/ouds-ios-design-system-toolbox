@@ -14,7 +14,6 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// swiftlint:disable accessibility_label_for_image
 // swiftlint:disable closure_body_length
 
 struct BulletListsView: View {
@@ -203,5 +202,4 @@ struct BulletListsView: View {
     }
 }
 
-// swiftlint:enable accessibility_label_for_image
 // swiftlint:enable closure_body_length

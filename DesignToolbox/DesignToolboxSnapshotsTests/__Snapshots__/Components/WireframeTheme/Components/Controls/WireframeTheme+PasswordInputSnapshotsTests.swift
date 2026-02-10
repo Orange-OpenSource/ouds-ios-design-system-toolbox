@@ -15,6 +15,7 @@ import OUDSSwiftUI
 import SwiftUI
 
 // swiftlint:disable required_deinit
+// swiftlint:disable type_name
 
 // MARK: - Test Cases
 
@@ -43,3 +44,4 @@ final class WireframeThemePasswordInputSnapshotsTests: PasswordInputSnapshotsTes
 }
 
 // swiftlint:enable required_deinit
+// swiftlint:enable type_name

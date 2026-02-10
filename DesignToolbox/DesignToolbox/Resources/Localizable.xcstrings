@@ -3327,7 +3327,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Password input is a UI element that allows to securely and confidentially capture a user\\’s password."
+            "value" : "Password input is a UI element that allows to securely and confidentially capture a user's password."
           }
         },
         "fr" : {
@@ -3344,7 +3344,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Hidden password"
           }
         },
@@ -3356,7 +3356,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Hidden password"
           }
         }
