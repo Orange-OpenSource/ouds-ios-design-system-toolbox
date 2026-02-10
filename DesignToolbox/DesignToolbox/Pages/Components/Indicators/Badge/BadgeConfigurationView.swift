@@ -171,7 +171,7 @@ struct BadgeConfigurationView: View {
             OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
                 .disabled(!configurationModel.enableFlipIcon)
 
-            OUDSChipPicker(title: "app_components_badge_type_label",
+            OUDSChipPicker(title: "app_components_common_type_label",
                            selection: $configurationModel.badgeType,
                            chips: BadgeConfigurationModel.BadgeType.chips)
 

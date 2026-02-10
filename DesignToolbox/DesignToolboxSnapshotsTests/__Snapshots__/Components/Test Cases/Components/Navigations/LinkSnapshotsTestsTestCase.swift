@@ -64,7 +64,7 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests link according to all parameters of the configutation available on a `OUDLink`
+    /// This function tests link according to all parameters of the configuration available on a `OUDLink`
     /// for the given theme and color schemes and on a colored surface or not.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
