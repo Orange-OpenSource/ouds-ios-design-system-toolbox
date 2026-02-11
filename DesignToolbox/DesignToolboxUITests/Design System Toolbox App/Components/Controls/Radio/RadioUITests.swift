@@ -31,6 +31,7 @@ final class RadioUITests: AppTestCase {
         let app = launchApp()
         goToComponentsSheet(app)
         swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
         tapButton(withWording: "app_components_radioButton_label", app)
         tapButton(withWording: "app_components_radioButton_label", app)
 
