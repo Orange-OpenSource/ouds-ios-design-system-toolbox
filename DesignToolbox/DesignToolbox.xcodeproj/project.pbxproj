@@ -1003,6 +1003,10 @@
 		95F840D32EB8FAA200CE1FE6 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95F840D22EB8FAA200CE1FE6 /* OUDSSwiftUI */; };
 		FC70E6722F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70E6712F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift */; };
 		FC8FD1582F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */; };
+		FC0E31E82F39F0D800E68D25 /* AlertElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E31E72F39F0D800E68D25 /* AlertElements.swift */; };
+		FC0E31E92F39F0D800E68D25 /* AlertElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E31E72F39F0D800E68D25 /* AlertElements.swift */; };
+		FC0E31EA2F39F0D800E68D25 /* AlertElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E31E72F39F0D800E68D25 /* AlertElements.swift */; };
+		FC0E31EB2F39F0D800E68D25 /* AlertElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E31E72F39F0D800E68D25 /* AlertElements.swift */; };
 		FCA849142E9FF00500DBCE76 /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
 		FCA849152E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */; };
 		FCA849162E9FF00500DBCE76 /* InputTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849132E9FF00500DBCE76 /* InputTagPage.swift */; };
@@ -1461,6 +1465,7 @@
 		95EDFD162EC73BB4006DE593 /* Image+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions.swift"; sourceTree = "<group>"; };
 		FC70E6712F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+PasswordInputSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FC0E31E72F39F0D800E68D25 /* AlertElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertElements.swift; sourceTree = "<group>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
 		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
 		FCA849132E9FF00500DBCE76 /* InputTagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagPage.swift; sourceTree = "<group>"; };
@@ -3218,6 +3223,14 @@
 				FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */,
 			);
 			path = ContentDisplay;
+		FC0E31E62F39F0C700E68D25 /* AlertMessage */ = {
+			isa = PBXGroup;
+			children = (
+				FCEAC3D52F35055C009D70DA /* AlertMessageConfigurationView.swift */,
+				FCEAC3D62F35055C009D70DA /* AlertMessageElement.swift */,
+				FCEAC3D72F35055C009D70DA /* AlertMessagePage.swift */,
+			);
+			path = AlertMessage;
 			sourceTree = "<group>";
 		};
 		FCA849102E9FEFF600DBCE76 /* InputTag */ = {
@@ -3316,9 +3329,8 @@
 		FCEAC3D42F350538009D70DA /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				FCEAC3D52F35055C009D70DA /* AlertMessageConfigurationView.swift */,
-				FCEAC3D62F35055C009D70DA /* AlertMessageElement.swift */,
-				FCEAC3D72F35055C009D70DA /* AlertMessagePage.swift */,
+				FC0E31E62F39F0C700E68D25 /* AlertMessage */,
+				FC0E31E72F39F0D800E68D25 /* AlertElements.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -3887,6 +3899,7 @@
 				51A2177F2E325FE600562BE0 /* WireframeTheme+TokensSizeSnapshotsTests.swift in Sources */,
 				FCB8B18D2F27918E00ADBAB8 /* BulletListSnapshotsTestsTestCase.swift in Sources */,
 				515EE98D2E21329B00A60E96 /* SuggestionChipElement.swift in Sources */,
+				FC0E31EB2F39F0D800E68D25 /* AlertElements.swift in Sources */,
 				51A2175F2E325ED500562BE0 /* OrangeCompactTheme+CheckboxSnapshotsTests.swift in Sources */,
 				515EE98E2E21329B00A60E96 /* SuggestionChipPage.swift in Sources */,
 				FCA849142E9FF00500DBCE76 /* InputTagElement.swift in Sources */,
@@ -4088,6 +4101,7 @@
 				075045F92E58717F00D98587 /* TextInputPage.swift in Sources */,
 				075045FA2E58717F00D98587 /* TextInputElement.swift in Sources */,
 				075045FB2E58717F00D98587 /* TextInputConfigurationView.swift in Sources */,
+				FC0E31E82F39F0D800E68D25 /* AlertElements.swift in Sources */,
 				07F75A372CC644C80004F1AD /* NamedSpace+Scaled.swift in Sources */,
 				0765B4A62CC15C9D00E69359 /* NamedColor.swift in Sources */,
 				07CC9AF42DB0F7DD001BC929 /* SwitchElement.swift in Sources */,
@@ -4398,6 +4412,7 @@
 				9589F0952EB7D67B00134487 /* TextInputPage.swift in Sources */,
 				9589F0962EB7D67B00134487 /* TextInputElement.swift in Sources */,
 				9589F0972EB7D67B00134487 /* TextInputConfigurationView.swift in Sources */,
+				FC0E31E92F39F0D800E68D25 /* AlertElements.swift in Sources */,
 				9589F0982EB7D67B00134487 /* NamedSpace+Scaled.swift in Sources */,
 				9589F0992EB7D67B00134487 /* NamedColor.swift in Sources */,
 				9589F09A2EB7D67B00134487 /* SwitchElement.swift in Sources */,
@@ -4579,6 +4594,7 @@
 				9589F16F2EB7D67E00134487 /* TextInputPage.swift in Sources */,
 				9589F1702EB7D67E00134487 /* TextInputElement.swift in Sources */,
 				9589F1712EB7D67E00134487 /* TextInputConfigurationView.swift in Sources */,
+				FC0E31EA2F39F0D800E68D25 /* AlertElements.swift in Sources */,
 				9589F1722EB7D67E00134487 /* NamedSpace+Scaled.swift in Sources */,
 				9589F1732EB7D67E00134487 /* NamedColor.swift in Sources */,
 				9589F1742EB7D67E00134487 /* SwitchElement.swift in Sources */,
@@ -5598,7 +5614,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1159-alert-message-and-inline-alert-components";
 				kind = branch;
 			};
 		};
