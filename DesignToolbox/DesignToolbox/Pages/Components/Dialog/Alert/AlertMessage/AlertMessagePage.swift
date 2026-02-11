@@ -38,23 +38,16 @@ struct AlertMessagePage: View {
 private struct AlertMessageDemo: View {
 
     @StateObject var configurationModel: AlertMessageConfigurationModel
-
     @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center) {
-            Spacer()
-            OUDSAlertMessage(label: "Label",
-                             status: .positive(showIcon: true),
-                             description: "Description",
-                             link: .init(text: "Link text", action: {})) {
-                // on close ()
-
-            }
-
-            Spacer()
+            OUDSAlertMessage(label: configurationModel.text,
+                             status: configurationModel.status(from: theme),
+                             description: configurationModel.descriptionText,
+                             link: configurationModel.link,
+                             onClose: configurationModel.onClose)
         }
-        .disabled(!configurationModel.enabled)
         .padding(.all, theme.spaces.fixedMedium)
     }
 }

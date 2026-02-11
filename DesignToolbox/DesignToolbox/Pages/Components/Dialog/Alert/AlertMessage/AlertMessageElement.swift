@@ -20,12 +20,12 @@ struct AlertMessageElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_button_label".localized()
+        name = "app_components_alert_alertMessage_label".localized()
         illustration = AnyView(AlertMessageIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            description: "app_components_button_description_text",
-            version: "", // TODO OUDSVersions.componentAlertMessageVersion,
+            description: "app_components_alert_alertMessage_description_text",
+            version: OUDSVersions.componentAlertMessageVersion,
             demoScreen: AnyView(AlertMessagePage())))
     }
 }

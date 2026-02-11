@@ -16,7 +16,7 @@ import SwiftUI
 struct ComponentsPage: View {
 
     var componentElements: [DesignToolboxElement] = [
-        AlertMessageElement(),        
+        AlertElements(),        
         BadgeElement(),
         BulletListElement(),
         ButtonElement(),
