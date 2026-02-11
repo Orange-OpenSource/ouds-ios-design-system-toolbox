@@ -191,7 +191,7 @@ struct TestTextInputView: View {
             // More complex with placeholder
             OUDSTextInput(label: "Label",
                           text: $text,
-                          placeholder: "PlaceHolder",
+                          placeholder: "Placeholder",
                           prefix: "£",
                           suffix: "$",
                           isOutlined: outlined,
@@ -200,7 +200,7 @@ struct TestTextInputView: View {
             // With placeholder and leading icon
             OUDSTextInput(label: "Label",
                           text: $text,
-                          placeholder: "PlaceHolder",
+                          placeholder: "Placeholder",
                           prefix: "£",
                           suffix: "$",
                           leadingIcon: icon,
@@ -211,7 +211,7 @@ struct TestTextInputView: View {
             // With placeholder and trailing action
             OUDSTextInput(label: "Label",
                           text: $text,
-                          placeholder: "PlaceHolder",
+                          placeholder: "Placeholder",
                           prefix: "£",
                           suffix: "$",
                           trailingAction: trailingAction,
@@ -221,7 +221,7 @@ struct TestTextInputView: View {
             // Full options
             OUDSTextInput(label: "Label",
                           text: $text,
-                          placeholder: "PlaceHolder",
+                          placeholder: "Placeholder",
                           prefix: "£",
                           suffix: "$",
                           leadingIcon: icon,

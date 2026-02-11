@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.1.0...develop)
 
+### Added
+
+- [Library] `password input` component (Orange-OpenSource/ouds-ios#997)
+- [Library] `bullet list` component (Orange-OpenSource/ouds-ios#513)
+
 ### Changed
 
 - Rename of *Orange Business Tools*  theme to *Orange Compact* (Orange-OpenSource/ouds-ios#1292)
