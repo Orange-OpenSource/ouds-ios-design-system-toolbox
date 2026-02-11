@@ -1000,8 +1000,8 @@
 		95EDFD1A2EC73BB9006DE593 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		95EDFD1B2EC73BB9006DE593 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		95F840D32EB8FAA200CE1FE6 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95F840D22EB8FAA200CE1FE6 /* OUDSSwiftUI */; };
-		FC8FD1582F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */; };
 		FC70E6722F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70E6712F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift */; };
+		FC8FD1582F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */; };
 		FCA849142E9FF00500DBCE76 /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
 		FCA849152E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */; };
 		FCA849162E9FF00500DBCE76 /* InputTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849132E9FF00500DBCE76 /* InputTagPage.swift */; };
@@ -1014,18 +1014,6 @@
 		FCB8B1932F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1922F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift */; };
 		FCB8B1952F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1942F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift */; };
 		FCB8B19A2F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1982F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift */; };
-		FCEEB18B2F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
-		FCEEB18C2F1A877300C9BD46 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
-		FCEEB18D2F1A877300C9BD46 /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
-		FCEEB18E2F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
-		FCEEB18F2F1A877300C9BD46 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
-		FCEEB1902F1A877300C9BD46 /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
-		FCEEB1912F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
-		FCEEB1922F1A877300C9BD46 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
-		FCEEB1932F1A877300C9BD46 /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
-		FCEEB1942F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
-		FCEEB1952F1A877300C9BD46 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
-		FCEEB1962F1A877300C9BD46 /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
 		FCDDFBB62F2B69E700389D8D /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */; };
 		FCDDFBB72F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */; };
 		FCDDFBB82F2B69E700389D8D /* PasswordInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */; };
@@ -1038,6 +1026,18 @@
 		FCDDFBBF2F2B69E700389D8D /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */; };
 		FCDDFBC02F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */; };
 		FCDDFBC12F2B69E700389D8D /* PasswordInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */; };
+		FCEEB18B2F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
+		FCEEB18C2F1A877300C9BD46 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
+		FCEEB18D2F1A877300C9BD46 /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
+		FCEEB18E2F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
+		FCEEB18F2F1A877300C9BD46 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
+		FCEEB1902F1A877300C9BD46 /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
+		FCEEB1912F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
+		FCEEB1922F1A877300C9BD46 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
+		FCEEB1932F1A877300C9BD46 /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
+		FCEEB1942F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
+		FCEEB1952F1A877300C9BD46 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
+		FCEEB1962F1A877300C9BD46 /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
 		FCF02BB02F30A77500F2013F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCF02BAF2F30A77500F2013F /* Localizable.xcstrings */; };
 		FCF02BB12F30A77500F2013F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCF02BAF2F30A77500F2013F /* Localizable.xcstrings */; };
 		FCF02BB22F30A77500F2013F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCF02BAF2F30A77500F2013F /* Localizable.xcstrings */; };
@@ -1446,8 +1446,8 @@
 		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
 		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
 		95EDFD162EC73BB4006DE593 /* Image+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions.swift"; sourceTree = "<group>"; };
-		FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC70E6712F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+PasswordInputSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
 		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
 		FCA849132E9FF00500DBCE76 /* InputTagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagPage.swift; sourceTree = "<group>"; };
@@ -1456,12 +1456,12 @@
 		FCB8B1922F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FCB8B1942F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FCB8B1982F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
-		FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListConfigurationView.swift; sourceTree = "<group>"; };
-		FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListElement.swift; sourceTree = "<group>"; };
-		FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListPage.swift; sourceTree = "<group>"; };
 		FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputConfigurationView.swift; sourceTree = "<group>"; };
 		FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputElement.swift; sourceTree = "<group>"; };
 		FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputPage.swift; sourceTree = "<group>"; };
+		FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListConfigurationView.swift; sourceTree = "<group>"; };
+		FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListElement.swift; sourceTree = "<group>"; };
+		FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListPage.swift; sourceTree = "<group>"; };
 		FCF02BAF2F30A77500F2013F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		FCF02BB32F30E4A600F2013F /* PasswordInputSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputSnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
 		FCF02BB52F30EC4B00F2013F /* SoshTheme+PasswordInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+PasswordInputSnapshotsTests.swift"; sourceTree = "<group>"; };
@@ -3255,6 +3255,16 @@
 			path = ContentDisplay;
 			sourceTree = "<group>";
 		};
+		FCDDFBB22F2B69DA00389D8D /* PasswordInput */ = {
+			isa = PBXGroup;
+			children = (
+				FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */,
+				FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */,
+				FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */,
+			);
+			path = PasswordInput;
+			sourceTree = "<group>";
+		};
 		FCEEB1862F1A877300C9BD46 /* BulletList */ = {
 			isa = PBXGroup;
 			children = (
@@ -3271,16 +3281,6 @@
 				FCEEB1862F1A877300C9BD46 /* BulletList */,
 			);
 			path = ContentDisplay;
-			sourceTree = "<group>";
-		};
-		FCDDFBB22F2B69DA00389D8D /* PasswordInput */ = {
-			isa = PBXGroup;
-			children = (
-				FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */,
-				FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */,
-				FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */,
-			);
-			path = PasswordInput;
 			sourceTree = "<group>";
 		};
 		FCEF76762F35E67C00CD9E10 /* Recovered References */ = {
@@ -5552,7 +5552,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "997-add-password-input-component";
+				branch = develop;
 				kind = branch;
 			};
 		};
@@ -5615,4 +5615,3 @@
 	};
 	rootObject = 07FDCD892C296A500009AA13 /* Project object */;
 }
-

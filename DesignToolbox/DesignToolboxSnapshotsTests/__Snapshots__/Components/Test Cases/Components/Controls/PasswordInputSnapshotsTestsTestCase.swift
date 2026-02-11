@@ -28,8 +28,8 @@ open class PasswordInputSnapshotsTestsTestCase: XCTestCase {
     /// **/!\ It does not test the hover and pressed states.**
     ///
     /// It iterates through all combinations of configuration:
-    /// - the rounded layout
-    /// - the style of the text input (default, alternative)
+    /// - the outline
+    /// - the the lock icon
     /// - status of the text input (the loader is dropped still the progress indicator is done)
     ///
     /// - Parameters:
@@ -51,13 +51,6 @@ open class PasswordInputSnapshotsTestsTestCase: XCTestCase {
     }
 
     /// This function tests some Password input configuration for the given theme and color schemes on a standard surface.
-    ///
-    /// **/!\ It does not test the hover and pressed states.**
-    ///
-    /// It iterates through all combinations of configuration:
-    /// - the rounded layout
-    /// - the style of the text input (default, alternative)
-    /// - status of the text input (the loader is dropped still the progress indicator is done)
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
@@ -120,7 +113,7 @@ struct TestPasswordInputView: View {
 
             OUDSPasswordInput(label: "Password",
                               password: $password,
-                              placeholder: "PlaceHolder",
+                              placeholder: "Placeholder",
                               prefix: "CORP-",
                               lockIcon: lockIcon,
                               helperText: "Helper text.",

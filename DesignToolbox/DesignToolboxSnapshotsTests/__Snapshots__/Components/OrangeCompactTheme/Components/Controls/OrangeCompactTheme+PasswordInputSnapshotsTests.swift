@@ -29,13 +29,13 @@ final class OrangeCompactThemePasswordInputSnapshotsTests: PasswordInputSnapshot
         theme = OrangeCompactTheme()
     }
 
-    /// Tests all switches configuration in the `OrangeCompactTheme` with the `light` color schemes.
+    /// Tests all password inputs configurations in the `OrangeCompactTheme` with the `light` color schemes.
     @MainActor func testAllPasswordInputsOrangeCompactThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllPasswordInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all switches configuration in the `OrangeCompactTheme` with the `dark` color schemes.
+    /// Tests all password inputs configurations in the `OrangeCompactTheme` with the `dark` color schemes.
     @MainActor func testAllPasswordInputsOrangeCompactThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllPasswordInputs(theme: theme, interfaceStyle: interfaceStyle)

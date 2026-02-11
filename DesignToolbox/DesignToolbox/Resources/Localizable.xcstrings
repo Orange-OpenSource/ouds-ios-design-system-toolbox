@@ -3338,7 +3338,7 @@
         }
       }
     },
-    "app_components_passwordInput_hiddenPassword__label" : {
+    "app_components_passwordInput_hiddenPassword_label" : {
       "comment" : "Component - Password Input",
       "extractionState" : "manual",
       "localizations" : {

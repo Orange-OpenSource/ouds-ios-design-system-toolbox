@@ -29,13 +29,13 @@ final class SoshThemePasswordInputsSnapshotsTests: PasswordInputSnapshotsTestsTe
         theme = SoshTheme()
     }
 
-    /// Tests all switches configuration in the `SoshTheme` with the `light` color schemes.
+    /// Tests all password inputs configurations in the `SoshTheme` with the `light` color schemes.
     @MainActor func testAllPasswordInputsSoshThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllPasswordInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all switches configuration in the `SoshTheme` with the `dark` color schemes.
+    /// Tests all password inputs configurations in the `SoshTheme` with the `dark` color schemes.
     @MainActor func testAllPasswordInputsSoshThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllPasswordInputs(theme: theme, interfaceStyle: interfaceStyle)

@@ -30,13 +30,13 @@ final class WireframeThemePasswordInputSnapshotsTests: PasswordInputSnapshotsTes
         theme = WireframeTheme()
     }
 
-    /// Tests all switches configuration in the `WireframeTheme` with the `light` color schemes.
+    /// Tests all password inputs configurations in the `WireframeTheme` with the `light` color schemes.
     @MainActor func testAllPasswordInputsWireframeThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllPasswordInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all switches configuration in the `WireframeTheme` with the `dark` color schemes.
+    /// Tests all password inputs configurations in the `WireframeTheme` with the `dark` color schemes.
     @MainActor func testAllPasswordInputsWireframeThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllPasswordInputs(theme: theme, interfaceStyle: interfaceStyle)
