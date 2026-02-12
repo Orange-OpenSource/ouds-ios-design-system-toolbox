@@ -20,6 +20,15 @@
       }
     },
     {
+      "identity" : "ouds-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Orange-OpenSource/ouds-ios",
+      "state" : {
+        "branch" : "1159-alert-message-and-inline-alert-components",
+        "revision" : "dd789496e262bd5bd422242726ba0c299ab70bb5"
+      }
+    },
+    {
       "identity" : "swift-custom-dump",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-custom-dump",
