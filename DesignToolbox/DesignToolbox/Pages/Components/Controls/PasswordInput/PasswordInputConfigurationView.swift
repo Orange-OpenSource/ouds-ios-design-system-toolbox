@@ -21,8 +21,8 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
 
     // MARK: Stored properties
 
-    private static let defaultLabel = String(localized: "app_components_common_label_label")
-    private static let defaultHelperText = String(localized: "app_components_common_helperText_label")
+    private static let defaultLabel = String(localized: "app_components_passwordInput_password_label")
+    private static let defaultHelperText = String(localized: "app_components_passwordInputHelperText_label")
     private static let defaultPlaceholderText = String(localized: "app_components_common_placeholder_label")
     private static let defaultErrorText = String(localized: "app_components_common_errorMessage_label")
 
@@ -157,7 +157,7 @@ struct PasswordInputConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                OUDSSwitchItem("app_components_passwordInput_hiddenPassword__label", isOn: $configurationModel.isHiddenPassword)
+                OUDSSwitchItem("app_components_passwordInput_hiddenPassword_label", isOn: $configurationModel.isHiddenPassword)
 
                 OUDSSwitchItem("app_components_common_outlined_label", isOn: $configurationModel.isOutlined)
 
