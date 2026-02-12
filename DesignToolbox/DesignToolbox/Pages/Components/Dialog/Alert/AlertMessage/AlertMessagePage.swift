@@ -35,7 +35,7 @@ struct AlertMessagePage: View {
 
 // MARK: - AlertMessage Demo
 
-private struct AlertMessageDemo: View {
+struct AlertMessageDemo: View {
 
     @StateObject var configurationModel: AlertMessageConfigurationModel
     @Environment(\.theme) private var theme
@@ -45,6 +45,7 @@ private struct AlertMessageDemo: View {
             OUDSAlertMessage(label: configurationModel.text,
                              status: configurationModel.status(from: theme),
                              description: configurationModel.descriptionText,
+                             bulletList: configurationModel.bulletList,
                              link: configurationModel.link,
                              onClose: configurationModel.onClose)
         }

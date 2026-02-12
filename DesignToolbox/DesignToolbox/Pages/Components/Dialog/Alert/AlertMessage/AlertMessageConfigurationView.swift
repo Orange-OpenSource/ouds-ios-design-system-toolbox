@@ -29,6 +29,16 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var bullet1: String {
+        didSet { updateCode() }
+    }
+    @Published var bullet2: String {
+        didSet { updateCode() }
+    }
+    @Published var bullet3: String {
+        didSet { updateCode() }
+    }
+
     @Published var status: AlertMessageStatus {
         didSet { updateCode() }
     }
@@ -53,6 +63,7 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    static let MaxBulletCount = Int(3)
 
     // MARK: Initializer
 
@@ -65,6 +76,10 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
         actionLink = false
         actionPosition = .bottom
         closeButton = false
+        bullet1 = "app_components_alert_alertMessage_bullet_label" <- Int(1)
+        bullet2 = "app_components_alert_alertMessage_bullet_label" <- Int(2)
+        bullet3 = "app_components_alert_alertMessage_bullet_label" <- Int(3)
+
         super.init()
     }
 
@@ -101,13 +116,52 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
         closeButton ? { } : nil
     }
 
+    var bulletList: [String]? {
+        let list = [bullet1, bullet2, bullet3].filter { !$0.isEmpty }
+        return list.isEmpty ? nil : list
+    }
 
     // MARK: Component Code snippet
+
+    private var flipIconPatern: String {
+        flipIcon ? ", flipped: true" : ""
+    }
+    private var iconPatern: String {
+        switch status {
+        case .neutral, .accent:
+            statusIcon ? "icon: Image(\"ic_heart\")\(flipIconPatern)" : ""
+        default:
+            statusIcon ? "showIcon: true" : ""
+        }
+    }
+    private var statusPattern: String {
+        ", status: \(status.technicalDescription)(\(iconPatern))"
+    }
+
+    private var descriptionPattern: String {
+        descriptionText.isEmpty ? "" : ", description: \"\(descriptionText)\""
+    }
+
+    private var bulletListPattern: String {
+        if let bulletList = bulletList {
+            return ", bulletList: [\"\(bulletList.joined(separator: "\", \""))\"]"
+        } else {
+            return ""
+        }
+    }
+
+    private var linkPattern: String {
+        actionLink ? ", link: .init(text: \"Action\", position: \(actionPosition.technicalDescription), action: {})" : ""
+    }
+
+    private var onClosePattern: String {
+        closeButton ? ", onClose: { }" : ""
+    }
 
     override func updateCode() {
         code =
             """
-            OUDSAlertMessage()
+            OUDSAlertMessage(label: \"\(text)"\(statusPattern)\(descriptionPattern)\(bulletListPattern)\(linkPattern)\(onClosePattern))
             """
     }
 }
@@ -147,6 +201,10 @@ struct AlertMessageConfigurationView: View {
             DesignToolboxEditContentDisclosure {
                 DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_label")
                 DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_common_description_label")
+
+                DesignToolboxTextField(text: $configurationModel.bullet1, label: "app_components_alert_alertMessage_bullet_label" <- Int(1))
+                DesignToolboxTextField(text: $configurationModel.bullet2, label: "app_components_alert_alertMessage_bullet_label" <- Int(2))
+                DesignToolboxTextField(text: $configurationModel.bullet3, label: "app_components_alert_alertMessage_bullet_label" <- Int(3))
             }
         }
     }
@@ -164,6 +222,15 @@ extension OUDSAlertMessage.Link.Position: @retroactive CaseIterable, @retroactiv
         }
     }
 
+    var technicalDescription: String {
+        switch self {
+        case .bottom:
+            ".bottom"
+        case .topTrailing:
+            ".topTrailing"
+        }
+    }
+
     private var chipData: OUDSChipPickerData<Self> {
         OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
@@ -173,7 +240,7 @@ extension OUDSAlertMessage.Link.Position: @retroactive CaseIterable, @retroactiv
     }
 }
 
-enum AlertMessageStatus: CaseIterable, CustomStringConvertible {
+enum AlertMessageStatus: String, CaseIterable, CustomStringConvertible {
     case neutral
     case accent
     case positive
@@ -196,6 +263,10 @@ enum AlertMessageStatus: CaseIterable, CustomStringConvertible {
         case .negative:
             "Negative"
         }
+    }
+
+    var technicalDescription: String {
+        ".\(self.rawValue)"
     }
 
     private var chipData: OUDSChipPickerData<Self> {
