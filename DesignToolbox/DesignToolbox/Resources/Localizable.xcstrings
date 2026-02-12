@@ -1037,6 +1037,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_alert_alertMessage_bullet_label" : {
+      "comment" : "Component - Alert Message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet %d"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet %d"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet %d"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_alert_alertMessage_closeButton_label" : {
       "comment" : "Component - Alert Message",
       "extractionState" : "manual",
