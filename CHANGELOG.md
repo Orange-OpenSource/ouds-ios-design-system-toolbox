@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] `ruby/setup-ruby` action from v1.286.0 to v1.288.0 for `build-and-test` workflow
 - [DesignToolbox] `github/codeql-action/upload-sarif` action for `scorecard` workflow
 - [DesignToolbox] `json` RubyGem from v2.18.0 to v2.18.1
 - [DesignToolbox] Update `fastlane` gem from v2.231.1 to v2.232.1
