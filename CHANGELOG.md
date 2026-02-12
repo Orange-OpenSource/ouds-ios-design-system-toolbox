@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] `github/codeql-action/upload-sarif` action for `scorecard` workflow
 - [DesignToolbox] `json` RubyGem from v2.18.0 to v2.18.1
 - [DesignToolbox] Update `fastlane` gem from v2.231.1 to v2.232.1
 - [DesignToolbox] Rename of *Orange Business Tools*  theme to *Orange Compact* (Orange-OpenSource/ouds-ios#1292)
