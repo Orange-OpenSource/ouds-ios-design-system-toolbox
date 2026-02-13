@@ -19,6 +19,7 @@ struct ComponentsView: View {
     @ViewBuilder
     var body: some View {
         NavigationLink("Actions", destination: ActionsView())
+        NavigationLink("Content Display", destination: ContentDisplayView())
         NavigationLink("Controls", destination: ControlsView())
         NavigationLink("Indicators", destination: IndicatorsView())
         NavigationLink("Layouts", destination: LayoutsView())

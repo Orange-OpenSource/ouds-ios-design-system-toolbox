@@ -17,12 +17,14 @@ struct ComponentsPage: View {
 
     var componentElements: [DesignToolboxElement] = [
         BadgeElement(),
+        BulletListElement(),
         ButtonElement(),
         ColoredSurfaceElement(),
         CheckboxElements(),
         ChipElements(),
         DividerElements(),
         LinkElement(),
+        PasswordInputElement(),
         RadioElements(),
         SwitchElements(),
         TabBarElement(),

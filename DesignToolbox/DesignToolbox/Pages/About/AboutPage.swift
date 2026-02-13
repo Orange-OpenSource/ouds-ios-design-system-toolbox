@@ -189,8 +189,8 @@ struct AboutPage: View {
         VersionItem(title: "app_about_details_themeSoshBrandVersion",
                     version: OUDSVersions.themeSoshBrandVersion)
 
-        VersionItem(title: "app_about_details_themeOrangeBusinessToolsBrandVersion",
-                    version: OUDSVersions.themeOrangeBusinessToolsBrandVersion)
+        VersionItem(title: "app_about_details_themeOrangeCompactBrandVersion",
+                    version: OUDSVersions.themeOrangeCompactBrandVersion)
 
         VersionItem(title: "app_about_details_themeWireframeBrandVersion",
                     version: OUDSVersions.themeWireframeBrandVersion)

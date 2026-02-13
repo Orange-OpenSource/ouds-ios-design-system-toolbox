@@ -23,7 +23,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
     private let defaultLabel = String(localized: "app_components_common_label_label")
     private let defaultHelperText = String(localized: "app_components_common_helperText_label")
-    private let defaultPlaceholderText = String(localized: "app_components_textInput_placeholder_label")
+    private let defaultPlaceholderText = String(localized: "app_components_common_placeholder_label")
     private let defaultErrorText = String(localized: "app_components_common_errorMessage_label")
 
     // MARK: Published properties
@@ -195,7 +195,7 @@ struct TextInputConfigurationView: View {
 
                 OUDSSwitchItem("app_components_common_constrainedMaxWidth_label", isOn: $configurationModel.constrainedMaxWidth)
 
-                OUDSSwitchItem("app_components_textInput_leadingIcon_label", isOn: $configurationModel.leadingIcon)
+                OUDSSwitchItem("app_components_common_leadingIcon_label", isOn: $configurationModel.leadingIcon)
 
                 OUDSSwitchItem("app_components_textInput_flipLeadingIcon_label", isOn: $configurationModel.flipLeadingIcon)
                     .disabled(!configurationModel.leadingIcon)
@@ -219,8 +219,8 @@ struct TextInputConfigurationView: View {
                         DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_label")
                     }
 
-                    DesignToolboxTextField(text: $configurationModel.placeholderText, label: "app_components_textInput_placeholder_label")
-                    DesignToolboxTextField(text: $configurationModel.prefixText, label: "app_components_textInput_prefix_label")
+                    DesignToolboxTextField(text: $configurationModel.placeholderText, label: "app_components_common_placeholder_label")
+                    DesignToolboxTextField(text: $configurationModel.prefixText, label: "app_components_common_prefix_label")
                     DesignToolboxTextField(text: $configurationModel.suffixText, label: "app_components_textInput_suffix_label")
 
                     DesignToolboxTextField(text: $configurationModel.helperLinkText, label: "app_components_textInput_helperLink_label")

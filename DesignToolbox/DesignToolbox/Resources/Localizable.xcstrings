@@ -434,26 +434,26 @@
         }
       }
     },
-    "app_about_details_themeOrangeBusinessToolsBrandVersion" : {
-      "comment" : "About screen - Tokens library version (Orange Business Tools)",
+    "app_about_details_themeOrangeCompactBrandVersion" : {
+      "comment" : "About screen - Tokens library version (Orange Compact)",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة الرموز المميزة للعلامة التجارية Orange Business Tools:"
+            "value" : "إصدار مكتبة الرموز المميزة للعلامة التجارية Orange Compact :"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Orange Business Tools brand tokens library version:"
+            "value" : "Orange Compact brand tokens library version:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens brand Orange Business Tools :"
+            "value" : "Version des tokens brand Orange Compact :"
           }
         }
       }
@@ -1156,29 +1156,275 @@
         }
       }
     },
-    "app_components_badge_type_label" : {
-      "comment" : "Component - Badge",
+    "app_components_bulletList_bold_label" : {
+      "comment" : "Component - Bullet List",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Type"
+            "value" : "Bold"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Type"
+            "value" : "Bold"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Type"
+            "value" : "Bold"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_bulletList_description_text" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet list هي عنصر واجهة مستخدم يساعد على عرض عناصر نصية فردية ذات صلة مجمعة معًا؛ عادةً ما تبدأ برقم أو برمز نقطي."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet list is a UI element that helps to view in related individual text items grouped together; items usually starting with a number or a bullet."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composant BulletList est un élément d'interface utilisateur qui permet de visualiser des éléments de texte individuels liés, regroupés par ordre alphabétique ; ces éléments commencent généralement par un chiffre ou une puce."
           }
         }
       }
+    },
+    "app_components_bulletList_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet List"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet List"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet List"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_bulletList_levelCount_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عد المستوى"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Level count"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre de niveaux"
+          }
+        }
+      }
+    },
+    "app_components_bulletList_nestedLevel_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Level"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Level"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Level"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_bulletList_oneLevel_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "واحد"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un"
+          }
+        }
+      }
+    },
+    "app_components_bulletList_textStyle_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text style"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text style"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text style"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_bulletList_threeLevel_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ثلاثة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Three"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trois"
+          }
+        }
+      }
+    },
+    "app_components_bulletList_twoLevel_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اثنين"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Two"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deux"
+          }
+        }
+      }
+    },
+    "app_components_bulletList_unorderedIcon_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unordered icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unordered icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unordered icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_bulletList_unorderedIconBrandColor_label" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brand color icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brand color icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brand color icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_components_button_appearence_notAllowed_text" : {
       "comment" : "Component - Button",
@@ -2213,7 +2459,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Label"
+            "value" : "تسمية"
           }
         },
         "en" : {
@@ -2251,6 +2497,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Layout"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_leadingIcon_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Leading icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Leading icon"
           }
         }
       },
@@ -2380,6 +2651,54 @@
         }
       }
     },
+    "app_components_common_placeholder_label" : {
+      "comment" : "Component - Common",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Placeholder"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_prefix_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefix"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefix"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefix"
+          }
+        }
+      }
+    },
     "app_components_common_readOnly_label" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
@@ -2427,7 +2746,8 @@
             "value" : "Selection"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_common_size_label" : {
       "comment" : "Component - Common",
@@ -2571,6 +2891,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Text only"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_type_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Type"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type"
           }
         }
       },
@@ -2968,6 +3313,152 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_passwordInput_description_text" : {
+      "comment" : "Component - Password Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " Password Input هو حقل نموذج مصمم خصيصًا لالتقاط كلمة مرور المستخدم بسرية. يقوم بإخفاء الأحرف أثناء الكتابة، عادةً باستبدالها بنقاط، لحماية الإدخال من قراءته من قبل الآخرين القريبين. بينما الهدف الأساسي هو تعزيز الخصوصية والأمان، قد يتضمن الحقل أيضًا ميزات سهولة الاستخدام مثل تبديل إظهار/إخفاء كلمة المرور ونص المساعدة لتوجيه إنشاء كلمة المرور."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password input is a UI element that allows to securely and confidentially capture a user's password."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composent PasswordInput est un élément d'interface utilisateur qui permet de capturer de manière sécurisée et confidentielle le mot de passe d'un utilisateur."
+          }
+        }
+      }
+    },
+    "app_components_passwordInput_hiddenPassword_label" : {
+      "comment" : "Component - Password Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden password"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden password"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden password"
+          }
+        }
+      }
+    },
+    "app_components_passwordInput_label" : {
+      "comment" : "Component - Password Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password input"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password input"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password input"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_passwordInput_lockIcon_label" : {
+      "comment" : "Component Password",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lock icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lock icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lock icon"
+          }
+        }
+      }
+    },
+    "app_components_passwordInput_password_label" : {
+      "comment" : "Component - Password Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_passwordInputHelperText_label" : {
+      "comment" : "Helper text for the password input.",
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password must be at least 8 characters."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password must be at least 8 characters."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password must be at least 8 characters."
+          }
+        }
+      }
     },
     "app_components_radioButton_description_text" : {
       "comment" : "Component - Radio",
@@ -3869,80 +4360,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Text input"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_textInput_leadingIcon_label" : {
-      "comment" : "Component - Text Input",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Leading icon"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leading icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Leading icon"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_textInput_placeholder_label" : {
-      "comment" : "Component - Text Input",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Placeholder"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Placeholder"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Placeholder"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_textInput_prefix_label" : {
-      "comment" : "Component - Text Input",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Prefix"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Prefix"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Prefix"
           }
         }
       },
@@ -5439,7 +5856,8 @@
     "Orange" : {
       "shouldTranslate" : false
     },
-    "Orange Business Tools" : {
+    "Orange Compact" : {
+      "extractionState" : "manual",
       "shouldTranslate" : false
     }
   },
