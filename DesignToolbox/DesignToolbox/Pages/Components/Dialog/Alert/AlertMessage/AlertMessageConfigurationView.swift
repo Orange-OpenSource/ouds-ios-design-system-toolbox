@@ -88,23 +88,28 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     var enableFlipIcon: Bool {
-        statusIcon && status == .neutral || status == .accent
+        statusIcon && hasIcon
     }
 
+    var hasIcon: Bool {
+        status == .neutral || status == .accent
+    }
+
+    @MainActor
     func status(from theme: OUDSTheme) -> OUDSAlertMessage.Status {
         switch status {
         case .neutral:
-            .neutral(icon: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon)
+            .neutral(icon: statusIcon ? OUDSIcon(asset: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon) : nil)
         case .accent:
-            .accent(icon: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon)
+            .accent(icon: statusIcon ? OUDSIcon(asset: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon) : nil)
         case .positive:
-            .positive(showIcon: statusIcon)
+            .positive
         case .info:
-            .info(showIcon: statusIcon)
+            .info
         case .warning:
-            .warning(showIcon: statusIcon)
+            .warning
         case .negative:
-            .negative(showIcon: statusIcon)
+            .negative
         }
     }
 
@@ -184,6 +189,7 @@ struct AlertMessageConfigurationView: View {
                                chips: AlertMessageStatus.chips)
 
                 OUDSSwitchItem("app_components_alert_alertMessage_statusIcon_label", isOn: $configurationModel.statusIcon)
+                    .disabled(!configurationModel.hasIcon)
 
                 OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
                     .disabled(!configurationModel.enableFlipIcon)
