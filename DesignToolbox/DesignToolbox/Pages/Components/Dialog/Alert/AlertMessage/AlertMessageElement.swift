@@ -38,7 +38,7 @@ private struct AlertMessageIllustration: View {
     var body: some View {
         VStack(spacing: theme.spaces.fixedSmall) {
             #if !os(visionOS)
-            OUDSAlertMessage(label: "Label", status: .negative(showIcon: false))
+            OUDSAlertMessage(label: "Label", status: .negative)
             #endif
         }
     }
