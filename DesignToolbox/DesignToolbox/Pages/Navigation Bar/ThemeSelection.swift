@@ -49,8 +49,8 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         if self is OrangeTheme {
             constructedId = "Orange"
         }
-        if self is OrangeBusinessToolsTheme {
-            constructedId = "Orange Business Tools"
+        if self is OrangeCompactTheme {
+            constructedId = "Orange Compact"
         }
         if self is SoshTheme {
             constructedId = "Sosh"
@@ -84,7 +84,7 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 @MainActor final class ThemeProvider: ObservableObject {
 
     let orangeThemes: [OUDSTheme]
-    let orangeBusinessToolsThemes: [OUDSTheme]
+    let orangeCompactThemes: [OUDSTheme]
     let otherThemes: [OUDSTheme]
 
     let allThemes: [OUDSTheme]
@@ -111,9 +111,9 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         let orangeBusinessOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
         let maxItOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
 
-        let orangeFranceOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
-        let maxItOrangeBusinessToolsTheme = OrangeBusinessToolsTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
+        let orangeFranceOrangeCompactTheme = OrangeCompactTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
+        let orangeBusinessOrangeCompactTheme = OrangeCompactTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
+        let maxItOrangeCompactTheme = OrangeCompactTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
 
         let soshTheme = SoshTheme()
         let wireframeTheme = WireframeTheme()
@@ -123,9 +123,9 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         // Fill arrays for menus
 
         orangeThemes = [orangeFranceOrangeTheme, orangeBusinessOrangeTheme, maxItOrangeTheme]
-        orangeBusinessToolsThemes = [orangeFranceOrangeBusinessToolsTheme, orangeBusinessOrangeBusinessToolsTheme, maxItOrangeBusinessToolsTheme]
+        orangeCompactThemes = [orangeFranceOrangeCompactTheme, orangeBusinessOrangeCompactTheme, maxItOrangeCompactTheme]
         otherThemes = [soshTheme, wireframeTheme]
-        allThemes = orangeThemes + orangeBusinessToolsThemes + otherThemes
+        allThemes = orangeThemes + orangeCompactThemes + otherThemes
 
         if let theme = allThemes.first(where: { $0.id == ThemeProvider.currentTheme }) {
             currentTheme = theme
@@ -190,10 +190,10 @@ struct ThemeSelectionButton: View {
                 .pickerStyle(.inline)
             }
 
-            // Orange Business Tools theme and tunings
-            Menu("Orange Business Tools") {
+            // Orange Compact theme and tunings
+            Menu("Orange Compact") {
                 Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
-                    ForEach(themeProvider.orangeBusinessToolsThemes, id: \.id) { theme in
+                    ForEach(themeProvider.orangeCompactThemes, id: \.id) { theme in
                         Text(theme.description).tag(theme)
                     }
                 }

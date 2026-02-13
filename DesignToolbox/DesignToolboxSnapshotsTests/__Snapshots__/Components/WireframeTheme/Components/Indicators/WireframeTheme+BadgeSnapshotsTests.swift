@@ -29,8 +29,8 @@ final class WireframeThemeBadgeSnapshotsTests: BadgeSnapshotsTestsTestCase {
         theme = WireframeTheme()
     }
 
-    /// Tests all bages configuration in the `WireframeTheme` with the `light` color schemes.
-    @MainActor func testAllBagesWireframeThemeLight() {
+    /// Tests all badges configuration in the `WireframeTheme` with the `light` color schemes.
+    @MainActor func testAllBadgesWireframeThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllBadges(theme: theme, interfaceStyle: interfaceStyle)
     }

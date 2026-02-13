@@ -102,7 +102,7 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
 
     // swiftlint:disable function_parameter_count
     // swiftlint:disable line_length
-    /// This function tests button according to all parameters of the configutation available on a `OUDButton`
+    /// This function tests button according to all parameters of the configuration available on a `OUDButton`
     /// for the given theme and color schemes and on a colored surface or not.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
