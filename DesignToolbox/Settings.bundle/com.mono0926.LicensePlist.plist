@@ -14,7 +14,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/accessibility-statement-lib-ios</string>
 			<key>Title</key>
-			<string>DeclarationAccessibility (2.1.2)</string>
+			<string>DeclarationAccessibility (2.2.0-beta.2)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -22,7 +22,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/ouds-ios</string>
 			<key>Title</key>
-			<string>OUDS (1.1.0)</string>
+			<string>OUDS (1.2.0-rc.1)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
