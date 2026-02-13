@@ -121,9 +121,8 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
         closeButton ? { } : nil
     }
 
-    var bulletList: [String]? {
-        let list = [bullet1, bullet2, bullet3].filter { !$0.isEmpty }
-        return list.isEmpty ? nil : list
+    var bulletList: [String] {
+         [bullet1, bullet2, bullet3].filter { !$0.isEmpty }
     }
 
     // MARK: Component Code snippet
@@ -148,11 +147,7 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
     }
 
     private var bulletListPattern: String {
-        if let bulletList = bulletList {
-            return ", bulletList: [\"\(bulletList.joined(separator: "\", \""))\"]"
-        } else {
-            return ""
-        }
+        bulletList.isEmpty ? "" : ", bulletList: [\"\(bulletList.joined(separator: "\", \""))\"]"
     }
 
     private var linkPattern: String {
@@ -170,7 +165,6 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
             """
     }
 }
-
 
 // MARK: - AlertMessage Configuration View
 
