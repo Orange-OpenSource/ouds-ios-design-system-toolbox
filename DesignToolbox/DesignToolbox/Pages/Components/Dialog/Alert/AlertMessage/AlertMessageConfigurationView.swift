@@ -32,9 +32,11 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
     @Published var bullet1: String {
         didSet { updateCode() }
     }
+
     @Published var bullet2: String {
         didSet { updateCode() }
     }
+
     @Published var bullet3: String {
         didSet { updateCode() }
     }
@@ -118,11 +120,11 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
     }
 
     var onClose: (() -> Void)? {
-        closeButton ? { } : nil
+        closeButton ? {} : nil
     }
 
     var bulletList: [String] {
-         [bullet1, bullet2, bullet3].filter { !$0.isEmpty }
+        [bullet1, bullet2, bullet3].filter { !$0.isEmpty }
     }
 
     // MARK: Component Code snippet
@@ -130,6 +132,7 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
     private var flipIconPatern: String {
         flipIcon ? ", flipped: true" : ""
     }
+
     private var iconPatern: String {
         switch status {
         case .neutral, .accent:
@@ -138,6 +141,7 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
             statusIcon ? "showIcon: true" : ""
         }
     }
+
     private var statusPattern: String {
         ", status: \(status.technicalDescription)(\(iconPatern))"
     }
@@ -195,7 +199,7 @@ struct AlertMessageConfigurationView: View {
                 OUDSChipPicker(title: "app_components_alert_alertMessage_actionLinkPosition_label",
                                selection: $configurationModel.actionPosition,
                                chips: OUDSAlertMessage.Link.Position.chips)
-                .disabled(!configurationModel.actionLink)
+                    .disabled(!configurationModel.actionLink)
             }
 
             DesignToolboxEditContentDisclosure {
@@ -266,7 +270,7 @@ enum AlertMessageStatus: String, CaseIterable, CustomStringConvertible {
     }
 
     var technicalDescription: String {
-        ".\(self.rawValue)"
+        ".\(rawValue)"
     }
 
     private var chipData: OUDSChipPickerData<Self> {
