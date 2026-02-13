@@ -37,29 +37,29 @@ open class AlertMessageSnapshotsTestsTestCase: XCTestCase {
 
         for status in AlertMessageStatus.allCases {
             let model = AlertMessageConfigurationModel()
-                model.status = status
-                model.statusIcon = true
-                model.descriptionText = "Here is a long description that need two lines to be displayed"
+            model.status = status
+            model.statusIcon = true
+            model.descriptionText = "Here is a long description that need two lines to be displayed"
 
-                // First test with bullet list and action at top trailing position
-                model.closeButton = false
-                model.actionPosition = .topTrailing
-                model.bullet2 = "Bullet 2 is a bullet with a very long label to test the wrapping"
+            // First test with bullet list and action at top trailing position
+            model.closeButton = false
+            model.actionPosition = .topTrailing
+            model.bullet2 = "Bullet 2 is a bullet with a very long label to test the wrapping"
 
-                testAlertMessage(theme: theme,
-                                 interfaceStyle: interfaceStyle,
-                                 model: model)
+            testAlertMessage(theme: theme,
+                             interfaceStyle: interfaceStyle,
+                             model: model)
 
-                // Second test with action at bottom and with close button, but without bullet list
-                model.closeButton = true
-                model.actionPosition = .bottom
-                model.bullet1 = ""
-                model.bullet2 = ""
-                model.bullet3 = ""
+            // Second test with action at bottom and with close button, but without bullet list
+            model.closeButton = true
+            model.actionPosition = .bottom
+            model.bullet1 = ""
+            model.bullet2 = ""
+            model.bullet3 = ""
 
-                testAlertMessage(theme: theme,
-                                 interfaceStyle: interfaceStyle,
-                                 model: model)
+            testAlertMessage(theme: theme,
+                             interfaceStyle: interfaceStyle,
+                             model: model)
         }
     }
 
@@ -74,8 +74,8 @@ open class AlertMessageSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - model: The model contains each element of configuration
     @MainActor private func testAlertMessage(theme: OUDSTheme,
-                                           interfaceStyle: UIUserInterfaceStyle,
-                                           model: AlertMessageConfigurationModel)
+                                             interfaceStyle: UIUserInterfaceStyle,
+                                             model: AlertMessageConfigurationModel)
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
