@@ -16,7 +16,7 @@ import SwiftUI
 
 // MARK: - AlertMessage Configuration Model
 
-/// The model shared between `AlertMessagePageConfiguration` view and `AlertMessagePageComponent` view.
+/// The model shared between `AlertMessageConfigurationView` view and `AlertMessageDemo` view.
 final class AlertMessageConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
@@ -64,8 +64,6 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
     @Published var actionPosition: OUDSAlertMessage.Link.Position {
         didSet { updateCode() }
     }
-
-    static let MaxBulletCount = Int(3)
 
     // MARK: Initializer
 
@@ -129,21 +127,21 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
 
     // MARK: Component Code snippet
 
-    private var flipIconPatern: String {
+    private var flipIconPattern: String {
         flipIcon ? ", flipped: true" : ""
     }
 
-    private var iconPatern: String {
+    private var iconPattern: String {
         switch status {
         case .neutral, .accent:
-            statusIcon ? "icon: Image(\"ic_heart\")\(flipIconPatern)" : ""
+            statusIcon ? "icon: Image(\"ic_heart\")\(flipIconPattern)" : ""
         default:
             statusIcon ? "showIcon: true" : ""
         }
     }
 
     private var statusPattern: String {
-        ", status: \(status.technicalDescription)(\(iconPatern))"
+        ", status: \(status.technicalDescription)(\(iconPattern))"
     }
 
     private var descriptionPattern: String {
@@ -165,7 +163,7 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            OUDSAlertMessage(label: \"\(text)"\(statusPattern)\(descriptionPattern)\(bulletListPattern)\(linkPattern)\(onClosePattern))
+            OUDSAlertMessage(label: \"\(text)\"\(statusPattern)\(descriptionPattern)\(bulletListPattern)\(linkPattern)\(onClosePattern))
             """
     }
 }

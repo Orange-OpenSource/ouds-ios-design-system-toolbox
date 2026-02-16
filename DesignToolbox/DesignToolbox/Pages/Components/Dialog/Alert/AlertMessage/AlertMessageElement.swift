@@ -33,7 +33,6 @@ struct AlertMessageElement: DesignToolboxElement {
 private struct AlertMessageIllustration: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(spacing: theme.spaces.fixedSmall) {
