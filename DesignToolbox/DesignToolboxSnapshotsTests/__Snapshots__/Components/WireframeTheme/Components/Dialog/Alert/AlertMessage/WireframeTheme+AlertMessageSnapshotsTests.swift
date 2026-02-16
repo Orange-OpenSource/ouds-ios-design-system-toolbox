@@ -29,13 +29,13 @@ final class WireframeThemeAlertMessageSnapshotsTests: AlertMessageSnapshotsTests
         theme = WireframeTheme()
     }
 
-    /// Tests all bullet lists configuration in the `WireframeTheme` with the `light` color schemes.
+    /// Tests all alert messages configurations in the `WireframeTheme` with the `light` color schemes.
     @MainActor func testAllAlertMessageWireframeThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllAlertMessages(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all bullet lists configuration in the `WireframeTheme` with the `dark` color schemes.
+    /// Tests all alert messages configurations in the `WireframeTheme` with the `dark` color schemes.
     @MainActor func testAllAlertMessagesWireframeThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllAlertMessages(theme: theme, interfaceStyle: interfaceStyle)

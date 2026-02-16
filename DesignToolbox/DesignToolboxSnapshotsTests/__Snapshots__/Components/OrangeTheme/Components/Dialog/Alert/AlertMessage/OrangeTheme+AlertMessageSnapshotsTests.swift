@@ -29,13 +29,13 @@ final class OrangeThemeAlertMessageSnapshotsTests: AlertMessageSnapshotsTestsTes
         theme = OrangeTheme()
     }
 
-    /// Tests all bullet lists configuration in the `OrangeTheme` with the `light` color schemes.
+    /// Tests all alert messages configurations in the `OrangeTheme` with the `light` color schemes.
     @MainActor func testAllAlertMessageOrangeThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllAlertMessages(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all bullet lists configuration in the `OrangeTheme` with the `dark` color schemes.
+    /// Tests all alert messages configurations in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllAlertMessagesOrangeThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllAlertMessages(theme: theme, interfaceStyle: interfaceStyle)
