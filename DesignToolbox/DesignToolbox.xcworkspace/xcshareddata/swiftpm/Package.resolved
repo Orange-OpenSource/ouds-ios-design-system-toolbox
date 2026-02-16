@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1296-with-the-button-component-the-loader-does-not-have-the-good-size",
-        "revision" : "1682a2cb973017fb7d8c678722c6622a2c2326fd"
+        "branch" : "develop",
+        "revision" : "921fa3794d483743188556e73b24005d36f46acb"
       }
     },
     {
