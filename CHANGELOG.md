@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.2.0...develop)
 
+### Fixed
+
+- [Library] Size of the bullet for unordered and bare bullet list component (Orange-OpenSource/ouds-ios#1300)
+
 ## [1.2.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.1.0...1.2.0) - 2026-02-13
 
 ### Added
