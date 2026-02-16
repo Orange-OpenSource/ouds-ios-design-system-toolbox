@@ -29,13 +29,13 @@ final class SoshThemeAlertMessageSnapshotsTests: AlertMessageSnapshotsTestsTestC
         theme = SoshTheme()
     }
 
-    /// Tests all bullet lists configuration in the `SoshTheme` with the `light` color schemes.
+    /// Tests all alert messages configuration in the `SoshTheme` with the `light` color schemes.
     @MainActor func testAllAlertMessageSoshThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllAlertMessages(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all bullet lists configuration in the `SoshTheme` with the `dark` color schemes.
+    /// Tests all alert messages configuration in the `SoshTheme` with the `dark` color schemes.
     @MainActor func testAllAlertMessagesSoshThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllAlertMessages(theme: theme, interfaceStyle: interfaceStyle)
