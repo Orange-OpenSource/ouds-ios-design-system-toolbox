@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1300-bullet-list-update-size-of-the-bullet-for-unordered-and-bare",
-        "revision" : "b957931fcaf384532f57c62203086c917a43e56d"
+        "branch" : "develop",
+        "revision" : "6b79ac08bf13f6f75266418e68b9e74d0788bd68"
       }
     },
     {
