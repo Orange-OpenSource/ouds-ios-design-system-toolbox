@@ -5554,7 +5554,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1296-with-the-button-component-the-loader-does-not-have-the-good-size";
 				kind = branch;
 			};
 		};
