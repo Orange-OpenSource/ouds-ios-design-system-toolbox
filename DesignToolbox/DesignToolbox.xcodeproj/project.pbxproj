@@ -5554,7 +5554,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1300-bullet-list-update-size-of-the-bullet-for-unordered-and-bare";
 				kind = branch;
 			};
 		};

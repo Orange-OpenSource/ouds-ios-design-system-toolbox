@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.2.0...develop)
 
+### Changed
+
+- [DesignToolbox] With the bullet list component, the size of the bullet for unordered and bare must be updated (Orange-OpenSource/ouds-ios#1300)
+
 ## [1.2.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.1.0...1.2.0) - 2026-02-13
 
 ### Added
@@ -15,7 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [DesignToolbox] With the bullet list component, the size of the bullet for unordered and bare must be updated (Orange-OpenSource/ouds-ios#1300)
 - [DesignToolbox] `ruby/setup-ruby` action from v1.286.0 to v1.288.0 for `build-and-test` workflow
 - [DesignToolbox] `github/codeql-action/upload-sarif` action for `scorecard` workflow
 - [DesignToolbox] `json` RubyGem from v2.18.0 to v2.18.1
