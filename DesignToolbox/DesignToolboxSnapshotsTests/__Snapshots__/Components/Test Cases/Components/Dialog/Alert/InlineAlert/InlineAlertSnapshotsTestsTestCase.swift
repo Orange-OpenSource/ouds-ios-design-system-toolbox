@@ -20,66 +20,45 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSAlertMessage` for each parameter
-open class AlertMessageSnapshotsTestsTestCase: XCTestCase {
+/// Tests the UI rendering of the `OUDSInlineAlert` for each parameter
+open class InlineAlertSnapshotsTestsTestCase: XCTestCase {
 
-    /// This function tests some AlertMessage configuration for the given theme and color schemes on a standard surface.
-    ///
-    /// To reduce the size of memory of snapshots, two kinds of configuration are considered:
-    /// - first: With action at the traling position, with bullet list and without close button
-    /// - seconf: With action at the bottom position without bullet but with a close button
-    /// For both, it iterates through all `AlertStatus` values.
+    /// This function tests some InlineAlert configuration for the given theme and color schemes on a standard surface.
+    /// It iterates through all `AlertStatus` values.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`).
     ///   - interfaceStyle: The user interface style (light or dark).
-    @MainActor func testAllAlertMessages(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    @MainActor func testAllInlineAlerts(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
         for status in AlertStatus.allCases {
-            let model = AlertMessageConfigurationModel()
+            let model = InlineAlertConfigurationModel()
             model.status = status
             model.statusIcon = true
-            model.descriptionText = "Here is a long description that need two lines to be displayed"
 
-            // First test with bullet list and action at top trailing position
-            model.closeButton = false
-            model.actionPosition = .topTrailing
-            model.bullet2 = "Bullet 2 is a bullet with a very long label to test the wrapping"
-
-            testAlertMessage(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             model: model)
-
-            // Second test with action at bottom and with close button, but without bullet list
-            model.closeButton = true
-            model.actionPosition = .bottom
-            model.bullet1 = ""
-            model.bullet2 = ""
-            model.bullet3 = ""
-
-            testAlertMessage(theme: theme,
+            testInlineAlert(theme: theme,
                              interfaceStyle: interfaceStyle,
                              model: model)
         }
     }
 
-    /// This function tests AlertMessage according to parameters of the configuration available on a `OUDSAlertMessage`
+    /// This function tests InlineAlert according to parameters of the configuration available on a `OUDSInlineAlert`
     /// for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
-    ///    test_<themeName>_<colorScheme>_<status>_<actionPosition>
+    ///    test_<themeName>_<colorScheme>_<status>
     ///
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - model: The model contains each element of configuration
-    @MainActor private func testAlertMessage(theme: OUDSTheme,
+    @MainActor private func testInlineAlert(theme: OUDSTheme,
                                              interfaceStyle: UIUserInterfaceStyle,
-                                             model: AlertMessageConfigurationModel)
+                                             model: InlineAlertConfigurationModel)
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
-            AlertMessageDemo(configurationModel: model)
+            InlineAlertDemo(configurationModel: model)
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
@@ -87,9 +66,8 @@ open class AlertMessageSnapshotsTestsTestCase: XCTestCase {
         //    test_<themeName>_<colorScheme>_<type>_<textStyle>_<isBold>
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let statusPattern = model.status.technicalDescription
-        let actionPosition = model.actionPosition.technicalDescription
 
-        let name = "\(statusPattern)\(actionPosition)"
+        let name = "\(statusPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,

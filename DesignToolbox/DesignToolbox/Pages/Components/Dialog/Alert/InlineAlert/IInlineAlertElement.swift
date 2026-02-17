@@ -14,30 +14,18 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct AlertElements: DesignToolboxElement {
+struct InlineAlertElement: DesignToolboxElement {
     let name: String
     let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
-        let variants: [DesignToolboxElement] = [
-            AlertMessageElement(),
-            InlineAlertElement(),
-        ]
-
-        name = "app_components_alert_label".localized()
+        name = "app_components_alert_inlineAlert_label".localized()
         illustration = AnyView(AlertIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            illustration: illustration,
-            description: "app_components_alert_description_text",
-            demoScreen: AnyView(DesignToolboxVariantElement(elements: variants))))
-    }
-}
-
-struct AlertIllustration: View {
-
-    var body: some View {
-        OUDSAlertMessage(label: "app_components_common_label_label".localized())
+            description: "app_components_alert_inlineAlert_description_text",
+            version: OUDSVersions.componentInlineAlertVersion,
+            demoScreen: AnyView(InlineAlertPage())))
     }
 }

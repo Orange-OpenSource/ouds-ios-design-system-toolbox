@@ -1008,6 +1008,37 @@
 		FC736E9B2F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E972F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift */; };
 		FC736EA02F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E9C2F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift */; };
 		FC8FD1582F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */; };
+		FC9178A62F438615002690A1 /* AlertStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178A52F438615002690A1 /* AlertStatus.swift */; };
+		FC9178A72F438615002690A1 /* AlertStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178A52F438615002690A1 /* AlertStatus.swift */; };
+		FC9178A82F438615002690A1 /* AlertStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178A52F438615002690A1 /* AlertStatus.swift */; };
+		FC9178A92F438615002690A1 /* AlertStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178A52F438615002690A1 /* AlertStatus.swift */; };
+		FC9178AA2F438615002690A1 /* AlertStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178A52F438615002690A1 /* AlertStatus.swift */; };
+		FC9178AB2F438615002690A1 /* AlertStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178A52F438615002690A1 /* AlertStatus.swift */; };
+		FC9178AE2F438678002690A1 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178AD2F438678002690A1 /* AlertConfiguration.swift */; };
+		FC9178AF2F438678002690A1 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178AD2F438678002690A1 /* AlertConfiguration.swift */; };
+		FC9178B02F438678002690A1 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178AD2F438678002690A1 /* AlertConfiguration.swift */; };
+		FC9178B12F438678002690A1 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178AD2F438678002690A1 /* AlertConfiguration.swift */; };
+		FC9178B22F438678002690A1 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178AD2F438678002690A1 /* AlertConfiguration.swift */; };
+		FC9178B32F438678002690A1 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178AD2F438678002690A1 /* AlertConfiguration.swift */; };
+		FC9178B52F438795002690A1 /* InlineAlertConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178B42F438795002690A1 /* InlineAlertConfigurationView.swift */; };
+		FC9178B62F438795002690A1 /* InlineAlertConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178B42F438795002690A1 /* InlineAlertConfigurationView.swift */; };
+		FC9178B72F438795002690A1 /* InlineAlertConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178B42F438795002690A1 /* InlineAlertConfigurationView.swift */; };
+		FC9178B82F438795002690A1 /* InlineAlertConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178B42F438795002690A1 /* InlineAlertConfigurationView.swift */; };
+		FC9178B92F438795002690A1 /* InlineAlertConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178B42F438795002690A1 /* InlineAlertConfigurationView.swift */; };
+		FC9178BA2F438795002690A1 /* InlineAlertConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178B42F438795002690A1 /* InlineAlertConfigurationView.swift */; };
+		FC9178BC2F438A6A002690A1 /* IInlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178BB2F438A6A002690A1 /* IInlineAlertElement.swift */; };
+		FC9178BD2F438A6A002690A1 /* IInlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178BB2F438A6A002690A1 /* IInlineAlertElement.swift */; };
+		FC9178BE2F438A6A002690A1 /* IInlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178BB2F438A6A002690A1 /* IInlineAlertElement.swift */; };
+		FC9178BF2F438A6A002690A1 /* IInlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178BB2F438A6A002690A1 /* IInlineAlertElement.swift */; };
+		FC9178C02F438A6A002690A1 /* IInlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178BB2F438A6A002690A1 /* IInlineAlertElement.swift */; };
+		FC9178C12F438A6A002690A1 /* IInlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178BB2F438A6A002690A1 /* IInlineAlertElement.swift */; };
+		FC9178C32F438B27002690A1 /* InlineAlertPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178C22F438B27002690A1 /* InlineAlertPage.swift */; };
+		FC9178C42F438B27002690A1 /* InlineAlertPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178C22F438B27002690A1 /* InlineAlertPage.swift */; };
+		FC9178C52F438B27002690A1 /* InlineAlertPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178C22F438B27002690A1 /* InlineAlertPage.swift */; };
+		FC9178C62F438B27002690A1 /* InlineAlertPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178C22F438B27002690A1 /* InlineAlertPage.swift */; };
+		FC9178C72F438B27002690A1 /* InlineAlertPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178C22F438B27002690A1 /* InlineAlertPage.swift */; };
+		FC9178C82F438B27002690A1 /* InlineAlertPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178C22F438B27002690A1 /* InlineAlertPage.swift */; };
+		FC9178CB2F44716E002690A1 /* InlineAlertSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9178CA2F44716E002690A1 /* InlineAlertSnapshotsTestsTestCase.swift */; };
 		FCA849142E9FF00500DBCE76 /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
 		FCA849152E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */; };
 		FCA849162E9FF00500DBCE76 /* InputTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849132E9FF00500DBCE76 /* InputTagPage.swift */; };
@@ -1483,6 +1514,12 @@
 		FC736E972F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC736E9C2F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FC9178A52F438615002690A1 /* AlertStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStatus.swift; sourceTree = "<group>"; };
+		FC9178AD2F438678002690A1 /* AlertConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertConfiguration.swift; sourceTree = "<group>"; };
+		FC9178B42F438795002690A1 /* InlineAlertConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineAlertConfigurationView.swift; sourceTree = "<group>"; };
+		FC9178BB2F438A6A002690A1 /* IInlineAlertElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IInlineAlertElement.swift; sourceTree = "<group>"; };
+		FC9178C22F438B27002690A1 /* InlineAlertPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineAlertPage.swift; sourceTree = "<group>"; };
+		FC9178CA2F44716E002690A1 /* InlineAlertSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineAlertSnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
 		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
 		FCA849132E9FF00500DBCE76 /* InputTagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagPage.swift; sourceTree = "<group>"; };
@@ -3251,6 +3288,7 @@
 		FC736E892F3D286E0019FC13 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				FC9178C92F447160002690A1 /* InlineAlert */,
 				FC736E8A2F3D28760019FC13 /* AlertMessage */,
 			);
 			path = Alert;
@@ -3368,6 +3406,33 @@
 			path = ContentDisplay;
 			sourceTree = "<group>";
 		};
+		FC9178A42F4385E8002690A1 /* InlineAlert */ = {
+			isa = PBXGroup;
+			children = (
+				FC9178C22F438B27002690A1 /* InlineAlertPage.swift */,
+				FC9178BB2F438A6A002690A1 /* IInlineAlertElement.swift */,
+				FC9178B42F438795002690A1 /* InlineAlertConfigurationView.swift */,
+			);
+			path = InlineAlert;
+			sourceTree = "<group>";
+		};
+		FC9178AC2F43863B002690A1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FC9178AD2F438678002690A1 /* AlertConfiguration.swift */,
+				FC9178A52F438615002690A1 /* AlertStatus.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		FC9178C92F447160002690A1 /* InlineAlert */ = {
+			isa = PBXGroup;
+			children = (
+				FC9178CA2F44716E002690A1 /* InlineAlertSnapshotsTestsTestCase.swift */,
+			);
+			path = InlineAlert;
+			sourceTree = "<group>";
+		};
 		FCA849102E9FEFF600DBCE76 /* InputTag */ = {
 			isa = PBXGroup;
 			children = (
@@ -3443,6 +3508,8 @@
 		FCEE0FD92F3CBEC300ABD80E /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				FC9178AC2F43863B002690A1 /* Common */,
+				FC9178A42F4385E8002690A1 /* InlineAlert */,
 				FCEE0FD72F3CBEC300ABD80E /* AlertMessage */,
 				FCEE0FD82F3CBEC300ABD80E /* AlertElements.swift */,
 			);
@@ -3927,6 +3994,7 @@
 				0745C18A2D7A03B8006B3A1F /* RadioElements.swift in Sources */,
 				51952A7C2D3FA1510068B807 /* OrangeTheme+TokensBorderSnapshotsTests.swift in Sources */,
 				518EC0B42E1FF38400FC77E4 /* OrangeTheme+BadgeSnapshotsTests.swift in Sources */,
+				FC9178C72F438B27002690A1 /* InlineAlertPage.swift in Sources */,
 				51D6D5862D887E36009CD879 /* CheckboxIndeterminateElement.swift in Sources */,
 				6DED17EF2CD25B2200584BC9 /* SizeTokenElement.swift in Sources */,
 				51A217832E325FE600562BE0 /* WireframeTheme+TokensOpacitySnapshotsTests.swift in Sources */,
@@ -3971,6 +4039,7 @@
 				51A217802E325FE600562BE0 /* WireframeTheme+TokensSpaceSnapshotsTests.swift in Sources */,
 				51E5999D2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */,
 				51A217822E325FE600562BE0 /* WireframeTheme+TokensBorderSnapshotsTests.swift in Sources */,
+				FC9178BD2F438A6A002690A1 /* IInlineAlertElement.swift in Sources */,
 				5134420B2D75B880000B5DE4 /* CheckboxConfiguration.swift in Sources */,
 				5134420C2D75B880000B5DE4 /* CheckboxElements.swift in Sources */,
 				6DB260DD2CD0F01F0091F72E /* NamedSpace+Scaled.swift in Sources */,
@@ -4014,6 +4083,7 @@
 				07CAE76A2CEE20B200D6C5D1 /* SpacePaddingTokenIllustrations.swift in Sources */,
 				FCF02BB62F30EC4B00F2013F /* SoshTheme+PasswordInputSnapshotsTests.swift in Sources */,
 				07CAE76B2CEE20B200D6C5D1 /* SpaceBasicTokenIllustrations.swift in Sources */,
+				FC9178BA2F438795002690A1 /* InlineAlertConfigurationView.swift in Sources */,
 				518EC0B02E1FF2E800FC77E4 /* SwitchSnapshotsTestsTestCase.swift in Sources */,
 				6D17A22E2CCBF12B00C00512 /* NamedColor+Background.swift in Sources */,
 				6D17A22F2CCBF12B00C00512 /* NamedColor+Border.swift in Sources */,
@@ -4029,9 +4099,11 @@
 				FCDDFBBA2F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */,
 				FCDDFBBB2F2B69E700389D8D /* PasswordInputElement.swift in Sources */,
 				51417C252E1BF661000266C8 /* TokensBorderSnapshotsTestsTestCase.swift in Sources */,
+				FC9178B02F438678002690A1 /* AlertConfiguration.swift in Sources */,
 				07B3CCB52D40F37000DBB10A /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				07FB2A332E454D7900361ECA /* TagPage.swift in Sources */,
 				07FB2A342E454D7900361ECA /* TagElement.swift in Sources */,
+				FC9178AB2F438615002690A1 /* AlertStatus.swift in Sources */,
 				07FB2A352E454D7900361ECA /* TagConfigurationView.swift in Sources */,
 				95CE05432EC33CE900ACE41C /* FontIllustrations.swift in Sources */,
 				51952A862D3FA1DB0068B807 /* OrangeTheme+TokensSpaceSnapshotsTests.swift in Sources */,
@@ -4042,6 +4114,7 @@
 				515EE9882E21329B00A60E96 /* FilterChipPage.swift in Sources */,
 				953DC15C2ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */,
 				953DC15D2ED0995600D14D44 /* TabBarElement.swift in Sources */,
+				FC9178CB2F44716E002690A1 /* InlineAlertSnapshotsTestsTestCase.swift in Sources */,
 				953DC15E2ED0995600D14D44 /* TabBarPage.swift in Sources */,
 				079B4A162E49C6EB0039FC26 /* SoshTheme+TagSnapshotsTests.swift in Sources */,
 				515EE9892E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */,
@@ -4121,6 +4194,7 @@
 				51E5999F2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */,
 				51952A672D3F9B9E0068B807 /* DesignToolboxConfiguration.swift in Sources */,
 				51952A682D3F9B9E0068B807 /* NamedColor+Opacity.swift in Sources */,
+				FC9178C52F438B27002690A1 /* InlineAlertPage.swift in Sources */,
 				07AB458B2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */,
 				0745C1992D7A0823006B3A1F /* RadioItemPage.swift in Sources */,
 				51952A692D3F9B9E0068B807 /* NamedColor+Overlay.swift in Sources */,
@@ -4147,6 +4221,7 @@
 				515EE9992E21329B00A60E96 /* SuggestionChipPage.swift in Sources */,
 				515EE99A2E21329B00A60E96 /* ChipElements.swift in Sources */,
 				5180FE6E2DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */,
+				FC9178C02F438A6A002690A1 /* IInlineAlertElement.swift in Sources */,
 				5180FE6F2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */,
 				5180FE702DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */,
 				95CE05392EC33C4800ACE41C /* OpacityIllustration.swift in Sources */,
@@ -4166,6 +4241,7 @@
 				95CE05572EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				0786A9DB2E0AAB4A00976098 /* CheckboxItemElement.swift in Sources */,
 				0786A9DC2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
+				FC9178A62F438615002690A1 /* AlertStatus.swift in Sources */,
 				077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */,
 				0765B4982CC15A4000E69359 /* NamedColor+Always.swift in Sources */,
 				07F75A392CC6462D0004F1AD /* NamedSpace+Fixed.swift in Sources */,
@@ -4192,6 +4268,7 @@
 				07EB47022E1801D000B94EC2 /* BadgeConfigurationView.swift in Sources */,
 				07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */,
 				07CF42782CA3F4BE000BD03E /* ElevationTokenElement.swift in Sources */,
+				FC9178B32F438678002690A1 /* AlertConfiguration.swift in Sources */,
 				0765B4A42CC15C3E00E69359 /* NamedColor+Chart.swift in Sources */,
 				07CF42792CA3F4BE000BD03E /* ElevationTokenPage.swift in Sources */,
 				51D6D5912D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift in Sources */,
@@ -4266,6 +4343,7 @@
 				0784B2732CCB8CC800299C10 /* NamedSize+IconDecorative.swift in Sources */,
 				51BD762A2C466FCF0033365D /* DesignToolbox.swift in Sources */,
 				07F75A432CC654050004F1AD /* NameSpace+PaddingBlock.swift in Sources */,
+				FC9178B52F438795002690A1 /* InlineAlertConfigurationView.swift in Sources */,
 				95CE05502EC33E9800ACE41C /* SizeIllustrations.swift in Sources */,
 				5134420E2D75B880000B5DE4 /* CheckboxElement.swift in Sources */,
 				95EDFD182EC73BB9006DE593 /* Image+extensions.swift in Sources */,
@@ -4353,6 +4431,7 @@
 				951458572EC28BC20096BBF1 /* ElevationsView.swift in Sources */,
 				9593906C2EC24DB9000DBE95 /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				9593906B2EC24DB3000DBE95 /* View+Illustration.swift in Sources */,
+				FC9178A72F438615002690A1 /* AlertStatus.swift in Sources */,
 				959390582EC24CC5000DBE95 /* NameSpace+ColumnGap.swift in Sources */,
 				959390592EC24CC5000DBE95 /* NameSpace+RowGap.swift in Sources */,
 				9593905A2EC24CC5000DBE95 /* NameSpace+PaddingInline.swift in Sources */,
@@ -4377,6 +4456,7 @@
 				9593904B2EC24A1B000DBE95 /* SizesView.swift in Sources */,
 				9593903B2EC22035000DBE95 /* NamedColor+Overlay.swift in Sources */,
 				9593903C2EC22035000DBE95 /* NamedColor+Repository.swift in Sources */,
+				FC9178B72F438795002690A1 /* InlineAlertConfigurationView.swift in Sources */,
 				9593903D2EC22035000DBE95 /* NamedColor+Surface.swift in Sources */,
 				959390212EC1F4BC000DBE95 /* DesignToolboxTokenIllustration.swift in Sources */,
 				950EA7D12EBE44390009414A /* NamedColorMode.swift in Sources */,
@@ -4387,6 +4467,7 @@
 				950EA7BC2EBE3ECB0009414A /* LayoutsView.swift in Sources */,
 				959390262EC21FD9000DBE95 /* ColorsView.swift in Sources */,
 				950EA7BD2EBE3ECB0009414A /* LinksView.swift in Sources */,
+				FC9178C62F438B27002690A1 /* InlineAlertPage.swift in Sources */,
 				950EA7BE2EBE3ECB0009414A /* NavigationsView.swift in Sources */,
 				950EA7BF2EBE3ECB0009414A /* BadgesView.swift in Sources */,
 				950EA7C02EBE3ECB0009414A /* TagsView.swift in Sources */,
@@ -4403,6 +4484,7 @@
 				950288A52EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */,
 				950EA7C72EBE3ECB0009414A /* SwitchesItemView.swift in Sources */,
 				950EA7C82EBE3ECB0009414A /* SwitchesOnlyView.swift in Sources */,
+				FC9178B22F438678002690A1 /* AlertConfiguration.swift in Sources */,
 				950EA7C92EBE3ECB0009414A /* SwitchesView.swift in Sources */,
 				95CE05452EC33CE900ACE41C /* FontIllustrations.swift in Sources */,
 				9514586B2EC2920C0096BBF1 /* OpacitiesView.swift in Sources */,
@@ -4420,6 +4502,7 @@
 				FCEE0FDE2F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */,
 				950EA7CE2EBE3ECB0009414A /* ControlsView.swift in Sources */,
 				950EA7CF2EBE3ECB0009414A /* ButtonsView.swift in Sources */,
+				FC9178C12F438A6A002690A1 /* IInlineAlertElement.swift in Sources */,
 				950EA7D02EBE3ECB0009414A /* ActionsView.swift in Sources */,
 				9593901B2EC1F2A0000DBE95 /* BordersView.swift in Sources */,
 			);
@@ -4436,6 +4519,7 @@
 				9589F0252EB7D67B00134487 /* NamedColor+Opacity.swift in Sources */,
 				9589F0262EB7D67B00134487 /* DesignToolboxTextField.swift in Sources */,
 				9589F0272EB7D67B00134487 /* RadioItemPage.swift in Sources */,
+				FC9178C32F438B27002690A1 /* InlineAlertPage.swift in Sources */,
 				9589F0282EB7D67B00134487 /* NamedColor+Overlay.swift in Sources */,
 				9589F0292EB7D67B00134487 /* NamedColor+Repository.swift in Sources */,
 				95CE05612EC33FF800ACE41C /* NamedElevation.swift in Sources */,
@@ -4462,6 +4546,7 @@
 				9589F03D2EB7D67B00134487 /* CheckboxPickerPage.swift in Sources */,
 				9589F03E2EB7D67B00134487 /* CheckboxPickerConfiguration.swift in Sources */,
 				9589F03F2EB7D67B00134487 /* CheckboxPickerElement.swift in Sources */,
+				FC9178BC2F438A6A002690A1 /* IInlineAlertElement.swift in Sources */,
 				95CE053C2EC33C4800ACE41C /* OpacityIllustration.swift in Sources */,
 				95CE056F2EC3D10700ACE41C /* BorderIllustrations.swift in Sources */,
 				9589F0402EB7D67B00134487 /* TagElements.swift in Sources */,
@@ -4481,6 +4566,7 @@
 				9589F04C2EB7D67B00134487 /* CheckboxItemPage.swift in Sources */,
 				9589F04D2EB7D67B00134487 /* DimensionTokenElement.swift in Sources */,
 				9589F04E2EB7D67B00134487 /* BorderTokenPage.swift in Sources */,
+				FC9178AA2F438615002690A1 /* AlertStatus.swift in Sources */,
 				9589F04F2EB7D67B00134487 /* DesignToolboxTokenIllustration.swift in Sources */,
 				9589F0502EB7D67B00134487 /* NamedColor+Always.swift in Sources */,
 				9589F0512EB7D67B00134487 /* NamedSpace+Fixed.swift in Sources */,
@@ -4507,6 +4593,7 @@
 				9589F0652EB7D67B00134487 /* BadgeConfigurationView.swift in Sources */,
 				9589F0662EB7D67B00134487 /* CardIllustration.swift in Sources */,
 				9589F0672EB7D67B00134487 /* ElevationTokenElement.swift in Sources */,
+				FC9178B12F438678002690A1 /* AlertConfiguration.swift in Sources */,
 				9589F0682EB7D67B00134487 /* NamedColor+Chart.swift in Sources */,
 				9589F0692EB7D67B00134487 /* ElevationTokenPage.swift in Sources */,
 				9589F06A2EB7D67B00134487 /* CheckboxIndeterminateConfiguration.swift in Sources */,
@@ -4581,6 +4668,7 @@
 				9589F0A32EB7D67B00134487 /* NamedSize+IconDecorative.swift in Sources */,
 				9589F0A42EB7D67B00134487 /* DesignToolbox.swift in Sources */,
 				9589F0A52EB7D67B00134487 /* NameSpace+PaddingBlock.swift in Sources */,
+				FC9178B92F438795002690A1 /* InlineAlertConfigurationView.swift in Sources */,
 				95CE054F2EC33E9800ACE41C /* SizeIllustrations.swift in Sources */,
 				9589F0A62EB7D67B00134487 /* CheckboxElement.swift in Sources */,
 				95EDFD1B2EC73BB9006DE593 /* Image+extensions.swift in Sources */,
@@ -4618,6 +4706,7 @@
 				9589F0FF2EB7D67E00134487 /* NamedColor+Opacity.swift in Sources */,
 				9589F1002EB7D67E00134487 /* DesignToolboxTextField.swift in Sources */,
 				9589F1012EB7D67E00134487 /* RadioItemPage.swift in Sources */,
+				FC9178C82F438B27002690A1 /* InlineAlertPage.swift in Sources */,
 				9589F1022EB7D67E00134487 /* NamedColor+Overlay.swift in Sources */,
 				9589F1032EB7D67E00134487 /* NamedColor+Repository.swift in Sources */,
 				95CE05602EC33FF800ACE41C /* NamedElevation.swift in Sources */,
@@ -4644,6 +4733,7 @@
 				9589F1172EB7D67E00134487 /* CheckboxPickerPage.swift in Sources */,
 				9589F1182EB7D67E00134487 /* CheckboxPickerConfiguration.swift in Sources */,
 				9589F1192EB7D67E00134487 /* CheckboxPickerElement.swift in Sources */,
+				FC9178BF2F438A6A002690A1 /* IInlineAlertElement.swift in Sources */,
 				95CE053B2EC33C4800ACE41C /* OpacityIllustration.swift in Sources */,
 				95CE056C2EC3D10700ACE41C /* BorderIllustrations.swift in Sources */,
 				9589F11A2EB7D67E00134487 /* TagElements.swift in Sources */,
@@ -4663,6 +4753,7 @@
 				9589F1262EB7D67E00134487 /* CheckboxItemPage.swift in Sources */,
 				9589F1272EB7D67E00134487 /* DimensionTokenElement.swift in Sources */,
 				9589F1282EB7D67E00134487 /* BorderTokenPage.swift in Sources */,
+				FC9178A82F438615002690A1 /* AlertStatus.swift in Sources */,
 				9589F1292EB7D67E00134487 /* DesignToolboxTokenIllustration.swift in Sources */,
 				9589F12A2EB7D67E00134487 /* NamedColor+Always.swift in Sources */,
 				9589F12B2EB7D67E00134487 /* NamedSpace+Fixed.swift in Sources */,
@@ -4689,6 +4780,7 @@
 				9589F13F2EB7D67E00134487 /* BadgeConfigurationView.swift in Sources */,
 				9589F1402EB7D67E00134487 /* CardIllustration.swift in Sources */,
 				9589F1412EB7D67E00134487 /* ElevationTokenElement.swift in Sources */,
+				FC9178AE2F438678002690A1 /* AlertConfiguration.swift in Sources */,
 				9589F1422EB7D67E00134487 /* NamedColor+Chart.swift in Sources */,
 				9589F1432EB7D67E00134487 /* ElevationTokenPage.swift in Sources */,
 				9589F1442EB7D67E00134487 /* CheckboxIndeterminateConfiguration.swift in Sources */,
@@ -4763,6 +4855,7 @@
 				9589F17D2EB7D67E00134487 /* NamedSize+IconDecorative.swift in Sources */,
 				9589F17E2EB7D67E00134487 /* DesignToolbox.swift in Sources */,
 				9589F17F2EB7D67E00134487 /* NameSpace+PaddingBlock.swift in Sources */,
+				FC9178B62F438795002690A1 /* InlineAlertConfigurationView.swift in Sources */,
 				95CE054E2EC33E9800ACE41C /* SizeIllustrations.swift in Sources */,
 				9589F1802EB7D67E00134487 /* CheckboxElement.swift in Sources */,
 				95EDFD172EC73BB9006DE593 /* Image+extensions.swift in Sources */,
@@ -4814,6 +4907,7 @@
 				951458582EC28BC20096BBF1 /* ElevationsView.swift in Sources */,
 				9593906E2EC24DC7000DBE95 /* View+Illustration.swift in Sources */,
 				9593906D2EC24DC2000DBE95 /* DesignToolboxSectionHeaderStyle.swift in Sources */,
+				FC9178A92F438615002690A1 /* AlertStatus.swift in Sources */,
 				9593905E2EC24CF3000DBE95 /* NameSpace+ColumnGap.swift in Sources */,
 				9593905F2EC24CF3000DBE95 /* NameSpace+RowGap.swift in Sources */,
 				959390602EC24CF3000DBE95 /* NameSpace+PaddingInline.swift in Sources */,
@@ -4838,6 +4932,7 @@
 				9593904A2EC24A1B000DBE95 /* SizesView.swift in Sources */,
 				959390302EC2202A000DBE95 /* NamedColor+Overlay.swift in Sources */,
 				959390312EC2202A000DBE95 /* NamedColor+Repository.swift in Sources */,
+				FC9178B82F438795002690A1 /* InlineAlertConfigurationView.swift in Sources */,
 				959390322EC2202A000DBE95 /* NamedColor+Surface.swift in Sources */,
 				959390202EC1F4B5000DBE95 /* DesignToolboxTokenIllustration.swift in Sources */,
 				950EA6C72EBCFCBE0009414A /* NamedColorMode.swift in Sources */,
@@ -4848,6 +4943,7 @@
 				9598008A2EBCCCAD007BE0EA /* BadgesView.swift in Sources */,
 				959390272EC21FD9000DBE95 /* ColorsView.swift in Sources */,
 				950EA6CF2EBDFF7D0009414A /* SwitchesView.swift in Sources */,
+				FC9178C42F438B27002690A1 /* InlineAlertPage.swift in Sources */,
 				950EA6BE2EBCF8D80009414A /* IndicatorsView.swift in Sources */,
 				950EA6B62EBCF2F10009414A /* ChipsView.swift in Sources */,
 				950EA6C02EBCF8E80009414A /* ControlsView.swift in Sources */,
@@ -4864,6 +4960,7 @@
 				950288A62EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */,
 				950EA6C92EBDF01D0009414A /* RadiosView.swift in Sources */,
 				950EA6AE2EBCDF510009414A /* ButtonsView.swift in Sources */,
+				FC9178AF2F438678002690A1 /* AlertConfiguration.swift in Sources */,
 				950EA6BC2EBCF8C80009414A /* NavigationsView.swift in Sources */,
 				95CE05442EC33CE900ACE41C /* FontIllustrations.swift in Sources */,
 				9514586C2EC2920C0096BBF1 /* OpacitiesView.swift in Sources */,
@@ -4881,6 +4978,7 @@
 				FCEE0FE22F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */,
 				950EA6B42EBCECA00009414A /* CheckboxesOnlyView.swift in Sources */,
 				950EA6D92EBE24AA0009414A /* TagView.swift in Sources */,
+				FC9178BE2F438A6A002690A1 /* IInlineAlertElement.swift in Sources */,
 				950EA6DB2EBE24E10009414A /* InputTag.swift in Sources */,
 				9593901A2EC1F2A0000DBE95 /* BordersView.swift in Sources */,
 			);
@@ -5774,7 +5872,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1159-alert-message-and-inline-alert-components";
+				branch = "1307-in-library-add-inline-alert-component";
 				kind = branch;
 			};
 		};
