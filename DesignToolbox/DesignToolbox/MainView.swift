@@ -16,10 +16,11 @@ import SwiftUI
 
 struct MainView: View {
 
+    @State private var selectedTab = 0
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSTabBar(selected: 0, count: 3) {
+        OUDSTabBar(selected: $selectedTab, count: 3) {
             TokensPage()
                 .tabItem {
                     Label("app_bottomBar_tokens_label", image: "design-token")
