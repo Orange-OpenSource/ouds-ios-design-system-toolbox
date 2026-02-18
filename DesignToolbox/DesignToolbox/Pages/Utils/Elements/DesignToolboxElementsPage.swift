@@ -63,7 +63,7 @@ struct DesignToolboxElementsPage: View {
                 ForEach(elements, id: \.id) { element in
                     NavigationLink {
                         element.pageDescription
-                            .navigationBarMenus()
+                            .navigationBarMenus(title: title)
                     } label: {
                         cardView(for: element)
                     }
@@ -72,7 +72,7 @@ struct DesignToolboxElementsPage: View {
             }
             .padding(.horizontal, 32)
             .padding(.vertical, 20)
-            .navigationBarMenus()
+            .navigationBarMenus(title: title)
             #else
             LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaces.fixedMedium) {
                 ForEach(elements, id: \.id) { element in
@@ -93,7 +93,8 @@ struct DesignToolboxElementsPage: View {
             }
             .gridMargin(.horizontal)
             .padding(.vertical, theme.spaces.fixedMedium)
-            .navigationBarMenus()
+            .navigationBarMenus(title: title)
+            .bottomToolbar()
             #endif
         }
         .background(theme.colors.bgPrimary)
