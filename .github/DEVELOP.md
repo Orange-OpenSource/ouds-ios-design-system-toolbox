@@ -39,7 +39,7 @@
 ## Technical preconditions
 
 > [!IMPORTANT]
-> You should check wether or not you have the tools in use in the project like Fastlane, SwiftLint, SwiftFormat, etc.
+> You should check whether or not you have the tools in use in the project like Fastlane, SwiftLint, SwiftFormat, etc.
 > You can have a look for example in the THIRD_PARTY.md file which lists any dependencies and tools we use at different levels (SDK, design system toolbox app, project).
 > Have a look on the locks file to know which versions we are using (Gemfile, Gemfile.lock, etc.).
 
@@ -401,7 +401,7 @@ Here is the list of files to update to keep the project clean:
 
 ## Developer Certificate of Origin
 
-A [GitHub Action bot](https://probot.github.io/apps/dco/) has been plugged in the repository so as to check wether or not the DCO is applied for commits.
+A [GitHub Action bot](https://probot.github.io/apps/dco/) has been plugged in the repository so as to check whether or not the DCO is applied for commits.
 
 ## Commits, changelog, release note, versioning
 
@@ -712,7 +712,7 @@ Workflows are the following:
 - [swiftlint](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/swiftlint.yml) to check if there is no linter warnings
 - [swiftpolyglot](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/swiftpolyglot.yml) to check if there are localizations troubles
 
-We use also two GitHub apps making controls on pull requests and defining wether or not prerequisites are filled or not.
+We use also two GitHub apps making controls on pull requests and defining whether or not prerequisites are filled or not.
 There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
 
 Finaly we have [this *GitHub Action*](https://github.com/cirruslabs/swiftlint-action) using _SwiftLint_ to ensure no warnings are in our codebase.
