@@ -21,6 +21,9 @@ struct ComponentsView: View {
         NavigationLink("Actions", destination: ActionsView())
         NavigationLink("Content Display", destination: ContentDisplayView())
         NavigationLink("Controls", destination: ControlsView())
+        #if os(tvOS)
+        NavigationLink("Dialogs", destination: DialogsView())
+        #endif
         NavigationLink("Indicators", destination: IndicatorsView())
         NavigationLink("Layouts", destination: LayoutsView())
         NavigationLink("Navigations", destination: NavigationsView())

@@ -992,6 +992,10 @@
 		95CE05812EC3D2FD00ACE41C /* BorderIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE056B2EC3D0FF00ACE41C /* BorderIllustrations.swift */; };
 		95CE05822EC3D30500ACE41C /* NamedBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE057B2EC3D2AA00ACE41C /* NamedBorders.swift */; };
 		95CE05832EC3D30500ACE41C /* BorderIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE056B2EC3D0FF00ACE41C /* BorderIllustrations.swift */; };
+		95D5BA342F4706E000CB10FE /* DialogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA312F4706E000CB10FE /* DialogsView.swift */; };
+		95D5BA362F4706E000CB10FE /* DialogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA312F4706E000CB10FE /* DialogsView.swift */; };
+		95D5BA372F4706E000CB10FE /* AlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA322F4706E000CB10FE /* AlertMessageView.swift */; };
+		95D5BA382F470AAA00CB10FE /* AlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA322F4706E000CB10FE /* AlertMessageView.swift */; };
 		95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95D713EC2EB36B0B00EBB7C2 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
 		95D804452F3C7BFD0080E04B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCF02BAF2F30A77500F2013F /* Localizable.xcstrings */; };
@@ -1002,6 +1006,11 @@
 		95EDFD1B2EC73BB9006DE593 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		95F840D32EB8FAA200CE1FE6 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95F840D22EB8FAA200CE1FE6 /* OUDSSwiftUI */; };
 		FC70E6722F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70E6712F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift */; };
+		FC736E8C2F3D28810019FC13 /* AlertMessageSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E8B2F3D28810019FC13 /* AlertMessageSnapshotsTestsTestCase.swift */; };
+		FC736E912F3E2DBD0019FC13 /* SoshTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E902F3E2DBD0019FC13 /* SoshTheme+AlertMessageSnapshotsTests.swift */; };
+		FC736E962F3E2DEE0019FC13 /* OrangeTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E922F3E2DEE0019FC13 /* OrangeTheme+AlertMessageSnapshotsTests.swift */; };
+		FC736E9B2F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E972F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift */; };
+		FC736EA02F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E9C2F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift */; };
 		FC8FD1582F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */; };
 		FCA849142E9FF00500DBCE76 /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
 		FCA849152E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */; };
@@ -1027,6 +1036,22 @@
 		FCDDFBBF2F2B69E700389D8D /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */; };
 		FCDDFBC02F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */; };
 		FCDDFBC12F2B69E700389D8D /* PasswordInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */; };
+		FCEE0FE32F3CBEC300ABD80E /* AlertMessageConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD42F3CBEC300ABD80E /* AlertMessageConfigurationView.swift */; };
+		FCEE0FE42F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD52F3CBEC300ABD80E /* AlertMessageElement.swift */; };
+		FCEE0FE52F3CBEC300ABD80E /* AlertElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD82F3CBEC300ABD80E /* AlertElements.swift */; };
+		FCEE0FE62F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD62F3CBEC300ABD80E /* AlertMessagePage.swift */; };
+		FCEE0FE72F3CBEC300ABD80E /* AlertMessageConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD42F3CBEC300ABD80E /* AlertMessageConfigurationView.swift */; };
+		FCEE0FE82F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD52F3CBEC300ABD80E /* AlertMessageElement.swift */; };
+		FCEE0FE92F3CBEC300ABD80E /* AlertElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD82F3CBEC300ABD80E /* AlertElements.swift */; };
+		FCEE0FEA2F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD62F3CBEC300ABD80E /* AlertMessagePage.swift */; };
+		FCEE0FEB2F3CBEC300ABD80E /* AlertMessageConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD42F3CBEC300ABD80E /* AlertMessageConfigurationView.swift */; };
+		FCEE0FEC2F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD52F3CBEC300ABD80E /* AlertMessageElement.swift */; };
+		FCEE0FED2F3CBEC300ABD80E /* AlertElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD82F3CBEC300ABD80E /* AlertElements.swift */; };
+		FCEE0FEE2F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD62F3CBEC300ABD80E /* AlertMessagePage.swift */; };
+		FCEE0FEF2F3CBEC300ABD80E /* AlertMessageConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD42F3CBEC300ABD80E /* AlertMessageConfigurationView.swift */; };
+		FCEE0FF02F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD52F3CBEC300ABD80E /* AlertMessageElement.swift */; };
+		FCEE0FF12F3CBEC300ABD80E /* AlertElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD82F3CBEC300ABD80E /* AlertElements.swift */; };
+		FCEE0FF22F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD62F3CBEC300ABD80E /* AlertMessagePage.swift */; };
 		FCEEB18B2F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
 		FCEEB18C2F1A877300C9BD46 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
 		FCEEB18D2F1A877300C9BD46 /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
@@ -1444,10 +1469,17 @@
 		95CE05622EC3401400ACE41C /* ElevationIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationIllustration.swift; sourceTree = "<group>"; };
 		95CE056B2EC3D0FF00ACE41C /* BorderIllustrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderIllustrations.swift; sourceTree = "<group>"; };
 		95CE057B2EC3D2AA00ACE41C /* NamedBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedBorders.swift; sourceTree = "<group>"; };
+		95D5BA312F4706E000CB10FE /* DialogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsView.swift; sourceTree = "<group>"; };
+		95D5BA322F4706E000CB10FE /* AlertMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageView.swift; sourceTree = "<group>"; };
 		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
 		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
 		95EDFD162EC73BB4006DE593 /* Image+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions.swift"; sourceTree = "<group>"; };
 		FC70E6712F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+PasswordInputSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FC736E8B2F3D28810019FC13 /* AlertMessageSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageSnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
+		FC736E902F3E2DBD0019FC13 /* SoshTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FC736E922F3E2DEE0019FC13 /* OrangeTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FC736E972F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FC736E9C2F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
 		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
@@ -1460,6 +1492,10 @@
 		FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputConfigurationView.swift; sourceTree = "<group>"; };
 		FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputElement.swift; sourceTree = "<group>"; };
 		FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputPage.swift; sourceTree = "<group>"; };
+		FCEE0FD42F3CBEC300ABD80E /* AlertMessageConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageConfigurationView.swift; sourceTree = "<group>"; };
+		FCEE0FD52F3CBEC300ABD80E /* AlertMessageElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageElement.swift; sourceTree = "<group>"; };
+		FCEE0FD62F3CBEC300ABD80E /* AlertMessagePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessagePage.swift; sourceTree = "<group>"; };
+		FCEE0FD82F3CBEC300ABD80E /* AlertElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertElements.swift; sourceTree = "<group>"; };
 		FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListConfigurationView.swift; sourceTree = "<group>"; };
 		FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListElement.swift; sourceTree = "<group>"; };
 		FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListPage.swift; sourceTree = "<group>"; };
@@ -2246,8 +2282,8 @@
 		51BD760E2C466FCF0033365D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */,
 				51F49C812E57434900D50BC4 /* _ */,
+				FCEE0FDA2F3CBEC300ABD80E /* Dialog */,
 				51F49C822E57435900D50BC4 /* Actions */,
 				FCEEB18A2F1A877300C9BD46 /* ContentDisplay */,
 				51F49C832E57437E00D50BC4 /* Controls */,
@@ -2279,6 +2315,7 @@
 			children = (
 				51BD760C2C466FCF0033365D /* About */,
 				51BD760E2C466FCF0033365D /* Components */,
+				07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */,
 				07CF42872CA55BB4000BD03E /* Navigation Bar */,
 				073543142CA17244001187EA /* Utils */,
 				51BD76102C466FCF0033365D /* Tokens */,
@@ -2472,6 +2509,7 @@
 		51F49C882E57449500D50BC4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FC736E882F3D28640019FC13 /* Dialog */,
 				FCB8B18A2F27916F00ADBAB8 /* ContentDisplay */,
 				51F49CA82E5745F300D50BC4 /* Navigations */,
 				51F49CA22E5745C400D50BC4 /* Layouts */,
@@ -2485,6 +2523,7 @@
 		51F49C892E57449C00D50BC4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FC736E8D2F3E2DA40019FC13 /* Dialog */,
 				FCB8B18E2F2791C900ADBAB8 /* ContentDisplay */,
 				51F49CA92E5745FD00D50BC4 /* Navigations */,
 				51F49CA32E5745CD00D50BC4 /* Layouts */,
@@ -2499,6 +2538,7 @@
 			isa = PBXGroup;
 			children = (
 				FCB8B18F2F2791DA00ADBAB8 /* ContentDisplay */,
+				FC736E952F3E2DEE0019FC13 /* Dialog */,
 				51F49CAA2E57460100D50BC4 /* Navigations */,
 				51F49CA42E5745CF00D50BC4 /* Layouts */,
 				51F49C9E2E57458A00D50BC4 /* Indicators */,
@@ -2512,6 +2552,7 @@
 			isa = PBXGroup;
 			children = (
 				FC8FD1572F3644450002A49B /* ContentDisplay */,
+				FC736E9A2F3E2E2A0019FC13 /* Dialog */,
 				51F49CAB2E57460300D50BC4 /* Navigations */,
 				51F49CA52E5745D200D50BC4 /* Layouts */,
 				51F49C9F2E57458C00D50BC4 /* Indicators */,
@@ -2525,6 +2566,7 @@
 			isa = PBXGroup;
 			children = (
 				FCB8B1992F27984B00ADBAB8 /* ContentDisplay */,
+				FC736E9F2F3E2E710019FC13 /* Dialog */,
 				51F49CAD2E57460900D50BC4 /* Navigations */,
 				51F49CA72E5745D600D50BC4 /* Layouts */,
 				51F49CA12E57458F00D50BC4 /* Indicators */,
@@ -2968,6 +3010,7 @@
 		959800752EBCCB81007BE0EA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				95D5BA302F4706BF00CB10FE /* Dialogs */,
 				957D5EDF2F2BB2660055128A /* ContentDisplay */,
 				950EA6C12EBCFA2F0009414A /* Layouts */,
 				959800872EBCCC13007BE0EA /* Navigations */,
@@ -3196,6 +3239,143 @@
 			path = NamedBorder;
 			sourceTree = "<group>";
 		};
+		95D5BA302F4706BF00CB10FE /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				95D5BA312F4706E000CB10FE /* DialogsView.swift */,
+				95D5BA332F4706E000CB10FE /* AlertMessage */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
+		95D5BA332F4706E000CB10FE /* AlertMessage */ = {
+			isa = PBXGroup;
+			children = (
+				95D5BA322F4706E000CB10FE /* AlertMessageView.swift */,
+			);
+			path = AlertMessage;
+			sourceTree = "<group>";
+		};
+		FC736E882F3D28640019FC13 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E892F3D286E0019FC13 /* Alert */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
+		FC736E892F3D286E0019FC13 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E8A2F3D28760019FC13 /* AlertMessage */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		FC736E8A2F3D28760019FC13 /* AlertMessage */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E8B2F3D28810019FC13 /* AlertMessageSnapshotsTestsTestCase.swift */,
+			);
+			path = AlertMessage;
+			sourceTree = "<group>";
+		};
+		FC736E8D2F3E2DA40019FC13 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E8E2F3E2DA90019FC13 /* Alert */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
+		FC736E8E2F3E2DA90019FC13 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E8F2F3E2DAF0019FC13 /* AlertMessage */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		FC736E8F2F3E2DAF0019FC13 /* AlertMessage */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E902F3E2DBD0019FC13 /* SoshTheme+AlertMessageSnapshotsTests.swift */,
+			);
+			path = AlertMessage;
+			sourceTree = "<group>";
+		};
+		FC736E932F3E2DEE0019FC13 /* AlertMessage */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E922F3E2DEE0019FC13 /* OrangeTheme+AlertMessageSnapshotsTests.swift */,
+			);
+			path = AlertMessage;
+			sourceTree = "<group>";
+		};
+		FC736E942F3E2DEE0019FC13 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E932F3E2DEE0019FC13 /* AlertMessage */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		FC736E952F3E2DEE0019FC13 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E942F3E2DEE0019FC13 /* Alert */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
+		FC736E982F3E2E2A0019FC13 /* AlertMessage */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E972F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift */,
+			);
+			path = AlertMessage;
+			sourceTree = "<group>";
+		};
+		FC736E992F3E2E2A0019FC13 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E982F3E2E2A0019FC13 /* AlertMessage */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		FC736E9A2F3E2E2A0019FC13 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E992F3E2E2A0019FC13 /* Alert */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
+		FC736E9D2F3E2E710019FC13 /* AlertMessage */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E9C2F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift */,
+			);
+			path = AlertMessage;
+			sourceTree = "<group>";
+		};
+		FC736E9E2F3E2E710019FC13 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E9D2F3E2E710019FC13 /* AlertMessage */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		FC736E9F2F3E2E710019FC13 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				FC736E9E2F3E2E710019FC13 /* Alert */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
 		FC8FD1572F3644450002A49B /* ContentDisplay */ = {
 			isa = PBXGroup;
 			children = (
@@ -3264,6 +3444,33 @@
 				FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */,
 			);
 			path = PasswordInput;
+			sourceTree = "<group>";
+		};
+		FCEE0FD72F3CBEC300ABD80E /* AlertMessage */ = {
+			isa = PBXGroup;
+			children = (
+				FCEE0FD42F3CBEC300ABD80E /* AlertMessageConfigurationView.swift */,
+				FCEE0FD52F3CBEC300ABD80E /* AlertMessageElement.swift */,
+				FCEE0FD62F3CBEC300ABD80E /* AlertMessagePage.swift */,
+			);
+			path = AlertMessage;
+			sourceTree = "<group>";
+		};
+		FCEE0FD92F3CBEC300ABD80E /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				FCEE0FD72F3CBEC300ABD80E /* AlertMessage */,
+				FCEE0FD82F3CBEC300ABD80E /* AlertElements.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		FCEE0FDA2F3CBEC300ABD80E /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				FCEE0FD92F3CBEC300ABD80E /* Alert */,
+			);
+			path = Dialog;
 			sourceTree = "<group>";
 		};
 		FCEEB1862F1A877300C9BD46 /* BulletList */ = {
@@ -3655,6 +3862,7 @@
 				518EC09C2E1FF28300FC77E4 /* SoshTheme+LinkSnapshotsTests.swift in Sources */,
 				518EC09D2E1FF28300FC77E4 /* SoshTheme+SwitchSnapshotsTests.swift in Sources */,
 				518EC09E2E1FF28300FC77E4 /* SoshTheme+CheckboxSnapshotsTests.swift in Sources */,
+				FC736E962F3E2DEE0019FC13 /* OrangeTheme+AlertMessageSnapshotsTests.swift in Sources */,
 				518EC09F2E1FF28300FC77E4 /* SoshTheme+RadioButtonSnapshotsTests.swift in Sources */,
 				518EC0A02E1FF28300FC77E4 /* SoshTheme+ButtonSnapshotsTests.swift in Sources */,
 				518EC0772E1FF23800FC77E4 /* OrangeTheme+CheckboxSnapshotsTests.swift in Sources */,
@@ -3694,6 +3902,7 @@
 				518EC0A82E1FF2C000FC77E4 /* BadgeSnapshotsTestsTestCase.swift in Sources */,
 				518EC0A92E1FF2C000FC77E4 /* ButtonSnapshotsTestsTestCase.swift in Sources */,
 				95CE055F2EC33FF800ACE41C /* NamedElevation.swift in Sources */,
+				FC736E9B2F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift in Sources */,
 				518EC0AA2E1FF2C000FC77E4 /* LinkSnapshotsTestsTestCase.swift in Sources */,
 				518EC0AB2E1FF2C000FC77E4 /* CheckboxSnapshotsTestsTestCase.swift in Sources */,
 				518EC0AC2E1FF2C000FC77E4 /* RadioButtonSnapshotsTestsTestCase.swift in Sources */,
@@ -3789,11 +3998,16 @@
 				0786A9DD2E0AAB4A00976098 /* CheckboxItemElement.swift in Sources */,
 				0786A9DE2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
 				076227652DA90C65009C3632 /* DividerElements.swift in Sources */,
+				FCEE0FE32F3CBEC300ABD80E /* AlertMessageConfigurationView.swift in Sources */,
+				FCEE0FE42F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */,
+				FCEE0FE52F3CBEC300ABD80E /* AlertElements.swift in Sources */,
+				FCEE0FE62F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */,
 				95CE054A2EC33D6A00ACE41C /* NamedSize.swift in Sources */,
 				FCEEB1942F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */,
 				FCEEB1952F1A877300C9BD46 /* BulletListPage.swift in Sources */,
 				FCEEB1962F1A877300C9BD46 /* BulletListElement.swift in Sources */,
 				51A217702E325F7F00562BE0 /* WireframeTheme+SwitchSnapshotsTests.swift in Sources */,
+				FC736EA02F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift in Sources */,
 				950288A12EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */,
 				076227662DA90C65009C3632 /* DividerPage.swift in Sources */,
 				6DB260DA2CD0EF9D0091F72E /* NamedSize+IconDecorative.swift in Sources */,
@@ -3854,12 +4068,14 @@
 				51A2176F2E325F7F00562BE0 /* WireframeTheme+ButtonSnapshotsTests.swift in Sources */,
 				51A2177F2E325FE600562BE0 /* WireframeTheme+TokensSizeSnapshotsTests.swift in Sources */,
 				FCB8B18D2F27918E00ADBAB8 /* BulletListSnapshotsTestsTestCase.swift in Sources */,
+				FC736E8C2F3D28810019FC13 /* AlertMessageSnapshotsTestsTestCase.swift in Sources */,
 				515EE98D2E21329B00A60E96 /* SuggestionChipElement.swift in Sources */,
 				51A2175F2E325ED500562BE0 /* OrangeCompactTheme+CheckboxSnapshotsTests.swift in Sources */,
 				515EE98E2E21329B00A60E96 /* SuggestionChipPage.swift in Sources */,
 				FCA849142E9FF00500DBCE76 /* InputTagElement.swift in Sources */,
 				FCA849152E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */,
 				FCA849162E9FF00500DBCE76 /* InputTagPage.swift in Sources */,
+				FC736E912F3E2DBD0019FC13 /* SoshTheme+AlertMessageSnapshotsTests.swift in Sources */,
 				FCA8491D2E9FF35700DBCE76 /* TagElements.swift in Sources */,
 				51A217812E325FE600562BE0 /* WireframeTheme+TokensElevationSnapshotsTests.swift in Sources */,
 				515EE98F2E21329B00A60E96 /* ChipElements.swift in Sources */,
@@ -4085,6 +4301,10 @@
 				0784B2712CCB86C500299C10 /* NamedSize+IconWithTypography.swift in Sources */,
 				07CC9AE02DB0F66E001BC929 /* RadioItemElement.swift in Sources */,
 				075C71332CEB743300B93FC3 /* SpaceTokenCommonIllustration.swift in Sources */,
+				FCEE0FE72F3CBEC300ABD80E /* AlertMessageConfigurationView.swift in Sources */,
+				FCEE0FE82F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */,
+				FCEE0FE92F3CBEC300ABD80E /* AlertElements.swift in Sources */,
+				FCEE0FEA2F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4128,6 +4348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D5BA382F470AAA00CB10FE /* AlertMessageView.swift in Sources */,
 				95CE05822EC3D30500ACE41C /* NamedBorders.swift in Sources */,
 				95CE05832EC3D30500ACE41C /* BorderIllustrations.swift in Sources */,
 				950288AC2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */,
@@ -4156,6 +4377,7 @@
 				9514585B2EC28DF10096BBF1 /* FontsView.swift in Sources */,
 				9593905C2EC24CC5000DBE95 /* NameSpace+PaddingBlock.swift in Sources */,
 				959390552EC24C28000DBE95 /* NamedFont.swift in Sources */,
+				95D5BA342F4706E000CB10FE /* DialogsView.swift in Sources */,
 				959390562EC24C28000DBE95 /* NamedSpace+Scaled.swift in Sources */,
 				959390572EC24C28000DBE95 /* NamedSpace+Fixed.swift in Sources */,
 				9593904F2EC24B28000DBE95 /* NamedSize+IconWithTypography.swift in Sources */,
@@ -4392,6 +4614,10 @@
 				9589F0B32EB7D67B00134487 /* NamedSize+IconWithTypography.swift in Sources */,
 				9589F0B42EB7D67B00134487 /* RadioItemElement.swift in Sources */,
 				9589F0B52EB7D67B00134487 /* SpaceTokenCommonIllustration.swift in Sources */,
+				FCEE0FEB2F3CBEC300ABD80E /* AlertMessageConfigurationView.swift in Sources */,
+				FCEE0FEC2F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */,
+				FCEE0FED2F3CBEC300ABD80E /* AlertElements.swift in Sources */,
+				FCEE0FEE2F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4570,6 +4796,10 @@
 				9589F18D2EB7D67E00134487 /* NamedSize+IconWithTypography.swift in Sources */,
 				9589F18E2EB7D67E00134487 /* RadioItemElement.swift in Sources */,
 				9589F18F2EB7D67E00134487 /* SpaceTokenCommonIllustration.swift in Sources */,
+				FCEE0FEF2F3CBEC300ABD80E /* AlertMessageConfigurationView.swift in Sources */,
+				FCEE0FF02F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */,
+				FCEE0FF12F3CBEC300ABD80E /* AlertElements.swift in Sources */,
+				FCEE0FF22F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4605,6 +4835,8 @@
 				959390622EC24CF3000DBE95 /* NameSpace+PaddingBlock.swift in Sources */,
 				9514585C2EC28DF10096BBF1 /* FontsView.swift in Sources */,
 				959390522EC24C20000DBE95 /* NamedFont.swift in Sources */,
+				95D5BA362F4706E000CB10FE /* DialogsView.swift in Sources */,
+				95D5BA372F4706E000CB10FE /* AlertMessageView.swift in Sources */,
 				959390532EC24C20000DBE95 /* NamedSpace+Scaled.swift in Sources */,
 				959390542EC24C20000DBE95 /* NamedSpace+Fixed.swift in Sources */,
 				9593904D2EC24B1E000DBE95 /* NamedSize+IconWithTypography.swift in Sources */,

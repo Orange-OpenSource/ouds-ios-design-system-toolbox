@@ -987,6 +987,230 @@
         }
       }
     },
+    "app_components_alert_alertMessage_actionLink_label" : {
+      "comment" : "Component - Alert Message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Action link"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Action link"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Action link"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_alert_alertMessage_actionLinkPosition_label" : {
+      "comment" : "Component - Alert Message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Action link position"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Action link position"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Action link position"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_alert_alertMessage_bullet_label" : {
+      "comment" : "Component - Alert Message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet %d"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet %d"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet %d"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_alert_alertMessage_closeButton_label" : {
+      "comment" : "Component - Alert Message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close button"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close button"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close button"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_alert_alertMessage_description_text" : {
+      "comment" : "Component - Alert Message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Alert message is a UI element that displays system feedback, status changes or required action; throughout detailed, prominent, persistent and actionable communication."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert message is a UI element that displays system feedback, status changes or required action; throughout detailed, prominent, persistent and actionable communication."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Les composants d'alerte sont des éléments d'interface utilisateur qui affichent des informations, des retours système ou des changements d'état."
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_alert_alertMessage_label" : {
+      "comment" : "Component - Alert Message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert message"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert message"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert message"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_alert_alertMessage_statusIcon_label" : {
+      "comment" : "Component - Alert Message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_alert_description_text" : {
+      "comment" : "Component - Alert",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert components are UI elements that display information, system feedback or status changes."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert components are UI elements that display information, system feedback or status changes."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les composants d'alerte sont des éléments d'interface utilisateur qui affichent des informations, des retours système ou des changements d'état."
+          }
+        }
+      }
+    },
+    "app_components_alert_label" : {
+      "comment" : "Component - Alert",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_badge_count_label" : {
       "comment" : "Component - Badge",
       "extractionState" : "manual",
@@ -2232,6 +2456,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_description_label" : {
+      "comment" : "Component - Common",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_editContent_label" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
@@ -2459,7 +2707,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تسمية"
+            "value" : "Label"
           }
         },
         "en" : {
@@ -2968,31 +3216,6 @@
           }
         }
       }
-    },
-    "app_components_controlItem_description_label" : {
-      "comment" : "Component - ControlItem",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Description"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Description"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Description"
-          }
-        }
-      },
-      "shouldTranslate" : false
     },
     "app_components_controlItem_divider_label" : {
       "comment" : "Component - ControlItem",
