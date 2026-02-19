@@ -21,7 +21,7 @@ struct CheckboxItemPage: View {
     @StateObject private var configurationModel: BooleanControlItemConfigurationModel
 
     init() {
-        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItem(isOn: $isOn")
+        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItem(")
         _configurationModel = StateObject(wrappedValue: model)
     }
 
@@ -44,8 +44,8 @@ private struct CheckboxItemDemo: View {
         HStack(alignment: .center) {
             Spacer()
 
-            OUDSCheckboxItem(isOn: $configurationModel.isOn,
-                             label: configurationModel.labelText,
+            OUDSCheckboxItem(label: configurationModel.labelText,
+                             isOn: $configurationModel.isOn,
                              description: configurationModel.descriptionText,
                              icon: icon,
                              flipIcon: configurationModel.flipIcon,

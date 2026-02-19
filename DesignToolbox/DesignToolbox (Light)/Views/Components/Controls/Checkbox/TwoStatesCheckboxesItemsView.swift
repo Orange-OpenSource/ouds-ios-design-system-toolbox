@@ -38,29 +38,29 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("No icons").font(.subheadline)
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          isReversed: false,
                          isReadOnly: false)
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          isReversed: true,
                          isReadOnly: false)
 
         Text("Disabled").font(.caption)
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          isReversed: false,
                          isReadOnly: false)
             .disabled(true)
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          isReversed: true,
                          isReadOnly: false)
@@ -68,15 +68,15 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("On error").font(.caption)
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          isReversed: false,
                          isError: true,
                          errorText: "Error")
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          isReversed: true,
                          isError: true,
@@ -84,29 +84,29 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("Read only").font(.caption)
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          isReversed: false,
                          isReadOnly: true)
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          isReversed: true,
                          isReadOnly: true)
 
         Text("With icons").font(.subheadline)
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: false,
                          isReadOnly: false)
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: true,
@@ -114,16 +114,16 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("On error").font(.caption)
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: false,
                          isError: true,
                          errorText: "Error")
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: true,
@@ -132,16 +132,16 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("Disabled").font(.caption)
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: false,
                          isReadOnly: false)
             .disabled(true)
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: true,
@@ -150,15 +150,15 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("Read only").font(.caption)
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: false,
                          isReadOnly: true)
 
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "Label",
+        OUDSCheckboxItem(label: "Label",
+                         isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: true,
@@ -215,26 +215,24 @@ struct TwoStatesCheckboxesItemsView: View {
                 .foregroundColor(.primary)
 
             VStack(spacing: theme.spaces.scaledXsmallMobile) {
-                OUDSCheckboxItem(
-                    isOn: $isOn,
-                    label: "Label",
-                    description: "Description",
-                    icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
-                    isReversed: false,
-                    isError: isError,
-                    errorText: isError ? "Error" : nil,
-                    isReadOnly: isReadOnly)
+                OUDSCheckboxItem(label: "Label",
+                                 isOn: $isOn,
+                                 description: "Description",
+                                 icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                                 isReversed: false,
+                                 isError: isError,
+                                 errorText: isError ? "Error" : nil,
+                                 isReadOnly: isReadOnly)
                     .disabled(isDisabled)
 
-                OUDSCheckboxItem(
-                    isOn: $isOn,
-                    label: "Label",
-                    description: "Description",
-                    icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
-                    isReversed: true,
-                    isError: isError,
-                    errorText: isError ? "Error" : nil,
-                    isReadOnly: isReadOnly)
+                OUDSCheckboxItem(label: "Label",
+                                 isOn: $isOn,
+                                 description: "Description",
+                                 icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                                 isReversed: true,
+                                 isError: isError,
+                                 errorText: isError ? "Error" : nil,
+                                 isReadOnly: isReadOnly)
                     .disabled(isDisabled)
             }
         }
