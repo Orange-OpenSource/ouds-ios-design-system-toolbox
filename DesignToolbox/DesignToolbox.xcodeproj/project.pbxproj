@@ -992,6 +992,10 @@
 		95CE05812EC3D2FD00ACE41C /* BorderIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE056B2EC3D0FF00ACE41C /* BorderIllustrations.swift */; };
 		95CE05822EC3D30500ACE41C /* NamedBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE057B2EC3D2AA00ACE41C /* NamedBorders.swift */; };
 		95CE05832EC3D30500ACE41C /* BorderIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE056B2EC3D0FF00ACE41C /* BorderIllustrations.swift */; };
+		95D5BA342F4706E000CB10FE /* DialogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA312F4706E000CB10FE /* DialogsView.swift */; };
+		95D5BA362F4706E000CB10FE /* DialogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA312F4706E000CB10FE /* DialogsView.swift */; };
+		95D5BA372F4706E000CB10FE /* AlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA322F4706E000CB10FE /* AlertMessageView.swift */; };
+		95D5BA382F470AAA00CB10FE /* AlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA322F4706E000CB10FE /* AlertMessageView.swift */; };
 		95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95D713EC2EB36B0B00EBB7C2 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
 		95D804452F3C7BFD0080E04B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCF02BAF2F30A77500F2013F /* Localizable.xcstrings */; };
@@ -1032,14 +1036,6 @@
 		FCDDFBBF2F2B69E700389D8D /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */; };
 		FCDDFBC02F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */; };
 		FCDDFBC12F2B69E700389D8D /* PasswordInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */; };
-		FCEE0FDB2F3CBEC300ABD80E /* AlertMessageConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD42F3CBEC300ABD80E /* AlertMessageConfigurationView.swift */; };
-		FCEE0FDC2F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD52F3CBEC300ABD80E /* AlertMessageElement.swift */; };
-		FCEE0FDD2F3CBEC300ABD80E /* AlertElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD82F3CBEC300ABD80E /* AlertElements.swift */; };
-		FCEE0FDE2F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD62F3CBEC300ABD80E /* AlertMessagePage.swift */; };
-		FCEE0FDF2F3CBEC300ABD80E /* AlertMessageConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD42F3CBEC300ABD80E /* AlertMessageConfigurationView.swift */; };
-		FCEE0FE02F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD52F3CBEC300ABD80E /* AlertMessageElement.swift */; };
-		FCEE0FE12F3CBEC300ABD80E /* AlertElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD82F3CBEC300ABD80E /* AlertElements.swift */; };
-		FCEE0FE22F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD62F3CBEC300ABD80E /* AlertMessagePage.swift */; };
 		FCEE0FE32F3CBEC300ABD80E /* AlertMessageConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD42F3CBEC300ABD80E /* AlertMessageConfigurationView.swift */; };
 		FCEE0FE42F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD52F3CBEC300ABD80E /* AlertMessageElement.swift */; };
 		FCEE0FE52F3CBEC300ABD80E /* AlertElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD82F3CBEC300ABD80E /* AlertElements.swift */; };
@@ -1473,6 +1469,8 @@
 		95CE05622EC3401400ACE41C /* ElevationIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationIllustration.swift; sourceTree = "<group>"; };
 		95CE056B2EC3D0FF00ACE41C /* BorderIllustrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderIllustrations.swift; sourceTree = "<group>"; };
 		95CE057B2EC3D2AA00ACE41C /* NamedBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedBorders.swift; sourceTree = "<group>"; };
+		95D5BA312F4706E000CB10FE /* DialogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsView.swift; sourceTree = "<group>"; };
+		95D5BA322F4706E000CB10FE /* AlertMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageView.swift; sourceTree = "<group>"; };
 		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
 		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
 		95EDFD162EC73BB4006DE593 /* Image+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions.swift"; sourceTree = "<group>"; };
@@ -3012,6 +3010,7 @@
 		959800752EBCCB81007BE0EA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				95D5BA302F4706BF00CB10FE /* Dialogs */,
 				957D5EDF2F2BB2660055128A /* ContentDisplay */,
 				950EA6C12EBCFA2F0009414A /* Layouts */,
 				959800872EBCCC13007BE0EA /* Navigations */,
@@ -3238,6 +3237,23 @@
 				95CE057B2EC3D2AA00ACE41C /* NamedBorders.swift */,
 			);
 			path = NamedBorder;
+			sourceTree = "<group>";
+		};
+		95D5BA302F4706BF00CB10FE /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				95D5BA312F4706E000CB10FE /* DialogsView.swift */,
+				95D5BA332F4706E000CB10FE /* AlertMessage */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
+		95D5BA332F4706E000CB10FE /* AlertMessage */ = {
+			isa = PBXGroup;
+			children = (
+				95D5BA322F4706E000CB10FE /* AlertMessageView.swift */,
+			);
+			path = AlertMessage;
 			sourceTree = "<group>";
 		};
 		FC736E882F3D28640019FC13 /* Dialog */ = {
@@ -4332,6 +4348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D5BA382F470AAA00CB10FE /* AlertMessageView.swift in Sources */,
 				95CE05822EC3D30500ACE41C /* NamedBorders.swift in Sources */,
 				95CE05832EC3D30500ACE41C /* BorderIllustrations.swift in Sources */,
 				950288AC2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */,
@@ -4360,6 +4377,7 @@
 				9514585B2EC28DF10096BBF1 /* FontsView.swift in Sources */,
 				9593905C2EC24CC5000DBE95 /* NameSpace+PaddingBlock.swift in Sources */,
 				959390552EC24C28000DBE95 /* NamedFont.swift in Sources */,
+				95D5BA342F4706E000CB10FE /* DialogsView.swift in Sources */,
 				959390562EC24C28000DBE95 /* NamedSpace+Scaled.swift in Sources */,
 				959390572EC24C28000DBE95 /* NamedSpace+Fixed.swift in Sources */,
 				9593904F2EC24B28000DBE95 /* NamedSize+IconWithTypography.swift in Sources */,
@@ -4414,10 +4432,6 @@
 				950EA7CB2EBE3ECB0009414A /* CheckboxesView.swift in Sources */,
 				950EA7CC2EBE3ECB0009414A /* CheckboxesItemView.swift in Sources */,
 				950EA7CD2EBE3ECB0009414A /* CheckboxesOnlyView.swift in Sources */,
-				FCEE0FDB2F3CBEC300ABD80E /* AlertMessageConfigurationView.swift in Sources */,
-				FCEE0FDC2F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */,
-				FCEE0FDD2F3CBEC300ABD80E /* AlertElements.swift in Sources */,
-				FCEE0FDE2F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */,
 				950EA7CE2EBE3ECB0009414A /* ControlsView.swift in Sources */,
 				950EA7CF2EBE3ECB0009414A /* ButtonsView.swift in Sources */,
 				950EA7D02EBE3ECB0009414A /* ActionsView.swift in Sources */,
@@ -4821,6 +4835,8 @@
 				959390622EC24CF3000DBE95 /* NameSpace+PaddingBlock.swift in Sources */,
 				9514585C2EC28DF10096BBF1 /* FontsView.swift in Sources */,
 				959390522EC24C20000DBE95 /* NamedFont.swift in Sources */,
+				95D5BA362F4706E000CB10FE /* DialogsView.swift in Sources */,
+				95D5BA372F4706E000CB10FE /* AlertMessageView.swift in Sources */,
 				959390532EC24C20000DBE95 /* NamedSpace+Scaled.swift in Sources */,
 				959390542EC24C20000DBE95 /* NamedSpace+Fixed.swift in Sources */,
 				9593904D2EC24B1E000DBE95 /* NamedSize+IconWithTypography.swift in Sources */,
@@ -4875,10 +4891,6 @@
 				950EA6C32EBCFA390009414A /* LayoutsView.swift in Sources */,
 				959800712EBCC714007BE0EA /* DesignToolbox_Light_App.swift in Sources */,
 				950EA6B22EBCEC2D0009414A /* CheckboxesItemView.swift in Sources */,
-				FCEE0FDF2F3CBEC300ABD80E /* AlertMessageConfigurationView.swift in Sources */,
-				FCEE0FE02F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */,
-				FCEE0FE12F3CBEC300ABD80E /* AlertElements.swift in Sources */,
-				FCEE0FE22F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */,
 				950EA6B42EBCECA00009414A /* CheckboxesOnlyView.swift in Sources */,
 				950EA6D92EBE24AA0009414A /* TagView.swift in Sources */,
 				950EA6DB2EBE24E10009414A /* InputTag.swift in Sources */,
@@ -5774,7 +5786,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1159-alert-message-and-inline-alert-components";
+				branch = develop;
 				kind = branch;
 			};
 		};
