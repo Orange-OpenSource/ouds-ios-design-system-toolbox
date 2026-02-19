@@ -280,8 +280,8 @@ struct RadioTest: View {
                       isReadOnly: isReadOnly)
                 .disabled(isDisabled)
         case let .default(labelText, extraLabelText, descriptionText, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
-            OUDSRadioItem(isOn: .constant(indicatorState),
-                          label: labelText,
+            OUDSRadioItem(label: labelText,
+                          isOn: .constant(indicatorState),
                           extraLabel: extraLabelText,
                           description: descriptionText,
                           icon: icon,
@@ -293,8 +293,8 @@ struct RadioTest: View {
                           hasDivider: hasDivider)
                 .disabled(isDisabled)
         case let .reversed(labelText, extraLabelText, descriptionText, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
-            OUDSRadioItem(isOn: .constant(indicatorState),
-                          label: labelText,
+            OUDSRadioItem(label: labelText,
+                          isOn: .constant(indicatorState),
                           extraLabel: extraLabelText,
                           description: descriptionText,
                           icon: icon,

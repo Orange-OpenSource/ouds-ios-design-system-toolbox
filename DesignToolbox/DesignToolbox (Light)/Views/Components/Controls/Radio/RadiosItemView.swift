@@ -134,16 +134,16 @@ struct RadiosItemView: View {
     private func detailedView(withIcon: Bool) -> some View {
         Text("Enabled").font(.caption)
 
-        OUDSRadioItem(isOn: $isOn,
-                      label: "Label",
+        OUDSRadioItem(label: "Label",
+                      isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                       isReversed: false,
                       isReadOnly: false)
 
-        OUDSRadioItem(isOn: $isOn,
-                      label: "Label",
+        OUDSRadioItem(label: "Label",
+                      isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
@@ -154,8 +154,8 @@ struct RadiosItemView: View {
 
         Text("Not outlined").font(.callout)
 
-        OUDSRadioItem(isOn: $isOn,
-                      label: "Label",
+        OUDSRadioItem(label: "Label",
+                      isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
@@ -163,8 +163,8 @@ struct RadiosItemView: View {
                       isError: true,
                       errorText: "Error")
 
-        OUDSRadioItem(isOn: $isOn,
-                      label: "Label",
+        OUDSRadioItem(label: "Label",
+                      isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
@@ -174,8 +174,8 @@ struct RadiosItemView: View {
 
         Text("Outlined").font(.callout)
 
-        OUDSRadioItem(isOn: $isOn,
-                      label: "Label",
+        OUDSRadioItem(label: "Label",
+                      isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
@@ -184,8 +184,8 @@ struct RadiosItemView: View {
                       isError: true,
                       errorText: "Error")
 
-        OUDSRadioItem(isOn: $isOn,
-                      label: "Label",
+        OUDSRadioItem(label: "Label",
+                      isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
@@ -196,8 +196,8 @@ struct RadiosItemView: View {
 
         Text("Disabled").font(.caption)
 
-        OUDSRadioItem(isOn: $isOn,
-                      label: "Label",
+        OUDSRadioItem(label: "Label",
+                      isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
@@ -205,8 +205,8 @@ struct RadiosItemView: View {
                       isReadOnly: false)
             .disabled(true)
 
-        OUDSRadioItem(isOn: $isOn,
-                      label: "Label",
+        OUDSRadioItem(label: "Label",
+                      isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
@@ -216,16 +216,16 @@ struct RadiosItemView: View {
 
         Text("Read only").font(.caption)
 
-        OUDSRadioItem(isOn: $isOn,
-                      label: "Label",
+        OUDSRadioItem(label: "Label",
+                      isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
                       isReversed: false,
                       isReadOnly: true)
 
-        OUDSRadioItem(isOn: $isOn,
-                      label: "Label",
+        OUDSRadioItem(label: "Label",
+                      isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
                       icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
