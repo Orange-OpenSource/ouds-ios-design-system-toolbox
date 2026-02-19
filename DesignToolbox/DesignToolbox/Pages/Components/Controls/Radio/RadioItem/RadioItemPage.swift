@@ -43,7 +43,7 @@ private struct RadioItemDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSRadioItem(label: configurationModel.labelText,
+        OUDSRadioItem(configurationModel.labelText,
                       isOn: $configurationModel.isOn,
                       extraLabel: configurationModel.extraLabelText,
                       description: configurationModel.descriptionText,

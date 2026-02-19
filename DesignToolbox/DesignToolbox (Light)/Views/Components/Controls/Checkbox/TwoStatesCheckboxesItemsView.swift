@@ -38,13 +38,13 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("No icons").font(.subheadline)
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: false,
                          isReadOnly: false)
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: true,
@@ -52,14 +52,14 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("Disabled").font(.caption)
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: false,
                          isReadOnly: false)
             .disabled(true)
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: true,
@@ -68,14 +68,14 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("On error").font(.caption)
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: false,
                          isError: true,
                          errorText: "Error")
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: true,
@@ -84,13 +84,13 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("Read only").font(.caption)
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: false,
                          isReadOnly: true)
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: true,
@@ -98,14 +98,14 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("With icons").font(.subheadline)
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: false,
                          isReadOnly: false)
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
@@ -114,7 +114,7 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("On error").font(.caption)
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
@@ -122,7 +122,7 @@ struct TwoStatesCheckboxesItemsView: View {
                          isError: true,
                          errorText: "Error")
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
@@ -132,7 +132,7 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("Disabled").font(.caption)
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
@@ -140,7 +140,7 @@ struct TwoStatesCheckboxesItemsView: View {
                          isReadOnly: false)
             .disabled(true)
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
@@ -150,14 +150,14 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("Read only").font(.caption)
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
                          isReversed: false,
                          isReadOnly: true)
 
-        OUDSCheckboxItem(label: "Label",
+        OUDSCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          icon: Image(systemName: "flag.pattern.checkered"),
@@ -215,7 +215,7 @@ struct TwoStatesCheckboxesItemsView: View {
                 .foregroundColor(.primary)
 
             VStack(spacing: theme.spaces.scaledXsmallMobile) {
-                OUDSCheckboxItem(label: "Label",
+                OUDSCheckboxItem("Label",
                                  isOn: $isOn,
                                  description: "Description",
                                  icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
@@ -225,7 +225,7 @@ struct TwoStatesCheckboxesItemsView: View {
                                  isReadOnly: isReadOnly)
                     .disabled(isDisabled)
 
-                OUDSCheckboxItem(label: "Label",
+                OUDSCheckboxItem("Label",
                                  isOn: $isOn,
                                  description: "Description",
                                  icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,

@@ -100,8 +100,8 @@ struct RadiosItemView: View {
             VStack(spacing: theme.spaces.scaledXsmallMobile) {
                 // Normal (isReversed: false)
                 OUDSRadioItem(
+                    "Label",
                     isOn: $isOn,
-                    label: "Label",
                     extraLabel: "Additional",
                     description: "Description",
                     icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
@@ -114,8 +114,8 @@ struct RadiosItemView: View {
 
                 // Reversed (isReversed: true)
                 OUDSRadioItem(
+                    "Label",
                     isOn: $isOn,
-                    label: "Label",
                     extraLabel: "Additional",
                     description: "Description",
                     icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
@@ -134,7 +134,7 @@ struct RadiosItemView: View {
     private func detailedView(withIcon: Bool) -> some View {
         Text("Enabled").font(.caption)
 
-        OUDSRadioItem(label: "Label",
+        OUDSRadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
@@ -142,7 +142,7 @@ struct RadiosItemView: View {
                       isReversed: false,
                       isReadOnly: false)
 
-        OUDSRadioItem(label: "Label",
+        OUDSRadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
@@ -154,7 +154,7 @@ struct RadiosItemView: View {
 
         Text("Not outlined").font(.callout)
 
-        OUDSRadioItem(label: "Label",
+        OUDSRadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
@@ -163,7 +163,7 @@ struct RadiosItemView: View {
                       isError: true,
                       errorText: "Error")
 
-        OUDSRadioItem(label: "Label",
+        OUDSRadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
@@ -174,7 +174,7 @@ struct RadiosItemView: View {
 
         Text("Outlined").font(.callout)
 
-        OUDSRadioItem(label: "Label",
+        OUDSRadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
@@ -184,7 +184,7 @@ struct RadiosItemView: View {
                       isError: true,
                       errorText: "Error")
 
-        OUDSRadioItem(label: "Label",
+        OUDSRadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
@@ -196,7 +196,7 @@ struct RadiosItemView: View {
 
         Text("Disabled").font(.caption)
 
-        OUDSRadioItem(label: "Label",
+        OUDSRadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
@@ -205,7 +205,7 @@ struct RadiosItemView: View {
                       isReadOnly: false)
             .disabled(true)
 
-        OUDSRadioItem(label: "Label",
+        OUDSRadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
@@ -216,7 +216,7 @@ struct RadiosItemView: View {
 
         Text("Read only").font(.caption)
 
-        OUDSRadioItem(label: "Label",
+        OUDSRadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
@@ -224,7 +224,7 @@ struct RadiosItemView: View {
                       isReversed: false,
                       isReadOnly: true)
 
-        OUDSRadioItem(label: "Label",
+        OUDSRadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",

@@ -41,7 +41,7 @@ private struct CheckboxItemIndeterminateDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSCheckboxItemIndeterminate(label: configurationModel.labelText,
+        OUDSCheckboxItemIndeterminate(configurationModel.labelText,
                                       selection: $configurationModel.selection,
                                       description: configurationModel.descriptionText,
                                       icon: icon,

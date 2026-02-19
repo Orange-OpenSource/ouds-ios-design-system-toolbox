@@ -44,7 +44,7 @@ private struct CheckboxItemDemo: View {
         HStack(alignment: .center) {
             Spacer()
 
-            OUDSCheckboxItem(label: configurationModel.labelText,
+            OUDSCheckboxItem(configurationModel.labelText,
                              isOn: $configurationModel.isOn,
                              description: configurationModel.descriptionText,
                              icon: icon,
