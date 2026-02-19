@@ -21,7 +21,7 @@ struct CheckboxItemPage: View {
     @StateObject private var configurationModel: BooleanControlItemConfigurationModel
 
     init() {
-        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItem(")
+        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSCheckboxItem(", bindingInitCode: "isOn: $isOn")
         _configurationModel = StateObject(wrappedValue: model)
     }
 

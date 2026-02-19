@@ -20,7 +20,8 @@ struct RadioItemPage: View {
     @StateObject private var configurationModel: BooleanControlItemConfigurationModel
 
     init() {
-        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSRadioItem(isOn: $isOn",
+        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSRadioItem(",
+                                                         bindingInitCode: "isOn: $isOn",
                                                          outlinedConfiguration: (value: false,
                                                                                  outlinedConfigurationLabel: "app_components_common_outlined_label"),
                                                          extraLabelConfiguration: "app_components_radioButton_radioButtonItem_extraLabel_label".localized())

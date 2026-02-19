@@ -267,8 +267,8 @@ struct CheckboxIndeterminateTest: View {
                                       isReadOnly: isReadOnly)
                 .disabled(isDisabled)
         case let .default(labelText, descriptionText, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
-            OUDSCheckboxItemIndeterminate(selection: .constant(indicatorState),
-                                          label: labelText,
+            OUDSCheckboxItemIndeterminate(label: labelText,
+                                          selection: .constant(indicatorState),
                                           description: descriptionText,
                                           icon: icon,
                                           flipIcon: flipIcon,
@@ -279,8 +279,8 @@ struct CheckboxIndeterminateTest: View {
                                           hasDivider: hasDivider)
                 .disabled(isDisabled)
         case let .reversed(labelText, descriptionText, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
-            OUDSCheckboxItemIndeterminate(selection: .constant(indicatorState),
-                                          label: labelText,
+            OUDSCheckboxItemIndeterminate(label: labelText,
+                                          selection: .constant(indicatorState),
                                           description: descriptionText,
                                           icon: icon,
                                           flipIcon: flipIcon,
