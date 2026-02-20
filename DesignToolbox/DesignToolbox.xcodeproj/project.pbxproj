@@ -1014,16 +1014,16 @@
 		FC4799B82F485277005F349B /* AlertStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799B12F485277005F349B /* AlertStatus.swift */; };
 		FC4799B92F485277005F349B /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799B02F485277005F349B /* AlertConfiguration.swift */; };
 		FC4799BD2F4852A9005F349B /* InlineAlertConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BB2F4852A9005F349B /* InlineAlertConfigurationView.swift */; };
-		FC4799BE2F4852A9005F349B /* IInlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BA2F4852A9005F349B /* IInlineAlertElement.swift */; };
+		FC4799BE2F4852A9005F349B /* InlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BA2F4852A9005F349B /* InlineAlertElement.swift */; };
 		FC4799BF2F4852A9005F349B /* InlineAlertPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BC2F4852A9005F349B /* InlineAlertPage.swift */; };
 		FC4799C02F4852A9005F349B /* InlineAlertConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BB2F4852A9005F349B /* InlineAlertConfigurationView.swift */; };
-		FC4799C12F4852A9005F349B /* IInlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BA2F4852A9005F349B /* IInlineAlertElement.swift */; };
+		FC4799C12F4852A9005F349B /* InlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BA2F4852A9005F349B /* InlineAlertElement.swift */; };
 		FC4799C22F4852A9005F349B /* InlineAlertPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BC2F4852A9005F349B /* InlineAlertPage.swift */; };
 		FC4799C32F4852A9005F349B /* InlineAlertConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BB2F4852A9005F349B /* InlineAlertConfigurationView.swift */; };
-		FC4799C42F4852A9005F349B /* IInlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BA2F4852A9005F349B /* IInlineAlertElement.swift */; };
+		FC4799C42F4852A9005F349B /* InlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BA2F4852A9005F349B /* InlineAlertElement.swift */; };
 		FC4799C52F4852A9005F349B /* InlineAlertPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BC2F4852A9005F349B /* InlineAlertPage.swift */; };
 		FC4799C62F4852A9005F349B /* InlineAlertConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BB2F4852A9005F349B /* InlineAlertConfigurationView.swift */; };
-		FC4799C72F4852A9005F349B /* IInlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BA2F4852A9005F349B /* IInlineAlertElement.swift */; };
+		FC4799C72F4852A9005F349B /* InlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BA2F4852A9005F349B /* InlineAlertElement.swift */; };
 		FC4799C82F4852A9005F349B /* InlineAlertPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BC2F4852A9005F349B /* InlineAlertPage.swift */; };
 		FC4799CB2F4854F2005F349B /* InlineAlertSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799CA2F4854F2005F349B /* InlineAlertSnapshotsTestsTestCase.swift */; };
 		FC4799CE2F485617005F349B /* OrangeCompactTheme+InlineAlertSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799CD2F485617005F349B /* OrangeCompactTheme+InlineAlertSnapshotsTests.swift */; };
@@ -1501,7 +1501,7 @@
 		95EDFD162EC73BB4006DE593 /* Image+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions.swift"; sourceTree = "<group>"; };
 		FC4799B02F485277005F349B /* AlertConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertConfiguration.swift; sourceTree = "<group>"; };
 		FC4799B12F485277005F349B /* AlertStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStatus.swift; sourceTree = "<group>"; };
-		FC4799BA2F4852A9005F349B /* IInlineAlertElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IInlineAlertElement.swift; sourceTree = "<group>"; };
+		FC4799BA2F4852A9005F349B /* InlineAlertElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineAlertElement.swift; sourceTree = "<group>"; };
 		FC4799BB2F4852A9005F349B /* InlineAlertConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineAlertConfigurationView.swift; sourceTree = "<group>"; };
 		FC4799BC2F4852A9005F349B /* InlineAlertPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineAlertPage.swift; sourceTree = "<group>"; };
 		FC4799CA2F4854F2005F349B /* InlineAlertSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineAlertSnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
@@ -3294,7 +3294,7 @@
 		FC4799AE2F48522E005F349B /* InlineAlert */ = {
 			isa = PBXGroup;
 			children = (
-				FC4799BA2F4852A9005F349B /* IInlineAlertElement.swift */,
+				FC4799BA2F4852A9005F349B /* InlineAlertElement.swift */,
 				FC4799BB2F4852A9005F349B /* InlineAlertConfigurationView.swift */,
 				FC4799BC2F4852A9005F349B /* InlineAlertPage.swift */,
 			);
@@ -4045,7 +4045,7 @@
 				FCEE0FE62F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */,
 				95CE054A2EC33D6A00ACE41C /* NamedSize.swift in Sources */,
 				FC4799C62F4852A9005F349B /* InlineAlertConfigurationView.swift in Sources */,
-				FC4799C72F4852A9005F349B /* IInlineAlertElement.swift in Sources */,
+				FC4799C72F4852A9005F349B /* InlineAlertElement.swift in Sources */,
 				FC4799C82F4852A9005F349B /* InlineAlertPage.swift in Sources */,
 				FCEEB1942F1A877300C9BD46 /* BulletListConfigurationView.swift in Sources */,
 				FCEEB1952F1A877300C9BD46 /* BulletListPage.swift in Sources */,
@@ -4197,7 +4197,7 @@
 				0745C1902D7A0596006B3A1F /* RadioElement.swift in Sources */,
 				519251F32D020BD0003FD1F6 /* DesignToolboxVariantElement.swift in Sources */,
 				FC4799C02F4852A9005F349B /* InlineAlertConfigurationView.swift in Sources */,
-				FC4799C12F4852A9005F349B /* IInlineAlertElement.swift in Sources */,
+				FC4799C12F4852A9005F349B /* InlineAlertElement.swift in Sources */,
 				FC4799C22F4852A9005F349B /* InlineAlertPage.swift in Sources */,
 				515EE9902E21329B00A60E96 /* ChipLayout.swift in Sources */,
 				515EE9912E21329B00A60E96 /* FilterChipConfigurationView.swift in Sources */,
@@ -4515,7 +4515,7 @@
 				9589F02F2EB7D67B00134487 /* ChipLayout.swift in Sources */,
 				9589F0302EB7D67B00134487 /* FilterChipConfigurationView.swift in Sources */,
 				FC4799BD2F4852A9005F349B /* InlineAlertConfigurationView.swift in Sources */,
-				FC4799BE2F4852A9005F349B /* IInlineAlertElement.swift in Sources */,
+				FC4799BE2F4852A9005F349B /* InlineAlertElement.swift in Sources */,
 				FC4799BF2F4852A9005F349B /* InlineAlertPage.swift in Sources */,
 				9589F0312EB7D67B00134487 /* FilterChipElement.swift in Sources */,
 				9589F0322EB7D67B00134487 /* FilterChipPage.swift in Sources */,
@@ -4702,7 +4702,7 @@
 				9589F1092EB7D67E00134487 /* ChipLayout.swift in Sources */,
 				9589F10A2EB7D67E00134487 /* FilterChipConfigurationView.swift in Sources */,
 				FC4799C32F4852A9005F349B /* InlineAlertConfigurationView.swift in Sources */,
-				FC4799C42F4852A9005F349B /* IInlineAlertElement.swift in Sources */,
+				FC4799C42F4852A9005F349B /* InlineAlertElement.swift in Sources */,
 				FC4799C52F4852A9005F349B /* InlineAlertPage.swift in Sources */,
 				9589F10B2EB7D67E00134487 /* FilterChipElement.swift in Sources */,
 				9589F10C2EB7D67E00134487 /* FilterChipPage.swift in Sources */,
@@ -5848,7 +5848,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1307-in-library-add-inline-alert-componentV2";
+				branch = develop;
 				kind = branch;
 			};
 		};

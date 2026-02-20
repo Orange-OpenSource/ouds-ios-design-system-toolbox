@@ -16,7 +16,7 @@ import SwiftUI
 
 // MARK: - Alert Configuration Model
 
-class AlertConfigurationModel: ComponentConfiguration {
+open class AlertConfigurationModel: ComponentConfiguration {
 
     @Published var text: String {
         didSet { updateCode() }
@@ -59,17 +59,17 @@ class AlertConfigurationModel: ComponentConfiguration {
     func status(from theme: OUDSTheme) -> OUDSAlertStatus {
         switch status {
         case .neutral:
-                .neutral(icon: statusIcon ? OUDSIcon(asset: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon) : nil)
+            .neutral(icon: statusIcon ? OUDSIcon(asset: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon) : nil)
         case .accent:
-                .accent(icon: statusIcon ? OUDSIcon(asset: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon) : nil)
+            .accent(icon: statusIcon ? OUDSIcon(asset: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon) : nil)
         case .positive:
-                .positive
+            .positive
         case .info:
-                .info
+            .info
         case .warning:
-                .warning
+            .warning
         case .negative:
-                .negative
+            .negative
         }
     }
 
@@ -82,13 +82,15 @@ class AlertConfigurationModel: ComponentConfiguration {
     var iconPattern: String {
         switch status {
         case .neutral, .accent:
-            statusIcon ? "icon: Image(\"ic_heart\")\(flipIconPattern)" : ""
+            statusIcon ? "icon: Image(decorative:\"tips-and-tricks\")\(flipIconPattern)" : ""
         default:
             statusIcon ? "showIcon: true" : ""
         }
     }
 
     var statusPattern: String {
-        ", status: \(status.technicalDescription)(\(iconPattern))"
+        iconPattern.isEmpty
+            ? ", status: \(status.technicalDescription)"
+            : ", status: \(status.technicalDescription)(\(iconPattern))"
     }
 }

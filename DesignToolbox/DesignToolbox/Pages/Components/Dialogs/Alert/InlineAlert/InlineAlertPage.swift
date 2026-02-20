@@ -14,7 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: InlineAlert page
+// MARK: Inline Alert page
 
 struct InlineAlertPage: View {
 
@@ -33,7 +33,7 @@ struct InlineAlertPage: View {
     }
 }
 
-// MARK: - InlineAlert Demo
+// MARK: - Inline Alert Demo
 
 struct InlineAlertDemo: View {
 

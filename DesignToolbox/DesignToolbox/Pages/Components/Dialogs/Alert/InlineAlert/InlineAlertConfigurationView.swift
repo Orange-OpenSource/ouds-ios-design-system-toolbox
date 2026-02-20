@@ -23,7 +23,6 @@ final class InlineAlertConfigurationModel: AlertConfigurationModel {
 
     override init() {
         super.init()
-
         status = .neutral
         statusIcon = true
         flipIcon = false
@@ -36,10 +35,12 @@ final class InlineAlertConfigurationModel: AlertConfigurationModel {
     override func updateCode() {
         code =
             """
-            OUDsInlineAlert(label: \"\(text)\"\(statusPattern))
+            OUDSInlineAlert(label: \"\(text)\"\(statusPattern))
             """
     }
 }
+
+// MARK: - Inline Alert Configuration View
 
 struct InlineAlertConfigurationView: View {
 
