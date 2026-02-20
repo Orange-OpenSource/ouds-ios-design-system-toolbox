@@ -85,7 +85,7 @@ struct AlertMessageView: View {
     }
 
     @ViewBuilder
-    private func alertMessageView(title: String, status: OUDSAlertMessage.Status) -> some View {
+    private func alertMessageView(title: String, status: OUDSAlertStatus) -> some View {
         OUDSAlertMessage(label: title,
                          status: status,
                          bulletList: ["Bullet 1", "Bullet 2", "Bullet 3"],

@@ -836,6 +836,8 @@
 		9589F1B52EB7D67E00134487 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B42CE3AF1500F2EC33 /* style.css */; };
 		9589F1B62EB7D67E00134487 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
 		9589F1B72EB7D67E00134487 /* orange-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */; };
+		958CA1FA2F48C407001F45E8 /* InlineAlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CA1F92F48C407001F45E8 /* InlineAlertMessageView.swift */; };
+		958CA1FB2F48C407001F45E8 /* InlineAlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CA1F92F48C407001F45E8 /* InlineAlertMessageView.swift */; };
 		959390092EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */; };
 		9593900A2EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */; };
 		9593900C2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */; };
@@ -1467,6 +1469,7 @@
 		957D5EE42F2BB2940055128A /* ContentDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDisplayView.swift; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		958CA1F92F48C407001F45E8 /* InlineAlertMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineAlertMessageView.swift; sourceTree = "<group>"; };
 		959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAndTVLayoutsView.swift; sourceTree = "<group>"; };
 		9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchVerticalLayoutView.swift; sourceTree = "<group>"; };
 		9593900E2EC1DA55000DBE95 /* TVGridLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGridLayoutView.swift; sourceTree = "<group>"; };
@@ -3287,6 +3290,7 @@
 			isa = PBXGroup;
 			children = (
 				95D5BA322F4706E000CB10FE /* AlertMessageView.swift */,
+				958CA1F92F48C407001F45E8 /* InlineAlertMessageView.swift */,
 			);
 			path = AlertMessage;
 			sourceTree = "<group>";
@@ -4409,6 +4413,7 @@
 				95CE055C2EC33FCB00ACE41C /* NamedGrid.swift in Sources */,
 				95CE05522EC33F1B00ACE41C /* SizeIllustrations.swift in Sources */,
 				95CE05532EC33F1B00ACE41C /* NamedSize.swift in Sources */,
+				958CA1FA2F48C407001F45E8 /* InlineAlertMessageView.swift in Sources */,
 				95CE05402EC33C8F00ACE41C /* OpacityIllustration.swift in Sources */,
 				95CE053F2EC33C8900ACE41C /* NamedOpacity.swift in Sources */,
 				9514585F2EC28F4E0096BBF1 /* String+extension.swift in Sources */,
@@ -4878,6 +4883,7 @@
 				95CE05542EC33F2300ACE41C /* SizeIllustrations.swift in Sources */,
 				95CE05552EC33F2300ACE41C /* NamedSize.swift in Sources */,
 				95CE053E2EC33C8200ACE41C /* NamedOpacity.swift in Sources */,
+				958CA1FB2F48C407001F45E8 /* InlineAlertMessageView.swift in Sources */,
 				95CE053D2EC33C7A00ACE41C /* OpacityIllustration.swift in Sources */,
 				951458602EC28F570096BBF1 /* String+extension.swift in Sources */,
 				957D5EE62F2BB29A0055128A /* ContentDisplayView.swift in Sources */,
