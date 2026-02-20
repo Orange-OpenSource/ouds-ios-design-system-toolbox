@@ -22,6 +22,7 @@ struct AlertElements: DesignToolboxElement {
     init() {
         let variants: [DesignToolboxElement] = [
             AlertMessageElement(),
+            InlineAlertElement(),
         ]
 
         name = "app_components_alert_label".localized()
@@ -34,7 +35,7 @@ struct AlertElements: DesignToolboxElement {
     }
 }
 
-private struct AlertIllustration: View {
+struct AlertIllustration: View {
 
     var body: some View {
         OUDSAlertMessage(label: "app_components_common_label_label".localized())

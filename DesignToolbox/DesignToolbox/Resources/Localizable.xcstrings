@@ -1186,6 +1186,55 @@
         }
       }
     },
+    "app_components_alert_inlineAlert_description_text" : {
+      "comment" : "Component - Inline Alert",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "InlineAlert هو عنصر واجهة مستخدم بسيط، يتم وضعه في تدفق المحتوى، حيث يعرض المعلومات وتعليقات النظام وتغييرات الحالة من خلال وسيلة اتصال لطيفة ومرئية ومستمرة وغير قابلة للاستغلال."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inline alert is a lightweight UI element, placed in the content flow, that displays information, system feedback, status changes throughout short, prominent, persistent and non actionable communication."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le composant InlineAlert est un élément d'interface utilisateur léger, placé dans le flux de contenu, qui affiche des informations, des commentaires système et des changements d'état au moyen d'une communication courte, visible, persistante et non exploitable."
+          }
+        }
+      }
+    },
+    "app_components_alert_inlineAlert_label" : {
+      "comment" : "Component - Inline Alert",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Inline Alert"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inline alert"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Inline Alert"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_alert_label" : {
       "comment" : "Component - Alert",
       "extractionState" : "manual",

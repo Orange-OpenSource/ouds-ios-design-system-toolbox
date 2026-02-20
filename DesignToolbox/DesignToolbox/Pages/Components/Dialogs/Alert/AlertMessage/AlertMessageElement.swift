@@ -21,24 +21,11 @@ struct AlertMessageElement: DesignToolboxElement {
 
     init() {
         name = "app_components_alert_alertMessage_label".localized()
-        illustration = AnyView(AlertMessageIllustration())
+        illustration = AnyView(AlertIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_alert_alertMessage_description_text",
             version: OUDSVersions.componentAlertMessageVersion,
             demoScreen: AnyView(AlertMessagePage())))
-    }
-}
-
-private struct AlertMessageIllustration: View {
-
-    @Environment(\.theme) private var theme
-
-    var body: some View {
-        VStack(spacing: theme.spaces.fixedSmall) {
-            #if !os(visionOS)
-            OUDSAlertMessage(label: "Label", status: .negative)
-            #endif
-        }
     }
 }

@@ -17,13 +17,9 @@ import SwiftUI
 // MARK: - AlertMessage Configuration Model
 
 /// The model shared between `AlertMessageConfigurationView` view and `AlertMessageDemo` view.
-final class AlertMessageConfigurationModel: ComponentConfiguration {
+final class AlertMessageConfigurationModel: AlertConfigurationModel {
 
     // MARK: Published properties
-
-    @Published var text: String {
-        didSet { updateCode() }
-    }
 
     @Published var descriptionText: String {
         didSet { updateCode() }
@@ -38,18 +34,6 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
     }
 
     @Published var bullet3: String {
-        didSet { updateCode() }
-    }
-
-    @Published var status: AlertMessageStatus {
-        didSet { updateCode() }
-    }
-
-    @Published var statusIcon: Bool {
-        didSet { updateCode() }
-    }
-
-    @Published var flipIcon: Bool {
         didSet { updateCode() }
     }
 
@@ -68,11 +52,7 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        text = String(localized: "app_components_common_label_label")
         descriptionText = String(localized: "app_components_common_description_label")
-        status = .positive
-        statusIcon = true
-        flipIcon = false
         actionLink = false
         actionPosition = .bottom
         closeButton = false
@@ -81,37 +61,15 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
         bullet3 = "app_components_alert_alertMessage_bullet_label" <- Int(3)
 
         super.init()
+
+        status = .positive
+        statusIcon = true
+        flipIcon = false
     }
 
     deinit {}
 
     // MARK: Component Configuration
-
-    var enableFlipIcon: Bool {
-        statusIcon && hasIcon
-    }
-
-    var hasIcon: Bool {
-        status == .neutral || status == .accent
-    }
-
-    @MainActor
-    func status(from theme: OUDSTheme) -> OUDSAlertMessage.Status {
-        switch status {
-        case .neutral:
-            .neutral(icon: statusIcon ? OUDSIcon(asset: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon) : nil)
-        case .accent:
-            .accent(icon: statusIcon ? OUDSIcon(asset: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon) : nil)
-        case .positive:
-            .positive
-        case .info:
-            .info
-        case .warning:
-            .warning
-        case .negative:
-            .negative
-        }
-    }
 
     var link: OUDSAlertMessage.Link? {
         actionLink ? .init(text: "Action", position: actionPosition, action: {}) : nil
@@ -126,23 +84,6 @@ final class AlertMessageConfigurationModel: ComponentConfiguration {
     }
 
     // MARK: Component Code snippet
-
-    private var flipIconPattern: String {
-        flipIcon ? ", flipped: true" : ""
-    }
-
-    private var iconPattern: String {
-        switch status {
-        case .neutral, .accent:
-            statusIcon ? "icon: Image(\"ic_heart\")\(flipIconPattern)" : ""
-        default:
-            statusIcon ? "showIcon: true" : ""
-        }
-    }
-
-    private var statusPattern: String {
-        ", status: \(status.technicalDescription)(\(iconPattern))"
-    }
 
     private var descriptionPattern: String {
         descriptionText.isEmpty ? "" : ", description: \"\(descriptionText)\""
@@ -182,7 +123,7 @@ struct AlertMessageConfigurationView: View {
 
                 OUDSChipPicker(title: "app_components_common_status_label",
                                selection: $configurationModel.status,
-                               chips: AlertMessageStatus.chips)
+                               chips: AlertStatus.chips)
 
                 OUDSSwitchItem("app_components_alert_alertMessage_statusIcon_label", isOn: $configurationModel.statusIcon)
                     .disabled(!configurationModel.hasIcon)
@@ -231,44 +172,6 @@ extension OUDSAlertMessage.Link.Position: @retroactive CaseIterable, @retroactiv
         case .topTrailing:
             ".topTrailing"
         }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
-}
-
-enum AlertMessageStatus: String, CaseIterable, CustomStringConvertible {
-    case neutral
-    case accent
-    case positive
-    case info
-    case warning
-    case negative
-
-    var description: String {
-        switch self {
-        case .neutral:
-            "Neutral"
-        case .accent:
-            "Accent"
-        case .positive:
-            "Positive"
-        case .info:
-            "Info"
-        case .warning:
-            "Warning"
-        case .negative:
-            "Negative"
-        }
-    }
-
-    var technicalDescription: String {
-        ".\(rawValue)"
     }
 
     private var chipData: OUDSChipPickerData<Self> {
