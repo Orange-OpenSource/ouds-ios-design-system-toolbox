@@ -38,29 +38,29 @@ struct ThreeStatesCheckboxesItemsView: View {
 
         Text("No icons").font(.subheadline)
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       isReversed: false,
                                       isReadOnly: false)
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       isReversed: true,
                                       isReadOnly: false)
 
         Text("Disabled").font(.caption)
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       isReversed: false,
                                       isReadOnly: false)
             .disabled(true)
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       isReversed: true,
                                       isReadOnly: false)
@@ -68,15 +68,15 @@ struct ThreeStatesCheckboxesItemsView: View {
 
         Text("On error").font(.caption)
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       isReversed: false,
                                       isError: true,
                                       errorText: "Error")
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       isReversed: true,
                                       isError: true,
@@ -84,29 +84,29 @@ struct ThreeStatesCheckboxesItemsView: View {
 
         Text("Read only").font(.subheadline)
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       isReversed: false,
                                       isReadOnly: true)
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       isReversed: true,
                                       isReadOnly: true)
 
         Text("With icons").font(.caption)
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       icon: Image(systemName: "flag.pattern.checkered"),
                                       isReversed: false,
                                       isReadOnly: false)
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       icon: Image(systemName: "flag.pattern.checkered"),
                                       isReversed: true,
@@ -114,16 +114,16 @@ struct ThreeStatesCheckboxesItemsView: View {
 
         Text("On error").font(.caption)
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       icon: Image(systemName: "flag.pattern.checkered"),
                                       isReversed: false,
                                       isError: true,
                                       errorText: "Error")
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       icon: Image(systemName: "flag.pattern.checkered"),
                                       isReversed: true,
@@ -132,16 +132,16 @@ struct ThreeStatesCheckboxesItemsView: View {
 
         Text("Disabled").font(.caption)
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       icon: Image(systemName: "flag.pattern.checkered"),
                                       isReversed: false,
                                       isReadOnly: false)
             .disabled(true)
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       icon: Image(systemName: "flag.pattern.checkered"),
                                       isReversed: true,
@@ -150,15 +150,15 @@ struct ThreeStatesCheckboxesItemsView: View {
 
         Text("Read only").font(.caption)
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       icon: Image(systemName: "flag.pattern.checkered"),
                                       isReversed: false,
                                       isReadOnly: true)
 
-        OUDSCheckboxItemIndeterminate(selection: $state,
-                                      label: "Label",
+        OUDSCheckboxItemIndeterminate("Label",
+                                      selection: $state,
                                       description: "Description",
                                       icon: Image(systemName: "flag.pattern.checkered"),
                                       isReversed: true,
@@ -216,26 +216,24 @@ struct ThreeStatesCheckboxesItemsView: View {
                 .foregroundColor(.primary)
 
             VStack(spacing: theme.spaces.scaledXsmallMobile) {
-                OUDSCheckboxItemIndeterminate(
-                    selection: $state,
-                    label: "Label",
-                    description: "Description",
-                    icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
-                    isReversed: false,
-                    isError: isError,
-                    errorText: isError ? "Error" : nil,
-                    isReadOnly: isReadOnly)
+                OUDSCheckboxItemIndeterminate("Label",
+                                              selection: $state,
+                                              description: "Description",
+                                              icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                                              isReversed: false,
+                                              isError: isError,
+                                              errorText: isError ? "Error" : nil,
+                                              isReadOnly: isReadOnly)
                     .disabled(isDisabled)
 
-                OUDSCheckboxItemIndeterminate(
-                    selection: $state,
-                    label: "Label",
-                    description: "Description",
-                    icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
-                    isReversed: true,
-                    isError: isError,
-                    errorText: isError ? "Error" : nil,
-                    isReadOnly: isReadOnly)
+                OUDSCheckboxItemIndeterminate("Label",
+                                              selection: $state,
+                                              description: "Description",
+                                              icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                                              isReversed: true,
+                                              isError: isError,
+                                              errorText: isError ? "Error" : nil,
+                                              isReadOnly: isReadOnly)
                     .disabled(isDisabled)
             }
         }
