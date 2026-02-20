@@ -5786,7 +5786,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1314-in-library-update-signature-of-control-item-components-to-be-consistant";
+				branch = develop;
 				kind = branch;
 			};
 		};
