@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "58b34e3769dd54be8bd46c2a292f8822ad90cf14"
+        "branch" : "1307-in-library-add-inline-alert-componentV2",
+        "revision" : "86eaaea2593c6484be7a1724792223df98de260b"
       }
     },
     {
