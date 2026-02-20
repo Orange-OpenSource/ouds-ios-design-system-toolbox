@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.2.0...develop)
 
+### Added
+
+- [Library] `alert message` component (Orange-OpenSource/ouds-ios#1159)
+
+### Changed
+
+- [Library] Signatures of control-item-based components (Orange-OpenSource/ouds-ios#1314)
+
 ### Fixed
 
 - [Library] Size of loader for `button` component (Orange-OpenSource/ouds-ios#1296)
@@ -16,7 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] `alert message` component (Orange-OpenSource/ouds-ios#1159)
 - [Library] `password input` component (Orange-OpenSource/ouds-ios#997)
 - [Library] `bullet list` component (Orange-OpenSource/ouds-ios#513)
 

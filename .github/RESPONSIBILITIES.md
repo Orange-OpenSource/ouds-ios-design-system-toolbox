@@ -90,5 +90,5 @@ Make sure the repo has a well-written, accurate, and complete description.
 
 ### Becoming or not a Maintainer
 
-The repository admins, seens as top maintainer, are the only ones able to choose wether or not somebody can be named as maintainer, in the way they want.
+The repository admins, seens as top maintainer, are the only ones able to choose whether or not somebody can be named as maintainer, in the way they want.
 

@@ -21,7 +21,7 @@ struct SwitchItemPage: View {
     @StateObject private var configurationModel: BooleanControlItemConfigurationModel
 
     init() {
-        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSSwitchItem(isOn: $isOn")
+        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSSwitchItem(", bindingInitCode: "isOn: $isOn")
         _configurationModel = StateObject(wrappedValue: model)
     }
 
