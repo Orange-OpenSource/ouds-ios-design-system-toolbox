@@ -47,7 +47,7 @@ struct GridTokenPage: View {
                     .designToolboxSectionHeaderStyle()
             }
         }
-        .padding(.horizontal, theme.spaces.fixedMedium)
+        .oudsGridMargin(.horizontal)
     }
 
     // MARK: Private helpers

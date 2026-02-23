@@ -42,17 +42,14 @@ private struct RadioPickerDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .center) {
-            OUDSRadioPicker(selection: $selection,
-                            radios: configurationModel.populate(),
-                            placement: configurationModel.pickerPlacement,
-                            isOutlined: configurationModel.isOutlined,
-                            isReversed: configurationModel.isReversed,
-                            isError: configurationModel.isError,
-                            isReadOnly: configurationModel.isReadOnly,
-                            hasDivider: configurationModel.hasDivider)
-                .padding([.trailing, .leading], theme.spaces.paddingInlineSmall)
-                .disabled(!configurationModel.isEnabled)
-        }
+        OUDSRadioPicker(selection: $selection,
+                        radios: configurationModel.populate(),
+                        placement: configurationModel.pickerPlacement,
+                        isOutlined: configurationModel.isOutlined,
+                        isReversed: configurationModel.isReversed,
+                        isError: configurationModel.isError,
+                        isReadOnly: configurationModel.isReadOnly,
+                        hasDivider: configurationModel.hasDivider)
+        .disabled(!configurationModel.isEnabled)
     }
 }

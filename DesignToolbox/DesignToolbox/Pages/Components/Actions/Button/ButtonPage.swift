@@ -42,9 +42,7 @@ private struct ButtonDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-
+        Group {
             // It is not allowed to place a Negative or Brand button on colored surface
             if configurationModel.onColoredSurface, configurationModel.appearance == .negative || configurationModel.appearance == .brand {
                 Text("app_components_button_appearence_notAllowed_text")
@@ -71,10 +69,7 @@ private struct ButtonDemo: View {
                                isFullWidth: configurationModel.isFullWidth) {}
                 }
             }
-
-            Spacer()
         }
         .disabled(!configurationModel.enabled)
-        .padding(.all, theme.spaces.fixedMedium)
     }
 }

@@ -41,15 +41,10 @@ private struct SwitchDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-            OUDSSwitch(isOn: $configurationModel.selection,
-                       accessibilityLabel: "app_components_switch_hint_a11y".localized(), // No LocalizedStringKey type inference in the component
-                       isReadOnly: configurationModel.isReadOnly)
-                .disabled(!configurationModel.enabled)
-                .accessibilityIdentifier(A11YIdentifiers.componentSwitch)
-            Spacer()
-        }
-        .padding(.all, theme.spaces.fixedMedium)
+        OUDSSwitch(isOn: $configurationModel.selection,
+                   accessibilityLabel: "app_components_switch_hint_a11y".localized(), // No LocalizedStringKey type inference in the component
+                   isReadOnly: configurationModel.isReadOnly)
+        .disabled(!configurationModel.enabled)
+        .accessibilityIdentifier(A11YIdentifiers.componentSwitch)
     }
 }

@@ -53,7 +53,6 @@ private struct CheckboxItemIndeterminateDemo: View {
                                       hasDivider: configurationModel.hasDivider,
                                       constrainedMaxWidth: configurationModel.constrainedMaxWidth)
             .disabled(!configurationModel.enabled)
-            .padding(.all, theme.spaces.fixedMedium)
             .designToolboxColoredSurface(false)
             .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItemIndeterminate)
     }

@@ -57,7 +57,6 @@ struct PasswordInputDemo: View {
                           status: configurationModel.status)
             .autocorrectionDisabled()
             .textInputDisableAutocapitalization()
-            .padding(.all, theme.spaces.fixedMedium)
             .onSubmit {
                 if configurationModel.text == "error" {
                     configurationModel.status = .error(message: "Error text")

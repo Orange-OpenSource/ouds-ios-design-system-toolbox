@@ -68,16 +68,25 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
-            ComponentShowcases(onColoredSurface: configuration.onColoredSurface, useOneColorSchemedDemo: configuration.useOneColorSchemedDemo, componentDemo: componentView)
+            ComponentShowcases(onColoredSurface: configuration.onColoredSurface, useOneColorSchemedDemo: configuration.useOneColorSchemedDemo) {
+                componentView()
+                    .frame(maxWidth: .infinity,
+                           minHeight: theme.spaces.fixedLarge,
+                           alignment: .center)
+                    .padding(.vertical, theme.spaces.fixedMedium)
+                    .oudsGridMargin(.horizontal)
+
+            }
             // No padding here, the component area keeps all the frame horizontaly
 
-            DesignToolboxConfiguration {
-                configurationView()
-            }
-            .padding(.horizontal, theme.spaces.fixedMedium)
+            Group {
+                DesignToolboxConfiguration {
+                    configurationView()
+                }
 
-            DesignToolboxCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
-                .padding(.horizontal, theme.spaces.fixedMedium)
+                DesignToolboxCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
+            }
+            .oudsGridMargin(.horizontal)
         }
     }
 }
@@ -104,7 +113,7 @@ private struct ComponentShowcases<ComponentDemo>: View where ComponentDemo: View
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .center) {
+        VStack(alignment: .center, spacing: 0) {
             if onColoredSurface {
                 componentDemo()
                     .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: true))
@@ -123,6 +132,5 @@ private struct ComponentShowcases<ComponentDemo>: View where ComponentDemo: View
                 }
             }
         }
-        .frame(alignment: .center)
     }
 }

@@ -42,9 +42,7 @@ struct SuggestionChipDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-
+        Group {
             switch configurationModel.layout {
             case .iconOnly:
                 OUDSSuggestionChip(icon: Image(decorative: "ic_heart"),
@@ -54,10 +52,7 @@ struct SuggestionChipDemo: View {
             case .textAndIcon:
                 OUDSSuggestionChip(icon: Image(decorative: "ic_heart"), text: configurationModel.text) {}
             }
-
-            Spacer()
         }
         .disabled(!configurationModel.enabled)
-        .padding(.all, theme.spaces.fixedMedium)
     }
 }

@@ -42,20 +42,12 @@ struct TagDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-
-            OUDSTag(
-                label: configurationModel.label,
+        OUDSTag(label: configurationModel.label,
                 status: configurationModel.status(from: theme),
                 appearance: configurationModel.appearance,
                 shape: configurationModel.shape,
                 size: configurationModel.size,
                 hasLoader: configurationModel.loader)
-                .disabled(!configurationModel.enabled)
-
-            Spacer()
-        }
-        .padding(.all, theme.spaces.fixedMedium)
+        .disabled(!configurationModel.enabled)
     }
 }

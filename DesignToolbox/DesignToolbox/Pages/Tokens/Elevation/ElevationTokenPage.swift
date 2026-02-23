@@ -34,6 +34,6 @@ struct ElevationTokenPage: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, theme.spaces.fixedMedium)
+        .oudsGridMargin(.horizontal)
     }
 }

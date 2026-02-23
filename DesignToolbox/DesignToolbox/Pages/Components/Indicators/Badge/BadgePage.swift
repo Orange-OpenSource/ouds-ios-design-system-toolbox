@@ -42,30 +42,25 @@ struct BadgeDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-
+        Group {
             switch configurationModel.badgeType {
             case .standard:
                 OUDSBadge(accessibilityLabel: "app_components_badge_hint_a11y".localized(),
                           status: configurationModel.status,
                           size: configurationModel.standardSize)
-                    .disabled(!configurationModel.enabled)
+                .disabled(!configurationModel.enabled)
             case .count:
                 OUDSBadge(count: configurationModel.count,
                           accessibilityLabel: "app_components_badge_hint_a11y".localized(),
                           status: configurationModel.status,
                           size: configurationModel.illustrationSize)
-                    .disabled(!configurationModel.enabled)
+                .disabled(!configurationModel.enabled)
             case .icon:
                 OUDSBadge(status: configurationModel.statusWithIcon(from: theme),
                           accessibilityLabel: "app_components_badge_hint_a11y".localized(),
                           size: configurationModel.illustrationSize)
-                    .disabled(!configurationModel.enabled)
+                .disabled(!configurationModel.enabled)
             }
-
-            Spacer()
         }
-        .padding(.all, theme.spaces.fixedMedium)
     }
 }

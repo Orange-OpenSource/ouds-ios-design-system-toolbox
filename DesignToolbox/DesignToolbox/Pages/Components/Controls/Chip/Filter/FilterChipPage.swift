@@ -41,9 +41,7 @@ struct FilterChipDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-
+        Group {
             switch configurationModel.layout {
             case .iconOnly:
                 OUDSFilterChip(icon: Image(decorative: "ic_heart"),
@@ -61,10 +59,7 @@ struct FilterChipDemo: View {
                     configurationModel.selected.toggle()
                 }
             }
-
-            Spacer()
         }
         .disabled(!configurationModel.enabled)
-        .padding(.all, theme.spaces.fixedMedium)
     }
 }

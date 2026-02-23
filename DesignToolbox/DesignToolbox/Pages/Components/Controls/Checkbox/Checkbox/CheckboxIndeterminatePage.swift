@@ -43,16 +43,11 @@ private struct CheckboxIndeterminateDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-            OUDSCheckboxIndeterminate(selection: $configurationModel.indicatorState,
-                                      accessibilityLabel: configurationModel.accessibilityLabel,
-                                      isError: configurationModel.isError,
-                                      isReadOnly: configurationModel.isReadOnly)
-                .disabled(!configurationModel.enabled)
-                .accessibilityIdentifier(A11YIdentifiers.componentCheckboxIndeterminate)
-            Spacer()
-        }
-        .padding(.all, theme.spaces.fixedMedium)
+        OUDSCheckboxIndeterminate(selection: $configurationModel.indicatorState,
+                                  accessibilityLabel: configurationModel.accessibilityLabel,
+                                  isError: configurationModel.isError,
+                                  isReadOnly: configurationModel.isReadOnly)
+        .disabled(!configurationModel.enabled)
+        .accessibilityIdentifier(A11YIdentifiers.componentCheckboxIndeterminate)
     }
 }

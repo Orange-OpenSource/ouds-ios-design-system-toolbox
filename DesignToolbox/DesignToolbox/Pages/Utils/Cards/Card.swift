@@ -28,7 +28,7 @@ struct Card: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             CardIllustration(illustration: illustration)
             title
                 .headingMedium(theme)
@@ -40,6 +40,5 @@ struct Card: View {
         }
         .oudsBackground(theme.colors.overlayDropdown)
         .oudsShadow(theme.elevations.raised)
-        .padding(.all, 4)
     }
 }
