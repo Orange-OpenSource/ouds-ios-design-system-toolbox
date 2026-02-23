@@ -5854,7 +5854,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1317-add-an-helper-on-view-to-apply-grid-elements-margin-min-width-maxwidth";
 				kind = branch;
 			};
 		};
