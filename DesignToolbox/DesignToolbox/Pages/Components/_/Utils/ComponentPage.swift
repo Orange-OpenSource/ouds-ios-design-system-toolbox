@@ -75,7 +75,6 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
                            alignment: .center)
                     .padding(.vertical, theme.spaces.fixedMedium)
                     .oudsGridMargin(.horizontal)
-
             }
             // No padding here, the component area keeps all the frame horizontaly
 
