@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "f8ea75e6f989e7fce46263cb1a5506f92094d058"
+        "branch" : "1317-add-an-helper-on-view-to-apply-grid-elements-margin-min-width-maxwidth",
+        "revision" : "e2d4898388bd929d32bdab1c762aed48f511c537"
       }
     },
     {
