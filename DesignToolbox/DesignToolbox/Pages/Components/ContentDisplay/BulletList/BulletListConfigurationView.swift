@@ -161,7 +161,7 @@ struct BulletListConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                OUDSChipPicker(title: "app_components_common_type_label",
+                OUDSChipPicker(title: "app_components_common_type_tech",
                                selection: $configurationModel.bulletType,
                                chips: BulletListType.chips)
 
@@ -173,18 +173,18 @@ struct BulletListConfigurationView: View {
                     OUDSSwitchItem("app_components_bulletList_unorderedAssetBrandColor_tech", isOn: $configurationModel.unorderedBulletIsBranded)
                 }
 
-                OUDSChipPicker(title: "app_components_bulletList_textStyle_label",
+                OUDSChipPicker(title: "app_components_bulletList_textStyle_tech",
                                selection: $configurationModel.textStyle,
                                chips: OUDSBulletList.TextStyle.chips)
 
-                OUDSSwitchItem("app_components_bulletList_bold_label", isOn: $configurationModel.isBold)
+                OUDSSwitchItem("app_components_bulletList_bold_tech", isOn: $configurationModel.isBold)
 
-                OUDSChipPicker(title: "app_components_bulletList_levelCount_label",
+                OUDSChipPicker(title: "app_components_bulletList_levelCount_tech",
                                selection: $configurationModel.levelCount,
                                chips: BulletListLevelCount.chips)
 
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_label")
+                    DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
                 }
             }
         }
@@ -201,9 +201,9 @@ enum BulletListLevelCount: CaseIterable, CustomStringConvertible {
         case .one:
             "app_components_bulletList_oneLevel_label"
         case .two:
-            "app_components_bulletList_twoLevel_label"
+            "app_components_bulletList_twoLevels_label"
         case .three:
-            "app_components_bulletList_threeLevel_label"
+            "app_components_bulletList_threeLevels_label"
         }
     }
 

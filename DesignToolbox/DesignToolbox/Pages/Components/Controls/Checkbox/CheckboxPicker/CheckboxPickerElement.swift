@@ -19,7 +19,7 @@ struct CheckboxPickerElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_checkboxPicker_label".localized()
+        name = "app_components_checkboxPicker_tech".localized()
         illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

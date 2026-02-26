@@ -794,7 +794,7 @@
         }
       }
     },
-    "app_common_disabled_label" : {
+    "app_common_disabled_tech" : {
       "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -819,7 +819,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_common_enabled_label" : {
+    "app_common_enabled_tech" : {
       "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -987,7 +987,7 @@
         }
       }
     },
-    "app_components_alert_alertMessage_actionLink_label" : {
+    "app_components_alert_alertMessage_actionLink_tech" : {
       "comment" : "Component - Alert Message",
       "extractionState" : "manual",
       "localizations" : {
@@ -1012,7 +1012,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_alert_alertMessage_actionLinkPosition_label" : {
+    "app_components_alert_alertMessage_actionLinkPosition_tech" : {
       "comment" : "Component - Alert Message",
       "extractionState" : "manual",
       "localizations" : {
@@ -1037,7 +1037,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_alert_alertMessage_bullet_label" : {
+    "app_components_alert_alertMessage_bullet_tech" : {
       "comment" : "Component - Alert Message",
       "extractionState" : "manual",
       "localizations" : {
@@ -1062,7 +1062,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_alert_alertMessage_closeButton_label" : {
+    "app_components_alert_alertMessage_closeButton_tech" : {
       "comment" : "Component - Alert Message",
       "extractionState" : "manual",
       "localizations" : {
@@ -1112,51 +1112,51 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_alert_alertMessage_label" : {
+    "app_components_alert_alertMessage_statusIcon_tech" : {
       "comment" : "Component - Alert Message",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alert message"
+            "value" : "Status icon"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alert message"
+            "value" : "Status icon"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alert message"
+            "value" : "Status icon"
           }
         }
       },
       "shouldTranslate" : false
     },
-    "app_components_alert_alertMessage_statusIcon_label" : {
+    "app_components_alert_alertMessage_tech" : {
       "comment" : "Component - Alert Message",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Status icon"
+            "value" : "Alert message"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Status icon"
+            "value" : "Alert message"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Status icon"
+            "value" : "Alert message"
           }
         }
       },
@@ -1210,7 +1210,7 @@
         }
       }
     },
-    "app_components_alert_inlineAlert_label" : {
+    "app_components_alert_inlineAlert_tech" : {
       "comment" : "Component - Inline Alert",
       "extractionState" : "manual",
       "localizations" : {
@@ -1235,7 +1235,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_alert_label" : {
+    "app_components_alert_tech" : {
       "comment" : "Component - Alert",
       "extractionState" : "manual",
       "localizations" : {
@@ -1260,7 +1260,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_badge_count_label" : {
+    "app_components_badge_count_tech" : {
       "comment" : "Component - Badge",
       "extractionState" : "manual",
       "localizations" : {
@@ -1282,9 +1282,10 @@
             "value" : "Count"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
-    "app_components_badge_countType_label" : {
+    "app_components_badge_countType_tech" : {
       "comment" : "Component - Badge",
       "extractionState" : "manual",
       "localizations" : {
@@ -1306,7 +1307,8 @@
             "value" : "Count"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_badge_description_text" : {
       "comment" : "Component - Badge",
@@ -1356,7 +1358,7 @@
         }
       }
     },
-    "app_components_badge_iconType_label" : {
+    "app_components_badge_iconType_tech" : {
       "comment" : "Composent - Badge",
       "extractionState" : "manual",
       "localizations" : {
@@ -1378,9 +1380,35 @@
             "value" : "Icon"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
-    "app_components_badge_label" : {
+    "app_components_badge_standardType_tech" : {
+      "comment" : "Component - Badge",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standard"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standard"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standard"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_badge_tech" : {
       "comment" : "Component - Badge",
       "extractionState" : "manual",
       "localizations" : {
@@ -1405,31 +1433,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_badge_standardType_label" : {
-      "comment" : "Component - Badge",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standard"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standard"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standard"
-          }
-        }
-      }
-    },
-    "app_components_bulletList_bold_label" : {
+    "app_components_bulletList_bold_tech" : {
       "comment" : "Component - Bullet List",
       "extractionState" : "manual",
       "localizations" : {
@@ -1478,32 +1482,7 @@
         }
       }
     },
-    "app_components_bulletList_label" : {
-      "comment" : "Component - Bullet List",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bullet List"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bullet List"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bullet List"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_bulletList_levelCount_label" : {
+    "app_components_bulletList_levelCount_tech" : {
       "comment" : "Component - Bullet List",
       "extractionState" : "manual",
       "localizations" : {
@@ -1525,7 +1504,8 @@
             "value" : "Nombre de niveaux"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_bulletList_nestedLevel_label" : {
       "comment" : "Component - Bullet List",
@@ -1576,7 +1556,32 @@
         }
       }
     },
-    "app_components_bulletList_textStyle_label" : {
+    "app_components_bulletList_tech" : {
+      "comment" : "Component - Bullet List",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet List"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet List"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bullet List"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_bulletList_textStyle_tech" : {
       "comment" : "Component - Bullet List",
       "extractionState" : "manual",
       "localizations" : {
@@ -1601,7 +1606,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_bulletList_threeLevel_label" : {
+    "app_components_bulletList_threeLevels_label" : {
       "comment" : "Component - Bullet List",
       "extractionState" : "manual",
       "localizations" : {
@@ -1625,7 +1630,7 @@
         }
       }
     },
-    "app_components_bulletList_twoLevel_label" : {
+    "app_components_bulletList_twoLevels_label" : {
       "comment" : "Component - Bullet List",
       "extractionState" : "manual",
       "localizations" : {
@@ -1747,7 +1752,7 @@
         }
       }
     },
-    "app_components_button_fullWidth_label" : {
+    "app_components_button_fullWidth_tech" : {
       "comment" : "Component - Button",
       "extractionState" : "manual",
       "localizations" : {
@@ -1772,7 +1777,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_button_label" : {
+    "app_components_button_tech" : {
       "comment" : "Component - Button",
       "extractionState" : "manual",
       "localizations" : {
@@ -1821,7 +1826,7 @@
         }
       }
     },
-    "app_components_checkbox_checkbox_label" : {
+    "app_components_checkbox_checkbox_tech" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
@@ -1870,7 +1875,7 @@
         }
       }
     },
-    "app_components_checkbox_checkboxItem_label" : {
+    "app_components_checkbox_checkboxItem_tech" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
@@ -1967,7 +1972,7 @@
         }
       }
     },
-    "app_components_checkbox_indeterminateCheckbox_label" : {
+    "app_components_checkbox_indeterminateCheckbox_tech" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
@@ -2016,7 +2021,7 @@
         }
       }
     },
-    "app_components_checkbox_indeterminateCheckboxItem_label" : {
+    "app_components_checkbox_indeterminateCheckboxItem_tech" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
@@ -2041,7 +2046,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_checkbox_label" : {
+    "app_components_checkbox_tech" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
@@ -2090,31 +2095,6 @@
         }
       }
     },
-    "app_components_checkboxPicker_label" : {
-      "comment" : "Component - Checkbox Picker",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Checkbox picker"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Checkbox picker"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Checkbox picker"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_checkboxPicker_root" : {
       "comment" : "Component - Checkbox Picker",
       "extractionState" : "manual",
@@ -2139,7 +2119,32 @@
         }
       }
     },
-    "app_components_chip_chipPicker_label" : {
+    "app_components_checkboxPicker_tech" : {
+      "comment" : "Component - Checkbox Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkbox picker"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkbox picker"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkbox picker"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_chip_chipPicker_tech" : {
       "comment" : "Component - ChipPicker",
       "extractionState" : "manual",
       "localizations" : {
@@ -2236,7 +2241,7 @@
         }
       }
     },
-    "app_components_chip_filterChip_label" : {
+    "app_components_chip_filterChip_tech" : {
       "comment" : "Component - Chip",
       "extractionState" : "manual",
       "localizations" : {
@@ -2256,31 +2261,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Filter chip"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_chip_label" : {
-      "comment" : "Component - Chip",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chip"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chip"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chip"
           }
         }
       },
@@ -2334,7 +2314,7 @@
         }
       }
     },
-    "app_components_chip_suggestionChip_label" : {
+    "app_components_chip_suggestionChip_tech" : {
       "comment" : "Component - Chip",
       "extractionState" : "manual",
       "localizations" : {
@@ -2354,6 +2334,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suggestion chip"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_chip_tech" : {
+      "comment" : "Component - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chip"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chip"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chip"
           }
         }
       },
@@ -2383,7 +2388,7 @@
         }
       }
     },
-    "app_components_chipPicker_selectionType_label" : {
+    "app_components_chipPicker_selectionType_tech" : {
       "comment" : "Component - Chip Picker",
       "extractionState" : "manual",
       "localizations" : {
@@ -2405,9 +2410,35 @@
             "value" : "Selection Type"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
-    "app_components_coloredSurface_description_text" : {
+    "app_components_coloredBackground_tech": {
+        "comment" : "Component - Colored Surface",
+        "extractionState" : "manual",
+        "localizations" : {
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Colored background"
+            }
+          },
+          "en" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Colored background"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Colored background"
+            }
+          }
+        },
+        "shouldTranslate" : false
+    },
+    "app_components_coloredBackground_description_text" : {
       "comment" : "Component - Colored Surface",
       "extractionState" : "manual",
       "localizations" : {
@@ -2431,7 +2462,7 @@
         }
       }
     },
-    "app_components_common_appearance_label" : {
+    "app_components_common_appearance_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -2456,7 +2487,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_color_label" : {
+    "app_components_common_color_tech" : {
       "comment" : "Component - Common",
       "localizations" : {
         "ar" : {
@@ -2480,7 +2511,32 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_constrainedMaxWidth_label" : {
+    "app_components_common_ColoredBackground_tech" : {
+      "comment" : "Component - Colored Surface",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colored background"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colored background"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colored background"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_constrainedMaxWidth_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -2505,7 +2561,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_description_label" : {
+    "app_components_common_description_tech" : {
       "comment" : "Component - Common",
       "localizations" : {
         "ar" : {
@@ -2601,7 +2657,7 @@
         }
       }
     },
-    "app_components_common_error_label" : {
+    "app_components_common_error_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -2626,7 +2682,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_errorMessage_label" : {
+    "app_components_common_errorMessage_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -2651,7 +2707,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_flipIcon_label" : {
+    "app_components_common_flipIcon_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -2676,7 +2732,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_helperText_label" : {
+    "app_components_common_helperText_tech" : {
       "comment" : "Component - Common",
       "localizations" : {
         "ar" : {
@@ -2724,7 +2780,7 @@
         }
       }
     },
-    "app_components_common_iconOnlyLayout_label" : {
+    "app_components_common_iconOnlyLayout_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -2756,6 +2812,30 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "تسمية"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "app_components_common_label_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "Label"
           }
         },
@@ -2774,7 +2854,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_layout_label" : {
+    "app_components_common_layout_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -2799,32 +2879,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_leadingIcon_label" : {
-      "comment" : "Component - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Leading icon"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leading icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Leading icon"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_common_loader_label" : {
+    "app_components_common_loader_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -2849,32 +2904,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_onColoredBackground_label" : {
-      "comment" : "Component - Colored Surface",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Colored background"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Colored background"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Colored background"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_common_onColoredSurface_label" : {
+    "app_components_common_onColoredSurface_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -2899,7 +2929,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_orientation_label" : {
+    "app_components_common_orientation_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -2924,7 +2954,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_outlined_label" : {
+    "app_components_common_outlined_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -2948,7 +2978,7 @@
         }
       }
     },
-    "app_components_common_placeholder_label" : {
+    "app_components_common_placeholder_tech" : {
       "comment" : "Component - Common",
       "localizations" : {
         "ar" : {
@@ -2972,7 +3002,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_prefix_label" : {
+    "app_components_common_prefix_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -2996,7 +3026,7 @@
         }
       }
     },
-    "app_components_common_readOnly_label" : {
+    "app_components_common_readOnly_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -3021,7 +3051,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_selection_label" : {
+    "app_components_common_selection_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -3046,7 +3076,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_size_label" : {
+    "app_components_common_size_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -3068,9 +3098,10 @@
             "value" : "Size"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
-    "app_components_common_status_label" : {
+    "app_components_common_status_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -3094,7 +3125,7 @@
         }
       }
     },
-    "app_components_common_style_label" : {
+    "app_components_common_style_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -3119,7 +3150,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_textAndIconLayout_label" : {
+    "app_components_common_textAndIconLayout_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -3168,7 +3199,7 @@
         }
       }
     },
-    "app_components_common_textOnlyLayout_label" : {
+    "app_components_common_textOnlyLayout_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -3193,7 +3224,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_type_label" : {
+    "app_components_common_type_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -3266,7 +3297,7 @@
         }
       }
     },
-    "app_components_controlItem_divider_label" : {
+    "app_components_controlItem_divider_tech" : {
       "comment" : "Component - ControlItem",
       "extractionState" : "manual",
       "localizations" : {
@@ -3291,7 +3322,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_controlItem_icon_label" : {
+    "app_components_controlItem_icon_tech" : {
       "comment" : "Component - ControlItem",
       "extractionState" : "manual",
       "localizations" : {
@@ -3316,7 +3347,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_controlItem_reversed_label" : {
+    "app_components_controlItem_reversed_tech" : {
       "comment" : "Component - ControlItem",
       "extractionState" : "manual",
       "localizations" : {
@@ -3388,7 +3419,7 @@
         }
       }
     },
-    "app_components_divider_horizontalDivider_label" : {
+    "app_components_divider_horizontalDivider_tech" : {
       "comment" : "Component - Divider",
       "extractionState" : "manual",
       "localizations" : {
@@ -3413,7 +3444,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_divider_label" : {
+    "app_components_divider_tech" : {
       "comment" : "Component - Divider",
       "extractionState" : "manual",
       "localizations" : {
@@ -3462,7 +3493,7 @@
         }
       }
     },
-    "app_components_divider_verticalDivider_label" : {
+    "app_components_divider_verticalDivider_tech" : {
       "comment" : "Component - Divider",
       "extractionState" : "manual",
       "localizations" : {
@@ -3487,7 +3518,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_link_backLayout_label" : {
+    "app_components_link_backLayout_teck" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",
       "localizations" : {
@@ -3536,51 +3567,51 @@
         }
       }
     },
-    "app_components_link_label" : {
+    "app_components_link_nextLayout_tech" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Link"
+            "value" : "Next"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Link"
+            "value" : "Next"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Link"
+            "value" : "Next"
           }
         }
       },
       "shouldTranslate" : false
     },
-    "app_components_link_nextLayout_label" : {
+    "app_components_link_tech" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Next"
+            "value" : "Link"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Next"
+            "value" : "Link"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Next"
+            "value" : "Link"
           }
         }
       },
@@ -3610,56 +3641,7 @@
         }
       }
     },
-    "app_components_passwordInput_hiddenPassword_label" : {
-      "comment" : "Component - Password Input",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hidden password"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hidden password"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hidden password"
-          }
-        }
-      }
-    },
-    "app_components_passwordInput_label" : {
-      "comment" : "Component - Password Input",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Password input"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Password input"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Password input"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_passwordInput_lockIcon_label" : {
+    "app_components_passwordInput_lockIcon_tech" : {
       "comment" : "Component Password",
       "extractionState" : "manual",
       "localizations" : {
@@ -3683,7 +3665,7 @@
         }
       }
     },
-    "app_components_passwordInput_password_label" : {
+    "app_components_passwordInput_password_tech" : {
       "comment" : "Component - Password Input",
       "extractionState" : "manual",
       "localizations" : {
@@ -3708,6 +3690,55 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_passwordInput_passwordHidden_tech" : {
+      "comment" : "Component - Password Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden password"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden password"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden password"
+          }
+        }
+      }
+    },
+    "app_components_passwordInput_tech" : {
+      "comment" : "Component - Password Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password input"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password input"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password input"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_passwordInputHelperText_label" : {
       "comment" : "Helper text for the password input.",
       "isCommentAutoGenerated" : true,
@@ -3715,7 +3746,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Password must be at least 8 characters."
+            "value" : "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل."
           }
         },
         "en" : {
@@ -3727,7 +3758,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Password must be at least 8 characters."
+            "value" : "Le mot de passe doit contenir au moins 8 caractères."
           }
         }
       }
@@ -3780,31 +3811,6 @@
         }
       }
     },
-    "app_components_radioButton_label" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Radio button"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Radio button"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Radio button"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_radioButton_radioButton_description_text" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
@@ -3829,7 +3835,7 @@
         }
       }
     },
-    "app_components_radioButton_radioButton_label" : {
+    "app_components_radioButton_radioButton_tech" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
@@ -3878,7 +3884,7 @@
         }
       }
     },
-    "app_components_radioButton_radioButtonItem_extraLabel_label" : {
+    "app_components_radioButton_radioButtonItem_extraLabel_tech" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
@@ -3903,7 +3909,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_radioButton_radioButtonItem_label" : {
+    "app_components_radioButton_radioButtonItem_tech" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
@@ -3923,6 +3929,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Radio button item"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_radioButton_tech" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio button"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio button"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio button"
           }
         }
       },
@@ -3952,7 +3983,7 @@
         }
       }
     },
-    "app_components_radioPicker_label" : {
+    "app_components_radioPicker_tech" : {
       "comment" : "Component - Radio picker",
       "extractionState" : "manual",
       "localizations" : {
@@ -4025,31 +4056,6 @@
         }
       }
     },
-    "app_components_switch_label" : {
-      "comment" : "Component - Switch",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Switch"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Switch"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Switch"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_switch_switch_description_text" : {
       "comment" : "Component - Switch",
       "extractionState" : "manual",
@@ -4074,7 +4080,7 @@
         }
       }
     },
-    "app_components_switch_switch_label" : {
+    "app_components_switch_switch_tech" : {
       "comment" : "Component - Switch",
       "extractionState" : "manual",
       "localizations" : {
@@ -4123,7 +4129,7 @@
         }
       }
     },
-    "app_components_switch_switchItem_label" : {
+    "app_components_switch_switchItem_tech" : {
       "comment" : "Component - Switch",
       "extractionState" : "manual",
       "localizations" : {
@@ -4143,6 +4149,31 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Switch Item"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_switch_tech" : {
+      "comment" : "Component - Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch"
           }
         }
       },
@@ -4195,31 +4226,6 @@
           }
         }
       }
-    },
-    "app_components_tabBar_label" : {
-      "comment" : "Component - Tab bar",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tab bar"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tab bar"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tab bar"
-          }
-        }
-      },
-      "shouldTranslate" : false
     },
     "app_components_tabBar_labeltem_label" : {
       "comment" : "Component - Tab bar",
@@ -4293,6 +4299,31 @@
         }
       }
     },
+    "app_components_tabBar_tech" : {
+      "comment" : "Component - Tab bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tab bar"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tab bar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tab bar"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_tag_description_text" : {
       "comment" : "Component - Tag",
       "extractionState" : "manual",
@@ -4341,7 +4372,7 @@
         }
       }
     },
-    "app_components_tag_inputTag_label" : {
+    "app_components_tag_inputTag_tech" : {
       "comment" : "Component - InputTag",
       "extractionState" : "manual",
       "localizations" : {
@@ -4366,32 +4397,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_tag_label" : {
-      "comment" : "Component - Tag",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tag"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tag"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tag"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_tag_shape_label" : {
+    "app_components_tag_shape_tech" : {
       "comment" : "Component - Tag",
       "extractionState" : "manual",
       "localizations" : {
@@ -4440,7 +4446,7 @@
         }
       }
     },
-    "app_components_tag_tag_label" : {
+    "app_components_tag_tag_tech" : {
       "comment" : "Component - Tag",
       "extractionState" : "manual",
       "localizations" : {
@@ -4465,7 +4471,32 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_tag_textAndBulletLayout_label" : {
+    "app_components_tag_tech" : {
+      "comment" : "Component - Tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_tag_textAndBulletLayout_tech" : {
       "comment" : "Component - Tag",
       "extractionState" : "manual",
       "localizations" : {
@@ -4538,7 +4569,7 @@
         }
       }
     },
-    "app_components_textInput_flipLeadingIcon_label" : {
+    "app_components_textInput_flipLeadingIcon_tech" : {
       "comment" : "Component - Text Input",
       "extractionState" : "manual",
       "localizations" : {
@@ -4563,7 +4594,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_textInput_flipTrailingActionIcon_label" : {
+    "app_components_textInput_flipTrailingActionIcon_tech" : {
       "comment" : "Component - Text input",
       "extractionState" : "manual",
       "localizations" : {
@@ -4585,9 +4616,10 @@
             "value" : "Flip trailing action icon"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
-    "app_components_textInput_helperLink_label" : {
+    "app_components_textInput_helperLink_tech" : {
       "comment" : "Component - Text Input",
       "extractionState" : "manual",
       "localizations" : {
@@ -4612,7 +4644,57 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_textInput_label" : {
+    "app_components_textInput_leadingIcon_tech" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Leading icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Leading icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_suffix_tech" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suffix"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suffix"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suffix"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textInput_tech" : {
       "comment" : "Component - Text Input",
       "extractionState" : "manual",
       "localizations" : {
@@ -4637,32 +4719,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_textInput_suffix_label" : {
-      "comment" : "Component - Text Input",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suffix"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suffix"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suffix"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_textInput_trailingAction_label" : {
+    "app_components_textInput_trailingAction_tech" : {
       "comment" : "Component - Text Input",
       "extractionState" : "manual",
       "localizations" : {
@@ -4830,32 +4887,7 @@
         }
       }
     },
-    "app_tokens_border_label" : {
-      "comment" : "Tokens - Border",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Border"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Border"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Border"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_tokens_border_radius_label" : {
+    "app_tokens_border_radius_tech" : {
       "comment" : "Tokens - Border",
       "extractionState" : "manual",
       "localizations" : {
@@ -4880,7 +4912,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_tokens_border_style_label" : {
+    "app_tokens_border_style_tech" : {
       "comment" : "Tokens - Border",
       "extractionState" : "manual",
       "localizations" : {
@@ -4905,7 +4937,32 @@
       },
       "shouldTranslate" : false
     },
-    "app_tokens_border_width_label" : {
+    "app_tokens_border_tech" : {
+      "comment" : "Tokens - Border",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Border"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Border"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Border"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_tokens_border_width_tech" : {
       "comment" : "Tokens - Border",
       "extractionState" : "manual",
       "localizations" : {
@@ -4954,7 +5011,7 @@
         }
       }
     },
-    "app_tokens_color_label" : {
+    "app_tokens_color_tech" : {
       "comment" : "Tokens - Color",
       "extractionState" : "manual",
       "localizations" : {
@@ -5050,31 +5107,6 @@
         }
       }
     },
-    "app_tokens_dimension_label" : {
-      "comment" : "Token - Dimension",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dimension"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dimension"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dimension"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_tokens_dimension_size_description_text" : {
       "comment" : "Token - Dimension - Size",
       "extractionState" : "manual",
@@ -5099,7 +5131,7 @@
         }
       }
     },
-    "app_tokens_dimension_size_iconDecorative_label" : {
+    "app_tokens_dimension_size_iconDecorative_tech" : {
       "comment" : "Token - Dimension - Size",
       "extractionState" : "manual",
       "localizations" : {
@@ -5123,7 +5155,7 @@
         }
       }
     },
-    "app_tokens_dimension_size_iconWith_label" : {
+    "app_tokens_dimension_size_iconWith_tech" : {
       "comment" : "Token - Dimension - Size",
       "extractionState" : "manual",
       "localizations" : {
@@ -5148,32 +5180,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_tokens_dimension_size_label" : {
-      "comment" : "Token - Dimension - Size",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_tokens_dimension_size_maxWidth_label" : {
+    "app_tokens_dimension_size_maxWidth_tech" : {
       "comment" : "Token - Dimension - Size",
       "extractionState" : "manual",
       "localizations" : {
@@ -5198,7 +5205,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_tokens_dimension_size_minInteractiveArea_label" : {
+    "app_tokens_dimension_size_minInteractiveArea_tech" : {
       "comment" : "Token - Dimension - Size",
       "extractionState" : "manual",
       "localizations" : {
@@ -5223,7 +5230,36 @@
       },
       "shouldTranslate" : false
     },
-    "app_tokens_dimension_space_columnGap_label" : {
+    "app_tokens_dimension_size_tech" : {
+      "comment" : "Token - Dimension - Size",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_tokens_dimension_space_columnGap_tech" : {
+      "comment" : "A section header for the column gap space token.",
+      "isCommentAutoGenerated" : true
+    },
+    "app_tokens_dimension_space_columnGap_teck" : {
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
@@ -5296,7 +5332,7 @@
         }
       }
     },
-    "app_tokens_dimension_space_fixed_label" : {
+    "app_tokens_dimension_space_fixed_tech" : {
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
@@ -5345,7 +5381,7 @@
         }
       }
     },
-    "app_tokens_dimension_space_inset_label" : {
+    "app_tokens_dimension_space_inset_tech" : {
       "comment" : "Token - Dimension - Space",
       "localizations" : {
         "ar" : {
@@ -5393,32 +5429,7 @@
         }
       }
     },
-    "app_tokens_dimension_space_label" : {
-      "comment" : "Token - Dimension - Space",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Space"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Space"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Space"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_tokens_dimension_space_paddingBlock_label" : {
+    "app_tokens_dimension_space_paddingBlock_tech" : {
       "comment" : "Token - Dimension - Space",
       "localizations" : {
         "ar" : {
@@ -5464,7 +5475,7 @@
         }
       }
     },
-    "app_tokens_dimension_space_paddingInline_label" : {
+    "app_tokens_dimension_space_paddingInline_tech" : {
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
@@ -5513,7 +5524,7 @@
         }
       }
     },
-    "app_tokens_dimension_space_paddingInset_label" : {
+    "app_tokens_dimension_space_paddingInset_tech" : {
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
@@ -5538,7 +5549,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_tokens_dimension_space_rowGap_label" : {
+    "app_tokens_dimension_space_rowGap_tech" : {
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
@@ -5587,7 +5598,7 @@
         }
       }
     },
-    "app_tokens_dimension_space_scaled_label" : {
+    "app_tokens_dimension_space_scaled_tech" : {
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
@@ -5636,6 +5647,56 @@
         }
       }
     },
+    "app_tokens_dimension_space_tech" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Space"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Space"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Space"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_tokens_dimension_tech" : {
+      "comment" : "Token - Dimension",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dimension"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dimension"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dimension"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_tokens_elevation_description_text" : {
       "comment" : "Token - Elevation",
       "extractionState" : "manual",
@@ -5660,7 +5721,7 @@
         }
       }
     },
-    "app_tokens_elevation_label" : {
+    "app_tokens_elevation_tech" : {
       "comment" : "Token - Elevation",
       "extractionState" : "manual",
       "localizations" : {
@@ -5709,7 +5770,7 @@
         }
       }
     },
-    "app_tokens_grid_label" : {
+    "app_tokens_grid_tech" : {
       "comment" : "Token - Grid",
       "extractionState" : "manual",
       "localizations" : {
@@ -5758,7 +5819,7 @@
         }
       }
     },
-    "app_tokens_opacity_label" : {
+    "app_tokens_opacity_tech" : {
       "comment" : "Token - Opacity",
       "extractionState" : "manual",
       "localizations" : {
@@ -5832,6 +5893,85 @@
       }
     },
     "app_tokens_typography_label" : {
+      "comment" : "Title of the Font Token Page.",
+      "isCommentAutoGenerated" : true
+    },
+    "app_tokens_typography_letterSpacing_tech" : {
+      "comment" : "Token - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "letterSpacing (%.2f)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "letterSpacing (%.2f)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "letterSpacing (%.2f)"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_tokens_typography_lineHeight_tech" : {
+      "comment" : "Token - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lineHeight (%.2f),"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lineHeight (%.2f), "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lineHeight (%.2f), "
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_tokens_typography_size_tech" : {
+      "comment" : "Token - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "size (%.2f), "
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "size (%.2f), "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "size (%.2f), "
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_tokens_typography_tech" : {
       "comment" : "Token - Typography",
       "extractionState" : "manual",
       "localizations" : {
@@ -5856,86 +5996,14 @@
       },
       "shouldTranslate" : false
     },
-    "app_tokens_typography_letterSpacingAttribute" : {
+    "app_tokens_typography_weight_tech" : {
       "comment" : "Token - Typography",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تباعد الأحرف (%.2f)"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "letterSpacing (%.2f)"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "letterSpacing (%.2f)"
-          }
-        }
-      }
-    },
-    "app_tokens_typography_lineHeightAttribute" : {
-      "comment" : "Token - Typography",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تباعد الأحرف (%.2f)"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "lineHeight (%.2f), "
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "lineHeight (%.2f), "
-          }
-        }
-      }
-    },
-    "app_tokens_typography_sizeAttribute" : {
-      "comment" : "Token - Typography",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الحجم (%.2f)،"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "size (%.2f), "
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "size (%.2f), "
-          }
-        }
-      }
-    },
-    "app_tokens_typography_weightAttribute" : {
-      "comment" : "Token - Typography",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الوزن (%lld)،"
+            "value" : "weight (%lld), "
           }
         },
         "en" : {
@@ -5950,7 +6018,8 @@
             "value" : "weight (%lld), "
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_topBar_mode_button_a11y" : {
       "comment" : "Top bar - Color scheme selector",

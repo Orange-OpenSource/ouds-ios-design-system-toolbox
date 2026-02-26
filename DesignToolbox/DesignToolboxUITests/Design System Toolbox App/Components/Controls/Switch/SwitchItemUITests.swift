@@ -33,7 +33,7 @@ final class SwitchItemUITests: AppTestCase {
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
-        tapButton(withWording: "app_components_switch_label", app)
+        tapButton(withWording: "app_components_switch_tech", app)
         waitForButtonToAppear(withWording: "Switch Item", app)
         tapButton(withWording: "Switch Item", app)
 

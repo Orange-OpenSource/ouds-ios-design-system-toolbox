@@ -20,7 +20,7 @@ struct TagElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_tag_label".localized()
+        name = "app_components_tag_tag_tech".localized()
         illustration = AnyView(OUDSTag(label: "Label", status: .positive(leading: .icon), appearance: .emphasized, shape: .rounded, size: .default))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

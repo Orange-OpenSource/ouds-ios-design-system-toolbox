@@ -20,7 +20,7 @@ struct InputTagElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_tag_inputTag_label".localized()
+        name = "app_components_tag_inputTag_tech".localized()
         illustration = AnyView(OUDSTag(label: "Label", status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

@@ -79,12 +79,12 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     // MARK: - Types
 
     enum BadgeType: String, CaseIterable {
-        case standard = "app_components_badge_standardType_label"
-        case count = "app_components_badge_countType_label"
-        case icon = "app_components_badge_iconType_label"
+        case standard = "app_components_badge_standardType_tech"
+        case count = "app_components_badge_countType_tech"
+        case icon = "app_components_badge_iconType_tech"
 
         private var chipData: OUDSChipPickerData<Self> {
-            OUDSChipPickerData(tag: self, layout: .text(text: rawValue.localized()))
+            OUDSChipPickerData(tag: self, layout: .text(text: rawValue))
         }
 
         static var chips: [OUDSChipPickerData<Self>] {
@@ -166,34 +166,34 @@ struct BadgeConfigurationView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+            OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
-            OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
+            OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
                 .disabled(!configurationModel.enableFlipIcon)
 
-            OUDSChipPicker(title: "app_components_common_type_label",
+            OUDSChipPicker(title: "app_components_common_type_tech",
                            selection: $configurationModel.badgeType,
                            chips: BadgeConfigurationModel.BadgeType.chips)
 
             switch configurationModel.badgeType {
             case .standard:
-                OUDSChipPicker(title: "app_components_common_size_label",
+                OUDSChipPicker(title: "app_components_common_size_tech",
                                selection: $configurationModel.standardSize,
                                chips: OUDSBadge.StandardSize.chips)
 
             case .count, .icon:
-                OUDSChipPicker(title: "app_components_common_size_label",
+                OUDSChipPicker(title: "app_components_common_size_tech",
                                selection: $configurationModel.illustrationSize,
                                chips: OUDSBadge.IllustrationSize.chips)
             }
 
-            OUDSChipPicker(title: "app_components_common_status_label",
+            OUDSChipPicker(title: "app_components_common_status_tech",
                            selection: $configurationModel.status,
                            chips: OUDSBadge.Status.chips)
 
             if configurationModel.badgeType == .count {
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.countText, label: "app_components_badge_count_label")
+                    DesignToolboxTextField(text: $configurationModel.countText, label: "app_components_badge_count_tech")
                         .numberPadKeyboard()
                 }
             }

@@ -21,7 +21,7 @@ struct DividerElement: DesignToolboxElement {
 
     init(orientation: DividerConfigurationModel.Orientation) {
         let keyPattern = orientation == .horizontal ? "horizontalDivider" : "verticalDivider"
-        let keyForName = "app_components_divider_\(keyPattern)_label"
+        let keyForName = "app_components_divider_\(keyPattern)_tech"
         let keyForDescription = "app_components_divider_\(keyPattern)_description_text"
 
         name = keyForName.localized()

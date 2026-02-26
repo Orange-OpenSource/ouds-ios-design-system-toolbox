@@ -21,7 +21,7 @@ struct CheckboxItemElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_checkbox_checkboxItem_label".localized()
+        name = "app_components_checkbox_checkboxItem_tech".localized()
         illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

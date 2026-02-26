@@ -111,7 +111,7 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
         let unorderedBulletTypePattern = model.bulletType == .unordered ? bulletTypePattern + brandedBulletPattern : ""
         let textStylePattern = model.textStyle.description
         let isBoldPattern = model.isBold ? "Bold" : ""
-        let countPattern = "Count-\(model.levelCount)"
+        let countPattern = "Count-\(model.levelCount.description.localized())"
 
         let name = "\(typePattern)\(unorderedBulletTypePattern)_\(textStylePattern)_\(isBoldPattern)_\(countPattern)"
 

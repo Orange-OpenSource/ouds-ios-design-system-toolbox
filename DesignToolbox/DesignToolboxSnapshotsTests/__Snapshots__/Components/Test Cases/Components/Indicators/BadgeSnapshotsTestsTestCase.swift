@@ -84,7 +84,7 @@ open class BadgeSnapshotsTestsTestCase: XCTestCase {
         // Create a unique snapshot name based on the current configuration :
         // test_<themeName>_<colorScheme>.<typePatterne><statusPattern><sizePattern> where:
         let testName = "testBadge_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let typePattern = model.badgeType.rawValue
+        let typePattern = model.badgeType.rawValue.localized()
         let statusPattern = model.status.technicalDescription
         let sizePattern = model.badgeType == .standard ? model.standardSize.technicalDescription : model.illustrationSize.technicalDescription
         let countPattern = (model.badgeType == .count && model.countText == "100") ? "_maxCount" : ""
