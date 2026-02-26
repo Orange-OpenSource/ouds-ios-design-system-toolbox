@@ -5868,7 +5868,7 @@
         }
       }
     },
-    "app_tokens_typography_familyAttribute" : {
+    "app_tokens_typography_family_tech" : {
       "comment" : "Token - Typography",
       "extractionState" : "manual",
       "localizations" : {
