@@ -20,7 +20,7 @@ struct TabBarElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_tabBar_label".localized()
+        name = "app_components_tabBar_tech".localized()
         illustration = AnyView(TabBarIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

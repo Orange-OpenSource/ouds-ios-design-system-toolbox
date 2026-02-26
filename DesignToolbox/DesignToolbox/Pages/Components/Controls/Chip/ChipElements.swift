@@ -26,7 +26,7 @@ struct ChipElements: DesignToolboxElement {
             ChipPickerElement(),
         ]
 
-        name = "app_components_chip_label".localized()
+        name = "app_components_chip_tech".localized()
         illustration = AnyView(ChipIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

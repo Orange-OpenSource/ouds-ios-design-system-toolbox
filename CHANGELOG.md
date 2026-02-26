@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] In the design toolbox, use grid margin helper (Orange-OpenSource/ouds-ios#1299)
 - [Library] Update Bullet list API to rename unordered icon to asset (Orange-OpenSource/ouds-ios#1326)
 - [DesignToolbox] Use of updated `bullet list` component API ("unordered icon" to "unordered asset") (Orange-OpenSource/ouds-ios#1326)
+- [DesignToolbox] Update wording keys (Orange-OpenSource/ouds-ios#1325)
 - [Library] Signatures of control-item-based components (Orange-OpenSource/ouds-ios#1314)
 - [Library] `inline alert` component (Orange-OpenSource/ouds-ios#1307)
 - [Library] `alert message` component (Orange-OpenSource/ouds-ios#1159)

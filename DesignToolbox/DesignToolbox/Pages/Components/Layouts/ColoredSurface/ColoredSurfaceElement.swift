@@ -20,11 +20,11 @@ struct ColoredSurfaceElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_common_onColoredBackground_label".localized()
+        name = "app_components_coloredBackground_tech".localized()
         illustration = AnyView(ColoredSurfaceIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            description: "app_components_coloredSurface_description_text",
+            description: "app_components_coloredBackground_description_text",
             demoScreen: AnyView(ColoredSurfacePage())))
     }
 }

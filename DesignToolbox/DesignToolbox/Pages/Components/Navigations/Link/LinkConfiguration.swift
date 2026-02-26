@@ -41,7 +41,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        text = String(localized: "app_components_link_label")
+        text = String(localized: "app_components_link_tech")
         layout = .textOnly
         size = .default
         super.init()
@@ -104,13 +104,13 @@ enum LinkLayout: CaseIterable, CustomStringConvertible {
     var description: String {
         switch self {
         case .textOnly:
-            "app_components_common_textOnlyLayout_label"
+            "app_components_common_textOnlyLayout_tech"
         case .textAndIcon:
-            "app_components_common_textAndIconLayout_label"
+            "app_components_common_textAndIconLayout_tech"
         case .indicatorBack:
-            "app_components_link_backLayout_label"
+            "app_components_link_backLayout_tech"
         case .indicatorNext:
-            "app_components_link_nextLayout_label"
+            "app_components_link_nextLayout_tech"
         }
     }
 
@@ -161,21 +161,21 @@ struct LinkConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+                OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
-                OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $configurationModel.onColoredSurface)
+                OUDSSwitchItem("app_components_common_onColoredSurface_tech", isOn: $configurationModel.onColoredSurface)
 
-                OUDSChipPicker(title: "app_components_common_size_label",
+                OUDSChipPicker(title: "app_components_common_size_tech",
                                selection: $configurationModel.size,
                                chips: OUDSLink.Size.chips)
 
-                OUDSChipPicker(title: "app_components_common_layout_label",
+                OUDSChipPicker(title: "app_components_common_layout_tech",
                                selection: $configurationModel.layout,
                                chips: LinkLayout.chips)
             }
 
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_label")
+                DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_tech")
             }
         }
     }

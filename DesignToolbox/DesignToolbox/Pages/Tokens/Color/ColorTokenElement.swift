@@ -19,7 +19,7 @@ struct ColorTokenElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init(themeName: String) {
-        name = "app_tokens_color_label".localized()
+        name = "app_tokens_color_tech".localized()
         illustration = AnyView(Image.decorativeImage(named: "palette", prefixedBy: themeName))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

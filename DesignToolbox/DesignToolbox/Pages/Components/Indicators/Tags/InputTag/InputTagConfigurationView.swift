@@ -57,10 +57,10 @@ struct InputTagConfigurationView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+            OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_label")
+                DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
             }
         }
     }

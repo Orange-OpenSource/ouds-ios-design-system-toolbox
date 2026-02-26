@@ -26,7 +26,7 @@ struct RadioElements: DesignToolboxElement {
             RadioPickerElement(),
         ]
 
-        name = "app_components_radioButton_label".localized()
+        name = "app_components_radioButton_tech".localized()
         illustration = AnyView(RadioIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

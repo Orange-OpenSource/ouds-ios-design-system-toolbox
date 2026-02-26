@@ -30,8 +30,8 @@ final class ChipsPickerUITests: AppTestCase {
 
         let app = launchApp()
         goToComponentsSheet(app)
-        tapButton(withWording: "app_components_chip_label", app)
-        tapButton(withWording: "app_components_chip_chipPicker_label", app)
+        tapButton(withWording: "app_components_chip_tech", app)
+        tapButton(withWording: "app_components_chip_chipPicker_tech", app)
         tapButton(withWording: "SingleOrNone", app)
 
         // WHEN, THEN
@@ -68,8 +68,8 @@ final class ChipsPickerUITests: AppTestCase {
 
         let app = launchApp()
         goToComponentsSheet(app)
-        tapButton(withWording: "app_components_chip_label", app)
-        tapButton(withWording: "app_components_chip_chipPicker_label", app)
+        tapButton(withWording: "app_components_chip_tech", app)
+        tapButton(withWording: "app_components_chip_chipPicker_tech", app)
 
         // By default, first element is selected in the picker of the demo app
         isButton(withAccessibleIdentifier: firstItemA11YIdentifier, selected: true, app)
@@ -100,8 +100,8 @@ final class ChipsPickerUITests: AppTestCase {
 
         let app = launchApp()
         goToComponentsSheet(app)
-        tapButton(withWording: "app_components_chip_label", app)
-        tapButton(withWording: "app_components_chip_chipPicker_label", app)
+        tapButton(withWording: "app_components_chip_tech", app)
+        tapButton(withWording: "app_components_chip_chipPicker_tech", app)
         tapButton(withWording: "Multiple", app)
 
         // By default, first element is selected in the picker of the demo app

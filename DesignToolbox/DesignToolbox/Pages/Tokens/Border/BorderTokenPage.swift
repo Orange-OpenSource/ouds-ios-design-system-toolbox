@@ -34,7 +34,7 @@ struct BorderTokenPage: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
             } header: {
-                Text("app_tokens_border_width_label")
+                Text("app_tokens_border_width_tech")
                     .headingLarge(theme)
                     .oudsForegroundStyle(theme.colors.contentDefault)
             }
@@ -47,7 +47,7 @@ struct BorderTokenPage: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
             } header: {
-                Text("app_tokens_border_radius_label")
+                Text("app_tokens_border_radius_tech")
                     .headingLarge(theme)
                     .oudsForegroundStyle(theme.colors.contentDefault)
             }
@@ -60,7 +60,7 @@ struct BorderTokenPage: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
             } header: {
-                Text("app_tokens_border_style_label")
+                Text("app_tokens_border_style_tech")
                     .headingLarge(theme)
                     .oudsForegroundStyle(theme.colors.contentDefault)
             }

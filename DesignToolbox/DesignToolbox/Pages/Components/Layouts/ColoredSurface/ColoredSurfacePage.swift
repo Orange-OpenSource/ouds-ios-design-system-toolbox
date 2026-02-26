@@ -46,11 +46,11 @@ private struct ColoredSurfaceDemo: View {
                 Text(configurationModel.selectedColor.formattedName)
                     .oudsForegroundColor(theme.colors.contentDefault)
 
-                OUDSButton(text: "app_components_button_label".localized(),
+                OUDSButton(text: "app_components_button_tech".localized(),
                            appearance: .default,
                            style: .default) {}
 
-                OUDSLink(text: "app_components_link_label".localized(), indicator: .next) {}
+                OUDSLink(text: "app_components_link_tech".localized(), indicator: .next) {}
             }
             .frame(maxWidth: .infinity, alignment: .center)
             .padding(.all, theme.spaces.fixedMedium)
