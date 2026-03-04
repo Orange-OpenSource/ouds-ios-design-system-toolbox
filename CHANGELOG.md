@@ -15,7 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [DesignToolbox] `github/codeql-action/upload-sarif` action to v4.34.1 or `scorecard` workflow
+- [DesignToolbox] `actions/dependency-review-action` action to v4.9.0 for `dependency-review` workflow
+- [DesignToolbox] `github/codeql-action/upload-sarif` action to v4.34.1 for `scorecard` workflow
 - [Library] `alert message` component with new label colors (Orange-OpenSource/ouds-ios#1342)
 - [DesignToolbox] Files for agentic AI (Orange-OpenSource/ouds-ios#1341)
 - [DesignToolbox] In the design toolbox, use grid margin helper (Orange-OpenSource/ouds-ios#1299)
