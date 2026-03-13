@@ -35,8 +35,6 @@ private struct ToolbarTopModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         OUDSToolbarTop(title: title, trailingItems: {
-            OUDSToolbarItem(icon: Image(decorative: "ic_heart"), accessibilityLabel: "Like") {}
-            OUDSToolbarItem(icon: Image(decorative: "ic_heart"), accessibilityLabel: "Like") {}
             OUDSToolbarItem {
                 ThemeSelectionButton()
             }

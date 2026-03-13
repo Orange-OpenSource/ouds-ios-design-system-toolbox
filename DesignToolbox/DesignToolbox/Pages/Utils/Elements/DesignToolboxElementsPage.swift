@@ -94,7 +94,6 @@ struct DesignToolboxElementsPage: View {
             .gridMargin(.horizontal)
             .padding(.vertical, theme.spaces.fixedMedium)
             .navigationBarMenus(title: title)
-            .bottomToolbar()
             #endif
         }
         .background(theme.colors.bgPrimary)

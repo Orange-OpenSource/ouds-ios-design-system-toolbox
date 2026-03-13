@@ -30,7 +30,7 @@ struct TabBarElement: DesignToolboxElement {
     }
 }
 
-private struct TabBarIllustration: View {
+struct TabBarIllustration: View {
 
     @State private var selectedTab = 0
     var body: some View {

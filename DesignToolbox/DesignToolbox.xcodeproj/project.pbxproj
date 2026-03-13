@@ -1129,6 +1129,18 @@
 		FCF02BB62F30EC4B00F2013F /* SoshTheme+PasswordInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF02BB52F30EC4B00F2013F /* SoshTheme+PasswordInputSnapshotsTests.swift */; };
 		FCF02BB82F30EC7700F2013F /* OrangeTheme+PasswordInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF02BB72F30EC7700F2013F /* OrangeTheme+PasswordInputSnapshotsTests.swift */; };
 		FCF02BBC2F30ECAB00F2013F /* WireframeTheme+PasswordInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF02BBB2F30ECAB00F2013F /* WireframeTheme+PasswordInputSnapshotsTests.swift */; };
+		FCFA11682F57259000C8E30D /* ToolBarTopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11662F57259000C8E30D /* ToolBarTopPage.swift */; };
+		FCFA11692F57259000C8E30D /* ToolBarTopConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11642F57259000C8E30D /* ToolBarTopConfigurationView.swift */; };
+		FCFA116A2F57259000C8E30D /* ToolBarTopElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11652F57259000C8E30D /* ToolBarTopElement.swift */; };
+		FCFA116B2F57259000C8E30D /* ToolBarTopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11662F57259000C8E30D /* ToolBarTopPage.swift */; };
+		FCFA116C2F57259000C8E30D /* ToolBarTopConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11642F57259000C8E30D /* ToolBarTopConfigurationView.swift */; };
+		FCFA116D2F57259000C8E30D /* ToolBarTopElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11652F57259000C8E30D /* ToolBarTopElement.swift */; };
+		FCFA116E2F57259000C8E30D /* ToolBarTopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11662F57259000C8E30D /* ToolBarTopPage.swift */; };
+		FCFA116F2F57259000C8E30D /* ToolBarTopConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11642F57259000C8E30D /* ToolBarTopConfigurationView.swift */; };
+		FCFA11702F57259000C8E30D /* ToolBarTopElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11652F57259000C8E30D /* ToolBarTopElement.swift */; };
+		FCFA11712F57259000C8E30D /* ToolBarTopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11662F57259000C8E30D /* ToolBarTopPage.swift */; };
+		FCFA11722F57259000C8E30D /* ToolBarTopConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11642F57259000C8E30D /* ToolBarTopConfigurationView.swift */; };
+		FCFA11732F57259000C8E30D /* ToolBarTopElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11652F57259000C8E30D /* ToolBarTopElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1589,6 +1601,9 @@
 		FCF02BB52F30EC4B00F2013F /* SoshTheme+PasswordInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+PasswordInputSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FCF02BB72F30EC7700F2013F /* OrangeTheme+PasswordInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+PasswordInputSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FCF02BBB2F30ECAB00F2013F /* WireframeTheme+PasswordInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+PasswordInputSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FCFA11642F57259000C8E30D /* ToolBarTopConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarTopConfigurationView.swift; sourceTree = "<group>"; };
+		FCFA11652F57259000C8E30D /* ToolBarTopElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarTopElement.swift; sourceTree = "<group>"; };
+		FCFA11662F57259000C8E30D /* ToolBarTopPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarTopPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2586,6 +2601,7 @@
 		51F49C862E5743F600D50BC4 /* Navigations */ = {
 			isa = PBXGroup;
 			children = (
+				FCFA11672F57259000C8E30D /* ToolBarTop */,
 				953DC1522ED0994E00D14D44 /* TabBar */,
 				07B3CCAD2D40E14C00DBB10A /* Link */,
 			);
@@ -3618,6 +3634,16 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		FCFA11672F57259000C8E30D /* ToolBarTop */ = {
+			isa = PBXGroup;
+			children = (
+				FCFA11642F57259000C8E30D /* ToolBarTopConfigurationView.swift */,
+				FCFA11652F57259000C8E30D /* ToolBarTopElement.swift */,
+				FCFA11662F57259000C8E30D /* ToolBarTopPage.swift */,
+			);
+			path = ToolBarTop;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -4252,6 +4278,9 @@
 				6D8F9C532CC160580078A10E /* SizeTokenPage.swift in Sources */,
 				51ABCD2B2E183226006CD6C0 /* SoshTheme+TokensSizeSnapshotsTests.swift in Sources */,
 				51A2176E2E325F7F00562BE0 /* WireframeTheme+BadgeSnapshotsTests.swift in Sources */,
+				FCFA11682F57259000C8E30D /* ToolBarTopPage.swift in Sources */,
+				FCFA11692F57259000C8E30D /* ToolBarTopConfigurationView.swift in Sources */,
+				FCFA116A2F57259000C8E30D /* ToolBarTopElement.swift in Sources */,
 				51E015A32E2AA82C00A86512 /* OrangeCompactTheme+TokensElevationSnapshotsTests.swift in Sources */,
 				51A217752E325F7F00562BE0 /* WireframeTheme+ChipsSnapshotsTests.swift in Sources */,
 				95CE05352EC33C2A00ACE41C /* NamedOpacity.swift in Sources */,
@@ -4381,6 +4410,9 @@
 				0765A6D72D09C5E2005DAB51 /* NamedFont.swift in Sources */,
 				0765A6D82D09C5E2005DAB51 /* FontTokenPage.swift in Sources */,
 				0765A6D92D09C5E2005DAB51 /* View+Illustration.swift in Sources */,
+				FCFA116B2F57259000C8E30D /* ToolBarTopPage.swift in Sources */,
+				FCFA116C2F57259000C8E30D /* ToolBarTopConfigurationView.swift in Sources */,
+				FCFA116D2F57259000C8E30D /* ToolBarTopElement.swift in Sources */,
 				511C96B62E157D3200F9D156 /* SwitchItemPage.swift in Sources */,
 				6DCC57E22CEB984D000F35F8 /* DesignToolboxCode.swift in Sources */,
 				0765B4942CC1597C00E69359 /* NamedColor+Background.swift in Sources */,
@@ -4705,6 +4737,9 @@
 				9589F07A2EB7D67B00134487 /* NamedFont.swift in Sources */,
 				9589F07B2EB7D67B00134487 /* FontTokenPage.swift in Sources */,
 				9589F07C2EB7D67B00134487 /* View+Illustration.swift in Sources */,
+				FCFA116E2F57259000C8E30D /* ToolBarTopPage.swift in Sources */,
+				FCFA116F2F57259000C8E30D /* ToolBarTopConfigurationView.swift in Sources */,
+				FCFA11702F57259000C8E30D /* ToolBarTopElement.swift in Sources */,
 				9589F07D2EB7D67B00134487 /* SwitchItemPage.swift in Sources */,
 				9589F07E2EB7D67B00134487 /* DesignToolboxCode.swift in Sources */,
 				9589F07F2EB7D67B00134487 /* NamedColor+Background.swift in Sources */,
@@ -4896,6 +4931,9 @@
 				9589F1542EB7D67E00134487 /* NamedFont.swift in Sources */,
 				9589F1552EB7D67E00134487 /* FontTokenPage.swift in Sources */,
 				9589F1562EB7D67E00134487 /* View+Illustration.swift in Sources */,
+				FCFA11712F57259000C8E30D /* ToolBarTopPage.swift in Sources */,
+				FCFA11722F57259000C8E30D /* ToolBarTopConfigurationView.swift in Sources */,
+				FCFA11732F57259000C8E30D /* ToolBarTopElement.swift in Sources */,
 				9589F1572EB7D67E00134487 /* SwitchItemPage.swift in Sources */,
 				9589F1582EB7D67E00134487 /* DesignToolboxCode.swift in Sources */,
 				9589F1592EB7D67E00134487 /* NamedColor+Background.swift in Sources */,
