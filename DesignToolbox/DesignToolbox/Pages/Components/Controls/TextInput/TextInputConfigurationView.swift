@@ -22,9 +22,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     // MARK: Stored properties
 
     private let defaultLabel = String(localized: "app_components_common_label_label")
-    private let defaultHelperText = String(localized: "app_components_common_helperText_label")
-    private let defaultPlaceholderText = String(localized: "app_components_common_placeholder_label")
-    private let defaultErrorText = String(localized: "app_components_common_errorMessage_label")
+    private let defaultErrorText = String(localized: "app_components_common_errorMessage_tech")
 
     // MARK: Published properties
 
@@ -95,9 +93,9 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
     override init() {
         label = defaultLabel
-        helperText = defaultHelperText
+        helperText = ""
         errorText = defaultErrorText
-        placeholderText = defaultPlaceholderText
+        placeholderText = ""
         prefixText = ""
         suffixText = ""
         leadingIcon = false
@@ -191,39 +189,38 @@ struct TextInputConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                OUDSSwitchItem("app_components_common_outlined_label", isOn: $configurationModel.isOutlined)
+                OUDSSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
 
-                OUDSSwitchItem("app_components_common_constrainedMaxWidth_label", isOn: $configurationModel.constrainedMaxWidth)
+                OUDSSwitchItem("app_components_common_constrainedMaxWidth_tech", isOn: $configurationModel.constrainedMaxWidth)
 
-                OUDSSwitchItem("app_components_common_leadingIcon_label", isOn: $configurationModel.leadingIcon)
+                OUDSSwitchItem("app_components_textInput_leadingIcon_tech", isOn: $configurationModel.leadingIcon)
 
-                OUDSSwitchItem("app_components_textInput_flipLeadingIcon_label", isOn: $configurationModel.flipLeadingIcon)
+                OUDSSwitchItem("app_components_textInput_flipLeadingIcon_tech", isOn: $configurationModel.flipLeadingIcon)
                     .disabled(!configurationModel.leadingIcon)
 
-                OUDSSwitchItem("app_components_textInput_trailingAction_label", isOn: $configurationModel.trailingAction)
+                OUDSSwitchItem("app_components_textInput_trailingAction_tech", isOn: $configurationModel.trailingAction)
 
-                OUDSSwitchItem("app_components_textInput_flipTrailingActionIcon_label", isOn: $configurationModel.flipTrailingActionIcon)
+                OUDSSwitchItem("app_components_textInput_flipTrailingActionIcon_tech", isOn: $configurationModel.flipTrailingActionIcon)
                     .disabled(!configurationModel.trailingAction)
 
-                OUDSChipPicker(title: "app_components_common_status_label",
+                OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
                                chips: OUDSTextInput.Status.chips)
 
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_label")
+                    DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
 
                     switch configurationModel.status {
                     case .error:
                         DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_textInput_errorDescription_label")
                     default:
-                        DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_label")
+                        DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
                     }
 
-                    DesignToolboxTextField(text: $configurationModel.placeholderText, label: "app_components_common_placeholder_label")
-                    DesignToolboxTextField(text: $configurationModel.prefixText, label: "app_components_common_prefix_label")
-                    DesignToolboxTextField(text: $configurationModel.suffixText, label: "app_components_textInput_suffix_label")
-
-                    DesignToolboxTextField(text: $configurationModel.helperLinkText, label: "app_components_textInput_helperLink_label")
+                    DesignToolboxTextField(text: $configurationModel.placeholderText, label: "app_components_common_placeholder_tech")
+                    DesignToolboxTextField(text: $configurationModel.prefixText, label: "app_components_common_prefix_tech")
+                    DesignToolboxTextField(text: $configurationModel.suffixText, label: "app_components_textInput_suffix_tech")
+                    DesignToolboxTextField(text: $configurationModel.helperLinkText, label: "app_components_textInput_helperLink_tech")
                 }
             }
         }
@@ -238,15 +235,15 @@ extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomSt
     public var description: String {
         switch self {
         case .enabled:
-            String(localized: "app_common_enabled_label")
+            String(localized: "app_common_enabled_tech")
         case .error:
-            String(localized: "app_components_common_error_label")
+            String(localized: "app_components_common_error_tech")
         case .loading:
-            String(localized: "app_components_common_loader_label")
+            String(localized: "app_components_common_loader_tech")
         case .readOnly:
-            String(localized: "app_components_common_readOnly_label")
+            String(localized: "app_components_common_readOnly_tech")
         case .disabled:
-            String(localized: "app_common_disabled_label")
+            String(localized: "app_common_disabled_tech")
         }
     }
 

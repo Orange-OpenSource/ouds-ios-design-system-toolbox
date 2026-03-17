@@ -55,16 +55,16 @@ struct InlineAlertConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
 
-                OUDSChipPicker(title: "app_components_common_status_label",
+                OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
                                chips: AlertStatus.chips)
 
-                OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
+                OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
                     .disabled(!configurationModel.enableFlipIcon)
             }
 
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_label")
+                DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_tech")
             }
         }
     }

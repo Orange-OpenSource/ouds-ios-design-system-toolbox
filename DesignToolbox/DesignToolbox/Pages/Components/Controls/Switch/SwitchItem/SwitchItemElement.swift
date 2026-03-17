@@ -20,7 +20,7 @@ struct SwitchItemElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_switch_switchItem_label".localized()
+        name = "app_components_switch_switchItem_tech".localized()
         illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

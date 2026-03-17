@@ -20,7 +20,7 @@ struct InlineAlertElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_alert_inlineAlert_label".localized()
+        name = "app_components_alert_inlineAlert_tech".localized()
         illustration = AnyView(AlertIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

@@ -25,7 +25,7 @@ struct DimensionTokenElement: DesignToolboxElement {
             SpaceTokenElement(),
         ]
 
-        name = "app_tokens_dimension_label".localized()
+        name = "app_tokens_dimension_tech".localized()
         illustration = AnyView(Image(decorative: "ic_dimension").renderingMode(.template))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

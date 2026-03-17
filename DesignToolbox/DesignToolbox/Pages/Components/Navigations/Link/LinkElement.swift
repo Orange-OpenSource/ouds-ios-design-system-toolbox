@@ -20,7 +20,7 @@ struct LinkElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_link_label".localized()
+        name = "app_components_link_tech".localized()
         illustration = AnyView(LinkIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

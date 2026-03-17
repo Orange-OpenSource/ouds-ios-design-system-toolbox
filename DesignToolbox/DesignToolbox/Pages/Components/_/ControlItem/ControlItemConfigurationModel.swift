@@ -100,8 +100,8 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         hasDivider = false
         constrainedMaxWidth = false
         labelText = String(localized: "app_components_common_label_label")
-        descriptionText = String(localized: "app_components_common_description_label")
-        errorText = String(localized: "app_components_common_errorMessage_label")
+        descriptionText = ""
+        errorText = String(localized: "app_components_common_errorMessage_tech")
         self.outlinedConfiguration = outlinedConfiguration
         self.extraLabelConfiguration = extraLabelConfiguration
         outlined = outlinedConfiguration?.value ?? false

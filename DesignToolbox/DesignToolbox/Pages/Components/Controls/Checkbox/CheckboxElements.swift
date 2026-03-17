@@ -28,7 +28,7 @@ struct CheckboxElements: DesignToolboxElement {
             CheckboxPickerElement(),
         ]
 
-        name = "app_components_checkbox_label".localized()
+        name = "app_components_checkbox_tech".localized()
         illustration = AnyView(CheckboxIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

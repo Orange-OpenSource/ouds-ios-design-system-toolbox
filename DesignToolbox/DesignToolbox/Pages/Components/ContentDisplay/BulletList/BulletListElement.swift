@@ -22,7 +22,7 @@ struct BulletListElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_bulletList_label".localized()
+        name = "app_components_bulletList_tech".localized()
         illustration = AnyView(BulletListIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

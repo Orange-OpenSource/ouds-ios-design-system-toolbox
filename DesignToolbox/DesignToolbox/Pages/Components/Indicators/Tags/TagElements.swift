@@ -25,7 +25,7 @@ struct TagElements: DesignToolboxElement {
             InputTagElement(),
         ]
 
-        name = "app_components_tag_label".localized()
+        name = "app_components_tag_tech".localized()
         illustration = AnyView(TagIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

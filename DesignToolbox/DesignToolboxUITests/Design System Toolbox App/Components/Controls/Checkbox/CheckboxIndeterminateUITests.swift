@@ -32,7 +32,7 @@ final class CheckboxIndeterminateUITests: AppTestCase {
 
         let app = launchApp()
         goToComponentsSheet(app)
-        tapButton(withWording: "app_components_checkbox_label", app)
+        tapButton(withWording: "app_components_checkbox_tech", app)
         tapButton(withWording: "Indeterminate checkbox", app)
 
         let checkbox = otherElements(withA11yIdentifier: A11YIdentifiers.componentCheckboxIndeterminate, app).firstMatch

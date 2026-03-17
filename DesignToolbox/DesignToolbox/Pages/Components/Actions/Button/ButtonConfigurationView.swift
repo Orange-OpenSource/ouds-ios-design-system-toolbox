@@ -53,7 +53,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        text = String(localized: "app_components_button_label")
+        text = String(localized: "app_components_common_label_label")
         layout = .textOnly
         flipIcon = false
         appearance = .default
@@ -125,11 +125,11 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
     var description: String {
         switch self {
         case .textOnly:
-            "app_components_common_textOnlyLayout_label"
+            "app_components_common_textOnlyLayout_tech"
         case .textAndIcon:
-            "app_components_common_textAndIconLayout_label"
+            "app_components_common_textAndIconLayout_tech"
         case .iconOnly:
-            "app_components_common_iconOnlyLayout_label"
+            "app_components_common_iconOnlyLayout_tech"
         }
     }
 
@@ -208,32 +208,32 @@ struct ButtonConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+                OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
                     .disabled(configurationModel.style != .default)
 
-                OUDSSwitchItem("app_components_button_fullWidth_label", isOn: $configurationModel.isFullWidth)
+                OUDSSwitchItem("app_components_button_fullWidth_tech", isOn: $configurationModel.isFullWidth)
 
-                OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
+                OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
                     .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
 
-                OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $configurationModel.onColoredSurface)
+                OUDSSwitchItem("app_components_common_onColoredSurface_tech", isOn: $configurationModel.onColoredSurface)
 
-                OUDSChipPicker(title: "app_components_common_appearance_label",
+                OUDSChipPicker(title: "app_components_common_appearance_tech",
                                selection: $configurationModel.appearance,
                                chips: OUDSButton.Appearance.chips)
 
-                OUDSChipPicker(title: "app_components_common_style_label",
+                OUDSChipPicker(title: "app_components_common_style_tech",
                                selection: $configurationModel.style,
                                chips: OUDSButton.Style.chips)
 
-                OUDSChipPicker(title: "app_components_common_layout_label",
+                OUDSChipPicker(title: "app_components_common_layout_tech",
                                selection: $configurationModel.layout,
                                chips: ButtonLayout.chips)
             }
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_label")
+                    DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_tech")
                 }
             }
         }

@@ -23,11 +23,11 @@ enum ChipLayout: CaseIterable, CustomStringConvertible {
     var description: String {
         switch self {
         case .textOnly:
-            "app_components_common_textOnlyLayout_label"
+            "app_components_common_textOnlyLayout_tech"
         case .textAndIcon:
-            "app_components_common_textAndIconLayout_label"
+            "app_components_common_textAndIconLayout_tech"
         case .iconOnly:
-            "app_components_common_iconOnlyLayout_label"
+            "app_components_common_iconOnlyLayout_tech"
         }
     }
 

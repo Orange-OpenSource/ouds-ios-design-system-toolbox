@@ -73,13 +73,13 @@ struct SwitchConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.selection)
+            OUDSSwitchItem("app_components_common_selection_tech", isOn: $configurationModel.selection)
                 .disabled(!configurationModel.enabled || configurationModel.isReadOnly)
 
-            OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+            OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
                 .disabled(configurationModel.isReadOnly)
 
-            OUDSSwitchItem("app_components_common_readOnly_label", isOn: $configurationModel.isReadOnly)
+            OUDSSwitchItem("app_components_common_readOnly_tech", isOn: $configurationModel.isReadOnly)
                 .disabled(!configurationModel.enabled)
         }
     }

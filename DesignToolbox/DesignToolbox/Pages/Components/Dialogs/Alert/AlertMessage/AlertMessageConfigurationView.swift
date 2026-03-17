@@ -52,13 +52,13 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
     // MARK: Initializer
 
     override init() {
-        descriptionText = String(localized: "app_components_common_description_label")
+        descriptionText = ""
         actionLink = false
         actionPosition = .bottom
         closeButton = false
-        bullet1 = "app_components_alert_alertMessage_bullet_label" <- Int(1)
-        bullet2 = "app_components_alert_alertMessage_bullet_label" <- Int(2)
-        bullet3 = "app_components_alert_alertMessage_bullet_label" <- Int(3)
+        bullet1 = "app_components_alert_alertMessage_bullet_tech" <- Int(1)
+        bullet2 = "app_components_alert_alertMessage_bullet_tech" <- Int(2)
+        bullet3 = "app_components_alert_alertMessage_bullet_tech" <- Int(3)
 
         super.init()
 
@@ -121,33 +121,33 @@ struct AlertMessageConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
 
-                OUDSChipPicker(title: "app_components_common_status_label",
+                OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
                                chips: AlertStatus.chips)
 
-                OUDSSwitchItem("app_components_alert_alertMessage_statusIcon_label", isOn: $configurationModel.statusIcon)
+                OUDSSwitchItem("app_components_alert_alertMessage_statusIcon_tech", isOn: $configurationModel.statusIcon)
                     .disabled(!configurationModel.hasIcon)
 
-                OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
+                OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
                     .disabled(!configurationModel.enableFlipIcon)
 
-                OUDSSwitchItem("app_components_alert_alertMessage_closeButton_label", isOn: $configurationModel.closeButton)
+                OUDSSwitchItem("app_components_alert_alertMessage_closeButton_tech", isOn: $configurationModel.closeButton)
 
-                OUDSSwitchItem("app_components_alert_alertMessage_actionLink_label", isOn: $configurationModel.actionLink)
+                OUDSSwitchItem("app_components_alert_alertMessage_actionLink_tech", isOn: $configurationModel.actionLink)
 
-                OUDSChipPicker(title: "app_components_alert_alertMessage_actionLinkPosition_label",
+                OUDSChipPicker(title: "app_components_alert_alertMessage_actionLinkPosition_tech",
                                selection: $configurationModel.actionPosition,
                                chips: OUDSAlertMessage.Link.Position.chips)
                     .disabled(!configurationModel.actionLink)
             }
 
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_label")
-                DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_common_description_label")
+                DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_tech")
+                DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_common_description_tech")
 
-                DesignToolboxTextField(text: $configurationModel.bullet1, label: "app_components_alert_alertMessage_bullet_label" <- Int(1))
-                DesignToolboxTextField(text: $configurationModel.bullet2, label: "app_components_alert_alertMessage_bullet_label" <- Int(2))
-                DesignToolboxTextField(text: $configurationModel.bullet3, label: "app_components_alert_alertMessage_bullet_label" <- Int(3))
+                DesignToolboxTextField(text: $configurationModel.bullet1, label: "app_components_alert_alertMessage_bullet_tech" <- Int(1))
+                DesignToolboxTextField(text: $configurationModel.bullet2, label: "app_components_alert_alertMessage_bullet_tech" <- Int(2))
+                DesignToolboxTextField(text: $configurationModel.bullet3, label: "app_components_alert_alertMessage_bullet_tech" <- Int(3))
             }
         }
     }
