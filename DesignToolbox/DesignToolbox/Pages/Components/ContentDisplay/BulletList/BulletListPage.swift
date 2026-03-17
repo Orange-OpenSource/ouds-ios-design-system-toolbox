@@ -72,7 +72,7 @@ struct BulletListDemo: View {
     private var bulletType: OUDSBulletList.`Type` {
         switch configurationModel.bulletType {
         case .unordered:
-            .unordered(icon: unorderedIcon, isBranded: configurationModel.unorderedBulletIsBranded)
+            .unordered(asset: unorderedAsset, isBranded: configurationModel.unorderedBulletIsBranded)
         case .bare:
             .bare
         case .ordered:
@@ -80,14 +80,14 @@ struct BulletListDemo: View {
         }
     }
 
-    private var unorderedIcon: OUDSBulletList.UnorderedIcon {
-        switch configurationModel.unorderedBulletIcon {
+    private var unorderedAsset: OUDSBulletList.UnorderedAsset {
+        switch configurationModel.unorderedAsset {
         case .bullet:
             .bullet
         case .tick:
             .tick
-        case .free:
-            .free(Image.defaultImage(prefixedBy: theme.name))
+        case .icon:
+            .icon(Image.defaultImage(prefixedBy: theme.name))
         }
     }
 }

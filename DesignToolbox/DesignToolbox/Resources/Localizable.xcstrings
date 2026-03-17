@@ -1649,51 +1649,51 @@
         }
       }
     },
-    "app_components_bulletList_unorderedIcon_label" : {
+    "app_components_bulletList_unorderedAsset_tech" : {
       "comment" : "Component - Bullet List",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unordered icon"
+            "value" : "Unordered asset"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unordered icon"
+            "value" : "Unordered asset"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unordered icon"
+            "value" : "Unordered asset"
           }
         }
       },
       "shouldTranslate" : false
     },
-    "app_components_bulletList_unorderedIconBrandColor_label" : {
+    "app_components_bulletList_unorderedAssetBrandColor_tech" : {
       "comment" : "Component - Bullet List",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Brand color icon"
+            "value" : "Unordered asset brand color"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Brand color icon"
+            "value" : "Unordered asset brand color"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Brand color icon"
+            "value" : "Unordered asset brand color"
           }
         }
       },
