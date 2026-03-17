@@ -39,17 +39,8 @@ struct InputTagDemo: View {
 
     @StateObject var configurationModel: InputTagConfigurationModel
 
-    @Environment(\.theme) private var theme
-
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-
-            OUDSInputTag(label: configurationModel.label) {}
-                .disabled(!configurationModel.enabled)
-
-            Spacer()
-        }
-        .padding(.all, theme.spaces.fixedMedium)
+        OUDSInputTag(label: configurationModel.label) {}
+            .disabled(!configurationModel.enabled)
     }
 }

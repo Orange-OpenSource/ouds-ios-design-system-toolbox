@@ -52,7 +52,6 @@ private struct SwitchItemDemo: View {
                        hasDivider: configurationModel.hasDivider,
                        constrainedMaxWidth: configurationModel.constrainedMaxWidth)
             .disabled(!configurationModel.enabled)
-            .padding(.all, theme.spaces.fixedMedium)
             .accessibilityIdentifier(A11YIdentifiers.componentSwitchItem)
     }
 

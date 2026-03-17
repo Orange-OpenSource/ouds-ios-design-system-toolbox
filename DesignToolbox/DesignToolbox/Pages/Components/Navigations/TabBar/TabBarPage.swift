@@ -80,9 +80,8 @@ struct TabBarDemo: View {
                 }
             }
         }
-        .padding(.all, theme.spaces.fixedMedium)
         #if canImport(UIKit)
-            .frame(maxHeight: UIDevice.current.userInterfaceIdiom == .pad ? 600 : 300)
+        .frame(maxHeight: UIDevice.current.userInterfaceIdiom == .pad ? 600 : 300)
         #endif
     }
 }

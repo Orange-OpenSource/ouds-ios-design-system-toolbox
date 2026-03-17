@@ -41,14 +41,11 @@ struct AlertMessageDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center) {
-            OUDSAlertMessage(label: configurationModel.text,
-                             status: configurationModel.status(from: theme),
-                             description: configurationModel.descriptionText,
-                             bulletList: configurationModel.bulletList,
-                             link: configurationModel.link,
-                             onClose: configurationModel.onClose)
-        }
-        .padding(.all, theme.spaces.fixedMedium)
+        OUDSAlertMessage(label: configurationModel.text,
+                         status: configurationModel.status(from: theme),
+                         description: configurationModel.descriptionText,
+                         bulletList: configurationModel.bulletList,
+                         link: configurationModel.link,
+                         onClose: configurationModel.onClose)
     }
 }

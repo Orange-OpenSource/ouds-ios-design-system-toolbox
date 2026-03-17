@@ -88,11 +88,11 @@ struct DesignToolboxVariantElement: View {
                 .multilineTextAlignment(.leading)
                 .oudsForegroundStyle(theme.colors.contentDefault)
                 .padding(.vertical, theme.spaces.fixedXsmall)
-                .padding(.leading, theme.spaces.fixedMedium)
+                .oudsGridMargin(.leading)
             Spacer()
             Image(systemName: "chevron.right")
                 .oudsForegroundColor(theme.colors.contentDefault)
-                .padding(layoutDirection == .rightToLeft ? .leading : .trailing, theme.spaces.fixedMedium)
+                .oudsGridMargin(layoutDirection == .rightToLeft ? .leading : .trailing)
                 .accessibilityHidden(true)
                 .scaleEffect(layoutDirection == .rightToLeft ? -1 : 1, anchor: .center)
         }

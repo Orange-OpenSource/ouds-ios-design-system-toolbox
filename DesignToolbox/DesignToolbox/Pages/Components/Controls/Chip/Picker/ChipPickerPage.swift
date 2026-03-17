@@ -38,24 +38,25 @@ struct ChipPickerPage: View {
 struct ChipPickerDemo: View {
 
     @StateObject var configurationModel: ChipPickerConfigurationModel
+    @Environment(\.theme) var theme
 
     var body: some View {
-        switch configurationModel.selectionType {
-        case .singleOrNone:
-            OUDSChipPicker(title: configurationModel.titleText,
-                           selection: $configurationModel.optionalSelectedDrink,
-                           chips: configurationModel.drinks())
-                .disabled(!configurationModel.enabled)
-        case .single:
-            OUDSChipPicker(title: configurationModel.titleText,
-                           selection: $configurationModel.selectedDrink,
-                           chips: configurationModel.drinks())
-                .disabled(!configurationModel.enabled)
-        case .multiple:
-            OUDSChipPicker(title: configurationModel.titleText,
-                           selections: $configurationModel.selectedDrinks,
-                           chips: configurationModel.drinks())
-                .disabled(!configurationModel.enabled)
+        Group {
+            switch configurationModel.selectionType {
+            case .singleOrNone:
+                OUDSChipPicker(title: configurationModel.titleText,
+                               selection: $configurationModel.optionalSelectedDrink,
+                               chips: configurationModel.drinks())
+            case .single:
+                OUDSChipPicker(title: configurationModel.titleText,
+                               selection: $configurationModel.selectedDrink,
+                               chips: configurationModel.drinks())
+            case .multiple:
+                OUDSChipPicker(title: configurationModel.titleText,
+                               selections: $configurationModel.selectedDrinks,
+                               chips: configurationModel.drinks())
+            }
         }
+        .disabled(!configurationModel.enabled)
     }
 }

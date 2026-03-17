@@ -26,7 +26,7 @@ struct IllustrationOpacity: View {
         let value = String(format: "%.2f", token)
 
         DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
-            ZStack {
+            ZStack(alignment: .topLeading) {
                 Image(decorative: "ic_union")
                     .resizable()
                     .renderingMode(.template)
@@ -42,10 +42,9 @@ struct IllustrationOpacity: View {
                                 width: theme.borders.widthThin,
                                 radius: theme.borders.radiusNone,
                                 color: theme.colors.borderDefault)
-                    .padding(.top, 24)
-                    .padding(.leading, 24)
+                    .padding(.top, 12)
+                    .padding(.leading, 12)
             }
-            .frame(width: 64, height: 64, alignment: .leading)
         }
     }
 }
