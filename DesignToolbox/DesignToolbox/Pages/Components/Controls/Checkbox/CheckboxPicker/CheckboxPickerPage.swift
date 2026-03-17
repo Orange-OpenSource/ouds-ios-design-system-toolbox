@@ -39,19 +39,15 @@ private struct CheckboxPickerDemo: View {
 
     @State private var selections: [String] = []
     @ObservedObject var configurationModel: CheckboxPickerConfigurationModel
-    @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .center) {
-            OUDSCheckboxPicker(selections: $selections,
-                               checkboxes: configurationModel.populate(),
-                               placement: configurationModel.pickerPlacement,
-                               isReversed: configurationModel.isReversed,
-                               isError: configurationModel.isError,
-                               isReadOnly: configurationModel.isReadOnly,
-                               hasDivider: configurationModel.hasDivider)
-                .padding([.trailing, .leading], theme.spaces.paddingInlineSmall)
-                .disabled(!configurationModel.isEnabled)
-        }
+        OUDSCheckboxPicker(selections: $selections,
+                           checkboxes: configurationModel.populate(),
+                           placement: configurationModel.pickerPlacement,
+                           isReversed: configurationModel.isReversed,
+                           isError: configurationModel.isError,
+                           isReadOnly: configurationModel.isReadOnly,
+                           hasDivider: configurationModel.hasDivider)
+            .disabled(!configurationModel.isEnabled)
     }
 }

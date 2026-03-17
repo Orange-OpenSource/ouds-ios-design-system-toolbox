@@ -38,26 +38,13 @@ struct DividerPage: View {
 struct DividerDemo: View {
 
     @StateObject var configurationModel: DividerConfigurationModel
-    @Environment(\.theme) private var theme
 
     var body: some View {
-        Group {
-            switch configurationModel.orientation {
-            case .horizontal:
-                VStack(alignment: .center) {
-                    Spacer()
-                    OUDSHorizontalDivider(color: configurationModel.selectedColor)
-                    Spacer()
-                }
-            case .vertical:
-                HStack(alignment: .center) {
-                    Spacer()
-                    OUDSVerticalDivider(color: configurationModel.selectedColor)
-                    Spacer()
-                }
-            }
+        switch configurationModel.orientation {
+        case .horizontal:
+            OUDSHorizontalDivider(color: configurationModel.selectedColor)
+        case .vertical:
+            OUDSVerticalDivider(color: configurationModel.selectedColor)
         }
-        .frame(height: 44)
-        .padding(.all, theme.spaces.fixedMedium)
     }
 }

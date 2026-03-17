@@ -18,8 +18,6 @@ import SwiftUI
 
 struct SpaceTokenPage: View {
 
-    @Environment(\.theme) private var theme
-
     var body: some View {
         Group {
             #if !os(tvOS) && !os(watchOS)
@@ -54,7 +52,7 @@ struct SpaceTokenPage: View {
                 header("app_tokens_dimension_space_rowGap_label")
             }
         }
-        .padding(.horizontal, theme.spaces.fixedMedium)
+        .oudsGridMargin(.horizontal)
     }
 
     // MARK: Common helpers

@@ -74,7 +74,7 @@ struct DesignToolboxElementsPage: View {
             .padding(.vertical, 20)
             .navigationBarMenus()
             #else
-            LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaces.fixed2xsmall) {
+            LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaces.fixedMedium) {
                 ForEach(elements, id: \.id) { element in
                     #if os(iOS)
                     NavigationLink {
@@ -91,7 +91,8 @@ struct DesignToolboxElementsPage: View {
                     #endif
                 }
             }
-            .padding(.all, theme.spaces.fixedMedium)
+            .oudsGridMargin(.horizontal)
+            .padding(.vertical, theme.spaces.fixedMedium)
             .navigationBarMenus()
             #endif
         }

@@ -41,22 +41,19 @@ private struct ColoredSurfaceDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.spaces.fixedMedium) {
-            OUDSColoredSurface(color: configurationModel.selectedColor.toSurfaceColor(from: theme)) {
-                VStack(alignment: .center, spacing: theme.spaces.fixedMedium) {
-                    Text(configurationModel.selectedColor.formattedName)
-                        .oudsForegroundColor(theme.colors.contentDefault)
+        OUDSColoredSurface(color: configurationModel.selectedColor.toSurfaceColor(from: theme)) {
+            VStack(alignment: .center, spacing: theme.spaces.fixedMedium) {
+                Text(configurationModel.selectedColor.formattedName)
+                    .oudsForegroundColor(theme.colors.contentDefault)
 
-                    OUDSButton(text: "app_components_button_label".localized(),
-                               appearance: .default,
-                               style: .default) {}
+                OUDSButton(text: "app_components_button_label".localized(),
+                           appearance: .default,
+                           style: .default) {}
 
-                    OUDSLink(text: "app_components_link_label".localized(), indicator: .next) {}
-                }
-                .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.all, theme.spaces.fixedMedium)
+                OUDSLink(text: "app_components_link_label".localized(), indicator: .next) {}
             }
+            .frame(maxWidth: .infinity, alignment: .center)
+            .padding(.all, theme.spaces.fixedMedium)
         }
-        .padding(.all, theme.spaces.fixedMedium)
     }
 }

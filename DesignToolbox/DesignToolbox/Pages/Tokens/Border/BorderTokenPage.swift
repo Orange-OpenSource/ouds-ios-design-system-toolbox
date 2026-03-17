@@ -65,6 +65,6 @@ struct BorderTokenPage: View {
                     .oudsForegroundStyle(theme.colors.contentDefault)
             }
         }
-        .padding(.horizontal, theme.spaces.fixedMedium)
+        .oudsGridMargin(.horizontal)
     }
 }

@@ -41,27 +41,20 @@ private struct CheckboxItemDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-
-            OUDSCheckboxItem(configurationModel.labelText,
-                             isOn: $configurationModel.isOn,
-                             description: configurationModel.descriptionText,
-                             icon: icon,
-                             flipIcon: configurationModel.flipIcon,
-                             isReversed: configurationModel.isReversed,
-                             isError: configurationModel.isError,
-                             errorText: configurationModel.errorText,
-                             isReadOnly: configurationModel.isReadOnly,
-                             hasDivider: configurationModel.hasDivider,
-                             constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-                .disabled(!configurationModel.enabled)
-                .padding(.all, theme.spaces.fixedMedium)
-                .designToolboxColoredSurface(false)
-                .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
-
-            Spacer()
-        }
+        OUDSCheckboxItem(configurationModel.labelText,
+                         isOn: $configurationModel.isOn,
+                         description: configurationModel.descriptionText,
+                         icon: icon,
+                         flipIcon: configurationModel.flipIcon,
+                         isReversed: configurationModel.isReversed,
+                         isError: configurationModel.isError,
+                         errorText: configurationModel.errorText,
+                         isReadOnly: configurationModel.isReadOnly,
+                         hasDivider: configurationModel.hasDivider,
+                         constrainedMaxWidth: configurationModel.constrainedMaxWidth)
+            .disabled(!configurationModel.enabled)
+            .designToolboxColoredSurface(false)
+            .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
     }
 
     private var icon: Image? {
