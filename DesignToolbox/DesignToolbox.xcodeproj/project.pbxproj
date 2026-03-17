@@ -5854,7 +5854,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1324-in-library-add-helpers-on-view-to-apply-scaled-space-easily";
+				branch = develop;
 				kind = branch;
 			};
 		};
