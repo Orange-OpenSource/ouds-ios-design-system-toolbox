@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Files for agentic AI (Orange-OpenSource/ouds-ios#1341)
 - [DesignToolbox] In the design toolbox, use grid margin helper (Orange-OpenSource/ouds-ios#1299)
 - [Library] Signatures of control-item-based components (Orange-OpenSource/ouds-ios#1314)
 - [Library] `inline alert` component (Orange-OpenSource/ouds-ios#1307)

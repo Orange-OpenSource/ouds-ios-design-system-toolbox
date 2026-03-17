@@ -1,15 +1,7 @@
----
-type: ai-agent-guide
-framework: OUDS-iOS-Design-System-Toolbox
-language: Swift
-ui-framework: SwiftUI
-platforms: [iOS, iPadOS, macOS, visionOS, watchOS, tvOS]
-min-deployment: iOS 15.0
----
+# OUDS iOS Design System Toolbox app - GitHub Copilot Instructions
 
-# OUDS iOS Design System Toolbox app - AI Agent Guide
-
-This file provides guidance to AI coding agents when working with code in this repository or with OUDS iOS products.
+This file provides guidance to GitHub Copilot when working on this repository.
+It covers contributor and maintainer guidelines: code formatting, architecture, build process, best practices, ecodesign, accessibility, development requirements, build commands and review guidelines.
 
 ## 1. Project Overview
 
