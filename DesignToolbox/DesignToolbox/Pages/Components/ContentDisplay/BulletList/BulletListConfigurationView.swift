@@ -33,7 +33,7 @@ final class BulletListConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var unorderedBulletIcon: BulletListUnorderedIcon {
+    @Published var unorderedAsset: BulletListUnorderedAsset {
         didSet { updateCode() }
     }
 
@@ -55,7 +55,7 @@ final class BulletListConfigurationModel: ComponentConfiguration {
         label = String(localized: "app_components_common_label_label")
         levelCount = .one
         bulletType = .unordered
-        unorderedBulletIcon = .bullet
+        unorderedAsset = .bullet
         unorderedBulletIsBranded = true
         textStyle = .bodyLarge
         isBold = true
@@ -68,13 +68,13 @@ final class BulletListConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     private var iconPattern: String {
-        switch unorderedBulletIcon {
+        switch unorderedAsset {
         case .bullet:
             ""
         case .tick:
-            "icon: .tick"
-        case .free:
-            "icon: .free(\(Image.defaultImageSample()))"
+            "asset: .tick"
+        case .icon:
+            "asset: .icon(\(Image.defaultImageSample()))"
         }
     }
 
@@ -166,11 +166,11 @@ struct BulletListConfigurationView: View {
                                chips: BulletListType.chips)
 
                 if configurationModel.bulletType == .unordered {
-                    OUDSChipPicker(title: "app_components_bulletList_unorderedIcon_label",
-                                   selection: $configurationModel.unorderedBulletIcon,
-                                   chips: BulletListUnorderedIcon.chips)
+                    OUDSChipPicker(title: "app_components_bulletList_unorderedAsset_tech",
+                                   selection: $configurationModel.unorderedAsset,
+                                   chips: BulletListUnorderedAsset.chips)
 
-                    OUDSSwitchItem("app_components_bulletList_unorderedIconBrandColor_label", isOn: $configurationModel.unorderedBulletIsBranded)
+                    OUDSSwitchItem("app_components_bulletList_unorderedAssetBrandColor_tech", isOn: $configurationModel.unorderedBulletIsBranded)
                 }
 
                 OUDSChipPicker(title: "app_components_bulletList_textStyle_label",
@@ -272,10 +272,10 @@ extension OUDSBulletList.TextStyle: @retroactive CaseIterable, @retroactive Cust
 
 // MARK: - Bullet List Unordered Icon
 
-enum BulletListUnorderedIcon: CaseIterable, CustomStringConvertible {
+enum BulletListUnorderedAsset: CaseIterable, CustomStringConvertible {
     case bullet
     case tick
-    case free
+    case icon
 
     // NOTE: Not localized because it is a technical name
     var description: String {
@@ -284,8 +284,8 @@ enum BulletListUnorderedIcon: CaseIterable, CustomStringConvertible {
             "Bullet"
         case .tick:
             "Tick"
-        case .free:
-            "Free"
+        case .icon:
+            "Icon"
         }
     }
 
