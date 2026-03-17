@@ -39,7 +39,6 @@ private struct CheckboxPickerDemo: View {
 
     @State private var selections: [String] = []
     @ObservedObject var configurationModel: CheckboxPickerConfigurationModel
-    @Environment(\.theme) private var theme
 
     var body: some View {
         OUDSCheckboxPicker(selections: $selections,

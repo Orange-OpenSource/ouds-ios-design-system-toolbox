@@ -38,7 +38,6 @@ struct RadioPage: View {
 private struct RadioDemo: View {
 
     @ObservedObject var configurationModel: RadioConfigurationModel
-    @Environment(\.theme) private var theme
 
     var body: some View {
         OUDSRadio(isOn: $configurationModel.selection,

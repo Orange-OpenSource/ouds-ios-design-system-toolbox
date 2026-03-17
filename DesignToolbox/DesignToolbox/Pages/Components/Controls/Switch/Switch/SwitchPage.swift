@@ -38,7 +38,6 @@ struct SwitchPage: View {
 private struct SwitchDemo: View {
 
     @ObservedObject var configurationModel: SwitchConfigurationModel
-    @Environment(\.theme) private var theme
 
     var body: some View {
         OUDSSwitch(isOn: $configurationModel.selection,

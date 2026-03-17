@@ -37,7 +37,6 @@ struct LinkPage: View {
 
 private struct LinkDemo: View {
 
-    @Environment(\.theme) private var theme
     @StateObject var configurationModel: LinkConfigurationModel
 
     var body: some View {

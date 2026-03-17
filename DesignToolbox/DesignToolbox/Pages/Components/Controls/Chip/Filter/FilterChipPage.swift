@@ -38,7 +38,6 @@ struct FilterChipPage: View {
 struct FilterChipDemo: View {
 
     @StateObject var configurationModel: FilterChipConfigurationModel
-    @Environment(\.theme) private var theme
 
     var body: some View {
         Group {

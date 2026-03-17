@@ -39,8 +39,6 @@ struct SuggestionChipDemo: View {
 
     @StateObject var configurationModel: SuggestionChipConfigurationModel
 
-    @Environment(\.theme) private var theme
-
     var body: some View {
         Group {
             switch configurationModel.layout {

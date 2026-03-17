@@ -40,8 +40,6 @@ private struct CheckboxDemo: View {
 
     @ObservedObject var configurationModel: CheckboxConfigurationModel
 
-    @Environment(\.theme) private var theme
-
     var body: some View {
         OUDSCheckbox(isOn: $configurationModel.indicatorState,
                      accessibilityLabel: configurationModel.accessibilityLabel,

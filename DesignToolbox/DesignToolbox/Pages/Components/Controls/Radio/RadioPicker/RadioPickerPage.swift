@@ -39,7 +39,6 @@ private struct RadioPickerDemo: View {
 
     @State private var selection: String = "Choice_1" // cf configurationModel.populate()
     @ObservedObject var configurationModel: RadioPickerConfigurationModel
-    @Environment(\.theme) private var theme
 
     var body: some View {
         OUDSRadioPicker(selection: $selection,

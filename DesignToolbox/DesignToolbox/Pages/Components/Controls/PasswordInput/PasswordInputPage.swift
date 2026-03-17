@@ -40,7 +40,6 @@ struct PasswordInputDemo: View {
     // MARK: - Stored properties
 
     @StateObject var configurationModel: PasswordInputConfigurationModel
-    @Environment(\.theme) private var theme
 
     // MARK: - Body
 
