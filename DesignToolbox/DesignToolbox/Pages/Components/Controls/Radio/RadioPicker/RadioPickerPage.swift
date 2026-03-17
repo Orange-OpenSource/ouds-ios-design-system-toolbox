@@ -50,6 +50,6 @@ private struct RadioPickerDemo: View {
                         isError: configurationModel.isError,
                         isReadOnly: configurationModel.isReadOnly,
                         hasDivider: configurationModel.hasDivider)
-        .disabled(!configurationModel.isEnabled)
+            .disabled(!configurationModel.isEnabled)
     }
 }

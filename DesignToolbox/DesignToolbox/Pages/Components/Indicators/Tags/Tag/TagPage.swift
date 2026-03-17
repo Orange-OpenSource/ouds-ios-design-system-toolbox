@@ -48,6 +48,6 @@ struct TagDemo: View {
                 shape: configurationModel.shape,
                 size: configurationModel.size,
                 hasLoader: configurationModel.loader)
-        .disabled(!configurationModel.enabled)
+            .disabled(!configurationModel.enabled)
     }
 }

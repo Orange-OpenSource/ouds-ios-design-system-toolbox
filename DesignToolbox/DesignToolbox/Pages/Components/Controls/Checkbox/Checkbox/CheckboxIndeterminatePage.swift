@@ -47,7 +47,7 @@ private struct CheckboxIndeterminateDemo: View {
                                   accessibilityLabel: configurationModel.accessibilityLabel,
                                   isError: configurationModel.isError,
                                   isReadOnly: configurationModel.isReadOnly)
-        .disabled(!configurationModel.enabled)
-        .accessibilityIdentifier(A11YIdentifiers.componentCheckboxIndeterminate)
+            .disabled(!configurationModel.enabled)
+            .accessibilityIdentifier(A11YIdentifiers.componentCheckboxIndeterminate)
     }
 }

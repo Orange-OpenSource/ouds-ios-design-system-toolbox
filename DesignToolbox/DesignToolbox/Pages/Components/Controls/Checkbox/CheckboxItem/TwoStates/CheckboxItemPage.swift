@@ -52,9 +52,9 @@ private struct CheckboxItemDemo: View {
                          isReadOnly: configurationModel.isReadOnly,
                          hasDivider: configurationModel.hasDivider,
                          constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-        .disabled(!configurationModel.enabled)
-        .designToolboxColoredSurface(false)
-        .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
+            .disabled(!configurationModel.enabled)
+            .designToolboxColoredSurface(false)
+            .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
     }
 
     private var icon: Image? {

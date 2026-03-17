@@ -45,11 +45,11 @@ private struct ColoredSurfaceDemo: View {
             VStack(alignment: .center, spacing: theme.spaces.fixedMedium) {
                 Text(configurationModel.selectedColor.formattedName)
                     .oudsForegroundColor(theme.colors.contentDefault)
-                
+
                 OUDSButton(text: "app_components_button_label".localized(),
                            appearance: .default,
                            style: .default) {}
-                
+
                 OUDSLink(text: "app_components_link_label".localized(), indicator: .next) {}
             }
             .frame(maxWidth: .infinity, alignment: .center)

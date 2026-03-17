@@ -81,7 +81,7 @@ struct TabBarDemo: View {
             }
         }
         #if canImport(UIKit)
-            .frame(maxHeight: UIDevice.current.userInterfaceIdiom == .pad ? 600 : 300)
+        .frame(maxHeight: UIDevice.current.userInterfaceIdiom == .pad ? 600 : 300)
         #endif
     }
 }
