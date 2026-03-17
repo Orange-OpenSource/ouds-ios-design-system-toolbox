@@ -15,7 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [DesignToolbox] `ruby/setup-ruby` action from v1.288.0 to v1.296.0 for `build-and-test` workflow
+- [DesignToolbox] `Ruby` version from v4.0.1 to v4.0.2 for `build-and-test` workflow
+- [DesignToolbox] `ruby/setup-ruby` action to v1.288.0 for `build-and-test` workflow
 - [DesignToolbox] `actions/upload-artifact` action from v6.0.0 to v7.0.0 for `scorecard` workflow
 - [DesignToolbox] `actions/dependency-review-action` action to v4.9.0 for `dependency-review` workflow
 - [DesignToolbox] `github/codeql-action/upload-sarif` action to v4.34.1 for `scorecard` workflow
