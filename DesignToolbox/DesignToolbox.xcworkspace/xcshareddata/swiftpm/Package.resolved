@@ -16,7 +16,7 @@
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
         "branch" : "1317-add-an-helper-on-view-to-apply-grid-elements-margin-min-width-maxwidth",
-        "revision" : "e2d4898388bd929d32bdab1c762aed48f511c537"
+        "revision" : "9e2d6321b912e88a13ad436a46a633c99f5efa32"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-custom-dump",
       "state" : {
-        "revision" : "2a2a938798236b8fa0bc57c453ee9de9f9ec3ab0",
-        "version" : "1.4.1"
+        "revision" : "06c57924455064182d6b217f06ebc05d00cb2990",
+        "version" : "1.5.0"
       }
     },
     {
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",
       "state" : {
-        "revision" : "34e463e98ab8541c604af706c99bed7160f5ec70",
-        "version" : "1.8.1"
+        "revision" : "dfd70507def84cb5fb821278448a262c6ff2bbad",
+        "version" : "1.9.0"
       }
     }
   ],
