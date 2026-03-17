@@ -705,7 +705,7 @@ platform :watch do
             include_symbols: true,
             skip_archive: true,
             skip_codesigning: true,
-            destination: "platform=watchOS Simulator,OS=26.0,name=Apple Watch Series 11 (46mm)"
+            destination: "generic/platform=watchOS"
         )
     end
     
