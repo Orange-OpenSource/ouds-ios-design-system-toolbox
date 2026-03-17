@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
  
-- [Library] helper to apply grid margin (Orange-OpenSource/ouds-ios#1317)
+- [Library] View helpers to use scaled spaces tokens to add padding and to creete HStack/VStack (Orange-OpenSource/ouds-ios#1324)
+- [Library] Helper to apply grid margin (Orange-OpenSource/ouds-ios#1317)
 - [Library] `alert message` component (Orange-OpenSource/ouds-ios#1159)
 
 ### Changed
