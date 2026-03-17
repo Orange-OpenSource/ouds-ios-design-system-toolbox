@@ -38,8 +38,8 @@ final class RadioPickerUITests: AppTestCase {
         goToComponentsSheet(app)
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
-        tapButton(withWording: "app_components_radioButton_label", app)
-        tapButton(withWording: "app_components_radioPicker_label", app)
+        tapButton(withWording: "app_components_radioButton_tech", app)
+        tapButton(withWording: "app_components_radioPicker_tech", app)
 
         check(value: selectedRadioA11YValue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
         check(value: unselectedRadioA11YValue, ofElementWithIdentifier: secondItemA11YIdentifier, app)

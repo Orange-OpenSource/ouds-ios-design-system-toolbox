@@ -19,7 +19,7 @@ struct ElevationTokenElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_tokens_elevation_label".localized()
+        name = "app_tokens_elevation_tech".localized()
         illustration = AnyView(Image(decorative: "ic_layers").renderingMode(.template))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

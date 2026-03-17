@@ -20,7 +20,7 @@ struct SuggestionChipElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_chip_suggestionChip_label".localized()
+        name = "app_components_chip_suggestionChip_tech".localized()
         illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

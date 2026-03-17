@@ -19,7 +19,7 @@ struct GridTokenElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init(themeName: String) {
-        name = "app_tokens_grid_label".localized()
+        name = "app_tokens_grid_tech".localized()
         illustration = AnyView(Image.decorativeImage(named: "menu-grid", prefixedBy: themeName))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

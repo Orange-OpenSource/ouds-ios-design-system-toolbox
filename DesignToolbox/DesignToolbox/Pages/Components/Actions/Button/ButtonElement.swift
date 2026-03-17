@@ -20,7 +20,7 @@ struct ButtonElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_button_label".localized()
+        name = "app_components_button_tech".localized()
         illustration = AnyView(ButtonIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

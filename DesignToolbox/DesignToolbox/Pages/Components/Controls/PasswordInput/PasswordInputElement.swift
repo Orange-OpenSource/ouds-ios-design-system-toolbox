@@ -20,7 +20,7 @@ struct PasswordInputElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_passwordInput_label".localized()
+        name = "app_components_passwordInput_tech".localized()
         illustration = AnyView(PasswordInputIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
@@ -35,7 +35,7 @@ private struct PasswordInputIllustration: View {
     @State private var password: String = ""
 
     var body: some View {
-        OUDSPasswordInput(label: "app_components_passwordInput_password_label".localized(),
+        OUDSPasswordInput(label: "app_components_passwordInput_password_tech".localized(),
                           password: $password,
                           helperText: String(localized: "app_components_passwordInputHelperText_label"))
     }

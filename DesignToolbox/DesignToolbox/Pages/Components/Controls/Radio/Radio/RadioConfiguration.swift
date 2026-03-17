@@ -82,17 +82,17 @@ struct RadioConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.selection)
+            OUDSSwitchItem("app_components_common_selection_tech", isOn: $configurationModel.selection)
                 .accessibilityIdentifier(A11YIdentifiers.configurationSwitchSelection)
                 .disabled(!configurationModel.enabled || configurationModel.isError || configurationModel.isReadOnly)
 
-            OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+            OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
                 .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
-            OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
+            OUDSSwitchItem("app_components_common_error_tech", isOn: $configurationModel.isError)
                 .disabled(!configurationModel.enabled || configurationModel.isReadOnly)
 
-            OUDSSwitchItem("app_components_common_readOnly_label", isOn: $configurationModel.isReadOnly)
+            OUDSSwitchItem("app_components_common_readOnly_tech", isOn: $configurationModel.isReadOnly)
                 .disabled(!configurationModel.enabled || configurationModel.isError)
         }
     }

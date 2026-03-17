@@ -94,20 +94,20 @@ struct FilterChipConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+                OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
-                OUDSSwitchItem("app_components_common_selection_label", isOn: $configurationModel.selected)
+                OUDSSwitchItem("app_components_common_selection_tech", isOn: $configurationModel.selected)
                     .accessibilityIdentifier(A11YIdentifiers.configurationSwitchSelection)
                     .disabled(!configurationModel.enabled)
 
-                OUDSChipPicker(title: "app_components_common_layout_label",
+                OUDSChipPicker(title: "app_components_common_layout_tech",
                                selection: $configurationModel.layout,
                                chips: ChipLayout.chips)
             }
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_label")
+                    DesignToolboxTextField(text: $configurationModel.text, label: "app_components_common_label_tech")
                 }
             }
         }

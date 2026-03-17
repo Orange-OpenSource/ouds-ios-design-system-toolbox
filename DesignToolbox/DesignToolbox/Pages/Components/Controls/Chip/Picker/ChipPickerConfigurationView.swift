@@ -172,19 +172,19 @@ struct ChipPickerConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+                OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
-                OUDSChipPicker(title: "app_components_common_layout_label",
+                OUDSChipPicker(title: "app_components_common_layout_tech",
                                selection: $configurationModel.layout,
                                chips: ChipLayout.chips)
 
-                OUDSChipPicker(title: "app_components_chipPicker_selectionType_label",
+                OUDSChipPicker(title: "app_components_chipPicker_selectionType_tech",
                                selection: $configurationModel.selectionType,
                                chips: ChipPickerConfigurationModel.SelectionType.chips)
             }
 
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.titleText, label: "app_components_common_label_label")
+                DesignToolboxTextField(text: $configurationModel.titleText, label: "app_components_common_label_tech")
             }
         }
     }

@@ -167,37 +167,37 @@ struct TagConfigurationView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+            OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
                 .disabled(configurationModel.loader)
 
-            OUDSSwitchItem("app_components_common_loader_label", isOn: $configurationModel.loader)
+            OUDSSwitchItem("app_components_common_loader_tech", isOn: $configurationModel.loader)
                 .disabled(!configurationModel.enabled)
 
-            OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
+            OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
                 .disabled(!configurationModel.enableFlipIcon)
 
-            OUDSChipPicker(title: "app_components_common_layout_label",
+            OUDSChipPicker(title: "app_components_common_layout_tech",
                            selection: $configurationModel.layout,
                            chips: TagLayout.chips)
 
-            OUDSChipPicker(title: "app_components_common_appearance_label",
+            OUDSChipPicker(title: "app_components_common_appearance_tech",
                            selection: $configurationModel.appearance,
                            chips: OUDSTag.Appearance.chips)
 
-            OUDSChipPicker(title: "app_components_common_status_label",
+            OUDSChipPicker(title: "app_components_common_status_tech",
                            selection: $configurationModel.statusCategory,
                            chips: filteredStatusChips)
 
-            OUDSChipPicker(title: "app_components_tag_shape_label",
+            OUDSChipPicker(title: "app_components_tag_shape_tech",
                            selection: $configurationModel.shape,
                            chips: OUDSTag.Shape.chips)
 
-            OUDSChipPicker(title: "app_components_common_size_label",
+            OUDSChipPicker(title: "app_components_common_size_tech",
                            selection: $configurationModel.size,
                            chips: OUDSTag.Size.chips)
 
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_label")
+                DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
             }
         }
     }
@@ -341,11 +341,11 @@ enum TagLayout: CaseIterable, CustomStringConvertible {
     var description: String {
         switch self {
         case .textOnly:
-            "app_components_common_textOnlyLayout_label"
+            "app_components_common_textOnlyLayout_tech"
         case .textAndBullet:
-            "app_components_tag_textAndBulletLayout_label"
+            "app_components_tag_textAndBulletLayout_tech"
         case .textAndIcon:
-            "app_components_common_textAndIconLayout_label"
+            "app_components_common_textAndIconLayout_tech"
         }
     }
 
