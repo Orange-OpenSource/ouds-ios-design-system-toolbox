@@ -44,7 +44,7 @@ private struct ChipIllustration: View {
         HStack(spacing: theme.spaces.fixedSmall) {
             #if !os(visionOS)
             let wording = "app_components_common_label_label".localized()
-            OUDSFilterChip(text:  wording, selected: true) {}
+            OUDSFilterChip(text: wording, selected: true) {}
             OUDSSuggestionChip(text: wording) {}
             #else
             OUDSFilterChip(text: "🥜", selected: true) {}
