@@ -21,6 +21,30 @@ final class ToolBarTopConfigurationModel: ComponentConfiguration {
 
     // MARK: Properties
 
+    enum DemoOption: CaseIterable, CustomStringConvertible {
+        case navigation
+        case sheet
+
+        var description: String {
+            switch self {
+            case .navigation: return "Navigation"
+            case .sheet: return "Sheet"
+            }
+        }
+
+        private var chipData: OUDSChipPickerData<Self> {
+            OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
+        }
+
+        static var chips: [OUDSChipPickerData<Self>] {
+            allCases.map(\.chipData)
+        }
+    }
+
+    @Published var demoOption: DemoOption {
+        didSet { updateCode() }
+    }
+
     @Published var title: String {
         didSet { updateCode() }
     }
@@ -60,6 +84,7 @@ final class ToolBarTopConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
+        demoOption = .navigation
         title = "app_components_topAppBar_title_label".localized()
         largeTitle = false
         subTitle = ""
@@ -131,6 +156,10 @@ struct ToolBarTopConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+
+                OUDSChipPicker(title: "app_components_topAppBar_demoOption_tech".localized(),
+                               selection: $configurationModel.demoOption,
+                               chips: ToolBarTopConfigurationModel.DemoOption.chips)
 
                 OUDSSwitchItem("large title", isOn: $configurationModel.largeTitle)
                 OUDSChipPicker(title: "app_components_topAppBar_navigationIcon_tech".localized(),

@@ -26,7 +26,7 @@ struct ToolBarTopPage: View {
 
     var body: some View {
         ComponentConfigurationView(configuration: configurationModel) {
-            ToolBarTopDemo(configurationModel: configurationModel)
+            ToolBarTopDemoSelection(configurationModel: configurationModel)
         } configurationView: {
             ToolBarTopConfiguration(configurationModel: configurationModel)
         }
@@ -34,6 +34,33 @@ struct ToolBarTopPage: View {
 }
 
 // MARK: - Tab bar demo
+
+struct ToolBarTopDemoSelection: View {
+
+    @State var showSheet: Bool = false
+    @State var showNavigation: Bool = false
+    @ObservedObject var configurationModel: ToolBarTopConfigurationModel
+
+    var body: some View {
+        switch configurationModel.demoOption {
+        case .navigation:
+            NavigationLink(destination: ToolBarTopDemo(configurationModel: configurationModel), isActive: $showNavigation) {
+                OUDSButton(text: "Show Demo") {
+                    showNavigation = true
+                }
+            }
+        case .sheet:
+            OUDSButton(text: "Show Demo") {
+                showSheet = true
+            }
+            .sheet(isPresented: $showSheet) {
+                NavigationView {
+                    ToolBarTopDemo(configurationModel: configurationModel)
+                }
+            }
+        }
+    }
+}
 
 struct ToolBarTopDemo: View {
 
@@ -43,40 +70,17 @@ struct ToolBarTopDemo: View {
     @State private var showSheet: Bool = false
 
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack(alignment: .center, spacing: 0) {
-                    Text("Some content")
-//                    NavigationLink(destination: Text("Some content"), isActive: $showDestination) {
-//                        OUDSLink(text: "Go to next page", indicator: .next) {
-//                            showDestination.toggle()
-//                        }
-//                    }
-//
-//                    OUDSLink(text: "Go to next page", indicator: .next) {
-//                        showSheet.toggle()
-//                    }
-//                    .sheet(isPresented: $showSheet) {
-//                        Text("Some content")
-//                    }
-                }
-                .frame(maxWidth: .infinity)
-                .background(.red)
+        ScrollView {
+            VStack(alignment: .center, spacing: 0) {
+                Text("Some content")
             }
-            .oudsToolBarTop(configurationModel.title,
-                            largeTitle: configurationModel.largeTitle,
-                            subtitle: subTitle,
-                            leadingItems: { configurationModel.leadingItems(for: theme) },
-                            trailingItems: { configurationModel.trailingItems(for: theme) })
+            .frame(maxWidth: .infinity)
         }
-        .oudsBorder(style: theme.borders.styleDefault,
-                    width: theme.borders.widthDefault,
-                    radius: theme.borders.radiusDefault,
-                    color: theme.colors.borderDefault)
-        .padding(.all, theme.spaces.fixedMedium)
-        #if canImport(UIKit)
-            .frame(maxHeight: UIDevice.current.userInterfaceIdiom == .pad ? 300 : 150)
-        #endif
+        .oudsToolBarTop(configurationModel.title,
+                        largeTitle: configurationModel.largeTitle,
+                        subtitle: subTitle,
+                        leadingItems: { configurationModel.leadingItems(for: theme) },
+                        trailingItems: { configurationModel.trailingItems(for: theme) })
     }
 
     private var subTitle: String? {
