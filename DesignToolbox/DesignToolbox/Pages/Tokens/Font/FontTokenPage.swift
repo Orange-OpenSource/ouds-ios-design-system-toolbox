@@ -32,6 +32,6 @@ struct FontTokenPage: View {
             }
         }
         .oudsGridMargin(.horizontal)
-        .navigationTitle(LocalizedStringKey("app_tokens_typography_label"))
+        .navigationTitle(LocalizedStringKey("app_tokens_typography_tech"))
     }
 }
