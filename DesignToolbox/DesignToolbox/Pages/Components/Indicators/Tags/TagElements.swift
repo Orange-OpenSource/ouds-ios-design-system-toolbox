@@ -38,6 +38,10 @@ struct TagElements: DesignToolboxElement {
 private struct TagIllustration: View {
 
     var body: some View {
-        OUDSTag(label: "Label", status: .positive(leading: .none), appearance: .emphasized, shape: .rounded, size: .default)
+        OUDSTag(label: "app_components_common_label_label".localized(),
+                status: .positive(leading: .none),
+                appearance: .emphasized,
+                shape: .rounded,
+                size: .default)
     }
 }

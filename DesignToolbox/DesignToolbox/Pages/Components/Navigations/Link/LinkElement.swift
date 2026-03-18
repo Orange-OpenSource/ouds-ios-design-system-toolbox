@@ -35,6 +35,6 @@ private struct LinkIllustration: View {
     @Environment(\.layoutDirection) var direction
 
     var body: some View {
-        OUDSLink(text: "Label", indicator: .next) {}
+        OUDSLink(text: "app_components_common_label_label".localized(), indicator: .next) {}
     }
 }
