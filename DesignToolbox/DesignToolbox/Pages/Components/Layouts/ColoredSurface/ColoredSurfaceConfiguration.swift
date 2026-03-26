@@ -43,9 +43,9 @@ final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
                Text("\(selectedColor.formattedName)")
                .oudsForegroundColor(theme.colors.contentDefault)
 
-               OUDSButton(text: "\("app_components_button_label".localized())") {}
+               OUDSButton(text: "\("app_components_button_tech".localized())") {}
 
-               OUDSLink(text: "\("app_components_link_label".localized())", indicator: .next) {}
+               OUDSLink(text: "\("app_components_link_tech".localized())", indicator: .next) {}
             }
             """
     }

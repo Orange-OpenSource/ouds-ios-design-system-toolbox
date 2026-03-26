@@ -37,13 +37,10 @@ struct LinkPage: View {
 
 private struct LinkDemo: View {
 
-    @Environment(\.theme) private var theme
     @StateObject var configurationModel: LinkConfigurationModel
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-
+        Group {
             switch configurationModel.layout {
             case .textOnly:
                 OUDSLink(text: configurationModel.text, size: configurationModel.size) {}
@@ -54,10 +51,7 @@ private struct LinkDemo: View {
             case .indicatorNext:
                 OUDSLink(text: configurationModel.text, indicator: .next, size: configurationModel.size) {}
             }
-
-            Spacer()
         }
         .disabled(!configurationModel.enabled)
-        .padding(.all, theme.spaces.fixedMedium)
     }
 }

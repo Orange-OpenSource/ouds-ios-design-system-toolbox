@@ -38,19 +38,13 @@ struct RadioPage: View {
 private struct RadioDemo: View {
 
     @ObservedObject var configurationModel: RadioConfigurationModel
-    @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-            OUDSRadio(isOn: $configurationModel.selection,
-                      accessibilityLabel: "app_components_radioButton_hint_a11y".localized(), // No LocalizedStringKey type inference in the component
-                      isError: configurationModel.isError,
-                      isReadOnly: configurationModel.isReadOnly)
-                .disabled(!configurationModel.enabled)
-                .accessibilityIdentifier(A11YIdentifiers.componentRadio)
-            Spacer()
-        }
-        .padding(.all, theme.spaces.fixedMedium)
+        OUDSRadio(isOn: $configurationModel.selection,
+                  accessibilityLabel: "app_components_radioButton_hint_a11y".localized(), // No LocalizedStringKey type inference in the component
+                  isError: configurationModel.isError,
+                  isReadOnly: configurationModel.isReadOnly)
+            .disabled(!configurationModel.enabled)
+            .accessibilityIdentifier(A11YIdentifiers.componentRadio)
     }
 }

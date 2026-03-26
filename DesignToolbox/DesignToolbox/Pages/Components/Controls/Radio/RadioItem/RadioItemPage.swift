@@ -20,10 +20,11 @@ struct RadioItemPage: View {
     @StateObject private var configurationModel: BooleanControlItemConfigurationModel
 
     init() {
-        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSRadioItem(isOn: $isOn",
+        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSRadioItem(",
+                                                         bindingInitCode: "isOn: $isOn",
                                                          outlinedConfiguration: (value: false,
-                                                                                 outlinedConfigurationLabel: "app_components_common_outlined_label"),
-                                                         extraLabelConfiguration: "app_components_radioButton_radioButtonItem_extraLabel_label".localized())
+                                                                                 outlinedConfigurationLabel: "app_components_common_outlined_tech"),
+                                                         extraLabelConfiguration: "app_components_radioButton_radioButtonItem_extraLabel_tech".localized())
         _configurationModel = StateObject(wrappedValue: model)
     }
 
@@ -42,8 +43,8 @@ private struct RadioItemDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSRadioItem(isOn: $configurationModel.isOn,
-                      label: configurationModel.labelText,
+        OUDSRadioItem(configurationModel.labelText,
+                      isOn: $configurationModel.isOn,
                       extraLabel: configurationModel.extraLabelText,
                       description: configurationModel.descriptionText,
                       icon: icon,
@@ -56,7 +57,6 @@ private struct RadioItemDemo: View {
                       hasDivider: configurationModel.hasDivider,
                       constrainedMaxWidth: configurationModel.constrainedMaxWidth)
             .disabled(!configurationModel.enabled)
-            .padding(.all, theme.spaces.fixedMedium)
             .accessibilityIdentifier(A11YIdentifiers.componentRadioItem)
     }
 

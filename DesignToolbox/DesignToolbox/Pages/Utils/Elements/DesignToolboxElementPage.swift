@@ -68,12 +68,10 @@ struct DesignToolboxElementPage: View {
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .accessibilityFocused($requestFocus)
-                    .padding(.horizontal, theme.spaces.fixedMedium)
+                    .oudsGridMargin(.horizontal)
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)
-            .padding(.horizontal, theme.spaces.fixedNone)
-            .padding(.bottom, theme.spaces.fixedMedium)
             .oudsBackground(theme.colors.bgPrimary)
 
             demoScreen
@@ -94,14 +92,13 @@ struct DesignToolboxElementPage: View {
                             size: .small,
                             hasLoader: false)
                 }
-                .padding(.horizontal, theme.spaces.fixedMedium)
+                .oudsGridMargin(.horizontal)
                 .padding(.bottom, theme.spaces.fixedMedium)
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
         .listStyle(.plain)
         .padding(.top, theme.spaces.fixedNone)
-        .padding(.horizontal, theme.spaces.fixedNone)
         .oudsBackground(theme.colors.bgPrimary)
         .navigationTitle(name.localized())
         .oudsRequestAccessibleFocus(_requestFocus)

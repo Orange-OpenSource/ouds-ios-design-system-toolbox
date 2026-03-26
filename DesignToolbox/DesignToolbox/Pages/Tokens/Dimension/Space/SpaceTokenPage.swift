@@ -18,8 +18,6 @@ import SwiftUI
 
 struct SpaceTokenPage: View {
 
-    @Environment(\.theme) private var theme
-
     var body: some View {
         Group {
             #if !os(tvOS) && !os(watchOS)
@@ -31,30 +29,30 @@ struct SpaceTokenPage: View {
             #endif
             // Basic Space Tokens
             Section { ScaledSpaceProperty() } header: {
-                header("app_tokens_dimension_space_scaled_label")
+                header("app_tokens_dimension_space_scaled_tech")
             }
             Section { FixedSpaceProperty() } header: {
-                header("app_tokens_dimension_space_fixed_label")
+                header("app_tokens_dimension_space_fixed_tech")
             }
             Section { InsetSpaceProperty() } header: {
-                header("app_tokens_dimension_space_inset_label")
+                header("app_tokens_dimension_space_inset_tech")
             }
             // Padding Space Tokens
             Section { PaddingInlineProperty() } header: {
-                header("app_tokens_dimension_space_paddingInline_label")
+                header("app_tokens_dimension_space_paddingInline_tech")
             }
             Section { PaddingBlockProperty() } header: {
-                header("app_tokens_dimension_space_paddingBlock_label")
+                header("app_tokens_dimension_space_paddingBlock_tech")
             }
             // Gap Space Tokens
             Section { ColumnGapProperty() } header: {
-                header("app_tokens_dimension_space_columnGap_label")
+                header("app_tokens_dimension_space_columnGap_tech")
             }
             Section { RowGapProperty() } header: {
-                header("app_tokens_dimension_space_rowGap_label")
+                header("app_tokens_dimension_space_rowGap_tech")
             }
         }
-        .padding(.horizontal, theme.spaces.fixedMedium)
+        .oudsGridMargin(.horizontal)
     }
 
     // MARK: Common helpers

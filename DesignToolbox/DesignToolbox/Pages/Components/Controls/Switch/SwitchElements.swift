@@ -25,7 +25,7 @@ struct SwitchElements: DesignToolboxElement {
             SwitchItemElement(),
         ]
 
-        name = "app_components_switch_label".localized()
+        name = "app_components_switch_tech".localized()
         illustration = AnyView(SwitchIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

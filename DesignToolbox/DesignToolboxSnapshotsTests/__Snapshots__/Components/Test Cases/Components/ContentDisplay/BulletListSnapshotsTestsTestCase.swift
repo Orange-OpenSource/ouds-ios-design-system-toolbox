@@ -70,9 +70,9 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
                                                     interfaceStyle: UIUserInterfaceStyle,
                                                     model: BulletListConfigurationModel)
     {
-        for icon in BulletListUnorderedIcon.allCases {
+        for icon in BulletListUnorderedAsset.allCases {
             for isBranded in [true, false] {
-                model.unorderedBulletIcon = icon
+                model.unorderedAsset = icon
                 model.unorderedBulletIsBranded = isBranded
 
                 testBulletList(theme: theme,
@@ -106,12 +106,12 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
         //    test_<themeName>_<colorScheme>_<type>_<textStyle>_<isBold>
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let typePattern = model.bulletType.description
-        let bulletTypePattern = model.bulletType == .unordered ? "_\(model.unorderedBulletIcon.description)" : ""
+        let bulletTypePattern = model.bulletType == .unordered ? "_\(model.unorderedAsset.description)" : ""
         let brandedBulletPattern = model.bulletType == .unordered && model.unorderedBulletIsBranded ? "_Branded" : ""
         let unorderedBulletTypePattern = model.bulletType == .unordered ? bulletTypePattern + brandedBulletPattern : ""
         let textStylePattern = model.textStyle.description
         let isBoldPattern = model.isBold ? "Bold" : ""
-        let countPattern = "Count-\(model.levelCount)"
+        let countPattern = "Count-\(model.levelCount.description.localized())"
 
         let name = "\(typePattern)\(unorderedBulletTypePattern)_\(textStylePattern)_\(isBoldPattern)_\(countPattern)"
 

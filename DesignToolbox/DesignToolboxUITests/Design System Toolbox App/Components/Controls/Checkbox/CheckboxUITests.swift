@@ -30,8 +30,8 @@ final class CheckboxUITests: AppTestCase {
 
         let app = launchApp()
         goToComponentsSheet(app)
-        tapButton(withWording: "app_components_checkbox_label", app)
-        tapButton(withWording: "app_components_checkbox_label", app)
+        tapButton(withWording: "app_components_checkbox_tech", app)
+        tapButton(withWording: "app_components_checkbox_tech", app)
 
         let checkbox = otherElements(withA11yIdentifier: A11YIdentifiers.componentCheckbox, app).firstMatch
         XCTAssertTrue(checkbox.exists)

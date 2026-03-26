@@ -93,16 +93,16 @@ struct CheckboxIndeterminateConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+            OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
                 .disabled(configurationModel.isReadOnly || configurationModel.isError)
 
-            OUDSSwitchItem("app_components_common_readOnly_label", isOn: $configurationModel.isReadOnly)
+            OUDSSwitchItem("app_components_common_readOnly_tech", isOn: $configurationModel.isReadOnly)
                 .disabled(!configurationModel.enabled || configurationModel.isError)
 
-            OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
+            OUDSSwitchItem("app_components_common_error_tech", isOn: $configurationModel.isError)
                 .disabled(!configurationModel.enabled || configurationModel.isReadOnly)
 
-            OUDSChipPicker(title: "app_components_common_selection_label",
+            OUDSChipPicker(title: "app_components_common_selection_tech",
                            selection: $configurationModel.indicatorState,
                            chips: OUDSCheckboxIndicatorState.chips)
                 .disabled(!configurationModel.enabled || configurationModel.isReadOnly)

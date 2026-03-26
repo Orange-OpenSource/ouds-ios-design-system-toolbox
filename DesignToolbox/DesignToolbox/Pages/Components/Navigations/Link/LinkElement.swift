@@ -20,7 +20,7 @@ struct LinkElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_link_label".localized()
+        name = "app_components_link_tech".localized()
         illustration = AnyView(LinkIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
@@ -35,6 +35,6 @@ private struct LinkIllustration: View {
     @Environment(\.layoutDirection) var direction
 
     var body: some View {
-        OUDSLink(text: "Label", indicator: .next) {}
+        OUDSLink(text: "app_components_common_label_label".localized(), indicator: .next) {}
     }
 }

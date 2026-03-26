@@ -42,9 +42,7 @@ struct BadgeDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-
+        Group {
             switch configurationModel.badgeType {
             case .standard:
                 OUDSBadge(accessibilityLabel: "app_components_badge_hint_a11y".localized(),
@@ -63,9 +61,6 @@ struct BadgeDemo: View {
                           size: configurationModel.illustrationSize)
                     .disabled(!configurationModel.enabled)
             }
-
-            Spacer()
         }
-        .padding(.all, theme.spaces.fixedMedium)
     }
 }

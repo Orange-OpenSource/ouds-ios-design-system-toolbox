@@ -19,7 +19,7 @@ struct BorderTokenElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_tokens_border_label".localized()
+        name = "app_tokens_border_tech".localized()
         illustration = AnyView(Image(decorative: "ic_border").renderingMode(.template))
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

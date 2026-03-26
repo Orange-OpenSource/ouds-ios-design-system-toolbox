@@ -56,42 +56,42 @@ private struct ControlItemConfiguration: View {
                 selection
                     .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
-                OUDSSwitchItem("app_components_controlItem_icon_label", isOn: $configurationModel.icon)
+                OUDSSwitchItem("app_components_controlItem_icon_tech", isOn: $configurationModel.icon)
 
-                OUDSSwitchItem("app_components_common_flipIcon_label", isOn: $configurationModel.flipIcon)
+                OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
                     .disabled(!configurationModel.icon || configurationModel.isError)
 
                 if let outlinedConfiguration = configurationModel.outlinedConfiguration {
                     OUDSSwitchItem(outlinedConfiguration.outlinedConfigurationLabel, isOn: $configurationModel.outlined)
                 }
 
-                OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $configurationModel.hasDivider)
+                OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
 
-                OUDSSwitchItem("app_components_common_constrainedMaxWidth_label", isOn: $configurationModel.constrainedMaxWidth)
+                OUDSSwitchItem("app_components_common_constrainedMaxWidth_tech", isOn: $configurationModel.constrainedMaxWidth)
 
-                OUDSSwitchItem("app_components_controlItem_reversed_label", isOn: $configurationModel.isReversed)
+                OUDSSwitchItem("app_components_controlItem_reversed_tech", isOn: $configurationModel.isReversed)
 
-                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
+                OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
                     .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
-                OUDSSwitchItem("app_components_common_readOnly_label", isOn: $configurationModel.isReadOnly)
+                OUDSSwitchItem("app_components_common_readOnly_tech", isOn: $configurationModel.isReadOnly)
                     .disabled(!configurationModel.enabled || configurationModel.isError)
 
-                OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
+                OUDSSwitchItem("app_components_common_error_tech", isOn: $configurationModel.isError)
                     .disabled(!configurationModel.enabled || configurationModel.isReadOnly)
             }
 
             DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.labelText, label: "app_components_common_label_label")
+                DesignToolboxTextField(text: $configurationModel.labelText, label: "app_components_common_label_tech")
 
                 if configurationModel.extraLabelConfiguration != nil {
-                    DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_radioButton_radioButtonItem_extraLabel_label")
+                    DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_radioButton_radioButtonItem_extraLabel_tech")
                 }
 
-                DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_controlItem_description_label")
+                DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_common_description_tech")
 
                 if configurationModel.isError {
-                    DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_common_errorMessage_label")
+                    DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_common_errorMessage_tech")
                 }
             }
         }
@@ -116,7 +116,7 @@ private struct BooleanSelectionView: View {
     @ObservedObject var model: BooleanControlItemConfigurationModel
 
     var body: some View {
-        OUDSSwitchItem("app_components_common_selection_label", isOn: $model.isOn)
+        OUDSSwitchItem("app_components_common_selection_tech", isOn: $model.isOn)
             .accessibilityIdentifier(A11YIdentifiers.configurationSwitchSelection)
     }
 }
@@ -128,7 +128,7 @@ private struct IndeterminateSelectionView: View {
     @ObservedObject var model: IndicatorControlItemConfigurationModel
 
     var body: some View {
-        OUDSChipPicker(title: "app_components_common_selection_label",
+        OUDSChipPicker(title: "app_components_common_selection_tech",
                        selection: $model.selection,
                        chips: OUDSCheckboxIndicatorState.chips)
     }

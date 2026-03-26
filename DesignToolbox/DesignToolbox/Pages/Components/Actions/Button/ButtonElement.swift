@@ -20,7 +20,7 @@ struct ButtonElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_button_label".localized()
+        name = "app_components_button_tech".localized()
         illustration = AnyView(ButtonIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
@@ -37,12 +37,13 @@ private struct ButtonIllustration: View {
 
     var body: some View {
         VStack(spacing: theme.spaces.fixedSmall) {
+            let wording = "app_components_common_label_label".localized()
             #if !os(visionOS)
             // Don't translate default text for all
-            OUDSButton(text: "Label", appearance: colorScheme == .light ? .strong : .default) {}
-            OUDSButton(text: "Label", appearance: colorScheme == .light ? .default : .strong) {}
+            OUDSButton(text: wording, appearance: colorScheme == .light ? .strong : .default) {}
+            OUDSButton(text: wording, appearance: colorScheme == .light ? .default : .strong) {}
             #else
-            OUDSButton(text: "Label", appearance: .default) {}
+            OUDSButton(text: wording, appearance: .default) {}
             #endif
         }
     }
