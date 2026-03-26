@@ -4,6 +4,38 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.2.0...1.3.0) - 2026-03-26
+
+### Added
+ 
+- [Library] View helpers to use scaled spaces tokens to add padding and to create HStack/VStack (Orange-OpenSource/ouds-ios#1324)
+- [Library] Helper to apply grid margin (Orange-OpenSource/ouds-ios#1317)
+- [Library] `inline alert` component (Orange-OpenSource/ouds-ios#1307)
+- [Library] `alert message` component (Orange-OpenSource/ouds-ios#1159)
+
+### Changed
+
+- [DesignToolbox] `fastlane` gem from v2.232.1 to v2.232.2
+- [DesignToolbox] `json` RubyGem from v2.18.1 to v2.19.3
+- [DesignToolbox] `Ruby` version from v4.0.1 to v4.0.2 for `build-and-test` workflow
+- [DesignToolbox] `ruby/setup-ruby` action to v1.288.0 for `build-and-test` workflow
+- [DesignToolbox] `actions/upload-artifact` action from v6.0.0 to v7.0.0 for `scorecard` workflow
+- [DesignToolbox] `actions/dependency-review-action` action to v4.9.0 for `dependency-review` workflow
+- [DesignToolbox] `github/codeql-action/upload-sarif` action to v4.34.1 for `scorecard` workflow
+- [Library] `alert message` component with new label colors (Orange-OpenSource/ouds-ios#1342)
+- [DesignToolbox] Files for agentic AI (Orange-OpenSource/ouds-ios#1341)
+- [DesignToolbox] In the design toolbox, use grid margin helper (Orange-OpenSource/ouds-ios#1299)
+- [Library] Update Bullet list API to rename unordered icon to asset (Orange-OpenSource/ouds-ios#1326)
+- [DesignToolbox] Use of updated `bullet list` component API ("unordered icon" to "unordered asset") (Orange-OpenSource/ouds-ios#1326)
+- [DesignToolbox] Update wording keys (Orange-OpenSource/ouds-ios#1325)
+- [Library] Signatures of control-item-based components (Orange-OpenSource/ouds-ios#1314)
+
+### Fixed
+
+- [Library] Size of loader for `button` component (Orange-OpenSource/ouds-ios#1296)
+- [Library] Size of the bullet for unordered and bare `bullet list` components (Orange-OpenSource/ouds-ios#1300)
+- [Library] Size of the bullet for unordered and bare bullet list component (Orange-OpenSource/ouds-ios#1300)
+
 ## [1.2.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.1.0...1.2.0) - 2026-02-13
 
 ### Added

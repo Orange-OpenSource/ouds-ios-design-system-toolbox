@@ -21,7 +21,7 @@ struct SwitchItemPage: View {
     @StateObject private var configurationModel: BooleanControlItemConfigurationModel
 
     init() {
-        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSSwitchItem(isOn: $isOn")
+        let model = BooleanControlItemConfigurationModel(componentInitCode: "OUDSSwitchItem(", bindingInitCode: "isOn: $isOn")
         _configurationModel = StateObject(wrappedValue: model)
     }
 
@@ -52,7 +52,6 @@ private struct SwitchItemDemo: View {
                        hasDivider: configurationModel.hasDivider,
                        constrainedMaxWidth: configurationModel.constrainedMaxWidth)
             .disabled(!configurationModel.enabled)
-            .padding(.all, theme.spaces.fixedMedium)
             .accessibilityIdentifier(A11YIdentifiers.componentSwitchItem)
     }
 

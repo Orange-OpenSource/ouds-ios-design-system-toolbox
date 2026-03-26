@@ -140,18 +140,18 @@ struct CheckboxPickerConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.isEnabled)
+            OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.isEnabled)
                 .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
-            OUDSSwitchItem("app_components_common_error_label", isOn: $configurationModel.isError)
+            OUDSSwitchItem("app_components_common_error_tech", isOn: $configurationModel.isError)
                 .disabled(!configurationModel.isEnabled || configurationModel.isReadOnly)
 
-            OUDSSwitchItem("app_components_common_readOnly_label", isOn: $configurationModel.isReadOnly)
+            OUDSSwitchItem("app_components_common_readOnly_tech", isOn: $configurationModel.isReadOnly)
                 .disabled(!configurationModel.isEnabled || configurationModel.isError)
 
-            OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $configurationModel.hasDivider)
+            OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
 
-            OUDSChipPicker(title: "app_components_common_orientation_label",
+            OUDSChipPicker(title: "app_components_common_orientation_tech",
                            selection: $configurationModel.pickerPlacement,
                            chips: OUDSCheckboxPickerPlacement.chips)
         }

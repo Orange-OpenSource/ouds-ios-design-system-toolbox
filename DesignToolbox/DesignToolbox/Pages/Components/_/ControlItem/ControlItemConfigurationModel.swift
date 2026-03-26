@@ -25,6 +25,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     // MARK: - Properties
 
     var componentInitCode: String = ""
+    var bindingInitCode: String = ""
     var extraLabelConfiguration: ExtraLabelConfiguration?
     var outlinedConfiguration: OutlinedConfiguration?
 
@@ -84,10 +85,12 @@ class ControlItemConfigurationModel: ComponentConfiguration {
 
     // NOTE: "unused" false-positive for periphery (https://github.com/peripheryapp/periphery/issues/957)
     init(componentInitCode: String,
+         bindingInitCode: String,
          outlinedConfiguration: OutlinedConfiguration? = nil,
          extraLabelConfiguration: ExtraLabelConfiguration? = nil)
     {
         self.componentInitCode = componentInitCode
+        self.bindingInitCode = bindingInitCode
         isError = false
         isReadOnly = false
         enabled = true
@@ -97,8 +100,8 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         hasDivider = false
         constrainedMaxWidth = false
         labelText = String(localized: "app_components_common_label_label")
-        descriptionText = String(localized: "app_components_controlItem_description_label")
-        errorText = String(localized: "app_components_common_errorMessage_label")
+        descriptionText = ""
+        errorText = String(localized: "app_components_common_errorMessage_tech")
         self.outlinedConfiguration = outlinedConfiguration
         self.extraLabelConfiguration = extraLabelConfiguration
         outlined = outlinedConfiguration?.value ?? false
@@ -114,7 +117,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            \(componentInitCode), label: "\(labelText)"\(extraLabelTextPattern)\(descriptionTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern)\(constrainedMaxWidthPattern))
+            \(componentInitCode)"\(labelText)", \(bindingInitCode)\(extraLabelTextPattern)\(descriptionTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern)\(constrainedMaxWidthPattern))
             \(disableCodePattern)
             """
     }

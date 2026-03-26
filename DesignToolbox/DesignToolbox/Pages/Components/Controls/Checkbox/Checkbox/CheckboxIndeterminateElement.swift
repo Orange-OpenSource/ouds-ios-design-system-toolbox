@@ -21,7 +21,7 @@ struct CheckboxIndeterminateElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_checkbox_indeterminateCheckbox_label".localized()
+        name = "app_components_checkbox_indeterminateCheckbox_tech".localized()
         illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

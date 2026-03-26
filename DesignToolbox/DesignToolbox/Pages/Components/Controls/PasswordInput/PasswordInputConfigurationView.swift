@@ -21,10 +21,9 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
 
     // MARK: Stored properties
 
-    private static let defaultLabel = String(localized: "app_components_common_label_label")
-    private static let defaultHelperText = String(localized: "app_components_common_helperText_label")
-    private static let defaultPlaceholderText = String(localized: "app_components_common_placeholder_label")
-    private static let defaultErrorText = String(localized: "app_components_common_errorMessage_label")
+    private static let defaultLabel = String(localized: "app_components_passwordInput_password_tech")
+    private static let defaultHelperText = String(localized: "app_components_passwordInputHelperText_label")
+    private static let defaultErrorText = String(localized: "app_components_common_errorMessage_tech")
 
     // MARK: Published properties
 
@@ -81,7 +80,7 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         label = Self.defaultLabel
         helperText = Self.defaultHelperText
         errorText = Self.defaultErrorText
-        placeholderText = Self.defaultPlaceholderText
+        placeholderText = ""
         prefixText = ""
         lockIcon = false
         text = ""
@@ -157,30 +156,30 @@ struct PasswordInputConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                OUDSSwitchItem("app_components_passwordInput_hiddenPassword__label", isOn: $configurationModel.isHiddenPassword)
+                OUDSSwitchItem("app_components_passwordInput_passwordHidden_tech", isOn: $configurationModel.isHiddenPassword)
 
-                OUDSSwitchItem("app_components_common_outlined_label", isOn: $configurationModel.isOutlined)
+                OUDSSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
 
-                OUDSSwitchItem("app_components_common_constrainedMaxWidth_label", isOn: $configurationModel.constrainedMaxWidth)
+                OUDSSwitchItem("app_components_common_constrainedMaxWidth_tech", isOn: $configurationModel.constrainedMaxWidth)
 
-                OUDSSwitchItem("app_components_passwordInput_lockIcon_label", isOn: $configurationModel.lockIcon)
+                OUDSSwitchItem("app_components_passwordInput_lockIcon_tech", isOn: $configurationModel.lockIcon)
 
-                OUDSChipPicker(title: "app_components_common_status_label",
+                OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
                                chips: OUDSTextInput.Status.chips)
 
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_label")
+                    DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
 
                     switch configurationModel.status {
                     case .error:
                         DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_textInput_errorDescription_label")
                     default:
-                        DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_label")
+                        DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
                     }
 
-                    DesignToolboxTextField(text: $configurationModel.placeholderText, label: "app_components_common_placeholder_label")
-                    DesignToolboxTextField(text: $configurationModel.prefixText, label: "app_components_common_prefix_label")
+                    DesignToolboxTextField(text: $configurationModel.placeholderText, label: "app_components_common_placeholder_tech")
+                    DesignToolboxTextField(text: $configurationModel.prefixText, label: "app_components_common_prefix_tech")
                 }
             }
         }

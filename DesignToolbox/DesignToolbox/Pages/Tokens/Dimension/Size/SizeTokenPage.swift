@@ -34,7 +34,7 @@ struct SizeTokenPage: View {
                     }
                 }
             } header: {
-                sectionHeader("app_tokens_dimension_size_iconDecorative_label")
+                sectionHeader("app_tokens_dimension_size_iconDecorative_tech")
             }
 
             Section {
@@ -44,7 +44,7 @@ struct SizeTokenPage: View {
                     }
                 }
             } header: {
-                sectionHeader("app_tokens_dimension_size_iconWith_label")
+                sectionHeader("app_tokens_dimension_size_iconWith_tech")
             }
 
             Section {
@@ -54,7 +54,7 @@ struct SizeTokenPage: View {
                     }
                 }
             } header: {
-                sectionHeader("app_tokens_dimension_size_maxWidth_label")
+                sectionHeader("app_tokens_dimension_size_maxWidth_tech")
             }
 
             Section {
@@ -64,10 +64,10 @@ struct SizeTokenPage: View {
                     }
                 }
             } header: {
-                sectionHeader("app_tokens_dimension_size_minInteractiveArea_label")
+                sectionHeader("app_tokens_dimension_size_minInteractiveArea_tech")
             }
         }
-        .padding(.horizontal, theme.spaces.fixedMedium)
+        .oudsGridMargin(.horizontal)
     }
 
     private func sectionHeader(_ text: LocalizedStringKey) -> some View {

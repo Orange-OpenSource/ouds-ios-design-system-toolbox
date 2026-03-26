@@ -30,7 +30,7 @@ final class CheckboxItemUITests: AppTestCase {
 
         let app = launchApp()
         goToComponentsSheet(app)
-        tapButton(withWording: "app_components_checkbox_label", app)
+        tapButton(withWording: "app_components_checkbox_tech", app)
         waitForButtonToAppear(withWording: "Checkbox Item", app)
         tapButton(withWording: "Checkbox Item", app)
 

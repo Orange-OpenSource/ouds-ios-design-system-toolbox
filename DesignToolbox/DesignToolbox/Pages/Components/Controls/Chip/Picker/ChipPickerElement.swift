@@ -19,7 +19,7 @@ struct ChipPickerElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_chip_chipPicker_label".localized()
+        name = "app_components_chip_chipPicker_tech".localized()
         illustration = AnyView(EmptyView())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
