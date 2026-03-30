@@ -112,7 +112,7 @@ Here are assets, images, HTML files like legal notices and fonts.
 ## 9. Development requirements
 
 - Minimum Swift 6.2 (e.g. Swigt 6.2.3)
-- Xcode 26.2 or later 
+- Xcode 26.3 or later 
 - Minimum deployment: iOS 15.0, iPad0S 15.0, macOS 15.6, visionOS 1.3, watch0S 11.6, tvOS 16.6
 - Apple Developer account for device testing
 
