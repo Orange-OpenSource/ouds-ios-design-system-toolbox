@@ -178,7 +178,7 @@ the online version based on [_GitHub Pages_](https://pages.github.com/), this ve
 ### Illustrations
 
 The illustrations in use for the documentation are versioned in the [Swift Package project](https://github.com/Orange-OpenSource/ouds-ios).
-They are made manulay with iPhone 17 Pro, in english, portrait, light mode without icreased size text.
+They are made manually with iPhone 17 Pro, in english, portrait, light mode without icreased size text.
 Because 4 themes are available with dedicated fonts and tokens, it was not possible to implement and maintain a test suite with one codebase for all cases.
 
 To update the illustrations, you have to:
@@ -226,7 +226,7 @@ Such tests here are used to as to be sure the look and feel of any components an
 Any interface modifications require regenerating the illustrations using the tool, i.e. run the tests twice. The reference illustrations have already been saved within the project.
 
 > [!IMPORTANT]
-> The device under tests is a simulator of iPhone 17 Pro (26.3), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
+> The device under tests is a simulator of iPhone 17 Pro (26.2), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
 
 #### How to use to use swift-snapshot-testing library
 
