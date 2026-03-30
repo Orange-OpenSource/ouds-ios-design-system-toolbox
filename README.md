@@ -34,7 +34,7 @@
 [![AppStore](https://img.shields.io/itunes/v/6743708286?style=for-the-badge&label=AppStore)](https://apps.apple.com/fr/app/design-system-toolbox/id6743708286)
 [![Still maintained](https://img.shields.io/maintenance/yes/2026?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues?q=is%3Aissue+is%3Aclosed)
 
-[![Xcode 26.2](https://img.shields.io/badge/Xcode-26.2-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_2-release-notes)
+[![Xcode 26.3](https://img.shields.io/badge/Xcode-26.3-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes)
 
 ![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)
 ![iPadOS 15.0](https://img.shields.io/badge/iPadOS-15.0-FF1AB2?style=for-the-badge)
