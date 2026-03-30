@@ -38,7 +38,7 @@ struct TagElements: DesignToolboxElement {
 private struct TagIllustration: View {
 
     var body: some View {
-        OUDSTag(label: "app_components_common_label_label".localized(),
+        OUDSTag("app_components_common_label_label",
                 status: .positive(leading: .none),
                 appearance: .emphasized,
                 shape: .rounded,

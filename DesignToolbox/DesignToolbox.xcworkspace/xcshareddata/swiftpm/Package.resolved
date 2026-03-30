@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "ab33404f21e3b1656151af5f4b897db81f942837"
+        "branch" : "copilot/update-button-component-localization",
+        "revision" : "cfae55fe51c5484bbcf009769fa7a3c33fc30d46"
       }
     },
     {

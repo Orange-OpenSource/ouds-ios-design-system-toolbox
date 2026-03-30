@@ -5854,7 +5854,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "copilot/update-button-component-localization";
 				kind = branch;
 			};
 		};
