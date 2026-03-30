@@ -36,9 +36,9 @@ struct Card: View {
                 .padding(.horizontal, theme.spaces.fixedMedium)
                 .padding(.vertical, theme.spaces.fixedMedium)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .oudsForegroundStyle(theme.colors.contentDefault)
+                .foregroundStyle(theme.colors.contentDefault)
         }
-        .oudsBackground(theme.colors.overlayDropdown)
-        .oudsShadow(theme.elevations.raised)
+        .background(theme.colors.overlayDropdown)
+        .shadow(theme.elevations.raised)
     }
 }

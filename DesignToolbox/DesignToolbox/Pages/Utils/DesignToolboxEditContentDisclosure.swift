@@ -26,7 +26,7 @@ struct DesignToolboxEditContentDisclosure<Content>: View where Content: View {
         DesignToolboxDisclosureGroup(isExpanded: $isContentVisible, accessibilityLabel: "", content: content) {
             Text("app_components_common_editContent_label")
                 .headingSmall(theme)
-                .oudsForegroundStyle(theme.colors.contentDefault)
+                .foregroundStyle(theme.colors.contentDefault)
                 .accessibilityAddTraits([.isButton])
         }
         .padding(.horizontal, theme.spaces.fixedMedium)

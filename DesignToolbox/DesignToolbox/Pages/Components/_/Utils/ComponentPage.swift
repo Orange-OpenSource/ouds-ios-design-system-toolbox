@@ -74,7 +74,7 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
                            minHeight: theme.spaces.fixedLarge,
                            alignment: .center)
                     .padding(.vertical, theme.spaces.fixedMedium)
-                    .oudsGridMargin(.horizontal)
+                    .gridMargin(.horizontal)
             }
             // No padding here, the component area keeps all the frame horizontaly
 
@@ -85,7 +85,7 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
 
                 DesignToolboxCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
             }
-            .oudsGridMargin(.horizontal)
+            .gridMargin(.horizontal)
         }
     }
 }

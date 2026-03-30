@@ -34,7 +34,7 @@ struct DesignToolboxCode: View {
         } label: {
             Text(titleText)
                 .bodyStrongLarge(theme)
-                .oudsForegroundStyle(theme.colors.contentDefault)
+                .foregroundStyle(theme.colors.contentDefault)
                 .padding(.vertical, theme.spaces.paddingInlineSmall)
         }
     }
@@ -43,7 +43,7 @@ struct DesignToolboxCode: View {
         HStack(alignment: .firstTextBaseline, spacing: theme.spaces.paddingBlockNone) {
             Text(code)
                 .font(.system(.body, design: .monospaced))
-                .oudsForegroundStyle(theme.colors.contentDefault)
+                .foregroundStyle(theme.colors.contentDefault)
                 .padding(.vertical, theme.spaces.paddingInlineSmall)
                 .multilineTextAlignment(layoutDirection == .rightToLeft ? .trailing : .leading)
             // As the source code sample is written in english, keep text aligned on the left
@@ -57,16 +57,16 @@ struct DesignToolboxCode: View {
         .frame(minWidth: 72, maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, theme.spaces.paddingInlineSmall)
         .padding(.leading, theme.spaces.paddingInlineMedium)
-        .oudsBackground(theme.colors.bgSecondary)
+        .background(theme.colors.bgSecondary)
         .accessibilityElement(children: .combine)
         .accessibilityHint("app_common_copyCode_a11y")
         .overlay(
             Rectangle()
                 .opacity(theme.opacities.invisible)
                 .frame(minWidth: 40, maxWidth: .infinity, alignment: .leading)
-                .oudsBorder(style: theme.borders.styleDefault,
-                            width: theme.borders.widthThin,
-                            radius: theme.borders.radiusDefault,
-                            color: theme.colors.borderDefault))
+                .border(style: theme.borders.styleDefault,
+                        width: theme.borders.widthThin,
+                        radius: theme.borders.radiusDefault,
+                        color: theme.colors.borderDefault))
     }
 }

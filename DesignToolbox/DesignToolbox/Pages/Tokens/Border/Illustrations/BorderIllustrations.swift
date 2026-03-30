@@ -37,10 +37,10 @@ struct IllustrationWidth: View {
 
         DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
             RectangleBackground()
-                .oudsBorder(style: theme.borders.styleDefault,
-                            width: token,
-                            radius: theme.borders.radiusNone,
-                            color: theme.colors.borderFocus)
+                .border(style: theme.borders.styleDefault,
+                        width: token,
+                        radius: theme.borders.radiusNone,
+                        color: theme.colors.borderFocus)
         }
     }
 }
@@ -57,10 +57,10 @@ struct IllustrationRadius: View {
 
         DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
             RectangleBackground()
-                .oudsBorder(style: theme.borders.styleDefault,
-                            width: theme.borders.widthDefault,
-                            radius: token,
-                            color: theme.colors.borderFocus)
+                .border(style: theme.borders.styleDefault,
+                        width: theme.borders.widthDefault,
+                        radius: token,
+                        color: theme.colors.borderFocus)
         }
     }
 }
@@ -77,10 +77,10 @@ struct IllustrationStyle: View {
 
         DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
             RectangleBackground()
-                .oudsBorder(style: token,
-                            width: theme.borders.widthDefault,
-                            radius: theme.borders.radiusNone,
-                            color: theme.colors.borderFocus)
+                .border(style: token,
+                        width: theme.borders.widthDefault,
+                        radius: theme.borders.radiusNone,
+                        color: theme.colors.borderFocus)
         }
     }
 }

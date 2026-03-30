@@ -30,7 +30,7 @@ struct IllustrationOpacity: View {
                 Image(decorative: "ic_union")
                     .resizable()
                     .renderingMode(.template)
-                    .oudsForegroundColor(theme.colors.contentStatusInfo)
+                    .foregroundColor(theme.colors.contentStatusInfo)
                     .frame(width: 48, height: 48)
                     .accessibilityHidden(true)
 
@@ -38,10 +38,10 @@ struct IllustrationOpacity: View {
                     .fill(theme.colors.overlayModal.color(for: colorScheme))
                     .opacity(token)
                     .frame(width: 48, height: 48)
-                    .oudsBorder(style: theme.borders.styleDefault,
-                                width: theme.borders.widthThin,
-                                radius: theme.borders.radiusNone,
-                                color: theme.colors.borderDefault)
+                    .border(style: theme.borders.styleDefault,
+                            width: theme.borders.widthThin,
+                            radius: theme.borders.radiusNone,
+                            color: theme.colors.borderDefault)
                     .padding(.top, 12)
                     .padding(.leading, 12)
             }

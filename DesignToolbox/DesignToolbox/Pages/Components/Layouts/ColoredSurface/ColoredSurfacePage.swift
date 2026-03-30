@@ -44,7 +44,7 @@ private struct ColoredSurfaceDemo: View {
         OUDSColoredSurface(color: configurationModel.selectedColor.toSurfaceColor(from: theme)) {
             VStack(alignment: .center, spacing: theme.spaces.fixedMedium) {
                 Text(configurationModel.selectedColor.formattedName)
-                    .oudsForegroundColor(theme.colors.contentDefault)
+                    .foregroundColor(theme.colors.contentDefault)
 
                 OUDSButton(text: "app_components_button_tech".localized(),
                            appearance: .default,

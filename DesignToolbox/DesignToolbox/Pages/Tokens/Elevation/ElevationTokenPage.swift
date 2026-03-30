@@ -34,6 +34,6 @@ struct ElevationTokenPage: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .oudsGridMargin(.horizontal)
+        .gridMargin(.horizontal)
     }
 }
