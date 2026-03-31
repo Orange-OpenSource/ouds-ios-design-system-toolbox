@@ -52,6 +52,7 @@ extension XCTestCase {
                                        file: StaticString = #filePath)
     {
         let hostingViewController = UIHostingController(rootView: illustration)
+        print("🎨 Snapshotting: '\(named)' for '\(testName)'")
         assertSnapshot(of: hostingViewController,
                        as: .image(precision: precision,
                                   perceptualPrecision: perceptualPrecision,
