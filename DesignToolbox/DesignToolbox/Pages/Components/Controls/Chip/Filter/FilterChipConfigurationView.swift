@@ -59,6 +59,10 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         selected ? ", selected: true" : ""
     }
 
+    private var accessibilityLabelValue: String {
+        "app_components_common_icon_a11y".localized()
+    }
+
     override func updateCode() {
         switch layout {
         case .textOnly:
@@ -70,7 +74,7 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         case .iconOnly:
             code =
                 """
-                OUDSFilterChip(icon: Image(\"ic_heart\"), accessibilityLabel: \"Some label\"\(selectedCodePattern)) {}
+                OUDSFilterChip(icon: Image(\"ic_heart\"), accessibilityLabel: \"\(accessibilityLabelValue)\"\(selectedCodePattern)) {}
                 \(disableCodePattern)
                 """
         case .textAndIcon:
