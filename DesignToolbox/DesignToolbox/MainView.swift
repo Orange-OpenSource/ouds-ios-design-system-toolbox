@@ -19,6 +19,7 @@ struct MainView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
+
         OUDSTabBar(selected: 0, count: 3) {
             TokensPage()
                 .tabItem {
@@ -35,6 +36,6 @@ struct MainView: View {
                     Label("app_bottomBar_about_label", image: "info-fill")
                 }
                 .tag(2)
-        }.oudsAccentColor(theme.colors.contentBrandPrimary)
+        }.accentColor(theme.colors.contentBrandPrimary)
     }
 }

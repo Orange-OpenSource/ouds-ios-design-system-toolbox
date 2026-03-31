@@ -249,7 +249,7 @@ private struct VersionItem: View {
     var body: some View {
         HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
             Text(title.localized())
-                .oudsForegroundColor(theme.colors.contentDefault)
+                .foregroundColor(theme.colors.contentDefault)
 
             Spacer()
 

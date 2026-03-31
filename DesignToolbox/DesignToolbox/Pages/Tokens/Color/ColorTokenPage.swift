@@ -38,7 +38,7 @@ struct ColorTokenPage: View {
             Section { illustrationForRepository() } header: { header("Repository") }
             Section { illustrationForSurface() } header: { header("Surface") }
         }
-        .oudsGridMargin(.horizontal)
+        .gridMargin(.horizontal)
     }
 
     // MARK: Private helpers
@@ -188,7 +188,7 @@ struct ColorTokenPage: View {
                     }
                 }
                 .frame(width: Self.colorIllustrationDimension, height: Self.colorIllustrationDimension)
-                .oudsBorder(
+                .border(
                     style: theme.borders.styleDefault,
                     width: theme.borders.widthThin,
                     radius: theme.borders.radiusNone,

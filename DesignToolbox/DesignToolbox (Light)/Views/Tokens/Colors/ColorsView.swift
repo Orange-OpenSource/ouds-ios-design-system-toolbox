@@ -244,7 +244,7 @@ struct ColorsView: View {
                 Rectangle()
                     .fill(Color(hexadecimalCode: colorRawToken)!) // If color not managed, issue with tokenator or token
                     .frame(width: 64, height: 64)
-                    .oudsBorder(
+                    .border(
                         style: theme.borders.styleDefault,
                         width: theme.borders.widthThin,
                         radius: theme.borders.radiusNone,

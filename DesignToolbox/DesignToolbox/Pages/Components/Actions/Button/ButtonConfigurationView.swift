@@ -94,7 +94,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     }
 
     private var coloredSurfaceCodeModifier: String {
-        onColoredSurface ? ".oudsColoredSurface(theme.colorModes.onBrandPrimary)" : ""
+        onColoredSurface ? ".coloredSurface(theme.colorModes.onBrandPrimary)" : ""
     }
 
     private var flipIconPattern: String {
