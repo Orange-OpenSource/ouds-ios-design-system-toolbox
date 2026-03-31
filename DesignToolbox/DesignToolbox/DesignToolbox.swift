@@ -17,6 +17,10 @@ import SwiftUI
 @main
 struct DesignToolbox: App {
 
+    init() {
+        OUDSLogger.verbose = true
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
