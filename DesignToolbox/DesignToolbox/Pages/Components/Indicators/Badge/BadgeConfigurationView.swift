@@ -123,7 +123,7 @@ final class BadgeConfigurationModel: ComponentConfiguration {
             """
         case .icon:
             code = """
-            OUDSBadge(\(statusWithIconPattern), accessibilityLabel: \"app_components_badge_hint_a11y\", \(sizePattern))
+            OUDSBadge(\(statusWithIconPattern), accessibilityLabel: \"\(accessibilityLabelValue)\", \(sizePattern))
             \(disablePattern)
             """
         }
@@ -150,6 +150,10 @@ final class BadgeConfigurationModel: ComponentConfiguration {
 
     private var sizePattern: String {
         "size: \(badgeType == .standard ? standardSize.technicalDescription : illustrationSize.technicalDescription)"
+    }
+
+    private var accessibilityLabelValue: String {
+        "app_components_badge_hint_a11y".localized()
     }
 }
 
