@@ -5854,7 +5854,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "copilot/rename-ouds-methods-and-style";
+				branch = develop;
 				kind = branch;
 			};
 		};
