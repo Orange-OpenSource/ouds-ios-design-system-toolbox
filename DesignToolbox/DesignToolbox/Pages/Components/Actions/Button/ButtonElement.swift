@@ -37,13 +37,11 @@ private struct ButtonIllustration: View {
 
     var body: some View {
         VStack(spacing: theme.spaces.fixedSmall) {
-            let wording = "app_components_common_label_label".localized()
             #if !os(visionOS)
-            // Don't translate default text for all
-            OUDSButton(text: wording, appearance: colorScheme == .light ? .strong : .default) {}
-            OUDSButton(text: wording, appearance: colorScheme == .light ? .default : .strong) {}
+            OUDSButton("app_components_common_label_label", appearance: colorScheme == .light ? .strong : .default) {}
+            OUDSButton("app_components_common_label_label", appearance: colorScheme == .light ? .default : .strong) {}
             #else
-            OUDSButton(text: wording, appearance: .default) {}
+            OUDSButton("app_components_common_label_label", appearance: .default) {}
             #endif
         }
     }
