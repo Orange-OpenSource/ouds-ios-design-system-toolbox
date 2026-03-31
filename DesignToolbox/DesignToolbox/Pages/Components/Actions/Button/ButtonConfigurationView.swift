@@ -79,7 +79,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .textOnly:
             "text: \"\(text)\""
         case .iconOnly:
-            "icon: \(Image.defaultImageSample())\(flipIconPattern), accessibilityLabel: \"accessibility label\""
+            "icon: \(Image.defaultImageSample())\(flipIconPattern), accessibilityLabel: \"\(accessibilityLabelValue)\""
         case .textAndIcon:
             "text: \"\(text)\", icon: \(Image.defaultImageSample())\(flipIconPattern)"
         }
@@ -103,6 +103,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
 
     private var isFullWidthPattern: String {
         isFullWidth ? ", isFullWidth: true" : ""
+    }
+
+    private var accessibilityLabelValue: String {
+        "app_components_common_icon_a11y".localized()
     }
 
     override func updateCode() {
