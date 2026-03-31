@@ -218,7 +218,7 @@ struct SpaceIllustrationIcon: View {
                 .resizable()
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
-                .oudsForegroundColor(theme.colors.contentStatusInfo)
+                .foregroundColor(theme.colors.contentStatusInfo)
                 .padding(.horizontal, asset.extraPadding)
                 .padding(.vertical, asset.extraPadding)
                 .frame(width: 24)
@@ -249,7 +249,7 @@ private struct SpaceIllustrationRectangle: View {
 
     var body: some View {
         Rectangle()
-            .oudsForegroundColor(theme.colors.contentStatusInfo)
+            .foregroundColor(theme.colors.contentStatusInfo)
             .frame(width: width, height: height)
     }
 }
@@ -290,9 +290,9 @@ struct SpaceHeaderDescription: View {
 
     var body: some View {
         content
-            .oudsBorder(style: theme.borders.styleDrag, width: theme.borders.widthThin, radius: theme.borders.radiusNone, color: theme.colors.bgInverseLow)
+            .border(style: theme.borders.styleDrag, width: theme.borders.widthThin, radius: theme.borders.radiusNone, color: theme.colors.bgInverseLow)
             .padding(.all, theme.spaces.fixedMedium)
-            .oudsBackground(theme.colors.surfaceSecondary)
+            .background(theme.colors.surfaceSecondary)
     }
 
     @ViewBuilder private var content: some View {
@@ -310,7 +310,7 @@ struct SpaceHeaderDescription: View {
         case .horizontal:
             HStack(alignment: .center, spacing: theme.spaces.fixedNone) {
                 Text(firstText)
-                    .oudsForegroundStyle(theme.colors.contentDefault)
+                    .foregroundStyle(theme.colors.contentDefault)
                     .bodyDefaultMedium(theme)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
@@ -318,7 +318,7 @@ struct SpaceHeaderDescription: View {
 
                 if let secondText {
                     Text(secondText)
-                        .oudsForegroundStyle(theme.colors.contentDefault)
+                        .foregroundStyle(theme.colors.contentDefault)
                         .bodyDefaultMedium(theme)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
@@ -326,7 +326,7 @@ struct SpaceHeaderDescription: View {
         case .verical:
             VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
                 Text(firstText)
-                    .oudsForegroundStyle(theme.colors.contentDefault)
+                    .foregroundStyle(theme.colors.contentDefault)
                     .bodyDefaultMedium(theme)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
@@ -334,7 +334,7 @@ struct SpaceHeaderDescription: View {
 
                 if let secondText {
                     Text(secondText)
-                        .oudsForegroundStyle(theme.colors.contentDefault)
+                        .foregroundStyle(theme.colors.contentDefault)
                         .bodyDefaultMedium(theme)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
@@ -350,7 +350,7 @@ struct SpaceHeaderDescription: View {
 
                 Text(firstText)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .oudsForegroundStyle(theme.colors.contentDefault)
+                    .foregroundStyle(theme.colors.contentDefault)
                     .bodyDefaultMedium(theme)
 
                 SpaceIllustrationRectangle(height: paddings.bottom)

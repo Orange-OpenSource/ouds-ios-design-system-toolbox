@@ -37,7 +37,7 @@ struct IllustrationIconDecorative: View {
                 Image("ic_token")
                     .resizable()
                     .renderingMode(.template)
-                    .oudsForegroundColor(theme.colors.contentStatusInfo)
+                    .foregroundColor(theme.colors.contentStatusInfo)
                     .frame(width: token, height: token, alignment: .center)
                     .accessibilityHidden(true)
             }
@@ -108,7 +108,7 @@ struct IllustrationIconWithTypography: View {
                 Image("ic_token")
                     .resizable()
                     .renderingMode(.template)
-                    .oudsForegroundColor(theme.colors.contentStatusInfo)
+                    .foregroundColor(theme.colors.contentStatusInfo)
                     .frame(width: token, height: token, alignment: .center)
                     .accessibilityHidden(true)
             }
@@ -158,15 +158,15 @@ private struct TypographyCategoryHeader: View {
                     .resizable()
                     .renderingMode(.template)
                     .aspectRatio(contentMode: .fit)
-                    .oudsForegroundStyle(theme.colors.contentStatusInfo)
+                    .foregroundStyle(theme.colors.contentStatusInfo)
             }
             .frame(height: size, alignment: .center)
 
             illustration(for: namedFont, in: theme)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .oudsForegroundStyle(theme.colors.contentDefault)
+                .foregroundStyle(theme.colors.contentDefault)
         }
         .padding(.all, theme.spaces.fixedMedium)
-        .oudsBackground(theme.colors.surfaceSecondary)
+        .background(theme.colors.surfaceSecondary)
     }
 }

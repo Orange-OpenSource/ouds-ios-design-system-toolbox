@@ -28,7 +28,7 @@ struct IllustrationFont: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             illustration(for: namedFont, in: theme)
-                .oudsForegroundStyle(theme.colors.contentDefault)
+                .foregroundStyle(theme.colors.contentDefault)
 
             Group {
                 Text(familyText)
@@ -39,7 +39,7 @@ struct IllustrationFont: View {
             }
             .bodyDefaultMedium(theme)
             .fixedSize(horizontal: false, vertical: true)
-            .oudsForegroundStyle(theme.colors.contentMuted)
+            .foregroundStyle(theme.colors.contentMuted)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, theme.spaces.fixedXsmall)

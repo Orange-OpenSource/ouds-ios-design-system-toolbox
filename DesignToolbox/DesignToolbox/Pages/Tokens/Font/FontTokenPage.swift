@@ -31,7 +31,7 @@ struct FontTokenPage: View {
                 IllustrationFont(namedFont: fontName)
             }
         }
-        .oudsGridMargin(.horizontal)
+        .gridMargin(.horizontal)
         .navigationTitle(LocalizedStringKey("app_tokens_typography_tech"))
     }
 }

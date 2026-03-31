@@ -91,12 +91,12 @@ struct DesignToolboxElementsPage: View {
                     #endif
                 }
             }
-            .oudsGridMargin(.horizontal)
+            .gridMargin(.horizontal)
             .padding(.vertical, theme.spaces.fixedMedium)
             .navigationBarMenus()
             #endif
         }
-        .oudsBackground(theme.colors.bgPrimary)
+        .background(theme.colors.bgPrimary)
         .oudsNavigationTitle(title)
     }
 
@@ -128,13 +128,13 @@ struct DesignToolboxElementsPage: View {
         .background(.regularMaterial, in: .capsule)
         .hoverEffect(.highlight)
         .accessibilityFocused($requestFocus, equals: .some(id: element.id))
-        .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
+        .requestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
         #else
         Card(
             title: Text(LocalizedStringKey(element.name)),
             illustration: element.illustration)
             .accessibilityFocused($requestFocus, equals: .some(id: element.id))
-            .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
+            .requestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
         #endif
     }
 }

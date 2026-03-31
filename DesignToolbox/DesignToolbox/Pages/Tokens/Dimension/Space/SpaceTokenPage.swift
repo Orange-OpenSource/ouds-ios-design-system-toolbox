@@ -52,7 +52,7 @@ struct SpaceTokenPage: View {
                 header("app_tokens_dimension_space_rowGap_tech")
             }
         }
-        .oudsGridMargin(.horizontal)
+        .gridMargin(.horizontal)
     }
 
     // MARK: Common helpers

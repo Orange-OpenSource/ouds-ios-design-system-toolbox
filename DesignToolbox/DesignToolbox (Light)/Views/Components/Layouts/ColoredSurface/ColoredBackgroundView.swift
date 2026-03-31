@@ -45,7 +45,7 @@ private struct ColoredSurfaceItems: View {
 
     var body: some View {
         VStack(alignment: .center, spacing: theme.spaces.scaledSmallMobile) {
-            Text("Text").oudsForegroundColor(theme.colors.contentDefault)
+            Text("Text").foregroundColor(theme.colors.contentDefault)
             OUDSButton(text: "Button", appearance: .default, style: .default) {}
             OUDSLink(text: "Link", indicator: .next) {}
         }

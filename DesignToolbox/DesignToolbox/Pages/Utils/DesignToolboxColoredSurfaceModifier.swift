@@ -27,11 +27,11 @@ struct DesignToolboxColoredSurfaceModifier: ViewModifier {
     func body(content: Content) -> some View {
         if coloredSurface {
             content
-                .oudsColoredSurface(theme.colorModes.onBrandPrimary)
+                .coloredSurface(theme.colorModes.onBrandPrimary)
                 .modifier(DebugWCAG21RatiosModifier())
         } else {
             content
-                .oudsBackground(theme.colors.bgPrimary)
+                .background(theme.colors.bgPrimary)
         }
     }
 }

@@ -46,11 +46,11 @@ struct DesignToolboxTokenIllustration<TokenIllustration>: View where TokenIllust
             VStack(alignment: .leading) {
                 Text(tokenName)
                     .bodyStrongLarge(theme)
-                    .oudsForegroundStyle(theme.colors.contentDefault)
+                    .foregroundStyle(theme.colors.contentDefault)
                 if let tokenValue {
                     Text(tokenValue)
                         .bodyDefaultMedium(theme)
-                        .oudsForegroundStyle(theme.colors.contentMuted)
+                        .foregroundStyle(theme.colors.contentMuted)
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)

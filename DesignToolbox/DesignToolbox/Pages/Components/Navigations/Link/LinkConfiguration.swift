@@ -52,7 +52,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     private var coloredSurfaceCodeModifierPattern: String {
-        onColoredSurface ? ".oudsColoredSurface(theme.colorModes.onBrandPrimary)" : ""
+        onColoredSurface ? ".coloredSurface(theme.colorModes.onBrandPrimary)" : ""
     }
 
     private var disableCodePattern: String {
