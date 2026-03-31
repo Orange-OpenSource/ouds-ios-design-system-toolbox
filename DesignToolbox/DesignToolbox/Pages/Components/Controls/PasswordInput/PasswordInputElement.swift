@@ -35,7 +35,7 @@ private struct PasswordInputIllustration: View {
     @State private var password: String = ""
 
     var body: some View {
-        OUDSPasswordInput(label: "app_components_common_label_label".localized(),
+        OUDSPasswordInput("app_components_common_label_label",
                           password: $password,
                           helperText: String(localized: "app_components_passwordInputHelperText_label"))
     }

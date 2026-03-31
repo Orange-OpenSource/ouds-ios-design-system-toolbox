@@ -38,6 +38,6 @@ struct AlertElements: DesignToolboxElement {
 struct AlertIllustration: View {
 
     var body: some View {
-        OUDSAlertMessage(label: "app_components_common_label_label".localized())
+        OUDSAlertMessage("app_components_common_label_label")
     }
 }

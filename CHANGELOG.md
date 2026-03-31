@@ -6,10 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.3.0...develop)
 
+### Added
+
+- [Library] `LocalizedStringKey` and `Bundle` initializers for components using `String` for texts and accessibility labels (Orange-OpenSource/ouds-ios#1366)
+- [Library] `oudsTintColor` view modifier helper to apply tint color from a `MultipleColorSemanticToken` (Orange-OpenSource/ouds-ios#1370)
+- [Library] `verbose` flag on `OUDSLogger` to suppress debug and log messages by default (Orange-OpenSource/ouds-ios#1365)
+
 ### Changed
 
-- [DesignToolbox] Migration from Xcode 26.2 to Xcode 26.3 (Orange-OpenSource/ouds-ios#1375)
-- [DesignToolbox] Use new naming of API for colors and borders (Orange-OpenSource/ouds-ios#1346)
+- [Library] Update illustrations in documentation for `alert message` component (Orange-OpenSource/ouds-ios#1359)
+- [Library] View modifiers and methods prefixed by `ouds` are replaced by same names without such `ouds` (Orange-OpenSource/ouds-ios#1346)
+- [DesignToolbox] Move from Xcode 26.2 to Xcode 26.3 (Orange-OpenSource/ouds-ios#1375)
 
 ## [1.3.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.2.0...1.3.0) - 2026-03-26
 
