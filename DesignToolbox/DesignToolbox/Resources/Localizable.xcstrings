@@ -1465,19 +1465,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bullet list هي عنصر واجهة مستخدم يساعد على عرض عناصر نصية فردية ذات صلة مجمعة معًا؛ عادةً ما تبدأ برقم أو برمز نقطي."
+            "value" : "القائمة النقطية هي عنصر واجهة مستخدم يُساعد على عرض عناصر نصية فردية مترابطة مُجمّعة معًا؛ تبدأ العناصر عادةً برقم أو نقطة. تُعرف القائمة النقطية أيضًا باسم \"القائمة غير المرتبة\" أو \"القائمة المرتبة\"، وهي ليست عنصرًا تفاعليًا افتراضيًا، على الرغم من أن عناصر النص تدعم روابط النص التشعبي."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bullet list is a UI element that helps to view in related individual text items grouped together; items usually starting with a number or a bullet."
+            "value" : "Bullet list is a UI element that helps to view in related individual text items grouped together; items usually starting with a number or a bullet. Bullet list is also known as “Unordered list” or “Ordered list” and is not an interactive element by default, although text items can support hypertext links."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant BulletList est un élément d'interface utilisateur qui permet de visualiser des éléments de texte individuels liés, regroupés par ordre alphabétique ; ces éléments commencent généralement par un chiffre ou une puce."
+            "value" : "La liste à puces est un élément d'interface utilisateur permettant d'afficher des éléments de texte individuels regroupés par thèmes ; ces éléments commencent généralement par un chiffre ou une puce. Également appelée « liste non ordonnée » ou « liste ordonnée », la liste à puces n'est pas interactive par défaut, bien que ses éléments puissent contenir des liens hypertextes."
           }
         }
       }
@@ -1735,19 +1735,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الزر هو عنصر من عناصر واجهة المستخدم يُفعّل إجراءً أو حدثًا، ويُستخدم لبدء المهام أو تأكيد إجراء ما. يظهر الزر بتصميمات وأنماط وحالات مختلفة للإشارة إلى التسلسل الهرمي أو التركيز."
+            "value" : "الزر هو عنصر من عناصر واجهة المستخدم يقوم بتشغيل إجراء أو حدث، ويستخدم لبدء المهام أو تأكيد إجراء ما."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Button is a UI element that triggers an action or event, and is used to initiate tasks or confirming an action. Button appears in different layouts, styles and states to indicate hierarchy or emphasis."
+            "value" : "Button is a UI element that triggers an action or event, and is used to initiate tasks or confirming an action."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le bouton est un élément de l'interface utilisateur qui déclenche une action ou un événement et est utilisé pour lancer des tâches ou confirmer une action. Le bouton apparaît dans différentes mises en page, styles et états pour indiquer la hiérarchie ou l'accent."
+            "value" : "Un bouton est un élément d'interface utilisateur qui déclenche une action ou un événement, et sert à lancer des tâches ou à confirmer une action."
           }
         }
       }
@@ -2224,19 +2224,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "شريحة التصفية هي عنصر من عناصر واجهة المستخدم يسمح بتحديد أو إلغاء تحديد خيار ضمن سلسلة، وتُستخدم عادةً لتسجيل قرارات التصفية. تتيح شريحة التصفية تصفية المحتوى عن طريق تحديدها أو إلغاء تحديدها. يمكن تفعيلها أو تعطيلها لتحسين النتائج المعروضة، وتبقى شرائح التصفية المحددة مميزة بصريًا للإشارة إلى عوامل التصفية النشطة."
+            "value" : "شريحة التصفية هي عنصر من عناصر واجهة المستخدم يسمح بتحديد أو إلغاء تحديد خيار ضمن سلسلة، وتستخدم عادة لالتقاط قرارات التصفية."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Filter chip is a UI element that allows to select or deselect an option within a series, and is commonly used to capture filtering decisions. Filter chip allows to filter content by being selected or deselected. It can be toggled \"On\" or \"Off\" to refine displayed results, and selected Filter Chips remain visually distinct to indicate active filters."
+            "value" : "Filter chip is a UI element that allows to select or deselect an option within a series, and is commonly used to capture filtering decisions."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La puce de filtre est un élément d'interface utilisateur qui permet de sélectionner ou de désélectionner une option au sein d'une série et est couramment utilisée pour capturer les décisions de filtrage. La puce de filtre permet de filtrer le contenu en étant sélectionné ou désélectionné. Il peut être activé ou désactivé pour affiner les résultats affichés, et les puces de filtre sélectionnées restent visuellement distinctes pour indiquer les filtres actifs."
+            "value" : "Le filtre est un élément d'interface utilisateur qui permet de sélectionner ou de désélectionner une option au sein d'une série, et est couramment utilisé pour enregistrer les décisions de filtrage."
           }
         }
       }
@@ -2297,19 +2297,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "شريحة الاقتراحات هي عنصر من عناصر واجهة المستخدم يسمح بعرض خيارات مُوصى بها أو تنبؤية بناءً على مدخلات المستخدم أو سياقه، وتُستخدم عادةً لتسجيل قرارات التصفية. عادةً ما تكون شريحة الاقتراحات غير مُحددة افتراضيًا، ويمكن النقر عليها أو الضغط عليها لتطبيق الاقتراح، مما يُبسط عملية الإدخال ويُحسّن سهولة الاستخدام."
+            "value" : "شريحة الاقتراحات هي عنصر من عناصر واجهة المستخدم يسمح بعرض خيارات موصى بها أو تنبؤية بناءً على مدخلات المستخدم أو السياق، وتستخدم عادة لالتقاط قرارات التصفية."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suggestion chip is a UI element that allows to present recommended or predictive options based on user's input or context, and is commonly used to capture filtering decisions. Suggestion chip is typically non-selected by default and can be tapped or clicked to apply the suggestion, streamlining input and enhancing usability."
+            "value" : "Suggestion chip is a UI element that allows to present recommended or predictive options based on user’s input or context, and is commonly used to capture filtering decisions."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La puce de suggestion est un élément de l'interface utilisateur qui permet de présenter des options recommandées ou prédictives en fonction de la saisie ou du contexte de l'utilisateur, et est couramment utilisée pour capturer les décisions de filtrage. La puce de suggestion n'est généralement pas sélectionnée par défaut et peut être appuyée ou cliquée pour appliquer la suggestion, rationalisant ainsi la saisie et améliorant la convivialité."
+            "value" : "La puce de suggestion est un élément d'interface utilisateur qui permet de présenter des options recommandées ou prédictives en fonction des entrées ou du contexte de l'utilisateur, et est couramment utilisée pour capturer les décisions de filtrage."
           }
         }
       }
@@ -3550,19 +3550,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الرابط هو عنصر من عناصر واجهة المستخدم يسمح بالتنقل من مكان إلى آخر، سواء داخل الصفحة نفسها، أو عبر صفحات مختلفة من نفس المصدر، أو إلى مصدر خارجي. تتمثل الوظيفة الأساسية للرابط في التنقل، وهو يُظهر طبيعته التفاعلية بصريًا ودلاليًا."
+            "value" : "الرابط هو عنصر واجهة مستخدم يسمح بالانتقال من مكان إلى آخر، سواء داخل نفس الصفحة أو عبر صفحات مختلفة في نفس المورد، أو إلى مورد خارجي."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Link is a UI element that allows to navigate from one location to another, either within the same page or across different pages in the same resource, or to an external resource. Link's primary function is navigation and it communicates its interactive nature visually and semantically."
+            "value" : "Link is a UI element that allows to navigate from one location to another, either within the same page or across different pages in the same resource, or to an external resource."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le lien est un élément d'interface utilisateur qui permet de naviguer d'un emplacement à un autre, soit au sein de la même page, soit à travers différentes pages de la même ressource, soit vers une ressource externe. La fonction principale du lien est la navigation et communique sa nature interactive visuellement et sémantiquement."
+            "value" : "Un lien est un élément d'interface utilisateur qui permet de naviguer d'un emplacement à un autre, que ce soit au sein de la même page, entre différentes pages de la même ressource ou vers une ressource externe."
           }
         }
       }
@@ -4528,19 +4528,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "حقل إدخال النص هو عنصر من عناصر واجهة المستخدم يسمح بإدخال البيانات النصية المكونة من سطر واحد أو تعديلها أو تحديدها. يُعد حقل إدخال النص أحد أهم عناصر النماذج المستخدمة لالتقاط مدخلات المستخدم مثل الأسماء وعناوين البريد الإلكتروني وكلمات المرور أو استعلامات البحث. يوفر هذا الحقل تجربة مرئية وتفاعلية لإدخال النصوص، مع دعمه للعلامات والرموز التوضيحية والأوصاف وملاحظات التحقق."
+            "value" : "إدخال النص هو عنصر من عناصر واجهة المستخدم يسمح بكتابة أو تحرير أو تحديد سطر واحد من البيانات النصية، مثل الأسماء أو عناوين البريد الإلكتروني أو استعلامات البحث."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Text input is a UI element that allows to enter, edit, or select single-line textual data. Text input is one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries. It provides a visual and interactive affordance for text entry while supporting labels, placeholders, icons, descriptions, and validation feedback."
+            "value" : "Text input is a UI element that allows to type, edit, or select single line of textual data, such as names, emails or search queries."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le champ de saisie de texte est un élément d'interface utilisateur permettant de saisir, modifier ou sélectionner des données textuelles sur une seule ligne. C'est l'un des éléments de formulaire les plus fondamentaux pour recueillir les informations saisies par l'utilisateur, telles que les noms, adresses e-mail, mots de passe ou requêtes de recherche. Il offre une interface visuelle et interactive pour la saisie de texte et prend en charge les étiquettes, les espaces réservés, les icônes, les descriptions et les retours de validation."
+            "value" : "Le champ de saisie de texte est un élément d'interface utilisateur qui permet de saisir, de modifier ou de sélectionner une seule ligne de données textuelles, telles que des noms, des adresses électroniques ou des requêtes de recherche."
           }
         }
       }
