@@ -500,9 +500,6 @@
 		953E02472F7D3AE100550DD6 /* PinCodeInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02422F7D3AE100550DD6 /* PinCodeInputPage.swift */; };
 		953E02482F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02402F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift */; };
 		953E02492F7D3AE100550DD6 /* PinCodeInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02412F7D3AE100550DD6 /* PinCodeInputElement.swift */; };
-		953E024A2F7D3AE100550DD6 /* PinCodeInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02422F7D3AE100550DD6 /* PinCodeInputPage.swift */; };
-		953E024B2F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02402F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift */; };
-		953E024C2F7D3AE100550DD6 /* PinCodeInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02412F7D3AE100550DD6 /* PinCodeInputElement.swift */; };
 		953E024D2F7D3AE100550DD6 /* PinCodeInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02422F7D3AE100550DD6 /* PinCodeInputPage.swift */; };
 		953E024E2F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02402F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift */; };
 		953E024F2F7D3AE100550DD6 /* PinCodeInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02412F7D3AE100550DD6 /* PinCodeInputElement.swift */; };
@@ -4583,7 +4580,6 @@
 				9589F0472EB7D67B00134487 /* NameSpace+PaddingInset.swift in Sources */,
 				9589F0482EB7D67B00134487 /* SpaceGapTokenIllustrations.swift in Sources */,
 				9589F0492EB7D67B00134487 /* SizeTokenPage.swift in Sources */,
-				953E024B2F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */,
 				9589F04A2EB7D67B00134487 /* ComponentPage.swift in Sources */,
 				95CE05592EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				9589F04B2EB7D67B00134487 /* CheckboxItemElement.swift in Sources */,
@@ -4659,8 +4655,6 @@
 				9589F08A2EB7D67B00134487 /* InputTagPage.swift in Sources */,
 				9589F08B2EB7D67B00134487 /* SpaceTokenElement.swift in Sources */,
 				9589F08C2EB7D67B00134487 /* DividerConfiguration.swift in Sources */,
-				953E024C2F7D3AE100550DD6 /* PinCodeInputElement.swift in Sources */,
-				953E024A2F7D3AE100550DD6 /* PinCodeInputPage.swift in Sources */,
 				9589F08D2EB7D67B00134487 /* DividerElement.swift in Sources */,
 				9589F08E2EB7D67B00134487 /* DividerElements.swift in Sources */,
 				9589F08F2EB7D67B00134487 /* DividerPage.swift in Sources */,
@@ -5892,7 +5886,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "998-add-pin-code-input-component";
 				kind = branch;
 			};
 		};

@@ -150,14 +150,6 @@ extension OUDSPinCodeInput.Status: @retroactive CaseIterable, @retroactive Custo
         }
     }
 
-    public var technicalDescription: String {
-        if case let .error(message) = self {
-            ".error(message: \"\(message)\")"
-        } else {
-            ".\(description.lowercased())"
-        }
-    }
-
     private var chipData: OUDSChipPickerData<Self> {
         OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
@@ -189,19 +181,11 @@ extension OUDSPinCodeInput.Length: @retroactive CaseIterable, @retroactive Custo
         }
     }
 
-    public var technicalDescription: String {
-        description.lowercased()
-    }
-
     private var chipData: OUDSChipPickerData<Self> {
         OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {
         allCases.map(\.chipData)
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(description)
     }
 }

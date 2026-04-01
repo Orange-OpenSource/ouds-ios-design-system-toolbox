@@ -61,7 +61,15 @@ struct PinCodeInputDemo: View {
                              isOutlined: configurationModel.isOutlined,
                              status: configurationModel.status)
         case .eight:
-            ScrollView(.horizontal) {
+            if UIDevice.current.userInterfaceIdiom == .phone { // For iPad we have enough space, not for iPhone
+                ScrollView(.horizontal) {
+                    OUDSPinCodeInput($configurationModel.value,
+                                     length: .eight,
+                                     helperText: configurationModel.helperText,
+                                     isOutlined: configurationModel.isOutlined,
+                                     status: configurationModel.status)
+                }
+            } else {
                 OUDSPinCodeInput($configurationModel.value,
                                  length: .eight,
                                  helperText: configurationModel.helperText,
