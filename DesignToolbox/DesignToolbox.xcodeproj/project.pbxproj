@@ -933,6 +933,11 @@
 		9593907C2EC251E7000DBE95 /* DesignToolboxTokenIllustrationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A732D3F9D840068B807 /* DesignToolboxTokenIllustrationBackground.swift */; };
 		9593907E2EC254D9000DBE95 /* SpacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593907D2EC254D9000DBE95 /* SpacesView.swift */; };
 		9593907F2EC254D9000DBE95 /* SpacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593907D2EC254D9000DBE95 /* SpacesView.swift */; };
+		9596D2102F7D7E5700DB6136 /* PinCodeInputSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596D20F2F7D7E5700DB6136 /* PinCodeInputSnapshotsTestsTestCase.swift */; };
+		9596D2122F7D80D000DB6136 /* OrangeTheme+PinCodeInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596D2112F7D80D000DB6136 /* OrangeTheme+PinCodeInputSnapshotsTests.swift */; };
+		9596D2142F7D811800DB6136 /* SoshTheme+PinCodeInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596D2132F7D811800DB6136 /* SoshTheme+PinCodeInputSnapshotsTests.swift */; };
+		9596D2162F7D813D00DB6136 /* OrangeCompactTheme+PinCodeInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596D2152F7D813D00DB6136 /* OrangeCompactTheme+PinCodeInputSnapshotsTests.swift */; };
+		9596D2182F7D817700DB6136 /* WireframeTheme+PinCodeInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596D2172F7D817700DB6136 /* WireframeTheme+PinCodeInputSnapshotsTests.swift */; };
 		9598006F2EBCC714007BE0EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9598006B2EBCC714007BE0EA /* Assets.xcassets */; };
 		959800702EBCC714007BE0EA /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006C2EBCC714007BE0EA /* ComponentsView.swift */; };
 		959800712EBCC714007BE0EA /* DesignToolbox_Light_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006D2EBCC714007BE0EA /* DesignToolbox_Light_App.swift */; };
@@ -1493,6 +1498,11 @@
 		959390492EC24A1A000DBE95 /* SizesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizesView.swift; sourceTree = "<group>"; };
 		959390642EC24D1F000DBE95 /* NamedSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedSpace.swift; sourceTree = "<group>"; };
 		9593907D2EC254D9000DBE95 /* SpacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacesView.swift; sourceTree = "<group>"; };
+		9596D20F2F7D7E5700DB6136 /* PinCodeInputSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeInputSnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
+		9596D2112F7D80D000DB6136 /* OrangeTheme+PinCodeInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+PinCodeInputSnapshotsTests.swift"; sourceTree = "<group>"; };
+		9596D2132F7D811800DB6136 /* SoshTheme+PinCodeInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+PinCodeInputSnapshotsTests.swift"; sourceTree = "<group>"; };
+		9596D2152F7D813D00DB6136 /* OrangeCompactTheme+PinCodeInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+PinCodeInputSnapshotsTests.swift"; sourceTree = "<group>"; };
+		9596D2172F7D817700DB6136 /* WireframeTheme+PinCodeInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+PinCodeInputSnapshotsTests.swift"; sourceTree = "<group>"; };
 		959800602EBCC6E2007BE0EA /* DesignToolbox (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9598006B2EBCC714007BE0EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9598006C2EBCC714007BE0EA /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
@@ -2675,6 +2685,7 @@
 				518EC0A72E1FF2C000FC77E4 /* RadioButtonSnapshotsTestsTestCase.swift */,
 				518EC0AF2E1FF2E800FC77E4 /* SwitchSnapshotsTestsTestCase.swift */,
 				072BB4532E68937E00A4DF2D /* TextInputSnapshotsTestsTestCase.swift */,
+				9596D20F2F7D7E5700DB6136 /* PinCodeInputSnapshotsTestsTestCase.swift */,
 				FCF02BB32F30E4A600F2013F /* PasswordInputSnapshotsTestsTestCase.swift */,
 			);
 			path = Controls;
@@ -2683,6 +2694,7 @@
 		51F49C972E57452600D50BC4 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				9596D2132F7D811800DB6136 /* SoshTheme+PinCodeInputSnapshotsTests.swift */,
 				515EE9A32E2133F200A60E96 /* SoshTheme+ChipsSnapshotsTests.swift */,
 				518EC0962E1FF28300FC77E4 /* SoshTheme+CheckboxSnapshotsTests.swift */,
 				518EC0992E1FF28300FC77E4 /* SoshTheme+RadioButtonSnapshotsTests.swift */,
@@ -2701,6 +2713,7 @@
 				518EC0732E1FF23800FC77E4 /* OrangeTheme+RadioButtonSnapshotsTests.swift */,
 				518EC0742E1FF23800FC77E4 /* OrangeTheme+SwitchSnapshotsTests.swift */,
 				072BB4572E69726D00A4DF2D /* OrangeTheme+TextInputSnapshotsTests.swift */,
+				9596D2112F7D80D000DB6136 /* OrangeTheme+PinCodeInputSnapshotsTests.swift */,
 				FCF02BB72F30EC7700F2013F /* OrangeTheme+PasswordInputSnapshotsTests.swift */,
 			);
 			path = Controls;
@@ -2709,6 +2722,7 @@
 		51F49C992E57452B00D50BC4 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				9596D2152F7D813D00DB6136 /* OrangeCompactTheme+PinCodeInputSnapshotsTests.swift */,
 				FC70E6712F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift */,
 				51A217542E325ED500562BE0 /* OrangeCompactTheme+ChipsSnapshotsTests.swift */,
 				51A217572E325ED500562BE0 /* OrangeCompactTheme+CheckboxSnapshotsTests.swift */,
@@ -2722,6 +2736,7 @@
 		51F49C9B2E57453200D50BC4 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				9596D2172F7D817700DB6136 /* WireframeTheme+PinCodeInputSnapshotsTests.swift */,
 				51A217652E325F7F00562BE0 /* WireframeTheme+ChipsSnapshotsTests.swift */,
 				51A217682E325F7F00562BE0 /* WireframeTheme+CheckboxSnapshotsTests.swift */,
 				51A2176B2E325F7F00562BE0 /* WireframeTheme+RadioButtonSnapshotsTests.swift */,
@@ -3924,6 +3939,7 @@
 				518EC0762E1FF23800FC77E4 /* OrangeTheme+RadioButtonSnapshotsTests.swift in Sources */,
 				518EC09B2E1FF28300FC77E4 /* SoshTheme+DividerSnapshotsTests.swift in Sources */,
 				518EC09C2E1FF28300FC77E4 /* SoshTheme+LinkSnapshotsTests.swift in Sources */,
+				9596D2162F7D813D00DB6136 /* OrangeCompactTheme+PinCodeInputSnapshotsTests.swift in Sources */,
 				518EC09D2E1FF28300FC77E4 /* SoshTheme+SwitchSnapshotsTests.swift in Sources */,
 				518EC09E2E1FF28300FC77E4 /* SoshTheme+CheckboxSnapshotsTests.swift in Sources */,
 				FC736E962F3E2DEE0019FC13 /* OrangeTheme+AlertMessageSnapshotsTests.swift in Sources */,
@@ -3959,6 +3975,7 @@
 				51952A992D3FA32E0068B807 /* BorderTokenElement.swift in Sources */,
 				51952A9A2D3FA32E0068B807 /* NamedColor+Opacity.swift in Sources */,
 				51952A9B2D3FA32E0068B807 /* NamedColor+Overlay.swift in Sources */,
+				9596D2182F7D817700DB6136 /* WireframeTheme+PinCodeInputSnapshotsTests.swift in Sources */,
 				51952A9C2D3FA32E0068B807 /* NamedColor+Repository.swift in Sources */,
 				51417C212E1BF57F000266C8 /* TokensSizeSnapshotsTestsTestCase.swift in Sources */,
 				072BB4582E69726D00A4DF2D /* OrangeTheme+TextInputSnapshotsTests.swift in Sources */,
@@ -4031,6 +4048,7 @@
 				51A217712E325F7F00562BE0 /* WireframeTheme+RadioButtonSnapshotsTests.swift in Sources */,
 				51417C272E1BF6B8000266C8 /* TokensOpacitySnapshotsTestsTestCase.swift in Sources */,
 				95EDFD192EC73BB9006DE593 /* Image+extensions.swift in Sources */,
+				9596D2122F7D80D000DB6136 /* OrangeTheme+PinCodeInputSnapshotsTests.swift in Sources */,
 				6DB260E22CD0F0520091F72E /* NameSpace+PaddingBlock.swift in Sources */,
 				95CE05512EC33E9800ACE41C /* SizeIllustrations.swift in Sources */,
 				6DB260E32CD0F0520091F72E /* NameSpace+ColumnGap.swift in Sources */,
@@ -4056,6 +4074,7 @@
 				51E5999D2E26AC2A002BCB27 /* UserDefaultsWrapper.swift in Sources */,
 				51A217822E325FE600562BE0 /* WireframeTheme+TokensBorderSnapshotsTests.swift in Sources */,
 				5134420B2D75B880000B5DE4 /* CheckboxConfiguration.swift in Sources */,
+				9596D2102F7D7E5700DB6136 /* PinCodeInputSnapshotsTestsTestCase.swift in Sources */,
 				5134420C2D75B880000B5DE4 /* CheckboxElements.swift in Sources */,
 				6DB260DD2CD0F01F0091F72E /* NamedSpace+Scaled.swift in Sources */,
 				6DB260DC2CD0F0000091F72E /* DesignToolboxSectionHeaderStyle.swift in Sources */,
@@ -4082,6 +4101,7 @@
 				FC736EA02F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift in Sources */,
 				950288A12EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */,
 				076227662DA90C65009C3632 /* DividerPage.swift in Sources */,
+				9596D2142F7D811800DB6136 /* SoshTheme+PinCodeInputSnapshotsTests.swift in Sources */,
 				6DB260DA2CD0EF9D0091F72E /* NamedSize+IconDecorative.swift in Sources */,
 				07AB458A2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */,
 				51952A8C2D3FA22A0068B807 /* OrangeTheme+TokensFontSnapshotsTests.swift in Sources */,
