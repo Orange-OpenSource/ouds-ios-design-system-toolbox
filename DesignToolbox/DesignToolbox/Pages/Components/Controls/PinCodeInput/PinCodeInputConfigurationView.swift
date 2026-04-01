@@ -21,7 +21,7 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
 
     // MARK: Stored properties
 
-    private static let defaultHelperText = String(localized: "app_components_pinCodeInputHelperText_label")
+    private static let defaultHelperText = ""
     private static let defaultErrorText = String(localized: "app_components_common_errorMessage_tech")
 
     // MARK: Published properties
@@ -57,7 +57,7 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
 
     override init() {
         value = ""
-        length = .four
+        length = .six
         helperText = Self.defaultHelperText
         errorText = Self.defaultErrorText
         isOutlined = false
