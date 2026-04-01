@@ -26,6 +26,7 @@ struct ComponentsPage: View {
         DividerElements(),
         LinkElement(),
         PasswordInputElement(),
+        PinCodeInputElement(),
         RadioElements(),
         SwitchElements(),
         TabBarElement(),

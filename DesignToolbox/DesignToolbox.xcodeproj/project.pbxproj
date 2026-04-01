@@ -494,6 +494,18 @@
 		953DC15F2ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1532ED0995600D14D44 /* TabBarConfigurationView.swift */; };
 		953DC1602ED0995600D14D44 /* TabBarElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1542ED0995600D14D44 /* TabBarElement.swift */; };
 		953DC1612ED0995600D14D44 /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1552ED0995600D14D44 /* TabBarPage.swift */; };
+		953E02442F7D3AE100550DD6 /* PinCodeInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02422F7D3AE100550DD6 /* PinCodeInputPage.swift */; };
+		953E02452F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02402F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift */; };
+		953E02462F7D3AE100550DD6 /* PinCodeInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02412F7D3AE100550DD6 /* PinCodeInputElement.swift */; };
+		953E02472F7D3AE100550DD6 /* PinCodeInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02422F7D3AE100550DD6 /* PinCodeInputPage.swift */; };
+		953E02482F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02402F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift */; };
+		953E02492F7D3AE100550DD6 /* PinCodeInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02412F7D3AE100550DD6 /* PinCodeInputElement.swift */; };
+		953E024A2F7D3AE100550DD6 /* PinCodeInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02422F7D3AE100550DD6 /* PinCodeInputPage.swift */; };
+		953E024B2F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02402F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift */; };
+		953E024C2F7D3AE100550DD6 /* PinCodeInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02412F7D3AE100550DD6 /* PinCodeInputElement.swift */; };
+		953E024D2F7D3AE100550DD6 /* PinCodeInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02422F7D3AE100550DD6 /* PinCodeInputPage.swift */; };
+		953E024E2F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02402F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift */; };
+		953E024F2F7D3AE100550DD6 /* PinCodeInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02412F7D3AE100550DD6 /* PinCodeInputElement.swift */; };
 		955A40DB2EC788CE001D7F84 /* Image+extensions Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */; };
 		955A40DC2EC7894C001D7F84 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
@@ -1464,6 +1476,9 @@
 		953DC1532ED0995600D14D44 /* TabBarConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurationView.swift; sourceTree = "<group>"; };
 		953DC1542ED0995600D14D44 /* TabBarElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarElement.swift; sourceTree = "<group>"; };
 		953DC1552ED0995600D14D44 /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
+		953E02402F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeInputConfigurationView.swift; sourceTree = "<group>"; };
+		953E02412F7D3AE100550DD6 /* PinCodeInputElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeInputElement.swift; sourceTree = "<group>"; };
+		953E02422F7D3AE100550DD6 /* PinCodeInputPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeInputPage.swift; sourceTree = "<group>"; };
 		955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions Tests.swift"; sourceTree = "<group>"; };
 		957D5EE02F2BB2740055128A /* BulletListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListsView.swift; sourceTree = "<group>"; };
 		957D5EE42F2BB2940055128A /* ContentDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDisplayView.swift; sourceTree = "<group>"; };
@@ -2497,6 +2512,7 @@
 			isa = PBXGroup;
 			children = (
 				FCDDFBB22F2B69DA00389D8D /* PasswordInput */,
+				953E02432F7D3AE100550DD6 /* PinCodeInput */,
 				513442062D75B880000B5DE4 /* Checkbox */,
 				515EE9842E21329B00A60E96 /* Chip */,
 				0745C1852D7A0351006B3A1F /* Radio */,
@@ -2954,6 +2970,16 @@
 				953DC1552ED0995600D14D44 /* TabBarPage.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		953E02432F7D3AE100550DD6 /* PinCodeInput */ = {
+			isa = PBXGroup;
+			children = (
+				953E02402F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift */,
+				953E02412F7D3AE100550DD6 /* PinCodeInputElement.swift */,
+				953E02422F7D3AE100550DD6 /* PinCodeInputPage.swift */,
+			);
+			path = PinCodeInput;
 			sourceTree = "<group>";
 		};
 		957D5EDF2F2BB2660055128A /* ContentDisplay */ = {
@@ -3983,6 +4009,7 @@
 				950288A82EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */,
 				51ABCD272E183226006CD6C0 /* SoshTheme+TokensBorderSnapshotsTests.swift in Sources */,
 				0745C18A2D7A03B8006B3A1F /* RadioElements.swift in Sources */,
+				953E02452F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */,
 				51952A7C2D3FA1510068B807 /* OrangeTheme+TokensBorderSnapshotsTests.swift in Sources */,
 				518EC0B42E1FF38400FC77E4 /* OrangeTheme+BadgeSnapshotsTests.swift in Sources */,
 				51D6D5862D887E36009CD879 /* CheckboxIndeterminateElement.swift in Sources */,
@@ -4130,6 +4157,7 @@
 				51A217812E325FE600562BE0 /* WireframeTheme+TokensElevationSnapshotsTests.swift in Sources */,
 				515EE98F2E21329B00A60E96 /* ChipElements.swift in Sources */,
 				51417C1F2E1BF4FB000266C8 /* TokensElevationSnapshotsTestsTestCase.swift in Sources */,
+				953E02462F7D3AE100550DD6 /* PinCodeInputElement.swift in Sources */,
 				51952A832D3FA1AC0068B807 /* OrangeTheme+TokensSizeSnapshotsTests.swift in Sources */,
 				51952A712D3F9D720068B807 /* DesignToolboxTokenIllustration.swift in Sources */,
 				51952A892D3FA20D0068B807 /* OrangeTheme+TokensElevationSnapshotsTests.swift in Sources */,
@@ -4139,6 +4167,7 @@
 				07CAE7682CEE20A600D6C5D1 /* SpaceTokenCommonIllustration.swift in Sources */,
 				6DE5F47D2CC696120008E774 /* ThemeSelection.swift in Sources */,
 				6D8F9C542CC160660078A10E /* SpaceTokenPage.swift in Sources */,
+				953E02442F7D3AE100550DD6 /* PinCodeInputPage.swift in Sources */,
 				07304A6A2D429F9F009320BA /* LinkConfiguration.swift in Sources */,
 				07304A6B2D429F9F009320BA /* LinkElement.swift in Sources */,
 				51ABCD282E183226006CD6C0 /* SoshTheme+TokensFontSnapshotsTests.swift in Sources */,
@@ -4232,6 +4261,7 @@
 				95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */,
 				95CE057C2EC3D2AF00ACE41C /* NamedBorders.swift in Sources */,
 				07F75A3D2CC653BD0004F1AD /* NameSpace+PaddingInset.swift in Sources */,
+				953E02482F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */,
 				075C713B2CECC7DA00B93FC3 /* SpaceGapTokenIllustrations.swift in Sources */,
 				075114DC2CB7D28D00B8B759 /* SizeTokenPage.swift in Sources */,
 				07F0AFD72CFDB3CC00D334DD /* ComponentPage.swift in Sources */,
@@ -4307,6 +4337,8 @@
 				FCA849192E9FF00500DBCE76 /* InputTagPage.swift in Sources */,
 				077CCE572CB426090059CC28 /* SpaceTokenElement.swift in Sources */,
 				076227672DA90C65009C3632 /* DividerConfiguration.swift in Sources */,
+				953E02492F7D3AE100550DD6 /* PinCodeInputElement.swift in Sources */,
+				953E02472F7D3AE100550DD6 /* PinCodeInputPage.swift in Sources */,
 				076227682DA90C65009C3632 /* DividerElement.swift in Sources */,
 				076227692DA90C65009C3632 /* DividerElements.swift in Sources */,
 				0762276A2DA90C65009C3632 /* DividerPage.swift in Sources */,
@@ -4551,6 +4583,7 @@
 				9589F0472EB7D67B00134487 /* NameSpace+PaddingInset.swift in Sources */,
 				9589F0482EB7D67B00134487 /* SpaceGapTokenIllustrations.swift in Sources */,
 				9589F0492EB7D67B00134487 /* SizeTokenPage.swift in Sources */,
+				953E024B2F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */,
 				9589F04A2EB7D67B00134487 /* ComponentPage.swift in Sources */,
 				95CE05592EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				9589F04B2EB7D67B00134487 /* CheckboxItemElement.swift in Sources */,
@@ -4626,6 +4659,8 @@
 				9589F08A2EB7D67B00134487 /* InputTagPage.swift in Sources */,
 				9589F08B2EB7D67B00134487 /* SpaceTokenElement.swift in Sources */,
 				9589F08C2EB7D67B00134487 /* DividerConfiguration.swift in Sources */,
+				953E024C2F7D3AE100550DD6 /* PinCodeInputElement.swift in Sources */,
+				953E024A2F7D3AE100550DD6 /* PinCodeInputPage.swift in Sources */,
 				9589F08D2EB7D67B00134487 /* DividerElement.swift in Sources */,
 				9589F08E2EB7D67B00134487 /* DividerElements.swift in Sources */,
 				9589F08F2EB7D67B00134487 /* DividerPage.swift in Sources */,
@@ -4738,6 +4773,7 @@
 				9589F1212EB7D67E00134487 /* NameSpace+PaddingInset.swift in Sources */,
 				9589F1222EB7D67E00134487 /* SpaceGapTokenIllustrations.swift in Sources */,
 				9589F1232EB7D67E00134487 /* SizeTokenPage.swift in Sources */,
+				953E024E2F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */,
 				9589F1242EB7D67E00134487 /* ComponentPage.swift in Sources */,
 				95CE05582EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				9589F1252EB7D67E00134487 /* CheckboxItemElement.swift in Sources */,
@@ -4813,6 +4849,8 @@
 				9589F1642EB7D67E00134487 /* InputTagPage.swift in Sources */,
 				9589F1652EB7D67E00134487 /* SpaceTokenElement.swift in Sources */,
 				9589F1662EB7D67E00134487 /* DividerConfiguration.swift in Sources */,
+				953E024F2F7D3AE100550DD6 /* PinCodeInputElement.swift in Sources */,
+				953E024D2F7D3AE100550DD6 /* PinCodeInputPage.swift in Sources */,
 				9589F1672EB7D67E00134487 /* DividerElement.swift in Sources */,
 				9589F1682EB7D67E00134487 /* DividerElements.swift in Sources */,
 				9589F1692EB7D67E00134487 /* DividerPage.swift in Sources */,
