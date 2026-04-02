@@ -14,32 +14,6 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: - Pin Code Input Status Kind
-
-/// A simple enum representing the kind of status for the pin code input picker,
-/// decoupled from the associated message in `OUDSPinCodeInput.Status`.
-enum PinCodeInputStatusKind: CaseIterable, CustomStringConvertible, Hashable {
-    case enabled
-    case error
-
-    var description: String {
-        switch self {
-        case .enabled:
-            String(localized: "app_common_enabled_tech")
-        case .error:
-            String(localized: "app_components_common_error_tech")
-        }
-    }
-
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
-}
-
 // MARK: - Pin Code Input Configuration Model
 
 /// The model shared between `PinCodeInputPageConfiguration` view and `PinCodeInputPageComponent` view.
@@ -155,7 +129,6 @@ struct PinCodeInputConfigurationView: View {
                                chips: PinCodeInputStatusKind.chips)
 
                 DesignToolboxEditContentDisclosure {
-                    // TODO: #998 - Wording
                     switch configurationModel.statusKind {
                     case .error:
                         DesignToolboxTextField(text: $configurationModel.errorText, label: "Error")
@@ -188,6 +161,32 @@ extension OUDSPinCodeInput.Length: @retroactive CaseIterable, @retroactive Custo
 
     private var chipData: OUDSChipPickerData<Self> {
         OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}
+
+// MARK: - Pin Code Input Status Kind
+
+/// A simple enum representing the kind of status for the pin code input picker,
+/// decoupled from the associated message in `OUDSPinCodeInput.Status`.
+enum PinCodeInputStatusKind: CaseIterable, CustomStringConvertible, Hashable {
+    case enabled
+    case error
+
+    var description: String {
+        switch self {
+        case .enabled:
+            "enabled"
+        case .error:
+            "error"
+        }
+    }
+
+    var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {

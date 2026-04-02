@@ -3776,13 +3776,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "PIN code input is a UI element that allows to capture short, fixed-length numeric codes, typically for authentication or confirmation purposes, such as a four, six or height-digit personal identification number (PIN)"
+            "value" : "PIN code input is a UI element that allows to capture short, fixed-length numeric codes, typically for authentication or confirmation purposes, such as a four, six or eight-digit personal identification number (PIN)"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La saisie du code PIN est un élément d'interface utilisateur qui permet de capturer des codes numériques courts et de longueur fixe, généralement à des fins d'authentification ou de confirmation, tels qu'un numéro d'identification personnel (PIN) à quatre, six ou plusieurs chiffres."
+            "value" : "La saisie du code PIN est un élément d'interface utilisateur qui permet de capturer des codes numériques courts et de longueur fixe, généralement à des fins d'authentification ou de confirmation, tels qu'un numéro d'identification personnel (PIN) à quatre, six ou huits chiffres."
           }
         }
       }
@@ -6251,13 +6251,20 @@
             "value" : "Item %lld"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item %lld"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Item %lld"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "Orange" : {
       "shouldTranslate" : false

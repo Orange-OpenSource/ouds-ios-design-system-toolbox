@@ -59,14 +59,14 @@ open class PinCodeInputSnapshotsTestsTestCase: XCTestCase {
     }
 
     // swiftlint:disable function_parameter_count
-    /// This function tests some pin copde input configuration for the given theme and color schemes on a standard surface.
+    /// This function tests some pin code input configurations for the given theme and color schemes on a standard surface.
     ///
     /// - Parameters:
-    ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors
     ///   - length: The number of boxes
-    ///   - isFull: True if all digits are filled, false if all all them are empty. Allwos ot test the placeholders for empty and not-empty boxes.
-    ///   - helperText: The helper text to dispkay for enabled status
+    ///   - isFull: True if all digits are filled, false if all of them are empty. Allows testing the placeholders for empty and non-empty boxes.
+    ///   - helperText: The helper text to display for the enabled status
     ///   - outlined: Flag to know if outlined
     ///   - status: The status of the component
     @MainActor private func testPinCodeInput(theme: OUDSTheme,
@@ -125,8 +125,6 @@ struct TestPinCodeInputView: View {
     let helperText: String
     let outlined: Bool
     let status: OUDSPinCodeInput.Status
-
-    @State private var value = ""
 
     // MARK: - Body
 
