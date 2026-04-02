@@ -14,6 +14,32 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// MARK: - Pin Code Input Status Kind
+
+/// A simple enum representing the kind of status for the pin code input picker,
+/// decoupled from the associated message in `OUDSPinCodeInput.Status`.
+enum PinCodeInputStatusKind: CaseIterable, CustomStringConvertible, Hashable {
+    case enabled
+    case error
+
+    var description: String {
+        switch self {
+        case .enabled:
+            String(localized: "app_common_enabled_tech")
+        case .error:
+            String(localized: "app_components_common_error_tech")
+        }
+    }
+
+    var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}
+
 // MARK: - Pin Code Input Configuration Model
 
 /// The model shared between `PinCodeInputPageConfiguration` view and `PinCodeInputPageComponent` view.
@@ -42,14 +68,21 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var status: OUDSPinCodeInput.Status {
+    @Published var statusKind: PinCodeInputStatusKind {
         didSet { updateCode() }
     }
 
     @Published var errorText: String {
-        didSet {
-            status = .error(message: errorText)
-            updateCode()
+        didSet { updateCode() }
+    }
+
+    /// The derived `OUDSPinCodeInput.Status` from the current `statusKind` and `errorText`.
+    var status: OUDSPinCodeInput.Status {
+        switch statusKind {
+        case .enabled:
+            .enabled
+        case .error:
+            .error(message: errorText)
         }
     }
 
@@ -61,7 +94,7 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         helperText = Self.defaultHelperText
         errorText = Self.defaultErrorText
         isOutlined = false
-        status = .enabled
+        statusKind = .enabled
         super.init()
     }
 
@@ -90,9 +123,10 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
     }
 
     private var statusPattern: String {
-        if status == .enabled {
+        switch statusKind {
+        case .enabled:
             ""
-        } else {
+        case .error:
             ", status: .error(message: \"\(errorText)\")"
         }
     }
@@ -117,12 +151,12 @@ struct PinCodeInputConfigurationView: View {
                                chips: OUDSPinCodeInput.Length.chips)
 
                 OUDSChipPicker(title: "app_components_common_status_tech",
-                               selection: $configurationModel.status,
-                               chips: OUDSPinCodeInput.Status.chips)
+                               selection: $configurationModel.statusKind,
+                               chips: PinCodeInputStatusKind.chips)
 
                 DesignToolboxEditContentDisclosure {
                     // TODO: #998 - Wording
-                    switch configurationModel.status {
+                    switch configurationModel.statusKind {
                     case .error:
                         DesignToolboxTextField(text: $configurationModel.errorText, label: "Error")
                     default:
@@ -131,35 +165,6 @@ struct PinCodeInputConfigurationView: View {
                 }
             }
         }
-    }
-}
-
-// MARK: - extension of OUDS Pin Code Input Status
-
-extension OUDSPinCodeInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
-
-    nonisolated(unsafe) public static var allCases: [OUDSPinCodeInput.Status] =
-        [.enabled, .error(message: "app_components_common_errorMessage_tech".localized())]
-
-    public var description: String {
-        switch self {
-        case .enabled:
-            String(localized: "app_common_enabled_tech")
-        case .error:
-            String(localized: "app_components_common_error_tech")
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(description)
     }
 }
 
