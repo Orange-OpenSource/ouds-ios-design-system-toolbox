@@ -150,7 +150,7 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
 
 extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSButton.Style] = [.default, .loading]
+    public static let allCases: [OUDSButton.Style] = [.default, .loading]
 
     public var description: String {
         switch self {
@@ -174,7 +174,7 @@ extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomString
 
 extension OUDSButton.Appearance: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
+    public static let allCases: [OUDSButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
 
     // Note: Not localized because it is a technical name
     public var description: String {
