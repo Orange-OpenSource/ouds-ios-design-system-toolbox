@@ -209,7 +209,7 @@ struct TagConfigurationView: View {
 
 extension OUDSTag.Size: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSTag.Size] = [.default, .small]
+    public static let allCases: [OUDSTag.Size] = [.default, .small]
 
     public var description: String {
         switch self {
@@ -253,7 +253,7 @@ extension OUDSTag.Status.Leading: @retroactive CustomStringConvertible {
 
 extension OUDSTag.Status.Category: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSTag.Status.Category] = [.neutral, .accent, .info, .negative, .positive, .warning]
+    public static let allCases: [OUDSTag.Status.Category] = [.neutral, .accent, .info, .negative, .positive, .warning]
 
     public var description: String {
         switch self {
@@ -283,7 +283,7 @@ extension OUDSTag.Status.Category: @retroactive CaseIterable, @retroactive Custo
 
 extension OUDSTag.Appearance: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSTag.Appearance] = [.emphasized, .muted]
+    public static let allCases: [OUDSTag.Appearance] = [.emphasized, .muted]
 
     public var description: String {
         switch self {
@@ -309,7 +309,7 @@ extension OUDSTag.Appearance: @retroactive CaseIterable, @retroactive CustomStri
 
 extension OUDSTag.Shape: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSTag.Shape] = [.rounded, .square]
+    public static let allCases: [OUDSTag.Shape] = [.rounded, .square]
 
     public var description: String {
         switch self {

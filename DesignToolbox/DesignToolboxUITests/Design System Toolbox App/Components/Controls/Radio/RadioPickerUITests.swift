@@ -38,6 +38,7 @@ final class RadioPickerUITests: AppTestCase {
         goToComponentsSheet(app)
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
         tapButton(withWording: "app_components_radioButton_tech", app)
         tapButton(withWording: "app_components_radioPicker_tech", app)
 
