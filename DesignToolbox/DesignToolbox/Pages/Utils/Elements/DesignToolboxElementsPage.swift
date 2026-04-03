@@ -33,12 +33,11 @@ struct DesignToolboxElementsPage: View {
     // MARK: Body
 
     var body: some View {
-        #if os(iOS) || os(visionOS)
-        NavigationView {
+        #if os(iOS)
+        OUDSNavigationStack {
             elementsPage
-                .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationViewStyle(.stack)
+        .navigationBarTitleDisplayMode(.inline)
         #else // macOS
         // Trick to be sure the view refreshes because NavigationView not always refreshed with macOS
         NavigationSplitView {

@@ -100,7 +100,7 @@ struct DesignToolboxElementPage: View {
         .listStyle(.plain)
         .padding(.top, theme.spaces.fixedNone)
         .background(theme.colors.bgPrimary)
-        .navigationTitle(name.localized())
         .requestAccessibleFocus(_requestFocus)
+        .oudsToolBarTop(name.localized())
     }
 }

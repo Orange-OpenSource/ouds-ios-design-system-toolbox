@@ -21,26 +21,6 @@ final class ToolBarTopConfigurationModel: ComponentConfiguration {
 
     // MARK: Properties
 
-    enum DemoOption: CaseIterable, CustomStringConvertible {
-        case navigation
-        case sheet
-
-        var description: String {
-            switch self {
-            case .navigation: return "Navigation"
-            case .sheet: return "Sheet"
-            }
-        }
-
-        private var chipData: OUDSChipPickerData<Self> {
-            OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-        }
-
-        static var chips: [OUDSChipPickerData<Self>] {
-            allCases.map(\.chipData)
-        }
-    }
-
     @Published var demoOption: DemoOption {
         didSet { updateCode() }
     }
@@ -57,7 +37,11 @@ final class ToolBarTopConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var leading: Leading {
+    @Published var hideBackButton: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var leading: LeadingTrailingType {
         didSet { updateCode() }
     }
 
@@ -65,11 +49,15 @@ final class ToolBarTopConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var isLeadingEnabled: Bool = true {
+    @Published var isLeadingEmphasized: Bool {
         didSet { updateCode() }
     }
 
-    @Published var trailing: Trailing {
+    @Published var isLeadingEnabled: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var trailing: LeadingTrailingType {
         didSet { updateCode() }
     }
 
@@ -77,9 +65,22 @@ final class ToolBarTopConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var isTrailingEnabled: Bool = true {
+    @Published var isTrailingEmphasized: Bool {
         didSet { updateCode() }
     }
+
+    @Published var isTrailingEnabled: Bool {
+        didSet { updateCode() }
+    }
+
+
+    @Published var ios26ButtonStyle: OUDSToolbarItem.ActionStyle = .default {
+        didSet { updateCode() }
+    }
+
+    @Published var showModalSheet: Bool = false
+    @Published var showFullCover: Bool = false
+    @Published var showNavigation: Bool = false
 
     // MARK: Initializer
 
@@ -88,56 +89,135 @@ final class ToolBarTopConfigurationModel: ComponentConfiguration {
         title = "app_components_topAppBar_title_label".localized()
         largeTitle = false
         subTitle = ""
-        leading = .back
+
+        hideBackButton = false
+        leading = .none
         numberOfLeading = 1
         isLeadingEnabled = true
+        isLeadingEmphasized = false
 
         trailing = .none
         numberOfTrailing = 1
         isTrailingEnabled = true
+        isTrailingEmphasized = false
 
-        super.init()
+        ios26ButtonStyle = .default
+
+        super.init(useOneColorSchemedDemo: true)
     }
 
     deinit {}
 
+    // MARK: Component configuration
+
     @MainActor
     func leadingItems(for theme: OUDSTheme) -> [OUDSToolbarItem] {
-        switch leading {
-        case .none:
-            return []
-        case .back:
-            return [OUDSToolbarItem(navigation: .back, label: "Back", action: {})]
-        case .close:
-            return [OUDSToolbarItem(navigation: .close, label: "Close", action: {})]
-        case .label:
-            return Array(repeating: OUDSToolbarItem(label: "Label", action: {}), count: numberOfLeading)
-        case .icon:
-            let icon = Image.defaultImage(prefixedBy: theme.name)
-            return Array(repeating: OUDSToolbarItem(icon: icon, accessibilityLabel: "", action: {}), count: numberOfLeading)
+        var items: [OUDSToolbarItem] = []
+        for _ in 1...numberOfLeading {
+            if let item = layout(for: theme, type: leading, isEnabled: isLeadingEnabled, isEmphasized: isLeadingEmphasized) {
+                items.append(item)
+            }
+        }
+
+        // Add the close button for sheet
+        if showFullCover || showModalSheet {
+            return [OUDSToolbarItem(navigation: .close)] + items
+        } else {
+            return items
         }
     }
 
     @MainActor
     func trailingItems(for theme: OUDSTheme) -> [OUDSToolbarItem] {
+        var items = [OUDSToolbarItem]()
+        for _ in 1...numberOfTrailing {
+            guard let item = layout(for: theme, type: trailing, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized) else {
+                return []
+            }
 
-        let action: (() -> Void)? = isTrailingEnabled ? { print("Tapped") } : nil
-        switch trailing {
+            items.append(item)
+        }
+
+        return items
+    }
+
+    @MainActor
+    private func layout(for theme: OUDSTheme, type: LeadingTrailingType, isEnabled: Bool, isEmphasized: Bool = false) -> OUDSToolbarItem? {
+
+        let action: (() -> Void)? = isEnabled ? {} : nil
+
+        var actionType: OUDSToolbarItem.ActionType?
+        switch type {
         case .none:
-            return []
+            actionType = nil
         case .label:
-            return Array(repeating: OUDSToolbarItem(label: "Label", action: action), count: numberOfTrailing)
+            let label = "app_components_common_label_label".localized()
+            actionType = .label(label, emphasized: isEmphasized, action: action)
         case .icon:
-            let icon = Image.defaultImage(prefixedBy: theme.name)
-            return Array(repeating: OUDSToolbarItem(icon: icon, accessibilityLabel: "", action: action), count: numberOfTrailing)
+            let asset = Image.defaultImage(prefixedBy: theme.name)
+            actionType = .icon(asset: asset, accessibilityLabel: "", action: action)
+        }
+
+        guard let actionType else {
+            return nil
+        }
+
+        #if os(iOS)
+        if #available(iOS 26, *) {
+            return OUDSToolbarItem(action: actionType, style: ios26ButtonStyle)
+        } else {
+            return OUDSToolbarItem(action: actionType)
+        }
+        #else
+            return OUDSToolbarItem(action: actionType)
+        #endif
+    }
+
+    // MARK: Code update
+
+    private var hasLargeTitlePattern: String {
+        largeTitle ? ", hasLargeTitle: true" : ""
+    }
+    private var subtitlePattern: String {
+        subTitle.isEmpty ? "" : ", subtitle: \"\(subTitle)\""
+    }
+    private func actionPattern(isEnabled: Bool) -> String {
+        isEnabled ? ", action: {}" : ""
+    }
+
+    private func labelActionPattern(isEnabled: Bool, isEmphasized: Bool) -> String {
+        let emphasizedPattern = isEmphasized ? ", emphasized: true" : ""
+        return"OUDSToolbarItem(action: .label(\"Label\",\(emphasizedPattern)\(actionPattern(isEnabled: isEnabled))))"
+    }
+    private func iconActionPattern(isEnabled: Bool) -> String {
+        "OUDSToolbarItem(action: .icon(asset: Image(\"ic_heart\"), accessibilityLabel: \"Like\"\(actionPattern(isEnabled: isEnabled))))"
+    }
+
+    private func actionPattern(type: LeadingTrailingType, isEnabled: Bool, isEmphasized: Bool = false) -> String {
+        switch type {
+        case .none:
+            ""
+        case .label:
+            """
+            , leadingItems: {
+                   \(labelActionPattern(isEnabled: isEnabled, isEmphasized: isEmphasized))
+                   }
+            """
+        case .icon:
+            """
+            , trailingItems: {
+                   \(iconActionPattern(isEnabled: isEnabled))
+                   }
+            """
         }
     }
 
-    // MARK: Component Configuration
-
     override func updateCode() {
+        let leadingActionPattern = actionPattern(type: leading, isEnabled: isLeadingEnabled, isEmphasized: isLeadingEmphasized)
+        let trailingActionPattern = actionPattern(type: trailing, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized)
         code = """
-        OUDSToolBarTop()
+        SomeView()
+        .oudsToolBarTop(\"\(title)\"\(hasLargeTitlePattern)\(subtitlePattern)\(leadingActionPattern)\(trailingActionPattern))
         """
     }
 }
@@ -159,55 +239,105 @@ struct ToolBarTopConfiguration: View {
 
                 OUDSChipPicker(title: "app_components_topAppBar_demoOption_tech".localized(),
                                selection: $configurationModel.demoOption,
-                               chips: ToolBarTopConfigurationModel.DemoOption.chips)
+                               chips: DemoOption.chips)
 
-                OUDSSwitchItem("large title", isOn: $configurationModel.largeTitle)
-                OUDSChipPicker(title: "app_components_topAppBar_navigationIcon_tech".localized(),
+                OUDSSwitchItem("app_components_topAppBar_largeTitle_tech", isOn: $configurationModel.largeTitle)
+
+                // Leading configuration
+                OUDSHorizontalDivider()
+
+                if configurationModel.demoOption == .navigation {
+                    OUDSSwitchItem("app_components_topAppBar_hideBackButton_tech", isOn: $configurationModel.hideBackButton)
+                }
+
+                OUDSChipPicker(title: "app_components_topAppBar_leading_tech".localized(),
                                selection: $configurationModel.leading,
-                               chips: Leading.chips)
+                               chips: LeadingTrailingType.chips)
 
                 switch configurationModel.leading {
-                case .none, .back, .close:
-                    EmptyView()
                 case .label, .icon:
                     Stepper("app_components_tabBar_itemCount_label" <- "\(configurationModel.numberOfLeading)",
                             value: $configurationModel.numberOfLeading,
                             in: 1 ... 3)
-                        .padding(.horizontal, theme.spaces.fixedMedium)
-                        .bodyDefaultMedium(theme)
+                    .padding(.horizontal, theme.spaces.fixedMedium)
+                    .bodyDefaultMedium(theme)
+
+                    if #available(iOS 26.0, *) {
+                    } else {
+                        if configurationModel.leading == .label {
+                            OUDSSwitchItem("app_components_topAppBar_Emphasized_tech", isOn: $configurationModel.isLeadingEmphasized)
+                        }
+                    }
+                default:
+                    EmptyView()
                 }
 
-                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.isLeadingEnabled)
-
-                OUDSChipPicker(title: "app_components_topAppBar_actionIcon_tech".localized(),
-                               selection: $configurationModel.trailing,
-                               chips: Trailing.chips)
-                switch configurationModel.trailing {
+                switch configurationModel.leading {
                 case .none:
                     EmptyView()
+                default:
+                    OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.isLeadingEnabled)
+                }
+
+                // Trailing configuration
+                OUDSHorizontalDivider()
+
+                OUDSChipPicker(title: "app_components_topAppBar_trailing_tech".localized(),
+                               selection: $configurationModel.trailing,
+                               chips: LeadingTrailingType.chips)
+
+                switch configurationModel.trailing {
                 case .label, .icon:
                     Stepper("app_components_tabBar_itemCount_label" <- "\(configurationModel.numberOfTrailing)",
                             value: $configurationModel.numberOfTrailing,
                             in: 1 ... 3)
-                        .padding(.horizontal, theme.spaces.fixedMedium)
-                        .bodyDefaultMedium(theme)
+                    .padding(.horizontal, theme.spaces.fixedMedium)
+                    .bodyDefaultMedium(theme)
+
+                    if #available(iOS 26.0, *) {
+                    } else {
+                        if configurationModel.trailing == .label {
+                            OUDSSwitchItem("app_components_topAppBar_Emphasized_tech", isOn: $configurationModel.isTrailingEmphasized)
+                        }
+                    }
+
+                default:
+                    EmptyView()
                 }
-                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.isTrailingEnabled)
+
+                switch configurationModel.trailing {
+                case .none:
+                    EmptyView()
+                default:
+                    OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.isTrailingEnabled)
+                }
+
+                if #available(iOS 26.0, *),
+                   configurationModel.trailing == .icon ||
+                    configurationModel.leading == .icon ||
+                    configurationModel.trailing == .label ||
+                    configurationModel.leading == .label {
+                    
+                    OUDSHorizontalDivider()
+                    
+                    OUDSChipPicker(title: "app_components_topAppBar_ios26ButtonStyle_tech",
+                                   selection: $configurationModel.ios26ButtonStyle,
+                                   chips: OUDSToolbarItem.ActionStyle.chips)
+                }
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.title, label: "app_components_topAppBar_title_tech")
-                    DesignToolboxTextField(text: $configurationModel.subTitle, label: "app_components_topAppBar_subtitle_tech")
+                    if #available(iOS 26, *) {
+                        DesignToolboxTextField(text: $configurationModel.subTitle, label: "app_components_topAppBar_subtitle_tech")
+                    }
                 }
             }
-            .navigationBarTitleDisplayMode(.large)
         }
     }
 }
 
-enum Leading: CaseIterable, CustomStringConvertible {
+enum LeadingTrailingType: CaseIterable, CustomStringConvertible {
     case none
-    case back
-    case close
     case label
     case icon
 
@@ -215,14 +345,10 @@ enum Leading: CaseIterable, CustomStringConvertible {
         switch self {
         case .none:
             return "app_components_common_none_tech"
-        case .back:
-            return "app_components_topAppBar_backNavigationIcon_tech"
-        case .close:
-            return "app_components_topAppBar_closeNavigationIcon_tech"
         case .label:
-            return "app_components_common_label_label" //TODO: app_components_common_label_tech
+            return "app_components_common_label_tech"
         case .icon:
-            return "app_components_topAppBar_customNavigationIcon_tech"
+            return "app_components_common_icon_tech"
         }
     }
 
@@ -235,19 +361,39 @@ enum Leading: CaseIterable, CustomStringConvertible {
     }
 }
 
-enum Trailing: CaseIterable, CustomStringConvertible {
-    case none
-    case label
-    case icon
+enum DemoOption: CaseIterable, CustomStringConvertible {
+    case navigation
+    case modalSheet
+    case fullCover
 
     var description: String {
         switch self {
-        case .none:
-            return "app_components_common_none_tech"
-        case .label:
-            return "app_components_common_label_label" //TODO: app_components_common_label_tech
-        case .icon:
-            return "app_components_topAppBar_customNavigationIcon_tech"
+        case .navigation: return "app_components_topAppBar_demoOption_navigation_tech"
+        case .modalSheet: return "app_components_topAppBar_demoOption_modalSheet_tech"
+        case .fullCover: return "app_components_topAppBar_demoOption_fullCover_tech"
+        }
+    }
+
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}
+
+extension OUDSToolbarItem.ActionStyle: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+    nonisolated(unsafe) public static let allCases: [OUDSToolbarItem.ActionStyle] = [.default, .proiminent, .tinted]
+
+    public var description: String {
+        switch self {
+        case .default:
+            "app_components_topAppBar_actionType_default_tech"
+        case .proiminent:
+            "app_components_topAppBar_actionType_proiminent_tech"
+        case .tinted:
+            "app_components_topAppBar_actionType_tinted_tech"
         }
     }
 

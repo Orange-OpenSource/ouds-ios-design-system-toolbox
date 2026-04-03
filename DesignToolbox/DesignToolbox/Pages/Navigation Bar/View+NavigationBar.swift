@@ -19,49 +19,25 @@ import SwiftUI
 extension View {
 
     func navigationBarMenus(title: String) -> some View {
-        modifier(ToolbarTopModifier(title: title))
+        self.oudsToolBarTop(title, trailingItems: {
+            OUDSToolbarItem {
+                ThemeSelectionButton()
+            }
+            OUDSToolbarItem {
+                ColorSchemeSelectionButton()
+            }
+        })
     }
 
     func bottomToolbar() -> some View {
-        modifier(ToolbarBottomModifier())
-    }
-}
-
-// MARK: - Toolbar Top Modifier
-
-private struct ToolbarTopModifier: ViewModifier {
-
-    let title: String
-
-    func body(content: Content) -> some View {
-        OUDSToolbarTop(title: title, trailingItems: {
+        self.oudsToolBarBottom {
             OUDSToolbarItem {
                 ThemeSelectionButton()
             }
+        } trailingItems: {
             OUDSToolbarItem {
                 ColorSchemeSelectionButton()
             }
-        }) {
-            content
-        }
-    }
-}
-
-// MARK: - Toolbar Bottom Modifier
-
-private struct ToolbarBottomModifier: ViewModifier {
-
-    func body(content: Content) -> some View {
-        OUDSToolbarBottom(leadingItems: {
-            OUDSToolbarItem {
-                ThemeSelectionButton()
-            }
-        }, trailingItems: {
-            OUDSToolbarItem {
-                ColorSchemeSelectionButton()
-            }
-        }) {
-            content
         }
     }
 }

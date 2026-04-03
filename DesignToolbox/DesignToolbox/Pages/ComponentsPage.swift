@@ -37,18 +37,18 @@ struct ComponentsPage: View {
     ]
     #else
     var componentElements: [DesignToolboxElement] = [
-//        BadgeElement(),
-//        BulletListElement(),
-//        ButtonElement(),
-//        ColoredSurfaceElement(),
-//        CheckboxElements(),
-//        ChipElements(),
-//        DividerElements(),
-//        LinkElement(),
-//        PasswordInputElement(),
-//        RadioElements(),
-//        SwitchElements(),
-//        TabBarElement(),
+        BadgeElement(),
+        BulletListElement(),
+        ButtonElement(),
+        ColoredSurfaceElement(),
+        CheckboxElements(),
+        ChipElements(),
+        DividerElements(),
+        LinkElement(),
+        PasswordInputElement(),
+        RadioElements(),
+        SwitchElements(),
+        TabBarElement(),
         ToolBarTopElement(),
         TagElements(),
         TextAreaElement(),
@@ -60,10 +60,10 @@ struct ComponentsPage: View {
         // Tab bar element demo designed for iOS / iPhones
         // Demo is broken for other platforms (navigation troubles with this tab view integrate elsewhere)
         #if !os(iOS)
-        componentElements.removeAll(where: { $0 is TabBarElement || $0 is ToolBarTopElement })
+        componentElements.removeAll(where: { $0 is TabBarElement })
         #elseif canImport(UIKit)
         if UIDevice.current.userInterfaceIdiom == .pad {
-            componentElements.removeAll(where: { $0 is TabBarElement || $0 is ToolBarTopElement })
+            componentElements.removeAll(where: { $0 is TabBarElement })
         }
         #endif
     }

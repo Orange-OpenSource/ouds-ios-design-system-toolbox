@@ -12,9 +12,20 @@
 //
 
 import OUDSSwiftUI
+import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: Tool bar top page
+
+#if !os(iOS)
+
+struct ToolBarTopPage: View {
+    var body: some View {
+        Text("Become soon available")
+    }
+}
+
+#else
 
 struct ToolBarTopPage: View {
 
@@ -37,53 +48,82 @@ struct ToolBarTopPage: View {
 
 struct ToolBarTopDemoSelection: View {
 
-    @State var showSheet: Bool = false
-    @State var showNavigation: Bool = false
     @ObservedObject var configurationModel: ToolBarTopConfigurationModel
 
     var body: some View {
-        switch configurationModel.demoOption {
-        case .navigation:
-            NavigationLink(destination: ToolBarTopDemo(configurationModel: configurationModel), isActive: $showNavigation) {
-                OUDSButton(text: "Show Demo") {
-                    showNavigation = true
-                }
-            }
-        case .sheet:
-            OUDSButton(text: "Show Demo") {
-                showSheet = true
-            }
-            .sheet(isPresented: $showSheet) {
-                NavigationView {
-                    ToolBarTopDemo(configurationModel: configurationModel)
+        NavigationLink(destination: demo(), isActive: $configurationModel.showNavigation) {
+            OUDSButton(text: "app_components_topAppBar_demo_showDemo_label", appearance: .strong) {
+                switch configurationModel.demoOption {
+                case .navigation:
+                    configurationModel.showNavigation = true
+                case .modalSheet:
+                    configurationModel.showModalSheet = true
+                case .fullCover:
+                    configurationModel.showFullCover = true
                 }
             }
         }
+        .sheet(isPresented: $configurationModel.showModalSheet) {
+            OUDSNavigationStack(content: demo)
+                .modalSheetDragindicator()
+        }
+        .fullScreenCover(isPresented: $configurationModel.showFullCover) {
+            OUDSNavigationStack(content: demo)
+                .modalSheetDragindicator()
+        }
+    }
+
+    @ViewBuilder
+    private func demo() -> some View {
+        ToolBarTopDemo(configurationModel: configurationModel)
     }
 }
 
 struct ToolBarTopDemo: View {
 
     @ObservedObject var configurationModel: ToolBarTopConfigurationModel
+    @Environment(\.presentationMode) private var presentationMode
     @Environment(\.theme) private var theme
-    @State private var showDestination: Bool = false
-    @State private var showSheet: Bool = false
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .center, spacing: 0) {
-                Text("Some content")
+            VStack(alignment: .center, spacing: theme.spaces.fixedLarge) {
+                OUDSAlertMessage(label: "app_components_topAppBar_demo_content_label".localized(),
+                                 status: .warning)
+
+                OUDSButton(text: "app_components_topAppBar_demo_backToConfiguration_label".localized(), appearance: .strong) {
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
             .frame(maxWidth: .infinity)
+            .padding(.top, 20)
         }
+        .oudsBackground(theme.colors.overlayModal)
+        .navigationBarBackButtonHidden(configurationModel.hideBackButton)
         .oudsToolBarTop(configurationModel.title,
-                        largeTitle: configurationModel.largeTitle,
-                        subtitle: subTitle,
-                        leadingItems: { configurationModel.leadingItems(for: theme) },
-                        trailingItems: { configurationModel.trailingItems(for: theme) })
+                        hasLargeTitle: configurationModel.largeTitle,
+                        subtitle: appliedSubtitle) {
+            configurationModel.leadingItems(for: theme)
+        } trailingItems: {
+            configurationModel.trailingItems(for: theme)
+        }
     }
 
-    private var subTitle: String? {
+    private var appliedSubtitle: String? {
         configurationModel.subTitle.isEmpty ? nil : configurationModel.subTitle
     }
 }
+
+extension View {
+
+    @ViewBuilder
+    public func modalSheetDragindicator() -> some View {
+        if #available(iOS 16.0, *) {
+            self.presentationDragIndicator(.visible)
+        } else {
+            self
+        }
+    }
+}
+
+#endif
