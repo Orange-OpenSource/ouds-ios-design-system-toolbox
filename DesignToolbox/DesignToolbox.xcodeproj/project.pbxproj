@@ -5854,7 +5854,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "copilot/optimize-source-code-and-objects";
+				branch = develop;
 				kind = branch;
 			};
 		};
