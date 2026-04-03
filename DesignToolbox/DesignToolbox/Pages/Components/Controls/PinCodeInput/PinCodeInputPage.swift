@@ -44,7 +44,6 @@ struct PinCodeInputDemo: View {
     // MARK: - Body
 
     var body: some View {
-        // FIXME: #988
         // Do not give the length to the same view as index out of bound error will occur in component
         // from the UIKit brige
         switch configurationModel.length {

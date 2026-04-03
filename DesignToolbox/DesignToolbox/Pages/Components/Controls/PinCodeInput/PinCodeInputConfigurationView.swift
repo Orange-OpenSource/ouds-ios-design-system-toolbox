@@ -120,7 +120,7 @@ struct PinCodeInputConfigurationView: View {
 
                 OUDSSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
 
-                OUDSChipPicker(title: "Length", // TODO: #988 - Wording
+                OUDSChipPicker(title: "app_components_pinCodeInput_length_tech",
                                selection: $configurationModel.length,
                                chips: OUDSPinCodeInput.Length.chips)
 
@@ -131,9 +131,9 @@ struct PinCodeInputConfigurationView: View {
                 DesignToolboxEditContentDisclosure {
                     switch configurationModel.statusKind {
                     case .error:
-                        DesignToolboxTextField(text: $configurationModel.errorText, label: "Error")
+                        DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_pinCodeInput_error_label")
                     default:
-                        DesignToolboxTextField(text: $configurationModel.helperText, label: "Helper")
+                        DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_pinCodeInput_helper_label")
                     }
                 }
             }
@@ -179,14 +179,14 @@ enum PinCodeInputStatusKind: CaseIterable, CustomStringConvertible, Hashable {
     var description: String {
         switch self {
         case .enabled:
-            "enabled"
+            "app_common_enabled_tech"
         case .error:
-            "error"
+            "app_components_common_error_tech"
         }
     }
 
     var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
     }
 
     static var chips: [OUDSChipPickerData<Self>] {
