@@ -14,28 +14,28 @@
 import OUDSComponents
 import SwiftUI
 
-// MARK: - View extensions for toolbars
+// MARK: - View extensions for toolBars
 
 extension View {
 
     func navigationBarMenus(title: String) -> some View {
         self.oudsToolBarTop(title, trailingItems: {
-            OUDSToolbarItem {
+            OUDSToolBarItem {
                 ThemeSelectionButton()
             }
-            OUDSToolbarItem {
+            OUDSToolBarItem {
                 ColorSchemeSelectionButton()
             }
         })
     }
 
-    func bottomToolbar() -> some View {
+    func bottomToolBar() -> some View {
         self.oudsToolBarBottom {
-            OUDSToolbarItem {
+            OUDSToolBarItem {
                 ThemeSelectionButton()
             }
         } trailingItems: {
-            OUDSToolbarItem {
+            OUDSToolBarItem {
                 ColorSchemeSelectionButton()
             }
         }

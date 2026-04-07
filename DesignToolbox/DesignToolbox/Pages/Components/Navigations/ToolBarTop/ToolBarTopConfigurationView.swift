@@ -74,7 +74,7 @@ final class ToolBarTopConfigurationModel: ComponentConfiguration {
     }
 
 
-    @Published var ios26ButtonStyle: OUDSToolbarItem.ActionStyle = .default {
+    @Published var ios26ButtonStyle: OUDSToolBarItem.ActionStyle = .default {
         didSet { updateCode() }
     }
 
@@ -91,17 +91,17 @@ final class ToolBarTopConfigurationModel: ComponentConfiguration {
         subTitle = ""
 
         hideBackButton = false
-        leading = .none
+        leading = .icon
         numberOfLeading = 1
         isLeadingEnabled = true
         isLeadingEmphasized = false
 
-        trailing = .none
+        trailing = .label
         numberOfTrailing = 1
         isTrailingEnabled = true
         isTrailingEmphasized = false
 
-        ios26ButtonStyle = .default
+        ios26ButtonStyle = .proiminent
 
         super.init(useOneColorSchemedDemo: true)
     }
@@ -111,8 +111,8 @@ final class ToolBarTopConfigurationModel: ComponentConfiguration {
     // MARK: Component configuration
 
     @MainActor
-    func leadingItems(for theme: OUDSTheme) -> [OUDSToolbarItem] {
-        var items: [OUDSToolbarItem] = []
+    func leadingItems(for theme: OUDSTheme) -> [OUDSToolBarItem] {
+        var items: [OUDSToolBarItem] = []
         for _ in 1...numberOfLeading {
             if let item = layout(for: theme, type: leading, isEnabled: isLeadingEnabled, isEmphasized: isLeadingEmphasized) {
                 items.append(item)
@@ -121,15 +121,15 @@ final class ToolBarTopConfigurationModel: ComponentConfiguration {
 
         // Add the close button for sheet
         if showFullCover || showModalSheet {
-            return [OUDSToolbarItem(navigation: .close)] + items
+            return [OUDSToolBarItem(navigation: .close)] + items
         } else {
             return items
         }
     }
 
     @MainActor
-    func trailingItems(for theme: OUDSTheme) -> [OUDSToolbarItem] {
-        var items = [OUDSToolbarItem]()
+    func trailingItems(for theme: OUDSTheme) -> [OUDSToolBarItem] {
+        var items = [OUDSToolBarItem]()
         for _ in 1...numberOfTrailing {
             guard let item = layout(for: theme, type: trailing, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized) else {
                 return []
@@ -142,11 +142,11 @@ final class ToolBarTopConfigurationModel: ComponentConfiguration {
     }
 
     @MainActor
-    private func layout(for theme: OUDSTheme, type: LeadingTrailingType, isEnabled: Bool, isEmphasized: Bool = false) -> OUDSToolbarItem? {
+    private func layout(for theme: OUDSTheme, type: LeadingTrailingType, isEnabled: Bool, isEmphasized: Bool = false) -> OUDSToolBarItem? {
 
         let action: (() -> Void)? = isEnabled ? {} : nil
 
-        var actionType: OUDSToolbarItem.ActionType?
+        var actionType: OUDSToolBarItem.ActionType?
         switch type {
         case .none:
             actionType = nil
@@ -164,12 +164,12 @@ final class ToolBarTopConfigurationModel: ComponentConfiguration {
 
         #if os(iOS)
         if #available(iOS 26, *) {
-            return OUDSToolbarItem(action: actionType, style: ios26ButtonStyle)
+            return OUDSToolBarItem(action: actionType, style: ios26ButtonStyle)
         } else {
-            return OUDSToolbarItem(action: actionType)
+            return OUDSToolBarItem(action: actionType)
         }
         #else
-            return OUDSToolbarItem(action: actionType)
+            return OUDSToolBarItem(action: actionType)
         #endif
     }
 
@@ -187,10 +187,10 @@ final class ToolBarTopConfigurationModel: ComponentConfiguration {
 
     private func labelActionPattern(isEnabled: Bool, isEmphasized: Bool) -> String {
         let emphasizedPattern = isEmphasized ? ", emphasized: true" : ""
-        return"OUDSToolbarItem(action: .label(\"Label\",\(emphasizedPattern)\(actionPattern(isEnabled: isEnabled))))"
+        return"OUDSToolBarItem(action: .label(\"Label\",\(emphasizedPattern)\(actionPattern(isEnabled: isEnabled))))"
     }
     private func iconActionPattern(isEnabled: Bool) -> String {
-        "OUDSToolbarItem(action: .icon(asset: Image(\"ic_heart\"), accessibilityLabel: \"Like\"\(actionPattern(isEnabled: isEnabled))))"
+        "OUDSToolBarItem(action: .icon(asset: Image(\"ic_heart\"), accessibilityLabel: \"Like\"\(actionPattern(isEnabled: isEnabled))))"
     }
 
     private func actionPattern(type: LeadingTrailingType, isEnabled: Bool, isEmphasized: Bool = false) -> String {
@@ -322,7 +322,7 @@ struct ToolBarTopConfiguration: View {
                     
                     OUDSChipPicker(title: "app_components_topAppBar_ios26ButtonStyle_tech",
                                    selection: $configurationModel.ios26ButtonStyle,
-                                   chips: OUDSToolbarItem.ActionStyle.chips)
+                                   chips: OUDSToolBarItem.ActionStyle.chips)
                 }
 
                 DesignToolboxEditContentDisclosure {
@@ -383,8 +383,8 @@ enum DemoOption: CaseIterable, CustomStringConvertible {
     }
 }
 
-extension OUDSToolbarItem.ActionStyle: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    nonisolated(unsafe) public static let allCases: [OUDSToolbarItem.ActionStyle] = [.default, .proiminent, .tinted]
+extension OUDSToolBarItem.ActionStyle: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+    nonisolated(unsafe) public static let allCases: [OUDSToolBarItem.ActionStyle] = [.default, .proiminent, .tinted]
 
     public var description: String {
         switch self {

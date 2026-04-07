@@ -39,9 +39,9 @@ private struct ToolBarTopIllustration: View {
             VStack(alignment: .center) {
             }
             .oudsToolBarTop("app_components_common_label_label".localized()) {
-                OUDSToolbarItem(navigation: .back())
+                OUDSToolBarItem(navigation: .back())
             } trailingItems: {
-                OUDSToolbarItem(action: .icon(asset: Image.defaultImage(prefixedBy: theme.name), accessibilityLabel: "", action: {}))
+                OUDSToolBarItem(action: .icon(asset: Image.defaultImage(prefixedBy: theme.name), accessibilityLabel: "", action: {}))
             }
         }
         .frame(maxHeight: 50)
