@@ -5906,7 +5906,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "998-add-pin-code-input-component";
+				branch = develop;
 				kind = branch;
 			};
 		};
