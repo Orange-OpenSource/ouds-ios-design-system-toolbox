@@ -19,7 +19,6 @@ struct MainView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-
         OUDSTabBar(selected: 0, count: 3) {
             TokensPage()
                 .tabItem {
