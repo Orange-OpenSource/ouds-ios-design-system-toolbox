@@ -131,9 +131,9 @@ struct PinCodeInputConfigurationView: View {
                 DesignToolboxEditContentDisclosure {
                     switch configurationModel.statusKind {
                     case .error:
-                        DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_pinCodeInput_error_label")
+                        DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_pinCodeInput_errorDescription_label")
                     default:
-                        DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_pinCodeInput_helper_label")
+                        DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
                     }
                 }
             }

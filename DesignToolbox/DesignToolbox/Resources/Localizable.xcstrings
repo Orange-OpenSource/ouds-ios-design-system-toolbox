@@ -3787,6 +3787,30 @@
         }
       }
     },
+    "app_components_pinCodeInput_errorDescription_label" : {
+      "comment" : "Component - Pin Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "وصف الخطأ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error description"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Message d’erreur"
+          }
+        }
+      }
+    },
     "app_components_pinCodeInput_helper_label" : {
       "comment" : "Component - PIN Code Input",
       "extractionState" : "manual",
