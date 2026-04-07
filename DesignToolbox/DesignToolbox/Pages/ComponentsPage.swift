@@ -15,6 +15,26 @@ import SwiftUI
 
 struct ComponentsPage: View {
 
+    #if !os(macOS)
+    var componentElements: [DesignToolboxElement] = [
+        AlertElements(),
+        BadgeElement(),
+        BulletListElement(),
+        ButtonElement(),
+        ColoredSurfaceElement(),
+        CheckboxElements(),
+        ChipElements(),
+        DividerElements(),
+        LinkElement(),
+        PasswordInputElement(),
+        PinCodeInputElement(),
+        RadioElements(),
+        SwitchElements(),
+        TabBarElement(),
+        TagElements(),
+        TextInputElement(),
+    ]
+    #else
     var componentElements: [DesignToolboxElement] = [
         AlertElements(),
         BadgeElement(),
@@ -32,6 +52,7 @@ struct ComponentsPage: View {
         TagElements(),
         TextInputElement(),
     ]
+    #endif
 
     init() {
         // Tab bar element demo designed for iOS / iPhones
