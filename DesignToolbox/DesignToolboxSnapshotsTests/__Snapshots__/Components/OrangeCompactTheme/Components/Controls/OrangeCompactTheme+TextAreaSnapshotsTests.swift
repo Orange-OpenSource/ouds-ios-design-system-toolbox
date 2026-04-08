@@ -15,7 +15,6 @@ import OUDSSwiftUI
 import SwiftUI
 
 // swiftlint:disable required_deinit
-// swiftlint:disable type_name
 
 // MARK: - Test Cases
 
@@ -44,4 +43,3 @@ final class OrangeCompactThemeTextAreaSnapshotsTests: TextAreaSnapshotsTestsTest
 }
 
 // swiftlint:enable required_deinit
-// swiftlint:enable type_name

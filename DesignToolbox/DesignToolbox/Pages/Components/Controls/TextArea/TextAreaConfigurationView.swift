@@ -91,6 +91,10 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var isOutlined: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var constrainedMaxWidth: Bool {
         didSet { updateCode() }
     }
@@ -110,6 +114,7 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         maxCharacters = 180
         errorText = defaultErrorText
         helperLinkText = ""
+        isOutlined = false
         constrainedMaxWidth = false
         status = .enabled
         super.init()
@@ -127,19 +132,17 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         case .plain:
             helperText.isEmpty ? nil : .plain(helperText)
         case .charactersMaxCount:
-            .charactersMaxCount(maxCharacters)
+            .charactersMaxCount(UInt16(maxCharacters))
         }
     }
 
     // MARK: Code illustration
 
     override func updateCode() {
-        // swiftlint:disable line_length
         code =
             """
-            OUDSTextArea(\(labelPattern)\(textPattern)\(placeholderPattern)\(helperTextPattern)\(helperLinkPattern)\(constrainedMaxWidthPattern)\(statusPattern))
+            OUDSTextArea(\(labelPattern)\(textPattern)\(placeholderPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
             """
-        // swiftlint:enable line_length
     }
 
     private var labelPattern: String {
@@ -169,6 +172,10 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         helperLinkText.isEmpty ? "" : ", helperLink: .init(text: \"\(helperLinkText)\") {}"
     }
 
+    private var outlinedPattern: String {
+        isOutlined ? ", isOutlined: true" : ""
+    }
+
     private var constrainedMaxWidthPattern: String {
         constrainedMaxWidth ? ", constrainedMaxWidth: true" : ""
     }
@@ -189,6 +196,8 @@ struct TextAreaConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+
+                OUDSSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
 
                 OUDSSwitchItem("app_components_common_constrainedMaxWidth_tech", isOn: $configurationModel.constrainedMaxWidth)
 
@@ -214,11 +223,11 @@ struct TextAreaConfigurationView: View {
                             Stepper(value: $configurationModel.maxCharacters, in: 10 ... 500, step: 10) {
                                 HStack {
                                     Text(LocalizedStringKey("app_components_textArea_maxCharacters_tech"))
-                                        .bodyDefaultMedium(theme)
+                                        .labelStrongMedium(theme)
                                         .foregroundColor(theme.colors.contentDefault)
                                     Spacer()
                                     Text("\(configurationModel.maxCharacters)")
-                                        .bodyDefaultMedium(theme)
+                                        .labelStrongMedium(theme)
                                         .foregroundColor(theme.colors.contentDefault)
                                 }
                             }

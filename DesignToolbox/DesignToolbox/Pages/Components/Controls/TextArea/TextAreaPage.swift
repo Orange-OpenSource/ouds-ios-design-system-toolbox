@@ -50,6 +50,7 @@ struct TextAreaDemo: View {
                      placeholder: configurationModel.placeholderText,
                      helperText: configurationModel.computedHelperText,
                      helperLink: helperLink,
+                     isOutlined: configurationModel.isOutlined,
                      constrainedMaxWidth: configurationModel.constrainedMaxWidth,
                      status: configurationModel.status)
     }
