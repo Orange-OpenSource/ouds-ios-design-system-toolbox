@@ -249,7 +249,7 @@ struct TextAreaConfigurationView: View {
 
 extension OUDSTextArea.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
 
-    nonisolated(unsafe) public static var allCases: [OUDSTextArea.Status] =
+    public static let allCases: [OUDSTextArea.Status] =
         [.enabled, .error(message: "app_components_textArea_errorDescription_label".localized()), .loading, .readOnly, .disabled]
 
     public var description: String {

@@ -19,7 +19,7 @@ import SwiftUI
 // MARK: - Test Cases
 
 /// Tests the UI rendering of the `OUDSTextArea` for each parameter with `SoshTheme`.
-final class SoshThemeTextAreasSnapshotsTests: TextAreaSnapshotsTestsTestCase {
+final class SoshThemeTextAreaSnapshotsTests: TextAreaSnapshotsTestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
     private var theme: OUDSTheme!
