@@ -50,6 +50,7 @@ struct ComponentsPage: View {
         SwitchElements(),
         TabBarElement(),
         ToolBarTopElement(),
+        ToolBarBottomElement(),
         TagElements(),
         TextAreaElement(),
         TextInputElement(),

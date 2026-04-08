@@ -1063,6 +1063,18 @@
 		FC4799D02F48562F005F349B /* WireframeTheme+InlineAlertSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799CF2F48562F005F349B /* WireframeTheme+InlineAlertSnapshotsTests.swift */; };
 		FC4799D22F485673005F349B /* OrangeTheme+InlineAlertSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799D12F485673005F349B /* OrangeTheme+InlineAlertSnapshotsTests.swift */; };
 		FC4799D42F485697005F349B /* SoshTheme+InlineAlertSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799D32F485697005F349B /* SoshTheme+InlineAlertSnapshotsTests.swift */; };
+		FC6AFD3C2F850344004615AF /* ToolBarBottomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD3A2F850344004615AF /* ToolBarBottomPage.swift */; };
+		FC6AFD3D2F850344004615AF /* ToolBarBottomConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD382F850344004615AF /* ToolBarBottomConfigurationView.swift */; };
+		FC6AFD3E2F850344004615AF /* ToolBarBottomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD392F850344004615AF /* ToolBarBottomElement.swift */; };
+		FC6AFD3F2F850344004615AF /* ToolBarBottomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD3A2F850344004615AF /* ToolBarBottomPage.swift */; };
+		FC6AFD402F850344004615AF /* ToolBarBottomConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD382F850344004615AF /* ToolBarBottomConfigurationView.swift */; };
+		FC6AFD412F850344004615AF /* ToolBarBottomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD392F850344004615AF /* ToolBarBottomElement.swift */; };
+		FC6AFD422F850344004615AF /* ToolBarBottomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD3A2F850344004615AF /* ToolBarBottomPage.swift */; };
+		FC6AFD432F850344004615AF /* ToolBarBottomConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD382F850344004615AF /* ToolBarBottomConfigurationView.swift */; };
+		FC6AFD442F850344004615AF /* ToolBarBottomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD392F850344004615AF /* ToolBarBottomElement.swift */; };
+		FC6AFD452F850344004615AF /* ToolBarBottomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD3A2F850344004615AF /* ToolBarBottomPage.swift */; };
+		FC6AFD462F850344004615AF /* ToolBarBottomConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD382F850344004615AF /* ToolBarBottomConfigurationView.swift */; };
+		FC6AFD472F850344004615AF /* ToolBarBottomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD392F850344004615AF /* ToolBarBottomElement.swift */; };
 		FC70E6722F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70E6712F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift */; };
 		FC736E8C2F3D28810019FC13 /* AlertMessageSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E8B2F3D28810019FC13 /* AlertMessageSnapshotsTestsTestCase.swift */; };
 		FC736E912F3E2DBD0019FC13 /* SoshTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E902F3E2DBD0019FC13 /* SoshTheme+AlertMessageSnapshotsTests.swift */; };
@@ -1070,6 +1082,14 @@
 		FC736E9B2F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E972F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift */; };
 		FC736EA02F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E9C2F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift */; };
 		FC8FD1582F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */; };
+		FC95B93D2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift */; };
+		FC95B93E2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift */; };
+		FC95B93F2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift */; };
+		FC95B9402F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift */; };
+		FC95B9422F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */; };
+		FC95B9432F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */; };
+		FC95B9442F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */; };
+		FC95B9452F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */; };
 		FCA849142E9FF00500DBCE76 /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
 		FCA849152E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */; };
 		FCA849162E9FF00500DBCE76 /* InputTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849132E9FF00500DBCE76 /* InputTagPage.swift */; };
@@ -1571,6 +1591,9 @@
 		FC4799CF2F48562F005F349B /* WireframeTheme+InlineAlertSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+InlineAlertSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC4799D12F485673005F349B /* OrangeTheme+InlineAlertSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+InlineAlertSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC4799D32F485697005F349B /* SoshTheme+InlineAlertSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+InlineAlertSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FC6AFD382F850344004615AF /* ToolBarBottomConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarBottomConfigurationView.swift; sourceTree = "<group>"; };
+		FC6AFD392F850344004615AF /* ToolBarBottomElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarBottomElement.swift; sourceTree = "<group>"; };
+		FC6AFD3A2F850344004615AF /* ToolBarBottomPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarBottomPage.swift; sourceTree = "<group>"; };
 		FC70E6712F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+PasswordInputSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC736E8B2F3D28810019FC13 /* AlertMessageSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageSnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
 		FC736E902F3E2DBD0019FC13 /* SoshTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
@@ -1578,6 +1601,8 @@
 		FC736E972F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC736E9C2F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FC95B93C2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarConfigurationModel.swift; sourceTree = "<group>"; };
+		FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarrCommonContent.swift; sourceTree = "<group>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
 		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
 		FCA849132E9FF00500DBCE76 /* InputTagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagPage.swift; sourceTree = "<group>"; };
@@ -2601,7 +2626,10 @@
 		51F49C862E5743F600D50BC4 /* Navigations */ = {
 			isa = PBXGroup;
 			children = (
+				FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */,
+				FC95B93C2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift */,
 				FCFA11672F57259000C8E30D /* ToolBarTop */,
+				FC6AFD3B2F850344004615AF /* ToolBarBottom */,
 				953DC1522ED0994E00D14D44 /* TabBar */,
 				07B3CCAD2D40E14C00DBB10A /* Link */,
 			);
@@ -3417,6 +3445,16 @@
 			path = InlineAlert;
 			sourceTree = "<group>";
 		};
+		FC6AFD3B2F850344004615AF /* ToolBarBottom */ = {
+			isa = PBXGroup;
+			children = (
+				FC6AFD382F850344004615AF /* ToolBarBottomConfigurationView.swift */,
+				FC6AFD392F850344004615AF /* ToolBarBottomElement.swift */,
+				FC6AFD3A2F850344004615AF /* ToolBarBottomPage.swift */,
+			);
+			path = ToolBarBottom;
+			sourceTree = "<group>";
+		};
 		FC736E882F3D28640019FC13 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
@@ -4071,6 +4109,7 @@
 				079B4A1A2E49C78F0039FC26 /* OrangeCompactTheme+TagSnapshotsTests.swift in Sources */,
 				51952AA32D3FA32E0068B807 /* GridTokenPage.swift in Sources */,
 				515EE9A42E2133F200A60E96 /* SoshTheme+ChipsSnapshotsTests.swift in Sources */,
+				FC6AFD3E2F850344004615AF /* ToolBarBottomElement.swift in Sources */,
 				51952AA42D3FA32E0068B807 /* TokensPage.swift in Sources */,
 				0745C1912D7A0596006B3A1F /* RadioPage.swift in Sources */,
 				51A217612E325ED500562BE0 /* OrangeCompactTheme+LinkSnapshotsTests.swift in Sources */,
@@ -4101,6 +4140,7 @@
 				6DED17EF2CD25B2200584BC9 /* SizeTokenElement.swift in Sources */,
 				51A217832E325FE600562BE0 /* WireframeTheme+TokensOpacitySnapshotsTests.swift in Sources */,
 				6DED17EE2CD23E5400584BC9 /* CardIllustration.swift in Sources */,
+				FC95B9422F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */,
 				6DED17ED2CD23D5200584BC9 /* DesignToolboxElementPage.swift in Sources */,
 				6DED17EC2CD23D3A00584BC9 /* DesignToolboxElement.swift in Sources */,
 				51ABCD2A2E183226006CD6C0 /* SoshTheme+TokensSpaceSnapshotsTests.swift in Sources */,
@@ -4166,6 +4206,7 @@
 				FCEE0FE52F3CBEC300ABD80E /* AlertElements.swift in Sources */,
 				FCEE0FE62F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */,
 				95CE054A2EC33D6A00ACE41C /* NamedSize.swift in Sources */,
+				FC6AFD3D2F850344004615AF /* ToolBarBottomConfigurationView.swift in Sources */,
 				FC4799C62F4852A9005F349B /* InlineAlertConfigurationView.swift in Sources */,
 				FC4799C72F4852A9005F349B /* InlineAlertElement.swift in Sources */,
 				FC4799C82F4852A9005F349B /* InlineAlertPage.swift in Sources */,
@@ -4233,6 +4274,7 @@
 				FCB8B1932F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift in Sources */,
 				515EE98A2E21329B00A60E96 /* ChipPickerElement.swift in Sources */,
 				515EE98B2E21329B00A60E96 /* ChipPickerPage.swift in Sources */,
+				FC95B93F2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */,
 				515EE98C2E21329B00A60E96 /* SuggestionChipConfigurationView.swift in Sources */,
 				51A2176F2E325F7F00562BE0 /* WireframeTheme+ButtonSnapshotsTests.swift in Sources */,
 				51A2177F2E325FE600562BE0 /* WireframeTheme+TokensSizeSnapshotsTests.swift in Sources */,
@@ -4279,6 +4321,7 @@
 				51ABCD2B2E183226006CD6C0 /* SoshTheme+TokensSizeSnapshotsTests.swift in Sources */,
 				51A2176E2E325F7F00562BE0 /* WireframeTheme+BadgeSnapshotsTests.swift in Sources */,
 				FCFA11682F57259000C8E30D /* ToolBarTopPage.swift in Sources */,
+				FC6AFD3C2F850344004615AF /* ToolBarBottomPage.swift in Sources */,
 				FCFA11692F57259000C8E30D /* ToolBarTopConfigurationView.swift in Sources */,
 				FCFA116A2F57259000C8E30D /* ToolBarTopElement.swift in Sources */,
 				51E015A32E2AA82C00A86512 /* OrangeCompactTheme+TokensElevationSnapshotsTests.swift in Sources */,
@@ -4333,6 +4376,7 @@
 				515EE9932E21329B00A60E96 /* FilterChipPage.swift in Sources */,
 				07FB2A302E454D7900361ECA /* TagPage.swift in Sources */,
 				07FB2A312E454D7900361ECA /* TagElement.swift in Sources */,
+				FC6AFD412F850344004615AF /* ToolBarBottomElement.swift in Sources */,
 				95CE05342EC33C2A00ACE41C /* NamedOpacity.swift in Sources */,
 				07FB2A322E454D7900361ECA /* TagConfigurationView.swift in Sources */,
 				515EE9942E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */,
@@ -4352,6 +4396,7 @@
 				519251F02D020BA6003FD1F6 /* DesignToolboxElementsPage.swift in Sources */,
 				519251EE2D020B8A003FD1F6 /* DesignToolboxElement.swift in Sources */,
 				519251EF2D020B8A003FD1F6 /* DesignToolboxElementPage.swift in Sources */,
+				FC95B9432F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */,
 				075BC9462DC01D2C00CB2573 /* DesignToolboxEditContentDisclosure.swift in Sources */,
 				95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */,
 				95CE057C2EC3D2AF00ACE41C /* NamedBorders.swift in Sources */,
@@ -4361,6 +4406,7 @@
 				075114DC2CB7D28D00B8B759 /* SizeTokenPage.swift in Sources */,
 				07F0AFD72CFDB3CC00D334DD /* ComponentPage.swift in Sources */,
 				95CE05572EC33FA900ACE41C /* NamedGrid.swift in Sources */,
+				FC95B93E2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */,
 				0786A9DB2E0AAB4A00976098 /* CheckboxItemElement.swift in Sources */,
 				0786A9DC2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
 				077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */,
@@ -4390,6 +4436,7 @@
 				07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */,
 				07CF42782CA3F4BE000BD03E /* ElevationTokenElement.swift in Sources */,
 				0765B4A42CC15C3E00E69359 /* NamedColor+Chart.swift in Sources */,
+				FC6AFD402F850344004615AF /* ToolBarBottomConfigurationView.swift in Sources */,
 				07CF42792CA3F4BE000BD03E /* ElevationTokenPage.swift in Sources */,
 				51D6D5912D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift in Sources */,
 				075114E12CB7FDC200B8B759 /* ColorTokenPage.swift in Sources */,
@@ -4481,6 +4528,7 @@
 				518B26652DAE9DE1003A6ED3 /* RadioPickerConfiguration.swift in Sources */,
 				518B26662DAE9DE1003A6ED3 /* RadioPickerElement.swift in Sources */,
 				5134420F2D75B880000B5DE4 /* CheckboxPage.swift in Sources */,
+				FC6AFD3F2F850344004615AF /* ToolBarBottomPage.swift in Sources */,
 				07C54EC12DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift in Sources */,
 				07D3DBF42DA5084500D8A57F /* ColoredSurfaceConfiguration.swift in Sources */,
 				07D3DBF52DA5084500D8A57F /* ColoredSurfacePage.swift in Sources */,
@@ -4661,6 +4709,7 @@
 				9589F0342EB7D67B00134487 /* TagElement.swift in Sources */,
 				95CE05362EC33C2A00ACE41C /* NamedOpacity.swift in Sources */,
 				9589F0352EB7D67B00134487 /* TagConfigurationView.swift in Sources */,
+				FC6AFD442F850344004615AF /* ToolBarBottomElement.swift in Sources */,
 				9589F0362EB7D67B00134487 /* ChipPickerConfigurationView.swift in Sources */,
 				9589F0372EB7D67B00134487 /* ChipPickerElement.swift in Sources */,
 				9589F0382EB7D67B00134487 /* ChipPickerPage.swift in Sources */,
@@ -4680,6 +4729,7 @@
 				9589F0442EB7D67B00134487 /* DesignToolboxElementPage.swift in Sources */,
 				9589F0452EB7D67B00134487 /* DesignToolboxEditContentDisclosure.swift in Sources */,
 				9589F0462EB7D67B00134487 /* OSUtilities.swift in Sources */,
+				FC95B9442F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */,
 				95CE057F2EC3D2AF00ACE41C /* NamedBorders.swift in Sources */,
 				9589F0472EB7D67B00134487 /* NameSpace+PaddingInset.swift in Sources */,
 				9589F0482EB7D67B00134487 /* SpaceGapTokenIllustrations.swift in Sources */,
@@ -4688,6 +4738,7 @@
 				95CE05592EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				9589F04B2EB7D67B00134487 /* CheckboxItemElement.swift in Sources */,
 				9589F04C2EB7D67B00134487 /* CheckboxItemPage.swift in Sources */,
+				FC95B93D2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */,
 				9589F04D2EB7D67B00134487 /* DimensionTokenElement.swift in Sources */,
 				9589F04E2EB7D67B00134487 /* BorderTokenPage.swift in Sources */,
 				9589F04F2EB7D67B00134487 /* DesignToolboxTokenIllustration.swift in Sources */,
@@ -4717,6 +4768,7 @@
 				9589F0662EB7D67B00134487 /* CardIllustration.swift in Sources */,
 				9589F0672EB7D67B00134487 /* ElevationTokenElement.swift in Sources */,
 				9589F0682EB7D67B00134487 /* NamedColor+Chart.swift in Sources */,
+				FC6AFD432F850344004615AF /* ToolBarBottomConfigurationView.swift in Sources */,
 				9589F0692EB7D67B00134487 /* ElevationTokenPage.swift in Sources */,
 				9589F06A2EB7D67B00134487 /* CheckboxIndeterminateConfiguration.swift in Sources */,
 				9589F06B2EB7D67B00134487 /* ColorTokenPage.swift in Sources */,
@@ -4806,6 +4858,7 @@
 				9589F0AA2EB7D67B00134487 /* RadioPickerConfiguration.swift in Sources */,
 				9589F0AB2EB7D67B00134487 /* RadioPickerElement.swift in Sources */,
 				9589F0AC2EB7D67B00134487 /* CheckboxPage.swift in Sources */,
+				FC6AFD422F850344004615AF /* ToolBarBottomPage.swift in Sources */,
 				9589F0AD2EB7D67B00134487 /* DesignToolboxDisclosureGroup.swift in Sources */,
 				9589F0AE2EB7D67B00134487 /* ColoredSurfaceConfiguration.swift in Sources */,
 				9589F0AF2EB7D67B00134487 /* ColoredSurfacePage.swift in Sources */,
@@ -4854,6 +4907,7 @@
 				9589F10E2EB7D67E00134487 /* TagElement.swift in Sources */,
 				95CE05372EC33C2A00ACE41C /* NamedOpacity.swift in Sources */,
 				9589F10F2EB7D67E00134487 /* TagConfigurationView.swift in Sources */,
+				FC6AFD472F850344004615AF /* ToolBarBottomElement.swift in Sources */,
 				9589F1102EB7D67E00134487 /* ChipPickerConfigurationView.swift in Sources */,
 				9589F1112EB7D67E00134487 /* ChipPickerElement.swift in Sources */,
 				9589F1122EB7D67E00134487 /* ChipPickerPage.swift in Sources */,
@@ -4873,6 +4927,7 @@
 				9589F11E2EB7D67E00134487 /* DesignToolboxElementPage.swift in Sources */,
 				9589F11F2EB7D67E00134487 /* DesignToolboxEditContentDisclosure.swift in Sources */,
 				9589F1202EB7D67E00134487 /* OSUtilities.swift in Sources */,
+				FC95B9452F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */,
 				95CE057E2EC3D2AF00ACE41C /* NamedBorders.swift in Sources */,
 				9589F1212EB7D67E00134487 /* NameSpace+PaddingInset.swift in Sources */,
 				9589F1222EB7D67E00134487 /* SpaceGapTokenIllustrations.swift in Sources */,
@@ -4882,6 +4937,7 @@
 				95CE05582EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				9589F1252EB7D67E00134487 /* CheckboxItemElement.swift in Sources */,
 				9589F1262EB7D67E00134487 /* CheckboxItemPage.swift in Sources */,
+				FC95B9402F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */,
 				9589F1272EB7D67E00134487 /* DimensionTokenElement.swift in Sources */,
 				9589F1282EB7D67E00134487 /* BorderTokenPage.swift in Sources */,
 				9589F1292EB7D67E00134487 /* DesignToolboxTokenIllustration.swift in Sources */,
@@ -4911,6 +4967,7 @@
 				9589F1402EB7D67E00134487 /* CardIllustration.swift in Sources */,
 				9589F1412EB7D67E00134487 /* ElevationTokenElement.swift in Sources */,
 				9589F1422EB7D67E00134487 /* NamedColor+Chart.swift in Sources */,
+				FC6AFD462F850344004615AF /* ToolBarBottomConfigurationView.swift in Sources */,
 				9589F1432EB7D67E00134487 /* ElevationTokenPage.swift in Sources */,
 				9589F1442EB7D67E00134487 /* CheckboxIndeterminateConfiguration.swift in Sources */,
 				9589F1452EB7D67E00134487 /* ColorTokenPage.swift in Sources */,
@@ -5002,6 +5059,7 @@
 				9589F1842EB7D67E00134487 /* RadioPickerConfiguration.swift in Sources */,
 				9589F1852EB7D67E00134487 /* RadioPickerElement.swift in Sources */,
 				9589F1862EB7D67E00134487 /* CheckboxPage.swift in Sources */,
+				FC6AFD452F850344004615AF /* ToolBarBottomPage.swift in Sources */,
 				9589F1872EB7D67E00134487 /* DesignToolboxDisclosureGroup.swift in Sources */,
 				9589F1882EB7D67E00134487 /* ColoredSurfaceConfiguration.swift in Sources */,
 				9589F1892EB7D67E00134487 /* ColoredSurfacePage.swift in Sources */,

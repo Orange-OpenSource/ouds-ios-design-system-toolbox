@@ -37,7 +37,7 @@ struct ToolBarTopPage: View {
 
     var body: some View {
         ComponentConfigurationView(configuration: configurationModel) {
-            ToolBarTopDemoSelection(configurationModel: configurationModel)
+            ToolBarTopDemo(configurationModel: configurationModel)
         } configurationView: {
             ToolBarTopConfiguration(configurationModel: configurationModel)
         }
@@ -46,13 +46,14 @@ struct ToolBarTopPage: View {
 
 // MARK: - Tab bar demo
 
-struct ToolBarTopDemoSelection: View {
+struct ToolBarTopDemo: View {
 
     @ObservedObject var configurationModel: ToolBarTopConfigurationModel
+    @Environment(\.theme) private var theme
 
     var body: some View {
         NavigationLink(destination: demo(), isActive: $configurationModel.showNavigation) {
-            OUDSButton(text: "app_components_topAppBar_demo_showDemo_label", appearance: .strong) {
+            OUDSButton(text: "app_components_toolbar_demo_showDemo_label", appearance: .strong) {
                 switch configurationModel.demoOption {
                 case .navigation:
                     configurationModel.showNavigation = true
@@ -75,38 +76,16 @@ struct ToolBarTopDemoSelection: View {
 
     @ViewBuilder
     private func demo() -> some View {
-        ToolBarTopDemo(configurationModel: configurationModel)
-    }
-}
-
-struct ToolBarTopDemo: View {
-
-    @ObservedObject var configurationModel: ToolBarTopConfigurationModel
-    @Environment(\.presentationMode) private var presentationMode
-    @Environment(\.theme) private var theme
-
-    var body: some View {
-        ScrollView {
-            VStack(alignment: .center, spacing: theme.spaces.fixedLarge) {
-                OUDSAlertMessage(label: "app_components_topAppBar_demo_content_label".localized(),
-                                 status: .warning)
-
-                OUDSButton(text: "app_components_topAppBar_demo_backToConfiguration_label".localized(), appearance: .strong) {
-                    presentationMode.wrappedValue.dismiss()
-                }
+        ToolbarrCommonContent()
+            .oudsBackground(theme.colors.overlayModal)
+            .navigationBarBackButtonHidden(configurationModel.hideBackButton)
+            .oudsToolBarTop(configurationModel.title,
+                            hasLargeTitle: configurationModel.largeTitle,
+                            subtitle: appliedSubtitle) {
+                configurationModel.leadingItems(for: theme)
+            } trailingItems: {
+                configurationModel.trailingItems(for: theme)
             }
-            .frame(maxWidth: .infinity)
-            .padding(.top, 20)
-        }
-        .oudsBackground(theme.colors.overlayModal)
-        .navigationBarBackButtonHidden(configurationModel.hideBackButton)
-        .oudsToolBarTop(configurationModel.title,
-                        hasLargeTitle: configurationModel.largeTitle,
-                        subtitle: appliedSubtitle) {
-            configurationModel.leadingItems(for: theme)
-        } trailingItems: {
-            configurationModel.trailingItems(for: theme)
-        }
     }
 
     private var appliedSubtitle: String? {
