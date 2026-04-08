@@ -14,6 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// swiftlint:disbale line_length
 struct ToolbarrCommonContent: View {
 
     // MARK: - Properties
@@ -27,12 +28,13 @@ struct ToolbarrCommonContent: View {
         ScrollView {
             VStack(alignment: .center, spacing: theme.spaces.fixedLarge) {
                 let link = OUDSAlertMessage.Link(text: "app_components_toolbar_demo_backToConfiguration_label",
-                                      position: .bottom) {
+                                                 position: .bottom) {
                     presentationMode.wrappedValue.dismiss()
                 }
 
                 OUDSAlertMessage(label: "app_components_toolbar_demo_content_label".localized(),
                                  status: .warning, link: link)
+
                 Text("""
                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
@@ -50,3 +52,4 @@ struct ToolbarrCommonContent: View {
         }
     }
 }
+// swiftlint:enable line_length

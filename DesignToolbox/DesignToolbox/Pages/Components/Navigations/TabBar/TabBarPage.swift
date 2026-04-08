@@ -37,7 +37,6 @@ struct TabBarPage: View {
 
 struct TabBarDemo: View {
 
-    @State private var selectedTab = 0
     @ObservedObject var configurationModel: TabBarConfigurationModel
     @Environment(\.theme) private var theme
 
@@ -62,7 +61,7 @@ struct TabBarDemo: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
-                OUDSTabBar(selected: $selectedTab, count: configurationModel.numberOfItems) {
+                OUDSTabBar(selected: 0, count: configurationModel.numberOfItems) {
                     ForEach(configurationModel.limitedItems.indices, id: \.self) { index in
                         let item = configurationModel.limitedItems[index]
                         TabBarItemDemo(index: index, imageName: item.imageName)

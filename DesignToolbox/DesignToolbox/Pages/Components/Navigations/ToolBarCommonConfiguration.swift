@@ -168,7 +168,7 @@ class ToolBarConfigurationModel: ComponentConfiguration {
     }
 
     var trailingItemPattern: String {
-        return actionPattern(type: trailing, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized)
+        actionPattern(type: trailing, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized)
     }
 }
 
@@ -243,12 +243,14 @@ struct ToolBarLeadingConfiguration: View {
                 .padding(.horizontal, theme.spaces.fixedMedium)
                 .bodyDefaultMedium(theme)
 
+                // swiftlint:disable unavailable_condition
                 if #available(iOS 26.0, *) {
                 } else {
                     if configurationModel.leading == .label {
                         OUDSSwitchItem("app_components_toolbar_item_emphasized_tech", isOn: $configurationModel.isLeadingEmphasized)
                     }
                 }
+                // swiftlint:enable unavailable_condition
             default:
                 EmptyView()
             }
@@ -288,12 +290,14 @@ struct ToolBarTrailingConfiguration: View {
             .padding(.horizontal, theme.spaces.fixedMedium)
             .bodyDefaultMedium(theme)
 
+            // swiftlint:disable unavailable_condition
             if #available(iOS 26.0, *) {
             } else {
                 if configurationModel.trailing == .label {
                     OUDSSwitchItem("app_components_toolbar_item_emphasized_tech", isOn: $configurationModel.isTrailingEmphasized)
                 }
             }
+            // swiftlint:disable unavailable_condition
 
         default:
             EmptyView()

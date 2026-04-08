@@ -32,12 +32,12 @@ struct TabBarElement: DesignToolboxElement {
 
 struct TabBarIllustration: View {
 
-    @State private var selectedTab = 0
     var body: some View {
-        OUDSTabBar(selected: $selectedTab, count: 3) {
-            FakeTabItem(title: "Label", imageName: "heart-empty", tag: 0)
-            FakeTabItem(title: "Label", imageName: "heart-empty", tag: 1)
-            FakeTabItem(title: "Label", imageName: "heart-empty", tag: 2)
+        OUDSTabBar(selected: 0, count: 3) {
+            let wording = "app_components_common_label_label".localized()
+            FakeTabItem(title: wording, imageName: "heart-empty", tag: 0)
+            FakeTabItem(title: wording, imageName: "heart-empty", tag: 1)
+            FakeTabItem(title: wording, imageName: "heart-empty", tag: 2)
         }
         .frame(maxHeight: 100)
     }
