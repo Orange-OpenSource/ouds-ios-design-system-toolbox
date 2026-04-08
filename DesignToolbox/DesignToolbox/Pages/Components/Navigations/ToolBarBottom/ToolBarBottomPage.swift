@@ -65,7 +65,7 @@ struct ToolBarBottomDemo: View {
     private func demo() -> some View {
         ToolbarrCommonContent()
             .modifier(BottomBarModifier(configurationModel: configurationModel))
-            .oudsBackground(theme.colors.overlayModal)
+            .background(theme.colors.overlayModal)
             .oudsToolBarTop("Demo") {
                 OUDSToolBarItem(navigation: .close)
             }

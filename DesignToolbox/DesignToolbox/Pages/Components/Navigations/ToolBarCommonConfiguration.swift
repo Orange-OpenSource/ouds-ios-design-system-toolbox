@@ -220,15 +220,14 @@ extension OUDSToolBarItem.ActionStyle: @retroactive CaseIterable, @retroactive C
     }
 }
 
-
 struct ToolBarLeadingConfiguration: View {
 
-    // MARK: Stored properties
+    // MARK: - Stored properties
 
     @StateObject var configurationModel: ToolBarConfigurationModel
     @Environment(\.theme) private var theme
 
-    // MARK: Body
+    // MARK: - Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
@@ -266,10 +265,12 @@ struct ToolBarLeadingConfiguration: View {
 
 struct ToolBarTrailingConfiguration: View {
 
-    // MARK: Stored properties
+    // MARK: - Stored properties
 
     @StateObject var configurationModel: ToolBarConfigurationModel
     @Environment(\.theme) private var theme
+
+    // MARK: - Body
 
     var body: some View {
         // Trailing configuration
@@ -304,7 +305,17 @@ struct ToolBarTrailingConfiguration: View {
         default:
             OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.isTrailingEnabled)
         }
+    }
+}
 
+struct ToolBarItemStyle: View {
+    // MARK: - Stored properties
+
+    @StateObject var configurationModel: ToolBarConfigurationModel
+
+    // MARK: - Body
+
+    var body: some View {
         if #available(iOS 26.0, *),
            configurationModel.trailing == .icon ||
             configurationModel.leading == .icon ||

@@ -77,7 +77,7 @@ struct ToolBarTopDemo: View {
     @ViewBuilder
     private func demo() -> some View {
         ToolbarrCommonContent()
-            .oudsBackground(theme.colors.overlayModal)
+            .background(theme.colors.overlayModal)
             .navigationBarBackButtonHidden(configurationModel.hideBackButton)
             .oudsToolBarTop(configurationModel.title,
                             hasLargeTitle: configurationModel.largeTitle,

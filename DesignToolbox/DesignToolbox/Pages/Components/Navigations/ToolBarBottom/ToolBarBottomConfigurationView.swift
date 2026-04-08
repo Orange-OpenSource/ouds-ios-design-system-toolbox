@@ -99,24 +99,10 @@ struct ToolBarBottomConfiguration: View {
                 ToolBarLeadingConfiguration(configurationModel: configurationModel)
 
                 if !configurationModel.groupedItems {
-                    // Trailing configuration
-                    OUDSHorizontalDivider()
-
                     ToolBarTrailingConfiguration(configurationModel: configurationModel)
                 }
 
-                if #available(iOS 26.0, *),
-                   configurationModel.trailing == .icon ||
-                    configurationModel.leading == .icon ||
-                    configurationModel.trailing == .label ||
-                    configurationModel.leading == .label {
-
-                    OUDSHorizontalDivider()
-
-                    OUDSChipPicker(title: "app_components_toolbar_ios26ButtonStyle_tech",
-                                   selection: $configurationModel.ios26ButtonStyle,
-                                   chips: OUDSToolBarItem.ActionStyle.chips)
-                }
+                ToolBarItemStyle(configurationModel: configurationModel)
             }
         }
     }

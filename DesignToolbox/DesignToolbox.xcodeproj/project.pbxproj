@@ -1082,10 +1082,10 @@
 		FC736E9B2F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E972F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift */; };
 		FC736EA02F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E9C2F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift */; };
 		FC8FD1582F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */; };
-		FC95B93D2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift */; };
-		FC95B93E2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift */; };
-		FC95B93F2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift */; };
-		FC95B9402F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift */; };
+		FC95B93D2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */; };
+		FC95B93E2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */; };
+		FC95B93F2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */; };
+		FC95B9402F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */; };
 		FC95B9422F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */; };
 		FC95B9432F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */; };
 		FC95B9442F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */; };
@@ -1601,7 +1601,7 @@
 		FC736E972F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC736E9C2F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
-		FC95B93C2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarConfigurationModel.swift; sourceTree = "<group>"; };
+		FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarCommonConfiguration.swift; sourceTree = "<group>"; };
 		FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarrCommonContent.swift; sourceTree = "<group>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
 		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
@@ -2627,7 +2627,7 @@
 			isa = PBXGroup;
 			children = (
 				FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */,
-				FC95B93C2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift */,
+				FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */,
 				FCFA11672F57259000C8E30D /* ToolBarTop */,
 				FC6AFD3B2F850344004615AF /* ToolBarBottom */,
 				953DC1522ED0994E00D14D44 /* TabBar */,
@@ -4274,7 +4274,7 @@
 				FCB8B1932F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift in Sources */,
 				515EE98A2E21329B00A60E96 /* ChipPickerElement.swift in Sources */,
 				515EE98B2E21329B00A60E96 /* ChipPickerPage.swift in Sources */,
-				FC95B93F2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */,
+				FC95B93F2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */,
 				515EE98C2E21329B00A60E96 /* SuggestionChipConfigurationView.swift in Sources */,
 				51A2176F2E325F7F00562BE0 /* WireframeTheme+ButtonSnapshotsTests.swift in Sources */,
 				51A2177F2E325FE600562BE0 /* WireframeTheme+TokensSizeSnapshotsTests.swift in Sources */,
@@ -4406,7 +4406,7 @@
 				075114DC2CB7D28D00B8B759 /* SizeTokenPage.swift in Sources */,
 				07F0AFD72CFDB3CC00D334DD /* ComponentPage.swift in Sources */,
 				95CE05572EC33FA900ACE41C /* NamedGrid.swift in Sources */,
-				FC95B93E2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */,
+				FC95B93E2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */,
 				0786A9DB2E0AAB4A00976098 /* CheckboxItemElement.swift in Sources */,
 				0786A9DC2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
 				077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */,
@@ -4738,7 +4738,7 @@
 				95CE05592EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				9589F04B2EB7D67B00134487 /* CheckboxItemElement.swift in Sources */,
 				9589F04C2EB7D67B00134487 /* CheckboxItemPage.swift in Sources */,
-				FC95B93D2F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */,
+				FC95B93D2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */,
 				9589F04D2EB7D67B00134487 /* DimensionTokenElement.swift in Sources */,
 				9589F04E2EB7D67B00134487 /* BorderTokenPage.swift in Sources */,
 				9589F04F2EB7D67B00134487 /* DesignToolboxTokenIllustration.swift in Sources */,
@@ -4937,7 +4937,7 @@
 				95CE05582EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				9589F1252EB7D67E00134487 /* CheckboxItemElement.swift in Sources */,
 				9589F1262EB7D67E00134487 /* CheckboxItemPage.swift in Sources */,
-				FC95B9402F855D9800A4F0B7 /* ToolBarConfigurationModel.swift in Sources */,
+				FC95B9402F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */,
 				9589F1272EB7D67E00134487 /* DimensionTokenElement.swift in Sources */,
 				9589F1282EB7D67E00134487 /* BorderTokenPage.swift in Sources */,
 				9589F1292EB7D67E00134487 /* DesignToolboxTokenIllustration.swift in Sources */,

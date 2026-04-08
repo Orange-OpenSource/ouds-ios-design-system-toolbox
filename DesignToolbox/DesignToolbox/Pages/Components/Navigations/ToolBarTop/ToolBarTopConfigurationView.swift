@@ -142,15 +142,9 @@ struct ToolBarTopConfiguration: View {
                     OUDSSwitchItem("app_components_topAppBar_hideBackButton_tech", isOn: $configurationModel.hideBackButton)
                 }
 
-                // Leading configuration
-                OUDSHorizontalDivider()
-
                 ToolBarLeadingConfiguration(configurationModel: configurationModel)
-
-                // Trailing configuration
-                OUDSHorizontalDivider()
-
                 ToolBarTrailingConfiguration(configurationModel: configurationModel)
+                ToolBarItemStyle(configurationModel: configurationModel)
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.title, label: "app_components_topAppBar_title_tech")

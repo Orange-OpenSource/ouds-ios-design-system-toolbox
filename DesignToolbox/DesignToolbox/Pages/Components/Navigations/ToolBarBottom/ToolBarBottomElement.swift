@@ -43,6 +43,7 @@ private struct ToolBarBottomIllustration: View {
 
             Spacer()
 
+            #if !os(visionOS)
             if #available(iOS 26, *) {
                 OUDSToolBarItem(action: .icon(asset: Image.defaultImage(prefixedBy: theme.name),
                                               accessibilityLabel: "",
@@ -53,13 +54,14 @@ private struct ToolBarBottomIllustration: View {
                                               accessibilityLabel: "",
                                               action: {}))
             }
+            #endif
         }
         .padding()
         .frame(maxHeight: 50)
-        .oudsBorder(style: theme.borders.styleDefault,
+        .border(style: theme.borders.styleDefault,
                     width: theme.borders.widthDefault,
                     radius: theme.borders.radiusDefault,
                     color: theme.colors.borderMinimal)
-        .oudsBackground(theme.colors.overlayModal)
+        .background(theme.colors.overlayModal)
     }
 }
