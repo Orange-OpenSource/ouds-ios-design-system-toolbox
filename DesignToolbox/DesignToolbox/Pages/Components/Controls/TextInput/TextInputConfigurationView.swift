@@ -212,7 +212,7 @@ struct TextInputConfigurationView: View {
 
                     switch configurationModel.status {
                     case .error:
-                        DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_textInput_errorDescription_label")
+                        DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_common_errorMessage_tech")
                     default:
                         DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
                     }
