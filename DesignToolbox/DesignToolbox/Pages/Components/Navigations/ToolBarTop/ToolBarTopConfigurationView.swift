@@ -152,6 +152,9 @@ struct ToolBarTopConfiguration: View {
                     if #available(iOS 26, *) {
                         DesignToolboxTextField(text: $configurationModel.subTitle, label: "app_components_topAppBar_subtitle_tech")
                     }
+
+                    DesignToolboxTextField(text: $configurationModel.leadingText, label: "app_components_toolbar_leadingText_label")
+                    DesignToolboxTextField(text: $configurationModel.trailingText, label: "app_components_toolbar_trailingText_label")
                 }
             }
         }

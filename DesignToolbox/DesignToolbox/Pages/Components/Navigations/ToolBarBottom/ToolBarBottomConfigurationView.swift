@@ -102,6 +102,11 @@ struct ToolBarBottomConfiguration: View {
                 }
 
                 ToolBarItemStyle(configurationModel: configurationModel)
+
+                DesignToolboxEditContentDisclosure {
+                    DesignToolboxTextField(text: $configurationModel.leadingText, label: "app_components_toolbar_leadingText_label")
+                    DesignToolboxTextField(text: $configurationModel.trailingText, label: "app_components_toolbar_trailingText_label")
+                }
             }
         }
     }

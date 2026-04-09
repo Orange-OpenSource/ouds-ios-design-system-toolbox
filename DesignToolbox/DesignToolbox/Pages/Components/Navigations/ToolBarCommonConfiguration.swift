@@ -21,6 +21,10 @@ class ToolBarConfigurationModel: ComponentConfiguration {
 
     // MARK: Properties
 
+    @Published var leadingText: String {
+        didSet { updateCode() }
+    }
+
     @Published var leading: LeadingTrailingType {
         didSet { updateCode() }
     }
@@ -34,6 +38,10 @@ class ToolBarConfigurationModel: ComponentConfiguration {
     }
 
     @Published var isLeadingEnabled: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var trailingText: String {
         didSet { updateCode() }
     }
 
@@ -60,11 +68,13 @@ class ToolBarConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
+        leadingText = String(localized: "app_components_toolbar_leading_tech")
         leading = .icon
         numberOfLeading = 1
         isLeadingEnabled = true
         isLeadingEmphasized = false
 
+        trailingText = String(localized: "app_components_toolbar_trailing_tech")
         trailing = .label
         numberOfTrailing = 1
         isTrailingEnabled = true
@@ -83,7 +93,7 @@ class ToolBarConfigurationModel: ComponentConfiguration {
     func leadingItems(for theme: OUDSTheme) -> [OUDSToolBarItem] {
         var items: [OUDSToolBarItem] = []
         for _ in 1 ... numberOfLeading {
-            guard let item = layout(for: theme, type: leading, isEnabled: isLeadingEnabled, isEmphasized: isLeadingEmphasized) else {
+            guard let item = layout(for: theme, type: leading, label: leadingText, isEnabled: isLeadingEnabled, isEmphasized: isLeadingEmphasized) else {
                 return []
             }
             items.append(item)
@@ -96,7 +106,7 @@ class ToolBarConfigurationModel: ComponentConfiguration {
     func trailingItems(for theme: OUDSTheme) -> [OUDSToolBarItem] {
         var items = [OUDSToolBarItem]()
         for _ in 1 ... numberOfTrailing {
-            guard let item = layout(for: theme, type: trailing, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized) else {
+            guard let item = layout(for: theme, type: trailing, label: trailingText, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized) else {
                 return []
             }
 
@@ -107,7 +117,7 @@ class ToolBarConfigurationModel: ComponentConfiguration {
     }
 
     @MainActor
-    private func layout(for theme: OUDSTheme, type: LeadingTrailingType, isEnabled: Bool, isEmphasized: Bool = false) -> OUDSToolBarItem? {
+    private func layout(for theme: OUDSTheme, type: LeadingTrailingType, label: String, isEnabled: Bool, isEmphasized: Bool = false) -> OUDSToolBarItem? {
 
         let action: (() -> Void)? = isEnabled ? {} : nil
 
@@ -116,7 +126,6 @@ class ToolBarConfigurationModel: ComponentConfiguration {
         case .none:
             actionType = nil
         case .label:
-            let label = "app_components_common_label_label".localized()
             actionType = .label(label, emphasized: isEmphasized, action: action)
         case .icon:
             let asset = Image.defaultImage(prefixedBy: theme.name)

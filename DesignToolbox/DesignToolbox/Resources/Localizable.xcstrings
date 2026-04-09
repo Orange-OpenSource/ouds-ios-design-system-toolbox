@@ -5430,6 +5430,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_toolbar_leadingText_label" : {
+      "comment" : "Component - Tool Bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النص الرئيسي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte du début"
+          }
+        }
+      }
+    },
     "app_components_toolbar_trailing_tech" : {
       "comment" : "Component - Tool Bar",
       "extractionState" : "manual",
@@ -5454,6 +5478,30 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_toolbar_trailingText_label" : {
+      "comment" : "Component - Tool Bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النص اللاحق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte de fin"
+          }
+        }
+      }
     },
     "app_components_topAppBar_demoOption_fullCover_tech" : {
       "comment" : "Component - Tool Bar Top",
