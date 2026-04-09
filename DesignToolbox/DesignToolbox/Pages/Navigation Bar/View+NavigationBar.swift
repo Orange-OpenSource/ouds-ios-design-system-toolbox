@@ -19,7 +19,8 @@ import SwiftUI
 extension View {
 
     func navigationBarMenus(title: String) -> some View {
-        self.oudsToolBarTop(title, trailingItems: {
+        #if !os(macOS)
+        oudsToolBarTop(title, trailingItems: {
             OUDSToolBarItem {
                 ThemeSelectionButton()
             }
@@ -27,10 +28,17 @@ extension View {
                 ColorSchemeSelectionButton()
             }
         })
+        #else
+        toolbar {
+            ThemeSelectionButton()
+            ColorSchemeSelectionButton()
+        }
+        #endif
     }
 
     func bottomToolBar() -> some View {
-        self.oudsToolBarBottom {
+        #if !os(macOS)
+        oudsToolBarBottom {
             OUDSToolBarItem {
                 ThemeSelectionButton()
             }
@@ -39,5 +47,8 @@ extension View {
                 ColorSchemeSelectionButton()
             }
         }
+        #else
+        self
+        #endif
     }
 }

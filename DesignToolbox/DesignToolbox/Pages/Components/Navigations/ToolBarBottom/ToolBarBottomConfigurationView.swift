@@ -50,23 +50,22 @@ final class ToolBarBottomConfigurationModel: ToolBarConfigurationModel {
 
     // MARK: Component configuration
 
-
     private var items: String {
         if groupedItems {
             return "groupedItem: \(leadingItemsPattern)"
         } else {
             let leading = leadingItemsPattern.isEmpty ? "" :
-                       """
-                       , leadingItems: {
-                         \(leadingItemsPattern)
-                       }
-                       """
+                """
+                , leadingItems: {
+                  \(leadingItemsPattern)
+                }
+                """
             let trailing = leadingItemsPattern.isEmpty ? "" :
-                    """
-                    , trailingItems: {
-                       \(trailingItemPattern)
-                    }
-                    """
+                """
+                , trailingItems: {
+                   \(trailingItemPattern)
+                }
+                """
             return "\(leading)\(trailing)"
         }
     }

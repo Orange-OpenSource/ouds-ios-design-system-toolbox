@@ -36,6 +36,8 @@ struct ComponentsPage: View {
         TextInputElement(),
         ToolBarBottomElement(),
         ToolBarTopElement(),
+        TagElements(),
+        TextInputElement(),
     ]
     #else
     var componentElements: [DesignToolboxElement] = [
@@ -51,8 +53,6 @@ struct ComponentsPage: View {
         RadioElements(),
         SwitchElements(),
         TabBarElement(),
-        ToolBarTopElement(),
-        ToolBarBottomElement(),
         TagElements(),
         TextAreaElement(),
         TextInputElement(),
@@ -61,10 +61,9 @@ struct ComponentsPage: View {
 
     init() {
         // Tab bar element demo designed for iOS / iPhones
-        // Demo is broken for other platforms (navigation troubles with this tab view integrate elsewhere)
-        #if !os(iOS)
-        componentElements.removeAll(where: { $0 is TabBarElement
-            || $0 is ToolBarTopElement || $0 is ToolBarBottomElement })
+        // Demo is broken for other platforms (navigation troubles with this tab view integrated elsewhere)
+        #if os(macOS)
+        componentElements.removeAll(where: { $0 is TabBarElement })
         #elseif canImport(UIKit)
         if UIDevice.current.userInterfaceIdiom == .pad {
             componentElements.removeAll(where: { $0 is TabBarElement })

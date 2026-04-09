@@ -81,7 +81,8 @@ struct ToolBarTopDemo: View {
             .navigationBarBackButtonHidden(configurationModel.hideBackButton)
             .oudsToolBarTop(configurationModel.title,
                             hasLargeTitle: configurationModel.largeTitle,
-                            subtitle: appliedSubtitle) {
+                            subtitle: appliedSubtitle)
+            {
                 configurationModel.leadingItems(for: theme)
             } trailingItems: {
                 configurationModel.trailingItems(for: theme)

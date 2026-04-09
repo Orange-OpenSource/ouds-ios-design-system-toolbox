@@ -92,23 +92,24 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
     private var hasLargeTitlePattern: String {
         largeTitle ? ", hasLargeTitle: true" : ""
     }
+
     private var subtitlePattern: String {
         subTitle.isEmpty ? "" : ", subtitle: \"\(subTitle)\""
     }
 
     override func updateCode() {
         let leading = leadingItemsPattern.isEmpty ? "" :
-                   """
-                   , leadingItems: {
-                     \(leadingItemsPattern)
-                   }
-                   """
+            """
+            , leadingItems: {
+              \(leadingItemsPattern)
+            }
+            """
         let trailing = leadingItemsPattern.isEmpty ? "" :
-                """
-                , trailingItems: {
-                   \(trailingItemPattern)
-                }
-                """
+            """
+            , trailingItems: {
+               \(trailingItemPattern)
+            }
+            """
 
         code = """
         SomeView()
@@ -164,9 +165,9 @@ enum DemoOption: CaseIterable, CustomStringConvertible {
 
     var description: String {
         switch self {
-        case .navigation: return "app_components_topAppBar_demoOption_navigation_tech"
-        case .modalSheet: return "app_components_topAppBar_demoOption_modalSheet_tech"
-        case .fullCover: return "app_components_topAppBar_demoOption_fullCover_tech"
+        case .navigation: "app_components_topAppBar_demoOption_navigation_tech"
+        case .modalSheet: "app_components_topAppBar_demoOption_modalSheet_tech"
+        case .fullCover: "app_components_topAppBar_demoOption_fullCover_tech"
         }
     }
 

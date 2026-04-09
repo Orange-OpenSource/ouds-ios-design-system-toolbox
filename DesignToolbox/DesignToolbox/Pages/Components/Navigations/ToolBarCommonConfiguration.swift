@@ -82,7 +82,7 @@ class ToolBarConfigurationModel: ComponentConfiguration {
     @MainActor
     func leadingItems(for theme: OUDSTheme) -> [OUDSToolBarItem] {
         var items: [OUDSToolBarItem] = []
-        for _ in 1...numberOfLeading {
+        for _ in 1 ... numberOfLeading {
             guard let item = layout(for: theme, type: leading, isEnabled: isLeadingEnabled, isEmphasized: isLeadingEmphasized) else {
                 return []
             }
@@ -95,7 +95,7 @@ class ToolBarConfigurationModel: ComponentConfiguration {
     @MainActor
     func trailingItems(for theme: OUDSTheme) -> [OUDSToolBarItem] {
         var items = [OUDSToolBarItem]()
-        for _ in 1...numberOfTrailing {
+        for _ in 1 ... numberOfTrailing {
             guard let item = layout(for: theme, type: trailing, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized) else {
                 return []
             }
@@ -134,7 +134,7 @@ class ToolBarConfigurationModel: ComponentConfiguration {
             return OUDSToolBarItem(action: actionType)
         }
         #else
-            return OUDSToolBarItem(action: actionType)
+        return OUDSToolBarItem(action: actionType)
         #endif
     }
 
@@ -148,6 +148,7 @@ class ToolBarConfigurationModel: ComponentConfiguration {
         let emphasizedPattern = isEmphasized ? ", emphasized: true" : ""
         return "OUDSToolBarItem(action: .label(\"Label\"\(emphasizedPattern)\(actionPattern(isEnabled: isEnabled))))"
     }
+
     private func iconActionPattern(isEnabled: Bool) -> String {
         "OUDSToolBarItem(action: .icon(asset: Image(\"ic_heart\"), accessibilityLabel: \"Like\"\(actionPattern(isEnabled: isEnabled))))"
     }
@@ -180,11 +181,11 @@ enum LeadingTrailingType: CaseIterable, CustomStringConvertible {
     var description: String {
         switch self {
         case .none:
-            return "app_components_common_none_tech"
+            "app_components_common_none_tech"
         case .label:
-            return "app_components_common_label_tech"
+            "app_components_common_label_tech"
         case .icon:
-            return "app_components_common_icon_tech"
+            "app_components_common_icon_tech"
         }
     }
 
@@ -240,11 +241,12 @@ struct ToolBarLeadingConfiguration: View {
                 Stepper("app_components_toolbar_common_itemCount_label" <- "\(configurationModel.numberOfLeading)",
                         value: $configurationModel.numberOfLeading,
                         in: 1 ... 3)
-                .padding(.horizontal, theme.spaces.fixedMedium)
-                .bodyDefaultMedium(theme)
+                    .padding(.horizontal, theme.spaces.fixedMedium)
+                    .bodyDefaultMedium(theme)
 
                 if #unavailable(iOS 26.0),
-                   configurationModel.leading == .label {
+                   configurationModel.leading == .label
+                {
                     OUDSSwitchItem("app_components_toolbar_item_emphasized_tech", isOn: $configurationModel.isLeadingEmphasized)
                 }
             default:
@@ -283,11 +285,12 @@ struct ToolBarTrailingConfiguration: View {
             Stepper("app_components_toolbar_common_itemCount_label" <- "\(configurationModel.numberOfTrailing)",
                     value: $configurationModel.numberOfTrailing,
                     in: 1 ... 3)
-            .padding(.horizontal, theme.spaces.fixedMedium)
-            .bodyDefaultMedium(theme)
+                .padding(.horizontal, theme.spaces.fixedMedium)
+                .bodyDefaultMedium(theme)
 
             if #unavailable(iOS 26.0),
-               configurationModel.trailing == .label {
+               configurationModel.trailing == .label
+            {
                 OUDSSwitchItem("app_components_toolbar_item_emphasized_tech", isOn: $configurationModel.isTrailingEmphasized)
             }
 
@@ -314,9 +317,10 @@ struct ToolBarItemStyle: View {
     var body: some View {
         if #available(iOS 26.0, *),
            configurationModel.trailing == .icon ||
-            configurationModel.leading == .icon ||
-            configurationModel.trailing == .label ||
-            configurationModel.leading == .label {
+           configurationModel.leading == .icon ||
+           configurationModel.trailing == .label ||
+           configurationModel.leading == .label
+        {
 
             OUDSHorizontalDivider()
 

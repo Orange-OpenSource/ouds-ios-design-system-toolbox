@@ -101,6 +101,8 @@ struct DesignToolboxElementPage: View {
         .padding(.top, theme.spaces.fixedNone)
         .background(theme.colors.bgPrimary)
         .requestAccessibleFocus(_requestFocus)
-        .oudsToolBarTop(name.localized())
+        #if !os(macOS)
+            .oudsToolBarTop(name.localized())
+        #endif
     }
 }

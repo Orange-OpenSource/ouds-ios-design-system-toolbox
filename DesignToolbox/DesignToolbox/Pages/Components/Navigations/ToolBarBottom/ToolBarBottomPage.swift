@@ -56,7 +56,7 @@ struct ToolBarBottomDemo: View {
             configurationModel.showDemo = true
         }
         .disabled(configurationModel.leading == .none && configurationModel.trailing == .none)
-        .sheet(isPresented: $configurationModel.showDemo){
+        .sheet(isPresented: $configurationModel.showDemo) {
             OUDSNavigationStack(content: demo)
         }
     }
