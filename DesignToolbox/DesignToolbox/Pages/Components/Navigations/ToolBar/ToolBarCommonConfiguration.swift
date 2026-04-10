@@ -245,6 +245,7 @@ struct ToolBarLeadingConfiguration: View {
 
     @StateObject var configurationModel: ToolBarConfigurationModel
     @Environment(\.theme) private var theme
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
 
@@ -262,7 +263,7 @@ struct ToolBarLeadingConfiguration: View {
                     .padding(.horizontal, theme.spaces.fixedMedium)
                     .labelStrongMedium(theme)
 
-                if #unavailable(iOS 26.0),
+                if isLiquidGlassDisabled,
                    configurationModel.leading == .label
                 {
                     OUDSSwitchItem("app_components_toolbar_item_emphasized_tech", isOn: $configurationModel.isLeadingEmphasized)
@@ -289,6 +290,7 @@ struct ToolBarTrailingConfiguration: View {
 
     @StateObject var configurationModel: ToolBarConfigurationModel
     @Environment(\.theme) private var theme
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
 
@@ -307,7 +309,7 @@ struct ToolBarTrailingConfiguration: View {
                 .padding(.horizontal, theme.spaces.fixedMedium)
                 .labelStrongMedium(theme)
 
-            if #unavailable(iOS 26.0),
+            if isLiquidGlassDisabled,
                configurationModel.trailing == .label
             {
                 OUDSSwitchItem("app_components_toolbar_item_emphasized_tech", isOn: $configurationModel.isTrailingEmphasized)
@@ -331,11 +333,12 @@ struct ToolBarTrailingConfiguration: View {
 struct ToolBarItemStyle: View {
 
     @StateObject var configurationModel: ToolBarConfigurationModel
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
 
     var body: some View {
-        if #available(iOS 26.0, *),
+        if !isLiquidGlassDisabled,
            configurationModel.trailing == .icon ||
            configurationModel.leading == .icon ||
            configurationModel.trailing == .label ||

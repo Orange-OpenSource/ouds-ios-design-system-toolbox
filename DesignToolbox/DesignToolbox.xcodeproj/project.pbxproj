@@ -6052,7 +6052,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1174-component-add-navigation-bar_build_ios18";
 				kind = branch;
 			};
 		};

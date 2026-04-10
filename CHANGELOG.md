@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] `text area` component (Orange-OpenSource/ouds-ios#543)
 - [DesignToolbox] `PIN code input` component (Orange-OpenSource/ouds-ios#998)
 - [Library] `borderDefault()` view modifier helper to apply a default border using default tokens from the current theme (Orange-OpenSource/ouds-ios#1379)
+- [DesignToolbox] Disbaled liquid glass support on ios 26 (Orange-OpenSource/ouds-ios#1408)
+- [Library] `topAppBar` and toolbarBottom components (Orange-OpenSource/ouds-ios#1174)
 - [Library] `LocalizedStringKey` and `Bundle` initializers for components using `String` for texts and accessibility labels (Orange-OpenSource/ouds-ios#1366)
 - [Library] `oudsTintColor` view modifier helper to apply tint color from a `MultipleColorSemanticToken` (Orange-OpenSource/ouds-ios#1370)
 - [Library] `verbose` flag on `OUDSLogger` to suppress debug and log messages by default (Orange-OpenSource/ouds-ios#1365)
