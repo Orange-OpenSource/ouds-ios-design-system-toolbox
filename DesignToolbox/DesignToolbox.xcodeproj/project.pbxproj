@@ -95,6 +95,23 @@
 		079B4A182E49C7790039FC26 /* OrangeTheme+TagSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079B4A172E49C7790039FC26 /* OrangeTheme+TagSnapshotsTests.swift */; };
 		079B4A1A2E49C78F0039FC26 /* OrangeCompactTheme+TagSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079B4A192E49C78F0039FC26 /* OrangeCompactTheme+TagSnapshotsTests.swift */; };
 		079B4A222E49C8740039FC26 /* WireframeTheme+TagSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079B4A212E49C8740039FC26 /* WireframeTheme+TagSnapshotsTests.swift */; };
+		07AA1100FF0000000000AB01 /* TextAreaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA03 /* TextAreaPage.swift */; };
+		07AA1100FF0000000000AB02 /* TextAreaElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA02 /* TextAreaElement.swift */; };
+		07AA1100FF0000000000AB03 /* TextAreaConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA01 /* TextAreaConfigurationView.swift */; };
+		07AA1100FF0000000000AB04 /* TextAreaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA03 /* TextAreaPage.swift */; };
+		07AA1100FF0000000000AB05 /* TextAreaElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA02 /* TextAreaElement.swift */; };
+		07AA1100FF0000000000AB06 /* TextAreaConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA01 /* TextAreaConfigurationView.swift */; };
+		07AA1100FF0000000000AB07 /* TextAreaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA03 /* TextAreaPage.swift */; };
+		07AA1100FF0000000000AB08 /* TextAreaElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA02 /* TextAreaElement.swift */; };
+		07AA1100FF0000000000AB09 /* TextAreaConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA01 /* TextAreaConfigurationView.swift */; };
+		07AA1100FF0000000000AB0A /* TextAreaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA03 /* TextAreaPage.swift */; };
+		07AA1100FF0000000000AB0B /* TextAreaElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA02 /* TextAreaElement.swift */; };
+		07AA1100FF0000000000AB0C /* TextAreaConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA01 /* TextAreaConfigurationView.swift */; };
+		07AA1100FF0000000000AB10 /* TextAreaSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA10 /* TextAreaSnapshotsTestsTestCase.swift */; };
+		07AA1100FF0000000000AB11 /* OrangeTheme+TextAreaSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA11 /* OrangeTheme+TextAreaSnapshotsTests.swift */; };
+		07AA1100FF0000000000AB12 /* OrangeCompactTheme+TextAreaSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA12 /* OrangeCompactTheme+TextAreaSnapshotsTests.swift */; };
+		07AA1100FF0000000000AB13 /* SoshTheme+TextAreaSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA13 /* SoshTheme+TextAreaSnapshotsTests.swift */; };
+		07AA1100FF0000000000AB14 /* WireframeTheme+TextAreaSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA14 /* WireframeTheme+TextAreaSnapshotsTests.swift */; };
 		07AB458A2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */; };
 		07AB458B2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */; };
 		07B3CCB12D40E34700DBB10A /* LinkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */; };
@@ -1236,6 +1253,14 @@
 		079B4A172E49C7790039FC26 /* OrangeTheme+TagSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TagSnapshotsTests.swift"; sourceTree = "<group>"; };
 		079B4A192E49C78F0039FC26 /* OrangeCompactTheme+TagSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+TagSnapshotsTests.swift"; sourceTree = "<group>"; };
 		079B4A212E49C8740039FC26 /* WireframeTheme+TagSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+TagSnapshotsTests.swift"; sourceTree = "<group>"; };
+		07AA1100FF0000000000AA01 /* TextAreaConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaConfigurationView.swift; sourceTree = "<group>"; };
+		07AA1100FF0000000000AA02 /* TextAreaElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaElement.swift; sourceTree = "<group>"; };
+		07AA1100FF0000000000AA03 /* TextAreaPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaPage.swift; sourceTree = "<group>"; };
+		07AA1100FF0000000000AA10 /* TextAreaSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaSnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
+		07AA1100FF0000000000AA11 /* OrangeTheme+TextAreaSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+TextAreaSnapshotsTests.swift"; sourceTree = "<group>"; };
+		07AA1100FF0000000000AA12 /* OrangeCompactTheme+TextAreaSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+TextAreaSnapshotsTests.swift"; sourceTree = "<group>"; };
+		07AA1100FF0000000000AA13 /* SoshTheme+TextAreaSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TextAreaSnapshotsTests.swift"; sourceTree = "<group>"; };
+		07AA1100FF0000000000AA14 /* WireframeTheme+TextAreaSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+TextAreaSnapshotsTests.swift"; sourceTree = "<group>"; };
 		07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxTextField.swift; sourceTree = "<group>"; };
 		07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkConfiguration.swift; sourceTree = "<group>"; };
 		07B3CCAF2D40E34700DBB10A /* LinkElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkElement.swift; sourceTree = "<group>"; };
@@ -1872,6 +1897,16 @@
 				0786A9DA2E0AAB4A00976098 /* CheckboxItemPage.swift */,
 			);
 			path = TwoStates;
+			sourceTree = "<group>";
+		};
+		07AA1100FF0000000000AA00 /* TextArea */ = {
+			isa = PBXGroup;
+			children = (
+				07AA1100FF0000000000AA01 /* TextAreaConfigurationView.swift */,
+				07AA1100FF0000000000AA02 /* TextAreaElement.swift */,
+				07AA1100FF0000000000AA03 /* TextAreaPage.swift */,
+			);
+			path = TextArea;
 			sourceTree = "<group>";
 		};
 		07B3CCAD2D40E14C00DBB10A /* Link */ = {
@@ -2524,6 +2559,7 @@
 				515EE9842E21329B00A60E96 /* Chip */,
 				0745C1852D7A0351006B3A1F /* Radio */,
 				07CC9AEB2DB0F7DD001BC929 /* Switch */,
+				07AA1100FF0000000000AA00 /* TextArea */,
 				075045F52E58715D00D98587 /* TextInput */,
 			);
 			path = Controls;
@@ -2684,6 +2720,7 @@
 				518EC0A42E1FF2C000FC77E4 /* CheckboxSnapshotsTestsTestCase.swift */,
 				518EC0A72E1FF2C000FC77E4 /* RadioButtonSnapshotsTestsTestCase.swift */,
 				518EC0AF2E1FF2E800FC77E4 /* SwitchSnapshotsTestsTestCase.swift */,
+				07AA1100FF0000000000AA10 /* TextAreaSnapshotsTestsTestCase.swift */,
 				072BB4532E68937E00A4DF2D /* TextInputSnapshotsTestsTestCase.swift */,
 				9596D20F2F7D7E5700DB6136 /* PinCodeInputSnapshotsTestsTestCase.swift */,
 				FCF02BB32F30E4A600F2013F /* PasswordInputSnapshotsTestsTestCase.swift */,
@@ -2699,6 +2736,7 @@
 				518EC0962E1FF28300FC77E4 /* SoshTheme+CheckboxSnapshotsTests.swift */,
 				518EC0992E1FF28300FC77E4 /* SoshTheme+RadioButtonSnapshotsTests.swift */,
 				518EC09A2E1FF28300FC77E4 /* SoshTheme+SwitchSnapshotsTests.swift */,
+				07AA1100FF0000000000AA13 /* SoshTheme+TextAreaSnapshotsTests.swift */,
 				072BB4552E69704C00A4DF2D /* SoshTheme+TextInputSnapshotsTests.swift */,
 				FCF02BB52F30EC4B00F2013F /* SoshTheme+PasswordInputSnapshotsTests.swift */,
 			);
@@ -2712,6 +2750,7 @@
 				518EC0702E1FF23800FC77E4 /* OrangeTheme+CheckboxSnapshotsTests.swift */,
 				518EC0732E1FF23800FC77E4 /* OrangeTheme+RadioButtonSnapshotsTests.swift */,
 				518EC0742E1FF23800FC77E4 /* OrangeTheme+SwitchSnapshotsTests.swift */,
+				07AA1100FF0000000000AA11 /* OrangeTheme+TextAreaSnapshotsTests.swift */,
 				072BB4572E69726D00A4DF2D /* OrangeTheme+TextInputSnapshotsTests.swift */,
 				9596D2112F7D80D000DB6136 /* OrangeTheme+PinCodeInputSnapshotsTests.swift */,
 				FCF02BB72F30EC7700F2013F /* OrangeTheme+PasswordInputSnapshotsTests.swift */,
@@ -2728,6 +2767,7 @@
 				51A217572E325ED500562BE0 /* OrangeCompactTheme+CheckboxSnapshotsTests.swift */,
 				51A2175A2E325ED500562BE0 /* OrangeCompactTheme+RadioButtonSnapshotsTests.swift */,
 				51A2175B2E325ED500562BE0 /* OrangeCompactTheme+SwitchSnapshotsTests.swift */,
+				07AA1100FF0000000000AA12 /* OrangeCompactTheme+TextAreaSnapshotsTests.swift */,
 				072BB4592E6972B200A4DF2D /* OrangeCompactTheme+TextInputSnapshotsTests.swift */,
 			);
 			path = Controls;
@@ -2741,6 +2781,7 @@
 				51A217682E325F7F00562BE0 /* WireframeTheme+CheckboxSnapshotsTests.swift */,
 				51A2176B2E325F7F00562BE0 /* WireframeTheme+RadioButtonSnapshotsTests.swift */,
 				51A2176C2E325F7F00562BE0 /* WireframeTheme+SwitchSnapshotsTests.swift */,
+				07AA1100FF0000000000AA14 /* WireframeTheme+TextAreaSnapshotsTests.swift */,
 				072BB45D2E69733500A4DF2D /* WireframeTheme+TextInputSnapshotsTests.swift */,
 				FCF02BBB2F30ECAB00F2013F /* WireframeTheme+PasswordInputSnapshotsTests.swift */,
 			);
@@ -3947,6 +3988,7 @@
 				518EC0A02E1FF28300FC77E4 /* SoshTheme+ButtonSnapshotsTests.swift in Sources */,
 				518EC0772E1FF23800FC77E4 /* OrangeTheme+CheckboxSnapshotsTests.swift in Sources */,
 				072BB45A2E6972B200A4DF2D /* OrangeCompactTheme+TextInputSnapshotsTests.swift in Sources */,
+				07AA1100FF0000000000AB12 /* OrangeCompactTheme+TextAreaSnapshotsTests.swift in Sources */,
 				518EC0782E1FF23800FC77E4 /* OrangeTheme+DividerSnapshotsTests.swift in Sources */,
 				FCF02BB42F30E4A600F2013F /* PasswordInputSnapshotsTestsTestCase.swift in Sources */,
 				518EC0792E1FF23800FC77E4 /* OrangeTheme+LinkSnapshotsTests.swift in Sources */,
@@ -3956,6 +3998,7 @@
 				51952AA52D3FA3440068B807 /* Card.swift in Sources */,
 				51952A942D3FA32E0068B807 /* DesignToolboxElementsPage.swift in Sources */,
 				072BB45E2E69733500A4DF2D /* WireframeTheme+TextInputSnapshotsTests.swift in Sources */,
+				07AA1100FF0000000000AB14 /* WireframeTheme+TextAreaSnapshotsTests.swift in Sources */,
 				51A217622E325ED500562BE0 /* OrangeCompactTheme+SwitchSnapshotsTests.swift in Sources */,
 				51952A952D3FA32E0068B807 /* DesignToolboxVariantElement.swift in Sources */,
 				5115808A2E730E0600DFFE4E /* OUDSTheme+Name.swift in Sources */,
@@ -3979,6 +4022,7 @@
 				51952A9C2D3FA32E0068B807 /* NamedColor+Repository.swift in Sources */,
 				51417C212E1BF57F000266C8 /* TokensSizeSnapshotsTestsTestCase.swift in Sources */,
 				072BB4582E69726D00A4DF2D /* OrangeTheme+TextInputSnapshotsTests.swift in Sources */,
+				07AA1100FF0000000000AB11 /* OrangeTheme+TextAreaSnapshotsTests.swift in Sources */,
 				51952A9D2D3FA32E0068B807 /* NamedColor+Surface.swift in Sources */,
 				51952A9E2D3FA32E0068B807 /* ColorTokenElement.swift in Sources */,
 				518EC0A82E1FF2C000FC77E4 /* BadgeSnapshotsTestsTestCase.swift in Sources */,
@@ -4016,6 +4060,7 @@
 				6DED17F12CD2641800584BC9 /* OpacityTokenElement.swift in Sources */,
 				07EB47032E1801D000B94EC2 /* BadgePage.swift in Sources */,
 				072BB4542E68937E00A4DF2D /* TextInputSnapshotsTestsTestCase.swift in Sources */,
+				07AA1100FF0000000000AB10 /* TextAreaSnapshotsTestsTestCase.swift in Sources */,
 				07EB47042E1801D000B94EC2 /* BadgeElement.swift in Sources */,
 				07EB47052E1801D000B94EC2 /* BadgeConfigurationView.swift in Sources */,
 				51E015A12E2AA82C00A86512 /* OrangeCompactTheme+TokensColorSnapshotsTests.swift in Sources */,
@@ -4055,11 +4100,15 @@
 				07CC9AED2DB0F7DD001BC929 /* SwitchElement.swift in Sources */,
 				51A906002E842834003F3E0E /* ColorSchemeSelectionButton.swift in Sources */,
 				072BB4562E69704C00A4DF2D /* SoshTheme+TextInputSnapshotsTests.swift in Sources */,
+				07AA1100FF0000000000AB13 /* SoshTheme+TextAreaSnapshotsTests.swift in Sources */,
 				07CC9AEE2DB0F7DD001BC929 /* SwitchElements.swift in Sources */,
 				07CC9AEF2DB0F7DD001BC929 /* SwitchItemElement.swift in Sources */,
 				075045FC2E58717F00D98587 /* TextInputPage.swift in Sources */,
 				075045FD2E58717F00D98587 /* TextInputElement.swift in Sources */,
 				075045FE2E58717F00D98587 /* TextInputConfigurationView.swift in Sources */,
+				07AA1100FF0000000000AB04 /* TextAreaPage.swift in Sources */,
+				07AA1100FF0000000000AB05 /* TextAreaElement.swift in Sources */,
+				07AA1100FF0000000000AB06 /* TextAreaConfigurationView.swift in Sources */,
 				07CC9AF02DB0F7DD001BC929 /* SwitchPage.swift in Sources */,
 				07CC9AF22DB0F7DD001BC929 /* SwitchConfiguration.swift in Sources */,
 				51A2175D2E325ED500562BE0 /* OrangeCompactTheme+ButtonSnapshotsTests.swift in Sources */,
@@ -4371,6 +4420,9 @@
 				075045F92E58717F00D98587 /* TextInputPage.swift in Sources */,
 				075045FA2E58717F00D98587 /* TextInputElement.swift in Sources */,
 				075045FB2E58717F00D98587 /* TextInputConfigurationView.swift in Sources */,
+				07AA1100FF0000000000AB01 /* TextAreaPage.swift in Sources */,
+				07AA1100FF0000000000AB02 /* TextAreaElement.swift in Sources */,
+				07AA1100FF0000000000AB03 /* TextAreaConfigurationView.swift in Sources */,
 				07F75A372CC644C80004F1AD /* NamedSpace+Scaled.swift in Sources */,
 				0765B4A62CC15C9D00E69359 /* NamedColor.swift in Sources */,
 				07CC9AF42DB0F7DD001BC929 /* SwitchElement.swift in Sources */,
@@ -4690,6 +4742,9 @@
 				9589F0952EB7D67B00134487 /* TextInputPage.swift in Sources */,
 				9589F0962EB7D67B00134487 /* TextInputElement.swift in Sources */,
 				9589F0972EB7D67B00134487 /* TextInputConfigurationView.swift in Sources */,
+				07AA1100FF0000000000AB07 /* TextAreaPage.swift in Sources */,
+				07AA1100FF0000000000AB08 /* TextAreaElement.swift in Sources */,
+				07AA1100FF0000000000AB09 /* TextAreaConfigurationView.swift in Sources */,
 				9589F0982EB7D67B00134487 /* NamedSpace+Scaled.swift in Sources */,
 				9589F0992EB7D67B00134487 /* NamedColor.swift in Sources */,
 				9589F09A2EB7D67B00134487 /* SwitchElement.swift in Sources */,
@@ -4880,6 +4935,9 @@
 				9589F16F2EB7D67E00134487 /* TextInputPage.swift in Sources */,
 				9589F1702EB7D67E00134487 /* TextInputElement.swift in Sources */,
 				9589F1712EB7D67E00134487 /* TextInputConfigurationView.swift in Sources */,
+				07AA1100FF0000000000AB0A /* TextAreaPage.swift in Sources */,
+				07AA1100FF0000000000AB0B /* TextAreaElement.swift in Sources */,
+				07AA1100FF0000000000AB0C /* TextAreaConfigurationView.swift in Sources */,
 				9589F1722EB7D67E00134487 /* NamedSpace+Scaled.swift in Sources */,
 				9589F1732EB7D67E00134487 /* NamedColor.swift in Sources */,
 				9589F1742EB7D67E00134487 /* SwitchElement.swift in Sources */,
