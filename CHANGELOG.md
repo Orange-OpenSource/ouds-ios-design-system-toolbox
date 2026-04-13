@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] `Text area` component (Orange-OpenSource/ouds-ios#543)
+- [Library] `text area` component (Orange-OpenSource/ouds-ios#543)
 - [Library] `LocalizedStringKey` and `Bundle` initializers for components using `String` for texts and accessibility labels (Orange-OpenSource/ouds-ios#1366)
 - [Library] `oudsTintColor` view modifier helper to apply tint color from a `MultipleColorSemanticToken` (Orange-OpenSource/ouds-ios#1370)
 - [Library] `verbose` flag on `OUDSLogger` to suppress debug and log messages by default (Orange-OpenSource/ouds-ios#1365)
