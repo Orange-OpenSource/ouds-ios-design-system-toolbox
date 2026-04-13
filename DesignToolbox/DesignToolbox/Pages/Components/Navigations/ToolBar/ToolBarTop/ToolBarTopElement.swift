@@ -14,6 +14,8 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// MARK: - Toolbar Top Element
+
 struct ToolBarTopElement: DesignToolboxElement {
     let name: String
     let illustration: AnyView
@@ -30,6 +32,8 @@ struct ToolBarTopElement: DesignToolboxElement {
     }
 }
 
+// MARK: - Toolbar Top Illustration
+
 private struct ToolBarTopIllustration: View {
 
     @Environment(\.theme) var theme
@@ -43,6 +47,6 @@ private struct ToolBarTopIllustration: View {
                     OUDSToolBarItem(action: .icon(asset: Image.defaultImage(prefixedBy: theme.name), accessibilityLabel: "", action: {}))
                 }
         }
-        .frame(maxHeight: 50)
+        .frame(maxHeight: 80)
     }
 }

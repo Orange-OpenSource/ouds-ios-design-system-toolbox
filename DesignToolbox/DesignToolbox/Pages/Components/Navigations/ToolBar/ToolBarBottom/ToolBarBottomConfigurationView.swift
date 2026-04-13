@@ -20,6 +20,7 @@ import SwiftUI
 final class ToolBarBottomConfigurationModel: ToolBarConfigurationModel {
 
     // MARK: Properties
+
     @Published var groupedItems: Bool {
         didSet { updateCode() }
     }
@@ -34,12 +35,12 @@ final class ToolBarBottomConfigurationModel: ToolBarConfigurationModel {
         super.init()
 
         leading = .icon
-        numberOfLeading = 1
+        numberOfLeadingItems = 1
         isLeadingEnabled = true
         isLeadingEmphasized = false
 
         trailing = .label
-        numberOfTrailing = 1
+        numberOfTrailingItems = 1
         isTrailingEnabled = true
         isTrailingEmphasized = false
 
@@ -56,11 +57,11 @@ final class ToolBarBottomConfigurationModel: ToolBarConfigurationModel {
         } else {
             let leading = leadingItemsPattern.isEmpty ? "" :
                 """
-                , leadingItems: {
+                leadingItems: {
                   \(leadingItemsPattern)
                 }
                 """
-            let trailing = leadingItemsPattern.isEmpty ? "" :
+            let trailing = trailingItemPattern.isEmpty ? "" :
                 """
                 , trailingItems: {
                    \(trailingItemPattern)
@@ -74,15 +75,15 @@ final class ToolBarBottomConfigurationModel: ToolBarConfigurationModel {
         code = """
         SomeView()
         .oudsToolBarBottom(\(items))
-        """
+        """ // FIXME: #1174 - Not well filled
     }
 }
 
-// MARK: - ToolBarBottom Configuration View
+// MARK: - Toolbar Bottom Configuration View
 
 struct ToolBarBottomConfiguration: View {
 
-    // MARK: Stored properties
+    // MARK: Properties
 
     @StateObject var configurationModel: ToolBarBottomConfigurationModel
     @Environment(\.theme) private var theme

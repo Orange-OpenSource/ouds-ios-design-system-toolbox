@@ -15,18 +15,15 @@ import OUDSSwiftUI
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: Tool bar top page
+// MARK: Toolbar Top Page
 
 #if !os(iOS)
-
 struct ToolBarTopPage: View {
     var body: some View {
         Text("Become soon available")
     }
 }
-
 #else
-
 struct ToolBarTopPage: View {
 
     @StateObject private var configurationModel: ToolBarTopConfigurationModel
@@ -44,9 +41,9 @@ struct ToolBarTopPage: View {
     }
 }
 
-// MARK: - Tab bar demo
+// MARK: - Toolbar Top Demo
 
-struct ToolBarTopDemo: View {
+private struct ToolBarTopDemo: View {
 
     @ObservedObject var configurationModel: ToolBarTopConfigurationModel
     @Environment(\.theme) private var theme
@@ -66,17 +63,17 @@ struct ToolBarTopDemo: View {
         }
         .sheet(isPresented: $configurationModel.showModalSheet) {
             OUDSNavigationStack(content: demo)
-                .modalSheetDragindicator()
+                .modalSheetDragIndicator()
         }
         .fullScreenCover(isPresented: $configurationModel.showFullCover) {
             OUDSNavigationStack(content: demo)
-                .modalSheetDragindicator()
+                .modalSheetDragIndicator()
         }
     }
 
     @ViewBuilder
     private func demo() -> some View {
-        ToolbarrCommonContent()
+        ToolBarCommonContent()
             .background(theme.colors.overlayModal)
             .navigationBarBackButtonHidden(configurationModel.hideBackButton)
             .oudsToolBarTop(configurationModel.title,
@@ -94,10 +91,12 @@ struct ToolBarTopDemo: View {
     }
 }
 
+// MARK: - Extension of View
+
 extension View {
 
     @ViewBuilder
-    public func modalSheetDragindicator() -> some View {
+    func modalSheetDragIndicator() -> some View {
         if #available(iOS 16.0, *) {
             self.presentationDragIndicator(.visible)
         } else {

@@ -58,7 +58,7 @@ private struct ToolBarBottomIllustration: View {
             #endif
         }
         .padding()
-        .frame(maxHeight: 50)
+        .frame(maxHeight: 80)
         .border(style: theme.borders.styleDefault,
                 width: theme.borders.widthDefault,
                 radius: theme.borders.radiusDefault,

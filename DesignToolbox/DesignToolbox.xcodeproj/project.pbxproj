@@ -1082,9 +1082,9 @@
 		FC95B93E2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */; };
 		FC95B93F2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */; };
 		FC95B9402F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */; };
-		FC95B9422F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */; };
-		FC95B9432F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */; };
-		FC95B9452F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */; };
+		FC95B9422F86769600A4F0B7 /* ToolBarCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolBarCommonContent.swift */; };
+		FC95B9432F86769600A4F0B7 /* ToolBarCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolBarCommonContent.swift */; };
+		FC95B9452F86769600A4F0B7 /* ToolBarCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolBarCommonContent.swift */; };
 		FCA849142E9FF00500DBCE76 /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
 		FCA849152E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */; };
 		FCA849162E9FF00500DBCE76 /* InputTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849132E9FF00500DBCE76 /* InputTagPage.swift */; };
@@ -1594,7 +1594,7 @@
 		FC736E9C2F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarCommonConfiguration.swift; sourceTree = "<group>"; };
-		FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarrCommonContent.swift; sourceTree = "<group>"; };
+		FC95B9412F86769600A4F0B7 /* ToolBarCommonContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarCommonContent.swift; sourceTree = "<group>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
 		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
 		FCA849132E9FF00500DBCE76 /* InputTagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagPage.swift; sourceTree = "<group>"; };
@@ -2618,10 +2618,7 @@
 		51F49C862E5743F600D50BC4 /* Navigations */ = {
 			isa = PBXGroup;
 			children = (
-				FC95B9412F86769600A4F0B7 /* ToolbarrCommonContent.swift */,
-				FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */,
-				FCFA11672F57259000C8E30D /* ToolBarTop */,
-				FC6AFD3B2F850344004615AF /* ToolBarBottom */,
+				95BF3D352F8D32C400762BE1 /* ToolBar */,
 				953DC1522ED0994E00D14D44 /* TabBar */,
 				07B3CCAD2D40E14C00DBB10A /* Link */,
 			);
@@ -3287,6 +3284,17 @@
 				950EA6CB2EBDF0DD0009414A /* RadiosOnlyView.swift */,
 			);
 			path = Radio;
+			sourceTree = "<group>";
+		};
+		95BF3D352F8D32C400762BE1 /* ToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				FC95B9412F86769600A4F0B7 /* ToolBarCommonContent.swift */,
+				FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */,
+				FCFA11672F57259000C8E30D /* ToolBarTop */,
+				FC6AFD3B2F850344004615AF /* ToolBarBottom */,
+			);
+			path = ToolBar;
 			sourceTree = "<group>";
 		};
 		95C17B8A2EBCAC75002A7371 /* Frameworks */ = {
@@ -4132,7 +4140,7 @@
 				6DED17EF2CD25B2200584BC9 /* SizeTokenElement.swift in Sources */,
 				51A217832E325FE600562BE0 /* WireframeTheme+TokensOpacitySnapshotsTests.swift in Sources */,
 				6DED17EE2CD23E5400584BC9 /* CardIllustration.swift in Sources */,
-				FC95B9422F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */,
+				FC95B9422F86769600A4F0B7 /* ToolBarCommonContent.swift in Sources */,
 				6DED17ED2CD23D5200584BC9 /* DesignToolboxElementPage.swift in Sources */,
 				6DED17EC2CD23D3A00584BC9 /* DesignToolboxElement.swift in Sources */,
 				51ABCD2A2E183226006CD6C0 /* SoshTheme+TokensSpaceSnapshotsTests.swift in Sources */,
@@ -4388,7 +4396,7 @@
 				519251F02D020BA6003FD1F6 /* DesignToolboxElementsPage.swift in Sources */,
 				519251EE2D020B8A003FD1F6 /* DesignToolboxElement.swift in Sources */,
 				519251EF2D020B8A003FD1F6 /* DesignToolboxElementPage.swift in Sources */,
-				FC95B9432F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */,
+				FC95B9432F86769600A4F0B7 /* ToolBarCommonContent.swift in Sources */,
 				075BC9462DC01D2C00CB2573 /* DesignToolboxEditContentDisclosure.swift in Sources */,
 				95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */,
 				95CE057C2EC3D2AF00ACE41C /* NamedBorders.swift in Sources */,
@@ -4911,7 +4919,7 @@
 				9589F11E2EB7D67E00134487 /* DesignToolboxElementPage.swift in Sources */,
 				9589F11F2EB7D67E00134487 /* DesignToolboxEditContentDisclosure.swift in Sources */,
 				9589F1202EB7D67E00134487 /* OSUtilities.swift in Sources */,
-				FC95B9452F86769600A4F0B7 /* ToolbarrCommonContent.swift in Sources */,
+				FC95B9452F86769600A4F0B7 /* ToolBarCommonContent.swift in Sources */,
 				95CE057E2EC3D2AF00ACE41C /* NamedBorders.swift in Sources */,
 				9589F1212EB7D67E00134487 /* NameSpace+PaddingInset.swift in Sources */,
 				9589F1222EB7D67E00134487 /* SpaceGapTokenIllustrations.swift in Sources */,

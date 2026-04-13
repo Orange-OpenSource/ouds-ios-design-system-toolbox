@@ -1464,19 +1464,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tool bar bottom"
+            "value" : "Toolbar bottom"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tool bar bottom"
+            "value" : "Toolbar bottom"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tool bar bottom"
+            "value" : "Toolbar bottom"
           }
         }
       },
@@ -5228,7 +5228,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le contenu de la page ici !"
+            "value" : "Votre contenu de page ici !"
           }
         }
       }
@@ -5503,6 +5503,30 @@
         }
       }
     },
+    "app_components_toolbarItem_hint_a11y" : {
+      "comment" : "Component - Toolbars",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا ملصق وهمي لعنصر شريط الأدوات"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is a dumb accessibility label for a toolbar item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceci est un label bidon pour un item de toolbar"
+          }
+        }
+      }
+    },
     "app_components_topAppBar_demoOption_fullCover_tech" : {
       "comment" : "Component - Tool Bar Top",
       "extractionState" : "manual",
@@ -5707,19 +5731,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Top app bar"
+            "value" : "Toolbar top"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Top app bar"
+            "value" : "Toolbar top"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Top app bar"
+            "value" : "Toolbar top"
           }
         }
       },

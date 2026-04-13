@@ -14,8 +14,10 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// swiftlint:disbale line_length
-struct ToolbarrCommonContent: View {
+// swiftlint:disable line_length
+
+/// A `View` with a very long text block
+struct ToolBarCommonContent: View {
 
     // MARK: - Properties
 
@@ -34,7 +36,8 @@ struct ToolbarrCommonContent: View {
                 }
 
                 OUDSAlertMessage(label: "app_components_toolbar_demo_content_label".localized(),
-                                 status: .warning, link: link)
+                                 status: .warning,
+                                 link: link)
 
                 Text("""
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -45,7 +48,7 @@ struct ToolbarrCommonContent: View {
 
                 Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
                 """)
-                .labelStrongXLarge(theme)
+                .labelDefaultLarge(theme)
                 .gridMargin(.horizontal)
             }
             .frame(maxWidth: .infinity)

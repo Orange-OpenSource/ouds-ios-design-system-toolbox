@@ -17,7 +17,7 @@ import SwiftUI
 // MARK: - ToolBar Configuration Model
 
 /// The model shared between `ToolBarPageConfiguration` view and `ToolBarTopPageComponent` view.
-class ToolBarConfigurationModel: ComponentConfiguration {
+open class ToolBarConfigurationModel: ComponentConfiguration {
 
     // MARK: Properties
 
@@ -29,7 +29,7 @@ class ToolBarConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var numberOfLeading: Int {
+    @Published var numberOfLeadingItems: Int {
         didSet { updateCode() }
     }
 
@@ -49,7 +49,7 @@ class ToolBarConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var numberOfTrailing: Int {
+    @Published var numberOfTrailingItems: Int {
         didSet { updateCode() }
     }
 
@@ -70,13 +70,13 @@ class ToolBarConfigurationModel: ComponentConfiguration {
     override init() {
         leadingText = String(localized: "app_components_toolbar_leading_tech")
         leading = .icon
-        numberOfLeading = 1
+        numberOfLeadingItems = 1
         isLeadingEnabled = true
         isLeadingEmphasized = false
 
         trailingText = String(localized: "app_components_toolbar_trailing_tech")
         trailing = .label
-        numberOfTrailing = 1
+        numberOfTrailingItems = 1
         isTrailingEnabled = true
         isTrailingEmphasized = false
 
@@ -92,7 +92,7 @@ class ToolBarConfigurationModel: ComponentConfiguration {
     @MainActor
     func leadingItems(for theme: OUDSTheme) -> [OUDSToolBarItem] {
         var items: [OUDSToolBarItem] = []
-        for _ in 1 ... numberOfLeading {
+        for _ in 1 ... numberOfLeadingItems {
             guard let item = layout(for: theme, type: leading, label: leadingText, isEnabled: isLeadingEnabled, isEmphasized: isLeadingEmphasized) else {
                 return []
             }
@@ -105,7 +105,7 @@ class ToolBarConfigurationModel: ComponentConfiguration {
     @MainActor
     func trailingItems(for theme: OUDSTheme) -> [OUDSToolBarItem] {
         var items = [OUDSToolBarItem]()
-        for _ in 1 ... numberOfTrailing {
+        for _ in 1 ... numberOfTrailingItems {
             guard let item = layout(for: theme, type: trailing, label: trailingText, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized) else {
                 return []
             }
@@ -159,7 +159,7 @@ class ToolBarConfigurationModel: ComponentConfiguration {
     }
 
     private func iconActionPattern(isEnabled: Bool) -> String {
-        "OUDSToolBarItem(action: .icon(asset: Image(\"ic_heart\"), accessibilityLabel: \"Like\"\(actionPattern(isEnabled: isEnabled))))"
+        "OUDSToolBarItem(action: .icon(asset: Image(\"magic_wand\"), accessibilityLabel: \"dumb_label_key\"\(actionPattern(isEnabled: isEnabled))))"
     }
 
     private func actionPattern(type: LeadingTrailingType, isEnabled: Bool, isEmphasized: Bool = false) -> String {
@@ -181,6 +181,8 @@ class ToolBarConfigurationModel: ComponentConfiguration {
         actionPattern(type: trailing, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized)
     }
 }
+
+// MARK: - Leading Trailing Type
 
 enum LeadingTrailingType: CaseIterable, CustomStringConvertible {
     case none
@@ -207,8 +209,10 @@ enum LeadingTrailingType: CaseIterable, CustomStringConvertible {
     }
 }
 
+// MARK: - Extension of OUDSToolBarItem Action Style
+
 extension OUDSToolBarItem.ActionStyle: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    nonisolated(unsafe) public static let allCases: [OUDSToolBarItem.ActionStyle] = [.default, .proiminent, .tinted]
+    public static let allCases: [OUDSToolBarItem.ActionStyle] = [.default, .proiminent, .tinted]
 
     public var description: String {
         switch self {
@@ -230,14 +234,16 @@ extension OUDSToolBarItem.ActionStyle: @retroactive CaseIterable, @retroactive C
     }
 }
 
+// MARK: - Toolbar Leading Configuration
+
 struct ToolBarLeadingConfiguration: View {
 
-    // MARK: - Stored properties
+    // MARK: Properties
 
     @StateObject var configurationModel: ToolBarConfigurationModel
     @Environment(\.theme) private var theme
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
@@ -247,11 +253,11 @@ struct ToolBarLeadingConfiguration: View {
 
             switch configurationModel.leading {
             case .label, .icon:
-                Stepper("app_components_toolbar_common_itemCount_label" <- "\(configurationModel.numberOfLeading)",
-                        value: $configurationModel.numberOfLeading,
+                Stepper("app_components_toolbar_common_itemCount_label" <- "\(configurationModel.numberOfLeadingItems)",
+                        value: $configurationModel.numberOfLeadingItems,
                         in: 1 ... 3)
                     .padding(.horizontal, theme.spaces.fixedMedium)
-                    .bodyDefaultMedium(theme)
+                    .labelStrongMedium(theme)
 
                 if #unavailable(iOS 26.0),
                    configurationModel.leading == .label
@@ -272,17 +278,18 @@ struct ToolBarLeadingConfiguration: View {
     }
 }
 
+// MARK: - Toolbar Trailing Configuration
+
 struct ToolBarTrailingConfiguration: View {
 
-    // MARK: - Stored properties
+    // MARK: Properties
 
     @StateObject var configurationModel: ToolBarConfigurationModel
     @Environment(\.theme) private var theme
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
-        // Trailing configuration
         OUDSHorizontalDivider()
 
         OUDSChipPicker(title: "app_components_toolbar_trailing_tech".localized(),
@@ -291,11 +298,11 @@ struct ToolBarTrailingConfiguration: View {
 
         switch configurationModel.trailing {
         case .label, .icon:
-            Stepper("app_components_toolbar_common_itemCount_label" <- "\(configurationModel.numberOfTrailing)",
-                    value: $configurationModel.numberOfTrailing,
+            Stepper("app_components_toolbar_common_itemCount_label" <- "\(configurationModel.numberOfTrailingItems)",
+                    value: $configurationModel.numberOfTrailingItems,
                     in: 1 ... 3)
                 .padding(.horizontal, theme.spaces.fixedMedium)
-                .bodyDefaultMedium(theme)
+                .labelStrongMedium(theme)
 
             if #unavailable(iOS 26.0),
                configurationModel.trailing == .label
@@ -316,12 +323,13 @@ struct ToolBarTrailingConfiguration: View {
     }
 }
 
+// MARK: - Toolbar Item Style
+
 struct ToolBarItemStyle: View {
-    // MARK: - Stored properties
 
     @StateObject var configurationModel: ToolBarConfigurationModel
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         if #available(iOS 26.0, *),

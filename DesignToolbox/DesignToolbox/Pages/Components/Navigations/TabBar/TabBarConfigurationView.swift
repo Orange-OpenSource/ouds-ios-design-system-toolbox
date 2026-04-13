@@ -122,7 +122,7 @@ struct TabBarConfiguration: View {
                         value: $configurationModel.numberOfItems,
                         in: 1 ... TabBarConfigurationModel.tabBarItems.count)
                     .padding(.horizontal, theme.spaces.fixedMedium)
-                    .bodyDefaultMedium(theme)
+                    .labelStrongMedium(theme)
 
                 OUDSChipPicker(title: "Badges",
                                selection: $configurationModel.badgeConfiguration,

@@ -59,12 +59,12 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
         super.init()
 
         leading = .icon
-        numberOfLeading = 1
+        numberOfLeadingItems = 1
         isLeadingEnabled = true
         isLeadingEmphasized = false
 
         trailing = .label
-        numberOfTrailing = 1
+        numberOfTrailingItems = 1
         isTrailingEnabled = true
         isTrailingEmphasized = false
 
@@ -161,6 +161,8 @@ struct ToolBarTopConfiguration: View {
     }
 }
 
+// MARK: - Demo Options
+
 enum DemoOption: CaseIterable, CustomStringConvertible {
     case navigation
     case modalSheet
@@ -168,9 +170,12 @@ enum DemoOption: CaseIterable, CustomStringConvertible {
 
     var description: String {
         switch self {
-        case .navigation: "app_components_topAppBar_demoOption_navigation_tech"
-        case .modalSheet: "app_components_topAppBar_demoOption_modalSheet_tech"
-        case .fullCover: "app_components_topAppBar_demoOption_fullCover_tech"
+        case .navigation:
+            "app_components_topAppBar_demoOption_navigation_tech"
+        case .modalSheet:
+            "app_components_topAppBar_demoOption_modalSheet_tech"
+        case .fullCover:
+            "app_components_topAppBar_demoOption_fullCover_tech"
         }
     }
 

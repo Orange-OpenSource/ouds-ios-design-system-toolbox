@@ -15,18 +15,15 @@ import OUDSSwiftUI
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: Tool bar bottom page
+// MARK: Toolbar Bottom Page
 
 #if !os(iOS)
-
 struct ToolBarBottomPage: View {
     var body: some View {
         Text("Become soon available")
     }
 }
-
 #else
-
 struct ToolBarBottomPage: View {
 
     @StateObject private var configurationModel: ToolBarBottomConfigurationModel
@@ -44,9 +41,9 @@ struct ToolBarBottomPage: View {
     }
 }
 
-// MARK: - Tab bar demo
+// MARK: - Toolbar Bottom Demo
 
-struct ToolBarBottomDemo: View {
+private struct ToolBarBottomDemo: View {
 
     @ObservedObject var configurationModel: ToolBarBottomConfigurationModel
     @Environment(\.theme) private var theme
@@ -63,7 +60,7 @@ struct ToolBarBottomDemo: View {
 
     @ViewBuilder
     private func demo() -> some View {
-        ToolbarrCommonContent()
+        ToolBarCommonContent()
             .modifier(BottomBarModifier(configurationModel: configurationModel))
             .background(theme.colors.overlayModal)
             .oudsToolBarTop("Demo") {
@@ -72,7 +69,9 @@ struct ToolBarBottomDemo: View {
     }
 }
 
-struct BottomBarModifier: ViewModifier {
+// MARK: - Bottom Bar Modifier
+
+private struct BottomBarModifier: ViewModifier {
 
     @ObservedObject var configurationModel: ToolBarBottomConfigurationModel
     @Environment(\.theme) private var theme
