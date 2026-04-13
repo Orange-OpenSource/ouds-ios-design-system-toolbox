@@ -16,8 +16,6 @@ import SwiftUI
 
 // MARK: - TextArea Helper Mode
 
-// FIXME: #543 - Update wording file
-
 /// Describes the three helper-text display modes available in the configuration panel.
 enum TextAreaHelperMode: CaseIterable, CustomStringConvertible, Hashable {
     case none
@@ -27,7 +25,7 @@ enum TextAreaHelperMode: CaseIterable, CustomStringConvertible, Hashable {
     var description: String {
         switch self {
         case .none:
-            "None" // FIXME: #543
+            String(localized: "app_components_common_none_tech")
         case .plain:
             String(localized: "app_components_common_helperText_tech")
         case .charactersMaxCount:
@@ -226,7 +224,7 @@ struct TextAreaConfigurationView: View {
                                         .labelStrongMedium(theme)
                                         .foregroundColor(theme.colors.contentDefault)
                                     Spacer()
-                                    Text("\(configurationModel.maxCharacters)")
+                                    Text(String(configurationModel.maxCharacters))
                                         .labelStrongMedium(theme)
                                         .foregroundColor(theme.colors.contentDefault)
                                 }

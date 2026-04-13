@@ -5964,7 +5964,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "543-in-library-add-text-area-component";
+				branch = develop;
 				kind = branch;
 			};
 		};

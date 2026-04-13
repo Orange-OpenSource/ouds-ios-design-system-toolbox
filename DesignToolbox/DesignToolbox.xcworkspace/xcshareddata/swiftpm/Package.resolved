@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "543-in-library-add-text-area-component",
-        "revision" : "6e99173f606990abb1099794039c116ed4573680"
+        "branch" : "develop",
+        "revision" : "5405aa8a65615214de6d9b54053c9fbfead0a269"
       }
     },
     {

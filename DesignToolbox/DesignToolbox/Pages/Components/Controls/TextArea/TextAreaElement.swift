@@ -38,6 +38,6 @@ private struct TextAreaIllustration: View {
         OUDSTextArea("app_components_common_label_label",
                      text: $text,
                      helperText: .plain(String(localized: "app_components_textAreaHelperText_label")))
-            .padding() // FIXME: #543 - Why mandatory? And overlapse when big sizes
+            .padding()
     }
 }
