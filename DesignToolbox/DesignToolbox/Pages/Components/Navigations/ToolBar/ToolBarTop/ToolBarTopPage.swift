@@ -20,7 +20,7 @@ import SwiftUI
 #if !os(iOS)
 struct ToolBarTopPage: View {
     var body: some View {
-        Text("Become soon available")
+        Text("app_common_soonAvailable")
     }
 }
 #else
