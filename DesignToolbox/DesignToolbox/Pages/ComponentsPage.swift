@@ -32,6 +32,7 @@ struct ComponentsPage: View {
         SwitchElements(),
         TabBarElement(),
         TagElements(),
+        TextAreaElement(),
         TextInputElement(),
     ]
     #else
@@ -50,6 +51,7 @@ struct ComponentsPage: View {
         SwitchElements(),
         TabBarElement(),
         TagElements(),
+        TextAreaElement(),
         TextInputElement(),
     ]
     #endif
