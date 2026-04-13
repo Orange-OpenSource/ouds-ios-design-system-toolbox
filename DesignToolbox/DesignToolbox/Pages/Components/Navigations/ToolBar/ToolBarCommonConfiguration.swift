@@ -129,7 +129,7 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
             actionType = .label(label, emphasized: isEmphasized, action: action)
         case .icon:
             let asset = Image.defaultImage(prefixedBy: theme.name)
-            actionType = .icon(asset: asset, accessibilityLabel: "", action: action)
+            actionType = .icon(asset: asset, accessibilityLabel: "app_components_toolbarItem_label_a11y".localized(), accessibilityHint: "app_components_toolbarItem_hint_a11y".localized(), action: action)
         }
 
         guard let actionType else {

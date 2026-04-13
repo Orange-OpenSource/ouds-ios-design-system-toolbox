@@ -75,7 +75,7 @@ final class ToolBarBottomConfigurationModel: ToolBarConfigurationModel {
         code = """
         SomeView()
         .oudsToolBarBottom(\(items))
-        """ // FIXME: #1174 - Not well filled
+        """
     }
 }
 

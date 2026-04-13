@@ -73,7 +73,7 @@ private struct ToolBarTopDemo: View {
 
     @ViewBuilder
     private func demo() -> some View {
-        ToolBarCommonContent()
+        ToolBarCommonContentView()
             .background(theme.colors.overlayModal)
             .navigationBarBackButtonHidden(configurationModel.hideBackButton)
             .oudsToolBarTop(configurationModel.title,

@@ -5527,6 +5527,30 @@
         }
       }
     },
+    "app_components_toolbarItem_label_a11y" : {
+      "comment" : "Component - Toolbars",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "تسمية للزر"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label for a button"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Label pour un bouton"
+          }
+        }
+      }
+    },
     "app_components_topAppBar_demoOption_fullCover_tech" : {
       "comment" : "Component - Tool Bar Top",
       "extractionState" : "manual",

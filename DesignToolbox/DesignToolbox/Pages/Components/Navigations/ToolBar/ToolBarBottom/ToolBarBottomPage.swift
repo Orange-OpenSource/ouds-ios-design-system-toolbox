@@ -60,7 +60,7 @@ private struct ToolBarBottomDemo: View {
 
     @ViewBuilder
     private func demo() -> some View {
-        ToolBarCommonContent()
+        ToolBarCommonContentView()
             .modifier(BottomBarModifier(configurationModel: configurationModel))
             .background(theme.colors.overlayModal)
             .oudsToolBarTop("Demo") {

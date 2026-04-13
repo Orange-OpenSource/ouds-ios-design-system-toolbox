@@ -17,7 +17,7 @@ import SwiftUI
 // swiftlint:disable line_length
 
 /// A `View` with a very long text block
-struct ToolBarCommonContent: View {
+struct ToolBarCommonContentView: View {
 
     // MARK: - Properties
 
