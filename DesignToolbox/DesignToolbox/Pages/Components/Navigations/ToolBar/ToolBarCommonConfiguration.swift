@@ -222,7 +222,7 @@ extension OUDSToolBarItem.ActionStyle: @retroactive CaseIterable, @retroactive C
         case .default:
             "app_components_toolbar_item_actionType_default_tech"
         case .prominent:
-            "app_components_toolbar_item_actionType_proiminent_tech"
+            "app_components_toolbar_item_actionType_prominent_tech"
         case .tinted:
             "app_components_toolbar_item_actionType_tinted_tech"
         }

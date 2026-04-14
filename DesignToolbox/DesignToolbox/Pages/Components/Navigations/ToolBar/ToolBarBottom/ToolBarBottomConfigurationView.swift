@@ -53,7 +53,7 @@ final class ToolBarBottomConfigurationModel: ToolBarConfigurationModel {
 
     private var items: String {
         if groupedItems {
-            return "groupedItem: \(leadingItemsPattern)"
+            return "groupedItems: \(leadingItemsPattern)"
         } else {
             let leading = leadingItemsPattern.isEmpty ? "" :
                 """

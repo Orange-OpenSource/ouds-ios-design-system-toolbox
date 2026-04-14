@@ -3051,31 +3051,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_common_none_tech" : {
-      "comment" : "Component - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "None"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "None"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "None"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_common_onColoredSurface_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
@@ -5270,7 +5245,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Your content here !"
+            "value" : "Your content here!"
           }
         },
         "fr" : {
@@ -5354,26 +5329,26 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_toolbar_item_actionType_proiminent_tech" : {
+    "app_components_toolbar_item_actionType_prominent_tech" : {
       "comment" : "Component - Tool Bar",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Proiminent"
+            "state" : "translated",
+            "value" : "Prominent"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Proiminent"
+            "value" : "Prominent"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Proiminent"
+            "value" : "Prominent"
           }
         }
       },
@@ -5655,19 +5630,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Model sheet"
+            "value" : "Modal sheet"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Model sheet"
+            "value" : "Modal sheet"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Model sheet"
+            "value" : "Modal sheet"
           }
         }
       },

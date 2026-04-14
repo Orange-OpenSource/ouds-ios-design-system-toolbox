@@ -100,11 +100,11 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
     override func updateCode() {
         let leading = leadingItemsPattern.isEmpty ? "" :
             """
-            , leadingItems: {
+            leadingItems: {
               \(leadingItemsPattern)
             }
             """
-        let trailing = leadingItemsPattern.isEmpty ? "" :
+        let trailing = trailingItemPattern.isEmpty ? "" :
             """
             , trailingItems: {
                \(trailingItemPattern)
