@@ -59,7 +59,6 @@ enum ColorSchemeMode: String, CustomStringConvertible {
 
 struct ColorSchemeSelectionButton: View {
     @AppStorage("colorSchemeMode") private var mode = ColorSchemeMode.auto
-    @Environment(\.theme) private var theme
 
     var body: some View {
         Button(action: {

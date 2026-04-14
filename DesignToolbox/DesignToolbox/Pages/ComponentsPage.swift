@@ -21,9 +21,9 @@ struct ComponentsPage: View {
         BadgeElement(),
         BulletListElement(),
         ButtonElement(),
-        ColoredSurfaceElement(),
         CheckboxElements(),
         ChipElements(),
+        ColoredSurfaceElement(),
         DividerElements(),
         LinkElement(),
         PasswordInputElement(),
@@ -36,8 +36,6 @@ struct ComponentsPage: View {
         TextInputElement(),
         ToolBarBottomElement(),
         ToolBarTopElement(),
-        TagElements(),
-        TextInputElement(),
     ]
     #else
     var componentElements: [DesignToolboxElement] = [
@@ -45,9 +43,9 @@ struct ComponentsPage: View {
         BadgeElement(),
         BulletListElement(),
         ButtonElement(),
-        ColoredSurfaceElement(),
         CheckboxElements(),
         ChipElements(),
+        ColoredSurfaceElement(),
         DividerElements(),
         LinkElement(),
         PasswordInputElement(),

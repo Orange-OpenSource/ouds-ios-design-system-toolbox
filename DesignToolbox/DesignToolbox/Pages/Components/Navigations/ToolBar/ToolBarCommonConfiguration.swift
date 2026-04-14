@@ -80,7 +80,7 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
         isTrailingEnabled = true
         isTrailingEmphasized = false
 
-        ios26ButtonStyle = .proiminent
+        ios26ButtonStyle = .prominent
 
         super.init(useOneColorSchemedDemo: true)
     }
@@ -215,13 +215,13 @@ enum LeadingTrailingType: CaseIterable, CustomStringConvertible {
 // MARK: - Extension of OUDSToolBarItem Action Style
 
 extension OUDSToolBarItem.ActionStyle: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    public static let allCases: [OUDSToolBarItem.ActionStyle] = [.default, .proiminent, .tinted]
+    public static let allCases: [OUDSToolBarItem.ActionStyle] = [.default, .prominent, .tinted]
 
     public var description: String {
         switch self {
         case .default:
             "app_components_toolbar_item_actionType_default_tech"
-        case .proiminent:
+        case .prominent:
             "app_components_toolbar_item_actionType_proiminent_tech"
         case .tinted:
             "app_components_toolbar_item_actionType_tinted_tech"

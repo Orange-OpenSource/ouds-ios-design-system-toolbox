@@ -35,20 +35,4 @@ extension View {
         }
         #endif
     }
-
-    func bottomToolBar() -> some View {
-        #if !os(macOS)
-        oudsToolBarBottom {
-            OUDSToolBarItem {
-                ThemeSelectionButton()
-            }
-        } trailingItems: {
-            OUDSToolBarItem {
-                ColorSchemeSelectionButton()
-            }
-        }
-        #else
-        self
-        #endif
-    }
 }

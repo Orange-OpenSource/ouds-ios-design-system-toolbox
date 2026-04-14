@@ -49,7 +49,7 @@ private struct ToolBarBottomIllustration: View {
                 OUDSToolBarItem(action: .icon(asset: Image.defaultImage(prefixedBy: theme.name),
                                               accessibilityLabel: "",
                                               action: {}),
-                                style: .proiminent)
+                                style: .prominent)
             } else {
                 OUDSToolBarItem(action: .icon(asset: Image.defaultImage(prefixedBy: theme.name),
                                               accessibilityLabel: "",
