@@ -33,7 +33,7 @@ struct TabBarElement: DesignToolboxElement {
 struct TabBarIllustration: View {
 
     var body: some View {
-        OUDSTabBar(selected: 0, count: 3) {
+        OUDSTabBar(selectedTab: .constant(0), count: 3) {
             let wording = "app_components_common_label_label".localized()
             FakeTabItem(title: wording, imageName: "heart-empty", tag: 0)
             FakeTabItem(title: wording, imageName: "heart-empty", tag: 1)
