@@ -76,9 +76,9 @@ private struct ToolBarTopDemo: View {
         ToolBarCommonContentView()
             .background(theme.colors.overlayModal)
             .navigationBarBackButtonHidden(configurationModel.hideBackButton)
-            .oudsToolBarTop(configurationModel.title,
-                            hasLargeTitle: configurationModel.largeTitle,
-                            subtitle: appliedSubtitle)
+            .toolBarTop(configurationModel.title,
+                        hasLargeTitle: configurationModel.largeTitle,
+                        subtitle: appliedSubtitle)
             {
                 configurationModel.leadingItems(for: theme)
             } trailingItems: {

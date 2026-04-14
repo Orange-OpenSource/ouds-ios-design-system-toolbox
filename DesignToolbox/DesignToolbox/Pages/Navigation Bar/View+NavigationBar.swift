@@ -20,7 +20,7 @@ extension View {
 
     func navigationBarMenus(title: String) -> some View {
         #if !os(macOS)
-        oudsToolBarTop(title, trailingItems: {
+        toolBarTop(title, trailingItems: {
             OUDSToolBarItem {
                 ThemeSelectionButton()
             }

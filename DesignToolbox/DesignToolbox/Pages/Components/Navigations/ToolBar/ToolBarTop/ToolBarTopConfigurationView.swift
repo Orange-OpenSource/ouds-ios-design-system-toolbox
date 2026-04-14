@@ -113,7 +113,7 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
 
         code = """
         SomeView()
-        .oudsToolBarTop(\"\(title)\"\(hasLargeTitlePattern)\(subtitlePattern)\(leading)\(trailing))
+        .toolBarTop(\"\(title)\"\(hasLargeTitlePattern)\(subtitlePattern)\(leading)\(trailing))
         """
     }
 }

@@ -41,7 +41,7 @@ private struct ToolBarTopIllustration: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {}
-                .oudsToolBarTop("app_components_common_label_label".localized()) {
+                .toolBarTop("app_components_common_label_label".localized()) {
                     OUDSToolBarItem(navigation: .back())
                 } trailingItems: {
                     OUDSToolBarItem(action: .icon(asset: Image.defaultImage(prefixedBy: theme.name), accessibilityLabel: "", action: {}))

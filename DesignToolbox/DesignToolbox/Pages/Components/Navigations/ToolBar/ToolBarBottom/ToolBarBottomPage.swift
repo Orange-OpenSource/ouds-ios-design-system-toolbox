@@ -63,7 +63,7 @@ private struct ToolBarBottomDemo: View {
         ToolBarCommonContentView()
             .modifier(BottomBarModifier(configurationModel: configurationModel))
             .background(theme.colors.overlayModal)
-            .oudsToolBarTop("Demo") {
+            .toolBarTop("Demo") {
                 OUDSToolBarItem(navigation: .close)
             }
     }
@@ -78,12 +78,12 @@ private struct BottomBarModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         if configurationModel.groupedItems {
-            content.oudsToolBarBottom(groupedItems: {
+            content.toolBarBottom(groupedItems: {
                 configurationModel.leadingItems(for: theme)
             })
         } else {
             content
-                .oudsToolBarBottom {
+                .toolBarBottom {
                     configurationModel.leadingItems(for: theme)
                 } trailingItems: {
                     configurationModel.trailingItems(for: theme)

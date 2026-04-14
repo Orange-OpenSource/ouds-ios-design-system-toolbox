@@ -102,7 +102,7 @@ struct DesignToolboxElementPage: View {
         .background(theme.colors.bgPrimary)
         .requestAccessibleFocus(_requestFocus)
         #if !os(macOS)
-            .oudsToolBarTop(name.localized())
+            .toolBarTop(name.localized())
         #endif
     }
 }

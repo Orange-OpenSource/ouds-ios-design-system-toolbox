@@ -74,7 +74,7 @@ final class ToolBarBottomConfigurationModel: ToolBarConfigurationModel {
     override func updateCode() {
         code = """
         SomeView()
-        .oudsToolBarBottom(\(items))
+        .toolBarBottom(\(items))
         """
     }
 }
