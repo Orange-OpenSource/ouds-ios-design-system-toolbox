@@ -137,7 +137,7 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 ### macOS
 
 > [!NOTE]
-> The macOS app is not yet available on TestFlight nor the AppStore
+> The macOS app is not yet available on TestFlight nor the AppStore, but you can build it
 
 <p align="center">
 <img src="./images/macOS/Tokens list - en - light.png" alt="List of tokens on MacBook Pro 16'' inch'' (english, light mode)" height="350" />
@@ -152,7 +152,7 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 ### visionOS 
 
 > [!NOTE]
-> The visionOS app is not yet available on TestFlight nor the AppStore
+> The visionOS app is not yet available on TestFlight nor the AppStore, but you can build it
 
 <p align="center">
 <img src="./images/visionOS/Tokens list - en - light.png" alt="List of tokens on Vision Pro (english, light mode)" height="350" />
@@ -169,7 +169,7 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 <!-- Mockups designed thanks to https://mockuphone.com/model/apple-watch-ultra-2/ -->
 
 > [!NOTE]
-> The watchOS app is not yet available on TestFlight nor the AppStore
+> The watchOS app is not yet available on TestFlight nor the AppStore, but you can build it
 
 <p align="center">
 <img src="./images/watchOS/Tokens list.png" alt="List of tokens on Watch Series 11 (46mm) (english)" height="350" />
@@ -184,7 +184,7 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 ### tvOS
 
 > [!NOTE]
-> The tvOS app is not yet available on TestFlight nor the AppStore
+> The tvOS app is not yet available on TestFlight nor the AppStore, but you can build it
 
 <p align="center">
 <img src="./images/tvOS/Tokens list.png" alt="List of tokens on Apple TV 4K (3rd generation) (english)" height="350" />

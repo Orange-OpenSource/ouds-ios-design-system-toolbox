@@ -35,6 +35,7 @@ struct MainView: View {
                     Label("app_bottomBar_about_label", image: "info-fill")
                 }
                 .tag(2)
-        }.accentColor(theme.colors.contentBrandPrimary)
+        }
+        .accentColor(theme.button.colorContentMinimalEnabled)
     }
 }

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `toolbar top` and `toolbar bottom` components (Orange-OpenSource/ouds-ios#1174)
 - [Library] `text area` component (Orange-OpenSource/ouds-ios#543)
 - [Library] `LocalizedStringKey` and `Bundle` initializers for components using `String` for texts and accessibility labels (Orange-OpenSource/ouds-ios#1366)
 - [Library] `oudsTintColor` view modifier helper to apply tint color from a `MultipleColorSemanticToken` (Orange-OpenSource/ouds-ios#1370)
@@ -101,7 +102,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [DesignToolbox] Toolbar buttons for theme and color scheme indicators do not work anymore (Orange-OpenSource/ouds-ios#1244)
+- [DesignToolbox] ToolBar buttons for theme and color scheme indicators do not work anymore (Orange-OpenSource/ouds-ios#1244)
 - [Library] Cycle in attribute graph with OUDS tab bar and Xcode 26.2 (Orange-OpenSource/ouds-ios#1247) (Orange-OpenSource/ouds-ios#1249)
 - [DesignToolbox] Custom icon does not change on theme switch on `badge` and `tag` components pages (Orange-OpenSource/ouds-ios#1218)
 

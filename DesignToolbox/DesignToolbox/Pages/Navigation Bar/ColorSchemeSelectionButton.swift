@@ -59,7 +59,6 @@ enum ColorSchemeMode: String, CustomStringConvertible {
 
 struct ColorSchemeSelectionButton: View {
     @AppStorage("colorSchemeMode") private var mode = ColorSchemeMode.auto
-    @Environment(\.theme) private var theme
 
     var body: some View {
         Button(action: {
@@ -67,7 +66,6 @@ struct ColorSchemeSelectionButton: View {
         }, label: {
             Image(decorative: mode.imageName)
                 .scaledToFit()
-                .foregroundColor(theme.colors.contentBrandPrimary)
         })
         .accessibilityLabel("app_topBar_mode_button_a11y")
         .accessibilityHint("app_topBar_mode_button_hint_a11y")
