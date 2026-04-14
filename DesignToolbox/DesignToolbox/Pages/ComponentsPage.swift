@@ -15,7 +15,7 @@ import SwiftUI
 
 struct ComponentsPage: View {
 
-    #if !os(macOS)
+    #if !os(macOS) && !os(visionOS)
     var componentElements: [DesignToolboxElement] = [
         AlertElements(),
         BadgeElement(),
@@ -41,6 +41,7 @@ struct ComponentsPage: View {
     ]
     #else
     var componentElements: [DesignToolboxElement] = [
+        AlertElements(),
         BadgeElement(),
         BulletListElement(),
         ButtonElement(),
