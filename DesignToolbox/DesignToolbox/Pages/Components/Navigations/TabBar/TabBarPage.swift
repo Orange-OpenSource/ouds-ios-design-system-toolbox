@@ -37,6 +37,7 @@ struct TabBarPage: View {
 
 struct TabBarDemo: View {
 
+    @State private var selectedTab: Int = 0
     @ObservedObject var configurationModel: TabBarConfigurationModel
     @Environment(\.theme) private var theme
 
@@ -61,10 +62,10 @@ struct TabBarDemo: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
-                OUDSTabBar(selected: 0, count: configurationModel.numberOfItems) {
+                OUDSTabBar(selectedTab: $selectedTab, count: configurationModel.numberOfItems) {
                     ForEach(configurationModel.limitedItems.indices, id: \.self) { index in
                         let item = configurationModel.limitedItems[index]
-                        TabBarItemDemo(index: index, imageName: item.imageName)
+                        TabBarItemDemo(selectedTab: selectedTab, imageName: item.imageName)
                             .tabItem {
                                 Label {
                                     Text(item.label.localized())
@@ -91,14 +92,14 @@ struct TabBarDemo: View {
 /// The view attached to the tab
 private struct TabBarItemDemo: View {
 
-    let index: Int
+    @State var selectedTab: Int
     let imageName: String
 
     @Environment(\.theme) private var theme
 
     var body: some View {
         HStack {
-            Text("Item \(index + 1)")
+            Text("Item \(selectedTab)")
             Image.decorativeImage(named: imageName, prefixedBy: theme.name)
         }
     }
