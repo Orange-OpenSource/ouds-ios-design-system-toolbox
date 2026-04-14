@@ -48,7 +48,7 @@ struct DesignToolboxElementPage: View {
     var body: some View {
         #if os(iOS)
         elementPageBody
-            .navigationBarMenus() // Otherwise does not appear
+            .navigationBarMenus(title: name) // Otherwise does not appear
         #else // macOS, visionOS
         elementPageBody // Otherwise appears twice
         #endif
@@ -100,7 +100,9 @@ struct DesignToolboxElementPage: View {
         .listStyle(.plain)
         .padding(.top, theme.spaces.fixedNone)
         .background(theme.colors.bgPrimary)
-        .navigationTitle(name.localized())
         .requestAccessibleFocus(_requestFocus)
+        #if !os(macOS)
+            .toolBarTop(name.localized())
+        #endif
     }
 }

@@ -32,6 +32,7 @@ struct AboutPage: View {
     private let appSettingsUrl: URL
     #endif
 
+    @Environment(\.theme) private var theme
     // NOTE: "unused" false-positive for periphery (https://github.com/peripheryapp/periphery/issues/993)
     @Environment(\.layoutDirection) private var layoutDirection
 
@@ -78,11 +79,13 @@ struct AboutPage: View {
         NavigationView {
             listBody
                 .navigationBarTitleDisplayMode(.inline)
+                .accentColor(theme.colors.actionAccent)
         }
         .navigationViewStyle(.stack)
         #else
         NavigationView {
             listBody
+                .accentColor(theme.colors.actionAccent)
         }
         .navigationViewStyle(.automatic)
         #endif
