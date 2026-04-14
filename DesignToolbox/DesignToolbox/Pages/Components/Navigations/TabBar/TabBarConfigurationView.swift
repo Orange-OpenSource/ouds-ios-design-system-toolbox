@@ -96,7 +96,7 @@ final class TabBarConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         code = """
-        OUDSTabBar(selected: 0, count: \(numberOfItems)) {
+        OUDSTabBar(selectedTab: $selectedTab, count: \(numberOfItems)) {
             // Views with .tabItem and .tag calls
             \(badgePattern)
         }
