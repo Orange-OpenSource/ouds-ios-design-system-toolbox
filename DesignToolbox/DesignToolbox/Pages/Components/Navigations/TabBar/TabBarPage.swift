@@ -62,7 +62,7 @@ struct TabBarDemo: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
-                OUDSTabBar(selectedTab: $selectedTab, count: configurationModel.numberOfItems) {
+                OUDSTabBar(selectedTab: $selectedTab, count: UInt8(configurationModel.numberOfItems)) {
                     ForEach(configurationModel.limitedItems.indices, id: \.self) { index in
                         let item = configurationModel.limitedItems[index]
                         TabBarItemDemo(selectedTab: selectedTab, imageName: item.imageName)

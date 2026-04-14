@@ -6052,7 +6052,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1373-for-tab-bar-component-expose-selected-value-with-a-binding";
+				branch = develop;
 				kind = branch;
 			};
 		};
