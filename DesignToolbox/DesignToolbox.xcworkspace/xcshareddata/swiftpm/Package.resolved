@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1174-support-of-LiquidGlass-disabling",
-        "revision" : "ed0cc716f85bce4a1bde00668872d31fb2e6226c"
+        "branch" : "develop",
+        "revision" : "bee81ddce1f2e60fbe271d80eb42b6b7238aa71b"
       }
     },
     {

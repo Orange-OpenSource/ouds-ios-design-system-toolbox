@@ -155,7 +155,7 @@ struct AboutPage: View {
     private var buildView: some View {
 
         if Bundle.main.fullBuildType == "stable" {
-            OpenableText("app_about_details_appVersion" <- Bundle.main.marketingVersion, anchor: Bundle.main.marketingVersion, type: .githubRelease)
+            OpenableText("app_about_details_appVersion_stable" <- Bundle.main.marketingVersion, anchor: Bundle.main.marketingVersion, type: .githubRelease)
                 .modifier(CopyableTextViewModifier(Bundle.main.marketingVersion))
         } else {
             VersionItem(title: "app_about_details_appVersion", version: Bundle.main.marketingVersion)

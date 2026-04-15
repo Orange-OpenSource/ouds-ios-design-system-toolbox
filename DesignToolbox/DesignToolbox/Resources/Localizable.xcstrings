@@ -273,7 +273,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار التطبيق"
+            "value" : "إصدار التطبيق "
           }
         },
         "en" : {
@@ -286,6 +286,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version de l’app"
+          }
+        }
+      }
+    },
+    "app_about_details_appVersion_stable" : {
+      "comment" : "About screen - App details (stable build)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار التطبيق %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App version %@ "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version de l’app %@"
           }
         }
       }
@@ -7267,6 +7291,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Taper deux fois pour changer le thème de l'application"
+          }
+        }
+      }
+    },
+    "core_pinCodeInput_digitLabel_a11y" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرقم %lld"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digit number %lld "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chiffre numéro %lld"
           }
         }
       }
