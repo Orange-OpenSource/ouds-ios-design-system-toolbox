@@ -6052,7 +6052,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1174-component-add-navigation-bar_build_ios18";
+				branch = "1174-support-of-LiquidGlass-disabling";
 				kind = branch;
 			};
 		};
