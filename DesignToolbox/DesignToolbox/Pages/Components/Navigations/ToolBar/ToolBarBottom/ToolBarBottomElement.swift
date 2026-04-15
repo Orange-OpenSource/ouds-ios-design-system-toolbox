@@ -34,6 +34,7 @@ struct ToolBarBottomElement: DesignToolboxElement {
 private struct ToolBarBottomIllustration: View {
 
     @Environment(\.theme) var theme
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     var body: some View {
         HStack {
@@ -45,7 +46,7 @@ private struct ToolBarBottomIllustration: View {
             Spacer()
 
             #if !os(visionOS)
-            if #available(iOS 26, *) {
+            if #available(iOS 26, *), !isLiquidGlassDisabled {
                 OUDSToolBarItem(action: .icon(asset: Image.defaultImage(prefixedBy: theme.name),
                                               accessibilityLabel: "",
                                               action: {}),

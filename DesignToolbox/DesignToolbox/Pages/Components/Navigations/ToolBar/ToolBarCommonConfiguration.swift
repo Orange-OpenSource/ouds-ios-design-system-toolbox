@@ -244,6 +244,7 @@ struct ToolBarLeadingConfiguration: View {
     // MARK: Properties
 
     @StateObject var configurationModel: ToolBarConfigurationModel
+
     @Environment(\.theme) private var theme
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 

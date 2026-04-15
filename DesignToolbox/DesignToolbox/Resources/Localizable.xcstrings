@@ -578,6 +578,31 @@
         }
       }
     },
+    "app_about_isLiquidGlass_disabled" : {
+      "comment" : "About screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liquid Glass:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liquid Glass:"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liquid Glass:"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_about_legalInformation_label" : {
       "comment" : "About screen",
       "extractionState" : "manual",
