@@ -258,7 +258,7 @@ private struct LiquidGlassStateItem: View {
             Spacer()
 
             OUDSTag(isLiquidGlassDisabled ? "app_common_disabled_tech" : "app_common_enabled_tech",
-                    status: isLiquidGlassDisabled ? .negative(leading: .none) : .info(leading: .none),
+                    status: isLiquidGlassDisabled ? .negative(leading: .none) : .positive(leading: .none),
                     appearance: isLiquidGlassDisabled ? .emphasized : .muted,
                     shape: .rounded,
                     size: .small,
