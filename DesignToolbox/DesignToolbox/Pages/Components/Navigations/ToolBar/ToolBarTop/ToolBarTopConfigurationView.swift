@@ -68,7 +68,7 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
         isTrailingEnabled = true
         isTrailingEmphasized = false
 
-        ios26ButtonStyle = .prominent
+        ios26ButtonStyle = .default
     }
 
     deinit {}

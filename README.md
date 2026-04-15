@@ -45,7 +45,7 @@
 
 ## 📦 Content
 
-Source code of the app sshowcasing the design system for iOS, iPadOS, macOS, visionOS, watchOS and tvOS.
+Source code of the app showcasing the design system for iOS, iPadOS, macOS, visionOS, watchOS and tvOS.
 
 > [!NOTE]
 > This repository contains the design system toolbox app which contains the OUDS iOS Swift Package and displays its features.
@@ -89,6 +89,10 @@ Code released under the [MIT License](https://github.com/Orange-OpenSource/ouds-
 For images and other assets, please [refer to the NOTICE.txt](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/ain/NOTICE.txt).
 
 ## 📱 Design System Toolbox App
+
+> [!IMPORTANT]
+> If you want to test the look and feel of OUDS without Liquid Glass on iOS 26 (Xcode 26),
+> add in your Info.plist the key "UIDesignRequiresCompatibility" with "YES" value.
 
 ### iOS
 

@@ -8,11 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Support of disabled `Liquid Glass` for `tab bar` and `toolbar` components (Orange-OpenSource/ouds-ios#1408)
 - [Library] `toolbar top` and `toolbar bottom` components (Orange-OpenSource/ouds-ios#1174)
 - [Library] `text area` component (Orange-OpenSource/ouds-ios#543)
-- [DesignToolbox] `toolbar top` and `toolbar bottom` components (Orange-OpenSource/ouds-ios#1174)
-- [DesignToolbox] `text area` component (Orange-OpenSource/ouds-ios#543)
-- [DesignToolbox] `PIN code input` component (Orange-OpenSource/ouds-ios#998)
+- [Library] `PIN code input` component (Orange-OpenSource/ouds-ios#998)
 - [Library] `borderDefault()` view modifier helper to apply a default border using default tokens from the current theme (Orange-OpenSource/ouds-ios#1379)
 - [Library] `LocalizedStringKey` and `Bundle` initializers for components using `String` for texts and accessibility labels (Orange-OpenSource/ouds-ios#1366)
 - [Library] `oudsTintColor` view modifier helper to apply tint color from a `MultipleColorSemanticToken` (Orange-OpenSource/ouds-ios#1370)
@@ -29,7 +28,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [Library] Accessibility-hint for double-tap to unselect action for `filter chip` component (Orange-OpenSource/ouds-ios##1277)
+- [Library] Vocalization and management of focus for `PIN code input` component (Orange-OpenSource/ouds-ios#1409)
+- [Library] Accessibility label for `alert` components for `warning` and `negative` statuses (Orange-OpenSource/ouds-ios#1407)
+- [Library] Accessibility hint for double-tap to unselect action for `filter chip` component (Orange-OpenSource/ouds-ios#1277)
 - [DesignToolbox] Display of accessibility label for buttons, chips and badge components sample code (Orange-OpenSource/ouds-ios#1378)
 
 ## [1.3.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.2.0...1.3.0) - 2026-03-26
