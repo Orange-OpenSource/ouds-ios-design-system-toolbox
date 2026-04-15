@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] `ruby/setup-ruby` action from v1.2960 to v1.301.0 for `build-and-test` workflow
 - [DesignToolbox] `github/codeql-action/upload-sarif` action from v4.34.1 to v4.35.2 for `scorecard` workflow
 - [DesignToolbox] `actions/upload-artifact` action from v7.0.0 to v7.0.1 for `scorecard` workflow
 - [DesignToolbox] `tab bar` component initialization (Orange-OpenSource/ouds-ios#1373)
