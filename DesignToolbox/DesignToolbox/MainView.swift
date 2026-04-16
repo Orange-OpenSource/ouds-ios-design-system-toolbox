@@ -16,10 +16,12 @@ import SwiftUI
 
 struct MainView: View {
 
+    @State private var selectedTab: Int = 0
+
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSTabBar(selected: 0, count: 3) {
+        OUDSTabBar(selectedTab: $selectedTab, count: 3) {
             TokensPage()
                 .tabItem {
                     Label("app_bottomBar_tokens_label", image: "design-token")
@@ -35,6 +37,7 @@ struct MainView: View {
                     Label("app_bottomBar_about_label", image: "info-fill")
                 }
                 .tag(2)
-        }.oudsAccentColor(theme.colors.contentBrandPrimary)
+        }
+        .accentColor(theme.button.colorContentMinimalEnabled)
     }
 }

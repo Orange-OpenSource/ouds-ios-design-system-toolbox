@@ -96,7 +96,7 @@ final class TabBarConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         code = """
-        OUDSTabBar(selected: 0, count: \(numberOfItems)) {
+        OUDSTabBar(selectedTab: $selectedTab, count: \(numberOfItems)) {
             // Views with .tabItem and .tag calls
             \(badgePattern)
         }
@@ -118,11 +118,11 @@ struct TabBarConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                Stepper("app_components_tabBar_itemCount_label" <- "\($configurationModel.numberOfItems.wrappedValue)",
+                Stepper("app_components_toolbar_common_itemCount_label" <- "\($configurationModel.numberOfItems.wrappedValue)",
                         value: $configurationModel.numberOfItems,
                         in: 1 ... TabBarConfigurationModel.tabBarItems.count)
                     .padding(.horizontal, theme.spaces.fixedMedium)
-                    .bodyDefaultMedium(theme)
+                    .labelStrongMedium(theme)
 
                 OUDSChipPicker(title: "Badges",
                                selection: $configurationModel.badgeConfiguration,

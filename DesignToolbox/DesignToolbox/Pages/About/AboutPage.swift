@@ -14,6 +14,8 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// MARK: - About Page
+
 // NOTE: Several items below are seen as unused but are used
 // This is a false positive in Periphy
 // See https://github.com/peripheryapp/periphery/issues/908
@@ -32,6 +34,7 @@ struct AboutPage: View {
     private let appSettingsUrl: URL
     #endif
 
+    @Environment(\.theme) private var theme
     // NOTE: "unused" false-positive for periphery (https://github.com/peripheryapp/periphery/issues/993)
     @Environment(\.layoutDirection) private var layoutDirection
 
@@ -78,11 +81,13 @@ struct AboutPage: View {
         NavigationView {
             listBody
                 .navigationBarTitleDisplayMode(.inline)
+                .accentColor(theme.colors.actionAccent)
         }
         .navigationViewStyle(.stack)
         #else
         NavigationView {
             listBody
+                .accentColor(theme.colors.actionAccent)
         }
         .navigationViewStyle(.automatic)
         #endif
@@ -150,13 +155,15 @@ struct AboutPage: View {
     private var buildView: some View {
 
         if Bundle.main.fullBuildType == "stable" {
-            OpenableText("app_about_details_appVersion" <- Bundle.main.marketingVersion, anchor: Bundle.main.marketingVersion, type: .githubRelease)
+            OpenableText("app_about_details_appVersion_stable" <- Bundle.main.marketingVersion, anchor: Bundle.main.marketingVersion, type: .githubRelease)
                 .modifier(CopyableTextViewModifier(Bundle.main.marketingVersion))
         } else {
             VersionItem(title: "app_about_details_appVersion", version: Bundle.main.marketingVersion)
         }
 
         VersionItem(title: "app_about_details_buildNumber", version: Bundle.main.buildNumber)
+
+        LiquidGlassStateItem()
 
         OpenableText("app_about_details_buildType" <- Bundle.main.fullBuildType, anchor: Bundle.main.fullBuildType, type: .githubBuild)
             .modifier(CopyableTextViewModifier(Bundle.main.fullBuildType))
@@ -236,20 +243,43 @@ struct AboutPage: View {
     }
 }
 
-private struct VersionItem: View {
+// MARK: - State Item
 
-    // MARK: Properties
+private struct LiquidGlassStateItem: View {
+
+    @Environment(\.theme) private var theme
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+
+    var body: some View {
+        HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
+            Text("app_about_isLiquidGlass_disabled".localized())
+                .foregroundColor(theme.colors.contentDefault)
+
+            Spacer()
+
+            OUDSTag(isLiquidGlassDisabled ? "app_common_disabled_tech" : "app_common_enabled_tech",
+                    status: isLiquidGlassDisabled ? .negative(leading: .none) : .positive(leading: .none),
+                    appearance: isLiquidGlassDisabled ? .emphasized : .muted,
+                    shape: .rounded,
+                    size: .small,
+                    hasLoader: false)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+// MARK: - Version Item
+
+private struct VersionItem: View {
 
     let title: String
     let version: String
     @Environment(\.theme) private var theme
 
-    // MARK: Body
-
     var body: some View {
         HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
             Text(title.localized())
-                .oudsForegroundColor(theme.colors.contentDefault)
+                .foregroundColor(theme.colors.contentDefault)
 
             Spacer()
 

@@ -35,7 +35,7 @@ struct CardIllustration: View {
         .accessibilityElement(children: .combine)
         .accessibilityRemoveTraits(.isImage)
         .accessibilityHidden(true)
-        .oudsForegroundStyle(theme.colors.contentDefault)
-        .oudsBackground(theme.colors.surfaceSecondary)
+        .foregroundStyle(theme.colors.contentDefault)
+        .background(theme.colors.surfaceSecondary)
     }
 }

@@ -32,6 +32,7 @@ final class RadioItemUITests: AppTestCase {
         goToComponentsSheet(app)
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
         tapButton(withWording: "app_components_radioButton_tech", app)
         tapButton(withWording: "Radio button item", app)
 

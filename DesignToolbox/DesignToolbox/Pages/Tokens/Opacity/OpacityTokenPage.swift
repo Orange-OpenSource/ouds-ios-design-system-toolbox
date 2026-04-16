@@ -33,6 +33,6 @@ struct OpacityTokenPage: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .oudsGridMargin(.horizontal)
+        .gridMargin(.horizontal)
     }
 }

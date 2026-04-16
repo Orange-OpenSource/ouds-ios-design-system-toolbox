@@ -48,7 +48,7 @@ struct DesignToolboxElementPage: View {
     var body: some View {
         #if os(iOS)
         elementPageBody
-            .navigationBarMenus() // Otherwise does not appear
+            .navigationBarMenus(title: name) // Otherwise does not appear
         #else // macOS, visionOS
         elementPageBody // Otherwise appears twice
         #endif
@@ -68,22 +68,22 @@ struct DesignToolboxElementPage: View {
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .accessibilityFocused($requestFocus)
-                    .oudsGridMargin(.horizontal)
+                    .gridMargin(.horizontal)
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)
-            .oudsBackground(theme.colors.bgPrimary)
+            .background(theme.colors.bgPrimary)
 
             demoScreen
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
-                .oudsBackground(theme.colors.bgPrimary)
+                .background(theme.colors.bgPrimary)
 
             if let version {
                 HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
                     Text("app_components_common_version_label")
                         .labelStrongLarge(theme)
-                        .oudsForegroundColor(theme.colors.contentDefault)
+                        .foregroundColor(theme.colors.contentDefault)
 
                     OUDSTag(label: version,
                             status: .info(leading: .none),
@@ -92,15 +92,17 @@ struct DesignToolboxElementPage: View {
                             size: .small,
                             hasLoader: false)
                 }
-                .oudsGridMargin(.horizontal)
+                .gridMargin(.horizontal)
                 .padding(.bottom, theme.spaces.fixedMedium)
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
         .listStyle(.plain)
         .padding(.top, theme.spaces.fixedNone)
-        .oudsBackground(theme.colors.bgPrimary)
-        .navigationTitle(name.localized())
-        .oudsRequestAccessibleFocus(_requestFocus)
+        .background(theme.colors.bgPrimary)
+        .requestAccessibleFocus(_requestFocus)
+        #if !os(macOS)
+            .toolBarTop(name.localized())
+        #endif
     }
 }

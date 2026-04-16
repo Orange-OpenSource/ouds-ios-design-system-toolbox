@@ -32,7 +32,7 @@ struct DesignToolboxConfiguration<Configuration>: View where Configuration: View
             Group {
                 Text("app_common_configuration_label")
                     .headingMedium(theme)
-                    .oudsForegroundColor(theme.colors.contentDefault)
+                    .foregroundColor(theme.colors.contentDefault)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 OUDSHorizontalDivider()
@@ -42,9 +42,9 @@ struct DesignToolboxConfiguration<Configuration>: View where Configuration: View
             configuration()
         }
         .padding(.vertical, theme.spaces.fixedMedium)
-        .oudsBorder(style: theme.borders.styleDefault,
-                    width: theme.borders.widthThin,
-                    radius: theme.borders.radiusMedium,
-                    color: theme.colors.borderDefault)
+        .border(style: theme.borders.styleDefault,
+                width: theme.borders.widthThin,
+                radius: theme.borders.radiusMedium,
+                color: theme.colors.borderDefault)
     }
 }

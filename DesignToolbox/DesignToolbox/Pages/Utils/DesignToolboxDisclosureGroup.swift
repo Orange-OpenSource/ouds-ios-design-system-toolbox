@@ -105,7 +105,7 @@ struct InternalDisclosure<Label, Content>: View where Label: View, Content: View
                         .resizable()
                         .renderingMode(.template)
                         .rotationEffect(Angle.degrees(isExpanded ? 0 : 180))
-                        .oudsForegroundColor(theme.colors.surfaceBrandPrimary)
+                        .foregroundColor(theme.colors.surfaceBrandPrimary)
                         .frame(width: 20, height: 20)
                         .padding(.trailing, theme.spaces.paddingInlineMedium)
                         .accessibilityLabel(accessibilityLabel.localized())

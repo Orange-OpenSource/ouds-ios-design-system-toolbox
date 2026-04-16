@@ -41,7 +41,7 @@ final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
             """
             OUDSColoredSurface(color: theme.colorModes.\(selectedColor.description)) {
                Text("\(selectedColor.formattedName)")
-               .oudsForegroundColor(theme.colors.contentDefault)
+               .foregroundColor(theme.colors.contentDefault)
 
                OUDSButton(text: "\("app_components_button_tech".localized())") {}
 

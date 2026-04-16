@@ -50,6 +50,10 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
         !enabled ? ".disabled(true)" : ""
     }
 
+    private var accessibilityLabelValue: String {
+        "app_components_common_icon_a11y".localized()
+    }
+
     override func updateCode() {
         switch layout {
         case .textOnly:
@@ -61,7 +65,7 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
         case .iconOnly:
             code =
                 """
-                OUDSSuggestionChip(icon: Image(\"ic_heart\"), accessibilityLabel: \"Some label\") {}
+                OUDSSuggestionChip(icon: Image(\"ic_heart\"), accessibilityLabel: \"\(accessibilityLabelValue)\") {}
                 \(disabledCode)
                 """
         case .textAndIcon:

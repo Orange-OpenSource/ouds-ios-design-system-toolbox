@@ -27,15 +27,15 @@ struct GridTokenPage: View {
                 Image(decorative: "il_tokens_grid_column_margin")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .oudsBackground(theme.colors.surfaceSecondary)
+                    .background(theme.colors.surfaceSecondary)
                 Image(decorative: "il_tokens_grid_min_width")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .oudsBackground(theme.colors.surfaceSecondary)
+                    .background(theme.colors.surfaceSecondary)
                 Image(decorative: "il_tokens_grid_max_width")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .oudsBackground(theme.colors.surfaceSecondary)
+                    .background(theme.colors.surfaceSecondary)
             }
 
             Section {
@@ -47,7 +47,7 @@ struct GridTokenPage: View {
                     .designToolboxSectionHeaderStyle()
             }
         }
-        .oudsGridMargin(.horizontal)
+        .gridMargin(.horizontal)
     }
 
     // MARK: Private helpers
