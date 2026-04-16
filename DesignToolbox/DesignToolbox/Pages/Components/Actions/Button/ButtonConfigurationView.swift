@@ -79,7 +79,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .textOnly:
             "text: \"\(text)\""
         case .iconOnly:
-            "icon: \(Image.defaultImageSample())\(flipIconPattern), accessibilityLabel: \"accessibility label\""
+            "icon: \(Image.defaultImageSample())\(flipIconPattern), accessibilityLabel: \"\(accessibilityLabelValue)\""
         case .textAndIcon:
             "text: \"\(text)\", icon: \(Image.defaultImageSample())\(flipIconPattern)"
         }
@@ -94,7 +94,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     }
 
     private var coloredSurfaceCodeModifier: String {
-        onColoredSurface ? ".oudsColoredSurface(theme.colorModes.onBrandPrimary)" : ""
+        onColoredSurface ? ".coloredSurface(theme.colorModes.onBrandPrimary)" : ""
     }
 
     private var flipIconPattern: String {
@@ -103,6 +103,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
 
     private var isFullWidthPattern: String {
         isFullWidth ? ", isFullWidth: true" : ""
+    }
+
+    private var accessibilityLabelValue: String {
+        "app_components_common_icon_a11y".localized()
     }
 
     override func updateCode() {
@@ -146,7 +150,7 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
 
 extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSButton.Style] = [.default, .loading]
+    public static let allCases: [OUDSButton.Style] = [.default, .loading]
 
     public var description: String {
         switch self {
@@ -170,7 +174,7 @@ extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomString
 
 extension OUDSButton.Appearance: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
+    public static let allCases: [OUDSButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
 
     // Note: Not localized because it is a technical name
     public var description: String {

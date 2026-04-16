@@ -4,6 +4,38 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.3.0...develop)
+
+### Added
+
+- [Library] Support of disabled `Liquid Glass` for `tab bar` and `toolbar` components (Orange-OpenSource/ouds-ios#1408)
+- [Library] `toolbar top` and `toolbar bottom` components (Orange-OpenSource/ouds-ios#1174)
+- [Library] `text area` component (Orange-OpenSource/ouds-ios#543)
+- [Library] `PIN code input` component (Orange-OpenSource/ouds-ios#998)
+- [Library] `borderDefault()` view modifier helper to apply a default border using default tokens from the current theme (Orange-OpenSource/ouds-ios#1379)
+- [Library] `LocalizedStringKey` and `Bundle` initializers for components using `String` for texts and accessibility labels (Orange-OpenSource/ouds-ios#1366)
+- [Library] `oudsTintColor` view modifier helper to apply tint color from a `MultipleColorSemanticToken` (Orange-OpenSource/ouds-ios#1370)
+- [Library] `verbose` flag on `OUDSLogger` to suppress debug and log messages by default (Orange-OpenSource/ouds-ios#1365)
+
+### Changed
+
+- [DesignToolbox] `ruby/setup-ruby` action from v1.2960 to v1.301.0 for `build-and-test` workflow
+- [DesignToolbox] `github/codeql-action/upload-sarif` action from v4.34.1 to v4.35.2 for `scorecard` workflow
+- [DesignToolbox] `actions/upload-artifact` action from v7.0.0 to v7.0.1 for `scorecard` workflow
+- [DesignToolbox] `tab bar` component initialization (Orange-OpenSource/ouds-ios#1373)
+- [Library] Optimization of public API (frozen structs and enums, inlinable properties) (Orange-OpenSource/ouds-ios#1382)
+- [DesignToolbox] Use short description for components pages (Orange-OpenSource/ouds-ios#1286)
+- [Library] Update illustrations in documentation for `alert message` component (Orange-OpenSource/ouds-ios#1359)
+- [Library] View modifiers and methods prefixed by `ouds` are replaced by same names without such `ouds` (Orange-OpenSource/ouds-ios#1346)
+- [DesignToolbox] Move from Xcode 26.2 to Xcode 26.3 (Orange-OpenSource/ouds-ios#1375)
+
+### Fixed
+
+- [Library] Vocalization and management of focus for `PIN code input` component (Orange-OpenSource/ouds-ios#1409)
+- [Library] Accessibility label for `alert` components for `warning` and `negative` statuses (Orange-OpenSource/ouds-ios#1407)
+- [Library] Accessibility hint for double-tap to unselect action for `filter chip` component (Orange-OpenSource/ouds-ios#1277)
+- [DesignToolbox] Display of accessibility label for buttons, chips and badge components sample code (Orange-OpenSource/ouds-ios#1378)
+
 ## [1.3.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.2.0...1.3.0) - 2026-03-26
 
 ### Added
@@ -81,7 +113,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [DesignToolbox] Toolbar buttons for theme and color scheme indicators do not work anymore (Orange-OpenSource/ouds-ios#1244)
+- [DesignToolbox] ToolBar buttons for theme and color scheme indicators do not work anymore (Orange-OpenSource/ouds-ios#1244)
 - [Library] Cycle in attribute graph with OUDS tab bar and Xcode 26.2 (Orange-OpenSource/ouds-ios#1247) (Orange-OpenSource/ouds-ios#1249)
 - [DesignToolbox] Custom icon does not change on theme switch on `badge` and `tag` components pages (Orange-OpenSource/ouds-ios#1218)
 

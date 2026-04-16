@@ -86,7 +86,7 @@ end
 # Devices configuration
 # ---------------------
 
-OUDS_SNAPSHOTS_TEST_DEVICE = "iPhone 17 Pro"
+OUDS_SNAPSHOTS_TEST_DEVICE = "iPhone 17 Pro (26.2)"
 OUDS_UNIT_TEST_DEVICE = OUDS_SNAPSHOTS_TEST_DEVICE
 OUDS_UI_TEST_DEVICE = OUDS_SNAPSHOTS_TEST_DEVICE
 
@@ -661,7 +661,7 @@ platform :vision do
             include_symbols: true,
             skip_archive: true,
             skip_codesigning: true,
-            destination: "platform=visionOS Simulator,OS=26.0,name=Apple Vision Pro"
+            destination: "generic/platform=visionOS"
         )
     end
     

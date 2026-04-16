@@ -34,7 +34,7 @@
 [![AppStore](https://img.shields.io/itunes/v/6743708286?style=for-the-badge&label=AppStore)](https://apps.apple.com/fr/app/design-system-toolbox/id6743708286)
 [![Still maintained](https://img.shields.io/maintenance/yes/2026?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues?q=is%3Aissue+is%3Aclosed)
 
-[![Xcode 26.2](https://img.shields.io/badge/Xcode-26.2-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_2-release-notes)
+[![Xcode 26.3](https://img.shields.io/badge/Xcode-26.3-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes)
 
 ![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)
 ![iPadOS 15.0](https://img.shields.io/badge/iPadOS-15.0-FF1AB2?style=for-the-badge)
@@ -45,7 +45,7 @@
 
 ## 📦 Content
 
-Source code of the app sshowcasing the design system for iOS, iPadOS, macOS, visionOS, watchOS and tvOS.
+Source code of the app showcasing the design system for iOS, iPadOS, macOS, visionOS, watchOS and tvOS.
 
 > [!NOTE]
 > This repository contains the design system toolbox app which contains the OUDS iOS Swift Package and displays its features.
@@ -89,6 +89,10 @@ Code released under the [MIT License](https://github.com/Orange-OpenSource/ouds-
 For images and other assets, please [refer to the NOTICE.txt](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/ain/NOTICE.txt).
 
 ## 📱 Design System Toolbox App
+
+> [!IMPORTANT]
+> If you want to test the look and feel of OUDS without Liquid Glass on iOS 26 (Xcode 26),
+> add in your Info.plist the key "UIDesignRequiresCompatibility" with "YES" value.
 
 ### iOS
 
@@ -137,7 +141,7 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 ### macOS
 
 > [!NOTE]
-> The macOS app is not yet available on TestFlight nor the AppStore
+> The macOS app is not yet available on TestFlight nor the AppStore, but you can build it
 
 <p align="center">
 <img src="./images/macOS/Tokens list - en - light.png" alt="List of tokens on MacBook Pro 16'' inch'' (english, light mode)" height="350" />
@@ -152,7 +156,7 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 ### visionOS 
 
 > [!NOTE]
-> The visionOS app is not yet available on TestFlight nor the AppStore
+> The visionOS app is not yet available on TestFlight nor the AppStore, but you can build it
 
 <p align="center">
 <img src="./images/visionOS/Tokens list - en - light.png" alt="List of tokens on Vision Pro (english, light mode)" height="350" />
@@ -169,7 +173,7 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 <!-- Mockups designed thanks to https://mockuphone.com/model/apple-watch-ultra-2/ -->
 
 > [!NOTE]
-> The watchOS app is not yet available on TestFlight nor the AppStore
+> The watchOS app is not yet available on TestFlight nor the AppStore, but you can build it
 
 <p align="center">
 <img src="./images/watchOS/Tokens list.png" alt="List of tokens on Watch Series 11 (46mm) (english)" height="350" />
@@ -184,7 +188,7 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 ### tvOS
 
 > [!NOTE]
-> The tvOS app is not yet available on TestFlight nor the AppStore
+> The tvOS app is not yet available on TestFlight nor the AppStore, but you can build it
 
 <p align="center">
 <img src="./images/tvOS/Tokens list.png" alt="List of tokens on Apple TV 4K (3rd generation) (english)" height="350" />

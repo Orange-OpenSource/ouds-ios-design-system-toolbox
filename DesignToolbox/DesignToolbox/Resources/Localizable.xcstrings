@@ -273,19 +273,43 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار التطبيق: %@"
+            "value" : "إصدار التطبيق "
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "App version:"
+            "value" : "App version"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version de l’app :"
+            "value" : "Version de l’app"
+          }
+        }
+      }
+    },
+    "app_about_details_appVersion_stable" : {
+      "comment" : "About screen - App details (stable build)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار التطبيق %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App version %@ "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version de l’app %@"
           }
         }
       }
@@ -297,19 +321,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "رقم البناء: %@"
+            "value" : "رقم البناء"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Build number: "
+            "value" : "Build number"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Numéro du build :"
+            "value" : "Numéro du build"
           }
         }
       }
@@ -321,19 +345,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "نوع البناء: %@"
+            "value" : "نوع البناء"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Build type:"
+            "value" : "Build type"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Type de build :"
+            "value" : "Type de build"
           }
         }
       }
@@ -393,19 +417,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز OUDS الأساسية:"
+            "value" : "إصدار مكتبة رموز OUDS الأساسية"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "OUDS core tokens library version:"
+            "value" : "OUDS core tokens library version"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens core OUDS :"
+            "value" : "Version des tokens core OUDS"
           }
         }
       }
@@ -417,19 +441,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز العلامة التجارية Orange:"
+            "value" : "إصدار مكتبة رموز العلامة التجارية Orange"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Orange brand tokens library version:"
+            "value" : "Orange brand tokens library version"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens brand Orange :"
+            "value" : "Version des tokens brand Orange"
           }
         }
       }
@@ -441,19 +465,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة الرموز المميزة للعلامة التجارية Orange Compact :"
+            "value" : "إصدار مكتبة الرموز المميزة للعلامة التجارية Orange Compact"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Orange Compact brand tokens library version:"
+            "value" : "Orange Compact brand tokens library version"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens brand Orange Compact :"
+            "value" : "Version des tokens brand Orange Compact"
           }
         }
       }
@@ -465,19 +489,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز Orange core:"
+            "value" : "إصدار مكتبة رموز Orange core"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Orange core tokens library version:"
+            "value" : "Orange core tokens library version"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens core Orange :"
+            "value" : "Version des tokens core Orange"
           }
         }
       }
@@ -489,19 +513,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز العلامة التجارية Sosh:"
+            "value" : "إصدار مكتبة رموز العلامة التجارية Sosh"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sosh brand tokens library version:"
+            "value" : "Sosh brand tokens library version"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens brand Sosh :"
+            "value" : "Version des tokens brand Sosh"
           }
         }
       }
@@ -513,19 +537,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز Sosh الأساسية:"
+            "value" : "إصدار مكتبة رموز Sosh الأساسية"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sosh core tokens library version:"
+            "value" : "Sosh core tokens library version"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens core Sosh :"
+            "value" : "Version des tokens core Sosh"
           }
         }
       }
@@ -537,19 +561,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز العلامة التجارية Wireframe:"
+            "value" : "إصدار مكتبة رموز العلامة التجارية Wireframe"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wireframe brand tokens library version:"
+            "value" : "Wireframe brand tokens library version"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens brand Wireframe :"
+            "value" : "Version des tokens brand Wireframe"
           }
         }
       }
@@ -561,22 +585,47 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار مكتبة رموز النواة للإطار السلكي:"
+            "value" : "إصدار مكتبة رموز النواة للإطار السلكي"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wireframe core tokens library version:"
+            "value" : "Wireframe core tokens library version"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version des tokens core Wireframe :"
+            "value" : "Version des tokens core Wireframe"
           }
         }
       }
+    },
+    "app_about_isLiquidGlass_disabled" : {
+      "comment" : "About screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liquid Glass"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liquid Glass"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liquid Glass"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_about_legalInformation_label" : {
       "comment" : "About screen",
@@ -844,6 +893,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_common_loremIpsum_tech" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.\n\nNemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\n\nUt enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.\n\nNemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\n\nUt enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.\n\nNemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\n\nUt enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+          }
+        }
+      }
+    },
     "app_common_select_element" : {
       "comment" : "Common - A message displayed when no element is selected in the Design Toolbox.",
       "localizations" : {
@@ -911,6 +984,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Basculer la visibilité du code"
+          }
+        }
+      }
+    },
+    "app_common_soonAvailable" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قريباً!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Available soon!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bientôt disponible !"
           }
         }
       }
@@ -1433,6 +1530,55 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_bottomAppBar_description_text" : {
+      "comment" : "Component - Tool bar Bottom",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يوفر شريط الأدوات السفلي وصولاً سهلاً إلى الأوامر وعناصر التحكم والبحث المستخدمة بشكل متكرر."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A tool bar bottom provides convenient access to frequently used commands, controls and search."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une barre d'outils en bas de l'écran offre un accès pratique aux commandes, aux contrôles et à la recherche fréquemment utilisés."
+          }
+        }
+      }
+    },
+    "app_components_bottomAppBar_tech" : {
+      "comment" : "Component - Tool bar Bottom",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toolbar bottom"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toolbar bottom"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toolbar bottom"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_bulletList_bold_tech" : {
       "comment" : "Component - Bullet List",
       "extractionState" : "manual",
@@ -1465,19 +1611,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bullet list هي عنصر واجهة مستخدم يساعد على عرض عناصر نصية فردية ذات صلة مجمعة معًا؛ عادةً ما تبدأ برقم أو برمز نقطي."
+            "value" : "القائمة النقطية هي عنصر واجهة مستخدم يُساعد على عرض عناصر نصية فردية مترابطة مُجمّعة معًا؛ تبدأ العناصر عادةً برقم أو نقطة. تُعرف القائمة النقطية أيضًا باسم \"القائمة غير المرتبة\" أو \"القائمة المرتبة\"، وهي ليست عنصرًا تفاعليًا افتراضيًا، على الرغم من أن عناصر النص تدعم روابط النص التشعبي."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bullet list is a UI element that helps to view in related individual text items grouped together; items usually starting with a number or a bullet."
+            "value" : "Bullet list is a UI element that helps to view in related individual text items grouped together; items usually starting with a number or a bullet. Bullet list is also known as “Unordered list” or “Ordered list” and is not an interactive element by default, although text items can support hypertext links."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le composant BulletList est un élément d'interface utilisateur qui permet de visualiser des éléments de texte individuels liés, regroupés par ordre alphabétique ; ces éléments commencent généralement par un chiffre ou une puce."
+            "value" : "La liste à puces est un élément d'interface utilisateur permettant d'afficher des éléments de texte individuels regroupés par thèmes ; ces éléments commencent généralement par un chiffre ou une puce. Également appelée « liste non ordonnée » ou « liste ordonnée », la liste à puces n'est pas interactive par défaut, bien que ses éléments puissent contenir des liens hypertextes."
           }
         }
       }
@@ -1735,19 +1881,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الزر هو عنصر من عناصر واجهة المستخدم يُفعّل إجراءً أو حدثًا، ويُستخدم لبدء المهام أو تأكيد إجراء ما. يظهر الزر بتصميمات وأنماط وحالات مختلفة للإشارة إلى التسلسل الهرمي أو التركيز."
+            "value" : "الزر هو عنصر من عناصر واجهة المستخدم يقوم بتشغيل إجراء أو حدث، ويستخدم لبدء المهام أو تأكيد إجراء ما."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Button is a UI element that triggers an action or event, and is used to initiate tasks or confirming an action. Button appears in different layouts, styles and states to indicate hierarchy or emphasis."
+            "value" : "Button is a UI element that triggers an action or event, and is used to initiate tasks or confirming an action."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le bouton est un élément de l'interface utilisateur qui déclenche une action ou un événement et est utilisé pour lancer des tâches ou confirmer une action. Le bouton apparaît dans différentes mises en page, styles et états pour indiquer la hiérarchie ou l'accent."
+            "value" : "Un bouton est un élément d'interface utilisateur qui déclenche une action ou un événement, et sert à lancer des tâches ou à confirmer une action."
           }
         }
       }
@@ -2224,19 +2370,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "شريحة التصفية هي عنصر من عناصر واجهة المستخدم يسمح بتحديد أو إلغاء تحديد خيار ضمن سلسلة، وتُستخدم عادةً لتسجيل قرارات التصفية. تتيح شريحة التصفية تصفية المحتوى عن طريق تحديدها أو إلغاء تحديدها. يمكن تفعيلها أو تعطيلها لتحسين النتائج المعروضة، وتبقى شرائح التصفية المحددة مميزة بصريًا للإشارة إلى عوامل التصفية النشطة."
+            "value" : "شريحة التصفية هي عنصر من عناصر واجهة المستخدم يسمح بتحديد أو إلغاء تحديد خيار ضمن سلسلة، وتستخدم عادة لالتقاط قرارات التصفية."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Filter chip is a UI element that allows to select or deselect an option within a series, and is commonly used to capture filtering decisions. Filter chip allows to filter content by being selected or deselected. It can be toggled \"On\" or \"Off\" to refine displayed results, and selected Filter Chips remain visually distinct to indicate active filters."
+            "value" : "Filter chip is a UI element that allows to select or deselect an option within a series, and is commonly used to capture filtering decisions."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La puce de filtre est un élément d'interface utilisateur qui permet de sélectionner ou de désélectionner une option au sein d'une série et est couramment utilisée pour capturer les décisions de filtrage. La puce de filtre permet de filtrer le contenu en étant sélectionné ou désélectionné. Il peut être activé ou désactivé pour affiner les résultats affichés, et les puces de filtre sélectionnées restent visuellement distinctes pour indiquer les filtres actifs."
+            "value" : "Le filtre est un élément d'interface utilisateur qui permet de sélectionner ou de désélectionner une option au sein d'une série, et est couramment utilisé pour enregistrer les décisions de filtrage."
           }
         }
       }
@@ -2297,19 +2443,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "شريحة الاقتراحات هي عنصر من عناصر واجهة المستخدم يسمح بعرض خيارات مُوصى بها أو تنبؤية بناءً على مدخلات المستخدم أو سياقه، وتُستخدم عادةً لتسجيل قرارات التصفية. عادةً ما تكون شريحة الاقتراحات غير مُحددة افتراضيًا، ويمكن النقر عليها أو الضغط عليها لتطبيق الاقتراح، مما يُبسط عملية الإدخال ويُحسّن سهولة الاستخدام."
+            "value" : "شريحة الاقتراحات هي عنصر من عناصر واجهة المستخدم يسمح بعرض خيارات موصى بها أو تنبؤية بناءً على مدخلات المستخدم أو السياق، وتستخدم عادة لالتقاط قرارات التصفية."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suggestion chip is a UI element that allows to present recommended or predictive options based on user's input or context, and is commonly used to capture filtering decisions. Suggestion chip is typically non-selected by default and can be tapped or clicked to apply the suggestion, streamlining input and enhancing usability."
+            "value" : "Suggestion chip is a UI element that allows to present recommended or predictive options based on user’s input or context, and is commonly used to capture filtering decisions."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La puce de suggestion est un élément de l'interface utilisateur qui permet de présenter des options recommandées ou prédictives en fonction de la saisie ou du contexte de l'utilisateur, et est couramment utilisée pour capturer les décisions de filtrage. La puce de suggestion n'est généralement pas sélectionnée par défaut et peut être appuyée ou cliquée pour appliquer la suggestion, rationalisant ainsi la saisie et améliorant la convivialité."
+            "value" : "La puce de suggestion est un élément d'interface utilisateur qui permet de présenter des options recommandées ou prédictives en fonction des entrées ou du contexte de l'utilisateur, et est couramment utilisée pour capturer les décisions de filtrage."
           }
         }
       }
@@ -2780,6 +2926,31 @@
         }
       }
     },
+    "app_components_common_icon_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_iconOnlyLayout_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
@@ -2886,19 +3057,44 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Loader"
+            "value" : "Loading"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Loader"
+            "value" : "Loading"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Loader"
+            "value" : "Loading"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_none_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "None"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "None"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "None"
           }
         }
       },
@@ -3322,31 +3518,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_controlItem_icon_tech" : {
-      "comment" : "Component - ControlItem",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_controlItem_reversed_tech" : {
       "comment" : "Component - ControlItem",
       "extractionState" : "manual",
@@ -3550,19 +3721,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الرابط هو عنصر من عناصر واجهة المستخدم يسمح بالتنقل من مكان إلى آخر، سواء داخل الصفحة نفسها، أو عبر صفحات مختلفة من نفس المصدر، أو إلى مصدر خارجي. تتمثل الوظيفة الأساسية للرابط في التنقل، وهو يُظهر طبيعته التفاعلية بصريًا ودلاليًا."
+            "value" : "الرابط هو عنصر واجهة مستخدم يسمح بالانتقال من مكان إلى آخر، سواء داخل نفس الصفحة أو عبر صفحات مختلفة في نفس المورد، أو إلى مورد خارجي."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Link is a UI element that allows to navigate from one location to another, either within the same page or across different pages in the same resource, or to an external resource. Link's primary function is navigation and it communicates its interactive nature visually and semantically."
+            "value" : "Link is a UI element that allows to navigate from one location to another, either within the same page or across different pages in the same resource, or to an external resource."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le lien est un élément d'interface utilisateur qui permet de naviguer d'un emplacement à un autre, soit au sein de la même page, soit à travers différentes pages de la même ressource, soit vers une ressource externe. La fonction principale du lien est la navigation et communique sa nature interactive visuellement et sémantiquement."
+            "value" : "Un lien est un élément d'interface utilisateur qui permet de naviguer d'un emplacement à un autre, que ce soit au sein de la même page, entre différentes pages de la même ressource ou vers une ressource externe."
           }
         }
       }
@@ -3759,6 +3930,152 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Le mot de passe doit contenir au moins 8 caractères."
+          }
+        }
+      }
+    },
+    "app_components_pinCodeInput_description_text" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إدخال رمز PIN هو عنصر واجهة مستخدم يسمح بالتقاط رموز رقمية قصيرة وثابتة الطول، عادةً لأغراض المصادقة أو التأكيد، مثل رقم تعريف شخصي (PIN) مكون من أربعة أو ستة أرقام أو أكثر."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PIN code input is a UI element that allows to capture short, fixed-length numeric codes, typically for authentication or confirmation purposes, such as a four, six or eight-digit personal identification number (PIN)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La saisie du code PIN est un élément d'interface utilisateur qui permet de capturer des codes numériques courts et de longueur fixe, généralement à des fins d'authentification ou de confirmation, tels qu'un numéro d'identification personnel (PIN) à quatre, six ou huits chiffres."
+          }
+        }
+      }
+    },
+    "app_components_pinCodeInput_errorDescription_label" : {
+      "comment" : "Component - Pin Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "وصف الخطأ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error description"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Message d’erreur"
+          }
+        }
+      }
+    },
+    "app_components_pinCodeInput_helper_label" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_pinCodeInput_length_tech" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Length"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Length"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Length"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_pinCodeInput_tech" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pin code input"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pin code input"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pin code input"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_pinCodeInputHelperText_label" : {
+      "comment" : "Component - PIN Code Input",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أدخل الرمز المكون من 6 أرقام والذي تم إرساله إلى هاتفك."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the 6-digit code sent to your phone."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisissez le code à 6 chiffres envoyé sur votre téléphone."
           }
         }
       }
@@ -4203,30 +4520,6 @@
         }
       }
     },
-    "app_components_tabBar_itemCount_label" : {
-      "comment" : "Component - Tab bar",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "عدد العناصر: %@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Item count: %@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nombre d’items : %@"
-          }
-        }
-      }
-    },
     "app_components_tabBar_labeltem_label" : {
       "comment" : "Component - Tab bar",
       "extractionState" : "manual",
@@ -4521,6 +4814,178 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_textArea_charactersMaxCount_tech" : {
+      "comment" : "Component - Text Area",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Characters max count"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Characters max count"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Characters max count"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textArea_description_text" : {
+      "comment" : "Component - Text Area",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "منطقة النص هي عنصر من عناصر واجهة المستخدم يسمح بكتابة أو تحرير أو تحديد كتل نصية متعددة الأسطر، مثل التعليقات أو الرسائل أو الأوصاف."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text area is a UI element that allows to type, edit, or select multiple lines of textual data, such as comments, messages or descriptions."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La zone de texte est un élément d'interface utilisateur qui permet de saisir, de modifier ou de sélectionner plusieurs lignes de données textuelles, telles que des commentaires, des messages ou des descriptions."
+          }
+        }
+      }
+    },
+    "app_components_textArea_errorDescription_label" : {
+      "comment" : "Component - Text Area",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "وصف الخطأ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error description"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Message d'erreur"
+          }
+        }
+      }
+    },
+    "app_components_textArea_helperLink_tech" : {
+      "comment" : "Component - Text Area",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper link"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper link"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper link"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textArea_maxCharacters_tech" : {
+      "comment" : "Component - Text Area",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max characters"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max characters"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max characters"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textArea_tech" : {
+      "comment" : "Component - Text Area",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text area"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text area"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text area"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_textAreaHelperText_label" : {
+      "comment" : "Component - Text Area",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص مساعد."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte d'aide."
+          }
+        }
+      }
+    },
     "app_components_textInput_description_text" : {
       "comment" : "Component - Text Input",
       "extractionState" : "manual",
@@ -4528,19 +4993,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "حقل إدخال النص هو عنصر من عناصر واجهة المستخدم يسمح بإدخال البيانات النصية المكونة من سطر واحد أو تعديلها أو تحديدها. يُعد حقل إدخال النص أحد أهم عناصر النماذج المستخدمة لالتقاط مدخلات المستخدم مثل الأسماء وعناوين البريد الإلكتروني وكلمات المرور أو استعلامات البحث. يوفر هذا الحقل تجربة مرئية وتفاعلية لإدخال النصوص، مع دعمه للعلامات والرموز التوضيحية والأوصاف وملاحظات التحقق."
+            "value" : "إدخال النص هو عنصر من عناصر واجهة المستخدم يسمح بكتابة أو تحرير أو تحديد سطر واحد من البيانات النصية، مثل الأسماء أو عناوين البريد الإلكتروني أو استعلامات البحث."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Text input is a UI element that allows to enter, edit, or select single-line textual data. Text input is one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries. It provides a visual and interactive affordance for text entry while supporting labels, placeholders, icons, descriptions, and validation feedback."
+            "value" : "Text input is a UI element that allows to type, edit, or select single line of textual data, such as names, emails or search queries."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le champ de saisie de texte est un élément d'interface utilisateur permettant de saisir, modifier ou sélectionner des données textuelles sur une seule ligne. C'est l'un des éléments de formulaire les plus fondamentaux pour recueillir les informations saisies par l'utilisateur, telles que les noms, adresses e-mail, mots de passe ou requêtes de recherche. Il offre une interface visuelle et interactive pour la saisie de texte et prend en charge les étiquettes, les espaces réservés, les icônes, les descriptions et les retours de validation."
+            "value" : "Le champ de saisie de texte est un élément d'interface utilisateur qui permet de saisir, de modifier ou de sélectionner une seule ligne de données textuelles, telles que des noms, des adresses électroniques ou des requêtes de recherche."
           }
         }
       }
@@ -4767,6 +5232,667 @@
           }
         }
       }
+    },
+    "app_components_toolbar_common_itemCount_label" : {
+      "comment" : "Component - Tab bar - common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عدد العناصر: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item count: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre d’items : %@"
+          }
+        }
+      }
+    },
+    "app_components_toolbar_demo_backToConfiguration_label" : {
+      "comment" : "Component - Tool Bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "العودة إلى الإعدادات"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back to configuration"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retour à la configuration"
+          }
+        }
+      }
+    },
+    "app_components_toolbar_demo_content_label" : {
+      "comment" : "Component - Tool Bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ضع محتواك هنا!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your content here!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre contenu de page ici !"
+          }
+        }
+      }
+    },
+    "app_components_toolbar_demo_showDemo_label" : {
+      "comment" : "Component - Tool Bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عرض تجريبي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Demo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Montrer la demo"
+          }
+        }
+      }
+    },
+    "app_components_toolbar_demoOption_tech" : {
+      "comment" : "Component - Tool Bar Top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خيارات العرض التوضيحي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Demo options"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Options de démonstration"
+          }
+        }
+      }
+    },
+    "app_components_toolbar_item_actionType_default_tech" : {
+      "comment" : "Component - Tool Bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Default"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_toolbar_item_actionType_prominent_tech" : {
+      "comment" : "Component - Tool Bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prominent"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prominent"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prominent"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_toolbar_item_actionType_tinted_tech" : {
+      "comment" : "Component - Tool Bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tinted"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tinted"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tinted"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_toolbar_item_emphasized_tech" : {
+      "comment" : "Component - Tool Bar Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emphasized"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emphasized"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emphasized"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_toolbar_item_ios26ButtonStyle_tech" : {
+      "comment" : "Component - Tool Bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iOS 26 Button style"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iOS 26 Button style"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iOS 26 Button style"
+          }
+        }
+      }
+    },
+    "app_components_toolbar_leading_tech" : {
+      "comment" : "Component - Tool Bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_toolbar_leadingText_label" : {
+      "comment" : "Component - Tool Bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النص الرئيسي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte du début"
+          }
+        }
+      }
+    },
+    "app_components_toolbar_trailing_tech" : {
+      "comment" : "Component - Tool Bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_toolbar_trailingText_label" : {
+      "comment" : "Component - Tool Bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النص اللاحق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte de fin"
+          }
+        }
+      }
+    },
+    "app_components_toolbarItem_hint_a11y" : {
+      "comment" : "Component - Toolbars",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا ملصق وهمي لعنصر شريط الأدوات"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is a dumb accessibility label for a toolbar item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceci est un label bidon pour un item de toolbar"
+          }
+        }
+      }
+    },
+    "app_components_toolbarItem_label_a11y" : {
+      "comment" : "Component - Toolbars",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تسمية للزر"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label for a button"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label pour un bouton"
+          }
+        }
+      }
+    },
+    "app_components_topAppBar_demoOption_fullCover_tech" : {
+      "comment" : "Component - Tool Bar Top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full cover"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full cover"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full cover"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_topAppBar_demoOption_label" : {
+      "comment" : "Component - Tool Bar Top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خيار العرض التوضيحي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Demo option"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Option de démonstration"
+          }
+        }
+      }
+    },
+    "app_components_topAppBar_demoOption_modalSheet_tech" : {
+      "comment" : "Component - Tool Bar Top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modal sheet"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modal sheet"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modal sheet"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_topAppBar_demoOption_navigation_tech" : {
+      "comment" : "Component - Tool Bar Top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Navigation"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Navigation"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Navigation"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_topAppBar_description_text" : {
+      "comment" : "Component - Tool Bar Top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App bar هو مكون موجه من الأعلى يعرض عنوان الشاشة ويوفر الوصول إلى الإجراءات الرئيسية وعناصر التنقل."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App bar is a top-aligned component that displays the screen title and provides access to key actions and navigation elements."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La barre d'application est un composant situé en haut de l'écran qui affiche le titre de l'écran et donne accès aux actions principales et aux éléments de navigation."
+          }
+        }
+      }
+    },
+    "app_components_topAppBar_hideBackButton_tech" : {
+      "comment" : "Component - Tool Bar Top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إخفاء زر الرجوع"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hide back button"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cacher le bouton de retour"
+          }
+        }
+      }
+    },
+    "app_components_topAppBar_largeTitle_tech" : {
+      "comment" : "Component - Tool Bar Top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Large title"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Large title"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Large title"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_topAppBar_subtitle_tech" : {
+      "comment" : "Component - Tool Bar Top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subtitle"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subtitle"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subtitle"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_topAppBar_tech" : {
+      "comment" : "Component - Tool Bar Top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toolbar top"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toolbar top"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toolbar top"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_topAppBar_title_label" : {
+      "comment" : "Component - Tool Bar Top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عنوان"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titre"
+          }
+        }
+      }
+    },
+    "app_components_topAppBar_title_tech" : {
+      "comment" : "Component - Tool Bar Top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_settings_themeSwitch_cancel" : {
       "comment" : "App - Settings",
@@ -6169,9 +7295,53 @@
         }
       }
     },
+    "core_pinCodeInput_digitLabel_a11y" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرقم %lld"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digit number %lld "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chiffre numéro %lld"
+          }
+        }
+      }
+    },
     "Item %lld" : {
       "comment" : "A label displaying the index of the tab item. The argument is the index of the tab item.",
       "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item %lld"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item %lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item %lld"
+          }
+        }
+      },
       "shouldTranslate" : false
     },
     "Orange" : {

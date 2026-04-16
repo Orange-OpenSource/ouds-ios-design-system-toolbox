@@ -52,7 +52,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     private var coloredSurfaceCodeModifierPattern: String {
-        onColoredSurface ? ".oudsColoredSurface(theme.colorModes.onBrandPrimary)" : ""
+        onColoredSurface ? ".coloredSurface(theme.colorModes.onBrandPrimary)" : ""
     }
 
     private var disableCodePattern: String {
@@ -127,7 +127,7 @@ enum LinkLayout: CaseIterable, CustomStringConvertible {
 
 extension OUDSLink.Size: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSLink.Size] = [.default, .small]
+    public static let allCases: [OUDSLink.Size] = [.default, .small]
 
     public var description: String {
         switch self {

@@ -11,25 +11,27 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSComponents
 import SwiftUI
+
+// MARK: - View extensions for toolBars
 
 extension View {
 
-    /// To add a `ThemeSelectionButton` in the toolbar and also a `ColorSchemeSelectionButton`
-    func navigationBarMenus() -> some View {
-        #if os(iOS) || os(visionOS)
-        toolbar {
-            ToolbarItemGroup(placement: .navigationBarTrailing) {
+    func navigationBarMenus(title: String) -> some View {
+        #if !os(macOS)
+        toolBarTop(title, trailingItems: {
+            OUDSToolBarItem {
                 ThemeSelectionButton()
+            }
+            OUDSToolBarItem {
                 ColorSchemeSelectionButton()
             }
-        }
-        #else // macOS
+        })
+        #else
         toolbar {
-            ToolbarItemGroup(placement: .automatic) {
-                ThemeSelectionButton()
-                ColorSchemeSelectionButton()
-            }
+            ThemeSelectionButton()
+            ColorSchemeSelectionButton()
         }
         #endif
     }

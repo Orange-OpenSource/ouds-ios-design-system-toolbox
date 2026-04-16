@@ -123,7 +123,7 @@ final class BadgeConfigurationModel: ComponentConfiguration {
             """
         case .icon:
             code = """
-            OUDSBadge(\(statusWithIconPattern), accessibilityLabel: \"app_components_badge_hint_a11y\", \(sizePattern))
+            OUDSBadge(\(statusWithIconPattern), accessibilityLabel: \"\(accessibilityLabelValue)\", \(sizePattern))
             \(disablePattern)
             """
         }
@@ -150,6 +150,10 @@ final class BadgeConfigurationModel: ComponentConfiguration {
 
     private var sizePattern: String {
         "size: \(badgeType == .standard ? standardSize.technicalDescription : illustrationSize.technicalDescription)"
+    }
+
+    private var accessibilityLabelValue: String {
+        "app_components_badge_hint_a11y".localized()
     }
 }
 
@@ -203,7 +207,7 @@ struct BadgeConfigurationView: View {
 
 extension OUDSBadge.StandardSize: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
+    public static let allCases: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
 
     public var description: String {
         switch self {
@@ -242,7 +246,7 @@ extension OUDSBadge.StandardSize: @retroactive CaseIterable, @retroactive Custom
 
 extension OUDSBadge.IllustrationSize: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSBadge.IllustrationSize] = [.medium, .large]
+    public static let allCases: [OUDSBadge.IllustrationSize] = [.medium, .large]
 
     public var description: String {
         switch self {
@@ -273,7 +277,7 @@ extension OUDSBadge.IllustrationSize: @retroactive CaseIterable, @retroactive Cu
 
 extension OUDSBadge.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
+    public static let allCases: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
 
     public var description: String {
         switch self {

@@ -21,10 +21,6 @@ source "https://rubygems.org"
 # Should be removed when net-http > 0.6.0 and CVE fixed
 gem 'uri', '1.1.1'
 
-# Solves GHSA-33mh-2634-fwr
-# Should be removed when net-http > 0.6.0 and CVE fixed
-gem 'faraday', '1.10.5'
-
 # To fix
 # "warning: abbrev was loaded from the standard library, but is not part of the default gems starting from Ruby 3.4.0.
 # You can add abbrev to your Gemfile or gemspec to silence this warning.""

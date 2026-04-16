@@ -15,14 +15,37 @@ import SwiftUI
 
 struct ComponentsPage: View {
 
+    #if !os(macOS) && !os(visionOS)
     var componentElements: [DesignToolboxElement] = [
         AlertElements(),
         BadgeElement(),
         BulletListElement(),
         ButtonElement(),
-        ColoredSurfaceElement(),
         CheckboxElements(),
         ChipElements(),
+        ColoredSurfaceElement(),
+        DividerElements(),
+        LinkElement(),
+        PasswordInputElement(),
+        PinCodeInputElement(),
+        RadioElements(),
+        SwitchElements(),
+        TabBarElement(),
+        TagElements(),
+        TextAreaElement(),
+        TextInputElement(),
+        ToolBarBottomElement(),
+        ToolBarTopElement(),
+    ]
+    #else
+    var componentElements: [DesignToolboxElement] = [
+        AlertElements(),
+        BadgeElement(),
+        BulletListElement(),
+        ButtonElement(),
+        CheckboxElements(),
+        ChipElements(),
+        ColoredSurfaceElement(),
         DividerElements(),
         LinkElement(),
         PasswordInputElement(),
@@ -30,13 +53,15 @@ struct ComponentsPage: View {
         SwitchElements(),
         TabBarElement(),
         TagElements(),
+        TextAreaElement(),
         TextInputElement(),
     ]
+    #endif
 
     init() {
         // Tab bar element demo designed for iOS / iPhones
-        // Demo is broken for other platforms (navigation troubles with this tab view integrate elsewhere)
-        #if !os(iOS)
+        // Demo is broken for other platforms (navigation troubles with this tab view integrated elsewhere)
+        #if os(macOS)
         componentElements.removeAll(where: { $0 is TabBarElement })
         #elseif canImport(UIKit)
         if UIDevice.current.userInterfaceIdiom == .pad {

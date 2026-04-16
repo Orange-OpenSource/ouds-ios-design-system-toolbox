@@ -56,7 +56,7 @@ private struct ControlItemConfiguration: View {
                 selection
                     .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
-                OUDSSwitchItem("app_components_controlItem_icon_tech", isOn: $configurationModel.icon)
+                OUDSSwitchItem("app_components_common_icon_tech", isOn: $configurationModel.icon)
 
                 OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
                     .disabled(!configurationModel.icon || configurationModel.isError)

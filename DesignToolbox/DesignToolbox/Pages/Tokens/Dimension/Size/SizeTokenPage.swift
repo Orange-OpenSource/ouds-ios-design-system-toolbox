@@ -67,7 +67,7 @@ struct SizeTokenPage: View {
                 sectionHeader("app_tokens_dimension_size_minInteractiveArea_tech")
             }
         }
-        .oudsGridMargin(.horizontal)
+        .gridMargin(.horizontal)
     }
 
     private func sectionHeader(_ text: LocalizedStringKey) -> some View {
