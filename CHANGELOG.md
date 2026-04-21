@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Redirection page for stable builds in about page (Orange-OpenSource/ouds-ios#1457)
 - [Library] Rich text for `alert message`, `bullet list` components (Orange-OpenSource/ouds-ios#1405)
 - [Library] Rich text for `alert message`, `bullet list`, `switch item` components (Orange-OpenSource/ouds-ios#1405)
+- [Library] Rich text support for `alert message`, `bullet list`, `switch item`, `checkbox item` components (Orange-OpenSource/ouds-ios#1405)
 
 ### Fixed
 
