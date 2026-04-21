@@ -40,19 +40,37 @@ private struct SwitchItemDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSSwitchItem(configurationModel.labelText,
-                       isOn: $configurationModel.isOn,
-                       description: configurationModel.descriptionText,
-                       icon: icon,
-                       flipIcon: configurationModel.flipIcon,
-                       isReversed: !configurationModel.isReversed,
-                       isError: configurationModel.isError,
-                       errorText: configurationModel.errorText,
-                       isReadOnly: configurationModel.isReadOnly,
-                       hasDivider: configurationModel.hasDivider,
-                       constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-            .disabled(!configurationModel.enabled)
-            .accessibilityIdentifier(A11YIdentifiers.componentSwitchItem)
+        // To keep things simple, supposed the rich/raw mode is for all parameters
+        switch configurationModel.textMode {
+        case .raw:
+            OUDSSwitchItem(configurationModel.labelText,
+                           isOn: $configurationModel.isOn,
+                           description: configurationModel.descriptionText,
+                           icon: icon,
+                           flipIcon: configurationModel.flipIcon,
+                           isReversed: !configurationModel.isReversed,
+                           isError: configurationModel.isError,
+                           errorText: configurationModel.errorText,
+                           isReadOnly: configurationModel.isReadOnly,
+                           hasDivider: configurationModel.hasDivider,
+                           constrainedMaxWidth: configurationModel.constrainedMaxWidth)
+                .disabled(!configurationModel.enabled)
+                .accessibilityIdentifier(A11YIdentifiers.componentSwitchItem)
+        case .rich:
+            OUDSSwitchItem(configurationModel.labelText,
+                           isOn: $configurationModel.isOn,
+                           description: configurationModel.descriptionText,
+                           icon: icon,
+                           flipIcon: configurationModel.flipIcon,
+                           isReversed: !configurationModel.isReversed,
+                           isError: configurationModel.isError,
+                           errorText: configurationModel.richErrorText,
+                           isReadOnly: configurationModel.isReadOnly,
+                           hasDivider: configurationModel.hasDivider,
+                           constrainedMaxWidth: configurationModel.constrainedMaxWidth)
+                .disabled(!configurationModel.enabled)
+                .accessibilityIdentifier(A11YIdentifiers.componentSwitchItem)
+        }
     }
 
     private var icon: Image? {
