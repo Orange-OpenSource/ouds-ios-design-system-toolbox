@@ -53,7 +53,7 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         didSet { updateCode() }
     }
 
-    // MARK: - Computed prperties
+    // MARK: - Computed properties
 
     var richDescriptionText: AttributedString {
         do {
@@ -171,7 +171,7 @@ struct AlertMessageConfigurationView: View {
                                chips: OUDSAlertMessage.Link.Position.chips)
                     .disabled(!configurationModel.actionLink)
 
-                OUDSChipPicker(title: "app_components_alert_alertMessage_textMode_tech",
+                OUDSChipPicker(title: "app_components_textMode_tech",
                                selection: $configurationModel.textMode,
                                chips: TextualContentMode.chips)
             }

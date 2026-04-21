@@ -1259,31 +1259,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_alert_alertMessage_textMode_tech" : {
-      "comment" : "Component - Alert Message",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Text mode"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Text mode"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Text mode"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_alert_description_text" : {
       "comment" : "Component - Alert",
       "extractionState" : "manual",
@@ -5257,6 +5232,31 @@
           }
         }
       }
+    },
+    "app_components_textMode_tech" : {
+      "comment" : "Common - Rich text mode",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text mode"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text mode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text mode"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_components_toolbar_common_itemCount_label" : {
       "comment" : "Component - Tab bar - common",
