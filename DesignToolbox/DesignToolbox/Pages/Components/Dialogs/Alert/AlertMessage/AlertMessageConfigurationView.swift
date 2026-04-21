@@ -55,11 +55,19 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
 
     // MARK: - Computed prperties
 
-    var descriptionAttributedText: AttributedString {
+    var richDescriptionText: AttributedString {
         do {
             return try AttributedString(markdown: descriptionText)
         } catch {
             return AttributedString("Supposed to be valid Markdown")
+        }
+    }
+
+    var richBulletList: [AttributedString] {
+        do {
+            return try bulletList.map { try AttributedString(markdown: $0) }
+        } catch {
+            return bulletList.map { _ in AttributedString("Supposed to be valid Markdown") }
         }
     }
 
