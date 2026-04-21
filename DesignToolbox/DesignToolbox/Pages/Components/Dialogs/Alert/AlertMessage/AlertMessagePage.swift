@@ -41,11 +41,21 @@ struct AlertMessageDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSAlertMessage(label: configurationModel.text,
-                         status: configurationModel.status(from: theme),
-                         description: configurationModel.descriptionText,
-                         bulletList: configurationModel.bulletList,
-                         link: configurationModel.link,
-                         onClose: configurationModel.onClose)
+        switch configurationModel.textMode {
+        case .raw:
+            OUDSAlertMessage(label: configurationModel.text,
+                             status: configurationModel.status(from: theme),
+                             description: configurationModel.descriptionText,
+                             bulletList: configurationModel.bulletList,
+                             link: configurationModel.link,
+                             onClose: configurationModel.onClose)
+        case .rich:
+            OUDSAlertMessage(label: configurationModel.text,
+                             status: configurationModel.status(from: theme),
+                             description: configurationModel.descriptionAttributedText,
+                             bulletList: configurationModel.bulletList,
+                             link: configurationModel.link,
+                             onClose: configurationModel.onClose)
+        }
     }
 }
