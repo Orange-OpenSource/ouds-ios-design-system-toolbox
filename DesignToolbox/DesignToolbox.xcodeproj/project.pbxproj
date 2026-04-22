@@ -6100,7 +6100,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "tokenator-update-tokens-20260422133231";
 				kind = branch;
 			};
 		};
