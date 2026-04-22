@@ -5411,7 +5411,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "Design System Toolbox";
@@ -5457,7 +5457,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "Design System Toolbox";
@@ -5601,7 +5601,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5649,7 +5649,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5697,7 +5697,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5742,7 +5742,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5788,7 +5788,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5834,7 +5834,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5871,7 +5871,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -5905,7 +5905,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -6021,7 +6021,7 @@
 			repositoryURL = "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = "2.2.0-beta.1";
+				minimumVersion = "2.2.0-beta.3";
 			};
 		};
 		950EA7062EBE3D5D0009414A /* XCRemoteSwiftPackageReference "ouds-ios" */ = {

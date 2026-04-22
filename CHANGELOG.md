@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.4.0...develop)
 
+### Changed
+
+- Use `accessibility-statement-lib-ios` v2.2.0-beta.3
+
 ### Fixed
 
 - Overlay items of `tab bar` component still displayed even if hidden for disabled Liquid Glass (Orange-OpenSource/ouds-ios#1434)
