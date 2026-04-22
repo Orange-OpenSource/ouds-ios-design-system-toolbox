@@ -5795,6 +5795,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_topAppBar_lastActionIconBadge_tech" : {
+      "comment" : "Component - Tool Bar Top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last action icon badge"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last action icon badge"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last action icon badge"
+          }
+        }
+      }
+    },
     "app_components_topAppBar_subtitle_tech" : {
       "comment" : "Component - Tool Bar Top",
       "extractionState" : "manual",

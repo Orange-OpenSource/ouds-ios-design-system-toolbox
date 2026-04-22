@@ -63,10 +63,12 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
         isLeadingEnabled = true
         isLeadingEmphasized = false
 
-        trailing = .label
+        trailing = .icon
         numberOfTrailingItems = 1
         isTrailingEnabled = true
         isTrailingEmphasized = false
+
+        badgeType = .number
 
         ios26ButtonStyle = .default
     }
@@ -144,7 +146,14 @@ struct ToolBarTopConfiguration: View {
                 }
 
                 ToolBarLeadingConfiguration(configurationModel: configurationModel)
+
                 ToolBarTrailingConfiguration(configurationModel: configurationModel)
+                if configurationModel.trailing == .icon {
+                    OUDSChipPicker(title: "app_components_topAppBar_lastActionIconBadge_tech".localized(),
+                                   selection: $configurationModel.badgeType,
+                                   chips: BarItemBadgeType.chips)
+                }
+
                 ToolBarItemStyle(configurationModel: configurationModel)
 
                 DesignToolboxEditContentDisclosure {

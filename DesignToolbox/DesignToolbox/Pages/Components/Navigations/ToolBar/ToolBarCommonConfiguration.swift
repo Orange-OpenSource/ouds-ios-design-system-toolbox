@@ -61,6 +61,10 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var badgeType: BarItemBadgeType {
+        didSet { updateCode() }
+    }
+
     @Published var ios26ButtonStyle: OUDSToolBarItem.ActionStyle = .default {
         didSet { updateCode() }
     }
@@ -79,6 +83,8 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
         numberOfTrailingItems = 1
         isTrailingEnabled = true
         isTrailingEmphasized = false
+
+        badgeType = .none
 
         ios26ButtonStyle = .prominent
 
@@ -105,8 +111,11 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
     @MainActor
     func trailingItems(for theme: OUDSTheme) -> [OUDSToolBarItem] {
         var items = [OUDSToolBarItem]()
-        for _ in 1 ... numberOfTrailingItems {
-            guard let item = layout(for: theme, type: trailing, label: trailingText, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized) else {
+
+        for index in 1 ... numberOfTrailingItems {
+            let barItemBadgeType: OUDSToolBarItem.BadgeType? = (index == numberOfTrailingItems && trailing == .icon) ? self.badgeType.barItemBadgeType : nil
+
+            guard let item = layout(for: theme, type: trailing, label: trailingText, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized, badgeType: barItemBadgeType) else {
                 return []
             }
 
@@ -117,7 +126,7 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
     }
 
     @MainActor
-    private func layout(for theme: OUDSTheme, type: LeadingTrailingType, label: String, isEnabled: Bool, isEmphasized: Bool = false) -> OUDSToolBarItem? {
+    private func layout(for theme: OUDSTheme, type: LeadingTrailingType, label: String, isEnabled: Bool, isEmphasized: Bool = false, badgeType: OUDSToolBarItem.BadgeType? = nil) -> OUDSToolBarItem? {
 
         let action: (() -> Void)? = isEnabled ? {} : nil
 
@@ -128,10 +137,11 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
         case .label:
             actionType = .label(label, emphasized: isEmphasized, action: action)
         case .icon:
-            let asset = Image.defaultImage(prefixedBy: theme.name)
+            let asset = Image("ic_heart")
             actionType = .icon(asset: asset,
                                accessibilityLabel: "app_components_toolbarItem_label_a11y".localized(),
                                accessibilityHint: "app_components_toolbarItem_hint_a11y".localized(),
+                               badgeType: badgeType,
                                action: action)
         }
 
@@ -161,8 +171,19 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
         return "OUDSToolBarItem(action: .label(\"Label\"\(emphasizedPattern)\(actionPattern(isEnabled: isEnabled))))"
     }
 
+    private var badgeTypePattern: String {
+        switch badgeType {
+        case .number:
+            ", badgeType: .standard"
+        case .standard:
+            ", badgeType: .number(count: 1)"
+        case .none:
+            ""
+        }
+    }
+
     private func iconActionPattern(isEnabled: Bool) -> String {
-        "OUDSToolBarItem(action: .icon(asset: Image(\"magic_wand\"), accessibilityLabel: \"dumb_label_key\"\(actionPattern(isEnabled: isEnabled))))"
+        "OUDSToolBarItem(action: .icon(asset: Image(\"magic_wand\"), accessibilityLabel: \"dumb_label_key\"\(badgeTypePattern)\(actionPattern(isEnabled: isEnabled))))"
     }
 
     private func actionPattern(type: LeadingTrailingType, isEnabled: Bool, isEmphasized: Bool = false) -> String {
@@ -210,6 +231,43 @@ enum LeadingTrailingType: CaseIterable, CustomStringConvertible {
     static var chips: [OUDSChipPickerData<Self>] {
         allCases.map(\.chipData)
     }
+}
+
+enum BarItemBadgeType: CaseIterable {
+    case none
+    case standard
+    case number
+
+    var description: String {
+        switch self {
+            case .none:
+                "app_components_common_none_tech"
+            case .standard:
+                "app_components_badge_standardType_tech"
+            case .number:
+                "app_components_badge_countType_tech"
+        }
+    }
+
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+
+    var barItemBadgeType: OUDSToolBarItem.BadgeType? {
+        switch self {
+        case .none:
+            nil
+        case .standard:
+            .standard
+        case .number:
+            .number(count: 1)
+        }
+    }
+
 }
 
 // MARK: - Extension of OUDSToolBarItem Action Style

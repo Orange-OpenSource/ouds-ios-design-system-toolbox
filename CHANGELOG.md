@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Update of tokens (tokens librairies v2.5.0) (Orange-OpenSource/ouds-ios#1473)
 - [DesignToolbox] Use `accessibility-statement-lib-ios` v2.2.0-beta.3
 - [Library] Update of tokens (tokens librairies v2.4.0) (Orange-OpenSource/ouds-ios#1437)
+- `badge` on `toolbar` item (Orange-OpenSource/ouds-ios#1398)
 
 ### Fixed
 
