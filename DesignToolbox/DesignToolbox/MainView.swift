@@ -34,7 +34,7 @@ struct MainView: View {
 
     var body: some View {
         #if os(iOS)
-        if #available(iOS 26, *), allowSearch, !isLiquidGlassDisabled {
+        if #available(iOS 26, *), allowSearch, !isLiquidGlassDisabled, UIDevice.current.userInterfaceIdiom == .phone {
             ios26TabView
         } else {
             legacyTabBar
