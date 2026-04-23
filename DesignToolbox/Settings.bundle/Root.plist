@@ -10,7 +10,7 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Allow native search (Liquid Glass) (need restart of app)</string>
+			<string>Allow native search (Liquid Glass) (Requires app restart)</string>
 			<key>Key</key>
 			<string>com.orange.ouds.demoapp.allowSearch</string>
 			<key>DefaultValue</key>

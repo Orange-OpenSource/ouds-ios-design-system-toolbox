@@ -68,12 +68,16 @@ struct ElementsGridView: View {
 
     // MARK: - Private
 
-    private func cardView(for element: DesignToolboxElement) -> some View {
-        Card(
+    @ViewBuilder private func cardView(for element: DesignToolboxElement) -> some View {
+        let card = Card(
             title: Text(LocalizedStringKey(element.name)),
             illustration: element.illustration)
             .accessibilityFocused($requestFocus, equals: .some(id: element.id))
-            .requestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
+        if let firstElementID = elements.first?.id {
+            card.requestAccessibleFocus(_requestFocus, for: .some(id: firstElementID))
+        } else {
+            card
+        }
     }
 }
 #endif

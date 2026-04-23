@@ -27,7 +27,7 @@ struct MainView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
-    /// To know if the search abr must be used or not in the app, from app settings
+    /// To know if the search bar must be used or not in the app, from app settings
     @AppStorage("com.orange.ouds.demoapp.allowSearch") private var allowSearch: Bool = true
 
     // MARK: - Body
@@ -47,6 +47,7 @@ struct MainView: View {
     // MARK: - iOS 26+ native TabView with search tab
 
     #if os(iOS)
+
     @available(iOS 26, *)
     private var ios26TabView: some View {
         TabView {

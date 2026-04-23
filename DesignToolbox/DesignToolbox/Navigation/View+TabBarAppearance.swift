@@ -89,9 +89,11 @@ extension View {
 
         // Force-update any live tab bars already on screen
         DispatchQueue.main.async {
-            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-            for window in windowScene.windows {
-                applyAppearanceRecursively(tabBarAppearance, to: window.rootViewController)
+            let windowScenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+            for windowScene in windowScenes {
+                for window in windowScene.windows {
+                    applyAppearanceRecursively(tabBarAppearance, to: window.rootViewController)
+                }
             }
         }
     }

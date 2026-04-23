@@ -114,7 +114,6 @@ struct DesignToolboxElementsPage: View {
         .background(.regularMaterial, in: .capsule)
         .hoverEffect(.highlight)
         .accessibilityFocused($requestFocus, equals: .some(id: element.id))
-        .requestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
     }
     #endif
 }
