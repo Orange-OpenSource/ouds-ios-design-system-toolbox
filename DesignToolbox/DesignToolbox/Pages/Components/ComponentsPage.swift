@@ -13,12 +13,10 @@
 
 import SwiftUI
 
-struct TokensPage: View {
-
-    @Environment(\.theme) private var theme
+struct ComponentsPage: View {
 
     var body: some View {
-        DesignToolboxElementsPage(title: "app_bottomBar_tokens_label",
-                                  elements: AllElements.tokenElements(themeName: theme.name).sorted(by: { $0.name < $1.name }))
+        DesignToolboxElementsPage(title: "app_bottomBar_components_label",
+                                  elements: AllElements.componentElements().sorted(by: { $0.name < $1.name }))
     }
 }

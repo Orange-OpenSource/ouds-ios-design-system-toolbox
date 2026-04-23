@@ -64,7 +64,7 @@ struct DesignToolboxElementsPage: View {
                         element.pageDescription
                             .navigationBarMenus(title: title)
                     } label: {
-                        cardView(for: element)
+                        visionOSCardView(for: element)
                     }
                     .buttonStyle(.plain)
                 }
@@ -73,43 +73,30 @@ struct DesignToolboxElementsPage: View {
             .padding(.vertical, 20)
             .navigationBarMenus(title: title)
             #else
-            LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaces.fixedMedium) {
-                ForEach(elements, id: \.id) { element in
-                    #if os(iOS)
-                    NavigationLink {
-                        element.pageDescription
-                    } label: {
-                        cardView(for: element)
-                    }
-                    #else // macOS
-                    Button {
-                        selectedElement = element
-                    } label: {
-                        cardView(for: element)
-                    }
-                    #endif
-                }
-            }
-            .gridMargin(.horizontal)
-            .padding(.vertical, theme.spaces.fixedMedium)
-            .navigationBarMenus(title: title)
+            #if os(iOS)
+            ElementsGridView(elements: elements)
+                .navigationBarMenus(title: title)
+            #else // macOS
+            ElementsGridView(elements: elements, onSelect: { selectedElement = $0 })
+                .navigationBarMenus(title: title)
+            #endif
             #endif
         }
         .background(theme.colors.bgPrimary)
         .oudsNavigationTitle(title)
     }
 
-    private func cardView(for element: DesignToolboxElement) -> some View {
-        #if os(visionOS)
+    // MARK: - visionOS-only card layout
+
+    #if os(visionOS)
+    private func visionOSCardView(for element: DesignToolboxElement) -> some View {
         HStack(spacing: 16) {
-            // Illustration
             element.illustration
                 .frame(width: 44, height: 44)
                 .scaleEffect(0.6)
                 .clipped()
                 .clipShape(RoundedRectangle(cornerRadius: 10))
 
-            // Titre
             Text(LocalizedStringKey(element.name))
                 .font(.headline)
                 .foregroundStyle(.primary)
@@ -128,12 +115,6 @@ struct DesignToolboxElementsPage: View {
         .hoverEffect(.highlight)
         .accessibilityFocused($requestFocus, equals: .some(id: element.id))
         .requestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
-        #else
-        Card(
-            title: Text(LocalizedStringKey(element.name)),
-            illustration: element.illustration)
-            .accessibilityFocused($requestFocus, equals: .some(id: element.id))
-            .requestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
-        #endif
     }
+    #endif
 }
