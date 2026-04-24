@@ -25,7 +25,7 @@ struct SuggestionChipElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_chip_suggestionChip_description_text",
-            version: OUDSVersions.componentChipVersion,
+            version: OUDSVersions.componentSuggestionChipVersion,
             demoScreen: AnyView(SuggestionChipPage())))
     }
 }

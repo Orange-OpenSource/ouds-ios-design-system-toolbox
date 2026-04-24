@@ -39,8 +39,13 @@ final class SoshThemeTokensColorSnapshotsTests: TokensColorSnapshotsTestsTestCas
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
         // Sosh theme does not have yet color charts branded for it
         // If the provider is defined that's unexpected, it should be nil
-        if theme.charts != nil {
+        if theme.colorsCharts != nil {
             XCTFail("The Sosh theme does not have yet color charts, that's unexpected")
+        }
+        // Sosh theme does not have yet color decorative branded for it
+        // If the provider is defined that's unexpected, it should be nil
+        if theme.colorsDecorative != nil {
+            XCTFail("The Sosh theme does not have yet color decorative, that's unexpected")
         }
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
         testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
@@ -60,8 +65,13 @@ final class SoshThemeTokensColorSnapshotsTests: TokensColorSnapshotsTestsTestCas
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
         // Sosh theme does not have yet color charts branded for it
         // If the provider is defined that's unexpected, it should be nil
-        if theme.charts != nil {
+        if theme.colorsCharts != nil {
             XCTFail("The Sosh theme does not have yet color charts, that's unexpected")
+        }
+        // Sosh theme does not have yet color decorative branded for it
+        // If the provider is defined that's unexpected, it should be nil
+        if theme.colorsDecorative != nil {
+            XCTFail("The Sosh theme does not have yet color decorative, that's unexpected")
         }
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
         testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)

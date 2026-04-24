@@ -81,13 +81,13 @@ struct AboutPage: View {
         NavigationView {
             listBody
                 .navigationBarTitleDisplayMode(.inline)
-                .accentColor(theme.colors.actionAccent)
+                .accentColor(theme.bar.colorAccent)
         }
         .navigationViewStyle(.stack)
         #else
         NavigationView {
             listBody
-                .accentColor(theme.colors.actionAccent)
+                .accentColor(theme.bar.colorAccent)
         }
         .navigationViewStyle(.automatic)
         #endif
