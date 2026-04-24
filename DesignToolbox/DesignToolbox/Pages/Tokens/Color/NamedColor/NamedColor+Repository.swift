@@ -108,7 +108,7 @@ extension NamedColor {
         case repositoryPrimaryLower
         case repositoryPrimaryLowest
         case repositorySecondaryHighest
-        case repositorySecondaryHigher
+        case repositorySecondaryHigherHigh
         case repositorySecondaryHigh
         case repositorySecondaryMedium
         case repositorySecondaryLow
@@ -309,8 +309,8 @@ extension NamedColor {
                 theme.colors.repositoryPrimaryLowest
             case .repositorySecondaryHighest:
                 theme.colors.repositorySecondaryHighest
-            case .repositorySecondaryHigher:
-                theme.colors.repositorySecondaryHigher
+            case .repositorySecondaryHigherHigh:
+                theme.colors.repositorySecondaryHigherHigh
             case .repositorySecondaryHigh:
                 theme.colors.repositorySecondaryHigh
             case .repositorySecondaryMedium:
