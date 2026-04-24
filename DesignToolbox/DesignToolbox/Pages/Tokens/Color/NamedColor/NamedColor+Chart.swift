@@ -41,43 +41,43 @@ extension NamedColor {
         func token(from theme: OUDSTheme) -> MultipleColorSemanticToken {
             switch self {
             case .border:
-                theme.charts!.border
+                theme.colorsCharts!.border
             case .borderContrast:
-                theme.charts!.borderContrast
+                theme.colorsCharts!.borderContrast
             case .categoricalTier1:
-                theme.charts!.categoricalTier1
+                theme.colorsCharts!.categoricalTier1
             case .categoricalTier2:
-                theme.charts!.categoricalTier2
+                theme.colorsCharts!.categoricalTier2
             case .categoricalTier3:
-                theme.charts!.categoricalTier3
+                theme.colorsCharts!.categoricalTier3
             case .categoricalTier4:
-                theme.charts!.categoricalTier4
+                theme.colorsCharts!.categoricalTier4
             case .categoricalTier5:
-                theme.charts!.categoricalTier5
+                theme.colorsCharts!.categoricalTier5
             case .categoricalTier6:
-                theme.charts!.categoricalTier6
+                theme.colorsCharts!.categoricalTier6
             case .categoricalTier7:
-                theme.charts!.categoricalTier7
+                theme.colorsCharts!.categoricalTier7
             case .categoricalTier8:
-                theme.charts!.categoricalTier8
+                theme.colorsCharts!.categoricalTier8
             case .categoricalTier9:
-                theme.charts!.categoricalTier9
+                theme.colorsCharts!.categoricalTier9
             case .categoricalTier10:
-                theme.charts!.categoricalTier10
+                theme.colorsCharts!.categoricalTier10
             case .functionalInfo:
-                theme.charts!.functionalInfo
+                theme.colorsCharts!.functionalInfo
             case .functionalNegative:
-                theme.charts!.functionalNegative
+                theme.colorsCharts!.functionalNegative
             case .functionalPositive:
-                theme.charts!.functionalPositive
+                theme.colorsCharts!.functionalPositive
             case .functionalWarning:
-                theme.charts!.functionalWarning
+                theme.colorsCharts!.functionalWarning
             case .gridlines:
-                theme.charts!.gridlines
+                theme.colorsCharts!.gridlines
             case .highlight:
-                theme.charts!.highlight
+                theme.colorsCharts!.highlight
             case .neutral:
-                theme.charts!.neutral
+                theme.colorsCharts!.neutral
             }
         }
         // swiftlint:enable force_unwrapping
