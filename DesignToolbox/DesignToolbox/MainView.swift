@@ -13,14 +13,72 @@
 
 import OUDSSwiftUI
 import SwiftUI
+#if os(iOS)
+import UIKit
+#endif
 
 struct MainView: View {
+
+    // MARK: - Properties
 
     @State private var selectedTab: Int = 0
 
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+
+    /// To know if the search bar must be used or not in the app, from app settings
+    @AppStorage("com.orange.ouds.demoapp.allowSearch") private var allowSearch: Bool = true
+
+    // MARK: - Body
 
     var body: some View {
+        #if os(iOS)
+        if #available(iOS 26, *), allowSearch, !isLiquidGlassDisabled, UIDevice.current.userInterfaceIdiom == .phone {
+            ios26TabView
+        } else {
+            legacyTabBar
+        }
+        #else
+        legacyTabBar
+        #endif
+    }
+
+    // MARK: - iOS 26+ native TabView with search tab
+
+    #if os(iOS)
+
+    @available(iOS 26, *)
+    private var ios26TabView: some View {
+        TabView {
+            Tab("app_bottomBar_tokens_label", image: "design-token") {
+                TokensPage()
+            }
+            Tab("app_bottomBar_components_label", image: "component-atom") {
+                ComponentsPage()
+            }
+            Tab("app_bottomBar_about_label", image: "info-fill") {
+                AboutPage()
+            }
+            Tab(role: .search) {
+                SearchPage()
+            }
+        }
+        .onAppear {
+            applyOUDSTabBarAppearance(colorScheme, theme)
+        }
+        .onChange(of: colorScheme) { newScheme in
+            applyOUDSTabBarAppearance(newScheme, theme)
+        }
+        .onChange(of: theme) { newTheme in
+            applyOUDSTabBarAppearance(colorScheme, newTheme)
+        }
+    }
+    #endif
+
+    // MARK: - iOS 15-18 / iOS 26 without Liquid Glass / macOS / visionOS legacy tab bar (no search)
+
+    private var legacyTabBar: some View {
         OUDSTabBar(selectedTab: $selectedTab, count: 3) {
             TokensPage()
                 .tabItem {
