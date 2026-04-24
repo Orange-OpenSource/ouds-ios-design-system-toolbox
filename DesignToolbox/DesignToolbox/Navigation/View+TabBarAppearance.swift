@@ -62,7 +62,7 @@ extension View {
 
         // MARK: Selected item
 
-        let selectedUIColor = theme.colors.actionAccent.color(for: colorScheme).uiColor
+        let selectedUIColor = theme.bar.colorAccent.color(for: colorScheme).uiColor
         tabBarItemAppearance.selected.iconColor = selectedUIColor
         tabBarItemAppearance.selected.titleTextAttributes = [
             .foregroundColor: selectedUIColor,

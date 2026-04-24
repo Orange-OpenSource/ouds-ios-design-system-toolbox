@@ -35,7 +35,7 @@ struct IllustrationOpacity: View {
                     .accessibilityHidden(true)
 
                 Rectangle()
-                    .fill(theme.colors.overlayModal.color(for: colorScheme))
+                    .fill(theme.colors.overlayModalSheet.color(for: colorScheme))
                     .opacity(token)
                     .frame(width: 48, height: 48)
                     .border(style: theme.borders.styleDefault,

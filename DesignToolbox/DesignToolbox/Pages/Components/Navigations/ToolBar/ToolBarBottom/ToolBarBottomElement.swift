@@ -64,7 +64,7 @@ private struct ToolBarBottomIllustration: View {
                 width: theme.borders.widthDefault,
                 radius: theme.borders.radiusDefault,
                 color: theme.colors.borderMinimal)
-        .background(theme.colors.overlayModal)
+        .background(theme.colors.overlayModalSheet)
     }
 }
 #endif
