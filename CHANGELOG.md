@@ -12,10 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Update of tokens (tokens librairies v2.5.0) (Orange-OpenSource/ouds-ios#1473)
 - [DesignToolbox] Use `accessibility-statement-lib-ios` v2.2.0-beta.3
-### Changed
-
-- [Library] Update of raw, semantic and component tokens declarations and definitions (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- [Library] Update of tokens (tokens librairies v2.4.0) (Orange-OpenSource/ouds-ios#1437)
 
 ### Fixed
 
