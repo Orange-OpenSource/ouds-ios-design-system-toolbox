@@ -3,6 +3,61 @@
 <plist version="1.0">
 <dict>
 	<key>PreferenceSpecifiers</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Licenses</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/accessibility-statement-lib-ios</string>
+			<key>Title</key>
+			<string>DeclarationAccessibility (2.2.0-beta.3)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/ouds-ios</string>
+			<key>Title</key>
+			<string>ouds-ios</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/swift-custom-dump</string>
+			<key>Title</key>
+			<string>swift-custom-dump (1.5.0)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/swift-snapshot-testing</string>
+			<key>Title</key>
+			<string>swift-snapshot-testing (1.18.7)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/swift-syntax</string>
+			<key>Title</key>
+			<string>swift-syntax (602.0.0)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/xctest-dynamic-overlay</string>
+			<key>Title</key>
+			<string>xctest-dynamic-overlay (1.9.0)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+	</array>
 </dict>
 </plist>
