@@ -126,10 +126,10 @@ source ~/.zshrc
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 26.3**, we suggest you use this version or newer if you want (even if not recommended).
+We use also for our GitLab CI runners **Xcode 26.4**, we suggest you use this version or newer if you want (even if not recommended).
 
 > [!IMPORTANT]
-> Xcode 26.3 and Swift 6.2 are used for this project. You should use this configuration.
+> Xcode 26.4 and Swift 6.3 are used for this project. You should use this configuration.
 > Not retrocompatibility is planned yet.
 > If need you can contact us and open a discussion on GitHub Orange-OpenSource/ouds-ios
 
