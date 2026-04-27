@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Move from Xcode 26.3 to Xcode 26.4, and Swift 6.2 to Swift 6.3 (Orange-OpenSource/ouds-ios#1356)
 - [Library] Update of tokens (tokens librairies v2.5.0) (Orange-OpenSource/ouds-ios#1473)
 - [DesignToolbox] Use `accessibility-statement-lib-ios` v2.2.0-beta.3
 - [Library] Update of tokens (tokens librairies v2.4.0) (Orange-OpenSource/ouds-ios#1437)
