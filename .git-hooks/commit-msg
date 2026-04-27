@@ -24,7 +24,7 @@ PATTERN_SECTION_REMOVED="refactor: remove|refactor: delete|chore: remove|chore: 
 PATTERN_SECTION_DEPRECATED="refactor\(deprecated\):|chore\(deprecated\)"
 PATTERN_SECTION_FIXED="fix:"
 PATTERN_SECTION_SECURITY="fix\(security\):"
-PATTERN_SECTION_BREAKING="feat!:|chore!:|refactor!:|fix!:"
+PATTERN_SECTION_BREAKING="feat!:|chore!:|refactor!:|fix!:|refactor\(🤖\)!:"
 PATTERN_SECTION_CHANGED="build:|chore:|chore\(deps\):|chore\(🤖\):|ci:|docs:|style:|refactor:|perf:|test:"
 
 # All acceptable patterns
@@ -102,12 +102,21 @@ check_trailers() {
 
             # Check if the token is a known trailer (exact casing)
             if is_known_trailer "$token"; then
-                # Validate content format: "First Last <email>" or "username <email>"
-                # A space before '<' is always required.
-                if ! [[ "$content" =~ $TRAILER_CONTENT_RE ]]; then
-                    echo "💥 Malformed trailer (line $line_number): '$line'"
-                    echo "Invalid format. Expected: $token: First Last <email@example.com> or $token: username <email@example.com>"
-                    errors=$((errors + 1))
+                if [[ "$token" == "Assisted-by" ]]; then
+                    # Assisted-by only requires a non-empty value (no email format enforced)
+                    if [[ -z "$content" ]]; then
+                        echo "💥 Malformed trailer (line $line_number): '$line'"
+                        echo "Empty value. Expected: Assisted-by: <non-empty value>"
+                        errors=$((errors + 1))
+                    fi
+                else
+                    # Validate content format: "First Last <email>" or "username <email>"
+                    # A space before '<' is always required.
+                    if ! [[ "$content" =~ $TRAILER_CONTENT_RE ]]; then
+                        echo "💥 Malformed trailer (line $line_number): '$line'"
+                        echo "Invalid format. Expected: $token: First Last <email@example.com> or $token: username <email@example.com>"
+                        errors=$((errors + 1))
+                    fi
                 fi
             else
                 # Check if it looks like a known trailer with wrong casing
@@ -163,7 +172,7 @@ if ! [[ "$COMMIT_MESSAGE" =~ $COMMIT_PREFIX_PATTERN ]]; then
     echo -e "\tTo deprecate things......: 'refactor(deprecated)' \t 'chore(deprecated)'"
     echo -e "\tTo fix things............: 'fix:"
     echo -e "\tFor security fixes.......: 'fix(security)'"
-    echo -e "\tFor breaking changes.....: 'feat!:' \t 'chore!:' \t 'refactor!:' \t \t 'fix!:'"
+    echo -e "\tFor breaking changes.....: 'feat!:' \t 'chore!:' \t 'refactor!:' \t \t 'refactor(🤖)!: \t \t 'fix!:'"
     echo -e "\tFor any other changes....: 'build:' \t 'chore:' \t 'chore(deps)' \t 'chore(🤖)' \t 'ci:' \t \t \t 'docs:' \t \t 'style:' \t 'refactor:' \t 'perf:' \t 'test:'"
     echo "Your commit message: '$COMMIT_MESSAGE'"
     exit 1
@@ -178,6 +187,7 @@ if [[ $TRAILER_ERRORS -gt 0 ]]; then
     echo ""
     echo "Valid trailers: ${KNOWN_TRAILERS[*]}"
     echo "Expected format: Token: First Last <email@example.com> or Token: username <email@example.com>"
+    echo "Exception: Assisted-by: <any non-empty value>"
     exit 1
 fi
 
