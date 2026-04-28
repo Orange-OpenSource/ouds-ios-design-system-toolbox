@@ -102,6 +102,12 @@ struct ToolBarBottomConfiguration: View {
                     ToolBarTrailingConfiguration(configurationModel: configurationModel)
                 }
 
+                if configurationModel.trailing == .icon {
+                    OUDSChipPicker(title: "app_components_topAppBar_lastActionIconBadge_tech".localized(),
+                                   selection: $configurationModel.badgeType,
+                                   chips: BarItemBadgeType.chips)
+                }
+
                 ToolBarItemStyle(configurationModel: configurationModel)
 
                 DesignToolboxEditContentDisclosure {

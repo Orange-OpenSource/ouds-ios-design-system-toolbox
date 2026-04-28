@@ -68,8 +68,6 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
         isTrailingEnabled = true
         isTrailingEmphasized = false
 
-        badgeType = .none
-
         ios26ButtonStyle = .default
     }
 
@@ -149,7 +147,7 @@ struct ToolBarTopConfiguration: View {
 
                 ToolBarTrailingConfiguration(configurationModel: configurationModel)
                 if configurationModel.trailing == .icon {
-                    OUDSChipPicker(title: "app_components_topAppBar_lastActionIconBadge_tech".localized(),
+                    OUDSChipPicker(title: "app_components_badge_tech".localized(),
                                    selection: $configurationModel.badgeType,
                                    chips: BarItemBadgeType.chips)
                 }

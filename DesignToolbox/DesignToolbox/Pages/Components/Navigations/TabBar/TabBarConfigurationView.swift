@@ -124,7 +124,7 @@ struct TabBarConfiguration: View {
                     .padding(.horizontal, theme.spaces.fixedMedium)
                     .labelStrongMedium(theme)
 
-                OUDSChipPicker(title: "Badges",
+                OUDSChipPicker(title: "app_components_badge_tech".localized(),
                                selection: $configurationModel.badgeConfiguration,
                                chips: configurationModel.badgeConfigurations)
 
