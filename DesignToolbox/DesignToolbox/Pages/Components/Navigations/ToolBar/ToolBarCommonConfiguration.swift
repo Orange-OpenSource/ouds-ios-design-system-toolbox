@@ -183,27 +183,31 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
 
     private var badgeTypePattern: String {
         switch badgeType {
-        case .number:
-            ", badgeType: .standard"
         case .standard:
+            ", badgeType: .standard"
+        case .number:
             ", badgeType: .number(count: 1)"
         case .none:
             ""
         }
     }
 
-    private func iconActionPattern(isEnabled: Bool) -> String {
-        "OUDSToolBarItem(action: .icon(asset: Image(\"magic_wand\"), accessibilityLabel: \"dumb_label_key\"\(badgeTypePattern)\(actionPattern(isEnabled: isEnabled))))"
+    private func iconActionPattern(isEnabled: Bool, showBadgeParameter: Bool) -> String {
+        if showBadgeParameter {
+            "OUDSToolBarItem(action: .icon(asset: Image(\"ic_heart\"), accessibilityLabel: \"dumb_label_key\"\(badgeTypePattern)\(actionPattern(isEnabled: isEnabled))))"
+        } else {
+            "OUDSToolBarItem(action: .icon(asset: Image(\"ic_heart\"), accessibilityLabel: \"dumb_label_key\"\(actionPattern(isEnabled: isEnabled))))"
+        }
     }
 
-    private func actionPattern(type: LeadingTrailingType, isEnabled: Bool, isEmphasized: Bool = false) -> String {
+    private func actionPattern(type: LeadingTrailingType, isEnabled: Bool, isEmphasized: Bool = false, showBadgeParameter: Bool = false) -> String {
         switch type {
         case .none:
             ""
         case .label:
             labelActionPattern(isEnabled: isEnabled, isEmphasized: isEmphasized)
         case .icon:
-            iconActionPattern(isEnabled: isEnabled)
+            iconActionPattern(isEnabled: isEnabled, showBadgeParameter: showBadgeParameter)
         }
     }
 
@@ -212,7 +216,7 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
     }
 
     var trailingItemPattern: String {
-        actionPattern(type: trailing, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized)
+        actionPattern(type: trailing, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized, showBadgeParameter: true)
     }
 }
 
