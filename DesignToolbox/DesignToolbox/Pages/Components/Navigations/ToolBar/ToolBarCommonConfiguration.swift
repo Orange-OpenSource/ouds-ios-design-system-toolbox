@@ -99,7 +99,7 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
     func leadingItems(for theme: OUDSTheme) -> [OUDSToolBarItem] {
         var items: [OUDSToolBarItem] = []
         for _ in 1 ... numberOfLeadingItems {
-            guard let item = layout(for: theme, type: leading, label: leadingText, isEnabled: isLeadingEnabled, isEmphasized: isLeadingEmphasized) else {
+            guard let item = layout(type: leading, label: leadingText, isEnabled: isLeadingEnabled, isEmphasized: isLeadingEmphasized) else {
                 return []
             }
             items.append(item)
@@ -113,9 +113,14 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
         var items = [OUDSToolBarItem]()
 
         for index in 1 ... numberOfTrailingItems {
-            let barItemBadgeType: OUDSToolBarItem.BadgeType? = (index == numberOfTrailingItems && trailing == .icon) ? self.badgeType.barItemBadgeType : nil
+            let barItemBadgeType: OUDSToolBarItem.BadgeType? = (index == numberOfTrailingItems && trailing == .icon) ? badgeType.barItemBadgeType : nil
 
-            guard let item = layout(for: theme, type: trailing, label: trailingText, isEnabled: isTrailingEnabled, isEmphasized: isTrailingEmphasized, badgeType: barItemBadgeType) else {
+            guard let item = layout(type: trailing,
+                                    label: trailingText,
+                                    isEnabled: isTrailingEnabled,
+                                    isEmphasized: isTrailingEmphasized,
+                                    badgeType: barItemBadgeType)
+            else {
                 return []
             }
 
@@ -126,7 +131,12 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
     }
 
     @MainActor
-    private func layout(for theme: OUDSTheme, type: LeadingTrailingType, label: String, isEnabled: Bool, isEmphasized: Bool = false, badgeType: OUDSToolBarItem.BadgeType? = nil) -> OUDSToolBarItem? {
+    private func layout(type: LeadingTrailingType,
+                        label: String,
+                        isEnabled: Bool,
+                        isEmphasized: Bool = false,
+                        badgeType: OUDSToolBarItem.BadgeType? = nil) -> OUDSToolBarItem?
+    {
 
         let action: (() -> Void)? = isEnabled ? {} : nil
 
@@ -240,12 +250,12 @@ enum BarItemBadgeType: CaseIterable {
 
     var description: String {
         switch self {
-            case .none:
-                "app_components_common_none_tech"
-            case .standard:
-                "app_components_badge_standardType_tech"
-            case .number:
-                "app_components_badge_countType_tech"
+        case .none:
+            "app_components_common_none_tech"
+        case .standard:
+            "app_components_badge_standardType_tech"
+        case .number:
+            "app_components_badge_countType_tech"
         }
     }
 
@@ -267,7 +277,6 @@ enum BarItemBadgeType: CaseIterable {
             .number(count: 1)
         }
     }
-
 }
 
 // MARK: - Extension of OUDSToolBarItem Action Style

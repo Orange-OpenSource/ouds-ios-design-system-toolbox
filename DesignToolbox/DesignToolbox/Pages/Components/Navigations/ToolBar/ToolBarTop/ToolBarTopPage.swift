@@ -50,7 +50,7 @@ private struct ToolBarTopDemo: View {
 
     var body: some View {
         NavigationLink(destination: demo(), isActive: $configurationModel.showNavigation) {
-            OUDSButton(text: "app_components_toolbar_demo_showDemo_label", appearance: .strong) {
+            OUDSButton("app_components_toolbar_demo_showDemo_label", appearance: .strong) {
                 switch configurationModel.demoOption {
                 case .navigation:
                     configurationModel.showNavigation = true
