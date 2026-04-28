@@ -68,7 +68,7 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
         isTrailingEnabled = true
         isTrailingEmphasized = false
 
-        badgeType = .number
+        badgeType = .none
 
         ios26ButtonStyle = .default
     }
