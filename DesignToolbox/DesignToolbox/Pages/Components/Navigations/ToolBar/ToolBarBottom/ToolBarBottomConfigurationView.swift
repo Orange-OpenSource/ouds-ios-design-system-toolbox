@@ -102,7 +102,7 @@ struct ToolBarBottomConfiguration: View {
                     ToolBarTrailingConfiguration(configurationModel: configurationModel)
                 }
 
-                if configurationModel.trailing == .icon {
+                if !configurationModel.groupedItems, configurationModel.trailing == .icon {
                     OUDSChipPicker(title: "app_components_badge_tech".localized(),
                                    selection: $configurationModel.badgeType,
                                    chips: BarItemBadgeType.chips)
