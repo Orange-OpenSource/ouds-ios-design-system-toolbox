@@ -103,7 +103,7 @@ struct ToolBarBottomConfiguration: View {
                 }
 
                 if configurationModel.trailing == .icon {
-                    OUDSChipPicker(title: "app_components_topAppBar_lastActionIconBadge_tech".localized(),
+                    OUDSChipPicker(title: "app_components_badge_tech".localized(),
                                    selection: $configurationModel.badgeType,
                                    chips: BarItemBadgeType.chips)
                 }
