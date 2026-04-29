@@ -229,7 +229,7 @@ struct PasswordInputConfigurationView: View {
                     DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
 
                     switch configurationModel.status {
-                    case .error:
+                    case .error, .richError:
                         DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_textInput_errorDescription_label")
                     default:
                         DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
