@@ -234,7 +234,13 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 
     private var helperTextPattern: String {
-        helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
+        if helperText.isEmpty {
+            ""
+        } else if textMode == .rich {
+            ", helperText: yourAttributedString"
+        } else {
+            ", helperText: \"\(helperText)\""
+        }
     }
 
     private var helperLinkPattern: String {
@@ -256,7 +262,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         case .error:
             ", status: .error(message: \"\(errorText)\")"
         case .richError:
-            ", status: .richError(message: AttributedString(markdown: \"\(errorText)\")"
+            ", status: .richError(message: yourAttributedString)"
         case .loading:
             ", status: .loading"
         case .readOnly:
