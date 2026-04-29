@@ -164,7 +164,15 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     }
 
     private var errorTextPattern: String {
-        isError && !errorText.isEmpty ? ", errorText: \"\(errorText)\"" : ""
+        if isError, !errorText.isEmpty {
+            if textMode == .rich {
+                ", errorText: yourAttributedString"
+            } else {
+                ", errorText: \"\(errorText)\""
+            }
+        } else {
+            ""
+        }
     }
 
     private var isReadOnlyPattern: String {
