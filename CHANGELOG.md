@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Rich text support for `alert message`, `bullet list`, `switch item`, `radio item`, `checkbox item` components (Orange-OpenSource/ouds-ios#1405)
 - [Library] `badge` on `toolbar` components items with icons (Orange-OpenSource/ouds-ios#1398)
 - [DesignToolbox] Search feature for tokens and components groups (iOS 26+ with Liquid Glass) (Orange-OpenSource/ouds-ios#1451)
 
@@ -22,12 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - [DesignToolbox] Redirection page for stable builds in about page (Orange-OpenSource/ouds-ios#1457)
-- [Library] Rich text for `alert message`, `bullet list` components (Orange-OpenSource/ouds-ios#1405)
-- [Library] Rich text for `alert message`, `bullet list`, `switch item` components (Orange-OpenSource/ouds-ios#1405)
-- [Library] Rich text support for `alert message`, `bullet list`, `switch item`, `checkbox item` components (Orange-OpenSource/ouds-ios#1405)
-
-### Fixed
-
 - [Library] Overlay items of `tab bar` component still displayed even if hidden for disabled Liquid Glass (Orange-OpenSource/ouds-ios#1434)
 - [Library] Selected tab indicator in `tab bar` component if Liquid Glass not applied (Orange-OpenSource/ouds-ios#1428)
 

@@ -16,10 +16,11 @@ import SwiftUI
 
 // MARK: - TextArea Helper Mode
 
-/// Describes the three helper-text display modes available in the configuration panel.
+/// Describes the four helper-text display modes available in the configuration panel.
 enum TextAreaHelperMode: CaseIterable, CustomStringConvertible, Hashable {
     case none
     case plain
+    case rich
     case charactersMaxCount
 
     var description: String {
@@ -28,8 +29,48 @@ enum TextAreaHelperMode: CaseIterable, CustomStringConvertible, Hashable {
             String(localized: "app_components_common_none_tech")
         case .plain:
             String(localized: "app_components_common_helperText_tech")
+        case .rich:
+            String(localized: "app_components_common_helperRichText_tech")
         case .charactersMaxCount:
             String(localized: "app_components_textArea_charactersMaxCount_tech")
+        }
+    }
+
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}
+
+// MARK: - Text Area Status
+
+/// Describes the status available in the configuration panel, to map with `OUDSTextArea.Status`
+enum TextAreaStatus: CaseIterable, CustomStringConvertible, Hashable {
+
+    case enabled
+    case error
+    case richError
+    case loading
+    case readOnly
+    case disabled
+
+    var description: String {
+        switch self {
+        case .enabled:
+            String(localized: "app_common_enabled_tech")
+        case .error:
+            String(localized: "app_components_common_error_tech")
+        case .richError:
+            String(localized: "app_components_common_richError_tech")
+        case .loading:
+            String(localized: "app_components_common_loader_tech")
+        case .readOnly:
+            String(localized: "app_components_common_readOnly_tech")
+        case .disabled:
+            String(localized: "app_common_disabled_tech")
         }
     }
 
@@ -79,10 +120,7 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
     }
 
     @Published var errorText: String {
-        didSet {
-            status = .error(message: errorText)
-            updateCode()
-        }
+        didSet { updateCode() }
     }
 
     @Published var helperLinkText: String {
@@ -97,7 +135,11 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var status: OUDSTextArea.Status {
+    @Published var status: TextAreaStatus {
+        didSet { updateCode() }
+    }
+
+    @Published var textMode: TextualContentMode {
         didSet { updateCode() }
     }
 
@@ -112,6 +154,7 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         maxCharacters = 180
         errorText = defaultErrorText
         helperLinkText = ""
+        textMode = .raw
         isOutlined = false
         constrainedMaxWidth = false
         status = .enabled
@@ -129,8 +172,46 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
             nil
         case .plain:
             helperText.isEmpty ? nil : .plain(helperText)
+        case .rich:
+            helperText.isEmpty ? nil : .rich(richHelperText)
         case .charactersMaxCount:
             .charactersMaxCount(UInt16(maxCharacters))
+        }
+    }
+
+    var richHelperText: AttributedString {
+        do {
+            return try AttributedString(markdown: helperText)
+        } catch {
+            return AttributedString("Supposed to be valid Markdown")
+        }
+    }
+
+    // MARK: Computed status
+
+    /// Returns the `OUDSTextArea.Status` value to pass to the component
+    var computedStatus: OUDSTextArea.Status {
+        switch status {
+        case .enabled:
+            .enabled
+        case .error:
+            .error(message: errorText)
+        case .richError:
+            .richError(message: richErrorText)
+        case .loading:
+            .loading
+        case .readOnly:
+            .readOnly
+        case .disabled:
+            .disabled
+        }
+    }
+
+    var richErrorText: AttributedString {
+        do {
+            return try AttributedString(markdown: errorText)
+        } catch {
+            return AttributedString("Supposed to be valid Markdown")
         }
     }
 
@@ -161,6 +242,8 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
             ""
         case .plain:
             helperText.isEmpty ? "" : ", helperText: .plain(\"\(helperText)\")"
+        case .rich:
+            helperText.isEmpty ? "" : ", helperText: .rich(\"\(helperText)\")"
         case .charactersMaxCount:
             ", helperText: .charactersMaxCount(\(maxCharacters))"
         }
@@ -179,7 +262,20 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
     }
 
     private var statusPattern: String {
-        status != .enabled ? ", status: \(status.technicalDescription)" : ""
+        switch status {
+        case .enabled:
+            ""
+        case .error:
+            ", status: .error(message: \"\(errorText)\")"
+        case .richError:
+            ", status: .richError(message: AttributedString(markdown: \"\(errorText)\")"
+        case .loading:
+            ", status: .loading"
+        case .readOnly:
+            ", status: .readOnly"
+        case .disabled:
+            ", status: .disabled"
+        }
     }
 }
 
@@ -201,7 +297,7 @@ struct TextAreaConfigurationView: View {
 
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
-                               chips: OUDSTextArea.Status.chips)
+                               chips: TextAreaStatus.chips)
 
                 OUDSChipPicker(title: "app_components_common_helperText_tech",
                                selection: $configurationModel.helperMode,
@@ -211,11 +307,11 @@ struct TextAreaConfigurationView: View {
                     DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
 
                     switch configurationModel.status {
-                    case .error:
+                    case .error, .richError:
                         DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_textArea_errorDescription_label")
                     default:
                         switch configurationModel.helperMode {
-                        case .plain:
+                        case .plain, .rich:
                             DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
                         case .charactersMaxCount:
                             Stepper(value: $configurationModel.maxCharacters, in: 10 ... 500, step: 10) {
@@ -240,51 +336,5 @@ struct TextAreaConfigurationView: View {
                 }
             }
         }
-    }
-}
-
-// MARK: - OUDSTextArea.Status conformances
-
-extension OUDSTextArea.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
-
-    public static let allCases: [OUDSTextArea.Status] =
-        [.enabled, .error(message: "app_components_textArea_errorDescription_label".localized()), .loading, .readOnly, .disabled]
-
-    public var description: String {
-        switch self {
-        case .enabled:
-            String(localized: "app_common_enabled_tech")
-        case .error:
-            String(localized: "app_components_common_error_tech")
-        case .loading:
-            String(localized: "app_components_common_loader_tech")
-        case .readOnly:
-            String(localized: "app_components_common_readOnly_tech")
-        case .disabled:
-            String(localized: "app_common_disabled_tech")
-        }
-    }
-
-    public var technicalDescription: String {
-        if self == .readOnly {
-            return ".readOnly"
-        }
-        if case let .error(message) = self {
-            return ".error(message: \"\(message)\")"
-        } else {
-            return ".\(description.lowercased())"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(description)
     }
 }
