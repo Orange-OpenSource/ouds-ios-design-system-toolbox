@@ -74,6 +74,7 @@ enum AllElements {
             ColoredSurfaceElement(),
             DividerElements(),
             LinkElement(),
+            ListItemElement(),
             PasswordInputElement(),
             PinCodeInputElement(),
             ProgressIndicatorElements(),
