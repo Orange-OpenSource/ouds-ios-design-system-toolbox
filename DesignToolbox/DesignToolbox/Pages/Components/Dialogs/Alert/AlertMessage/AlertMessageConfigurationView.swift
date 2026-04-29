@@ -121,7 +121,11 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
     }
 
     private var bulletListPattern: String {
-        bulletList.isEmpty ? "" : ", bulletList: [\"\(bulletList.joined(separator: "\", \""))\"]"
+        if textMode == .raw {
+            bulletList.isEmpty ? "" : ", bulletList: [\"\(bulletList.joined(separator: "\", \""))\"]"
+        } else {
+            bulletList.isEmpty ? "" : ", bulletList: yourArrayOfAttributedString"
+        }
     }
 
     private var linkPattern: String {
