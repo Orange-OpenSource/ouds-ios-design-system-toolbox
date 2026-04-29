@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1482-update-linkto-center-the-next-indicator",
-        "revision" : "75c3cd03d9afce7403f18e8365a2df3d3a682dc9"
+        "branch" : "develop",
+        "revision" : "ef54b8e5870c170d9a55943199edd6429a28c161"
       }
     },
     {
