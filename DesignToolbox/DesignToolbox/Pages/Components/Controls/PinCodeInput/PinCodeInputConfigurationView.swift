@@ -114,7 +114,7 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
     }
 
     private var helperTextPattern: String {
-        textMode == .rich ? ", helperText: AttributedString(markdown: \"\(helperText)\")" : ", helperText: \"\(helperText)\""
+        textMode == .rich ? ", helperText: yourAttributedString" : ", helperText: \"\(helperText)\""
     }
 
     private var isOutlinedPattern: String {
@@ -128,7 +128,7 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         case .error:
             ", status: .error(message: \"\(errorText)\")"
         case .richError:
-            ", status: .richError(message: AttributedString(markdown: \"\(errorText)\"))"
+            ", status: .richError(message: yourAttributedString)"
         }
     }
 }
