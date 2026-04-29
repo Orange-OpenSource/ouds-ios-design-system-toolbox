@@ -277,7 +277,7 @@ enum BulletListType: CaseIterable, CustomStringConvertible {
 typealias BulletListTextStyle = OUDSBulletList.TextStyle
 extension OUDSBulletList.TextStyle: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSBulletList.TextStyle] = [.bodyLarge, .bodyMedium]
+    public static let allCases: [OUDSBulletList.TextStyle] = [.bodyLarge, .bodyMedium]
 
     // NOTE: Not localized because it is a technical name
     public var description: String {

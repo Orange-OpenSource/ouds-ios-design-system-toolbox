@@ -71,6 +71,10 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var textMode: TextualContentMode {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -85,12 +89,21 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         constrainedMaxWidth = false
         status = .enabled
         isHiddenPassword = true
+        textMode = .raw
         super.init()
     }
 
     deinit {}
 
     // MARK: Computed status
+
+    var richHelperText: AttributedString {
+        do {
+            return try AttributedString(markdown: helperText)
+        } catch {
+            return AttributedString("Supposed to be valid Markdown")
+        }
+    }
 
     /// Returns the `OUDSTextInput.Status` value to pass to the component
     var computedStatus: OUDSTextInput.Status {
@@ -205,6 +218,12 @@ struct PasswordInputConfigurationView: View {
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
                                chips: TextInputStatus.chips)
+
+                if configurationModel.status != .error, configurationModel.status != .richError {
+                    OUDSChipPicker(title: "app_components_textMode_tech",
+                                   selection: $configurationModel.textMode,
+                                   chips: TextualContentMode.chips)
+                }
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
