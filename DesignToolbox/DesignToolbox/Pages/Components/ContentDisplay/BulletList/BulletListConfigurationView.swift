@@ -87,7 +87,7 @@ final class BulletListConfigurationModel: ComponentConfiguration {
         case .rich:
             "yourAttributedString"
         case .raw:
-            "\(label)"
+            "\"\(label)\""
         }
     }
 
@@ -138,26 +138,26 @@ final class BulletListConfigurationModel: ComponentConfiguration {
         case .one:
             """
             {
-                OUDSBulletList.Item("\(labelPattern)")
-                OUDSBulletList.Item("\(labelPattern)")
-                OUDSBulletList.Item("\(labelPattern)")
+                OUDSBulletList.Item(\(labelPattern))
+                OUDSBulletList.Item(\(labelPattern))
+                OUDSBulletList.Item(\(labelPattern))
             }
             """
         case .two:
             """
             {
-                OUDSBulletList.Item("\(labelPattern)") {
-                    OUDSBulletList.Item("\(labelPattern)")
-                    OUDSBulletList.Item("\(labelPattern)")
+                OUDSBulletList.Item(\(labelPattern)) {
+                    OUDSBulletList.Item(\(labelPattern))
+                    OUDSBulletList.Item(\(labelPattern))
                 }
             }
             """
         case .three:
             """
             {
-                OUDSBulletList.Item("\(labelPattern)") {
-                    OUDSBulletList.Item("\(labelPattern)") {
-                        OUDSBulletList.Item("\(labelPattern)")
+                OUDSBulletList.Item(\(labelPattern)) {
+                    OUDSBulletList.Item(\(labelPattern)) {
+                        OUDSBulletList.Item(\(labelPattern))
                     }
                 }
             }
