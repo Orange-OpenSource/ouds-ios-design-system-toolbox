@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] `ruby/setup-ruby` action from v1.301.0 to v1.306.0 for `build-and-test` workflow
 - [DesignToolbox] Accessibility statement library v2.2.0
 - [DesignToolbox] Liquid Glass status tag in about menu with management of iOS until 18 case
 - [Library] `link` component to center the indicator on multiline (Orange-OpenSource/ouds-ios#1482)
