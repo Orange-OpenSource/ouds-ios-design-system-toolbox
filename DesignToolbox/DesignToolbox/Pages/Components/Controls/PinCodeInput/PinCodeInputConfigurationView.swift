@@ -50,6 +50,12 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var textMode: TextualContentMode {
+        didSet { updateCode() }
+    }
+
+    // MARK: - Computed properties
+
     /// The derived `OUDSPinCodeInput.Status` from the current `statusKind` and `errorText`.
     var status: OUDSPinCodeInput.Status {
         switch statusKind {
@@ -57,6 +63,24 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
             .enabled
         case .error:
             .error(message: errorText)
+        case .richError:
+            .richError(message: richErrorText)
+        }
+    }
+
+    var richHelperText: AttributedString {
+        do {
+            return try AttributedString(markdown: helperText)
+        } catch {
+            return AttributedString("Supposed to be valid Markdown")
+        }
+    }
+
+    var richErrorText: AttributedString {
+        do {
+            return try AttributedString(markdown: errorText)
+        } catch {
+            return AttributedString("Supposed to be valid Markdown")
         }
     }
 
@@ -69,6 +93,7 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         errorText = Self.defaultErrorText
         isOutlined = false
         statusKind = .enabled
+        textMode = .raw
         super.init()
     }
 
@@ -89,7 +114,7 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
     }
 
     private var helperTextPattern: String {
-        ", helperText: \"\(helperText)\""
+        textMode == .rich ? ", helperText: AttributedString(markdown: \"\(helperText)\")" : ", helperText: \"\(helperText)\""
     }
 
     private var isOutlinedPattern: String {
@@ -102,6 +127,8 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
             ""
         case .error:
             ", status: .error(message: \"\(errorText)\")"
+        case .richError:
+            ", status: .richError(message: AttributedString(markdown: \"\(errorText)\"))"
         }
     }
 }
@@ -128,9 +155,15 @@ struct PinCodeInputConfigurationView: View {
                                selection: $configurationModel.statusKind,
                                chips: PinCodeInputStatusKind.chips)
 
+                if configurationModel.statusKind != .error, configurationModel.statusKind != .richError {
+                    OUDSChipPicker(title: "app_components_textMode_tech",
+                                   selection: $configurationModel.textMode,
+                                   chips: TextualContentMode.chips)
+                }
+
                 DesignToolboxEditContentDisclosure {
                     switch configurationModel.statusKind {
-                    case .error:
+                    case .error, .richError:
                         DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_pinCodeInput_errorDescription_label")
                     default:
                         DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
@@ -175,6 +208,7 @@ extension OUDSPinCodeInput.Length: @retroactive CaseIterable, @retroactive Custo
 enum PinCodeInputStatusKind: CaseIterable, CustomStringConvertible, Hashable {
     case enabled
     case error
+    case richError
 
     var description: String {
         switch self {
@@ -182,6 +216,8 @@ enum PinCodeInputStatusKind: CaseIterable, CustomStringConvertible, Hashable {
             "app_common_enabled_tech"
         case .error:
             "app_components_common_error_tech"
+        case .richError:
+            "app_components_common_richError_tech"
         }
     }
 
