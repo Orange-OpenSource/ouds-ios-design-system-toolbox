@@ -31,10 +31,6 @@ enum TextualContentMode: CaseIterable, CustomStringConvertible {
         }
     }
 
-    var technicalDescription: String {
-        description
-    }
-
     private var chipData: OUDSChipPickerData<Self> {
         OUDSChipPickerData(tag: self, layout: .text(text: description))
     }
