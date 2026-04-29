@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `badge` on `toolbar` components items with icons (Orange-OpenSource/ouds-ios#1398)
 - [DesignToolbox] Search feature for tokens and components groups (iOS 26+ with Liquid Glass) (Orange-OpenSource/ouds-ios#1451)
 
 ### Changed
