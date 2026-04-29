@@ -3882,6 +3882,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_controlItem_extraLabel_tech" : {
+      "comment" : "Component - ControlItem",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extra label"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extra label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extra label"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_controlItem_reversed_tech" : {
       "comment" : "Component - ControlItem",
       "extractionState" : "manual",
@@ -4197,6 +4222,230 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Link"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_alignment_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alignment"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alignment"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alignment"
+          }
+        },
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_alignment_center_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Center"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Center"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Center"
+          }
+        },
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_alignment_top_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Top"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Top"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Top"
+          }
+        },
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_affordance_next_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_affordance_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Affordance"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Affordance"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Affordance"
+          }
+        },
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_affordance_previous_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Previous"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Previous"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Previous"
+          }
+        },
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_affordance_external_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "External"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "External"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "External"
+          }
+        },
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_description_text" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عنصر القائمة هو صف أفقي يُستخدم لعرض وحدة معلومات داخل قائمة.\nتُرتب عناصر القائمة عموديًا لتنظيم المحتوى ذي الصلة وتسهيل التصفح السريع والتفاعل.\nيمكن أن يحتوي كل عنصر على عناصر مثل التسمية، والنص التوضيحي، والأيقونات، والصور، وذلك حسب السياق."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A list item is a horizontal row used to display a unit of information within a list.\nList items are vertically stacked to organise related content and support quick scanning and interaction.\nEach item can contain elements such as a label, supporting text, icons, images depending on the context."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un élément de liste est une ligne horizontale servant à afficher une unité d'information au sein d'une liste.\n\nLes éléments de liste sont empilés verticalement afin d'organiser le contenu associé et de faciliter la consultation et l'interaction.\n\nChaque élément peut contenir des éléments tels qu'une étiquette, du texte explicatif, des icônes ou des images, selon le contexte."
+          }
+        }
+      }
+    },
+    "app_components_listItem_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List Item"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List Item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List Item"
           }
         }
       },
@@ -4935,31 +5184,6 @@
           }
         }
       }
-    },
-    "app_components_radioButton_radioButtonItem_extraLabel_tech" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Extra label"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Extra label"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Extra label"
-          }
-        }
-      },
-      "shouldTranslate" : false
     },
     "app_components_radioButton_radioButtonItem_tech" : {
       "comment" : "Component - Radio",
