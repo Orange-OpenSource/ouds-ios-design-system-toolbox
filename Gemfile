@@ -29,7 +29,7 @@ gem 'abbrev', '0.1.2'
 # Really needed gems
 # ------------------
 
-gem 'fastlane', '2.232.2'
+gem 'fastlane', '2.233.1'
 gem 'fastlane-plugin-changelog', '0.16.0'
 gem 'fastlane-plugin-mattermost', '1.3.2'
 gem 'json', '2.19.3'
