@@ -52,7 +52,7 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
     /// in enabled and disbled state.
     ///
     /// - Parameters:
-    ///   - theme: The theme (`OUDSTheme) from which to retrieve color tokens.
+    ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllLinksOnColoredSurface(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Skip test for negative hierarchy because it is not allowed on colored surface
@@ -74,7 +74,7 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
     ///
     /// - Parameters:
-    ///   - theme: The theme (OUDSTheme)
+    ///   - theme: The theme (`OUDSTheme`)
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - layout: the layout of the link
     ///   - size: the size of the link
