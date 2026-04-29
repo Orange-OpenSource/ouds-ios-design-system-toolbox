@@ -82,7 +82,7 @@ private struct ToolBarTopDemo: View {
             {
                 configurationModel.leadingItems(for: theme)
             } trailingItems: {
-                configurationModel.trailingItems(for: theme)
+                configurationModel.trailingItems()
             }
     }
 

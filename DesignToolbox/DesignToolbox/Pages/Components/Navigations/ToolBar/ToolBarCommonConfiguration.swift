@@ -109,7 +109,7 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
     }
 
     @MainActor
-    func trailingItems(for theme: OUDSTheme) -> [OUDSToolBarItem] {
+    func trailingItems() -> [OUDSToolBarItem] {
         var items = [OUDSToolBarItem]()
 
         for index in 1 ... numberOfTrailingItems {

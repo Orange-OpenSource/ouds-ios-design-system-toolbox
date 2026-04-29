@@ -86,7 +86,7 @@ private struct BottomBarModifier: ViewModifier {
                 .toolBarBottom {
                     configurationModel.leadingItems(for: theme)
                 } trailingItems: {
-                    configurationModel.trailingItems(for: theme)
+                    configurationModel.trailingItems()
                 }
         }
     }
