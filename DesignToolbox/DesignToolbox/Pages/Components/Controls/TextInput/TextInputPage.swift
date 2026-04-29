@@ -46,26 +46,41 @@ struct TextInputDemo: View {
     // MARK: - Body
 
     var body: some View {
-        OUDSTextInput(label: configurationModel.label,
-                      text: $configurationModel.text,
-                      placeholder: configurationModel.placeholderText,
-                      prefix: configurationModel.prefixText,
-                      suffix: configurationModel.suffixText,
-                      leadingIcon: leadingIcon,
-                      flipLeadingIcon: configurationModel.flipLeadingIcon,
-                      trailingAction: trailingAction,
-                      helperText: configurationModel.helperText,
-                      helperLink: helperLink,
-                      isOutlined: configurationModel.isOutlined,
-                      constrainedMaxWidth: configurationModel.constrainedMaxWidth,
-                      status: configurationModel.status)
-            .autocorrectionDisabled()
-            .textInputDisableAutocapitalization()
-            .onSubmit {
-                if configurationModel.text == "error" {
-                    configurationModel.status = .error(message: "Error text detecte")
-                }
-            }
+        // To keep things simple, supposed the rich/raw mode is for all parameters
+        switch configurationModel.textMode {
+        case .raw:
+            OUDSTextInput(label: configurationModel.label,
+                          text: $configurationModel.text,
+                          placeholder: configurationModel.placeholderText,
+                          prefix: configurationModel.prefixText,
+                          suffix: configurationModel.suffixText,
+                          leadingIcon: leadingIcon,
+                          flipLeadingIcon: configurationModel.flipLeadingIcon,
+                          trailingAction: trailingAction,
+                          helperText: configurationModel.helperText,
+                          helperLink: helperLink,
+                          isOutlined: configurationModel.isOutlined,
+                          constrainedMaxWidth: configurationModel.constrainedMaxWidth,
+                          status: configurationModel.computedStatus)
+                .autocorrectionDisabled()
+                .textInputDisableAutocapitalization()
+        case .rich:
+            OUDSTextInput(label: configurationModel.label,
+                          text: $configurationModel.text,
+                          placeholder: configurationModel.placeholderText,
+                          prefix: configurationModel.prefixText,
+                          suffix: configurationModel.suffixText,
+                          leadingIcon: leadingIcon,
+                          flipLeadingIcon: configurationModel.flipLeadingIcon,
+                          trailingAction: trailingAction,
+                          helperText: configurationModel.richHelperText,
+                          helperLink: helperLink,
+                          isOutlined: configurationModel.isOutlined,
+                          constrainedMaxWidth: configurationModel.constrainedMaxWidth,
+                          status: configurationModel.computedStatus)
+                .autocorrectionDisabled()
+                .textInputDisableAutocapitalization()
+        }
     }
 
     private var leadingIcon: Image? {

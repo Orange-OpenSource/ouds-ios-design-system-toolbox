@@ -53,13 +53,8 @@ struct PasswordInputDemo: View {
                           helperText: configurationModel.helperText,
                           isOutlined: configurationModel.isOutlined,
                           constrainedMaxWidth: configurationModel.constrainedMaxWidth,
-                          status: configurationModel.status)
+                          status: configurationModel.computedStatus)
             .autocorrectionDisabled()
             .textInputDisableAutocapitalization()
-            .onSubmit {
-                if configurationModel.text == "error" {
-                    configurationModel.status = .error(message: "Error text")
-                }
-            }
     }
 }

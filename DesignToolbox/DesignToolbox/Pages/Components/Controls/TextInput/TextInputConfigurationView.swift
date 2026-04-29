@@ -14,6 +14,44 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// MARK: - Text Input Status
+
+/// Describes the status available in the configuration panel, to map with `OUDSTextInput.Status`
+enum TextInputStatus: CaseIterable, CustomStringConvertible, Hashable {
+
+    case enabled
+    case error
+    case richError
+    case loading
+    case readOnly
+    case disabled
+
+    var description: String {
+        switch self {
+        case .enabled:
+            String(localized: "app_common_enabled_tech")
+        case .error:
+            String(localized: "app_components_common_error_tech")
+        case .richError:
+            String(localized: "app_components_common_richError_tech")
+        case .loading:
+            String(localized: "app_components_common_loader_tech")
+        case .readOnly:
+            String(localized: "app_components_common_readOnly_tech")
+        case .disabled:
+            String(localized: "app_common_disabled_tech")
+        }
+    }
+
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}
+
 // MARK: - TextInput Configuration Model
 
 /// The model shared between `TextInputPageConfiguration` view and `TextInputPageComponent` view.
@@ -67,10 +105,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 
     @Published var errorText: String {
-        didSet {
-            status = .error(message: errorText)
-            updateCode()
-        }
+        didSet { updateCode() }
     }
 
     @Published var helperLinkText: String {
@@ -85,7 +120,11 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var status: OUDSTextInput.Status {
+    @Published var status: TextInputStatus {
+        didSet { updateCode() }
+    }
+
+    @Published var textMode: TextualContentMode {
         didSet { updateCode() }
     }
 
@@ -107,10 +146,47 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         isOutlined = false
         constrainedMaxWidth = false
         status = .enabled
+        textMode = .raw
         super.init()
     }
 
     deinit {}
+
+    // MARK: Computed status
+
+    var richHelperText: AttributedString {
+        do {
+            return try AttributedString(markdown: helperText)
+        } catch {
+            return AttributedString("Supposed to be valid Markdown")
+        }
+    }
+
+    /// Returns the `OUDSTextInput.Status` value to pass to the component
+    var computedStatus: OUDSTextInput.Status {
+        switch status {
+        case .enabled:
+            .enabled
+        case .error:
+            .error(message: errorText)
+        case .richError:
+            .richError(message: richErrorText)
+        case .loading:
+            .loading
+        case .readOnly:
+            .readOnly
+        case .disabled:
+            .disabled
+        }
+    }
+
+    var richErrorText: AttributedString {
+        do {
+            return try AttributedString(markdown: errorText)
+        } catch {
+            return AttributedString("Supposed to be valid Markdown")
+        }
+    }
 
     // MARK: Code illustration
 
@@ -174,7 +250,20 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 
     private var statusPattern: String {
-        status != .enabled ? ", status: \(status.technicalDescription)" : ""
+        switch status {
+        case .enabled:
+            ""
+        case .error:
+            ", status: .error(message: \"\(errorText)\")"
+        case .richError:
+            ", status: .richError(message: AttributedString(markdown: \"\(errorText)\")"
+        case .loading:
+            ", status: .loading"
+        case .readOnly:
+            ", status: .readOnly"
+        case .disabled:
+            ", status: .disabled"
+        }
     }
 }
 
@@ -205,13 +294,19 @@ struct TextInputConfigurationView: View {
 
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
-                               chips: OUDSTextInput.Status.chips)
+                               chips: TextInputStatus.chips)
+
+                if configurationModel.status != .error, configurationModel.status != .richError {
+                    OUDSChipPicker(title: "app_components_textMode_tech",
+                                   selection: $configurationModel.textMode,
+                                   chips: TextualContentMode.chips)
+                }
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
 
                     switch configurationModel.status {
-                    case .error:
+                    case .error, .richError:
                         DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_common_errorMessage_tech")
                     default:
                         DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
@@ -224,49 +319,5 @@ struct TextInputConfigurationView: View {
                 }
             }
         }
-    }
-}
-
-extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
-
-    nonisolated(unsafe) public static var allCases: [OUDSTextInput.Status] =
-        [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading, .readOnly, .disabled]
-
-    public var description: String {
-        switch self {
-        case .enabled:
-            String(localized: "app_common_enabled_tech")
-        case .error:
-            String(localized: "app_components_common_error_tech")
-        case .loading:
-            String(localized: "app_components_common_loader_tech")
-        case .readOnly:
-            String(localized: "app_components_common_readOnly_tech")
-        case .disabled:
-            String(localized: "app_common_disabled_tech")
-        }
-    }
-
-    public var technicalDescription: String {
-        if self == .readOnly {
-            return ".readOnly"
-        }
-        if case let .error(message) = self {
-            return ".error(message: \"\(message)\")"
-        } else {
-            return ".\(description.lowercased())"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(description)
     }
 }

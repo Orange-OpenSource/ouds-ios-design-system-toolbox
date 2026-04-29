@@ -52,10 +52,7 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
     }
 
     @Published var errorText: String {
-        didSet {
-            status = .error(message: errorText)
-            updateCode()
-        }
+        didSet { updateCode() }
     }
 
     @Published var isOutlined: Bool {
@@ -66,7 +63,7 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var status: OUDSTextInput.Status {
+    @Published var status: TextInputStatus {
         didSet { updateCode() }
     }
 
@@ -92,6 +89,34 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
     }
 
     deinit {}
+
+    // MARK: Computed status
+
+    /// Returns the `OUDSTextInput.Status` value to pass to the component
+    var computedStatus: OUDSTextInput.Status {
+        switch status {
+        case .enabled:
+            .enabled
+        case .error:
+            .error(message: errorText)
+        case .richError:
+            .richError(message: richErrorText)
+        case .loading:
+            .loading
+        case .readOnly:
+            .readOnly
+        case .disabled:
+            .disabled
+        }
+    }
+
+    var richErrorText: AttributedString {
+        do {
+            return try AttributedString(markdown: errorText)
+        } catch {
+            return AttributedString("Supposed to be valid Markdown")
+        }
+    }
 
     // MARK: Code illustration
 
@@ -141,7 +166,20 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
     }
 
     private var statusPattern: String {
-        status != .enabled ? ", status: \(status.technicalDescription)" : ""
+        switch status {
+        case .enabled:
+            ""
+        case .error:
+            ", status: .error(message: \"\(errorText)\")"
+        case .richError:
+            ", status: .richError(message: AttributedString(markdown: \"\(errorText)\")"
+        case .loading:
+            ", status: .loading"
+        case .readOnly:
+            ", status: .readOnly"
+        case .disabled:
+            ", status: .disabled"
+        }
     }
 }
 
@@ -166,7 +204,7 @@ struct PasswordInputConfigurationView: View {
 
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
-                               chips: OUDSTextInput.Status.chips)
+                               chips: TextInputStatus.chips)
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
