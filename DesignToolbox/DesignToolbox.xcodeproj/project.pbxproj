@@ -6114,7 +6114,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1482-update-linkto-center-the-next-indicator";
 				kind = branch;
 			};
 		};

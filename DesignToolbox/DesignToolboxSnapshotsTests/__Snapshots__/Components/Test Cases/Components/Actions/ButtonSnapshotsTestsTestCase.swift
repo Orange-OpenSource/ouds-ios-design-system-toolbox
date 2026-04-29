@@ -70,7 +70,7 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
     /// in enabled and disabled state.
     ///
     /// - Parameters:
-    ///   - theme: The theme (`OUDSTheme) from which to retrieve color tokens.
+    ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllButtonsOnColoredSurface(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Skip test for negative and brand appearance because it is not allowed on colored surface
