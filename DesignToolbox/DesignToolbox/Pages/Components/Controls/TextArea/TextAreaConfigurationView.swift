@@ -243,7 +243,7 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         case .plain:
             helperText.isEmpty ? "" : ", helperText: .plain(\"\(helperText)\")"
         case .rich:
-            helperText.isEmpty ? "" : ", helperText: .rich(\"\(helperText)\")"
+            helperText.isEmpty ? "" : ", helperText: .rich(yourAttributedString)"
         case .charactersMaxCount:
             ", helperText: .charactersMaxCount(\(maxCharacters))"
         }
@@ -268,7 +268,7 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         case .error:
             ", status: .error(message: \"\(errorText)\")"
         case .richError:
-            ", status: .richError(message: AttributedString(markdown: \"\(errorText)\")"
+            ", status: .richError(message: yourAttributedString)"
         case .loading:
             ", status: .loading"
         case .readOnly:
