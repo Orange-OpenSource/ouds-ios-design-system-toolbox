@@ -42,7 +42,7 @@ struct BulletListDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        // To keep things simple, supposed the rich/raw mode is for all parameters
+        // To keep things simple, assuming the rich/raw mode is for all parameters
         switch configurationModel.textMode {
         case .raw:
             OUDSBulletList(type: bulletType,

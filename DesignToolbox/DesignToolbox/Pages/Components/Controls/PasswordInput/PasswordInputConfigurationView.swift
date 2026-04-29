@@ -185,7 +185,7 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         case .error:
             ", status: .error(message: \"\(errorText)\")"
         case .richError:
-            ", status: .richError(message: AttributedString(markdown: \"\(errorText)\")"
+            ", status: .richError(message: yourAttributedString)"
         case .loading:
             ", status: .loading"
         case .readOnly:

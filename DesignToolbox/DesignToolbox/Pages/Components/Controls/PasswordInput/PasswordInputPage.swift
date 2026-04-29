@@ -44,7 +44,7 @@ struct PasswordInputDemo: View {
     // MARK: - Body
 
     var body: some View {
-        // To keep things simple, supposed the rich/raw mode is for all parameters
+        // To keep things simple, assuming the rich/raw mode is for all parameters
         switch configurationModel.textMode {
         case .raw:
             OUDSPasswordInput(label: configurationModel.label,

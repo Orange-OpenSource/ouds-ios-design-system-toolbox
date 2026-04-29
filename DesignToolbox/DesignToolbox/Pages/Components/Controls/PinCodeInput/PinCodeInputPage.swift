@@ -54,7 +54,7 @@ struct PinCodeInputDemo: View {
         }
 
         // Do not give the length to the same view as index out of bound error will occur in component
-        // from the UIKit brige
+        // from the UIKit bridge
         switch configurationModel.textMode {
         case .rich:
             if length == .eight, UIDevice.current.userInterfaceIdiom == .phone { // For iPad we have enough space, not for iPhone

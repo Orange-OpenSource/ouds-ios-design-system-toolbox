@@ -2879,7 +2879,7 @@
       "shouldTranslate" : false
     },
     "app_components_common_helperRichText_tech" : {
-      "comment" : "Component - Text Area",
+      "comment" : "Component - Common",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -3272,7 +3272,7 @@
       "shouldTranslate" : false
     },
     "app_components_common_richError_tech" : {
-      "comment" : "Component - Text Area",
+      "comment" : "Component - Common",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
