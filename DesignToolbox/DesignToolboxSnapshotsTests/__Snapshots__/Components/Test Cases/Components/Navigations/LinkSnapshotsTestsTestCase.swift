@@ -74,7 +74,7 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
     ///
     /// - Parameters:
-    ///   - theme: The theme (`OUDSTheme)
+    ///   - theme: The theme (`OUDSTheme`)
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - layout: the layout of the link
     ///   - size: the size of the link
