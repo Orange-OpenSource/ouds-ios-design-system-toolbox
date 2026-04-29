@@ -25,7 +25,7 @@ The products are written in Swift with SwiftUI as UI framework and Swift 6 (form
 
 ## 3. Code formating
 
-The source code is formatted for Swift 6.2. Configuration of formater is in `.swiftformat` and linter in `.swiftlint`.
+The source code is formatted for Swift 6.3. Configuration of formater is in `.swiftformat` and linter in `.swiftlint`.
 
 ## 4. Project structure
 

@@ -88,7 +88,7 @@ end
 # Devices configuration
 # ---------------------
 
-OUDS_SNAPSHOTS_TEST_DEVICE = "iPhone 17 Pro (26.2)"
+OUDS_SNAPSHOTS_TEST_DEVICE = "iPhone 17 Pro (26.4)"
 OUDS_UNIT_TEST_DEVICE = OUDS_SNAPSHOTS_TEST_DEVICE
 OUDS_UI_TEST_DEVICE = OUDS_SNAPSHOTS_TEST_DEVICE
 
@@ -181,7 +181,7 @@ platform :ios do
     
     desc "Run snapshots tests in the demo app to look for visual regressions of components defined in OUDS package"
     lane :test_snapshots do
-        puts "👉 Run UI tests"
+        puts "👉 Run snapshots tests"
 
         # Should have on runner one device under at least iOS 15
         # Check the available devices using `xcrun xctrace list devices`
