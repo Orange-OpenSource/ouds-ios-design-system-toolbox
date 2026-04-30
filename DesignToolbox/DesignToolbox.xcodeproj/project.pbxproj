@@ -964,6 +964,10 @@
 		95C17B892EBCAC64002A7371 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95C17B882EBCAC64002A7371 /* OUDSSwiftUI */; };
 		95C17B8C2EBCAC75002A7371 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95C17B8B2EBCAC75002A7371 /* OUDSSwiftUI */; };
 		95C17B8E2EBCAC7B002A7371 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95C17B8D2EBCAC7B002A7371 /* OUDSSwiftUI */; };
+		95C5A7D42F978289002F6D8A /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
+		95C5A7D52F978289002F6D8A /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
+		95C5A7D62F978289002F6D8A /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
+		95C5A7D72F978289002F6D8A /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
 		95CD64F22EB3A375008FAB03 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD64F12EB3A371008FAB03 /* WindowManager.swift */; };
 		95CE05342EC33C2A00ACE41C /* NamedOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05332EC33C2700ACE41C /* NamedOpacity.swift */; };
 		95CE05352EC33C2A00ACE41C /* NamedOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05332EC33C2700ACE41C /* NamedOpacity.swift */; };
@@ -1579,6 +1583,7 @@
 		9598006C2EBCC714007BE0EA /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
 		9598006D2EBCC714007BE0EA /* DesignToolbox_Light_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolbox_Light_App.swift; sourceTree = "<group>"; };
 		959800892EBCCCAB007BE0EA /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
+		95C5A7D32F978284002F6D8A /* TextualContentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextualContentMode.swift; sourceTree = "<group>"; };
 		95CD64F12EB3A371008FAB03 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		95CE05332EC33C2700ACE41C /* NamedOpacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedOpacity.swift; sourceTree = "<group>"; };
 		95CE05382EC33C4300ACE41C /* OpacityIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityIllustration.swift; sourceTree = "<group>"; };
@@ -2078,6 +2083,7 @@
 		07F0AFE62CFE055300D334DD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				95C5A7D32F978284002F6D8A /* TextualContentMode.swift */,
 				07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */,
 			);
 			path = Utils;
@@ -4346,6 +4352,7 @@
 				6DE5F47D2CC696120008E774 /* ThemeSelection.swift in Sources */,
 				6D8F9C542CC160660078A10E /* SpaceTokenPage.swift in Sources */,
 				953E02442F7D3AE100550DD6 /* PinCodeInputPage.swift in Sources */,
+				95C5A7D62F978289002F6D8A /* TextualContentMode.swift in Sources */,
 				07304A6A2D429F9F009320BA /* LinkConfiguration.swift in Sources */,
 				07304A6B2D429F9F009320BA /* LinkElement.swift in Sources */,
 				51ABCD282E183226006CD6C0 /* SoshTheme+TokensFontSnapshotsTests.swift in Sources */,
@@ -4453,6 +4460,7 @@
 				07F0AFD72CFDB3CC00D334DD /* ComponentPage.swift in Sources */,
 				95CE05572EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				FC95B93E2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */,
+				95C5A7D42F978289002F6D8A /* TextualContentMode.swift in Sources */,
 				0786A9DB2E0AAB4A00976098 /* CheckboxItemElement.swift in Sources */,
 				0786A9DC2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
 				077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */,
@@ -4808,6 +4816,7 @@
 				9589F05D2EB7D67B00134487 /* ButtonPage.swift in Sources */,
 				9589F05E2EB7D67B00134487 /* CheckboxItemIndeterminatePage.swift in Sources */,
 				9589F05F2EB7D67B00134487 /* A11YIdentifiers.swift in Sources */,
+				95C5A7D52F978289002F6D8A /* TextualContentMode.swift in Sources */,
 				9589F0602EB7D67B00134487 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				9589F0612EB7D67B00134487 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
 				9589F0622EB7D67B00134487 /* ButtonElement.swift in Sources */,
@@ -4987,6 +4996,7 @@
 				9589F1252EB7D67E00134487 /* CheckboxItemElement.swift in Sources */,
 				9589F1262EB7D67E00134487 /* CheckboxItemPage.swift in Sources */,
 				FC95B9402F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */,
+				95C5A7D72F978289002F6D8A /* TextualContentMode.swift in Sources */,
 				9589F1272EB7D67E00134487 /* DimensionTokenElement.swift in Sources */,
 				9589F1282EB7D67E00134487 /* BorderTokenPage.swift in Sources */,
 				9589F1292EB7D67E00134487 /* DesignToolboxTokenIllustration.swift in Sources */,

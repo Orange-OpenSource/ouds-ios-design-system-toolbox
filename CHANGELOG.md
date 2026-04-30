@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Rich text support for `alert message`, `bullet list`, `switch item`, `radio item`, `checkbox item`, `text area`, `text input`, `password input`, `PIN code input` components (Orange-OpenSource/ouds-ios#1405)
 - [Library] `badge` on `toolbar` components items with icons (Orange-OpenSource/ouds-ios#1398)
 - [DesignToolbox] Search feature for tokens and components groups (iOS 26+ with Liquid Glass) (Orange-OpenSource/ouds-ios#1451)
 
@@ -21,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] Missing error vocalization with Voice Over for `switch item` component (Orange-OpenSource/ouds-ios#1484)
 - [DesignToolbox] Redirection page for stable builds in about page (Orange-OpenSource/ouds-ios#1457)
 - [Library] Overlay items of `tab bar` component still displayed even if hidden for disabled Liquid Glass (Orange-OpenSource/ouds-ios#1434)
 - [Library] Selected tab indicator in `tab bar` component if Liquid Glass not applied (Orange-OpenSource/ouds-ios#1428)

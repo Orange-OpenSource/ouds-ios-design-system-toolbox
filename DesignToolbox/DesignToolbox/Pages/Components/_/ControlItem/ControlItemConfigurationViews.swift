@@ -34,14 +34,14 @@ struct ControlItemElementPage<Demo>: View where Demo: View {
 
     var body: some View {
         ComponentConfigurationView(configuration: configurationModel, componentView: demo) {
-            ControlItemConfiguration(configurationModel: configurationModel)
+            ControlItemConfigurationView(configurationModel: configurationModel)
         }
     }
 }
 
 // MARK: - ControlItem Configuration View
 
-private struct ControlItemConfiguration: View {
+private struct ControlItemConfigurationView: View {
 
     // MARK: Stored properties
 
@@ -79,6 +79,10 @@ private struct ControlItemConfiguration: View {
 
                 OUDSSwitchItem("app_components_common_error_tech", isOn: $configurationModel.isError)
                     .disabled(!configurationModel.enabled || configurationModel.isReadOnly)
+
+                OUDSChipPicker(title: "app_components_textMode_tech",
+                               selection: $configurationModel.textMode,
+                               chips: TextualContentMode.chips)
             }
 
             DesignToolboxEditContentDisclosure {

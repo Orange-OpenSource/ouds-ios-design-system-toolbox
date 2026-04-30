@@ -52,7 +52,7 @@ struct TextAreaDemo: View {
                      helperLink: helperLink,
                      isOutlined: configurationModel.isOutlined,
                      constrainedMaxWidth: configurationModel.constrainedMaxWidth,
-                     status: configurationModel.status)
+                     status: configurationModel.computedStatus)
     }
 
     private var helperLink: OUDSTextArea.Helperlink? {

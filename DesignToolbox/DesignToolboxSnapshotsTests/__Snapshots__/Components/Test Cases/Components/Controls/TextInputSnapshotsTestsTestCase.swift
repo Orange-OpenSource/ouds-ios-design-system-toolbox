@@ -268,3 +268,51 @@ struct TestTextInputView: View {
         .init(text: "HelperLink") {}
     }
 }
+
+// MARK: - Extension of OUDS Text Input Status
+
+extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
+
+    nonisolated(unsafe) public static var allCases: [OUDSTextInput.Status] =
+        [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading, .readOnly, .disabled]
+
+    public var description: String {
+        switch self {
+        case .enabled:
+            String(localized: "app_common_enabled_tech")
+        case .error:
+            String(localized: "app_components_common_error_tech")
+        case .richError:
+            String(localized: "app_components_common_richError_tech")
+        case .loading:
+            String(localized: "app_components_common_loader_tech")
+        case .readOnly:
+            String(localized: "app_components_common_readOnly_tech")
+        case .disabled:
+            String(localized: "app_common_disabled_tech")
+        }
+    }
+
+    public var technicalDescription: String {
+        if self == .readOnly {
+            return ".readOnly"
+        }
+        if case let .error(message) = self {
+            return ".error(message: \"\(message)\")"
+        } else {
+            return ".\(description.lowercased())"
+        }
+    }
+
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(description)
+    }
+}

@@ -81,6 +81,20 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var textMode: TextualContentMode {
+        didSet { updateCode() }
+    }
+
+    // MARK: - Computed properties
+
+    var richErrorText: AttributedString {
+        do {
+            return try AttributedString(markdown: errorText)
+        } catch {
+            return AttributedString("Supposed to be valid Markdown")
+        }
+    }
+
     // MARK: - Initializer
 
     // NOTE: "unused" false-positive for periphery (https://github.com/peripheryapp/periphery/issues/957)
@@ -106,6 +120,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         self.extraLabelConfiguration = extraLabelConfiguration
         outlined = outlinedConfiguration?.value ?? false
         extraLabelText = extraLabelConfiguration ?? ""
+        textMode = .raw
         super.init()
     }
 
@@ -149,7 +164,15 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     }
 
     private var errorTextPattern: String {
-        isError && !errorText.isEmpty ? ", errorText: \"\(errorText)\"" : ""
+        if isError, !errorText.isEmpty {
+            if textMode == .rich {
+                ", errorText: yourAttributedString"
+            } else {
+                ", errorText: \"\(errorText)\""
+            }
+        } else {
+            ""
+        }
     }
 
     private var isReadOnlyPattern: String {
