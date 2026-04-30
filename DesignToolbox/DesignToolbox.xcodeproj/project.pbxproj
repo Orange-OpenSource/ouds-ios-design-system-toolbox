@@ -6124,7 +6124,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1405-for-alert-message-bullet-list-switch-radio-checkbox-text-area-text-input-pin-code-put-components-update-api-to-use-rich-text";
+				branch = develop;
 				kind = branch;
 			};
 		};
