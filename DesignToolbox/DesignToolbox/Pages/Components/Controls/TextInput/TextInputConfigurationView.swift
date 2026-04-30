@@ -19,6 +19,7 @@ import SwiftUI
 // MARK: - Text Input Status
 
 /// Describes the status available in the configuration panel, to map with `OUDSTextInput.Status`
+
 enum TextInputStatus: DesignToolboxEnumLocalizedRepresentable {
     case enabled, error, richError, loading, readOnly, disabled
 
