@@ -44,22 +44,34 @@ struct PasswordInputDemo: View {
     // MARK: - Body
 
     var body: some View {
-        OUDSPasswordInput(label: configurationModel.label,
-                          password: $configurationModel.text,
-                          isHiddenPassword: $configurationModel.isHiddenPassword,
-                          placeholder: configurationModel.placeholderText,
-                          prefix: configurationModel.prefixText,
-                          lockIcon: configurationModel.lockIcon,
-                          helperText: configurationModel.helperText,
-                          isOutlined: configurationModel.isOutlined,
-                          constrainedMaxWidth: configurationModel.constrainedMaxWidth,
-                          status: configurationModel.status)
-            .autocorrectionDisabled()
-            .textInputDisableAutocapitalization()
-            .onSubmit {
-                if configurationModel.text == "error" {
-                    configurationModel.status = .error(message: "Error text")
-                }
-            }
+        // To keep things simple, assuming the rich/raw mode is for all parameters
+        switch configurationModel.textMode {
+        case .raw:
+            OUDSPasswordInput(label: configurationModel.label,
+                              password: $configurationModel.text,
+                              isHiddenPassword: $configurationModel.isHiddenPassword,
+                              placeholder: configurationModel.placeholderText,
+                              prefix: configurationModel.prefixText,
+                              lockIcon: configurationModel.lockIcon,
+                              helperText: configurationModel.helperText,
+                              isOutlined: configurationModel.isOutlined,
+                              constrainedMaxWidth: configurationModel.constrainedMaxWidth,
+                              status: configurationModel.computedStatus)
+                .autocorrectionDisabled()
+                .textInputDisableAutocapitalization()
+        case .rich:
+            OUDSPasswordInput(label: configurationModel.label,
+                              password: $configurationModel.text,
+                              isHiddenPassword: $configurationModel.isHiddenPassword,
+                              placeholder: configurationModel.placeholderText,
+                              prefix: configurationModel.prefixText,
+                              lockIcon: configurationModel.lockIcon,
+                              helperText: configurationModel.richHelperText,
+                              isOutlined: configurationModel.isOutlined,
+                              constrainedMaxWidth: configurationModel.constrainedMaxWidth,
+                              status: configurationModel.computedStatus)
+                .autocorrectionDisabled()
+                .textInputDisableAutocapitalization()
+        }
     }
 }

@@ -2878,6 +2878,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_helperRichText_tech" : {
+      "comment" : "Component - Common",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text (rich)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text (rich)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text (rich)"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_helperText_tech" : {
       "comment" : "Component - Common",
       "localizations" : {
@@ -3242,6 +3266,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Read only"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_richError_tech" : {
+      "comment" : "Component - Common",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error (rich)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error (rich)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error (rich)"
           }
         }
       },
@@ -5232,6 +5280,31 @@
           }
         }
       }
+    },
+    "app_components_textMode_tech" : {
+      "comment" : "Common - Rich text mode",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text mode"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text mode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text mode"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_components_toolbar_common_itemCount_label" : {
       "comment" : "Component - Tab bar - common",

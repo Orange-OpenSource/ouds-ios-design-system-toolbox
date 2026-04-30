@@ -49,6 +49,20 @@ final class BulletListConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var textMode: TextualContentMode {
+        didSet { updateCode() }
+    }
+
+    // MARK: - Computed properties
+
+    var richLabel: AttributedString {
+        do {
+            return try AttributedString(markdown: label)
+        } catch {
+            return AttributedString("Supposed to be valid Markdown")
+        }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -59,6 +73,7 @@ final class BulletListConfigurationModel: ComponentConfiguration {
         unorderedBulletIsBranded = true
         textStyle = .bodyLarge
         isBold = true
+        textMode = .raw
 
         super.init()
     }
@@ -66,6 +81,15 @@ final class BulletListConfigurationModel: ComponentConfiguration {
     deinit {}
 
     // MARK: Component Configuration
+
+    private var labelPattern: String {
+        switch textMode {
+        case .rich:
+            "yourAttributedString"
+        case .raw:
+            "\"\(label)\""
+        }
+    }
 
     private var iconPattern: String {
         switch unorderedAsset {
@@ -114,26 +138,26 @@ final class BulletListConfigurationModel: ComponentConfiguration {
         case .one:
             """
             {
-                OUDSBulletList.Item("\(label)")
-                OUDSBulletList.Item("\(label)")
-                OUDSBulletList.Item("\(label)")
+                OUDSBulletList.Item(\(labelPattern))
+                OUDSBulletList.Item(\(labelPattern))
+                OUDSBulletList.Item(\(labelPattern))
             }
             """
         case .two:
             """
             {
-                OUDSBulletList.Item("\(label)") {
-                    OUDSBulletList.Item("\(label)")
-                    OUDSBulletList.Item("\(label)")
+                OUDSBulletList.Item(\(labelPattern)) {
+                    OUDSBulletList.Item(\(labelPattern))
+                    OUDSBulletList.Item(\(labelPattern))
                 }
             }
             """
         case .three:
             """
             {
-                OUDSBulletList.Item("\(label)") {
-                    OUDSBulletList.Item("\(label)") {
-                        OUDSBulletList.Item("\(label)")
+                OUDSBulletList.Item(\(labelPattern)) {
+                    OUDSBulletList.Item(\(labelPattern)) {
+                        OUDSBulletList.Item(\(labelPattern))
                     }
                 }
             }
@@ -182,6 +206,10 @@ struct BulletListConfigurationView: View {
                 OUDSChipPicker(title: "app_components_bulletList_levelCount_tech",
                                selection: $configurationModel.levelCount,
                                chips: BulletListLevelCount.chips)
+
+                OUDSChipPicker(title: "app_components_textMode_tech",
+                               selection: $configurationModel.textMode,
+                               chips: TextualContentMode.chips)
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
@@ -249,7 +277,7 @@ enum BulletListType: CaseIterable, CustomStringConvertible {
 typealias BulletListTextStyle = OUDSBulletList.TextStyle
 extension OUDSBulletList.TextStyle: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSBulletList.TextStyle] = [.bodyLarge, .bodyMedium]
+    public static let allCases: [OUDSBulletList.TextStyle] = [.bodyLarge, .bodyMedium]
 
     // NOTE: Not localized because it is a technical name
     public var description: String {
