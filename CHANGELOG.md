@@ -14,7 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [DesignToolbox] `json` RubyGem from v2.19.3 to v2.19.5
+- [DesignToolbox] `github/codeql-action/upload-sarif` action from v4.35.2 to v4.35.3 for `scorecard` workflow
+- [DesignToolbox] `Ruby` version from v4.0.2 to v4.0.3 for `build-and-test` workflow
+- [DesignToolbox] `fastlane` gem from v2.232.2 to v2.233.1
+- [DesignToolbox] `json` gem from v2.19.3 to v2.19.5
 - [DesignToolbox] `ruby/setup-ruby` action from v1.301.0 to v1.306.0 for `build-and-test` workflow
 - [DesignToolbox] Accessibility statement library v2.2.0
 - [DesignToolbox] Liquid Glass status tag in about menu with management of iOS until 18 case
