@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Liquid Glass status tag in about menu with management of iOS until 18 case
 - [Library] `link` component to center the indicator on multiline (Orange-OpenSource/ouds-ios#1482)
 - [DesignToolbox] Move from Xcode 26.3 to Xcode 26.4, and Swift 6.2 to Swift 6.3 (Orange-OpenSource/ouds-ios#1356)
 - [Library] Update of tokens (tokens librairies v2.5.0) (Orange-OpenSource/ouds-ios#1473)
