@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] Overlay items of `tab bar` component still displayed even if hidden for disabled Liquid Glass for deep navigations app (Orange-OpenSource/ouds-ios#1490)
 - [Library] Missing error vocalization with Voice Over for `switch item` component (Orange-OpenSource/ouds-ios#1484)
 - [DesignToolbox] Redirection page for stable builds in about page (Orange-OpenSource/ouds-ios#1457)
 - [Library] Overlay items of `tab bar` component still displayed even if hidden for disabled Liquid Glass (Orange-OpenSource/ouds-ios#1434)
