@@ -1012,6 +1012,31 @@
         }
       }
     },
+    "app_common_unavailable_tech" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unavailable"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unavailable"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unavailable"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_common_version" : {
       "comment" : "Common",
       "extractionState" : "manual",
