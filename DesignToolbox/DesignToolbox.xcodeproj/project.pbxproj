@@ -6095,7 +6095,7 @@
 			repositoryURL = "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = "2.2.0-beta.3";
+				minimumVersion = 2.2.0;
 			};
 		};
 		950EA7062EBE3D5D0009414A /* XCRemoteSwiftPackageReference "ouds-ios" */ = {
@@ -6126,7 +6126,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = 2.0.0;
 				kind = branch;
 			};
 		};
