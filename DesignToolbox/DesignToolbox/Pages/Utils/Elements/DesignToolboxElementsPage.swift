@@ -27,7 +27,6 @@ struct DesignToolboxElementsPage: View {
     @State private var selectedElement: DesignToolboxElement?
     #endif
 
-    @AccessibilityFocusState private var requestFocus: AccessibilityFocusable?
     @Environment(\.theme) private var theme
 
     // MARK: Body
@@ -113,7 +112,6 @@ struct DesignToolboxElementsPage: View {
         .padding(.vertical, 18)
         .background(.regularMaterial, in: .capsule)
         .hoverEffect(.highlight)
-        .accessibilityFocused($requestFocus, equals: .some(id: element.id))
     }
     #endif
 }
