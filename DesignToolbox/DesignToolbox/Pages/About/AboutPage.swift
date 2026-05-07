@@ -81,13 +81,13 @@ struct AboutPage: View {
         NavigationView {
             listBody
                 .navigationBarTitleDisplayMode(.inline)
-                .accentColor(theme.colors.actionAccent)
+                .accentColor(theme.bar.colorAccent)
         }
         .navigationViewStyle(.stack)
         #else
         NavigationView {
             listBody
-                .accentColor(theme.colors.actionAccent)
+                .accentColor(theme.bar.colorAccent)
         }
         .navigationViewStyle(.automatic)
         #endif
@@ -257,12 +257,21 @@ private struct LiquidGlassStateItem: View {
 
             Spacer()
 
-            OUDSTag(isLiquidGlassDisabled ? "app_common_disabled_tech" : "app_common_enabled_tech",
-                    status: isLiquidGlassDisabled ? .negative(leading: .none) : .positive(leading: .none),
-                    appearance: isLiquidGlassDisabled ? .emphasized : .muted,
-                    shape: .rounded,
-                    size: .small,
-                    hasLoader: false)
+            if #available(iOS 26, *) {
+                OUDSTag(isLiquidGlassDisabled ? "app_common_disabled_tech" : "app_common_enabled_tech",
+                        status: isLiquidGlassDisabled ? .negative(leading: .none) : .positive(leading: .none),
+                        appearance: isLiquidGlassDisabled ? .emphasized : .muted,
+                        shape: .rounded,
+                        size: .small,
+                        hasLoader: false)
+            } else {
+                OUDSTag("app_common_unavailable_tech",
+                        status: .warning(leading: .none),
+                        appearance: .muted,
+                        shape: .rounded,
+                        size: .small,
+                        hasLoader: false)
+            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }

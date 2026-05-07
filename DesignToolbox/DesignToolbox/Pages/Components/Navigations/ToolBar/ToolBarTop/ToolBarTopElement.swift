@@ -27,7 +27,7 @@ struct ToolBarTopElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_topAppBar_description_text",
-            version: OUDSVersions.componentNavigationBarVersion,
+            version: OUDSVersions.componentToolBarTopVersion,
             demoScreen: AnyView(ToolBarTopPage())))
     }
 }

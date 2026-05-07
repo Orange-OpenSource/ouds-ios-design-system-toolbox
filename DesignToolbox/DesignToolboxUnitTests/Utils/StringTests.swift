@@ -18,9 +18,9 @@ import Testing
 struct StringTests {
 
     @Test func toGitHubRelease() {
-        #expect("".toGitHubRelease() == "https://github.com/Orange-OpenSource/ouds-ios/releases")
-        #expect("123".toGitHubRelease() == "https://github.com/Orange-OpenSource/ouds-ios/releases")
-        #expect("4.5.6".toGitHubRelease() == "https://github.com/Orange-OpenSource/ouds-ios/releases/tag/4.5.6")
+        #expect("".toGitHubRelease() == "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases")
+        #expect("123".toGitHubRelease() == "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases")
+        #expect("4.5.6".toGitHubRelease() == "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases/tag/4.5.6")
     }
 
     @Test func toGitHubBuild() {

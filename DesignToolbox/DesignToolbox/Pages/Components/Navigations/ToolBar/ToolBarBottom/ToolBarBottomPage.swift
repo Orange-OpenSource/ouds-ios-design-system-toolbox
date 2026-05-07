@@ -49,7 +49,7 @@ private struct ToolBarBottomDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSButton(text: "app_components_toolbar_demo_showDemo_label", appearance: .strong) {
+        OUDSButton("app_components_toolbar_demo_showDemo_label", appearance: .strong) {
             configurationModel.showDemo = true
         }
         .disabled(configurationModel.leading == .none && configurationModel.trailing == .none)
@@ -62,7 +62,7 @@ private struct ToolBarBottomDemo: View {
     private func demo() -> some View {
         ToolBarCommonContentView()
             .modifier(BottomBarModifier(configurationModel: configurationModel))
-            .background(theme.colors.overlayModal)
+            .background(theme.colors.overlayModalSheet)
             .toolBarTop("Demo") {
                 OUDSToolBarItem(navigation: .close)
             }
@@ -86,7 +86,7 @@ private struct BottomBarModifier: ViewModifier {
                 .toolBarBottom {
                     configurationModel.leadingItems(for: theme)
                 } trailingItems: {
-                    configurationModel.trailingItems(for: theme)
+                    configurationModel.trailingItems()
                 }
         }
     }

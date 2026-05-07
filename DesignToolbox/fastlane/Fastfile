@@ -77,6 +77,8 @@ OUDS_PROJECT_NAME = "DesignToolbox" # Root for Info.plist, etc.
 OUDS_APP_DISPLAY_NAME = "Design System Toolbox"
 OUDS_PACKAGE_RESOLVED_PATH = "#{OUDS_WORKSPACE}/xcshareddata/swiftpm/Package.resolved"
 
+OUDS_RELEASE_PROVISIONING_PROFILE = "OUDS iOS app (release)"
+
 module BuildType
     ALPHA = :alpha
     BETA = :beta
@@ -86,7 +88,7 @@ end
 # Devices configuration
 # ---------------------
 
-OUDS_SNAPSHOTS_TEST_DEVICE = "iPhone 17 Pro (26.2)"
+OUDS_SNAPSHOTS_TEST_DEVICE = "iPhone 17 Pro (26.4)"
 OUDS_UNIT_TEST_DEVICE = OUDS_SNAPSHOTS_TEST_DEVICE
 OUDS_UI_TEST_DEVICE = OUDS_SNAPSHOTS_TEST_DEVICE
 
@@ -179,7 +181,7 @@ platform :ios do
     
     desc "Run snapshots tests in the demo app to look for visual regressions of components defined in OUDS package"
     lane :test_snapshots do
-        puts "👉 Run UI tests"
+        puts "👉 Run snapshots tests"
 
         # Should have on runner one device under at least iOS 15
         # Check the available devices using `xcrun xctrace list devices`
@@ -458,13 +460,13 @@ platform :ios do
 
             # Disable automatic code signing for release / distribution builds.
             # Thus we won't use any Xcode with plugged account in, and use only needed certificates and provisioning profiles.
-            # Mobile provisioning profile named "OUDS iOS app (release)" must be placed in runner.
+            # Mobile provisioning profile named OUDS_RELEASE_PROVISIONING_PROFILE must be placed in runner.
             # The certificate(s) used to build (with bundle ID) the provisionning profile must be available in the keychain of the runner
             # (both .cer and .p12), here a distribution certificate.
             # This way is more agile and allows to use VM-based solution with on the fly configuration like with Tart.
             update_code_signing_settings(path: "#{OUDS_PROJECT}",
                 use_automatic_signing: false,
-                profile_name: 'OUDS iOS app (release)',
+                profile_name: OUDS_RELEASE_PROVISIONING_PROFILE,
                 targets: OUDS_TARGET_IOS)
             
             gym(workspace: "#{OUDS_WORKSPACE}",

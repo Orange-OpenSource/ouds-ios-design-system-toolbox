@@ -44,33 +44,46 @@ struct PinCodeInputDemo: View {
     // MARK: - Body
 
     var body: some View {
-        // Do not give the length to the same view as index out of bound error will occur in component
-        // from the UIKit brige
-        switch configurationModel.length {
+        let length: OUDSPinCodeInput.Length = switch configurationModel.length {
         case .four:
-            OUDSPinCodeInput($configurationModel.value,
-                             length: .four,
-                             helperText: configurationModel.helperText,
-                             isOutlined: configurationModel.isOutlined,
-                             status: configurationModel.status)
+            .four
         case .six:
-            OUDSPinCodeInput($configurationModel.value,
-                             length: .six,
-                             helperText: configurationModel.helperText,
-                             isOutlined: configurationModel.isOutlined,
-                             status: configurationModel.status)
+            .six
         case .eight:
-            if UIDevice.current.userInterfaceIdiom == .phone { // For iPad we have enough space, not for iPhone
+            .eight
+        }
+
+        // Do not give the length to the same view as index out of bound error will occur in component
+        // from the UIKit bridge
+        switch configurationModel.textMode {
+        case .rich:
+            if length == .eight, UIDevice.current.userInterfaceIdiom == .phone { // For iPad we have enough space, not for iPhone
                 ScrollView(.horizontal) {
                     OUDSPinCodeInput($configurationModel.value,
-                                     length: .eight,
+                                     length: length,
+                                     helperText: configurationModel.richHelperText,
+                                     isOutlined: configurationModel.isOutlined,
+                                     status: configurationModel.status)
+                }
+            } else {
+                OUDSPinCodeInput($configurationModel.value,
+                                 length: length,
+                                 helperText: configurationModel.richHelperText,
+                                 isOutlined: configurationModel.isOutlined,
+                                 status: configurationModel.status)
+            }
+        case .raw:
+            if length == .eight, UIDevice.current.userInterfaceIdiom == .phone { // For iPad we have enough space, not for iPhone
+                ScrollView(.horizontal) {
+                    OUDSPinCodeInput($configurationModel.value,
+                                     length: length,
                                      helperText: configurationModel.helperText,
                                      isOutlined: configurationModel.isOutlined,
                                      status: configurationModel.status)
                 }
             } else {
                 OUDSPinCodeInput($configurationModel.value,
-                                 length: .eight,
+                                 length: length,
                                  helperText: configurationModel.helperText,
                                  isOutlined: configurationModel.isOutlined,
                                  status: configurationModel.status)

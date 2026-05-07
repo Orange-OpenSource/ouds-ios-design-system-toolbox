@@ -25,7 +25,7 @@ struct TabBarElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_tabBar_description_text",
-            version: OUDSVersions.componentNavigationBarVersion,
+            version: OUDSVersions.componentTabBarVersion,
             demoScreen: AnyView(TabBarPage())))
     }
 }

@@ -86,9 +86,9 @@ extension String {
         let regex = try? NSRegularExpression(pattern: pattern)
         let range = NSRange(location: 0, length: utf16.count)
         guard regex?.firstMatch(in: self, options: [], range: range) != nil else {
-            return "https://github.com/Orange-OpenSource/ouds-ios/releases" // Default fallback
+            return "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases" // Default fallback
         }
-        return "https://github.com/Orange-OpenSource/ouds-ios/releases/tag/\(self)"
+        return "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases/tag/\(self)"
     }
 
     /// - Returns: The URL for the given GitHub build

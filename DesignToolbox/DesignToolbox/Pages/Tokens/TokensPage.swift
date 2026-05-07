@@ -19,18 +19,6 @@ struct TokensPage: View {
 
     var body: some View {
         DesignToolboxElementsPage(title: "app_bottomBar_tokens_label",
-                                  elements: tokenElements(theme.name).sorted(by: { $0.name < $1.name }))
-    }
-
-    private func tokenElements(_ themeName: String) -> [DesignToolboxElement] {
-        [
-            BorderTokenElement(),
-            ColorTokenElement(themeName: themeName),
-            DimensionTokenElement(),
-            ElevationTokenElement(),
-            GridTokenElement(themeName: themeName),
-            OpacityTokenElement(),
-            FontTokenElement(),
-        ]
+                                  elements: AllElements.tokenElements(themeName: theme.name).sorted(by: { $0.name < $1.name }))
     }
 }

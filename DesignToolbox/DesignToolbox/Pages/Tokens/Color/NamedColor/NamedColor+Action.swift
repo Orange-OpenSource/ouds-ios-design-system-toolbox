@@ -38,7 +38,6 @@ extension NamedColor {
         case actionVisited
         case actionReadOnlyPrimary
         case actionReadOnlySecondary
-        case actionAccent
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticToken {
             switch self {
@@ -86,8 +85,6 @@ extension NamedColor {
                 theme.colors.actionReadOnlyPrimary
             case .actionReadOnlySecondary:
                 theme.colors.actionReadOnlySecondary
-            case .actionAccent:
-                theme.colors.actionAccent
             }
         }
     }

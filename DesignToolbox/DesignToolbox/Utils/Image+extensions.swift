@@ -18,7 +18,7 @@ extension Image {
 
     /// Returns a decorative `Image` with the given named loaded form the suitable workspace depending to the theme name
     static func decorativeImage(named: String, prefixedBy themeName: String) -> Image {
-        if themeName.contains("Orange") { // "Orange" and "Orange cCompact" themes
+        if themeName.contains("Orange") { // "Orange" and "Orange Compact" themes
             Image(decorative: "Orange/\(named)")
         } else {
             Image(decorative: "\(themeName)/\(named)")

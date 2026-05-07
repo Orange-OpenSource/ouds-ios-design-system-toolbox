@@ -4,7 +4,38 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.3.0...develop)
+## [2.0.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.4.0...2.0.0) - 2026-05-07
+
+### Added
+
+- [Library] Rich text support for `alert message`, `bullet list`, `switch item`, `radio item`, `checkbox item`, `text area`, `text input`, `password input`, `PIN code input` components (Orange-OpenSource/ouds-ios#1405)
+- [Library] `badge` on `toolbar` components items with icons (Orange-OpenSource/ouds-ios#1398)
+- [DesignToolbox] Search feature for tokens and components groups (iOS 26+ with Liquid Glass) (Orange-OpenSource/ouds-ios#1451)
+
+### Changed
+
+- [DesignToolbox] `github/codeql-action/upload-sarif` action from v4.35.2 to v4.35.3 for `scorecard` workflow
+- [DesignToolbox] `Ruby` version from v4.0.2 to v4.0.3 for `build-and-test` workflow
+- [DesignToolbox] `fastlane` gem from v2.232.2 to v2.233.1
+- [DesignToolbox] `json` gem from v2.19.3 to v2.19.5
+- [DesignToolbox] `ruby/setup-ruby` action from v1.301.0 to v1.306.0 for `build-and-test` workflow
+- [DesignToolbox] Accessibility statement library v2.2.0
+- [DesignToolbox] Liquid Glass status tag in about menu with management of iOS until 18 case
+- [Library] `link` component to center the indicator on multiline (Orange-OpenSource/ouds-ios#1482)
+- [DesignToolbox] Move from Xcode 26.3 to Xcode 26.4, and Swift 6.2 to Swift 6.3 (Orange-OpenSource/ouds-ios#1356)
+- [Library] Update of tokens (tokens librairies v2.5.0) (Orange-OpenSource/ouds-ios#1473)
+- [DesignToolbox] Use `accessibility-statement-lib-ios` v2.2.0-beta.3
+- [Library] Update of tokens (tokens librairies v2.4.0) (Orange-OpenSource/ouds-ios#1437)
+
+### Fixed
+
+- [Library] Overlay items of `tab bar` component still displayed even if hidden for disabled Liquid Glass for deep navigations app (Orange-OpenSource/ouds-ios#1490)
+- [Library] Missing error vocalization with Voice Over for `switch item` component (Orange-OpenSource/ouds-ios#1484)
+- [DesignToolbox] Redirection page for stable builds in about page (Orange-OpenSource/ouds-ios#1457)
+- [Library] Overlay items of `tab bar` component still displayed even if hidden for disabled Liquid Glass (Orange-OpenSource/ouds-ios#1434)
+- [Library] Selected tab indicator in `tab bar` component if Liquid Glass not applied (Orange-OpenSource/ouds-ios#1428)
+
+## [1.4.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.3.0...1.4.0) - 2026-04-16
 
 ### Added
 

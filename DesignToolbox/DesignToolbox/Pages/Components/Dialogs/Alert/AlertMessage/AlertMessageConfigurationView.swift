@@ -49,6 +49,28 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         didSet { updateCode() }
     }
 
+    @Published var textMode: TextualContentMode {
+        didSet { updateCode() }
+    }
+
+    // MARK: - Computed properties
+
+    var richDescriptionText: AttributedString {
+        do {
+            return try AttributedString(markdown: descriptionText)
+        } catch {
+            return AttributedString("Supposed to be valid Markdown")
+        }
+    }
+
+    var richBulletList: [AttributedString] {
+        do {
+            return try bulletList.map { try AttributedString(markdown: $0) }
+        } catch {
+            return bulletList.map { _ in AttributedString("Supposed to be valid Markdown") }
+        }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -59,6 +81,7 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         bullet1 = "app_components_alert_alertMessage_bullet_tech" <- Int(1)
         bullet2 = "app_components_alert_alertMessage_bullet_tech" <- Int(2)
         bullet3 = "app_components_alert_alertMessage_bullet_tech" <- Int(3)
+        textMode = .raw
 
         super.init()
 
@@ -86,11 +109,23 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
     // MARK: Component Code snippet
 
     private var descriptionPattern: String {
-        descriptionText.isEmpty ? "" : ", description: \"\(descriptionText)\""
+        if descriptionText.isEmpty {
+            return ""
+        }
+        switch textMode {
+        case .raw:
+            return ", description: \"\(descriptionText)\""
+        case .rich:
+            return ", description: yourAttributedString"
+        }
     }
 
     private var bulletListPattern: String {
-        bulletList.isEmpty ? "" : ", bulletList: [\"\(bulletList.joined(separator: "\", \""))\"]"
+        if textMode == .raw {
+            bulletList.isEmpty ? "" : ", bulletList: [\"\(bulletList.joined(separator: "\", \""))\"]"
+        } else {
+            bulletList.isEmpty ? "" : ", bulletList: yourArrayOfAttributedString"
+        }
     }
 
     private var linkPattern: String {
@@ -139,6 +174,10 @@ struct AlertMessageConfigurationView: View {
                                selection: $configurationModel.actionPosition,
                                chips: OUDSAlertMessage.Link.Position.chips)
                     .disabled(!configurationModel.actionLink)
+
+                OUDSChipPicker(title: "app_components_textMode_tech",
+                               selection: $configurationModel.textMode,
+                               chips: TextualContentMode.chips)
             }
 
             DesignToolboxEditContentDisclosure {
@@ -155,7 +194,7 @@ struct AlertMessageConfigurationView: View {
 
 extension OUDSAlertMessage.Link.Position: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSAlertMessage.Link.Position] = [.bottom, .topTrailing]
+    public static let allCases: [OUDSAlertMessage.Link.Position] = [.bottom, .topTrailing]
     public var description: String {
         switch self {
         case .bottom:

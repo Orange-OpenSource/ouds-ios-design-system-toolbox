@@ -126,10 +126,10 @@ source ~/.zshrc
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 26.3**, we suggest you use this version or newer if you want (even if not recommended).
+We use also for our GitLab CI runners **Xcode 26.4**, we suggest you use this version or newer if you want (even if not recommended).
 
 > [!IMPORTANT]
-> Xcode 26.3 and Swift 6.2 are used for this project. You should use this configuration.
+> Xcode 26.4 and Swift 6.3 are used for this project. You should use this configuration.
 > Not retrocompatibility is planned yet.
 > If need you can contact us and open a discussion on GitHub Orange-OpenSource/ouds-ios
 
@@ -178,21 +178,19 @@ the online version based on [_GitHub Pages_](https://pages.github.com/), this ve
 ### Illustrations
 
 The illustrations in use for the documentation are versioned in the [Swift Package project](https://github.com/Orange-OpenSource/ouds-ios).
-They are made manually with iPhone 17 Pro, in english, portrait, light mode without icreased size text.
+They are made manually with iPhone 17 Pro, in english, portrait, light mode (combined with dark mode) without icreased size text.
 Because 4 themes are available with dedicated fonts and tokens, it was not possible to implement and maintain a test suite with one codebase for all cases.
 
 To update the illustrations, you have to:
 - have such iPhone (e.g. simulator or real device)
 - configure it with the theme you want
-- make screenshots and crop them ten
+- make screenshots and crop them then
 
 Repeat this process for the other themes if needed.
 
-For *App Store* illustrations, same thing, but with the suitable simulators or devices:
-- iPad Pro 2nd generation / 12.9-inch
-- iPad Pro 3rd generation (2018) / 12.9-inch
-- iPhone 5.5-inch devices (iPhone 6/7/8 Plus) 1242 x 2208
-- iPhone 6.5-inch (iPhone XS Max) 1242 x 2688
+For *App Store* illustrations, you need to make screenshots using simulators or devices in light mode, portrait and english:
+- iPad Air 13" (iOS 26)
+- iPhone 11 Pro Max (iOS 26)
 
 ## Run tests 
 
@@ -209,7 +207,7 @@ To run these snapshots tests follow some steps:
 1. `cd DesignToolbox`
 2. Open *DesignToolbox.xcworkspace*
 3. Select *DesignToolboxSnapshotsTests* scheme
-4. Select *iPhone 17 Pro* simulator (the device used to tests and views rendering) (iOS 26.2 (23C54))
+4. Select *iPhone 17 Pro* simulator (the device used to tests and views rendering) (iOS 26.4.1 (23E254a))
 5. Run tests (Product -> Test)
 
 Or run in terminal:
@@ -226,7 +224,7 @@ Such tests here are used to as to be sure the look and feel of any components an
 Any interface modifications require regenerating the illustrations using the tool, i.e. run the tests twice. The reference illustrations have already been saved within the project.
 
 > [!IMPORTANT]
-> The device under tests is a simulator of iPhone 17 Pro (26.2), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
+> The device under tests is a simulator of iPhone 17 Pro (26.4.1), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode.
 
 #### How to use to use swift-snapshot-testing library
 
@@ -291,7 +289,7 @@ To run these UI tests follow some steps:
 1. `cd DesignToolbox`
 2. Open *DesignToolbox.xcworkspace*
 3. Select *DesignToolboxUITests* scheme
-4. Select *iPhone 17 Pro* simulator (the device used for tests and views rendering) (iOS 26.2 (23C54))
+4. Select *iPhone 17 Pro* simulator (the device used for tests and views rendering) (iOS 26.4.1 (23E254a))
 5. Run tests (Product -> Test)
 
 Or run in terminal:
@@ -329,7 +327,7 @@ We try to cover several devices types and OS max version according to [iosref.co
 
 #### iPhone / iOS
 
-- iPhone 17 Pro (iOS 26.2)
+- iPhone 17 Pro (iOS 26.4.1)
 - iPhone 14 Pro (iOS 17.5)
 - iPhone Xs Max (iOS 18.6)
 - iPhone 8 Plus (iOS 16.4)

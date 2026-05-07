@@ -26,7 +26,7 @@ struct ToolBarBottomElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_bottomAppBar_description_text",
-            version: OUDSVersions.componentNavigationBarVersion,
+            version: OUDSVersions.componentToolBarBottomVersion,
             demoScreen: AnyView(ToolBarBottomPage())))
     }
 }
@@ -64,7 +64,7 @@ private struct ToolBarBottomIllustration: View {
                 width: theme.borders.widthDefault,
                 radius: theme.borders.radiusDefault,
                 color: theme.colors.borderMinimal)
-        .background(theme.colors.overlayModal)
+        .background(theme.colors.overlayModalSheet)
     }
 }
 #endif
