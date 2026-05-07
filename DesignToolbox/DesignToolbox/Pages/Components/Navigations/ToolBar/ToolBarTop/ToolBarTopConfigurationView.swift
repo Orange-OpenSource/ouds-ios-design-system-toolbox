@@ -63,7 +63,7 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
         isLeadingEnabled = true
         isLeadingEmphasized = false
 
-        trailing = .label
+        trailing = .icon
         numberOfTrailingItems = 1
         isTrailingEnabled = true
         isTrailingEmphasized = false
@@ -89,6 +89,10 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
 
     // MARK: Code update
 
+    private var titlePattern: String {
+        !title.isEmpty ? "\"\(title)\"," : ""
+    }
+
     private var hasLargeTitlePattern: String {
         largeTitle ? ", hasLargeTitle: true" : ""
     }
@@ -113,7 +117,7 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
 
         code = """
         SomeView()
-        .toolBarTop(\"\(title)\"\(hasLargeTitlePattern)\(subtitlePattern)\(leading)\(trailing))
+        .toolBarTop(\(titlePattern)\(hasLargeTitlePattern)\(subtitlePattern)\(leading)\(trailing))
         """
     }
 }
@@ -144,7 +148,16 @@ struct ToolBarTopConfiguration: View {
                 }
 
                 ToolBarLeadingConfiguration(configurationModel: configurationModel)
+
                 ToolBarTrailingConfiguration(configurationModel: configurationModel)
+                if configurationModel.trailing == .icon {
+                    OUDSHorizontalDivider()
+
+                    OUDSChipPicker(title: "app_components_badge_tech".localized(),
+                                   selection: $configurationModel.badgeType,
+                                   chips: BarItemBadgeType.chips)
+                }
+
                 ToolBarItemStyle(configurationModel: configurationModel)
 
                 DesignToolboxEditContentDisclosure {

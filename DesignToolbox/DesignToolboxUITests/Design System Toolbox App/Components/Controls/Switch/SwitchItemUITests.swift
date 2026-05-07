@@ -21,10 +21,10 @@ final class SwitchItemUITests: AppTestCase {
     /// Check the a11y configurations of the switch depending to its state
     @MainActor func testSwitchItemA11yConfigurations() throws {
 
-        // 'Switch button. Selected.'
-        let selectedSwitchA11YValue = wording(for: "core_switch_trait_a11y") + ". " + wording(for: "core_common_selected_a11y") + ". "
-        // 'Switch button. Unselected.'
-        let unselectedSwitchA11YValue = wording(for: "core_switch_trait_a11y") + ". " + wording(for: "core_common_unselected_a11y") + ". "
+        // 'Switch button. Selected. .'
+        let selectedSwitchA11YValue = wording(for: "core_switch_trait_a11y") + ". " + wording(for: "core_common_selected_a11y") + ". . "
+        // 'Switch button. Unselected. .'
+        let unselectedSwitchA11YValue = wording(for: "core_switch_trait_a11y") + ". " + wording(for: "core_common_unselected_a11y") + ". . "
 
         // GIVEN
 

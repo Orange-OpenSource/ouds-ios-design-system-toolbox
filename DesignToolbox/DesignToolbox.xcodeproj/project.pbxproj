@@ -964,6 +964,10 @@
 		95C17B892EBCAC64002A7371 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95C17B882EBCAC64002A7371 /* OUDSSwiftUI */; };
 		95C17B8C2EBCAC75002A7371 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95C17B8B2EBCAC75002A7371 /* OUDSSwiftUI */; };
 		95C17B8E2EBCAC7B002A7371 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95C17B8D2EBCAC7B002A7371 /* OUDSSwiftUI */; };
+		95C5A7D42F978289002F6D8A /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
+		95C5A7D52F978289002F6D8A /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
+		95C5A7D62F978289002F6D8A /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
+		95C5A7D72F978289002F6D8A /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
 		95CD64F22EB3A375008FAB03 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD64F12EB3A371008FAB03 /* WindowManager.swift */; };
 		95CE05342EC33C2A00ACE41C /* NamedOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05332EC33C2700ACE41C /* NamedOpacity.swift */; };
 		95CE05352EC33C2A00ACE41C /* NamedOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05332EC33C2700ACE41C /* NamedOpacity.swift */; };
@@ -1025,10 +1029,28 @@
 		95CE05812EC3D2FD00ACE41C /* BorderIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE056B2EC3D0FF00ACE41C /* BorderIllustrations.swift */; };
 		95CE05822EC3D30500ACE41C /* NamedBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE057B2EC3D2AA00ACE41C /* NamedBorders.swift */; };
 		95CE05832EC3D30500ACE41C /* BorderIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE056B2EC3D0FF00ACE41C /* BorderIllustrations.swift */; };
+		95CEF1862F9A2726008AD8C4 /* View+TabBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF1852F9A271C008AD8C4 /* View+TabBarAppearance.swift */; };
+		95CEF1872F9A2726008AD8C4 /* View+TabBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF1852F9A271C008AD8C4 /* View+TabBarAppearance.swift */; };
+		95CEF1882F9A2726008AD8C4 /* View+TabBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF1852F9A271C008AD8C4 /* View+TabBarAppearance.swift */; };
+		95CEF1892F9A2726008AD8C4 /* View+TabBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF1852F9A271C008AD8C4 /* View+TabBarAppearance.swift */; };
+		95CEF18B2F9A28DE008AD8C4 /* AllElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18A2F9A28DE008AD8C4 /* AllElements.swift */; };
+		95CEF18C2F9A28DE008AD8C4 /* AllElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18A2F9A28DE008AD8C4 /* AllElements.swift */; };
+		95CEF18D2F9A28DE008AD8C4 /* AllElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18A2F9A28DE008AD8C4 /* AllElements.swift */; };
+		95CEF18E2F9A28DE008AD8C4 /* AllElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18A2F9A28DE008AD8C4 /* AllElements.swift */; };
+		95CEF1902F9A2952008AD8C4 /* ElementsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18F2F9A2952008AD8C4 /* ElementsGridView.swift */; };
+		95CEF1912F9A2952008AD8C4 /* ElementsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18F2F9A2952008AD8C4 /* ElementsGridView.swift */; };
+		95CEF1922F9A2952008AD8C4 /* ElementsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18F2F9A2952008AD8C4 /* ElementsGridView.swift */; };
+		95CEF1932F9A2952008AD8C4 /* ElementsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18F2F9A2952008AD8C4 /* ElementsGridView.swift */; };
 		95D5BA342F4706E000CB10FE /* DialogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA312F4706E000CB10FE /* DialogsView.swift */; };
 		95D5BA362F4706E000CB10FE /* DialogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA312F4706E000CB10FE /* DialogsView.swift */; };
 		95D5BA372F4706E000CB10FE /* AlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA322F4706E000CB10FE /* AlertMessageView.swift */; };
 		95D5BA382F470AAA00CB10FE /* AlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA322F4706E000CB10FE /* AlertMessageView.swift */; };
+		95D6AAD12F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
+		95D6AAD22F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
+		95D6AAD32F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
+		95D6AAD42F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
+		95D6AAD52F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
+		95D6AAD62F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
 		95D713EA2EB36B0400EBB7C2 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		95D713EC2EB36B0B00EBB7C2 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
 		95D804452F3C7BFD0080E04B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCF02BAF2F30A77500F2013F /* Localizable.xcstrings */; };
@@ -1038,6 +1060,10 @@
 		95EDFD1A2EC73BB9006DE593 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		95EDFD1B2EC73BB9006DE593 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		95F840D32EB8FAA200CE1FE6 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95F840D22EB8FAA200CE1FE6 /* OUDSSwiftUI */; };
+		AASRCH003BUILD00000001 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AASRCH001FILEREF00000001 /* SearchPage.swift */; };
+		AASRCH004BUILD00000002 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AASRCH001FILEREF00000001 /* SearchPage.swift */; };
+		AASRCH005BUILD00000003 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AASRCH001FILEREF00000001 /* SearchPage.swift */; };
+		AASRCH006BUILD00000004 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AASRCH001FILEREF00000001 /* SearchPage.swift */; };
 		FC4799B22F485277005F349B /* AlertStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799B12F485277005F349B /* AlertStatus.swift */; };
 		FC4799B32F485277005F349B /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799B02F485277005F349B /* AlertConfiguration.swift */; };
 		FC4799B42F485277005F349B /* AlertStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799B12F485277005F349B /* AlertStatus.swift */; };
@@ -1557,6 +1583,7 @@
 		9598006C2EBCC714007BE0EA /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
 		9598006D2EBCC714007BE0EA /* DesignToolbox_Light_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolbox_Light_App.swift; sourceTree = "<group>"; };
 		959800892EBCCCAB007BE0EA /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
+		95C5A7D32F978284002F6D8A /* TextualContentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextualContentMode.swift; sourceTree = "<group>"; };
 		95CD64F12EB3A371008FAB03 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		95CE05332EC33C2700ACE41C /* NamedOpacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedOpacity.swift; sourceTree = "<group>"; };
 		95CE05382EC33C4300ACE41C /* OpacityIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityIllustration.swift; sourceTree = "<group>"; };
@@ -1568,11 +1595,16 @@
 		95CE05622EC3401400ACE41C /* ElevationIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationIllustration.swift; sourceTree = "<group>"; };
 		95CE056B2EC3D0FF00ACE41C /* BorderIllustrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderIllustrations.swift; sourceTree = "<group>"; };
 		95CE057B2EC3D2AA00ACE41C /* NamedBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedBorders.swift; sourceTree = "<group>"; };
+		95CEF1852F9A271C008AD8C4 /* View+TabBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TabBarAppearance.swift"; sourceTree = "<group>"; };
+		95CEF18A2F9A28DE008AD8C4 /* AllElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllElements.swift; sourceTree = "<group>"; };
+		95CEF18F2F9A2952008AD8C4 /* ElementsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsGridView.swift; sourceTree = "<group>"; };
 		95D5BA312F4706E000CB10FE /* DialogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsView.swift; sourceTree = "<group>"; };
 		95D5BA322F4706E000CB10FE /* AlertMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageView.swift; sourceTree = "<group>"; };
+		95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedColor+Decorative.swift"; sourceTree = "<group>"; };
 		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
 		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
 		95EDFD162EC73BB4006DE593 /* Image+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions.swift"; sourceTree = "<group>"; };
+		AASRCH001FILEREF00000001 /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
 		FC4799B02F485277005F349B /* AlertConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertConfiguration.swift; sourceTree = "<group>"; };
 		FC4799B12F485277005F349B /* AlertStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStatus.swift; sourceTree = "<group>"; };
 		FC4799BA2F4852A9005F349B /* InlineAlertElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineAlertElement.swift; sourceTree = "<group>"; };
@@ -1697,10 +1729,12 @@
 		0708222D2CFF617000570EC7 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				95CEF18A2F9A28DE008AD8C4 /* AllElements.swift */,
 				073543152CA17275001187EA /* DesignToolboxElement.swift */,
 				51E3FF0A2CAFD9AE00F1BC59 /* DesignToolboxElementPage.swift */,
 				51BD760F2C466FCF0033365D /* DesignToolboxElementsPage.swift */,
 				077CCE5B2CB431C50059CC28 /* DesignToolboxVariantElement.swift */,
+				95CEF18F2F9A2952008AD8C4 /* ElementsGridView.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -1882,6 +1916,7 @@
 				0765B4932CC1597C00E69359 /* NamedColor+Background.swift */,
 				0765B4992CC15ACE00E69359 /* NamedColor+Border.swift */,
 				0765B4A32CC15C3E00E69359 /* NamedColor+Chart.swift */,
+				95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */,
 				0765B49F2CC15BBC00E69359 /* NamedColor+Content.swift */,
 				0765A6DA2D09C680005DAB51 /* NamedColor+Opacity.swift */,
 				0765A6DB2D09C680005DAB51 /* NamedColor+Overlay.swift */,
@@ -2013,14 +2048,15 @@
 			path = Border;
 			sourceTree = "<group>";
 		};
-		07CF42872CA55BB4000BD03E /* Navigation Bar */ = {
+		07CF42872CA55BB4000BD03E /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				95CEF1852F9A271C008AD8C4 /* View+TabBarAppearance.swift */,
 				51A905FF2E84282E003F3E0E /* ColorSchemeSelectionButton.swift */,
 				51A905FC2E8427C2003F3E0E /* View+NavigationBar.swift */,
 				07CF42882CA55BC8000BD03E /* ThemeSelection.swift */,
 			);
-			path = "Navigation Bar";
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		07D3DBF02DA5084500D8A57F /* ColoredSurface */ = {
@@ -2047,6 +2083,7 @@
 		07F0AFE62CFE055300D334DD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				95C5A7D32F978284002F6D8A /* TextualContentMode.swift */,
 				07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */,
 			);
 			path = Utils;
@@ -2417,6 +2454,7 @@
 				51F49C842E5743B800D50BC4 /* Indicators */,
 				51F49C852E5743D900D50BC4 /* Layouts */,
 				51F49C862E5743F600D50BC4 /* Navigations */,
+				07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -2442,8 +2480,7 @@
 			children = (
 				51BD760C2C466FCF0033365D /* About */,
 				51BD760E2C466FCF0033365D /* Components */,
-				07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */,
-				07CF42872CA55BB4000BD03E /* Navigation Bar */,
+				AASRCH002GROUP000000001 /* Search */,
 				073543142CA17244001187EA /* Utils */,
 				51BD76102C466FCF0033365D /* Tokens */,
 			);
@@ -2491,6 +2528,7 @@
 			isa = PBXGroup;
 			children = (
 				51A7A9DA2C46E17F00EF7A77 /* Info.plist */,
+				07CF42872CA55BB4000BD03E /* Navigation */,
 				51BD76112C466FCF0033365D /* Pages */,
 				51BD76132C466FCF0033365D /* Preview Content */,
 				51BD761B2C466FCF0033365D /* Resources */,
@@ -3418,6 +3456,14 @@
 			path = AlertMessage;
 			sourceTree = "<group>";
 		};
+		AASRCH002GROUP000000001 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AASRCH001FILEREF00000001 /* SearchPage.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		FC4799AE2F48522E005F349B /* InlineAlert */ = {
 			isa = PBXGroup;
 			children = (
@@ -4062,6 +4108,7 @@
 				51952AA52D3FA3440068B807 /* Card.swift in Sources */,
 				51952A942D3FA32E0068B807 /* DesignToolboxElementsPage.swift in Sources */,
 				072BB45E2E69733500A4DF2D /* WireframeTheme+TextInputSnapshotsTests.swift in Sources */,
+				95D6AAD12F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */,
 				07AA1100FF0000000000AB14 /* WireframeTheme+TextAreaSnapshotsTests.swift in Sources */,
 				51A217622E325ED500562BE0 /* OrangeCompactTheme+SwitchSnapshotsTests.swift in Sources */,
 				51952A952D3FA32E0068B807 /* DesignToolboxVariantElement.swift in Sources */,
@@ -4095,6 +4142,7 @@
 				FC736E9B2F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift in Sources */,
 				518EC0AA2E1FF2C000FC77E4 /* LinkSnapshotsTestsTestCase.swift in Sources */,
 				518EC0AB2E1FF2C000FC77E4 /* CheckboxSnapshotsTestsTestCase.swift in Sources */,
+				95CEF1932F9A2952008AD8C4 /* ElementsGridView.swift in Sources */,
 				518EC0AC2E1FF2C000FC77E4 /* RadioButtonSnapshotsTestsTestCase.swift in Sources */,
 				51A217742E325F7F00562BE0 /* WireframeTheme+CheckboxSnapshotsTests.swift in Sources */,
 				51A217632E325ED500562BE0 /* OrangeCompactTheme+BadgeSnapshotsTests.swift in Sources */,
@@ -4160,6 +4208,7 @@
 				51417C272E1BF6B8000266C8 /* TokensOpacitySnapshotsTestsTestCase.swift in Sources */,
 				95EDFD192EC73BB9006DE593 /* Image+extensions.swift in Sources */,
 				9596D2122F7D80D000DB6136 /* OrangeTheme+PinCodeInputSnapshotsTests.swift in Sources */,
+				95CEF1862F9A2726008AD8C4 /* View+TabBarAppearance.swift in Sources */,
 				6DB260E22CD0F0520091F72E /* NameSpace+PaddingBlock.swift in Sources */,
 				95CE05512EC33E9800ACE41C /* SizeIllustrations.swift in Sources */,
 				6DB260E32CD0F0520091F72E /* NameSpace+ColumnGap.swift in Sources */,
@@ -4233,6 +4282,7 @@
 				07D3DBF32DA5084500D8A57F /* ColoredSurfaceElement.swift in Sources */,
 				FCB8B19A2F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift in Sources */,
 				51417C292E1BF70F000266C8 /* TokensColorSnapshotsTestsTestCase.swift in Sources */,
+				95CEF18B2F9A28DE008AD8C4 /* AllElements.swift in Sources */,
 				515EE9A62E21347200A60E96 /* OrangeTheme+ChipsSnapshotsTests.swift in Sources */,
 				51952A7F2D3FA17E0068B807 /* OrangeTheme+TokensColorSnapshotsTests.swift in Sources */,
 				07CAE76A2CEE20B200D6C5D1 /* SpacePaddingTokenIllustrations.swift in Sources */,
@@ -4302,6 +4352,7 @@
 				6DE5F47D2CC696120008E774 /* ThemeSelection.swift in Sources */,
 				6D8F9C542CC160660078A10E /* SpaceTokenPage.swift in Sources */,
 				953E02442F7D3AE100550DD6 /* PinCodeInputPage.swift in Sources */,
+				95C5A7D62F978289002F6D8A /* TextualContentMode.swift in Sources */,
 				07304A6A2D429F9F009320BA /* LinkConfiguration.swift in Sources */,
 				07304A6B2D429F9F009320BA /* LinkElement.swift in Sources */,
 				51ABCD282E183226006CD6C0 /* SoshTheme+TokensFontSnapshotsTests.swift in Sources */,
@@ -4337,6 +4388,7 @@
 				6D24658E2CBEAC750023E359 /* BorderTokenPage.swift in Sources */,
 				51952A8F2D3FA24C0068B807 /* OrangeTheme+TokensOpacitySnapshotsTests.swift in Sources */,
 				07F0AFDF2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */,
+				AASRCH003BUILD00000001 /* SearchPage.swift in Sources */,
 				078C4C382E01558B00598F75 /* ControlItemConfigurationViews.swift in Sources */,
 				95CE05642EC3401800ACE41C /* ElevationIllustration.swift in Sources */,
 				51D6D5922D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift in Sources */,
@@ -4380,6 +4432,7 @@
 				95CE05342EC33C2A00ACE41C /* NamedOpacity.swift in Sources */,
 				07FB2A322E454D7900361ECA /* TagConfigurationView.swift in Sources */,
 				515EE9942E21329B00A60E96 /* ChipPickerConfigurationView.swift in Sources */,
+				95D6AAD22F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */,
 				515EE9952E21329B00A60E96 /* ChipPickerElement.swift in Sources */,
 				515EE9962E21329B00A60E96 /* ChipPickerPage.swift in Sources */,
 				515EE9972E21329B00A60E96 /* SuggestionChipConfigurationView.swift in Sources */,
@@ -4407,6 +4460,7 @@
 				07F0AFD72CFDB3CC00D334DD /* ComponentPage.swift in Sources */,
 				95CE05572EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				FC95B93E2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */,
+				95C5A7D42F978289002F6D8A /* TextualContentMode.swift in Sources */,
 				0786A9DB2E0AAB4A00976098 /* CheckboxItemElement.swift in Sources */,
 				0786A9DC2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
 				077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */,
@@ -4425,6 +4479,7 @@
 				51BD762B2C466FCF0033365D /* MainView.swift in Sources */,
 				0721411C2D02F52A00B7B9C6 /* ButtonPage.swift in Sources */,
 				0786A9E22E0AAB6600976098 /* CheckboxItemIndeterminatePage.swift in Sources */,
+				95CEF1912F9A2952008AD8C4 /* ElementsGridView.swift in Sources */,
 				51F676DB2E0D45FA00C15CB6 /* A11YIdentifiers.swift in Sources */,
 				0786A9E32E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				0786A9E42E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
@@ -4443,7 +4498,9 @@
 				95D713EC2EB36B0B00EBB7C2 /* View+extensions.swift in Sources */,
 				07F7533B2CC785620007450D /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				07F0AFDE2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */,
+				AASRCH004BUILD00000002 /* SearchPage.swift in Sources */,
 				07B3CCB12D40E34700DBB10A /* LinkConfiguration.swift in Sources */,
+				95CEF1892F9A2726008AD8C4 /* View+TabBarAppearance.swift in Sources */,
 				07B3CCB22D40E34700DBB10A /* LinkElement.swift in Sources */,
 				07B3CCB32D40E34700DBB10A /* LinkPage.swift in Sources */,
 				070DF8B12CDD07F20043D558 /* GridTokenPage.swift in Sources */,
@@ -4464,6 +4521,7 @@
 				6DCC57E22CEB984D000F35F8 /* DesignToolboxCode.swift in Sources */,
 				0765B4942CC1597C00E69359 /* NamedColor+Background.swift in Sources */,
 				075C71372CECC3D800B93FC3 /* SpacePaddingTokenIllustrations.swift in Sources */,
+				95CEF18E2F9A28DE008AD8C4 /* AllElements.swift in Sources */,
 				075114DB2CB7D28D00B8B759 /* SizeTokenElement.swift in Sources */,
 				0765B4A02CC15BBC00E69359 /* NamedColor+Content.swift in Sources */,
 				0765B49A2CC15ACE00E69359 /* NamedColor+Border.swift in Sources */,
@@ -4647,6 +4705,7 @@
 				950EA7BF2EBE3ECB0009414A /* BadgesView.swift in Sources */,
 				950EA7C02EBE3ECB0009414A /* TagsView.swift in Sources */,
 				950EA7C12EBE3ECB0009414A /* TagView.swift in Sources */,
+				95D6AAD52F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */,
 				950EA7D42EBE4D5C0009414A /* TwoStatesCheckboxesItemsView.swift in Sources */,
 				950EA7C22EBE3ECB0009414A /* InputTag.swift in Sources */,
 				950EA7C32EBE3ECB0009414A /* IndicatorsView.swift in Sources */,
@@ -4682,6 +4741,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				950288AA2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */,
+				95CEF1872F9A2726008AD8C4 /* View+TabBarAppearance.swift in Sources */,
 				9589F0222EB7D67B00134487 /* DesignToolboxColorPicker.swift in Sources */,
 				9589F0232EB7D67B00134487 /* UserDefaultsWrapper.swift in Sources */,
 				9589F0242EB7D67B00134487 /* DesignToolboxConfiguration.swift in Sources */,
@@ -4710,6 +4770,7 @@
 				95CE05362EC33C2A00ACE41C /* NamedOpacity.swift in Sources */,
 				9589F0352EB7D67B00134487 /* TagConfigurationView.swift in Sources */,
 				9589F0362EB7D67B00134487 /* ChipPickerConfigurationView.swift in Sources */,
+				95CEF18C2F9A28DE008AD8C4 /* AllElements.swift in Sources */,
 				9589F0372EB7D67B00134487 /* ChipPickerElement.swift in Sources */,
 				9589F0382EB7D67B00134487 /* ChipPickerPage.swift in Sources */,
 				9589F0392EB7D67B00134487 /* SuggestionChipConfigurationView.swift in Sources */,
@@ -4755,6 +4816,7 @@
 				9589F05D2EB7D67B00134487 /* ButtonPage.swift in Sources */,
 				9589F05E2EB7D67B00134487 /* CheckboxItemIndeterminatePage.swift in Sources */,
 				9589F05F2EB7D67B00134487 /* A11YIdentifiers.swift in Sources */,
+				95C5A7D52F978289002F6D8A /* TextualContentMode.swift in Sources */,
 				9589F0602EB7D67B00134487 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				9589F0612EB7D67B00134487 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
 				9589F0622EB7D67B00134487 /* ButtonElement.swift in Sources */,
@@ -4767,10 +4829,12 @@
 				9589F0682EB7D67B00134487 /* NamedColor+Chart.swift in Sources */,
 				9589F0692EB7D67B00134487 /* ElevationTokenPage.swift in Sources */,
 				9589F06A2EB7D67B00134487 /* CheckboxIndeterminateConfiguration.swift in Sources */,
+				95D6AAD32F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */,
 				9589F06B2EB7D67B00134487 /* ColorTokenPage.swift in Sources */,
 				9589F06C2EB7D67B00134487 /* View+extensions.swift in Sources */,
 				9589F06D2EB7D67B00134487 /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				9589F06E2EB7D67B00134487 /* ComponentsPage.swift in Sources */,
+				AASRCH005BUILD00000003 /* SearchPage.swift in Sources */,
 				9589F06F2EB7D67B00134487 /* LinkConfiguration.swift in Sources */,
 				9589F0702EB7D67B00134487 /* LinkElement.swift in Sources */,
 				9589F0712EB7D67B00134487 /* LinkPage.swift in Sources */,
@@ -4854,6 +4918,7 @@
 				9589F0AD2EB7D67B00134487 /* DesignToolboxDisclosureGroup.swift in Sources */,
 				9589F0AE2EB7D67B00134487 /* ColoredSurfaceConfiguration.swift in Sources */,
 				9589F0AF2EB7D67B00134487 /* ColoredSurfacePage.swift in Sources */,
+				95CEF1902F9A2952008AD8C4 /* ElementsGridView.swift in Sources */,
 				9589F0B02EB7D67B00134487 /* ColoredSurfaceElement.swift in Sources */,
 				9589F0B12EB7D67B00134487 /* CheckboxConfiguration.swift in Sources */,
 				9589F0B22EB7D67B00134487 /* CheckboxElements.swift in Sources */,
@@ -4903,6 +4968,7 @@
 				9589F1102EB7D67E00134487 /* ChipPickerConfigurationView.swift in Sources */,
 				9589F1112EB7D67E00134487 /* ChipPickerElement.swift in Sources */,
 				9589F1122EB7D67E00134487 /* ChipPickerPage.swift in Sources */,
+				95D6AAD42F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */,
 				9589F1132EB7D67E00134487 /* SuggestionChipConfigurationView.swift in Sources */,
 				9589F1142EB7D67E00134487 /* SuggestionChipElement.swift in Sources */,
 				9589F1152EB7D67E00134487 /* SuggestionChipPage.swift in Sources */,
@@ -4930,6 +4996,7 @@
 				9589F1252EB7D67E00134487 /* CheckboxItemElement.swift in Sources */,
 				9589F1262EB7D67E00134487 /* CheckboxItemPage.swift in Sources */,
 				FC95B9402F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */,
+				95C5A7D72F978289002F6D8A /* TextualContentMode.swift in Sources */,
 				9589F1272EB7D67E00134487 /* DimensionTokenElement.swift in Sources */,
 				9589F1282EB7D67E00134487 /* BorderTokenPage.swift in Sources */,
 				9589F1292EB7D67E00134487 /* DesignToolboxTokenIllustration.swift in Sources */,
@@ -4948,6 +5015,7 @@
 				9589F1362EB7D67E00134487 /* MainView.swift in Sources */,
 				9589F1372EB7D67E00134487 /* ButtonPage.swift in Sources */,
 				9589F1382EB7D67E00134487 /* CheckboxItemIndeterminatePage.swift in Sources */,
+				95CEF1922F9A2952008AD8C4 /* ElementsGridView.swift in Sources */,
 				9589F1392EB7D67E00134487 /* A11YIdentifiers.swift in Sources */,
 				9589F13A2EB7D67E00134487 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				9589F13B2EB7D67E00134487 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
@@ -4966,7 +5034,9 @@
 				9589F1462EB7D67E00134487 /* View+extensions.swift in Sources */,
 				9589F1472EB7D67E00134487 /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				9589F1482EB7D67E00134487 /* ComponentsPage.swift in Sources */,
+				AASRCH006BUILD00000004 /* SearchPage.swift in Sources */,
 				9589F1492EB7D67E00134487 /* LinkConfiguration.swift in Sources */,
+				95CEF1882F9A2726008AD8C4 /* View+TabBarAppearance.swift in Sources */,
 				9589F14A2EB7D67E00134487 /* LinkElement.swift in Sources */,
 				9589F14B2EB7D67E00134487 /* LinkPage.swift in Sources */,
 				9589F14C2EB7D67E00134487 /* GridTokenPage.swift in Sources */,
@@ -4987,6 +5057,7 @@
 				9589F1582EB7D67E00134487 /* DesignToolboxCode.swift in Sources */,
 				9589F1592EB7D67E00134487 /* NamedColor+Background.swift in Sources */,
 				9589F15A2EB7D67E00134487 /* SpacePaddingTokenIllustrations.swift in Sources */,
+				95CEF18D2F9A28DE008AD8C4 /* AllElements.swift in Sources */,
 				9589F15B2EB7D67E00134487 /* SizeTokenElement.swift in Sources */,
 				9589F15C2EB7D67E00134487 /* NamedColor+Content.swift in Sources */,
 				9589F15D2EB7D67E00134487 /* NamedColor+Border.swift in Sources */,
@@ -5134,6 +5205,7 @@
 				950EA6B62EBCF2F10009414A /* ChipsView.swift in Sources */,
 				950EA6C02EBCF8E80009414A /* ControlsView.swift in Sources */,
 				950EA6B02EBCE3A30009414A /* CheckboxesView.swift in Sources */,
+				95D6AAD62F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */,
 				950EA7D32EBE4D5C0009414A /* TwoStatesCheckboxesItemsView.swift in Sources */,
 				950EA6D22EBDFFA50009414A /* SwitchesItemView.swift in Sources */,
 				950EA6D32EBDFFA50009414A /* SwitchesOnlyView.swift in Sources */,
@@ -5391,7 +5463,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_APP_SANDBOX = YES;
@@ -5411,7 +5483,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "Design System Toolbox";
@@ -5437,7 +5509,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -5457,7 +5529,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "Design System Toolbox";
@@ -5581,7 +5653,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_APP_SANDBOX = YES;
@@ -5601,7 +5673,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5629,7 +5701,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -5649,7 +5721,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5677,7 +5749,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_APP_SANDBOX = YES;
@@ -5697,7 +5769,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5722,7 +5794,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -5742,7 +5814,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5768,7 +5840,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_APP_SANDBOX = YES;
@@ -5788,7 +5860,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5814,7 +5886,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "Apple Distribution: France Telecom (MG2LSJNJB6)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -5834,7 +5906,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 2.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5859,19 +5931,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "DesignToolbox (watchOS)";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -5893,19 +5966,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "DesignToolbox (watchOS)";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -6021,7 +6095,7 @@
 			repositoryURL = "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = "2.2.0-beta.1";
+				minimumVersion = 2.2.0;
 			};
 		};
 		950EA7062EBE3D5D0009414A /* XCRemoteSwiftPackageReference "ouds-ios" */ = {
@@ -6053,7 +6127,7 @@
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
 				kind = exactVersion;
-				version = 1.4.0;
+				version = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

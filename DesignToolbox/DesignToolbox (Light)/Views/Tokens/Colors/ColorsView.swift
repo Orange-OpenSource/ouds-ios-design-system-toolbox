@@ -44,9 +44,14 @@ struct ColorsView: View {
                 NavigationLink("Border") {
                     WatchVerticalLayout { ScrollView { illustrationForBorder() } }
                 }
-                if theme.charts != nil {
+                if theme.colorsCharts != nil {
                     NavigationLink("Chart") {
                         WatchVerticalLayout { ScrollView { illustrationForChart() } }
+                    }
+                }
+                if theme.colorsDecorative != nil {
+                    NavigationLink("Decorative") {
+                        WatchVerticalLayout { ScrollView { illustrationForDecorative() } }
                     }
                 }
                 NavigationLink("Content") {
@@ -85,9 +90,14 @@ struct ColorsView: View {
                     NavigationLink("Border") {
                         TVGridLayout(count: 4) { illustrationForBorder() }
                     }
-                    if theme.charts != nil {
+                    if theme.colorsCharts != nil {
                         NavigationLink("Chart") {
                             TVGridLayout(count: 4) { illustrationForChart() }
+                        }
+                    }
+                    if theme.colorsDecorative != nil {
+                        NavigationLink("Decorative") {
+                            TVGridLayout(count: 4) { illustrationForDecorative() }
                         }
                     }
                     NavigationLink("Content") {
@@ -151,6 +161,17 @@ struct ColorsView: View {
     private func illustrationForChart() -> some View {
         ForEach(NamedColor.Chart.allCases, id: \.rawValue) { namedColorToken in
             if !namedColorToken.token(from: theme).hasForbiddenColorValue() {
+                Illustration(
+                    token: namedColorToken.token(from: theme),
+                    name: namedColorToken.rawValue).focusable()
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func illustrationForDecorative() -> some View {
+        ForEach(NamedColor.Decorative.allCases, id: \.rawValue) { namedColorToken in
+            if !namedColorToken.token(from: theme).isForbiddenValueColor() {
                 Illustration(
                     token: namedColorToken.token(from: theme),
                     name: namedColorToken.rawValue).focusable()

@@ -42,28 +42,60 @@ struct BulletListDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSBulletList(type: bulletType,
-                       textStyle: configurationModel.textStyle,
-                       isBold: configurationModel.isBold,
-                       items: items)
+        // To keep things simple, assuming the rich/raw mode is for all parameters
+        switch configurationModel.textMode {
+        case .raw:
+            OUDSBulletList(type: bulletType,
+                           textStyle: configurationModel.textStyle,
+                           isBold: configurationModel.isBold,
+                           items: rawItems)
+        case .rich:
+            OUDSBulletList(type: bulletType,
+                           textStyle: configurationModel.textStyle,
+                           isBold: configurationModel.isBold,
+                           items: richItems)
+        }
     }
 
     @OUDSBulletListItemBuilder
-    private func items() -> [OUDSBulletList.Item] {
+    private func rawItems() -> [OUDSBulletList.Item] {
+        let label = configurationModel.label
         switch configurationModel.levelCount {
         case .one:
-            OUDSBulletList.Item(configurationModel.label)
-            OUDSBulletList.Item(configurationModel.label)
-            OUDSBulletList.Item(configurationModel.label)
+            OUDSBulletList.Item(label)
+            OUDSBulletList.Item(label)
+            OUDSBulletList.Item(label)
         case .two:
-            OUDSBulletList.Item(configurationModel.label) {
-                OUDSBulletList.Item(configurationModel.label)
-                OUDSBulletList.Item(configurationModel.label)
+            OUDSBulletList.Item(label) {
+                OUDSBulletList.Item(label)
+                OUDSBulletList.Item(label)
             }
         case .three:
-            OUDSBulletList.Item(configurationModel.label) {
-                OUDSBulletList.Item(configurationModel.label) {
-                    OUDSBulletList.Item(configurationModel.label)
+            OUDSBulletList.Item(label) {
+                OUDSBulletList.Item(label) {
+                    OUDSBulletList.Item(label)
+                }
+            }
+        }
+    }
+
+    @OUDSBulletListItemBuilder
+    private func richItems() -> [OUDSBulletList.Item] {
+        let richLabel = configurationModel.richLabel
+        switch configurationModel.levelCount {
+        case .one:
+            OUDSBulletList.Item(richLabel)
+            OUDSBulletList.Item(richLabel)
+            OUDSBulletList.Item(richLabel)
+        case .two:
+            OUDSBulletList.Item(richLabel) {
+                OUDSBulletList.Item(richLabel)
+                OUDSBulletList.Item(richLabel)
+            }
+        case .three:
+            OUDSBulletList.Item(richLabel) {
+                OUDSBulletList.Item(richLabel) {
+                    OUDSBulletList.Item(richLabel)
                 }
             }
         }

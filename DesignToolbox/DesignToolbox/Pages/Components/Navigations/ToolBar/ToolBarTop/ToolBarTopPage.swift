@@ -50,7 +50,7 @@ private struct ToolBarTopDemo: View {
 
     var body: some View {
         NavigationLink(destination: demo(), isActive: $configurationModel.showNavigation) {
-            OUDSButton(text: "app_components_toolbar_demo_showDemo_label", appearance: .strong) {
+            OUDSButton("app_components_toolbar_demo_showDemo_label", appearance: .strong) {
                 switch configurationModel.demoOption {
                 case .navigation:
                     configurationModel.showNavigation = true
@@ -74,7 +74,7 @@ private struct ToolBarTopDemo: View {
     @ViewBuilder
     private func demo() -> some View {
         ToolBarCommonContentView()
-            .background(theme.colors.overlayModal)
+            .background(theme.colors.overlayModalSheet)
             .navigationBarBackButtonHidden(configurationModel.hideBackButton)
             .toolBarTop(configurationModel.title,
                         hasLargeTitle: configurationModel.largeTitle,
@@ -82,7 +82,7 @@ private struct ToolBarTopDemo: View {
             {
                 configurationModel.leadingItems(for: theme)
             } trailingItems: {
-                configurationModel.trailingItems(for: theme)
+                configurationModel.trailingItems()
             }
     }
 
