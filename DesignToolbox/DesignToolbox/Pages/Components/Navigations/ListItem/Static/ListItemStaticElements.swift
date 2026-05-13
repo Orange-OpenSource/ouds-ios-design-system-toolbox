@@ -14,29 +14,23 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct ListItemElement: DesignToolboxElement {
+struct ListItemStaticElements: DesignToolboxElement {
     let name: String
     let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_listItem_tech".localized()
+        let variants: [DesignToolboxElement] = [
+            ListItemStaticElement(type: .card),
+            ListItemStaticElement(type: .item),
+        ]
+
+        name = "app_components_listItem_static_tech".localized()
         illustration = AnyView(ListItemIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             illustration: illustration,
-            description: "app_components_listItem_description_text",
-            demoScreen: AnyView(ListItemPage())))
-    }
-}
-
-private struct ListItemIllustration: View {
-
-    @Environment(\.theme) private var theme
-
-    var body: some View {
-        VStack(spacing: theme.spaces.fixedSmall) {
-            OUDSListItem(label: "Label", extraLabel: "Extra Label", description: "A description of the item to show in the list item view and its accessibility label and VoiceOver label if not provided.")
-        }
+            description: "",
+            demoScreen: AnyView(DesignToolboxVariantElement(elements: variants))))
     }
 }

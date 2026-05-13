@@ -3857,6 +3857,31 @@
         }
       }
     },
+    "app_components_listItem_boldLabel_tech" : {
+      "comment" : "Component - List item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bold label"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bold label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bold label"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_controlItem_divider_tech" : {
       "comment" : "Component - ControlItem",
       "extractionState" : "manual",
@@ -3877,6 +3902,56 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Divider"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_background_tech" : {
+      "comment" : "Component - List item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Background"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Background"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Background"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_size_tech" : {
+      "comment" : "Component - List item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size"
           }
         }
       },
@@ -4227,6 +4302,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_listItem_leading_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading"
+          }
+        },
+      },
+      "shouldTranslate" : false
+    },
     "app_components_listItem_alignment_tech" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
@@ -4252,81 +4352,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_listItem_alignment_center_tech" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Center"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Center"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Center"
-          }
-        },
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_listItem_alignment_top_tech" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Top"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Top"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Top"
-          }
-        },
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_listItem_affordance_next_tech" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next"
-          }
-        },
-      },
-      "shouldTranslate" : false
-    },
     "app_components_listItem_affordance_tech" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
@@ -4347,56 +4372,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Affordance"
-          }
-        },
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_listItem_affordance_previous_tech" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Previous"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Previous"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Previous"
-          }
-        },
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_listItem_affordance_external_tech" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "External"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "External"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "External"
           }
         },
       },
@@ -4446,6 +4421,131 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "List Item"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_item_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_card_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Card"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Card"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Card"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_static_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Static"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Static"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Static"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_navigation_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Navigation"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Navigation"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Navigation"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_overline_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overline"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overline"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overline"
           }
         }
       },
@@ -6242,8 +6342,8 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_toolbar_common_itemCount_label" : {
-      "comment" : "Component - Tab bar - common",
+    "app_components_common_itemCount_label" : {
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
