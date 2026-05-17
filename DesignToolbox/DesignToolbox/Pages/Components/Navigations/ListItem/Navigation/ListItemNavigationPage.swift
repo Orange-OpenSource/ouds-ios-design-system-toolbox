@@ -16,13 +16,9 @@ import SwiftUI
 
 // MARK: - ListItem Page
 
-struct ListItemNavigationGroupedPage: View {
+struct ListItemNavigationPage: View {
 
-    @StateObject private var configurationModel: ListItemNavigationConfigurationModel
-
-    init(type: ListItemConfigurationModel.ListType) {
-        self._configurationModel = StateObject(wrappedValue: ListItemNavigationConfigurationModel(type: type))
-    }
+    @StateObject private var configurationModel = ListItemNavigationConfigurationModel()
 
     var body: some View {
         ComponentConfigurationView(configuration: configurationModel) {
@@ -41,15 +37,23 @@ private struct ListItemNavigationDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: theme.spaces.fixedNone) {
+        VStack(spacing: rowGap) {
             ForEach(Array(configurationModel.dataItems.enumerated()), id: \.offset) { _, data in
                 OUDSListItemNavigation(data: data,
                                        affordanceType: configurationModel.affordanceType,
-                                       leading: configurationModel.leading(for: theme))
+                                       leading: configurationModel.leading(for: theme),
+                                       trailing: configurationModel.trailing(for: theme)) {
+                    print("Element \(data.label) clicked")
+                }
             }
             .modifier(ListStyleModifier(configurationModel: configurationModel))
             .oudsListItemContainerAlignment(configurationModel.containersAlignment)
+            .oudsListItemRoundedMedia(configurationModel.roundedMedia)
             .disabled(!configurationModel.enabled)
         }
+    }
+
+    private var rowGap: CGFloat {
+        configurationModel.type == .card ? theme.spaces.fixedLarge : theme.spaces.fixedNone
     }
 }

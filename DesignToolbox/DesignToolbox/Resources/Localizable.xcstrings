@@ -3266,6 +3266,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_itemCount_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عدد العناصر: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item count: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre d’items : %@"
+          }
+        }
+      }
+    },
     "app_components_common_label_label" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
@@ -3857,31 +3881,6 @@
         }
       }
     },
-    "app_components_listItem_boldLabel_tech" : {
-      "comment" : "Component - List item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bold label"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bold label"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bold label"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_controlItem_divider_tech" : {
       "comment" : "Component - ControlItem",
       "extractionState" : "manual",
@@ -3902,56 +3901,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Divider"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_listItem_background_tech" : {
-      "comment" : "Component - List item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Background"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Background"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Background"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_listItem_size_tech" : {
-      "comment" : "Component - List item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Size"
           }
         }
       },
@@ -4302,28 +4251,28 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_listItem_leading_tech" : {
+    "app_components_listItem_affordance_tech" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Leading"
+            "value" : "Affordance"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Leading"
+            "value" : "Affordance"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Leading"
+            "value" : "Affordance"
           }
-        },
+        }
       },
       "shouldTranslate" : false
     },
@@ -4348,104 +4297,55 @@
             "state" : "translated",
             "value" : "Alignment"
           }
-        },
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_listItem_affordance_tech" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Affordance"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Affordance"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Affordance"
-          }
-        },
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_listItem_description_text" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "عنصر القائمة هو صف أفقي يُستخدم لعرض وحدة معلومات داخل قائمة.\nتُرتب عناصر القائمة عموديًا لتنظيم المحتوى ذي الصلة وتسهيل التصفح السريع والتفاعل.\nيمكن أن يحتوي كل عنصر على عناصر مثل التسمية، والنص التوضيحي، والأيقونات، والصور، وذلك حسب السياق."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A list item is a horizontal row used to display a unit of information within a list.\nList items are vertically stacked to organise related content and support quick scanning and interaction.\nEach item can contain elements such as a label, supporting text, icons, images depending on the context."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Un élément de liste est une ligne horizontale servant à afficher une unité d'information au sein d'une liste.\n\nLes éléments de liste sont empilés verticalement afin d'organiser le contenu associé et de faciliter la consultation et l'interaction.\n\nChaque élément peut contenir des éléments tels qu'une étiquette, du texte explicatif, des icônes ou des images, selon le contexte."
-          }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
-    "app_components_listItem_tech" : {
-      "comment" : "Component - List Item",
+    "app_components_listItem_background_tech" : {
+      "comment" : "Component - List item",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "List Item"
+            "value" : "Background"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "List Item"
+            "value" : "Background"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "List Item"
+            "value" : "Background"
           }
         }
       },
       "shouldTranslate" : false
     },
-    "app_components_listItem_item_tech" : {
-      "comment" : "Component - List Item",
+    "app_components_listItem_boldLabel_tech" : {
+      "comment" : "Component - List item",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Item"
+            "value" : "Bold label"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Item"
+            "value" : "Bold label"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Item"
+            "value" : "Bold label"
           }
         }
       },
@@ -4476,26 +4376,125 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_listItem_static_tech" : {
+    "app_components_listItem_description_text" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Static"
+            "value" : "عنصر القائمة هو صف أفقي يُستخدم لعرض وحدة معلومات داخل قائمة.\nتُرتب عناصر القائمة عموديًا لتنظيم المحتوى ذي الصلة وتسهيل التصفح السريع والتفاعل.\nيمكن أن يحتوي كل عنصر على عناصر مثل التسمية، والنص التوضيحي، والأيقونات، والصور، وذلك حسب السياق."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Static"
+            "value" : "A list item is a horizontal row used to display a unit of information within a list.\nList items are vertically stacked to organise related content and support quick scanning and interaction.\nEach item can contain elements such as a label, supporting text, icons, images depending on the context."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Static"
+            "value" : "Un élément de liste est une ligne horizontale servant à afficher une unité d'information au sein d'une liste.\n\nLes éléments de liste sont empilés verticalement afin d'organiser le contenu associé et de faciliter la consultation et l'interaction.\n\nChaque élément peut contenir des éléments tels qu'une étiquette, du texte explicatif, des icônes ou des images, selon le contexte."
+          }
+        }
+      }
+    },
+    "app_components_listItem_item_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_leading_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leading"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_trailing_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_roundedMedia_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rounded media"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rounded Media"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rounded Media"
           }
         }
       },
@@ -4546,6 +4545,81 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Overline"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_size_tech" : {
+      "comment" : "Component - List item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_static_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Static"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Static"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Static"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List Item"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List Item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List Item"
           }
         }
       },
@@ -6341,30 +6415,6 @@
         }
       },
       "shouldTranslate" : false
-    },
-    "app_components_common_itemCount_label" : {
-      "comment" : "Component - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "عدد العناصر: %@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Item count: %@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nombre d’items : %@"
-          }
-        }
-      }
     },
     "app_components_toolbar_demo_backToConfiguration_label" : {
       "comment" : "Component - Tool Bar",
@@ -8763,6 +8813,17 @@
           }
         }
       },
+      "shouldTranslate" : false
+    },
+    "Label" : {
+      "comment" : "A label displayed as a trailing element in a list item.",
+      "isCommentAutoGenerated" : true
+    },
+    "Orange" : {
+      "shouldTranslate" : false
+    },
+    "Orange Compact" : {
+      "extractionState" : "manual",
       "shouldTranslate" : false
     }
   },

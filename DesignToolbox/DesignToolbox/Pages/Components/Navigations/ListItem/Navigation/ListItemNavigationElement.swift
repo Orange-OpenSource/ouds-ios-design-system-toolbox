@@ -14,23 +14,31 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct ListItemNavigationElements: DesignToolboxElement {
+struct ListItemNavigationElement: DesignToolboxElement {
     let name: String
     let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
-        let variants: [DesignToolboxElement] = [
-            ListItemNavigationElement(type: .card),
-            ListItemNavigationElement(type: .item),
-        ]
-
         name = "app_components_listItem_navigation_tech".localized()
-        illustration = AnyView(ListItemIllustration())
+        illustration = AnyView(ListItemNavigationIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             illustration: illustration,
             description: "",
-            demoScreen: AnyView(DesignToolboxVariantElement(elements: variants))))
+            demoScreen: AnyView(ListItemNavigationPage())))
+    }
+}
+
+struct ListItemNavigationIllustration: View {
+
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        VStack(spacing: theme.spaces.fixedSmall) {
+            let data = OUDSListItemSizeSmallData(label: "Label",
+                                                 description: "A description of the item to show in the list item view and its accessibility label and VoiceOver label if not provided.")
+            OUDSListItemNavigation(data: data, affordanceType: .next)
+        }
     }
 }

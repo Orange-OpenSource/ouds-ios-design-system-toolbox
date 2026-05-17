@@ -14,23 +14,18 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct ListItemStaticElements: DesignToolboxElement {
+struct ListItemStaticElement: DesignToolboxElement {
     let name: String
     let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
-        let variants: [DesignToolboxElement] = [
-            ListItemStaticElement(type: .card),
-            ListItemStaticElement(type: .item),
-        ]
-
         name = "app_components_listItem_static_tech".localized()
         illustration = AnyView(ListItemIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             illustration: illustration,
             description: "",
-            demoScreen: AnyView(DesignToolboxVariantElement(elements: variants))))
+            demoScreen: AnyView(ListItemStaticPage())))
     }
 }

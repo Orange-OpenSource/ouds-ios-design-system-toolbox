@@ -18,11 +18,7 @@ import SwiftUI
 
 struct ListItemStaticPage: View {
 
-    @StateObject private var configurationModel: ListItemStaticConfigurationModel
-
-    init(type: ListItemConfigurationModel.ListType) {
-        self._configurationModel = StateObject(wrappedValue: ListItemStaticConfigurationModel(type: type))
-    }
+    @StateObject private var configurationModel = ListItemStaticConfigurationModel()
 
     var body: some View {
         ComponentConfigurationView(configuration: configurationModel) {
@@ -41,13 +37,20 @@ private struct ListItemStaticDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: theme.spaces.fixedNone) {
+        VStack(spacing: rowGap) {
             ForEach(Array(configurationModel.dataItems.enumerated()), id: \.offset) { _, data in
-                OUDSListStaticItem(data: data, leading: configurationModel.leading(for: theme))
+                OUDSListStaticItem(data: data,
+                                   leading: configurationModel.leading(for: theme),
+                                   trailing: configurationModel.trailing(for: theme))
             }
         }
         .modifier(ListStyleModifier(configurationModel: configurationModel))
         .oudsListItemContainerAlignment(configurationModel.containersAlignment)
+        .oudsListItemRoundedMedia(configurationModel.roundedMedia)
         .disabled(!configurationModel.enabled)
+    }
+
+    private var rowGap: CGFloat {
+        configurationModel.type == .card ? theme.spaces.fixedLarge : theme.spaces.fixedNone
     }
 }
