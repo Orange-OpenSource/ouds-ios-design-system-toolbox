@@ -64,28 +64,28 @@ final class LinkConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
                 """
-                OUDSLink(text: \"\(text)\", size: \(size.description.lowercased())) {}
+                OUDSLink(text: \"\(text)\", size: \(size.technicalDescription)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSLink(text: \"\(text)\", icon: Image(\"ic_heart\"), size: \(size.description.lowercased())) {}
+                OUDSLink(text: \"\(text)\", icon: Image(\"ic_heart\"), size: \(size.technicalDescription)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         case .indicatorNext:
             code =
                 """
-                OUDSLink(text: \"\(text)\", indicator: .next, size: \(size.description.lowercased())) {}
+                OUDSLink(text: \"\(text)\", indicator: .next, size: \(size.technicalDescription)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         case .indicatorBack:
             code =
                 """
-                OUDSLink(text: \"\(text)\", indicator: .back, size: \(size.description.lowercased())) {}
+                OUDSLink(text: \"\(text)\", indicator: .back, size: \(size.technicalDescription)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
@@ -95,13 +95,10 @@ final class LinkConfigurationModel: ComponentConfiguration {
 
 // MARK: - Link Layout
 
-enum LinkLayout: CaseIterable, CustomStringConvertible {
-    case textOnly
-    case textAndIcon
-    case indicatorBack
-    case indicatorNext
+enum LinkLayout: DesignToolboxEnumLocalizedRepresentable {
+    case textOnly, textAndIcon, indicatorBack, indicatorNext
 
-    var description: String {
+    var wordingKey: String {
         switch self {
         case .textOnly:
             "app_components_common_textOnlyLayout_tech"
@@ -113,38 +110,12 @@ enum LinkLayout: CaseIterable, CustomStringConvertible {
             "app_components_link_nextLayout_tech"
         }
     }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
 // MARK: Link size extension
 
-extension OUDSLink.Size: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
+extension OUDSLink.Size: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSLink.Size] = [.default, .small]
-
-    public var description: String {
-        switch self {
-        case .default:
-            "Default"
-        case .small:
-            "Small"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
 // MARK: - Link Configuration View

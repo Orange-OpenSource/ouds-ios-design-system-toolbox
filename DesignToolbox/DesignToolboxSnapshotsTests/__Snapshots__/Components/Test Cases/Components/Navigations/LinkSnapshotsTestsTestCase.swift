@@ -101,7 +101,7 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
         let disabledPatern = disabled ? "_Disabled" : ""
-        let name = "\(coloredSurfacePatern)\(layout.debugDescription)_\(size.description)\(disabledPatern)"
+        let name = "\(coloredSurfacePatern)\(layout.debugDescription)_\(size.formattedName)\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,

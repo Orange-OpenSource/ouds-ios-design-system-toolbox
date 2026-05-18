@@ -207,138 +207,30 @@ struct TagConfigurationView: View {
     }
 }
 
-extension OUDSTag.Size: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
+extension OUDSTag.Size: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSTag.Size] = [.default, .small]
-
-    public var description: String {
-        switch self {
-        case .default:
-            "Default"
-        case .small:
-            "Small"
-        }
-    }
-
-    public var technicalDescription: String {
-        ".\(description.lowercased())"
-    }
-
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
-extension OUDSTag.Status.Leading: @retroactive CustomStringConvertible {
-
-    public var description: String {
-        switch self {
-        case .none:
-            "none"
-        case .bullet:
-            "bullet"
-        case .icon:
-            "icon"
-        }
-    }
-
-    public var technicalDescription: String {
-        ".\(description)"
-    }
+extension OUDSTag.Status.Leading:  @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSTag.Status.Leading] = [.none, .icon, .bullet]
 }
 
-extension OUDSTag.Status.Category: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
+extension OUDSTag.Status.Category: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSTag.Status.Category] = [.neutral, .accent, .info, .negative, .positive, .warning]
-
-    public var description: String {
-        switch self {
-        case .neutral:
-            "Neutral"
-        case .accent:
-            "Accent"
-        case .info:
-            "Info"
-        case .negative:
-            "Negative"
-        case .positive:
-            "Positive"
-        case .warning:
-            "Warning"
-        }
-    }
-
-    public var technicalDescription: String {
-        ".\(description.lowercased())"
-    }
-
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
 }
 
-extension OUDSTag.Appearance: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
+extension OUDSTag.Appearance: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSTag.Appearance] = [.emphasized, .muted]
-
-    public var description: String {
-        switch self {
-        case .emphasized:
-            "Emphasized"
-        case .muted:
-            "Muted"
-        }
-    }
-
-    public var technicalDescription: String {
-        ".\(description.lowercased())"
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
-extension OUDSTag.Shape: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
+extension OUDSTag.Shape: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSTag.Shape] = [.rounded, .square]
-
-    public var description: String {
-        switch self {
-        case .rounded:
-            "Rounded"
-        case .square:
-            "Square"
-        }
-    }
-
-    public var technicalDescription: String {
-        ".\(description.lowercased())"
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
-enum TagLayout: CaseIterable, CustomStringConvertible {
-    case textOnly
-    case textAndBullet
-    case textAndIcon
+enum TagLayout: DesignToolboxEnumLocalizedRepresentable {
+    case textOnly, textAndBullet, textAndIcon
 
-    var description: String {
+    var wordingKey: String {
         switch self {
         case .textOnly:
             "app_components_common_textOnlyLayout_tech"
@@ -347,14 +239,6 @@ enum TagLayout: CaseIterable, CustomStringConvertible {
         case .textAndIcon:
             "app_components_common_textAndIconLayout_tech"
         }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
     }
 
     var statusLeading: OUDSTag.Status.Leading {

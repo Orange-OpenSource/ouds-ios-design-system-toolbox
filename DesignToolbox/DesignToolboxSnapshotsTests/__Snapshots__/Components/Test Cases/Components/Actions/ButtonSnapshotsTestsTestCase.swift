@@ -141,7 +141,7 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
         let flipIconPattern = flipIcon ? "_FlipIcon" : ""
         let disabledPatern = disabled ? "_Disabled" : ""
         let roundedPattern = theme.tuning.hasRoundedButtons ? "_Rounded" : ""
-        let name = "\(coloredSurfacePatern)\(flipIconPattern)\(layout.rawValue.camelCase)_\(appearance.description)_\(OUDSButton.Style.default.description)\(disabledPatern)\(roundedPattern)"
+        let name = "\(coloredSurfacePatern)\(flipIconPattern)\(layout.rawValue.camelCase)_\(appearance.formattedName)_\(OUDSButton.Style.default.formattedName)\(disabledPatern)\(roundedPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,

@@ -15,12 +15,10 @@ import OUDSSwiftUI
 
 // MARK: - Chip Layout
 
-enum ChipLayout: CaseIterable, CustomStringConvertible {
-    case textOnly
-    case textAndIcon
-    case iconOnly
+enum ChipLayout: DesignToolboxEnumLocalizedRepresentable {
+    case textOnly, textAndIcon, iconOnly
 
-    var description: String {
+    var wordingKey: String {
         switch self {
         case .textOnly:
             "app_components_common_textOnlyLayout_tech"
@@ -29,13 +27,5 @@ enum ChipLayout: CaseIterable, CustomStringConvertible {
         case .iconOnly:
             "app_components_common_iconOnlyLayout_tech"
         }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
     }
 }

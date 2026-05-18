@@ -86,11 +86,11 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     }
 
     private var appearancePattern: String {
-        ", appearance: .\(appearance.description.lowercased())"
+        ", appearance: \(appearance.technicalDescription)"
     }
 
     private var stylePattern: String {
-        ", style: .\(style.description.lowercased())"
+        ", style: \(style.technicalDescription)"
     }
 
     private var coloredSurfaceCodeModifier: String {
@@ -121,12 +121,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
 
 // MARK: - Button Layout
 
-enum ButtonLayout: CaseIterable, CustomStringConvertible {
-    case textOnly
-    case textAndIcon
-    case iconOnly
+enum ButtonLayout: DesignToolboxEnumLocalizedRepresentable {
+    case textOnly, textAndIcon, iconOnly
 
-    var description: String {
+    var wordingKey: String {
         switch self {
         case .textOnly:
             "app_components_common_textOnlyLayout_tech"
@@ -136,69 +134,18 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
             "app_components_common_iconOnlyLayout_tech"
         }
     }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
 // MARK: Button style extension
 
-extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
+extension OUDSButton.Style: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSButton.Style] = [.default, .loading]
-
-    public var description: String {
-        switch self {
-        case .default:
-            "Default"
-        case .loading:
-            "Loading"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
 // MARK: Button appearance extension
 
-extension OUDSButton.Appearance: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
+extension OUDSButton.Appearance: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
-
-    // Note: Not localized because it is a technical name
-    public var description: String {
-        switch self {
-        case .default:
-            "Default"
-        case .strong:
-            "Strong"
-        case .brand:
-            "Brand"
-        case .minimal:
-            "Minimal"
-        case .negative:
-            "Negative"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
 // MARK: - Button Configuration View
