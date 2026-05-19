@@ -233,7 +233,7 @@ extension OUDSTextArea.Status: @retroactive CaseIterable, @retroactive Hashable,
         if case let .error(message) = self {
             return ".error(message: \"\(message)\")"
         } else {
-            return ".\(wordingKey.lowercased())"
+            return ".\(wordingKey.localized().lowercased())"
         }
     }
 
