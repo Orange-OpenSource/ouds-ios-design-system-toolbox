@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [DesignToolbox] Mmutualize description of enums options of the configuration used by pickers (Orange-OpenSource/ouds-ios#1493)
+- [DesignToolbox] Mutualize description of enums options of the configuration used by pickers (Orange-OpenSource/ouds-ios#1493)
 
 
 ## [2.0.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.4.0...2.0.0) - 2026-05-07
