@@ -109,7 +109,7 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
         let bulletTypePattern = model.bulletType == .unordered ? "_\(model.unorderedAsset.formattedName)" : ""
         let brandedBulletPattern = model.bulletType == .unordered && model.unorderedBulletIsBranded ? "_Branded" : ""
         let unorderedBulletTypePattern = model.bulletType == .unordered ? bulletTypePattern + brandedBulletPattern : ""
-        let textStylePattern = model.textStyle.technicalDescription
+        let textStylePattern = model.textStyle.formattedName
         let isBoldPattern = model.isBold ? "Bold" : ""
         let countPattern = switch model.levelCount {
         case .one:
