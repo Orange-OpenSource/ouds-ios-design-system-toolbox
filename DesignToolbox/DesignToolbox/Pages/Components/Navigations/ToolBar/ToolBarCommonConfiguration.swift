@@ -238,7 +238,7 @@ enum LeadingTrailingType: DesignToolboxEnumLocalizedRepresentable {
 }
 
 enum BarItemBadgeType: DesignToolboxEnumLocalizedRepresentable {
-    case none, standard, number 
+    case none, standard, number
 
     var wordingKey: String {
         switch self {

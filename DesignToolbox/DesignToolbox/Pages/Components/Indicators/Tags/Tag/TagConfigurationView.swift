@@ -211,7 +211,7 @@ extension OUDSTag.Size: @retroactive CaseIterable, DesignToolboxEnumRepresentabl
     public static let allCases: [OUDSTag.Size] = [.default, .small]
 }
 
-extension OUDSTag.Status.Leading:  @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+extension OUDSTag.Status.Leading: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSTag.Status.Leading] = [.none, .icon, .bullet]
 }
 

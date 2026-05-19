@@ -63,9 +63,8 @@ extension DesignToolboxEnumRepresentable {
     }
 }
 
-
 /// Define the option of configuration as enum representable based on Localizable String Keys
-protocol DesignToolboxEnumLocalizedRepresentable:   DesignToolboxEnumRepresentable {
+protocol DesignToolboxEnumLocalizedRepresentable: DesignToolboxEnumRepresentable {
     var wordingKey: String { get }
 }
 

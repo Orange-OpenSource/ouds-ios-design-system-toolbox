@@ -170,7 +170,7 @@ struct RadioPickerConfiguration: View {
 
 // MARK: - Extension of OUDSRadioPickerPlacement
 
-extension OUDSRadioPickerPlacement: @retroactive Equatable, @retroactive CaseIterable, @retroactive Hashable,  DesignToolboxEnumLocalizedRepresentable {
+extension OUDSRadioPickerPlacement: @retroactive Equatable, @retroactive CaseIterable, @retroactive Hashable, DesignToolboxEnumLocalizedRepresentable {
 
     // MARK: Case Iterable
 

@@ -162,7 +162,6 @@ struct CheckboxPickerConfiguration: View {
 
 extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive Equatable, @retroactive Hashable, DesignToolboxEnumLocalizedRepresentable {
 
-
     // MARK: Case Iterable
 
     public static var allCases: [OUDSCheckboxPickerPlacement] {
