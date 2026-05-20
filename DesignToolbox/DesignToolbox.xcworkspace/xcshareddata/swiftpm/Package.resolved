@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "c5dfbff230daf171329b705cc37cadc8fa1c4c13"
+        "branch" : "1443-for-password-input-component-update-to-v13",
+        "revision" : "9078bd941dbf7b40b0bfbfe6e4e7d65f19021787"
       }
     },
     {
