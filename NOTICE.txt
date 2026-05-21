@@ -28,6 +28,7 @@ Any use or displaying shall constitute an infringement under intellectual proper
 
 ## Images
 
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_placeholder.imageset/il_placeholder.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin_dark.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width.png

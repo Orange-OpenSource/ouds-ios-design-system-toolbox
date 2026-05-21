@@ -74,6 +74,22 @@ class ListItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var trailingTextType: OUDSListItemTrailing.TextType {
+        didSet { updateCode() }
+    }
+
+    @Published var avatarType: OUDSListItemAvatar.AvatarType {
+        didSet { updateCode() }
+    }
+
+    @Published var avatarSize: OUDSListItemAvatar.Size {
+        didSet { updateCode() }
+    }
+
+    @Published var avatarBadgeOption: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var roundedMedia: Bool {
         didSet { updateCode() }
     }
@@ -99,9 +115,9 @@ class ListItemConfigurationModel: ComponentConfiguration {
         var description: String {
             switch self {
             case .item:
-                "List item"
+                "app_components_listItem_item_tech"
             case .card:
-                "Card item"
+                "app_components_listItem_card_tech"
             }
         }
 
@@ -135,7 +151,12 @@ class ListItemConfigurationModel: ComponentConfiguration {
         size = .`default`
         containersAlignment = .center
         leadingOption = .none
-        trailingOption = .none
+        trailingOption = .avatar
+        trailingTextType = .label(Text("Label"))
+        avatarType = .icon
+        avatarSize = .medium
+        avatarBadgeOption = false
+
         roundedMedia = false
 
         isOutlined = false
@@ -177,40 +198,76 @@ class ListItemConfigurationModel: ComponentConfiguration {
         isOutlined ? .outlined : .standard(divider: hasDivider, background: hasBackground)
     }
 
+    @MainActor
     func leading(for theme: OUDSTheme) -> OOUDSListItemLeading? {
         switch leadingOption {
         case .none:
-            nil
+            return nil
         case .icon:
-            .icon(asset: Image("ic_heart"))
+            return .icon(asset: Image("ic_heart"))
         case .image:
-            .image(asset: Image("il_sunset"))
+            return .image(asset: Image("il_placeholder"))
         case .video:
-            .video(URL(string: "https://mastermedia.orange.com/publicMedia?t=pmHGomBcoc&o=517502")!)
+            return .video(URL(string: "https://mastermedia.orange.com/publicMedia?t=pmHGomBcoc&o=517502")!)
         case .flag:
-            .flag(asset: Image("il_flag_fr"))
+            return .flag(asset: Image("il_flag_fr"))
+        case .avatar:
+            return .avatar(OUDSListItemAvatar(type: avatarType,
+                                              size: avatarSize,
+                                              badge: avatarBadge))
         }
     }
 
     @MainActor
-    func trailing(for theme: OUDSTheme) -> OOUDSListItemTrailing? {
+    func trailing(for theme: OUDSTheme) -> OUDSListItemTrailing? {
         switch trailingOption {
         case .none:
             return nil
         case .text:
-            return OOUDSListItemTrailing.text(Text("Label"))
+            return .text(trailingTextType)
         case .badge:
-            return OOUDSListItemTrailing.badge(OUDSBadge(count: 1, accessibilityLabel: "", status: .negative, size: .medium))
+            return .badge(OUDSBadge(count: 1, accessibilityLabel: "", status: .negative, size: .medium))
         case .tag:
-            return OOUDSListItemTrailing.tag(OUDSTag(label: "Label", size: .small))
+            return .tag(OUDSTag(label: "Label", size: .small))
         case .icon:
-            return OOUDSListItemTrailing.icon(asset: Image("ic_heart"))
+            return .icon(asset: Image("ic_heart"))
         case .image:
-            return OOUDSListItemTrailing.image(asset: Image("il_sunset"))
+            return .image(asset: Image("il_placeholder"))
         case .video:
-            return OOUDSListItemTrailing.video(URL(string: "https://mastermedia.orange.com/publicMedia?t=pmHGomBcoc&o=517502")!)
+            return .video(URL(string: "https://mastermedia.orange.com/publicMedia?t=pmHGomBcoc&o=517502")!)
         case .flag:
-            return OOUDSListItemTrailing.flag(asset: Image("il_flag_fr"))
+            return .flag(asset: Image("il_flag_fr"))
+        case .avatar:
+            return .avatar(OUDSListItemAvatar(type: avatarType,
+                                              size: avatarSize,
+                                              badge: avatarBadge))
+        }
+    }
+
+    @MainActor
+    private var avatarBadge: OUDSBadge? {
+        let badgeSize: OUDSBadge.StandardSize = switch avatarSize {
+        case .small, .medium:
+            .extraSmall
+        case .large:
+            .small
+        case .extraLarge:
+            .medium
+        }
+
+        return avatarBadgeOption ? OUDSBadge(accessibilityLabel: "", status: .negative, size: badgeSize) : nil
+    }
+
+    var trailingText: OUDSListItemTrailing.TextType {
+        switch trailingTextType {
+        case .label:
+            .label(Text("Label"))
+        case .labelStrong:
+            .labelStrong(Text("Label"))
+        case .labelMuted:
+            .labelMuted(Text("Label"))
+        case .labelAndExtraLabel:
+            .labelAndExtraLabel(Text("Label"), Text("Extra label"))
         }
     }
 
@@ -306,7 +363,6 @@ struct ListItemTextsCommonConfiguration: View {
 
             if configurationModel.size == .default {
                 DesignToolboxTextField(text: $configurationModel.overlineText, label: "app_components_listItem_overline_tech")
-
                 DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_controlItem_extraLabel_tech")
             }
 
@@ -336,6 +392,26 @@ struct ListItemCommonConfiguration: View {
         OUDSChipPicker(title: "app_components_listItem_trailing_tech".localized(),
                        selection: $configurationModel.trailingOption,
                        chips: Trailing.chips)
+
+        Divider().horizontal()
+
+        if configurationModel.trailingOption == .avatar || configurationModel.leadingOption == .avatar {
+            OUDSChipPicker(title: "app_components_listItem_avatarType_tech".localized(),
+                           selection: $configurationModel.avatarType,
+                           chips: OUDSListItemAvatar.AvatarType.chips)
+            OUDSChipPicker(title: "app_components_listItem_avatarSize_tech".localized(),
+                           selection: $configurationModel.avatarSize,
+                           chips: OUDSListItemAvatar.Size.chips)
+
+            OUDSSwitchItem("app_components_listItem_avatarBadge_label", isOn: $configurationModel.avatarBadgeOption)
+        }
+
+        if configurationModel.trailingOption == .text {
+            OUDSChipPicker(title: "app_components_listItem_trailing_textType_tech".localized(),
+                           selection: $configurationModel.trailingTextType,
+                           chips: OUDSListItemTrailing.TextType.chips)
+        }
+
 
         if !(configurationModel.leadingOption == .none)
             || !(configurationModel.trailingOption == .none) {
@@ -431,19 +507,22 @@ enum Leading: CaseIterable, CustomStringConvertible {
     case image
     case video
     case flag
+    case avatar
 
     var description: String {
         switch self {
         case .none:
-            return "None"
+            "None"
         case .icon:
-            return "Icon"
+            "Icon"
         case .image:
-            return "Image"
+            "Image"
         case .video:
-            return "Video"
+            "Video"
         case .flag:
-            return "Flag"
+            "Flag"
+        case .avatar:
+            "Avatar"
         }
     }
 
@@ -465,25 +544,142 @@ enum Trailing: CaseIterable, CustomStringConvertible {
     case image
     case video
     case flag
+    case avatar
 
     var description: String {
         switch self {
         case .none:
-            return "None"
+            "None"
         case .text:
-            return "Text"
+            "Text"
         case .badge:
-            return "Badge"
+            "Badge"
         case .tag:
-            return "Tag"
+            "Tag"
         case .icon:
-            return "Icon"
+            "Icon"
         case .image:
-            return "Image"
+            "Image"
         case .video:
-            return "Video"
+            "Video"
         case .flag:
-            return "Flag"
+            "Flag"
+        case .avatar:
+            "Avatar"
+        }
+    }
+
+    var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}
+
+extension OUDSListItemTrailing.TextType: @retroactive Equatable {}
+extension OUDSListItemTrailing.TextType: @retroactive Hashable {}
+extension OUDSListItemTrailing.TextType: @retroactive CustomStringConvertible, @retroactive CaseIterable {
+    public static let allCases: [OUDSListItemTrailing.TextType] =
+        [
+            .label(Text("Label")),
+            .labelStrong(Text("Label")),
+            .labelMuted(Text("Label")),
+            .labelAndExtraLabel(Text("Label"), Text("Extra Label"))
+        ]
+
+    public var description: String {
+        switch self {
+        case .label:
+            return "Label"
+        case .labelStrong:
+            return "Label Strong"
+        case .labelMuted:
+            return "Label Muted"
+        case .labelAndExtraLabel:
+            return "Label and Extra Label"
+        }
+    }
+
+    // MARK: Equatable
+
+    public static func == (lhs: OUDSListItemTrailing.TextType, rhs: OUDSListItemTrailing.TextType) -> Bool {
+        lhs.description == rhs.description
+    }
+
+    // MARK: - Hashable
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(description)
+    }
+
+    var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}
+
+extension OUDSListItemAvatar.AvatarType: @retroactive Equatable {}
+extension OUDSListItemAvatar.AvatarType: @retroactive Hashable {}
+extension OUDSListItemAvatar.AvatarType: @retroactive CustomStringConvertible, @retroactive CaseIterable {
+
+    public static let allCases: [OUDSListItemAvatar.AvatarType] =
+        [
+            .icon,
+            .image(Image(decorative: "il_placeholder")),
+            .initials("MT")
+        ]
+
+    public var description: String {
+        switch self {
+        case .icon:
+            "Icon"
+        case .image:
+            "Image"
+        case .initials:
+            "Initials"
+        }
+    }
+
+    // MARK: Equatable
+
+    public static func == (lhs: OUDSListItemAvatar.AvatarType, rhs: OUDSListItemAvatar.AvatarType) -> Bool {
+        lhs.description == rhs.description
+    }
+
+    // MARK: - Hashable
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(description)
+    }
+
+    var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}
+
+extension OUDSListItemAvatar.Size: @retroactive CustomStringConvertible, @retroactive CaseIterable {
+
+    public static let allCases: [OUDSListItemAvatar.Size] = [ .small, .medium, .large, .extraLarge ]
+
+    public var description: String {
+        switch self {
+        case .small:
+            "Small"
+        case .medium:
+            "Medium"
+        case .large:
+            "Large"
+        case .extraLarge:
+            "Extra Large"
         }
     }
 
