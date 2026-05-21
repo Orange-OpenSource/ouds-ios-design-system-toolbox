@@ -6136,7 +6136,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1448-for-text-area-component-update-to-v12";
 				kind = branch;
 			};
 		};
