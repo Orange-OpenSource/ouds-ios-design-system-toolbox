@@ -51,11 +51,7 @@ struct ListItemNavigationConfiguration: View {
             
             Divider().horizontal()
             
-            ListItemCommonConfiguration(configurationModel: configurationModel)
-            
-            Divider().horizontal()
-            
-            ListItemTextsConfiguration(configurationModel: configurationModel)
+            ListItemConfiguration(configurationModel: configurationModel)
         }
     }
 }

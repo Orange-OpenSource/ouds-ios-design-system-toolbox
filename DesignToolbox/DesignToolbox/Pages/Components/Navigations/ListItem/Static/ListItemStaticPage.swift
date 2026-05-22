@@ -18,13 +18,13 @@ import SwiftUI
 
 struct ListItemStaticPage: View {
 
-    @StateObject private var configurationModel = ListItemStaticConfigurationModel()
+    @StateObject private var configurationModel = ListItemConfigurationModel()
 
     var body: some View {
         ComponentConfigurationView(configuration: configurationModel) {
             ListItemStaticDemo(configurationModel: configurationModel)
         } configurationView: {
-            ListItemStaticConfiguration(configurationModel: configurationModel)
+            ListItemConfiguration(configurationModel: configurationModel)
         }
     }
 }
@@ -33,7 +33,7 @@ struct ListItemStaticPage: View {
 
 private struct ListItemStaticDemo: View {
 
-    @ObservedObject var configurationModel: ListItemStaticConfigurationModel
+    @ObservedObject var configurationModel: ListItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
