@@ -90,6 +90,18 @@ class ListItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var iconType: IconType {
+        didSet { updateCode() }
+    }
+
+    @Published var iconSize: OUDSLIstItemIcon.Size {
+        didSet { updateCode() }
+    }
+
+    @Published var bageOnNeutralIcon: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var roundedMedia: Bool {
         didSet { updateCode() }
     }
@@ -132,7 +144,7 @@ class ListItemConfigurationModel: ComponentConfiguration {
 
     override init() {
         type = .item
-        numberOfItems = 3
+        numberOfItems = 1
 
         // Item content
         labelText = String(localized: "app_components_common_label_label")
@@ -153,9 +165,14 @@ class ListItemConfigurationModel: ComponentConfiguration {
         leadingOption = .none
         trailingOption = .avatar
         trailingTextType = .label(Text("Label"))
+
         avatarType = .icon
         avatarSize = .medium
         avatarBadgeOption = false
+
+        iconType = .negative
+        bageOnNeutralIcon = false
+        iconSize = .medium
 
         roundedMedia = false
 
@@ -204,7 +221,7 @@ class ListItemConfigurationModel: ComponentConfiguration {
         case .none:
             return nil
         case .icon:
-            return .icon(asset: Image("ic_heart"))
+            return .icon(icon(for: theme))
         case .image:
             return .image(asset: Image("il_placeholder"))
         case .video:
@@ -230,7 +247,7 @@ class ListItemConfigurationModel: ComponentConfiguration {
         case .tag:
             return .tag(OUDSTag(label: "Label", size: .small))
         case .icon:
-            return .icon(asset: Image("ic_heart"))
+            return .icon(icon(for: theme))
         case .image:
             return .image(asset: Image("il_placeholder"))
         case .video:
@@ -256,6 +273,24 @@ class ListItemConfigurationModel: ComponentConfiguration {
         }
 
         return avatarBadgeOption ? OUDSBadge(accessibilityLabel: "", status: .negative, size: badgeSize) : nil
+    }
+
+    @MainActor
+    private func icon(for theme: OUDSTheme) -> OUDSLIstItemIcon {
+        let type: OUDSLIstItemIcon.IconType = switch iconType {
+        case .neutral:
+            .neutral(asset: Image(decorative: "ic_heart", bundle: theme.resourcesBundle), badge: bageOnNeutralIcon)
+        case .info:
+            .info
+        case .warning:
+            .warning
+        case .negative:
+            .negative
+        case .positive:
+            .positive
+        }
+
+        return OUDSLIstItemIcon(type: type, size: iconSize)
     }
 
     var trailingText: OUDSListItemTrailing.TextType {
@@ -341,6 +376,7 @@ class ListItemConfigurationModel: ComponentConfiguration {
                                containersAlignment: \(containersAlignment))
         """
     }
+
     private var itemStyleModifierPettern: String {
         """
             .oudsListCardStyle(hasDdivider: \(hasDivider),
@@ -393,9 +429,10 @@ struct ListItemCommonConfiguration: View {
                        selection: $configurationModel.trailingOption,
                        chips: Trailing.chips)
 
-        Divider().horizontal()
-
         if configurationModel.trailingOption == .avatar || configurationModel.leadingOption == .avatar {
+
+            Divider().horizontal()
+
             OUDSChipPicker(title: "app_components_listItem_avatarType_tech".localized(),
                            selection: $configurationModel.avatarType,
                            chips: OUDSListItemAvatar.AvatarType.chips)
@@ -407,14 +444,36 @@ struct ListItemCommonConfiguration: View {
         }
 
         if configurationModel.trailingOption == .text {
+
+            Divider().horizontal()
+
             OUDSChipPicker(title: "app_components_listItem_trailing_textType_tech".localized(),
                            selection: $configurationModel.trailingTextType,
                            chips: OUDSListItemTrailing.TextType.chips)
         }
 
+        if configurationModel.trailingOption == .icon || configurationModel.leadingOption == .icon {
+
+            Divider().horizontal()
+
+            OUDSChipPicker(title: "app_components_listItem_iconType_tech".localized(),
+                           selection: $configurationModel.iconType,
+                           chips: IconType.chips)
+
+            OUDSChipPicker(title: "app_components_listItem_iconSize_tech".localized(),
+                           selection: $configurationModel.iconSize,
+                           chips: OUDSLIstItemIcon.Size.chips)
+
+            if configurationModel.iconType == .neutral {
+                OUDSSwitchItem("app_components_listItem_badgeOnIcon_tech", isOn: $configurationModel.bageOnNeutralIcon)
+            }
+        }
 
         if !(configurationModel.leadingOption == .none)
             || !(configurationModel.trailingOption == .none) {
+
+            Divider().horizontal()
+
             OUDSChipPicker(title: "app_components_listItem_alignment_tech".localized(),
                            selection: $configurationModel.containersAlignment,
                            chips: OUDSListItemContainersAlignment.chips)
@@ -445,7 +504,6 @@ struct ListItemCommonConfiguration: View {
         Divider().horizontal()
 
         OUDSSwitchItem("app_components_listItem_boldLabel_tech", isOn: $configurationModel.isBoldLabel)
-
 
         OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
@@ -680,6 +738,57 @@ extension OUDSListItemAvatar.Size: @retroactive CustomStringConvertible, @retroa
             "Large"
         case .extraLarge:
             "Extra Large"
+        }
+    }
+
+    var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}
+
+enum IconType: CustomStringConvertible, CaseIterable {
+
+    case neutral, info, warning, negative, positive
+
+    public var description: String {
+        switch self {
+        case .neutral:
+            "Neutral"
+        case .info:
+            "Info"
+        case .warning:
+            "Warning"
+        case .negative:
+            "Negative"
+        case .positive:
+            "Positive"
+        }
+    }
+
+    var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}
+
+extension OUDSLIstItemIcon.Size: @retroactive CustomStringConvertible, @retroactive CaseIterable {
+    public static let allCases: [OUDSLIstItemIcon.Size] = [.small, .medium, .large]
+
+    public var description: String {
+        switch self {
+        case .small:
+            "Small"
+        case .medium:
+            "Medium"
+        case .large:
+            "Large"
         }
     }
 

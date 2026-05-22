@@ -4701,6 +4701,81 @@
         },
         "shouldTranslate" : false
     },
+    "app_components_listItem_iconType_tech" : {
+        "comment" : "Component - List Item",
+        "extractionState" : "manual",
+        "localizations" : {
+            "ar" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Icon type"
+                }
+            },
+            "en" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Icon type"
+                }
+            },
+            "fr" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Icon type"
+                }
+            }
+        },
+        "shouldTranslate" : false
+    },
+    "app_components_listItem_iconSize_tech" : {
+        "comment" : "Component - List Item",
+        "extractionState" : "manual",
+        "localizations" : {
+            "ar" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Icon size"
+                }
+            },
+            "en" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Icon size"
+                }
+            },
+            "fr" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Icon size"
+                }
+            }
+        },
+        "shouldTranslate" : false
+    },
+    "app_components_listItem_badgeOnIcon_tech" : {
+        "comment" : "Component - List Item",
+        "extractionState" : "manual",
+        "localizations" : {
+            "ar" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Badge on icon"
+                }
+            },
+            "en" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Badge on icon"
+                }
+            },
+            "fr" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Badge on icon"
+                }
+            }
+        },
+        "shouldTranslate" : false
+    },
     "app_components_listItem_trailing_textType_tech" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
