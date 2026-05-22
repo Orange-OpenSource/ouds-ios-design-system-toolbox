@@ -46,7 +46,7 @@ class ListItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var size: ListItemSize {
+    @Published var itemSize: OUDSListItemSize {
         didSet { updateCode() }
     }
 
@@ -160,7 +160,7 @@ class ListItemConfigurationModel: ComponentConfiguration {
         enabled = true
 
         // Item Style
-        size = .`default`
+        itemSize = .standard
         containersAlignment = .center
         leadingOption = .none
         trailingOption = .avatar
@@ -189,25 +189,14 @@ class ListItemConfigurationModel: ComponentConfiguration {
 
     var dataItems: [OUDSListItemData] {
         (0..<numberOfItems).map { index in
-            let label = index == 0 ? labelText : "\(labelText)_\(index)"
-            switch size {
-            case .small:
-                return OUDSListItemSizeSmallData(
-                    label: label,
-                    isBoldLabel: isBoldLabel,
-                    description: descriptionText.isEmpty ? nil : descriptionText,
-                    helperText: helperText.isEmpty ? nil : helperText
-                )
-            case .default:
-                return OUDSListItemSizeDefaultData(
-                    label: label,
-                    isBoldLabel: isBoldLabel,
-                    description: descriptionText.isEmpty ? nil : descriptionText,
-                    overline: overlineText.isEmpty ? nil : overlineText,
-                    extraLabel: extraLabelText.isEmpty ? nil : extraLabelText,
-                    helperText: helperText.isEmpty ? nil : helperText
-                )
-            }
+            OUDSListItemData(
+                label: index == 0 ? labelText : "\(labelText)_\(index)",
+                isBoldLabel: isBoldLabel,
+                description: descriptionText.isEmpty ? nil : descriptionText,
+                overline: overlineText.isEmpty ? nil : overlineText,
+                extraLabel: extraLabelText.isEmpty ? nil : extraLabelText,
+                helperText: helperText.isEmpty ? nil : helperText
+            )
         }
     }
 
@@ -264,7 +253,7 @@ class ListItemConfigurationModel: ComponentConfiguration {
     @MainActor
     private var avatarBadge: OUDSBadge? {
         let badgeSize: OUDSBadge.StandardSize = switch avatarSize {
-        case .small, .medium:
+        case .medium:
             .extraSmall
         case .large:
             .small
@@ -370,6 +359,11 @@ class ListItemConfigurationModel: ComponentConfiguration {
         }
     }
 
+    var sizeModifierPattern: String {
+        let sizePattern = String(describing: itemSize)
+        return ".oudsListItemSize(.\(sizePattern))"
+    }
+
     private var cardStyleModifierPettern: String {
         """
             .oudsListItemStyle(style: \(listStyle),
@@ -388,7 +382,7 @@ class ListItemConfigurationModel: ComponentConfiguration {
 
 // MARK: - ListItem Configuration
 
-struct ListItemTextsCommonConfiguration: View {
+struct ListItemTextsConfiguration: View {
 
     @ObservedObject var configurationModel: ListItemConfigurationModel
     @Environment(\.theme) private var theme
@@ -397,7 +391,7 @@ struct ListItemTextsCommonConfiguration: View {
         DesignToolboxEditContentDisclosure {
             DesignToolboxTextField(text: $configurationModel.labelText, label: "app_components_common_label_tech")
 
-            if configurationModel.size == .default {
+            if configurationModel.itemSize == .standard {
                 DesignToolboxTextField(text: $configurationModel.overlineText, label: "app_components_listItem_overline_tech")
                 DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_controlItem_extraLabel_tech")
             }
@@ -409,110 +403,137 @@ struct ListItemTextsCommonConfiguration: View {
     }
 }
 
-struct ListItemCommonConfiguration: View {
+struct ListItemContentConfiguration: View {
 
     @ObservedObject var configurationModel: ListItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSChipPicker(title: "app_components_common_type_tech".localized(),
-                       selection: $configurationModel.`type`,
-                       chips: ListItemConfigurationModel.ListType.chips)
+        DesignToolboxEditContentDisclosure("Content settings", isContentVisible: true) {
+            VStack (spacing: 0) {
+                OUDSChipPicker(title: "app_components_listItem_leading_tech".localized(),
+                               selection: $configurationModel.leadingOption,
+                               chips: Leading.chips)
 
-        Divider().horizontal()
+                OUDSChipPicker(title: "app_components_listItem_trailing_tech".localized(),
+                               selection: $configurationModel.trailingOption,
+                               chips: Trailing.chips)
 
-        OUDSChipPicker(title: "app_components_listItem_leading_tech".localized(),
-                       selection: $configurationModel.leadingOption,
-                       chips: Leading.chips)
+                if configurationModel.trailingOption == .avatar || configurationModel.leadingOption == .avatar {
 
-        OUDSChipPicker(title: "app_components_listItem_trailing_tech".localized(),
-                       selection: $configurationModel.trailingOption,
-                       chips: Trailing.chips)
+                    Divider().horizontal()
 
-        if configurationModel.trailingOption == .avatar || configurationModel.leadingOption == .avatar {
+                    OUDSChipPicker(title: "app_components_listItem_avatarType_tech".localized(),
+                                   selection: $configurationModel.avatarType,
+                                   chips: OUDSListItemAvatar.AvatarType.chips)
+                    OUDSChipPicker(title: "app_components_listItem_avatarSize_tech".localized(),
+                                   selection: $configurationModel.avatarSize,
+                                   chips: OUDSListItemAvatar.Size.chips)
 
-            Divider().horizontal()
+                    OUDSSwitchItem("app_components_listItem_avatarBadge_label", isOn: $configurationModel.avatarBadgeOption)
+                }
 
-            OUDSChipPicker(title: "app_components_listItem_avatarType_tech".localized(),
-                           selection: $configurationModel.avatarType,
-                           chips: OUDSListItemAvatar.AvatarType.chips)
-            OUDSChipPicker(title: "app_components_listItem_avatarSize_tech".localized(),
-                           selection: $configurationModel.avatarSize,
-                           chips: OUDSListItemAvatar.Size.chips)
+                if configurationModel.trailingOption == .text {
 
-            OUDSSwitchItem("app_components_listItem_avatarBadge_label", isOn: $configurationModel.avatarBadgeOption)
-        }
+                    Divider().horizontal()
 
-        if configurationModel.trailingOption == .text {
+                    OUDSChipPicker(title: "app_components_listItem_trailing_textType_tech".localized(),
+                                   selection: $configurationModel.trailingTextType,
+                                   chips: OUDSListItemTrailing.TextType.chips)
+                }
 
-            Divider().horizontal()
+                if configurationModel.trailingOption == .icon || configurationModel.leadingOption == .icon {
 
-            OUDSChipPicker(title: "app_components_listItem_trailing_textType_tech".localized(),
-                           selection: $configurationModel.trailingTextType,
-                           chips: OUDSListItemTrailing.TextType.chips)
-        }
+                    Divider().horizontal()
 
-        if configurationModel.trailingOption == .icon || configurationModel.leadingOption == .icon {
+                    OUDSChipPicker(title: "app_components_listItem_iconType_tech".localized(),
+                                   selection: $configurationModel.iconType,
+                                   chips: IconType.chips)
 
-            Divider().horizontal()
+                    OUDSChipPicker(title: "app_components_listItem_iconSize_tech".localized(),
+                                   selection: $configurationModel.iconSize,
+                                   chips: OUDSLIstItemIcon.Size.chips)
 
-            OUDSChipPicker(title: "app_components_listItem_iconType_tech".localized(),
-                           selection: $configurationModel.iconType,
-                           chips: IconType.chips)
+                    if configurationModel.iconType == .neutral {
+                        OUDSSwitchItem("app_components_listItem_badgeOnIcon_tech", isOn: $configurationModel.bageOnNeutralIcon)
+                    }
+                }
 
-            OUDSChipPicker(title: "app_components_listItem_iconSize_tech".localized(),
-                           selection: $configurationModel.iconSize,
-                           chips: OUDSLIstItemIcon.Size.chips)
+                if !(configurationModel.leadingOption == .none)
+                    || !(configurationModel.trailingOption == .none) {
 
-            if configurationModel.iconType == .neutral {
-                OUDSSwitchItem("app_components_listItem_badgeOnIcon_tech", isOn: $configurationModel.bageOnNeutralIcon)
+                    Divider().horizontal()
+
+                    OUDSChipPicker(title: "app_components_listItem_alignment_tech".localized(),
+                                   selection: $configurationModel.containersAlignment,
+                                   chips: OUDSListItemContainersAlignment.chips)
+
+                    if configurationModel.needRoundedMediaOption {
+                        OUDSSwitchItem("app_components_listItem_roundedMedia_tech", isOn: $configurationModel.roundedMedia)
+                    }
+                }
             }
         }
+    }
+}
 
-        if !(configurationModel.leadingOption == .none)
-            || !(configurationModel.trailingOption == .none) {
+struct ListItemGlobalSettingsConfiguration: View {
+
+    @ObservedObject var configurationModel: ListItemConfigurationModel
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+
+        DesignToolboxEditContentDisclosure("Global settings", isContentVisible: true) {
+            VStack (spacing: 0) {
+                OUDSChipPicker(title: "app_components_common_type_tech".localized(),
+                               selection: $configurationModel.`type`,
+                               chips: ListItemConfigurationModel.ListType.chips)
+
+                OUDSChipPicker(title: "app_components_listItem_size_tech".localized(),
+                               selection: $configurationModel.itemSize,
+                               chips: OUDSListItemSize.chips)
+
+                Divider().horizontal()
+
+                if configurationModel.type == .card {
+                    OUDSSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
+                }
+
+                if configurationModel.type == .item ||
+                    (configurationModel.type == .card && !configurationModel.isOutlined) {
+                    OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
+                    OUDSSwitchItem("app_components_listItem_background_tech", isOn: $configurationModel.hasBackground)
+                }
+
+                Divider().horizontal()
+
+                OUDSSwitchItem("app_components_listItem_boldLabel_tech", isOn: $configurationModel.isBoldLabel)
+
+                OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
+
+                Stepper("app_components_common_itemCount_label" <- "\($configurationModel.numberOfItems.wrappedValue)",
+                        value: $configurationModel.numberOfItems)
+                .padding(.all, theme.spaces.fixedMedium)
+                .labelStrongMedium(theme)
+            }
+        }
+    }
+}
+
+struct ListItemCommonConfiguration: View {
+
+    let configurationModel: ListItemConfigurationModel
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
+            ListItemGlobalSettingsConfiguration(configurationModel: configurationModel)
 
             Divider().horizontal()
 
-            OUDSChipPicker(title: "app_components_listItem_alignment_tech".localized(),
-                           selection: $configurationModel.containersAlignment,
-                           chips: OUDSListItemContainersAlignment.chips)
-
-            if configurationModel.needRoundedMediaOption {
-                OUDSSwitchItem("app_components_listItem_roundedMedia_tech", isOn: $configurationModel.roundedMedia)
-            }
+            ListItemContentConfiguration(configurationModel: configurationModel)
         }
-
-        Divider().horizontal()
-
-        if configurationModel.type == .card {
-            OUDSSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
-        }
-
-        if configurationModel.type == .item ||
-            (configurationModel.type == .card && !configurationModel.isOutlined) {
-            OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
-            OUDSSwitchItem("app_components_listItem_background_tech", isOn: $configurationModel.hasBackground)
-        }
-
-        Divider().horizontal()
-
-        OUDSChipPicker(title: "app_components_listItem_size_tech".localized(),
-                       selection: $configurationModel.size,
-                       chips: ListItemSize.chips)
-
-        Divider().horizontal()
-
-        OUDSSwitchItem("app_components_listItem_boldLabel_tech", isOn: $configurationModel.isBoldLabel)
-
-        OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
-
-        Stepper("app_components_common_itemCount_label" <- "\($configurationModel.numberOfItems.wrappedValue)",
-                value: $configurationModel.numberOfItems)
-            .padding(.all, theme.spaces.fixedMedium)
-            .labelStrongMedium(theme)
-
-        Divider().horizontal()
     }
 }
 
@@ -537,16 +558,16 @@ extension OUDSListItemContainersAlignment: @retroactive CaseIterable, @retroacti
     }
 }
 
-enum ListItemSize: CaseIterable, CustomStringConvertible {
-    case small
-    case `default`
+extension OUDSListItemSize: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    var description: String {
+    public static let allCases: [OUDSListItemSize] = [.standard, .small]
+
+    public var description: String {
         switch self {
+        case .standard:
+            return "Standard"
         case .small:
             return "Small"
-        case .default:
-            return "Default"
         }
     }
 
@@ -726,12 +747,10 @@ extension OUDSListItemAvatar.AvatarType: @retroactive CustomStringConvertible, @
 
 extension OUDSListItemAvatar.Size: @retroactive CustomStringConvertible, @retroactive CaseIterable {
 
-    public static let allCases: [OUDSListItemAvatar.Size] = [ .small, .medium, .large, .extraLarge ]
+    public static let allCases: [OUDSListItemAvatar.Size] = [ .medium, .large, .extraLarge ]
 
     public var description: String {
         switch self {
-        case .small:
-            "Small"
         case .medium:
             "Medium"
         case .large:

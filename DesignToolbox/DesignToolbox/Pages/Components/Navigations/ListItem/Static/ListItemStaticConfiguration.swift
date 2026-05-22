@@ -24,26 +24,14 @@ final class ListItemStaticConfigurationModel: ListItemConfigurationModel {
         code = """
                let data = \(dataPattern)
 
-               OUDSListStaticItem(data: data)
+               OUDSListItem(data: data)
                \(styleModifierPettern)
+               \(sizeModifierPattern)
                """
     }
 
     private var dataPattern: String {
-        switch size {
-        case .small:
-            smallSizeDataPattern
-        case .default:
-            defautSizeDataPattern
-        }
-    }
-
-    private var smallSizeDataPattern: String {
-        "OUDSListItemSizeSmallData(\(labelPattern)\(isBoldLabelPattern)\(descriptionPattern)\(helperTextPattern))"
-    }
-
-    private var defautSizeDataPattern: String {
-        "OUDSListItemSizeDefaultData(\(labelPattern)\(isBoldLabelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern))"
+        "OUDSListItemData(\(labelPattern)\(isBoldLabelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern))"
     }
 }
 
@@ -60,7 +48,7 @@ struct ListItemStaticConfiguration: View {
                 ListItemCommonConfiguration(configurationModel: configurationModel)
             }
 
-            ListItemTextsCommonConfiguration(configurationModel: configurationModel)
+            ListItemTextsConfiguration(configurationModel: configurationModel)
         }
     }
 }

@@ -49,6 +49,7 @@ private struct ListItemNavigationDemo: View {
             .modifier(ListStyleModifier(configurationModel: configurationModel))
             .oudsListItemContainerAlignment(configurationModel.containersAlignment)
             .oudsListItemRoundedMedia(configurationModel.roundedMedia)
+            .oudsListItemSize(configurationModel.itemSize)
             .disabled(!configurationModel.enabled)
         }
     }

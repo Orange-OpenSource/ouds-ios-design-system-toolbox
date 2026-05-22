@@ -4301,6 +4301,81 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_listItem_avatarBadge_label" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avatar badge"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avatar badge"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avatar Badge"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_avatarSize_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avatar size"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avatar size"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avatar size"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_avatarType_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avatar type"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avatar type"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avatar type"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_listItem_background_tech" : {
       "comment" : "Component - List item",
       "extractionState" : "manual",
@@ -4321,6 +4396,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Background"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_badgeOnIcon_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge on icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge on icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge on icon"
           }
         }
       },
@@ -4351,6 +4451,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_listItem_card_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Card item"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Card item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Card item"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_listItem_description_text" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
@@ -4374,6 +4499,56 @@
           }
         }
       }
+    },
+    "app_components_listItem_iconSize_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon size"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon size"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon size"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_iconType_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon type"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon type"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon type"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_components_listItem_item_tech" : {
       "comment" : "Component - List Item",
@@ -4400,32 +4575,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_listItem_card_tech" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Card item"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Card item"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Card item"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-
     "app_components_listItem_leading_tech" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
@@ -4625,156 +4774,6 @@
         }
       },
       "shouldTranslate" : false
-    },
-    "app_components_listItem_avatarSize_tech" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Avatar size"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Avatar size"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Avatar size"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_listItem_avatarType_tech" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Avatar type"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Avatar type"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Avatar type"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_listItem_avatarBadge_label": {
-        "comment" : "Component - List Item",
-        "extractionState" : "manual",
-        "localizations" : {
-            "ar" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Avatar badge"
-                }
-            },
-            "en" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Avatar badge"
-                }
-            },
-            "fr" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Avatar Badge"
-                }
-            }
-        },
-        "shouldTranslate" : false
-    },
-    "app_components_listItem_iconType_tech" : {
-        "comment" : "Component - List Item",
-        "extractionState" : "manual",
-        "localizations" : {
-            "ar" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Icon type"
-                }
-            },
-            "en" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Icon type"
-                }
-            },
-            "fr" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Icon type"
-                }
-            }
-        },
-        "shouldTranslate" : false
-    },
-    "app_components_listItem_iconSize_tech" : {
-        "comment" : "Component - List Item",
-        "extractionState" : "manual",
-        "localizations" : {
-            "ar" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Icon size"
-                }
-            },
-            "en" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Icon size"
-                }
-            },
-            "fr" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Icon size"
-                }
-            }
-        },
-        "shouldTranslate" : false
-    },
-    "app_components_listItem_badgeOnIcon_tech" : {
-        "comment" : "Component - List Item",
-        "extractionState" : "manual",
-        "localizations" : {
-            "ar" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Badge on icon"
-                }
-            },
-            "en" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Badge on icon"
-                }
-            },
-            "fr" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Badge on icon"
-                }
-            }
-        },
-        "shouldTranslate" : false
     },
     "app_components_listItem_trailing_textType_tech" : {
       "comment" : "Component - List Item",
@@ -8972,6 +8971,10 @@
     },
     "Extra Label" : {
       "comment" : "A label displayed alongside a label.",
+      "isCommentAutoGenerated" : true
+    },
+    "Global settings" : {
+      "comment" : "A heading for the global settings of the list item.",
       "isCommentAutoGenerated" : true
     },
     "Item %lld" : {

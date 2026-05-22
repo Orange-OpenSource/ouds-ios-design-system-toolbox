@@ -41,8 +41,8 @@ struct ListItemIllustration: View {
 
     var body: some View {
         VStack(spacing: theme.spaces.fixedSmall) {
-            let data = OUDSListItemSizeSmallData(label: "Label",
-                                                 description: "A description of the item to show in the list item view and its accessibility label and VoiceOver label if not provided.")
+            let data = OUDSListItemData(label: "Label",
+                                        description: "A description of the item to show in the list item view and its accessibility label and VoiceOver label if not provided.")
             OUDSListStaticItem(data: data)
         }
     }

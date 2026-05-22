@@ -45,19 +45,17 @@ struct ListItemNavigationConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
-            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-
-                OUDSChipPicker(title: "app_components_listItem_affordance_tech".localized(),
-                               selection: $configurationModel.affordanceType,
-                               chips: OUDSListItemNavigation.AffordanceType.chips)
-
-                Divider().horizontal()
-
-                ListItemCommonConfiguration(configurationModel: configurationModel)
-
-            }
-
-            ListItemTextsCommonConfiguration(configurationModel: configurationModel)
+            OUDSChipPicker(title: "app_components_listItem_affordance_tech".localized(),
+                           selection: $configurationModel.affordanceType,
+                           chips: OUDSListItemNavigation.AffordanceType.chips)
+            
+            Divider().horizontal()
+            
+            ListItemCommonConfiguration(configurationModel: configurationModel)
+            
+            Divider().horizontal()
+            
+            ListItemTextsConfiguration(configurationModel: configurationModel)
         }
     }
 }

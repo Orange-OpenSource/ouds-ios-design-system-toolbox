@@ -16,15 +16,30 @@ import SwiftUI
 
 struct DesignToolboxEditContentDisclosure<Content>: View where Content: View {
 
+    // MARK: - Properties
+
+    private let title: String
     @ViewBuilder
-    let content: () -> Content
+    private let content: () -> Content
 
     @State private var isContentVisible = false
     @Environment(\.theme) private var theme
 
+    //  MARK: - Initializer
+
+    init(_ title: String = "app_components_common_editContent_label",
+         isContentVisible: Bool = false,
+         @ViewBuilder content: @escaping () -> Content) {
+        self.title = title.localized()
+        self.isContentVisible = isContentVisible
+        self.content = content
+    }
+
+    //  MARK: - Body
+
     var body: some View {
         DesignToolboxDisclosureGroup(isExpanded: $isContentVisible, accessibilityLabel: "", content: content) {
-            Text("app_components_common_editContent_label")
+            Text(title)
                 .headingSmall(theme)
                 .foregroundStyle(theme.colors.contentDefault)
                 .accessibilityAddTraits([.isButton])
