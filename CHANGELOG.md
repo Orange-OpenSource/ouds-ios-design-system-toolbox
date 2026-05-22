@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] `text area` component (Orange-OpenSource/ouds-ios#1448)
 - [Library] `text input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1446)
 - [Library] `password input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1443)
 - [Library] `PIN code input` component with new typography (Orange-OpenSource/ouds-ios#1444)
@@ -15,7 +16,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] `filter chip` and `suggestion chip` components with label medium moderate typography for text (Orange-OpenSource/ouds-ios#1441)
 - [Library] `input tag` component with label medium moderate typography for text (Orange-OpenSource/ouds-ios#1450)
 - [DesignToolbox] Mutualize description of enums options of the configuration used by pickers (Orange-OpenSource/ouds-ios#1493)
-- [Library] `text area` component (Orange-OpenSource/ouds-ios#1448)
 
 ## [2.0.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.4.0...2.0.0) - 2026-05-07
 
