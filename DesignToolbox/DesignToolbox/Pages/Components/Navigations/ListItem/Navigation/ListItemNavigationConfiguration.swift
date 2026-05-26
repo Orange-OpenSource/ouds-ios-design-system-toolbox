@@ -32,7 +32,7 @@ final class ListItemNavigationConfigurationModel: ListItemConfigurationModel {
     // MARK: - Code generation
 
     override func updateCode() {
-        code = ""
+        super.updateCode()
     }
 }
 

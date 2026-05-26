@@ -314,31 +314,49 @@ class ListItemConfigurationModel: ComponentConfiguration {
     }
 
     // MARK: - Code generation
+    override func updateCode() {
+        let leadingPart = leadingPattern.isEmpty ? "" : ", leading: leading"
+        let trailingPart = trailingPattern.isEmpty ? "" : ", trailing: trailing"
+
+        code = """
+               \(dataPattern) \(leadingPattern) \(trailingPattern)
+               
+               OUDSListItem(data: data\(leadingPart)\(trailingPart)
+               \(styleModifierPettern)\(sizeModifierPattern)\(containersAlignmentPattern)\(roundedMediaPattern)
+               """
+    }
 
     var disableCodePattern: String {
         !enabled ? ".disabled(true)" : ""
     }
 
-    var labelPattern: String {
+    var dataPattern: String {
+        """
+        let data = OUDSListItemData(\(labelPattern)\(isBoldLabelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern))
+        """
+    }
+
+    private var labelPattern: String {
         "label: \"\(labelText)\""
     }
-    var isBoldLabelPattern: String {
+
+    private var isBoldLabelPattern: String {
         isBoldLabel ? ", isBoldLabel: true" : ""
     }
 
-    var overlinePattern: String {
+    private var overlinePattern: String {
         overlineText.isEmpty ? "" : ", overline: \"\(overlineText)\""
     }
 
-    var extraLabelPattern: String {
+    private var extraLabelPattern: String {
         extraLabelText.isEmpty ? "" : ", extraLabel: \"\(extraLabelText)\""
     }
 
-    var descriptionPattern: String {
+    private var descriptionPattern: String {
         descriptionText.isEmpty ? "" : ", description: \"\(descriptionText)\""
     }
 
-    var helperTextPattern: String {
+    private var helperTextPattern: String {
         helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
     }
 
@@ -350,33 +368,135 @@ class ListItemConfigurationModel: ComponentConfiguration {
         hasDivider ? ", hasDivider: true" : ""
     }
 
-    var styleModifierPettern: String {
+    private var styleModifierPettern: String {
         switch type {
         case .item:
-            itemStyleModifierPettern
+            """
+            .oudsListCardStyle(hasDdivider: \(hasDivider),
+                               hasBackground: \(hasBackground))
+            """
         case .card:
-            cardStyleModifierPettern
+            ".oudsListItemStyle(style: \(listStyle))"
         }
     }
 
-    var sizeModifierPattern: String {
-        let sizePattern = String(describing: itemSize)
-        return ".oudsListItemSize(.\(sizePattern))"
+    private var roundedMediaPattern: String {
+        if !(trailingOption == .none) || !(leadingOption == .none) {
+            "\n.oudsListItemRoundedMedia(\(roundedMedia))"
+        } else {
+            ""
+        }
     }
 
-    private var cardStyleModifierPettern: String {
-        """
-            .oudsListItemStyle(style: \(listStyle),
-                               containersAlignment: \(containersAlignment))
-        """
+    private var sizeModifierPattern: String {
+        itemSize == .standard ? "" : "\n.oudsListItemSize(.\(String(describing: itemSize)))"
     }
 
-    private var itemStyleModifierPettern: String {
-        """
-            .oudsListCardStyle(hasDdivider: \(hasDivider),
-                               hasBackground: \(hasBackground),
-                               containersAlignment: \(containersAlignment))
-            """
+
+    private var containersAlignmentPattern: String {
+        // TODO: technicalName
+        "\n.oudsListItemContainerAlignment(.\(containersAlignment))"
+    }
+
+    private var iconPattern: String {
+        let imagePattern = "Image(decorative: \"ic_heart\")"
+        let typePattern: String = switch iconType {
+            case .neutral:
+                ".neutral(asset: \(imagePattern), badge: \(bageOnNeutralIcon))"
+            case .info:
+                ".info"
+            case .warning:
+                ".warning"
+            case .negative:
+                ".negative"
+            case .positive:
+                ".positive"
+            }
+
+            // TODO: .technicalDecription
+            let sizePattern: String = iconSize.description
+            return ".init(type: \(typePattern), size: \(sizePattern))"
+    }
+
+    private var avatarPattern: String {
+        let typePattern = switch avatarType {
+        case .icon:
+            ".icon"
+        case .image:
+            ".image(asset: Image(decorative: \"ic_heart\"))"
+        case .initials:
+            ".initials(\"MP\")"
+        }
+
+        let sizePattern = switch avatarSize {
+        case .medium:
+            "medium"
+        case .large:
+            "large"
+        case .extraLarge:
+            "extraLarge"
+        }
+
+        return ".init(type: \(typePattern), size: \(sizePattern))"
+    }
+
+    private var leadingPattern: String {
+        let leadingOptionPatter: String =
+        switch leadingOption {
+        case .none:
+            ""
+        case .icon:
+            ".icon(\(iconPattern)"
+        case .image:
+            ".image(asset: Image(decorative: \"ic_heart\"))"
+        case .video:
+            ".video(URL(string: \"https://unified-design-system.orange.com/\")!)"
+        case .flag:
+            ".flag(asset: Image(decorative: \"ic_flag_FR_fr\")"
+        case .avatar:
+            ".avatar(\(avatarPattern))"
+        }
+
+        return leadingOption == .none ? "" : "\nlet leading: OOUDSListItemLeading = \n \(leadingOptionPatter)"
+    }
+
+    private var trailingTextTypePattern: String {
+        switch trailingTextType {
+        case .label:
+            ".label(Text(\"Label\"))"
+        case .labelMuted:
+            ".labelMuted(Text(\"Label\"))"
+        case .labelStrong:
+            ".labelStrong(Text(\"Label\"))"
+        case .labelAndExtraLabel:
+            ".labelMuted(Text(\"Label\"), Text(\"extra Label\"))"
+        }
+    }
+
+    private var trailingPattern: String {
+        let trailingOptionPattern: String =
+        switch trailingOption {
+        case .none:
+            ""
+        case .text:
+            ".text(\(trailingTextTypePattern))"
+        case .badge:
+            ".badge(OUDSBadge(count: 1, accessibilityLabel: \"\", status: .negative, size: .medium)"
+        case .tag:
+            ".tag(OUDSTag(label: \"Label\", size: .small))"
+        case .icon:
+            ".icon(.info)"
+        case .image:
+            ".image(asset: Image(\"il_placeholder\"))"
+        case .video:
+            ".video(URL(string: \"https://unified-design-system.orange.com/\")!)"
+        case .flag:
+            ".flag(asset: Image(decorative: \"ic_flag_FR_fr\")"
+        case .avatar:
+            ".avatar(\(avatarPattern))"
+        }
+
+        return trailingOption == .none ? "" : "\nlet traling: OOUDSListItemTrailing = \n \(trailingOptionPattern)"
     }
 }
 
