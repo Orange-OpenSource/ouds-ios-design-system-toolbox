@@ -53,12 +53,12 @@ struct BadgeDemo: View {
                 OUDSBadge(count: configurationModel.count,
                           accessibilityLabel: "app_components_badge_hint_a11y".localized(),
                           status: configurationModel.status,
-                          size: configurationModel.illustrationSize)
+                          countSize: configurationModel.countSize)
                     .disabled(!configurationModel.enabled)
             case .icon:
                 OUDSBadge(status: configurationModel.statusWithIcon(from: theme),
                           accessibilityLabel: "app_components_badge_hint_a11y".localized(),
-                          size: configurationModel.illustrationSize)
+                          iconSize: configurationModel.iconSize)
                     .disabled(!configurationModel.enabled)
             }
         }

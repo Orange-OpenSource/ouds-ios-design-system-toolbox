@@ -29,7 +29,11 @@ final class BadgeConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var illustrationSize: OUDSBadge.IllustrationSize {
+    @Published var iconSize: OUDSBadge.IconSize {
+        didSet { updateCode() }
+    }
+
+    @Published var countSize: OUDSBadge.CountSize {
         didSet { updateCode() }
     }
 
@@ -98,7 +102,8 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     override init() {
         enabled = true
         standardSize = .medium
-        illustrationSize = .medium
+        iconSize = .medium
+        countSize = .medium
         status = .neutral
         badgeType = .count
         flipIcon = false
@@ -150,7 +155,15 @@ final class BadgeConfigurationModel: ComponentConfiguration {
     }
 
     private var sizePattern: String {
-        "size: \(badgeType == .standard ? standardSize.technicalDescription : illustrationSize.technicalDescription)"
+        let description = switch badgeType {
+        case .standard:
+            standardSize.technicalDescription
+        case .icon:
+            iconSize.technicalDescription
+        case .count:
+            countSize.technicalDescription
+        }
+        return "size: \(description)"
     }
 
     private var accessibilityLabelValue: String {
@@ -186,10 +199,15 @@ struct BadgeConfigurationView: View {
                                selection: $configurationModel.standardSize,
                                chips: OUDSBadge.StandardSize.chips)
 
-            case .count, .icon:
+            case .count:
                 OUDSChipPicker(title: "app_components_common_size_tech",
-                               selection: $configurationModel.illustrationSize,
-                               chips: OUDSBadge.IllustrationSize.chips)
+                               selection: $configurationModel.countSize,
+                               chips: OUDSBadge.CountSize.chips)
+
+            case .icon:
+                OUDSChipPicker(title: "app_components_common_size_tech",
+                               selection: $configurationModel.iconSize,
+                               chips: OUDSBadge.IconSize.chips)
             }
 
             OUDSChipPicker(title: "app_components_common_status_tech",
@@ -210,8 +228,12 @@ extension OUDSBadge.StandardSize: @retroactive CaseIterable, DesignToolboxEnumRe
     public static let allCases: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
 }
 
-extension OUDSBadge.IllustrationSize: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSBadge.IllustrationSize] = [.medium, .large]
+extension OUDSBadge.IconSize: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSBadge.IconSize] = [.medium, .large]
+}
+
+extension OUDSBadge.CountSize: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSBadge.CountSize] = [.medium, .large]
 }
 
 extension OUDSBadge.Status: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
