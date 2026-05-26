@@ -78,17 +78,18 @@ final class BadgeConfigurationModel: ComponentConfiguration {
 
     // MARK: - Types
 
-    enum BadgeType: String, CaseIterable {
-        case standard = "app_components_badge_standardType_tech"
-        case count = "app_components_badge_countType_tech"
-        case icon = "app_components_badge_iconType_tech"
+    enum BadgeType: DesignToolboxEnumLocalizedRepresentable {
+        case standard, count, icon
 
-        private var chipData: OUDSChipPickerData<Self> {
-            OUDSChipPickerData(tag: self, layout: .text(text: rawValue))
-        }
-
-        static var chips: [OUDSChipPickerData<Self>] {
-            allCases.map(\.chipData)
+        var wordingKey: String {
+            switch self {
+            case .standard:
+                "app_components_badge_standardType_tech"
+            case .count:
+                "app_components_badge_countType_tech"
+            case .icon:
+                "app_components_badge_iconType_tech"
+            }
         }
     }
 
@@ -205,106 +206,14 @@ struct BadgeConfigurationView: View {
     }
 }
 
-extension OUDSBadge.StandardSize: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
+extension OUDSBadge.StandardSize: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
-
-    public var description: String {
-        switch self {
-        case .extraSmall:
-            "Extra Small"
-        case .small:
-            "Small"
-        case .medium:
-            "Medium"
-        case .large:
-            "Large"
-        }
-    }
-
-    public var technicalDescription: String {
-        switch self {
-        case .extraSmall:
-            ".extraSmall"
-        case .small:
-            ".small"
-        case .medium:
-            ".medium"
-        case .large:
-            ".large"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
-extension OUDSBadge.IllustrationSize: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
+extension OUDSBadge.IllustrationSize: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSBadge.IllustrationSize] = [.medium, .large]
-
-    public var description: String {
-        switch self {
-        case .medium:
-            "Medium"
-        case .large:
-            "Large"
-        }
-    }
-
-    public var technicalDescription: String {
-        switch self {
-        case .medium:
-            ".medium"
-        case .large:
-            ".large"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
-extension OUDSBadge.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
+extension OUDSBadge.Status: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
-
-    public var description: String {
-        switch self {
-        case .accent:
-            "Accent"
-        case .info:
-            "Info"
-        case .negative:
-            "Negative"
-        case .neutral:
-            "Neutral"
-        case .positive:
-            "Positive"
-        case .warning:
-            "Warning"
-        }
-    }
-
-    public var technicalDescription: String {
-        ".\(description.lowercased())"
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }

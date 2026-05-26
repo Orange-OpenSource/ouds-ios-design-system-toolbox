@@ -204,25 +204,25 @@ struct TestTextAreaView: View {
 
 // MARK: - Extension of OUDS Text Area Status
 
-extension OUDSTextArea.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
+extension OUDSTextArea.Status: @retroactive CaseIterable, @retroactive Hashable, DesignToolboxEnumLocalizedRepresentable {
 
     public static let allCases: [OUDSTextArea.Status] =
         [.enabled, .error(message: "app_components_textArea_errorDescription_label".localized()), .loading, .readOnly, .disabled]
 
-    public var description: String {
+    public var wordingKey: String {
         switch self {
         case .enabled:
-            String(localized: "app_common_enabled_tech")
+            "app_common_enabled_tech"
         case .error:
-            String(localized: "app_components_common_error_tech")
+            "app_components_common_error_tech"
         case .richError:
-            String(localized: "app_components_common_richError_tech")
+            "app_components_common_richError_tech"
         case .loading:
-            String(localized: "app_components_common_loader_tech")
+            "app_components_common_loader_tech"
         case .readOnly:
-            String(localized: "app_components_common_readOnly_tech")
+            "app_components_common_readOnly_tech"
         case .disabled:
-            String(localized: "app_common_disabled_tech")
+            "app_common_disabled_tech"
         }
     }
 
@@ -233,19 +233,11 @@ extension OUDSTextArea.Status: @retroactive CaseIterable, @retroactive CustomStr
         if case let .error(message) = self {
             return ".error(message: \"\(message)\")"
         } else {
-            return ".\(description.lowercased())"
+            return ".\(wordingKey.localized().lowercased())"
         }
     }
 
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
-
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(description)
+        hasher.combine(wordingKey)
     }
 }

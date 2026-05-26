@@ -32,7 +32,7 @@ final class ChipsPickerUITests: AppTestCase {
         goToComponentsSheet(app)
         tapButton(withWording: "app_components_chip_tech", app)
         tapButton(withWording: "app_components_chip_chipPicker_tech", app)
-        tapButton(withWording: "SingleOrNone", app)
+        tapButton(withWording: "Single or none", app)
 
         // WHEN, THEN
 

@@ -222,12 +222,10 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
 
 // MARK: - Leading Trailing Type
 
-enum LeadingTrailingType: CaseIterable, CustomStringConvertible {
-    case none
-    case label
-    case icon
+enum LeadingTrailingType: DesignToolboxEnumLocalizedRepresentable {
+    case none, label, icon
 
-    var description: String {
+    var wordingKey: String {
         switch self {
         case .none:
             "app_components_common_none_tech"
@@ -237,22 +235,12 @@ enum LeadingTrailingType: CaseIterable, CustomStringConvertible {
             "app_components_common_icon_tech"
         }
     }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
-enum BarItemBadgeType: CaseIterable {
-    case none
-    case standard
-    case number
+enum BarItemBadgeType: DesignToolboxEnumLocalizedRepresentable {
+    case none, standard, number
 
-    var description: String {
+    var wordingKey: String {
         switch self {
         case .none:
             "app_components_common_none_tech"
@@ -261,14 +249,6 @@ enum BarItemBadgeType: CaseIterable {
         case .number:
             "app_components_badge_countType_tech"
         }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
     }
 
     var barItemBadgeType: OUDSToolBarItem.BadgeType? {
@@ -285,10 +265,10 @@ enum BarItemBadgeType: CaseIterable {
 
 // MARK: - Extension of OUDSToolBarItem Action Style
 
-extension OUDSToolBarItem.ActionStyle: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+extension OUDSToolBarItem.ActionStyle: @retroactive CaseIterable, DesignToolboxEnumLocalizedRepresentable {
     public static let allCases: [OUDSToolBarItem.ActionStyle] = [.default, .prominent, .tinted]
 
-    public var description: String {
+    var wordingKey: String {
         switch self {
         case .default:
             "app_components_toolbar_item_actionType_default_tech"
@@ -297,14 +277,6 @@ extension OUDSToolBarItem.ActionStyle: @retroactive CaseIterable, @retroactive C
         case .tinted:
             "app_components_toolbar_item_actionType_tinted_tech"
         }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
     }
 }
 

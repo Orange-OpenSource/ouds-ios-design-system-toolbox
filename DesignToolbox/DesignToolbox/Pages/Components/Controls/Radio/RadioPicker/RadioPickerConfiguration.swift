@@ -170,7 +170,7 @@ struct RadioPickerConfiguration: View {
 
 // MARK: - Extension of OUDSRadioPickerPlacement
 
-extension OUDSRadioPickerPlacement: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Equatable, @retroactive Hashable {
+extension OUDSRadioPickerPlacement: @retroactive Equatable, @retroactive CaseIterable, @retroactive Hashable, DesignToolboxEnumLocalizedRepresentable {
 
     // MARK: Case Iterable
 
@@ -179,12 +179,12 @@ extension OUDSRadioPickerPlacement: @retroactive CaseIterable, @retroactive Cust
     }
 
     var id: String {
-        description
+        wordingKey
     }
 
     // MARK: Custom String Convertible
 
-    public var description: String {
+    var wordingKey: String {
         switch self {
         case let .horizontal(showIndicator) where showIndicator == true:
             "Horizontal with indicator"
@@ -207,15 +207,5 @@ extension OUDSRadioPickerPlacement: @retroactive CaseIterable, @retroactive Cust
 
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
-    }
-
-    // MARK: Chips data
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
     }
 }

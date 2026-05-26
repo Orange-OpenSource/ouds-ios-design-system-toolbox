@@ -14,40 +14,11 @@
 import OUDSSwiftUI
 import SwiftUI
 
-enum AlertStatus: String, CaseIterable, CustomStringConvertible {
+enum AlertStatus: String, DesignToolboxEnumRepresentable {
     case neutral
     case accent
     case positive
     case info
     case warning
     case negative
-
-    var description: String {
-        switch self {
-        case .neutral:
-            "Neutral"
-        case .accent:
-            "Accent"
-        case .positive:
-            "Positive"
-        case .info:
-            "Info"
-        case .warning:
-            "Warning"
-        case .negative:
-            "Negative"
-        }
-    }
-
-    var technicalDescription: String {
-        ".\(rawValue)"
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
