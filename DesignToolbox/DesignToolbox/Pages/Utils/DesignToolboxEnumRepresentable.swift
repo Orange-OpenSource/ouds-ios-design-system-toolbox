@@ -14,14 +14,15 @@
 import OUDSSwiftUI
 import SwiftUI
 
-/// Define the option of configuration as enum representable (i.e. formated) to be used
-/// in a ``OUDSChipPicker``. By default the ``OUDSChipPickerData`` is built with
+// MARK: - Design Toolbox Enum Representable
+
+/// Defines the option of configuration as enum representable (i.e. formated) to be used
+/// in a `OUDSChipPicker`. By default the `OUDSChipPickerData` is built with
 /// a formatted string based on the enum description.
 ///
 /// The technical name is based on the desciption of the enum prefixed by a dot.
-///
 protocol DesignToolboxEnumRepresentable: CaseIterable, Hashable {
-    // The string formatted
+    /// The formatted string
     var formattedName: String { get }
 
     /// The technical description
@@ -30,7 +31,7 @@ protocol DesignToolboxEnumRepresentable: CaseIterable, Hashable {
     /// The chip data used by the `OUDSChipPicker`
     var chipData: OUDSChipPickerData<Self> { get }
 
-    /// Set of chips used by ``OUDSChipPicker``
+    /// Set of chips used by `OUDSChipPicker`
     static var chips: [OUDSChipPickerData<Self>] { get }
 }
 
@@ -42,8 +43,7 @@ extension DesignToolboxEnumRepresentable {
         let withSpaces = name.replacingOccurrences(
             of: "([a-z])([A-Z])",
             with: "$1 $2",
-            options: .regularExpression
-        )
+            options: .regularExpression)
         return withSpaces.prefix(1).uppercased() + withSpaces.dropFirst().lowercased()
     }
 
@@ -54,7 +54,7 @@ extension DesignToolboxEnumRepresentable {
 
     /// The data used by ``OUDSChipPickerData`` based on formatted representation
     var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: self.formattedName))
+        OUDSChipPickerData(tag: self, layout: .text(text: formattedName))
     }
 
     /// The data used by ``OUDSChipPicker`` based on formatted representation
@@ -63,15 +63,18 @@ extension DesignToolboxEnumRepresentable {
     }
 }
 
-/// Define the option of configuration as enum representable based on Localizable String Keys
+// MARK: - Design Toolbox Enum Localized Representable
+
+/// Define the option of configuration as enum representable based on Localized String Keys
 protocol DesignToolboxEnumLocalizedRepresentable: DesignToolboxEnumRepresentable {
     var wordingKey: String { get }
 }
 
 extension DesignToolboxEnumLocalizedRepresentable {
-    /// Alternative implementation of the ``OUDSChipPickerData`` based on
+
+    /// Alternative implementation of the `OUDSChipPickerData` based on
     /// description that represents a wording key.
     var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: self.wordingKey.localized()))
+        OUDSChipPickerData(tag: self, layout: .text(text: wordingKey.localized()))
     }
 }
