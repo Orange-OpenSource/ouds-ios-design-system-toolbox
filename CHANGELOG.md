@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] `fastlane` gem from v2.233.1 to v2.235.0
 - [DesignToolbox] `actions/dependency-review-action` action to v5.0.0 for `dependency-review` workflow
 - [DesignToolbox] `ruby/setup-ruby` action from v1.306.0 to v1.310.0 for `build-and-test` workflow
 - [Library] `text area` component (Orange-OpenSource/ouds-ios#1448)
