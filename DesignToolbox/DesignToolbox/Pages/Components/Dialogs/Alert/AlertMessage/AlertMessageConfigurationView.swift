@@ -192,32 +192,6 @@ struct AlertMessageConfigurationView: View {
     }
 }
 
-extension OUDSAlertMessage.Link.Position: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
+extension OUDSAlertMessage.Link.Position: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSAlertMessage.Link.Position] = [.bottom, .topTrailing]
-    public var description: String {
-        switch self {
-        case .bottom:
-            "Bottom"
-        case .topTrailing:
-            "Top Trailing"
-        }
-    }
-
-    var technicalDescription: String {
-        switch self {
-        case .bottom:
-            ".bottom"
-        case .topTrailing:
-            ".topTrailing"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }

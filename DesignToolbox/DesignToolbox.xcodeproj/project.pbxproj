@@ -1098,6 +1098,10 @@
 		FC6AFD452F850344004615AF /* ToolBarBottomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD3A2F850344004615AF /* ToolBarBottomPage.swift */; };
 		FC6AFD462F850344004615AF /* ToolBarBottomConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD382F850344004615AF /* ToolBarBottomConfigurationView.swift */; };
 		FC6AFD472F850344004615AF /* ToolBarBottomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD392F850344004615AF /* ToolBarBottomElement.swift */; };
+		FC6D5C792FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D5C782FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift */; };
+		FC6D5C7A2FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D5C782FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift */; };
+		FC6D5C7B2FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D5C782FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift */; };
+		FC6D5C7C2FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D5C782FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift */; };
 		FC70E6722F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70E6712F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift */; };
 		FC736E8C2F3D28810019FC13 /* AlertMessageSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E8B2F3D28810019FC13 /* AlertMessageSnapshotsTestsTestCase.swift */; };
 		FC736E912F3E2DBD0019FC13 /* SoshTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E902F3E2DBD0019FC13 /* SoshTheme+AlertMessageSnapshotsTests.swift */; };
@@ -1618,6 +1622,7 @@
 		FC6AFD382F850344004615AF /* ToolBarBottomConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarBottomConfigurationView.swift; sourceTree = "<group>"; };
 		FC6AFD392F850344004615AF /* ToolBarBottomElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarBottomElement.swift; sourceTree = "<group>"; };
 		FC6AFD3A2F850344004615AF /* ToolBarBottomPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarBottomPage.swift; sourceTree = "<group>"; };
+		FC6D5C782FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxEnumRepresentable.swift; sourceTree = "<group>"; };
 		FC70E6712F35EC59009F9155 /* OrangeCompactTheme+PasswordInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+PasswordInputSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC736E8B2F3D28810019FC13 /* AlertMessageSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageSnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
 		FC736E902F3E2DBD0019FC13 /* SoshTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
@@ -1773,6 +1778,7 @@
 			children = (
 				0735430F2CA15440001187EA /* Cards */,
 				0708222D2CFF617000570EC7 /* Elements */,
+				FC6D5C782FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift */,
 				5152DA1C2DE0BD3B0078B9F1 /* DesignToolbox+EnrichedTexts.swift */,
 				07F7533A2CC785620007450D /* DesignToolboxSectionHeaderStyle.swift */,
 				0762276B2DA93D62009C3632 /* DesignToolboxColorPicker.swift */,
@@ -4357,6 +4363,7 @@
 				07304A6B2D429F9F009320BA /* LinkElement.swift in Sources */,
 				51ABCD282E183226006CD6C0 /* SoshTheme+TokensFontSnapshotsTests.swift in Sources */,
 				5180FE712DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */,
+				FC6D5C7A2FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift in Sources */,
 				51A905FD2E8427C6003F3E0E /* View+NavigationBar.swift in Sources */,
 				5180FE722DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */,
 				079B4A132E49BFA20039FC26 /* TagSnapshotsTestCase.swift in Sources */,
@@ -4564,6 +4571,7 @@
 				0765B4A62CC15C9D00E69359 /* NamedColor.swift in Sources */,
 				07CC9AF42DB0F7DD001BC929 /* SwitchElement.swift in Sources */,
 				07CC9AF52DB0F7DD001BC929 /* SwitchElements.swift in Sources */,
+				FC6D5C7B2FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift in Sources */,
 				07CC9AF62DB0F7DD001BC929 /* SwitchItemElement.swift in Sources */,
 				07CC9AF72DB0F7DD001BC929 /* SwitchPage.swift in Sources */,
 				95CE054C2EC33D6A00ACE41C /* NamedSize.swift in Sources */,
@@ -4825,6 +4833,7 @@
 				959390692EC24D22000DBE95 /* NamedSpace.swift in Sources */,
 				9589F0652EB7D67B00134487 /* BadgeConfigurationView.swift in Sources */,
 				9589F0662EB7D67B00134487 /* CardIllustration.swift in Sources */,
+				FC6D5C792FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift in Sources */,
 				9589F0672EB7D67B00134487 /* ElevationTokenElement.swift in Sources */,
 				9589F0682EB7D67B00134487 /* NamedColor+Chart.swift in Sources */,
 				9589F0692EB7D67B00134487 /* ElevationTokenPage.swift in Sources */,
@@ -5100,6 +5109,7 @@
 				9589F1732EB7D67E00134487 /* NamedColor.swift in Sources */,
 				9589F1742EB7D67E00134487 /* SwitchElement.swift in Sources */,
 				9589F1752EB7D67E00134487 /* SwitchElements.swift in Sources */,
+				FC6D5C7C2FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift in Sources */,
 				9589F1762EB7D67E00134487 /* SwitchItemElement.swift in Sources */,
 				9589F1772EB7D67E00134487 /* SwitchPage.swift in Sources */,
 				95CE05492EC33D6A00ACE41C /* NamedSize.swift in Sources */,

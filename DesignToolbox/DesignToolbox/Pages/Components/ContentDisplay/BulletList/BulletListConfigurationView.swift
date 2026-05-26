@@ -221,10 +221,10 @@ struct BulletListConfigurationView: View {
 
 // MARK: Bullet List Level Count
 
-enum BulletListLevelCount: CaseIterable, CustomStringConvertible {
+enum BulletListLevelCount: DesignToolboxEnumLocalizedRepresentable {
     case one, two, three
 
-    var description: String {
+    var wordingKey: String {
         switch self {
         case .one:
             "app_components_bulletList_oneLevel_label"
@@ -234,94 +234,27 @@ enum BulletListLevelCount: CaseIterable, CustomStringConvertible {
             "app_components_bulletList_threeLevels_label"
         }
     }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
 // MARK: Bullet List Type
 
-enum BulletListType: CaseIterable, CustomStringConvertible {
+enum BulletListType: DesignToolboxEnumRepresentable {
     case bare
     case ordered
     case unordered
-
-    // NOTE: Not localized because it is a technical name
-    var description: String {
-        switch self {
-        case .bare:
-            "Bare"
-        case .ordered:
-            "Ordered"
-        case .unordered:
-            "Unordered"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
 // MARK: Bullet List Text Style extension
 
 typealias BulletListTextStyle = OUDSBulletList.TextStyle
-extension OUDSBulletList.TextStyle: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
+extension OUDSBulletList.TextStyle: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSBulletList.TextStyle] = [.bodyLarge, .bodyMedium]
-
-    // NOTE: Not localized because it is a technical name
-    public var description: String {
-        switch self {
-        case .bodyLarge:
-            "Body Large"
-        case .bodyMedium:
-            "Body Medium"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
 // MARK: - Bullet List Unordered Icon
 
-enum BulletListUnorderedAsset: CaseIterable, CustomStringConvertible {
+enum BulletListUnorderedAsset: DesignToolboxEnumRepresentable {
     case bullet
     case tick
     case icon
-
-    // NOTE: Not localized because it is a technical name
-    var description: String {
-        switch self {
-        case .bullet:
-            "Bullet"
-        case .tick:
-            "Tick"
-        case .icon:
-            "Icon"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }

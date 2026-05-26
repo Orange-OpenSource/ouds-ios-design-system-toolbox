@@ -176,41 +176,20 @@ struct PinCodeInputConfigurationView: View {
 
 // MARK: - extension of OUDS Pin Code Input Length
 
-extension OUDSPinCodeInput.Length: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+extension OUDSPinCodeInput.Length: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
 
     nonisolated(unsafe) public static var allCases: [OUDSPinCodeInput.Length] =
         [.four, .six, .eight]
-
-    public var description: String {
-        switch self {
-        case .four:
-            "four"
-        case .six:
-            "six"
-        case .eight:
-            "eight"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
 // MARK: - Pin Code Input Status Kind
 
 /// A simple enum representing the kind of status for the pin code input picker,
 /// decoupled from the associated message in `OUDSPinCodeInput.Status`.
-enum PinCodeInputStatusKind: CaseIterable, CustomStringConvertible, Hashable {
-    case enabled
-    case error
-    case richError
+enum PinCodeInputStatusKind: DesignToolboxEnumLocalizedRepresentable {
+    case enabled, error, richError
 
-    var description: String {
+    var wordingKey: String {
         switch self {
         case .enabled:
             "app_common_enabled_tech"
@@ -219,13 +198,5 @@ enum PinCodeInputStatusKind: CaseIterable, CustomStringConvertible, Hashable {
         case .richError:
             "app_components_common_richError_tech"
         }
-    }
-
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
     }
 }
