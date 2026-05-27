@@ -14,18 +14,18 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct BadgeElement: DesignToolboxElement {
+struct BadgeStandardElement: DesignToolboxElement {
     let name: String
     let illustration: AnyView
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_badge_tech".localized()
-        illustration = AnyView(OUDSBadge(count: 1, accessibilityLabel: "", status: .negative, countSize: .medium))
+        name = "app_components_badge_standard_tech".localized()
+        illustration = AnyView(BadgeIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            description: "app_components_badge_description_text",
+            description: "app_components_badge_standard_description_text",
             version: OUDSVersions.componentBadgeVersion,
-            demoScreen: AnyView(BadgePage())))
+            demoScreen: AnyView(BadgeStandardPage())))
     }
 }
