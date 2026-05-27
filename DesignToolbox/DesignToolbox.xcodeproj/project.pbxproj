@@ -6252,7 +6252,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1439-for-component-badge-icon-update-to-v13";
 				kind = branch;
 			};
 		};

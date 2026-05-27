@@ -66,7 +66,7 @@ enum AllElements {
         #else
         var elements: [DesignToolboxElement] = [
             AlertElements(),
-            BadgeElement(),
+            BadgeElements(),
             BulletListElement(),
             ButtonElement(),
             CheckboxElements(),
