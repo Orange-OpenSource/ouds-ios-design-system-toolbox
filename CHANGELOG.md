@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] `ruby/setup-ruby` action from v1.306.0 to v1.310.0 for `build-and-test` workflow
 - [Library] `text area` component (Orange-OpenSource/ouds-ios#1448)
 - [Library] `text input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1446)
 - [Library] `password input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1443)
