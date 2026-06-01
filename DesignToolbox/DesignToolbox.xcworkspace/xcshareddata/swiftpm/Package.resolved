@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1441-for-filter-chip-suggestion-chip-filter-chip-expand-update-to-v14",
-        "revision" : "438af1be5c34a14a08cbc803c1aa4b59d01dcdff"
+        "branch" : "develop",
+        "revision" : "30b5a80b92ad4a2c782473b3300fce975beec2d9"
       }
     },
     {
