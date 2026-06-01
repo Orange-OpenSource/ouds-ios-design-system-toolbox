@@ -56,25 +56,7 @@ struct ListItemNavigationConfiguration: View {
     }
 }
 
-extension OUDSListItemNavigation.AffordanceType: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+extension OUDSListItemNavigation.AffordanceType: @retroactive CaseIterable {}
+extension OUDSListItemNavigation.AffordanceType: DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSListItemNavigation.AffordanceType] = [.next, .previous, .external]
-
-    public var description: String {
-        switch self {
-        case .next:
-            "Next"
-        case .previous:
-            "Previous"
-        case .external:
-            "External"
-        }
-    }
-
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }

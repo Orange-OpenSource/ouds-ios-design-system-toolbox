@@ -376,7 +376,7 @@ class ListItemConfigurationModel: ComponentConfiguration {
                                hasBackground: \(hasBackground))
             """
         case .card:
-            ".oudsListItemStyle(style: \(listStyle))"
+            ".oudsListItemStyle(style: .\(listStyle))"
         }
     }
 
@@ -389,13 +389,12 @@ class ListItemConfigurationModel: ComponentConfiguration {
     }
 
     private var sizeModifierPattern: String {
-        itemSize == .standard ? "" : "\n.oudsListItemSize(.\(String(describing: itemSize)))"
+        itemSize == .standard ? "" : "\n.oudsListItemSize(\(itemSize.technicalDescription))"
     }
 
 
     private var containersAlignmentPattern: String {
-        // TODO: technicalName
-        "\n.oudsListItemContainerAlignment(.\(containersAlignment))"
+        "\n.oudsListItemContainerAlignment(\(containersAlignment.technicalDescription))"
     }
 
     private var iconPattern: String {
@@ -413,31 +412,12 @@ class ListItemConfigurationModel: ComponentConfiguration {
                 ".positive"
             }
 
-            // TODO: .technicalDecription
-            let sizePattern: String = iconSize.description
+            let sizePattern: String = iconSize.technicalDescription
             return ".init(type: \(typePattern), size: \(sizePattern))"
     }
 
     private var avatarPattern: String {
-        let typePattern = switch avatarType {
-        case .icon:
-            ".icon"
-        case .image:
-            ".image(asset: Image(decorative: \"ic_heart\"))"
-        case .initials:
-            ".initials(\"MP\")"
-        }
-
-        let sizePattern = switch avatarSize {
-        case .medium:
-            "medium"
-        case .large:
-            "large"
-        case .extraLarge:
-            "extraLarge"
-        }
-
-        return ".init(type: \(typePattern), size: \(sizePattern))"
+        ".init(type: \(avatarType.technicalDescription), size: \(avatarSize.technicalDescription))"
     }
 
     private var leadingPattern: String {
@@ -500,129 +480,28 @@ class ListItemConfigurationModel: ComponentConfiguration {
     }
 }
 
-extension OUDSListItemContainersAlignment: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+extension OUDSListItemContainersAlignment: @retroactive CaseIterable {}
+extension OUDSListItemContainersAlignment: DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSListItemContainersAlignment] = [.center, .top]
-
-    public var description: String {
-        switch self {
-        case .center:
-            "Center"
-        case .top:
-            "Top"
-        }
-    }
-
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
-extension OUDSListItemSize: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
+extension OUDSListItemSize: @retroactive CaseIterable {}
+extension OUDSListItemSize: DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSListItemSize] = [.standard, .small]
-
-    public var description: String {
-        switch self {
-        case .standard:
-            return "Standard"
-        case .small:
-            return "Small"
-        }
-    }
-
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
-enum Leading: CaseIterable, CustomStringConvertible {
-    case none
-    case icon
-    case image
-    case video
-    case flag
-    case avatar
-
-    var description: String {
-        switch self {
-        case .none:
-            "None"
-        case .icon:
-            "Icon"
-        case .image:
-            "Image"
-        case .video:
-            "Video"
-        case .flag:
-            "Flag"
-        case .avatar:
-            "Avatar"
-        }
-    }
-
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
+enum Leading: DesignToolboxEnumRepresentable {
+    case none, icon, image, video, flag, avatar
 }
 
-enum Trailing: CaseIterable, CustomStringConvertible {
-    case none
-    case text
-    case badge
-    case tag
-    case icon
-    case image
-    case video
-    case flag
-    case avatar
-
-    var description: String {
-        switch self {
-        case .none:
-            "None"
-        case .text:
-            "Text"
-        case .badge:
-            "Badge"
-        case .tag:
-            "Tag"
-        case .icon:
-            "Icon"
-        case .image:
-            "Image"
-        case .video:
-            "Video"
-        case .flag:
-            "Flag"
-        case .avatar:
-            "Avatar"
-        }
-    }
-
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
+enum Trailing: DesignToolboxEnumRepresentable {
+    case none, text, badge, tag, icon, image, video, flag, avatar
 }
 
 extension OUDSListItemTrailing.TextType: @retroactive Equatable {}
 extension OUDSListItemTrailing.TextType: @retroactive Hashable {}
-extension OUDSListItemTrailing.TextType: @retroactive CustomStringConvertible, @retroactive CaseIterable {
+extension OUDSListItemTrailing.TextType: @retroactive CaseIterable {}
+extension OUDSListItemTrailing.TextType: DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSListItemTrailing.TextType] =
         [
             .label(Text("Label")),
@@ -631,43 +510,23 @@ extension OUDSListItemTrailing.TextType: @retroactive CustomStringConvertible, @
             .labelAndExtraLabel(Text("Label"), Text("Extra Label"))
         ]
 
-    public var description: String {
-        switch self {
-        case .label:
-            return "Label"
-        case .labelStrong:
-            return "Label Strong"
-        case .labelMuted:
-            return "Label Muted"
-        case .labelAndExtraLabel:
-            return "Label and Extra Label"
-        }
-    }
-
     // MARK: Equatable
 
     public static func == (lhs: OUDSListItemTrailing.TextType, rhs: OUDSListItemTrailing.TextType) -> Bool {
-        lhs.description == rhs.description
+        lhs.formattedName == rhs.formattedName
     }
 
     // MARK: - Hashable
 
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(description)
-    }
-
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
+        hasher.combine(formattedName)
     }
 }
 
 extension OUDSListItemAvatar.AvatarType: @retroactive Equatable {}
 extension OUDSListItemAvatar.AvatarType: @retroactive Hashable {}
-extension OUDSListItemAvatar.AvatarType: @retroactive CustomStringConvertible, @retroactive CaseIterable {
+extension OUDSListItemAvatar.AvatarType: @retroactive CaseIterable {}
+extension OUDSListItemAvatar.AvatarType: DesignToolboxEnumRepresentable {
 
     public static let allCases: [OUDSListItemAvatar.AvatarType] =
         [
@@ -676,109 +535,51 @@ extension OUDSListItemAvatar.AvatarType: @retroactive CustomStringConvertible, @
             .initials("MT")
         ]
 
-    public var description: String {
+    var formattedName: String {
         switch self {
-        case .icon:
-            "Icon"
         case .image:
             "Image"
         case .initials:
             "Initials"
+        case .icon:
+            "Icon"
+        }
+    }
+
+    var technicalDescription: String {
+        switch self {
+        case .icon:
+            ".icon"
+        case .image(let asset):
+            ".image(asset: \(String(describing: asset)))"
+        case .initials(let initials):
+            ".initials(\"\(initials)\")"
         }
     }
 
     // MARK: Equatable
 
     public static func == (lhs: OUDSListItemAvatar.AvatarType, rhs: OUDSListItemAvatar.AvatarType) -> Bool {
-        lhs.description == rhs.description
+        lhs.formattedName == rhs.formattedName
     }
 
     // MARK: - Hashable
 
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(description)
-    }
-
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
+        hasher.combine(formattedName)
     }
 }
 
-extension OUDSListItemAvatar.Size: @retroactive CustomStringConvertible, @retroactive CaseIterable {
-
+extension OUDSListItemAvatar.Size: @retroactive CaseIterable {}
+extension OUDSListItemAvatar.Size: DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSListItemAvatar.Size] = [ .medium, .large, .extraLarge ]
-
-    public var description: String {
-        switch self {
-        case .medium:
-            "Medium"
-        case .large:
-            "Large"
-        case .extraLarge:
-            "Extra Large"
-        }
-    }
-
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
-enum IconType: CustomStringConvertible, CaseIterable {
-
+enum IconType: DesignToolboxEnumRepresentable {
     case neutral, info, warning, negative, positive
-
-    public var description: String {
-        switch self {
-        case .neutral:
-            "Neutral"
-        case .info:
-            "Info"
-        case .warning:
-            "Warning"
-        case .negative:
-            "Negative"
-        case .positive:
-            "Positive"
-        }
-    }
-
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
 
-extension OUDSLIstItemIcon.Size: @retroactive CustomStringConvertible, @retroactive CaseIterable {
+extension OUDSLIstItemIcon.Size: @retroactive CaseIterable {}
+extension OUDSLIstItemIcon.Size: DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSLIstItemIcon.Size] = [.small, .medium, .large]
-
-    public var description: String {
-        switch self {
-        case .small:
-            "Small"
-        case .medium:
-            "Medium"
-        case .large:
-            "Large"
-        }
-    }
-
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }
