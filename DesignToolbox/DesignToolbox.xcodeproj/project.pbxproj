@@ -6136,7 +6136,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1443-for-password-input-component-update-to-v13";
+				branch = develop;
 				kind = branch;
 			};
 		};
