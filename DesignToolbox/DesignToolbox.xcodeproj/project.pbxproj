@@ -6136,7 +6136,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1450-for-input-tag-component-update-to-v12";
+				branch = develop;
 				kind = branch;
 			};
 		};
