@@ -98,6 +98,7 @@ enum AllElements {
             ColoredSurfaceElement(),
             DividerElements(),
             LinkElement(),
+            ListItemElements(),
             PasswordInputElement(),
             ProgressIndicatorElements(),
             RadioElements(),
