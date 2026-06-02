@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] `checkout` action from v6.0.2 to v6.0.3 in workflows
 - [DesignToolbox] `gitleaks/gitleaks-action` action to v3.0.0 for `gitleaks` workflow
 - [DesignToolbox] `json` gem from v2.19.5 to v2.19.8
 - [DesignToolbox] `Ruby` version from v4.0.3 to v4.0.5 for `build-and-test` workflow
