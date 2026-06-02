@@ -524,6 +524,7 @@
 		955A40DC2EC7894C001D7F84 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
+		956B943A2FCF033A00471ADE /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 956B94392FCF033A00471ADE /* OUDSSwiftUI */; };
 		957D5EE12F2BB27D0055128A /* BulletListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE02F2BB2740055128A /* BulletListsView.swift */; };
 		957D5EE22F2BB27D0055128A /* BulletListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE02F2BB2740055128A /* BulletListsView.swift */; };
 		957D5EE52F2BB29A0055128A /* ContentDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE42F2BB2940055128A /* ContentDisplayView.swift */; };
@@ -1683,6 +1684,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				956B943A2FCF033A00471ADE /* OUDSSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6156,6 +6158,10 @@
 		950EA7052EBE3D5D0009414A /* OUDSSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 950EA7062EBE3D5D0009414A /* XCRemoteSwiftPackageReference "ouds-ios" */;
+			productName = OUDSSwiftUI;
+		};
+		956B94392FCF033A00471ADE /* OUDSSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = OUDSSwiftUI;
 		};
 		9589F0112EB7D67B00134487 /* DeclarationAccessibility */ = {
