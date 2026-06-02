@@ -7513,13 +7513,6 @@
         }
       },
       "shouldTranslate" : false
-    },
-    "Orange" : {
-      "shouldTranslate" : false
-    },
-    "Orange Compact" : {
-      "extractionState" : "manual",
-      "shouldTranslate" : false
     }
   },
   "version" : "1.1"
