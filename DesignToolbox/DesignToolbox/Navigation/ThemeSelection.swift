@@ -24,10 +24,10 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
     /// The text displayed in submenus of the theme selector
     var description: String {
         if self is SoshTheme {
-            return "Sosh"
+            return SoshTheme.name
         }
         if self is WireframeTheme {
-            return "Wireframe"
+            return WireframeTheme.name
         }
         if tuning == Tuning.OrangeFrance {
             return "Orange France"
@@ -47,16 +47,16 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
     public var id: String {
         var constructedId = String(describing: Self.self)
         if self is OrangeTheme {
-            constructedId = "Orange"
+            constructedId = OrangeTheme.name
         }
         if self is OrangeCompactTheme {
-            constructedId = "Orange Compact"
+            constructedId = OrangeCompactTheme.name
         }
         if self is SoshTheme {
-            constructedId = "Sosh"
+            constructedId = SoshTheme.name
         }
         if self is WireframeTheme {
-            constructedId = "Wireframe"
+            constructedId = WireframeTheme.name
         }
         if tuning == Tuning.OrangeFrance {
             constructedId += constructedId + " (Orange France)"
@@ -91,7 +91,7 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
     var hotSwitchWarning: HotSwitchWarning
 
-    @UserDefaultsWrapper(key: "com.orange.ouds.demoapp.theme", defaultValue: "Orange")
+    @UserDefaultsWrapper(key: "com.orange.ouds.demoapp.theme", defaultValue: OrangeTheme.name)
     private static var currentTheme
 
     @Published var currentTheme: OUDSTheme {
@@ -181,7 +181,7 @@ struct ThemeSelectionButton: View {
     var body: some View {
         Menu {
             // Orange theme and tunings
-            Menu("Orange") {
+            Menu(OrangeTheme.name) {
                 Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
                     ForEach(themeProvider.orangeThemes, id: \.id) { theme in
                         Text(theme.description).tag(theme)
@@ -191,7 +191,7 @@ struct ThemeSelectionButton: View {
             }
 
             // Orange Compact theme and tunings
-            Menu("Orange Compact") {
+            Menu(OrangeCompactTheme.name) {
                 Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
                     ForEach(themeProvider.orangeCompactThemes, id: \.id) { theme in
                         Text(theme.description).tag(theme)
