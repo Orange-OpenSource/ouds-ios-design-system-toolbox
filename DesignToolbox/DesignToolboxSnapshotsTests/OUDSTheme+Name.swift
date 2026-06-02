@@ -18,16 +18,16 @@ extension OUDSTheme {
     /// The name of the theme used in snapshots files names
     var name: String {
         if self is OrangeTheme {
-            return "Orange"
+            return OrangeTheme.name
         }
         if self is OrangeCompactTheme {
-            return "Orange Compact"
+            return OrangeCompactTheme.name
         }
         if self is SoshTheme {
-            return "Sosh"
+            return SoshTheme.name
         }
         if self is WireframeTheme {
-            return "Wireframe"
+            return WireframeTheme.name
         }
         return String(describing: Self.self)
     }
