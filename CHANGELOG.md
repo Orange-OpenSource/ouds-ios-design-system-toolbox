@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] `text area` component (Orange-OpenSource/ouds-ios#1448)
 - [Library] `text input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1446)
 - [Library] `password input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1443)
 - [Library] `PIN code input` component with new typography (Orange-OpenSource/ouds-ios#1444)
