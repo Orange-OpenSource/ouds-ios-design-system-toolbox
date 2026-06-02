@@ -6792,7 +6792,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = releases/3.x/3.0.0;
+				branch = "265-in-library-add-list-item-component";
 				kind = branch;
 			};
 		};
