@@ -32,7 +32,7 @@ gem 'abbrev', '0.1.2'
 gem 'fastlane', '2.235.0'
 gem 'fastlane-plugin-changelog', '0.16.0'
 gem 'fastlane-plugin-mattermost', '1.3.2'
-gem 'json', '2.19.5'
+gem 'json', '2.19.8'
 gem 'net-http', '0.9.1'
 gem 'xcode-install', '2.8.1'
 
