@@ -6138,8 +6138,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				kind = exactVersion;
-				version = 2.1.0;
+				branch = "1528-for-text-area-component-add-flag-to-enable-or-disable-the-component-expansion";
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
