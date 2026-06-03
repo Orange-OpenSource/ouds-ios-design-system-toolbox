@@ -4,10 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.0.0...develop)
+## [2.1.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.0.0...2.1.0) - 2026-06-03
 
 ### Changed
 
+- [DesignToolbox] Accessibility statement library v2.3.0
 - [DesignToolbox] `checkout` action from v6.0.2 to v6.0.3 in workflows
 - [DesignToolbox] `gitleaks/gitleaks-action` action to v3.0.0 for `gitleaks` workflow
 - [DesignToolbox] `json` gem from v2.19.5 to v2.19.8
