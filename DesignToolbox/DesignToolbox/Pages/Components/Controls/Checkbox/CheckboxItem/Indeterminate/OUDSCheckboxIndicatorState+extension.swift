@@ -15,27 +15,6 @@ import OUDSSwiftUI
 
 // MARK: - OUDS Checkbox Indicator State extension
 
-extension OUDSCheckboxIndicatorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
+extension OUDSCheckboxIndicatorState: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     nonisolated(unsafe) public static var allCases: [OUDSCheckboxIndicatorState] = [.selected, .unselected, .indeterminate]
-
-    // No l10n, tehchnical names
-    public var description: String {
-        switch self {
-        case .selected:
-            "Selected"
-        case .unselected:
-            "Unselected"
-        case .indeterminate:
-            "Indeterminate"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }

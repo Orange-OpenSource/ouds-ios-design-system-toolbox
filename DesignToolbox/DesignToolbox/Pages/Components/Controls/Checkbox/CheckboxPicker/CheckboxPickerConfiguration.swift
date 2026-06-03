@@ -160,7 +160,7 @@ struct CheckboxPickerConfiguration: View {
 
 // MARK: - Extension of OUDS Checkbox Picker Placement
 
-extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Equatable, @retroactive Hashable {
+extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive Equatable, @retroactive Hashable, DesignToolboxEnumLocalizedRepresentable {
 
     // MARK: Case Iterable
 
@@ -176,12 +176,12 @@ extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive C
     }
 
     var id: String {
-        description
+        wordingKey
     }
 
     // MARK: Custom String Convertible
 
-    public var description: String {
+    var wordingKey: String {
         switch self {
         case let .horizontal(showIndicator) where showIndicator == true:
             "Horizontal with indicator"
@@ -206,14 +206,5 @@ extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive C
 
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
-    }
-
-    // MARK: - Chips description
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
     }
 }

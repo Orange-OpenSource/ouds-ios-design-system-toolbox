@@ -17,38 +17,24 @@ import SwiftUI
 // MARK: - Text Input Status
 
 /// Describes the status available in the configuration panel, to map with `OUDSTextInput.Status`
-enum TextInputStatus: CaseIterable, CustomStringConvertible, Hashable {
+enum TextInputStatus: DesignToolboxEnumLocalizedRepresentable {
+    case enabled, error, richError, loading, readOnly, disabled
 
-    case enabled
-    case error
-    case richError
-    case loading
-    case readOnly
-    case disabled
-
-    var description: String {
+    var wordingKey: String {
         switch self {
         case .enabled:
-            String(localized: "app_common_enabled_tech")
+            "app_common_enabled_tech"
         case .error:
-            String(localized: "app_components_common_error_tech")
+            "app_components_common_error_tech"
         case .richError:
-            String(localized: "app_components_common_richError_tech")
+            "app_components_common_richError_tech"
         case .loading:
-            String(localized: "app_components_common_loader_tech")
+            "app_components_common_loader_tech"
         case .readOnly:
-            String(localized: "app_components_common_readOnly_tech")
+            "app_components_common_readOnly_tech"
         case .disabled:
-            String(localized: "app_common_disabled_tech")
+            "app_common_disabled_tech"
         }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
     }
 }
 

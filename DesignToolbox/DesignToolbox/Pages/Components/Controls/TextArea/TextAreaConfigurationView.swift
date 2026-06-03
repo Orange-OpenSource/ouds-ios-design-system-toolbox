@@ -17,69 +17,44 @@ import SwiftUI
 // MARK: - TextArea Helper Mode
 
 /// Describes the four helper-text display modes available in the configuration panel.
-enum TextAreaHelperMode: CaseIterable, CustomStringConvertible, Hashable {
-    case none
-    case plain
-    case rich
-    case charactersMaxCount
+enum TextAreaHelperMode: DesignToolboxEnumLocalizedRepresentable {
+    case none, plain, rich, charactersMaxCount
 
-    var description: String {
+    var wordingKey: String {
         switch self {
         case .none:
-            String(localized: "app_components_common_none_tech")
+            "app_components_common_none_tech"
         case .plain:
-            String(localized: "app_components_common_helperText_tech")
+            "app_components_common_helperText_tech"
         case .rich:
-            String(localized: "app_components_common_helperRichText_tech")
+            "app_components_common_helperRichText_tech"
         case .charactersMaxCount:
-            String(localized: "app_components_textArea_charactersMaxCount_tech")
+            "app_components_textArea_charactersMaxCount_tech"
         }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
     }
 }
 
 // MARK: - Text Area Status
 
 /// Describes the status available in the configuration panel, to map with `OUDSTextArea.Status`
-enum TextAreaStatus: CaseIterable, CustomStringConvertible, Hashable {
+enum TextAreaStatus: DesignToolboxEnumLocalizedRepresentable {
+    case enabled, error, richError, loading, readOnly, disabled
 
-    case enabled
-    case error
-    case richError
-    case loading
-    case readOnly
-    case disabled
-
-    var description: String {
+    var wordingKey: String {
         switch self {
         case .enabled:
-            String(localized: "app_common_enabled_tech")
+            "app_common_enabled_tech"
         case .error:
-            String(localized: "app_components_common_error_tech")
+            "app_components_common_error_tech"
         case .richError:
-            String(localized: "app_components_common_richError_tech")
+            "app_components_common_richError_tech"
         case .loading:
-            String(localized: "app_components_common_loader_tech")
+            "app_components_common_loader_tech"
         case .readOnly:
-            String(localized: "app_components_common_readOnly_tech")
+            "app_components_common_readOnly_tech"
         case .disabled:
-            String(localized: "app_common_disabled_tech")
+            "app_common_disabled_tech"
         }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
     }
 }
 
