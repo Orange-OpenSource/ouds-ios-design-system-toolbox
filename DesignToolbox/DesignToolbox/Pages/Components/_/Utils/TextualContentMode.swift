@@ -13,29 +13,10 @@
 
 import OUDSSwiftUI
 
-enum TextualContentMode: CaseIterable, CustomStringConvertible {
+enum TextualContentMode: DesignToolboxEnumRepresentable {
 
     /// To map to OUDS TextualContent.attributed(AttributedString)
     case rich
     /// To map to OUDS TextualContent.raw(String)
     case raw
-
-    static let allCases: [TextualContentMode] = [.rich, .raw]
-
-    var description: String {
-        switch self {
-        case .rich:
-            "Rich"
-        case .raw:
-            "Raw"
-        }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
-    }
 }

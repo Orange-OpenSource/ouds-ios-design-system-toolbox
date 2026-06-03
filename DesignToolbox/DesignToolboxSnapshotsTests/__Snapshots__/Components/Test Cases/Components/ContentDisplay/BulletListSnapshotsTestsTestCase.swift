@@ -105,11 +105,11 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
         // Create a unique snapshot name based on the current configuration :
         //    test_<themeName>_<colorScheme>_<type>_<textStyle>_<isBold>
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let typePattern = model.bulletType.description
-        let bulletTypePattern = model.bulletType == .unordered ? "_\(model.unorderedAsset.description)" : ""
+        let typePattern = model.bulletType.formattedName
+        let bulletTypePattern = model.bulletType == .unordered ? "_\(model.unorderedAsset.formattedName)" : ""
         let brandedBulletPattern = model.bulletType == .unordered && model.unorderedBulletIsBranded ? "_Branded" : ""
         let unorderedBulletTypePattern = model.bulletType == .unordered ? bulletTypePattern + brandedBulletPattern : ""
-        let textStylePattern = model.textStyle.description
+        let textStylePattern = model.textStyle.formattedName
         let isBoldPattern = model.isBold ? "Bold" : ""
         let countPattern = switch model.levelCount {
         case .one:

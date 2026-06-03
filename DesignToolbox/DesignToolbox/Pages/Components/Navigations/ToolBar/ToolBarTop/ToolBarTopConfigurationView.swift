@@ -176,12 +176,10 @@ struct ToolBarTopConfiguration: View {
 
 // MARK: - Demo Options
 
-enum DemoOption: CaseIterable, CustomStringConvertible {
-    case navigation
-    case modalSheet
-    case fullCover
+enum DemoOption: DesignToolboxEnumLocalizedRepresentable {
+    case navigation, modalSheet, fullCover
 
-    var description: String {
+    var wordingKey: String {
         switch self {
         case .navigation:
             "app_components_topAppBar_demoOption_navigation_tech"
@@ -190,13 +188,5 @@ enum DemoOption: CaseIterable, CustomStringConvertible {
         case .fullCover:
             "app_components_topAppBar_demoOption_fullCover_tech"
         }
-    }
-
-    private var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-    }
-
-    static var chips: [OUDSChipPickerData<Self>] {
-        allCases.map(\.chipData)
     }
 }

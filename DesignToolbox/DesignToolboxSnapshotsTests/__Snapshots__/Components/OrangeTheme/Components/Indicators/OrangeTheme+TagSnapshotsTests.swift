@@ -17,7 +17,7 @@ import SwiftUI
 // swiftlint:disable required_deinit
 
 /// Tests the UI rendering of the `OUDSTag` for each parameter with `OrangeTheme`.
-final class OrangeThemeThemeTagSnapshotsTests: TagSnapshotsTestsTestCase {
+final class OrangeThemeTagSnapshotsTests: TagSnapshotsTestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
     private var theme: OUDSTheme!

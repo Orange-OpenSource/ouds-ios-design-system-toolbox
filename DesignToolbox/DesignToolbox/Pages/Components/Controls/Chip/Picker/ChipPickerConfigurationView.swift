@@ -34,7 +34,7 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
     }
 
     /// The type of selection
-    enum SelectionType: String, CaseIterable {
+    enum SelectionType: String, DesignToolboxEnumRepresentable {
         /// Single selection with tag of the selected chip, or none
         case singleOrNone
 
@@ -43,19 +43,6 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
 
         /// Multiple selection with tags of the selected chips
         case multiple
-
-        /// The technical description
-        var description: String {
-            rawValue.camelCase
-        }
-
-        private var chipData: OUDSChipPickerData<Self> {
-            OUDSChipPickerData(tag: self, layout: .text(text: description.localized()))
-        }
-
-        static var chips: [OUDSChipPickerData<Self>] {
-            allCases.map(\.chipData)
-        }
     }
 
     @Published var selectionType: SelectionType {

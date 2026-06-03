@@ -19,7 +19,7 @@ import SwiftUI
 // MARK: - Test Cases
 
 /// Tests the UI rendering of the `OUDSPasswordInput` for each parameter with `SoshTheme`.
-final class SoshThemePasswordInputsSnapshotsTests: PasswordInputSnapshotsTestsTestCase {
+final class SoshThemePasswordInputSnapshotsTests: PasswordInputSnapshotsTestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
     private var theme: OUDSTheme!

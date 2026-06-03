@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.0.0...2.1.0) - 2026-06-03
+
+### Changed
+
+- [DesignToolbox] Accessibility statement library v2.3.0
+- [DesignToolbox] `checkout` action from v6.0.2 to v6.0.3 in workflows
+- [DesignToolbox] `gitleaks/gitleaks-action` action to v3.0.0 for `gitleaks` workflow
+- [DesignToolbox] `json` gem from v2.19.5 to v2.19.8
+- [DesignToolbox] `Ruby` version from v4.0.3 to v4.0.5 for `build-and-test` workflow
+- [DesignToolbox] `fastlane` gem from v2.233.1 to v2.235.0
+- [DesignToolbox] `actions/dependency-review-action` action to v5.0.0 for `dependency-review` workflow
+- [DesignToolbox] `ruby/setup-ruby` action from v1.306.0 to v1.310.0 for `build-and-test` workflow
+- [Library] `text area` component (Orange-OpenSource/ouds-ios#1448)
+- [Library] `text input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1446)
+- [Library] `password input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1443)
+- [Library] `PIN code input` component with new typography (Orange-OpenSource/ouds-ios#1444)
+- [Library] `tag` component with label medium moderate typography for text (Orange-OpenSource/ouds-ios#1449)
+- [Library] `filter chip` and `suggestion chip` components with label medium moderate typography for text (Orange-OpenSource/ouds-ios#1441)
+- [Library] `input tag` component with label medium moderate typography for text (Orange-OpenSource/ouds-ios#1450)
+- [DesignToolbox] Mutualize description of enums options of the configuration used by pickers (Orange-OpenSource/ouds-ios#1493)
+
 ## [2.0.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/1.4.0...2.0.0) - 2026-05-07
 
 ### Added

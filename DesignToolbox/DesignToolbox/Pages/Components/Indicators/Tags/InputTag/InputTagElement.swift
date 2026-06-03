@@ -25,7 +25,7 @@ struct InputTagElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_tag_inputTag_description_text",
-            version: OUDSVersions.componentTagVersion,
+            version: OUDSVersions.componentInputTagVersion,
             demoScreen: AnyView(InputTagPage())))
     }
 }
