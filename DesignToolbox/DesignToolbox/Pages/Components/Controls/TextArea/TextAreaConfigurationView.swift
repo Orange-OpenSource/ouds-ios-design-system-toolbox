@@ -110,6 +110,10 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var constrainedMaxHeight: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var status: TextAreaStatus {
         didSet { updateCode() }
     }
@@ -132,6 +136,7 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         textMode = .raw
         isOutlined = false
         constrainedMaxWidth = false
+        constrainedMaxHeight = false
         status = .enabled
         super.init()
     }
@@ -192,12 +197,15 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
 
     // MARK: Code illustration
 
+    // swiftlint:disable line_length
     override func updateCode() {
         code =
             """
-            OUDSTextArea(\(labelPattern)\(textPattern)\(placeholderPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
+            OUDSTextArea(\(labelPattern)\(textPattern)\(placeholderPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(constrainedMaxHeightPattern)\(statusPattern))
             """
     }
+
+    // swiftlint:enable line_length
 
     private var labelPattern: String {
         "label: \"\(label)\""
@@ -236,6 +244,10 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         constrainedMaxWidth ? ", constrainedMaxWidth: true" : ""
     }
 
+    private var constrainedMaxHeightPattern: String {
+        constrainedMaxHeight ? ", constrainedMaxHeight: true" : ""
+    }
+
     private var statusPattern: String {
         switch status {
         case .enabled:
@@ -269,6 +281,8 @@ struct TextAreaConfigurationView: View {
                 OUDSSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
 
                 OUDSSwitchItem("app_components_common_constrainedMaxWidth_tech", isOn: $configurationModel.constrainedMaxWidth)
+
+                OUDSSwitchItem("app_components_common_constrainedMaxHeight_tech", isOn: $configurationModel.constrainedMaxHeight)
 
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
