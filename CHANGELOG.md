@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.1.0...develop)
+
+### Added
+
+- [Library] Flag to limit the height of the `text area` component (Orange-OpenSource/ouds-ios#1528)
+- [Library] `View modifier` for fonts using only token (Orange-OpenSource/ouds-ios#1534)
+- [DesignToolbox] Alert to notify the user an update is available in App Store (Orange-OpenSource/ouds-ios#1548)
+
 ## [2.1.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.0.0...2.1.0) - 2026-06-03
 
 ### Changed

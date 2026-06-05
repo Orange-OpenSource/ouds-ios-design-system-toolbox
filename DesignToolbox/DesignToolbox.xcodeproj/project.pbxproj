@@ -434,6 +434,9 @@
 		950288AB2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A72EEC629300510C32 /* NamedSize+MinWidth.swift */; };
 		950288AC2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A72EEC629300510C32 /* NamedSize+MinWidth.swift */; };
 		950288AD2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A72EEC629300510C32 /* NamedSize+MinWidth.swift */; };
+		95096A252FD310BC00746A5D /* AppStoreUpdateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A222FD310BC00746A5D /* AppStoreUpdateInfo.swift */; };
+		95096A262FD310BC00746A5D /* AppStoreUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A232FD310BC00746A5D /* AppStoreUpdateService.swift */; };
+		95096A272FD310BC00746A5D /* AppStoreUpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A242FD310BC00746A5D /* AppStoreUpdateViewModel.swift */; };
 		950EA6AE2EBCDF510009414A /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6AD2EBCDF4B0009414A /* ButtonsView.swift */; };
 		950EA6B02EBCE3A30009414A /* CheckboxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6AF2EBCE3A30009414A /* CheckboxesView.swift */; };
 		950EA6B22EBCEC2D0009414A /* CheckboxesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6B12EBCEC2D0009414A /* CheckboxesItemView.swift */; };
@@ -1527,6 +1530,9 @@
 		6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = accessibility_result.xml; sourceTree = "<group>"; };
 		950288A02EEC60CB00510C32 /* NamedSize+MaxWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+MaxWidth.swift"; sourceTree = "<group>"; };
 		950288A72EEC629300510C32 /* NamedSize+MinWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+MinWidth.swift"; sourceTree = "<group>"; };
+		95096A222FD310BC00746A5D /* AppStoreUpdateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreUpdateInfo.swift; sourceTree = "<group>"; };
+		95096A232FD310BC00746A5D /* AppStoreUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreUpdateService.swift; sourceTree = "<group>"; };
+		95096A242FD310BC00746A5D /* AppStoreUpdateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreUpdateViewModel.swift; sourceTree = "<group>"; };
 		950EA6AD2EBCDF4B0009414A /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		950EA6AF2EBCE3A30009414A /* CheckboxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxesView.swift; sourceTree = "<group>"; };
 		950EA6B12EBCEC2D0009414A /* CheckboxesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxesItemView.swift; sourceTree = "<group>"; };
@@ -2519,6 +2525,7 @@
 		51BD761D2C466FCF0033365D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				95096A282FD3110500746A5D /* AppStore */,
 				95EDFD162EC73BB4006DE593 /* Image+extensions.swift */,
 				95CD64F12EB3A371008FAB03 /* WindowManager.swift */,
 				95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */,
@@ -3043,6 +3050,16 @@
 				6DFC20B42CE3AF1500F2EC33 /* style.css */,
 			);
 			path = accessibilityStatement;
+			sourceTree = "<group>";
+		};
+		95096A282FD3110500746A5D /* AppStore */ = {
+			isa = PBXGroup;
+			children = (
+				95096A222FD310BC00746A5D /* AppStoreUpdateInfo.swift */,
+				95096A232FD310BC00746A5D /* AppStoreUpdateService.swift */,
+				95096A242FD310BC00746A5D /* AppStoreUpdateViewModel.swift */,
+			);
+			path = AppStore;
 			sourceTree = "<group>";
 		};
 		950EA6C12EBCFA2F0009414A /* Layouts */ = {
@@ -4542,6 +4559,9 @@
 				51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */,
 				0765B4962CC159F600E69359 /* NamedColor+Action.swift in Sources */,
 				FCDDFBBF2F2B69E700389D8D /* PasswordInputPage.swift in Sources */,
+				95096A252FD310BC00746A5D /* AppStoreUpdateInfo.swift in Sources */,
+				95096A262FD310BC00746A5D /* AppStoreUpdateService.swift in Sources */,
+				95096A272FD310BC00746A5D /* AppStoreUpdateViewModel.swift in Sources */,
 				FCDDFBC02F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */,
 				FCDDFBC12F2B69E700389D8D /* PasswordInputElement.swift in Sources */,
 				FCA849172E9FF00500DBCE76 /* InputTagElement.swift in Sources */,
