@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1528-for-text-area-component-add-flag-to-enable-or-disable-the-component-expansion",
-        "revision" : "000624d7b8b237dd6a8179e450485c8d79dc6426"
+        "branch" : "develop",
+        "revision" : "6272bd567ec96428b689c9ea7e5358dbc7615ff4"
       }
     },
     {

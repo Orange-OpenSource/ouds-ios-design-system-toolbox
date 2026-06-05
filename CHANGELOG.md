@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Flag to limit the height of the `text area` component (Orange-OpenSource/ouds-ios#1528)
+- [Library] Flag to limit the height of the `text area` component (Orange-OpenSource/ouds-ios#1528)
+- [Library] `View modifier` for fonts using only token (Orange-OpenSource/ouds-ios#1534)
 
 ## [2.1.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.0.0...2.1.0) - 2026-06-03
 
