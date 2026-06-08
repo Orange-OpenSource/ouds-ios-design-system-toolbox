@@ -123,6 +123,8 @@ private struct ListItemContentConfiguration: View {
                                selection: $configurationModel.trailingOption,
                                chips: Trailing.chips)
 
+                OUDSSwitchItem("app_components_listItem_slot_tech", isOn: $configurationModel.hasSlot)
+
                 if configurationModel.trailingOption == .avatar || configurationModel.leadingOption == .avatar {
 
                     Divider().horizontal()
@@ -159,7 +161,7 @@ private struct ListItemContentConfiguration: View {
                                    chips: OUDSLIstItemIcon.Size.chips)
 
                     if configurationModel.iconType == .neutral {
-                        OUDSSwitchItem("app_components_listItem_badgeOnIcon_tech", isOn: $configurationModel.bageOnNeutralIcon)
+                        OUDSSwitchItem("app_components_listItem_iconBadge_label", isOn: $configurationModel.bageOnNeutralIcon)
                     }
                 }
 

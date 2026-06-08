@@ -18,7 +18,7 @@ import SwiftUI
 
 final class ListItemNavigationConfigurationModel: ListItemConfigurationModel {
 
-    @Published var affordanceType: OUDSListItemNavigation.AffordanceType {
+    @Published var affordanceType: OUDSListItemNavigationAffordanceType {
         didSet { updateCode() }
     }
 
@@ -47,7 +47,7 @@ struct ListItemNavigationConfiguration: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             OUDSChipPicker(title: "app_components_listItem_affordance_tech".localized(),
                            selection: $configurationModel.affordanceType,
-                           chips: OUDSListItemNavigation.AffordanceType.chips)
+                           chips: OUDSListItemNavigationAffordanceType.chips)
             
             Divider().horizontal()
             
@@ -56,7 +56,7 @@ struct ListItemNavigationConfiguration: View {
     }
 }
 
-extension OUDSListItemNavigation.AffordanceType: @retroactive CaseIterable {}
-extension OUDSListItemNavigation.AffordanceType: DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSListItemNavigation.AffordanceType] = [.next, .previous, .external]
+extension OUDSListItemNavigationAffordanceType: @retroactive CaseIterable {}
+extension OUDSListItemNavigationAffordanceType: DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSListItemNavigationAffordanceType] = [.next, .previous, .external]
 }

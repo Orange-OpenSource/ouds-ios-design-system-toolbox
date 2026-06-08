@@ -39,9 +39,16 @@ private struct ListItemStaticDemo: View {
     var body: some View {
         VStack(spacing: rowGap) {
             ForEach(Array(configurationModel.dataItems.enumerated()), id: \.offset) { _, data in
-                OUDSListStaticItem(data: data,
-                                   leading: configurationModel.leading(for: theme),
-                                   trailing: configurationModel.trailing(for: theme))
+                if configurationModel.hasSlot {
+                    OUDSListStaticItem(data: data,
+                                       slot: configurationModel.slot(for: theme),
+                                       leading: configurationModel.leading(for: theme),
+                                       trailing: configurationModel.trailing(for: theme))
+                } else {
+                    OUDSListStaticItem(data: data,
+                                       leading: configurationModel.leading(for: theme),
+                                       trailing: configurationModel.trailing(for: theme))
+                }
             }
         }
         .modifier(ListStyleModifier(configurationModel: configurationModel))

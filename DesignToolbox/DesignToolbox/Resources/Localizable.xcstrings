@@ -4308,19 +4308,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Avatar badge"
+            "value" : "شارة على الصورة الرمزية"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Avatar badge"
+            "value" : "Badge on avatar"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Avatar Badge"
+            "value" : "Badge sur avatar"
           }
         }
       },
@@ -4401,14 +4401,14 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_listItem_badgeOnIcon_tech" : {
+    "app_components_listItem_iconBadge_label" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Badge on icon"
+            "value" : "شارة على الأيقونة"
           }
         },
         "en" : {
@@ -4420,7 +4420,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Badge on icon"
+            "value" : "Badge sur icon"
           }
         }
       },
@@ -4451,7 +4451,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_listItem_card_tech" : {
+    "app_components_listItem_cardType_tech" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
       "localizations" : {
@@ -4483,7 +4483,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Content"
+            "value" : "المحتوى"
           }
         },
         "en" : {
@@ -4531,7 +4531,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Global"
+            "value" : "إجمالي"
           }
         },
         "en" : {
@@ -4599,7 +4599,7 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_listItem_item_tech" : {
+    "app_components_listItem_itemType_tech" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
       "localizations" : {
@@ -4768,6 +4768,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Size"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_slot_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slot"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slot"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slot"
           }
         }
       },

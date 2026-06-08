@@ -39,11 +39,21 @@ private struct ListItemNavigationDemo: View {
     var body: some View {
         VStack(spacing: rowGap) {
             ForEach(Array(configurationModel.dataItems.enumerated()), id: \.offset) { _, data in
-                OUDSListItemNavigation(data: data,
-                                       affordanceType: configurationModel.affordanceType,
-                                       leading: configurationModel.leading(for: theme),
-                                       trailing: configurationModel.trailing(for: theme)) {
-                    print("Element \(data.label) clicked")
+                if configurationModel.hasSlot {
+                    OUDSListItemNavigation(data: data,
+                                           slot: configurationModel.slot(for: theme),
+                                           affordanceType: configurationModel.affordanceType,
+                                           leading: configurationModel.leading(for: theme),
+                                           trailing: configurationModel.trailing(for: theme)) {
+                        print("Element \(data.label) clicked")
+                    }
+                } else {
+                    OUDSListItemNavigation(data: data,
+                                           affordanceType: configurationModel.affordanceType,
+                                           leading: configurationModel.leading(for: theme),
+                                           trailing: configurationModel.trailing(for: theme)) {
+                        print("Element \(data.label) clicked")
+                    }
                 }
             }
             .modifier(ListStyleModifier(configurationModel: configurationModel))

@@ -106,6 +106,10 @@ class ListItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var hasSlot: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var numberOfItems: Int
 
     @Published var type: ListType {
@@ -127,9 +131,9 @@ class ListItemConfigurationModel: ComponentConfiguration {
         var description: String {
             switch self {
             case .item:
-                "app_components_listItem_item_tech"
+                "app_components_listItem_itemType_tech"
             case .card:
-                "app_components_listItem_card_tech"
+                "app_components_listItem_cardType_tech"
             }
         }
 
@@ -176,6 +180,8 @@ class ListItemConfigurationModel: ComponentConfiguration {
 
         roundedMedia = false
 
+        hasSlot = false
+
         isOutlined = false
         hasDivider = true
         hasBackground = false
@@ -202,6 +208,11 @@ class ListItemConfigurationModel: ComponentConfiguration {
 
     var listStyle: OUDSListItemContentStyle {
         isOutlined ? .outlined : .standard(divider: hasDivider, background: hasBackground)
+    }
+
+    @MainActor
+    func slot(for theme: OUDSTheme) -> some View {
+        OUDSInlineAlert(label: "Label", status: .warning)
     }
 
     @MainActor
@@ -509,6 +520,32 @@ extension OUDSListItemTrailing.TextType: DesignToolboxEnumRepresentable {
             .labelMuted(Text("Label")),
             .labelAndExtraLabel(Text("Label"), Text("Extra Label"))
         ]
+
+    var formattedName: String {
+        switch self {
+        case .label:
+            "Label"
+        case .labelMuted:
+            "Label Muted"
+        case .labelStrong:
+            "Label Strong"
+        case .labelAndExtraLabel:
+            "Label and extra labe"
+        }
+    }
+
+    var technicalDescription: String {
+        switch self {
+        case .label(let text):
+            ".label(Text(\"\(text)\"))"
+        case .labelMuted(let text):
+            ".labelMuted(Text(\"\(text)\"))"
+        case .labelStrong(let text):
+            ".labelStrong(Text(\"\(text)\"))"
+        case .labelAndExtraLabel(let text, let text2):
+            ".labelAndExtraLabel(Text(\"\(text)\"), Text(\"\(text2)\"))"
+        }
+    }
 
     // MARK: Equatable
 
