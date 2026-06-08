@@ -8,9 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Helper to forge a font object with OUDS typography tokens (Orange-OpenSource/ouds-ios#1550)
 - [Library] Flag to limit the height of the `text area` component (Orange-OpenSource/ouds-ios#1528)
 - [Library] `View modifier` for fonts using only token (Orange-OpenSource/ouds-ios#1534)
 - [DesignToolbox] Alert to notify the user an update is available in App Store (Orange-OpenSource/ouds-ios#1548)
+
+### Fixed
+
+- [DesignToolbox] Wording key displayed in fonts page for `watchOS` and `tvOS` (Orange-OpenSource/ouds-ios#1553)
+- [Library] Label and description of `alert message` component not vocalized together (Orange-OpenSource/ouds-ios#1552)
 
 ## [2.1.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.0.0...2.1.0) - 2026-06-03
 
