@@ -893,6 +893,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_common_forced_tech" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forced"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forced"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forced"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_common_loremIpsum_tech" : {
       "comment" : "Common",
       "extractionState" : "manual",
