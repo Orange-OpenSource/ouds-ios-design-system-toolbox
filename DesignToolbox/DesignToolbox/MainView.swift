@@ -97,6 +97,5 @@ struct MainView: View {
                 .tag(2)
         }
         .accentColor(theme.button.colorContentMinimalEnabled)
-        .modifier(OUDSLegacyTabBarModifier())
     }
 }

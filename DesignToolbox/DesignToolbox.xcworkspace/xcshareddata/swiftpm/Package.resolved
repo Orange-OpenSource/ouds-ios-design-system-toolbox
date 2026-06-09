@@ -16,7 +16,7 @@
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
         "branch" : "fix/1557-manage-iOS27-and-Xcode27-for-tabbar-layout",
-        "revision" : "4b10999945179b20fe162ccbdcbdb2418b722f9f"
+        "revision" : "e6f83c5fbb54234668a0ec83b7098b254509a7ab"
       }
     },
     {
