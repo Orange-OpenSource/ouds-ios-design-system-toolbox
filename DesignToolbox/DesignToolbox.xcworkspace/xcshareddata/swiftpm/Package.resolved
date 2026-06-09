@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "44ca7c7206c41ccc1189c9024eb7256a2ff6122f"
+        "branch" : "fix/1557-manage-iOS27-and-Xcode27-for-tabbar-layout",
+        "revision" : "2ca21530348ff9fedd0b96475d19f93322b7d484"
       }
     },
     {

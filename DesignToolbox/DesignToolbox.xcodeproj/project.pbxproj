@@ -6158,7 +6158,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "fix/1557-manage-iOS27-and-Xcode27-for-tabbar-layout";
 				kind = branch;
 			};
 		};
