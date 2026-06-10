@@ -25,17 +25,18 @@ struct DesignToolboxEditContentDisclosure<Content>: View where Content: View {
     @State private var isContentVisible = false
     @Environment(\.theme) private var theme
 
-    //  MARK: - Initializer
+    // MARK: - Initializer
 
     init(_ title: String = "app_components_common_editContent_label",
          isContentVisible: Bool = false,
-         @ViewBuilder content: @escaping () -> Content) {
+         @ViewBuilder content: @escaping () -> Content)
+    {
         self.title = title.localized()
         self.isContentVisible = isContentVisible
         self.content = content
     }
 
-    //  MARK: - Body
+    // MARK: - Body
 
     var body: some View {
         DesignToolboxDisclosureGroup(isExpanded: $isContentVisible, accessibilityLabel: "", content: content) {

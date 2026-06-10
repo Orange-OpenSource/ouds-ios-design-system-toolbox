@@ -14,9 +14,12 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: - ListItem Configuration Model
+// swiftlint:disable file_length
+// swiftlint:disable type_body_length
 
-class ListItemConfigurationModel: ComponentConfiguration {
+// MARK: - List Item Configuration Model
+
+open class ListItemConfigurationModel: ComponentConfiguration {
 
     @Published var enabled: Bool {
         didSet { updateCode() }
@@ -116,7 +119,6 @@ class ListItemConfigurationModel: ComponentConfiguration {
         didSet {
             if type == .card {
                 hasBackground = true
-
             } else {
                 hasBackground = false
             }
@@ -194,15 +196,14 @@ class ListItemConfigurationModel: ComponentConfiguration {
     // MARK: - Data
 
     var dataItems: [OUDSListItemData] {
-        (0..<numberOfItems).map { index in
+        (0 ..< numberOfItems).map { index in
             OUDSListItemData(
                 label: index == 0 ? labelText : "\(labelText)_\(index)",
                 isBoldLabel: isBoldLabel,
                 description: descriptionText.isEmpty ? nil : descriptionText,
                 overline: overlineText.isEmpty ? nil : overlineText,
                 extraLabel: extraLabelText.isEmpty ? nil : extraLabelText,
-                helperText: helperText.isEmpty ? nil : helperText
-            )
+                helperText: helperText.isEmpty ? nil : helperText)
         }
     }
 
@@ -215,23 +216,24 @@ class ListItemConfigurationModel: ComponentConfiguration {
         OUDSInlineAlert(label: "Label", status: .warning)
     }
 
+    // swiftlint:disable force_unwrapping
     @MainActor
     func leading(for theme: OUDSTheme) -> OOUDSListItemLeading? {
         switch leadingOption {
         case .none:
-            return nil
+            nil
         case .icon:
-            return .icon(icon(for: theme))
+            .icon(icon(for: theme))
         case .image:
-            return .image(asset: Image("il_placeholder"))
+            .image(asset: Image("il_placeholder"))
         case .video:
-            return .video(URL(string: "https://mastermedia.orange.com/publicMedia?t=pmHGomBcoc&o=517502")!)
+            .video(URL(string: "https://mastermedia.orange.com/publicMedia?t=pmHGomBcoc&o=517502")!)
         case .flag:
-            return .flag(asset: Image("il_flag_fr"))
+            .flag(asset: Image("il_flag_fr"))
         case .avatar:
-            return .avatar(OUDSListItemAvatar(type: avatarType,
-                                              size: avatarSize,
-                                              badge: avatarBadge))
+            .avatar(OUDSListItemAvatar(type: avatarType,
+                                       size: avatarSize,
+                                       badge: avatarBadge))
         }
     }
 
@@ -239,27 +241,29 @@ class ListItemConfigurationModel: ComponentConfiguration {
     func trailing(for theme: OUDSTheme) -> OUDSListItemTrailing? {
         switch trailingOption {
         case .none:
-            return nil
+            nil
         case .text:
-            return .text(trailingTextType)
+            .text(trailingTextType)
         case .badge:
-            return .badge(OUDSBadge(count: 1, accessibilityLabel: "", status: .negative, size: .medium))
+            .badge(OUDSBadge(count: 1, accessibilityLabel: "", status: .negative, size: .medium))
         case .tag:
-            return .tag(OUDSTag(label: "Label", size: .small))
+            .tag(OUDSTag(label: "Label", size: .small))
         case .icon:
-            return .icon(icon(for: theme))
+            .icon(icon(for: theme))
         case .image:
-            return .image(asset: Image("il_placeholder"))
+            .image(asset: Image("il_placeholder"))
         case .video:
-            return .video(URL(string: "https://mastermedia.orange.com/publicMedia?t=pmHGomBcoc&o=517502")!)
+            .video(URL(string: "https://mastermedia.orange.com/publicMedia?t=pmHGomBcoc&o=517502")!)
         case .flag:
-            return .flag(asset: Image("il_flag_fr"))
+            .flag(asset: Image("il_flag_fr"))
         case .avatar:
-            return .avatar(OUDSListItemAvatar(type: avatarType,
-                                              size: avatarSize,
-                                              badge: avatarBadge))
+            .avatar(OUDSListItemAvatar(type: avatarType,
+                                       size: avatarSize,
+                                       badge: avatarBadge))
         }
     }
+
+    // swiftlint:enable force_unwrapping
 
     @MainActor
     private var avatarBadge: OUDSBadge? {
@@ -308,10 +312,10 @@ class ListItemConfigurationModel: ComponentConfiguration {
 
     var needRoundedMediaOption: Bool {
         let leadingMedia = switch leadingOption {
-            case .image, .video:
-                true
-            default:
-                false
+        case .image, .video:
+            true
+        default:
+            false
         }
 
         let trailingMedia = switch trailingOption {
@@ -330,11 +334,11 @@ class ListItemConfigurationModel: ComponentConfiguration {
         let trailingPart = trailingPattern.isEmpty ? "" : ", trailing: trailing"
 
         code = """
-               \(dataPattern) \(leadingPattern) \(trailingPattern)
-               
-               OUDSListItem(data: data\(leadingPart)\(trailingPart)
-               \(styleModifierPettern)\(sizeModifierPattern)\(containersAlignmentPattern)\(roundedMediaPattern)
-               """
+        \(dataPattern) \(leadingPattern) \(trailingPattern)
+
+        OUDSListItem(data: data\(leadingPart)\(trailingPart)
+        \(styleModifierPettern)\(sizeModifierPattern)\(containersAlignmentPattern)\(roundedMediaPattern)
+        """
     }
 
     var disableCodePattern: String {
@@ -403,28 +407,27 @@ class ListItemConfigurationModel: ComponentConfiguration {
         itemSize == .standard ? "" : "\n.oudsListItemSize(\(itemSize.technicalDescription))"
     }
 
-
     private var containersAlignmentPattern: String {
         "\n.oudsListItemContainerAlignment(\(containersAlignment.technicalDescription))"
     }
 
     private var iconPattern: String {
         let imagePattern = "Image(decorative: \"ic_heart\")"
-        let typePattern: String = switch iconType {
-            case .neutral:
-                ".neutral(asset: \(imagePattern), badge: \(bageOnNeutralIcon))"
-            case .info:
-                ".info"
-            case .warning:
-                ".warning"
-            case .negative:
-                ".negative"
-            case .positive:
-                ".positive"
-            }
+        let typePattern = switch iconType {
+        case .neutral:
+            ".neutral(asset: \(imagePattern), badge: \(bageOnNeutralIcon))"
+        case .info:
+            ".info"
+        case .warning:
+            ".warning"
+        case .negative:
+            ".negative"
+        case .positive:
+            ".positive"
+        }
 
-            let sizePattern: String = iconSize.technicalDescription
-            return ".init(type: \(typePattern), size: \(sizePattern))"
+        let sizePattern: String = iconSize.technicalDescription
+        return ".init(type: \(typePattern), size: \(sizePattern))"
     }
 
     private var avatarPattern: String {
@@ -432,21 +435,21 @@ class ListItemConfigurationModel: ComponentConfiguration {
     }
 
     private var leadingPattern: String {
-        let leadingOptionPatter: String =
-        switch leadingOption {
-        case .none:
-            ""
-        case .icon:
-            ".icon(\(iconPattern)"
-        case .image:
-            ".image(asset: Image(decorative: \"ic_heart\"))"
-        case .video:
-            ".video(URL(string: \"https://unified-design-system.orange.com/\")!)"
-        case .flag:
-            ".flag(asset: Image(decorative: \"ic_flag_FR_fr\")"
-        case .avatar:
-            ".avatar(\(avatarPattern))"
-        }
+        let leadingOptionPatter =
+            switch leadingOption {
+            case .none:
+                ""
+            case .icon:
+                ".icon(\(iconPattern)"
+            case .image:
+                ".image(asset: Image(decorative: \"ic_heart\"))"
+            case .video:
+                ".video(URL(string: \"https://unified-design-system.orange.com/\")!)"
+            case .flag:
+                ".flag(asset: Image(decorative: \"ic_flag_FR_fr\")"
+            case .avatar:
+                ".avatar(\(avatarPattern))"
+            }
 
         return leadingOption == .none ? "" : "\nlet leading: OOUDSListItemLeading = \n \(leadingOptionPatter)"
     }
@@ -465,31 +468,49 @@ class ListItemConfigurationModel: ComponentConfiguration {
     }
 
     private var trailingPattern: String {
-        let trailingOptionPattern: String =
-        switch trailingOption {
-        case .none:
-            ""
-        case .text:
-            ".text(\(trailingTextTypePattern))"
-        case .badge:
-            ".badge(OUDSBadge(count: 1, accessibilityLabel: \"\", status: .negative, size: .medium)"
-        case .tag:
-            ".tag(OUDSTag(label: \"Label\", size: .small))"
-        case .icon:
-            ".icon(.info)"
-        case .image:
-            ".image(asset: Image(\"il_placeholder\"))"
-        case .video:
-            ".video(URL(string: \"https://unified-design-system.orange.com/\")!)"
-        case .flag:
-            ".flag(asset: Image(decorative: \"ic_flag_FR_fr\")"
-        case .avatar:
-            ".avatar(\(avatarPattern))"
-        }
+        let trailingOptionPattern =
+            switch trailingOption {
+            case .none:
+                ""
+            case .text:
+                ".text(\(trailingTextTypePattern))"
+            case .badge:
+                ".badge(OUDSBadge(count: 1, accessibilityLabel: \"\", status: .negative, size: .medium)"
+            case .tag:
+                ".tag(OUDSTag(label: \"Label\", size: .small))"
+            case .icon:
+                ".icon(.info)"
+            case .image:
+                ".image(asset: Image(\"il_placeholder\"))"
+            case .video:
+                ".video(URL(string: \"https://unified-design-system.orange.com/\")!)"
+            case .flag:
+                ".flag(asset: Image(decorative: \"ic_flag_FR_fr\")"
+            case .avatar:
+                ".avatar(\(avatarPattern))"
+            }
 
         return trailingOption == .none ? "" : "\nlet traling: OOUDSListItemTrailing = \n \(trailingOptionPattern)"
     }
 }
+
+// swiftlint:enable type_body_length
+
+// MARK: - Enums
+
+enum IconType: DesignToolboxEnumRepresentable {
+    case neutral, info, warning, negative, positive
+}
+
+enum Leading: DesignToolboxEnumRepresentable {
+    case none, icon, image, video, flag, avatar
+}
+
+enum Trailing: DesignToolboxEnumRepresentable {
+    case none, text, badge, tag, icon, image, video, flag, avatar
+}
+
+// MARK: - Extensions
 
 extension OUDSListItemContainersAlignment: @retroactive CaseIterable {}
 extension OUDSListItemContainersAlignment: DesignToolboxEnumRepresentable {
@@ -501,14 +522,6 @@ extension OUDSListItemSize: DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSListItemSize] = [.standard, .small]
 }
 
-enum Leading: DesignToolboxEnumRepresentable {
-    case none, icon, image, video, flag, avatar
-}
-
-enum Trailing: DesignToolboxEnumRepresentable {
-    case none, text, badge, tag, icon, image, video, flag, avatar
-}
-
 extension OUDSListItemTrailing.TextType: @retroactive Equatable {}
 extension OUDSListItemTrailing.TextType: @retroactive Hashable {}
 extension OUDSListItemTrailing.TextType: @retroactive CaseIterable {}
@@ -518,7 +531,7 @@ extension OUDSListItemTrailing.TextType: DesignToolboxEnumRepresentable {
             .label(Text("Label")),
             .labelStrong(Text("Label")),
             .labelMuted(Text("Label")),
-            .labelAndExtraLabel(Text("Label"), Text("Extra Label"))
+            .labelAndExtraLabel(Text("Label"), Text("Extra Label")),
         ]
 
     var formattedName: String {
@@ -536,13 +549,13 @@ extension OUDSListItemTrailing.TextType: DesignToolboxEnumRepresentable {
 
     var technicalDescription: String {
         switch self {
-        case .label(let text):
+        case let .label(text):
             ".label(Text(\"\(text)\"))"
-        case .labelMuted(let text):
+        case let .labelMuted(text):
             ".labelMuted(Text(\"\(text)\"))"
-        case .labelStrong(let text):
+        case let .labelStrong(text):
             ".labelStrong(Text(\"\(text)\"))"
-        case .labelAndExtraLabel(let text, let text2):
+        case let .labelAndExtraLabel(text, text2):
             ".labelAndExtraLabel(Text(\"\(text)\"), Text(\"\(text2)\"))"
         }
     }
@@ -569,7 +582,7 @@ extension OUDSListItemAvatar.AvatarType: DesignToolboxEnumRepresentable {
         [
             .icon,
             .image(Image(decorative: "il_placeholder")),
-            .initials("MT")
+            .initials("MT"),
         ]
 
     var formattedName: String {
@@ -587,9 +600,9 @@ extension OUDSListItemAvatar.AvatarType: DesignToolboxEnumRepresentable {
         switch self {
         case .icon:
             ".icon"
-        case .image(let asset):
+        case let .image(asset):
             ".image(asset: \(String(describing: asset)))"
-        case .initials(let initials):
+        case let .initials(initials):
             ".initials(\"\(initials)\")"
         }
     }
@@ -609,11 +622,7 @@ extension OUDSListItemAvatar.AvatarType: DesignToolboxEnumRepresentable {
 
 extension OUDSListItemAvatar.Size: @retroactive CaseIterable {}
 extension OUDSListItemAvatar.Size: DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSListItemAvatar.Size] = [ .medium, .large, .extraLarge ]
-}
-
-enum IconType: DesignToolboxEnumRepresentable {
-    case neutral, info, warning, negative, positive
+    public static let allCases: [OUDSListItemAvatar.Size] = [.medium, .large, .extraLarge]
 }
 
 extension OUDSLIstItemIcon.Size: @retroactive CaseIterable {}

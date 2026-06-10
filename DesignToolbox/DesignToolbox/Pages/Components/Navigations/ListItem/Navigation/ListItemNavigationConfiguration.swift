@@ -28,12 +28,6 @@ final class ListItemNavigationConfigurationModel: ListItemConfigurationModel {
     }
 
     deinit {}
-
-    // MARK: - Code generation
-
-    override func updateCode() {
-        super.updateCode()
-    }
 }
 
 // MARK: - ListItem Configuration
@@ -48,9 +42,9 @@ struct ListItemNavigationConfiguration: View {
             OUDSChipPicker(title: "app_components_listItem_affordance_tech".localized(),
                            selection: $configurationModel.affordanceType,
                            chips: OUDSListItemNavigationAffordanceType.chips)
-            
+
             Divider().horizontal()
-            
+
             ListItemConfiguration(configurationModel: configurationModel)
         }
     }

@@ -17,7 +17,7 @@ struct ComponentsPage: View {
 
     #if !os(macOS) && !os(visionOS)
     var componentElements: [DesignToolboxElement] = [
-//        AlertElements(),
+        //        AlertElements(),
 //        BadgeElement(),
 //        BulletListElement(),
 //        ButtonElement(),

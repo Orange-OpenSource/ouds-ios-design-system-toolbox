@@ -44,14 +44,16 @@ private struct ListItemNavigationDemo: View {
                                            slot: configurationModel.slot(for: theme),
                                            affordanceType: configurationModel.affordanceType,
                                            leading: configurationModel.leading(for: theme),
-                                           trailing: configurationModel.trailing(for: theme)) {
+                                           trailing: configurationModel.trailing(for: theme))
+                    {
                         print("Element \(data.label) clicked")
                     }
                 } else {
                     OUDSListItemNavigation(data: data,
                                            affordanceType: configurationModel.affordanceType,
                                            leading: configurationModel.leading(for: theme),
-                                           trailing: configurationModel.trailing(for: theme)) {
+                                           trailing: configurationModel.trailing(for: theme))
+                    {
                         print("Element \(data.label) clicked")
                     }
                 }

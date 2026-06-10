@@ -14,7 +14,6 @@
 import OUDSSwiftUI
 import SwiftUI
 
-
 // MARK: - ListItem Configuration
 
 struct ListItemConfiguration: View {
@@ -46,9 +45,9 @@ private struct ListItemGlobalSettingsConfiguration: View {
 
     var body: some View {
         DesignToolboxEditContentDisclosure("app_components_listItem_globalConfiguration_label", isContentVisible: true) {
-            VStack (spacing: 0) {
+            VStack(spacing: 0) {
                 OUDSChipPicker(title: "app_components_common_type_tech".localized(),
-                               selection: $configurationModel.`type`,
+                               selection: $configurationModel.type,
                                chips: ListItemConfigurationModel.ListType.chips)
 
                 OUDSChipPicker(title: "app_components_listItem_size_tech".localized(),
@@ -62,7 +61,8 @@ private struct ListItemGlobalSettingsConfiguration: View {
                 }
 
                 if configurationModel.type == .item ||
-                    (configurationModel.type == .card && !configurationModel.isOutlined) {
+                    (configurationModel.type == .card && !configurationModel.isOutlined)
+                {
                     OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
                     OUDSSwitchItem("app_components_listItem_background_tech", isOn: $configurationModel.hasBackground)
                 }
@@ -75,8 +75,8 @@ private struct ListItemGlobalSettingsConfiguration: View {
 
                 Stepper("app_components_common_itemCount_label" <- "\($configurationModel.numberOfItems.wrappedValue)",
                         value: $configurationModel.numberOfItems)
-                .padding(.all, theme.spaces.fixedMedium)
-                .labelStrongMedium(theme)
+                    .padding(.all, theme.spaces.fixedMedium)
+                    .labelStrongMedium(theme)
             }
         }
     }
@@ -90,7 +90,7 @@ private struct ListItemTextsConfiguration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        DesignToolboxEditContentDisclosure("app_components_listItem_labelsConfiguration_label"){
+        DesignToolboxEditContentDisclosure("app_components_listItem_labelsConfiguration_label") {
             DesignToolboxTextField(text: $configurationModel.labelText, label: "app_components_common_label_tech")
 
             if configurationModel.itemSize == .standard {
@@ -114,7 +114,7 @@ private struct ListItemContentConfiguration: View {
 
     var body: some View {
         DesignToolboxEditContentDisclosure("app_components_listItem_contentConfiguration_label", isContentVisible: true) {
-            VStack (spacing: 0) {
+            VStack(spacing: 0) {
                 OUDSChipPicker(title: "app_components_listItem_leading_tech".localized(),
                                selection: $configurationModel.leadingOption,
                                chips: Leading.chips)
@@ -166,7 +166,8 @@ private struct ListItemContentConfiguration: View {
                 }
 
                 if !(configurationModel.leadingOption == .none)
-                    || !(configurationModel.trailingOption == .none) {
+                    || !(configurationModel.trailingOption == .none)
+                {
 
                     Divider().horizontal()
 

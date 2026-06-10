@@ -39,6 +39,7 @@ enum AllElements {
 
     // MARK: - Components
 
+    // swiftlint:disable function_body_length
     /// All component elements, filtered for the current platform / device.
     /// - `PinCodeInputElement`, `ToolBarBottomElement`, `ToolBarTopElement` are iOS/non-visionOS only.
     /// - `TabBarElement` is removed on macOS and iPad (navigation conflicts).
@@ -124,6 +125,7 @@ enum AllElements {
 
         return elements
     }
+    // swiftlint:enable function_body_length
 }
 
 // swiftlint:enable function_body_length
