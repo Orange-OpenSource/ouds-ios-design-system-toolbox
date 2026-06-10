@@ -158,7 +158,7 @@ private struct ListItemContentConfiguration: View {
 
                     OUDSChipPicker(title: "app_components_listItem_iconSize_tech".localized(),
                                    selection: $configurationModel.iconSize,
-                                   chips: OUDSLIstItemIcon.Size.chips)
+                                   chips: OUDSListItemIcon.Size.chips)
 
                     if configurationModel.iconType == .neutral {
                         OUDSSwitchItem("app_components_listItem_iconBadge_label", isOn: $configurationModel.bageOnNeutralIcon)

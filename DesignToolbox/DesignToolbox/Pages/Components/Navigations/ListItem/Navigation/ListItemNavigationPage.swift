@@ -40,7 +40,7 @@ private struct ListItemNavigationDemo: View {
         VStack(spacing: rowGap) {
             ForEach(Array(configurationModel.dataItems.enumerated()), id: \.offset) { _, data in
                 if configurationModel.hasSlot {
-                    OUDSListItemNavigation(data: data,
+                    OUDSNavigationListItem(data: data,
                                            slot: configurationModel.slot(for: theme),
                                            affordanceType: configurationModel.affordanceType,
                                            leading: configurationModel.leading(for: theme),
@@ -49,7 +49,7 @@ private struct ListItemNavigationDemo: View {
                         print("Element \(data.label) clicked")
                     }
                 } else {
-                    OUDSListItemNavigation(data: data,
+                    OUDSNavigationListItem(data: data,
                                            affordanceType: configurationModel.affordanceType,
                                            leading: configurationModel.leading(for: theme),
                                            trailing: configurationModel.trailing(for: theme))

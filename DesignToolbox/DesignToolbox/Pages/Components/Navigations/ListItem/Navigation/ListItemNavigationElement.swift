@@ -38,7 +38,7 @@ struct ListItemNavigationIllustration: View {
         VStack(spacing: theme.spaces.fixedSmall) {
             let data = OUDSListItemData(label: "Label",
                                         description: "A description of the item to show in the list item view and its accessibility label and VoiceOver label if not provided.")
-            OUDSListItemNavigation(data: data, affordanceType: .next)
+            OUDSNavigationListItem(data: data, affordanceType: .next)
         }
     }
 }

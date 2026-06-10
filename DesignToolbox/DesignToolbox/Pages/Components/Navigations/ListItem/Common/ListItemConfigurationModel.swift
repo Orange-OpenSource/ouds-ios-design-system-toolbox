@@ -97,7 +97,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var iconSize: OUDSLIstItemIcon.Size {
+    @Published var iconSize: OUDSListItemIcon.Size {
         didSet { updateCode() }
     }
 
@@ -218,7 +218,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
     // swiftlint:disable force_unwrapping
     @MainActor
-    func leading(for theme: OUDSTheme) -> OOUDSListItemLeading? {
+    func leading(for theme: OUDSTheme) -> OUDSListItemLeading? {
         switch leadingOption {
         case .none:
             nil
@@ -280,8 +280,8 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     }
 
     @MainActor
-    private func icon(for theme: OUDSTheme) -> OUDSLIstItemIcon {
-        let type: OUDSLIstItemIcon.IconType = switch iconType {
+    private func icon(for theme: OUDSTheme) -> OUDSListItemIcon {
+        let type: OUDSListItemIcon.IconType = switch iconType {
         case .neutral:
             .neutral(asset: Image(decorative: "ic_heart", bundle: theme.resourcesBundle), badge: bageOnNeutralIcon)
         case .info:
@@ -294,7 +294,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
             .positive
         }
 
-        return OUDSLIstItemIcon(type: type, size: iconSize)
+        return OUDSListItemIcon(type: type, size: iconSize)
     }
 
     var trailingText: OUDSListItemTrailing.TextType {
@@ -451,7 +451,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                 ".avatar(\(avatarPattern))"
             }
 
-        return leadingOption == .none ? "" : "\nlet leading: OOUDSListItemLeading = \n \(leadingOptionPatter)"
+        return leadingOption == .none ? "" : "\nlet leading: OUDSListItemLeading = \n \(leadingOptionPatter)"
     }
 
     private var trailingTextTypePattern: String {
@@ -490,7 +490,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                 ".avatar(\(avatarPattern))"
             }
 
-        return trailingOption == .none ? "" : "\nlet traling: OOUDSListItemTrailing = \n \(trailingOptionPattern)"
+        return trailingOption == .none ? "" : "\nlet traling: OUDSListItemTrailing = \n \(trailingOptionPattern)"
     }
 }
 
@@ -625,7 +625,7 @@ extension OUDSListItemAvatar.Size: DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSListItemAvatar.Size] = [.medium, .large, .extraLarge]
 }
 
-extension OUDSLIstItemIcon.Size: @retroactive CaseIterable {}
-extension OUDSLIstItemIcon.Size: DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSLIstItemIcon.Size] = [.small, .medium, .large]
+extension OUDSListItemIcon.Size: @retroactive CaseIterable {}
+extension OUDSListItemIcon.Size: DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSListItemIcon.Size] = [.small, .medium, .large]
 }
