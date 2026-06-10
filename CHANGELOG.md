@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] `tab bar` layout is broken for iOS 27 (Orange-OpenSource/ouds-ios#1557)
 - [DesignToolbox] Wording key displayed in fonts page for `watchOS` and `tvOS` (Orange-OpenSource/ouds-ios#1553)
 - [Library] Label and description of `alert message` component not vocalized together (Orange-OpenSource/ouds-ios#1552)
 
