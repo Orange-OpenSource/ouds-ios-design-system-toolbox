@@ -28,7 +28,7 @@ struct MainView: View {
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     /// To know if the search bar must be used or not in the app, from app settings
-    @AppStorage("com.orange.ouds.demoapp.allowSearch") private var allowSearch: Bool = true
+    @AppStorage("com.orange.ouds.demoapp.allowSearch") private var allowSearch: Bool = false
 
     // MARK: - Body
 
@@ -97,5 +97,6 @@ struct MainView: View {
                 .tag(2)
         }
         .accentColor(theme.button.colorContentMinimalEnabled)
+//        .modifier(OUDSLegacyTabBarModifier())
     }
 }

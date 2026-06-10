@@ -275,7 +275,7 @@ private struct LiquidGlassStateItem: View {
             if isLiquidGlassDisabled { return "app_common_disabled_tech".localized() }
             return "app_common_enabled_tech".localized()
         } else {
-            return "app_common_disabled_tech".localized()
+            return "app_common_unavailable_tech".localized()
         }
     }
 
