@@ -14,7 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Alert to notify the user an update is available in App Store (Orange-OpenSource/ouds-ios#1548)
 
 ### Changed
- 
+
+- [DesignToolbox] `ruby/setup-ruby` GitHub Action from v1.310.0 to v1.313.0 for `build-and-test` workflow
+- [DesignToolbox] `github/codeql-action/upload-sarif` GitHub Action from v4.36.1 to v4.36.2 for `scorecard` workflow 
 - [Library] `badge` components with dedicated API and version 1.3 for `badge icon` (Orange-OpenSource/ouds-ios#1439)
 
 ### Fixed
