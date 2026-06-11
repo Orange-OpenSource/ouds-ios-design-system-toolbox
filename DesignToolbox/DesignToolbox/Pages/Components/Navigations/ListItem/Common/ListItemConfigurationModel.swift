@@ -226,14 +226,23 @@ open class ListItemConfigurationModel: ComponentConfiguration {
             .icon(icon(for: theme))
         case .image:
             .image(asset: Image("il_placeholder"))
-        case .video:
-            .video(URL(string: "https://mastermedia.orange.com/publicMedia?t=pmHGomBcoc&o=517502")!)
         case .flag:
             .flag(asset: Image("il_flag_fr"))
         case .avatar:
             .avatar(OUDSListItemAvatar(type: avatarType,
                                        size: avatarSize,
                                        badge: avatarBadge))
+        #if os(iOS)
+        case .video:
+            // swiftlint:disable:next line_length
+            // .video(URL(string: "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8")!)
+            // .video(URL(string: "https://mastermedia.orange.com/publicMedia?t=pmHGomBcoc&o=517502")!)
+            .video(URL(string: "https://assets.orange.com/medias/domain12751/media101721/516402-fgepu9uf6k-480.m3u8")!,
+                   autoplay: true,
+                   muted: false,
+                   tapToTogglePlay: false,
+                   tapToToggleMute: false)
+        #endif
         }
     }
 
@@ -252,8 +261,10 @@ open class ListItemConfigurationModel: ComponentConfiguration {
             .icon(icon(for: theme))
         case .image:
             .image(asset: Image("il_placeholder"))
+        #if os(iOS)
         case .video:
-            .video(URL(string: "https://mastermedia.orange.com/publicMedia?t=pmHGomBcoc&o=517502")!)
+            .video(URL(string: "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8")!)
+        #endif
         case .flag:
             .flag(asset: Image("il_flag_fr"))
         case .avatar:
@@ -312,15 +323,23 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
     var needRoundedMediaOption: Bool {
         let leadingMedia = switch leadingOption {
-        case .image, .video:
+        case .image:
             true
+        #if os(iOS)
+        case .video:
+            true
+        #endif
         default:
             false
         }
 
         let trailingMedia = switch trailingOption {
-        case .image, .video:
+        case .image:
             true
+        #if os(iOS)
+        case .video:
+            true
+        #endif
         default:
             false
         }
@@ -443,189 +462,202 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                 ".icon(\(iconPattern)"
             case .image:
                 ".image(asset: Image(decorative: \"ic_heart\"))"
+            #if os(iOS)
             case .video:
                 ".video(URL(string: \"https://unified-design-system.orange.com/\")!)"
+            #endif
             case .flag:
                 ".flag(asset: Image(decorative: \"ic_flag_FR_fr\")"
             case .avatar:
                 ".avatar(\(avatarPattern))"
             }
 
-        return leadingOption == .none ? "" : "\nlet leading: OUDSListItemLeading = \n \(leadingOptionPatter)"
+            return leadingOption == .none ? "" : "\nlet leading: OUDSListItemLeading = \n \(leadingOptionPatter)"
     }
 
-    private var trailingTextTypePattern: String {
-        switch trailingTextType {
-        case .label:
-            ".label(Text(\"Label\"))"
-        case .labelMuted:
-            ".labelMuted(Text(\"Label\"))"
-        case .labelStrong:
-            ".labelStrong(Text(\"Label\"))"
-        case .labelAndExtraLabel:
-            ".labelMuted(Text(\"Label\"), Text(\"extra Label\"))"
-        }
-    }
-
-    private var trailingPattern: String {
-        let trailingOptionPattern =
-            switch trailingOption {
-            case .none:
-                ""
-            case .text:
-                ".text(\(trailingTextTypePattern))"
-            case .badge:
-                ".badge(OUDSBadge(count: 1, accessibilityLabel: \"\", status: .negative, size: .medium)"
-            case .tag:
-                ".tag(OUDSTag(label: \"Label\", size: .small))"
-            case .icon:
-                ".icon(.info)"
-            case .image:
-                ".image(asset: Image(\"il_placeholder\"))"
-            case .video:
-                ".video(URL(string: \"https://unified-design-system.orange.com/\")!)"
-            case .flag:
-                ".flag(asset: Image(decorative: \"ic_flag_FR_fr\")"
-            case .avatar:
-                ".avatar(\(avatarPattern))"
+            private var trailingTextTypePattern: String {
+                switch trailingTextType {
+                case .label:
+                    ".label(Text(\"Label\"))"
+                case .labelMuted:
+                    ".labelMuted(Text(\"Label\"))"
+                case .labelStrong:
+                    ".labelStrong(Text(\"Label\"))"
+                case .labelAndExtraLabel:
+                    ".labelMuted(Text(\"Label\"), Text(\"extra Label\"))"
+                }
             }
 
-        return trailingOption == .none ? "" : "\nlet traling: OUDSListItemTrailing = \n \(trailingOptionPattern)"
+            private var trailingPattern: String
+            {
+                let trailingOptionPattern =
+                    switch trailingOption {
+                    case .none:
+                        ""
+                    case .text:
+                        ".text(\(trailingTextTypePattern))"
+                    case .badge:
+                        ".badge(OUDSBadge(count: 1, accessibilityLabel: \"\", status: .negative, size: .medium)"
+                    case .tag:
+                        ".tag(OUDSTag(label: \"Label\", size: .small))"
+                    case .icon:
+                        ".icon(.info)"
+                    case .image:
+                        ".image(asset: Image(\"il_placeholder\"))"
+                    #if os(iOS)
+                    case .video:
+                        ".video(URL(string: \"https://unified-design-system.orange.com/\")!)"
+                    #endif
+                    case .flag:
+                        ".flag(asset: Image(decorative: \"ic_flag_FR_fr\")"
+                    case .avatar:
+                        ".avatar(\(avatarPattern))"
+                    }
+
+                    return trailingOption == .none ? "" : "\nlet traling: OUDSListItemTrailing = \n \(trailingOptionPattern)"
     }
 }
 
-// swiftlint:enable type_body_length
+                    // swiftlint:enable type_body_length
 
-// MARK: - Enums
+                    // MARK: - Enums
 
-enum IconType: DesignToolboxEnumRepresentable {
-    case neutral, info, warning, negative, positive
-}
+                    enum IconType: DesignToolboxEnumRepresentable {
+                        case neutral, info, warning, negative, positive
+                    }
 
-enum Leading: DesignToolboxEnumRepresentable {
-    case none, icon, image, video, flag, avatar
-}
+                    enum Leading: DesignToolboxEnumRepresentable {
+                        #if os(iOS)
+                        case none, icon, image, video, flag, avatar
+                        #else
+                        case none, icon, image, flag, avatar
+                        #endif
+                    }
 
-enum Trailing: DesignToolboxEnumRepresentable {
-    case none, text, badge, tag, icon, image, video, flag, avatar
-}
+                    enum Trailing: DesignToolboxEnumRepresentable {
+                        #if os(iOS)
+                        case none, text, badge, tag, icon, image, video, flag, avatar
+                        #else
+                        case none, text, badge, tag, icon, image, flag, avatar
+                        #endif
+                    }
 
-// MARK: - Extensions
+                    // MARK: - Extensions
 
-extension OUDSListItemContainersAlignment: @retroactive CaseIterable {}
-extension OUDSListItemContainersAlignment: DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSListItemContainersAlignment] = [.center, .top]
-}
+                    extension OUDSListItemContainersAlignment: @retroactive CaseIterable {}
+                    extension OUDSListItemContainersAlignment: DesignToolboxEnumRepresentable {
+                        public static let allCases: [OUDSListItemContainersAlignment] = [.center, .top]
+                    }
 
-extension OUDSListItemSize: @retroactive CaseIterable {}
-extension OUDSListItemSize: DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSListItemSize] = [.standard, .small]
-}
+                    extension OUDSListItemSize: @retroactive CaseIterable {}
+                    extension OUDSListItemSize: DesignToolboxEnumRepresentable {
+                        public static let allCases: [OUDSListItemSize] = [.standard, .small]
+                    }
 
-extension OUDSListItemTrailing.TextType: @retroactive Equatable {}
-extension OUDSListItemTrailing.TextType: @retroactive Hashable {}
-extension OUDSListItemTrailing.TextType: @retroactive CaseIterable {}
-extension OUDSListItemTrailing.TextType: DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSListItemTrailing.TextType] =
-        [
-            .label(Text("Label")),
-            .labelStrong(Text("Label")),
-            .labelMuted(Text("Label")),
-            .labelAndExtraLabel(Text("Label"), Text("Extra Label")),
-        ]
+                    extension OUDSListItemTrailing.TextType: @retroactive Equatable {}
+                    extension OUDSListItemTrailing.TextType: @retroactive Hashable {}
+                    extension OUDSListItemTrailing.TextType: @retroactive CaseIterable {}
+                    extension OUDSListItemTrailing.TextType: DesignToolboxEnumRepresentable {
+                        public static let allCases: [OUDSListItemTrailing.TextType] =
+                            [
+                                .label(Text("Label")),
+                                .labelStrong(Text("Label")),
+                                .labelMuted(Text("Label")),
+                                .labelAndExtraLabel(Text("Label"), Text("Extra Label")),
+                            ]
 
-    var formattedName: String {
-        switch self {
-        case .label:
-            "Label"
-        case .labelMuted:
-            "Label Muted"
-        case .labelStrong:
-            "Label Strong"
-        case .labelAndExtraLabel:
-            "Label and extra labe"
-        }
-    }
+                        var formattedName: String {
+                            switch self {
+                            case .label:
+                                "Label"
+                            case .labelMuted:
+                                "Label Muted"
+                            case .labelStrong:
+                                "Label Strong"
+                            case .labelAndExtraLabel:
+                                "Label and extra labe"
+                            }
+                        }
 
-    var technicalDescription: String {
-        switch self {
-        case let .label(text):
-            ".label(Text(\"\(text)\"))"
-        case let .labelMuted(text):
-            ".labelMuted(Text(\"\(text)\"))"
-        case let .labelStrong(text):
-            ".labelStrong(Text(\"\(text)\"))"
-        case let .labelAndExtraLabel(text, text2):
-            ".labelAndExtraLabel(Text(\"\(text)\"), Text(\"\(text2)\"))"
-        }
-    }
+                        var technicalDescription: String {
+                            switch self {
+                            case let .label(text):
+                                ".label(Text(\"\(text)\"))"
+                            case let .labelMuted(text):
+                                ".labelMuted(Text(\"\(text)\"))"
+                            case let .labelStrong(text):
+                                ".labelStrong(Text(\"\(text)\"))"
+                            case let .labelAndExtraLabel(text, text2):
+                                ".labelAndExtraLabel(Text(\"\(text)\"), Text(\"\(text2)\"))"
+                            }
+                        }
 
-    // MARK: Equatable
+                        // MARK: Equatable
 
-    public static func == (lhs: OUDSListItemTrailing.TextType, rhs: OUDSListItemTrailing.TextType) -> Bool {
-        lhs.formattedName == rhs.formattedName
-    }
+                        public static func == (lhs: OUDSListItemTrailing.TextType, rhs: OUDSListItemTrailing.TextType) -> Bool {
+                            lhs.formattedName == rhs.formattedName
+                        }
 
-    // MARK: - Hashable
+                        // MARK: - Hashable
 
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(formattedName)
-    }
-}
+                        public func hash(into hasher: inout Hasher) {
+                            hasher.combine(formattedName)
+                        }
+                    }
 
-extension OUDSListItemAvatar.AvatarType: @retroactive Equatable {}
-extension OUDSListItemAvatar.AvatarType: @retroactive Hashable {}
-extension OUDSListItemAvatar.AvatarType: @retroactive CaseIterable {}
-extension OUDSListItemAvatar.AvatarType: DesignToolboxEnumRepresentable {
+                    extension OUDSListItemAvatar.AvatarType: @retroactive Equatable {}
+                    extension OUDSListItemAvatar.AvatarType: @retroactive Hashable {}
+                    extension OUDSListItemAvatar.AvatarType: @retroactive CaseIterable {}
+                    extension OUDSListItemAvatar.AvatarType: DesignToolboxEnumRepresentable {
 
-    public static let allCases: [OUDSListItemAvatar.AvatarType] =
-        [
-            .icon,
-            .image(Image(decorative: "il_placeholder")),
-            .initials("MT"),
-        ]
+                        public static let allCases: [OUDSListItemAvatar.AvatarType] =
+                            [
+                                .icon,
+                                .image(Image(decorative: "il_placeholder")),
+                                .initials("MT"),
+                            ]
 
-    var formattedName: String {
-        switch self {
-        case .image:
-            "Image"
-        case .initials:
-            "Initials"
-        case .icon:
-            "Icon"
-        }
-    }
+                        var formattedName: String {
+                            switch self {
+                            case .image:
+                                "Image"
+                            case .initials:
+                                "Initials"
+                            case .icon:
+                                "Icon"
+                            }
+                        }
 
-    var technicalDescription: String {
-        switch self {
-        case .icon:
-            ".icon"
-        case let .image(asset):
-            ".image(asset: \(String(describing: asset)))"
-        case let .initials(initials):
-            ".initials(\"\(initials)\")"
-        }
-    }
+                        var technicalDescription: String {
+                            switch self {
+                            case .icon:
+                                ".icon"
+                            case let .image(asset):
+                                ".image(asset: \(String(describing: asset)))"
+                            case let .initials(initials):
+                                ".initials(\"\(initials)\")"
+                            }
+                        }
 
-    // MARK: Equatable
+                        // MARK: Equatable
 
-    public static func == (lhs: OUDSListItemAvatar.AvatarType, rhs: OUDSListItemAvatar.AvatarType) -> Bool {
-        lhs.formattedName == rhs.formattedName
-    }
+                        public static func == (lhs: OUDSListItemAvatar.AvatarType, rhs: OUDSListItemAvatar.AvatarType) -> Bool {
+                            lhs.formattedName == rhs.formattedName
+                        }
 
-    // MARK: - Hashable
+                        // MARK: - Hashable
 
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(formattedName)
-    }
-}
+                        public func hash(into hasher: inout Hasher) {
+                            hasher.combine(formattedName)
+                        }
+                    }
 
-extension OUDSListItemAvatar.Size: @retroactive CaseIterable {}
-extension OUDSListItemAvatar.Size: DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSListItemAvatar.Size] = [.medium, .large, .extraLarge]
-}
+                    extension OUDSListItemAvatar.Size: @retroactive CaseIterable {}
+                    extension OUDSListItemAvatar.Size: DesignToolboxEnumRepresentable {
+                        public static let allCases: [OUDSListItemAvatar.Size] = [.medium, .large, .extraLarge]
+                    }
 
-extension OUDSListItemIcon.Size: @retroactive CaseIterable {}
-extension OUDSListItemIcon.Size: DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSListItemIcon.Size] = [.small, .medium, .large]
-}
+                    extension OUDSListItemIcon.Size: @retroactive CaseIterable {}
+                    extension OUDSListItemIcon.Size: DesignToolboxEnumRepresentable {
+                        public static let allCases: [OUDSListItemIcon.Size] = [.small, .medium, .large]
+                    }
