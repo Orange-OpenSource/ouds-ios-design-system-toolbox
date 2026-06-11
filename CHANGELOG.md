@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] `json` Ruby gem from v2.19.8 to v2.19.9
 - [DesignToolbox] `ruby/setup-ruby` GitHub Action from v1.310.0 to v1.313.0 for `build-and-test` workflow
 - [DesignToolbox] `github/codeql-action/upload-sarif` GitHub Action from v4.36.1 to v4.36.2 for `scorecard` workflow 
 - [Library] `badge` components with dedicated API and version 1.3 for `badge icon` (Orange-OpenSource/ouds-ios#1439)
