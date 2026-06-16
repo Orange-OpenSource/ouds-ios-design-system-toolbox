@@ -41,7 +41,7 @@ private struct StaticListItemDemo: View {
             ForEach(Array(configurationModel.dataItems.enumerated()), id: \.offset) { _, data in
                 if configurationModel.hasSlot {
                     OUDSStaticListItem(data: data,
-                                       slot: configurationModel.slot(for: theme),
+                                       slot: configurationModel.slot(),
                                        leading: configurationModel.leading(for: theme),
                                        trailing: configurationModel.trailing(for: theme))
                 } else {

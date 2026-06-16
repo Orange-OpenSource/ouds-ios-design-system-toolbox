@@ -41,7 +41,7 @@ private struct NavigationListItemDemo: View {
             ForEach(Array(configurationModel.dataItems.enumerated()), id: \.offset) { _, data in
                 if configurationModel.hasSlot {
                     OUDSNavigationListItem(data: data,
-                                           slot: configurationModel.slot(for: theme),
+                                           slot: configurationModel.slot(),
                                            affordanceType: configurationModel.affordanceType,
                                            leading: configurationModel.leading(for: theme),
                                            trailing: configurationModel.trailing(for: theme)) {}

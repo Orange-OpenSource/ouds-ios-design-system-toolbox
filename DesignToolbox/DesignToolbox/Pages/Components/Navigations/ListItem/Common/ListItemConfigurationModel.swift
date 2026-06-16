@@ -180,7 +180,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         containersAlignment = .center
         leadingOption = .none
         trailingOption = .none
-        trailingTextType = .label(Text("Label"))
+        trailingTextType = .label(Text(OUDSListItemTrailing.TextType.labelValue))
 
         avatarType = .icon
         avatarSize = .medium
@@ -224,7 +224,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     }
 
     @MainActor
-    func slot(for theme: OUDSTheme) -> some View {
+    func slot() -> some View {
         OUDSInlineAlert(label: "Label", status: .warning)
     }
 
@@ -237,7 +237,9 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         case .icon:
             .icon(icon(for: theme))
         case .image:
-            .image(asset: Image("il_placeholder"))
+            .image(
+                asset: Image.placeholderImage(),
+                description: "Image description")
         case .flag:
             .flag(asset: Image("il_flag_fr"))
         case .avatar:
@@ -264,7 +266,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
             .badge(
                 OUDSBadge(
                     count: 1,
-                    accessibilityLabel: "",
+                    accessibilityLabel: "1",
                     status: .negative,
                     size: .medium))
         case .tag:
@@ -272,7 +274,9 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         case .icon:
             .icon(icon(for: theme))
         case .image:
-            .image(asset: Image("il_placeholder"))
+            .image(
+                asset: Image.placeholderImage(),
+                description: "Image description")
         #if os(iOS)
         case .video:
             .video(URL(string: String.defaultVideoUrl())!, autoplay: true)
@@ -332,19 +336,6 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         return OUDSListItemIcon(type: type, size: iconSize)
     }
 
-    var trailingText: OUDSListItemTrailing.TextType {
-        switch trailingTextType {
-        case .label:
-            .label(Text("Label"))
-        case .labelStrong:
-            .labelStrong(Text("Label"))
-        case .labelMuted:
-            .labelMuted(Text("Label"))
-        case .labelAndExtraLabel:
-            .labelAndExtraLabel(Text("Label"), Text("Extra label"))
-        }
-    }
-
     var needRoundedMediaOption: Bool {
         let leadingMedia =
             switch leadingOption {
@@ -384,6 +375,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
                     \(componentInitCode)(data: data\(slotPattern)\(leadingPart)\(trailingPart))
                     \(styleModifierPettern)\(sizeModifierPattern)\(containersAlignmentPattern)\(roundedMediaPattern)
+                    \(disableCodePattern)
                     """
                 }
 
@@ -419,14 +411,6 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
                 private var helperTextPattern: String {
                     helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
-                }
-
-                private var isOutlinedPattern: String {
-                    isOutlined ? ", isOutlined: true" : ""
-                }
-
-                private var hasDividerPattern: String {
-                    hasDivider ? ", hasDivider: true" : ""
                 }
 
                 private var styleModifierPettern: String {
@@ -494,10 +478,10 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                         case .icon:
                             ".icon(\(iconPattern)"
                         case .image:
-                            ".image(asset: Image(decorative: \"ic_heart\"))"
+                            ".image(asset: \"\(Image.placeholderImageSample())\", description: \"Image description\")\""
                         #if os(iOS)
                         case .video:
-                            ".video(URL(string: \"https://unified-design-system.orange.com/\")!, autoplay: true)"
+                            ".video(URL(string: \"\(String.defaultVideoUrl())\")!, autoplay: true)"
                         #endif
                         case .flag:
                             ".flag(asset: Image(decorative: \"ic_flag_FR_fr\")"
@@ -538,7 +522,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                                 case .icon:
                                     ".icon(.info)"
                                 case .image:
-                                    ".image(asset: \"\(Image.placeholderImageSample())\""
+                                    ".image(asset: \"\(Image.placeholderImageSample())\", description: \"Image description\")\""
                                 #if os(iOS)
                                 case .video:
                                     ".video(URL(string: \"\(String.defaultVideoUrl())\")!, autoplay: true)"
@@ -601,12 +585,17 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                                 extension OUDSListItemTrailing.TextType: @retroactive Hashable {}
                                 extension OUDSListItemTrailing.TextType: @retroactive CaseIterable {}
                                 extension OUDSListItemTrailing.TextType: DesignToolboxEnumRepresentable {
+
+                                    // Tricks to avoid to have Xcode ffiding these Strings and definied localizables with Text()
+                                    static let labelValue = "Label"
+                                    static let extraLabelValue = "Extra Label"
+
                                     public static let allCases: [OUDSListItemTrailing.TextType] =
                                         [
-                                            .label(Text("Label")),
-                                            .labelStrong(Text("Label")),
-                                            .labelMuted(Text("Label")),
-                                            .labelAndExtraLabel(Text("Label"), Text("Extra Label")),
+                                            .label(Text(Self.labelValue)),
+                                            .labelStrong(Text(Self.labelValue)),
+                                            .labelMuted(Text(Self.labelValue)),
+                                            .labelAndExtraLabel(Text(Self.labelValue), Text(Self.extraLabelValue)),
                                         ]
 
                                     var formattedName: String {
@@ -683,7 +672,10 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                                         }
                                     }
 
-                                    public static func == (lhs: OUDSListItemAvatar.AvatarType, rhs: OUDSListItemAvatar.AvatarType) -> Bool {
+                                    public static func == (
+                                        lhs: OUDSListItemAvatar.AvatarType,
+                                        rhs: OUDSListItemAvatar.AvatarType) -> Bool
+                                    {
                                         lhs.formattedName == rhs.formattedName
                                     }
 

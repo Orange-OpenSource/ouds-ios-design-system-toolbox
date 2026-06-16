@@ -89,7 +89,6 @@ private struct ListItemGlobalSettingsConfiguration: View {
 private struct ListItemTextsConfiguration: View {
 
     @ObservedObject var configurationModel: ListItemConfigurationModel
-    @Environment(\.theme) private var theme
 
     var body: some View {
         DesignToolboxEditContentDisclosure("app_components_listItem_labelsConfiguration_label") {
@@ -112,7 +111,6 @@ private struct ListItemTextsConfiguration: View {
 private struct ListItemContentConfiguration: View {
 
     @ObservedObject var configurationModel: ListItemConfigurationModel
-    @Environment(\.theme) private var theme
 
     var body: some View {
         DesignToolboxEditContentDisclosure("app_components_listItem_contentConfiguration_label", isContentVisible: true) {
