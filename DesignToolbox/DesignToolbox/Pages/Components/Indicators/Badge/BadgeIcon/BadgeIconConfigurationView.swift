@@ -25,7 +25,7 @@ final class BadgeIconConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var iconSize: OUDSBadgeIcon.Size {
+    @Published var size: OUDSBadgeStandard.Size {
         didSet { updateCode() }
     }
 
@@ -72,7 +72,7 @@ final class BadgeIconConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        iconSize = .medium
+        size = .medium
         statusKind = .neutral
         flipIcon = false
         super.init()
@@ -111,7 +111,7 @@ final class BadgeIconConfigurationModel: ComponentConfiguration {
     }
 
     private var sizePattern: String {
-        "size: \(iconSize.technicalDescription)"
+        "size: \(size.technicalDescription)"
     }
 
     private var accessibilityLabelValue: String {
@@ -138,8 +138,8 @@ struct BadgeIconConfigurationView: View {
                 .disabled(!configurationModel.enableFlipIcon)
 
             OUDSChipPicker(title: "app_components_common_size_tech",
-                           selection: $configurationModel.iconSize,
-                           chips: OUDSBadgeIcon.Size.chips)
+                           selection: $configurationModel.size,
+                           chips: OUDSBadgeStandard.Size.chips)
 
             OUDSChipPicker(title: "app_components_common_status_tech",
                            selection: $configurationModel.statusKind,
@@ -151,89 +151,5 @@ struct BadgeIconConfigurationView: View {
 // MARK: - Badge Icon Status Kind
 
 enum BadgeIconStatusKind: DesignToolboxEnumRepresentable, CaseIterable, Hashable {
-    case neutral
-    case accent
-    case positive
-    case info
-    case warning
-    case negative
-
-    var formattedName: String {
-        switch self {
-        case .neutral:
-            "Neutral"
-        case .accent:
-            "Accent"
-        case .positive:
-            "Positive"
-        case .info:
-            "Info"
-        case .warning:
-            "Warning"
-        case .negative:
-            "Negative"
-        }
-    }
-}
-
-extension OUDSBadgeIcon.Status: @retroactive Equatable, @retroactive Hashable, @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSBadgeIcon.Status] = [
-        .neutral(icon: Image.defaultImage()),
-        .accent(icon: Image.defaultImage()),
-        .positive,
-        .info,
-        .warning,
-        .negative,
-    ]
-
-    public static func == (lhs: OUDSBadgeIcon.Status, rhs: OUDSBadgeIcon.Status) -> Bool {
-        switch (lhs, rhs) {
-        case let (.neutral(_, lFlipped), .neutral(_, rFlipped)):
-            lFlipped == rFlipped
-        case let (.accent(_, lFlipped), .accent(_, rFlipped)):
-            lFlipped == rFlipped
-        case (.positive, .positive), (.info, .info), (.warning, .warning), (.negative, .negative):
-            true
-        default:
-            false
-        }
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        switch self {
-        case .neutral:
-            hasher.combine("neutral")
-        case .accent:
-            hasher.combine("accent")
-        case .positive:
-            hasher.combine("positive")
-        case .info:
-            hasher.combine("info")
-        case .warning:
-            hasher.combine("warning")
-        case .negative:
-            hasher.combine("negative")
-        }
-    }
-
-    var formattedName: String {
-        switch self {
-        case .neutral:
-            "Neutral"
-        case .accent:
-            "Accent"
-        case .positive:
-            "Positive"
-        case .info:
-            "Info"
-        case .warning:
-            "Warning"
-        case .negative:
-            "Negative"
-        }
-    }
-}
-
-extension OUDSBadgeIcon.Size: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSBadgeIcon.Size] = [.extraSmall, .small, .medium, .large]
+    case neutral, accent, positive, info, warning, negative
 }

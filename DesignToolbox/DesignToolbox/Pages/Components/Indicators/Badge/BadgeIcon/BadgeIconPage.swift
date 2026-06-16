@@ -37,10 +37,9 @@ struct BadgeIconDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSBadgeIcon(
-            status: configurationModel.statusWithIcon(from: theme),
-            accessibilityLabel: "app_components_badge_hint_a11y".localized(),
-            size: configurationModel.iconSize)
+        OUDSBadgeIcon(status: configurationModel.statusWithIcon(from: theme),
+                      accessibilityLabel: "app_components_badge_hint_a11y".localized(),
+                      size: configurationModel.size)
             .disabled(!configurationModel.enabled)
             .id(theme.name) // Hack to be sure the image of the badge is the good one depending to the thame
     }
