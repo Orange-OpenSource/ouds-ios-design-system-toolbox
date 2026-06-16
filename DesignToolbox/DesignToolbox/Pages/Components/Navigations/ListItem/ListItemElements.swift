@@ -21,8 +21,8 @@ struct ListItemElements: DesignToolboxElement {
 
     init() {
         let variants: [DesignToolboxElement] = [
-            ListItemStaticElement(),
-            ListItemNavigationElement(),
+            StaticListItemElement(),
+            NavigationListItemElement(),
         ]
 
         name = "app_components_listItem_tech".localized()
@@ -42,8 +42,9 @@ struct ListItemIllustration: View {
     var body: some View {
         VStack(spacing: theme.spaces.fixedSmall) {
             let data = OUDSListItemData(label: "Label",
-                                        description: "A description of the item to show in the list item view and its accessibility label and VoiceOver label if not provided.")
+                                        description: "A description of the item to show in the list item view.")
             OUDSStaticListItem(data: data)
+                .oudsListCardStyle(hasDivider: false, hasBackground: true)
         }
     }
 }

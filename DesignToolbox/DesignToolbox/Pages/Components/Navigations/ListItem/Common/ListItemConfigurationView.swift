@@ -14,7 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: - ListItem Configuration
+// MARK: - List Item Configuration
 
 struct ListItemConfiguration: View {
 
@@ -25,11 +25,11 @@ struct ListItemConfiguration: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             ListItemGlobalSettingsConfiguration(configurationModel: configurationModel)
 
-            Divider().horizontal()
+            OUDSHorizontalDivider()
 
             ListItemContentConfiguration(configurationModel: configurationModel)
 
-            Divider().horizontal()
+            OUDSHorizontalDivider()
 
             ListItemTextsConfiguration(configurationModel: configurationModel)
         }
@@ -74,7 +74,9 @@ private struct ListItemGlobalSettingsConfiguration: View {
                 OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
                 Stepper("app_components_common_itemCount_label" <- "\($configurationModel.numberOfItems.wrappedValue)",
-                        value: $configurationModel.numberOfItems)
+                        value: $configurationModel.numberOfItems,
+                        in: 1 ... 15,
+                        step: 1)
                     .padding(.all, theme.spaces.fixedMedium)
                     .labelStrongMedium(theme)
             }

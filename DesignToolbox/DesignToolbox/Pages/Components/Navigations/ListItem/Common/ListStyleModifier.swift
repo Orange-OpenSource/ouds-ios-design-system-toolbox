@@ -21,7 +21,7 @@ struct ListStyleModifier: ViewModifier {
     func body(content: Content) -> some View {
         switch configurationModel.type {
         case .item:
-            content.oudsListCardStyle(hasDdivider: configurationModel.hasDivider,
+            content.oudsListCardStyle(hasDivider: configurationModel.hasDivider,
                                       hasBackground: configurationModel.hasBackground)
         case .card:
             content.oudsListItemStyle(style: configurationModel.listStyle)

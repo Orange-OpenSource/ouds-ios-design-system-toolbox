@@ -143,4 +143,9 @@ extension String {
         }
         return "https://github.com/Orange-OpenSource/ouds-ios/tree/main"
     }
+
+    /// - Returns: The URL of a video to use as demo video
+    public static func defaultVideoUrl() -> String {
+        "https://assets.orange.com/medias/domain12751/media101721/516402-fgepu9uf6k-480.m3u8"
+    }
 }

@@ -4401,31 +4401,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_listItem_iconBadge_label" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "شارة على الأيقونة"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Badge on icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Badge sur icon"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_listItem_boldLabel_tech" : {
       "comment" : "Component - List item",
       "extractionState" : "manual",
@@ -4519,7 +4494,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Un élément de liste est une ligne horizontale servant à afficher une unité d'information au sein d'une liste.\n\nLes éléments de liste sont empilés verticalement afin d'organiser le contenu associé et de faciliter la consultation et l'interaction.\n\nChaque élément peut contenir des éléments tels qu'une étiquette, du texte explicatif, des icônes ou des images, selon le contexte."
+            "value" : "Un élément de liste est une ligne horizontale servant à afficher une unité d'information au sein d'une liste.\nLes éléments de liste sont empilés verticalement afin d'organiser le contenu associé et de faciliter la consultation et l'interaction.\nChaque élément peut contenir des éléments tels qu'une étiquette, du texte explicatif, des icônes ou des images, selon le contexte."
           }
         }
       }
@@ -4544,6 +4519,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Globale"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_iconBadge_label" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شارة على الأيقونة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge on icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge sur icon"
           }
         }
       },
@@ -4673,6 +4673,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_listItem_navigation_description" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عنصر قائمة التنقل يشبه عنصر القائمة الثابتة، ولكنه يستطيع إعادة توجيه المستخدمين إلى مكان آخر باستخدام التنقل."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A navigation list item is like a static list item but can redirect users elsewhere with navigation"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un liste item de navigation est similaire à un élément de liste statique, mais peut rediriger les utilisateurs vers d'autres emplacements grâce à la navigation."
+          }
+        }
+      }
+    },
     "app_components_listItem_navigation_tech" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
@@ -4797,6 +4821,30 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_listItem_static_description" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "القائمة الثابتة هي عنصر من عناصر واجهة المستخدم لا يمكن النقر عليه وعرض محتواه دون مزيد من التنقل."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Static list is a UI element which cannot be clicked and display content without further navigation."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un liste item statique est un élément d'interface utilisateur qui ne peut être cliqué et afficher son contenu sans navigation supplémentaire."
+          }
+        }
+      }
     },
     "app_components_listItem_static_tech" : {
       "comment" : "Component - List Item",

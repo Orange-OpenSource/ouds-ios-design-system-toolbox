@@ -14,9 +14,9 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: - ListItem Navigation Configuration Model
+// MARK: - Navigation List Item Configuration Model
 
-final class ListItemNavigationConfigurationModel: ListItemConfigurationModel {
+final class NavigationListItemConfigurationModel: ListItemConfigurationModel {
 
     @Published var affordanceType: OUDSNavigationListItemAffordanceType {
         didSet { updateCode() }
@@ -25,16 +25,17 @@ final class ListItemNavigationConfigurationModel: ListItemConfigurationModel {
     override init() {
         affordanceType = .next
         super.init()
+        componentInitCode = "OUDSNavigationListItem"
     }
 
     deinit {}
 }
 
-// MARK: - ListItem Configuration
+// MARK: - Navigation List Item Configuration
 
-struct ListItemNavigationConfiguration: View {
+struct NavigationListItemConfiguration: View {
 
-    @ObservedObject var configurationModel: ListItemNavigationConfigurationModel
+    @ObservedObject var configurationModel: NavigationListItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
@@ -49,6 +50,8 @@ struct ListItemNavigationConfiguration: View {
         }
     }
 }
+
+// MARK: Extension for OUDSNavigationListItemAffordanceType
 
 extension OUDSNavigationListItemAffordanceType: @retroactive CaseIterable {}
 extension OUDSNavigationListItemAffordanceType: DesignToolboxEnumRepresentable {

@@ -14,7 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct ListItemStaticElement: DesignToolboxElement {
+struct StaticListItemElement: DesignToolboxElement {
     let name: String
     let illustration: AnyView
     let pageDescription: AnyView
@@ -24,8 +24,7 @@ struct ListItemStaticElement: DesignToolboxElement {
         illustration = AnyView(ListItemIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            illustration: illustration,
-            description: "",
-            demoScreen: AnyView(ListItemStaticPage())))
+            description: "app_components_listItem_static_description", // TODO: #265 - Display version
+            demoScreen: AnyView(StaticListItemPage())))
     }
 }

@@ -14,24 +14,24 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: - ListItem Page
+// MARK: - Static List Item Page
 
-struct ListItemStaticPage: View {
+struct StaticListItemPage: View {
 
     @StateObject private var configurationModel = ListItemConfigurationModel()
 
     var body: some View {
         ComponentConfigurationView(configuration: configurationModel) {
-            ListItemStaticDemo(configurationModel: configurationModel)
+            StaticListItemDemo(configurationModel: configurationModel)
         } configurationView: {
             ListItemConfiguration(configurationModel: configurationModel)
         }
     }
 }
 
-// MARK: - ListItem Demo
+// MARK: - Static List Item Demo
 
-private struct ListItemStaticDemo: View {
+private struct StaticListItemDemo: View {
 
     @ObservedObject var configurationModel: ListItemConfigurationModel
     @Environment(\.theme) private var theme
@@ -59,6 +59,6 @@ private struct ListItemStaticDemo: View {
     }
 
     private var rowGap: CGFloat {
-        configurationModel.type == .card ? theme.spaces.fixedLarge : theme.spaces.fixedNone
+        configurationModel.type == .card ? theme.spaces.fixedSmall : theme.spaces.fixedNone
     }
 }

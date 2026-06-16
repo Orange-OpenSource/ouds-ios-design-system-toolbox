@@ -14,26 +14,26 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: - ListItem Page
+// MARK: - Navigation List Item Page
 
-struct ListItemNavigationPage: View {
+struct NavigationListItemPage: View {
 
-    @StateObject private var configurationModel = ListItemNavigationConfigurationModel()
+    @StateObject private var configurationModel = NavigationListItemConfigurationModel()
 
     var body: some View {
         ComponentConfigurationView(configuration: configurationModel) {
-            ListItemNavigationDemo(configurationModel: configurationModel)
+            NavigationListItemDemo(configurationModel: configurationModel)
         } configurationView: {
-            ListItemNavigationConfiguration(configurationModel: configurationModel)
+            NavigationListItemConfiguration(configurationModel: configurationModel)
         }
     }
 }
 
-// MARK: - ListItem Demo
+// MARK: - Navigation List Item Demo
 
-private struct ListItemNavigationDemo: View {
+private struct NavigationListItemDemo: View {
 
-    @ObservedObject var configurationModel: ListItemNavigationConfigurationModel
+    @ObservedObject var configurationModel: NavigationListItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
@@ -44,18 +44,12 @@ private struct ListItemNavigationDemo: View {
                                            slot: configurationModel.slot(for: theme),
                                            affordanceType: configurationModel.affordanceType,
                                            leading: configurationModel.leading(for: theme),
-                                           trailing: configurationModel.trailing(for: theme))
-                    {
-                        print("Element \(data.label) clicked")
-                    }
+                                           trailing: configurationModel.trailing(for: theme)) {}
                 } else {
                     OUDSNavigationListItem(data: data,
                                            affordanceType: configurationModel.affordanceType,
                                            leading: configurationModel.leading(for: theme),
-                                           trailing: configurationModel.trailing(for: theme))
-                    {
-                        print("Element \(data.label) clicked")
-                    }
+                                           trailing: configurationModel.trailing(for: theme)) {}
                 }
             }
             .modifier(ListStyleModifier(configurationModel: configurationModel))
