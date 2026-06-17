@@ -64,10 +64,6 @@ final class BadgeStandardConfigurationModel: ComponentConfiguration {
     private var sizePattern: String {
         "size: \(standardSize.technicalDescription)"
     }
-
-    private var accessibilityLabelValue: String {
-        "app_components_badge_hint_a11y".localized()
-    }
 }
 
 // MARK: - Badge Standard Configuration View

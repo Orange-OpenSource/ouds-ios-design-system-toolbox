@@ -39,8 +39,6 @@ struct BadgeCountDemo: View {
 
     @StateObject var configurationModel: BadgeCountConfigurationModel
 
-    @Environment(\.theme) private var theme
-
     var body: some View {
         OUDSBadgeCount(configurationModel.count,
                        accessibilityLabel: "app_components_badge_hint_a11y".localized(),

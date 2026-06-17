@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1439-for-component-badge-icon-update-to-v13",
-        "revision" : "39f7c361ac052ea03af8d5e7df06a64c8cafe51d"
+        "branch" : "develop",
+        "revision" : "26e7582e5c524e56e28361e237f01ba702d8a1fa"
       }
     },
     {

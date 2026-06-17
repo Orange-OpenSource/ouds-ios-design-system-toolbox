@@ -40,14 +40,13 @@ struct MainView: View {
             oudsTabBar
         }
         #else
-        legacyTabBar
+        oudsTabBar
         #endif
     }
 
     // MARK: - iOS 26+ native TabView with search tab
 
     #if os(iOS)
-
     @available(iOS 26, *)
     private var nativeTabBar: some View {
         TabView {
