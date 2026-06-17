@@ -80,30 +80,30 @@ struct OpenableText: View {
         self.type = type
     }
 
-    var body: some View {
-        HStack(spacing: theme.spaces.insetNone) {
-            Text(rawText.replacingOccurrences(of: anchor, with: ""))
-            Spacer()
-            anchorLinkView
-        }
-    }
-
     // swiftlint:disable force_unwrapping
-    @ViewBuilder
-    private var anchorLinkView: some View {
+    var body: some View {
         if type != .githubIssue {
-            OUDSLink(text: anchor) {
+            let tag = OUDSTag(label: anchor)
+            OUDSNavigationListItem(data: .init(label: rawText.replacingOccurrences(of: anchor, with: "")),
+                                   affordanceType: .external,
+                                   trailing: .tag(tag))
+            {
                 OSUtilities.open(url: type.destination(for: anchor).first!)
             }
+            .oudsListItemStyle(.standard(divider: false, background: false))
+            .oudsListItemSize(.small)
         } else {
-            let anchors = anchor.split(separator: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
-            ForEach(anchors, id: \.self) { someAnchor in
-                if let url = urlFor(String(someAnchor)) {
-                    OUDSLink(text: someAnchor) {
-                        OSUtilities.open(url: url)
+            HStack(spacing: theme.spaces.insetNone) {
+                Text(rawText.replacingOccurrences(of: anchor, with: ""))
+                let anchors = anchor.split(separator: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+                ForEach(anchors, id: \.self) { someAnchor in
+                    if let url = urlFor(String(someAnchor)) {
+                        OUDSLink(text: someAnchor) {
+                            OSUtilities.open(url: url)
+                        }
+                    } else {
+                        Text(anchor)
                     }
-                } else {
-                    Text(anchor)
                 }
             }
         }

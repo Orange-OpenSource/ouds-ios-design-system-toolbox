@@ -24,7 +24,7 @@ struct ListStyleModifier: ViewModifier {
             content.oudsListCardStyle(hasDivider: configurationModel.hasDivider,
                                       hasBackground: configurationModel.hasBackground)
         case .card:
-            content.oudsListItemStyle(style: configurationModel.listStyle)
+            content.oudsListItemStyle(configurationModel.listStyle)
         }
     }
 }

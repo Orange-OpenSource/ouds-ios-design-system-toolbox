@@ -420,7 +420,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                         .oudsListCardStyle(hasDivider: \(hasDivider), hasBackground: \(hasBackground))
                         """
                     case .card:
-                        ".oudsListItemStyle(style: .\(listStyle))"
+                        ".oudsListItemStyle(.\(listStyle))"
                     }
                 }
 

@@ -28,29 +28,6 @@
         }
       }
     },
-    "app_about_appSettings_hint_a11y" : {
-      "comment" : "About screen - App settings",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "انقر مرتين للانتقال إلى إعدادات التطبيق"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tap twice to go to app settings"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Appuyez deux fois pour accéder aux paramètres de l'application"
-          }
-        }
-      }
-    },
     "app_about_appSettings_label" : {
       "comment" : "About screen - App settings",
       "localizations" : {
@@ -70,30 +47,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ouvrir les paramètres de l'application"
-          }
-        }
-      }
-    },
-    "app_about_appSources_hint_a11y" : {
-      "comment" : "About screen - App sources (hint)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "انقر مرتين للانتقال إلى الكود المصدري لهذا التطبيق على GitHub"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tap twice to go to the source code of this application on GitHub"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Appuyez deux fois pour accéder au code source de l’application disponible sur GitHub"
           }
         }
       }
@@ -122,30 +75,6 @@
         }
       }
     },
-    "app_about_bugReport_hint_a11y" : {
-      "comment" : "About screen - Bug reports (a11y)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "انقر مرتين للإبلاغ عن خطأ وإرسال طلب تحسين للتطبيق أو SDK"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tap twice to report a bug and send an improvement request for the app or the SDK"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Appuyez deux fois pour envoyer un rapport de bug ou une demande d’amélioration de l’application ou du SDK"
-          }
-        }
-      }
-    },
     "app_about_bugReport_label" : {
       "comment" : "About screen - Bug report",
       "extractionState" : "manual",
@@ -170,30 +99,6 @@
         }
       }
     },
-    "app_about_changelog_hint_a11y" : {
-      "comment" : "About screen - Changelog hint",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "انقر مرتين للانتقال إلى سجل التغيير عبر الإنترنت للمشروع"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tap twice to go the the changelog of the project"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tappez deux fois pour accéder en ligne aux notes de versions"
-          }
-        }
-      }
-    },
     "app_about_changelog_label" : {
       "comment" : "About screen - Changelog URL",
       "extractionState" : "manual",
@@ -214,30 +119,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Voir les notes de version"
-          }
-        }
-      }
-    },
-    "app_about_designSystem_hint_a11y" : {
-      "comment" : "About screen - Design system (a11y)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "انقر مرتين للانتقال إلى موقع نظام التصميم على الويب"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tap twice to go to the design system website"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Appuyez deux fois pour accéder aux spécifications du système de design"
           }
         }
       }
