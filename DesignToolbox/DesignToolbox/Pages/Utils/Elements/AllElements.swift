@@ -44,7 +44,7 @@ enum AllElements {
         #if !os(macOS) && !os(visionOS)
         var elements: [DesignToolboxElement] = [
             AlertElements(),
-            BadgeElement(),
+            BadgeElements(),
             BulletListElement(),
             ButtonElement(),
             CheckboxElements(),
@@ -66,7 +66,7 @@ enum AllElements {
         #else
         var elements: [DesignToolboxElement] = [
             AlertElements(),
-            BadgeElement(),
+            BadgeElements(),
             BulletListElement(),
             ButtonElement(),
             CheckboxElements(),

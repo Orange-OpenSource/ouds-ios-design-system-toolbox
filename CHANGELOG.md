@@ -13,11 +13,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] `View modifier` for fonts using only token (Orange-OpenSource/ouds-ios#1534)
 - [DesignToolbox] Alert to notify the user an update is available in App Store (Orange-OpenSource/ouds-ios#1548)
 
+### Changed
+ 
+- [Library] `badge` components with dedicated API and version 1.3 for `badge icon` (Orange-OpenSource/ouds-ios#1439)
+
 ### Fixed
 
 - [Library] `tab bar` layout is broken for iOS 27 (Orange-OpenSource/ouds-ios#1557)
 - [DesignToolbox] Wording key displayed in fonts page for `watchOS` and `tvOS` (Orange-OpenSource/ouds-ios#1553)
 - [Library] Label and description of `alert message` component not vocalized together (Orange-OpenSource/ouds-ios#1552)
+
+### Deprecated
+
+- [Library] `badge` umbrella component managing the three variants (Orange-OpenSource/ouds-ios#1439)
 
 ## [2.1.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.0.0...2.1.0) - 2026-06-03
 

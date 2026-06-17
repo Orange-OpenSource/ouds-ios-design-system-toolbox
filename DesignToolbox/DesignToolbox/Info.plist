@@ -36,7 +36,7 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIDesignRequiresCompatibility</key>
-	<true/>
+	<false/>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UILaunchScreen</key>
