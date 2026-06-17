@@ -17,11 +17,13 @@ import SwiftUI
 // swiftlint:disable accessibility_label_for_image
 struct BadgesView: View {
 
-    private static let allBadgeStatus: [OUDSBadge.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
-    private static let allBadgeStatusWithIcon: [OUDSBadge.StatusWithIcon]
+    private static let allBadgeStandardStatus: [OUDSBadgeStandard.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
+    private static let allBadgeIconStatus: [OUDSBadgeIcon.Status]
         = [.accent(icon: Image(systemName: "sun.min.fill")), .info, .negative, .positive, .neutral(icon: Image(systemName: "sun.min.fill")), .warning]
-    private static let allBadgeStandardSizes: [OUDSBadge.StandardSize] = [.extraSmall, .small, .medium, .large]
-    private static let allBadgeIllustrationSizes: [OUDSBadge.IllustrationSize] = [.medium, .large]
+    private static let allBadgeCountStatus: [OUDSBadgeStandard.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
+    private static let allBadgeStandardSizes: [OUDSBadgeStandard.Size] = [.extraSmall, .small, .medium, .large]
+    private static let allBadgeIconSizes: [OUDSBadgeStandard.Size] = [.extraSmall, .small, .medium, .large]
+    private static let allBadgeCountSizes: [OUDSBadgeCount.Size] = [.medium, .large]
 
     @Environment(\.theme) private var theme
 
@@ -35,28 +37,28 @@ struct BadgesView: View {
 
     @ViewBuilder
     private var watchOSLayout: some View {
-        Text("Status badges").font(.headline)
+        Text("Standard badges").font(.headline)
         ForEach(Self.allBadgeStandardSizes, id: \.self) { size in
             Text("Standard size \(String(describing: size))").font(.subheadline)
-            ForEach(Self.allBadgeStatus, id: \.self) { status in
-                OUDSBadge(accessibilityLabel: "Foo", status: status, size: size)
+            ForEach(Self.allBadgeStandardStatus, id: \.self) { status in
+                OUDSBadgeStandard(accessibilityLabel: "Foo", status: status, size: size)
             }
         }
 
         Text("Icon badges").font(.headline)
-        ForEach(Self.allBadgeIllustrationSizes, id: \.self) { size in
-            Text("Illustration size \(String(describing: size))").font(.subheadline)
-            ForEach(0 ..< Self.allBadgeStatusWithIcon.count, id: \.self) { index in
-                let status = Self.allBadgeStatusWithIcon[index]
-                OUDSBadge(status: status, accessibilityLabel: "Foo", size: size)
+        ForEach(Self.allBadgeIconSizes, id: \.self) { size in
+            Text("Icon size \(String(describing: size))").font(.subheadline)
+            ForEach(0 ..< Self.allBadgeIconStatus.count, id: \.self) { index in
+                let status = Self.allBadgeIconStatus[index]
+                OUDSBadgeIcon(status: status, accessibilityLabel: "Foo", size: size)
             }
         }
 
         Text("Count badges").font(.headline)
-        ForEach(Self.allBadgeIllustrationSizes, id: \.self) { size in
-            Text("Illustration size \(String(describing: size))").font(.subheadline)
-            ForEach(Self.allBadgeStatus, id: \.self) { status in
-                OUDSBadge(count: 100, accessibilityLabel: "Foo", status: status, size: size)
+        ForEach(Self.allBadgeCountSizes, id: \.self) { size in
+            Text("Count size \(String(describing: size))").font(.subheadline)
+            ForEach(Self.allBadgeCountStatus, id: \.self) { status in
+                OUDSBadgeCount(100, accessibilityLabel: "Foo", status: status, size: size)
             }
         }
     }
@@ -69,15 +71,15 @@ struct BadgesView: View {
 
             // Row n°1: Status badges
             VStack(spacing: theme.spaces.scaledMediumMobile) {
-                Text("Status Badges")
+                Text("Standard Badges")
                     .font(.title2)
                     .fontWeight(.bold)
 
                 HStack(spacing: theme.spaces.scaledMediumMobile) {
                     ForEach(Self.allBadgeStandardSizes, id: \.self) { size in
                         badgeSection(title: "Standard \(String(describing: size))") {
-                            ForEach(Self.allBadgeStatus, id: \.self) { status in
-                                OUDSBadge(accessibilityLabel: "Foo", status: status, size: size)
+                            ForEach(Self.allBadgeStandardStatus, id: \.self) { status in
+                                OUDSBadgeStandard(accessibilityLabel: "Foo", status: status, size: size)
                             }
                         }
                     }
@@ -93,11 +95,11 @@ struct BadgesView: View {
                     .fontWeight(.bold)
 
                 HStack(spacing: theme.spaces.scaledMediumMobile) {
-                    ForEach(Self.allBadgeIllustrationSizes, id: \.self) { size in
-                        badgeSection(title: "Illustration \(String(describing: size))") {
-                            ForEach(0 ..< Self.allBadgeStatusWithIcon.count, id: \.self) { index in
-                                let status = Self.allBadgeStatusWithIcon[index]
-                                OUDSBadge(status: status, accessibilityLabel: "Foo", size: size)
+                    ForEach(Self.allBadgeIconSizes, id: \.self) { size in
+                        badgeSection(title: "Icon \(String(describing: size))") {
+                            ForEach(0 ..< Self.allBadgeIconStatus.count, id: \.self) { index in
+                                let status = Self.allBadgeIconStatus[index]
+                                OUDSBadgeIcon(status: status, accessibilityLabel: "Foo", size: size)
                             }
                         }
                     }
@@ -113,10 +115,10 @@ struct BadgesView: View {
                     .fontWeight(.bold)
 
                 HStack(spacing: theme.spaces.scaledMediumMobile) {
-                    ForEach(Self.allBadgeIllustrationSizes, id: \.self) { size in
-                        badgeSection(title: "Illustration \(String(describing: size))") {
-                            ForEach(Self.allBadgeStatus, id: \.self) { status in
-                                OUDSBadge(count: 100, accessibilityLabel: "Foo", status: status, size: size)
+                    ForEach(Self.allBadgeCountSizes, id: \.self) { size in
+                        badgeSection(title: "Count \(String(describing: size))") {
+                            ForEach(Self.allBadgeCountStatus, id: \.self) { status in
+                                OUDSBadgeCount(100, accessibilityLabel: "Foo", status: status, size: size)
                             }
                         }
                     }

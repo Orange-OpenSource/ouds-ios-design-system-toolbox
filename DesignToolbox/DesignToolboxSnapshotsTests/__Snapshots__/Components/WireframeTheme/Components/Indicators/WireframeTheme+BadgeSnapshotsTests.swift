@@ -18,7 +18,7 @@ import SwiftUI
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSBadge` components for each parameter with `WireframeTheme`
+/// Tests the UI rendering of the `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount` components for each parameter with `WireframeTheme`
 final class WireframeThemeBadgeSnapshotsTests: BadgeSnapshotsTestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional

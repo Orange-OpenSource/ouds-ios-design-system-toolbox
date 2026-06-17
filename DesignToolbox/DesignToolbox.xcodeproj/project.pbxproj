@@ -154,12 +154,10 @@
 		07D3DBF62DA5084500D8A57F /* ColoredSurfaceElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3DBEE2DA5084500D8A57F /* ColoredSurfaceElement.swift */; };
 		07D7E1972D035566006472EB /* ButtonConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7E1962D035566006472EB /* ButtonConfigurationView.swift */; };
 		07D7E1982D035566006472EB /* ButtonConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7E1962D035566006472EB /* ButtonConfigurationView.swift */; };
-		07EB47002E1801D000B94EC2 /* BadgePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FF2E1801D000B94EC2 /* BadgePage.swift */; };
-		07EB47012E1801D000B94EC2 /* BadgeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FE2E1801D000B94EC2 /* BadgeElement.swift */; };
-		07EB47022E1801D000B94EC2 /* BadgeConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FD2E1801D000B94EC2 /* BadgeConfigurationView.swift */; };
-		07EB47032E1801D000B94EC2 /* BadgePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FF2E1801D000B94EC2 /* BadgePage.swift */; };
-		07EB47042E1801D000B94EC2 /* BadgeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FE2E1801D000B94EC2 /* BadgeElement.swift */; };
-		07EB47052E1801D000B94EC2 /* BadgeConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FD2E1801D000B94EC2 /* BadgeConfigurationView.swift */; };
+		07EB47012E1801D000B94EC2 /* BadgeStandardElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FE2E1801D000B94EC2 /* BadgeStandardElement.swift */; };
+		07EB47022E1801D000B94EC2 /* BadgeCountConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FD2E1801D000B94EC2 /* BadgeCountConfigurationView.swift */; };
+		07EB47042E1801D000B94EC2 /* BadgeStandardElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FE2E1801D000B94EC2 /* BadgeStandardElement.swift */; };
+		07EB47052E1801D000B94EC2 /* BadgeCountConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FD2E1801D000B94EC2 /* BadgeCountConfigurationView.swift */; };
 		07F0AFD72CFDB3CC00D334DD /* ComponentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */; };
 		07F0AFD82CFDB3CC00D334DD /* ComponentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */; };
 		07F0AFDE2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */; };
@@ -599,9 +597,8 @@
 		9589F0602EB7D67B00134487 /* CheckboxItemIndeterminateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9DF2E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift */; };
 		9589F0612EB7D67B00134487 /* OUDSCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift */; };
 		9589F0622EB7D67B00134487 /* ButtonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072141162D02F52A00B7B9C6 /* ButtonElement.swift */; };
-		9589F0632EB7D67B00134487 /* BadgePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FF2E1801D000B94EC2 /* BadgePage.swift */; };
-		9589F0642EB7D67B00134487 /* BadgeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FE2E1801D000B94EC2 /* BadgeElement.swift */; };
-		9589F0652EB7D67B00134487 /* BadgeConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FD2E1801D000B94EC2 /* BadgeConfigurationView.swift */; };
+		9589F0642EB7D67B00134487 /* BadgeStandardElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FE2E1801D000B94EC2 /* BadgeStandardElement.swift */; };
+		9589F0652EB7D67B00134487 /* BadgeCountConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FD2E1801D000B94EC2 /* BadgeCountConfigurationView.swift */; };
 		9589F0662EB7D67B00134487 /* CardIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42732CA3EC58000BD03E /* CardIllustration.swift */; };
 		9589F0672EB7D67B00134487 /* ElevationTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42762CA3F4BE000BD03E /* ElevationTokenElement.swift */; };
 		9589F0682EB7D67B00134487 /* NamedColor+Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4A32CC15C3E00E69359 /* NamedColor+Chart.swift */; };
@@ -765,9 +762,8 @@
 		9589F13A2EB7D67E00134487 /* CheckboxItemIndeterminateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9DF2E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift */; };
 		9589F13B2EB7D67E00134487 /* OUDSCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift */; };
 		9589F13C2EB7D67E00134487 /* ButtonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072141162D02F52A00B7B9C6 /* ButtonElement.swift */; };
-		9589F13D2EB7D67E00134487 /* BadgePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FF2E1801D000B94EC2 /* BadgePage.swift */; };
-		9589F13E2EB7D67E00134487 /* BadgeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FE2E1801D000B94EC2 /* BadgeElement.swift */; };
-		9589F13F2EB7D67E00134487 /* BadgeConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FD2E1801D000B94EC2 /* BadgeConfigurationView.swift */; };
+		9589F13E2EB7D67E00134487 /* BadgeStandardElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FE2E1801D000B94EC2 /* BadgeStandardElement.swift */; };
+		9589F13F2EB7D67E00134487 /* BadgeCountConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FD2E1801D000B94EC2 /* BadgeCountConfigurationView.swift */; };
 		9589F1402EB7D67E00134487 /* CardIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42732CA3EC58000BD03E /* CardIllustration.swift */; };
 		9589F1412EB7D67E00134487 /* ElevationTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42762CA3F4BE000BD03E /* ElevationTokenElement.swift */; };
 		9589F1422EB7D67E00134487 /* NamedColor+Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4A32CC15C3E00E69359 /* NamedColor+Chart.swift */; };
@@ -972,6 +968,38 @@
 		95C5A7D52F978289002F6D8A /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
 		95C5A7D62F978289002F6D8A /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
 		95C5A7D72F978289002F6D8A /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
+		95CA20192FC70AAA00431097 /* BadgeElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20182FC70AAA00431097 /* BadgeElements.swift */; };
+		95CA201A2FC70AAA00431097 /* BadgeElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20182FC70AAA00431097 /* BadgeElements.swift */; };
+		95CA201B2FC70AAA00431097 /* BadgeElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20182FC70AAA00431097 /* BadgeElements.swift */; };
+		95CA201C2FC70AAA00431097 /* BadgeElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20182FC70AAA00431097 /* BadgeElements.swift */; };
+		95CA201E2FC70B4300431097 /* BadgeIconElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA201D2FC70B4300431097 /* BadgeIconElement.swift */; };
+		95CA201F2FC70B4300431097 /* BadgeIconElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA201D2FC70B4300431097 /* BadgeIconElement.swift */; };
+		95CA20202FC70B4300431097 /* BadgeIconElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA201D2FC70B4300431097 /* BadgeIconElement.swift */; };
+		95CA20212FC70B4300431097 /* BadgeIconElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA201D2FC70B4300431097 /* BadgeIconElement.swift */; };
+		95CA20232FC70B4300431097 /* BadgeCountElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20222FC70B4300431097 /* BadgeCountElement.swift */; };
+		95CA20242FC70B4300431097 /* BadgeCountElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20222FC70B4300431097 /* BadgeCountElement.swift */; };
+		95CA20252FC70B4300431097 /* BadgeCountElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20222FC70B4300431097 /* BadgeCountElement.swift */; };
+		95CA20262FC70B4300431097 /* BadgeCountElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20222FC70B4300431097 /* BadgeCountElement.swift */; };
+		95CA20282FC70B7800431097 /* BadgeStandardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20272FC70B7800431097 /* BadgeStandardPage.swift */; };
+		95CA20292FC70B7800431097 /* BadgeStandardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20272FC70B7800431097 /* BadgeStandardPage.swift */; };
+		95CA202A2FC70B7800431097 /* BadgeStandardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20272FC70B7800431097 /* BadgeStandardPage.swift */; };
+		95CA202B2FC70B7800431097 /* BadgeStandardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20272FC70B7800431097 /* BadgeStandardPage.swift */; };
+		95CA202D2FC70BE700431097 /* BadgeCountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA202C2FC70BE700431097 /* BadgeCountPage.swift */; };
+		95CA202E2FC70BE700431097 /* BadgeCountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA202C2FC70BE700431097 /* BadgeCountPage.swift */; };
+		95CA202F2FC70BE700431097 /* BadgeCountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA202C2FC70BE700431097 /* BadgeCountPage.swift */; };
+		95CA20302FC70BE700431097 /* BadgeCountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA202C2FC70BE700431097 /* BadgeCountPage.swift */; };
+		95CA20322FC70BEF00431097 /* BadgeStandardConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20312FC70BEF00431097 /* BadgeStandardConfigurationView.swift */; };
+		95CA20332FC70BEF00431097 /* BadgeStandardConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20312FC70BEF00431097 /* BadgeStandardConfigurationView.swift */; };
+		95CA20342FC70BEF00431097 /* BadgeStandardConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20312FC70BEF00431097 /* BadgeStandardConfigurationView.swift */; };
+		95CA20352FC70BEF00431097 /* BadgeStandardConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20312FC70BEF00431097 /* BadgeStandardConfigurationView.swift */; };
+		95CA20372FC70D5300431097 /* BadgeIconPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20362FC70D5300431097 /* BadgeIconPage.swift */; };
+		95CA20382FC70D5300431097 /* BadgeIconPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20362FC70D5300431097 /* BadgeIconPage.swift */; };
+		95CA20392FC70D5300431097 /* BadgeIconPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20362FC70D5300431097 /* BadgeIconPage.swift */; };
+		95CA203A2FC70D5300431097 /* BadgeIconPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20362FC70D5300431097 /* BadgeIconPage.swift */; };
+		95CA203C2FC70DA200431097 /* BadgeIconConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA203B2FC70DA200431097 /* BadgeIconConfigurationView.swift */; };
+		95CA203D2FC70DA200431097 /* BadgeIconConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA203B2FC70DA200431097 /* BadgeIconConfigurationView.swift */; };
+		95CA203E2FC70DA200431097 /* BadgeIconConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA203B2FC70DA200431097 /* BadgeIconConfigurationView.swift */; };
+		95CA203F2FC70DA200431097 /* BadgeIconConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA203B2FC70DA200431097 /* BadgeIconConfigurationView.swift */; };
 		95CD64F22EB3A375008FAB03 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD64F12EB3A371008FAB03 /* WindowManager.swift */; };
 		95CE05342EC33C2A00ACE41C /* NamedOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05332EC33C2700ACE41C /* NamedOpacity.swift */; };
 		95CE05352EC33C2A00ACE41C /* NamedOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05332EC33C2700ACE41C /* NamedOpacity.swift */; };
@@ -1345,9 +1373,8 @@
 		07D3DBEE2DA5084500D8A57F /* ColoredSurfaceElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredSurfaceElement.swift; sourceTree = "<group>"; };
 		07D3DBEF2DA5084500D8A57F /* ColoredSurfacePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredSurfacePage.swift; sourceTree = "<group>"; };
 		07D7E1962D035566006472EB /* ButtonConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfigurationView.swift; sourceTree = "<group>"; };
-		07EB46FD2E1801D000B94EC2 /* BadgeConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeConfigurationView.swift; sourceTree = "<group>"; };
-		07EB46FE2E1801D000B94EC2 /* BadgeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeElement.swift; sourceTree = "<group>"; };
-		07EB46FF2E1801D000B94EC2 /* BadgePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgePage.swift; sourceTree = "<group>"; };
+		07EB46FD2E1801D000B94EC2 /* BadgeCountConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCountConfigurationView.swift; sourceTree = "<group>"; };
+		07EB46FE2E1801D000B94EC2 /* BadgeStandardElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeStandardElement.swift; sourceTree = "<group>"; };
 		07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentPage.swift; sourceTree = "<group>"; };
 		07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsPage.swift; sourceTree = "<group>"; };
 		07F0AFE72CFE0FBD00D334DD /* DesignToolboxConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxConfiguration.swift; sourceTree = "<group>"; };
@@ -1595,6 +1622,14 @@
 		9598006D2EBCC714007BE0EA /* DesignToolbox_Light_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolbox_Light_App.swift; sourceTree = "<group>"; };
 		959800892EBCCCAB007BE0EA /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
 		95C5A7D32F978284002F6D8A /* TextualContentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextualContentMode.swift; sourceTree = "<group>"; };
+		95CA20182FC70AAA00431097 /* BadgeElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeElements.swift; sourceTree = "<group>"; };
+		95CA201D2FC70B4300431097 /* BadgeIconElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeIconElement.swift; sourceTree = "<group>"; };
+		95CA20222FC70B4300431097 /* BadgeCountElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCountElement.swift; sourceTree = "<group>"; };
+		95CA20272FC70B7800431097 /* BadgeStandardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeStandardPage.swift; sourceTree = "<group>"; };
+		95CA202C2FC70BE700431097 /* BadgeCountPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCountPage.swift; sourceTree = "<group>"; };
+		95CA20312FC70BEF00431097 /* BadgeStandardConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeStandardConfigurationView.swift; sourceTree = "<group>"; };
+		95CA20362FC70D5300431097 /* BadgeIconPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeIconPage.swift; sourceTree = "<group>"; };
+		95CA203B2FC70DA200431097 /* BadgeIconConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeIconConfigurationView.swift; sourceTree = "<group>"; };
 		95CD64F12EB3A371008FAB03 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		95CE05332EC33C2700ACE41C /* NamedOpacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedOpacity.swift; sourceTree = "<group>"; };
 		95CE05382EC33C4300ACE41C /* OpacityIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityIllustration.swift; sourceTree = "<group>"; };
@@ -2087,9 +2122,10 @@
 		07EB46FC2E1801BB00B94EC2 /* Badge */ = {
 			isa = PBXGroup;
 			children = (
-				07EB46FD2E1801D000B94EC2 /* BadgeConfigurationView.swift */,
-				07EB46FE2E1801D000B94EC2 /* BadgeElement.swift */,
-				07EB46FF2E1801D000B94EC2 /* BadgePage.swift */,
+				95CA20172FC70A4A00431097 /* BadgeCount */,
+				95CA20152FC70A3F00431097 /* BadgeIcon */,
+				95CA20162FC70A4300431097 /* BadgeStandard */,
+				95CA20182FC70AAA00431097 /* BadgeElements.swift */,
 			);
 			path = Badge;
 			sourceTree = "<group>";
@@ -3367,6 +3403,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		95CA20152FC70A3F00431097 /* BadgeIcon */ = {
+			isa = PBXGroup;
+			children = (
+				95CA203B2FC70DA200431097 /* BadgeIconConfigurationView.swift */,
+				95CA20362FC70D5300431097 /* BadgeIconPage.swift */,
+				95CA201D2FC70B4300431097 /* BadgeIconElement.swift */,
+			);
+			path = BadgeIcon;
+			sourceTree = "<group>";
+		};
+		95CA20162FC70A4300431097 /* BadgeStandard */ = {
+			isa = PBXGroup;
+			children = (
+				95CA20312FC70BEF00431097 /* BadgeStandardConfigurationView.swift */,
+				95CA20272FC70B7800431097 /* BadgeStandardPage.swift */,
+				07EB46FE2E1801D000B94EC2 /* BadgeStandardElement.swift */,
+			);
+			path = BadgeStandard;
+			sourceTree = "<group>";
+		};
+		95CA20172FC70A4A00431097 /* BadgeCount */ = {
+			isa = PBXGroup;
+			children = (
+				95CA20222FC70B4300431097 /* BadgeCountElement.swift */,
+				95CA202C2FC70BE700431097 /* BadgeCountPage.swift */,
+				07EB46FD2E1801D000B94EC2 /* BadgeCountConfigurationView.swift */,
+			);
+			path = BadgeCount;
+			sourceTree = "<group>";
+		};
 		95CE05702EC3D13C00ACE41C /* Illustrations */ = {
 			isa = PBXGroup;
 			children = (
@@ -4178,6 +4244,7 @@
 				51952AA12D3FA32E0068B807 /* ElevationTokenElement.swift in Sources */,
 				95CE055A2EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				51952AA22D3FA32E0068B807 /* GridTokenElement.swift in Sources */,
+				95CA20212FC70B4300431097 /* BadgeIconElement.swift in Sources */,
 				0794FCDB2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift in Sources */,
 				079B4A1A2E49C78F0039FC26 /* OrangeCompactTheme+TagSnapshotsTests.swift in Sources */,
 				51952AA32D3FA32E0068B807 /* GridTokenPage.swift in Sources */,
@@ -4196,11 +4263,11 @@
 				51B8D5A22DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */,
 				079B4A182E49C7790039FC26 /* OrangeTheme+TagSnapshotsTests.swift in Sources */,
 				6DED17F12CD2641800584BC9 /* OpacityTokenElement.swift in Sources */,
-				07EB47032E1801D000B94EC2 /* BadgePage.swift in Sources */,
 				072BB4542E68937E00A4DF2D /* TextInputSnapshotsTestsTestCase.swift in Sources */,
 				07AA1100FF0000000000AB10 /* TextAreaSnapshotsTestsTestCase.swift in Sources */,
-				07EB47042E1801D000B94EC2 /* BadgeElement.swift in Sources */,
-				07EB47052E1801D000B94EC2 /* BadgeConfigurationView.swift in Sources */,
+				07EB47042E1801D000B94EC2 /* BadgeStandardElement.swift in Sources */,
+				07EB47052E1801D000B94EC2 /* BadgeCountConfigurationView.swift in Sources */,
+				95CA20342FC70BEF00431097 /* BadgeStandardConfigurationView.swift in Sources */,
 				51E015A12E2AA82C00A86512 /* OrangeCompactTheme+TokensColorSnapshotsTests.swift in Sources */,
 				FCF02BB82F30EC7700F2013F /* OrangeTheme+PasswordInputSnapshotsTests.swift in Sources */,
 				950288A82EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */,
@@ -4242,6 +4309,7 @@
 				072BB4562E69704C00A4DF2D /* SoshTheme+TextInputSnapshotsTests.swift in Sources */,
 				07AA1100FF0000000000AB13 /* SoshTheme+TextAreaSnapshotsTests.swift in Sources */,
 				07CC9AEE2DB0F7DD001BC929 /* SwitchElements.swift in Sources */,
+				95CA203A2FC70D5300431097 /* BadgeIconPage.swift in Sources */,
 				07CC9AEF2DB0F7DD001BC929 /* SwitchItemElement.swift in Sources */,
 				075045FC2E58717F00D98587 /* TextInputPage.swift in Sources */,
 				075045FD2E58717F00D98587 /* TextInputElement.swift in Sources */,
@@ -4264,6 +4332,8 @@
 				51A217822E325FE600562BE0 /* WireframeTheme+TokensBorderSnapshotsTests.swift in Sources */,
 				5134420B2D75B880000B5DE4 /* CheckboxConfiguration.swift in Sources */,
 				9596D2102F7D7E5700DB6136 /* PinCodeInputSnapshotsTestsTestCase.swift in Sources */,
+				95CA202A2FC70B7800431097 /* BadgeStandardPage.swift in Sources */,
+				95CA202D2FC70BE700431097 /* BadgeCountPage.swift in Sources */,
 				5134420C2D75B880000B5DE4 /* CheckboxElements.swift in Sources */,
 				6DB260DD2CD0F01F0091F72E /* NamedSpace+Scaled.swift in Sources */,
 				6DB260DC2CD0F0000091F72E /* DesignToolboxSectionHeaderStyle.swift in Sources */,
@@ -4382,11 +4452,13 @@
 				07304A6B2D429F9F009320BA /* LinkElement.swift in Sources */,
 				51ABCD282E183226006CD6C0 /* SoshTheme+TokensFontSnapshotsTests.swift in Sources */,
 				5180FE712DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */,
+				95CA203E2FC70DA200431097 /* BadgeIconConfigurationView.swift in Sources */,
 				FC6D5C7A2FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift in Sources */,
 				51A905FD2E8427C6003F3E0E /* View+NavigationBar.swift in Sources */,
 				5180FE722DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */,
 				079B4A132E49BFA20039FC26 /* TagSnapshotsTestCase.swift in Sources */,
 				51ABCD2C2E183226006CD6C0 /* SoshTheme+TokensElevationSnapshotsTests.swift in Sources */,
+				95CA20232FC70B4300431097 /* BadgeCountElement.swift in Sources */,
 				5180FE732DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */,
 				51E0159E2E2AA82C00A86512 /* OrangeCompactTheme+TokensBorderSnapshotsTests.swift in Sources */,
 				51A217602E325ED500562BE0 /* OrangeCompactTheme+DividerSnapshotsTests.swift in Sources */,
@@ -4404,6 +4476,7 @@
 				51E015A32E2AA82C00A86512 /* OrangeCompactTheme+TokensElevationSnapshotsTests.swift in Sources */,
 				51A217752E325F7F00562BE0 /* WireframeTheme+ChipsSnapshotsTests.swift in Sources */,
 				95CE05352EC33C2A00ACE41C /* NamedOpacity.swift in Sources */,
+				95CA201B2FC70AAA00431097 /* BadgeElements.swift in Sources */,
 				95CE057D2EC3D2AF00ACE41C /* NamedBorders.swift in Sources */,
 				6D8F9C522CC15F960078A10E /* ElevationTokenPage.swift in Sources */,
 				6D8F9C502CC14EBF0078A10E /* OpacityTokenPage.swift in Sources */,
@@ -4487,6 +4560,7 @@
 				95CE05572EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				FC95B93E2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */,
 				95C5A7D42F978289002F6D8A /* TextualContentMode.swift in Sources */,
+				95CA20352FC70BEF00431097 /* BadgeStandardConfigurationView.swift in Sources */,
 				0786A9DB2E0AAB4A00976098 /* CheckboxItemElement.swift in Sources */,
 				0786A9DC2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */,
 				077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */,
@@ -4510,21 +4584,24 @@
 				0786A9E32E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				0786A9E42E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
 				0721411E2D02F52A00B7B9C6 /* ButtonElement.swift in Sources */,
-				07EB47002E1801D000B94EC2 /* BadgePage.swift in Sources */,
-				07EB47012E1801D000B94EC2 /* BadgeElement.swift in Sources */,
+				95CA20392FC70D5300431097 /* BadgeIconPage.swift in Sources */,
+				07EB47012E1801D000B94EC2 /* BadgeStandardElement.swift in Sources */,
 				9593906A2EC24D22000DBE95 /* NamedSpace.swift in Sources */,
-				07EB47022E1801D000B94EC2 /* BadgeConfigurationView.swift in Sources */,
+				07EB47022E1801D000B94EC2 /* BadgeCountConfigurationView.swift in Sources */,
 				07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */,
 				07CF42782CA3F4BE000BD03E /* ElevationTokenElement.swift in Sources */,
 				0765B4A42CC15C3E00E69359 /* NamedColor+Chart.swift in Sources */,
 				FC6AFD402F850344004615AF /* ToolBarBottomConfigurationView.swift in Sources */,
+				95CA203F2FC70DA200431097 /* BadgeIconConfigurationView.swift in Sources */,
 				07CF42792CA3F4BE000BD03E /* ElevationTokenPage.swift in Sources */,
 				51D6D5912D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift in Sources */,
 				075114E12CB7FDC200B8B759 /* ColorTokenPage.swift in Sources */,
+				95CA20242FC70B4300431097 /* BadgeCountElement.swift in Sources */,
 				95D713EC2EB36B0B00EBB7C2 /* View+extensions.swift in Sources */,
 				07F7533B2CC785620007450D /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				07F0AFDE2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */,
 				AASRCH004BUILD00000002 /* SearchPage.swift in Sources */,
+				95CA201A2FC70AAA00431097 /* BadgeElements.swift in Sources */,
 				07B3CCB12D40E34700DBB10A /* LinkConfiguration.swift in Sources */,
 				95CEF1892F9A2726008AD8C4 /* View+TabBarAppearance.swift in Sources */,
 				07B3CCB22D40E34700DBB10A /* LinkElement.swift in Sources */,
@@ -4578,6 +4655,8 @@
 				953DC15F2ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */,
 				953DC1602ED0995600D14D44 /* TabBarElement.swift in Sources */,
 				953DC1612ED0995600D14D44 /* TabBarPage.swift in Sources */,
+				95CA20282FC70B7800431097 /* BadgeStandardPage.swift in Sources */,
+				95CA202F2FC70BE700431097 /* BadgeCountPage.swift in Sources */,
 				5122E02A2D65E7AC00CD2857 /* String+extension.swift in Sources */,
 				95CE05662EC3401800ACE41C /* ElevationIllustration.swift in Sources */,
 				07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */,
@@ -4611,6 +4690,7 @@
 				95EDFD182EC73BB9006DE593 /* Image+extensions.swift in Sources */,
 				518B26642DAE9DE1003A6ED3 /* RadioPickerPage.swift in Sources */,
 				51A905FE2E8427C6003F3E0E /* View+NavigationBar.swift in Sources */,
+				95CA20202FC70B4300431097 /* BadgeIconElement.swift in Sources */,
 				95CE05472EC33CE900ACE41C /* FontIllustrations.swift in Sources */,
 				5152DA1E2DE0BD440078B9F1 /* DesignToolbox+EnrichedTexts.swift in Sources */,
 				518B26652DAE9DE1003A6ED3 /* RadioPickerConfiguration.swift in Sources */,
@@ -4785,6 +4865,7 @@
 				FC4799B82F485277005F349B /* AlertStatus.swift in Sources */,
 				FC4799B92F485277005F349B /* AlertConfiguration.swift in Sources */,
 				9589F02B2EB7D67B00134487 /* RadioPage.swift in Sources */,
+				95CA20332FC70BEF00431097 /* BadgeStandardConfigurationView.swift in Sources */,
 				9589F02C2EB7D67B00134487 /* RadioConfiguration.swift in Sources */,
 				9589F02D2EB7D67B00134487 /* RadioElement.swift in Sources */,
 				9589F02E2EB7D67B00134487 /* DesignToolboxVariantElement.swift in Sources */,
@@ -4850,10 +4931,9 @@
 				9589F0602EB7D67B00134487 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				9589F0612EB7D67B00134487 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
 				9589F0622EB7D67B00134487 /* ButtonElement.swift in Sources */,
-				9589F0632EB7D67B00134487 /* BadgePage.swift in Sources */,
-				9589F0642EB7D67B00134487 /* BadgeElement.swift in Sources */,
+				9589F0642EB7D67B00134487 /* BadgeStandardElement.swift in Sources */,
 				959390692EC24D22000DBE95 /* NamedSpace.swift in Sources */,
-				9589F0652EB7D67B00134487 /* BadgeConfigurationView.swift in Sources */,
+				9589F0652EB7D67B00134487 /* BadgeCountConfigurationView.swift in Sources */,
 				9589F0662EB7D67B00134487 /* CardIllustration.swift in Sources */,
 				FC6D5C792FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift in Sources */,
 				9589F0672EB7D67B00134487 /* ElevationTokenElement.swift in Sources */,
@@ -4869,6 +4949,7 @@
 				9589F06F2EB7D67B00134487 /* LinkConfiguration.swift in Sources */,
 				9589F0702EB7D67B00134487 /* LinkElement.swift in Sources */,
 				9589F0712EB7D67B00134487 /* LinkPage.swift in Sources */,
+				95CA20192FC70AAA00431097 /* BadgeElements.swift in Sources */,
 				9589F0722EB7D67B00134487 /* GridTokenPage.swift in Sources */,
 				9589F0732EB7D67B00134487 /* GridTokenElement.swift in Sources */,
 				9589F0742EB7D67B00134487 /* SpaceTokenPage.swift in Sources */,
@@ -4899,7 +4980,9 @@
 				FCDDFBBE2F2B69E700389D8D /* PasswordInputElement.swift in Sources */,
 				9589F0882EB7D67B00134487 /* InputTagElement.swift in Sources */,
 				9589F0892EB7D67B00134487 /* InputTagConfigurationView.swift in Sources */,
+				95CA20372FC70D5300431097 /* BadgeIconPage.swift in Sources */,
 				9589F08A2EB7D67B00134487 /* InputTagPage.swift in Sources */,
+				95CA201E2FC70B4300431097 /* BadgeIconElement.swift in Sources */,
 				9589F08B2EB7D67B00134487 /* SpaceTokenElement.swift in Sources */,
 				9589F08C2EB7D67B00134487 /* DividerConfiguration.swift in Sources */,
 				9589F08D2EB7D67B00134487 /* DividerElement.swift in Sources */,
@@ -4916,6 +4999,7 @@
 				9589F0942EB7D67B00134487 /* TokensPage.swift in Sources */,
 				9589F0952EB7D67B00134487 /* TextInputPage.swift in Sources */,
 				9589F0962EB7D67B00134487 /* TextInputElement.swift in Sources */,
+				95CA203C2FC70DA200431097 /* BadgeIconConfigurationView.swift in Sources */,
 				9589F0972EB7D67B00134487 /* TextInputConfigurationView.swift in Sources */,
 				07AA1100FF0000000000AB07 /* TextAreaPage.swift in Sources */,
 				07AA1100FF0000000000AB08 /* TextAreaElement.swift in Sources */,
@@ -4948,9 +5032,12 @@
 				9589F0AC2EB7D67B00134487 /* CheckboxPage.swift in Sources */,
 				9589F0AD2EB7D67B00134487 /* DesignToolboxDisclosureGroup.swift in Sources */,
 				9589F0AE2EB7D67B00134487 /* ColoredSurfaceConfiguration.swift in Sources */,
+				95CA20292FC70B7800431097 /* BadgeStandardPage.swift in Sources */,
+				95CA202E2FC70BE700431097 /* BadgeCountPage.swift in Sources */,
 				9589F0AF2EB7D67B00134487 /* ColoredSurfacePage.swift in Sources */,
 				95CEF1902F9A2952008AD8C4 /* ElementsGridView.swift in Sources */,
 				9589F0B02EB7D67B00134487 /* ColoredSurfaceElement.swift in Sources */,
+				95CA20262FC70B4300431097 /* BadgeCountElement.swift in Sources */,
 				9589F0B12EB7D67B00134487 /* CheckboxConfiguration.swift in Sources */,
 				9589F0B22EB7D67B00134487 /* CheckboxElements.swift in Sources */,
 				9589F0B32EB7D67B00134487 /* NamedSize+IconWithTypography.swift in Sources */,
@@ -5028,6 +5115,7 @@
 				9589F1262EB7D67E00134487 /* CheckboxItemPage.swift in Sources */,
 				FC95B9402F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */,
 				95C5A7D72F978289002F6D8A /* TextualContentMode.swift in Sources */,
+				95CA20322FC70BEF00431097 /* BadgeStandardConfigurationView.swift in Sources */,
 				9589F1272EB7D67E00134487 /* DimensionTokenElement.swift in Sources */,
 				9589F1282EB7D67E00134487 /* BorderTokenPage.swift in Sources */,
 				9589F1292EB7D67E00134487 /* DesignToolboxTokenIllustration.swift in Sources */,
@@ -5051,21 +5139,24 @@
 				9589F13A2EB7D67E00134487 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				9589F13B2EB7D67E00134487 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
 				9589F13C2EB7D67E00134487 /* ButtonElement.swift in Sources */,
-				9589F13D2EB7D67E00134487 /* BadgePage.swift in Sources */,
-				9589F13E2EB7D67E00134487 /* BadgeElement.swift in Sources */,
+				95CA20382FC70D5300431097 /* BadgeIconPage.swift in Sources */,
+				9589F13E2EB7D67E00134487 /* BadgeStandardElement.swift in Sources */,
 				959390652EC24D22000DBE95 /* NamedSpace.swift in Sources */,
-				9589F13F2EB7D67E00134487 /* BadgeConfigurationView.swift in Sources */,
+				9589F13F2EB7D67E00134487 /* BadgeCountConfigurationView.swift in Sources */,
 				9589F1402EB7D67E00134487 /* CardIllustration.swift in Sources */,
 				9589F1412EB7D67E00134487 /* ElevationTokenElement.swift in Sources */,
 				9589F1422EB7D67E00134487 /* NamedColor+Chart.swift in Sources */,
 				FC6AFD462F850344004615AF /* ToolBarBottomConfigurationView.swift in Sources */,
+				95CA203D2FC70DA200431097 /* BadgeIconConfigurationView.swift in Sources */,
 				9589F1432EB7D67E00134487 /* ElevationTokenPage.swift in Sources */,
 				9589F1442EB7D67E00134487 /* CheckboxIndeterminateConfiguration.swift in Sources */,
 				9589F1452EB7D67E00134487 /* ColorTokenPage.swift in Sources */,
+				95CA20252FC70B4300431097 /* BadgeCountElement.swift in Sources */,
 				9589F1462EB7D67E00134487 /* View+extensions.swift in Sources */,
 				9589F1472EB7D67E00134487 /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				9589F1482EB7D67E00134487 /* ComponentsPage.swift in Sources */,
 				AASRCH006BUILD00000004 /* SearchPage.swift in Sources */,
+				95CA201C2FC70AAA00431097 /* BadgeElements.swift in Sources */,
 				9589F1492EB7D67E00134487 /* LinkConfiguration.swift in Sources */,
 				95CEF1882F9A2726008AD8C4 /* View+TabBarAppearance.swift in Sources */,
 				9589F14A2EB7D67E00134487 /* LinkElement.swift in Sources */,
@@ -5116,6 +5207,8 @@
 				953DC1592ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */,
 				953DC15A2ED0995600D14D44 /* TabBarElement.swift in Sources */,
 				953DC15B2ED0995600D14D44 /* TabBarPage.swift in Sources */,
+				95CA202B2FC70B7800431097 /* BadgeStandardPage.swift in Sources */,
+				95CA20302FC70BE700431097 /* BadgeCountPage.swift in Sources */,
 				9589F16B2EB7D67E00134487 /* String+extension.swift in Sources */,
 				95CE05652EC3401800ACE41C /* ElevationIllustration.swift in Sources */,
 				9589F16C2EB7D67E00134487 /* ThemeSelection.swift in Sources */,
@@ -5149,6 +5242,7 @@
 				95EDFD172EC73BB9006DE593 /* Image+extensions.swift in Sources */,
 				9589F1812EB7D67E00134487 /* RadioPickerPage.swift in Sources */,
 				9589F1822EB7D67E00134487 /* View+NavigationBar.swift in Sources */,
+				95CA201F2FC70B4300431097 /* BadgeIconElement.swift in Sources */,
 				95CE05462EC33CE900ACE41C /* FontIllustrations.swift in Sources */,
 				9589F1832EB7D67E00134487 /* DesignToolbox+EnrichedTexts.swift in Sources */,
 				9589F1842EB7D67E00134487 /* RadioPickerConfiguration.swift in Sources */,
