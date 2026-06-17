@@ -22,7 +22,7 @@ struct BadgesView: View {
         = [.accent(icon: Image(systemName: "sun.min.fill")), .info, .negative, .positive, .neutral(icon: Image(systemName: "sun.min.fill")), .warning]
     private static let allBadgeCountStatus: [OUDSBadgeStandard.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
     private static let allBadgeStandardSizes: [OUDSBadgeStandard.Size] = [.extraSmall, .small, .medium, .large]
-    private static let allBadgeIconSizes: [OUDSBadgeStandard	.Size] = [.extraSmall, .small, .medium, .large]
+    private static let allBadgeIconSizes: [OUDSBadgeStandard.Size] = [.extraSmall, .small, .medium, .large]
     private static let allBadgeCountSizes: [OUDSBadgeCount.Size] = [.medium, .large]
 
     @Environment(\.theme) private var theme

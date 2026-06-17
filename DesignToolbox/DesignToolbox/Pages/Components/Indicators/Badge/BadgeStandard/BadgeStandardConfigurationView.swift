@@ -48,7 +48,7 @@ final class BadgeStandardConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         code = """
-        OUDSBadgeStandard(\(statusPattern), \(sizePattern))
+        OUDSBadgeStandard(accessibilityLabel: someLabel, \(statusPattern), \(sizePattern))
         \(disablePattern)
         """
     }

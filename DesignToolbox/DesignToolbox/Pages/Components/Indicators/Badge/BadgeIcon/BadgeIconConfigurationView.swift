@@ -84,7 +84,7 @@ final class BadgeIconConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         code = """
-        OUDSBadgeIcon(\(statusWithIconPattern), accessibilityLabel: \"\(accessibilityLabelValue)\", \(sizePattern))
+        OUDSBadgeIcon(\(statusWithIconPattern), accessibilityLabel: someLabel, \(sizePattern))
         \(disablePattern)
         """
     }
@@ -112,10 +112,6 @@ final class BadgeIconConfigurationModel: ComponentConfiguration {
 
     private var sizePattern: String {
         "size: \(size.technicalDescription)"
-    }
-
-    private var accessibilityLabelValue: String {
-        "app_components_badge_hint_a11y".localized()
     }
 }
 

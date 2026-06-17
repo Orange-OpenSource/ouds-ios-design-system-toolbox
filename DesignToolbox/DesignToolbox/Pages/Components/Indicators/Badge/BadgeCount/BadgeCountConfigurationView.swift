@@ -59,7 +59,7 @@ final class BadgeCountConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         code = """
-        OUDSBadgeCount(\(count), \(statusPattern), \(sizePattern))
+        OUDSBadgeCount(\(count), accessibilityLabel: someLabel, \(statusPattern), \(sizePattern))
         \(disablePattern)
         """
     }
