@@ -43,11 +43,11 @@ open class BadgeSnapshotsTestsTestCase: XCTestCase {
         }
 
         // Test OUDSBadgeIcon
-        for status in OUDSBadgeIcon.Status.allCases {
+        for status in BadgeIconStatusKind.allCases {
             let model = BadgeIconConfigurationModel()
-            model.statusKind = statusKind(status)
-            for size in OUDSBadgeIcon.Size.allCases {
-                model.iconSize = size
+            model.statusKind = status
+            for size in OUDSBadgeStandard.Size.allCases {
+                model.size = size
                 testBadgeIcon(theme: theme, interfaceStyle: interfaceStyle, model: model)
             }
         }
@@ -123,7 +123,7 @@ open class BadgeSnapshotsTestsTestCase: XCTestCase {
         let testName = "testBadge_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let typePattern = "icon"
         let statusPattern = model.statusKind.technicalDescription
-        let sizePattern = model.iconSize.technicalDescription
+        let sizePattern = model.size.technicalDescription
 
         let name = "\(typePattern)\(statusPattern)\(sizePattern)"
 
