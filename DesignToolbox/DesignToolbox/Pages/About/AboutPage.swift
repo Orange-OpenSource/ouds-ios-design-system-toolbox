@@ -249,6 +249,35 @@ private struct LiquidGlassStateItem: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyTabBar
+
+    private var status: OUDSTag.Status {
+        if #available(iOS 26, *) {
+            if forceOUDSLegacyTabBar || isLiquidGlassDisabled { return .negative(leading: .none) }
+            return .positive(leading: .none)
+        } else {
+            return .warning(leading: .none)
+        }
+    }
+
+    private var appearance: OUDSTag.Appearance {
+        if #available(iOS 26, *) {
+            if forceOUDSLegacyTabBar || isLiquidGlassDisabled { return .emphasized }
+            return .muted
+        } else {
+            return .muted
+        }
+    }
+
+    private var wording: String {
+        if #available(iOS 26, *) {
+            if forceOUDSLegacyTabBar { return "app_common_forced_tech".localized() + " " + "app_common_disabled_tech".localized() }
+            if isLiquidGlassDisabled { return "app_common_disabled_tech".localized() }
+            return "app_common_enabled_tech".localized()
+        } else {
+            return "app_common_unavailable_tech".localized()
+        }
+    }
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
@@ -257,21 +286,12 @@ private struct LiquidGlassStateItem: View {
 
             Spacer()
 
-            if #available(iOS 26, *) {
-                OUDSTag(isLiquidGlassDisabled ? "app_common_disabled_tech" : "app_common_enabled_tech",
-                        status: isLiquidGlassDisabled ? .negative(leading: .none) : .positive(leading: .none),
-                        appearance: isLiquidGlassDisabled ? .emphasized : .muted,
-                        shape: .rounded,
-                        size: .small,
-                        hasLoader: false)
-            } else {
-                OUDSTag("app_common_unavailable_tech",
-                        status: .warning(leading: .none),
-                        appearance: .muted,
-                        shape: .rounded,
-                        size: .small,
-                        hasLoader: false)
-            }
+            OUDSTag(label: wording,
+                    status: status,
+                    appearance: appearance,
+                    shape: .rounded,
+                    size: .small,
+                    hasLoader: false)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }

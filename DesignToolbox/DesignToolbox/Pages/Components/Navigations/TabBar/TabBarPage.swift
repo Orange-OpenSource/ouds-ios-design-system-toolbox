@@ -107,7 +107,7 @@ private struct TabBarItemDemo: View {
 
 // MARK: - Badge modifier
 
-/// To add a bad in the tab bar item
+/// To add a badge in the tab bar item
 private struct BadgeModifier: ViewModifier {
 
     let index: Int

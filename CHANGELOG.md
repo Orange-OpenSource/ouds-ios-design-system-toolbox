@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.1.0...2.2.0) - 2026-06-18
+
+### Added
+
+- [Library] Helper to forge a font object with OUDS typography tokens (Orange-OpenSource/ouds-ios#1550)
+- [Library] Flag to limit the height of the `text area` component (Orange-OpenSource/ouds-ios#1528)
+- [Library] `View modifier` for fonts using only token (Orange-OpenSource/ouds-ios#1534)
+- [DesignToolbox] Alert to notify the user an update is available in App Store (Orange-OpenSource/ouds-ios#1548)
+
+### Changed
+
+- [DesignToolbox] `fastlane` Ruby gem from v2.235.0 to v2.236.1
+- [DesignToolbox] `json` Ruby gem from v2.19.8 to v2.19.9
+- [DesignToolbox] `ruby/setup-ruby` GitHub Action from v1.310.0 to v1.313.0 for `build-and-test` workflow
+- [DesignToolbox] `github/codeql-action/upload-sarif` GitHub Action from v4.36.1 to v4.36.2 for `scorecard` workflow 
+- [Library] `badge` components with dedicated API and version 1.3 for `badge icon` (Orange-OpenSource/ouds-ios#1439)
+
+### Fixed
+
+- [Library] `tab bar` layout is broken for iOS 27 (Orange-OpenSource/ouds-ios#1557)
+- [DesignToolbox] Wording key displayed in fonts page for `watchOS` and `tvOS` (Orange-OpenSource/ouds-ios#1553)
+- [Library] Label and description of `alert message` component not vocalized together (Orange-OpenSource/ouds-ios#1552)
+
+### Deprecated
+
+- [Library] `badge` umbrella component managing the three variants (Orange-OpenSource/ouds-ios#1439)
+
 ## [2.1.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.0.0...2.1.0) - 2026-06-03
 
 ### Changed

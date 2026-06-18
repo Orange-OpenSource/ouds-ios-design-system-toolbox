@@ -893,6 +893,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_common_forced_tech" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forced"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forced"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forced"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_common_loremIpsum_tech" : {
       "comment" : "Common",
       "extractionState" : "manual",
@@ -1382,6 +1407,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_badge_count_description_text" : {
+      "comment" : "Component - Badge",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يُعدّ عدد الشارات عنصرًا من عناصر واجهة المستخدم يُبرز إشعارات النظام، أو الحالة، أو تصنيف المعلومات، وذلك من خلال اللون والقيمة العددية. يُعرض عدد الشارات على شكل شكل ملون، ويعرض قيمًا عددية؛ ويبقى حجمه ثابتًا بغض النظر عن تغييرات حجم واجهة المستخدم."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge count is a UI element that emphasizes system notifications, status, or the categorization of an information, throughout colour and numerical value. Badge count is rendered as a coloured shape, displaying numerical values; and its chosen size remains unchanged regardless of the changes of the interface size."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le badge à compteur est un élément d'interface utilisateur qui met en évidence les notifications système, l'état ou la catégorisation d'une information, grâce à la couleur et à une valeur numérique. Il est représenté par une forme colorée affichant des valeurs numériques ; sa taille reste inchangée quelles que soient les modifications apportées à l'interface."
+          }
+        }
+      }
+    },
     "app_components_badge_count_tech" : {
       "comment" : "Component - Badge",
       "extractionState" : "manual",
@@ -1389,23 +1438,22 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Count"
+            "value" : "Badge count"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Count"
+            "value" : "Badge count"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Count"
+            "value" : "Badge count"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "app_components_badge_countType_tech" : {
       "comment" : "Component - Badge",
@@ -1439,19 +1487,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الشارة عنصر من عناصر واجهة المستخدم يُستخدم لتسليط الضوء على إشعارات النظام، أو الحالة، أو تصنيف المعلومات، وذلك من خلال اللون فقط. تُعرض الشارة كشكل ملون، بدون أيقونة أو نص أو رقم؛ ويبقى حجمها ثابتًا بغض النظر عن تغيير حجم واجهة المستخدم."
+            "value" : "الشارة هي عنصر من عناصر واجهة المستخدم التي تؤكد على إشعارات النظام أو الحالة أو تصنيف المعلومات، وذلك من خلال اللون فقط."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Badge is a UI element that emphasizes system notifications, status, or the categorization of an information, throughout colour only. Badge is rendered as a coloured shape, without icon, text or number; and its chosen size remains unchanged regardless of the changes of the interface size."
+            "value" : "Badge is a UI element that emphasizes system notifications, status, or the categorization of an information, throughout colour only."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le badge est un élément de l'interface utilisateur qui met l'accent sur les notifications du système, l'état ou la catégorisation d'une information, uniquement par la couleur. Le badge est rendu sous la forme d'une forme colorée, sans icône, texte ou numéro ; et sa taille choisie reste inchangée quels que soient les changements de taille de l'interface."
+            "value" : "Un badge est un élément d'interface utilisateur qui met en évidence les notifications système, l'état ou la catégorisation d'une information, uniquement par le biais de la couleur."
           }
         }
       }
@@ -1463,25 +1511,73 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "هذه ملصق زائف للشارة مع ملف"
+            "value" : "هذا ملصق غبي للشارة"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This is a dumb label for the badge with an icon"
+            "value" : "This is a dumb label for the badge"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ceci est un label bidon pour le badge avec une icône"
+            "value" : "Ceci est un label bidon pour le badge"
+          }
+        }
+      }
+    },
+    "app_components_badge_icon_description_text" : {
+      "comment" : "Component - Badge",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أيقونة الشارة هي عنصر من عناصر واجهة المستخدم يُستخدم لتسليط الضوء على إشعارات النظام، أو الحالة، أو تصنيف المعلومات، وذلك من خلال اللون والرمز. تُعرض أيقونة الشارة كشكل ملون، ويبقى حجمها ثابتًا بغض النظر عن تغيير حجم واجهة المستخدم."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge icon is a UI element that emphasizes system notifications, status, or the categorization of an information, throughout colour and iconography. Badge icon is rendered as a coloured shape, displaying icon; and its chosen size remains unchanged regardless of the changes of the interface size."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le badge à icône est un élément d'interface utilisateur qui met en évidence les notifications système, l'état ou la catégorisation d'une information, grâce à sa couleur et à son iconographie. Elle se présente sous la forme d'une forme colorée affichant une icône ; sa taille reste inchangée quelles que soient les modifications apportées à l'interface."
+          }
+        }
+      }
+    },
+    "app_components_badge_icon_tech" : {
+      "comment" : "Comptent - Badge",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge icon"
           }
         }
       }
     },
     "app_components_badge_iconType_tech" : {
-      "comment" : "Composent - Badge",
+      "comment" : "Component - Badge",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -1504,6 +1600,54 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_badge_standard_description_text" : {
+      "comment" : "Component - Badge",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الشارة عنصر من عناصر واجهة المستخدم يُستخدم لتسليط الضوء على إشعارات النظام، أو الحالة، أو تصنيف المعلومات، وذلك من خلال اللون فقط. تُعرض الشارة كشكل ملون، بدون أيقونة أو نص أو رقم؛ ويبقى حجمها ثابتًا بغض النظر عن تغيير حجم واجهة المستخدم."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge is a UI element that emphasizes system notifications, status, or the categorization of an information, throughout colour only. Badge is rendered as a coloured shape, without icon, text or number; and its chosen size remains unchanged regardless of the changes of the interface size."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un badge est un élément d'interface utilisateur qui met en évidence les notifications système, l'état ou la catégorisation d'une information, uniquement par la couleur. Il se présente sous la forme d'une forme colorée, sans icône, texte ni chiffre ; sa taille reste inchangée quelles que soient les modifications apportées à l'interface."
+          }
+        }
+      }
+    },
+    "app_components_badge_standard_tech" : {
+      "comment" : "Component - Badge",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge standard"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge standard"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge standard"
+          }
+        }
+      }
     },
     "app_components_badge_standardType_tech" : {
       "comment" : "Component - Badge",
@@ -2702,6 +2846,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colored background"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_constrainedMaxHeight_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Constrained max height"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Constrained max height"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Constrained max height"
           }
         }
       },
@@ -7461,6 +7630,102 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Taper deux fois pour changer le thème de l'application"
+          }
+        }
+      }
+    },
+    "app_update_alert_button_dismiss" : {
+      "comment" : "App Store update alert - Dismiss button",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إغلاق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fermer"
+          }
+        }
+      }
+    },
+    "app_update_alert_button_store" : {
+      "comment" : "App Store update alert - Open App Store button",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Store"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Store"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Store"
+          }
+        }
+      }
+    },
+    "app_update_alert_message_fallback" : {
+      "comment" : "App Store update alert - Fallback message when no release notes are available",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتوفر إصدار جديد من التطبيق على App Store."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A new version of the app is available on the App Store."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une nouvelle version de l'application est disponible sur l'App Store."
+          }
+        }
+      }
+    },
+    "app_update_alert_title" : {
+      "comment" : "App Store update alert - Title. %@ is replaced by the version number.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تحديث متاح (%@)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update available (%@)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mise à jour disponible (%@)"
           }
         }
       }

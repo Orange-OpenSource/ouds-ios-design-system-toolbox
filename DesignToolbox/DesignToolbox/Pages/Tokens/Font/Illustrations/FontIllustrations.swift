@@ -47,22 +47,22 @@ struct IllustrationFont: View {
     }
 
     private var familyText: String {
-        "app_tokens_typography_family_tech" <- "\(theme.fontFamily ?? "system")"
+        "family (\(theme.fontFamily ?? "system")), "
     }
 
     private var weightText: String {
-        "app_tokens_typography_weight_tech" <- token.weight
+        "weight (\(token.weight)), "
     }
 
     private var sizeText: String {
-        "app_tokens_typography_size_tech" <- token.size
+        "size (\(token.size)), "
     }
 
     private var lineHeightText: String {
-        "app_tokens_typography_lineHeight_tech" <- token.lineHeight
+        "lineHeight (\(token.lineHeight)), "
     }
 
     private var letterSpacingText: String {
-        "app_tokens_typography_letterSpacing_tech" <- token.letterSpacing
+        "letterSpacing (\(token.letterSpacing))"
     }
 }
