@@ -86,7 +86,7 @@ open class BadgeSnapshotsTestsTestCase: XCTestCase {
         // Create a unique snapshot name based on the current configuration :
         // test_<themeName>_<colorScheme>.<typePatterne><statusPattern><sizePattern> where:
         let testName = "testBadge_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let typePattern = "standard"
+        let typePattern = "StandardBadge"
         let statusPattern = model.status.technicalDescription
         let sizePattern = model.standardSize.technicalDescription
 
@@ -121,7 +121,7 @@ open class BadgeSnapshotsTestsTestCase: XCTestCase {
         // Create a unique snapshot name based on the current configuration :
         // test_<themeName>_<colorScheme>.<typePatterne><statusPattern><sizePattern> where:
         let testName = "testBadge_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let typePattern = "icon"
+        let typePattern = "IconBadge"
         let statusPattern = model.statusKind.technicalDescription
         let sizePattern = model.size.technicalDescription
 
@@ -156,7 +156,7 @@ open class BadgeSnapshotsTestsTestCase: XCTestCase {
         // Create a unique snapshot name based on the current configuration :
         // test_<themeName>_<colorScheme>.<typePatterne><statusPattern><sizePattern> where:
         let testName = "testBadge_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let typePattern = "count"
+        let typePattern = "CountBadge"
         let statusPattern = model.status.technicalDescription
         let sizePattern = model.countSize.technicalDescription
 
