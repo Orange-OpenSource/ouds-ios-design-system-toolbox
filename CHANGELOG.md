@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] View modifier to fill colors on `Shape`
 - [Library] Helper to register local fonts configurations for custom themes
 
+### Changed
+
+- [DesignToolbox] GitHub Action `actions/checkout` from v6.0.3 to v7.0.0 for all workflow
+
 ### Deprecated
 
 - [Library] Components with several configuration parameters for images (Orange-OpenSource/ouds-ios#1511)
