@@ -14,7 +14,7 @@
 			<key>Key</key>
 			<string>com.orange.ouds.demoapp.allowSearch</string>
 			<key>DefaultValue</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Type</key>

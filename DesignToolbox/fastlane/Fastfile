@@ -189,7 +189,8 @@ platform :ios do
         begin
             scan(scheme: OUDS_SCHEME_SNAPSHOTS_TESTS,
                 device: OUDS_SNAPSHOTS_TEST_DEVICE,
-                skip_build: true
+                skip_build: true,
+                result_bundle: true
             )
 
             if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
@@ -245,7 +246,8 @@ platform :ios do
         begin
             scan(scheme: OUDS_SCHEME_UNIT_TESTS,
                 device: OUDS_UNIT_TEST_DEVICE,
-                skip_build: true
+                skip_build: true,
+                result_bundle: true
             )
 
             if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?

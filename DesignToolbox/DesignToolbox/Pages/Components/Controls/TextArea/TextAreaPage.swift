@@ -52,6 +52,7 @@ struct TextAreaDemo: View {
                      helperLink: helperLink,
                      isOutlined: configurationModel.isOutlined,
                      constrainedMaxWidth: configurationModel.constrainedMaxWidth,
+                     constrainedMaxHeight: configurationModel.constrainedMaxHeight,
                      status: configurationModel.computedStatus)
     }
 

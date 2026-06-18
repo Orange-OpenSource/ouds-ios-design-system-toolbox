@@ -18,7 +18,7 @@ import SwiftUI
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSBadge` components for each parameter with `SoshTheme`
+/// Tests the UI rendering of the `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount` components for each parameter with `SoshTheme`
 final class SoshThemeBadgeSnapshotsTests: BadgeSnapshotsTestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
