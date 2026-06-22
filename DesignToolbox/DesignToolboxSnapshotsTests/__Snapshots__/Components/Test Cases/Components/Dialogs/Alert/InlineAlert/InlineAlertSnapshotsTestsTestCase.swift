@@ -32,13 +32,15 @@ open class InlineAlertSnapshotsTestsTestCase: XCTestCase {
     @MainActor func testAllInlineAlerts(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
         for status in AlertStatus.allCases {
-            let model = InlineAlertConfigurationModel()
-            model.status = status
-            model.statusIcon = true
+            for statusIcon in StatusIcons.allCases {
+                let model = InlineAlertConfigurationModel()
+                model.status = status
+                model.statusIcon = statusIcon
 
-            testInlineAlert(theme: theme,
-                            interfaceStyle: interfaceStyle,
-                            model: model)
+                testInlineAlert(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                model: model)
+            }
         }
     }
 
@@ -66,8 +68,9 @@ open class InlineAlertSnapshotsTestsTestCase: XCTestCase {
         //    test_<themeName>_<colorScheme>_<type>_<textStyle>_<isBold>
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let statusPattern = model.status.technicalDescription
+        let statusIconPattern = model.statusIcon.technicalDescription
 
-        let name = "\(statusPattern)"
+        let name = "\(statusPattern)\(statusIconPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
