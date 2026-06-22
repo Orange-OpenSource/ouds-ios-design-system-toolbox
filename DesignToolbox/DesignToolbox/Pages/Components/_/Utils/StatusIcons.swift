@@ -25,3 +25,12 @@ enum StatusIcons: DesignToolboxEnumRepresentable {
     /// Raw image without tint for the given component
     case image
 }
+
+enum DefinedStatusIcons: DesignToolboxEnumRepresentable {
+
+    /// Tinted icon for the given component
+    case tintedIcon
+
+    /// Raw image without tint for the given component
+    case image
+}

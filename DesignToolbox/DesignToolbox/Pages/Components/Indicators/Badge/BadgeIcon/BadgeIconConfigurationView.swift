@@ -45,6 +45,10 @@ final class BadgeIconConfigurationModel: ComponentConfiguration {
         }
     }
 
+    @Published var statusIcon: DefinedStatusIcons {
+        didSet { updateCode() }
+    }
+
     // MARK: - Properties
 
     var enableFlipIcon: Bool {
@@ -52,11 +56,13 @@ final class BadgeIconConfigurationModel: ComponentConfiguration {
     }
 
     func statusWithIcon(from theme: OUDSTheme) -> OUDSBadgeIcon.Status {
-        switch statusKind {
+        let imageRenderingMode: Image.TemplateRenderingMode = (statusIcon == .tintedIcon ? .template : .original)
+        let imageAsset: Image = (statusIcon == .tintedIcon ? Image.defaultImage(prefixedBy: theme.name) : Image.placeholderImage())
+        return switch statusKind {
         case .neutral:
-            .neutral(icon: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon)
+            .neutral(icon: imageAsset, flipped: flipIcon, renderingMode: imageRenderingMode)
         case .accent:
-            .accent(icon: Image.defaultImage(prefixedBy: theme.name), flipped: flipIcon)
+            .accent(icon: imageAsset, flipped: flipIcon, renderingMode: imageRenderingMode)
         case .positive:
             .positive
         case .info:
@@ -75,6 +81,7 @@ final class BadgeIconConfigurationModel: ComponentConfiguration {
         size = .medium
         statusKind = .neutral
         flipIcon = false
+        statusIcon = .tintedIcon
         super.init()
     }
 
@@ -129,6 +136,10 @@ struct BadgeIconConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
+
+            OUDSChipPicker(title: "app_components_common_statusIcon_tech",
+                           selection: $configurationModel.statusIcon,
+                           chips: DefinedStatusIcons.chips)
 
             OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
                 .disabled(!configurationModel.enableFlipIcon)
