@@ -24,7 +24,7 @@ final class InlineAlertConfigurationModel: AlertConfigurationModel {
     override init() {
         super.init()
         status = .neutral
-        statusIcon = true
+        statusIcon = .tintedIcon
         flipIcon = false
     }
 

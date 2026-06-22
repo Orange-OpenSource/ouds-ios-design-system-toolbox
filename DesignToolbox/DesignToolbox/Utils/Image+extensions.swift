@@ -16,6 +16,8 @@ import SwiftUI
 
 extension Image {
 
+    // MARK: - Decorative imahe
+
     /// Returns a decorative `Image` with the given named loaded form the suitable workspace depending to the theme name
     static func decorativeImage(named: String, prefixedBy themeName: String) -> Image {
         if themeName.contains(OrangeTheme.name) { // "Orange" and "Orange Compact" themes
@@ -25,14 +27,15 @@ extension Image {
         }
     }
 
+    // MARK: - Default image
     // Note: Warning, seen as false positive by Periphery, this method is used in tests cases
     /// Returns a decorative default `Image` view with Orange asset
     static func defaultImage() -> Image {
         Image(decorative: "\(OrangeTheme.name)/tips-and-tricks")
     }
 
-    /// Returns a decorative default `Image` view with a prefix in the name, upposed to be theme assets folder.
-    /// Supposed ot have in the Design System Toolbox, in assets folder, folders with assets "providing namespaces".
+    /// Returns a decorative default `Image` view with a prefix in the name, supposed to be theme assets folder.
+    /// Supposed tp have in the Design System Toolbox, in assets folder, folders with assets "providing namespaces".
     static func defaultImage(prefixedBy themeName: String) -> Image {
         if themeName.contains(OrangeTheme.name) { // "Orange" and "Orange Compact" themes
             Image(decorative: "\(OrangeTheme.name)/tips-and-tricks")
@@ -44,5 +47,12 @@ extension Image {
     /// Returns a Swift sample code for design toolbox app faking the use of an image
     static func defaultImageSample() -> String {
         "Image(decorative: \"tips-and-tricks\")"
+    }
+
+    // MARK: - Placeholer image
+
+    /// Returns a decorative placeholder `Image` not supposed to be tinted.
+    static func placeholderImage() -> Image {
+        Image(decorative: "il_placeholder")
     }
 }

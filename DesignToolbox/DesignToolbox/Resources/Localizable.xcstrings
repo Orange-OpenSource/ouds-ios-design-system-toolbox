@@ -1259,31 +1259,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_alert_alertMessage_statusIcon_tech" : {
-      "comment" : "Component - Alert Message",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Status icon"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Status icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Status icon"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_alert_alertMessage_tech" : {
       "comment" : "Component - Alert Message",
       "extractionState" : "manual",
@@ -3562,6 +3537,31 @@
           }
         }
       }
+    },
+    "app_components_common_statusIcon_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status Icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status Icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status Icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_components_common_style_tech" : {
       "comment" : "Component - Common",
