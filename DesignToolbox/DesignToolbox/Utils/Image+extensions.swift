@@ -44,15 +44,20 @@ extension Image {
         }
     }
 
-    /// Returns a Swift sample code for design toolbox app faking the use of an image
+    /// Returns a Swift sample code for design toolbox app faking the use of a default icon
     static func defaultImageSample() -> String {
         "Image(decorative: \"tips-and-tricks\")"
     }
 
-    // MARK: - Placeholer image
+    // MARK: - Placeholder image
 
     /// Returns a decorative placeholder `Image` not supposed to be tinted.
     static func placeholderImage() -> Image {
         Image(decorative: "il_placeholder")
+    }
+
+    /// Returns a Swift sample code for design toolbox app faking the use of a placeholder image
+    static func placeholderImageSample() -> String {
+        "Image(decorative: \"il_placeholder\")"
     }
 }

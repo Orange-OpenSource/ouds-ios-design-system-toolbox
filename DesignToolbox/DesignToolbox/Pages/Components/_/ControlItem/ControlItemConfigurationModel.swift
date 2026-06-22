@@ -41,6 +41,10 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var rawImage: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var isError: Bool {
         didSet { updateCode() }
     }
@@ -109,6 +113,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         isReadOnly = false
         enabled = true
         icon = true
+        rawImage = false
         flipIcon = false
         isReversed = false
         hasDivider = false
@@ -148,7 +153,10 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     }
 
     private var iconPattern: String {
-        icon ? ", icon: \(Image.defaultImageSample())" : ""
+        guard icon else { return "" }
+        let imageSample = rawImage ? "\(Image.defaultImageSample())" : "\(Image.placeholderImageSample())"
+        let mode = rawImage ? ", renderingMode: .original" : ""
+        return ", icon: \(imageSample)\(mode)"
     }
 
     private var flipIconPattern: String {

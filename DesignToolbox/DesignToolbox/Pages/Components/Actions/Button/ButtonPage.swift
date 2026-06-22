@@ -39,8 +39,6 @@ private struct ButtonDemo: View {
 
     @StateObject var configurationModel: ButtonConfigurationModel
 
-    @Environment(\.theme) private var theme
-
     var body: some View {
         Group {
             // It is not allowed to place a Negative or Brand button on colored surface

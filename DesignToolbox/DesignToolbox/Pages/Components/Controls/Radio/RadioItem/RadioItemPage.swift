@@ -52,6 +52,7 @@ private struct RadioItemDemo: View {
                           description: configurationModel.descriptionText,
                           icon: icon,
                           flipIcon: configurationModel.flipIcon,
+                          renderingMode: mode,
                           isOutlined: configurationModel.outlined,
                           isReversed: configurationModel.isReversed,
                           isError: configurationModel.isError,
@@ -68,6 +69,7 @@ private struct RadioItemDemo: View {
                           description: configurationModel.descriptionText,
                           icon: icon,
                           flipIcon: configurationModel.flipIcon,
+                          renderingMode: mode,
                           isOutlined: configurationModel.outlined,
                           isReversed: configurationModel.isReversed,
                           isError: configurationModel.isError,
@@ -81,6 +83,19 @@ private struct RadioItemDemo: View {
     }
 
     private var icon: Image? {
-        configurationModel.icon ? Image.defaultImage(prefixedBy: theme.name) : nil
+        guard configurationModel.icon else { return nil }
+        return if configurationModel.rawImage {
+            Image.placeholderImage()
+        } else {
+            Image.defaultImage(prefixedBy: theme.name)
+        }
+    }
+
+    private var mode: Image.TemplateRenderingMode {
+        if configurationModel.rawImage {
+            .original
+        } else {
+            .template
+        }
     }
 }

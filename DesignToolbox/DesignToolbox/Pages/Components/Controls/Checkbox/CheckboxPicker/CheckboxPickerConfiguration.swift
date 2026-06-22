@@ -41,6 +41,10 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var rawImages: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var isEnabled: Bool {
         didSet { updateCode() }
     }
@@ -53,6 +57,7 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
         isReadOnly = false
         isError = false
         isReversed = false
+        rawImages = false
         isEnabled = true
         super.init()
     }
@@ -113,18 +118,21 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
             OUDSCheckboxPickerData<String>(tag: "Choice_1",
                                            label: "Virgin Holy Lava",
                                            description: "No alcohol, only tasty flavors",
-                                           icon: Image(systemName: "flame"),
+                                           icon: rawImages ? Image.placeholderImage() : Image(systemName: "flame"),
+                                           renderingMode: rawImages ? .original : .template,
                                            accessibilityIdentifier: "Virgin Holy Lava"),
 
             OUDSCheckboxPickerData<String>(tag: "Choice_2",
                                            label: "IPA beer",
                                            description: "From Brewdog company",
-                                           icon: Image(systemName: "dog.fill"),
+                                           icon: rawImages ? Image.placeholderImage() : Image(systemName: "dog.fill"),
+                                           renderingMode: rawImages ? .original : .template,
                                            accessibilityIdentifier: "IPA beer"),
 
             OUDSCheckboxPickerData<String>(tag: "Choice_3",
                                            label: "Mineral water",
-                                           icon: Image(systemName: "waterbottle.fill"),
+                                           icon: rawImages ? Image.placeholderImage() : Image(systemName: "waterbottle.fill"),
+                                           renderingMode: rawImages ? .original : .template,
                                            accessibilityIdentifier: "Mineral water"),
         ]
     }
@@ -150,6 +158,8 @@ struct CheckboxPickerConfiguration: View {
                 .disabled(!configurationModel.isEnabled || configurationModel.isError)
 
             OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
+
+            OUDSSwitchItem("app_components_common_rawImage_tech", isOn: $configurationModel.rawImages)
 
             OUDSChipPicker(title: "app_components_common_orientation_tech",
                            selection: $configurationModel.pickerPlacement,
