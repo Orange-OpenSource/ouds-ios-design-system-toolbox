@@ -33,12 +33,17 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var iconType: DefinedStatusIcons {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
         enabled = true
         text = "app_components_chip_suggestionChip_chipContent_label".localized()
         layout = .textOnly
+        iconType = .tintedIcon
         super.init()
     }
 
@@ -54,6 +59,14 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
         "app_components_common_icon_a11y".localized()
     }
 
+    private var iconAssetName: String {
+        iconType == .tintedIcon ? "ic_heart" : "il_placeholder"
+    }
+
+    private var renderingModeCode: String {
+        iconType == .image ? ", renderingMode: .original" : ""
+    }
+
     override func updateCode() {
         switch layout {
         case .textOnly:
@@ -65,13 +78,13 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
         case .iconOnly:
             code =
                 """
-                OUDSSuggestionChip(icon: Image(\"ic_heart\"), accessibilityLabel: \"\(accessibilityLabelValue)\") {}
+                OUDSSuggestionChip(icon: Image(\"\(iconAssetName)\"), accessibilityLabel: \"\(accessibilityLabelValue)\"\(renderingModeCode)) {}
                 \(disabledCode)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSSuggestionChip(icon: Image(\"ic_heart\", text: \"\(text)\")) {}
+                OUDSSuggestionChip(icon: Image(\"\(iconAssetName)\"), text: \"\(text)\"\(renderingModeCode)) {}
                 \(disabledCode)
                 """
         }
@@ -94,6 +107,12 @@ struct SuggestionChipConfigurationView: View {
                 OUDSChipPicker(title: "app_components_common_layout_tech",
                                selection: $configurationModel.layout,
                                chips: ChipLayout.chips)
+
+                if configurationModel.layout != .textOnly {
+                    OUDSChipPicker(title: "app_components_common_statusIcon_tech",
+                                   selection: $configurationModel.iconType,
+                                   chips: DefinedStatusIcons.chips)
+                }
             }
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
