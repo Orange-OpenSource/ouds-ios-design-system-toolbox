@@ -97,22 +97,29 @@ OUDS_UI_TEST_DEVICE = OUDS_SNAPSHOTS_TEST_DEVICE
 
 desc "Run SwiftFormat to format Swift source files according to the local configuration and apply source header template."
 lane :format do
+    start_time = Time.now
     puts "👉 Run Swift Format to format sources"
 
     template = '\\nSoftware Name: OUDS iOS\\nSPDX-FileCopyrightText: Copyright (c) Orange SA\\nSPDX-License-Identifier: MIT\\n\\nThis software is distributed under the MIT license,\\nthe text of which is available at https://opensource.org/license/MIT/\\nor see the \\"LICENSE\\" file for more details.\\n\\nAuthors: See CONTRIBUTORS.txt\\nSoftware description: A SwiftUI components library with code examples for Orange Unified Design System\\n'
     sh "cd .. && swiftformat . --header \"#{template}\""
+
+    puts "⏱ Done in #{format_elapsed_time(Time.now - start_time)}"
 end
 
 desc "Run SwiftLint in strict mode to detect code smells using local configuration for app, snapshots, units and UI tests"
 lane :lint do
+    start_time = Time.now
     puts "👉 Run Swift Lint for smells"
 
     # If there are violations, error 2 will be returned by swiftlint, making Fastlane fail (expected)
     sh "cd .. && swiftlint --strict --config ../.swiftlint.yml DesignToolbox/* DesignToolboxSnapshotsTests/* DesignToolboxUITests/* DesignToolboxUnitTests/*"
+
+    puts "⏱ Done in #{format_elapsed_time(Time.now - start_time)}"
 end
 
 desc "Run LicensePlist to update list of third-parties to embed in app"
 lane :update_3rd_parties do
+    start_time = Time.now
     puts "👉 Run LicensePlist to update list of third-parties"
 
     Dir.chdir ".." do
@@ -124,18 +131,24 @@ lane :update_3rd_parties do
         sh "rm -rf Settings.bundle/com.mono0926.LicensePlist.plist && mv com.mono0926.LicensePlist.Output/com.mono0926.LicensePlist.plist Settings.bundle"
         sh "rm -rf com.mono0926.LicensePlist.Output"
     end
+
+    puts "⏱ Done in #{format_elapsed_time(Time.now - start_time)}"
 end
 
 desc "Run GitLeaks to look for leaks of secrets in project and Git history"
 lane :check_leaks do
+    start_time = Time.now
     puts "👉 Run Gitleaks for leaks scan"
 
     # If there are violations, non 0 error be returned by swiftlint, making Fastlane fail (expected)
     sh "cd .. && gitleaks detect -v -l debug --source ."
+
+    puts "⏱ Done in #{format_elapsed_time(Time.now - start_time)}"
 end
 
 desc "Generates a SBOM (Software Bill Of Materials) in SPDX JSON format with Syft and analyse it with Grype to as to look for vulnerabilities"
 lane :update_sbom do
+    start_time = Time.now
     puts "👉 Run Syft to generate the SBOM"
 
     # Or also cyclonedx-json
@@ -151,6 +164,8 @@ lane :update_sbom do
         # Process the SBOM
         sh "grype sbom:./SBOM.json --fail-on #{vulnerabilitiesTolerance}"
     end
+
+    puts "⏱ Done in #{format_elapsed_time(Time.now - start_time)}"
  end
 
 desc "UPDATE BUILD NUMBER WITH TIMESTAMP"
@@ -174,13 +189,17 @@ platform :ios do
 
     desc "Run Periphery to look for dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned."
     lane :check_dead_code do
+        start_time = Time.now
         puts "👉 Check iOS dead code with Periphery"
 
         sh "periphery scan --project ../#{OUDS_WORKSPACE} --schemes #{OUDS_SCHEME_IOS} --format xcode --clean-build"
+
+        puts "⏱ Done in #{format_elapsed_time(Time.now - start_time)}"
     end
     
     desc "Run snapshots tests in the demo app to look for visual regressions of components defined in OUDS package"
     lane :test_snapshots do
+        start_time = Time.now
         puts "👉 Run snapshots tests"
 
         # Should have on runner one device under at least iOS 15
@@ -205,11 +224,14 @@ platform :ios do
                 publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test_snapshots)")
             end
             raise error
+        ensure
+            puts "⏱ Done in #{format_elapsed_time(Time.now - start_time)}"
         end
     end
 
     desc "Run UI tests in the demo app to check some specific components behaviors"
     lane :test_ui do
+        start_time = Time.now
         puts "👉 Run UI tests"
 
         # Should have on runner one device under at least iOS 15
@@ -233,11 +255,14 @@ platform :ios do
                 publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test_ui)")
             end
             raise error
+        ensure
+            puts "⏱ Done in #{format_elapsed_time(Time.now - start_time)}"
         end
     end
 
     desc "Run Unit tests in the demo app to check some specific components behaviors"
     lane :test_unit do
+        start_time = Time.now
         puts "👉 Run unit tests"
 
         # Should have on runner one device under at least iOS 15
@@ -262,6 +287,8 @@ platform :ios do
                 publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test_unit)")
             end
             raise error
+        ensure
+            puts "⏱ Done in #{format_elapsed_time(Time.now - start_time)}"
         end
     end
 
@@ -769,6 +796,15 @@ end
 
 # Helpers
 # -------
+
+# Returns a human-readable elapsed time string in HH:MM:SS format.
+def format_elapsed_time(seconds)
+    total = seconds.to_i
+    h = total / 3600
+    m = (total % 3600) / 60
+    s = total % 60
+    format("%02d:%02d:%02d", h, m, s)
+end
 
 # Checks if beta build of the design system toolbox app points to develop branch of Swift Package,
  # i.e. points to a branch
