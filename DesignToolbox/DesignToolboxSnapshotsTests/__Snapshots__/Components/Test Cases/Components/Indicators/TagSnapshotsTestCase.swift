@@ -59,12 +59,17 @@ open class TagSnapshotsTestsTestCase: XCTestCase {
                     model.size = size
                     model.shape = shape
 
-                    testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
-
-                    // Add extra test for flip icon if enabled
-                    if model.enableFlipIcon {
-                        model.flipIcon = true
+                    let iconTypes: [DefinedStatusIcons] = model.enableFlipIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
+                    for iconType in iconTypes {
+                        model.iconType = iconType
+                        model.flipIcon = false
                         testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+
+                        // Add extra test for flip icon if enabled
+                        if model.enableFlipIcon {
+                            model.flipIcon = true
+                            testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                        }
                     }
                 }
             }
@@ -94,12 +99,17 @@ open class TagSnapshotsTestsTestCase: XCTestCase {
                             model.shape = shape
                             model.flipIcon = false
 
-                            testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
-
-                            // Add extra test for flip icon if enabled
-                            if model.enableFlipIcon {
-                                model.flipIcon = true
+                            let iconTypes: [DefinedStatusIcons] = model.enableFlipIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
+                            for iconType in iconTypes {
+                                model.iconType = iconType
+                                model.flipIcon = false
                                 testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+
+                                // Add extra test for flip icon if enabled
+                                if model.enableFlipIcon {
+                                    model.flipIcon = true
+                                    testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                                }
                             }
                         }
                     }
@@ -136,8 +146,11 @@ open class TagSnapshotsTestsTestCase: XCTestCase {
         let loaderPattern = model.loader ? ".loader" : ""
         let flipIconPattern = model.flipIcon ? ".flipIcon" : ""
         let disabledPatern = !model.enabled ? "_Disabled" : "_Enabled"
+        let imageModePattern = model.enableFlipIcon
+            ? (model.iconType == .image ? "_OriginalImage" : "_TemplateImage")
+            : ""
 
-        let name = "\(layoutPattern)\(appearancePattern)\(statusPattern)\(sizePattern)\(shapePattern)\(loaderPattern)\(flipIconPattern)\(disabledPatern)"
+        let name = "\(layoutPattern)\(appearancePattern)\(statusPattern)\(sizePattern)\(shapePattern)\(loaderPattern)\(imageModePattern)\(flipIconPattern)\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,

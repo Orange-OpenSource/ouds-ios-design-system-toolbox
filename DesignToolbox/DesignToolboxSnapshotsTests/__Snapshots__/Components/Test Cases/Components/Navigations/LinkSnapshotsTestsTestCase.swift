@@ -37,8 +37,11 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
     @MainActor func testAllLinks(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for layout in LinkLayout.allCases {
             for size in OUDSLink.Size.allCases {
-                testLink(theme: theme, interfaceStyle: interfaceStyle, layout: layout, size: size, disabled: false, onColoredSurface: false)
-                testLink(theme: theme, interfaceStyle: interfaceStyle, layout: layout, size: size, disabled: true, onColoredSurface: false)
+                let iconTypes: [DefinedStatusIcons] = layout == .textAndIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
+                for iconType in iconTypes {
+                    testLink(theme: theme, interfaceStyle: interfaceStyle, layout: layout, size: size, iconType: iconType, disabled: false, onColoredSurface: false)
+                    testLink(theme: theme, interfaceStyle: interfaceStyle, layout: layout, size: size, iconType: iconType, disabled: true, onColoredSurface: false)
+                }
             }
         }
     }
@@ -58,8 +61,11 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
         // Skip test for negative hierarchy because it is not allowed on colored surface
         for layout in LinkLayout.allCases {
             for size in OUDSLink.Size.allCases {
-                testLink(theme: theme, interfaceStyle: interfaceStyle, layout: layout, size: size, disabled: false, onColoredSurface: true)
-                testLink(theme: theme, interfaceStyle: interfaceStyle, layout: layout, size: size, disabled: true, onColoredSurface: true)
+                let iconTypes: [DefinedStatusIcons] = layout == .textAndIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
+                for iconType in iconTypes {
+                    testLink(theme: theme, interfaceStyle: interfaceStyle, layout: layout, size: size, iconType: iconType, disabled: false, onColoredSurface: true)
+                    testLink(theme: theme, interfaceStyle: interfaceStyle, layout: layout, size: size, iconType: iconType, disabled: true, onColoredSurface: true)
+                }
             }
         }
     }
@@ -84,24 +90,27 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
                                      interfaceStyle: UIUserInterfaceStyle,
                                      layout: LinkLayout,
                                      size: OUDSLink.Size,
+                                     iconType: DefinedStatusIcons = .tintedIcon,
                                      disabled: Bool,
                                      onColoredSurface: Bool = false)
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
-            LinkTest(layout: layout, size: size, onColoredSurface: onColoredSurface)
+            LinkTest(layout: layout, size: size, iconType: iconType, onColoredSurface: onColoredSurface)
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
                 .disabled(disabled)
         }
 
         // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<size><disabledPatern> where:
+        // test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<imageMode>_<size><disabledPatern> where:
         // - `coloredSurfacePatern` is empty if not on colored surface
+        // - `imageModePattern` is empty if not textAndIcon layout
         // - `disabledPatern` is empty if not disabled
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
+        let imageModePattern = layout == .textAndIcon ? (iconType == .image ? "_OriginalImage" : "_TemplateImage") : ""
         let disabledPatern = disabled ? "_Disabled" : ""
-        let name = "\(coloredSurfacePatern)\(layout.debugDescription)_\(size.formattedName)\(disabledPatern)"
+        let name = "\(coloredSurfacePatern)\(layout.debugDescription)\(imageModePattern)_\(size.formattedName)\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
@@ -119,6 +128,7 @@ struct LinkTest: View {
 
     let layout: LinkLayout
     let size: OUDSLink.Size
+    let iconType: DefinedStatusIcons
     let onColoredSurface: Bool
     @Environment(\.theme) private var theme
 
@@ -135,12 +145,20 @@ struct LinkTest: View {
         case .textOnly:
             OUDSLink(text: "Link", size: size) {}
         case .textAndIcon:
-            OUDSLink(text: "Link", icon: Image(decorative: "ic_heart"), size: size) {}
+            OUDSLink(text: "Link", icon: iconImage, renderingMode: renderingMode, size: size) {}
         case .indicatorNext:
             OUDSLink(text: "Next", indicator: .next, size: size) {}
         case .indicatorBack:
             OUDSLink(text: "Back", indicator: .back, size: size) {}
         }
+    }
+
+    private var iconImage: Image {
+        iconType == .tintedIcon ? Image(decorative: "ic_heart") : Image.placeholderImage()
+    }
+
+    private var renderingMode: Image.TemplateRenderingMode {
+        iconType == .tintedIcon ? .template : .original
     }
 }
 
