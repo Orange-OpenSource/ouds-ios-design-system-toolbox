@@ -70,11 +70,19 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var leadingIconType: DefinedStatusIcons {
+        didSet { updateCode() }
+    }
+
     @Published var flipLeadingIcon: Bool {
         didSet { updateCode() }
     }
 
     @Published var trailingAction: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var trailingActionIconType: DefinedStatusIcons {
         didSet { updateCode() }
     }
 
@@ -124,8 +132,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         prefixText = ""
         suffixText = ""
         leadingIcon = false
+        leadingIconType = .tintedIcon
         flipLeadingIcon = false
         trailingAction = false
+        trailingActionIconType = .tintedIcon
         flipTrailingActionIcon = false
         text = ""
         helperLinkText = ""
@@ -205,18 +215,34 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         placeholderText.isEmpty ? "" : ", placeholder: \"\(placeholderText)\""
     }
 
+    private var leadingIconAssetSample: String {
+        leadingIconType == .tintedIcon ? Image.defaultImageSample() : "Image(decorative: \"il_placeholder\")"
+    }
+
+    private var leadingIconRenderingModeCode: String {
+        leadingIconType == .image ? ", leadingIconRenderingMode: .original" : ""
+    }
+
     private var leadingIconPattern: String {
-        leadingIcon ? ", leadingIcon: \(Image.defaultImageSample())" : ""
+        leadingIcon ? ", leadingIcon: \(leadingIconAssetSample)\(leadingIconRenderingModeCode)" : ""
     }
 
     private var flipLeadingIconPattern: String {
         flipLeadingIcon ? ", flipLeadingIcon: true" : ""
     }
 
+    private var trailingActionAssetSample: String {
+        trailingActionIconType == .tintedIcon ? Image.defaultImageSample() : "Image(decorative: \"il_placeholder\")"
+    }
+
+    private var trailingActionRenderingModeCode: String {
+        trailingActionIconType == .image ? ", renderingMode: .original" : ""
+    }
+
     private var trailingActionPattern: String {
         let accessibilityLabel = "app_components_common_icon_a11y".localized()
         let flipIconPattern = flipTrailingActionIcon ? ", flipIcon: true" : ""
-        return trailingAction ? ", trailingAction: .init(icon: \(Image.defaultImageSample())\(flipIconPattern), actionHint: \"\(accessibilityLabel)\") {}" : ""
+        return trailingAction ? ", trailingAction: .init(icon: \(trailingActionAssetSample)\(flipIconPattern), actionHint: \"\(accessibilityLabel)\"\(trailingActionRenderingModeCode)) {}" : ""
     }
 
     private var helperTextPattern: String {
@@ -276,10 +302,22 @@ struct TextInputConfigurationView: View {
 
                 OUDSSwitchItem("app_components_textInput_leadingIcon_tech", isOn: $configurationModel.leadingIcon)
 
+                if configurationModel.leadingIcon {
+                    OUDSChipPicker(title: "app_components_textInput_leadingIcon_tech",
+                                   selection: $configurationModel.leadingIconType,
+                                   chips: DefinedStatusIcons.chips)
+                }
+
                 OUDSSwitchItem("app_components_textInput_flipLeadingIcon_tech", isOn: $configurationModel.flipLeadingIcon)
                     .disabled(!configurationModel.leadingIcon)
 
                 OUDSSwitchItem("app_components_textInput_trailingAction_tech", isOn: $configurationModel.trailingAction)
+
+                if configurationModel.trailingAction {
+                    OUDSChipPicker(title: "app_components_textInput_trailingIcon_tech",
+                                   selection: $configurationModel.trailingActionIconType,
+                                   chips: DefinedStatusIcons.chips)
+                }
 
                 OUDSSwitchItem("app_components_textInput_flipTrailingActionIcon_tech", isOn: $configurationModel.flipTrailingActionIcon)
                     .disabled(!configurationModel.trailingAction)

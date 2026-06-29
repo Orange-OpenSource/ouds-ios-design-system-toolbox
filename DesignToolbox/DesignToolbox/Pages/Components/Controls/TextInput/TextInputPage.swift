@@ -56,6 +56,7 @@ struct TextInputDemo: View {
                           suffix: configurationModel.suffixText,
                           leadingIcon: leadingIcon,
                           flipLeadingIcon: configurationModel.flipLeadingIcon,
+                          leadingIconRenderingMode: leadingIconRenderingMode,
                           trailingAction: trailingAction,
                           helperText: configurationModel.helperText,
                           helperLink: helperLink,
@@ -72,6 +73,7 @@ struct TextInputDemo: View {
                           suffix: configurationModel.suffixText,
                           leadingIcon: leadingIcon,
                           flipLeadingIcon: configurationModel.flipLeadingIcon,
+                          leadingIconRenderingMode: leadingIconRenderingMode,
                           trailingAction: trailingAction,
                           helperText: configurationModel.richHelperText,
                           helperLink: helperLink,
@@ -84,16 +86,34 @@ struct TextInputDemo: View {
     }
 
     private var leadingIcon: Image? {
-        configurationModel.leadingIcon ? Image.defaultImage(prefixedBy: theme.name) : nil
+        guard configurationModel.leadingIcon else { return nil }
+        return configurationModel.leadingIconType == .tintedIcon
+            ? Image.defaultImage(prefixedBy: theme.name)
+            : Image.placeholderImage()
+    }
+
+    private var leadingIconRenderingMode: Image.TemplateRenderingMode {
+        configurationModel.leadingIconType == .tintedIcon ? .template : .original
     }
 
     private var trailingAction: OUDSTextInput.TrailingAction? {
         guard configurationModel.trailingAction else {
             return nil
         }
-        return .init(icon: Image.defaultImage(prefixedBy: theme.name),
+        return .init(icon: trailingActionImage,
                      actionHint: "app_components_common_icon_a11y".localized(),
-                     flipIcon: configurationModel.flipTrailingActionIcon) {}
+                     flipIcon: configurationModel.flipTrailingActionIcon,
+                     renderingMode: trailingActionRenderingMode) {}
+    }
+
+    private var trailingActionImage: Image {
+        configurationModel.trailingActionIconType == .tintedIcon
+            ? Image.defaultImage(prefixedBy: theme.name)
+            : Image.placeholderImage()
+    }
+
+    private var trailingActionRenderingMode: Image.TemplateRenderingMode {
+        configurationModel.trailingActionIconType == .tintedIcon ? .template : .original
     }
 
     private var helperLink: OUDSTextInput.Helperlink? {

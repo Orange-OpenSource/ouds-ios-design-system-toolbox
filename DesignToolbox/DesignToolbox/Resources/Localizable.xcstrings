@@ -5451,6 +5451,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_textInput_trailingIcon_tech" : {
+      "comment" : "Component - Text Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trailing icon"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_textInputHelperText_label" : {
       "comment" : "Component - Text Input",
       "extractionState" : "manual",
