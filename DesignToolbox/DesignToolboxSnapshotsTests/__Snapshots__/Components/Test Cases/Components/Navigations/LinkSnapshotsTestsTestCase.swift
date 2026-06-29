@@ -70,6 +70,7 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
+    // swiftlint:disable function_default_parameter_at_end
     /// This function tests link according to all parameters of the configuration available on a `OUDLink`
     /// for the given theme and color schemes and on a colored surface or not.
     ///
@@ -118,6 +119,7 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
                            named: name,
                            testName: testName)
     }
+    // swiftlint:enable function_default_parameter_at_end
 }
 
 // swiftlint:enable required_deinit

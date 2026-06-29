@@ -242,7 +242,9 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     private var trailingActionPattern: String {
         let accessibilityLabel = "app_components_common_icon_a11y".localized()
         let flipIconPattern = flipTrailingActionIcon ? ", flipIcon: true" : ""
-        return trailingAction ? ", trailingAction: .init(icon: \(trailingActionAssetSample)\(flipIconPattern), actionHint: \"\(accessibilityLabel)\"\(trailingActionRenderingModeCode)) {}" : ""
+        return trailingAction
+            ? ", trailingAction: .init(icon: \(trailingActionAssetSample)\(flipIconPattern), actionHint: \"\(accessibilityLabel)\"\(trailingActionRenderingModeCode)) {}"
+            : ""
     }
 
     private var helperTextPattern: String {
