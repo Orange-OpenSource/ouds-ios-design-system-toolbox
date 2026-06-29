@@ -37,6 +37,10 @@ final class LinkConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var iconType: DefinedStatusIcons {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -44,6 +48,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
         text = String(localized: "app_components_link_tech")
         layout = .textOnly
         size = .default
+        iconType = .tintedIcon
         super.init()
     }
 
@@ -53,6 +58,14 @@ final class LinkConfigurationModel: ComponentConfiguration {
 
     private var coloredSurfaceCodeModifierPattern: String {
         onColoredSurface ? ".coloredSurface(theme.colorModes.onBrandPrimary)" : ""
+    }
+
+    private var iconAssetSample: String {
+        iconType == .tintedIcon ? "Image(\"ic_heart\")" : "Image(decorative: \"il_placeholder\")"
+    }
+
+    private var renderingModeCode: String {
+        iconType == .image ? ", renderingMode: .original" : ""
     }
 
     private var disableCodePattern: String {
@@ -71,7 +84,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
         case .textAndIcon:
             code =
                 """
-                OUDSLink(text: \"\(text)\", icon: Image(\"ic_heart\"), size: \(size.technicalDescription)) {}
+                OUDSLink(text: \"\(text)\", icon: \(iconAssetSample)\(renderingModeCode), size: \(size.technicalDescription)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
@@ -143,6 +156,12 @@ struct LinkConfiguration: View {
                 OUDSChipPicker(title: "app_components_common_layout_tech",
                                selection: $configurationModel.layout,
                                chips: LinkLayout.chips)
+
+                if configurationModel.layout == .textAndIcon {
+                    OUDSChipPicker(title: "app_components_common_statusIcon_tech",
+                                   selection: $configurationModel.iconType,
+                                   chips: DefinedStatusIcons.chips)
+                }
             }
 
             DesignToolboxEditContentDisclosure {
