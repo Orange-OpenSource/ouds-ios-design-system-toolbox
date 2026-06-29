@@ -43,9 +43,10 @@ struct FilterChipDemo: View {
         Group {
             switch configurationModel.layout {
             case .iconOnly:
-                OUDSFilterChip(icon: Image(decorative: "ic_heart"),
+                OUDSFilterChip(icon: iconImage,
                                accessibilityLabel: "app_components_common_icon_a11y".localized(),
-                               selected: configurationModel.selected)
+                               selected: configurationModel.selected,
+                               renderingMode: renderingMode)
                 {
                     configurationModel.selected.toggle()
                 }
@@ -54,11 +55,21 @@ struct FilterChipDemo: View {
                     configurationModel.selected.toggle()
                 }
             case .textAndIcon:
-                OUDSFilterChip(icon: Image(decorative: "ic_heart"), text: configurationModel.text, selected: configurationModel.selected) {
+                OUDSFilterChip(icon: iconImage, text: configurationModel.text, selected: configurationModel.selected, renderingMode: renderingMode) {
                     configurationModel.selected.toggle()
                 }
             }
         }
         .disabled(!configurationModel.enabled)
+    }
+
+    private var iconImage: Image {
+        configurationModel.iconType == .tintedIcon
+            ? Image(decorative: "ic_heart")
+            : Image.placeholderImage()
+    }
+
+    private var renderingMode: Image.TemplateRenderingMode {
+        configurationModel.iconType == .tintedIcon ? .template : .original
     }
 }
