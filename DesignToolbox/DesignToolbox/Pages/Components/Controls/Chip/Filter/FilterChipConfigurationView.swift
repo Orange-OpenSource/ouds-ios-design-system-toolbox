@@ -87,13 +87,13 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         case .iconOnly:
             code =
                 """
-                OUDSFilterChip(icon: Image(\"\(iconAssetName)\"), accessibilityLabel: \"\(accessibilityLabelValue)\"\(selectedCodePattern)\(renderingModeCode)) {}
+                OUDSFilterChip(icon: OUDSImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), accessibilityLabel: \"\(accessibilityLabelValue)\"\(selectedCodePattern)) {}
                 \(disableCodePattern)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSFilterChip(icon: Image(\"\(iconAssetName)\"), text: \"\(text)"\(selectedCodePattern)\(renderingModeCode)) {}
+                OUDSFilterChip(icon: OUDSImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), text: \"\(text)"\(selectedCodePattern)) {}
                 \(disableCodePattern)
                 """
         }

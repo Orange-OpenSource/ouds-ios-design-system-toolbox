@@ -152,8 +152,8 @@ final class TagConfigurationModel: ComponentConfiguration {
             if layout == .textAndBullet {
                 return ", status: \(statusCategory.technicalDescription)(bullet: true)"
             } else if layout == .textAndIcon {
-                let flipIconPattern = flipIcon ? ", flipIcon: true" : ""
-                return ", status: \(statusCategory.technicalDescription)(icon: \(iconAssetSample)\(flipIconPattern)\(renderingModeCode))"
+                let flipIconPattern = flipIcon ? ", flipped: true" : ""
+                return ", status: \(statusCategory.technicalDescription)(icon: OUDSImage(asset: \(iconAssetSample)\(flipIconPattern)\(renderingModeCode)))"
             } else {
                 return ", status: \(statusCategory.technicalDescription)()"
             }

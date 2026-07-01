@@ -103,9 +103,19 @@ final class BadgeIconConfigurationModel: ComponentConfiguration {
     private var statusWithIconPattern: String {
         switch statusKind {
         case .neutral:
-            "status: .neutral(icon: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : ""))"
+            switch statusIcon {
+            case .image:
+                "status: .neutral(icon: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : ""))"
+            case .tintedIcon:
+                "status: .neutral(icon: \(Image.placeholderImageSample())\(flipIcon ? ", flipped: true" : ""), renderingMode: .original)"
+            }
         case .accent:
-            "status: .accent(icon: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : ""))"
+            switch statusIcon {
+            case .image:
+                "status: .accent(icon: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : ""))"
+            case .tintedIcon:
+                "status: .accent(icon: \(Image.placeholderImageSample())\(flipIcon ? ", flipped: true" : ""), renderingMode: .original)"
+            }
         case .positive:
             "status: .positive"
         case .info:

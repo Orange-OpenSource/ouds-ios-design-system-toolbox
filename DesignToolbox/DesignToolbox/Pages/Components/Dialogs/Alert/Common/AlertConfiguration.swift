@@ -81,6 +81,10 @@ open class AlertConfigurationModel: ComponentConfiguration {
         flipIcon ? ", flipped: true" : ""
     }
 
+    var renderingModePattern: String {
+        statusIcon == .image ? ", renderingMode: .original" : ""
+    }
+
     var iconPattern: String {
         switch status {
         case .neutral, .accent:
@@ -88,9 +92,9 @@ open class AlertConfigurationModel: ComponentConfiguration {
             case .none:
                 ""
             case .tintedIcon:
-                "icon: Image(decorative: \"tips-and-tricks\")\(flipIconPattern)"
+                "icon: OUDSImage(asset: Image(decorative: \"tips-and-tricks\")\(flipIconPattern)\(renderingModePattern))"
             case .image:
-                "icon: Image(decorative: \"il_placeholder\")\(flipIconPattern)"
+                "icon: OUDSImage(asset: Image(decorative: \"il_placeholder\")\(flipIconPattern)\(renderingModePattern))"
             }
         default:
             statusIcon != .none ? "showIcon: true" : ""

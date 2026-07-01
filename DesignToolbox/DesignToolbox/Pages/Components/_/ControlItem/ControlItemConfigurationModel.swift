@@ -137,7 +137,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            \(componentInitCode)"\(labelText)", \(bindingInitCode)\(extraLabelTextPattern)\(descriptionTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern)\(constrainedMaxWidthPattern))
+            \(componentInitCode)"\(labelText)", \(bindingInitCode)\(extraLabelTextPattern)\(descriptionTextPattern)\(iconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern)\(constrainedMaxWidthPattern))
             \(disableCodePattern)
             """
     }
@@ -154,13 +154,10 @@ class ControlItemConfigurationModel: ComponentConfiguration {
 
     private var iconPattern: String {
         guard icon else { return "" }
-        let imageSample = rawImage ? "\(Image.defaultImageSample())" : "\(Image.placeholderImageSample())"
-        let mode = rawImage ? ", renderingMode: .original" : ""
-        return ", icon: \(imageSample)\(mode)"
-    }
-
-    private var flipIconPattern: String {
-        !isError && flipIcon ? ", flipIcon: true" : ""
+        let imageSampleFragment = rawImage ? "\(Image.placeholderImageSample())" : "\(Image.defaultImageSample())"
+        let modeFragment = rawImage ? ", renderingMode: .original" : ""
+        let flipFragment = (!isError && flipIcon) ? ", flipped: true" : ""
+        return ", icon: OUDSImage(asset: \(imageSampleFragment)\(flipFragment)\(modeFragment))"
     }
 
     private var isReversedPattern: String {

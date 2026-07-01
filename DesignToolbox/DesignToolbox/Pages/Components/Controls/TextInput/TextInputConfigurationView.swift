@@ -190,7 +190,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         // swiftlint:disable line_length
         code =
             """
-            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(suffixPattern)\(leadingIconPattern)\(flipLeadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
+            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(suffixPattern)\(leadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
             """
         // swiftlint:enable line_length
     }
@@ -220,15 +220,13 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 
     private var leadingIconRenderingModeCode: String {
-        leadingIconType == .image ? ", leadingIconRenderingMode: .original" : ""
+        leadingIconType == .image ? ", renderingMode: .original" : ""
     }
 
     private var leadingIconPattern: String {
-        leadingIcon ? ", leadingIcon: \(leadingIconAssetSample)\(leadingIconRenderingModeCode)" : ""
-    }
-
-    private var flipLeadingIconPattern: String {
-        flipLeadingIcon ? ", flipLeadingIcon: true" : ""
+        guard leadingIcon else { return "" }
+        let flipFragment = flipLeadingIcon ? ", flipped: true" : ""
+        return ", leadingIcon: OUDSImage(asset: \(leadingIconAssetSample)\(flipFragment)\(leadingIconRenderingModeCode))"
     }
 
     private var trailingActionAssetSample: String {
@@ -239,13 +237,16 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         trailingActionIconType == .image ? ", renderingMode: .original" : ""
     }
 
+    // swiftlint:disable line_length
     private var trailingActionPattern: String {
         let accessibilityLabel = "app_components_common_icon_a11y".localized()
-        let flipIconPattern = flipTrailingActionIcon ? ", flipIcon: true" : ""
+        let flipFragment = flipTrailingActionIcon ? ", flipped: true" : ""
         return trailingAction
-            ? ", trailingAction: .init(icon: \(trailingActionAssetSample)\(flipIconPattern), actionHint: \"\(accessibilityLabel)\"\(trailingActionRenderingModeCode)) {}"
+            ? ", trailingAction: .init(icon: OUDSImage(asset: \(trailingActionAssetSample)\(flipFragment)\(trailingActionRenderingModeCode)), actionHint: \"\(accessibilityLabel)\") {}"
             : ""
     }
+
+    // swiftlint:enable line_length
 
     private var helperTextPattern: String {
         if helperText.isEmpty {

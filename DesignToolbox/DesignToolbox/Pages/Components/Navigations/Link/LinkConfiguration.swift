@@ -84,7 +84,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
         case .textAndIcon:
             code =
                 """
-                OUDSLink(text: \"\(text)\", icon: \(iconAssetSample)\(renderingModeCode), size: \(size.technicalDescription)) {}
+                OUDSLink(text: \"\(text)\", icon: OUDSImage(asset: \(iconAssetSample)\(renderingModeCode)), size: \(size.technicalDescription)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """

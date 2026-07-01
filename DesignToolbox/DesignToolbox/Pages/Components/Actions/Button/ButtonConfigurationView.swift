@@ -81,13 +81,14 @@ final class ButtonConfigurationModel: ComponentConfiguration {
 
     private var layoutPattern: String {
         let imageModePattern = (rawImage ? ", renderingMode: .original" : "")
+        let imageNamePattern = (rawImage ? Image.placeholderImageSample() : Image.defaultImageSample())
         return switch layout {
         case .textOnly:
             "text: \"\(text)\""
         case .iconOnly:
-            "icon: \(Image.defaultImageSample())\(flipIconPattern), accessibilityLabel: \"\(accessibilityLabelValue)\"\(imageModePattern)"
+            "image: OUDSImage(asset: \(imageNamePattern)\(flipIconPattern), accessibilityLabel: \"\(accessibilityLabelValue)\", \(imageModePattern))"
         case .textAndIcon:
-            "text: \"\(text)\", icon: \(Image.defaultImageSample())\(flipIconPattern)\(imageModePattern)"
+            "text: \"\(text)\", image: OUDSImage(asset: \(imageNamePattern)\(flipIconPattern)\(imageModePattern))"
         }
     }
 
@@ -104,7 +105,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     }
 
     private var flipIconPattern: String {
-        flipIcon ? ", flipIcon: true" : ""
+        flipIcon ? ", flipped: true" : ""
     }
 
     private var isFullWidthPattern: String {
