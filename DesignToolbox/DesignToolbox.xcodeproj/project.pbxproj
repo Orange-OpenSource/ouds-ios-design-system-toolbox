@@ -525,6 +525,10 @@
 		955A40DC2EC7894C001D7F84 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		9561A8482EB4CB26003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		9561A8492EB4CB2F003D2B12 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
+		9564DF5A2FE92A3400E2BC7D /* StatusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */; };
+		9564DF5B2FE92A3400E2BC7D /* StatusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */; };
+		9564DF5C2FE92A3400E2BC7D /* StatusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */; };
+		9564DF5D2FE92A3400E2BC7D /* StatusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */; };
 		956B943A2FCF033A00471ADE /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 956B94392FCF033A00471ADE /* OUDSSwiftUI */; };
 		957D5EE12F2BB27D0055128A /* BulletListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE02F2BB2740055128A /* BulletListsView.swift */; };
 		957D5EE22F2BB27D0055128A /* BulletListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE02F2BB2740055128A /* BulletListsView.swift */; };
@@ -1595,6 +1599,7 @@
 		953E02412F7D3AE100550DD6 /* PinCodeInputElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeInputElement.swift; sourceTree = "<group>"; };
 		953E02422F7D3AE100550DD6 /* PinCodeInputPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeInputPage.swift; sourceTree = "<group>"; };
 		955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions Tests.swift"; sourceTree = "<group>"; };
+		9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIcons.swift; sourceTree = "<group>"; };
 		957D5EE02F2BB2740055128A /* BulletListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListsView.swift; sourceTree = "<group>"; };
 		957D5EE42F2BB2940055128A /* ContentDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDisplayView.swift; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2133,6 +2138,7 @@
 		07F0AFE62CFE055300D334DD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */,
 				95C5A7D32F978284002F6D8A /* TextualContentMode.swift */,
 				07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */,
 			);
@@ -4281,6 +4287,7 @@
 				51A217832E325FE600562BE0 /* WireframeTheme+TokensOpacitySnapshotsTests.swift in Sources */,
 				6DED17EE2CD23E5400584BC9 /* CardIllustration.swift in Sources */,
 				FC95B9422F86769600A4F0B7 /* ToolBarCommonContent.swift in Sources */,
+				9564DF5B2FE92A3400E2BC7D /* StatusIcons.swift in Sources */,
 				6DED17ED2CD23D5200584BC9 /* DesignToolboxElementPage.swift in Sources */,
 				6DED17EC2CD23D3A00584BC9 /* DesignToolboxElement.swift in Sources */,
 				51ABCD2A2E183226006CD6C0 /* SoshTheme+TokensSpaceSnapshotsTests.swift in Sources */,
@@ -4643,6 +4650,7 @@
 				FCDDFBC12F2B69E700389D8D /* PasswordInputElement.swift in Sources */,
 				FCA849172E9FF00500DBCE76 /* InputTagElement.swift in Sources */,
 				FCA849182E9FF00500DBCE76 /* InputTagConfigurationView.swift in Sources */,
+				9564DF5A2FE92A3400E2BC7D /* StatusIcons.swift in Sources */,
 				FCA849192E9FF00500DBCE76 /* InputTagPage.swift in Sources */,
 				077CCE572CB426090059CC28 /* SpaceTokenElement.swift in Sources */,
 				076227672DA90C65009C3632 /* DividerConfiguration.swift in Sources */,
@@ -4978,6 +4986,7 @@
 				FCDDFBBC2F2B69E700389D8D /* PasswordInputPage.swift in Sources */,
 				FCDDFBBD2F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */,
 				FCDDFBBE2F2B69E700389D8D /* PasswordInputElement.swift in Sources */,
+				9564DF5D2FE92A3400E2BC7D /* StatusIcons.swift in Sources */,
 				9589F0882EB7D67B00134487 /* InputTagElement.swift in Sources */,
 				9589F0892EB7D67B00134487 /* InputTagConfigurationView.swift in Sources */,
 				95CA20372FC70D5300431097 /* BadgeIconPage.swift in Sources */,
@@ -5204,6 +5213,7 @@
 				9589F1682EB7D67E00134487 /* DividerElements.swift in Sources */,
 				9589F1692EB7D67E00134487 /* DividerPage.swift in Sources */,
 				9589F16A2EB7D67E00134487 /* NameSpace+RowGap.swift in Sources */,
+				9564DF5C2FE92A3400E2BC7D /* StatusIcons.swift in Sources */,
 				953DC1592ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */,
 				953DC15A2ED0995600D14D44 /* TabBarElement.swift in Sources */,
 				953DC15B2ED0995600D14D44 /* TabBarPage.swift in Sources */,

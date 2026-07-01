@@ -61,6 +61,9 @@ private struct ControlItemConfigurationView: View {
                 OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
                     .disabled(!configurationModel.icon || configurationModel.isError)
 
+                OUDSSwitchItem("app_components_common_rawImage_tech", isOn: $configurationModel.rawImage)
+                    .disabled(!configurationModel.icon)
+
                 if let outlinedConfiguration = configurationModel.outlinedConfiguration {
                     OUDSSwitchItem(outlinedConfiguration.outlinedConfigurationLabel, isOn: $configurationModel.outlined)
                 }

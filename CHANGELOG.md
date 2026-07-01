@@ -1,4 +1,4 @@
-# OUDS iOS design system toolbox changelog
+g# OUDS iOS design system toolbox changelog
 
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -6,10 +6,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.2.0...develop)
 
+### Added
+
+- [Library] Use of original image possible for components with icons (Orange-OpenSource/ouds-ios#1511)
+- [Library] Migration skill for AI agents
+- [Library] View modifier to fill colors on `Shape`
+- [Library] Helper to register local fonts configurations for custom themes
+
+### Deprecated
+
+- [Library] Components with several configuration parameters for images (Orange-OpenSource/ouds-ios#1511)
+
 ## [2.2.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.1.0...2.2.0) - 2026-06-18
 
 ### Added
 
+- [Library] Use of original image possible for components with icons (Orange-OpenSource/ouds-ios#1511)
 - [Library] Helper to forge a font object with OUDS typography tokens (Orange-OpenSource/ouds-ios#1550)
 - [Library] Flag to limit the height of the `text area` component (Orange-OpenSource/ouds-ios#1528)
 - [Library] `View modifier` for fonts using only token (Orange-OpenSource/ouds-ios#1534)

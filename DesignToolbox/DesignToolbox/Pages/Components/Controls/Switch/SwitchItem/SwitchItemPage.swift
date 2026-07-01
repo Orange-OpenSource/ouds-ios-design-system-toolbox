@@ -46,8 +46,7 @@ private struct SwitchItemDemo: View {
             OUDSSwitchItem(configurationModel.labelText,
                            isOn: $configurationModel.isOn,
                            description: configurationModel.descriptionText,
-                           icon: icon,
-                           flipIcon: configurationModel.flipIcon,
+                           image: image,
                            isReversed: !configurationModel.isReversed,
                            isError: configurationModel.isError,
                            errorText: configurationModel.errorText,
@@ -60,8 +59,7 @@ private struct SwitchItemDemo: View {
             OUDSSwitchItem(configurationModel.labelText,
                            isOn: $configurationModel.isOn,
                            description: configurationModel.descriptionText,
-                           icon: icon,
-                           flipIcon: configurationModel.flipIcon,
+                           image: image,
                            isReversed: !configurationModel.isReversed,
                            isError: configurationModel.isError,
                            errorText: configurationModel.richErrorText,
@@ -73,7 +71,10 @@ private struct SwitchItemDemo: View {
         }
     }
 
-    private var icon: Image? {
-        configurationModel.icon ? Image.defaultImage(prefixedBy: theme.name) : nil
+    private var image: OUDSImage? {
+        guard configurationModel.icon else { return nil }
+        let asset: Image = configurationModel.rawImage ? Image.placeholderImage() : Image.defaultImage(prefixedBy: theme.name)
+        let renderingMode: Image.TemplateRenderingMode = configurationModel.rawImage ? .original : .template
+        return OUDSImage(asset: asset, flipped: configurationModel.flipIcon, renderingMode: renderingMode)
     }
 }

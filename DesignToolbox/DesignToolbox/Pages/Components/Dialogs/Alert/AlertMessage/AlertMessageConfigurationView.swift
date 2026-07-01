@@ -86,7 +86,7 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         super.init()
 
         status = .positive
-        statusIcon = true
+        statusIcon = .tintedIcon
         flipIcon = false
     }
 
@@ -160,7 +160,9 @@ struct AlertMessageConfigurationView: View {
                                selection: $configurationModel.status,
                                chips: AlertStatus.chips)
 
-                OUDSSwitchItem("app_components_alert_alertMessage_statusIcon_tech", isOn: $configurationModel.statusIcon)
+                OUDSChipPicker(title: "app_components_common_statusIcon_tech",
+                               selection: $configurationModel.statusIcon,
+                               chips: StatusIcons.chips)
                     .disabled(!configurationModel.hasIcon)
 
                 OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
