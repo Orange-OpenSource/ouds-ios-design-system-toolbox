@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Use of original image possible for components with icons (Orange-OpenSource/ouds-ios#1511)
 - [Library] Helper to forge a font object with OUDS typography tokens (Orange-OpenSource/ouds-ios#1550)
 - [Library] Flag to limit the height of the `text area` component (Orange-OpenSource/ouds-ios#1528)
 - [Library] `View modifier` for fonts using only token (Orange-OpenSource/ouds-ios#1534)

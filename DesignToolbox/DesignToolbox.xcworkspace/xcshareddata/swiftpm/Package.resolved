@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1511-in-library-update-alert-message-inline-alert-button-checkbox-item-radio-button-item-switch-item-suggestion-chip-filter-chip-link-tag-and-text-input-to-allow-the-use-of-fixed-images",
-        "revision" : "22d030c1a07ea95833bfe23df056791f608dcafa"
+        "branch" : "develop",
+        "revision" : "ef53e5aa0bb1fa16e7f4f7c574bc5572d29e0692"
       }
     },
     {
