@@ -113,26 +113,26 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
 
     // MARK: - Data populating
 
-    func populate() -> [OUDSCheckboxPickerData<String>] {
+    @MainActor func populate() -> [OUDSCheckboxPickerData<String>] {
         [
             OUDSCheckboxPickerData<String>(tag: "Choice_1",
                                            label: "Virgin Holy Lava",
                                            description: "No alcohol, only tasty flavors",
-                                           icon: rawImages ? Image.placeholderImage() : Image(systemName: "flame"),
-                                           renderingMode: rawImages ? .original : .template,
+                                           icon: OUDSImage(asset: rawImages ? Image.placeholderImage() : Image(systemName: "flame"),
+                                                           renderingMode: rawImages ? .original : .template),
                                            accessibilityIdentifier: "Virgin Holy Lava"),
 
             OUDSCheckboxPickerData<String>(tag: "Choice_2",
                                            label: "IPA beer",
                                            description: "From Brewdog company",
-                                           icon: rawImages ? Image.placeholderImage() : Image(systemName: "dog.fill"),
-                                           renderingMode: rawImages ? .original : .template,
+                                           icon: OUDSImage(asset: rawImages ? Image.placeholderImage() : Image(systemName: "dog.fill"),
+                                                           renderingMode: rawImages ? .original : .template),
                                            accessibilityIdentifier: "IPA beer"),
 
             OUDSCheckboxPickerData<String>(tag: "Choice_3",
                                            label: "Mineral water",
-                                           icon: rawImages ? Image.placeholderImage() : Image(systemName: "waterbottle.fill"),
-                                           renderingMode: rawImages ? .original : .template,
+                                           icon: OUDSImage(asset: rawImages ? Image.placeholderImage() : Image(systemName: "waterbottle.fill"),
+                                                           renderingMode: rawImages ? .original : .template),
                                            accessibilityIdentifier: "Mineral water"),
         ]
     }

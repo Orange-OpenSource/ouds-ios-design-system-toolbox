@@ -232,28 +232,24 @@ struct ButtonTest: View {
         case .textAndIcon:
             OUDSButton(
                 text: "Button",
-                icon: image,
-                flipIcon: flipIcon,
-                renderingMode: imageMode,
+                image: oudsImage,
                 appearance: appearance,
                 style: style) {}
         case .icon:
             OUDSButton(
-                icon: image,
-                accessibilityLabel: "Icon",
-                flipIcon: flipIcon,
-                renderingMode: imageMode,
+                image: OUDSImage(asset: imageMode == .original ? Image.placeholderImage() : Image.defaultImage(),
+                                 flipped: flipIcon,
+                                 renderingMode: imageMode,
+                                 accessibilityLabel: "Icon"),
                 appearance: appearance,
                 style: style) {}
         }
     }
 
-    private var image: Image {
-        if imageMode == .original {
-            Image.placeholderImage()
-        } else {
-            Image.defaultImage()
-        }
+    private var oudsImage: OUDSImage {
+        OUDSImage(asset: imageMode == .original ? Image.placeholderImage() : Image.defaultImage(),
+                  flipped: flipIcon,
+                  renderingMode: imageMode)
     }
 }
 

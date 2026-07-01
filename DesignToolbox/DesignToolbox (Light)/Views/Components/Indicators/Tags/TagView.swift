@@ -36,10 +36,10 @@ struct TagView: View {
         OUDSTag.Status.info(leading: .none),
         OUDSTag.Status.neutral(bullet: false),
         OUDSTag.Status.neutral(bullet: true),
-        OUDSTag.Status.neutral(icon: Image(systemName: "sun.min.fill")),
+        OUDSTag.Status.neutral(icon: OUDSImage(asset: Image(systemName: "sun.min.fill"))),
         OUDSTag.Status.accent(bullet: false),
         OUDSTag.Status.accent(bullet: true),
-        OUDSTag.Status.accent(icon: Image(systemName: "sun.min.fill")),
+        OUDSTag.Status.accent(icon: OUDSImage(asset: Image(systemName: "sun.min.fill"))),
     ]
 
     @State private var isSelected: Bool = true

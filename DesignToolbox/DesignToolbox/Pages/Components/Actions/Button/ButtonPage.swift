@@ -47,10 +47,10 @@ private struct ButtonDemo: View {
             } else {
                 switch configurationModel.layout {
                 case .iconOnly:
-                    OUDSButton(icon: image,
-                               accessibilityLabel: "app_components_common_icon_a11y".localized(),
-                               flipIcon: configurationModel.flipIcon,
-                               renderingMode: imageMode,
+                    OUDSButton(image: OUDSImage(asset: image,
+                                                flipped: configurationModel.flipIcon,
+                                                accessibilityLabel: "app_components_common_icon_a11y".localized(),
+                                                renderingMode: imageMode),
                                appearance: configurationModel.appearance,
                                style: configurationModel.style,
                                isFullWidth: configurationModel.isFullWidth) {}
@@ -61,9 +61,9 @@ private struct ButtonDemo: View {
                                isFullWidth: configurationModel.isFullWidth) {}
                 case .textAndIcon:
                     OUDSButton(text: configurationModel.text,
-                               icon: image,
-                               flipIcon: configurationModel.flipIcon,
-                               renderingMode: imageMode,
+                               image: OUDSImage(asset: image,
+                                                flipped: configurationModel.flipIcon,
+                                                renderingMode: imageMode),
                                appearance: configurationModel.appearance,
                                style: configurationModel.style,
                                isFullWidth: configurationModel.isFullWidth) {}

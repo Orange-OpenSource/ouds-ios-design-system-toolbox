@@ -158,20 +158,16 @@ struct TestTextInputView: View {
 
     @State private var text = ""
 
-    private var leadingIcon: Image {
-        leadingIconType == .tintedIcon ? Image(decorative: "ic_heart") : Image.placeholderImage()
+    private var leadingIcon: OUDSImage {
+        let asset: Image = leadingIconType == .tintedIcon ? Image(decorative: "ic_heart") : Image.placeholderImage()
+        let renderingMode: Image.TemplateRenderingMode = leadingIconType == .tintedIcon ? .template : .original
+        return OUDSImage(asset: asset, flipped: flipLeadingIcon, renderingMode: renderingMode)
     }
 
-    private var leadingIconRenderingMode: Image.TemplateRenderingMode {
-        leadingIconType == .tintedIcon ? .template : .original
-    }
-
-    private var trailingIcon: Image {
-        trailingIconType == .tintedIcon ? Image(decorative: "ic_heart") : Image.placeholderImage()
-    }
-
-    private var trailingIconRenderingMode: Image.TemplateRenderingMode {
-        trailingIconType == .tintedIcon ? .template : .original
+    private var trailingIcon: OUDSImage {
+        let asset: Image = trailingIconType == .tintedIcon ? Image(decorative: "ic_heart") : Image.placeholderImage()
+        let renderingMode: Image.TemplateRenderingMode = trailingIconType == .tintedIcon ? .template : .original
+        return OUDSImage(asset: asset, flipped: flipTrailingActionIcon, renderingMode: renderingMode)
     }
 
     // MARK: - Body
@@ -201,8 +197,6 @@ struct TestTextInputView: View {
             OUDSTextInput(label: "Label",
                           text: $text,
                           leadingIcon: leadingIcon,
-                          flipLeadingIcon: flipLeadingIcon,
-                          leadingIconRenderingMode: leadingIconRenderingMode,
                           isOutlined: outlined,
                           status: status)
 
@@ -217,8 +211,6 @@ struct TestTextInputView: View {
             OUDSTextInput(label: "Label",
                           text: $text,
                           leadingIcon: leadingIcon,
-                          flipLeadingIcon: flipLeadingIcon,
-                          leadingIconRenderingMode: leadingIconRenderingMode,
                           trailingAction: trailingAction,
                           isOutlined: outlined,
                           status: status)
@@ -239,8 +231,6 @@ struct TestTextInputView: View {
                           prefix: "£",
                           suffix: "$",
                           leadingIcon: leadingIcon,
-                          flipLeadingIcon: flipLeadingIcon,
-                          leadingIconRenderingMode: leadingIconRenderingMode,
                           isOutlined: outlined,
                           status: status)
 
@@ -261,8 +251,6 @@ struct TestTextInputView: View {
                           prefix: "£",
                           suffix: "$",
                           leadingIcon: leadingIcon,
-                          flipLeadingIcon: flipLeadingIcon,
-                          leadingIconRenderingMode: leadingIconRenderingMode,
                           trailingAction: trailingAction,
                           isOutlined: outlined,
                           status: status)
@@ -298,7 +286,7 @@ struct TestTextInputView: View {
     // MARK: - Helpers
 
     private var trailingAction: OUDSTextInput.TrailingAction {
-        .init(icon: trailingIcon, actionHint: "", flipIcon: flipTrailingActionIcon, renderingMode: trailingIconRenderingMode, action: {})
+        .init(icon: trailingIcon, actionHint: "", action: {})
     }
 
     private var helperLink: OUDSTextInput.Helperlink {

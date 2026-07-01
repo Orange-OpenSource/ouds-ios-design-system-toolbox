@@ -61,9 +61,9 @@ open class AlertConfigurationModel: ComponentConfiguration {
         let imageAsset: Image = (statusIcon == .tintedIcon ? Image.defaultImage(prefixedBy: theme.name) : Image.placeholderImage())
         return switch status {
         case .neutral:
-            .neutral(icon: statusIcon == .none ? nil : OUDSIcon(asset: imageAsset, flipped: flipIcon, renderingMode: imageRenderingMode))
+            .neutral(icon: statusIcon == .none ? nil : OUDSImage(asset: imageAsset, flipped: flipIcon, renderingMode: imageRenderingMode))
         case .accent:
-            .accent(icon: statusIcon == .none ? nil : OUDSIcon(asset: imageAsset, flipped: flipIcon, renderingMode: imageRenderingMode))
+            .accent(icon: statusIcon == .none ? nil : OUDSImage(asset: imageAsset, flipped: flipIcon, renderingMode: imageRenderingMode))
         case .positive:
             .positive
         case .info:

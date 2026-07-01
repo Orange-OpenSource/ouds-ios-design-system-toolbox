@@ -47,8 +47,6 @@ private struct CheckboxItemDemo: View {
                              isOn: $configurationModel.isOn,
                              description: configurationModel.descriptionText,
                              icon: icon,
-                             flipIcon: configurationModel.flipIcon,
-                             renderingMode: mode,
                              isReversed: configurationModel.isReversed,
                              isError: configurationModel.isError,
                              errorText: configurationModel.errorText,
@@ -63,8 +61,6 @@ private struct CheckboxItemDemo: View {
                              isOn: $configurationModel.isOn,
                              description: configurationModel.descriptionText,
                              icon: icon,
-                             flipIcon: configurationModel.flipIcon,
-                             renderingMode: mode,
                              isReversed: configurationModel.isReversed,
                              isError: configurationModel.isError,
                              errorText: configurationModel.richErrorText,
@@ -77,20 +73,10 @@ private struct CheckboxItemDemo: View {
         }
     }
 
-    private var icon: Image? {
+    private var icon: OUDSImage? {
         guard configurationModel.icon else { return nil }
-        return if configurationModel.rawImage {
-            Image.placeholderImage()
-        } else {
-            Image.defaultImage(prefixedBy: theme.name)
-        }
-    }
-
-    private var mode: Image.TemplateRenderingMode {
-        if configurationModel.rawImage {
-            .original
-        } else {
-            .template
-        }
+        let asset: Image = configurationModel.rawImage ? Image.placeholderImage() : Image.defaultImage(prefixedBy: theme.name)
+        let renderingMode: Image.TemplateRenderingMode = configurationModel.rawImage ? .original : .template
+        return OUDSImage(asset: asset, flipped: configurationModel.flipIcon, renderingMode: renderingMode)
     }
 }

@@ -134,15 +134,15 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         }
     }
 
-    func drinks() -> [OUDSChipPickerData<Drink>] {
+    @MainActor func drinks() -> [OUDSChipPickerData<Drink>] {
         Drink.allCases.map { drink in
             switch layout {
             case .textOnly:
                 .init(tag: drink, layout: .text(text: drink.text), accessibilityIdentifier: drink.text)
             case .textAndIcon:
-                .init(tag: drink, layout: .textAndIcon(text: drink.text, icon: drink.icon), accessibilityIdentifier: drink.text)
+                .init(tag: drink, layout: .textAndIcon(drink.text, image: OUDSImage(asset: drink.icon)), accessibilityIdentifier: drink.text)
             case .iconOnly:
-                .init(tag: drink, layout: .icon(icon: drink.icon, accessibilityLabel: drink.text), accessibilityIdentifier: drink.text)
+                .init(tag: drink, layout: .icon(OUDSImage(asset: drink.icon), accessibilityLabel: drink.text), accessibilityIdentifier: drink.text)
             }
         }
     }

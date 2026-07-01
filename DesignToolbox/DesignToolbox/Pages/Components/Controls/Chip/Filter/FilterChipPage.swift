@@ -43,10 +43,9 @@ struct FilterChipDemo: View {
         Group {
             switch configurationModel.layout {
             case .iconOnly:
-                OUDSFilterChip(icon: iconImage,
+                OUDSFilterChip(icon: oudsIcon,
                                accessibilityLabel: "app_components_common_icon_a11y".localized(),
-                               selected: configurationModel.selected,
-                               renderingMode: renderingMode)
+                               selected: configurationModel.selected)
                 {
                     configurationModel.selected.toggle()
                 }
@@ -55,7 +54,7 @@ struct FilterChipDemo: View {
                     configurationModel.selected.toggle()
                 }
             case .textAndIcon:
-                OUDSFilterChip(icon: iconImage, text: configurationModel.text, selected: configurationModel.selected, renderingMode: renderingMode) {
+                OUDSFilterChip(icon: oudsIcon, text: configurationModel.text, selected: configurationModel.selected) {
                     configurationModel.selected.toggle()
                 }
             }
@@ -63,13 +62,11 @@ struct FilterChipDemo: View {
         .disabled(!configurationModel.enabled)
     }
 
-    private var iconImage: Image {
-        configurationModel.iconType == .tintedIcon
+    private var oudsIcon: OUDSImage {
+        let asset: Image = configurationModel.iconType == .tintedIcon
             ? Image(decorative: "ic_heart")
             : Image.placeholderImage()
-    }
-
-    private var renderingMode: Image.TemplateRenderingMode {
-        configurationModel.iconType == .tintedIcon ? .template : .original
+        let renderingMode: Image.TemplateRenderingMode = configurationModel.iconType == .tintedIcon ? .template : .original
+        return OUDSImage(asset: asset, renderingMode: renderingMode)
     }
 }

@@ -79,11 +79,12 @@ final class TagConfigurationModel: ComponentConfiguration {
 
     deinit {}
 
-    func status(from theme: OUDSTheme) -> OUDSTag.Status {
-        let iconImage: Image = iconType == .tintedIcon
+    @MainActor func status(from theme: OUDSTheme) -> OUDSTag.Status {
+        let asset: Image = iconType == .tintedIcon
             ? Image.defaultImage(prefixedBy: theme.name)
             : Image.placeholderImage()
         let renderingMode: Image.TemplateRenderingMode = iconType == .tintedIcon ? .template : .original
+        let iconImage = OUDSImage(asset: asset, flipped: flipIcon, renderingMode: renderingMode)
 
         return switch statusCategory {
         case .accent:
@@ -93,7 +94,7 @@ final class TagConfigurationModel: ComponentConfiguration {
             case .none:
                 .accent(bullet: false)
             case .icon:
-                .accent(icon: iconImage, flipIcon: flipIcon, renderingMode: renderingMode)
+                .accent(icon: iconImage)
             }
         case .neutral:
             switch layout.statusLeading {
@@ -102,7 +103,7 @@ final class TagConfigurationModel: ComponentConfiguration {
             case .none:
                 .neutral(bullet: false)
             case .icon:
-                .neutral(icon: iconImage, flipIcon: flipIcon, renderingMode: renderingMode)
+                .neutral(icon: iconImage)
             }
         case .positive:
             .positive(leading: layout.statusLeading)
