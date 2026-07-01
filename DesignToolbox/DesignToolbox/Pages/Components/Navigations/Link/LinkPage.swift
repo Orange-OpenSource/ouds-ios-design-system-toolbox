@@ -45,7 +45,7 @@ private struct LinkDemo: View {
             case .textOnly:
                 OUDSLink(text: configurationModel.text, size: configurationModel.size) {}
             case .textAndIcon:
-                OUDSLink(text: configurationModel.text, icon: oudsIcon, size: configurationModel.size) {}
+                OUDSLink(text: configurationModel.text, image: image, size: configurationModel.size) {}
             case .indicatorBack:
                 OUDSLink(text: configurationModel.text, indicator: .back, size: configurationModel.size) {}
             case .indicatorNext:
@@ -55,7 +55,7 @@ private struct LinkDemo: View {
         .disabled(!configurationModel.enabled)
     }
 
-    private var oudsIcon: OUDSImage {
+    private var image: OUDSImage {
         let asset: Image = configurationModel.iconType == .tintedIcon
             ? Image(decorative: "ic_heart")
             : Image.placeholderImage()

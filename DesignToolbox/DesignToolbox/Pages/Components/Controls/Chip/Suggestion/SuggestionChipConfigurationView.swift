@@ -78,13 +78,13 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
         case .iconOnly:
             code =
                 """
-                OUDSSuggestionChip(icon: OUDSImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), accessibilityLabel: \"\(accessibilityLabelValue)\") {}
+                OUDSSuggestionChip(image: OUDSImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), accessibilityLabel: \"\(accessibilityLabelValue)\") {}
                 \(disabledCode)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSSuggestionChip(icon: OUDSImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), text: \"\(text)\") {}
+                OUDSSuggestionChip(image: OUDSImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), text: \"\(text)\") {}
                 \(disabledCode)
                 """
         }

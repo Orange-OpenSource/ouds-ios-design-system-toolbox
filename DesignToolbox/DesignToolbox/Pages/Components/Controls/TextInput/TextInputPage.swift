@@ -54,7 +54,7 @@ struct TextInputDemo: View {
                           placeholder: configurationModel.placeholderText,
                           prefix: configurationModel.prefixText,
                           suffix: configurationModel.suffixText,
-                          leadingIcon: leadingIcon,
+                          leadingImage: leadingImage,
                           trailingAction: trailingAction,
                           helperText: configurationModel.helperText,
                           helperLink: helperLink,
@@ -69,7 +69,7 @@ struct TextInputDemo: View {
                           placeholder: configurationModel.placeholderText,
                           prefix: configurationModel.prefixText,
                           suffix: configurationModel.suffixText,
-                          leadingIcon: leadingIcon,
+                          leadingImage: leadingImage,
                           trailingAction: trailingAction,
                           helperText: configurationModel.richHelperText,
                           helperLink: helperLink,
@@ -81,7 +81,7 @@ struct TextInputDemo: View {
         }
     }
 
-    private var leadingIcon: OUDSImage? {
+    private var leadingImage: OUDSImage? {
         guard configurationModel.leadingIcon else { return nil }
         let asset: Image = configurationModel.leadingIconType == .tintedIcon
             ? Image.defaultImage(prefixedBy: theme.name)
@@ -98,9 +98,9 @@ struct TextInputDemo: View {
             ? Image.defaultImage(prefixedBy: theme.name)
             : Image.placeholderImage()
         let renderingMode: Image.TemplateRenderingMode = configurationModel.trailingActionIconType == .tintedIcon ? .template : .original
-        return .init(icon: OUDSImage(asset: asset,
-                                     flipped: configurationModel.flipTrailingActionIcon,
-                                     renderingMode: renderingMode),
+        return .init(image: OUDSImage(asset: asset,
+                                      flipped: configurationModel.flipTrailingActionIcon,
+                                      renderingMode: renderingMode),
                      actionHint: "app_components_common_icon_a11y".localized()) {}
     }
 

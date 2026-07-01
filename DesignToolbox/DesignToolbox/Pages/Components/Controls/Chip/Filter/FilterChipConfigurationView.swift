@@ -76,6 +76,7 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         iconType == .image ? ", renderingMode: .original" : ""
     }
 
+    // swiftlint:disable line_length
     override func updateCode() {
         switch layout {
         case .textOnly:
@@ -87,17 +88,18 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         case .iconOnly:
             code =
                 """
-                OUDSFilterChip(icon: OUDSImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), accessibilityLabel: \"\(accessibilityLabelValue)\"\(selectedCodePattern)) {}
+                OUDSFilterChip(image: OUDSImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), accessibilityLabel: \"\(accessibilityLabelValue)\"\(selectedCodePattern)) {}
                 \(disableCodePattern)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSFilterChip(icon: OUDSImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), text: \"\(text)"\(selectedCodePattern)) {}
+                OUDSFilterChip(image: OUDSImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), text: \"\(text)"\(selectedCodePattern)) {}
                 \(disableCodePattern)
                 """
         }
     }
+    // swiftlint:enable line_length
 }
 
 // MARK: - FilterChip Configuration View

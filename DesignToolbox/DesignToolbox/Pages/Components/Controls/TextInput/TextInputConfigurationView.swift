@@ -226,7 +226,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     private var leadingIconPattern: String {
         guard leadingIcon else { return "" }
         let flipFragment = flipLeadingIcon ? ", flipped: true" : ""
-        return ", leadingIcon: OUDSImage(asset: \(leadingIconAssetSample)\(flipFragment)\(leadingIconRenderingModeCode))"
+        return ", leadingImage: OUDSImage(asset: \(leadingIconAssetSample)\(flipFragment)\(leadingIconRenderingModeCode))"
     }
 
     private var trailingActionAssetSample: String {
@@ -242,7 +242,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         let accessibilityLabel = "app_components_common_icon_a11y".localized()
         let flipFragment = flipTrailingActionIcon ? ", flipped: true" : ""
         return trailingAction
-            ? ", trailingAction: .init(icon: OUDSImage(asset: \(trailingActionAssetSample)\(flipFragment)\(trailingActionRenderingModeCode)), actionHint: \"\(accessibilityLabel)\") {}"
+            ? ", trailingAction: .init(image: OUDSImage(asset: \(trailingActionAssetSample)\(flipFragment)\(trailingActionRenderingModeCode)), actionHint: \"\(accessibilityLabel)\") {}"
             : ""
     }
 

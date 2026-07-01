@@ -157,7 +157,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         let imageSampleFragment = rawImage ? "\(Image.placeholderImageSample())" : "\(Image.defaultImageSample())"
         let modeFragment = rawImage ? ", renderingMode: .original" : ""
         let flipFragment = (!isError && flipIcon) ? ", flipped: true" : ""
-        return ", icon: OUDSImage(asset: \(imageSampleFragment)\(flipFragment)\(modeFragment))"
+        return ", image: OUDSImage(asset: \(imageSampleFragment)\(flipFragment)\(modeFragment))"
     }
 
     private var isReversedPattern: String {
