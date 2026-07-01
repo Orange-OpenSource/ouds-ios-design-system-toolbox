@@ -104,7 +104,7 @@ struct RadiosItemView: View {
                     isOn: $isOn,
                     extraLabel: "Additional",
                     description: "Description",
-                    icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                    image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                     isOutlined: isOutlined,
                     isReversed: false,
                     isError: isError,
@@ -118,7 +118,7 @@ struct RadiosItemView: View {
                     isOn: $isOn,
                     extraLabel: "Additional",
                     description: "Description",
-                    icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                    image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                     isOutlined: isOutlined,
                     isReversed: true,
                     isError: isError,
@@ -138,7 +138,7 @@ struct RadiosItemView: View {
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: false,
                       isReadOnly: false)
 
@@ -146,7 +146,7 @@ struct RadiosItemView: View {
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: true,
                       isReadOnly: false)
 
@@ -158,7 +158,7 @@ struct RadiosItemView: View {
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: false,
                       isError: true,
                       errorText: "Error")
@@ -167,7 +167,7 @@ struct RadiosItemView: View {
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: true,
                       isError: true,
                       errorText: "Error")
@@ -178,7 +178,7 @@ struct RadiosItemView: View {
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isOutlined: true,
                       isReversed: false,
                       isError: true,
@@ -188,7 +188,7 @@ struct RadiosItemView: View {
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isOutlined: true,
                       isReversed: true,
                       isError: true,
@@ -200,7 +200,7 @@ struct RadiosItemView: View {
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: false,
                       isReadOnly: false)
             .disabled(true)
@@ -209,7 +209,7 @@ struct RadiosItemView: View {
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: true,
                       isReadOnly: false)
             .disabled(true)
@@ -220,7 +220,7 @@ struct RadiosItemView: View {
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: false,
                       isReadOnly: true)
 
@@ -228,7 +228,7 @@ struct RadiosItemView: View {
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      icon: withIcon ? Image(systemName: "flag.pattern.checkered") : nil,
+                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: true,
                       isReadOnly: true)
     }

@@ -32,27 +32,35 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllChips(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
-        // Test OUDSFilterChips
+        // Test OUDSSuggestionChips
         for layout in ChipLayout.allCases {
             for enabled in [true, false] {
-                let model = SuggestionChipConfigurationModel()
-                model.layout = layout
-                model.enabled = enabled
+                let imageModes: [DefinedStatusIcons] = layout == .textOnly ? [.tintedIcon] : DefinedStatusIcons.allCases
+                for iconType in imageModes {
+                    let model = SuggestionChipConfigurationModel()
+                    model.layout = layout
+                    model.enabled = enabled
+                    model.iconType = iconType
 
-                testSuggestionChips(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                    testSuggestionChips(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                }
             }
         }
 
-        // Test OUDSSuggestionChips
+        // Test OUDSFilterChips
         for layout in ChipLayout.allCases {
             for selected in [true, false] {
                 for enabled in [true, false] {
-                    let model = FilterChipConfigurationModel()
-                    model.layout = layout
-                    model.selected = selected
-                    model.enabled = enabled
+                    let imageModes: [DefinedStatusIcons] = layout == .textOnly ? [.tintedIcon] : DefinedStatusIcons.allCases
+                    for iconType in imageModes {
+                        let model = FilterChipConfigurationModel()
+                        model.layout = layout
+                        model.selected = selected
+                        model.enabled = enabled
+                        model.iconType = iconType
 
-                    testFilterChips(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                        testFilterChips(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                    }
                 }
             }
         }
@@ -86,7 +94,8 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
         let testName = "testFilter_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let disabledPattern = !model.enabled ? "_Disabled" : ""
         let selectedPattern = model.selected ? "_Selected" : ""
-        let name = "\(model.layout.debugDescription)\(selectedPattern)\(disabledPattern)"
+        let imageModePattern = model.layout != .textOnly ? (model.iconType == .image ? "_OriginalImage" : "_TemplateImage") : ""
+        let name = "\(model.layout.debugDescription)\(imageModePattern)\(selectedPattern)\(disabledPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
@@ -121,7 +130,8 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
         // - `disabledPattern` is empty if not disabled
         let testName = "testSuggestion_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let disabledPattern = !model.enabled ? "_Disabled" : ""
-        let name = "\(model.layout.debugDescription)\(disabledPattern)"
+        let imageModePattern = model.layout != .textOnly ? (model.iconType == .image ? "_OriginalImage" : "_TemplateImage") : ""
+        let name = "\(model.layout.debugDescription)\(imageModePattern)\(disabledPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,

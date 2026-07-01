@@ -70,11 +70,19 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var leadingIconType: DefinedStatusIcons {
+        didSet { updateCode() }
+    }
+
     @Published var flipLeadingIcon: Bool {
         didSet { updateCode() }
     }
 
     @Published var trailingAction: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var trailingActionIconType: DefinedStatusIcons {
         didSet { updateCode() }
     }
 
@@ -124,8 +132,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         prefixText = ""
         suffixText = ""
         leadingIcon = false
+        leadingIconType = .tintedIcon
         flipLeadingIcon = false
         trailingAction = false
+        trailingActionIconType = .tintedIcon
         flipTrailingActionIcon = false
         text = ""
         helperLinkText = ""
@@ -180,7 +190,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         // swiftlint:disable line_length
         code =
             """
-            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(suffixPattern)\(leadingIconPattern)\(flipLeadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
+            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(suffixPattern)\(leadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
             """
         // swiftlint:enable line_length
     }
@@ -205,19 +215,38 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         placeholderText.isEmpty ? "" : ", placeholder: \"\(placeholderText)\""
     }
 
+    private var leadingIconAssetSample: String {
+        leadingIconType == .tintedIcon ? Image.defaultImageSample() : "Image(decorative: \"il_placeholder\")"
+    }
+
+    private var leadingIconRenderingModeCode: String {
+        leadingIconType == .image ? ", renderingMode: .original" : ""
+    }
+
     private var leadingIconPattern: String {
-        leadingIcon ? ", leadingIcon: \(Image.defaultImageSample())" : ""
+        guard leadingIcon else { return "" }
+        let flipFragment = flipLeadingIcon ? ", flipped: true" : ""
+        return ", leadingImage: OUDSImage(asset: \(leadingIconAssetSample)\(flipFragment)\(leadingIconRenderingModeCode))"
     }
 
-    private var flipLeadingIconPattern: String {
-        flipLeadingIcon ? ", flipLeadingIcon: true" : ""
+    private var trailingActionAssetSample: String {
+        trailingActionIconType == .tintedIcon ? Image.defaultImageSample() : "Image(decorative: \"il_placeholder\")"
     }
 
+    private var trailingActionRenderingModeCode: String {
+        trailingActionIconType == .image ? ", renderingMode: .original" : ""
+    }
+
+    // swiftlint:disable line_length
     private var trailingActionPattern: String {
         let accessibilityLabel = "app_components_common_icon_a11y".localized()
-        let flipIconPattern = flipTrailingActionIcon ? ", flipIcon: true" : ""
-        return trailingAction ? ", trailingAction: .init(icon: \(Image.defaultImageSample())\(flipIconPattern), actionHint: \"\(accessibilityLabel)\") {}" : ""
+        let flipFragment = flipTrailingActionIcon ? ", flipped: true" : ""
+        return trailingAction
+            ? ", trailingAction: .init(image: OUDSImage(asset: \(trailingActionAssetSample)\(flipFragment)\(trailingActionRenderingModeCode)), actionHint: \"\(accessibilityLabel)\") {}"
+            : ""
     }
+
+    // swiftlint:enable line_length
 
     private var helperTextPattern: String {
         if helperText.isEmpty {
@@ -276,10 +305,22 @@ struct TextInputConfigurationView: View {
 
                 OUDSSwitchItem("app_components_textInput_leadingIcon_tech", isOn: $configurationModel.leadingIcon)
 
+                if configurationModel.leadingIcon {
+                    OUDSChipPicker(title: "app_components_textInput_leadingIcon_tech",
+                                   selection: $configurationModel.leadingIconType,
+                                   chips: DefinedStatusIcons.chips)
+                }
+
                 OUDSSwitchItem("app_components_textInput_flipLeadingIcon_tech", isOn: $configurationModel.flipLeadingIcon)
                     .disabled(!configurationModel.leadingIcon)
 
                 OUDSSwitchItem("app_components_textInput_trailingAction_tech", isOn: $configurationModel.trailingAction)
+
+                if configurationModel.trailingAction {
+                    OUDSChipPicker(title: "app_components_textInput_trailingIcon_tech",
+                                   selection: $configurationModel.trailingActionIconType,
+                                   chips: DefinedStatusIcons.chips)
+                }
 
                 OUDSSwitchItem("app_components_textInput_flipTrailingActionIcon_tech", isOn: $configurationModel.flipTrailingActionIcon)
                     .disabled(!configurationModel.trailingAction)

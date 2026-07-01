@@ -37,6 +37,10 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var iconType: DefinedStatusIcons {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -44,6 +48,7 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         selected = false
         text = "app_components_chip_filterChip_chipContent_label".localized(with: 1)
         layout = .textOnly
+        iconType = .tintedIcon
         super.init()
     }
 
@@ -63,6 +68,15 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         "app_components_common_icon_a11y".localized()
     }
 
+    private var iconAssetName: String {
+        iconType == .tintedIcon ? "ic_heart" : "il_placeholder"
+    }
+
+    private var renderingModeCode: String {
+        iconType == .image ? ", renderingMode: .original" : ""
+    }
+
+    // swiftlint:disable line_length
     override func updateCode() {
         switch layout {
         case .textOnly:
@@ -74,17 +88,18 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         case .iconOnly:
             code =
                 """
-                OUDSFilterChip(icon: Image(\"ic_heart\"), accessibilityLabel: \"\(accessibilityLabelValue)\"\(selectedCodePattern)) {}
+                OUDSFilterChip(image: OUDSImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), accessibilityLabel: \"\(accessibilityLabelValue)\"\(selectedCodePattern)) {}
                 \(disableCodePattern)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSFilterChip(icon: Image(\"ic_heart\"), text: \"\(text)"\(selectedCodePattern)) {}
+                OUDSFilterChip(image: OUDSImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), text: \"\(text)"\(selectedCodePattern)) {}
                 \(disableCodePattern)
                 """
         }
     }
+    // swiftlint:enable line_length
 }
 
 // MARK: - FilterChip Configuration View
@@ -107,6 +122,12 @@ struct FilterChipConfigurationView: View {
                 OUDSChipPicker(title: "app_components_common_layout_tech",
                                selection: $configurationModel.layout,
                                chips: ChipLayout.chips)
+
+                if configurationModel.layout != .textOnly {
+                    OUDSChipPicker(title: "app_components_common_statusIcon_tech",
+                                   selection: $configurationModel.iconType,
+                                   chips: DefinedStatusIcons.chips)
+                }
             }
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {

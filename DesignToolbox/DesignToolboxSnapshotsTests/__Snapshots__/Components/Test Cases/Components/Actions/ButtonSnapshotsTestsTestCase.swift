@@ -34,27 +34,39 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`).
     ///   - interfaceStyle: The user interface style (light or dark).
-    @MainActor func testAllButtons(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    @MainActor func testAllButtons(
+        theme: OUDSTheme,
+        interfaceStyle: UIUserInterfaceStyle)
+    {
         for appearance in OUDSButton.Appearance.allCases {
             for layout in ButtonTest.Layout.allCases {
                 for flipIcon in [true, false] {
-                    for disabled in [true, false] {
-                        testButton(theme: theme,
-                                   interfaceStyle: interfaceStyle,
-                                   a11yContrast: .normal,
-                                   layout: layout,
-                                   flipIcon: flipIcon,
-                                   appearance: appearance,
-                                   disabled: disabled,
-                                   onColoredSurface: false)
-                        testButton(theme: theme,
-                                   interfaceStyle: interfaceStyle,
-                                   a11yContrast: .high,
-                                   layout: layout,
-                                   flipIcon: flipIcon,
-                                   appearance: appearance,
-                                   disabled: disabled,
-                                   onColoredSurface: false)
+                    for imageMode in [
+                        Image.TemplateRenderingMode.original,
+                        Image.TemplateRenderingMode.template,
+                    ] {
+                        for disabled in [true, false] {
+                            testButton(
+                                theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .normal,
+                                layout: layout,
+                                flipIcon: flipIcon,
+                                imageMode: imageMode,
+                                appearance: appearance,
+                                disabled: disabled,
+                                onColoredSurface: false)
+                            testButton(
+                                theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .high,
+                                layout: layout,
+                                flipIcon: flipIcon,
+                                imageMode: imageMode,
+                                appearance: appearance,
+                                disabled: disabled,
+                                onColoredSurface: false)
+                        }
                     }
                 }
             }
@@ -72,28 +84,42 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor func testAllButtonsOnColoredSurface(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    @MainActor func testAllButtonsOnColoredSurface(
+        theme: OUDSTheme,
+        interfaceStyle: UIUserInterfaceStyle)
+    {
         // Skip test for negative and brand appearance because it is not allowed on colored surface
-        for appearance in OUDSButton.Appearance.allCases where appearance != .negative && appearance != .brand {
+        for appearance in OUDSButton.Appearance.allCases
+            where appearance != .negative && appearance != .brand
+        {
             for layout in ButtonTest.Layout.allCases {
                 for flipIcon in [true, false] {
-                    for disabled in [true, false] {
-                        testButton(theme: theme,
-                                   interfaceStyle: interfaceStyle,
-                                   a11yContrast: .normal,
-                                   layout: layout,
-                                   flipIcon: flipIcon,
-                                   appearance: appearance,
-                                   disabled: disabled,
-                                   onColoredSurface: true)
-                        testButton(theme: theme,
-                                   interfaceStyle: interfaceStyle,
-                                   a11yContrast: .high,
-                                   layout: layout,
-                                   flipIcon: flipIcon,
-                                   appearance: appearance,
-                                   disabled: disabled,
-                                   onColoredSurface: true)
+                    for imageMode in [
+                        Image.TemplateRenderingMode.original,
+                        Image.TemplateRenderingMode.template,
+                    ] {
+                        for disabled in [true, false] {
+                            testButton(
+                                theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .normal,
+                                layout: layout,
+                                flipIcon: flipIcon,
+                                imageMode: imageMode,
+                                appearance: appearance,
+                                disabled: disabled,
+                                onColoredSurface: true)
+                            testButton(
+                                theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .high,
+                                layout: layout,
+                                flipIcon: flipIcon,
+                                imageMode: imageMode,
+                                appearance: appearance,
+                                disabled: disabled,
+                                onColoredSurface: true)
+                        }
                     }
                 }
             }
@@ -116,39 +142,55 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
     ///   - a11yContrast:Contrast mode (high or not)
     ///   - layout: the layout of the button
     ///   - flipIcon: flip the icon of the button or not
+    ///   - imageMode: The rendering mode for the image in the button
     ///   - appearance; the appearance of the button
     ///   - disabled: the disabled flag
     ///   - onColoredSurface: a flag to know if button is on a colored surface or not
-    @MainActor private func testButton(theme: OUDSTheme,
-                                       interfaceStyle: UIUserInterfaceStyle,
-                                       a11yContrast: UIAccessibilityContrast,
-                                       layout: ButtonTest.Layout,
-                                       flipIcon: Bool,
-                                       appearance: OUDSButton.Appearance,
-                                       disabled: Bool,
-                                       onColoredSurface: Bool = false)
+    @MainActor private func testButton(
+        theme: OUDSTheme,
+        interfaceStyle: UIUserInterfaceStyle,
+        a11yContrast: UIAccessibilityContrast,
+        layout: ButtonTest.Layout,
+        flipIcon: Bool,
+        imageMode: Image.TemplateRenderingMode,
+        appearance: OUDSButton.Appearance,
+        disabled: Bool,
+        onColoredSurface: Bool = false)
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
-            ButtonTest(layout: layout, flipIcon: flipIcon, appearance: appearance, style: .default, onColoredSurface: onColoredSurface)
-                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+            ButtonTest(
+                layout: layout,
+                flipIcon: flipIcon,
+                imageMode: imageMode,
+                appearance: appearance,
+                style: .default,
+                onColoredSurface: onColoredSurface)
+                .background(
+                    theme.colors.bgPrimary.color(
+                        for: interfaceStyle == .light ? .light : .dark))
                 .disabled(disabled)
         }
 
         // Create a unique snapshot name based on the current configuration
-        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")_\(a11yContrast == .high ? "HighContrast" : "")"
+        let testName =
+            "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")_\(a11yContrast == .high ? "HighContrast" : "")"
         let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
         let flipIconPattern = flipIcon ? "_FlipIcon" : ""
+        let imageModePattern =
+            imageMode == .original ? "_OriginalImage" : "_TemplateImage"
         let disabledPatern = disabled ? "_Disabled" : ""
         let roundedPattern = theme.tuning.hasRoundedButtons ? "_Rounded" : ""
-        let name = "\(coloredSurfacePatern)\(flipIconPattern)\(layout.rawValue.camelCase)_\(appearance.formattedName)_\(OUDSButton.Style.default.formattedName)\(disabledPatern)\(roundedPattern)"
+        let name =
+            "\(coloredSurfacePatern)\(flipIconPattern)\(imageModePattern)\(layout.rawValue.camelCase)_\(appearance.formattedName)_\(OUDSButton.Style.default.formattedName)\(disabledPatern)\(roundedPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-        assertIllustration(illustration,
-                           on: interfaceStyle,
-                           a11yContrast: a11yContrast,
-                           named: name,
-                           testName: testName)
+        assertIllustration(
+            illustration,
+            on: interfaceStyle,
+            a11yContrast: a11yContrast,
+            named: name,
+            testName: testName)
     }
     // swiftlint:enable function_parameter_count
     // swiftlint:enable line_length
@@ -166,6 +208,7 @@ struct ButtonTest: View {
 
     let layout: Layout
     let flipIcon: Bool
+    let imageMode: Image.TemplateRenderingMode
     let appearance: OUDSButton.Appearance
     let style: OUDSButton.Style
     let onColoredSurface: Bool
@@ -174,7 +217,9 @@ struct ButtonTest: View {
 
     var body: some View {
         if onColoredSurface {
-            OUDSColoredSurface(color: theme.colorModes.onBrandPrimary, content: button)
+            OUDSColoredSurface(
+                color: theme.colorModes.onBrandPrimary,
+                content: button)
         } else {
             button()
         }
@@ -185,10 +230,26 @@ struct ButtonTest: View {
         case .text:
             OUDSButton(text: "Button", appearance: appearance, style: style) {}
         case .textAndIcon:
-            OUDSButton(text: "Button", icon: Image(decorative: "ic_heart"), flipIcon: flipIcon, appearance: appearance, style: style) {}
+            OUDSButton(
+                text: "Button",
+                image: oudsImage,
+                appearance: appearance,
+                style: style) {}
         case .icon:
-            OUDSButton(icon: Image(decorative: "ic_heart"), accessibilityLabel: "Icon", flipIcon: flipIcon, appearance: appearance, style: style) {}
+            OUDSButton(
+                image: OUDSImage(asset: imageMode == .original ? Image.placeholderImage() : Image.defaultImage(),
+                                 flipped: flipIcon,
+                                 accessibilityLabel: "Icon",
+                                 renderingMode: imageMode),
+                appearance: appearance,
+                style: style) {}
         }
+    }
+
+    private var oudsImage: OUDSImage {
+        OUDSImage(asset: imageMode == .original ? Image.placeholderImage() : Image.defaultImage(),
+                  flipped: flipIcon,
+                  renderingMode: imageMode)
     }
 }
 

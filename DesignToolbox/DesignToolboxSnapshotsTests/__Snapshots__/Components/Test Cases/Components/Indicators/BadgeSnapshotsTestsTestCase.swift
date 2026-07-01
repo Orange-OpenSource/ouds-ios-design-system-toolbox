@@ -48,7 +48,10 @@ open class BadgeSnapshotsTestsTestCase: XCTestCase {
             model.statusKind = status
             for size in OUDSBadgeStandard.Size.allCases {
                 model.size = size
-                testBadgeIcon(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                for statusIcon in DefinedStatusIcons.allCases {
+                    model.statusIcon = statusIcon
+                    testBadgeIcon(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                }
             }
         }
 
@@ -123,9 +126,10 @@ open class BadgeSnapshotsTestsTestCase: XCTestCase {
         let testName = "testBadge_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let typePattern = "IconBadge"
         let statusPattern = model.statusKind.technicalDescription
+        let statusIconPattern = model.statusIcon.technicalDescription
         let sizePattern = model.size.technicalDescription
 
-        let name = "\(typePattern)\(statusPattern)\(sizePattern)"
+        let name = "\(typePattern)\(statusPattern)\(statusIconPattern)\(sizePattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
