@@ -147,7 +147,7 @@ struct LinkTest: View {
         case .textOnly:
             OUDSLink(text: "Link", size: size) {}
         case .textAndIcon:
-            OUDSLink(text: "Link", icon: oudsIcon, size: size) {}
+            OUDSLink(text: "Link", image: oudsImage, size: size) {}
         case .indicatorNext:
             OUDSLink(text: "Next", indicator: .next, size: size) {}
         case .indicatorBack:
@@ -155,7 +155,7 @@ struct LinkTest: View {
         }
     }
 
-    private var oudsIcon: OUDSImage {
+    private var oudsImage: OUDSImage {
         let asset: Image = iconType == .tintedIcon ? Image(decorative: "ic_heart") : Image.placeholderImage()
         let renderingMode: Image.TemplateRenderingMode = iconType == .tintedIcon ? .template : .original
         return OUDSImage(asset: asset, renderingMode: renderingMode)

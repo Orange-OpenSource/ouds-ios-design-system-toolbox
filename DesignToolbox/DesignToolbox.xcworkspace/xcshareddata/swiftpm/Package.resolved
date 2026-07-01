@@ -16,7 +16,7 @@
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
         "branch" : "1511-in-library-update-alert-message-inline-alert-button-checkbox-item-radio-button-item-switch-item-suggestion-chip-filter-chip-link-tag-and-text-input-to-allow-the-use-of-fixed-images",
-        "revision" : "b0adb6449a6a0967b5609690e3f5358d01bf465f"
+        "revision" : "22d030c1a07ea95833bfe23df056791f608dcafa"
       }
     },
     {

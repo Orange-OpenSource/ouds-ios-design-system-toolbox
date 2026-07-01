@@ -239,8 +239,8 @@ struct ButtonTest: View {
             OUDSButton(
                 image: OUDSImage(asset: imageMode == .original ? Image.placeholderImage() : Image.defaultImage(),
                                  flipped: flipIcon,
-                                 renderingMode: imageMode,
-                                 accessibilityLabel: "Icon"),
+                                 accessibilityLabel: "Icon",
+                                 renderingMode: imageMode),
                 appearance: appearance,
                 style: style) {}
         }
