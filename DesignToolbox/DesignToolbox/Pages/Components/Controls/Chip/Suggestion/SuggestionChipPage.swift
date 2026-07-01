@@ -43,18 +43,18 @@ struct SuggestionChipDemo: View {
         Group {
             switch configurationModel.layout {
             case .iconOnly:
-                OUDSSuggestionChip(icon: oudsIcon,
+                OUDSSuggestionChip(image: oudsImage,
                                    accessibilityLabel: "app_components_common_icon_a11y".localized()) {}
             case .textOnly:
                 OUDSSuggestionChip(text: configurationModel.text) {}
             case .textAndIcon:
-                OUDSSuggestionChip(icon: oudsIcon, text: configurationModel.text) {}
+                OUDSSuggestionChip(image: oudsImage, text: configurationModel.text) {}
             }
         }
         .disabled(!configurationModel.enabled)
     }
 
-    private var oudsIcon: OUDSImage {
+    private var oudsImage: OUDSImage {
         let asset: Image = configurationModel.iconType == .tintedIcon
             ? Image(decorative: "ic_heart")
             : Image.placeholderImage()

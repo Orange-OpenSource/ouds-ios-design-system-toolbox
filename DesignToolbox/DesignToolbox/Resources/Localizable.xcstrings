@@ -3415,6 +3415,31 @@
         }
       }
     },
+    "app_components_common_rawImage_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raw image"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raw image"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raw image"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_readOnly_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",

@@ -94,7 +94,7 @@ final class TagConfigurationModel: ComponentConfiguration {
             case .none:
                 .accent(bullet: false)
             case .icon:
-                .accent(icon: iconImage)
+                .accent(image: iconImage)
             }
         case .neutral:
             switch layout.statusLeading {
@@ -103,7 +103,7 @@ final class TagConfigurationModel: ComponentConfiguration {
             case .none:
                 .neutral(bullet: false)
             case .icon:
-                .neutral(icon: iconImage)
+                .neutral(image: iconImage)
             }
         case .positive:
             .positive(leading: layout.statusLeading)
@@ -153,7 +153,7 @@ final class TagConfigurationModel: ComponentConfiguration {
                 return ", status: \(statusCategory.technicalDescription)(bullet: true)"
             } else if layout == .textAndIcon {
                 let flipIconPattern = flipIcon ? ", flipped: true" : ""
-                return ", status: \(statusCategory.technicalDescription)(icon: OUDSImage(asset: \(iconAssetSample)\(flipIconPattern)\(renderingModeCode)))"
+                return ", status: \(statusCategory.technicalDescription)(image: OUDSImage(asset: \(iconAssetSample)\(flipIconPattern)\(renderingModeCode)))"
             } else {
                 return ", status: \(statusCategory.technicalDescription)()"
             }
