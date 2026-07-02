@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Open API to use easily fixed and scaled icons, and interactions layers (Orange-OpenSource/ouds-ios#1569)
+- [Library] Skill to create local theme
 - [Library] Use of original image possible for components with icons (Orange-OpenSource/ouds-ios#1511)
 - [Library] Migration skill for AI agents
 - [Library] View modifier to fill colors on `Shape`
