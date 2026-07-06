@@ -62,6 +62,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - [Library] **BREAKING**: `forceOUDSLegacyTabBar` and `OUDSLegacyTabBarModifier`, for `forceOUDSLegacyLayout` and `OUDSLegacyLayoutModifier`
+### Removed
+
 - [Library] **BREAKING**: Deprecated `OUDSBadge` API
 - [Library] **BREAKING**: Deprecated type `OUDSIcon`
 - [Library] **BREAKING**: Deprecated initializers for `button`, `checkbox`, `chips`, `radio`, `switch`, `checkbox`, `text input`, `badge`, `link`, `tag` components
