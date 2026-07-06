@@ -15,22 +15,22 @@ import OUDSSwiftUI
 
 extension NamedColor {
 
-    enum Opacity: String, CaseIterable {
-        case opacityLowest
-        case opacityLower
-        case opacityTransparent
-        case opacityTransparentInverse
+    enum Ai: String, CaseIterable {
+        case colorAiPrimary
+        case colorAiSecondary
+        case colorAiTertiary
+        case colorAiQuaternary
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticToken {
             switch self {
-            case .opacityLowest:
-                theme.colors.opacityLowest
-            case .opacityLower:
-                theme.colors.opacityLower
-            case .opacityTransparent:
-                theme.colors.opacityTransparent
-            case .opacityTransparentInverse:
-                theme.colors.opacityTransparentInverse
+            case .colorAiPrimary:
+                theme.colors.colorAiPrimary
+            case .colorAiSecondary:
+                theme.colors.colorAiSecondary
+            case .colorAiTertiary:
+                theme.colors.colorAiTertiary
+            case .colorAiQuaternary:
+                theme.colors.colorAiQuaternary
             }
         }
     }
