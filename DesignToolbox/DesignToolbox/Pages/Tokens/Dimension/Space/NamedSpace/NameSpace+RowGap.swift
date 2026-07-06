@@ -17,6 +17,7 @@ extension NamedSpace {
 
     enum RowGap: String, CaseIterable, NamedSpaceToken {
         case rowGapNone
+        case rowGap3xsmall
         case rowGap2xsmall
         case rowGapXsmall
         case rowGapSmall
@@ -29,6 +30,8 @@ extension NamedSpace {
             switch self {
             case .rowGapNone:
                 theme.spaces.rowGapNone
+            case .rowGap3xsmall:
+                theme.spaces.rowGap3xsmall
             case .rowGap2xsmall:
                 theme.spaces.rowGap2xsmall
             case .rowGapXsmall:
