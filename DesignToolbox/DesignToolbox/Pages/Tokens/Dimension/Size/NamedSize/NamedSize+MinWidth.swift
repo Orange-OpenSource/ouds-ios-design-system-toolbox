@@ -16,11 +16,17 @@ import OUDSSwiftUI
 extension NamedSize {
     enum MinWidth: String, CaseIterable {
         case minInteractiveArea
+        case minInteractiveAreaSmall
+        case minInteractiveAreaSmallest
 
         func token(for theme: OUDSTheme) -> SizeSemanticToken {
             switch self {
             case .minInteractiveArea:
-                theme.sizes.minInteractiveArea
+                theme.sizes.minInteractiveAreaDefault
+            case .minInteractiveAreaSmall:
+                theme.sizes.minInteractiveAreaSmall
+            case .minInteractiveAreaSmallest:
+                theme.sizes.minInteractiveAreaSmallest
             }
         }
     }

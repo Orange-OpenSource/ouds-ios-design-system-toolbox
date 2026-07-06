@@ -28,9 +28,9 @@ struct InlineAlertMessageView: View {
     private var watchVerticalLayout: some View {
         WatchVerticalLayout {
             OUDSInlineAlert(label: "This is a neutral alert", status: .neutral())
-            OUDSInlineAlert(label: "This is also a neutral alert", status: .neutral(icon: OUDSImage(asset: Image(systemName: "figure.handball"))))
+            OUDSInlineAlert(label: "This is also a neutral alert", status: .neutral(image: OUDSImage(asset: Image(systemName: "figure.handball"))))
             OUDSInlineAlert(label: "This is an accent alert", status: .accent())
-            OUDSInlineAlert(label: "This is also a accent alert", status: .neutral(icon: OUDSImage(asset: Image(systemName: "figure.handball"))))
+            OUDSInlineAlert(label: "This is also a accent alert", status: .neutral(image: OUDSImage(asset: Image(systemName: "figure.handball"))))
             OUDSInlineAlert(label: "This is a positive alert", status: .positive)
             OUDSInlineAlert(label: "This is a info alert", status: .info)
             OUDSInlineAlert(label: "This is a warning alert", status: .warning)
@@ -41,9 +41,9 @@ struct InlineAlertMessageView: View {
     private var tvVerticalLayout: some View {
         TVVerticalLayout {
             OUDSInlineAlert(label: "This is a neutral alert", status: .neutral())
-            OUDSInlineAlert(label: "This is also a neutral alert", status: .neutral(icon: OUDSImage(asset: Image(systemName: "figure.handball"))))
+            OUDSInlineAlert(label: "This is also a neutral alert", status: .neutral(image: OUDSImage(asset: Image(systemName: "figure.handball"))))
             OUDSInlineAlert(label: "This is an accent alert", status: .accent())
-            OUDSInlineAlert(label: "This is also a accent alert", status: .neutral(icon: OUDSImage(asset: Image(systemName: "figure.handball"))))
+            OUDSInlineAlert(label: "This is also a accent alert", status: .neutral(image: OUDSImage(asset: Image(systemName: "figure.handball"))))
             OUDSInlineAlert(label: "This is a positive alert", status: .positive)
             OUDSInlineAlert(label: "This is a info alert", status: .info)
             OUDSInlineAlert(label: "This is a warning alert", status: .warning)
