@@ -19,7 +19,14 @@ struct BadgesView: View {
 
     private static let allBadgeStandardStatus: [OUDSBadgeStandard.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
     private static let allBadgeIconStatus: [OUDSBadgeIcon.Status]
-        = [.accent(icon: Image(systemName: "sun.min.fill")), .info, .negative, .positive, .neutral(icon: Image(systemName: "sun.min.fill")), .warning]
+        = [
+            .accent(image: OUDSImage(asset: Image(systemName: "sun.min.fill"))),
+            .info,
+            .negative,
+            .positive,
+            .neutral(image: OUDSImage(asset: Image(systemName: "sun.min.fill"))),
+            .warning,
+        ]
     private static let allBadgeCountStatus: [OUDSBadgeStandard.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
     private static let allBadgeStandardSizes: [OUDSBadgeStandard.Size] = [.extraSmall, .small, .medium, .large]
     private static let allBadgeIconSizes: [OUDSBadgeStandard.Size] = [.extraSmall, .small, .medium, .large]

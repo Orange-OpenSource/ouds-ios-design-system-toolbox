@@ -4,7 +4,41 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.2.0...develop)
+## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.0...develop)
+
+### Added
+
+- [Library] Component tokens for `accordions`, `progress indicators` and `typography` components (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] Semantic tokens of `colors` dedicated to AI (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579) 
+- [Library] Components tokens for `list item` (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] Components tokens for `button` dedicated to AI (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+
+### Changed
+
+- [Library] **BREAKING**: `.neutral` and `.accent` `badge icon status` signatures
+- [Library] **BREAKING**: `.neutral` and `.accent` `alert status` parameter name
+- [Library] **BREAKING**: `.icon` and `.textAndIcon` layouts for `chip picker data` object
+- [Library] `elevation` semantic tokens for `Orange`, `Orange Compact`, `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] `color` semantic tokens for `Orange`, `Orange Compact`, `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] `link` component tokens for `Sosh` theme (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] `button` component tokens for `Orange Compact` theme (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] `alert` component tokens for `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] `text input` component tokens for `Sosh` theme (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] `text area` component tokens for `Orange`, `Orange Compact`, `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] **BREAKING**: Components token for `tag` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] **BREAKING**: Components token for `link` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] **BREAKING**: Components token for `icon` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] **BREAKING**: Components token for `button` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+
+### Removed
+
+- [Library] **BREAKING**: Deprecated `OUDSBadge` API
+- [Library] **BREAKING**: Deprecated type `OUDSIcon`
+- [Library] **BREAKING**: Deprecated initializers for `button`, `checkbox`, `chips`, `radio`, `switch`, `checkbox`, `text input`, `badge`, `link`, `tag` components
+- [Library] **BREAKING**: Component tokens of `control item` component (Orange-OpenSource/ouds-ios#1579)
+- [Library] **BREAKING**: Component tokens of `expand link` component (Orange-OpenSource/ouds-ios#1579)
+
+## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...2.3.0) - 2026-07-09
 
 ### Added
 

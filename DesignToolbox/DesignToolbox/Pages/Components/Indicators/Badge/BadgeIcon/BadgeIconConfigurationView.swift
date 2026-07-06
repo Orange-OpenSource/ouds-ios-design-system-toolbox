@@ -55,14 +55,14 @@ final class BadgeIconConfigurationModel: ComponentConfiguration {
         statusKind == .neutral || statusKind == .accent
     }
 
-    func statusWithIcon(from theme: OUDSTheme) -> OUDSBadgeIcon.Status {
+    @MainActor func statusWithIcon(from theme: OUDSTheme) -> OUDSBadgeIcon.Status {
         let imageRenderingMode: Image.TemplateRenderingMode = (statusIcon == .tintedIcon ? .template : .original)
         let imageAsset: Image = (statusIcon == .tintedIcon ? Image.defaultImage(prefixedBy: theme.name) : Image.placeholderImage())
         return switch statusKind {
         case .neutral:
-            .neutral(icon: imageAsset, flipped: flipIcon, renderingMode: imageRenderingMode)
+            .neutral(image: OUDSImage(asset: imageAsset, flipped: flipIcon, renderingMode: imageRenderingMode))
         case .accent:
-            .accent(icon: imageAsset, flipped: flipIcon, renderingMode: imageRenderingMode)
+            .accent(image: OUDSImage(asset: imageAsset, flipped: flipIcon, renderingMode: imageRenderingMode))
         case .positive:
             .positive
         case .info:
@@ -105,16 +105,16 @@ final class BadgeIconConfigurationModel: ComponentConfiguration {
         case .neutral:
             switch statusIcon {
             case .image:
-                "status: .neutral(icon: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : ""))"
+                "status: .neutral(image: OUDSImage(asset: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : ""))"
             case .tintedIcon:
-                "status: .neutral(icon: \(Image.placeholderImageSample())\(flipIcon ? ", flipped: true" : ""), renderingMode: .original)"
+                "status: .neutral(image: OUDSImage(asset: \(Image.placeholderImageSample())\(flipIcon ? ", flipped: true" : ""), renderingMode: .original)"
             }
         case .accent:
             switch statusIcon {
             case .image:
-                "status: .accent(icon: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : ""))"
+                "status: .accent(image: OUDSImage(asset: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : ""))"
             case .tintedIcon:
-                "status: .accent(icon: \(Image.placeholderImageSample())\(flipIcon ? ", flipped: true" : ""), renderingMode: .original)"
+                "status: .accent(image: OUDSImage(asset: \(Image.placeholderImageSample())\(flipIcon ? ", flipped: true" : ""), renderingMode: .original)"
             }
         case .positive:
             "status: .positive"
