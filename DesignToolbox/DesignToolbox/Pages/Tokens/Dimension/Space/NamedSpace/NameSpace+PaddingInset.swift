@@ -17,6 +17,7 @@ extension NamedSpace {
 
     enum Inset: String, CaseIterable, NamedSpaceToken {
         case insetNone
+        case inset5xsmall
         case inset4xsmall
         case inset3xsmall
         case inset2xsmall
@@ -34,6 +35,8 @@ extension NamedSpace {
             switch self {
             case .insetNone:
                 theme.spaces.insetNone
+            case .inset5xsmall:
+                theme.spaces.inset5xsmall
             case .inset4xsmall:
                 theme.spaces.inset4xsmall
             case .inset3xsmall:
