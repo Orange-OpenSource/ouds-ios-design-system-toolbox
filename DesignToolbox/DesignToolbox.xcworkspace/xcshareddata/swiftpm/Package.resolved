@@ -11,6 +11,7 @@
       }
     },
     {
+<<<<<<< HEAD
       "identity" : "ouds-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
@@ -20,12 +21,32 @@
       }
     },
     {
+=======
+>>>>>>> 14dd6d4e7 (chore: clean snapshots)
       "identity" : "swift-custom-dump",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-custom-dump",
       "state" : {
         "revision" : "a8cd6c976f335ed361dcecddb0dc39ebda51bc3e",
         "version" : "1.6.1"
+      }
+    },
+    {
+      "identity" : "swift-docc-plugin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-docc-plugin",
+      "state" : {
+        "revision" : "647c708be89f834fa6a6d4945442793a77ddf5b6",
+        "version" : "1.5.0"
+      }
+    },
+    {
+      "identity" : "swift-docc-symbolkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-docc-symbolkit",
+      "state" : {
+        "revision" : "b45d1f2ed151d057b54504d653e0da5552844e34",
+        "version" : "1.0.0"
       }
     },
     {
@@ -69,8 +90,13 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nicklockwood/SwiftFormat",
       "state" : {
+<<<<<<< HEAD
         "revision" : "a5fa7a6a57abeb834df1b3fa43ea9133137d5ade",
         "version" : "0.61.1"
+=======
+        "revision" : "2226e9d89bf05a604cc985bab3dccb44ff7c8ee3",
+        "version" : "0.62.1"
+>>>>>>> 788b21880 (chore: clean snapshots)
       }
     },
     {
