@@ -74,7 +74,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
 
         func boldData() -> OUDSListItemData {
             OUDSListItemData(
-                label: data.label,
+                label: "Label",
                 hasBoldLabel: true,
                 description: data.description,
                 overline: data.overline,
@@ -95,10 +95,14 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The color scheme (light or dark).
     @MainActor func testAllStyles(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         let styles: [(OUDSListItemContentStyle, String)] = [
-            (.outlined, "outlined"),
-            (.standard(divider: true, background: false), "standard_divider"),
-            (.standard(divider: false, background: true), "standard_bg"),
-            (.standard(divider: true, background: true), "standard_divider_bg"),
+            (.card(.outlined), "card_outlined"),
+            (.card(.outlinedOnInteractionOnly), "card_outlinedOnInteractionOnly"),
+            (.card(.background(withDivider: true)), "card_backgroundWithDivider"),
+            (.card(.background(withDivider: false)), "card_backgroundWithoutDivider"),
+            (.card(.backgroundOnInteractionOnly(withDivider: true)), "card_backgroundOnInteractionOnlyWithDivider"),
+            (.card(.backgroundOnInteractionOnly(withDivider: false)), "card_backgroundOnInteractionOnlyWithoutDivider"),
+            (.standard(.background(withDivider: false)), "stabdard_backgroundWithoutDivider"),
+            (.standard(.backgroundOnInteractionOnly(withDivider: true)), "standard_backgroundOnInteractionOnlyWithDivider"),
         ]
         for (style, styleName) in styles {
             for textCase in TextCase.allCases {
@@ -148,7 +152,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
             (.center, "center"),
         ]
         let leading = OUDSListItemLeading.icon(OUDSListItemIcon(type: .neutral(asset: Image(decorative: "ic_heart"))))
-        let trailing = OUDSListItemTrailing.text(.label(Text("Label")))
+        let trailing = OUDSListItemTrailing.text(.label("Label"))
         for (alignment, alignmentName) in alignments {
             for textCase in TextCase.allCases {
                 for isBold in [false, true] {
@@ -157,7 +161,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .outlined,
+                        style: .card(.outlined),
                         alignment: alignment,
                         size: .standard,
                         rounded: false,
@@ -168,7 +172,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testNavigationListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .outlined,
+                        style: .card(.outlined),
                         alignment: alignment,
                         size: .standard,
                         rounded: false,
@@ -205,7 +209,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .outlined,
+                        style: .card(.outlined),
                         alignment: .center,
                         size: size,
                         rounded: false,
@@ -216,7 +220,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testNavigationListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .outlined,
+                        style: .card(.outlined),
                         alignment: .center,
                         size: size,
                         rounded: false,
@@ -240,15 +244,15 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The color scheme (light or dark).
     @MainActor func testRoundedMedia(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         let image = Image(decorative: "ic_heart")
-        let leading = OUDSListItemLeading.image(asset: image)
-        let trailing = OUDSListItemTrailing.image(asset: image)
+        let leading = OUDSListItemLeading.image(.init(asset: image))
+        let trailing = OUDSListItemTrailing.image(.init(asset: image))
         let data = TextCase.full.data
         for rounded in [false, true] {
             let roundedSuffix = rounded ? "_RoundedMedia" : ""
             testListItem(
                 theme: theme,
                 interfaceStyle: interfaceStyle,
-                style: .outlined,
+                style: .card(.outlined),
                 alignment: .center,
                 size: .standard,
                 rounded: rounded,
@@ -259,7 +263,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
             testNavigationListItem(
                 theme: theme,
                 interfaceStyle: interfaceStyle,
-                style: .outlined,
+                style: .card(.outlined),
                 alignment: .center,
                 size: .standard,
                 rounded: rounded,
@@ -285,8 +289,8 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
             (nil, "none"),
             (.icon(OUDSListItemIcon(type: .neutral(asset: image))), "icon_neutral"),
             (.icon(OUDSListItemIcon(type: .negative)), "icon_negative"),
-            (.image(asset: image), "image"),
-            (.flag(asset: image), "flag"),
+            (.image(.init(asset: image)), "image"),
+            (.flag(.init(asset: image)), "flag"),
             (.avatar(OUDSListItemAvatar(type: .icon, size: .medium)), "avatar_icon"),
             (.avatar(OUDSListItemAvatar(type: .initials("MT"), size: .medium)), "avatar_initials"),
             (.avatar(OUDSListItemAvatar(type: .image(image), size: .medium)), "avatar_image"),
@@ -299,7 +303,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .outlined,
+                        style: .card(.outlined),
                         alignment: .center,
                         size: .standard,
                         rounded: false,
@@ -310,7 +314,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testNavigationListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .outlined,
+                        style: .card(.outlined),
                         alignment: .center,
                         size: .standard,
                         rounded: false,
@@ -336,14 +340,14 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
         let image = Image(decorative: "ic_heart")
         let trailings: [(OUDSListItemTrailing?, String)] = [
             (nil, "none"),
-            (.text(.label(Text("Label"))), "text_label"),
-            (.text(.labelStrong(Text("Label"))), "text_labelStrong"),
-            (.text(.labelAndExtraLabel(Text("Label"), Text("Extra"))), "text_labelAndExtraLabel"),
-            (.badge(OUDSBadge(accessibilityLabel: "", status: .negative, size: .small)), "badge"),
+            (.text(.label("Label")), "text_label"),
+            (.text(.labelStrong("Label")), "text_labelStrong"),
+            (.text(.labelAndExtraLabel("Label", "Extra")), "text_labelAndExtraLabel"),
+            (.badge(.standard(OUDSBadgeStandard(accessibilityLabel: "", status: .negative, size: .small))), "badge"),
             (.tag(OUDSTag(label: "Tag")), "tag"),
             (.icon(OUDSListItemIcon(type: .neutral(asset: image))), "icon_neutral"),
-            (.image(asset: image), "image"),
-            (.flag(asset: image), "flag"),
+            (.image(.init(asset: image)), "image"),
+            (.flag(.init(asset: image)), "flag"),
             (.avatar(OUDSListItemAvatar(type: .icon, size: .medium)), "avatar_icon"),
         ]
         for (trailing, trailingName) in trailings {
@@ -354,7 +358,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .outlined,
+                        style: .card(.outlined),
                         alignment: .center,
                         size: .standard,
                         rounded: false,
@@ -365,7 +369,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testNavigationListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .outlined,
+                        style: .card(.outlined),
                         alignment: .center,
                         size: .standard,
                         rounded: false,
@@ -420,7 +424,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
     {
         let colorScheme: ColorScheme = interfaceStyle == .light ? .light : .dark
         let illustration = OUDSThemeableView(theme: theme) {
-            OUDSNavigationListItem(data: data, affordanceType: .next, leading: leading, trailing: trailing)
+            OUDSNavigationListItem(data: data, indicatorType: .next, leading: leading, trailing: trailing)
                 .oudsListItemStyle(style)
                 .oudsListItemContainerAlignment(alignment)
                 .oudsListItemSize(size)
