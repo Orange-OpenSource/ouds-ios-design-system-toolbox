@@ -41,8 +41,8 @@ struct NavigationListItemIllustration: View {
         VStack(spacing: theme.spaces.fixedSmall) {
             let data = OUDSListItemData(label: "Label",
                                         description: "A description of the item to show in the list item view.")
-            OUDSNavigationListItem(data: data, affordanceType: .next)
-                .oudsListCardStyle(hasDivider: false, hasBackground: true)
+            OUDSNavigationListItem(data: data, indicatorType: .next)
+                .oudsListItemStandardStyle(.backgroundOnInteractionOnly(withDivider: false))
         }
     }
 }

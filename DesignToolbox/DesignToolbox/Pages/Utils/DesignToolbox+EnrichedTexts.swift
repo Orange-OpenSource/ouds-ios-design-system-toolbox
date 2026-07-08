@@ -85,12 +85,12 @@ struct OpenableText: View {
         if type != .githubIssue {
             let tag = OUDSTag(label: anchor)
             OUDSNavigationListItem(data: .init(label: rawText.replacingOccurrences(of: anchor, with: "")),
-                                   affordanceType: .external,
+                                   indicatorType: .external,
                                    trailing: .tag(tag))
             {
                 OSUtilities.open(url: type.destination(for: anchor).first!)
             }
-            .oudsListItemStyle(.standard(divider: false, background: false))
+            .oudsListItemStandardStyle(.backgroundOnInteractionOnly(withDivider: false))
             .oudsListItemSize(.small)
         } else {
             HStack(spacing: theme.spaces.insetNone) {

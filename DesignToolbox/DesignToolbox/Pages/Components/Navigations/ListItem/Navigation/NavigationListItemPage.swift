@@ -42,17 +42,17 @@ private struct NavigationListItemDemo: View {
                 if configurationModel.hasSlot {
                     OUDSNavigationListItem(data: data,
                                            slot: configurationModel.slot(),
-                                           affordanceType: configurationModel.affordanceType,
+                                           indicatorType: configurationModel.indicatorType,
                                            leading: configurationModel.leading(for: theme),
                                            trailing: configurationModel.trailing(for: theme)) {}
                 } else {
                     OUDSNavigationListItem(data: data,
-                                           affordanceType: configurationModel.affordanceType,
+                                           indicatorType: configurationModel.indicatorType,
                                            leading: configurationModel.leading(for: theme),
                                            trailing: configurationModel.trailing(for: theme)) {}
                 }
             }
-            .modifier(ListStyleModifier(configurationModel: configurationModel))
+            .oudsListItemStyle(configurationModel.contentStyle)
             .oudsListItemContainerAlignment(configurationModel.containersAlignment)
             .oudsListItemRoundedMedia(configurationModel.roundedMedia)
             .oudsListItemSize(configurationModel.itemSize)

@@ -51,7 +51,7 @@ private struct StaticListItemDemo: View {
                 }
             }
         }
-        .modifier(ListStyleModifier(configurationModel: configurationModel))
+        .oudsListItemStyle(configurationModel.contentStyle)
         .oudsListItemContainerAlignment(configurationModel.containersAlignment)
         .oudsListItemRoundedMedia(configurationModel.roundedMedia)
         .oudsListItemSize(configurationModel.itemSize)

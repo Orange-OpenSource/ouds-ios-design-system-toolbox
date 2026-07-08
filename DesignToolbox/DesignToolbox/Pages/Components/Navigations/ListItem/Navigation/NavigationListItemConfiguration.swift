@@ -18,12 +18,12 @@ import SwiftUI
 
 final class NavigationListItemConfigurationModel: ListItemConfigurationModel {
 
-    @Published var affordanceType: OUDSNavigationListItemAffordanceType {
+    @Published var indicatorType: OUDSNavigationListItemIndicatorType {
         didSet { updateCode() }
     }
 
     override init() {
-        affordanceType = .next
+        indicatorType = .next
         super.init()
         componentInitCode = "OUDSNavigationListItem"
     }
@@ -40,9 +40,9 @@ struct NavigationListItemConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
-            OUDSChipPicker(title: "app_components_listItem_affordance_tech".localized(),
-                           selection: $configurationModel.affordanceType,
-                           chips: OUDSNavigationListItemAffordanceType.chips)
+            OUDSChipPicker(title: "app_components_listItem_indicator_tech".localized(),
+                           selection: $configurationModel.indicatorType,
+                           chips: OUDSNavigationListItemIndicatorType.chips)
 
             Divider().horizontal()
 
@@ -51,9 +51,9 @@ struct NavigationListItemConfiguration: View {
     }
 }
 
-// MARK: Extension for OUDSNavigationListItemAffordanceType
+// MARK: Extension for OUDSNavigationListItemIndicatorType
 
-extension OUDSNavigationListItemAffordanceType: @retroactive CaseIterable {}
-extension OUDSNavigationListItemAffordanceType: DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSNavigationListItemAffordanceType] = [.next, .previous, .external]
+extension OUDSNavigationListItemIndicatorType: @retroactive CaseIterable {}
+extension OUDSNavigationListItemIndicatorType: DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSNavigationListItemIndicatorType] = [.next, .previous, .external]
 }

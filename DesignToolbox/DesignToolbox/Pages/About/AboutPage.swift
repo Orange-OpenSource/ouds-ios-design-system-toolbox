@@ -203,12 +203,12 @@ struct AboutPage: View {
         #if os(iOS)
         // swiftlint:disable accessibility_label_for_image
         OUDSNavigationListItem(data: .init(key: "app_about_appSettings_label"),
-                               affordanceType: .external,
-                               leading: .image(asset: Image(systemName: "gear")))
+                               indicatorType: .external,
+                               leading: .image(.init(asset: Image(systemName: "gear"))))
         {
             OSUtilities.open(url: appSettingsUrl)
         }
-        .oudsListItemStyle(.standard(divider: false, background: false))
+        .oudsListItemStandardStyle(.backgroundOnInteractionOnly(withDivider: false))
         .oudsListItemSize(.small)
         // swiftlint:enable accessibility_label_for_image
         #endif
@@ -241,12 +241,12 @@ struct AboutPage: View {
     private func link(_ url: URL, label: LocalizedStringKey, assetName: String) -> some View {
         // swiftlint:disable accessibility_label_for_image
         OUDSNavigationListItem(data: .init(key: label),
-                               affordanceType: .external,
-                               leading: .image(asset: Image(systemName: assetName)))
+                               indicatorType: .external,
+                               leading: .image(.init(asset: Image(systemName: assetName))))
         {
             openUrl.callAsFunction(url)
         }
-        .oudsListItemStyle(.standard(divider: false, background: false))
+        .oudsListItemStandardStyle(.backgroundOnInteractionOnly(withDivider: false))
         .oudsListItemSize(.small)
         // swiftlint:enable accessibility_label_for_image
     }
@@ -306,24 +306,17 @@ private struct LiquidGlassStateItem: View {
 
     var body: some View {
 
-        let tag = if #available(iOS 26, *) {
-            OUDSTag(isLiquidGlassDisabled ? "app_common_disabled_tech" : "app_common_enabled_tech",
-                    status: isLiquidGlassDisabled ? .negative(leading: .none) : .positive(leading: .none),
-                    appearance: isLiquidGlassDisabled ? .emphasized : .muted,
-                    shape: .rounded,
-                    size: .small,
-                    hasLoader: false)
-        } else {
-            OUDSTag("app_common_unavailable_tech",
-                    status: .warning(leading: .none),
-                    appearance: .muted,
-                    shape: .rounded,
-                    size: .small,
-                    hasLoader: false)
-        }
+        Spacer()
+
+        let tag = OUDSTag(label: wording,
+                          status: status,
+                          appearance: appearance,
+                          shape: .rounded,
+                          size: .small,
+                          hasLoader: false)
 
         OUDSStaticListItem(data: .init(key: "app_about_isLiquidGlass_disabled"), trailing: .tag(tag))
-            .oudsListItemStyle(.standard(divider: false, background: false))
+            .oudsListItemStandardStyle(.backgroundOnInteractionOnly(withDivider: false))
             .oudsListItemSize(.small)
     }
 }
@@ -345,7 +338,7 @@ private struct VersionItem: View {
                           hasLoader: false)
 
         OUDSStaticListItem(data: .init(key: title), trailing: .tag(tag))
-            .oudsListItemStyle(.standard(divider: false, background: false))
+            .oudsListItemStandardStyle(.backgroundOnInteractionOnly(withDivider: false))
             .oudsListItemSize(.small)
             .modifier(CopyableTextViewModifier(version))
     }

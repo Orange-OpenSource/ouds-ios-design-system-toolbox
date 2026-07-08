@@ -44,7 +44,7 @@ struct ListItemIllustration: View {
             let data = OUDSListItemData(label: "Label",
                                         description: "A description of the item to show in the list item view.")
             OUDSStaticListItem(data: data)
-                .oudsListCardStyle(hasDivider: false, hasBackground: true)
+                .oudsListItemStandardStyle(.background(wthDivider: false))
         }
     }
 }

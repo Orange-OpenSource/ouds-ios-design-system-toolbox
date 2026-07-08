@@ -78,12 +78,9 @@ struct DesignToolboxVariantElement: View {
                             .environmentObject(lowPowerModeObserver)
                     }
                 }
-            } label: {
-                rowView(for: element)
             }
-            .buttonStyle(.plain)
-            #endif
         }
+        .oudsListItemSize(.small)
     }
 
     // MARK: - Helper

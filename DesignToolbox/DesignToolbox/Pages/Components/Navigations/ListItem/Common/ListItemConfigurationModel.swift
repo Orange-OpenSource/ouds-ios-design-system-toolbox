@@ -51,6 +51,10 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var labelContentType: LabelContentType {
+        didSet { updateCode() }
+    }
+
     @Published var itemSize: OUDSListItemSize {
         didSet { updateCode() }
     }
@@ -59,15 +63,19 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var isOutlined: Bool {
+    @Published var type: ListType {
+        didSet { updateCode() }
+    }
+
+    @Published var contentCardStyleOption: ContentCardStyle {
+        didSet { updateCode() }
+    }
+
+    @Published var contentStandardStyleOption: ContentStandardStyle {
         didSet { updateCode() }
     }
 
     @Published var hasDivider: Bool {
-        didSet { updateCode() }
-    }
-
-    @Published var hasBackground: Bool {
         didSet { updateCode() }
     }
 
@@ -95,6 +103,14 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var imageSize: OUDSListItemImage.Size {
+        didSet { updateCode() }
+    }
+
+    @Published var flagSize: OUDSListItemFlag.Size {
+        didSet { updateCode() }
+    }
+
     @Published var iconType: IconType {
         didSet { updateCode() }
     }
@@ -102,6 +118,12 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     @Published var iconSize: OUDSListItemIcon.Size {
         didSet { updateCode() }
     }
+
+    #if os(iOS) && canImport(UIKit)
+    @Published var videoSize: OUDSListItemVideo.Size {
+        didSet { updateCode() }
+    }
+    #endif
 
     @Published var bageOnNeutralIcon: Bool {
         didSet { updateCode() }
@@ -117,33 +139,22 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
     @Published var numberOfItems: Int
 
-    @Published var type: ListType {
-        didSet {
-            if type == .card {
-                hasBackground = true
-            } else {
-                hasBackground = false
-            }
-            updateCode()
-        }
-    }
-
     // MARK: - Properties
 
     var componentInitCode: String = "OUDSStaticListItem"
 
-    // MARK: - List type
+    // MARK: - Label Content Type
 
-    enum ListType: CaseIterable, CustomStringConvertible {
-        case item
-        case card
+    enum LabelContentType: CaseIterable, CustomStringConvertible {
+        case text
+        case customView
 
         var description: String {
             switch self {
-            case .item:
-                "app_components_listItem_itemType_tech"
-            case .card:
-                "app_components_listItem_cardType_tech"
+            case .text:
+                "Text"
+            case .customView:
+                "Custom View"
             }
         }
 
@@ -156,14 +167,34 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         }
     }
 
+    // MARK: - List type
+
+    enum ListType: DesignToolboxEnumLocalizedRepresentable {
+        case standard, card
+
+        var wordingKey: String {
+            switch self {
+            case .standard:
+                "app_components_listItem_itemType_tech"
+            case .card:
+                "app_components_listItem_cardType_tech"
+            }
+        }
+    }
+
     // MARK: - Initializer
 
     override init() {
-        type = .item
+        type = .standard
+        contentCardStyleOption = .background
+        contentStandardStyleOption = .backgroundOnInteraction
+        hasDivider = true
+
         numberOfItems = 1
 
         // Item content
         labelText = String(localized: "app_components_common_label_label")
+        labelContentType = .text
 
         helperText = ""
         overlineText = ""
@@ -186,17 +217,20 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         avatarSize = .medium
         avatarBadgeOption = false
 
+        imageSize = .medium
+        flagSize = .medium
+
         iconType = .negative
         bageOnNeutralIcon = false
         iconSize = .medium
 
+        #if os(iOS) && canImport(UIKit)
+        videoSize = .medium
+        #endif
+
         roundedMedia = false
 
         hasSlot = false
-
-        isOutlined = false
-        hasDivider = true
-        hasBackground = false
 
         super.init()
     }
@@ -207,20 +241,42 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
     var dataItems: [OUDSListItemData] {
         (0 ..< numberOfItems).map { index in
-            OUDSListItemData(
-                label: index == 0 ? labelText : "\(labelText) \(index + 1)",
-                isBoldLabel: isBoldLabel,
-                description: descriptionText.isEmpty ? nil : descriptionText,
-                overline: overlineText.isEmpty ? nil : overlineText,
-                extraLabel: extraLabelText.isEmpty ? nil : extraLabelText,
-                helperText: helperText.isEmpty ? nil : helperText)
+            let currentLabel = index == 0 ? labelText : "\(labelText) \(index + 1)"
+            switch labelContentType {
+            case .text:
+                return OUDSListItemData(
+                    label: currentLabel,
+                    isBoldLabel: isBoldLabel,
+                    description: descriptionText.isEmpty ? nil : descriptionText,
+                    overline: overlineText.isEmpty ? nil : overlineText,
+                    extraLabel: extraLabelText.isEmpty ? nil : extraLabelText,
+                    helperText: helperText.isEmpty ? nil : helperText)
+            case .customView:
+                return OUDSListItemData(
+                    label: Self.customLabelView(text: currentLabel),
+                    accessibilityLabel: currentLabel,
+                    description: descriptionText.isEmpty ? nil : descriptionText,
+                    overline: overlineText.isEmpty ? nil : overlineText,
+                    extraLabel: extraLabelText.isEmpty ? nil : extraLabelText,
+                    helperText: helperText.isEmpty ? nil : helperText)
+            }
         }
     }
 
-    var listStyle: OUDSListItemContentStyle {
-        isOutlined
-            ? .outlined
-            : .standard(divider: hasDivider, background: hasBackground)
+    /// Builds the custom view used as label when `labelContentType` is `.customView`.
+    /// Displays a star icon followed by the label text and a chevron icon.
+    static func customLabelView(text: String) -> some View {
+        HStack(spacing: 8) {
+            Image(systemName: "star.fill")
+                .foregroundColor(.yellow)
+                .accessibilityHidden(true)
+            Text(text)
+                .fontWeight(.semibold)
+            Spacer()
+            Image(systemName: "chevron.right.circle.fill")
+                .foregroundColor(.secondary)
+                .accessibilityHidden(true)
+        }
     }
 
     @MainActor
@@ -233,24 +289,22 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     func leading(for theme: OUDSTheme) -> OUDSListItemLeading? {
         switch leadingOption {
         case .none:
-            nil
+            return nil
         case .icon:
-            .icon(icon(for: theme))
+            return .icon(icon(for: theme))
         case .image:
-            .image(
-                asset: Image.placeholderImage(),
-                description: "Image description")
+            return .image(.init(asset: Image.placeholderImage(),
+                                size: imageSize,
+                                description: "Image description"))
         case .flag:
-            .flag(asset: Image("il_flag_fr"))
+            return .flag(.init(asset: Image(decorative: "il_flag_fr"), size: flagSize))
         case .avatar:
-            .avatar(
-                OUDSListItemAvatar(
-                    type: avatarType,
-                    size: avatarSize,
-                    badge: avatarBadge))
-        #if os(iOS)
+            return .avatar(.init(type: avatarType,
+                                 size: avatarSize,
+                                 badgeType: avatarBadgeOption ? .standard(.negative) : nil))
+        #if os(iOS) && canImport(UIKit)
         case .video:
-            .video(URL(string: String.defaultVideoUrl())!, autoplay: true)
+            return .video(.init(url: URL(string: String.defaultVideoUrl())!, autoplay: true, muted: true, size: videoSize))
         #endif
         }
     }
@@ -259,58 +313,33 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     func trailing(for theme: OUDSTheme) -> OUDSListItemTrailing? {
         switch trailingOption {
         case .none:
-            nil
+            return nil
         case .text:
-            .text(trailingTextType)
+            return .text(trailingTextType)
         case .badge:
-            .badge(
-                OUDSBadge(
-                    count: 1,
-                    accessibilityLabel: "1",
-                    status: .negative,
-                    size: .medium))
+            return .badge(.count(.init(1,
+                                       accessibilityLabel: "1",
+                                       status: .negative,
+                                       size: .medium)))
         case .tag:
-            .tag(OUDSTag(label: "Label", size: .small))
+            return .tag(.init(label: "Label", size: .small))
         case .icon:
-            .icon(icon(for: theme))
+            return .icon(icon(for: theme))
         case .image:
-            .image(
-                asset: Image.placeholderImage(),
-                description: "Image description")
-        #if os(iOS)
+            return .image(.init(asset: Image.placeholderImage(),
+                                size: imageSize,
+                                description: "Image description"))
+        #if os(iOS) && canImport(UIKit)
         case .video:
-            .video(URL(string: String.defaultVideoUrl())!, autoplay: true)
+            return .video(.init(url: URL(string: String.defaultVideoUrl())!, autoplay: true, muted: true, size: videoSize))
         #endif
         case .flag:
-            .flag(asset: Image("il_flag_fr"))
+            return .flag(.init(asset: Image(decorative: "il_flag_fr"), size: flagSize))
         case .avatar:
-            .avatar(
-                OUDSListItemAvatar(
-                    type: avatarType,
-                    size: avatarSize,
-                    badge: avatarBadge))
+            return .avatar(.init(type: avatarType,
+                                 size: avatarSize,
+                                 badgeType: avatarBadgeOption ? .standard(.negative) : nil))
         }
-    }
-
-    // swiftlint:enable force_unwrapping
-
-    @MainActor
-    private var avatarBadge: OUDSBadge? {
-        let badgeSize: OUDSBadge.StandardSize =
-            switch avatarSize {
-            case .medium:
-                .extraSmall
-            case .large:
-                .small
-            case .extraLarge:
-                .medium
-            }
-
-        return avatarBadgeOption
-            ? OUDSBadge(
-                accessibilityLabel: "",
-                status: .negative,
-                size: badgeSize) : nil
     }
 
     @MainActor
@@ -353,7 +382,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                 switch trailingOption {
                 case .image:
                     true
-                #if os(iOS)
+                #if os(iOS) && canImport(UIKit)
                 case .video:
                     true
                 #endif
@@ -363,6 +392,33 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
                 return leadingMedia || trailingMedia
     }
+
+                var contentStyle: OUDSListItemContentStyle {
+                    switch type {
+                    case .standard:
+                        let style: OUDSListItemContentStyle.Standard = switch contentStandardStyleOption {
+                        case .background:
+                            .background(wthDivider: hasDivider)
+                        case .backgroundOnInteraction:
+                            .backgroundOnInteractionOnly(withDivider: hasDivider)
+                        }
+
+                        return .standard(style)
+                    case .card:
+                        let style: OUDSListItemContentStyle.Card = switch contentCardStyleOption {
+                        case .outlined:
+                            .outlined
+                        case .outlinedOnInteraction:
+                            .outlinedOnInteractionOnly
+                        case .background:
+                            .background(wthDivider: hasDivider)
+                        case .backgroundOnInteraction:
+                            .backgroundOnInteractionOnly(withDivider: hasDivider)
+                        }
+
+                        return .card(style)
+                    }
+                }
 
                 // MARK: - Code generation
 
@@ -374,7 +430,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                     \(dataPattern) \(leadingPattern) \(trailingPattern)
 
                     \(componentInitCode)(data: data\(slotPattern)\(leadingPart)\(trailingPart))
-                    \(styleModifierPettern)\(sizeModifierPattern)\(containersAlignmentPattern)\(roundedMediaPattern)
+                    \(styleModifierPattern)\(sizeModifierPattern)\(containersAlignmentPattern)\(roundedMediaPattern)
                     \(disableCodePattern)
                     """
                 }
@@ -384,9 +440,22 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                 }
 
                 var dataPattern: String {
-                    """
-                    let data = OUDSListItemData(\(labelPattern)\(isBoldLabelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern))
-                    """
+                    switch labelContentType {
+                    case .text:
+                        """
+                        let data = OUDSListItemData(\(labelPattern)\(isBoldLabelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern))
+                        """
+                    case .customView:
+                        """
+                        let customLabel = HStack {
+                            Image(systemName: "star.fill")
+                            Text("\(labelText)")
+                            Spacer()
+                            Image(systemName: "chevron.right.circle.fill")
+                        }
+                        let data = OUDSListItemData(label: customLabel, accessibilityLabel: "\(labelText)"\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern))
+                        """
+                    }
                 }
 
                 private var labelPattern: String {
@@ -413,14 +482,33 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                     helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
                 }
 
-                private var styleModifierPettern: String {
-                    switch type {
-                    case .item:
-                        """
-                        .oudsListCardStyle(hasDivider: \(hasDivider), hasBackground: \(hasBackground))
-                        """
-                    case .card:
-                        ".oudsListItemStyle(.\(listStyle))"
+                private var styleModifierPattern: String {
+                    if type == .card {
+                        ".oudsListItemCardStyle(\(cardStylePattern))"
+                    } else {
+                        ".oudsListItemStandardStyle(\(standardStylePattern))"
+                    }
+                }
+
+                private var standardStylePattern: String {
+                    switch contentStandardStyleOption {
+                    case .background:
+                        ".background(divider: \(hasDivider))"
+                    case .backgroundOnInteraction:
+                        ".backgroundOnInteractionOnly(divider: \(hasDivider))"
+                    }
+                }
+
+                private var cardStylePattern: String {
+                    switch contentCardStyleOption {
+                    case .outlined:
+                        ".outlined"
+                    case .outlinedOnInteraction:
+                        ".outlinedOnInteractionOnly"
+                    case .background:
+                        ".background(divider: \(hasDivider))"
+                    case .backgroundOnInteraction:
+                        ".backgroundOnInteractionOnly(divider: \(hasDivider))"
                     }
                 }
 
@@ -461,12 +549,24 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                     return ".init(type: \(typePattern), size: \(sizePattern))"
                 }
 
+                private var imagePattern: String {
+                    ".init(asset; \"\(Image.placeholderImageSample())\", description: \"Image description\", size: \(imageSize.technicalDescription))"
+                }
+
+                private var flagPattern: String {
+                    ".init(asset: Image(\"ic_flag_FR_fr\"), size: \(flagSize.technicalDescription))"
+                }
+
                 private var avatarPattern: String {
                     ".init(type: \(avatarType.technicalDescription), size: \(avatarSize.technicalDescription))"
                 }
 
                 private var slotPattern: String {
                     hasSlot ? ", slot: someView()" : ""
+                }
+
+                private var badgePattern: String {
+                    ".count(.init(1, accessibilityLabel: \"1\", status: .negative, size: .medium)))"
                 }
 
                 private var leadingPattern: String
@@ -478,13 +578,13 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                         case .icon:
                             ".icon(\(iconPattern)"
                         case .image:
-                            ".image(asset: \"\(Image.placeholderImageSample())\", description: \"Image description\")\""
-                        #if os(iOS)
+                            ".image(\(imagePattern)"
+                        #if os(iOS) && canImport(UIKit)
                         case .video:
                             ".video(URL(string: \"\(String.defaultVideoUrl())\")!, autoplay: true)"
                         #endif
                         case .flag:
-                            ".flag(asset: Image(decorative: \"ic_flag_FR_fr\")"
+                            ".flag(\(flagPattern))"
                         case .avatar:
                             ".avatar(\(avatarPattern))"
                         }
@@ -516,19 +616,19 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                                 case .text:
                                     ".text(\(trailingTextTypePattern))"
                                 case .badge:
-                                    ".badge(OUDSBadge(count: 1, accessibilityLabel: \"\", status: .negative, size: .medium)"
+                                    ".badge(\(badgePattern))"
                                 case .tag:
                                     ".tag(OUDSTag(label: \"Label\", size: .small))"
                                 case .icon:
                                     ".icon(.info)"
                                 case .image:
-                                    ".image(asset: \"\(Image.placeholderImageSample())\", description: \"Image description\")\""
-                                #if os(iOS)
+                                    ".image(\(imagePattern))"
+                                #if os(iOS) && canImport(UIKit)
                                 case .video:
                                     ".video(URL(string: \"\(String.defaultVideoUrl())\")!, autoplay: true)"
                                 #endif
                                 case .flag:
-                                    ".flag(asset: Image(decorative: \"ic_flag_FR_fr\")"
+                                    ".flag(\(flagPattern))"
                                 case .avatar:
                                     ".avatar(\(avatarPattern))"
                                 }
@@ -543,12 +643,20 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
                                 // MARK: - Enums
 
+                                enum ContentCardStyle: DesignToolboxEnumRepresentable {
+                                    case outlined, outlinedOnInteraction, background, backgroundOnInteraction
+                                }
+
+                                enum ContentStandardStyle: DesignToolboxEnumRepresentable {
+                                    case background, backgroundOnInteraction
+                                }
+
                                 enum IconType: DesignToolboxEnumRepresentable {
                                     case neutral, info, warning, negative, positive
                                 }
 
                                 enum Leading: DesignToolboxEnumRepresentable {
-                                    #if os(iOS)
+                                    #if os(iOS) && canImport(UIKit)
                                     case none, icon, image, video, flag, avatar
                                     #else
                                     case none, icon, image, flag, avatar
@@ -556,7 +664,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                                 }
 
                                 enum Trailing: DesignToolboxEnumRepresentable {
-                                    #if os(iOS)
+                                    #if os(iOS) && canImport(UIKit)
                                     case none, text, badge, tag, icon, image, video, flag, avatar
                                     #else
                                     case none, text, badge, tag, icon, image, flag, avatar
@@ -695,11 +803,42 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                                     ]
                                 }
 
+                                enum AvatarBadgeType: DesignToolboxEnumRepresentable {
+                                    case none, standard, icon, image
+                                }
+
                                 // MARK: - Extensions of OUDSListItemIcon.Size
 
                                 extension OUDSListItemIcon.Size: @retroactive CaseIterable {}
                                 extension OUDSListItemIcon.Size: DesignToolboxEnumRepresentable {
-                                    public static let allCases: [OUDSListItemIcon.Size] = [
-                                        .small, .medium, .large,
+                                    public static let allCases: [OUDSListItemIcon.Size] = [.medium, .large]
+                                }
+
+                                // MARK: - Extensions of OUDSListItemImage.Size
+
+                                extension OUDSListItemImage.Size: @retroactive CaseIterable {}
+                                extension OUDSListItemImage.Size: DesignToolboxEnumRepresentable {
+                                    public static let allCases: [OUDSListItemImage.Size] = [
+                                        .medium, .large, .extraLarge,
                                     ]
                                 }
+
+                                // MARK: - Extensions of OUDSListItemFlag.Size
+
+                                extension OUDSListItemFlag.Size: @retroactive CaseIterable {}
+                                extension OUDSListItemFlag.Size: DesignToolboxEnumRepresentable {
+                                    public static let allCases: [OUDSListItemFlag.Size] = [
+                                        .medium, .large, .extraLarge,
+                                    ]
+                                }
+
+                                // MARK: - Extensions of OUDSListItemVideo.Size
+
+                                #if os(iOS) && canImport(UIKit)
+                                extension OUDSListItemVideo.Size: @retroactive CaseIterable {}
+                                extension OUDSListItemVideo.Size: DesignToolboxEnumRepresentable {
+                                    public static let allCases: [OUDSListItemVideo.Size] = [
+                                        .medium, .large, .extraLarge,
+                                    ]
+                                }
+                                #endif
