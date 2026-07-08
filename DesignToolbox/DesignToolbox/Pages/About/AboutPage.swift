@@ -223,14 +223,14 @@ struct AboutPage: View {
 
     #if !os(visionOS)
     @ViewBuilder private func link(title: LocalizedStringKey, forWebview url: URL) -> some View {
-        OUDSNavigationLink(title) {
+        OUDSNavigationLink(title, style: .standard(.backgroundOnInteractionOnly(withDivider: false))) {
             WebView(from: url)
         }
         .oudsListItemSize(.small)
     }
 
     @ViewBuilder private func link(title: LocalizedStringKey, forView view: some View) -> some View {
-        OUDSNavigationLink(title) {
+        OUDSNavigationLink(title, style: .standard(.backgroundOnInteractionOnly(withDivider: false))) {
             view
         }
         .oudsListItemSize(.small)
@@ -272,7 +272,6 @@ struct AboutPage: View {
 
 private struct LiquidGlassStateItem: View {
 
-    @Environment(\.theme) private var theme
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
     @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
 
@@ -306,8 +305,6 @@ private struct LiquidGlassStateItem: View {
 
     var body: some View {
 
-        Spacer()
-
         let tag = OUDSTag(label: wording,
                           status: status,
                           appearance: appearance,
@@ -327,7 +324,6 @@ private struct VersionItem: View {
 
     let title: LocalizedStringKey
     let version: String
-    @Environment(\.theme) private var theme
 
     var body: some View {
         let tag = OUDSTag(label: version,

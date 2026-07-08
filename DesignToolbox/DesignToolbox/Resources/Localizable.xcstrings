@@ -895,6 +895,31 @@
         }
       }
     },
+    "app_common_notImplementedYet" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not implemented yet!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not implemented yet!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not implemented yet!"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_common_select_element" : {
       "comment" : "Common - A message displayed when no element is selected in the Design Toolbox.",
       "localizations" : {
@@ -4282,6 +4307,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_listItem_backgroundContentStyle_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Background content style"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Background content style"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Background content style"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_listItem_boldLabel_tech" : {
       "comment" : "Component - List item",
       "extractionState" : "manual",
@@ -4379,6 +4429,31 @@
           }
         }
       }
+    },
+    "app_components_listItem_flagSize_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flag size"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flag size"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flag size"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_components_listItem_globalConfiguration_label" : {
       "comment" : "Component - List Item",
@@ -4480,6 +4555,55 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_listItem_imageSize_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image size"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image size"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image size"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_indicator_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indicator type"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indicator type"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indicator type"
+          }
+        }
+      }
+    },
     "app_components_listItem_itemType_tech" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
@@ -4500,6 +4624,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "List item"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_labelContentType_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label content type"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label content type"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label content type"
           }
         }
       },
@@ -4822,6 +4971,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Trailing text type"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_videoSize_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Video size"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Video size"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Video size"
           }
         }
       },

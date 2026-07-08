@@ -62,19 +62,30 @@ private struct ListItemGlobalSettingsConfiguration: View {
 
                 switch configurationModel.type {
                 case .card:
-                    OUDSChipPicker(title: "app_components_listItem_contentStyle_tech".localized(),
+                    OUDSChipPicker(title: "app_components_listItem_backgroundContentStyle_tech".localized(),
                                    selection: $configurationModel.contentCardStyleOption,
                                    chips: ContentCardStyle.chips)
+
+                    if configurationModel.contentCardStyleOption == .backgroundOnInteraction ||
+                        configurationModel.contentCardStyleOption == .outlinedOnInteraction
+                    {
+                        OUDSInlineAlert("app_common_notImplementedYet", status: .warning)
+                    }
 
                     if configurationModel.contentCardStyleOption == .backgroundOnInteraction ||
                         configurationModel.contentCardStyleOption == .background
                     {
                         OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
                     }
+
                 case .standard:
-                    OUDSChipPicker(title: "app_components_listItem_contentStyle_tech".localized(),
+                    OUDSChipPicker(title: "app_components_listItem_backgroundContentStyle_tech".localized(),
                                    selection: $configurationModel.contentStandardStyleOption,
                                    chips: ContentStandardStyle.chips)
+
+                    if configurationModel.contentStandardStyleOption == .backgroundOnInteraction {
+                        OUDSInlineAlert("app_common_notImplementedYet", status: .warning)
+                    }
 
                     if configurationModel.contentStandardStyleOption == .backgroundOnInteraction ||
                         configurationModel.contentStandardStyleOption == .background
@@ -122,6 +133,8 @@ private struct ListItemTextsConfiguration: View {
 
 // MARK: - Content configuration
 
+// swiftlint:disable closure_body_length
+
 private struct ListItemContentConfiguration: View {
 
     @ObservedObject var configurationModel: ListItemConfigurationModel
@@ -134,7 +147,7 @@ private struct ListItemContentConfiguration: View {
                                chips: ListItemConfigurationModel.LabelContentType.chips)
 
                 if configurationModel.labelContentType == .text {
-                    OUDSSwitchItem("app_components_listItem_boldLabel_tech", isOn: $configurationModel.isBoldLabel)
+                    OUDSSwitchItem("app_components_listItem_boldLabel_tech", isOn: $configurationModel.hasBoldLabel)
                 }
 
                 OUDSChipPicker(title: "app_components_listItem_leading_tech".localized(),
@@ -241,9 +254,10 @@ private struct ListItemContentConfiguration: View {
                 if !(configurationModel.leadingOption == .none)
                     || !(configurationModel.trailingOption == .none)
                 {
-                    Divider().horizontal()
 
                     if configurationModel.needRoundedMediaOption {
+                        Divider().horizontal()
+
                         OUDSSwitchItem("app_components_listItem_roundedMedia_tech", isOn: $configurationModel.roundedMedia)
                     }
                 }
@@ -251,3 +265,5 @@ private struct ListItemContentConfiguration: View {
         }
     }
 }
+
+// swiftlint:enable closure_body_length

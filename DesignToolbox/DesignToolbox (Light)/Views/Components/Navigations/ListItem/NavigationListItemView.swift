@@ -39,18 +39,18 @@ struct NavigationListItemView: View {
                 description: "Description",
                 overline: "Overline",
                 extraLabel: "Extra Label")
-            OUDSNavigationListItem(data: data, affordanceType: .external)
+            OUDSNavigationListItem(data: data, indicatorType: .external)
 
             Text("Leading icon, trailing badge").font(.headline)
 
             let icon = OUDSListItemIcon(type: .info, size: .medium)
-            let badge = OUDSBadge(count: 3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
+            let badge = OUDSBadgeCount(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
 
             OUDSNavigationListItem(
                 data: OUDSListItemData(label: "Label"),
-                affordanceType: .next,
+                indicatorType: .next,
                 leading: .icon(icon),
-                trailing: .badge(badge))
+                trailing: .badge(.count(badge)))
 
             Text("Leading avatar, trailing text").font(.headline)
 
@@ -58,9 +58,9 @@ struct NavigationListItemView: View {
 
             OUDSNavigationListItem(
                 data: OUDSListItemData(label: "Label", description: "Description"),
-                affordanceType: .previous,
+                indicatorType: .previous,
                 leading: .avatar(avatar),
-                trailing: .text(.label(Text("Info"))))
+                trailing: .text(.label("Info")))
         }
     }
 
@@ -84,13 +84,13 @@ struct NavigationListItemView: View {
                     .padding(.bottom, theme.spaces.paddingBlockSmall)
 
                 let icon = OUDSListItemIcon(type: .info, size: .medium)
-                let badge = OUDSBadge(count: 3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
+                let badge = OUDSBadgeCount(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
 
                 OUDSNavigationListItem(
                     data: OUDSListItemData(label: "Label"),
-                    affordanceType: .external,
+                    indicatorType: .external,
                     leading: .icon(icon),
-                    trailing: .badge(badge))
+                    trailing: .badge(.count(badge)))
             }
             .padding()
 
@@ -106,7 +106,7 @@ struct NavigationListItemView: View {
                     description: "Description",
                     overline: "Overline",
                     extraLabel: "Extra Label")
-                OUDSNavigationListItem(data: data, affordanceType: .next)
+                OUDSNavigationListItem(data: data, indicatorType: .next)
 
                 Text("Leading avatar, trailing text")
                     .font(.title2)
@@ -117,9 +117,9 @@ struct NavigationListItemView: View {
 
                 OUDSNavigationListItem(
                     data: OUDSListItemData(label: "Label", description: "Description"),
-                    affordanceType: .previous,
+                    indicatorType: .previous,
                     leading: .avatar(avatar),
-                    trailing: .text(.label(Text("Info"))))
+                    trailing: .text(.label("Info")))
             }
             .padding()
         }

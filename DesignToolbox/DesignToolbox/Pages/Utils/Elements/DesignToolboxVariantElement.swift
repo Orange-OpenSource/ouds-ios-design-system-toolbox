@@ -78,7 +78,6 @@ struct DesignToolboxVariantElement: View {
                             .environmentObject(lowPowerModeObserver)
                     }
                 }
-            }
         }
         .oudsListItemSize(.small)
     }

@@ -75,7 +75,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
         func boldData() -> OUDSListItemData {
             OUDSListItemData(
                 label: data.label,
-                isBoldLabel: true,
+                hasBoldLabel: true,
                 description: data.description,
                 overline: data.overline,
                 extraLabel: data.extraLabel,

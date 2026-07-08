@@ -274,9 +274,6 @@ struct MainView: View {
                 .tag(2)
         }
         .accentColor(theme.button.colorContentMinimalEnabled)
-<<<<<<< HEAD
 //        .modifier(OUDSLegacyLayoutModifier())
-=======
->>>>>>> 836def167 (chore: complete rebase of hell)
     }
 }

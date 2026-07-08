@@ -16,6 +16,7 @@ import SwiftUI
 
 // swiftlint:disable file_length
 // swiftlint:disable type_body_length
+// swiftlint:disable line_length
 
 // MARK: - List Item Configuration Model
 
@@ -47,7 +48,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var isBoldLabel: Bool {
+    @Published var hasBoldLabel: Bool {
         didSet { updateCode() }
     }
 
@@ -201,7 +202,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         extraLabelText = ""
         descriptionText = ""
 
-        isBoldLabel = false
+        hasBoldLabel = false
 
         // Item interaction
         enabled = true
@@ -211,7 +212,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         containersAlignment = .center
         leadingOption = .none
         trailingOption = .none
-        trailingTextType = .label(Text(OUDSListItemTrailing.TextType.labelValue))
+        trailingTextType = .label(OUDSListItemTrailing.TextType.labelValue)
 
         avatarType = .icon
         avatarSize = .medium
@@ -246,7 +247,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
             case .text:
                 return OUDSListItemData(
                     label: currentLabel,
-                    isBoldLabel: isBoldLabel,
+                    hasBoldLabel: hasBoldLabel,
                     description: descriptionText.isEmpty ? nil : descriptionText,
                     overline: overlineText.isEmpty ? nil : overlineText,
                     extraLabel: extraLabelText.isEmpty ? nil : extraLabelText,
@@ -341,6 +342,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                                  badgeType: avatarBadgeOption ? .standard(.negative) : nil))
         }
     }
+    // swiftlint:enable force_unwrapping
 
     @MainActor
     private func icon(for theme: OUDSTheme) -> OUDSListItemIcon {
@@ -398,7 +400,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                     case .standard:
                         let style: OUDSListItemContentStyle.Standard = switch contentStandardStyleOption {
                         case .background:
-                            .background(wthDivider: hasDivider)
+                            .background(withDivider: hasDivider)
                         case .backgroundOnInteraction:
                             .backgroundOnInteractionOnly(withDivider: hasDivider)
                         }
@@ -411,7 +413,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                         case .outlinedOnInteraction:
                             .outlinedOnInteractionOnly
                         case .background:
-                            .background(wthDivider: hasDivider)
+                            .background(withDivider: hasDivider)
                         case .backgroundOnInteraction:
                             .backgroundOnInteractionOnly(withDivider: hasDivider)
                         }
@@ -443,7 +445,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                     switch labelContentType {
                     case .text:
                         """
-                        let data = OUDSListItemData(\(labelPattern)\(isBoldLabelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern))
+                        let data = OUDSListItemData(\(labelPattern)\(hasBoldLabelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern))
                         """
                     case .customView:
                         """
@@ -462,8 +464,8 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                     "label: \"\(labelText)\""
                 }
 
-                private var isBoldLabelPattern: String {
-                    isBoldLabel ? ", isBoldLabel: true" : ""
+                private var hasBoldLabelPattern: String {
+                    hasBoldLabel ? ", hasBoldLabel: true" : ""
                 }
 
                 private var overlinePattern: String {
@@ -597,13 +599,13 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                         private var trailingTextTypePattern: String {
                             switch trailingTextType {
                             case .label:
-                                ".label(Text(\"Label\"))"
+                                ".label(\"\(labelText)\")"
                             case .labelMuted:
-                                ".labelMuted(Text(\"Label\"))"
+                                ".labelMuted(\"\(labelText)\")"
                             case .labelStrong:
-                                ".labelStrong(Text(\"Label\"))"
+                                ".labelStrong(\"\(labelText)\")"
                             case .labelAndExtraLabel:
-                                ".labelMuted(Text(\"Label\"), Text(\"extra Label\"))"
+                                ".labelMuted(\"\(labelText)\", \"\(extraLabelText)\")"
                             }
                         }
 
@@ -640,6 +642,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 }
 
                                 // swiftlint:enable type_body_length
+                                // swiftlint:enable line_length
 
                                 // MARK: - Enums
 
@@ -700,10 +703,10 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
                                     public static let allCases: [OUDSListItemTrailing.TextType] =
                                         [
-                                            .label(Text(Self.labelValue)),
-                                            .labelStrong(Text(Self.labelValue)),
-                                            .labelMuted(Text(Self.labelValue)),
-                                            .labelAndExtraLabel(Text(Self.labelValue), Text(Self.extraLabelValue)),
+                                            .label(Self.labelValue),
+                                            .labelStrong(Self.labelValue),
+                                            .labelMuted(Self.labelValue),
+                                            .labelAndExtraLabel(Self.labelValue, Self.extraLabelValue),
                                         ]
 
                                     var formattedName: String {
@@ -774,7 +777,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                                         case .icon:
                                             ".icon"
                                         case .image:
-                                            ".image(asset: \"\(Image.placeholderImageSample())\")"
+                                            ".image(asset: \(Image.placeholderImageSample()))"
                                         case let .initials(initials):
                                             ".initials(\"\(initials)\")"
                                         }
@@ -801,10 +804,6 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                                     public static let allCases: [OUDSListItemAvatar.Size] = [
                                         .medium, .large, .extraLarge,
                                     ]
-                                }
-
-                                enum AvatarBadgeType: DesignToolboxEnumRepresentable {
-                                    case none, standard, icon, image
                                 }
 
                                 // MARK: - Extensions of OUDSListItemIcon.Size
