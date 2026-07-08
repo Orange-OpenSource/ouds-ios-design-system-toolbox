@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] GitHub Action `github/codeql-action/upload-sarif` from v4.36.1 to 4.37.0 for `scorecard` workflow
+- [DesignToolbox] GitHub Action `ruby/setup-ruby` from v1.313.0 to v1.316.0 for all workflow
 - [DesignToolbox] GitHub Action `actions/checkout` from v6.0.3 to v7.0.0 for all workflow
 
 ### Deprecated
