@@ -33,7 +33,7 @@ final class CheckboxitemIndeterminateUITests: AppTestCase {
         let app = launchApp()
         goToComponentsSheet(app)
         tapButton(withWording: "app_components_checkbox_tech", app)
-        tapButton(withWording: "Indeterminate checkbox item", app)
+        tapLink(withWording: "app_components_checkbox_indeterminateCheckboxItem_tech", app)
 
         let checkbox = otherElements(withA11yIdentifier: A11YIdentifiers.componentCheckboxItemIndeterminate, app).firstMatch
         XCTAssertTrue(checkbox.exists)
