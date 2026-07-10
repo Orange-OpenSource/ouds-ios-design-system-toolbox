@@ -165,55 +165,55 @@ open class RadioButtonSnapshotsTestsTestCase: XCTestCase {
 
     // swiftlint:disable line_length
     // swiftlint:disable function_default_parameter_at_end
-    private func availableLayouts(isError: Bool, errorText: String? = nil, isReadOnly: Bool) -> [RadioTest.Layout] {
+    @MainActor private func availableLayouts(isError: Bool, errorText: String? = nil, isReadOnly: Bool) -> [RadioTest.Layout] {
         [
             RadioTest.Layout.indicatorOnly(isError: isError, isReadOnly: isReadOnly),
 
-            RadioTest.Layout.default(labelText: "Takoyaki", extraLabelText: nil, helperText: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Takoyaki", extraLabelText: nil, helperText: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Takoyaki", extraLabelText: nil, helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Takoyaki", extraLabelText: nil, helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
-            RadioTest.Layout.default(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
-            RadioTest.Layout.default(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
-            RadioTest.Layout.reversed(labelText: "Takoyaki", extraLabelText: nil, helperText: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Takoyaki", extraLabelText: nil, helperText: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: nil, icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Takoyaki", extraLabelText: nil, helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Takoyaki", extraLabelText: nil, helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
-            RadioTest.Layout.reversed(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: Image.defaultImage(), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
 
-            RadioTest.Layout.reversed(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: Image.defaultImage(), flipIcon: true, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
         ]
     }
     // swiftlint:enable line_length
@@ -232,8 +232,7 @@ struct RadioTest: View {
         case `default`(labelText: String,
                        extraLabelText: String?,
                        helperText: String?,
-                       icon: Image?,
-                       flipIcon: Bool = false,
+                       image: OUDSImage?,
                        isError: Bool,
                        errorText: String? = nil,
                        hasDivider: Bool,
@@ -241,22 +240,21 @@ struct RadioTest: View {
         case reversed(labelText: String,
                       extraLabelText: String?,
                       helperText: String?,
-                      icon: Image?,
-                      flipIcon: Bool = false,
+                      image: OUDSImage?,
                       isError: Bool,
                       errorText: String? = nil,
                       hasDivider: Bool,
                       isReadOnly: Bool)
 
         // swiftlint:disable line_length
-        var description: String {
+        @MainActor var description: String {
             switch self {
             case let .indicatorOnly(isError, isReadOnly):
                 "layout-indicatorOnly-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")"
-            case let .default(_, extraLabelText, helperText, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
-                "layout-default-label-\(extraLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(flipIcon ? "flipIcon" : "")-\(isError ? "error-\(errorText != nil ? "withText" : "")" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
-            case let .reversed(_, extraLabelText, helperText, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
-                "layout-inverse-label-\(extraLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(flipIcon ? "flipIcon" : "")-\(isError ? "error-\(errorText != nil ? "withText" : "")" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
+            case let .default(_, extraLabelText, helperText, icon, isError, errorText, hasDivider, isReadOnly):
+                "layout-default-label-\(extraLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(icon?.flipped == true ? "flipIcon" : "")-\(isError ? "error-\(errorText != nil ? "withText" : "")" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
+            case let .reversed(_, extraLabelText, helperText, icon, isError, errorText, hasDivider, isReadOnly):
+                "layout-inverse-label-\(extraLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(icon?.flipped == true ? "flipIcon" : "")-\(isError ? "error-\(errorText != nil ? "withText" : "")" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
             }
         }
         // swiftlint:enable line_length
@@ -279,26 +277,24 @@ struct RadioTest: View {
                       isError: isError,
                       isReadOnly: isReadOnly)
                 .disabled(isDisabled)
-        case let .default(labelText, extraLabelText, descriptionText, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
+        case let .default(labelText, extraLabelText, descriptionText, icon, isError, errorText, hasDivider, isReadOnly):
             OUDSRadioItem(labelText,
                           isOn: .constant(indicatorState),
                           extraLabel: extraLabelText,
                           description: descriptionText,
-                          icon: icon,
-                          flipIcon: flipIcon,
+                          image: icon,
                           isReversed: false,
                           isError: isError,
                           errorText: errorText,
                           isReadOnly: isReadOnly,
                           hasDivider: hasDivider)
                 .disabled(isDisabled)
-        case let .reversed(labelText, extraLabelText, descriptionText, icon, flipIcon, isError, errorText, hasDivider, isReadOnly):
+        case let .reversed(labelText, extraLabelText, descriptionText, icon, isError, errorText, hasDivider, isReadOnly):
             OUDSRadioItem(labelText,
                           isOn: .constant(indicatorState),
                           extraLabel: extraLabelText,
                           description: descriptionText,
-                          icon: icon,
-                          flipIcon: flipIcon,
+                          image: icon,
                           isReversed: true,
                           isError: isError,
                           errorText: errorText,

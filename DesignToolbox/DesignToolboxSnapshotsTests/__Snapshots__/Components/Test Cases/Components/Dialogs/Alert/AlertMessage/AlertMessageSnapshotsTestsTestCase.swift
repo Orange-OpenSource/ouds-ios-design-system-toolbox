@@ -36,30 +36,33 @@ open class AlertMessageSnapshotsTestsTestCase: XCTestCase {
     @MainActor func testAllAlertMessages(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
         for status in AlertStatus.allCases {
-            let model = AlertMessageConfigurationModel()
-            model.status = status
-            model.statusIcon = true
-            model.descriptionText = "Here is a long description that need two lines to be displayed"
+            for statusIcon in StatusIcons.allCases {
 
-            // First test with bullet list and action at top trailing position
-            model.closeButton = false
-            model.actionPosition = .topTrailing
-            model.bullet2 = "Bullet 2 is a bullet with a very long label to test the wrapping"
+                let model = AlertMessageConfigurationModel()
+                model.status = status
+                model.statusIcon = statusIcon
+                model.descriptionText = "Here is a long description that need two lines to be displayed"
 
-            testAlertMessage(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             model: model)
+                // First test with bullet list and action at top trailing position
+                model.closeButton = false
+                model.actionPosition = .topTrailing
+                model.bullet2 = "Bullet 2 is a bullet with a very long label to test the wrapping"
 
-            // Second test with action at bottom and with close button, but without bullet list
-            model.closeButton = true
-            model.actionPosition = .bottom
-            model.bullet1 = ""
-            model.bullet2 = ""
-            model.bullet3 = ""
+                testAlertMessage(theme: theme,
+                                 interfaceStyle: interfaceStyle,
+                                 model: model)
 
-            testAlertMessage(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             model: model)
+                // Second test with action at bottom and with close button, but without bullet list
+                model.closeButton = true
+                model.actionPosition = .bottom
+                model.bullet1 = ""
+                model.bullet2 = ""
+                model.bullet3 = ""
+
+                testAlertMessage(theme: theme,
+                                 interfaceStyle: interfaceStyle,
+                                 model: model)
+            }
         }
     }
 
@@ -87,9 +90,10 @@ open class AlertMessageSnapshotsTestsTestCase: XCTestCase {
         //    test_<themeName>_<colorScheme>_<type>_<textStyle>_<isBold>
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let statusPattern = model.status.technicalDescription
+        let statusIconPattern = model.statusIcon.technicalDescription
         let actionPosition = model.actionPosition.technicalDescription
 
-        let name = "\(statusPattern)\(actionPosition)"
+        let name = "\(statusPattern)\(statusIconPattern)\(actionPosition)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,

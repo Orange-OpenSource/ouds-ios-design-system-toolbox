@@ -24,7 +24,7 @@ final class InlineAlertConfigurationModel: AlertConfigurationModel {
     override init() {
         super.init()
         status = .neutral
-        statusIcon = true
+        statusIcon = .tintedIcon
         flipIcon = false
     }
 
@@ -58,6 +58,11 @@ struct InlineAlertConfigurationView: View {
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
                                chips: AlertStatus.chips)
+
+                OUDSChipPicker(title: "app_components_common_statusIcon_tech",
+                               selection: $configurationModel.statusIcon,
+                               chips: StatusIcons.chips)
+                    .disabled(!configurationModel.hasIcon)
 
                 OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
                     .disabled(!configurationModel.enableFlipIcon)

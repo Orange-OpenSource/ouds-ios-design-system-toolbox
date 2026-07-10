@@ -115,24 +115,24 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
 
     // MARK: - Data populating
 
-    func populate() -> [OUDSRadioPickerData<String>] {
+    @MainActor func populate() -> [OUDSRadioPickerData<String>] {
         [
             OUDSRadioPickerData<String>(tag: "Choice_1",
                                         label: "Virgin Holy Lava",
                                         extraLabel: "Very spicy",
                                         description: "No alcohol, only tasty flavors",
-                                        icon: Image(systemName: "flame"),
+                                        image: OUDSImage(asset: Image(systemName: "flame")),
                                         accessibilityIdentifier: "Virgin Holy Lava"),
 
             OUDSRadioPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
                                         extraLabel: "From Brewdog company",
-                                        icon: Image(systemName: "dog.fill"),
+                                        image: OUDSImage(asset: Image(systemName: "dog.fill")),
                                         accessibilityIdentifier: "IPA beer"),
 
             OUDSRadioPickerData<String>(tag: "Choice_3",
                                         label: "Mineral water",
-                                        icon: Image(systemName: "waterbottle.fill"),
+                                        image: OUDSImage(asset: Image(systemName: "waterbottle.fill")),
                                         accessibilityIdentifier: "Mineral water"),
         ]
     }

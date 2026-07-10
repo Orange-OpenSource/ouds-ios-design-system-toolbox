@@ -48,10 +48,10 @@ private struct FilterChipView: View {
         OUDSFilterChip(text: "Filter", selected: isSelected) { isSelected.toggle() }
 
         Text("Text + icon").font(.subheadline)
-        OUDSFilterChip(icon: Image(systemName: "sun.min.fill"), text: "Filter", selected: isSelected) { isSelected.toggle() }
+        OUDSFilterChip(image: OUDSImage(asset: Image(systemName: "sun.min.fill")), text: "Filter", selected: isSelected) { isSelected.toggle() }
 
         Text("Icon only").font(.subheadline)
-        OUDSFilterChip(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Filter", selected: isSelected) { isSelected.toggle() }
+        OUDSFilterChip(image: OUDSImage(asset: Image(systemName: "sun.min.fill")), accessibilityLabel: "Filter", selected: isSelected) { isSelected.toggle() }
     }
 }
 
@@ -76,10 +76,10 @@ private struct SuggestionChipView: View {
         OUDSSuggestionChip(text: "Suggestion") {}
 
         Text("Text + icon").font(.subheadline)
-        OUDSSuggestionChip(icon: Image(systemName: "sun.min.fill"), text: "Suggestion") {}
+        OUDSSuggestionChip(image: OUDSImage(asset: Image(systemName: "sun.min.fill")), text: "Suggestion") {}
 
         Text("Icon only").font(.subheadline)
-        OUDSSuggestionChip(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Suggestion") {}
+        OUDSSuggestionChip(image: OUDSImage(asset: Image(systemName: "sun.min.fill")), accessibilityLabel: "Suggestion") {}
     }
 }
 

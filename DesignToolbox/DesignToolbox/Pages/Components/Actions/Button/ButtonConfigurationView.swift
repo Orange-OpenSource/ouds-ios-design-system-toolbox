@@ -37,6 +37,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var rawImage: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var appearance: OUDSButton.Appearance {
         didSet { updateCode() }
     }
@@ -56,6 +60,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         text = String(localized: "app_components_common_label_label")
         layout = .textOnly
         flipIcon = false
+        rawImage = false
         appearance = .default
         style = .default
         isFullWidth = false
@@ -75,13 +80,15 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     }
 
     private var layoutPattern: String {
-        switch layout {
+        let imageModePattern = (rawImage ? ", renderingMode: .original" : "")
+        let imageNamePattern = (rawImage ? Image.placeholderImageSample() : Image.defaultImageSample())
+        return switch layout {
         case .textOnly:
             "text: \"\(text)\""
         case .iconOnly:
-            "icon: \(Image.defaultImageSample())\(flipIconPattern), accessibilityLabel: \"\(accessibilityLabelValue)\""
+            "image: OUDSImage(asset: \(imageNamePattern)\(flipIconPattern), accessibilityLabel: \"\(accessibilityLabelValue)\", \(imageModePattern))"
         case .textAndIcon:
-            "text: \"\(text)\", icon: \(Image.defaultImageSample())\(flipIconPattern)"
+            "text: \"\(text)\", image: OUDSImage(asset: \(imageNamePattern)\(flipIconPattern)\(imageModePattern))"
         }
     }
 
@@ -98,7 +105,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     }
 
     private var flipIconPattern: String {
-        flipIcon ? ", flipIcon: true" : ""
+        flipIcon ? ", flipped: true" : ""
     }
 
     private var isFullWidthPattern: String {
@@ -165,6 +172,9 @@ struct ButtonConfigurationView: View {
                 OUDSSwitchItem("app_components_button_fullWidth_tech", isOn: $configurationModel.isFullWidth)
 
                 OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
+                    .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
+
+                OUDSSwitchItem("app_components_common_rawImage_tech", isOn: $configurationModel.rawImage)
                     .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
 
                 OUDSSwitchItem("app_components_common_onColoredSurface_tech", isOn: $configurationModel.onColoredSurface)

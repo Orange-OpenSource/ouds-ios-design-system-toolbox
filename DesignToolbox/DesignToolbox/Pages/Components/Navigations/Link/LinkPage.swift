@@ -45,7 +45,7 @@ private struct LinkDemo: View {
             case .textOnly:
                 OUDSLink(text: configurationModel.text, size: configurationModel.size) {}
             case .textAndIcon:
-                OUDSLink(text: configurationModel.text, icon: Image(decorative: "ic_heart"), size: configurationModel.size) {}
+                OUDSLink(text: configurationModel.text, image: image, size: configurationModel.size) {}
             case .indicatorBack:
                 OUDSLink(text: configurationModel.text, indicator: .back, size: configurationModel.size) {}
             case .indicatorNext:
@@ -53,5 +53,13 @@ private struct LinkDemo: View {
             }
         }
         .disabled(!configurationModel.enabled)
+    }
+
+    private var image: OUDSImage {
+        let asset: Image = configurationModel.iconType == .tintedIcon
+            ? Image(decorative: "ic_heart")
+            : Image.placeholderImage()
+        let renderingMode: Image.TemplateRenderingMode = configurationModel.iconType == .tintedIcon ? .template : .original
+        return OUDSImage(asset: asset, renderingMode: renderingMode)
     }
 }
