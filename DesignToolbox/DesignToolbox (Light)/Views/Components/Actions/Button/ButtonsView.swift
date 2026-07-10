@@ -74,8 +74,8 @@ struct ButtonsView: View {
 
             VStack(spacing: theme.spaces.scaledXsmallTablet) {
                 OUDSButton(text: "Button", appearance: appearance, style: style) {}
-                OUDSButton(text: "Button", icon: Image(systemName: "sun.min.fill"), appearance: appearance, style: style) {}
-                OUDSButton(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Button", appearance: appearance, style: style) {}
+                OUDSButton(text: "Button", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), appearance: appearance, style: style) {}
+                OUDSButton(image: OUDSImage(asset: Image(systemName: "sun.min.fill"), accessibilityLabel: "Button"), appearance: appearance, style: style) {}
             }
         }
         .padding(theme.spaces.paddingInlineMedium)
@@ -91,8 +91,8 @@ struct ButtonsView: View {
                 ForEach(Self.kAllButtonAppaerances, id: \.self) { appearance in
                     Text("Appearance \(String(describing: appearance))").font(.subheadline)
                     OUDSButton(text: "Button", appearance: appearance, style: style) {}
-                    OUDSButton(text: "Button", icon: Image(systemName: "sun.min.fill"), appearance: appearance, style: style) {}
-                    OUDSButton(icon: Image(systemName: "sun.min.fill"), accessibilityLabel: "Button", appearance: appearance, style: style) {}
+                    OUDSButton(text: "Button", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), appearance: appearance, style: style) {}
+                    OUDSButton(image: OUDSImage(asset: Image(systemName: "sun.min.fill"), accessibilityLabel: "Button"), appearance: appearance, style: style) {}
                 }
             }
         }

@@ -57,6 +57,10 @@ final class TagConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var iconType: DefinedStatusIcons {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -64,6 +68,7 @@ final class TagConfigurationModel: ComponentConfiguration {
         layout = .textOnly
         loader = false
         flipIcon = false
+        iconType = .tintedIcon
         label = String(localized: "app_components_common_label_label")
         size = .default
         statusCategory = .neutral
@@ -74,8 +79,14 @@ final class TagConfigurationModel: ComponentConfiguration {
 
     deinit {}
 
-    func status(from theme: OUDSTheme) -> OUDSTag.Status {
-        switch statusCategory {
+    @MainActor func status(from theme: OUDSTheme) -> OUDSTag.Status {
+        let asset: Image = iconType == .tintedIcon
+            ? Image.defaultImage(prefixedBy: theme.name)
+            : Image.placeholderImage()
+        let renderingMode: Image.TemplateRenderingMode = iconType == .tintedIcon ? .template : .original
+        let iconImage = OUDSImage(asset: asset, flipped: flipIcon, renderingMode: renderingMode)
+
+        return switch statusCategory {
         case .accent:
             switch layout.statusLeading {
             case .bullet:
@@ -83,7 +94,7 @@ final class TagConfigurationModel: ComponentConfiguration {
             case .none:
                 .accent(bullet: false)
             case .icon:
-                .accent(icon: Image.defaultImage(prefixedBy: theme.name), flipIcon: flipIcon)
+                .accent(image: iconImage)
             }
         case .neutral:
             switch layout.statusLeading {
@@ -92,7 +103,7 @@ final class TagConfigurationModel: ComponentConfiguration {
             case .none:
                 .neutral(bullet: false)
             case .icon:
-                .neutral(icon: Image.defaultImage(prefixedBy: theme.name), flipIcon: flipIcon)
+                .neutral(image: iconImage)
             }
         case .positive:
             .positive(leading: layout.statusLeading)
@@ -126,6 +137,14 @@ final class TagConfigurationModel: ComponentConfiguration {
         ", appearance: \(appearance.technicalDescription)"
     }
 
+    private var iconAssetSample: String {
+        iconType == .tintedIcon ? Image.defaultImageSample() : "Image(decorative: \"il_placeholder\")"
+    }
+
+    private var renderingModeCode: String {
+        iconType == .image ? ", renderingMode: .original" : ""
+    }
+
     private var statusPattern: String {
         if statusCategory != .neutral, statusCategory != .accent {
             return ", status: \(statusCategory.technicalDescription)(leading: \(layout.statusLeading.technicalDescription))"
@@ -133,8 +152,8 @@ final class TagConfigurationModel: ComponentConfiguration {
             if layout == .textAndBullet {
                 return ", status: \(statusCategory.technicalDescription)(bullet: true)"
             } else if layout == .textAndIcon {
-                let flipIconPattern = flipIcon ? ", flipIcon: true" : ""
-                return ", status: \(statusCategory.technicalDescription)(icon: \(Image.defaultImageSample())\(flipIconPattern))"
+                let flipIconPattern = flipIcon ? ", flipped: true" : ""
+                return ", status: \(statusCategory.technicalDescription)(image: OUDSImage(asset: \(iconAssetSample)\(flipIconPattern)\(renderingModeCode)))"
             } else {
                 return ", status: \(statusCategory.technicalDescription)()"
             }
@@ -179,6 +198,14 @@ struct TagConfigurationView: View {
             OUDSChipPicker(title: "app_components_common_layout_tech",
                            selection: $configurationModel.layout,
                            chips: TagLayout.chips)
+
+            if configurationModel.layout == .textAndIcon,
+               configurationModel.statusCategory == .neutral || configurationModel.statusCategory == .accent
+            {
+                OUDSChipPicker(title: "app_components_common_statusIcon_tech",
+                               selection: $configurationModel.iconType,
+                               chips: DefinedStatusIcons.chips)
+            }
 
             OUDSChipPicker(title: "app_components_common_appearance_tech",
                            selection: $configurationModel.appearance,

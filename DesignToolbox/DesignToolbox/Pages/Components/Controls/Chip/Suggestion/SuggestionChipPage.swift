@@ -43,14 +43,22 @@ struct SuggestionChipDemo: View {
         Group {
             switch configurationModel.layout {
             case .iconOnly:
-                OUDSSuggestionChip(icon: Image(decorative: "ic_heart"),
+                OUDSSuggestionChip(image: oudsImage,
                                    accessibilityLabel: "app_components_common_icon_a11y".localized()) {}
             case .textOnly:
                 OUDSSuggestionChip(text: configurationModel.text) {}
             case .textAndIcon:
-                OUDSSuggestionChip(icon: Image(decorative: "ic_heart"), text: configurationModel.text) {}
+                OUDSSuggestionChip(image: oudsImage, text: configurationModel.text) {}
             }
         }
         .disabled(!configurationModel.enabled)
+    }
+
+    private var oudsImage: OUDSImage {
+        let asset: Image = configurationModel.iconType == .tintedIcon
+            ? Image(decorative: "ic_heart")
+            : Image.placeholderImage()
+        let renderingMode: Image.TemplateRenderingMode = configurationModel.iconType == .tintedIcon ? .template : .original
+        return OUDSImage(asset: asset, renderingMode: renderingMode)
     }
 }

@@ -39,8 +39,6 @@ private struct ButtonDemo: View {
 
     @StateObject var configurationModel: ButtonConfigurationModel
 
-    @Environment(\.theme) private var theme
-
     var body: some View {
         Group {
             // It is not allowed to place a Negative or Brand button on colored surface
@@ -49,9 +47,10 @@ private struct ButtonDemo: View {
             } else {
                 switch configurationModel.layout {
                 case .iconOnly:
-                    OUDSButton(icon: Image.defaultImage(prefixedBy: theme.name),
-                               accessibilityLabel: "app_components_common_icon_a11y".localized(),
-                               flipIcon: configurationModel.flipIcon,
+                    OUDSButton(image: OUDSImage(asset: image,
+                                                flipped: configurationModel.flipIcon,
+                                                accessibilityLabel: "app_components_common_icon_a11y".localized(),
+                                                renderingMode: imageMode),
                                appearance: configurationModel.appearance,
                                style: configurationModel.style,
                                isFullWidth: configurationModel.isFullWidth) {}
@@ -62,8 +61,9 @@ private struct ButtonDemo: View {
                                isFullWidth: configurationModel.isFullWidth) {}
                 case .textAndIcon:
                     OUDSButton(text: configurationModel.text,
-                               icon: Image.defaultImage(prefixedBy: theme.name),
-                               flipIcon: configurationModel.flipIcon,
+                               image: OUDSImage(asset: image,
+                                                flipped: configurationModel.flipIcon,
+                                                renderingMode: imageMode),
                                appearance: configurationModel.appearance,
                                style: configurationModel.style,
                                isFullWidth: configurationModel.isFullWidth) {}
@@ -71,5 +71,21 @@ private struct ButtonDemo: View {
             }
         }
         .disabled(!configurationModel.enabled)
+    }
+
+    private var image: Image {
+        if configurationModel.rawImage {
+            Image.placeholderImage()
+        } else {
+            Image.defaultImage()
+        }
+    }
+
+    private var imageMode: Image.TemplateRenderingMode {
+        if configurationModel.rawImage {
+            .original
+        } else {
+            .template
+        }
     }
 }

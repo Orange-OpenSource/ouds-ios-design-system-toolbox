@@ -54,8 +54,7 @@ struct TextInputDemo: View {
                           placeholder: configurationModel.placeholderText,
                           prefix: configurationModel.prefixText,
                           suffix: configurationModel.suffixText,
-                          leadingIcon: leadingIcon,
-                          flipLeadingIcon: configurationModel.flipLeadingIcon,
+                          leadingImage: leadingImage,
                           trailingAction: trailingAction,
                           helperText: configurationModel.helperText,
                           helperLink: helperLink,
@@ -70,8 +69,7 @@ struct TextInputDemo: View {
                           placeholder: configurationModel.placeholderText,
                           prefix: configurationModel.prefixText,
                           suffix: configurationModel.suffixText,
-                          leadingIcon: leadingIcon,
-                          flipLeadingIcon: configurationModel.flipLeadingIcon,
+                          leadingImage: leadingImage,
                           trailingAction: trailingAction,
                           helperText: configurationModel.richHelperText,
                           helperLink: helperLink,
@@ -83,17 +81,27 @@ struct TextInputDemo: View {
         }
     }
 
-    private var leadingIcon: Image? {
-        configurationModel.leadingIcon ? Image.defaultImage(prefixedBy: theme.name) : nil
+    private var leadingImage: OUDSImage? {
+        guard configurationModel.leadingIcon else { return nil }
+        let asset: Image = configurationModel.leadingIconType == .tintedIcon
+            ? Image.defaultImage(prefixedBy: theme.name)
+            : Image.placeholderImage()
+        let renderingMode: Image.TemplateRenderingMode = configurationModel.leadingIconType == .tintedIcon ? .template : .original
+        return OUDSImage(asset: asset, flipped: configurationModel.flipLeadingIcon, renderingMode: renderingMode)
     }
 
     private var trailingAction: OUDSTextInput.TrailingAction? {
         guard configurationModel.trailingAction else {
             return nil
         }
-        return .init(icon: Image.defaultImage(prefixedBy: theme.name),
-                     actionHint: "app_components_common_icon_a11y".localized(),
-                     flipIcon: configurationModel.flipTrailingActionIcon) {}
+        let asset: Image = configurationModel.trailingActionIconType == .tintedIcon
+            ? Image.defaultImage(prefixedBy: theme.name)
+            : Image.placeholderImage()
+        let renderingMode: Image.TemplateRenderingMode = configurationModel.trailingActionIconType == .tintedIcon ? .template : .original
+        return .init(image: OUDSImage(asset: asset,
+                                      flipped: configurationModel.flipTrailingActionIcon,
+                                      renderingMode: renderingMode),
+                     actionHint: "app_components_common_icon_a11y".localized()) {}
     }
 
     private var helperLink: OUDSTextInput.Helperlink? {

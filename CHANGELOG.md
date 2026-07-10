@@ -1,13 +1,37 @@
-# OUDS iOS design system toolbox changelog
+g# OUDS iOS design system toolbox changelog
 
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.2.0...2.3.0) - 2026-07-10
+
+### Added
+
+- [Library] Open API to use easily fixed and scaled icons, and interactions layers (Orange-OpenSource/ouds-ios#1569)
+- [Library] Skill to create local theme
+- [Library] Use of original image possible for components with icons (Orange-OpenSource/ouds-ios#1511)
+- [Library] Migration skill for AI agents
+- [Library] View modifier to fill colors on `Shape`
+- [Library] Helper to register local fonts configurations for custom themes
+
+### Changed
+
+- [DesignToolbox] Ruby Gem `fastlane` from v2.236.1 to v2.237.0
+- [DesignToolbox] Ruby Gem `json` from v2.19.8 to v2.19.9
+- [DesignToolbox] GitHub Action `github/codeql-action/upload-sarif` from v4.36.1 to 4.37.0 for `scorecard` workflow
+- [DesignToolbox] GitHub Action `ruby/setup-ruby` from v1.313.0 to v1.316.0 for all workflow
+- [DesignToolbox] GitHub Action `actions/checkout` from v6.0.3 to v7.0.0 for all workflow
+
+### Deprecated
+
+- [Library] Components with several configuration parameters for images (Orange-OpenSource/ouds-ios#1511)
+
 ## [2.2.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.1.0...2.2.0) - 2026-06-18
 
 ### Added
 
+- [Library] Use of original image possible for components with icons (Orange-OpenSource/ouds-ios#1511)
 - [Library] Helper to forge a font object with OUDS typography tokens (Orange-OpenSource/ouds-ios#1550)
 - [Library] Flag to limit the height of the `text area` component (Orange-OpenSource/ouds-ios#1528)
 - [Library] `View modifier` for fonts using only token (Orange-OpenSource/ouds-ios#1534)

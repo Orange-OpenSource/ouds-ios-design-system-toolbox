@@ -41,6 +41,10 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var rawImage: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var isError: Bool {
         didSet { updateCode() }
     }
@@ -109,6 +113,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         isReadOnly = false
         enabled = true
         icon = true
+        rawImage = false
         flipIcon = false
         isReversed = false
         hasDivider = false
@@ -132,7 +137,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            \(componentInitCode)"\(labelText)", \(bindingInitCode)\(extraLabelTextPattern)\(descriptionTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern)\(constrainedMaxWidthPattern))
+            \(componentInitCode)"\(labelText)", \(bindingInitCode)\(extraLabelTextPattern)\(descriptionTextPattern)\(iconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern)\(constrainedMaxWidthPattern))
             \(disableCodePattern)
             """
     }
@@ -148,11 +153,11 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     }
 
     private var iconPattern: String {
-        icon ? ", icon: \(Image.defaultImageSample())" : ""
-    }
-
-    private var flipIconPattern: String {
-        !isError && flipIcon ? ", flipIcon: true" : ""
+        guard icon else { return "" }
+        let imageSampleFragment = rawImage ? "\(Image.placeholderImageSample())" : "\(Image.defaultImageSample())"
+        let modeFragment = rawImage ? ", renderingMode: .original" : ""
+        let flipFragment = (!isError && flipIcon) ? ", flipped: true" : ""
+        return ", image: OUDSImage(asset: \(imageSampleFragment)\(flipFragment)\(modeFragment))"
     }
 
     private var isReversedPattern: String {
