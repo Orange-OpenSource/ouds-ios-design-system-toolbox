@@ -557,28 +557,28 @@ platform :ios do
             # See https://github.com/Orange-OpenSource/ouds-ios/issues/1195
             # See https://github.com/fastlane/fastlane/issues/29803
 
-            ipa_path="../build/Design\\ System\\ Toolbox.ipa "
-            sh "xcrun altool --upload-package #{ipa_path} --apiKey \"#{APPLE_KEY_ID}\" --apiIssuer \"#{APPLE_ISSUER_ID}\""
-            puts "⚠️ Warning: Do not forget then on App Store Connect (https://appstoreconnect.apple.com/) to add the uploaded build to the suitable test team!"
+            #ipa_path="../build/Design\\ System\\ Toolbox.ipa "
+            #sh "xcrun altool --upload-package #{ipa_path} --apiKey \"#{APPLE_KEY_ID}\" --apiIssuer \"#{APPLE_ISSUER_ID}\""
+            #puts "⚠️ Warning: Do not forget then on App Store Connect (https://appstoreconnect.apple.com/) to add the uploaded build to the suitable test team!"
 
-            #api_key = app_store_connect_api_key(
-            #    key_id: APPLE_KEY_ID,
-            #    issuer_id: APPLE_ISSUER_ID,
-            #    key_content: APPLE_KEY_CONTENT,
-            #    duration: 1200,
-            #    in_house: false
-            #)
+            api_key = app_store_connect_api_key(
+                key_id: APPLE_KEY_ID,
+                issuer_id: APPLE_ISSUER_ID,
+                key_content: APPLE_KEY_CONTENT,
+                duration: 1200,
+                in_house: false
+            )
 
-            #upload_to_testflight(
-            #    changelog: news,
-            #    app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
-            #    skip_submission: false,
-            #    skip_waiting_for_build_processing: false,
-            #    distribute_external: true,
-            #    notify_external_testers: true,
-            #    groups: TESTFLIGHT_GROUPS,
-            #    api_key: api_key
-            #)
+            upload_to_testflight(
+                changelog: news,
+                app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+                skip_submission: false,
+                skip_waiting_for_build_processing: false,
+                distribute_external: true,
+                notify_external_testers: true,
+                groups: TESTFLIGHT_GROUPS,
+                api_key: api_key
+            )
             
             isAlpha = params[:type] == BuildType::ALPHA
             publish_mattermost_notification("📦 ✅ @here The upload to TestFlight #{mattermost_build_type_details} has been done successfully (version = '#{version}', build number = '#{build_number}')")    
