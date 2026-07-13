@@ -41,6 +41,10 @@ final class LinkConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var isFullWidth: Bool = false {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -72,6 +76,10 @@ final class LinkConfigurationModel: ComponentConfiguration {
         enabled ? "" : ".disabled(true)"
     }
 
+    private var isFullWidthPattern: String {
+        isFullWidth ? ", isFullWidth: true" : ""
+    }
+
     override func updateCode() {
         switch layout {
         case .textOnly:
@@ -91,14 +99,14 @@ final class LinkConfigurationModel: ComponentConfiguration {
         case .indicatorNext:
             code =
                 """
-                OUDSLink(text: \"\(text)\", indicator: .next, size: \(size.technicalDescription)) {}
+                OUDSLink(text: \"\(text)\", indicator: .next, size: \(size.technicalDescription)\(isFullWidthPattern)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         case .indicatorBack:
             code =
                 """
-                OUDSLink(text: \"\(text)\", indicator: .back, size: \(size.technicalDescription)) {}
+                OUDSLink(text: \"\(text)\", indicator: .back, size: \(size.technicalDescription)\(isFullWidthPattern)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
@@ -161,6 +169,10 @@ struct LinkConfiguration: View {
                     OUDSChipPicker(title: "app_components_common_statusIcon_tech",
                                    selection: $configurationModel.iconType,
                                    chips: DefinedStatusIcons.chips)
+                }
+
+                if configurationModel.layout == .indicatorBack || configurationModel.layout == .indicatorNext {
+                    OUDSSwitchItem("app_components_link_fullWidth_tech", isOn: $configurationModel.isFullWidth)
                 }
             }
 
