@@ -40,19 +40,21 @@ private struct LinkDemo: View {
     @StateObject var configurationModel: LinkConfigurationModel
 
     var body: some View {
-        Group {
-            switch configurationModel.layout {
-            case .textOnly:
-                OUDSLink(text: configurationModel.text, size: configurationModel.size) {}
-            case .textAndIcon:
-                OUDSLink(text: configurationModel.text, image: image, size: configurationModel.size) {}
-            case .indicatorBack:
-                OUDSLink(text: configurationModel.text, indicator: .back, size: configurationModel.size) {}
-            case .indicatorNext:
-                OUDSLink(text: configurationModel.text, indicator: .next, size: configurationModel.size) {}
-            }
+        link
+            .disabled(!configurationModel.enabled)
+    }
+
+    @ViewBuilder private var link: some View {
+        switch configurationModel.layout {
+        case .textOnly:
+            OUDSLink(text: configurationModel.text, size: configurationModel.size) {}
+        case .textAndIcon:
+            OUDSLink(text: configurationModel.text, image: image, size: configurationModel.size) {}
+        case .indicatorBack:
+            OUDSLink(text: configurationModel.text, indicator: .back, size: configurationModel.size, isFullWidth: configurationModel.isFullWidth) {}
+        case .indicatorNext:
+            OUDSLink(text: configurationModel.text, indicator: .next, size: configurationModel.size, isFullWidth: configurationModel.isFullWidth) {}
         }
-        .disabled(!configurationModel.enabled)
     }
 
     private var image: OUDSImage {
