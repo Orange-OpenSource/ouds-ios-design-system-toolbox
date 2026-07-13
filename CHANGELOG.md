@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `View modifier` to add custom accessibility traits inside `text area` component (Orange-OpenSource/ouds-ios#1597)
 - [Library] Flag to let `link` component take full width (Orange-OpenSource/ouds-ios#1576)
 - [Library] Component tokens for `accordions`, `progress indicators` and `typography` components (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
 - [Library] Semantic tokens of `colors` dedicated to AI (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579) 
@@ -30,6 +31,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] **BREAKING**: Components token for `link` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
 - [Library] **BREAKING**: Components token for `icon` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
 - [Library] **BREAKING**: Components token for `button` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+
+### Fixed
+
+- [Library] Icon assets for unordered list item not displayed (Orange-OpenSource/ouds-ios#1615)
 
 ### Removed
 
