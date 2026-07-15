@@ -1,4 +1,4 @@
-g# OUDS iOS design system toolbox changelog
+# OUDS iOS design system toolbox changelog
 
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `View modifier` to apply theme on Liquid Glass SwiftUI `TabView` (Orange-OpenSource/ouds-ios#1459)
 - [Library] `View modifier` to add custom accessibility traits inside `text area` component (Orange-OpenSource/ouds-ios#1597)
 - [Library] Flag to let `link` component take full width (Orange-OpenSource/ouds-ios#1576)
 - [Library] Component tokens for `accordions`, `progress indicators` and `typography` components (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
@@ -17,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Detection of forced legacy layout for navigation elements
 - [Library] **BREAKING**: `.neutral` and `.accent` `badge icon status` signatures
 - [Library] **BREAKING**: `.neutral` and `.accent` `alert status` parameter name
 - [Library] **BREAKING**: `.icon` and `.textAndIcon` layouts for `chip picker data` object
@@ -34,10 +36,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [Library] Icon assets for unordered list item not displayed (Orange-OpenSource/ouds-ios#1615)
+- [Library] Missing `badges` on `toolbar top` component for app on iOS 27 with Xcode 26.5 and disabled Liquid Glass configuration (Orange-OpenSource/ouds-ios#1623)
+- [Library] Missing "core_common_back" localized string for `back` button of `toolbar top` component (Orange-OpenSource/ouds-ios#1577)
+- [Library] For `alert` components, add default vocalisation on "info" status (Orange-OpenSource/ouds-ios#1561)
+- [Library] Icon assets for unordered `bullet list` item not displayed (Orange-OpenSource/ouds-ios#1615)
 
 ### Removed
 
+- [Library] **BREAKING**: `forceOUDSLegacyTabBar` and `OUDSLegacyTabBarModifier`, for `forceOUDSLegacyLayout` and `OUDSLegacyLayoutModifier`
 - [Library] **BREAKING**: Deprecated `OUDSBadge` API
 - [Library] **BREAKING**: Deprecated type `OUDSIcon`
 - [Library] **BREAKING**: Deprecated initializers for `button`, `checkbox`, `chips`, `radio`, `switch`, `checkbox`, `text input`, `badge`, `link`, `tag` components

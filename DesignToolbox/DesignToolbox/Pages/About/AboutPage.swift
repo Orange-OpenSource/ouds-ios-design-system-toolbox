@@ -249,11 +249,11 @@ private struct LiquidGlassStateItem: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
-    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyTabBar
+    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
 
     private var status: OUDSTag.Status {
         if #available(iOS 26, *) {
-            if forceOUDSLegacyTabBar || isLiquidGlassDisabled { return .negative(leading: .none) }
+            if forceOUDSLegacyLayout || isLiquidGlassDisabled { return .negative(leading: .none) }
             return .positive(leading: .none)
         } else {
             return .warning(leading: .none)
@@ -262,7 +262,7 @@ private struct LiquidGlassStateItem: View {
 
     private var appearance: OUDSTag.Appearance {
         if #available(iOS 26, *) {
-            if forceOUDSLegacyTabBar || isLiquidGlassDisabled { return .emphasized }
+            if forceOUDSLegacyLayout || isLiquidGlassDisabled { return .emphasized }
             return .muted
         } else {
             return .muted
@@ -271,7 +271,7 @@ private struct LiquidGlassStateItem: View {
 
     private var wording: String {
         if #available(iOS 26, *) {
-            if forceOUDSLegacyTabBar { return "app_common_forced_tech".localized() + " " + "app_common_disabled_tech".localized() }
+            if forceOUDSLegacyLayout { return "app_common_forced_tech".localized() + " " + "app_common_disabled_tech".localized() }
             if isLiquidGlassDisabled { return "app_common_disabled_tech".localized() }
             return "app_common_enabled_tech".localized()
         } else {
