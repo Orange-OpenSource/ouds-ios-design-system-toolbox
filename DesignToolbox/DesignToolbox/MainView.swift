@@ -63,15 +63,7 @@ struct MainView: View {
                 SearchPage()
             }
         }
-        .onAppear {
-            applyOUDSTabBarAppearance(colorScheme, theme)
-        }
-        .onChange(of: colorScheme) { newScheme in
-            applyOUDSTabBarAppearance(newScheme, theme)
-        }
-        .onChange(of: theme) { newTheme in
-            applyOUDSTabBarAppearance(colorScheme, newTheme)
-        }
+        .modifier(OUDSTabBarViewModifier())
     }
     #endif
 
@@ -96,6 +88,6 @@ struct MainView: View {
                 .tag(2)
         }
         .accentColor(theme.button.colorContentMinimalEnabled)
-//        .modifier(OUDSLegacyTabBarModifier())
+//        .modifier(OUDSLegacyLayoutModifier())
     }
 }
