@@ -30,6 +30,7 @@ struct TextInputPage: View {
         } configurationView: {
             TextInputConfigurationView(configurationModel: configurationModel)
         }
+        .oudsHideKeyboardOnTap()
     }
 }
 

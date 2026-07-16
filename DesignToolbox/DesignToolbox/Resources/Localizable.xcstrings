@@ -4005,31 +4005,6 @@
         }
       }
     },
-    "app_components_link_nextLayout_tech" : {
-      "comment" : "Component - Link",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_link_fullWidth_tech" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",
@@ -4050,6 +4025,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Full width"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_link_nextLayout_tech" : {
+      "comment" : "Component - Link",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
           }
         }
       },
@@ -7801,30 +7801,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mise à jour disponible (%@)"
-          }
-        }
-      }
-    },
-    "core_pinCodeInput_digitLabel_a11y" : {
-      "comment" : "Component - PIN Code Input",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الرقم %lld"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Digit number %lld "
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chiffre numéro %lld"
           }
         }
       }
