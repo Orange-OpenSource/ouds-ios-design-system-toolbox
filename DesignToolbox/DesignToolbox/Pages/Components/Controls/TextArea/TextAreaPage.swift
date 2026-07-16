@@ -30,6 +30,7 @@ struct TextAreaPage: View {
         } configurationView: {
             TextAreaConfigurationView(configurationModel: configurationModel)
         }
+        .oudsHideKeyboardOnTap()
     }
 }
 

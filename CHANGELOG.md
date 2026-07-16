@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `View modifier` to force keyboard closing on tap (Orange-OpenSource/ouds-ios#1530)
 - [Library] `View modifier` to apply theme on Liquid Glass SwiftUI `TabView` (Orange-OpenSource/ouds-ios#1459)
 - [Library] `View modifier` to add custom accessibility traits inside `text area` component (Orange-OpenSource/ouds-ios#1597)
 - [Library] Flag to let `link` component take full width (Orange-OpenSource/ouds-ios#1576)
