@@ -27,29 +27,32 @@ struct MainView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
-    /// To know if the search bar must be used or not in the app, from app settings
-    @AppStorage("com.orange.ouds.demoapp.allowSearch") private var allowSearch: Bool = false
-
     // MARK: - Body
 
     var body: some View {
         #if os(iOS)
-        if #available(iOS 26, *), allowSearch, !isLiquidGlassDisabled, UIDevice.current.userInterfaceIdiom == .phone {
-            nativeTabBar
+        if #available(iOS 26, *) {
+            if isLiquidGlassDisabled {
+                searchTabBar
+            } else {
+                liquidGlassSearchTabBar
+            }
+        } else if #available(iOS 18, *) {
+            searchTabBar
         } else {
-            oudsTabBar
+            tabBar
         }
         #else
-        oudsTabBar
+        tabBar
         #endif
     }
 
     // MARK: - iOS 26+ native TabView with search tab
 
     #if os(iOS)
-    @available(iOS 26, *)
-    private var nativeTabBar: some View {
-        TabView {
+    @available(iOS 26, *) // Supposing we did not disable Liquid Glass :3
+    private var liquidGlassSearchTabBar: some View {
+        OUDSLiquidGlassTabView {
             Tab("app_bottomBar_tokens_label", image: "design-token") {
                 TokensPage()
             }
@@ -63,13 +66,30 @@ struct MainView: View {
                 SearchPage()
             }
         }
-        .modifier(OUDSTabBarViewModifier())
+        .accentColor(theme.button.colorContentMinimalEnabled)
+    }
+
+    @available(iOS 18, *)
+    private var searchTabBar: some View {
+        OUDSTabView(selectedTab: $selectedTab, count: 4) {
+            Tab("app_bottomBar_tokens_label", image: "design-token", value: 0) {
+                TokensPage()
+            }
+            Tab("app_bottomBar_components_label", image: "component-atom", value: 1) {
+                ComponentsPage()
+            }
+            Tab("app_bottomBar_about_label", image: "info-fill", value: 2) {
+                AboutPage()
+            }
+            Tab(value: 3, role: .search) {
+                SearchPage()
+            }
+        }
+        .accentColor(theme.button.colorContentMinimalEnabled)
     }
     #endif
 
-    // MARK: - iOS 15-18 / iOS 26 without Liquid Glass / macOS / visionOS legacy tab bar (no search)
-
-    private var oudsTabBar: some View {
+    private var tabBar: some View {
         OUDSTabBar(selectedTab: $selectedTab, count: 3) {
             TokensPage()
                 .tabItem {
