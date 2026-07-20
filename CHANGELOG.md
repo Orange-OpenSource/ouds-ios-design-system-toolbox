@@ -38,6 +38,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [DesignToolbox] Vocalization with `Voice Over` of badges for tab bar demo (Orange-OpenSource/ouds-ios#1227) 
+- [Library] `Voice Over` announcement of displayed `alert` component (Orange-OpenSource/ouds-ios#1491)
+- [Library] Usage of `PIN code input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1631)
+- [Library] Usage of `password input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1563)
 - [Library] Usage of `text input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1562)
 - [Library] Vocalization priority for `alert message` components and usage with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1564)
 - [Library] `PIN code input` component usage with Voice Over (Orange-OpenSource/ouds-ios#1529)
