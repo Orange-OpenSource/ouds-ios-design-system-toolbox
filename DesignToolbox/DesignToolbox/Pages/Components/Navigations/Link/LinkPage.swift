@@ -50,8 +50,8 @@ private struct LinkDemo: View {
             OUDSLink(text: configurationModel.text, size: configurationModel.size) {}
         case .textAndIcon:
             OUDSLink(text: configurationModel.text, image: image, size: configurationModel.size) {}
-        case .indicatorBack:
-            OUDSLink(text: configurationModel.text, indicator: .back, size: configurationModel.size, isFullWidth: configurationModel.isFullWidth) {}
+        case .indicatorPrevious:
+            OUDSLink(text: configurationModel.text, indicator: .previous, size: configurationModel.size, isFullWidth: configurationModel.isFullWidth) {}
         case .indicatorNext:
             OUDSLink(text: configurationModel.text, indicator: .next, size: configurationModel.size, isFullWidth: configurationModel.isFullWidth) {}
         }

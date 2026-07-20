@@ -103,10 +103,10 @@ final class LinkConfigurationModel: ComponentConfiguration {
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
-        case .indicatorBack:
+        case .indicatorPrevious:
             code =
                 """
-                OUDSLink(text: \"\(text)\", indicator: .back, size: \(size.technicalDescription)\(isFullWidthPattern)) {}
+                OUDSLink(text: \"\(text)\", indicator: .previous, size: \(size.technicalDescription)\(isFullWidthPattern)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
@@ -117,7 +117,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
 // MARK: - Link Layout
 
 enum LinkLayout: DesignToolboxEnumLocalizedRepresentable {
-    case textOnly, textAndIcon, indicatorBack, indicatorNext
+    case textOnly, textAndIcon, indicatorPrevious, indicatorNext
 
     var wordingKey: String {
         switch self {
@@ -125,7 +125,7 @@ enum LinkLayout: DesignToolboxEnumLocalizedRepresentable {
             "app_components_common_textOnlyLayout_tech"
         case .textAndIcon:
             "app_components_common_textAndIconLayout_tech"
-        case .indicatorBack:
+        case .indicatorPrevious:
             "app_components_link_backLayout_tech"
         case .indicatorNext:
             "app_components_link_nextLayout_tech"
@@ -171,7 +171,7 @@ struct LinkConfiguration: View {
                                    chips: DefinedStatusIcons.chips)
                 }
 
-                if configurationModel.layout == .indicatorBack || configurationModel.layout == .indicatorNext {
+                if configurationModel.layout == .indicatorPrevious || configurationModel.layout == .indicatorNext {
                     OUDSSwitchItem("app_components_link_fullWidth_tech", isOn: $configurationModel.isFullWidth)
                 }
             }
