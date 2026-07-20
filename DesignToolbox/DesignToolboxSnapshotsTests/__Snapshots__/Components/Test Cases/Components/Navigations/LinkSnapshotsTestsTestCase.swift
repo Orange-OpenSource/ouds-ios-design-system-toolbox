@@ -38,7 +38,7 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
         for layout in LinkLayout.allCases {
             for size in OUDSLink.Size.allCases {
                 let iconTypes: [DefinedStatusIcons] = layout == .textAndIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
-                let fullWidths: [Bool] = (layout == .indicatorNext || layout == .indicatorBack) ? [false, true] : [false]
+                let fullWidths: [Bool] = (layout == .indicatorNext || layout == .indicatorPrevious) ? [false, true] : [false]
                 for iconType in iconTypes {
                     for isFullWidth in fullWidths {
                         testLink(theme: theme,
@@ -79,7 +79,7 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
         for layout in LinkLayout.allCases {
             for size in OUDSLink.Size.allCases {
                 let iconTypes: [DefinedStatusIcons] = layout == .textAndIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
-                let fullWidths: [Bool] = (layout == .indicatorNext || layout == .indicatorBack) ? [false, true] : [false]
+                let fullWidths: [Bool] = (layout == .indicatorNext || layout == .indicatorPrevious) ? [false, true] : [false]
                 for iconType in iconTypes {
                     for isFullWidth in fullWidths {
                         testLink(theme: theme,
@@ -141,7 +141,7 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
         // test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<imageMode>_<size><fullWidthPattern><disabledPatern> where:
         // - `coloredSurfacePatern` is empty if not on colored surface
         // - `imageModePattern` is empty if not textAndIcon layout
-        // - `fullWidthPattern` is empty if not full width (only relevant for indicatorNext and indicatorBack layouts)
+        // - `fullWidthPattern` is empty if not full width (only relevant for indicatorNext and indicatorPrevious layouts)
         // - `disabledPatern` is empty if not disabled
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
@@ -188,8 +188,8 @@ struct LinkTest: View {
             OUDSLink(text: "Link", image: oudsImage, size: size) {}
         case .indicatorNext:
             OUDSLink(text: "Next", indicator: .next, size: size, isFullWidth: isFullWidth) {}
-        case .indicatorBack:
-            OUDSLink(text: "Back", indicator: .back, size: size, isFullWidth: isFullWidth) {}
+        case .indicatorPrevious:
+            OUDSLink(text: "Back", indicator: .previous, size: size, isFullWidth: isFullWidth) {}
         }
     }
 
@@ -218,8 +218,8 @@ extension LinkLayout: CustomDebugStringConvertible {
             "TextOnly"
         case .textAndIcon:
             "IconAndText"
-        case .indicatorBack:
-            "IndicatorBack"
+        case .indicatorPrevious:
+            "IndicatorPrevious"
         case .indicatorNext:
             "IndicatorNext"
         }

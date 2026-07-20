@@ -36,13 +36,13 @@ struct LinksView: View {
             Text("Enabled").font(.subheadline)
             OUDSLink(text: "Link", size: .default) {}
             OUDSLink(text: "Link", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), size: .default) {}
-            OUDSLink(text: "Link", indicator: .back, size: .default) {}
+            OUDSLink(text: "Link", indicator: .previous, size: .default) {}
             OUDSLink(text: "Link", indicator: .next, size: .default) {}
 
             Text("Disabled").font(.subheadline)
             OUDSLink(text: "Link", size: .small) {}.disabled(true)
             OUDSLink(text: "Link", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), size: .small) {}.disabled(true)
-            OUDSLink(text: "Link", indicator: .back, size: .default) {}.disabled(true)
+            OUDSLink(text: "Link", indicator: .previous, size: .default) {}.disabled(true)
             OUDSLink(text: "Link", indicator: .next, size: .default) {}.disabled(true)
 
             Text("Size small").font(.headline)
@@ -50,13 +50,13 @@ struct LinksView: View {
             Text("Enabled").font(.subheadline)
             OUDSLink(text: "Link", size: .small) {}
             OUDSLink(text: "Link", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), size: .small) {}
-            OUDSLink(text: "Link", indicator: .back, size: .small) {}
+            OUDSLink(text: "Link", indicator: .previous, size: .small) {}
             OUDSLink(text: "Link", indicator: .next, size: .small) {}
 
             Text("Disabled").font(.subheadline)
             OUDSLink(text: "Link", size: .small) {}.disabled(true)
             OUDSLink(text: "Link", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), size: .small) {}.disabled(true)
-            OUDSLink(text: "Link", indicator: .back, size: .small) {}.disabled(true)
+            OUDSLink(text: "Link", indicator: .previous, size: .small) {}.disabled(true)
             OUDSLink(text: "Link", indicator: .next, size: .small) {}.disabled(true)
         }
     }
@@ -112,13 +112,13 @@ struct LinksView: View {
                     .padding(.bottom, theme.spaces.paddingBlockSmall)
 
                 linkSection(title: "Default Size") {
-                    OUDSLink(text: "Link", indicator: .back, size: .default) {}
-                    OUDSLink(text: "Link", indicator: .back, size: .default) {}.disabled(true)
+                    OUDSLink(text: "Link", indicator: .previous, size: .default) {}
+                    OUDSLink(text: "Link", indicator: .previous, size: .default) {}.disabled(true)
                 }
 
                 linkSection(title: "Small Size") {
-                    OUDSLink(text: "Link", indicator: .back, size: .small) {}
-                    OUDSLink(text: "Link", indicator: .back, size: .small) {}.disabled(true)
+                    OUDSLink(text: "Link", indicator: .previous, size: .small) {}
+                    OUDSLink(text: "Link", indicator: .previous, size: .small) {}.disabled(true)
                 }
             }
             .padding()
