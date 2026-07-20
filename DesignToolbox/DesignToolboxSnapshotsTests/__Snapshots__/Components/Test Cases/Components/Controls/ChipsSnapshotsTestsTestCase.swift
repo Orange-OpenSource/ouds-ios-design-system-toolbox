@@ -42,7 +42,10 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
                     model.enabled = enabled
                     model.iconType = iconType
 
-                    testSuggestionChips(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                    testSuggestionChips(theme: theme, interfaceStyle: interfaceStyle, model: model, isLongText: false)
+
+                    model.text = "¡ Bravas patatas ! ¡ Patatas bravas ! ¡ Patatata-patatata-patatas bravas !"
+                    testSuggestionChips(theme: theme, interfaceStyle: interfaceStyle, model: model, isLongText: true)
                 }
             }
         }
@@ -59,7 +62,10 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
                         model.enabled = enabled
                         model.iconType = iconType
 
-                        testFilterChips(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                        testFilterChips(theme: theme, interfaceStyle: interfaceStyle, model: model, isLongText: false)
+
+                        model.text = "¡ Bravas patatas ! ¡ Patatas bravas ! ¡ Patatata-patatata-patatas bravas !"
+                        testFilterChips(theme: theme, interfaceStyle: interfaceStyle, model: model, isLongText: true)
                     }
                 }
             }
@@ -77,9 +83,11 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - model: The model contains each element of configuration
+    ///   - isLongText: Flag to rise to record in the snapshot file name the text of the chip is considered long
     @MainActor func testFilterChips(theme: OUDSTheme,
                                     interfaceStyle: UIUserInterfaceStyle,
-                                    model: FilterChipConfigurationModel)
+                                    model: FilterChipConfigurationModel,
+                                    isLongText: Bool)
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
@@ -95,7 +103,8 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
         let disabledPattern = !model.enabled ? "_Disabled" : ""
         let selectedPattern = model.selected ? "_Selected" : ""
         let imageModePattern = model.layout != .textOnly ? (model.iconType == .image ? "_OriginalImage" : "_TemplateImage") : ""
-        let name = "\(model.layout.debugDescription)\(imageModePattern)\(selectedPattern)\(disabledPattern)"
+        let textLengthPattern = isLongText ? "_LongText" : "_ShortText"
+        let name = "\(model.layout.debugDescription)\(imageModePattern)\(textLengthPattern)\(selectedPattern)\(disabledPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
@@ -115,9 +124,11 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - model: The model contains each element of configuration
+    ///   - isLongText: Flag to rise to record in the snapshot file name the text of the chip is considered long
     @MainActor func testSuggestionChips(theme: OUDSTheme,
                                         interfaceStyle: UIUserInterfaceStyle,
-                                        model: SuggestionChipConfigurationModel)
+                                        model: SuggestionChipConfigurationModel,
+                                        isLongText: Bool)
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
@@ -131,7 +142,8 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
         let testName = "testSuggestion_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let disabledPattern = !model.enabled ? "_Disabled" : ""
         let imageModePattern = model.layout != .textOnly ? (model.iconType == .image ? "_OriginalImage" : "_TemplateImage") : ""
-        let name = "\(model.layout.debugDescription)\(imageModePattern)\(disabledPattern)"
+        let textLengthPattern = isLongText ? "_LongText" : "_ShortText"
+        let name = "\(model.layout.debugDescription)\(imageModePattern)\(textLengthPattern)\(disabledPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
