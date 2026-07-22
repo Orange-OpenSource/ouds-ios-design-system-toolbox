@@ -40,8 +40,15 @@ struct DesignToolboxElementsPage: View {
         #elseif os(tvOS)
         // tvOS: focus engine works best with a simple stack; NavigationSplitView with
         // sidebar is awkward with the Siri Remote. We use NavigationStack + grid.
+        // A visible top controls bar hosts theme / color-scheme selectors (they cannot
+        // live inside a nav bar because tvOS has none) and doubles as a focus target
+        // above the grid so the user can move focus back up to the tab bar.
         NavigationStack {
-            elementsPage
+            VStack(spacing: 0) {
+                TVOSTopControlsBar()
+                elementsPage
+            }
+            .background(theme.colors.bgPrimary)
         }
         #else // macOS
         // Trick to be sure the view refreshes because NavigationView not always refreshed with macOS
@@ -78,9 +85,13 @@ struct DesignToolboxElementsPage: View {
             .padding(.vertical, 20)
             .navigationBarMenus(title: title)
             #else
-            #if os(iOS) || os(tvOS)
+            #if os(iOS)
             ElementsGridView(elements: elements)
                 .navigationBarMenus(title: title)
+            #elseif os(tvOS)
+            // navigationBarMenus is a no-op on tvOS: the controls are already rendered
+            // by TVOSTopControlsBar above the ScrollView.
+            ElementsGridView(elements: elements)
             #else // macOS
             ElementsGridView(elements: elements, onSelect: { selectedElement = $0 })
                 .navigationBarMenus(title: title)
@@ -88,7 +99,7 @@ struct DesignToolboxElementsPage: View {
             #endif
         }
         .background(theme.colors.bgPrimary)
-        .oudsNavigationTitle(title)
+        .oudsScreenTitle(title)
     }
 
     // MARK: - visionOS-only card layout

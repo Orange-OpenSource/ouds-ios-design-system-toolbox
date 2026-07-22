@@ -508,6 +508,7 @@
 		7A3A207FF109371ECD352667 /* SpaceTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE512CB426090059CC28 /* SpaceTokenElement.swift */; };
 		7DC17D4858E987ED5F3A8318 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
 		7ED25061D591A6D08FE83653 /* BadgeStandardConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20312FC70BEF00431097 /* BadgeStandardConfigurationView.swift */; };
+		7FB87D0FFE593799D712DEB2 /* TVOSShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9691F6689982BA5065E71DD /* TVOSShims.swift */; };
 		810D76A478322CA0463D7D77 /* AlertStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799B12F485277005F349B /* AlertStatus.swift */; };
 		8243035B8C80FCE2B2196F72 /* BadgeCountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA202C2FC70BE700431097 /* BadgeCountPage.swift */; };
 		82EC829A67A93A9DBA7F4229 /* RadioItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C1942D7A0823006B3A1F /* RadioItemPage.swift */; };
@@ -5665,6 +5666,7 @@
 				950EA6D92EBE24AA0009414A /* TagView.swift in Sources */,
 				950EA6DB2EBE24E10009414A /* InputTag.swift in Sources */,
 				9593901A2EC1F2A0000DBE95 /* BordersView.swift in Sources */,
+				7FB87D0FFE593799D712DEB2 /* TVOSShims.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

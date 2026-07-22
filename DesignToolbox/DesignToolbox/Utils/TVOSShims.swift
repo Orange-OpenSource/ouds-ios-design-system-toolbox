@@ -11,9 +11,36 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if os(tvOS)
-
 import SwiftUI
+
+// MARK: - Cross-platform helpers used by the tvOS build
+
+extension View {
+
+    /// On tvOS, marks the view as focusable so it participates in the focus
+    /// engine. This is required for two reasons on tvOS:
+    ///
+    /// 1. A `ScrollView` only scrolls when the focus moves near its edges. If
+    ///    the scroll content has no focusable descendants, tvOS cannot scroll
+    ///    the content at all and everything beyond the first screen becomes
+    ///    unreachable (e.g. Fonts page, Border page, etc.).
+    /// 2. Adding a focusable relay between a top header and a bottom
+    ///    configuration panel gives the focus engine an intermediate target,
+    ///    so that swiping up from a config control scrolls the ScrollView
+    ///    back toward the demo instead of jumping straight to the header.
+    ///
+    /// On other platforms this modifier is a no-op.
+    @ViewBuilder
+    func tvOSFocusableRow() -> some View {
+        #if os(tvOS)
+        self.focusable(true)
+        #else
+        self
+        #endif
+    }
+}
+
+#if os(tvOS)
 
 // MARK: - tvOS shims for OUDS Pickers
 //

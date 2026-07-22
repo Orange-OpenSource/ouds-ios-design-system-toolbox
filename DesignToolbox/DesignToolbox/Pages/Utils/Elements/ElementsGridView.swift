@@ -64,6 +64,11 @@ struct ElementsGridView: View {
         }
         .gridMargin(.horizontal)
         .padding(.vertical, theme.spaces.fixedMedium)
+        #if os(tvOS)
+        // Declare the grid as a focus region so the focus engine can route focus
+        // out of it (upward) toward the top controls bar and the tab bar.
+        .focusSection()
+        #endif
     }
 
     // MARK: - Private

@@ -84,6 +84,18 @@ struct AboutPage: View {
                 .accentColor(theme.bar.colorAccent)
         }
         .navigationViewStyle(.stack)
+        #elseif os(tvOS)
+        // tvOS: use `NavigationStack` for consistency with the rest of the app and
+        // render the theme / color-scheme controls in a visible focusable header
+        // (they cannot be rendered inside a nav bar because tvOS has none).
+        NavigationStack {
+            VStack(spacing: 0) {
+                TVOSTopControlsBar()
+                listBody
+                    .accentColor(theme.bar.colorAccent)
+            }
+            .background(theme.colors.bgPrimary)
+        }
         #else
         NavigationView {
             listBody
@@ -99,7 +111,7 @@ struct AboutPage: View {
             buildView
             linksView
         }
-        .oudsNavigationTitle("app_bottomBar_about_label")
+        .oudsScreenTitle("app_bottomBar_about_label")
     }
 
     // MARK: - Views
