@@ -178,16 +178,17 @@ struct ThemeSelectionButton: View {
 
     @EnvironmentObject private var themeProvider: ThemeProvider
 
+    #if os(tvOS)
+    // On tvOS `Menu` requires tvOS 17+ and behaves poorly with nested pickers.
+    // We open a full-screen sheet listing all themes grouped by family instead;
+    // this stays compatible with tvOS 16.6 and offers a proper focusable list.
+    @State private var showThemePicker: Bool = false
+    #endif
+
     var body: some View {
         #if os(tvOS)
-        // `Menu` requires tvOS 17+. To keep the demo compatible with tvOS 16, use
-        // a simple button that cycles through all themes on each click.
         Button {
-            let all = themeProvider.allThemes
-            guard !all.isEmpty else { return }
-            let current = themeProvider.currentTheme
-            let idx = all.firstIndex(where: { $0.id == current.id }) ?? 0
-            themeProvider.currentTheme = all[(idx + 1) % all.count]
+            showThemePicker = true
         } label: {
             Image(decorative: "ic_theme")
                 .scaledToFit()
@@ -195,6 +196,10 @@ struct ThemeSelectionButton: View {
         .modifier(HotSwitchWarningModifier(hotSwitchWarningIndicator: themeProvider.hotSwitchWarning))
         .accessibilityLabel("app_topBar_theme_button_a11y")
         .accessibilityHint("app_topBar_theme_button_hint_a11y")
+        .fullScreenCover(isPresented: $showThemePicker) {
+            TVOSThemePickerSheet(isPresented: $showThemePicker)
+                .environmentObject(themeProvider)
+        }
         #else
         menuBody
         #endif
@@ -291,3 +296,87 @@ struct HotSwitchWarningModifier: ViewModifier {
         }
     }
 }
+
+// MARK: - tvOS Theme Picker Sheet
+
+#if os(tvOS)
+
+/// Full-screen sheet used on tvOS to pick a theme.
+///
+/// SwiftUI's `Menu` API requires tvOS 17+ and behaves poorly with nested
+/// pickers, so on tvOS the theme selection is presented as a `List` grouped by
+/// theme family (Orange / Orange Compact / Other). Each row is a focusable
+/// button and the currently active theme is marked with a checkmark.
+private struct TVOSThemePickerSheet: View {
+
+    @Binding var isPresented: Bool
+
+    @EnvironmentObject private var themeProvider: ThemeProvider
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        NavigationStack {
+            ZStack {
+                // Opaque background so the sheet fully masks the page underneath.
+                // Without this, tvOS renders the sheet with a translucent List and
+                // the underlying content bleeds through, making the picker unreadable.
+                Rectangle()
+                    .fill(theme.colors.bgPrimary)
+                    .ignoresSafeArea()
+
+                List {
+                    themeSection(title: OrangeTheme.name, themes: themeProvider.orangeThemes)
+                    themeSection(title: OrangeCompactTheme.name, themes: themeProvider.orangeCompactThemes)
+                    themeSection(title: "app_topBar_theme_picker_otherThemes_section".localized(),
+                                 themes: themeProvider.otherThemes)
+                }
+                // Note: `.scrollContentBackground(.hidden)` is unavailable on tvOS.
+                // The opaque `Rectangle` behind the `List` is what actually masks
+                // the page below the sheet; the `List` itself sits on top with its
+                // default (potentially translucent) chrome.
+            }
+            .navigationTitle("app_topBar_theme_picker_navigationTitle")
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button {
+                        isPresented = false
+                    } label: {
+                        Text("app_topBar_theme_picker_close_label")
+                    }
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func themeSection(title: String, themes: [OUDSTheme]) -> some View {
+        Section(title) {
+            ForEach(themes, id: \.id) { candidate in
+                themeRow(for: candidate)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func themeRow(for candidate: OUDSTheme) -> some View {
+        let isSelected = candidate.id == themeProvider.currentTheme.id
+        Button {
+            themeProvider.currentTheme = candidate
+            isPresented = false
+        } label: {
+            HStack {
+                Text(candidate.description)
+                    .foregroundStyle(theme.colors.contentDefault)
+                Spacer()
+                if isSelected {
+                    // `.circle.fill` version stays visible whatever the theme background.
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundStyle(theme.colors.contentBrandPrimary)
+                        .accessibilityLabel("app_topBar_theme_picker_selected_a11y")
+                }
+            }
+        }
+    }
+}
+
+#endif
