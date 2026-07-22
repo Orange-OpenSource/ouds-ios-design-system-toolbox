@@ -38,12 +38,14 @@ struct LinksView: View {
             OUDSLink(text: "Link", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), size: .default) {}
             OUDSLink(text: "Link", indicator: .previous, size: .default) {}
             OUDSLink(text: "Link", indicator: .next, size: .default) {}
+            OUDSLink(text: "Link", indicator: .external, size: .default) {}
 
             Text("Disabled").font(.subheadline)
             OUDSLink(text: "Link", size: .small) {}.disabled(true)
             OUDSLink(text: "Link", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), size: .small) {}.disabled(true)
             OUDSLink(text: "Link", indicator: .previous, size: .default) {}.disabled(true)
             OUDSLink(text: "Link", indicator: .next, size: .default) {}.disabled(true)
+            OUDSLink(text: "Link", indicator: .external, size: .default) {}.disabled(true)
 
             Text("Size small").font(.headline)
 
@@ -52,12 +54,14 @@ struct LinksView: View {
             OUDSLink(text: "Link", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), size: .small) {}
             OUDSLink(text: "Link", indicator: .previous, size: .small) {}
             OUDSLink(text: "Link", indicator: .next, size: .small) {}
+            OUDSLink(text: "Link", indicator: .external, size: .small) {}
 
             Text("Disabled").font(.subheadline)
             OUDSLink(text: "Link", size: .small) {}.disabled(true)
             OUDSLink(text: "Link", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), size: .small) {}.disabled(true)
             OUDSLink(text: "Link", indicator: .previous, size: .small) {}.disabled(true)
             OUDSLink(text: "Link", indicator: .next, size: .small) {}.disabled(true)
+            OUDSLink(text: "Link", indicator: .external, size: .small) {}.disabled(true)
         }
     }
 
@@ -138,6 +142,25 @@ struct LinksView: View {
                 linkSection(title: "Small Size") {
                     OUDSLink(text: "Link", indicator: .next, size: .small) {}
                     OUDSLink(text: "Link", indicator: .next, size: .small) {}.disabled(true)
+                }
+            }
+            .padding()
+
+            // Column n°5: with external indicator
+            VStack(spacing: theme.spaces.paddingBlockLarge) {
+                Text("Exterbal Indicator")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding(.bottom, theme.spaces.paddingBlockSmall)
+
+                linkSection(title: "Default Size") {
+                    OUDSLink(text: "Link", indicator: .external, size: .default) {}
+                    OUDSLink(text: "Link", indicator: .external, size: .default) {}.disabled(true)
+                }
+
+                linkSection(title: "Small Size") {
+                    OUDSLink(text: "Link", indicator: .external, size: .small) {}
+                    OUDSLink(text: "Link", indicator: .external, size: .small) {}.disabled(true)
                 }
             }
             .padding()

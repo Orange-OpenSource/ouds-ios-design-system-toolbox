@@ -4005,6 +4005,31 @@
         }
       }
     },
+    "app_components_link_externalLayout_tech" : {
+      "comment" : "Component - Link",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "External"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "External"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "External"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_link_fullWidth_tech" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",

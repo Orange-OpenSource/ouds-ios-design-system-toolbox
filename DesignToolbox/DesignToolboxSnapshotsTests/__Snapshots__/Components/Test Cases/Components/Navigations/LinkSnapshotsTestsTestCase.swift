@@ -190,6 +190,8 @@ struct LinkTest: View {
             OUDSLink(text: "Next", indicator: .next, size: size, isFullWidth: isFullWidth) {}
         case .indicatorPrevious:
             OUDSLink(text: "Back", indicator: .previous, size: size, isFullWidth: isFullWidth) {}
+        case .indicatorExternal:
+            OUDSLink(text: "External", indicator: .external, size: size, isFullWidth: isFullWidth) {}
         }
     }
 
@@ -222,6 +224,8 @@ extension LinkLayout: CustomDebugStringConvertible {
             "IndicatorPrevious"
         case .indicatorNext:
             "IndicatorNext"
+        case .indicatorExternal:
+            "IndicatorExternal"
         }
     }
 }
