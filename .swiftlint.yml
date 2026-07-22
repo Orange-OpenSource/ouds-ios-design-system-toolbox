@@ -44,7 +44,7 @@ disabled_rules:
 - explicit_type_interface
 - extension_access_modifier
 - file_name
-- file_types_orderb
+- file_types_order
 - multiline_arguments_brackets
 - multiline_parameters_brackets
 - opening_brace

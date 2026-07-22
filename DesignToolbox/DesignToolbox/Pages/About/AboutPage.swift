@@ -35,9 +35,7 @@ struct AboutPage: View {
     #endif
 
     @Environment(\.theme) private var theme
-    @Environment(\.openURL) private var openUrl
-    // NOTE: "unused" false-positive for periphery (https://github.com/peripheryapp/periphery/issues/993)
-    @Environment(\.layoutDirection) private var layoutDirection
+    @Environment(\.openURL) private var openURL
 
     // MARK: Initializer
 
@@ -224,6 +222,7 @@ struct AboutPage: View {
         link(appSourcesUrl, label: "app_about_appSources_label", hint: "app_about_appSources_hint_a11y")
         link(bugReportUrl, label: "app_about_bugReport_label", hint: "app_about_bugReport_hint_a11y")
         link(designSystemUrl, label: "app_about_designSystem_label", hint: "app_about_designSystem_hint_a11y")
+
         #if os(iOS)
         Button {
             OSUtilities.open(url: appSettingsUrl)
@@ -240,22 +239,9 @@ struct AboutPage: View {
     @ViewBuilder
     private func link(_ url: URL, label: String, hint: String) -> some View {
         OUDSLink(text: label.localized(), indicator: .external, isFullWidth: true) {
-            openUrl.callAsFunction(url)
+            openURL.callAsFunction(url)
         }
-        /*
-         Link(destination: url) {
-             HStack {
-                 Text(label.localized())
-                 Spacer()
-                 if layoutDirection == .leftToRight {
-                     Image(systemName: "arrow.up.right.square").accessibilityHidden(true)
-                 } else {
-                     Image(systemName: "arrow.up.left.square").accessibilityHidden(true)
-                 }
-             }
-         }*/
         .accessibilityHint(hint.localized())
-        .accessibilityRemoveTraits([.isButton]) // Has also link trait
     }
 }
 
