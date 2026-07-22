@@ -35,8 +35,7 @@ struct AboutPage: View {
     #endif
 
     @Environment(\.theme) private var theme
-    // NOTE: "unused" false-positive for periphery (https://github.com/peripheryapp/periphery/issues/993)
-    @Environment(\.layoutDirection) private var layoutDirection
+    @Environment(\.openURL) private var openURL
 
     // MARK: Initializer
 
@@ -84,6 +83,18 @@ struct AboutPage: View {
                 .accentColor(theme.bar.colorAccent)
         }
         .navigationViewStyle(.stack)
+        #elseif os(tvOS)
+        // tvOS: use `NavigationStack` for consistency with the rest of the app and
+        // render the theme / color-scheme controls in a visible focusable header
+        // (they cannot be rendered inside a nav bar because tvOS has none).
+        NavigationStack {
+            VStack(spacing: 0) {
+                TVOSTopControlsBar()
+                listBody
+                    .accentColor(theme.bar.colorAccent)
+            }
+            .background(theme.colors.bgPrimary)
+        }
         #else
         NavigationView {
             listBody
@@ -99,7 +110,7 @@ struct AboutPage: View {
             buildView
             linksView
         }
-        .oudsNavigationTitle("app_bottomBar_about_label")
+        .oudsScreenTitle("app_bottomBar_about_label")
     }
 
     // MARK: - Views
@@ -205,6 +216,13 @@ struct AboutPage: View {
 
     @ViewBuilder
     private var linksView: some View {
+        if let changelogURL = Bundle.main.changelogURL {
+            link(changelogURL, label: "app_about_changelog_label", hint: "app_about_changelog_hint_a11y")
+        }
+        link(appSourcesUrl, label: "app_about_appSources_label", hint: "app_about_appSources_hint_a11y")
+        link(bugReportUrl, label: "app_about_bugReport_label", hint: "app_about_bugReport_hint_a11y")
+        link(designSystemUrl, label: "app_about_designSystem_label", hint: "app_about_designSystem_hint_a11y")
+
         #if os(iOS)
         Button {
             OSUtilities.open(url: appSettingsUrl)
@@ -216,30 +234,14 @@ struct AboutPage: View {
             }
         }.accessibilityHint("app_about_appSettings_hint_a11y")
         #endif
-
-        if let changelogURL = Bundle.main.changelogURL {
-            link(changelogURL, label: "app_about_changelog_label", hint: "app_about_changelog_hint_a11y")
-        }
-        link(appSourcesUrl, label: "app_about_appSources_label", hint: "app_about_appSources_hint_a11y")
-        link(bugReportUrl, label: "app_about_bugReport_label", hint: "app_about_bugReport_hint_a11y")
-        link(designSystemUrl, label: "app_about_designSystem_label", hint: "app_about_designSystem_hint_a11y")
     }
 
     @ViewBuilder
     private func link(_ url: URL, label: String, hint: String) -> some View {
-        Link(destination: url) {
-            HStack {
-                Text(label.localized())
-                Spacer()
-                if layoutDirection == .leftToRight {
-                    Image(systemName: "arrow.up.right.square").accessibilityHidden(true)
-                } else {
-                    Image(systemName: "arrow.up.left.square").accessibilityHidden(true)
-                }
-            }
+        OUDSLink(text: label.localized(), indicator: .external, isFullWidth: true) {
+            openURL.callAsFunction(url)
         }
         .accessibilityHint(hint.localized())
-        .accessibilityRemoveTraits([.isButton]) // Has also link trait
     }
 }
 

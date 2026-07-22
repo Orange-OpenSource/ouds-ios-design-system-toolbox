@@ -47,14 +47,10 @@ struct TagView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(title: "Tag") {
+        WatchScrollLayoutView(title: "Tag") {
             watchOSLayout
-        } tvLayout: {
-            tvOSLayout
         }
     }
-
-    // MARK: - watchOS
 
     private var watchOSLayout: some View {
         WatchVerticalLayout {
@@ -84,79 +80,6 @@ struct TagView: View {
                 }
             }
         }
-    }
-
-    // MARK: - tvOS
-
-    private var tvOSLayout: some View {
-        LazyVStack(spacing: theme.spaces.paddingBlock4xlarge) {
-            ForEach(Self.allTagStatus.indices, id: \.self) { statusIndex in
-                let status = Self.allTagStatus[statusIndex]
-
-                VStack(spacing: theme.spaces.scaledMediumMobile) {
-                    Text("Status " + Self.description(for: statusIndex))
-                        .font(.title2)
-                        .fontWeight(.bold)
-
-                    VStack(spacing: theme.spaces.scaledMediumMobile) {
-                        ForEach(Self.allBadgeSizes, id: \.self) { size in
-                            HStack(spacing: theme.spaces.scaledMediumMobile) {
-                                ForEach(Self.allTagShapes, id: \.self) { shape in
-                                    ForEach(Self.allTagAppearances, id: \.self) { appearance in
-                                        tagSection(
-                                            title: "\(String(describing: size)) • \(String(describing: shape)) • \(String(describing: appearance))",
-                                            status: status,
-                                            appearance: appearance,
-                                            shape: shape,
-                                            size: size)
-                                    }
-                                }
-                                Spacer()
-                            }
-                        }
-                    }
-                }
-                .padding()
-                .focusable()
-            }
-        }
-        .padding()
-    }
-
-    // MARK: - Helpers
-
-    @ViewBuilder
-    private func tagSection(
-        title: String,
-        status: OUDSTag.Status,
-        appearance: OUDSTag.Appearance,
-        shape: OUDSTag.Shape,
-        size: OUDSTag.Size) -> some View
-    {
-        VStack(spacing: theme.spaces.scaledSmallMobile) {
-            Text(title)
-                .font(.caption)
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.center)
-
-            VStack(spacing: theme.spaces.scaledXsmallMobile) {
-                OUDSTag(label: "Tag",
-                        status: status,
-                        appearance: appearance,
-                        shape: shape,
-                        size: size,
-                        hasLoader: false)
-
-                OUDSTag(label: "Tag",
-                        status: status,
-                        appearance: appearance,
-                        shape: shape,
-                        size: size,
-                        hasLoader: true)
-            }
-        }
-        .padding(theme.spaces.scaledSmallMobile)
-        .frame(maxWidth: .infinity)
     }
 
     private static func description(for statusIndex: Int) -> String {

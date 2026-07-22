@@ -131,5 +131,10 @@ private struct ComponentShowcases<ComponentDemo>: View where ComponentDemo: View
                 }
             }
         }
+        // Make the whole showcases region focusable on tvOS so it becomes an
+        // intermediate focus target between the top controls and the
+        // configuration panel: swiping up from the config will focus (and thus
+        // scroll into view) the demo instead of jumping straight to the header.
+        .tvOSFocusableRow()
     }
 }

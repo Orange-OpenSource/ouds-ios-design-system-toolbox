@@ -21,11 +21,7 @@ struct ColorsView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        #if os(tvOS)
-        tvLayout
-        #else
         watchLayout
-        #endif
     }
 
     @ViewBuilder
@@ -70,55 +66,6 @@ struct ColorsView: View {
                     WatchVerticalLayout { ScrollView { illustrationForRepository() } }
                 }
             }
-        }
-    }
-
-    @ViewBuilder
-    private var tvLayout: some View {
-        NavigationView {
-            ScrollView(.vertical, showsIndicators: true) {
-                TVGridLayout(count: 4) {
-                    NavigationLink("Action") {
-                        TVGridLayout(count: 4) { illustrationForAction() }
-                    }
-                    NavigationLink("Always") {
-                        TVGridLayout(count: 4) { illustrationForAlways() }
-                    }
-                    NavigationLink("Background") {
-                        TVGridLayout(count: 4) { illustrationForBackground() }
-                    }
-                    NavigationLink("Border") {
-                        TVGridLayout(count: 4) { illustrationForBorder() }
-                    }
-                    if theme.colorsCharts != nil {
-                        NavigationLink("Chart") {
-                            TVGridLayout(count: 4) { illustrationForChart() }
-                        }
-                    }
-                    if theme.colorsDecorative != nil {
-                        NavigationLink("Decorative") {
-                            TVGridLayout(count: 4) { illustrationForDecorative() }
-                        }
-                    }
-                    NavigationLink("Content") {
-                        TVGridLayout(count: 4) { illustrationForContent() }
-                    }
-                    NavigationLink("Overlay") {
-                        TVGridLayout(count: 4) { illustrationForOverlay() }
-                    }
-                    NavigationLink("Surface") {
-                        TVGridLayout(count: 4) { illustrationForSurface() }
-                    }
-                    NavigationLink("Opacity") {
-                        TVGridLayout(count: 4) { illustrationForOpacity() }
-                    }
-                    NavigationLink("Repository") {
-                        TVGridLayout(count: 4) { illustrationForRepository() }
-                    }
-                }
-                .padding()
-            }
-            .navigationTitle("Colors")
         }
     }
 
