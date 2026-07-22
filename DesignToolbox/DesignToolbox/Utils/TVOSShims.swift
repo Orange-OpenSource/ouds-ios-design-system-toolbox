@@ -33,7 +33,7 @@ extension View {
     @ViewBuilder
     func tvOSFocusableRow() -> some View {
         #if os(tvOS)
-        self.focusable(true)
+        focusable(true)
         #else
         self
         #endif
@@ -41,6 +41,8 @@ extension View {
 }
 
 #if os(tvOS)
+
+// swiftlint:disable missing_docs
 
 // MARK: - tvOS shims for OUDS Pickers
 //
@@ -78,9 +80,12 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
 
     var displayText: String {
         switch layout {
-        case let .text(text): return text
-        case let .textAndIcon(text, _): return text
-        case let .icon(_, label): return label
+        case let .text(text):
+            text
+        case let .textAndIcon(text, _):
+            text
+        case let .icon(_, label):
+            label
         }
     }
 }
@@ -106,34 +111,38 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     public init(title: String,
                 selection: Binding<Tag>,
-                chips: [OUDSChipPickerData<Tag>]) {
+                chips: [OUDSChipPickerData<Tag>])
+    {
         self.title = title
         self.chips = chips
-        self.selectionMode = .required(selection)
+        selectionMode = .required(selection)
     }
 
     public init(title: String,
                 selection: Binding<Tag?>,
-                chips: [OUDSChipPickerData<Tag>]) {
+                chips: [OUDSChipPickerData<Tag>])
+    {
         self.title = title
         self.chips = chips
-        self.selectionMode = .optional(selection)
+        selectionMode = .optional(selection)
     }
 
     public init(title: String,
                 selections: Binding<Set<Tag>>,
-                chips: [OUDSChipPickerData<Tag>]) {
+                chips: [OUDSChipPickerData<Tag>])
+    {
         self.title = title
         self.chips = chips
-        self.selectionMode = .multipleSet(selections)
+        selectionMode = .multipleSet(selections)
     }
 
     public init(title: String,
                 selections: Binding<[Tag]>,
-                chips: [OUDSChipPickerData<Tag>]) {
+                chips: [OUDSChipPickerData<Tag>])
+    {
         self.title = title
         self.chips = chips
-        self.selectionMode = .multipleArray(selections)
+        selectionMode = .multipleArray(selections)
     }
 
     // MARK: Body
@@ -193,5 +202,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
         }
     }
 }
+
+// swiftlint:enable missing_docs
 
 #endif

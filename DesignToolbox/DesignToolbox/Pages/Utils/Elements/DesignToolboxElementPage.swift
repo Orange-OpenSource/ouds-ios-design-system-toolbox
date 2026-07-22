@@ -14,6 +14,8 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// swiftlint:disable closure_body_length
+
 /// Used to present the element in same layout with:
 /// - a text for the description
 /// - an optional image to illustrate the element
@@ -109,15 +111,15 @@ struct DesignToolboxElementPage: View {
                 .id(Self.tvOSTopAnchorID)
                 .listRowInsets(EdgeInsets())
                 #if !os(tvOS)
-                .listRowSeparator(Visibility.hidden) // `listRowSeparator` unavailable on tvOS
+                    .listRowSeparator(Visibility.hidden) // `listRowSeparator` unavailable on tvOS
                 #endif
-                .background(theme.colors.bgPrimary)
+                    .background(theme.colors.bgPrimary)
 
                 demoScreen
                     .listRowInsets(EdgeInsets())
-                    #if !os(tvOS)
+                #if !os(tvOS)
                     .listRowSeparator(Visibility.hidden)
-                    #endif
+                #endif
                     .background(theme.colors.bgPrimary)
 
                 if let version {
@@ -143,22 +145,24 @@ struct DesignToolboxElementPage: View {
             .background(theme.colors.bgPrimary)
             .requestAccessibleFocus(_requestFocus)
             #if os(tvOS)
-            .onAppear {
-                // Defer to the next runloop tick so the layout is settled before
-                // we ask the ScrollView to reset its offset.
-                DispatchQueue.main.async {
-                    withAnimation(.none) {
-                        proxy.scrollTo(Self.tvOSTopAnchorID, anchor: .top)
+                .onAppear {
+                    // Defer to the next runloop tick so the layout is settled before
+                    // we ask the ScrollView to reset its offset.
+                    DispatchQueue.main.async {
+                        withAnimation(.none) {
+                            proxy.scrollTo(Self.tvOSTopAnchorID, anchor: .top)
+                        }
                     }
                 }
-            }
             #endif
             #if !os(macOS) && !os(tvOS)
-                // OUDS `toolBarTop` modifier is not available on tvOS; on tvOS the top tab bar
-                // is provided natively by SwiftUI's `TabView` and the navigation title is
-                // handled by `.oudsNavigationTitle` further up the hierarchy.
-                .toolBarTop(name.localized())
+            // OUDS `toolBarTop` modifier is not available on tvOS; on tvOS the top tab bar
+            // is provided natively by SwiftUI's `TabView` and the navigation title is
+            // handled by `.oudsNavigationTitle` further up the hierarchy.
+            .toolBarTop(name.localized())
             #endif
         }
     }
 }
+
+// swiftlint:enable closure_body_length

@@ -61,11 +61,11 @@ extension View {
     @ViewBuilder
     func oudsScreenTitle(_ title: String) -> some View {
         #if os(tvOS)
-        self.onAppear {
+        onAppear {
             UIAccessibility.post(notification: .screenChanged, argument: title.localized())
         }
         #else
-        self.oudsNavigationTitle(title)
+        oudsNavigationTitle(title)
         #endif
     }
 }

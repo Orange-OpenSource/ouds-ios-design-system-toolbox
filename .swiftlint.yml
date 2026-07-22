@@ -28,6 +28,7 @@ included:
 # ========
 
 excluded:
+- DesignToolbox/DesignToolbox/Info-tvOS.plist
 - DesignToolbox/DesignToolbox/Info.plist
 - DesignToolbox/DesignToolbox/Resources
 - DesignToolbox/DerivedData
@@ -43,7 +44,7 @@ disabled_rules:
 - explicit_type_interface
 - extension_access_modifier
 - file_name
-- file_types_order
+- file_types_orderb
 - multiline_arguments_brackets
 - multiline_parameters_brackets
 - opening_brace

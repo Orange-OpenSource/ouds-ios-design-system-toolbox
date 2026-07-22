@@ -20,23 +20,13 @@ struct OpacitiesView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(title: "Opacities",
-                              watchLayout: { watchLayout },
-                              tvLayout: { tvLayout })
+        WatchScrollLayoutView(title: "Opacities",
+                              layout: { watchLayout })
     }
 
     @ViewBuilder
     private var watchLayout: some View {
         WatchVerticalLayout {
-            ForEach(NamedOpacity.allCases, id: \.rawValue) { opacityName in
-                IllustrationOpacity(opacityName: opacityName)
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var tvLayout: some View {
-        TVVerticalLayout {
             ForEach(NamedOpacity.allCases, id: \.rawValue) { opacityName in
                 IllustrationOpacity(opacityName: opacityName)
             }

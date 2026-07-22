@@ -20,23 +20,13 @@ struct ElevationsView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(title: "Elevations",
-                              watchLayout: { watchLayout },
-                              tvLayout: { tvLayout })
+        WatchScrollLayoutView(title: "Elevations",
+                              layout: { watchLayout })
     }
 
     @ViewBuilder
     private var watchLayout: some View {
         WatchVerticalLayout {
-            ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
-                IllustrationElevation(namedElevation: elevationName)
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var tvLayout: some View {
-        TVVerticalLayout {
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
                 IllustrationElevation(namedElevation: elevationName)
             }

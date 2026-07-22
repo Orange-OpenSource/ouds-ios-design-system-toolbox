@@ -937,10 +937,8 @@
 		9589F1B62EB7D67E00134487 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
 		9589F1B72EB7D67E00134487 /* orange-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */; };
 		958CA1FB2F48C407001F45E8 /* InlineAlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CA1F92F48C407001F45E8 /* InlineAlertMessageView.swift */; };
-		9593900A2EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */; };
+		9593900A2EC125C3000DBE95 /* WatchScrollLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390082EC125B5000DBE95 /* WatchScrollLayoutView.swift */; };
 		9593900D2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */; };
-		959390102EC1DA55000DBE95 /* TVGridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593900E2EC1DA55000DBE95 /* TVGridLayoutView.swift */; };
-		959390132EC1DCAC000DBE95 /* TVVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390112EC1DCAC000DBE95 /* TVVerticalLayoutView.swift */; };
 		959390162EC1F268000DBE95 /* TokensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390152EC1F268000DBE95 /* TokensView.swift */; };
 		9593901A2EC1F2A0000DBE95 /* BordersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390192EC1F29F000DBE95 /* BordersView.swift */; };
 		959390202EC1F4B5000DBE95 /* DesignToolboxTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */; };
@@ -1143,7 +1141,6 @@
 		95CEF1922F9A2952008AD8C4 /* ElementsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18F2F9A2952008AD8C4 /* ElementsGridView.swift */; };
 		95CEF1932F9A2952008AD8C4 /* ElementsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18F2F9A2952008AD8C4 /* ElementsGridView.swift */; };
 		95D5BA362F4706E000CB10FE /* DialogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA312F4706E000CB10FE /* DialogsView.swift */; };
-		95D5BA372F4706E000CB10FE /* AlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA322F4706E000CB10FE /* AlertMessageView.swift */; };
 		95D6AAD12F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
 		95D6AAD22F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
 		95D6AAD32F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
@@ -1752,10 +1749,8 @@
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		958CA1F92F48C407001F45E8 /* InlineAlertMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineAlertMessageView.swift; sourceTree = "<group>"; };
-		959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAndTVLayoutsView.swift; sourceTree = "<group>"; };
+		959390082EC125B5000DBE95 /* WatchScrollLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchScrollLayoutView.swift; sourceTree = "<group>"; };
 		9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchVerticalLayoutView.swift; sourceTree = "<group>"; };
-		9593900E2EC1DA55000DBE95 /* TVGridLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGridLayoutView.swift; sourceTree = "<group>"; };
-		959390112EC1DCAC000DBE95 /* TVVerticalLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVVerticalLayoutView.swift; sourceTree = "<group>"; };
 		959390152EC1F268000DBE95 /* TokensView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensView.swift; sourceTree = "<group>"; };
 		959390192EC1F29F000DBE95 /* BordersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BordersView.swift; sourceTree = "<group>"; };
 		959390242EC21FD9000DBE95 /* ColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsView.swift; sourceTree = "<group>"; };
@@ -1798,7 +1793,6 @@
 		95CEF18A2F9A28DE008AD8C4 /* AllElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllElements.swift; sourceTree = "<group>"; };
 		95CEF18F2F9A2952008AD8C4 /* ElementsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsGridView.swift; sourceTree = "<group>"; };
 		95D5BA312F4706E000CB10FE /* DialogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsView.swift; sourceTree = "<group>"; };
-		95D5BA322F4706E000CB10FE /* AlertMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageView.swift; sourceTree = "<group>"; };
 		95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedColor+Decorative.swift"; sourceTree = "<group>"; };
 		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
 		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
@@ -3344,10 +3338,8 @@
 		959390072EC125A6000DBE95 /* _ */ = {
 			isa = PBXGroup;
 			children = (
-				959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */,
+				959390082EC125B5000DBE95 /* WatchScrollLayoutView.swift */,
 				9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */,
-				959390112EC1DCAC000DBE95 /* TVVerticalLayoutView.swift */,
-				9593900E2EC1DA55000DBE95 /* TVGridLayoutView.swift */,
 			);
 			path = _;
 			sourceTree = "<group>";
@@ -3698,7 +3690,6 @@
 		95D5BA332F4706E000CB10FE /* AlertMessage */ = {
 			isa = PBXGroup;
 			children = (
-				95D5BA322F4706E000CB10FE /* AlertMessageView.swift */,
 				958CA1F92F48C407001F45E8 /* InlineAlertMessageView.swift */,
 			);
 			path = AlertMessage;
@@ -5606,7 +5597,6 @@
 				9514585C2EC28DF10096BBF1 /* FontsView.swift in Sources */,
 				959390522EC24C20000DBE95 /* NamedFont.swift in Sources */,
 				95D5BA362F4706E000CB10FE /* DialogsView.swift in Sources */,
-				95D5BA372F4706E000CB10FE /* AlertMessageView.swift in Sources */,
 				959390532EC24C20000DBE95 /* NamedSpace+Scaled.swift in Sources */,
 				959390542EC24C20000DBE95 /* NamedSpace+Fixed.swift in Sources */,
 				9593904D2EC24B1E000DBE95 /* NamedSize+IconWithTypography.swift in Sources */,
@@ -5629,7 +5619,6 @@
 				950EA6C72EBCFCBE0009414A /* NamedColorMode.swift in Sources */,
 				950EA6CC2EBDF0DD0009414A /* RadiosItemView.swift in Sources */,
 				950EA6CD2EBDF0DD0009414A /* RadiosOnlyView.swift in Sources */,
-				959390132EC1DCAC000DBE95 /* TVVerticalLayoutView.swift in Sources */,
 				950EA6BA2EBCF8810009414A /* ActionsView.swift in Sources */,
 				9598008A2EBCCCAD007BE0EA /* BadgesView.swift in Sources */,
 				959390272EC21FD9000DBE95 /* ColorsView.swift in Sources */,
@@ -5646,7 +5635,7 @@
 				950EA6D72EBE053B0009414A /* TagsView.swift in Sources */,
 				959800702EBCC714007BE0EA /* ComponentsView.swift in Sources */,
 				959390162EC1F268000DBE95 /* TokensView.swift in Sources */,
-				9593900A2EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */,
+				9593900A2EC125C3000DBE95 /* WatchScrollLayoutView.swift in Sources */,
 				950EA6B82EBCF6230009414A /* LinksView.swift in Sources */,
 				950288A62EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */,
 				950EA6C92EBDF01D0009414A /* RadiosView.swift in Sources */,
@@ -5658,7 +5647,6 @@
 				950EA6C62EBCFA710009414A /* ColoredBackgroundView.swift in Sources */,
 				959390662EC24D22000DBE95 /* NamedSpace.swift in Sources */,
 				9593900D2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift in Sources */,
-				959390102EC1DA55000DBE95 /* TVGridLayoutView.swift in Sources */,
 				950EA6C32EBCFA390009414A /* LayoutsView.swift in Sources */,
 				959800712EBCC714007BE0EA /* DesignToolbox_Light_App.swift in Sources */,
 				950EA6B22EBCEC2D0009414A /* CheckboxesItemView.swift in Sources */,

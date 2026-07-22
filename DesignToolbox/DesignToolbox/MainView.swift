@@ -24,7 +24,6 @@ struct MainView: View {
     @State private var selectedTab: Int = 0
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: - Body

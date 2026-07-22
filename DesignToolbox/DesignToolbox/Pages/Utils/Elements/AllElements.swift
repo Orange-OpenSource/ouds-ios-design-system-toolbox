@@ -15,6 +15,8 @@
 import UIKit
 #endif
 
+// swiftlint:disable function_body_length
+
 /// Central registry for all `DesignToolboxElement` instances.
 /// Use these helpers instead of re-declaring the lists in each page.
 enum AllElements {
@@ -118,3 +120,5 @@ enum AllElements {
         return elements
     }
 }
+
+// swiftlint:enable function_body_length

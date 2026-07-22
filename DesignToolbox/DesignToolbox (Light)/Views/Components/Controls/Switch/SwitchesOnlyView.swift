@@ -17,9 +17,7 @@ import SwiftUI
 struct SwitchesOnlyView: View {
 
     var body: some View {
-        WatchAndTVLayoutsView(watchLayout: {
-            SwitchOnlyLayout()
-        }, tvLayout: {
+        WatchScrollLayoutView(layout: {
             SwitchOnlyLayout()
         })
     }
