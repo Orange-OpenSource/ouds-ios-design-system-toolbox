@@ -7734,6 +7734,102 @@
         }
       }
     },
+    "app_topBar_theme_picker_close_label" : {
+      "comment" : "Theme picker sheet - close button label (tvOS)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إغلاق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fermer"
+          }
+        }
+      }
+    },
+    "app_topBar_theme_picker_navigationTitle" : {
+      "comment" : "Theme picker sheet - navigation title (tvOS)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختر موضوعًا"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose a theme"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisir un thème"
+          }
+        }
+      }
+    },
+    "app_topBar_theme_picker_otherThemes_section" : {
+      "comment" : "Theme picker sheet - other themes section header (tvOS)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مواضيع أخرى"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other themes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autres thèmes"
+          }
+        }
+      }
+    },
+    "app_topBar_theme_picker_selected_a11y" : {
+      "comment" : "Theme picker sheet - VoiceOver hint for the currently selected theme (tvOS)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "محدد"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selected"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionné"
+          }
+        }
+      }
+    },
     "app_update_alert_button_dismiss" : {
       "comment" : "App Store update alert - Dismiss button",
       "extractionState" : "manual",

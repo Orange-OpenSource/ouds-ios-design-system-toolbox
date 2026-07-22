@@ -28,6 +28,7 @@ included:
 # ========
 
 excluded:
+- DesignToolbox/DesignToolbox/Info-tvOS.plist
 - DesignToolbox/DesignToolbox/Info.plist
 - DesignToolbox/DesignToolbox/Resources
 - DesignToolbox/DerivedData

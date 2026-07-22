@@ -13,39 +13,28 @@
 
 import SwiftUI
 
-/// Displays depending to the OS in use the given layout
-struct WatchAndTVLayoutsView<WatchLayout: View, TVLayout: View>: View {
+/// Displays the given layout in a `ScrollView`
+struct WatchScrollLayoutView<WatchLayout: View>: View {
 
     let title: String?
-    let watchLayout: WatchLayout
-    let tvLayout: TVLayout
+    let layout: WatchLayout
 
     init(title: String? = nil,
-         @ViewBuilder watchLayout: () -> WatchLayout,
-         @ViewBuilder tvLayout: () -> TVLayout)
+         @ViewBuilder layout: () -> WatchLayout)
     {
         self.title = title
-        self.watchLayout = watchLayout()
-        self.tvLayout = tvLayout()
+        self.layout = layout()
     }
 
     var body: some View {
         if let title {
             ScrollView {
-                #if os(tvOS)
-                tvLayout
-                #else
-                watchLayout
-                #endif
+                layout
             }
             .navigationTitle(title)
         } else {
             ScrollView {
-                #if os(tvOS)
-                tvLayout
-                #else
-                watchLayout
-                #endif
+                layout
             }
         }
     }

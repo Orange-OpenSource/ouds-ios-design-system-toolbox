@@ -44,6 +44,7 @@ struct IllustrationFont: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, theme.spaces.fixedXsmall)
         .accessibilityElement(children: .combine)
+        .tvOSFocusableRow()
     }
 
     private var familyText: String {

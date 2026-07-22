@@ -20,9 +20,8 @@ struct FontsView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(title: "Fonts",
-                              watchLayout: { watchLayout },
-                              tvLayout: { tvLayout })
+        WatchScrollLayoutView(title: "Fonts",
+                              layout: { watchLayout })
     }
 
     @ViewBuilder
@@ -30,15 +29,6 @@ struct FontsView: View {
         WatchVerticalLayout {
             ForEach(NamedFont.allCases, id: \.rawValue) { fontName in
                 IllustrationFont(namedFont: fontName)
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var tvLayout: some View {
-        TVGridLayout(count: 4) {
-            ForEach(NamedFont.allCases, id: \.rawValue) { fontName in
-                IllustrationFont(namedFont: fontName).focusable()
             }
         }
     }

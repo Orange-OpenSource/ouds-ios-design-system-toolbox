@@ -33,7 +33,7 @@ struct ElementsGridView: View {
 
     // MARK: - macOS selection binding
 
-    #if !os(iOS)
+    #if !os(iOS) && !os(tvOS)
     /// On macOS there is no `NavigationLink`; tapping a card updates this binding
     /// so the parent `NavigationSplitView` can display the detail pane.
     var onSelect: ((DesignToolboxElement) -> Void)?
@@ -47,7 +47,7 @@ struct ElementsGridView: View {
             spacing: theme.spaces.fixedMedium)
         {
             ForEach(elements, id: \.id) { element in
-                #if os(iOS)
+                #if os(iOS) || os(tvOS)
                 NavigationLink {
                     element.pageDescription
                 } label: {
@@ -64,6 +64,11 @@ struct ElementsGridView: View {
         }
         .gridMargin(.horizontal)
         .padding(.vertical, theme.spaces.fixedMedium)
+        #if os(tvOS)
+            // Declare the grid as a focus region so the focus engine can route focus
+            // out of it (upward) toward the top controls bar and the tab bar.
+            .focusSection()
+        #endif
     }
 
     // MARK: - Private

@@ -57,6 +57,18 @@ struct DesignToolboxVariantElement: View {
                 rowView(for: element)
             }
 
+            #elseif os(tvOS)
+            NavigationLink {
+                // The destination is a `DesignToolboxElementPage`, whose `tvOSHeader`
+                // already renders the title alongside the theme / color-scheme controls,
+                // and `oudsScreenTitle` posts the accessibility screen-changed
+                // notification. Setting `.navigationTitle` here would render a second
+                // visible copy of the title (tvOS renders it as inline text, not chrome).
+                element.pageDescription
+            } label: {
+                rowView(for: element)
+            }
+
             #else // macOS
             Button {
                 windowManager.openWindow(

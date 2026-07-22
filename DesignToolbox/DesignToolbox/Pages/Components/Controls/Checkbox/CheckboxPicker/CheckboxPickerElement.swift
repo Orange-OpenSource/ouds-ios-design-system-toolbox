@@ -11,6 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(tvOS)
+
 import SwiftUI
 
 struct CheckboxPickerElement: DesignToolboxElement {
@@ -27,3 +29,5 @@ struct CheckboxPickerElement: DesignToolboxElement {
             demoScreen: AnyView(CheckboxPickerPage())))
     }
 }
+
+#endif

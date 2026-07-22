@@ -20,26 +20,12 @@ struct InlineAlertMessageView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(title: "Inline Alert",
-                              watchLayout: { watchVerticalLayout },
-                              tvLayout: { tvVerticalLayout })
+        WatchScrollLayoutView(title: "Inline Alert",
+                              layout: { watchVerticalLayout })
     }
 
     private var watchVerticalLayout: some View {
         WatchVerticalLayout {
-            OUDSInlineAlert(label: "This is a neutral alert", status: .neutral())
-            OUDSInlineAlert(label: "This is also a neutral alert", status: .neutral(image: OUDSImage(asset: Image(systemName: "figure.handball"))))
-            OUDSInlineAlert(label: "This is an accent alert", status: .accent())
-            OUDSInlineAlert(label: "This is also a accent alert", status: .neutral(image: OUDSImage(asset: Image(systemName: "figure.handball"))))
-            OUDSInlineAlert(label: "This is a positive alert", status: .positive)
-            OUDSInlineAlert(label: "This is a info alert", status: .info)
-            OUDSInlineAlert(label: "This is a warning alert", status: .warning)
-            OUDSInlineAlert(label: "This is a negative alert", status: .negative)
-        }
-    }
-
-    private var tvVerticalLayout: some View {
-        TVVerticalLayout {
             OUDSInlineAlert(label: "This is a neutral alert", status: .neutral())
             OUDSInlineAlert(label: "This is also a neutral alert", status: .neutral(image: OUDSImage(asset: Image(systemName: "figure.handball"))))
             OUDSInlineAlert(label: "This is an accent alert", status: .accent())

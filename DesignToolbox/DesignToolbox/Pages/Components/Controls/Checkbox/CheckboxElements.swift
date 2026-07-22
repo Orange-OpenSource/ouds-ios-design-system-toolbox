@@ -20,13 +20,16 @@ struct CheckboxElements: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        let variants: [DesignToolboxElement] = [
+        var variants: [DesignToolboxElement] = [
             CheckboxElement(),
             CheckboxItemElement(),
             CheckboxIndeterminateElement(),
             CheckboxItemIndeterminateElement(),
-            CheckboxPickerElement(),
         ]
+        #if !os(tvOS)
+        // `OUDSCheckboxPickerPlacement` is not available on tvOS in the OUDS SDK.
+        variants.append(CheckboxPickerElement())
+        #endif
 
         name = "app_components_checkbox_tech".localized()
         illustration = AnyView(CheckboxIllustration())

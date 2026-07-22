@@ -23,40 +23,10 @@ struct ButtonsView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        #if os(tvOS)
-        WatchAndTVLayoutsView(title: "Button (\(theme.name))",
-                              watchLayout: {
+        WatchScrollLayoutView(title: "Button",
+                              layout: {
                                   watchLayout
-                              }, tvLayout: {
-                                  tvLayout
                               })
-        #else
-        WatchAndTVLayoutsView(title: "Button",
-                              watchLayout: {
-                                  watchLayout
-                              }, tvLayout: {
-                                  tvLayout
-                              })
-        #endif
-    }
-
-    // MARK: - tvOS
-
-    @ViewBuilder
-    private var tvLayout: some View {
-        TVGridLayout(count: Self.kAllButtonAppaerances.count) {
-            ForEach(Self.kAllButtonAppaerances, id: \.self) { appearance in
-                buttonSection(style: .default, appearance: appearance)
-            }
-        }
-        .padding()
-
-        TVGridLayout(count: Self.kAllButtonAppaerances.count) {
-            ForEach(Self.kAllButtonAppaerances, id: \.self) { appearance in
-                buttonSection(style: .loading, appearance: appearance)
-            }
-        }
-        .padding()
     }
 
     @ViewBuilder
@@ -80,8 +50,6 @@ struct ButtonsView: View {
         }
         .padding(theme.spaces.paddingInlineMedium)
     }
-
-    // MARK: - watchOS
 
     @ViewBuilder
     private var watchLayout: some View {

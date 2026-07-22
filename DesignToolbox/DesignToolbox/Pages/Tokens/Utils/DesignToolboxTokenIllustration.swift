@@ -57,5 +57,9 @@ struct DesignToolboxTokenIllustration<TokenIllustration>: View where TokenIllust
             .accessibilityElement(children: .combine)
         }
         .padding(.vertical, theme.spaces.fixedXsmall)
+        // On tvOS this makes the illustration row focusable so it can drive
+        // the parent `ScrollView` (which otherwise cannot scroll because none
+        // of the token illustrations expose a native focus target).
+        .tvOSFocusableRow()
     }
 }

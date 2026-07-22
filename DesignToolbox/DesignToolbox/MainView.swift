@@ -24,7 +24,6 @@ struct MainView: View {
     @State private var selectedTab: Int = 0
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: - Body
@@ -42,12 +41,39 @@ struct MainView: View {
         } else {
             tabBar
         }
+        #elseif os(tvOS)
+        tvOSTabBar
         #else
         tabBar
         #endif
     }
 
-    // MARK: - iOS 26+ native TabView with search tab
+    // MARK: - tvOS Tab View
+
+    #if os(tvOS)
+    private var tvOSTabBar: some View {
+        TabView(selection: $selectedTab) {
+            TokensPage()
+                .tabItem {
+                    Label("app_bottomBar_tokens_label", image: "design-token")
+                }
+                .tag(0)
+            ComponentsPage()
+                .tabItem {
+                    Label("app_bottomBar_components_label", image: "component-atom")
+                }
+                .tag(1)
+            AboutPage()
+                .tabItem {
+                    Label("app_bottomBar_about_label", image: "info-fill")
+                }
+                .tag(2)
+        }
+        .accentColor(theme.button.colorContentMinimalEnabled)
+    }
+    #endif
+
+    // MARK: - iOS Tab Bar / Tab View
 
     #if os(iOS)
     @available(iOS 26, *) // Supposing we did not disable Liquid Glass :3
@@ -88,6 +114,8 @@ struct MainView: View {
         .accentColor(theme.button.colorContentMinimalEnabled)
     }
     #endif
+
+    // MARK: - Default Tab Bar
 
     private var tabBar: some View {
         OUDSTabBar(selectedTab: $selectedTab, count: 3) {

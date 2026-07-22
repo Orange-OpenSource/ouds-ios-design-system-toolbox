@@ -24,14 +24,10 @@ struct RadiosItemView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(watchLayout: {
+        WatchScrollLayoutView(layout: {
             watchOSLayout
-        }, tvLayout: {
-            tvOSLayout
         })
     }
-
-    // MARK: - watchOS
 
     private var watchOSLayout: some View {
         WatchVerticalLayout {
@@ -42,42 +38,6 @@ struct RadiosItemView: View {
 
             Text("With icon").font(.headline)
             detailedView(withIcon: true)
-        }
-    }
-
-    // MARK: - tvOS
-
-    private var tvOSLayout: some View {
-        TVGridLayout(count: 2) {
-            // Column n°1: without icon
-            VStack(spacing: theme.spaces.scaledMediumMobile) {
-                Text("With Icon")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.bottom, theme.spaces.scaledXsmallMobile)
-
-                radioSection(title: "Enabled", withIcon: false)
-                radioSection(title: "Error (Not outlined)", withIcon: false, isError: true, isOutlined: false)
-                radioSection(title: "Error (Outlined)", withIcon: false, isError: true, isOutlined: true)
-                radioSection(title: "Disabled", withIcon: false, isDisabled: true)
-                radioSection(title: "Read Only", withIcon: false, isReadOnly: true)
-            }
-            .padding()
-
-            // Column n°2: with icon
-            VStack(spacing: theme.spaces.scaledMediumMobile) {
-                Text("Without Icon")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.bottom, theme.spaces.paddingInlineSmall)
-
-                radioSection(title: "Enabled", withIcon: true)
-                radioSection(title: "Error (Not outlined)", withIcon: true, isError: true, isOutlined: false)
-                radioSection(title: "Error (Outlined)", withIcon: true, isError: true, isOutlined: true)
-                radioSection(title: "Disabled", withIcon: true, isDisabled: true)
-                radioSection(title: "Read Only", withIcon: true, isReadOnly: true)
-            }
-            .padding()
         }
     }
 
