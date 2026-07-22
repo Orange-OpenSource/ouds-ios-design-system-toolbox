@@ -33,7 +33,7 @@ struct ElementsGridView: View {
 
     // MARK: - macOS selection binding
 
-    #if !os(iOS)
+    #if !os(iOS) && !os(tvOS)
     /// On macOS there is no `NavigationLink`; tapping a card updates this binding
     /// so the parent `NavigationSplitView` can display the detail pane.
     var onSelect: ((DesignToolboxElement) -> Void)?
@@ -47,7 +47,7 @@ struct ElementsGridView: View {
             spacing: theme.spaces.fixedMedium)
         {
             ForEach(elements, id: \.id) { element in
-                #if os(iOS)
+                #if os(iOS) || os(tvOS)
                 NavigationLink {
                     element.pageDescription
                 } label: {

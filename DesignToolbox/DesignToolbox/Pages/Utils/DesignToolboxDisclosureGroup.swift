@@ -46,15 +46,21 @@ struct DesignToolboxDisclosureGroup<Label, Content>: View where Label: View, Con
     // MARK: Body
 
     var body: some View {
+        #if os(tvOS)
+        // `DisclosureGroupStyle` is unavailable on tvOS; always fall back to the internal implementation.
+        InternalDisclosure(isExpanded: $isExpanded, accessibilityLabel: accessibilityLabel, content: content, label: label)
+        #else
         if #available(iOS 16.0, *) {
             DisclosureGroup(isExpanded: $isExpanded, content: content, label: label)
                 .disclosureGroupStyle(DesignToolboxDisclosureGroupStyle(accessibilityLabel: accessibilityLabel))
         } else {
             InternalDisclosure(isExpanded: $isExpanded, accessibilityLabel: accessibilityLabel, content: content, label: label)
         }
+        #endif
     }
 }
 
+#if !os(tvOS)
 @available(iOS 16.0, *)
 struct DesignToolboxDisclosureGroupStyle: DisclosureGroupStyle {
 
@@ -68,6 +74,7 @@ struct DesignToolboxDisclosureGroupStyle: DisclosureGroupStyle {
         }
     }
 }
+#endif
 
 /// Implemennt the feature of disclosure.
 struct InternalDisclosure<Label, Content>: View where Label: View, Content: View {

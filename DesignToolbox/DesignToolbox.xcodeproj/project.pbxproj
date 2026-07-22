@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00DE409C54FA4C5C35B39AD7 /* SwitchElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE32DB0F7DD001BC929 /* SwitchElement.swift */; };
+		0109A0415101CD90820FA608 /* ColoredSurfacePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3DBEF2DA5084500D8A57F /* ColoredSurfacePage.swift */; };
+		0245346935012513A7E61B89 /* SuggestionChipElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9802E21329B00A60E96 /* SuggestionChipElement.swift */; };
+		0372034FFD7DC04D3F817010 /* BadgeStandardElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FE2E1801D000B94EC2 /* BadgeStandardElement.swift */; };
+		03E157AEDDB2DACAF5AFCD18 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
+		06EF13C7D599B645D4638046 /* ToolBarCommonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */; };
 		070DF8B12CDD07F20043D558 /* GridTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AF2CDD07F20043D558 /* GridTokenPage.swift */; };
 		070DF8B22CDD07F20043D558 /* GridTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AE2CDD07F20043D558 /* GridTokenElement.swift */; };
 		072141192D02F52A00B7B9C6 /* ButtonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072141172D02F52A00B7B9C6 /* ButtonPage.swift */; };
@@ -89,6 +95,7 @@
 		0786A9E72E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift */; };
 		078C4C372E01558B00598F75 /* ControlItemConfigurationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C4C362E01558B00598F75 /* ControlItemConfigurationViews.swift */; };
 		078C4C382E01558B00598F75 /* ControlItemConfigurationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C4C362E01558B00598F75 /* ControlItemConfigurationViews.swift */; };
+		078C8C020FD6F3ED092B17FF /* DesignToolboxDisclosureGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54EC02DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift */; };
 		0794FCDB2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0794FCDA2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift */; };
 		079B4A132E49BFA20039FC26 /* TagSnapshotsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079B4A122E49BFA20039FC26 /* TagSnapshotsTestCase.swift */; };
 		079B4A162E49C6EB0039FC26 /* SoshTheme+TagSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079B4A152E49C6EB0039FC26 /* SoshTheme+TagSnapshotsTests.swift */; };
@@ -177,8 +184,61 @@
 		07FB2A332E454D7900361ECA /* TagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2F2E454D7900361ECA /* TagPage.swift */; };
 		07FB2A342E454D7900361ECA /* TagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2E2E454D7900361ECA /* TagElement.swift */; };
 		07FB2A352E454D7900361ECA /* TagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2D2E454D7900361ECA /* TagConfigurationView.swift */; };
+		08224754A9DE8C595EB660D6 /* CheckboxPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */; };
+		0AAA529C83F12E5E26AB26FD /* ToolBarCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolBarCommonContent.swift */; };
+		0BED085F7D57F9E83189619B /* RadioPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B26622DAE9DE1003A6ED3 /* RadioPickerConfiguration.swift */; };
+		0C21D678E5228FB6019DECFC /* CheckboxPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */; };
+		0D6A6A11606B56CF227242FA /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
+		0DD5ACDCFB32FD194EE17A0E /* TVOSShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9691F6689982BA5065E71DD /* TVOSShims.swift */; };
+		0ECFFA92997C5A8475DC38E9 /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1552ED0995600D14D44 /* TabBarPage.swift */; };
+		0FF6DF55D1C617C120FD5423 /* DesignToolboxColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762276B2DA93D62009C3632 /* DesignToolboxColorPicker.swift */; };
+		10839A381526B38DA9A92BBB /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
+		13DE1469ADD684CD95B02998 /* ControlItemConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07523E7D2E00173D00A7C87C /* ControlItemConfigurationModel.swift */; };
+		1562A58ADE9A5DAA88E81394 /* BadgeStandardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20272FC70B7800431097 /* BadgeStandardPage.swift */; };
+		15BBE8EBC90D96497F4467F1 /* RadioPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B26602DAE9DE1003A6ED3 /* RadioPickerElement.swift */; };
+		15BE236DDBC578A79E717135 /* TabBarElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1542ED0995600D14D44 /* TabBarElement.swift */; };
+		19B33C5BA421E5FC26043A51 /* CheckboxPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513441FF2D75B880000B5DE4 /* CheckboxPage.swift */; };
+		1CBFB1A6E8928D7F14347E9B /* ToolBarBottomConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD382F850344004615AF /* ToolBarBottomConfigurationView.swift */; };
+		1CD3C837CDB6E0284D5E74D9 /* LinkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */; };
+		1CF5565C9D4F000BFFD608C6 /* FilterChipConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9772E21329B00A60E96 /* FilterChipConfigurationView.swift */; };
+		1EF150949CF36FB19397C483 /* ElementsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18F2F9A2952008AD8C4 /* ElementsGridView.swift */; };
+		1F75DF7E573004B25A38513B /* SuggestionChipPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9812E21329B00A60E96 /* SuggestionChipPage.swift */; };
+		229BD696255AA075FF295954 /* BadgeIconPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20362FC70D5300431097 /* BadgeIconPage.swift */; };
+		23BBDACB50384A7998958257 /* DesignToolboxVariantElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE5B2CB431C50059CC28 /* DesignToolboxVariantElement.swift */; };
+		2A5704C853210D3C018034A9 /* BadgeCountConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB46FD2E1801D000B94EC2 /* BadgeCountConfigurationView.swift */; };
+		2F9FA09AEEE3E6893121532E /* SwitchItemElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE72DB0F7DD001BC929 /* SwitchItemElement.swift */; };
+		2FA8212B9D5B0324639F46C9 /* AppStoreUpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A242FD310BC00746A5D /* AppStoreUpdateViewModel.swift */; };
+		2FE5EEDECB6AEE8B2D21ADCD /* AllElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18A2F9A28DE008AD8C4 /* AllElements.swift */; };
+		301FA9F4270EDF24D3CED7A0 /* ElevationTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42772CA3F4BE000BD03E /* ElevationTokenPage.swift */; };
+		308C4E7BF064F03BFBC9B5A2 /* DesignToolbox+EnrichedTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5152DA1C2DE0BD3B0078B9F1 /* DesignToolbox+EnrichedTexts.swift */; };
+		340D3A6839634685D68D7976 /* SwitchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE42DB0F7DD001BC929 /* SwitchPage.swift */; };
+		360D9426F3B4AC9B543E9ACF /* ColoredSurfaceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3DBED2DA5084500D8A57F /* ColoredSurfaceConfiguration.swift */; };
+		387198E96EBF3F20F5FE478B /* RadioItemElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9ADD2DB0F66E001BC929 /* RadioItemElement.swift */; };
+		390B190F9BD2B6BC60CEB60C /* ThemeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42882CA55BC8000BD03E /* ThemeSelection.swift */; };
+		39C1FD98F986697F655B7082 /* GridTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AF2CDD07F20043D558 /* GridTokenPage.swift */; };
+		3A5400D9053F531A9A3EBA98 /* InlineAlertPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BC2F4852A9005F349B /* InlineAlertPage.swift */; };
+		3B0CE154850677585BFCE7C7 /* ColorTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114DE2CB7FDC200B8B759 /* ColorTokenElement.swift */; };
+		3CC952B7C75D0D109DDB5C3C /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
+		3D681661F3357DD1DFD8FA59 /* DividerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762275F2DA90C65009C3632 /* DividerPage.swift */; };
+		3E6619E6218EBD334ACEA5B2 /* SuggestionChipConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97F2E21329B00A60E96 /* SuggestionChipConfigurationView.swift */; };
+		3F179BE0001C28736356ED44 /* PinCodeInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02422F7D3AE100550DD6 /* PinCodeInputPage.swift */; };
+		402C44C6C8D93071A1607FEC /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B12CE3AF1500F2EC33 /* favicon.ico */; };
+		43FA4976F0C73AD36427493D /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760B2C466FCF0033365D /* AboutPage.swift */; };
+		45E02168BD117ECAA2FC4262 /* FilterChipElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9782E21329B00A60E96 /* FilterChipElement.swift */; };
+		4911F04232BE294F93C5CADF /* ToolBarTopConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11642F57259000C8E30D /* ToolBarTopConfigurationView.swift */; };
+		49967AC505A5906083704075 /* DividerElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076227612DA90C65009C3632 /* DividerElements.swift */; };
+		49FDA9AAD0F1C778829FD19B /* DesignToolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761E2C466FCF0033365D /* DesignToolbox.swift */; };
+		4A3C4C5F24263C7DCF81843E /* ToolBarTopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11662F57259000C8E30D /* ToolBarTopPage.swift */; };
+		4B18B80D8CD0930ABEF821E5 /* AppStoreUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A232FD310BC00746A5D /* AppStoreUpdateService.swift */; };
+		4C0165A474A37F973D4E933B /* DesignToolboxColoredSurfaceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCB42D40F36C00DBB10A /* DesignToolboxColoredSurfaceModifier.swift */; };
+		4C81A3CA1D2B84A65B49F1E8 /* FontTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6D02D09C5E2005DAB51 /* FontTokenPage.swift */; };
+		4F7BAC0F41BFD2497E96CE76 /* LinkPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCB02D40E34700DBB10A /* LinkPage.swift */; };
+		4FCC5A99078E3C09FA2C08C5 /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
+		507A982D313DB7249A8274FC /* about_privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76172C466FCF0033365D /* about_privacy_policy.html */; };
+		50B2ADF27679048DEB269510 /* HelveticaNeueLTArabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D42E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf */; };
 		51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
 		510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* XCTestCase+Snapshot.swift */; };
+		510E69F65C4BC739064E989F /* CheckboxItemElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9D92E0AAB4A00976098 /* CheckboxItemElement.swift */; };
 		5115808A2E730E0600DFFE4E /* OUDSTheme+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511580892E730E0100DFFE4E /* OUDSTheme+Name.swift */; };
 		511C96B52E157D3200F9D156 /* SwitchItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511C96B42E157D2C00F9D156 /* SwitchItemPage.swift */; };
 		511C96B62E157D3200F9D156 /* SwitchItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511C96B42E157D2C00F9D156 /* SwitchItemPage.swift */; };
@@ -380,6 +440,25 @@
 		51F676ED2E0D678600C15CB6 /* SwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F676EC2E0D678600C15CB6 /* SwitchUITests.swift */; };
 		51F676EF2E0D681700C15CB6 /* SwitchItemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F676EE2E0D681700C15CB6 /* SwitchItemUITests.swift */; };
 		51FD65222E0D8DB20084B982 /* A11YIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F676DA2E0D45F300C15CB6 /* A11YIdentifiers.swift */; };
+		52C75E5526B16DA35AD8E733 /* ToolBarBottomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD392F850344004615AF /* ToolBarBottomElement.swift */; };
+		5490CCECC3A6FE00DB69AA1F /* RadioElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C1882D7A03B8006B3A1F /* RadioElements.swift */; };
+		556F4943C9BD1A0D1E353BAD /* CheckboxIndeterminatePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D58A2D887E94009CD879 /* CheckboxIndeterminatePage.swift */; };
+		58E2B9C51004D2F8CEE88214 /* SizeTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D92CB7D28D00B8B759 /* SizeTokenPage.swift */; };
+		5BD7CFC3F9832960ABDE3A57 /* View+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A905FC2E8427C2003F3E0E /* View+NavigationBar.swift */; };
+		5E7BFCF9A8D95AB86D9EE4A8 /* AlertElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD82F3CBEC300ABD80E /* AlertElements.swift */; };
+		5EFF99E7DA096059B6724543 /* RadioPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B26612DAE9DE1003A6ED3 /* RadioPickerPage.swift */; };
+		5F121EE06329173A44A9FF19 /* CheckboxElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513442052D75B880000B5DE4 /* CheckboxElements.swift */; };
+		5F74C5F0467F713019043E13 /* ButtonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072141162D02F52A00B7B9C6 /* ButtonElement.swift */; };
+		5FA2FEAD96473C46C962F6EA /* DividerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762275E2DA90C65009C3632 /* DividerElement.swift */; };
+		62108ADD8B57D2FA70D04E5C /* CheckboxIndeterminateConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5902D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift */; };
+		6425CC0FC413526732B78156 /* CheckboxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513441FD2D75B880000B5DE4 /* CheckboxConfiguration.swift */; };
+		642E7AFE04795D646187476A /* BorderTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42812CA45DA9000BD03E /* BorderTokenElement.swift */; };
+		65B6E9239D0DC104513F4EEF /* TextInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F62E58717F00D98587 /* TextInputConfigurationView.swift */; };
+		664AC65F83E58C96B5B240BD /* RadioPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C18D2D7A0596006B3A1F /* RadioPage.swift */; };
+		66C5698D133AA59482A789E4 /* ControlItemConfigurationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C4C362E01558B00598F75 /* ControlItemConfigurationViews.swift */; };
+		6899F5AC1FEB6B77CF1A01F8 /* ChipLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9752E21329B00A60E96 /* ChipLayout.swift */; };
+		698C985F96EE8E0F95F68C49 /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */; };
+		6A6DB945F2C61B8E7C5E92F5 /* TagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2F2E454D7900361ECA /* TagPage.swift */; };
 		6D17A22B2CCBF0E200C00512 /* ColorTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114DF2CB7FDC200B8B759 /* ColorTokenPage.swift */; };
 		6D17A22C2CCBF12B00C00512 /* NamedColor+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4952CC159F600E69359 /* NamedColor+Action.swift */; };
 		6D17A22D2CCBF12B00C00512 /* NamedColor+Always.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4972CC15A4000E69359 /* NamedColor+Always.swift */; };
@@ -420,6 +499,29 @@
 		6DFC20C12CE3D39D00F2EC33 /* accessibility_detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */; };
 		6DFC20C22CE3D39D00F2EC33 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
 		6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */; };
+		6FC799D9679409217F7CA98D /* TVOSShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9691F6689982BA5065E71DD /* TVOSShims.swift */; };
+		7037F2D4F3BA78E0B1820F59 /* OpacityTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF427D2CA41325000BD03E /* OpacityTokenElement.swift */; };
+		725FA16B28477462B45633FF /* about_legal_information.html in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76152C466FCF0033365D /* about_legal_information.html */; };
+		746364C3D1E4C3A814633D77 /* SwitchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE22DB0F7DD001BC929 /* SwitchConfiguration.swift */; };
+		746C400942F9EE92B1E7DDE1 /* DividerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762275D2DA90C65009C3632 /* DividerConfiguration.swift */; };
+		782F766BB76124F735702D05 /* pie.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B32CE3AF1500F2EC33 /* pie.css */; };
+		7A3A207FF109371ECD352667 /* SpaceTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE512CB426090059CC28 /* SpaceTokenElement.swift */; };
+		7DC17D4858E987ED5F3A8318 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
+		7ED25061D591A6D08FE83653 /* BadgeStandardConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20312FC70BEF00431097 /* BadgeStandardConfigurationView.swift */; };
+		810D76A478322CA0463D7D77 /* AlertStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799B12F485277005F349B /* AlertStatus.swift */; };
+		8243035B8C80FCE2B2196F72 /* BadgeCountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA202C2FC70BE700431097 /* BadgeCountPage.swift */; };
+		82EC829A67A93A9DBA7F4229 /* RadioItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C1942D7A0823006B3A1F /* RadioItemPage.swift */; };
+		84BAA69B7827F0C014C6CC08 /* orange-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */; };
+		8775C06F0F5C5694E0DEDECC /* PasswordInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */; };
+		883365D3EB75A2D23CC95116 /* FilterChipPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9792E21329B00A60E96 /* FilterChipPage.swift */; };
+		8BD3BBD026D74E4D06FBB87D /* OUDSCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift */; };
+		8C3946A1771A0AECB286B8FC /* BadgeIconElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA201D2FC70B4300431097 /* BadgeIconElement.swift */; };
+		8DCE503C713B59573F0517FA /* SwitchItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511C96B42E157D2C00F9D156 /* SwitchItemPage.swift */; };
+		8E15134569906509CE72D750 /* GridTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AE2CDD07F20043D558 /* GridTokenElement.swift */; };
+		911FF7518C73C9E79D473829 /* ColorSchemeSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A905FF2E84282E003F3E0E /* ColorSchemeSelectionButton.swift */; };
+		92DE76E7C263C59990933B7B /* DesignToolboxCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */; };
+		9355F1EDDDF64C175B7F05A5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCF02BAF2F30A77500F2013F /* Localizable.xcstrings */; };
+		949943C77DD97A9D2C02617A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543102CA154DE001187EA /* Card.swift */; };
 		950288A12EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A02EEC60CB00510C32 /* NamedSize+MaxWidth.swift */; };
 		950288A22EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A02EEC60CB00510C32 /* NamedSize+MaxWidth.swift */; };
 		950288A32EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A02EEC60CB00510C32 /* NamedSize+MaxWidth.swift */; };
@@ -458,45 +560,14 @@
 		950EA6D92EBE24AA0009414A /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6D82EBE24AA0009414A /* TagView.swift */; };
 		950EA6DB2EBE24E10009414A /* InputTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6DA2EBE24E10009414A /* InputTag.swift */; };
 		950EA79E2EBE3D5D0009414A /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 950EA7052EBE3D5D0009414A /* OUDSSwiftUI */; };
-		950EA7B82EBE3EA80009414A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9598006B2EBCC714007BE0EA /* Assets.xcassets */; };
-		950EA7B92EBE3ECB0009414A /* DesignToolbox_Light_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006D2EBCC714007BE0EA /* DesignToolbox_Light_App.swift */; };
-		950EA7BA2EBE3ECB0009414A /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006C2EBCC714007BE0EA /* ComponentsView.swift */; };
-		950EA7BB2EBE3ECB0009414A /* ColoredBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6C52EBCFA6E0009414A /* ColoredBackgroundView.swift */; };
-		950EA7BC2EBE3ECB0009414A /* LayoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6C22EBCFA360009414A /* LayoutsView.swift */; };
-		950EA7BD2EBE3ECB0009414A /* LinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6B72EBCF6230009414A /* LinksView.swift */; };
-		950EA7BE2EBE3ECB0009414A /* NavigationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6BB2EBCF8C40009414A /* NavigationsView.swift */; };
-		950EA7BF2EBE3ECB0009414A /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959800892EBCCCAB007BE0EA /* BadgesView.swift */; };
-		950EA7C02EBE3ECB0009414A /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6D62EBE053B0009414A /* TagsView.swift */; };
-		950EA7C12EBE3ECB0009414A /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6D82EBE24AA0009414A /* TagView.swift */; };
-		950EA7C22EBE3ECB0009414A /* InputTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6DA2EBE24E10009414A /* InputTag.swift */; };
-		950EA7C32EBE3ECB0009414A /* IndicatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6BD2EBCF8D50009414A /* IndicatorsView.swift */; };
-		950EA7C42EBE3ECB0009414A /* RadiosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6C82EBDF01D0009414A /* RadiosView.swift */; };
-		950EA7C52EBE3ECB0009414A /* RadiosItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6CA2EBDF0DD0009414A /* RadiosItemView.swift */; };
-		950EA7C62EBE3ECB0009414A /* RadiosOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6CB2EBDF0DD0009414A /* RadiosOnlyView.swift */; };
-		950EA7C72EBE3ECB0009414A /* SwitchesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6D02EBDFFA50009414A /* SwitchesItemView.swift */; };
-		950EA7C82EBE3ECB0009414A /* SwitchesOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6D12EBDFFA50009414A /* SwitchesOnlyView.swift */; };
-		950EA7C92EBE3ECB0009414A /* SwitchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6CE2EBDFF7D0009414A /* SwitchesView.swift */; };
-		950EA7CA2EBE3ECB0009414A /* ChipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6B52EBCF2F10009414A /* ChipsView.swift */; };
-		950EA7CB2EBE3ECB0009414A /* CheckboxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6AF2EBCE3A30009414A /* CheckboxesView.swift */; };
-		950EA7CC2EBE3ECB0009414A /* CheckboxesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6B12EBCEC2D0009414A /* CheckboxesItemView.swift */; };
-		950EA7CD2EBE3ECB0009414A /* CheckboxesOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6B32EBCECA00009414A /* CheckboxesOnlyView.swift */; };
-		950EA7CE2EBE3ECB0009414A /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6BF2EBCF8E50009414A /* ControlsView.swift */; };
-		950EA7CF2EBE3ECB0009414A /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6AD2EBCDF4B0009414A /* ButtonsView.swift */; };
-		950EA7D02EBE3ECB0009414A /* ActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6B92EBCF87C0009414A /* ActionsView.swift */; };
 		950EA7D12EBE44390009414A /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
 		950EA7D32EBE4D5C0009414A /* TwoStatesCheckboxesItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA7D22EBE4D560009414A /* TwoStatesCheckboxesItemsView.swift */; };
-		950EA7D42EBE4D5C0009414A /* TwoStatesCheckboxesItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA7D22EBE4D560009414A /* TwoStatesCheckboxesItemsView.swift */; };
-		950EA7D62EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA7D52EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift */; };
 		950EA7D72EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA7D52EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift */; };
-		951458572EC28BC20096BBF1 /* ElevationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458552EC28BC20096BBF1 /* ElevationsView.swift */; };
 		951458582EC28BC20096BBF1 /* ElevationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458552EC28BC20096BBF1 /* ElevationsView.swift */; };
-		9514585B2EC28DF10096BBF1 /* FontsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458592EC28DF10096BBF1 /* FontsView.swift */; };
 		9514585C2EC28DF10096BBF1 /* FontsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458592EC28DF10096BBF1 /* FontsView.swift */; };
 		9514585F2EC28F4E0096BBF1 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
 		951458602EC28F570096BBF1 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
-		951458652EC2906B0096BBF1 /* GridsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458642EC2906B0096BBF1 /* GridsView.swift */; };
 		951458662EC2906B0096BBF1 /* GridsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458642EC2906B0096BBF1 /* GridsView.swift */; };
-		9514586B2EC2920C0096BBF1 /* OpacitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458692EC2920C0096BBF1 /* OpacitiesView.swift */; };
 		9514586C2EC2920C0096BBF1 /* OpacitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951458692EC2920C0096BBF1 /* OpacitiesView.swift */; };
 		95196E302EC4812E003133EF /* BorderTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */; };
 		95196E312EC4816A003133EF /* DesignToolboxTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */; };
@@ -531,8 +602,6 @@
 		9564DF5D2FE92A3400E2BC7D /* StatusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */; };
 		956B943A2FCF033A00471ADE /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 956B94392FCF033A00471ADE /* OUDSSwiftUI */; };
 		957D5EE12F2BB27D0055128A /* BulletListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE02F2BB2740055128A /* BulletListsView.swift */; };
-		957D5EE22F2BB27D0055128A /* BulletListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE02F2BB2740055128A /* BulletListsView.swift */; };
-		957D5EE52F2BB29A0055128A /* ContentDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE42F2BB2940055128A /* ContentDisplayView.swift */; };
 		957D5EE62F2BB29A0055128A /* ContentDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE42F2BB2940055128A /* ContentDisplayView.swift */; };
 		95818BC22EB50D70004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
 		95818BC32EB50D7F004F46F4 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
@@ -866,23 +935,15 @@
 		9589F1B52EB7D67E00134487 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B42CE3AF1500F2EC33 /* style.css */; };
 		9589F1B62EB7D67E00134487 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
 		9589F1B72EB7D67E00134487 /* orange-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */; };
-		958CA1FA2F48C407001F45E8 /* InlineAlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CA1F92F48C407001F45E8 /* InlineAlertMessageView.swift */; };
 		958CA1FB2F48C407001F45E8 /* InlineAlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CA1F92F48C407001F45E8 /* InlineAlertMessageView.swift */; };
-		959390092EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */; };
 		9593900A2EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390082EC125B5000DBE95 /* WatchAndTVLayoutsView.swift */; };
-		9593900C2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */; };
 		9593900D2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */; };
-		9593900F2EC1DA55000DBE95 /* TVGridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593900E2EC1DA55000DBE95 /* TVGridLayoutView.swift */; };
 		959390102EC1DA55000DBE95 /* TVGridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593900E2EC1DA55000DBE95 /* TVGridLayoutView.swift */; };
-		959390122EC1DCAC000DBE95 /* TVVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390112EC1DCAC000DBE95 /* TVVerticalLayoutView.swift */; };
 		959390132EC1DCAC000DBE95 /* TVVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390112EC1DCAC000DBE95 /* TVVerticalLayoutView.swift */; };
 		959390162EC1F268000DBE95 /* TokensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390152EC1F268000DBE95 /* TokensView.swift */; };
-		959390172EC1F268000DBE95 /* TokensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390152EC1F268000DBE95 /* TokensView.swift */; };
 		9593901A2EC1F2A0000DBE95 /* BordersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390192EC1F29F000DBE95 /* BordersView.swift */; };
-		9593901B2EC1F2A0000DBE95 /* BordersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390192EC1F29F000DBE95 /* BordersView.swift */; };
 		959390202EC1F4B5000DBE95 /* DesignToolboxTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */; };
 		959390212EC1F4BC000DBE95 /* DesignToolboxTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */; };
-		959390262EC21FD9000DBE95 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390242EC21FD9000DBE95 /* ColorsView.swift */; };
 		959390272EC21FD9000DBE95 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390242EC21FD9000DBE95 /* ColorsView.swift */; };
 		959390282EC2202A000DBE95 /* NamedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4A52CC15C9D00E69359 /* NamedColor.swift */; };
 		959390292EC2202A000DBE95 /* NamedColor+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4952CC159F600E69359 /* NamedColor+Action.swift */; };
@@ -906,10 +967,8 @@
 		9593903B2EC22035000DBE95 /* NamedColor+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6DB2D09C680005DAB51 /* NamedColor+Overlay.swift */; };
 		9593903C2EC22035000DBE95 /* NamedColor+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6DC2D09C680005DAB51 /* NamedColor+Repository.swift */; };
 		9593903D2EC22035000DBE95 /* NamedColor+Surface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6DD2D09C680005DAB51 /* NamedColor+Surface.swift */; };
-		959390472EC249A8000DBE95 /* DimensionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390452EC249A8000DBE95 /* DimensionsView.swift */; };
 		959390482EC249A8000DBE95 /* DimensionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390452EC249A8000DBE95 /* DimensionsView.swift */; };
 		9593904A2EC24A1B000DBE95 /* SizesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390492EC24A1A000DBE95 /* SizesView.swift */; };
-		9593904B2EC24A1B000DBE95 /* SizesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390492EC24A1A000DBE95 /* SizesView.swift */; };
 		9593904D2EC24B1E000DBE95 /* NamedSize+IconWithTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */; };
 		9593904E2EC24B1E000DBE95 /* NamedSize+IconDecorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */; };
 		9593904F2EC24B28000DBE95 /* NamedSize+IconWithTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */; };
@@ -952,7 +1011,6 @@
 		9593907A2EC2519E000DBE95 /* SpacePaddingTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71362CECC3D800B93FC3 /* SpacePaddingTokenIllustrations.swift */; };
 		9593907B2EC251E0000DBE95 /* DesignToolboxTokenIllustrationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A732D3F9D840068B807 /* DesignToolboxTokenIllustrationBackground.swift */; };
 		9593907C2EC251E7000DBE95 /* DesignToolboxTokenIllustrationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A732D3F9D840068B807 /* DesignToolboxTokenIllustrationBackground.swift */; };
-		9593907E2EC254D9000DBE95 /* SpacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593907D2EC254D9000DBE95 /* SpacesView.swift */; };
 		9593907F2EC254D9000DBE95 /* SpacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593907D2EC254D9000DBE95 /* SpacesView.swift */; };
 		9596D2102F7D7E5700DB6136 /* PinCodeInputSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596D20F2F7D7E5700DB6136 /* PinCodeInputSnapshotsTestsTestCase.swift */; };
 		9596D2122F7D80D000DB6136 /* OrangeTheme+PinCodeInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596D2112F7D80D000DB6136 /* OrangeTheme+PinCodeInputSnapshotsTests.swift */; };
@@ -1083,10 +1141,8 @@
 		95CEF1912F9A2952008AD8C4 /* ElementsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18F2F9A2952008AD8C4 /* ElementsGridView.swift */; };
 		95CEF1922F9A2952008AD8C4 /* ElementsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18F2F9A2952008AD8C4 /* ElementsGridView.swift */; };
 		95CEF1932F9A2952008AD8C4 /* ElementsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18F2F9A2952008AD8C4 /* ElementsGridView.swift */; };
-		95D5BA342F4706E000CB10FE /* DialogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA312F4706E000CB10FE /* DialogsView.swift */; };
 		95D5BA362F4706E000CB10FE /* DialogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA312F4706E000CB10FE /* DialogsView.swift */; };
 		95D5BA372F4706E000CB10FE /* AlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA322F4706E000CB10FE /* AlertMessageView.swift */; };
-		95D5BA382F470AAA00CB10FE /* AlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA322F4706E000CB10FE /* AlertMessageView.swift */; };
 		95D6AAD12F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
 		95D6AAD22F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
 		95D6AAD32F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
@@ -1102,10 +1158,93 @@
 		95EDFD1A2EC73BB9006DE593 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		95EDFD1B2EC73BB9006DE593 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		95F840D32EB8FAA200CE1FE6 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95F840D22EB8FAA200CE1FE6 /* OUDSSwiftUI */; };
+		962CB8095A068192CEA0C399 /* CheckboxItemIndeterminatePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E02E0AAB6600976098 /* CheckboxItemIndeterminatePage.swift */; };
+		96645B8033AC32CB35544F19 /* ElevationTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42762CA3F4BE000BD03E /* ElevationTokenElement.swift */; };
+		97690312C5A835761CF9B87F /* AlertMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD62F3CBEC300ABD80E /* AlertMessagePage.swift */; };
+		986D9A961CDB5520C7D885B9 /* RadioConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C18B2D7A0596006B3A1F /* RadioConfiguration.swift */; };
+		99A65EBB9967AC0BD633488C /* InlineAlertConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BB2F4852A9005F349B /* InlineAlertConfigurationView.swift */; };
+		9BA1B489A130D5FFE00846EC /* ChipElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9832E21329B00A60E96 /* ChipElements.swift */; };
+		9BB8A180925F8D4327476032 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
+		9E0A0ACE6584984EFFA77A86 /* AppStoreUpdateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A222FD310BC00746A5D /* AppStoreUpdateInfo.swift */; };
+		A1A56F609A601DC9820F2362 /* ToolBarBottomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD3A2F850344004615AF /* ToolBarBottomPage.swift */; };
+		A41B4CA01F77270E996E3841 /* DesignToolboxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFE72CFE0FBD00D334DD /* DesignToolboxConfiguration.swift */; };
+		A581BA14B41EF9DC032BD7B1 /* CheckboxIndeterminateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5842D887E36009CD879 /* CheckboxIndeterminateElement.swift */; };
+		A61D22C1218B012C41ADF6D1 /* BadgeElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20182FC70AAA00431097 /* BadgeElements.swift */; };
+		A6C66BBF00912C1C8186DD61 /* CheckboxElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513441FE2D75B880000B5DE4 /* CheckboxElement.swift */; };
+		A6CB88C81BEF99A3F317282F /* SizeTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D82CB7D28D00B8B759 /* SizeTokenElement.swift */; };
+		AA835D7064B1A1CB5A4342C2 /* DesignToolboxEnumRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D5C782FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift */; };
 		AASRCH003BUILD00000001 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AASRCH001FILEREF00000001 /* SearchPage.swift */; };
 		AASRCH004BUILD00000002 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AASRCH001FILEREF00000001 /* SearchPage.swift */; };
 		AASRCH005BUILD00000003 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AASRCH001FILEREF00000001 /* SearchPage.swift */; };
 		AASRCH006BUILD00000004 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AASRCH001FILEREF00000001 /* SearchPage.swift */; };
+		AC4214D823895C7F13324997 /* BorderTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */; };
+		AC6D866B49A24FA6C36E267F /* ChipPickerConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97B2E21329B00A60E96 /* ChipPickerConfigurationView.swift */; };
+		ACA436CC9890EC5855C166A5 /* FontTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6CF2D09C5E2005DAB51 /* FontTokenElement.swift */; };
+		AD8DF7860D8F0C23433573E8 /* ChipPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97C2E21329B00A60E96 /* ChipPickerElement.swift */; };
+		AF500E01E35A258514D509B9 /* ChipPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97D2E21329B00A60E96 /* ChipPickerPage.swift */; };
+		AFE6E083E537385C23176829 /* AlertMessageConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD42F3CBEC300ABD80E /* AlertMessageConfigurationView.swift */; };
+		B0AD2F956E02F73F02A34581 /* InputTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849132E9FF00500DBCE76 /* InputTagPage.swift */; };
+		B1A7C4AD2636A931097A6601 /* ColorTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114DF2CB7FDC200B8B759 /* ColorTokenPage.swift */; };
+		B40D37ECA62C08B1BAB58C00 /* TokensPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF426A2CA30728000BD03E /* TokensPage.swift */; };
+		B4D6166433BCC08284E332F6 /* InlineAlertElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BA2F4852A9005F349B /* InlineAlertElement.swift */; };
+		B55DBA4522B06020F6251B96 /* BadgeCountElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20222FC70B4300431097 /* BadgeCountElement.swift */; };
+		B993482B54CC318FA05B935D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761F2C466FCF0033365D /* MainView.swift */; };
+		BC5821519BA58448B5DB1914 /* ComponentsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */; };
+		BDCEC61C0A0B9E673CE34887 /* TagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2D2E454D7900361ECA /* TagConfigurationView.swift */; };
+		BEDAA7BABA53BBE245720124 /* TextAreaConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA01 /* TextAreaConfigurationView.swift */; };
+		BFA4FC6C86F244940F4EBF64 /* HelveticaNeueLTArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3CE2E95941900664BD0 /* HelveticaNeueLTArabic-Bold.ttf */; };
+		BFCC02203D5B2DD9A6A9EA65 /* SwitchElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AEA2DB0F7DD001BC929 /* SwitchElements.swift */; };
+		BFD97D9DF841BB9C08E5E32F /* BulletListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1882F1A877300C9BD46 /* BulletListElement.swift */; };
+		C0362A5C669E71F1F5706DC6 /* TextAreaElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA02 /* TextAreaElement.swift */; };
+		C05CCA3D1C9D54F07C393E18 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799B02F485277005F349B /* AlertConfiguration.swift */; };
+		C14BD8C4538F074146F3CA3E /* LinkElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCAF2D40E34700DBB10A /* LinkElement.swift */; };
+		C16AB047D461D5B1DD826796 /* CardIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42732CA3EC58000BD03E /* CardIllustration.swift */; };
+		C1ADF07D31590659A7204371 /* BadgeIconConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA203B2FC70DA200431097 /* BadgeIconConfigurationView.swift */; };
+		C31DF1BACA6FF8ACEA9EB2CE /* A11YIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F676DA2E0D45F300C15CB6 /* A11YIdentifiers.swift */; };
+		C42E7D70E8F132ABA7FB4911 /* TextInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F72E58717F00D98587 /* TextInputElement.swift */; };
+		C4B5287AFFF20F41478698F7 /* DesignToolboxElementsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760F2C466FCF0033365D /* DesignToolboxElementsPage.swift */; };
+		C59C0DEE43D70C8A638FE3D1 /* ButtonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072141172D02F52A00B7B9C6 /* ButtonPage.swift */; };
+		C6654E5640F6679CD435C68B /* DesignToolboxElementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E3FF0A2CAFD9AE00F1BC59 /* DesignToolboxElementPage.swift */; };
+		C8B3AC5638A11229B5C8F4B2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 51D5898F2E8FCC310071E8BF /* README.md */; };
+		CC5725FBE279F85B02FE8E6B /* CheckboxItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9DA2E0AAB4A00976098 /* CheckboxItemPage.swift */; };
+		CCCEA1D69AC477D035B3B7B7 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B42CE3AF1500F2EC33 /* style.css */; };
+		CF6C8827951414CFD6E9CF6B /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5999C2E26AC24002BCB27 /* UserDefaultsWrapper.swift */; };
+		D05FE478BC22B0CA5B2E5E45 /* StatusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */; };
+		D10908C1C76A9454BD1192F8 /* DesignToolboxElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543152CA17275001187EA /* DesignToolboxElement.swift */; };
+		D478C47AE507A7F56389723D /* ComponentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */; };
+		D794D1E78C7BA21B30712FA0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76122C466FCF0033365D /* Preview Assets.xcassets */; };
+		D80EA9B5CAF6CD7BB3531722 /* TagElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8491B2E9FF35700DBCE76 /* TagElements.swift */; };
+		D882D677DF3C9BFD7AE68BC5 /* CheckboxPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */; };
+		D96AD88E242EE322096A206B /* OpacityTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF427E2CA41325000BD03E /* OpacityTokenPage.swift */; };
+		D99FD953CE13EFD8DF7EE007 /* View+TabBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF1852F9A271C008AD8C4 /* View+TabBarAppearance.swift */; };
+		DA32077B171F7E34B9871DD3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761C2C466FCF0033365D /* WebView.swift */; };
+		DA53E7A3DD76C39786D27B0E /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD64F12EB3A371008FAB03 /* WindowManager.swift */; };
+		DB0834872E8D660434E50639 /* accessibility_detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */; };
+		DB3605376A33F14E89B2BDDB /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
+		DCD5984F31961AC6A66B87EE /* ColoredSurfaceElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3DBEE2DA5084500D8A57F /* ColoredSurfaceElement.swift */; };
+		DD38B50149488B393561BF98 /* TVOSShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9691F6689982BA5065E71DD /* TVOSShims.swift */; };
+		DF419BD28E52FD7C84B4226A /* PasswordInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */; };
+		DFDC2352B84F9CAF10BE8DB0 /* InputTagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */; };
+		E28C30DAB4CFB221AD658E45 /* TVOSShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9691F6689982BA5065E71DD /* TVOSShims.swift */; };
+		E38ECF2BEFC89890B0A82D5F /* AccessibilityStatementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFC208A2CDE669500F2EC33 /* AccessibilityStatementPage.swift */; };
+		E811D1EA6FCCA91C06C1D442 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AASRCH001FILEREF00000001 /* SearchPage.swift */; };
+		E883CA98A9D5AB021B105A6E /* CheckboxItemIndeterminateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9DF2E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift */; };
+		EA9293DA21484DFB25698F06 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
+		EAE7FE919F61B15534640A1E /* DesignToolboxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */; };
+		EAF9A9485BDA005B162833D4 /* TabBarConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1532ED0995600D14D44 /* TabBarConfigurationView.swift */; };
+		EC2223D98C9E4813DA258FD8 /* AlertMessageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD52F3CBEC300ABD80E /* AlertMessageElement.swift */; };
+		EE04608A8E83473243FE32B1 /* PinCodeInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02402F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift */; };
+		F2AA4FF6DFF97AF0F0BCD0BD /* DesignToolboxEditContentDisclosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075BC9442DC01D2C00CB2573 /* DesignToolboxEditContentDisclosure.swift */; };
+		F4AFF59D33CBBEA8EB4B4514 /* ButtonConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7E1962D035566006472EB /* ButtonConfigurationView.swift */; };
+		F514053A205A3DD19BF5F26F /* DimensionTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE542CB426090059CC28 /* DimensionTokenElement.swift */; };
+		F69B3F9B1BAEA52388C16EAA /* TagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB2A2E2E454D7900361ECA /* TagElement.swift */; };
+		F7898AA7992D7EFD8884FB2F /* RadioElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C18C2D7A0596006B3A1F /* RadioElement.swift */; };
+		F7D75DA989ED7030384D2EE3 /* ToolBarTopElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11652F57259000C8E30D /* ToolBarTopElement.swift */; };
+		F811121F4B983ED345250611 /* SpaceTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE522CB426090059CC28 /* SpaceTokenPage.swift */; };
+		F8D028BFB9228D7E38BB6C81 /* PinCodeInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02412F7D3AE100550DD6 /* PinCodeInputElement.swift */; };
+		F975C9107A91CD636EBFCBC3 /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
+		FA4366DBEB70DD256BB03F23 /* TextAreaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA1100FF0000000000AA03 /* TextAreaPage.swift */; };
+		FAAA3E4939F6D944CA03CAAD /* boosted-grid.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B02CE3AF1500F2EC33 /* boosted-grid.min.css */; };
 		FC4799B22F485277005F349B /* AlertStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799B12F485277005F349B /* AlertStatus.swift */; };
 		FC4799B32F485277005F349B /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799B02F485277005F349B /* AlertConfiguration.swift */; };
 		FC4799B42F485277005F349B /* AlertStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799B12F485277005F349B /* AlertStatus.swift */; };
@@ -1150,6 +1289,7 @@
 		FC736E962F3E2DEE0019FC13 /* OrangeTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E922F3E2DEE0019FC13 /* OrangeTheme+AlertMessageSnapshotsTests.swift */; };
 		FC736E9B2F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E972F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift */; };
 		FC736EA02F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E9C2F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift */; };
+		FC85DA849A24B18A3FC380FB /* TextInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075045F82E58717F00D98587 /* TextInputPage.swift */; };
 		FC8FD1582F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */; };
 		FC95B93E2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */; };
 		FC95B93F2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */; };
@@ -1663,6 +1803,7 @@
 		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
 		95EDFD162EC73BB4006DE593 /* Image+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions.swift"; sourceTree = "<group>"; };
 		AASRCH001FILEREF00000001 /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
+		B9691F6689982BA5065E71DD /* TVOSShims.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TVOSShims.swift; sourceTree = "<group>"; };
 		FC4799B02F485277005F349B /* AlertConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertConfiguration.swift; sourceTree = "<group>"; };
 		FC4799B12F485277005F349B /* AlertStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStatus.swift; sourceTree = "<group>"; };
 		FC4799BA2F4852A9005F349B /* InlineAlertElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineAlertElement.swift; sourceTree = "<group>"; };
@@ -2585,6 +2726,7 @@
 				51BD761C2C466FCF0033365D /* WebView.swift */,
 				51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */,
 				95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */,
+				B9691F6689982BA5065E71DD /* TVOSShims.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -4117,7 +4259,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				9593906F2EC24E76000DBE95 /* Assets.xcassets in Resources */,
-				950EA7B82EBE3EA80009414A /* Assets.xcassets in Resources */,
+				DB0834872E8D660434E50639 /* accessibility_detail.html in Resources */,
+				9BB8A180925F8D4327476032 /* accessibility_result.xml in Resources */,
+				C8B3AC5638A11229B5C8F4B2 /* README.md in Resources */,
+				D794D1E78C7BA21B30712FA0 /* Preview Assets.xcassets in Resources */,
+				725FA16B28477462B45633FF /* about_legal_information.html in Resources */,
+				BFA4FC6C86F244940F4EBF64 /* HelveticaNeueLTArabic-Bold.ttf in Resources */,
+				50B2ADF27679048DEB269510 /* HelveticaNeueLTArabic-Light.ttf in Resources */,
+				9355F1EDDDF64C175B7F05A5 /* Localizable.xcstrings in Resources */,
+				507A982D313DB7249A8274FC /* about_privacy_policy.html in Resources */,
+				FAAA3E4939F6D944CA03CAAD /* boosted-grid.min.css in Resources */,
+				402C44C6C8D93071A1607FEC /* favicon.ico in Resources */,
+				782F766BB76124F735702D05 /* pie.css in Resources */,
+				CCCEA1D69AC477D035B3B7B7 /* style.css in Resources */,
+				EA9293DA21484DFB25698F06 /* HelveticaNeueLTArabic-Roman.ttf in Resources */,
+				84BAA69B7827F0C014C6CC08 /* orange-logo.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4728,6 +4884,7 @@
 				FCEE0FE82F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */,
 				FCEE0FE92F3CBEC300ABD80E /* AlertElements.swift in Sources */,
 				FCEE0FEA2F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */,
+				E28C30DAB4CFB221AD658E45 /* TVOSShims.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4771,7 +4928,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95D5BA382F470AAA00CB10FE /* AlertMessageView.swift in Sources */,
 				95CE05822EC3D30500ACE41C /* NamedBorders.swift in Sources */,
 				95CE05832EC3D30500ACE41C /* BorderIllustrations.swift in Sources */,
 				950288AC2EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */,
@@ -4780,29 +4936,23 @@
 				95CE055C2EC33FCB00ACE41C /* NamedGrid.swift in Sources */,
 				95CE05522EC33F1B00ACE41C /* SizeIllustrations.swift in Sources */,
 				95CE05532EC33F1B00ACE41C /* NamedSize.swift in Sources */,
-				958CA1FA2F48C407001F45E8 /* InlineAlertMessageView.swift in Sources */,
 				95CE05402EC33C8F00ACE41C /* OpacityIllustration.swift in Sources */,
 				95CE053F2EC33C8900ACE41C /* NamedOpacity.swift in Sources */,
 				9514585F2EC28F4E0096BBF1 /* String+extension.swift in Sources */,
-				957D5EE52F2BB29A0055128A /* ContentDisplayView.swift in Sources */,
 				9593907C2EC251E7000DBE95 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
-				9593907E2EC254D9000DBE95 /* SpacesView.swift in Sources */,
 				959390722EC25190000DBE95 /* SpaceTokenCommonIllustration.swift in Sources */,
 				959C5E9F2FFBF1C900E12BFF /* NamedColor+Ai.swift in Sources */,
 				959390732EC25190000DBE95 /* SpaceBasicTokenIllustrations.swift in Sources */,
 				959390742EC25190000DBE95 /* SpaceGapTokenIllustrations.swift in Sources */,
 				959390752EC25190000DBE95 /* SpacePaddingTokenIllustrations.swift in Sources */,
-				951458572EC28BC20096BBF1 /* ElevationsView.swift in Sources */,
 				9593906C2EC24DB9000DBE95 /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				9593906B2EC24DB3000DBE95 /* View+Illustration.swift in Sources */,
 				959390582EC24CC5000DBE95 /* NameSpace+ColumnGap.swift in Sources */,
 				959390592EC24CC5000DBE95 /* NameSpace+RowGap.swift in Sources */,
 				9593905A2EC24CC5000DBE95 /* NameSpace+PaddingInline.swift in Sources */,
 				9593905B2EC24CC5000DBE95 /* NameSpace+PaddingInset.swift in Sources */,
-				9514585B2EC28DF10096BBF1 /* FontsView.swift in Sources */,
 				9593905C2EC24CC5000DBE95 /* NameSpace+PaddingBlock.swift in Sources */,
 				959390552EC24C28000DBE95 /* NamedFont.swift in Sources */,
-				95D5BA342F4706E000CB10FE /* DialogsView.swift in Sources */,
 				959390562EC24C28000DBE95 /* NamedSpace+Scaled.swift in Sources */,
 				959390572EC24C28000DBE95 /* NamedSpace+Fixed.swift in Sources */,
 				9593904F2EC24B28000DBE95 /* NamedSize+IconWithTypography.swift in Sources */,
@@ -4813,55 +4963,185 @@
 				959390362EC22035000DBE95 /* NamedColor+Background.swift in Sources */,
 				959390372EC22035000DBE95 /* NamedColor+Border.swift in Sources */,
 				959390382EC22035000DBE95 /* NamedColor+Chart.swift in Sources */,
-				951458652EC2906B0096BBF1 /* GridsView.swift in Sources */,
 				959390392EC22035000DBE95 /* NamedColor+Content.swift in Sources */,
 				9593903A2EC22035000DBE95 /* NamedColor+Opacity.swift in Sources */,
-				959390472EC249A8000DBE95 /* DimensionsView.swift in Sources */,
-				9593904B2EC24A1B000DBE95 /* SizesView.swift in Sources */,
 				9593903B2EC22035000DBE95 /* NamedColor+Overlay.swift in Sources */,
 				9593903C2EC22035000DBE95 /* NamedColor+Repository.swift in Sources */,
 				9593903D2EC22035000DBE95 /* NamedColor+Surface.swift in Sources */,
 				959390212EC1F4BC000DBE95 /* DesignToolboxTokenIllustration.swift in Sources */,
 				950EA7D12EBE44390009414A /* NamedColorMode.swift in Sources */,
-				950EA7B92EBE3ECB0009414A /* DesignToolbox_Light_App.swift in Sources */,
-				950EA7BA2EBE3ECB0009414A /* ComponentsView.swift in Sources */,
-				959390122EC1DCAC000DBE95 /* TVVerticalLayoutView.swift in Sources */,
-				950EA7BB2EBE3ECB0009414A /* ColoredBackgroundView.swift in Sources */,
-				950EA7BC2EBE3ECB0009414A /* LayoutsView.swift in Sources */,
-				959390262EC21FD9000DBE95 /* ColorsView.swift in Sources */,
-				950EA7BD2EBE3ECB0009414A /* LinksView.swift in Sources */,
-				950EA7BE2EBE3ECB0009414A /* NavigationsView.swift in Sources */,
-				950EA7BF2EBE3ECB0009414A /* BadgesView.swift in Sources */,
-				950EA7C02EBE3ECB0009414A /* TagsView.swift in Sources */,
-				950EA7C12EBE3ECB0009414A /* TagView.swift in Sources */,
 				95D6AAD52F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */,
-				950EA7D42EBE4D5C0009414A /* TwoStatesCheckboxesItemsView.swift in Sources */,
-				950EA7C22EBE3ECB0009414A /* InputTag.swift in Sources */,
-				950EA7C32EBE3ECB0009414A /* IndicatorsView.swift in Sources */,
-				957D5EE22F2BB27D0055128A /* BulletListsView.swift in Sources */,
-				950EA7C42EBE3ECB0009414A /* RadiosView.swift in Sources */,
-				950EA7C52EBE3ECB0009414A /* RadiosItemView.swift in Sources */,
-				959390172EC1F268000DBE95 /* TokensView.swift in Sources */,
-				959390092EC125C3000DBE95 /* WatchAndTVLayoutsView.swift in Sources */,
-				950EA7C62EBE3ECB0009414A /* RadiosOnlyView.swift in Sources */,
 				950288A52EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */,
-				950EA7C72EBE3ECB0009414A /* SwitchesItemView.swift in Sources */,
-				950EA7C82EBE3ECB0009414A /* SwitchesOnlyView.swift in Sources */,
-				950EA7C92EBE3ECB0009414A /* SwitchesView.swift in Sources */,
 				95CE05452EC33CE900ACE41C /* FontIllustrations.swift in Sources */,
-				9514586B2EC2920C0096BBF1 /* OpacitiesView.swift in Sources */,
-				950EA7D62EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift in Sources */,
-				950EA7CA2EBE3ECB0009414A /* ChipsView.swift in Sources */,
 				959390672EC24D22000DBE95 /* NamedSpace.swift in Sources */,
-				9593900C2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift in Sources */,
-				9593900F2EC1DA55000DBE95 /* TVGridLayoutView.swift in Sources */,
-				950EA7CB2EBE3ECB0009414A /* CheckboxesView.swift in Sources */,
-				950EA7CC2EBE3ECB0009414A /* CheckboxesItemView.swift in Sources */,
-				950EA7CD2EBE3ECB0009414A /* CheckboxesOnlyView.swift in Sources */,
-				950EA7CE2EBE3ECB0009414A /* ControlsView.swift in Sources */,
-				950EA7CF2EBE3ECB0009414A /* ButtonsView.swift in Sources */,
-				950EA7D02EBE3ECB0009414A /* ActionsView.swift in Sources */,
-				9593901B2EC1F2A0000DBE95 /* BordersView.swift in Sources */,
+				AC4214D823895C7F13324997 /* BorderTokenPage.swift in Sources */,
+				0FF6DF55D1C617C120FD5423 /* DesignToolboxColorPicker.swift in Sources */,
+				CF6C8827951414CFD6E9CF6B /* UserDefaultsWrapper.swift in Sources */,
+				A41B4CA01F77270E996E3841 /* DesignToolboxConfiguration.swift in Sources */,
+				EAE7FE919F61B15534640A1E /* DesignToolboxTextField.swift in Sources */,
+				82EC829A67A93A9DBA7F4229 /* RadioItemPage.swift in Sources */,
+				810D76A478322CA0463D7D77 /* AlertStatus.swift in Sources */,
+				C05CCA3D1C9D54F07C393E18 /* AlertConfiguration.swift in Sources */,
+				664AC65F83E58C96B5B240BD /* RadioPage.swift in Sources */,
+				986D9A961CDB5520C7D885B9 /* RadioConfiguration.swift in Sources */,
+				F7898AA7992D7EFD8884FB2F /* RadioElement.swift in Sources */,
+				23BBDACB50384A7998958257 /* DesignToolboxVariantElement.swift in Sources */,
+				99A65EBB9967AC0BD633488C /* InlineAlertConfigurationView.swift in Sources */,
+				B4D6166433BCC08284E332F6 /* InlineAlertElement.swift in Sources */,
+				3A5400D9053F531A9A3EBA98 /* InlineAlertPage.swift in Sources */,
+				6899F5AC1FEB6B77CF1A01F8 /* ChipLayout.swift in Sources */,
+				1CF5565C9D4F000BFFD608C6 /* FilterChipConfigurationView.swift in Sources */,
+				45E02168BD117ECAA2FC4262 /* FilterChipElement.swift in Sources */,
+				883365D3EB75A2D23CC95116 /* FilterChipPage.swift in Sources */,
+				6A6DB945F2C61B8E7C5E92F5 /* TagPage.swift in Sources */,
+				F69B3F9B1BAEA52388C16EAA /* TagElement.swift in Sources */,
+				52C75E5526B16DA35AD8E733 /* ToolBarBottomElement.swift in Sources */,
+				BDCEC61C0A0B9E673CE34887 /* TagConfigurationView.swift in Sources */,
+				AC6D866B49A24FA6C36E267F /* ChipPickerConfigurationView.swift in Sources */,
+				AD8DF7860D8F0C23433573E8 /* ChipPickerElement.swift in Sources */,
+				AF500E01E35A258514D509B9 /* ChipPickerPage.swift in Sources */,
+				3E6619E6218EBD334ACEA5B2 /* SuggestionChipConfigurationView.swift in Sources */,
+				0245346935012513A7E61B89 /* SuggestionChipElement.swift in Sources */,
+				1F75DF7E573004B25A38513B /* SuggestionChipPage.swift in Sources */,
+				9BA1B489A130D5FFE00846EC /* ChipElements.swift in Sources */,
+				D882D677DF3C9BFD7AE68BC5 /* CheckboxPickerPage.swift in Sources */,
+				0C21D678E5228FB6019DECFC /* CheckboxPickerConfiguration.swift in Sources */,
+				08224754A9DE8C595EB660D6 /* CheckboxPickerElement.swift in Sources */,
+				D80EA9B5CAF6CD7BB3531722 /* TagElements.swift in Sources */,
+				911FF7518C73C9E79D473829 /* ColorSchemeSelectionButton.swift in Sources */,
+				C4B5287AFFF20F41478698F7 /* DesignToolboxElementsPage.swift in Sources */,
+				D10908C1C76A9454BD1192F8 /* DesignToolboxElement.swift in Sources */,
+				C6654E5640F6679CD435C68B /* DesignToolboxElementPage.swift in Sources */,
+				0AAA529C83F12E5E26AB26FD /* ToolBarCommonContent.swift in Sources */,
+				F2AA4FF6DFF97AF0F0BCD0BD /* DesignToolboxEditContentDisclosure.swift in Sources */,
+				03E157AEDDB2DACAF5AFCD18 /* OSUtilities.swift in Sources */,
+				EE04608A8E83473243FE32B1 /* PinCodeInputConfigurationView.swift in Sources */,
+				58E2B9C51004D2F8CEE88214 /* SizeTokenPage.swift in Sources */,
+				D478C47AE507A7F56389723D /* ComponentPage.swift in Sources */,
+				06EF13C7D599B645D4638046 /* ToolBarCommonConfiguration.swift in Sources */,
+				F975C9107A91CD636EBFCBC3 /* TextualContentMode.swift in Sources */,
+				7ED25061D591A6D08FE83653 /* BadgeStandardConfigurationView.swift in Sources */,
+				510E69F65C4BC739064E989F /* CheckboxItemElement.swift in Sources */,
+				CC5725FBE279F85B02FE8E6B /* CheckboxItemPage.swift in Sources */,
+				F514053A205A3DD19BF5F26F /* DimensionTokenElement.swift in Sources */,
+				66C5698D133AA59482A789E4 /* ControlItemConfigurationViews.swift in Sources */,
+				A581BA14B41EF9DC032BD7B1 /* CheckboxIndeterminateElement.swift in Sources */,
+				556F4943C9BD1A0D1E353BAD /* CheckboxIndeterminatePage.swift in Sources */,
+				642E7AFE04795D646187476A /* BorderTokenElement.swift in Sources */,
+				F4AFF59D33CBBEA8EB4B4514 /* ButtonConfigurationView.swift in Sources */,
+				DA53E7A3DD76C39786D27B0E /* WindowManager.swift in Sources */,
+				D96AD88E242EE322096A206B /* OpacityTokenPage.swift in Sources */,
+				3B0CE154850677585BFCE7C7 /* ColorTokenElement.swift in Sources */,
+				B993482B54CC318FA05B935D /* MainView.swift in Sources */,
+				C59C0DEE43D70C8A638FE3D1 /* ButtonPage.swift in Sources */,
+				962CB8095A068192CEA0C399 /* CheckboxItemIndeterminatePage.swift in Sources */,
+				1EF150949CF36FB19397C483 /* ElementsGridView.swift in Sources */,
+				C31DF1BACA6FF8ACEA9EB2CE /* A11YIdentifiers.swift in Sources */,
+				E883CA98A9D5AB021B105A6E /* CheckboxItemIndeterminateElement.swift in Sources */,
+				8BD3BBD026D74E4D06FBB87D /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
+				5F74C5F0467F713019043E13 /* ButtonElement.swift in Sources */,
+				229BD696255AA075FF295954 /* BadgeIconPage.swift in Sources */,
+				0372034FFD7DC04D3F817010 /* BadgeStandardElement.swift in Sources */,
+				2A5704C853210D3C018034A9 /* BadgeCountConfigurationView.swift in Sources */,
+				C16AB047D461D5B1DD826796 /* CardIllustration.swift in Sources */,
+				96645B8033AC32CB35544F19 /* ElevationTokenElement.swift in Sources */,
+				1CBFB1A6E8928D7F14347E9B /* ToolBarBottomConfigurationView.swift in Sources */,
+				C1ADF07D31590659A7204371 /* BadgeIconConfigurationView.swift in Sources */,
+				301FA9F4270EDF24D3CED7A0 /* ElevationTokenPage.swift in Sources */,
+				62108ADD8B57D2FA70D04E5C /* CheckboxIndeterminateConfiguration.swift in Sources */,
+				B1A7C4AD2636A931097A6601 /* ColorTokenPage.swift in Sources */,
+				B55DBA4522B06020F6251B96 /* BadgeCountElement.swift in Sources */,
+				0D6A6A11606B56CF227242FA /* View+extensions.swift in Sources */,
+				BC5821519BA58448B5DB1914 /* ComponentsPage.swift in Sources */,
+				E811D1EA6FCCA91C06C1D442 /* SearchPage.swift in Sources */,
+				A61D22C1218B012C41ADF6D1 /* BadgeElements.swift in Sources */,
+				1CD3C837CDB6E0284D5E74D9 /* LinkConfiguration.swift in Sources */,
+				D99FD953CE13EFD8DF7EE007 /* View+TabBarAppearance.swift in Sources */,
+				C14BD8C4538F074146F3CA3E /* LinkElement.swift in Sources */,
+				4F7BAC0F41BFD2497E96CE76 /* LinkPage.swift in Sources */,
+				39C1FD98F986697F655B7082 /* GridTokenPage.swift in Sources */,
+				8E15134569906509CE72D750 /* GridTokenElement.swift in Sources */,
+				F811121F4B983ED345250611 /* SpaceTokenPage.swift in Sources */,
+				DA32077B171F7E34B9871DD3 /* WebView.swift in Sources */,
+				E38ECF2BEFC89890B0A82D5F /* AccessibilityStatementPage.swift in Sources */,
+				5490CCECC3A6FE00DB69AA1F /* RadioElements.swift in Sources */,
+				ACA436CC9890EC5855C166A5 /* FontTokenElement.swift in Sources */,
+				4C81A3CA1D2B84A65B49F1E8 /* FontTokenPage.swift in Sources */,
+				4A3C4C5F24263C7DCF81843E /* ToolBarTopPage.swift in Sources */,
+				4911F04232BE294F93C5CADF /* ToolBarTopConfigurationView.swift in Sources */,
+				F7D75DA989ED7030384D2EE3 /* ToolBarTopElement.swift in Sources */,
+				8DCE503C713B59573F0517FA /* SwitchItemPage.swift in Sources */,
+				92DE76E7C263C59990933B7B /* DesignToolboxCode.swift in Sources */,
+				2FE5EEDECB6AEE8B2D21ADCD /* AllElements.swift in Sources */,
+				A6CB88C81BEF99A3F317282F /* SizeTokenElement.swift in Sources */,
+				3CC952B7C75D0D109DDB5C3C /* BulletListConfigurationView.swift in Sources */,
+				7DC17D4858E987ED5F3A8318 /* BulletListPage.swift in Sources */,
+				BFD97D9DF841BB9C08E5E32F /* BulletListElement.swift in Sources */,
+				4C0165A474A37F973D4E933B /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
+				4FCC5A99078E3C09FA2C08C5 /* Bundle+extension.swift in Sources */,
+				698C985F96EE8E0F95F68C49 /* PasswordInputPage.swift in Sources */,
+				9E0A0ACE6584984EFFA77A86 /* AppStoreUpdateInfo.swift in Sources */,
+				4B18B80D8CD0930ABEF821E5 /* AppStoreUpdateService.swift in Sources */,
+				2FA8212B9D5B0324639F46C9 /* AppStoreUpdateViewModel.swift in Sources */,
+				8775C06F0F5C5694E0DEDECC /* PasswordInputConfigurationView.swift in Sources */,
+				DF419BD28E52FD7C84B4226A /* PasswordInputElement.swift in Sources */,
+				DB3605376A33F14E89B2BDDB /* InputTagElement.swift in Sources */,
+				DFDC2352B84F9CAF10BE8DB0 /* InputTagConfigurationView.swift in Sources */,
+				D05FE478BC22B0CA5B2E5E45 /* StatusIcons.swift in Sources */,
+				B0AD2F956E02F73F02A34581 /* InputTagPage.swift in Sources */,
+				7A3A207FF109371ECD352667 /* SpaceTokenElement.swift in Sources */,
+				746C400942F9EE92B1E7DDE1 /* DividerConfiguration.swift in Sources */,
+				F8D028BFB9228D7E38BB6C81 /* PinCodeInputElement.swift in Sources */,
+				3F179BE0001C28736356ED44 /* PinCodeInputPage.swift in Sources */,
+				5FA2FEAD96473C46C962F6EA /* DividerElement.swift in Sources */,
+				49967AC505A5906083704075 /* DividerElements.swift in Sources */,
+				3D681661F3357DD1DFD8FA59 /* DividerPage.swift in Sources */,
+				EAF9A9485BDA005B162833D4 /* TabBarConfigurationView.swift in Sources */,
+				15BE236DDBC578A79E717135 /* TabBarElement.swift in Sources */,
+				0ECFFA92997C5A8475DC38E9 /* TabBarPage.swift in Sources */,
+				1562A58ADE9A5DAA88E81394 /* BadgeStandardPage.swift in Sources */,
+				8243035B8C80FCE2B2196F72 /* BadgeCountPage.swift in Sources */,
+				390B190F9BD2B6BC60CEB60C /* ThemeSelection.swift in Sources */,
+				7037F2D4F3BA78E0B1820F59 /* OpacityTokenElement.swift in Sources */,
+				B40D37ECA62C08B1BAB58C00 /* TokensPage.swift in Sources */,
+				FC85DA849A24B18A3FC380FB /* TextInputPage.swift in Sources */,
+				C42E7D70E8F132ABA7FB4911 /* TextInputElement.swift in Sources */,
+				65B6E9239D0DC104513F4EEF /* TextInputConfigurationView.swift in Sources */,
+				FA4366DBEB70DD256BB03F23 /* TextAreaPage.swift in Sources */,
+				C0362A5C669E71F1F5706DC6 /* TextAreaElement.swift in Sources */,
+				BEDAA7BABA53BBE245720124 /* TextAreaConfigurationView.swift in Sources */,
+				00DE409C54FA4C5C35B39AD7 /* SwitchElement.swift in Sources */,
+				BFCC02203D5B2DD9A6A9EA65 /* SwitchElements.swift in Sources */,
+				AA835D7064B1A1CB5A4342C2 /* DesignToolboxEnumRepresentable.swift in Sources */,
+				2F9FA09AEEE3E6893121532E /* SwitchItemElement.swift in Sources */,
+				340D3A6839634685D68D7976 /* SwitchPage.swift in Sources */,
+				13DE1469ADD684CD95B02998 /* ControlItemConfigurationModel.swift in Sources */,
+				746364C3D1E4C3A814633D77 /* SwitchConfiguration.swift in Sources */,
+				949943C77DD97A9D2C02617A /* Card.swift in Sources */,
+				43FA4976F0C73AD36427493D /* AboutPage.swift in Sources */,
+				49FDA9AAD0F1C778829FD19B /* DesignToolbox.swift in Sources */,
+				A6C66BBF00912C1C8186DD61 /* CheckboxElement.swift in Sources */,
+				10839A381526B38DA9A92BBB /* Image+extensions.swift in Sources */,
+				5EFF99E7DA096059B6724543 /* RadioPickerPage.swift in Sources */,
+				5BD7CFC3F9832960ABDE3A57 /* View+NavigationBar.swift in Sources */,
+				8C3946A1771A0AECB286B8FC /* BadgeIconElement.swift in Sources */,
+				308C4E7BF064F03BFBC9B5A2 /* DesignToolbox+EnrichedTexts.swift in Sources */,
+				0BED085F7D57F9E83189619B /* RadioPickerConfiguration.swift in Sources */,
+				15BBE8EBC90D96497F4467F1 /* RadioPickerElement.swift in Sources */,
+				19B33C5BA421E5FC26043A51 /* CheckboxPage.swift in Sources */,
+				A1A56F609A601DC9820F2362 /* ToolBarBottomPage.swift in Sources */,
+				078C8C020FD6F3ED092B17FF /* DesignToolboxDisclosureGroup.swift in Sources */,
+				360D9426F3B4AC9B543E9ACF /* ColoredSurfaceConfiguration.swift in Sources */,
+				0109A0415101CD90820FA608 /* ColoredSurfacePage.swift in Sources */,
+				DCD5984F31961AC6A66B87EE /* ColoredSurfaceElement.swift in Sources */,
+				6425CC0FC413526732B78156 /* CheckboxConfiguration.swift in Sources */,
+				5F121EE06329173A44A9FF19 /* CheckboxElements.swift in Sources */,
+				387198E96EBF3F20F5FE478B /* RadioItemElement.swift in Sources */,
+				AFE6E083E537385C23176829 /* AlertMessageConfigurationView.swift in Sources */,
+				EC2223D98C9E4813DA258FD8 /* AlertMessageElement.swift in Sources */,
+				5E7BFCF9A8D95AB86D9EE4A8 /* AlertElements.swift in Sources */,
+				97690312C5A835761CF9B87F /* AlertMessagePage.swift in Sources */,
+				6FC799D9679409217F7CA98D /* TVOSShims.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5068,6 +5348,7 @@
 				FCEE0FEC2F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */,
 				FCEE0FED2F3CBEC300ABD80E /* AlertElements.swift in Sources */,
 				FCEE0FEE2F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */,
+				0DD5ACDCFB32FD194EE17A0E /* TVOSShims.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5285,6 +5566,7 @@
 				FCEE0FF02F3CBEC300ABD80E /* AlertMessageElement.swift in Sources */,
 				FCEE0FF12F3CBEC300ABD80E /* AlertElements.swift in Sources */,
 				FCEE0FF22F3CBEC300ABD80E /* AlertMessagePage.swift in Sources */,
+				DD38B50149488B393561BF98 /* TVOSShims.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5811,13 +6093,9 @@
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = DesignToolbox/Info.plist;
+				INFOPLIST_FILE = "DesignToolbox/Info-tvOS.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Design System Toolbox (DEBUG)";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -5859,13 +6137,9 @@
 				"DEVELOPMENT_TEAM[sdk=xros*]" = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = DesignToolbox/Info.plist;
+				INFOPLIST_FILE = "DesignToolbox/Info-tvOS.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Design System Toolbox (DEBUG)";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -179,6 +179,29 @@ struct ThemeSelectionButton: View {
     @EnvironmentObject private var themeProvider: ThemeProvider
 
     var body: some View {
+        #if os(tvOS)
+        // `Menu` requires tvOS 17+. To keep the demo compatible with tvOS 16, use
+        // a simple button that cycles through all themes on each click.
+        Button {
+            let all = themeProvider.allThemes
+            guard !all.isEmpty else { return }
+            let current = themeProvider.currentTheme
+            let idx = all.firstIndex(where: { $0.id == current.id }) ?? 0
+            themeProvider.currentTheme = all[(idx + 1) % all.count]
+        } label: {
+            Image(decorative: "ic_theme")
+                .scaledToFit()
+        }
+        .modifier(HotSwitchWarningModifier(hotSwitchWarningIndicator: themeProvider.hotSwitchWarning))
+        .accessibilityLabel("app_topBar_theme_button_a11y")
+        .accessibilityHint("app_topBar_theme_button_hint_a11y")
+        #else
+        menuBody
+        #endif
+    }
+
+    #if !os(tvOS)
+    private var menuBody: some View {
         Menu {
             // Orange theme and tunings
             Menu(OrangeTheme.name) {
@@ -200,7 +223,7 @@ struct ThemeSelectionButton: View {
                 .pickerStyle(.inline)
             }
 
-            #if !os(macOS)
+            #if !os(macOS) && !os(tvOS)
             // Sosh and Wireframe themes (which do not have tunings)
             Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
                 ForEach(themeProvider.otherThemes, id: \.id) { theme in
@@ -210,7 +233,7 @@ struct ThemeSelectionButton: View {
             }
             .pickerStyle(.automatic)
             #else
-            Divider() // with macOS at least there are troubles with menus and pickers inside
+            Divider() // with macOS/tvOS at least there are troubles with menus and pickers inside
             ForEach(themeProvider.otherThemes, id: \.id) { theme in
                 Button(theme.description) {
                     themeProvider.currentTheme = theme
@@ -225,6 +248,7 @@ struct ThemeSelectionButton: View {
         .accessibilityLabel("app_topBar_theme_button_a11y")
         .accessibilityHint("app_topBar_theme_button_hint_a11y")
     }
+    #endif
 }
 
 // MARK: - Hot Switch

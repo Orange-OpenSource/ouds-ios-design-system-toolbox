@@ -71,12 +71,16 @@ struct DesignToolboxElementPage: View {
                     .gridMargin(.horizontal)
             }
             .listRowInsets(EdgeInsets())
-            .listRowSeparator(Visibility.hidden)
+            #if !os(tvOS)
+            .listRowSeparator(Visibility.hidden) // `listRowSeparator` unavailable on tvOS
+            #endif
             .background(theme.colors.bgPrimary)
 
             demoScreen
                 .listRowInsets(EdgeInsets())
+                #if !os(tvOS)
                 .listRowSeparator(Visibility.hidden)
+                #endif
                 .background(theme.colors.bgPrimary)
 
             if let version {
@@ -101,7 +105,10 @@ struct DesignToolboxElementPage: View {
         .padding(.top, theme.spaces.fixedNone)
         .background(theme.colors.bgPrimary)
         .requestAccessibleFocus(_requestFocus)
-        #if !os(macOS)
+        #if !os(macOS) && !os(tvOS)
+            // OUDS `toolBarTop` modifier is not available on tvOS; on tvOS the top tab bar
+            // is provided natively by SwiftUI's `TabView` and the navigation title is
+            // handled by `.oudsNavigationTitle` further up the hierarchy.
             .toolBarTop(name.localized())
         #endif
     }

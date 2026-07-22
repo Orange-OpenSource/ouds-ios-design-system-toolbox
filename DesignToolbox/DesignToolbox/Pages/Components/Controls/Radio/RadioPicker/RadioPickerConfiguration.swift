@@ -11,6 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+
+#if !os(tvOS)
+
 import OUDSSwiftUI
 import SwiftUI
 
@@ -209,3 +212,5 @@ extension OUDSRadioPickerPlacement: @retroactive Equatable, @retroactive CaseIte
         hasher.combine(id)
     }
 }
+
+#endif

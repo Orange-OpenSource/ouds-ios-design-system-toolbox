@@ -57,6 +57,14 @@ struct DesignToolboxVariantElement: View {
                 rowView(for: element)
             }
 
+            #elseif os(tvOS)
+            NavigationLink {
+                element.pageDescription
+                    .navigationTitle(element.name)
+            } label: {
+                rowView(for: element)
+            }
+
             #else // macOS
             Button {
                 windowManager.openWindow(

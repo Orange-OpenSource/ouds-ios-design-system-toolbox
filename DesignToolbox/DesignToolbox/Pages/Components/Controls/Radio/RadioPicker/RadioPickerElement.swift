@@ -11,6 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+
+#if !os(tvOS)
+
 import OUDSSwiftUI
 import SwiftUI
 
@@ -28,3 +31,5 @@ struct RadioPickerElement: DesignToolboxElement {
             demoScreen: AnyView(RadioPickerPage())))
     }
 }
+
+#endif

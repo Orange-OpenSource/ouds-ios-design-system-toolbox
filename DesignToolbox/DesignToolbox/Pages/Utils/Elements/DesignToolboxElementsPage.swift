@@ -23,7 +23,7 @@ struct DesignToolboxElementsPage: View {
     let title: String
     let elements: [DesignToolboxElement]
 
-    #if !os(iOS)
+    #if !os(iOS) && !os(tvOS)
     @State private var selectedElement: DesignToolboxElement?
     #endif
 
@@ -37,6 +37,12 @@ struct DesignToolboxElementsPage: View {
             elementsPage
         }
         .navigationBarTitleDisplayMode(.inline)
+        #elseif os(tvOS)
+        // tvOS: focus engine works best with a simple stack; NavigationSplitView with
+        // sidebar is awkward with the Siri Remote. We use NavigationStack + grid.
+        NavigationStack {
+            elementsPage
+        }
         #else // macOS
         // Trick to be sure the view refreshes because NavigationView not always refreshed with macOS
         NavigationSplitView {
@@ -72,7 +78,7 @@ struct DesignToolboxElementsPage: View {
             .padding(.vertical, 20)
             .navigationBarMenus(title: title)
             #else
-            #if os(iOS)
+            #if os(iOS) || os(tvOS)
             ElementsGridView(elements: elements)
                 .navigationBarMenus(title: title)
             #else // macOS

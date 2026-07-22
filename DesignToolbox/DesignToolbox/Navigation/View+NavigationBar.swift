@@ -19,7 +19,14 @@ import SwiftUI
 extension View {
 
     func navigationBarMenus(title: String) -> some View {
-        #if !os(macOS)
+        #if os(macOS) || os(tvOS)
+        // macOS: OUDSToolBarItem/toolBarTop is not the idiomatic pattern.
+        // tvOS: focus engine handles the top navigation bar natively; use SwiftUI `.toolbar`.
+        toolbar {
+            ThemeSelectionButton()
+            ColorSchemeSelectionButton()
+        }
+        #else
         toolBarTop(title, trailingItems: {
             OUDSToolBarItem {
                 ThemeSelectionButton()
@@ -28,11 +35,6 @@ extension View {
                 ColorSchemeSelectionButton()
             }
         })
-        #else
-        toolbar {
-            ThemeSelectionButton()
-            ColorSchemeSelectionButton()
-        }
         #endif
     }
 }
