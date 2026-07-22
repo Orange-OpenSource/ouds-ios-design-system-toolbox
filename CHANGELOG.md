@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] **BREAKING**: `link` component to v2.4.0 (Orange-OpenSource/ouds-ios#1640)
 - [Library] `suggestion chip` and `filter chip` components to v1.5.0 (Orange-OpenSource/ouds-ios#1588)
 - [Library] **BREAKING**: `link` component to v2.3.0 (Orange-OpenSource/ouds-ios#1589)
 - [Library] Detection of forced legacy layout for navigation elements

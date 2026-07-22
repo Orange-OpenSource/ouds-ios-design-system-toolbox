@@ -110,6 +110,13 @@ final class LinkConfigurationModel: ComponentConfiguration {
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
+        case .indicatorExternal:
+            code =
+                """
+                OUDSLink(text: \"\(text)\", indicator: .external, size: \(size.technicalDescription)\(isFullWidthPattern)) {}
+                \(disableCodePattern)
+                \(coloredSurfaceCodeModifierPattern)
+                """
         }
     }
 }
@@ -117,7 +124,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
 // MARK: - Link Layout
 
 enum LinkLayout: DesignToolboxEnumLocalizedRepresentable {
-    case textOnly, textAndIcon, indicatorPrevious, indicatorNext
+    case textOnly, textAndIcon, indicatorPrevious, indicatorNext, indicatorExternal
 
     var wordingKey: String {
         switch self {
@@ -129,6 +136,8 @@ enum LinkLayout: DesignToolboxEnumLocalizedRepresentable {
             "app_components_link_backLayout_tech"
         case .indicatorNext:
             "app_components_link_nextLayout_tech"
+        case .indicatorExternal:
+            "app_components_link_externalLayout_tech"
         }
     }
 }

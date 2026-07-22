@@ -54,6 +54,8 @@ private struct LinkDemo: View {
             OUDSLink(text: configurationModel.text, indicator: .previous, size: configurationModel.size, isFullWidth: configurationModel.isFullWidth) {}
         case .indicatorNext:
             OUDSLink(text: configurationModel.text, indicator: .next, size: configurationModel.size, isFullWidth: configurationModel.isFullWidth) {}
+        case .indicatorExternal:
+            OUDSLink(text: configurationModel.text, indicator: .external, size: configurationModel.size, isFullWidth: configurationModel.isFullWidth) {}
         }
     }
 
