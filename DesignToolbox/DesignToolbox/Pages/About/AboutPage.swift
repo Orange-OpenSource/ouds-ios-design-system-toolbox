@@ -221,7 +221,7 @@ struct AboutPage: View {
         link(designSystemUrl, label: "app_about_designSystem_label", assetName: "paintpalette.fill")
     }
 
-    #if !os(visionOS)
+    #if !os(visionOS) && !os(tvOS)
     @ViewBuilder private func link(title: LocalizedStringKey, forWebview url: URL) -> some View {
         OUDSNavigationLink(title, style: .standard(.backgroundOnInteractionOnly(withDivider: false))) {
             WebView(from: url)
@@ -244,7 +244,7 @@ struct AboutPage: View {
                                indicatorType: .external,
                                leading: .image(.init(asset: Image(systemName: assetName))))
         {
-            openUrl.callAsFunction(url)
+            openURL.callAsFunction(url)
         }
         .oudsListItemStandardStyle(.backgroundOnInteractionOnly(withDivider: false))
         .oudsListItemSize(.small)

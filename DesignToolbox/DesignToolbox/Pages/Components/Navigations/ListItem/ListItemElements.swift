@@ -24,7 +24,6 @@ struct ListItemElements: DesignToolboxElement {
             StaticListItemElement(),
             NavigationListItemElement(),
         ]
-
         name = "app_components_listItem_tech".localized()
         illustration = AnyView(ListItemIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(

@@ -24,7 +24,8 @@ struct StaticListItemElement: DesignToolboxElement {
         illustration = AnyView(ListItemIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            description: "app_components_listItem_static_description", // TODO: #265 - Display version
+            description: "app_components_listItem_static_description",
+            version: OUDSVersions.componentStaticListItemVersion,
             demoScreen: AnyView(StaticListItemPage())))
     }
 }

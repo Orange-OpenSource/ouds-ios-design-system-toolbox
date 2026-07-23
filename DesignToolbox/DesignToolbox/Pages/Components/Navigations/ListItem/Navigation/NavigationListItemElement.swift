@@ -26,7 +26,8 @@ struct NavigationListItemElement: DesignToolboxElement {
         illustration = AnyView(NavigationListItemIllustration())
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            description: "app_components_listItem_navigation_description", // TODO: #265 - Display version
+            description: "app_components_listItem_navigation_description",
+            version: OUDSVersions.componentNavigationListItemVersion,
             demoScreen: AnyView(NavigationListItemPage())))
     }
 }

@@ -42,7 +42,7 @@ struct DesignToolboxVariantElement: View {
     var body: some View {
         ForEach(elements, id: \.id) { element in
             #if os(iOS)
-            OUDSNavigationLink(LocalizedStringKey(element.name), isBoldLabel: true, affordanceType: .next) {
+            OUDSNavigationLink(LocalizedStringKey(element.name), hasBoldLabel: true, indicatorType: .next) {
                 element.pageDescription
             }
             #elseif os(visionOS)
@@ -78,6 +78,10 @@ struct DesignToolboxVariantElement: View {
                             .environmentObject(lowPowerModeObserver)
                     }
                 }
+            } label: {
+                rowView(for: element)
+            }
+            #endif
         }
         .oudsListItemSize(.small)
     }

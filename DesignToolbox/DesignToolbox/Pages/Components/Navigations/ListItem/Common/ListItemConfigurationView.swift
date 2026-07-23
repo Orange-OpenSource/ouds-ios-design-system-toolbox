@@ -98,12 +98,14 @@ private struct ListItemGlobalSettingsConfiguration: View {
 
                 OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
+                #if !os(tvOS)
                 Stepper("app_components_common_itemCount_label" <- "\($configurationModel.numberOfItems.wrappedValue)",
                         value: $configurationModel.numberOfItems,
                         in: 1 ... 15,
                         step: 1)
                     .padding(.all, theme.spaces.fixedMedium)
                     .labelStrongMedium(theme)
+                #endif
             }
         }
     }

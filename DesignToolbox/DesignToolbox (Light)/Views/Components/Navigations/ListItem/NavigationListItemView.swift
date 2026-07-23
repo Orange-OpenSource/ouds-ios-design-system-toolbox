@@ -19,14 +19,13 @@ struct NavigationListItemView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(title: "Navigation List Item",
-                              watchLayout: { watchOSVerticalLayout },
-                              tvLayout: { tvOSGridLayout })
+        WatchScrollLayoutView(title: "Navigation List Item",
+                              layout: { watchOSLayout })
     }
 
     // MARK: - watchOS
 
-    private var watchOSVerticalLayout: some View {
+    private var watchOSLayout: some View {
         WatchVerticalLayout {
             Text("Label only").font(.headline)
 
@@ -62,67 +61,5 @@ struct NavigationListItemView: View {
                 leading: .avatar(avatar),
                 trailing: .text(.label("Info")))
         }
-    }
-
-    // MARK: - tvOS
-
-    private var tvOSGridLayout: some View {
-        TVGridLayout(count: 2) {
-
-            // Column n°1
-            VStack(spacing: theme.spaces.paddingBlockLarge) {
-                Text("Label only")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.bottom, theme.spaces.paddingBlockSmall)
-
-                OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
-
-                Text("Leading icon, trailing badge")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.bottom, theme.spaces.paddingBlockSmall)
-
-                let icon = OUDSListItemIcon(type: .info, size: .medium)
-                let badge = OUDSBadgeCount(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
-
-                OUDSNavigationListItem(
-                    data: OUDSListItemData(label: "Label"),
-                    indicatorType: .external,
-                    leading: .icon(icon),
-                    trailing: .badge(.count(badge)))
-            }
-            .padding()
-
-            // Column n°2
-            VStack(spacing: theme.spaces.paddingBlockLarge) {
-                Text("More textual")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.bottom, theme.spaces.paddingBlockSmall)
-
-                let data = OUDSListItemData(
-                    label: "Label",
-                    description: "Description",
-                    overline: "Overline",
-                    extraLabel: "Extra Label")
-                OUDSNavigationListItem(data: data, indicatorType: .next)
-
-                Text("Leading avatar, trailing text")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.bottom, theme.spaces.paddingBlockSmall)
-
-                let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
-
-                OUDSNavigationListItem(
-                    data: OUDSListItemData(label: "Label", description: "Description"),
-                    indicatorType: .previous,
-                    leading: .avatar(avatar),
-                    trailing: .text(.label("Info")))
-            }
-            .padding()
-        }
-        .padding()
     }
 }
