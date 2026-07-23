@@ -37,26 +37,30 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
     @MainActor func testAllLinks(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for layout in LinkLayout.allCases {
             for size in OUDSLink.Size.allCases {
-                let iconTypes: [DefinedStatusIcons] = layout == .textAndIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
-                let fullWidths: [Bool] = (layout == .indicatorNext || layout == .indicatorPrevious) ? [false, true] : [false]
-                for iconType in iconTypes {
-                    for isFullWidth in fullWidths {
-                        testLink(theme: theme,
-                                 interfaceStyle: interfaceStyle,
-                                 layout: layout,
-                                 size: size,
-                                 iconType: iconType,
-                                 disabled: false,
-                                 onColoredSurface: false,
-                                 isFullWidth: isFullWidth)
-                        testLink(theme: theme,
-                                 interfaceStyle: interfaceStyle,
-                                 layout: layout,
-                                 size: size,
-                                 iconType: iconType,
-                                 disabled: true,
-                                 onColoredSurface: false,
-                                 isFullWidth: isFullWidth)
+                for density in OUDSLink.Density.allCases {
+                    let iconTypes: [DefinedStatusIcons] = layout == .textAndIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
+                    let fullWidths: [Bool] = (layout == .indicatorNext || layout == .indicatorPrevious) ? [false, true] : [false]
+                    for iconType in iconTypes {
+                        for isFullWidth in fullWidths {
+                            testLink(theme: theme,
+                                     interfaceStyle: interfaceStyle,
+                                     layout: layout,
+                                     size: size,
+                                     density: density,
+                                     iconType: iconType,
+                                     disabled: false,
+                                     onColoredSurface: false,
+                                     isFullWidth: isFullWidth)
+                            testLink(theme: theme,
+                                     interfaceStyle: interfaceStyle,
+                                     layout: layout,
+                                     size: size,
+                                     density: density,
+                                     iconType: iconType,
+                                     disabled: true,
+                                     onColoredSurface: false,
+                                     isFullWidth: isFullWidth)
+                        }
                     }
                 }
             }
@@ -78,26 +82,30 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
         // Skip test for negative hierarchy because it is not allowed on colored surface
         for layout in LinkLayout.allCases {
             for size in OUDSLink.Size.allCases {
-                let iconTypes: [DefinedStatusIcons] = layout == .textAndIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
-                let fullWidths: [Bool] = (layout == .indicatorNext || layout == .indicatorPrevious) ? [false, true] : [false]
-                for iconType in iconTypes {
-                    for isFullWidth in fullWidths {
-                        testLink(theme: theme,
-                                 interfaceStyle: interfaceStyle,
-                                 layout: layout,
-                                 size: size,
-                                 iconType: iconType,
-                                 disabled: false,
-                                 onColoredSurface: true,
-                                 isFullWidth: isFullWidth)
-                        testLink(theme: theme,
-                                 interfaceStyle: interfaceStyle,
-                                 layout: layout,
-                                 size: size,
-                                 iconType: iconType,
-                                 disabled: true,
-                                 onColoredSurface: true,
-                                 isFullWidth: isFullWidth)
+                for density in OUDSLink.Density.allCases {
+                    let iconTypes: [DefinedStatusIcons] = layout == .textAndIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
+                    let fullWidths: [Bool] = (layout == .indicatorNext || layout == .indicatorPrevious) ? [false, true] : [false]
+                    for iconType in iconTypes {
+                        for isFullWidth in fullWidths {
+                            testLink(theme: theme,
+                                     interfaceStyle: interfaceStyle,
+                                     layout: layout,
+                                     size: size,
+                                     density: density,
+                                     iconType: iconType,
+                                     disabled: false,
+                                     onColoredSurface: true,
+                                     isFullWidth: isFullWidth)
+                            testLink(theme: theme,
+                                     interfaceStyle: interfaceStyle,
+                                     layout: layout,
+                                     size: size,
+                                     density: density,
+                                     iconType: iconType,
+                                     disabled: true,
+                                     onColoredSurface: true,
+                                     isFullWidth: isFullWidth)
+                        }
                     }
                 }
             }
@@ -119,12 +127,14 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - layout: the layout of the link
     ///   - size: the size of the link
+    ///   - density: the sidensityze of the link
     ///   - disabled: the disabled flag
     ///   - onColoredSurface: a flag to know if link is on a colored surface or not
     @MainActor private func testLink(theme: OUDSTheme,
                                      interfaceStyle: UIUserInterfaceStyle,
                                      layout: LinkLayout,
                                      size: OUDSLink.Size,
+                                     density: OUDSLink.Density,
                                      iconType: DefinedStatusIcons = .tintedIcon,
                                      disabled: Bool,
                                      onColoredSurface: Bool = false,
@@ -132,7 +142,7 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
     {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
-            LinkTest(layout: layout, size: size, iconType: iconType, onColoredSurface: onColoredSurface, isFullWidth: isFullWidth)
+            LinkTest(layout: layout, size: size, density: density, iconType: iconType, onColoredSurface: onColoredSurface, isFullWidth: isFullWidth)
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
                 .disabled(disabled)
         }
@@ -148,7 +158,7 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
         let imageModePattern = layout == .textAndIcon ? (iconType == .image ? "_OriginalImage" : "_TemplateImage") : ""
         let fullWidthPattern = isFullWidth ? "_FullWidth" : ""
         let disabledPatern = disabled ? "_Disabled" : ""
-        let name = "\(coloredSurfacePatern)\(layout.debugDescription)\(imageModePattern)_\(size.formattedName)\(fullWidthPattern)\(disabledPatern)"
+        let name = "\(coloredSurfacePatern)\(layout.debugDescription)\(imageModePattern)_\(size.formattedName)_\(density.formattedName)\(fullWidthPattern)\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
@@ -167,9 +177,11 @@ struct LinkTest: View {
 
     let layout: LinkLayout
     let size: OUDSLink.Size
+    let density: OUDSLink.Density
     let iconType: DefinedStatusIcons
     let onColoredSurface: Bool
     let isFullWidth: Bool
+
     @Environment(\.theme) private var theme
 
     var body: some View {
@@ -183,15 +195,15 @@ struct LinkTest: View {
     func link() -> some View {
         switch layout {
         case .textOnly:
-            OUDSLink(text: "Link", size: size) {}
+            OUDSLink(text: "Link", size: size, density: density) {}
         case .textAndIcon:
-            OUDSLink(text: "Link", image: oudsImage, size: size) {}
+            OUDSLink(text: "Link", image: oudsImage, size: size, density: density) {}
         case .indicatorNext:
-            OUDSLink(text: "Next", indicator: .next, size: size, isFullWidth: isFullWidth) {}
+            OUDSLink(text: "Next", indicator: .next, size: size, density: density, isFullWidth: isFullWidth) {}
         case .indicatorPrevious:
-            OUDSLink(text: "Back", indicator: .previous, size: size, isFullWidth: isFullWidth) {}
+            OUDSLink(text: "Back", indicator: .previous, size: size, density: density, isFullWidth: isFullWidth) {}
         case .indicatorExternal:
-            OUDSLink(text: "External", indicator: .external, size: size, isFullWidth: isFullWidth) {}
+            OUDSLink(text: "External", indicator: .external, size: size, density: density, isFullWidth: isFullWidth) {}
         }
     }
 

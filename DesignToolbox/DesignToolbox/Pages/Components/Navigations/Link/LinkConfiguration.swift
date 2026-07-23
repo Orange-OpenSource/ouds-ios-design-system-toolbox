@@ -37,6 +37,10 @@ final class LinkConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var density: OUDSLink.Density {
+        didSet { updateCode() }
+    }
+
     @Published var iconType: DefinedStatusIcons {
         didSet { updateCode() }
     }
@@ -52,6 +56,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
         text = String(localized: "app_components_link_tech")
         layout = .textOnly
         size = .default
+        density = .default
         iconType = .tintedIcon
         super.init()
     }
@@ -76,6 +81,10 @@ final class LinkConfigurationModel: ComponentConfiguration {
         enabled ? "" : ".disabled(true)"
     }
 
+    private var densityPattern: String {
+        density != .default ? ", density: \(density.technicalDescription)" : ""
+    }
+
     private var isFullWidthPattern: String {
         isFullWidth ? ", isFullWidth: true" : ""
     }
@@ -85,35 +94,35 @@ final class LinkConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
                 """
-                OUDSLink(text: \"\(text)\", size: \(size.technicalDescription)) {}
+                OUDSLink(text: \"\(text)\", size: \(size.technicalDescription)\(densityPattern)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSLink(text: \"\(text)\", image: OUDSImage(asset: \(iconAssetSample)\(renderingModeCode)), size: \(size.technicalDescription)) {}
+                OUDSLink(text: \"\(text)\", image: OUDSImage(asset: \(iconAssetSample)\(renderingModeCode)), size: \(size.technicalDescription)\(densityPattern)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         case .indicatorNext:
             code =
                 """
-                OUDSLink(text: \"\(text)\", indicator: .next, size: \(size.technicalDescription)\(isFullWidthPattern)) {}
+                OUDSLink(text: \"\(text)\", indicator: .next, size: \(size.technicalDescription)\(densityPattern)\(isFullWidthPattern)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         case .indicatorPrevious:
             code =
                 """
-                OUDSLink(text: \"\(text)\", indicator: .previous, size: \(size.technicalDescription)\(isFullWidthPattern)) {}
+                OUDSLink(text: \"\(text)\", indicator: .previous, size: \(size.technicalDescription)\(densityPattern)\(isFullWidthPattern)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         case .indicatorExternal:
             code =
                 """
-                OUDSLink(text: \"\(text)\", indicator: .external, size: \(size.technicalDescription)\(isFullWidthPattern)) {}
+                OUDSLink(text: \"\(text)\", indicator: .external, size: \(size.technicalDescription)\(densityPattern)\(isFullWidthPattern)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
@@ -148,6 +157,12 @@ extension OUDSLink.Size: @retroactive CaseIterable, DesignToolboxEnumRepresentab
     public static let allCases: [OUDSLink.Size] = [.default, .small]
 }
 
+// MARK: Link density extension
+
+extension OUDSLink.Density: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSLink.Density] = [.default, .compact]
+}
+
 // MARK: - Link Configuration View
 
 struct LinkConfiguration: View {
@@ -169,6 +184,10 @@ struct LinkConfiguration: View {
                 OUDSChipPicker(title: "app_components_common_size_tech",
                                selection: $configurationModel.size,
                                chips: OUDSLink.Size.chips)
+
+                OUDSChipPicker(title: "app_components_common_density_tech",
+                               selection: $configurationModel.density,
+                               chips: OUDSLink.Density.chips)
 
                 OUDSChipPicker(title: "app_components_common_layout_tech",
                                selection: $configurationModel.layout,
