@@ -47,15 +47,32 @@ private struct LinkDemo: View {
     @ViewBuilder private var link: some View {
         switch configurationModel.layout {
         case .textOnly:
-            OUDSLink(text: configurationModel.text, size: configurationModel.size) {}
+            OUDSLink(text: configurationModel.text,
+                     size: configurationModel.size,
+                     density: configurationModel.density) {}
         case .textAndIcon:
-            OUDSLink(text: configurationModel.text, image: image, size: configurationModel.size) {}
+            OUDSLink(text: configurationModel.text,
+                     image: image,
+                     size: configurationModel.size,
+                     density: configurationModel.density) {}
         case .indicatorPrevious:
-            OUDSLink(text: configurationModel.text, indicator: .previous, size: configurationModel.size, isFullWidth: configurationModel.isFullWidth) {}
+            OUDSLink(text: configurationModel.text,
+                     indicator: .previous,
+                     size: configurationModel.size,
+                     density: configurationModel.density,
+                     isFullWidth: configurationModel.isFullWidth) {}
         case .indicatorNext:
-            OUDSLink(text: configurationModel.text, indicator: .next, size: configurationModel.size, isFullWidth: configurationModel.isFullWidth) {}
+            OUDSLink(text: configurationModel.text,
+                     indicator: .next,
+                     size: configurationModel.size,
+                     density: configurationModel.density,
+                     isFullWidth: configurationModel.isFullWidth) {}
         case .indicatorExternal:
-            OUDSLink(text: configurationModel.text, indicator: .external, size: configurationModel.size, isFullWidth: configurationModel.isFullWidth) {}
+            OUDSLink(text: configurationModel.text,
+                     indicator: .external,
+                     size: configurationModel.size,
+                     density: configurationModel.density,
+                     isFullWidth: configurationModel.isFullWidth) {}
         }
     }
 
