@@ -27,7 +27,7 @@ extension View {
     /// - iOS / visionOS: rendered inside the OUDS `toolBarTop` navigation bar.
     /// - macOS: rendered via SwiftUI `.toolbar`.
     /// - tvOS: this is a no-op. The controls must be rendered explicitly by the
-    ///   caller inside the page layout using ``TVOSTopControlsBar``, because tvOS
+    ///   caller inside the page layout using `TVOSTopControlsBar`, because tvOS
     ///   has no navigation bar chrome where a `.toolbar` payload would appear.
     @ViewBuilder
     func navigationBarMenus(title: String) -> some View {
@@ -52,7 +52,7 @@ extension View {
 
     /// Sets the screen title.
     ///
-    /// - Non-tvOS: forwards to ``oudsNavigationTitle(_:)`` so the OUDS navigation
+    /// - Non-tvOS: forwards to `oudsNavigationTitle(_:)` so the OUDS navigation
     ///   stack renders it in its navigation bar and posts the accessibility
     ///   screen-changed notification.
     /// - tvOS: does not render any visible title (the top `TabView` bar already
