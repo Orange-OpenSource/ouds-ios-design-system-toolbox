@@ -675,6 +675,54 @@
         }
       }
     },
+    "app_about_sandbox_description" : {
+      "comment" : "About screen - Description of the DEBUG-only sandbox switch item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قم بالتفعيل لعرض صندوق التجارب في وضع التصحيح"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable to display the sandbox in debug mode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activer pour afficher le bac à sable en mode debug"
+          }
+        }
+      }
+    },
+    "app_about_sandbox_label" : {
+      "comment" : "About screen - Label of the DEBUG-only sandbox switch item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "صندوق التجارب"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sandbox"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bac à sable"
+          }
+        }
+      }
+    },
     "app_bottomBar_about_label" : {
       "comment" : "Bottom bar",
       "extractionState" : "manual",
@@ -719,6 +767,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Composants"
+          }
+        }
+      }
+    },
+    "app_bottomBar_debug_label" : {
+      "comment" : "Bottom bar - DEBUG-only sandbox tab title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تصحيح"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Debug"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Debug"
           }
         }
       }
@@ -6285,6 +6357,78 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_sandbox_navigation_title" : {
+      "comment" : "Sandbox page - Navigation bar title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تصحيح"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Debug"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Debug"
+          }
+        }
+      }
+    },
+    "app_sandbox_placeholder_description" : {
+      "comment" : "Sandbox page - Placeholder description shown when the sandbox has no content",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أضف هنا تجاربك وأدوات التصحيح الخاصة بك"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add your experimentations and debug here"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter ici vos expérimentations et debug"
+          }
+        }
+      }
+    },
+    "app_sandbox_placeholder_title" : {
+      "comment" : "Sandbox page - Placeholder title shown when the sandbox has no content",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "صندوق التجارب"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sandbox"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bac à sable"
+          }
+        }
+      }
     },
     "app_search_empty_results" : {
       "comment" : "Search page - No results found for the given query (%@ = search text)",

@@ -163,7 +163,8 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
                 }
             case let .optional(binding):
                 Picker(selection: binding) {
-                    Text("—").tag(Tag?.none)
+                    let dummy = "—"
+                    Text(dummy).tag(Tag?.none)
                     ForEach(chips, id: \.tag) { chip in
                         Text(chip.displayText).tag(Tag?.some(chip.tag))
                     }

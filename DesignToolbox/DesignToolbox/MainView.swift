@@ -26,6 +26,12 @@ struct MainView: View {
     @Environment(\.theme) private var theme
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
+    #if DEBUG
+    /// DEBUG-only flag toggled from the About page. When `true`, a "Debug" tab
+    /// wrapping ``SandboxPage`` is inserted at the first position of the tab bar.
+    @AppStorage(SandboxUserDefaultsKeys.sandboxEnabled) private var sandboxEnabled: Bool = false
+    #endif
+
     // MARK: - Body
 
     var body: some View {
@@ -51,7 +57,42 @@ struct MainView: View {
     // MARK: - tvOS Tab View
 
     #if os(tvOS)
+    @ViewBuilder
     private var tvOSTabBar: some View {
+        #if DEBUG
+        if sandboxEnabled {
+            TabView(selection: $selectedTab) {
+                SandboxPage()
+                    .tabItem {
+                        Label("app_bottomBar_debug_label", systemImage: "hammer")
+                    }
+                    .tag(0)
+                TokensPage()
+                    .tabItem {
+                        Label("app_bottomBar_tokens_label", image: "design-token")
+                    }
+                    .tag(1)
+                ComponentsPage()
+                    .tabItem {
+                        Label("app_bottomBar_components_label", image: "component-atom")
+                    }
+                    .tag(2)
+                AboutPage()
+                    .tabItem {
+                        Label("app_bottomBar_about_label", image: "info-fill")
+                    }
+                    .tag(3)
+            }
+            .accentColor(theme.button.colorContentMinimalEnabled)
+        } else {
+            defaultTvOSTabBar
+        }
+        #else
+        defaultTvOSTabBar
+        #endif
+    }
+
+    private var defaultTvOSTabBar: some View {
         TabView(selection: $selectedTab) {
             TokensPage()
                 .tabItem {
@@ -77,7 +118,38 @@ struct MainView: View {
 
     #if os(iOS)
     @available(iOS 26, *) // Supposing we did not disable Liquid Glass :3
+    @ViewBuilder
     private var liquidGlassSearchTabBar: some View {
+        #if DEBUG
+        if sandboxEnabled {
+            OUDSLiquidGlassTabView {
+                Tab("app_bottomBar_debug_label", systemImage: "hammer") {
+                    SandboxPage()
+                }
+                Tab("app_bottomBar_tokens_label", image: "design-token") {
+                    TokensPage()
+                }
+                Tab("app_bottomBar_components_label", image: "component-atom") {
+                    ComponentsPage()
+                }
+                Tab("app_bottomBar_about_label", image: "info-fill") {
+                    AboutPage()
+                }
+                Tab(role: .search) {
+                    SearchPage()
+                }
+            }
+            .accentColor(theme.button.colorContentMinimalEnabled)
+        } else {
+            defaultLiquidGlassSearchTabBar
+        }
+        #else
+        defaultLiquidGlassSearchTabBar
+        #endif
+    }
+
+    @available(iOS 26, *)
+    private var defaultLiquidGlassSearchTabBar: some View {
         OUDSLiquidGlassTabView {
             Tab("app_bottomBar_tokens_label", image: "design-token") {
                 TokensPage()
@@ -96,7 +168,38 @@ struct MainView: View {
     }
 
     @available(iOS 18, *)
+    @ViewBuilder
     private var searchTabBar: some View {
+        #if DEBUG
+        if sandboxEnabled {
+            OUDSTabView(selectedTab: $selectedTab, count: 5) {
+                Tab("app_bottomBar_debug_label", systemImage: "hammer", value: 0) {
+                    SandboxPage()
+                }
+                Tab("app_bottomBar_tokens_label", image: "design-token", value: 1) {
+                    TokensPage()
+                }
+                Tab("app_bottomBar_components_label", image: "component-atom", value: 2) {
+                    ComponentsPage()
+                }
+                Tab("app_bottomBar_about_label", image: "info-fill", value: 3) {
+                    AboutPage()
+                }
+                Tab(value: 4, role: .search) {
+                    SearchPage()
+                }
+            }
+            .accentColor(theme.button.colorContentMinimalEnabled)
+        } else {
+            defaultSearchTabBar
+        }
+        #else
+        defaultSearchTabBar
+        #endif
+    }
+
+    @available(iOS 18, *)
+    private var defaultSearchTabBar: some View {
         OUDSTabView(selectedTab: $selectedTab, count: 4) {
             Tab("app_bottomBar_tokens_label", image: "design-token", value: 0) {
                 TokensPage()
@@ -117,7 +220,42 @@ struct MainView: View {
 
     // MARK: - Default Tab Bar
 
+    @ViewBuilder
     private var tabBar: some View {
+        #if DEBUG
+        if sandboxEnabled {
+            OUDSTabBar(selectedTab: $selectedTab, count: 4) {
+                SandboxPage()
+                    .tabItem {
+                        Label("app_bottomBar_debug_label", systemImage: "hammer")
+                    }
+                    .tag(0)
+                TokensPage()
+                    .tabItem {
+                        Label("app_bottomBar_tokens_label", image: "design-token")
+                    }
+                    .tag(1)
+                ComponentsPage()
+                    .tabItem {
+                        Label("app_bottomBar_components_label", image: "component-atom")
+                    }
+                    .tag(2)
+                AboutPage()
+                    .tabItem {
+                        Label("app_bottomBar_about_label", image: "info-fill")
+                    }
+                    .tag(3)
+            }
+            .accentColor(theme.button.colorContentMinimalEnabled)
+        } else {
+            defaultTabBar
+        }
+        #else
+        defaultTabBar
+        #endif
+    }
+
+    private var defaultTabBar: some View {
         OUDSTabBar(selectedTab: $selectedTab, count: 3) {
             TokensPage()
                 .tabItem {
