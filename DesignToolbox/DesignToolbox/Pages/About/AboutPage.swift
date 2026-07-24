@@ -37,6 +37,13 @@ struct AboutPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.openURL) private var openURL
 
+    #if DEBUG
+    /// DEBUG-only flag persisting whether the sandbox tab must be displayed.
+    /// Toggled by the "Bac à sable" switch item at the bottom of the About page
+    /// and observed by ``MainView`` to conditionally insert the Debug tab.
+    @AppStorage(SandboxUserDefaultsKeys.sandboxEnabled) private var sandboxEnabled: Bool = false
+    #endif
+
     // MARK: Initializer
 
     init() {
@@ -109,6 +116,7 @@ struct AboutPage: View {
             legalView
             buildView
             linksView
+            debugSandboxView
         }
         .oudsScreenTitle("app_bottomBar_about_label")
     }
@@ -243,6 +251,22 @@ struct AboutPage: View {
         }
         .accessibilityHint(hint.localized())
     }
+
+    // swiftlint:disable accessibility_label_for_image
+    /// DEBUG-only switch item displayed at the very bottom of the About list.
+    /// Enabling it makes ``MainView`` add a "Debug" tab in first position.
+    @ViewBuilder
+    private var debugSandboxView: some View {
+        #if DEBUG
+        OUDSSwitchItem("app_about_sandbox_label",
+                       isOn: $sandboxEnabled,
+                       description: "app_about_sandbox_description".localized(),
+                       image: .init(asset: Image(systemName: "hammer")))
+        #else
+        EmptyView()
+        #endif
+    }
+    // swiftlint:enable accessibility_label_for_image
 }
 
 // MARK: - State Item
