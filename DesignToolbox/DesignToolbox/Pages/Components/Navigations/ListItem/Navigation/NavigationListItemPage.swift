@@ -33,23 +33,34 @@ struct NavigationListItemPage: View {
 
 private struct NavigationListItemDemo: View {
 
-    @ObservedObject var configurationModel: NavigationListItemConfigurationModel
+    @ObservedObject private var configurationModel: NavigationListItemConfigurationModel
+    @ObservedObject private var textsModel: ListItemTextsConfigurationModel
+    @ObservedObject private var leadingModel: ListItemLeadingConfigurationModel
+    @ObservedObject private var trailingModel: ListItemTrailingConfigurationModel
+
     @Environment(\.theme) private var theme
+
+    init(configurationModel: NavigationListItemConfigurationModel) {
+        self.configurationModel = configurationModel
+        textsModel = configurationModel.textsModel
+        leadingModel = configurationModel.leadingModel
+        trailingModel = configurationModel.trailingModel
+    }
 
     var body: some View {
         VStack(spacing: rowGap) {
             ForEach(Array(configurationModel.dataItems.enumerated()), id: \.offset) { _, data in
-                if configurationModel.hasSlot {
+                if textsModel.hasSlot {
                     OUDSNavigationListItem(data: data,
-                                           slot: configurationModel.slot(),
+                                           slot: textsModel.slot(),
                                            indicatorType: configurationModel.indicatorType,
-                                           leading: configurationModel.leading(for: theme),
-                                           trailing: configurationModel.trailing(for: theme)) {}
+                                           leading: leadingModel.item(for: theme),
+                                           trailing: trailingModel.item(for: theme)) {}
                 } else {
                     OUDSNavigationListItem(data: data,
                                            indicatorType: configurationModel.indicatorType,
-                                           leading: configurationModel.leading(for: theme),
-                                           trailing: configurationModel.trailing(for: theme)) {}
+                                           leading: leadingModel.item(for: theme),
+                                           trailing: trailingModel.item(for: theme)) {}
                 }
             }
             .oudsListItemStyle(configurationModel.contentStyle)

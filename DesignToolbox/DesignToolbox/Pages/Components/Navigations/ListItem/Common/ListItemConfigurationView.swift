@@ -18,254 +18,48 @@ import SwiftUI
 
 struct ListItemConfiguration: View {
 
-    let configurationModel: ListItemConfigurationModel
+    // MARK: Properties
+
+    @ObservedObject var configurationModel: ListItemConfigurationModel
     @Environment(\.theme) private var theme
 
+    enum Configuration: String, CaseIterable {
+        case global, texts, leading, trailing
+
+        var description: String {
+            switch self {
+            case .global:
+                "app_components_listItem_globalConfiguration_label"
+            case .texts:
+                "app_components_listItem_labelsConfiguration_label"
+            case .leading:
+                "app_components_listItem_leading_tech"
+            case .trailing:
+                "app_components_listItem_trailing_tech"
+            }
+        }
+    }
+
+    @State var configuration: Configuration = .global
+
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
+        Picker("Configuration", selection: $configuration) {
+            ForEach(Configuration.allCases, id: \.self) { configuration in
+                Text(configuration.description.localized()).tag(configuration)
+            }
+        }
+        .pickerStyle(.segmented)
+        .padding(.horizontal, theme.spaces.fixedSmall)
+
+        switch configuration {
+        case .global:
             ListItemGlobalSettingsConfiguration(configurationModel: configurationModel)
-
-            OUDSHorizontalDivider()
-
-            ListItemContentConfiguration(configurationModel: configurationModel)
-
-            OUDSHorizontalDivider()
-
-            ListItemTextsConfiguration(configurationModel: configurationModel)
+        case .texts:
+            ListItemTextsConfiguration(configurationModel: configurationModel.textsModel)
+        case .trailing:
+            ListItemTrailingConfiguration(configurationModel: configurationModel.trailingModel)
+        case .leading:
+            ListItemLeadingConfiguration(configurationModel: configurationModel.leadingModel)
         }
     }
 }
-
-// MARK: - Global configuration
-
-private struct ListItemGlobalSettingsConfiguration: View {
-
-    @ObservedObject var configurationModel: ListItemConfigurationModel
-    @Environment(\.theme) private var theme
-
-    var body: some View {
-        DesignToolboxEditContentDisclosure("app_components_listItem_globalConfiguration_label", isContentVisible: true) {
-            VStack(spacing: 0) {
-                OUDSChipPicker(title: "app_components_listItem_size_tech".localized(),
-                               selection: $configurationModel.itemSize,
-                               chips: OUDSListItemSize.chips)
-
-                OUDSChipPicker(title: "app_components_listItem_alignment_tech".localized(),
-                               selection: $configurationModel.containersAlignment,
-                               chips: OUDSListItemContainersAlignment.chips)
-
-                Divider().horizontal()
-
-                OUDSChipPicker(title: "app_components_common_type_tech".localized(),
-                               selection: $configurationModel.type,
-                               chips: ListItemConfigurationModel.ListType.chips)
-
-                switch configurationModel.type {
-                case .card:
-                    OUDSChipPicker(title: "app_components_listItem_backgroundContentStyle_tech".localized(),
-                                   selection: $configurationModel.contentCardStyleOption,
-                                   chips: ContentCardStyle.chips)
-
-                    if configurationModel.contentCardStyleOption == .backgroundOnInteraction ||
-                        configurationModel.contentCardStyleOption == .outlinedOnInteraction
-                    {
-                        OUDSInlineAlert("app_common_notImplementedYet", status: .warning)
-                    }
-
-                    if configurationModel.contentCardStyleOption == .backgroundOnInteraction ||
-                        configurationModel.contentCardStyleOption == .background
-                    {
-                        OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
-                    }
-
-                case .standard:
-                    OUDSChipPicker(title: "app_components_listItem_backgroundContentStyle_tech".localized(),
-                                   selection: $configurationModel.contentStandardStyleOption,
-                                   chips: ContentStandardStyle.chips)
-
-                    if configurationModel.contentStandardStyleOption == .backgroundOnInteraction {
-                        OUDSInlineAlert("app_common_notImplementedYet", status: .warning)
-                    }
-
-                    if configurationModel.contentStandardStyleOption == .backgroundOnInteraction ||
-                        configurationModel.contentStandardStyleOption == .background
-                    {
-                        OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
-                    }
-                }
-
-                Divider().horizontal()
-
-                OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
-
-                #if !os(tvOS)
-                Stepper("app_components_common_itemCount_label" <- "\($configurationModel.numberOfItems.wrappedValue)",
-                        value: $configurationModel.numberOfItems,
-                        in: 1 ... 15,
-                        step: 1)
-                    .padding(.all, theme.spaces.fixedMedium)
-                    .labelStrongMedium(theme)
-                #endif
-            }
-        }
-    }
-}
-
-// MARK: - Texts configuration
-
-private struct ListItemTextsConfiguration: View {
-
-    @ObservedObject var configurationModel: ListItemConfigurationModel
-
-    var body: some View {
-        DesignToolboxEditContentDisclosure("app_components_listItem_labelsConfiguration_label") {
-            DesignToolboxTextField(text: $configurationModel.labelText, label: "app_components_common_label_tech")
-
-            if configurationModel.itemSize == .standard {
-                DesignToolboxTextField(text: $configurationModel.overlineText, label: "app_components_listItem_overline_tech")
-                DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_controlItem_extraLabel_tech")
-            }
-
-            DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_common_description_tech")
-
-            DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
-        }
-    }
-}
-
-// MARK: - Content configuration
-
-// swiftlint:disable closure_body_length
-
-private struct ListItemContentConfiguration: View {
-
-    @ObservedObject var configurationModel: ListItemConfigurationModel
-
-    var body: some View {
-        DesignToolboxEditContentDisclosure("app_components_listItem_contentConfiguration_label", isContentVisible: true) {
-            VStack(spacing: 0) {
-                OUDSChipPicker(title: "app_components_listItem_labelContentType_tech".localized(),
-                               selection: $configurationModel.labelContentType,
-                               chips: ListItemConfigurationModel.LabelContentType.chips)
-
-                if configurationModel.labelContentType == .text {
-                    OUDSSwitchItem("app_components_listItem_boldLabel_tech", isOn: $configurationModel.hasBoldLabel)
-                }
-
-                OUDSChipPicker(title: "app_components_listItem_leading_tech".localized(),
-                               selection: $configurationModel.leadingOption,
-                               chips: Leading.chips)
-
-                OUDSChipPicker(title: "app_components_listItem_trailing_tech".localized(),
-                               selection: $configurationModel.trailingOption,
-                               chips: Trailing.chips)
-
-                OUDSSwitchItem("app_components_listItem_slot_tech", isOn: $configurationModel.hasSlot)
-
-                // Trailing text configuration
-
-                if configurationModel.trailingOption == .text {
-
-                    Divider().horizontal()
-
-                    OUDSChipPicker(title: "app_components_listItem_trailing_textType_tech".localized(),
-                                   selection: $configurationModel.trailingTextType,
-                                   chips: OUDSListItemTrailing.TextType.chips)
-                }
-
-                // Trailing/Leading image configuration
-
-                if configurationModel.itemSize == .standard,
-                   configurationModel.trailingOption == .image || configurationModel.leadingOption == .image
-                {
-
-                    Divider().horizontal()
-
-                    OUDSChipPicker(title: "app_components_listItem_imageSize_tech".localized(),
-                                   selection: $configurationModel.imageSize,
-                                   chips: OUDSListItemImage.Size.chips)
-                }
-
-                // Trailing/Leading Avatar configuration
-
-                if configurationModel.trailingOption == .avatar || configurationModel.leadingOption == .avatar {
-
-                    Divider().horizontal()
-
-                    OUDSChipPicker(title: "app_components_listItem_avatarType_tech".localized(),
-                                   selection: $configurationModel.avatarType,
-                                   chips: OUDSListItemAvatar.AvatarType.chips)
-
-                    if configurationModel.itemSize == .standard {
-                        OUDSChipPicker(title: "app_components_listItem_avatarSize_tech".localized(),
-                                       selection: $configurationModel.avatarSize,
-                                       chips: OUDSListItemAvatar.Size.chips)
-                    }
-
-                    OUDSSwitchItem("app_components_listItem_avatarBadge_label", isOn: $configurationModel.avatarBadgeOption)
-                }
-
-                // Trailing/Leading icon configuration
-
-                if configurationModel.trailingOption == .icon || configurationModel.leadingOption == .icon {
-
-                    Divider().horizontal()
-
-                    OUDSChipPicker(title: "app_components_listItem_iconType_tech".localized(),
-                                   selection: $configurationModel.iconType,
-                                   chips: IconType.chips)
-
-                    if configurationModel.iconType == .neutral {
-                        OUDSSwitchItem("app_components_listItem_iconBadge_label", isOn: $configurationModel.bageOnNeutralIcon)
-                    }
-
-                    if configurationModel.itemSize == .standard {
-                        OUDSChipPicker(title: "app_components_listItem_iconSize_tech".localized(),
-                                       selection: $configurationModel.iconSize,
-                                       chips: OUDSListItemIcon.Size.chips)
-                    }
-                }
-
-                // Trailing/Leading flag configuration
-
-                if configurationModel.itemSize == .standard,
-                   configurationModel.trailingOption == .flag || configurationModel.leadingOption == .flag
-                {
-
-                    Divider().horizontal()
-
-                    OUDSChipPicker(title: "app_components_listItem_flagSize_tech".localized(),
-                                   selection: $configurationModel.flagSize,
-                                   chips: OUDSListItemFlag.Size.chips)
-                }
-
-                // Trailing/Leading video configuration
-
-                #if os(iOS) && canImport(UIKit)
-                if configurationModel.itemSize == .standard,
-                   configurationModel.trailingOption == .video || configurationModel.leadingOption == .video
-                {
-
-                    Divider().horizontal()
-                    OUDSChipPicker(title: "app_components_listItem_videoSize_tech".localized(),
-                                   selection: $configurationModel.videoSize,
-                                   chips: OUDSListItemVideo.Size.chips)
-                }
-                #endif
-
-                if !(configurationModel.leadingOption == .none)
-                    || !(configurationModel.trailingOption == .none)
-                {
-
-                    if configurationModel.needRoundedMediaOption {
-                        Divider().horizontal()
-
-                        OUDSSwitchItem("app_components_listItem_roundedMedia_tech", isOn: $configurationModel.roundedMedia)
-                    }
-                }
-            }
-        }
-    }
-}
-
-// swiftlint:enable closure_body_length

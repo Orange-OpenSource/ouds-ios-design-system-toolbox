@@ -1,0 +1,189 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import OUDSSwiftUI
+import SwiftUI
+
+open class ListItemTextsConfigurationModel: ComponentConfiguration {
+
+    // MARK: Properties
+
+    var itemSize: OUDSListItemSize
+
+    @Published var labelText: String {
+        didSet { updateCode() }
+    }
+
+    @Published var overlineText: String {
+        didSet { updateCode() }
+    }
+
+    @Published var extraLabelText: String {
+        didSet { updateCode() }
+    }
+
+    @Published var descriptionText: String {
+        didSet { updateCode() }
+    }
+
+    @Published var hasBoldLabel: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var hasSlot: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var labelContentType: LabelContentType {
+        didSet { updateCode() }
+    }
+
+    // MARK: Initializer
+
+    init(itemSize: OUDSListItemSize) {
+        self.itemSize = itemSize
+
+        labelText = String(localized: "app_components_common_label_label")
+        labelContentType = .text
+
+        overlineText = ""
+        extraLabelText = ""
+        descriptionText = ""
+        hasBoldLabel = false
+
+        hasSlot = false
+
+        super.init()
+    }
+
+    // MARK: Builder
+
+    @MainActor
+    func slot() -> some View {
+        OUDSInlineAlert(label: "Something wrong", status: .warning)
+    }
+
+    @MainActor
+    var customLabelView: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "phone.down.fill")
+                .foregroundColor(.red)
+                .accessibilityHidden(true)
+            Text("Missed call")
+                .fontWeight(.semibold)
+        }
+    }
+
+    // MARK: Code helper
+
+    override func updateCode() {
+        code = switch labelContentType {
+        case .text:
+            "\(labelPattern)\(hasBoldLabelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)"
+        case .customView:
+            "label: customLabel, accessibilityLabel: \"\(labelText)\"\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)"
+        }
+    }
+
+    var customLabelPattern: String {
+        """
+        let customLabel = 
+        HStack(spacing: 8) {
+            Image(systemName: "phone.down.fill")
+                .foregroundColor(.red)
+                .accessibilityHidden(true)
+            Text("Missed call")
+                .fontWeight(.semibold)
+        }
+        """
+    }
+    private var labelPattern: String {
+        "label: \"\(labelText)\""
+    }
+
+    private var hasBoldLabelPattern: String {
+        hasBoldLabel ? ", hasBoldLabel: true" : ""
+    }
+
+    private var overlinePattern: String {
+        overlineText.isEmpty ? "" : ", overline: \"\(overlineText)\""
+    }
+
+    private var extraLabelPattern: String {
+        extraLabelText.isEmpty ? "" : ", extraLabel: \"\(extraLabelText)\""
+    }
+
+    private var descriptionPattern: String {
+        descriptionText.isEmpty ? "" : ", description: \"\(descriptionText)\""
+    }
+
+    private var slotPattern: String {
+        hasSlot ? ", slot: someView()" : ""
+    }
+}
+
+// MARK: - Texts configuration
+
+struct ListItemTextsConfiguration: View {
+
+    @ObservedObject var configurationModel: ListItemTextsConfigurationModel
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        OUDSChipPicker(title: "app_components_listItem_labelContentType_tech".localized(),
+                       selection: $configurationModel.labelContentType,
+                       chips: LabelContentType.chips)
+
+        VStack {
+            if configurationModel.labelContentType == .text {
+                DesignToolboxTextField(text: $configurationModel.labelText, label: "app_components_common_label_tech")
+
+                OUDSSwitchItem("app_components_listItem_boldLabel_tech", isOn: $configurationModel.hasBoldLabel)
+            }
+
+            if configurationModel.itemSize == .standard {
+                DesignToolboxTextField(text: $configurationModel.overlineText, label: "app_components_listItem_overline_tech")
+                DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_controlItem_extraLabel_tech")
+            }
+
+            DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_common_description_tech")
+
+            OUDSSwitchItem("app_components_listItem_slot_tech", isOn: $configurationModel.hasSlot)
+        }
+        .padding(.horizontal, theme.spaces.fixedMedium)
+    }
+}
+
+// MARK: - Label Content Type
+
+enum LabelContentType: CaseIterable, CustomStringConvertible {
+    case text
+    case customView
+
+    var description: String {
+        switch self {
+        case .text:
+            "Text"
+        case .customView:
+            "Custom View"
+        }
+    }
+
+    var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}

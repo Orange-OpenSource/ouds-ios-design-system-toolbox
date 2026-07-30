@@ -33,21 +33,32 @@ struct StaticListItemPage: View {
 
 private struct StaticListItemDemo: View {
 
-    @ObservedObject var configurationModel: ListItemConfigurationModel
+    @ObservedObject private var configurationModel: ListItemConfigurationModel
+    @ObservedObject private var textsModel: ListItemTextsConfigurationModel
+    @ObservedObject private var leadingModel: ListItemLeadingConfigurationModel
+    @ObservedObject private var trailingModel: ListItemTrailingConfigurationModel
+
     @Environment(\.theme) private var theme
+
+    init(configurationModel: ListItemConfigurationModel) {
+        self.configurationModel = configurationModel
+        textsModel = configurationModel.textsModel
+        leadingModel = configurationModel.leadingModel
+        trailingModel = configurationModel.trailingModel
+    }
 
     var body: some View {
         VStack(spacing: rowGap) {
             ForEach(Array(configurationModel.dataItems.enumerated()), id: \.offset) { _, data in
-                if configurationModel.hasSlot {
+                if textsModel.hasSlot {
                     OUDSStaticListItem(data: data,
-                                       slot: configurationModel.slot(),
-                                       leading: configurationModel.leading(for: theme),
-                                       trailing: configurationModel.trailing(for: theme))
+                                       slot: textsModel.slot(),
+                                       leading: leadingModel.item(for: theme),
+                                       trailing: trailingModel.item(for: theme))
                 } else {
                     OUDSStaticListItem(data: data,
-                                       leading: configurationModel.leading(for: theme),
-                                       trailing: configurationModel.trailing(for: theme))
+                                       leading: leadingModel.item(for: theme),
+                                       trailing: trailingModel.item(for: theme))
                 }
             }
         }
