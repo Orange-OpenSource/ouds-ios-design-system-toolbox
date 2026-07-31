@@ -24,12 +24,22 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var ratio: OUDSListItemImage.Ratio {
+        didSet { updateCode() }
+    }
+
+    @Published var contentMode: ContentMode {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     init(itemSize: OUDSListItemSize) {
         self.itemSize = itemSize
 
         size = .medium
+        ratio = .square
+        contentMode = .fit
 
         super.init()
     }
@@ -40,13 +50,38 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
     var image: OUDSListItemImage {
         OUDSListItemImage(asset: Image.placeholderImage(),
                           size: size,
+                          ratio: ratio,
+                          contentMode: contentMode,
                           description: "Image description")
     }
 
     // MARK: Code helper
 
     override func updateCode() {
-        code = ".init(asset; \"\(Image.placeholderImageSample())\", description: \"Image description\", size: \(size.technicalDescription))"
+        code = 
+        """
+        .init(asset; \"\(Image.placeholderImageSample())\"
+            \(sizePattern)
+            \(ratioPattern)
+            \(contentModePattern)
+            \(descriptionPattern))
+        """
+    }
+
+    private var sizePattern: String {
+        ", size: \(size.technicalDescription)"
+    }
+
+    private var ratioPattern: String {
+        ", ratio: \(ratio.technicalDescription)"
+    }
+
+    private var contentModePattern: String {
+        ", contentMode: \(contentMode.technicalDescription)"
+    }
+
+    private var descriptionPattern: String {
+        ", description: \"Image description\""
     }
 }
 
@@ -60,6 +95,14 @@ struct ListItemImageConfiguration: View {
                            selection: $configurationModel.size,
                            chips: OUDSListItemImage.Size.chips)
         }
+
+        OUDSChipPicker(title: "app_components_listItem_imageRatio_tech".localized(),
+                       selection: $configurationModel.ratio,
+                       chips: OUDSListItemImage.Ratio.chips)
+
+        OUDSChipPicker(title: "app_components_listItem_imageContentMode_tech".localized(),
+                       selection: $configurationModel.contentMode,
+                       chips: ContentMode.chips)
     }
 }
 
@@ -78,4 +121,16 @@ extension OUDSListItemImage.Size: DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSListItemImage.Size] = [
         .medium, .large, .extraLarge,
     ]
+}
+
+// MARK: - Extensions of OUDSListItemImage.Ratio
+
+extension OUDSListItemImage.Ratio: @retroactive CaseIterable {}
+extension OUDSListItemImage.Ratio: DesignToolboxEnumRepresentable {
+    public static let allCases:  [OUDSListItemImage.Ratio] = [.square, .widescreen]
+}
+
+// MARK: - Extensions of ContentMode
+
+extension ContentMode: DesignToolboxEnumRepresentable {
 }

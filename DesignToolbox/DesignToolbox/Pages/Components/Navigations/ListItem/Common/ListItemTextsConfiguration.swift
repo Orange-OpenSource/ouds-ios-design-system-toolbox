@@ -153,7 +153,7 @@ struct ListItemTextsConfiguration: View {
 
             if configurationModel.itemSize == .standard {
                 DesignToolboxTextField(text: $configurationModel.overlineText, label: "app_components_listItem_overline_tech")
-                DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_controlItem_extraLabel_tech")
+                DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_common_extraLabel_tech")
             }
 
             DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_common_description_tech")

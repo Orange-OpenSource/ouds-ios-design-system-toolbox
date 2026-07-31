@@ -24,7 +24,7 @@ struct RadioItemPage: View {
                                                          bindingInitCode: "isOn: $isOn",
                                                          outlinedConfiguration: (value: false,
                                                                                  outlinedConfigurationLabel: "app_components_common_outlined_tech"),
-                                                         extraLabelConfiguration: "app_components_controlItem_extraLabel_tech".localized())
+                                                         extraLabelConfiguration: "app_components_common_extraLabel_tech".localized())
         _configurationModel = StateObject(wrappedValue: model)
     }
 

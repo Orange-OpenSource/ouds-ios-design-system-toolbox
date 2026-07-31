@@ -29,7 +29,7 @@ struct ListItemGlobalSettingsConfiguration: View {
 
             OUDSHorizontalDivider()
 
-            OUDSChipPicker(title: "app_components_listItem_alignment_tech".localized(),
+            OUDSChipPicker(title: "app_components_listItem_contentAlignment_tech".localized(),
                            selection: $configurationModel.containersAlignment,
                            chips: OUDSListItemContainersAlignment.chips)
 
@@ -45,9 +45,9 @@ struct ListItemGlobalSettingsConfiguration: View {
                                selection: $configurationModel.contentCardStyleOption,
                                chips: ContentCardStyle.chips)
 
-                if configurationModel.contentCardStyleOption == .backgroundOnInteraction ||
-                    configurationModel.contentCardStyleOption == .outlinedOnInteraction
-                {
+                if !(configurationModel is NavigationListItemConfigurationModel)
+                    && (configurationModel.contentCardStyleOption == .backgroundOnInteraction
+                        || configurationModel.contentCardStyleOption == .outlinedOnInteraction) {
                     OUDSInlineAlert("app_common_notImplementedYet", status: .warning)
                         .padding(.horizontal, theme.spaces.fixedSmall)
                 }
@@ -63,7 +63,8 @@ struct ListItemGlobalSettingsConfiguration: View {
                                selection: $configurationModel.contentStandardStyleOption,
                                chips: ContentStandardStyle.chips)
 
-                if configurationModel.contentStandardStyleOption == .backgroundOnInteraction {
+                if !(configurationModel is NavigationListItemConfigurationModel)
+                    && configurationModel.contentStandardStyleOption == .backgroundOnInteraction {
                     OUDSInlineAlert("app_common_notImplementedYet", status: .warning)
                         .padding(.horizontal, theme.spaces.fixedSmall)
                 }

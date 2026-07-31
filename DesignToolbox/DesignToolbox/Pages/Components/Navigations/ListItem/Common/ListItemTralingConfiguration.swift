@@ -23,18 +23,27 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var textType: OUDSListItemTrailing.TextType {
+    @Published var textTypeOption: TextType {
         didSet { updateCode() }
     }
 
-    private var cancellables = Set<AnyCancellable>()
+    @Published var label: String {
+        didSet { updateCode() }
+    }
+
+    @Published var extraLabel: String  {
+        didSet { updateCode() }
+    }
+
     var avatarModel: ListItemAvatarConfigurationModel
+    var badgeModel: ListItemBadgeConfigurationModel
     var flagModel: ListItemFlagConfigurationModel
     var iconModel: ListItemIconConfigurationModel
     var imageModel: ListItemImageConfigurationModel
     #if os(iOS) && canImport(UIKit)
     var videoModel: ListItemVideoConfigurationModel
     #endif
+
 
     var itemSize: OUDSListItemSize {
         didSet {
@@ -55,7 +64,9 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         self.itemSize = itemSize
 
         option = .none
-        textType = .label(OUDSListItemTrailing.TextType.labelValue)
+        textTypeOption = .label
+        label = String(localized: "app_components_common_label_label")
+        extraLabel = String(localized: "app_components_common_extraLabel_label")
 
         avatarModel = ListItemAvatarConfigurationModel(itemSize: itemSize)
         flagModel = ListItemFlagConfigurationModel(itemSize: itemSize)
@@ -64,27 +75,21 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         #if os(iOS) && canImport(UIKit)
         videoModel = ListItemVideoConfigurationModel(itemSize: itemSize)
         #endif
+        badgeModel = ListItemBadgeConfigurationModel(itemSize: itemSize)
 
         super.init()
 
         register(avatarModel)
+        register(badgeModel)
         register(flagModel)
         register(iconModel)
+        register(imageModel)
         #if os(iOS) && canImport(UIKit)
         register(videoModel)
         #endif
     }
 
-    private func register(_ model: ComponentConfiguration) {
-        model
-            .objectWillChange
-            .sink { [weak self] _ in
-            self?.objectWillChange.send()
-        }
-        .store(in: &self.cancellables)
-    }
-
-    // MARK: Builder
+    // MARK: Builders
 
     @MainActor
     func item(for theme: OUDSTheme) -> OUDSListItemTrailing? {
@@ -94,10 +99,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         case .text:
             return .text(textType)
         case .badge:
-            return .badge(.count(.init(1,
-                                       accessibilityLabel: "1",
-                                       status: .negative,
-                                       size: .large)))
+            return .badge(badgeModel.badgeType)
         case .tag:
             return .tag(.init(label: "Label", size: .small))
         case .icon:
@@ -112,6 +114,19 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
             return .flag(flagModel.flag)
         case .avatar:
             return .avatar(avatarModel.avatar)
+        }
+    }
+
+    private var textType: OUDSListItemTrailing.TextType {
+        switch textTypeOption {
+        case .label:
+            .label(label)
+        case .labelStrong:
+            .labelStrong(label)
+        case .labelMuted:
+            .labelMuted(label)
+        case .labelAndExtraLabel:
+            .labelAndExtraLabel(label, extraLabel)
         }
     }
 
@@ -140,8 +155,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         case .text:
             ".text(\(textPattern))"
         case .badge:
-            "TODO"
-//            ".badge(\(badgePattern))"
+            ".badge(\(badgeModel.code)"
         case .tag:
             ".tag(OUDSTag(label: \"Label\", size: .small))"
         case .icon:
@@ -162,38 +176,42 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
     }
 
     private var textPattern: String {
-        let labelText = "TODO"
-        let extraLabelText = "TODO"
-
-        let textPattern = switch textType {
+        switch textType {
         case .label:
-            ".label(\"\(labelText)\")"
+            ".label(\"\(label)\")"
         case .labelMuted:
-            ".labelMuted(\"\(labelText)\")"
+            ".labelMuted(\"\(label)\")"
         case .labelStrong:
-            ".labelStrong(\"\(labelText)\")"
+            ".labelStrong(\"\(label)\")"
         case .labelAndExtraLabel:
-            ".labelMuted(\"\(labelText)\", \"\(extraLabelText)\")"
+            ".labelMuted(\"\(label)\", \"\(extraLabel)\")"
         }
-
-        return textPattern
     }
 }
 
 struct ListItemTrailingConfiguration: View {
 
     @ObservedObject var configurationModel: ListItemTrailingConfigurationModel
+    @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: theme.spaces.fixedSmall) {
             OUDSChipPicker(selection: $configurationModel.option,
                            chips: Trailing.chips)
             
             switch configurationModel.option {
             case .text:
                 OUDSChipPicker(title: "app_components_listItem_trailing_textType_tech".localized(),
-                               selection: $configurationModel.textType,
-                               chips: OUDSListItemTrailing.TextType.chips)
+                               selection: $configurationModel.textTypeOption,
+                               chips: TextType.chips)
+                Group {
+                    DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
+
+                    if configurationModel.textTypeOption == .labelAndExtraLabel {
+                        DesignToolboxTextField(text: $configurationModel.extraLabel, label: "app_components_common_extraLabel_tech")
+                    }
+                }
+                .padding(.horizontal, theme.spaces.fixedSmall)
             case .image:
                 ListItemImageConfiguration(configurationModel: configurationModel.imageModel)
             case .icon:
@@ -203,9 +221,13 @@ struct ListItemTrailingConfiguration: View {
             case .flag:
                 ListItemFlagConfiguration(configurationModel: configurationModel.flagModel)
             case .video:
-#if os(iOS) && canImport(UIKit)
+                #if os(iOS) && canImport(UIKit)
                 ListItemVideoConfiguration(configurationModel: configurationModel.videoModel)
-#endif
+                #endif
+
+            case .badge:
+                ListItemBadgeConfiguration(configurationModel: configurationModel.badgeModel)
+
             default:
                 EmptyView()
             }
@@ -221,59 +243,6 @@ enum Trailing: DesignToolboxEnumRepresentable {
 #endif
 }
 
-// MARK: - Extensions of OUDSListItemTrailing.TextType
-
-extension OUDSListItemTrailing.TextType: @retroactive Equatable {}
-extension OUDSListItemTrailing.TextType: @retroactive Hashable {}
-extension OUDSListItemTrailing.TextType: @retroactive CaseIterable {}
-extension OUDSListItemTrailing.TextType: DesignToolboxEnumRepresentable {
-
-    // Tricks to avoid to have Xcode ffiding these Strings and definied localizables with Text()
-    static let labelValue = "Label"
-    static let extraLabelValue = "Extra Label"
-
-    public static let allCases: [OUDSListItemTrailing.TextType] =
-    [
-        .label(Self.labelValue),
-        .labelStrong(Self.labelValue),
-        .labelMuted(Self.labelValue),
-        .labelAndExtraLabel(Self.labelValue, Self.extraLabelValue),
-    ]
-
-    var formattedName: String {
-        switch self {
-        case .label:
-            "Label"
-        case .labelMuted:
-            "Label Muted"
-        case .labelStrong:
-            "Label Strong"
-        case .labelAndExtraLabel:
-            "Label and extra label"
-        }
-    }
-
-    var technicalDescription: String {
-        switch self {
-        case let .label(text):
-            ".label(Text(\"\(text)\"))"
-        case let .labelMuted(text):
-            ".labelMuted(Text(\"\(text)\"))"
-        case let .labelStrong(text):
-            ".labelStrong(Text(\"\(text)\"))"
-        case let .labelAndExtraLabel(text, text2):
-            ".labelAndExtraLabel(Text(\"\(text)\"), Text(\"\(text2)\"))"
-        }
-    }
-
-    public static func == (
-        lhs: OUDSListItemTrailing.TextType,
-        rhs: OUDSListItemTrailing.TextType) -> Bool
-    {
-        lhs.formattedName == rhs.formattedName
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(formattedName)
-    }
+enum TextType: DesignToolboxEnumRepresentable {
+    case label, labelStrong, labelMuted, labelAndExtraLabel
 }

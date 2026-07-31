@@ -35,7 +35,6 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
         }
     }
 
-    private var cancellables = Set<AnyCancellable>()
     var avatarModel: ListItemAvatarConfigurationModel
     var flagModel: ListItemFlagConfigurationModel
     var iconModel: ListItemIconConfigurationModel
@@ -64,18 +63,10 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
         register(avatarModel)
         register(flagModel)
         register(iconModel)
+        register(imageModel)
         #if os(iOS) && canImport(UIKit)
         register(videoModel)
         #endif
-    }
-
-    private func register(_ model: ComponentConfiguration) {
-        model
-            .objectWillChange
-            .sink { [weak self] _ in
-            self?.objectWillChange.send()
-        }
-        .store(in: &self.cancellables)
     }
 
     // MARK: Builder

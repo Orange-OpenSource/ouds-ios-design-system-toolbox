@@ -92,7 +92,7 @@ private struct ControlItemConfigurationView: View {
                 DesignToolboxTextField(text: $configurationModel.labelText, label: "app_components_common_label_tech")
 
                 if configurationModel.extraLabelConfiguration != nil {
-                    DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_controlItem_extraLabel_tech")
+                    DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_common_extraLabel_tech")
                 }
 
                 DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_common_description_tech")

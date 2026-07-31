@@ -13,6 +13,7 @@
 
 import OUDSSwiftUI
 import SwiftUI
+import Combine
 
 // MARK: - Component Configuration
 
@@ -29,6 +30,8 @@ open class ComponentConfiguration: ObservableObject {
         didSet { updateCode() }
     }
 
+    private var cancellables = Set<AnyCancellable>()
+
     init() {
         useOneColorSchemedDemo = false
         updateCode()
@@ -43,6 +46,16 @@ open class ComponentConfiguration: ObservableObject {
 
     // Override this function and update code when configuration changed
     func updateCode() {}
+
+    // Use to registrar sub configuration model
+    func register(_ model: ComponentConfiguration) {
+        model
+            .objectWillChange
+            .sink { [weak self] _ in
+            self?.objectWillChange.send()
+        }
+        .store(in: &self.cancellables)
+    }
 }
 
 // MARK: - Component Configuration View

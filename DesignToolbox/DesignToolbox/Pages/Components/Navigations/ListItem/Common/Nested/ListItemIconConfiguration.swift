@@ -20,7 +20,7 @@ open class ListItemIconConfigurationModel: ComponentConfiguration {
 
     var itemSize: OUDSListItemSize
 
-    @Published var type: IconType {
+    @Published var status: IconStatus {
         didSet { updateCode() }
     }
 
@@ -37,7 +37,7 @@ open class ListItemIconConfigurationModel: ComponentConfiguration {
     init(itemSize: OUDSListItemSize) {
         self.itemSize = itemSize
 
-        type = .negative
+        status = .negative
         bageOnNeutralIcon = false
         size = .medium
 
@@ -48,8 +48,8 @@ open class ListItemIconConfigurationModel: ComponentConfiguration {
 
     @MainActor
     func icon(for theme: OUDSTheme) -> OUDSListItemIcon {
-        let type: OUDSListItemIcon.IconType =
-            switch type {
+        let status: OUDSListItemIcon.IconStatus =
+            switch status {
             case .neutral:
                 .neutral(
                     asset: Image(
@@ -66,15 +66,15 @@ open class ListItemIconConfigurationModel: ComponentConfiguration {
                 .positive
             }
 
-        return OUDSListItemIcon(type: type, size: size)
+        return OUDSListItemIcon(status: status, size: size)
     }
 
     // MARK: Code helepr
 
     var iconPattern: String {
         let imagePattern = "Image(decorative: \"ic_heart\")"
-        let typePattern =
-        switch type {
+        let statusPattern =
+        switch status {
         case .neutral:
             ".neutral(asset: \(imagePattern), badge: \(bageOnNeutralIcon))"
         case .info:
@@ -88,7 +88,7 @@ open class ListItemIconConfigurationModel: ComponentConfiguration {
         }
 
         let sizePattern: String = size.technicalDescription
-        return ".init(type: \(typePattern), size: \(sizePattern))"
+        return ".init(status: \(statusPattern), size: \(sizePattern))"
     }
 }
 
@@ -98,11 +98,11 @@ struct ListItemIconConfiguration: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            OUDSChipPicker(title: "app_components_listItem_iconType_tech".localized(),
-                           selection: $configurationModel.type,
-                           chips: IconType.chips)
+            OUDSChipPicker(title: "app_components_listItem_iconStatus_tech".localized(),
+                           selection: $configurationModel.status,
+                           chips: IconStatus.chips)
 
-            if configurationModel.type == .neutral {
+            if configurationModel.status == .neutral {
                 OUDSSwitchItem("app_components_listItem_iconBadge_label", isOn: $configurationModel.bageOnNeutralIcon)
             }
 
@@ -115,7 +115,7 @@ struct ListItemIconConfiguration: View {
     }
 }
 
-enum IconType: DesignToolboxEnumRepresentable {
+enum IconStatus: DesignToolboxEnumRepresentable {
     case neutral, info, warning, negative, positive
 }
 
