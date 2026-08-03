@@ -53,6 +53,7 @@ open class ComponentConfiguration: ObservableObject {
             .objectWillChange
             .sink { [weak self] _ in
             self?.objectWillChange.send()
+             self?.updateCode()
         }
         .store(in: &self.cancellables)
     }

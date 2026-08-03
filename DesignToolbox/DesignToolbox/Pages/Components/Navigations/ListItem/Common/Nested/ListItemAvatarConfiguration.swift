@@ -14,25 +14,13 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct ListItemAvatarDemo: View {
-
-    @ObservedObject var configuration: ListItemAvatarConfigurationModel
-
-    var body: some View {
-        OUDSListItemAvatar(
-            type: configuration.type,
-            size: configuration.size,
-            badgeType: configuration.badgeOption ? .standard(.negative) : nil)
-    }
-}
-
 open class ListItemAvatarConfigurationModel: ComponentConfiguration {
 
     // MARK: Properties
 
     var itemSize: OUDSListItemSize
 
-    @Published var type: OUDSListItemAvatar.AvatarType {
+    @Published var type: AvatarType {
         didSet { updateCode() }
     }
 
@@ -59,16 +47,36 @@ open class ListItemAvatarConfigurationModel: ComponentConfiguration {
     // MARK: Builder
 
     @MainActor
-    var avatar: OUDSListItemAvatar {
-        OUDSListItemAvatar(
-            type: type,
+    func avatar(for theme: OUDSTheme) -> OUDSListItemAvatar {
+        let avatarType: OUDSListItemAvatar.AvatarType =
+        switch type {
+        case .image:
+            .image(Image.decorativeImage(named: "il_placeholder_avatar", prefixedBy: theme.name))
+        case .initials:
+            .initials("MT")
+        case .icon:
+            .icon
+        }
+
+        return OUDSListItemAvatar(
+            type: avatarType,
             size: size,
             badgeType: badgeOption ? .standard(.negative) : nil)
     }
 
     // MARK: Code helepr
-    var avatarPattern: String {
-        ".init(type: \(type.technicalDescription), size: \(size.technicalDescription)\(badgePattern))"
+    override func updateCode() {
+        let imagePattern = "Image(decorative: \"ic_placeholder\")"
+        let typePattern = switch type {
+        case .image:
+            ".image(asset: \(imagePattern))"
+        case .initials:
+            ".initials(\"MT\")"
+        case .icon:
+            ".icon"
+        }
+
+        code = ".init(type: \(typePattern), size: \(size.technicalDescription)\(badgePattern))"
     }
 
     private var badgePattern: String {
@@ -84,7 +92,7 @@ struct ListItemAvatarConfiguration: View {
         VStack(spacing: 0) {
             OUDSChipPicker(title: "app_components_listItem_avatarType_tech".localized(),
                            selection: $configurationModel.type,
-                           chips: OUDSListItemAvatar.AvatarType.chips)
+                           chips: AvatarType.chips)
 
             if configurationModel.itemSize == .standard {
                 OUDSChipPicker(title: "app_components_listItem_avatarSize_tech".localized(),
@@ -97,54 +105,10 @@ struct ListItemAvatarConfiguration: View {
     }
 }
 
-// MARK: - Extensions of OUDSListItemAvatar.AvatarType
+// MARK: - AvatarType
 
-extension OUDSListItemAvatar.AvatarType: @retroactive Equatable {}
-extension OUDSListItemAvatar.AvatarType: @retroactive Hashable {}
-extension OUDSListItemAvatar.AvatarType: @retroactive CaseIterable {}
-extension OUDSListItemAvatar.AvatarType: DesignToolboxEnumRepresentable {
-
-    public static let allCases: [OUDSListItemAvatar.AvatarType] =
-    [
-        .icon,
-        .image(Image(decorative: "il_placeholder")),
-        .initials("MT"),
-    ]
-
-    var formattedName: String {
-        switch self {
-        case .image:
-            "Image"
-        case .initials:
-            "Initials"
-        case .icon:
-            "Icon"
-        }
-    }
-
-    var technicalDescription: String {
-        switch self {
-        case .icon:
-            ".icon"
-        case .image:
-            ".image(asset: \(Image.placeholderImageSample()))"
-        case let .initials(initials):
-            ".initials(\"\(initials)\")"
-        }
-    }
-
-    public static func == (
-        lhs: OUDSListItemAvatar.AvatarType,
-        rhs: OUDSListItemAvatar.AvatarType) -> Bool
-    {
-        lhs.formattedName == rhs.formattedName
-    }
-
-    // MARK: - Hashable
-
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(formattedName)
-    }
+enum AvatarType: DesignToolboxEnumRepresentable {
+    case image, initials, icon
 }
 
 // MARK: - Extensions of OUDSListItemAvatar.Size

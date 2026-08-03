@@ -51,6 +51,11 @@ extension Image {
 
     // MARK: - Placeholder image
 
+    /// Returns a Swift `Image` view with a placeholder image related to a theme.
+    static func brandedPlaceholderImage(for themeName: String) -> Image {
+        Image.decorativeImage(named: "il_placeholder", prefixedBy: themeName)
+    }
+
     /// Returns a Swift `Image` view with a placeholder image, which can be decorative (i.e. not spotted by Voice Over) or not
     static func placeholderImage(decorative: Bool = false) -> Image {
         if decorative {

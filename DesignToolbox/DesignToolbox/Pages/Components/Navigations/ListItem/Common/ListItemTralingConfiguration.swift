@@ -105,7 +105,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         case .icon:
             return .icon(iconModel.icon(for: theme))
         case .image:
-            return .image(imageModel.image)
+            return .image(imageModel.image(for: theme))
         #if os(iOS) && canImport(UIKit)
         case .video:
             return .video(videoModel.video)
@@ -113,7 +113,8 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         case .flag:
             return .flag(flagModel.flag)
         case .avatar:
-            return .avatar(avatarModel.avatar)
+            return .avatar(avatarModel.avatar(for: theme))
+            
         }
     }
 
@@ -157,7 +158,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         case .badge:
             ".badge(\(badgeModel.code)"
         case .tag:
-            ".tag(OUDSTag(label: \"Label\", size: .small))"
+            ".tag(OUDSTag(label: \"Label\", size: .small)"
         case .icon:
             ".icon(\(iconModel.code)"
         case .image:
@@ -172,7 +173,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
             ".avatar(\(avatarModel.code))"
         }
 
-        code =  option == .none ? "" : "\n\nlet trailing: OUDSListItemTrailing = \n \(pattern)"
+        code = option == .none ? "" : "\n\nlet trailing: OUDSListItemTrailing = \n \(pattern)"
     }
 
     private var textPattern: String {

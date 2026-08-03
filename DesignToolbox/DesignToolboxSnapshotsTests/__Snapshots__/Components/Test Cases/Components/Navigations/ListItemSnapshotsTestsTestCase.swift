@@ -151,7 +151,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
             (.top, "top"),
             (.center, "center"),
         ]
-        let leading = OUDSListItemLeading.icon(OUDSListItemIcon(type: .neutral(asset: Image(decorative: "ic_heart"))))
+        let leading = OUDSListItemLeading.icon(OUDSListItemIcon(status: .neutral(asset: Image(decorative: "ic_heart")), description: ""))
         let trailing = OUDSListItemTrailing.text(.label("Label"))
         for (alignment, alignmentName) in alignments {
             for textCase in TextCase.allCases {
@@ -287,8 +287,8 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
         let image = Image(decorative: "ic_heart")
         let leadings: [(OUDSListItemLeading?, String)] = [
             (nil, "none"),
-            (.icon(OUDSListItemIcon(type: .neutral(asset: image))), "icon_neutral"),
-            (.icon(OUDSListItemIcon(type: .negative)), "icon_negative"),
+            (.icon(OUDSListItemIcon(status: .neutral(asset: image), description: "icon_neutral")), "icon_neutral"),
+            (.icon(OUDSListItemIcon(status: .negative, description: "icon_negative")), "icon_negative"),
             (.image(.init(asset: image)), "image"),
             (.flag(.init(asset: image)), "flag"),
             (.avatar(OUDSListItemAvatar(type: .icon, size: .medium)), "avatar_icon"),
@@ -345,7 +345,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
             (.text(.labelAndExtraLabel("Label", "Extra")), "text_labelAndExtraLabel"),
             (.badge(.standard(OUDSBadgeStandard(accessibilityLabel: "", status: .negative, size: .small))), "badge"),
             (.tag(OUDSTag(label: "Tag")), "tag"),
-            (.icon(OUDSListItemIcon(type: .neutral(asset: image))), "icon_neutral"),
+            (.icon(OUDSListItemIcon(status: .neutral(asset: image), description: "icon_neutral")), "icon_neutral"),
             (.image(.init(asset: image)), "image"),
             (.flag(.init(asset: image)), "flag"),
             (.avatar(OUDSListItemAvatar(type: .icon, size: .medium)), "avatar_icon"),

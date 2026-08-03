@@ -47,12 +47,12 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
     // MARK: Builder
 
     @MainActor
-    var image: OUDSListItemImage {
-        OUDSListItemImage(asset: Image.placeholderImage(),
+    func image(for theme: OUDSTheme) -> OUDSListItemImage {
+        OUDSListItemImage(asset: Image.brandedPlaceholderImage(for: theme.name),
+                          description: "app_components_listItem_image_a11y".localized(),
                           size: size,
                           ratio: ratio,
-                          contentMode: contentMode,
-                          description: "Image description")
+                          contentMode: contentMode)
     }
 
     // MARK: Code helper
@@ -60,7 +60,7 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code = 
         """
-        .init(asset; \"\(Image.placeholderImageSample())\"
+        .init(asset: \"\(Image.placeholderImageSample())\"
             \(sizePattern)
             \(ratioPattern)
             \(contentModePattern)
@@ -81,7 +81,7 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
     }
 
     private var descriptionPattern: String {
-        ", description: \"Image description\""
+        ", description: \"\("app_components_listItem_image_a11y".localized())\""
     }
 }
 

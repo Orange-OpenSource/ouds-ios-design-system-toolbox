@@ -66,12 +66,14 @@ open class ListItemIconConfigurationModel: ComponentConfiguration {
                 .positive
             }
 
-        return OUDSListItemIcon(status: status, size: size)
+        return OUDSListItemIcon(status: status,
+                                description: "app_components_listItem_icon_a11y".localized(),
+                                size: size)
     }
 
     // MARK: Code helepr
 
-    var iconPattern: String {
+    override func updateCode() {
         let imagePattern = "Image(decorative: \"ic_heart\")"
         let statusPattern =
         switch status {
@@ -88,7 +90,9 @@ open class ListItemIconConfigurationModel: ComponentConfiguration {
         }
 
         let sizePattern: String = size.technicalDescription
-        return ".init(status: \(statusPattern), size: \(sizePattern))"
+        let descriptionPattern: String = "app_components_listItem_icon_a11y".localized()
+
+        code = ".init(status: \(statusPattern), description: \"\(descriptionPattern)\", size: \(sizePattern))"
     }
 }
 

@@ -110,6 +110,10 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         numberOfItems = 1
 
         super.init()
+
+        register(textsModel)
+        register(trailingModel)
+        register(leadingModel)
     }
 
     deinit {}
@@ -180,6 +184,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
         code = """
                     \(dataPattern) \(leadingModel.code) \(trailingModel.code)
+                    
                     \(componentInitCode)(data: data\(slotPattern)\(leadingPart)\(trailingPart))
                     \(styleModifierPattern)\(sizeModifierPattern)\(containersAlignmentPattern)\(roundedMediaPattern)
                     \(disableCodePattern)

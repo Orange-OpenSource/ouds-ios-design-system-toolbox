@@ -79,11 +79,11 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
         case .icon:
             return .icon(iconModel.icon(for: theme))
         case .image:
-            return .image(imageModel.image)
+            return .image(imageModel.image(for: theme))
         case .flag:
             return .flag(flagModel.flag)
         case .avatar:
-            return .avatar(avatarModel.avatar)
+            return .avatar(avatarModel.avatar(for: theme))
         #if os(iOS) && canImport(UIKit)
         case .video:
             return .video(videoModel.video)
