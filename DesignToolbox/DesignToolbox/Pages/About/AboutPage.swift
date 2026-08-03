@@ -16,6 +16,10 @@ import SwiftUI
 
 // MARK: - About Page
 
+// NOTE: Several items below are seen as unused but are used
+// This is a false positive in Periphy
+// See https://github.com/peripheryapp/periphery/issues/908
+
 struct AboutPage: View {
 
     // MARK: Properties
@@ -109,10 +113,10 @@ struct AboutPage: View {
 
     private var listBody: some View {
         List {
-           legalView
-            versionsView
+            legalView
             buildView
             linksView
+            debugSandboxView
         }
         .oudsScreenTitle("app_bottomBar_about_label")
     }
@@ -122,16 +126,42 @@ struct AboutPage: View {
     #if os(iOS)
     @ViewBuilder
     private var legalView: some View {
-        link(title: "app_about_privacyPolicy_label", forWebview: privacyPolicyUrl)
-        link(title: "app_about_legalInformation_label", forWebview: legalInformationUrl)
-        link(title: "app_about_accessibilityStatement_label", forView: AccessibilityStatementPage())
+        NavigationLink {
+            WebView(from: privacyPolicyUrl)
+                .navigationTitle("app_about_privacyPolicy_label")
+        } label: {
+            Text("app_about_privacyPolicy_label")
+        }
+
+        NavigationLink {
+            WebView(from: legalInformationUrl)
+                .navigationTitle("app_about_legalInformation_label")
+        } label: {
+            Text("app_about_legalInformation_label")
+        }
+
+        NavigationLink {
+            AccessibilityStatementPage()
+                .navigationTitle("app_about_accessibilityStatement_label")
+        } label: {
+            Text("app_about_accessibilityStatement_label")
+        }
     }
 
     #elseif os(macOS)
     @ViewBuilder
     private var legalView: some View {
-        link(title: "app_about_privacyPolicy_label", forWebview: privacyPolicyUrl)
-        link(title: "app_about_legalInformation_label", forWebview: legalInformationUrl)
+        NavigationLink {
+            WebView(from: privacyPolicyUrl)
+        } label: {
+            Text("app_about_privacyPolicy_label")
+        }
+
+        NavigationLink {
+            WebView(from: legalInformationUrl)
+        } label: {
+            Text("app_about_legalInformation_label")
+        }
     }
     #else
     @ViewBuilder
@@ -141,7 +171,31 @@ struct AboutPage: View {
     #endif
 
     @ViewBuilder
-    private var versionsView: some View {
+    private var buildView: some View {
+
+        if Bundle.main.fullBuildType == "stable" {
+            OpenableText("app_about_details_appVersion_stable" <- Bundle.main.marketingVersion, anchor: Bundle.main.marketingVersion, type: .githubRelease)
+                .modifier(CopyableTextViewModifier(Bundle.main.marketingVersion))
+        } else {
+            VersionItem(title: "app_about_details_appVersion", version: Bundle.main.marketingVersion)
+        }
+
+        VersionItem(title: "app_about_details_buildNumber", version: Bundle.main.buildNumber)
+
+        LiquidGlassStateItem()
+
+        OpenableText("app_about_details_buildType" <- Bundle.main.fullBuildType, anchor: Bundle.main.fullBuildType, type: .githubBuild)
+            .modifier(CopyableTextViewModifier(Bundle.main.fullBuildType))
+
+        if let buildDetails = Bundle.main.buildDetails {
+            OpenableText("app_about_details_githubBuildDetails" <- buildDetails, anchor: buildDetails, type: .githubIssue)
+                .modifier(CopyableTextViewModifier(buildDetails.leadingColumnFragment))
+        }
+
+        if let sdkVersion = Bundle.main.sdkVersion, !sdkVersion.isEmpty {
+            OpenableText("app_about_details_sdkVersion" <- sdkVersion, anchor: sdkVersion, type: .githubVersion)
+                .modifier(CopyableTextViewModifier(sdkVersion))
+        }
 
         VersionItem(title: "app_about_details_themeCoreVersion",
                     version: OUDSVersions.themeCoreVersion)
@@ -169,86 +223,33 @@ struct AboutPage: View {
     }
 
     @ViewBuilder
-    private var buildView: some View {
-
-        LiquidGlassStateItem()
-
-        if Bundle.main.fullBuildType == "stable" {
-            OpenableText("app_about_details_appVersion_stable" <- Bundle.main.marketingVersion,
-                         anchor: Bundle.main.marketingVersion,
-                         type: .githubRelease)
-                .modifier(CopyableTextViewModifier(Bundle.main.marketingVersion))
-        } else {
-            VersionItem(title: "app_about_details_appVersion", version: Bundle.main.marketingVersion)
-        }
-
-        VersionItem(title: "app_about_details_buildNumber", version: Bundle.main.buildNumber)
-
-        OpenableText("app_about_details_buildType" <- Bundle.main.fullBuildType, anchor: Bundle.main.fullBuildType, type: .githubBuild)
-            .modifier(CopyableTextViewModifier(Bundle.main.fullBuildType))
-
-        if let sdkVersion = Bundle.main.sdkVersion, !sdkVersion.isEmpty {
-            OpenableText("app_about_details_sdkVersion" <- sdkVersion, anchor: sdkVersion, type: .githubVersion)
-                .modifier(CopyableTextViewModifier(sdkVersion))
-        }
-
-        if let buildDetails = Bundle.main.buildDetails {
-            OpenableText("app_about_details_githubBuildDetails" <- buildDetails, anchor: buildDetails, type: .githubIssue)
-                .modifier(CopyableTextViewModifier(buildDetails.leadingColumnFragment))
-        }
-    }
-
-    @ViewBuilder
     private var linksView: some View {
-        #if os(iOS)
-        // swiftlint:disable accessibility_label_for_image
-        OUDSNavigationListItem(data: .init(key: "app_about_appSettings_label"),
-                               indicatorType: .external,
-                               leading: .image(.init(asset: Image(systemName: "gear"))))
-        {
-            OSUtilities.open(url: appSettingsUrl)
-        }
-        .oudsListItemStandardStyle(.backgroundOnInteractionOnly(withDivider: false))
-        .oudsListItemSize(.small)
-        // swiftlint:enable accessibility_label_for_image
-        #endif
-
         if let changelogURL = Bundle.main.changelogURL {
-            link(changelogURL, label: "app_about_changelog_label", assetName: "text.pad.header")
+            link(changelogURL, label: "app_about_changelog_label", hint: "app_about_changelog_hint_a11y")
         }
-        link(appSourcesUrl, label: "app_about_appSources_label", assetName: "apple.terminal")
-        link(bugReportUrl, label: "app_about_bugReport_label", assetName: "ant.fill")
-        link(designSystemUrl, label: "app_about_designSystem_label", assetName: "paintpalette.fill")
-    }
+        link(appSourcesUrl, label: "app_about_appSources_label", hint: "app_about_appSources_hint_a11y")
+        link(bugReportUrl, label: "app_about_bugReport_label", hint: "app_about_bugReport_hint_a11y")
+        link(designSystemUrl, label: "app_about_designSystem_label", hint: "app_about_designSystem_hint_a11y")
 
-    #if !os(visionOS) && !os(tvOS)
-    @ViewBuilder private func link(title: LocalizedStringKey, forWebview url: URL) -> some View {
-        OUDSNavigationLink(title, style: .standard(.backgroundOnInteractionOnly(withDivider: false))) {
-            WebView(from: url)
-        }
-        .oudsListItemSize(.small)
+        #if os(iOS)
+        Button {
+            OSUtilities.open(url: appSettingsUrl)
+        } label: {
+            HStack {
+                Text("app_about_appSettings_label")
+                Spacer()
+                Image(systemName: "gear").accessibilityHidden(true)
+            }
+        }.accessibilityHint("app_about_appSettings_hint_a11y")
+        #endif
     }
-
-    @ViewBuilder private func link(title: LocalizedStringKey, forView view: some View) -> some View {
-        OUDSNavigationLink(title, style: .standard(.backgroundOnInteractionOnly(withDivider: false))) {
-            view
-        }
-        .oudsListItemSize(.small)
-    }
-    #endif
 
     @ViewBuilder
-    private func link(_ url: URL, label: LocalizedStringKey, assetName: String) -> some View {
-        // swiftlint:disable accessibility_label_for_image
-        OUDSNavigationListItem(data: .init(key: label),
-                               indicatorType: .external,
-                               leading: .image(.init(asset: Image(systemName: assetName))))
-        {
+    private func link(_ url: URL, label: String, hint: String) -> some View {
+        OUDSLink(text: label.localized(), indicator: .external, isFullWidth: true) {
             openURL.callAsFunction(url)
         }
-        .oudsListItemStandardStyle(.backgroundOnInteractionOnly(withDivider: false))
-        .oudsListItemSize(.small)
-        // swiftlint:enable accessibility_label_for_image
+        .accessibilityHint(hint.localized())
     }
 
     // swiftlint:disable accessibility_label_for_image
@@ -272,6 +273,7 @@ struct AboutPage: View {
 
 private struct LiquidGlassStateItem: View {
 
+    @Environment(\.theme) private var theme
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
     @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
 
@@ -304,17 +306,20 @@ private struct LiquidGlassStateItem: View {
     }
 
     var body: some View {
+        HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
+            Text("app_about_isLiquidGlass_disabled".localized())
+                .foregroundColor(theme.colors.contentDefault)
 
-        let tag = OUDSTag(label: wording,
-                          status: status,
-                          appearance: appearance,
-                          shape: .rounded,
-                          size: .small,
-                          hasLoader: false)
+            Spacer()
 
-        OUDSStaticListItem(data: .init(key: "app_about_isLiquidGlass_disabled"), trailing: .tag(tag))
-            .oudsListItemStandardStyle(.backgroundOnInteractionOnly(withDivider: false))
-            .oudsListItemSize(.small)
+            OUDSTag(label: wording,
+                    status: status,
+                    appearance: appearance,
+                    shape: .rounded,
+                    size: .small,
+                    hasLoader: false)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
@@ -322,20 +327,25 @@ private struct LiquidGlassStateItem: View {
 
 private struct VersionItem: View {
 
-    let title: LocalizedStringKey
+    let title: String
     let version: String
+    @Environment(\.theme) private var theme
 
     var body: some View {
-        let tag = OUDSTag(label: version,
-                          status: .info(leading: .none),
-                          appearance: .muted,
-                          shape: .rounded,
-                          size: .small,
-                          hasLoader: false)
+        HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
+            Text(title.localized())
+                .foregroundColor(theme.colors.contentDefault)
 
-        OUDSStaticListItem(data: .init(key: title), trailing: .tag(tag))
-            .oudsListItemStandardStyle(.backgroundOnInteractionOnly(withDivider: false))
-            .oudsListItemSize(.small)
-            .modifier(CopyableTextViewModifier(version))
+            Spacer()
+
+            OUDSTag(label: version,
+                    status: .info(leading: .none),
+                    appearance: .muted,
+                    shape: .rounded,
+                    size: .small,
+                    hasLoader: false)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .modifier(CopyableTextViewModifier(version))
     }
 }

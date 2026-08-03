@@ -44,6 +44,8 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
         super.init()
     }
 
+    deinit {}
+
     // MARK: Builder
 
     @MainActor
@@ -58,14 +60,14 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
     // MARK: Code helper
 
     override func updateCode() {
-        code = 
-        """
-        .init(asset: \"\(Image.placeholderImageSample())\"
-            \(sizePattern)
-            \(ratioPattern)
-            \(contentModePattern)
-            \(descriptionPattern))
-        """
+        code =
+            """
+            .init(asset: \"\(Image.placeholderImageSample())\"
+                \(sizePattern)
+                \(ratioPattern)
+                \(contentModePattern)
+                \(descriptionPattern))
+            """
     }
 
     private var sizePattern: String {
@@ -113,7 +115,6 @@ extension OUDSListItemSize: DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSListItemSize] = [.standard, .small]
 }
 
-
 // MARK: - Extensions of OUDSListItemImage.Size
 
 extension OUDSListItemImage.Size: @retroactive CaseIterable {}
@@ -127,10 +128,9 @@ extension OUDSListItemImage.Size: DesignToolboxEnumRepresentable {
 
 extension OUDSListItemImage.Ratio: @retroactive CaseIterable {}
 extension OUDSListItemImage.Ratio: DesignToolboxEnumRepresentable {
-    public static let allCases:  [OUDSListItemImage.Ratio] = [.square, .widescreen]
+    public static let allCases: [OUDSListItemImage.Ratio] = [.square, .widescreen]
 }
 
 // MARK: - Extensions of ContentMode
 
-extension ContentMode: DesignToolboxEnumRepresentable {
-}
+extension ContentMode: DesignToolboxEnumRepresentable {}

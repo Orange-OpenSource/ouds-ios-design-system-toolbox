@@ -34,6 +34,8 @@ open class ListItemFlagConfigurationModel: ComponentConfiguration {
         super.init()
     }
 
+    deinit {}
+
     // MARK: Builder
 
     @MainActor

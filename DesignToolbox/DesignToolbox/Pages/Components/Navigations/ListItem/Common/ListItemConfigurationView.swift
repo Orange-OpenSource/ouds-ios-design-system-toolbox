@@ -43,7 +43,7 @@ struct ListItemConfiguration: View {
     @State var configuration: Configuration = .global
 
     var body: some View {
-        Picker("Configuration", selection: $configuration) {
+        Picker("app_common_configuration_label", selection: $configuration) {
             ForEach(Configuration.allCases, id: \.self) { configuration in
                 Text(configuration.description.localized()).tag(configuration)
             }

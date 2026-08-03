@@ -11,9 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import Combine
 import OUDSSwiftUI
 import SwiftUI
-import Combine
 
 open class ListItemTrailingConfigurationModel: ComponentConfiguration {
 
@@ -31,7 +31,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var extraLabel: String  {
+    @Published var extraLabel: String {
         didSet { updateCode() }
     }
 
@@ -40,10 +40,10 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
     var flagModel: ListItemFlagConfigurationModel
     var iconModel: ListItemIconConfigurationModel
     var imageModel: ListItemImageConfigurationModel
+
     #if os(iOS) && canImport(UIKit)
     var videoModel: ListItemVideoConfigurationModel
     #endif
-
 
     var itemSize: OUDSListItemSize {
         didSet {
@@ -56,7 +56,6 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
             #endif
         }
     }
-
 
     // MARK: Initializer
 
@@ -89,6 +88,8 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         #endif
     }
 
+    deinit {}
+
     // MARK: Builders
 
     @MainActor
@@ -114,7 +115,6 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
             return .flag(flagModel.flag)
         case .avatar:
             return .avatar(avatarModel.avatar(for: theme))
-            
         }
     }
 
@@ -145,105 +145,103 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
             false
         }
     }
-    
+
     // MARK: Code helper
 
     override func updateCode() {
         let pattern =
-        switch option {
-        case .none:
-            ""
-        case .text:
-            ".text(\(textPattern))"
-        case .badge:
-            ".badge(\(badgeModel.code)"
-        case .tag:
-            ".tag(OUDSTag(label: \"Label\", size: .small)"
-        case .icon:
-            ".icon(\(iconModel.code)"
-        case .image:
-            ".image(\(imageModel.code))"
-        #if os(iOS) && canImport(UIKit)
-        case .video:
-            ".video(\(videoModel.code)"
-        #endif
-        case .flag:
-            ".flag(\(flagModel.code))"
-        case .avatar:
-            ".avatar(\(avatarModel.code))"
-        }
+            switch option {
+            case .none:
+                ""
+            case .text:
+                ".text(\(textPattern))"
+            case .badge:
+                ".badge(\(badgeModel.code)"
+            case .tag:
+                ".tag(OUDSTag(label: \"Label\", size: .small)"
+            case .icon:
+                ".icon(\(iconModel.code)"
+            case .image:
+                ".image(\(imageModel.code))"
+            #if os(iOS) && canImport(UIKit)
+            case .video:
+                ".video(\(videoModel.code)"
+            #endif
+            case .flag:
+                ".flag(\(flagModel.code))"
+            case .avatar:
+                ".avatar(\(avatarModel.code))"
+            }
 
-        code = option == .none ? "" : "\n\nlet trailing: OUDSListItemTrailing = \n \(pattern)"
+            code = option == .none ? "" : "\n\nlet trailing: OUDSListItemTrailing = \n \(pattern)"
     }
 
-    private var textPattern: String {
-        switch textType {
-        case .label:
-            ".label(\"\(label)\")"
-        case .labelMuted:
-            ".labelMuted(\"\(label)\")"
-        case .labelStrong:
-            ".labelStrong(\"\(label)\")"
-        case .labelAndExtraLabel:
-            ".labelMuted(\"\(label)\", \"\(extraLabel)\")"
-        }
-    }
+            private var textPattern: String {
+                switch textType {
+                case .label:
+                    ".label(\"\(label)\")"
+                case .labelMuted:
+                    ".labelMuted(\"\(label)\")"
+                case .labelStrong:
+                    ".labelStrong(\"\(label)\")"
+                case .labelAndExtraLabel:
+                    ".labelMuted(\"\(label)\", \"\(extraLabel)\")"
+                }
+            }
 }
 
-struct ListItemTrailingConfiguration: View {
+            struct ListItemTrailingConfiguration: View {
 
-    @ObservedObject var configurationModel: ListItemTrailingConfigurationModel
-    @Environment(\.theme) private var theme
+                @ObservedObject var configurationModel: ListItemTrailingConfigurationModel
+                @Environment(\.theme) private var theme
 
-    var body: some View {
-        VStack(spacing: theme.spaces.fixedSmall) {
-            OUDSChipPicker(selection: $configurationModel.option,
-                           chips: Trailing.chips)
-            
-            switch configurationModel.option {
-            case .text:
-                OUDSChipPicker(title: "app_components_listItem_trailing_textType_tech".localized(),
-                               selection: $configurationModel.textTypeOption,
-                               chips: TextType.chips)
-                Group {
-                    DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
+                var body: some View {
+                    VStack(spacing: theme.spaces.fixedSmall) {
+                        OUDSChipPicker(selection: $configurationModel.option,
+                                       chips: Trailing.chips)
 
-                    if configurationModel.textTypeOption == .labelAndExtraLabel {
-                        DesignToolboxTextField(text: $configurationModel.extraLabel, label: "app_components_common_extraLabel_tech")
+                        switch configurationModel.option {
+                        case .text:
+                            OUDSChipPicker(title: "app_components_listItem_trailing_textType_tech".localized(),
+                                           selection: $configurationModel.textTypeOption,
+                                           chips: TextType.chips)
+                            Group {
+                                DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
+
+                                if configurationModel.textTypeOption == .labelAndExtraLabel {
+                                    DesignToolboxTextField(text: $configurationModel.extraLabel, label: "app_components_common_extraLabel_tech")
+                                }
+                            }
+                            .padding(.horizontal, theme.spaces.fixedSmall)
+                        case .image:
+                            ListItemImageConfiguration(configurationModel: configurationModel.imageModel)
+                        case .icon:
+                            ListItemIconConfiguration(configurationModel: configurationModel.iconModel)
+                        case .avatar:
+                            ListItemAvatarConfiguration(configurationModel: configurationModel.avatarModel)
+                        case .flag:
+                            ListItemFlagConfiguration(configurationModel: configurationModel.flagModel)
+                        case .video:
+                            #if os(iOS) && canImport(UIKit)
+                            ListItemVideoConfiguration(configurationModel: configurationModel.videoModel)
+                            #endif
+                        case .badge:
+                            ListItemBadgeConfiguration(configurationModel: configurationModel.badgeModel)
+                        default:
+                            EmptyView()
+                        }
                     }
                 }
-                .padding(.horizontal, theme.spaces.fixedSmall)
-            case .image:
-                ListItemImageConfiguration(configurationModel: configurationModel.imageModel)
-            case .icon:
-                ListItemIconConfiguration(configurationModel: configurationModel.iconModel)
-            case .avatar:
-                ListItemAvatarConfiguration(configurationModel: configurationModel.avatarModel)
-            case .flag:
-                ListItemFlagConfiguration(configurationModel: configurationModel.flagModel)
-            case .video:
-                #if os(iOS) && canImport(UIKit)
-                ListItemVideoConfiguration(configurationModel: configurationModel.videoModel)
-                #endif
-
-            case .badge:
-                ListItemBadgeConfiguration(configurationModel: configurationModel.badgeModel)
-
-            default:
-                EmptyView()
             }
-        }
-    }
-}
 
-enum Trailing: DesignToolboxEnumRepresentable {
-#if os(iOS) && canImport(UIKit)
-    case none, text, badge, tag, icon, image, video, flag, avatar
-#else
-    case none, text, badge, tag, icon, image, flag, avatar
-#endif
-}
+            enum Trailing: DesignToolboxEnumRepresentable {
+                #if os(iOS) && canImport(UIKit)
+                case none, text, badge, tag, icon, image, video, flag, avatar
+                #else
+                case none, text, badge, tag, icon, image, flag, avatar
+                #endif
+            }
 
-enum TextType: DesignToolboxEnumRepresentable {
-    case label, labelStrong, labelMuted, labelAndExtraLabel
-}
+            enum TextType: DesignToolboxEnumRepresentable {
+                case label, labelStrong, labelMuted, labelAndExtraLabel
+            }

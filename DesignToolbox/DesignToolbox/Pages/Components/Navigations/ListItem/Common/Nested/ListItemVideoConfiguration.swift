@@ -36,10 +36,13 @@ open class ListItemVideoConfigurationModel: ComponentConfiguration {
         super.init()
     }
 
+    deinit {}
+
     // MARK: Builder
 
     @MainActor
     var video: OUDSListItemVideo {
+        // swiftlint:disable:next force_unwrapping
         .init(url: URL(string: String.defaultVideoUrl())!, autoplay: true, muted: true, size: size)
     }
 
@@ -62,7 +65,6 @@ struct ListItemVideoConfiguration: View {
         }
     }
 }
-
 
 // MARK: - Extensions of OUDSListItemVideo.Size
 

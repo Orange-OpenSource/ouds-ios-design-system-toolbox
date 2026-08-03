@@ -14,7 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: - Global configuration
+// swiftlint:disable closure_body_length
 
 struct ListItemGlobalSettingsConfiguration: View {
 
@@ -47,8 +47,9 @@ struct ListItemGlobalSettingsConfiguration: View {
 
                 if !(configurationModel is NavigationListItemConfigurationModel)
                     && (configurationModel.contentCardStyleOption == .backgroundOnInteraction
-                        || configurationModel.contentCardStyleOption == .outlinedOnInteraction) {
-                    OUDSInlineAlert("app_common_notImplementedYet", status: .warning)
+                        || configurationModel.contentCardStyleOption == .outlinedOnInteraction)
+                {
+                    OUDSInlineAlert("app_common_notRelevant", status: .info)
                         .padding(.horizontal, theme.spaces.fixedSmall)
                 }
 
@@ -64,8 +65,9 @@ struct ListItemGlobalSettingsConfiguration: View {
                                chips: ContentStandardStyle.chips)
 
                 if !(configurationModel is NavigationListItemConfigurationModel)
-                    && configurationModel.contentStandardStyleOption == .backgroundOnInteraction {
-                    OUDSInlineAlert("app_common_notImplementedYet", status: .warning)
+                    && configurationModel.contentStandardStyleOption == .backgroundOnInteraction
+                {
+                    OUDSInlineAlert("app_common_notRelevant", status: .info)
                         .padding(.horizontal, theme.spaces.fixedSmall)
                 }
 
@@ -88,14 +90,16 @@ struct ListItemGlobalSettingsConfiguration: View {
 
             OUDSHorizontalDivider()
 
-#if !os(tvOS)
+            #if !os(tvOS)
             Stepper("app_components_common_itemCount_label" <- "\($configurationModel.numberOfItems.wrappedValue)",
                     value: $configurationModel.numberOfItems,
                     in: 1 ... 15,
                     step: 1)
-            .padding(.all, theme.spaces.fixedMedium)
-            .labelStrongMedium(theme)
-#endif
+                .padding(.all, theme.spaces.fixedMedium)
+                .labelStrongMedium(theme)
+            #endif
         }
     }
 }
+
+// swiftlint:enable closure_body_length

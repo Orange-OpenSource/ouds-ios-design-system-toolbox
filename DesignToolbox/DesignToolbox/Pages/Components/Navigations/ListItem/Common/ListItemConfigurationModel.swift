@@ -154,22 +154,22 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         case .standard:
             let style: OUDSListItemContentStyle.Standard = switch contentStandardStyleOption {
             case .background:
-                    .background(withDivider: hasDivider)
+                .background(withDivider: hasDivider)
             case .backgroundOnInteraction:
-                    .backgroundOnInteractionOnly(withDivider: hasDivider)
+                .backgroundOnInteractionOnly(withDivider: hasDivider)
             }
 
             return .standard(style)
         case .card:
             let style: OUDSListItemContentStyle.Card = switch contentCardStyleOption {
             case .outlined:
-                    .outlined
+                .outlined
             case .outlinedOnInteraction:
-                    .outlinedOnInteractionOnly
+                .outlinedOnInteractionOnly
             case .background:
-                    .background(withDivider: hasDivider)
+                .background(withDivider: hasDivider)
             case .backgroundOnInteraction:
-                    .backgroundOnInteractionOnly(withDivider: hasDivider)
+                .backgroundOnInteractionOnly(withDivider: hasDivider)
             }
 
             return .card(style)
@@ -183,12 +183,12 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         let trailingPart = trailingModel.code.isEmpty ? "" : ", trailing: trailing"
 
         code = """
-                    \(dataPattern) \(leadingModel.code) \(trailingModel.code)
-                    
-                    \(componentInitCode)(data: data\(slotPattern)\(leadingPart)\(trailingPart))
-                    \(styleModifierPattern)\(sizeModifierPattern)\(containersAlignmentPattern)\(roundedMediaPattern)
-                    \(disableCodePattern)
-                    """
+        \(dataPattern) \(leadingModel.code) \(trailingModel.code)
+
+        \(componentInitCode)(data: data\(slotPattern)\(leadingPart)\(trailingPart))
+        \(styleModifierPattern)\(sizeModifierPattern)\(containersAlignmentPattern)\(roundedMediaPattern)
+        \(disableCodePattern)
+        """
     }
 
     private var helperTextPattern: String {
@@ -203,7 +203,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         switch textsModel.labelContentType {
         case .text:
             """
-            let data = OUDSListItemData(\(textsModel.code) \(helperTextPattern))
+            let data = OUDSListItemData(\(textsModel.code)\(helperTextPattern))
             """
         case .customView:
             """
@@ -249,7 +249,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
     private var sizeModifierPattern: String {
         itemSize == .standard
-        ? "" : "\n.oudsListItemSize(\(itemSize.technicalDescription))"
+            ? "" : "\n.oudsListItemSize(\(itemSize.technicalDescription))"
     }
 
     private var containersAlignmentPattern: String {

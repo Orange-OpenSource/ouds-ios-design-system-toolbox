@@ -66,6 +66,8 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
         super.init()
     }
 
+    deinit {}
+
     // MARK: Builder
 
     @MainActor
@@ -73,13 +75,14 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
         OUDSInlineAlert(label: "Something wrong", status: .warning)
     }
 
-    @MainActor
+    @ViewBuilder
     var customLabelView: some View {
+        let fakeText = "Missed call"
         HStack(spacing: 8) {
             Image(systemName: "phone.down.fill")
                 .foregroundColor(.red)
                 .accessibilityHidden(true)
-            Text("Missed call")
+            Text(fakeText)
                 .fontWeight(.semibold)
         }
     }
@@ -97,16 +100,10 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
 
     var customLabelPattern: String {
         """
-        let customLabel = 
-        HStack(spacing: 8) {
-            Image(systemName: "phone.down.fill")
-                .foregroundColor(.red)
-                .accessibilityHidden(true)
-            Text("Missed call")
-                .fontWeight(.semibold)
-        }
+        let customLabel = someLabel()
         """
     }
+
     private var labelPattern: String {
         "label: \"\(labelText)\""
     }

@@ -11,9 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import Combine
 import OUDSSwiftUI
 import SwiftUI
-import Combine
 
 open class ListItemBadgeConfigurationModel: ComponentConfiguration {
 
@@ -43,20 +43,23 @@ open class ListItemBadgeConfigurationModel: ComponentConfiguration {
         register(countModel)
     }
 
+    deinit {}
+
     // MARK: Builder
 
     @MainActor
     var badgeType: OUDSListItemTrailing.BadgeType {
         switch badgeTypeOption {
         case .standard:
-                .standard(.init(accessibilityLabel: "", status: stadardModel.status, size: stadardModel.standardSize))
+            .standard(.init(accessibilityLabel: "", status: stadardModel.status, size: stadardModel.standardSize))
         case .count:
-                .count(.init(countModel.count,
-                             accessibilityLabel: code.count.description,
-                             status: countModel.status,
-                             size: countModel.countSize))
+            .count(.init(countModel.count,
+                         accessibilityLabel: code.count.description,
+                         status: countModel.status,
+                         size: countModel.countSize))
         }
     }
+
     // MARK: Code helper
 
     override func updateCode() {

@@ -44,19 +44,21 @@ open class ListItemAvatarConfigurationModel: ComponentConfiguration {
         super.init()
     }
 
+    deinit {}
+
     // MARK: Builder
 
     @MainActor
     func avatar(for theme: OUDSTheme) -> OUDSListItemAvatar {
         let avatarType: OUDSListItemAvatar.AvatarType =
-        switch type {
-        case .image:
-            .image(Image.decorativeImage(named: "il_placeholder_avatar", prefixedBy: theme.name))
-        case .initials:
-            .initials("MT")
-        case .icon:
-            .icon
-        }
+            switch type {
+            case .image:
+                .image(Image.decorativeImage(named: "il_placeholder_avatar", prefixedBy: theme.name))
+            case .initials:
+                .initials("MT")
+            case .icon:
+                .icon
+            }
 
         return OUDSListItemAvatar(
             type: avatarType,

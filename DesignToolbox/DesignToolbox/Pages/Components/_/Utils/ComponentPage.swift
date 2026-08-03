@@ -11,9 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import Combine
 import OUDSSwiftUI
 import SwiftUI
-import Combine
 
 // MARK: - Component Configuration
 
@@ -24,11 +24,20 @@ open class ComponentConfiguration: ObservableObject {
     /// like for tab bars
     let useOneColorSchemedDemo: Bool
 
-    @Published var code: String = ""
+    @Published var code: String = "" {
+        didSet { codeDidChange.send() }
+    }
 
     @Published var onColoredSurface: Bool = false {
         didSet { updateCode() }
     }
+
+    /// Emitted **after** `code` has actually been updated with its new value.
+    /// Used instead of `objectWillChange` by `register(_:)` so that parent configurations
+    /// always read an up to date `code` from their registered sub configurations, avoiding
+    /// the one step lag caused by `objectWillChange` firing before `@Published` properties
+    /// are actually mutated (its `willSet` semantics).
+    let codeDidChange = PassthroughSubject<Void, Never>()
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -50,12 +59,12 @@ open class ComponentConfiguration: ObservableObject {
     // Use to registrar sub configuration model
     func register(_ model: ComponentConfiguration) {
         model
-            .objectWillChange
+            .codeDidChange
             .sink { [weak self] _ in
-            self?.objectWillChange.send()
-             self?.updateCode()
-        }
-        .store(in: &self.cancellables)
+                self?.objectWillChange.send()
+                self?.updateCode()
+            }
+            .store(in: &cancellables)
     }
 }
 

@@ -44,6 +44,8 @@ open class ListItemIconConfigurationModel: ComponentConfiguration {
         super.init()
     }
 
+    deinit {}
+
     // MARK: Builder
 
     @MainActor
@@ -76,21 +78,21 @@ open class ListItemIconConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         let imagePattern = "Image(decorative: \"ic_heart\")"
         let statusPattern =
-        switch status {
-        case .neutral:
-            ".neutral(asset: \(imagePattern), badge: \(bageOnNeutralIcon))"
-        case .info:
-            ".info"
-        case .warning:
-            ".warning"
-        case .negative:
-            ".negative"
-        case .positive:
-            ".positive"
-        }
+            switch status {
+            case .neutral:
+                ".neutral(asset: \(imagePattern), badge: \(bageOnNeutralIcon))"
+            case .info:
+                ".info"
+            case .warning:
+                ".warning"
+            case .negative:
+                ".negative"
+            case .positive:
+                ".positive"
+            }
 
         let sizePattern: String = size.technicalDescription
-        let descriptionPattern: String = "app_components_listItem_icon_a11y".localized()
+        let descriptionPattern = "app_components_listItem_icon_a11y".localized()
 
         code = ".init(status: \(statusPattern), description: \"\(descriptionPattern)\", size: \(sizePattern))"
     }
