@@ -197,7 +197,8 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
 
                 var body: some View {
                     VStack(spacing: theme.spaces.fixedSmall) {
-                        OUDSChipPicker(selection: $configurationModel.option,
+                        OUDSChipPicker(title: "",
+                                       selection: $configurationModel.option,
                                        chips: Trailing.chips)
 
                         switch configurationModel.option {
@@ -221,10 +222,10 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
                             ListItemAvatarConfiguration(configurationModel: configurationModel.avatarModel)
                         case .flag:
                             ListItemFlagConfiguration(configurationModel: configurationModel.flagModel)
+                        #if os(iOS) && canImport(UIKit)
                         case .video:
-                            #if os(iOS) && canImport(UIKit)
                             ListItemVideoConfiguration(configurationModel: configurationModel.videoModel)
-                            #endif
+                        #endif
                         case .badge:
                             ListItemBadgeConfiguration(configurationModel: configurationModel.badgeModel)
                         default:

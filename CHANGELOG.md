@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] `circular progress indicator` component (Orange-OpenSource/ouds-ios#409)
 - [DesignToolbox] Sandbox / debug view for experiments and easy debugging
 - [Library] `static list item` and `navigation list item` components (Orange-OpenSource/ouds-ios#265)
+- [Library] `list item` component (Orange-OpenSource/ouds-ios#265)
+- [DesignToolbox] Sandbox / debug view for experiments and easy debugging
 - [DesignToolbox] Support of `tvOS` in Design System Toolbox app and keep `watchOS` on light app (Orange-OpenSource/ouds-ios#1480)
 - [Library] `Tab view` component to use SwiftUI `Tab` API (Orange-OpenSource/ouds-ios#1452)
 - [Library] `View modifier` to force keyboard closing on tap (Orange-OpenSource/ouds-ios#1530)
@@ -63,8 +65,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - [Library] **BREAKING**: `forceOUDSLegacyTabBar` and `OUDSLegacyTabBarModifier`, for `forceOUDSLegacyLayout` and `OUDSLegacyLayoutModifier`
-### Removed
-
 - [Library] **BREAKING**: Deprecated `OUDSBadge` API
 - [Library] **BREAKING**: Deprecated type `OUDSIcon`
 - [Library] **BREAKING**: Deprecated initializers for `button`, `checkbox`, `chips`, `radio`, `switch`, `checkbox`, `text input`, `badge`, `link`, `tag` components

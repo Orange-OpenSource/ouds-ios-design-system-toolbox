@@ -140,7 +140,8 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
 
                 var body: some View {
                     VStack(spacing: 0) {
-                        OUDSChipPicker(selection: $configurationModel.option,
+                        OUDSChipPicker(title: "",
+                                       selection: $configurationModel.option,
                                        chips: Leading.chips)
 
                         switch configurationModel.option {
@@ -152,10 +153,10 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
                             ListItemIconConfiguration(configurationModel: configurationModel.iconModel)
                         case .flag:
                             ListItemFlagConfiguration(configurationModel: configurationModel.flagModel)
+                        #if os(iOS) && canImport(UIKit)
                         case .video:
-                            #if os(iOS) && canImport(UIKit)
                             ListItemVideoConfiguration(configurationModel: configurationModel.videoModel)
-                            #endif
+                        #endif
                         case .none:
                             EmptyView()
                         }

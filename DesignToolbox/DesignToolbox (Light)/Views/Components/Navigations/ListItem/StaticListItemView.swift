@@ -42,7 +42,7 @@ struct StaticListItemView: View {
 
             Text("Leading icon, trailing badge").font(.headline)
 
-            let icon = OUDSListItemIcon(type: .info, size: .medium)
+            let icon = OUDSListItemIcon(status: .info, description: "Information", size: .medium)
             let badge = OUDSBadgeCount(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
 
             OUDSStaticListItem(
