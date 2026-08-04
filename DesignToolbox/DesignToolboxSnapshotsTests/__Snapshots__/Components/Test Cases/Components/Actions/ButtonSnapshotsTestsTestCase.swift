@@ -95,7 +95,7 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
         // Skip test for negative and brand appearance because it is not allowed on colored surface
         for size in OUDSButton.Size.allCases {
             for appearance in OUDSButton.Appearance.allCases
-            where appearance != .negative && appearance != .brand
+                where appearance != .negative && appearance != .brand
             {
                 for layout in ButtonTest.Layout.allCases {
                     for flipIcon in [true, false] {
