@@ -192,7 +192,7 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
             imageMode == .original ? "_OriginalImage" : "_TemplateImage"
         let disabledPatern = disabled ? "_Disabled" : ""
         let roundedPattern = theme.tuning.hasRoundedButtons ? "_Rounded" : ""
-        let sizePattern  = size == .small ? "_Small" : ""
+        let sizePattern = size == .small ? "_Small" : ""
         let name =
             "\(coloredSurfacePatern)\(flipIconPattern)\(imageModePattern)\(layout.rawValue.camelCase)_\(appearance.formattedName)_\(OUDSButton.Style.default.formattedName)\(sizePattern)\(disabledPatern)\(roundedPattern)"
 
