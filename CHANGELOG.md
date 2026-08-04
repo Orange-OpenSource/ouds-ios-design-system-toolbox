@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `circular progress indicator` component (Orange-OpenSource/ouds-ios#409)
 - [DesignToolbox] Sandbox / debug view for experiments and easy debugging
 - [DesignToolbox] Support of `tvOS` in Design System Toolbox app and keep `watchOS` on light app (Orange-OpenSource/ouds-ios#1480)
 - [Library] `Tab view` component to use SwiftUI `Tab` API (Orange-OpenSource/ouds-ios#1452)
