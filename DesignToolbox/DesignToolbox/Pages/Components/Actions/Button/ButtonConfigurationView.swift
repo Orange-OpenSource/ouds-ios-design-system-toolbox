@@ -49,6 +49,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var size: OUDSButton.Size {
+        didSet { updateCode() }
+    }
+
     @Published var isFullWidth: Bool {
         didSet { updateCode() }
     }
@@ -63,6 +67,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         rawImage = false
         appearance = .default
         style = .default
+        size = .default
         isFullWidth = false
         super.init()
     }
@@ -100,6 +105,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         ", style: \(style.technicalDescription)"
     }
 
+    private var sizePattern: String {
+        ", size: \(size.technicalDescription)"
+    }
+
     private var coloredSurfaceCodeModifier: String {
         onColoredSurface ? ".coloredSurface(theme.colorModes.onBrandPrimary)" : ""
     }
@@ -119,7 +128,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-            OUDSButton(\(layoutPattern)\(appearancePattern)\(stylePattern)\(isFullWidthPattern)) {}
+            OUDSButton(\(layoutPattern)\(appearancePattern)\(stylePattern)\(sizePattern)\(isFullWidthPattern)) {}
             \(disableCodePattern)
             \(coloredSurfaceCodeModifier)
             """
@@ -149,6 +158,12 @@ extension OUDSButton.Style: @retroactive CaseIterable, DesignToolboxEnumRepresen
     public static let allCases: [OUDSButton.Style] = [.default, .loading]
 }
 
+// MARK: Button size extension
+
+extension OUDSButton.Size: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSButton.Size] = [.default, .small]
+}
+
 // MARK: Button appearance extension
 
 extension OUDSButton.Appearance: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
@@ -169,14 +184,6 @@ struct ButtonConfigurationView: View {
                 OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
                     .disabled(configurationModel.style != .default)
 
-                OUDSSwitchItem("app_components_button_fullWidth_tech", isOn: $configurationModel.isFullWidth)
-
-                OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
-                    .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
-
-                OUDSSwitchItem("app_components_common_rawImage_tech", isOn: $configurationModel.rawImage)
-                    .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
-
                 OUDSSwitchItem("app_components_common_onColoredSurface_tech", isOn: $configurationModel.onColoredSurface)
 
                 OUDSChipPicker(title: "app_components_common_appearance_tech",
@@ -187,10 +194,24 @@ struct ButtonConfigurationView: View {
                                selection: $configurationModel.style,
                                chips: OUDSButton.Style.chips)
 
+                OUDSChipPicker(title: "app_components_common_size_tech",
+                               selection: $configurationModel.size,
+                               chips: OUDSButton.Size.chips)
+
                 OUDSChipPicker(title: "app_components_common_layout_tech",
                                selection: $configurationModel.layout,
                                chips: ButtonLayout.chips)
+
+                OUDSSwitchItem("app_components_button_fullWidth_tech", isOn: $configurationModel.isFullWidth)
+
+                OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
+                    .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
+
+                OUDSSwitchItem("app_components_common_rawImage_tech", isOn: $configurationModel.rawImage)
+                    .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
+
             }
+
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
                 DesignToolboxEditContentDisclosure {
