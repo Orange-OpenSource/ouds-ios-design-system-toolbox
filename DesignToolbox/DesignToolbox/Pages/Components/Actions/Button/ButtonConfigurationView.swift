@@ -209,9 +209,7 @@ struct ButtonConfigurationView: View {
 
                 OUDSSwitchItem("app_components_common_rawImage_tech", isOn: $configurationModel.rawImage)
                     .disabled(!(configurationModel.layout == .iconOnly || configurationModel.layout == .textAndIcon))
-
             }
-
 
             if configurationModel.layout == .textAndIcon || configurationModel.layout == .textOnly {
                 DesignToolboxEditContentDisclosure {
