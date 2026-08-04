@@ -12,6 +12,7 @@
 //
 
 #if DEBUG
+import OUDSSwiftUI
 import SwiftUI
 
 /// Flags and constants used by the DEBUG-only sandbox mode.
@@ -32,7 +33,7 @@ import SwiftUI
 /// - `true`: the sandbox loads `SandboxTestView` for experimentations.
 ///
 /// Flip this flag when you start populating the sandbox with real content.
-let kSandboxContainsThings: Bool = false
+let kSandboxContainsThings: Bool = true
 
 /// Actual sandbox surface, loaded when ``kSandboxContainsThings`` is `true`.
 ///
@@ -41,8 +42,39 @@ let kSandboxContainsThings: Bool = false
 /// scaffolding around it.
 struct SandboxTestView: View {
 
+    @Environment(\.theme) private var theme
+
     var body: some View {
-        EmptyView()
+//        OUDSCircularProgressIndicator(status: .neutral)
+        allUndefinedCircular
+    }
+
+    var allUndefinedCircular: some View {
+        HStack {
+            VStack {
+                Text("With Track").bodyStrongLarge(theme)
+                OUDSCircularProgressIndicator(status: .neutral)
+                OUDSCircularProgressIndicator(status: .accent)
+                OUDSCircularProgressIndicator(status: .positive)
+                OUDSCircularProgressIndicator(status: .info)
+                OUDSCircularProgressIndicator(status: .warning)
+                OUDSCircularProgressIndicator(status: .negative)
+            }
+            Spacer()
+            VStack {
+                Text("Without Track").bodyStrongLarge(theme)
+                OUDSCircularProgressIndicator(status: .neutral, track: false)
+                OUDSCircularProgressIndicator(status: .accent, track: false)
+                OUDSCircularProgressIndicator(status: .positive, track: false)
+                OUDSCircularProgressIndicator(status: .info, track: false)
+                OUDSCircularProgressIndicator(status: .warning, track: false)
+                OUDSCircularProgressIndicator(status: .negative, track: false)
+            }
+        }
+        .padding(.horizontal, 30)
     }
 }
 #endif
+
+// TODO: #409 - Add pages for component
+// TODO: #409 - Snapshot tests

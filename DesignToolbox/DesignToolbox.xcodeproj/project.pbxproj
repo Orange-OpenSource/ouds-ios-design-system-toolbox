@@ -6582,7 +6582,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "409-in-library-add-circular-progress-indicator-component";
 				kind = branch;
 			};
 		};
