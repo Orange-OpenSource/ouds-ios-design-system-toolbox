@@ -3436,13 +3436,13 @@
 		959800752EBCCB81007BE0EA /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				95D5BA302F4706BF00CB10FE /* Dialogs */,
+				959800832EBCCBFE007BE0EA /* Actions */,
 				957D5EDF2F2BB2660055128A /* ContentDisplay */,
+				959800842EBCCC03007BE0EA /* Controls */,
+				95D5BA302F4706BF00CB10FE /* Dialogs */,
+				959800852EBCCC07007BE0EA /* Indicators */,
 				950EA6C12EBCFA2F0009414A /* Layouts */,
 				959800872EBCCC13007BE0EA /* Navigations */,
-				959800852EBCCC07007BE0EA /* Indicators */,
-				959800842EBCCC03007BE0EA /* Controls */,
-				959800832EBCCBFE007BE0EA /* Actions */,
 				9598006C2EBCC714007BE0EA /* ComponentsView.swift */,
 			);
 			path = Components;
