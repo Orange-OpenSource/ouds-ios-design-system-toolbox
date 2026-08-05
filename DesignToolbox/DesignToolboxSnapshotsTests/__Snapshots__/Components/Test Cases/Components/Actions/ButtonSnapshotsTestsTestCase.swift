@@ -38,34 +38,38 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
         theme: OUDSTheme,
         interfaceStyle: UIUserInterfaceStyle)
     {
-        for appearance in OUDSButton.Appearance.allCases {
-            for layout in ButtonTest.Layout.allCases {
-                for flipIcon in [true, false] {
-                    for imageMode in [
-                        Image.TemplateRenderingMode.original,
-                        Image.TemplateRenderingMode.template,
-                    ] {
-                        for disabled in [true, false] {
-                            testButton(
-                                theme: theme,
-                                interfaceStyle: interfaceStyle,
-                                a11yContrast: .normal,
-                                layout: layout,
-                                flipIcon: flipIcon,
-                                imageMode: imageMode,
-                                appearance: appearance,
-                                disabled: disabled,
-                                onColoredSurface: false)
-                            testButton(
-                                theme: theme,
-                                interfaceStyle: interfaceStyle,
-                                a11yContrast: .high,
-                                layout: layout,
-                                flipIcon: flipIcon,
-                                imageMode: imageMode,
-                                appearance: appearance,
-                                disabled: disabled,
-                                onColoredSurface: false)
+        for size in OUDSButton.Size.allCases {
+            for appearance in OUDSButton.Appearance.allCases {
+                for layout in ButtonTest.Layout.allCases {
+                    for flipIcon in [true, false] {
+                        for imageMode in [
+                            Image.TemplateRenderingMode.original,
+                            Image.TemplateRenderingMode.template,
+                        ] {
+                            for disabled in [true, false] {
+                                testButton(
+                                    theme: theme,
+                                    interfaceStyle: interfaceStyle,
+                                    a11yContrast: .normal,
+                                    layout: layout,
+                                    flipIcon: flipIcon,
+                                    imageMode: imageMode,
+                                    appearance: appearance,
+                                    size: size,
+                                    disabled: disabled,
+                                    onColoredSurface: false)
+                                testButton(
+                                    theme: theme,
+                                    interfaceStyle: interfaceStyle,
+                                    a11yContrast: .high,
+                                    layout: layout,
+                                    flipIcon: flipIcon,
+                                    imageMode: imageMode,
+                                    appearance: appearance,
+                                    size: size,
+                                    disabled: disabled,
+                                    onColoredSurface: false)
+                            }
                         }
                     }
                 }
@@ -89,36 +93,40 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
         interfaceStyle: UIUserInterfaceStyle)
     {
         // Skip test for negative and brand appearance because it is not allowed on colored surface
-        for appearance in OUDSButton.Appearance.allCases
-            where appearance != .negative && appearance != .brand
-        {
-            for layout in ButtonTest.Layout.allCases {
-                for flipIcon in [true, false] {
-                    for imageMode in [
-                        Image.TemplateRenderingMode.original,
-                        Image.TemplateRenderingMode.template,
-                    ] {
-                        for disabled in [true, false] {
-                            testButton(
-                                theme: theme,
-                                interfaceStyle: interfaceStyle,
-                                a11yContrast: .normal,
-                                layout: layout,
-                                flipIcon: flipIcon,
-                                imageMode: imageMode,
-                                appearance: appearance,
-                                disabled: disabled,
-                                onColoredSurface: true)
-                            testButton(
-                                theme: theme,
-                                interfaceStyle: interfaceStyle,
-                                a11yContrast: .high,
-                                layout: layout,
-                                flipIcon: flipIcon,
-                                imageMode: imageMode,
-                                appearance: appearance,
-                                disabled: disabled,
-                                onColoredSurface: true)
+        for size in OUDSButton.Size.allCases {
+            for appearance in OUDSButton.Appearance.allCases
+                where appearance != .negative && appearance != .brand
+            {
+                for layout in ButtonTest.Layout.allCases {
+                    for flipIcon in [true, false] {
+                        for imageMode in [
+                            Image.TemplateRenderingMode.original,
+                            Image.TemplateRenderingMode.template,
+                        ] {
+                            for disabled in [true, false] {
+                                testButton(
+                                    theme: theme,
+                                    interfaceStyle: interfaceStyle,
+                                    a11yContrast: .normal,
+                                    layout: layout,
+                                    flipIcon: flipIcon,
+                                    imageMode: imageMode,
+                                    appearance: appearance,
+                                    size: size,
+                                    disabled: disabled,
+                                    onColoredSurface: true)
+                                testButton(
+                                    theme: theme,
+                                    interfaceStyle: interfaceStyle,
+                                    a11yContrast: .high,
+                                    layout: layout,
+                                    flipIcon: flipIcon,
+                                    imageMode: imageMode,
+                                    appearance: appearance,
+                                    size: size,
+                                    disabled: disabled,
+                                    onColoredSurface: true)
+                            }
                         }
                     }
                 }
@@ -144,6 +152,7 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
     ///   - flipIcon: flip the icon of the button or not
     ///   - imageMode: The rendering mode for the image in the button
     ///   - appearance; the appearance of the button
+    ///   - size: the size of the button
     ///   - disabled: the disabled flag
     ///   - onColoredSurface: a flag to know if button is on a colored surface or not
     @MainActor private func testButton(
@@ -154,6 +163,7 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
         flipIcon: Bool,
         imageMode: Image.TemplateRenderingMode,
         appearance: OUDSButton.Appearance,
+        size: OUDSButton.Size,
         disabled: Bool,
         onColoredSurface: Bool = false)
     {
@@ -165,6 +175,7 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
                 imageMode: imageMode,
                 appearance: appearance,
                 style: .default,
+                size: size,
                 onColoredSurface: onColoredSurface)
                 .background(
                     theme.colors.bgPrimary.color(
@@ -181,8 +192,9 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
             imageMode == .original ? "_OriginalImage" : "_TemplateImage"
         let disabledPatern = disabled ? "_Disabled" : ""
         let roundedPattern = theme.tuning.hasRoundedButtons ? "_Rounded" : ""
+        let sizePattern = size == .small ? "_Small" : ""
         let name =
-            "\(coloredSurfacePatern)\(flipIconPattern)\(imageModePattern)\(layout.rawValue.camelCase)_\(appearance.formattedName)_\(OUDSButton.Style.default.formattedName)\(disabledPatern)\(roundedPattern)"
+            "\(coloredSurfacePatern)\(flipIconPattern)\(imageModePattern)\(layout.rawValue.camelCase)_\(appearance.formattedName)_\(OUDSButton.Style.default.formattedName)\(sizePattern)\(disabledPatern)\(roundedPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(
@@ -211,6 +223,7 @@ struct ButtonTest: View {
     let imageMode: Image.TemplateRenderingMode
     let appearance: OUDSButton.Appearance
     let style: OUDSButton.Style
+    let size: OUDSButton.Size
     let onColoredSurface: Bool
 
     @Environment(\.theme) private var theme
@@ -228,13 +241,14 @@ struct ButtonTest: View {
     func button() -> some View {
         switch layout {
         case .text:
-            OUDSButton(text: "Button", appearance: appearance, style: style) {}
+            OUDSButton(text: "Button", appearance: appearance, style: style, size: size) {}
         case .textAndIcon:
             OUDSButton(
                 text: "Button",
                 image: oudsImage,
                 appearance: appearance,
-                style: style) {}
+                style: style,
+                size: size) {}
         case .icon:
             OUDSButton(
                 image: OUDSImage(asset: imageMode == .original ? Image.placeholderImage() : Image.defaultImage(),
@@ -242,7 +256,8 @@ struct ButtonTest: View {
                                  accessibilityLabel: "Icon",
                                  renderingMode: imageMode),
                 appearance: appearance,
-                style: style) {}
+                style: style,
+                size: size) {}
         }
     }
 
