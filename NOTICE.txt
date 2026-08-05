@@ -70,7 +70,7 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ## Illustrations
 
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_empty_screen.imageset/il_empty_screen.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_flag_fr.imageset/il_flag_fr.jpeg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_flag_fr.imageset/il_flag_fr.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_placeholder.imageset/il_placeholder.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin_dark.png
