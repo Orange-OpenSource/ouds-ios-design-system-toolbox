@@ -3031,7 +3031,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Extra label"
+            "value" : "ملصق إضافي"
           }
         },
         "en" : {
@@ -3043,11 +3043,10 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Extra label"
+            "value" : "Étiquette supplémentaire"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "app_components_common_extraLabel_tech" : {
       "comment" : "Component - Common",
@@ -5020,7 +5019,7 @@
       "shouldTranslate" : false
     },
     "app_components_listItem_trailing_badgeType_tech" : {
-      "comment" : "Component - List item",
+      "comment" : "Component - List Item",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -5042,7 +5041,6 @@
           }
         }
       },
-      "shouldTranslate" : false
     },
     "app_components_listItem_trailing_tech" : {
       "comment" : "Component - List Item",

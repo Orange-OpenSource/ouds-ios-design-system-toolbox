@@ -78,6 +78,7 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width_dark.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width_dark.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_flag_fr.imageset/il_tokens_flag_fr.png
 
 ## Branded Illustrations
 

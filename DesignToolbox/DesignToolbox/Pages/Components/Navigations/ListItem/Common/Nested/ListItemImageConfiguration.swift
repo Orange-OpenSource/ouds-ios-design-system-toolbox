@@ -39,7 +39,7 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
 
         size = .medium
         ratio = .square
-        contentMode = .fit
+        contentMode = .fill
 
         super.init()
     }

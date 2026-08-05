@@ -49,7 +49,7 @@ open class ListItemVideoConfigurationModel: ComponentConfiguration {
     // MARK: Code helper
 
     override func updateCode() {
-        code = ".init(asset: Image(\"ic_flag_FR_fr\"), size: \(size.technicalDescription))"
+        code = ".init(url: URL(string: <THE_URL>)!, autoplay: true, muted: true, size: \(size.technicalDescription))"
     }
 }
 

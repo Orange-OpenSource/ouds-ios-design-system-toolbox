@@ -46,7 +46,7 @@ open class ListItemFlagConfigurationModel: ComponentConfiguration {
     // MARK: Code helper
 
     override func updateCode() {
-        code = ".init(asset: Image(\"ic_flag_FR_fr\"), size: \(size.technicalDescription))"
+        code = ".init(asset: Image(\"ic_flag_fr\"), size: \(size.technicalDescription))"
     }
 }
 
