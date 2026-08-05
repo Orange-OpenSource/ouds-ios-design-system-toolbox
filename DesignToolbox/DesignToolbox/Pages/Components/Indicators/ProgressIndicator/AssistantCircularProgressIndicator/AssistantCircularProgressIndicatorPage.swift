@@ -1,0 +1,43 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import OUDSSwiftUI
+import SwiftUI
+
+// MARK: - Assistant Circular Progress Indicator Page
+
+struct AssistantCircularProgressIndicatorPage: View {
+
+    @StateObject private var configurationModel: AssistantCircularProgressIndicatorConfigurationModel
+
+    init() {
+        _configurationModel = StateObject(wrappedValue: AssistantCircularProgressIndicatorConfigurationModel())
+    }
+
+    var body: some View {
+        ComponentConfigurationView(configuration: configurationModel) {
+            AssistantCircularProgressIndicatorDemo()
+        } configurationView: {
+            AssistantCircularProgressIndicatorConfigurationView(configurationModel: configurationModel)
+        }
+    }
+}
+
+// MARK: - Assistant Circular Progress Indicator Demo
+
+struct AssistantCircularProgressIndicatorDemo: View {
+
+    var body: some View {
+        OUDSAssistantCircularProgressIndicator()
+    }
+}

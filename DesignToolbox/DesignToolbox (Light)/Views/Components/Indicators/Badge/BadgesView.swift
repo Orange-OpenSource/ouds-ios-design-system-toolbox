@@ -66,21 +66,6 @@ struct BadgesView: View {
             }
         }
     }
-
-    @ViewBuilder
-    private func badgeSection(title: String, @ViewBuilder content: () -> some View) -> some View {
-        VStack(spacing: theme.spaces.scaledSmallMobile) {
-            Text(title)
-                .font(.headline)
-                .foregroundColor(.primary)
-
-            VStack(spacing: theme.spaces.scaledXsmallMobile) {
-                content()
-            }
-        }
-        .padding()
-        .frame(maxWidth: .infinity)
-    }
 }
 
 // swiftlint:enable accessibility_label_for_image
