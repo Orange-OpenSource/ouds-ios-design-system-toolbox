@@ -22,7 +22,6 @@ struct ProgressIndicatorElements: DesignToolboxElement {
     init() {
         let variants: [DesignToolboxElement] = [
             CircularProgressIndicatorElement(),
-            AssistantCircularProgressIndicatorElement(),
         ]
 
         name = "app_components_progressIndicator_tech".localized()

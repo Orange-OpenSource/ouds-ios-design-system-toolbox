@@ -25,9 +25,6 @@ import XCTest
 ///
 /// **Warning: only the determinate variant is tested. The indeterminate variant is not tested yet
 /// as we face troubles with animations and snapshots.**
-///
-/// The AI-oriented `OUDSAssistantCircularProgressIndicator` is out of scope of this test case,
-/// for the same reason (it is intrinsically animated and indeterminate).
 open class CircularProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
 
     /// Fixed progress values covering the full [0, 1] range.

@@ -4519,55 +4519,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_progressIndicator_assistantCircular_description_text" : {
-      "comment" : "Component - Progress Indicator",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "مؤشر دائري مخصص لسياقات مساعد الذكاء الاصطناعي، يوضح أن المساعد يفكر أو يعالج طلبًا. يكون دائمًا غير محدَّد وبدون مسار، ويستخدم دورة ألوان مخصصة للذكاء الاصطناعي."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A circular indicator dedicated to AI assistant contexts, showing that an assistant is thinking or processing a request. It is always indeterminate, without track, and uses a dedicated AI colour cycle."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Un indicateur circulaire dédié aux contextes d'assistant IA, indiquant que l'assistant est en train de réfléchir ou de traiter une requête. Il est toujours indéterminé, sans rail, et utilise un cycle de couleurs IA dédié."
-          }
-        }
-      }
-    },
-    "app_components_progressIndicator_assistantCircular_tech" : {
-      "comment" : "Component - Progress Indicator",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Assistant circular"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Assistant circular"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Assistant circular"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_progressIndicator_circular_description_text" : {
       "comment" : "Component - Progress Indicator",
       "extractionState" : "manual",
