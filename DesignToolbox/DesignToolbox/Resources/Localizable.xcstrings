@@ -4494,6 +4494,228 @@
         }
       }
     },
+    "app_components_progressIndicator_animated_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animated"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animated"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animated"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_progressIndicator_circular_description_text" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يعرض المؤشر الدائري تقدم مهمة باستخدام دائرة. يمكنه إظهار قيمة محددة (محدَّد) أو مجرد الإشارة إلى أن هناك عملية جارية (غير محدَّد). مفيد عند الحاجة إلى تركيز بصري أكبر أو عندما تكون المساحة محدودة."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A circular indicator shows the progress of a task using a circle. It can show a specific value (determinate) or just that something is in progress (indeterminate). Useful when you need more visual focus or when space is limited."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'indicateur circulaire montre l'avancement d'une tâche à l'aide d'un cercle. Il peut afficher une valeur précise (déterminé) ou simplement signaler qu'un traitement est en cours (indéterminé). Utile lorsqu'un focus visuel plus fort est nécessaire ou lorsque l'espace est limité."
+          }
+        }
+      }
+    },
+    "app_components_progressIndicator_circular_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Circular"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Circular"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Circular"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_progressIndicator_description_text" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يُستخدم مؤشر التقدم لإبلاغ المستخدم بأن النظام يعالج طلبًا معيّنًا. قد يكون التقدم معلومًا (محدَّد) أو غير معلوم (غير محدَّد). يتوفر بشكلين: دائري وخطي."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A progress indicator communicates to the user that the system is processing a request. Progress can be measurable (determinate) or unknown (indeterminate). It comes in two shapes: circular and linear."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'indicateur de progression communique à l'utilisateur que le système traite une demande. La progression peut être connue (déterminée) ou inconnue (indéterminée). Il se décline en deux formes : circulaire et linéaire."
+          }
+        }
+      }
+    },
+    "app_components_progressIndicator_gapSize_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gap size"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gap size"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gap size"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_progressIndicator_progress_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التقدم"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progress"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progression"
+          }
+        }
+      }
+    },
+    "app_components_progressIndicator_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progress indicator"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progress indicator"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progress indicator"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_progressIndicator_track_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Track"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Track"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Track"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_progressIndicator_variant_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Variant"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Variant"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Variant"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_radioButton_description_text" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
