@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `circular progress indicator` component (Orange-OpenSource/ouds-ios#409)
 - [DesignToolbox] Sandbox / debug view for experiments and easy debugging
 - [DesignToolbox] Support of `tvOS` in Design System Toolbox app and keep `watchOS` on light app (Orange-OpenSource/ouds-ios#1480)
 - [Library] `Tab view` component to use SwiftUI `Tab` API (Orange-OpenSource/ouds-ios#1452)
@@ -48,7 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Vocalization with `Voice Over` of badges for tab bar demo (Orange-OpenSource/ouds-ios#1227)
 - [Library] `Voice Over` announcement of displayed `alert` component (Orange-OpenSource/ouds-ios#1491)
 - [Library] Usage of `PIN code input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1631)
-- [Library] Usage of `password input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1563)
+- [Library] Usage of `password input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1562)
 - [Library] Usage of `text input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1562)
 - [Library] Vocalization priority for `alert message` components and usage with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1564)
 - [Library] `PIN code input` component usage with Voice Over (Orange-OpenSource/ouds-ios#1529)
