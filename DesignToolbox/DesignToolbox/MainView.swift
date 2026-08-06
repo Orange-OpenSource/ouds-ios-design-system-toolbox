@@ -123,11 +123,7 @@ struct MainView: View {
         #if DEBUG
         if sandboxEnabled {
             OUDSLiquidGlassTabView {
-<<<<<<< HEAD
                 Tab("app_bottomBar_debug_label", systemImage: "hammer") {
-=======
-                Tab("app_navigation_debug_label", systemImage: "hammer") {
->>>>>>> 45a68ce90 (chore: clean sources (Orange-OpenSource/ouds-ios#265))
                     SandboxPage()
                 }
                 Tab("app_bottomBar_tokens_label", image: "design-token") {
@@ -177,11 +173,7 @@ struct MainView: View {
         #if DEBUG
         if sandboxEnabled {
             OUDSTabView(selectedTab: $selectedTab, count: 5) {
-<<<<<<< HEAD
                 Tab("app_bottomBar_debug_label", systemImage: "hammer", value: 0) {
-=======
-                Tab("app_navigation_debug_label", systemImage: "hammer", value: 0) {
->>>>>>> 45a68ce90 (chore: clean sources (Orange-OpenSource/ouds-ios#265))
                     SandboxPage()
                 }
                 Tab("app_bottomBar_tokens_label", image: "design-token", value: 1) {
@@ -235,11 +227,7 @@ struct MainView: View {
             OUDSTabBar(selectedTab: $selectedTab, count: 4) {
                 SandboxPage()
                     .tabItem {
-<<<<<<< HEAD
                         Label("app_bottomBar_debug_label", systemImage: "hammer")
-=======
-                        Label("app_navigation_debug_label", systemImage: "hammer")
->>>>>>> 45a68ce90 (chore: clean sources (Orange-OpenSource/ouds-ios#265))
                     }
                     .tag(0)
                 TokensPage()
