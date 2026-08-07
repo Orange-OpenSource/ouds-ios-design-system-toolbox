@@ -167,8 +167,8 @@ struct ProgressControl: View {
         OUDSChipPicker(title: progressLabel,
                        selection: $progress,
                        chips: Self.progressSteps.map { value in
-            OUDSChipPickerData(tag: value, layout: .text(text: "\(Int(value * 100)) %"))
-        })
+                          OUDSChipPickerData(tag: value, layout: .text(text: "\(Int(value * 100)) %"))
+                       })
 #else
         VStack(alignment: .leading, spacing: theme.spaces.fixedXsmall) {
             OUDSLabel(LocalizedStringKey(progressLabel), size: .large, weight: .strong)
