@@ -48,6 +48,10 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var helperText: String {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     init(itemSize: OUDSListItemSize) {
@@ -62,6 +66,8 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
         hasBoldLabel = false
 
         hasSlot = false
+        
+        helperText = ""
 
         super.init()
     }
@@ -92,9 +98,9 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code = switch labelContentType {
         case .text:
-            "\(labelPattern)\(hasBoldLabelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)"
+            "\(labelPattern)\(hasBoldLabelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern)"
         case .customView:
-            "label: customLabel, accessibilityLabel: \"\(labelText)\"\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)"
+            "label: customLabel, accessibilityLabel: \"\(labelText)\"\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern)"
         }
     }
 
@@ -127,6 +133,10 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
     private var slotPattern: String {
         hasSlot ? ", slot: someView()" : ""
     }
+
+    private var helperTextPattern: String {
+        helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
+    }
 }
 
 // MARK: - Texts configuration
@@ -154,6 +164,8 @@ struct ListItemTextsConfiguration: View {
             }
 
             DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_common_description_tech")
+
+            DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
 
             OUDSSwitchItem("app_components_listItem_slot_tech", isOn: $configurationModel.hasSlot)
         }

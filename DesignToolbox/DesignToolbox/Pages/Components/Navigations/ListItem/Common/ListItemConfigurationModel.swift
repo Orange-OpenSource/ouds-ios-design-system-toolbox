@@ -24,10 +24,6 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var helperText: String {
-        didSet { updateCode() }
-    }
-
     @Published var containersAlignment: OUDSListItemContainersAlignment {
         didSet { updateCode() }
     }
@@ -105,7 +101,6 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         trailingModel = ListItemTrailingConfigurationModel(itemSize: .standard)
         leadingModel = ListItemLeadingConfigurationModel(itemSize: .standard)
 
-        helperText = ""
         roundedMedia = false
         numberOfItems = 1
 
@@ -132,7 +127,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                     description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
                     overline: textsModel.overlineText.isEmpty ? nil : textsModel.overlineText,
                     extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                    helperText: helperText.isEmpty ? nil : helperText)
+                    helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText)
             case .customView:
                 return OUDSListItemData(
                     label: textsModel.customLabelView,
@@ -140,7 +135,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                     description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
                     overline: textsModel.overlineText.isEmpty ? nil : textsModel.overlineText,
                     extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                    helperText: helperText.isEmpty ? nil : helperText)
+                    helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText)
             }
         }
     }
@@ -191,10 +186,6 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         """
     }
 
-    private var helperTextPattern: String {
-        helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
-    }
-
     var disableCodePattern: String {
         !enabled ? ".disabled(true)" : ""
     }
@@ -203,12 +194,12 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         switch textsModel.labelContentType {
         case .text:
             """
-            let data = OUDSListItemData(\(textsModel.code)\(helperTextPattern))
+            let data = OUDSListItemData(\(textsModel.code))
             """
         case .customView:
             """
             \(textsModel.customLabelPattern)
-            let data = OUDSListItemData(\(textsModel.code)\(helperTextPattern))
+            let data = OUDSListItemData(\(textsModel.code))
             """
         }
     }
