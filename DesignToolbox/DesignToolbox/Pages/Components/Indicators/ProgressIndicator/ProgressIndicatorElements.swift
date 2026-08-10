@@ -39,8 +39,8 @@ private struct ProgressIndicatorIllustration: View {
 
     var body: some View {
         VStack(spacing: 8) {
-            OUDSCircularProgressIndicator(progress: 0.75, animated: false)
-            OUDSLinearProgressIndicator(progress: 0.75, animated: false)
+            OUDSCircularProgressIndicator(progress: 0.75, status: .accent, animated: false)
+            OUDSLinearProgressIndicator(progress: 0.75, status: .accent, animated: false)
                 .frame(maxWidth: 120)
         }
     }

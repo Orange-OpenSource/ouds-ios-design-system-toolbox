@@ -4617,30 +4617,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_progressIndicator_helperText_default_text" : {
-      "comment" : "Component - Progress Indicator",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "جارٍ التحميل…"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Uploading…"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Téléversement…"
-          }
-        }
-      }
-    },
     "app_components_progressIndicator_helperText_tech" : {
       "comment" : "Component - Progress Indicator",
       "extractionState" : "manual",

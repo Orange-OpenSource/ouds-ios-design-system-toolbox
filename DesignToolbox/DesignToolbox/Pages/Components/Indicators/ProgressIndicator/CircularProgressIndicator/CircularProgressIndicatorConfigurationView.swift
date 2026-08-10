@@ -31,7 +31,7 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
         didSet { updateCode() }
     }
 
-    @Published var status: OUDSCircularProgressIndicator.Status {
+    @Published var status: ProgressIndicatorStatus {
         didSet { updateCode() }
     }
 
@@ -39,7 +39,7 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
         didSet { updateCode() }
     }
 
-    @Published var gapSize: OUDSCircularProgressIndicator.GapSize {
+    @Published var gapSize: ProgressIndicatorGapSize {
         didSet { updateCode() }
     }
 
@@ -123,26 +123,28 @@ struct CircularProgressIndicatorConfigurationView: View {
                            selection: $configurationModel.variant,
                            chips: CircularProgressIndicatorConfigurationModel.Variant.chips)
 
+            OUDSSwitchItem("app_components_common_onColoredSurface_tech",
+                           isOn: $configurationModel.onColoredSurface)
+
             if configurationModel.variant == .determinate {
                 progressControl
-
-                OUDSSwitchItem("app_components_progressIndicator_animated_tech",
-                               isOn: $configurationModel.animated)
             }
 
             OUDSChipPicker(title: "app_components_common_status_tech",
                            selection: $configurationModel.status,
-                           chips: OUDSCircularProgressIndicator.Status.chips)
+                           chips: ProgressIndicatorStatus.chips)
 
             OUDSSwitchItem("app_components_progressIndicator_track_tech",
                            isOn: $configurationModel.track)
 
             OUDSChipPicker(title: "app_components_progressIndicator_gapSize_tech",
                            selection: $configurationModel.gapSize,
-                           chips: OUDSCircularProgressIndicator.GapSize.chips)
+                           chips: ProgressIndicatorGapSize.chips)
 
-            OUDSSwitchItem("app_components_common_onColoredSurface_tech",
-                           isOn: $configurationModel.onColoredSurface)
+            if configurationModel.variant == .determinate {
+                OUDSSwitchItem("app_components_progressIndicator_animated_tech",
+                               isOn: $configurationModel.animated)
+            }
         }
     }
 
@@ -176,16 +178,6 @@ struct CircularProgressIndicatorConfigurationView: View {
     #if os(tvOS)
     private static let progressSteps: [Double] = [0.0, 0.25, 0.5, 0.75, 1.0]
     #endif
-}
-
-// MARK: - OUDS enum representable extensions
-
-extension OUDSCircularProgressIndicator.Status: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSCircularProgressIndicator.Status] = [.neutral, .accent, .positive, .info, .warning, .negative]
-}
-
-extension OUDSCircularProgressIndicator.GapSize: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSCircularProgressIndicator.GapSize] = [.default, .small]
 }
 
 // swiftlint:enable type_name

@@ -46,9 +46,8 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
     @MainActor func testAllLinearProgressIndicators(theme: OUDSTheme,
                                                     interfaceStyle: UIUserInterfaceStyle)
     {
-        // MARK: Base matrix - Status x GapSize x Track x Progress
-        for status in OUDSLinearProgressIndicator.Status.allCases {
-            for gapSize in OUDSLinearProgressIndicator.GapSize.allCases {
+        for status in ProgressIndicatorStatus.allCases {
+            for gapSize in ProgressIndicatorGapSize.allCases {
                 for track in [true, false] {
                     for progress in Self.testedProgressValues {
                         let model = LinearProgressIndicatorConfigurationModel()
@@ -60,7 +59,7 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
                         // Disable the reveal animation to make snapshots deterministic.
                         model.animated = false
                         model.stopIndicator = false
-                        model.helperText = false
+                        model.helperText = ""
 
                         testLinearProgressIndicator(theme: theme,
                                                     interfaceStyle: interfaceStyle,
@@ -70,12 +69,12 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
             }
         }
 
-        // MARK: Extras matrix - stopIndicator x helperText (Linear-specific parameters)
+        // A fixed literal string is used to keep snapshots deterministic across locales.
         for stopIndicator in [true, false] {
-            for helperText in [true, false] {
-                // Skip the (false, false) combination which is already covered above
+            for helperText in ["", "Uploading…"] {
+                // Skip the (false, empty) combination which is already covered above
                 // (neutral / default / track / progress 0.5).
-                if !stopIndicator, !helperText { continue }
+                if !stopIndicator, helperText.isEmpty { continue }
 
                 let model = LinearProgressIndicatorConfigurationModel()
                 model.variant = .determinate
@@ -121,7 +120,7 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
         // Encoded as `.progress_75` to keep the file name filesystem-friendly.
         let progressPattern = ".progress_\(Int((model.progress * 100).rounded()))"
         let stopPattern = model.stopIndicator ? ".stopIndicator" : ""
-        let helperPattern = model.helperText ? ".helperText" : ""
+        let helperPattern = model.helperText.isEmpty ? "" : ".helperText"
 
         let name = "\(typePattern)\(statusPattern)\(gapPattern)\(trackPattern)\(progressPattern)\(stopPattern)\(helperPattern)"
 

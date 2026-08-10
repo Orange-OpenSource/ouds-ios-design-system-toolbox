@@ -16,7 +16,7 @@ import SwiftUI
 
 struct LinearIndicatorsView: View {
 
-    private static let allIndicatorStatus: [OUDSLinearProgressIndicator.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
+    private static let allIndicatorStatus: [ProgressIndicatorStatus] = [.accent, .info, .negative, .positive, .neutral, .warning]
 
     var body: some View {
         WatchScrollLayoutView(title: "Linear Indicators",

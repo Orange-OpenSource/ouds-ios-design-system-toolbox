@@ -31,7 +31,7 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var status: OUDSLinearProgressIndicator.Status {
+    @Published var status: ProgressIndicatorStatus {
         didSet { updateCode() }
     }
 
@@ -43,11 +43,11 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var helperText: Bool {
+    @Published var helperText: String {
         didSet { updateCode() }
     }
 
-    @Published var gapSize: OUDSLinearProgressIndicator.GapSize {
+    @Published var gapSize: ProgressIndicatorGapSize {
         didSet { updateCode() }
     }
 
@@ -63,7 +63,7 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         status = .neutral
         track = true
         stopIndicator = false
-        helperText = false
+        helperText = ""
         gapSize = .default
         animated = true
         super.init()
@@ -73,10 +73,10 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
 
     // MARK: Helper text
 
-    /// The actual `String?` value passed to the component: nil when the switch is off,
-    /// a localized default sentence otherwise.
+    /// The actual `String?` value passed to the component: nil when the field is empty,
+    /// the user-entered text otherwise.
     var helperTextValue: String? {
-        helperText ? "app_components_progressIndicator_helperText_default_text".localized() : nil
+        helperText.isEmpty ? nil : helperText
     }
 
     // MARK: Component Configuration
@@ -92,7 +92,7 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         case .indeterminate:
             code = """
             OUDSLinearProgressIndicator(\(statusPattern), \(trackPattern), \(stopIndicatorPattern), \
-            \(helperTextPattern), \(gapSizePattern), \(animatedPattern))\(coloredSurfacePattern)
+            \(helperTextPattern), \(gapSizePattern))\(coloredSurfacePattern)
             """
         }
     }
@@ -149,37 +149,43 @@ struct LinearProgressIndicatorConfigurationView: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            OUDSChipPicker(title: "app_components_progressIndicator_variant_tech",
-                           selection: $configurationModel.variant,
-                           chips: LinearProgressIndicatorConfigurationModel.Variant.chips)
+        VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                OUDSChipPicker(title: "app_components_progressIndicator_variant_tech",
+                               selection: $configurationModel.variant,
+                               chips: LinearProgressIndicatorConfigurationModel.Variant.chips)
 
-            if configurationModel.variant == .determinate {
-                progressControl
+                OUDSSwitchItem("app_components_common_onColoredSurface_tech",
+                               isOn: $configurationModel.onColoredSurface)
+
+                if configurationModel.variant == .determinate {
+                    progressControl
+                }
+
+                OUDSChipPicker(title: "app_components_common_status_tech",
+                               selection: $configurationModel.status,
+                               chips: ProgressIndicatorStatus.chips)
+
+                OUDSSwitchItem("app_components_progressIndicator_track_tech",
+                               isOn: $configurationModel.track)
+
+                OUDSChipPicker(title: "app_components_progressIndicator_gapSize_tech",
+                               selection: $configurationModel.gapSize,
+                               chips: ProgressIndicatorGapSize.chips)
+
+                if configurationModel.variant == .determinate {
+                    OUDSSwitchItem("app_components_progressIndicator_animated_tech",
+                                   isOn: $configurationModel.animated)
+                }
+
+                OUDSSwitchItem("app_components_progressIndicator_stopIndicator_tech",
+                               isOn: $configurationModel.stopIndicator)
             }
 
-            OUDSSwitchItem("app_components_progressIndicator_animated_tech",
-                           isOn: $configurationModel.animated)
-
-            OUDSChipPicker(title: "app_components_common_status_tech",
-                           selection: $configurationModel.status,
-                           chips: OUDSLinearProgressIndicator.Status.chips)
-
-            OUDSSwitchItem("app_components_progressIndicator_track_tech",
-                           isOn: $configurationModel.track)
-
-            OUDSSwitchItem("app_components_progressIndicator_stopIndicator_tech",
-                           isOn: $configurationModel.stopIndicator)
-
-            OUDSSwitchItem("app_components_progressIndicator_helperText_tech",
-                           isOn: $configurationModel.helperText)
-
-            OUDSChipPicker(title: "app_components_progressIndicator_gapSize_tech",
-                           selection: $configurationModel.gapSize,
-                           chips: OUDSLinearProgressIndicator.GapSize.chips)
-
-            OUDSSwitchItem("app_components_common_onColoredSurface_tech",
-                           isOn: $configurationModel.onColoredSurface)
+            DesignToolboxEditContentDisclosure {
+                DesignToolboxTextField(text: $configurationModel.helperText,
+                                       label: "app_components_progressIndicator_helperText_tech")
+            }
         }
     }
 
@@ -217,12 +223,12 @@ struct LinearProgressIndicatorConfigurationView: View {
 
 // MARK: - OUDS enum representable extensions
 
-extension OUDSLinearProgressIndicator.Status: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSLinearProgressIndicator.Status] = [.neutral, .accent, .positive, .info, .warning, .negative]
+extension ProgressIndicatorStatus: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [ProgressIndicatorStatus] = [.neutral, .accent, .positive, .info, .warning, .negative]
 }
 
-extension OUDSLinearProgressIndicator.GapSize: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSLinearProgressIndicator.GapSize] = [.default, .small]
+extension ProgressIndicatorGapSize: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [ProgressIndicatorGapSize] = [.default, .small]
 }
 
 // swiftlint:enable type_name
