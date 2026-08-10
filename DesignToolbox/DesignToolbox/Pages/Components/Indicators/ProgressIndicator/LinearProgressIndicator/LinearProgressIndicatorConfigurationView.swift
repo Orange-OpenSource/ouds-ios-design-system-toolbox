@@ -91,8 +91,8 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
             """
         case .indeterminate:
             code = """
-            OUDSLinearProgressIndicator(\(statusPattern), \(trackPattern), \(stopIndicatorPattern), \
-            \(helperTextPattern), \(gapSizePattern))\(coloredSurfacePattern)
+            OUDSLinearProgressIndicator(\(statusPattern), \(trackPattern), \(helperTextPattern), \
+            \(gapSizePattern))\(coloredSurfacePattern)
             """
         }
     }
@@ -178,8 +178,10 @@ struct LinearProgressIndicatorConfigurationView: View {
                                    isOn: $configurationModel.animated)
                 }
 
-                OUDSSwitchItem("app_components_progressIndicator_stopIndicator_tech",
-                               isOn: $configurationModel.stopIndicator)
+                if configurationModel.variant == .determinate {
+                    OUDSSwitchItem("app_components_progressIndicator_stopIndicator_tech",
+                                   isOn: $configurationModel.stopIndicator)
+                }
             }
 
             DesignToolboxEditContentDisclosure {
