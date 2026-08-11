@@ -32,21 +32,21 @@ struct StaticListItemPage: View {
 // MARK: - Static List Item Demo
 
 private struct StaticListItemDemo: View {
-
+    
     @ObservedObject private var configurationModel: ListItemConfigurationModel
     @ObservedObject private var textsModel: ListItemTextsConfigurationModel
     @ObservedObject private var leadingModel: ListItemLeadingConfigurationModel
     @ObservedObject private var trailingModel: ListItemTrailingConfigurationModel
-
+    
     @Environment(\.theme) private var theme
-
+    
     init(configurationModel: ListItemConfigurationModel) {
         self.configurationModel = configurationModel
         textsModel = configurationModel.textsModel
         leadingModel = configurationModel.leadingModel
         trailingModel = configurationModel.trailingModel
     }
-
+    
     var body: some View {
         VStack(spacing: rowGap) {
             ForEach(Array(configurationModel.dataItems.enumerated()), id: \.offset) { _, data in
@@ -62,14 +62,19 @@ private struct StaticListItemDemo: View {
                 }
             }
         }
-        .oudsListItemStyle(configurationModel.contentStyle)
+        .oudsListContentStyle(configurationModel.contentStyle)
         .oudsListItemContainerAlignment(configurationModel.containersAlignment)
         .oudsListItemRoundedMedia(configurationModel.roundedMedia)
         .oudsListItemSize(configurationModel.itemSize)
         .disabled(!configurationModel.enabled)
     }
-
+    
     private var rowGap: CGFloat {
-        configurationModel.type == .card ? theme.spaces.fixedSmall : theme.spaces.fixedNone
+        switch configurationModel.contentStyle {
+        case .card:
+            theme.spaces.fixedSmall
+        case .item:
+            theme.spaces.fixedNone
+        }
     }
 }

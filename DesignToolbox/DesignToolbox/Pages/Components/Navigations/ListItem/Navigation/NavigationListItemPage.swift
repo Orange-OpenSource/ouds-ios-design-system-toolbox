@@ -63,7 +63,7 @@ private struct NavigationListItemDemo: View {
                                            trailing: trailingModel.item(for: theme)) {}
                 }
             }
-            .oudsListItemStyle(configurationModel.contentStyle)
+            .oudsListContentStyle(configurationModel.contentStyle)
             .oudsListItemContainerAlignment(configurationModel.containersAlignment)
             .oudsListItemRoundedMedia(configurationModel.roundedMedia)
             .oudsListItemSize(configurationModel.itemSize)
@@ -72,6 +72,11 @@ private struct NavigationListItemDemo: View {
     }
 
     private var rowGap: CGFloat {
-        configurationModel.type == .card ? theme.spaces.fixedLarge : theme.spaces.fixedNone
+        switch configurationModel.contentStyle {
+        case .card:
+            theme.spaces.fixedLarge
+        case .item:
+            theme.spaces.fixedNone
+        }
     }
 }

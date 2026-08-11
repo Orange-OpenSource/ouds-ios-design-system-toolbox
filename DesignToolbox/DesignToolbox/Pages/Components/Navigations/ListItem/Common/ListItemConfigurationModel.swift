@@ -28,19 +28,23 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var type: ListType {
+    @Published var contentStyleOption: ListContentStyle {
         didSet { updateCode() }
     }
 
-    @Published var contentCardStyleOption: ContentCardStyle {
-        didSet { updateCode() }
-    }
-
-    @Published var contentStandardStyleOption: ContentStandardStyle {
+    @Published var contentCardDecorationOption: ContentCardStyle {
         didSet { updateCode() }
     }
 
     @Published var hasDivider: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var hasBackground: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var outlinedOnInteractionOnly: Bool {
         didSet { updateCode() }
     }
 
@@ -68,12 +72,12 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
     // MARK: - List type
 
-    enum ListType: DesignToolboxEnumLocalizedRepresentable {
-        case standard, card
+    enum ListContentStyle: DesignToolboxEnumLocalizedRepresentable {
+        case item, card
 
         var wordingKey: String {
             switch self {
-            case .standard:
+            case .item:
                 "app_components_listItem_itemType_tech"
             case .card:
                 "app_components_listItem_cardType_tech"
@@ -85,10 +89,11 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
     override init() {
         // Item Style
-        type = .standard
-        contentCardStyleOption = .background
-        contentStandardStyleOption = .backgroundOnInteraction
+        contentStyleOption = .item
+        contentCardDecorationOption = .strandard
         hasDivider = true
+        hasBackground = true
+        outlinedOnInteractionOnly = false
 
         itemSize = .standard
         containersAlignment = .center
@@ -145,29 +150,16 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     }
 
     var contentStyle: OUDSListItemContentStyle {
-        switch type {
-        case .standard:
-            let style: OUDSListItemContentStyle.Standard = switch contentStandardStyleOption {
-            case .background:
-                .background(withDivider: hasDivider)
-            case .backgroundOnInteraction:
-                .backgroundOnInteractionOnly(withDivider: hasDivider)
-            }
-
-            return .standard(style)
+        switch contentStyleOption {
+        case .item:
+            .item(divider: hasDivider, background: hasBackground)
         case .card:
-            let style: OUDSListItemContentStyle.Card = switch contentCardStyleOption {
+            switch contentCardDecorationOption {
             case .outlined:
-                .outlined
-            case .outlinedOnInteraction:
-                .outlinedOnInteractionOnly
-            case .background:
-                .background(withDivider: hasDivider)
-            case .backgroundOnInteraction:
-                .backgroundOnInteractionOnly(withDivider: hasDivider)
+                .card(.outlined(onlyOnInteraction: outlinedOnInteractionOnly))
+            case .strandard:
+                .card(.standard(divider: hasDivider, background: hasBackground))
             }
-
-            return .card(style)
         }
     }
 
@@ -205,33 +197,26 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     }
 
     private var styleModifierPattern: String {
-        if type == .card {
-            ".oudsListItemCardStyle(\(cardStylePattern))"
+        if contentStyleOption == .card {
+            let cardDecorationPattern = switch contentCardDecorationOption {
+            case .outlined:
+                ".outlined(onlyOnInteraction: \(outlinedOnInteractionOnly))"
+            case .strandard:
+                ".standard(\(dividerPattern), \(backgroundPattern))"
+            }
+
+            return ".oudsListCardStyle(\(cardDecorationPattern))"
         } else {
-            ".oudsListItemStandardStyle(\(standardStylePattern))"
+            return ".oudsListItemStyle(\(dividerPattern), \(backgroundPattern))"
         }
     }
 
-    private var standardStylePattern: String {
-        switch contentStandardStyleOption {
-        case .background:
-            ".background(divider: \(hasDivider))"
-        case .backgroundOnInteraction:
-            ".backgroundOnInteractionOnly(divider: \(hasDivider))"
-        }
+    private var backgroundPattern: String {
+        "background: \(hasBackground)"
     }
 
-    private var cardStylePattern: String {
-        switch contentCardStyleOption {
-        case .outlined:
-            ".outlined"
-        case .outlinedOnInteraction:
-            ".outlinedOnInteractionOnly"
-        case .background:
-            ".background(divider: \(hasDivider))"
-        case .backgroundOnInteraction:
-            ".backgroundOnInteractionOnly(divider: \(hasDivider))"
-        }
+    private var dividerPattern: String {
+        "divider: \(hasDivider)"
     }
 
     private var roundedMediaPattern: String {
@@ -259,11 +244,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 // MARK: - Enums
 
 enum ContentCardStyle: DesignToolboxEnumRepresentable {
-    case outlined, outlinedOnInteraction, background, backgroundOnInteraction
-}
-
-enum ContentStandardStyle: DesignToolboxEnumRepresentable {
-    case background, backgroundOnInteraction
+    case outlined, strandard
 }
 
 // MARK: - Extensions of OUDSListItemContainersAlignment

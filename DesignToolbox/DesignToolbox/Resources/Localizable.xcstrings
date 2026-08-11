@@ -4307,26 +4307,51 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_listItem_backgroundContentStyle_tech" : {
+    "app_components_listItem_outlinedOnInteraction_tech": {
+        "comment" : "Component - List Item",
+        "extractionState" : "manual",
+        "localizations" : {
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "On interaction only"
+            }
+          },
+          "en" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "On interaction only"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "On interaction only"
+            }
+          }
+        },
+        "shouldTranslate" : false
+    },
+    "app_components_listItem_cardDecoration_tech" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Background content style"
+            "value" : "Decoration"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Background content style"
+            "value" : "Decoration"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Background content style"
+            "value" : "Decoration"
           }
         }
       },

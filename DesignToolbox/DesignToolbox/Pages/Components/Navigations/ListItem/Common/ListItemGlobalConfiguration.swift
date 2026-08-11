@@ -36,46 +36,30 @@ struct ListItemGlobalSettingsConfiguration: View {
             OUDSHorizontalDivider()
 
             OUDSChipPicker(title: "app_components_common_type_tech".localized(),
-                           selection: $configurationModel.type,
-                           chips: ListItemConfigurationModel.ListType.chips)
+                           selection: $configurationModel.contentStyleOption,
+                           chips: ListItemConfigurationModel.ListContentStyle.chips)
 
-            switch configurationModel.type {
+            switch configurationModel.contentStyleOption {
             case .card:
-                OUDSChipPicker(title: "app_components_listItem_backgroundContentStyle_tech".localized(),
-                               selection: $configurationModel.contentCardStyleOption,
+                OUDSChipPicker(title: "app_components_listItem_cardDecoration_tech".localized(),
+                               selection: $configurationModel.contentCardDecorationOption,
                                chips: ContentCardStyle.chips)
+                switch configurationModel.contentCardDecorationOption {
+                case .outlined:
+                    if (configurationModel is NavigationListItemConfigurationModel) {
+                        OUDSSwitchItem("app_components_listItem_outlinedOnInteraction_tech", isOn: $configurationModel.outlinedOnInteractionOnly)
+                    }
 
-                if !(configurationModel is NavigationListItemConfigurationModel)
-                    && (configurationModel.contentCardStyleOption == .backgroundOnInteraction
-                        || configurationModel.contentCardStyleOption == .outlinedOnInteraction)
-                {
-                    OUDSInlineAlert("app_common_notRelevant", status: .info)
-                        .padding(.horizontal, theme.spaces.fixedSmall)
-                }
-
-                if configurationModel.contentCardStyleOption == .backgroundOnInteraction ||
-                    configurationModel.contentCardStyleOption == .background
-                {
+                case .strandard:
                     OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
+
+                    OUDSSwitchItem("app_components_listItem_background_tech", isOn: $configurationModel.hasBackground)
                 }
 
-            case .standard:
-                OUDSChipPicker(title: "app_components_listItem_backgroundContentStyle_tech".localized(),
-                               selection: $configurationModel.contentStandardStyleOption,
-                               chips: ContentStandardStyle.chips)
+            case .item:
+                OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
 
-                if !(configurationModel is NavigationListItemConfigurationModel)
-                    && configurationModel.contentStandardStyleOption == .backgroundOnInteraction
-                {
-                    OUDSInlineAlert("app_common_notRelevant", status: .info)
-                        .padding(.horizontal, theme.spaces.fixedSmall)
-                }
-
-                if configurationModel.contentStandardStyleOption == .backgroundOnInteraction ||
-                    configurationModel.contentStandardStyleOption == .background
-                {
-                    OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
-                }
+                OUDSSwitchItem("app_components_listItem_background_tech", isOn: $configurationModel.hasBackground)
             }
 
             OUDSHorizontalDivider()

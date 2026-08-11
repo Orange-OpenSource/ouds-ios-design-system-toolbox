@@ -95,14 +95,14 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The color scheme (light or dark).
     @MainActor func testAllStyles(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         let styles: [(OUDSListItemContentStyle, String)] = [
-            (.card(.outlined), "card_outlined"),
-            (.card(.outlinedOnInteractionOnly), "card_outlinedOnInteractionOnly"),
-            (.card(.background(withDivider: true)), "card_backgroundWithDivider"),
-            (.card(.background(withDivider: false)), "card_backgroundWithoutDivider"),
-            (.card(.backgroundOnInteractionOnly(withDivider: true)), "card_backgroundOnInteractionOnlyWithDivider"),
-            (.card(.backgroundOnInteractionOnly(withDivider: false)), "card_backgroundOnInteractionOnlyWithoutDivider"),
-            (.standard(.background(withDivider: false)), "stabdard_backgroundWithoutDivider"),
-            (.standard(.backgroundOnInteractionOnly(withDivider: true)), "standard_backgroundOnInteractionOnlyWithDivider"),
+            (.card(.outlined(onlyOnInteraction: false)), "card_outlined"),
+            (.card(.outlined(onlyOnInteraction: true)), "card_outlinedOnInteractionOnly"),
+            (.card(.standard(divider: true, background: true)), "card_backgroundWithDivider"),
+            (.card(.standard(divider: false, background: true)), "card_backgroundWithoutDivider"),
+            (.card(.standard(divider: true, background: false)), "card_backgroundOnInteractionOnlyWithDivider"),
+            (.card(.standard(divider: false, background: false)), "card_backgroundOnInteractionOnlyWithoutDivider"),
+            (.item(divider: false, background: true), "stabdard_backgroundWithoutDivider"),
+            (.item(divider: true, background: false), "standard_backgroundOnInteractionOnlyWithDivider"),
         ]
         for (style, styleName) in styles {
             for textCase in TextCase.allCases {
@@ -161,7 +161,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .card(.outlined),
+                        style: .card(.outlined()),
                         alignment: alignment,
                         size: .standard,
                         rounded: false,
@@ -172,7 +172,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testNavigationListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .card(.outlined),
+                        style: .card(.outlined()),
                         alignment: alignment,
                         size: .standard,
                         rounded: false,
@@ -209,7 +209,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .card(.outlined),
+                        style: .card(.outlined()),
                         alignment: .center,
                         size: size,
                         rounded: false,
@@ -220,7 +220,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testNavigationListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .card(.outlined),
+                        style: .card(.outlined()),
                         alignment: .center,
                         size: size,
                         rounded: false,
@@ -252,7 +252,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
             testListItem(
                 theme: theme,
                 interfaceStyle: interfaceStyle,
-                style: .card(.outlined),
+                style: .card(.outlined()),
                 alignment: .center,
                 size: .standard,
                 rounded: rounded,
@@ -263,7 +263,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
             testNavigationListItem(
                 theme: theme,
                 interfaceStyle: interfaceStyle,
-                style: .card(.outlined),
+                style: .card(.outlined()),
                 alignment: .center,
                 size: .standard,
                 rounded: rounded,
@@ -303,7 +303,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .card(.outlined),
+                        style: .card(.outlined()),
                         alignment: .center,
                         size: .standard,
                         rounded: false,
@@ -314,7 +314,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testNavigationListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .card(.outlined),
+                        style: .card(.outlined()),
                         alignment: .center,
                         size: .standard,
                         rounded: false,
@@ -358,7 +358,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .card(.outlined),
+                        style: .card(.outlined()),
                         alignment: .center,
                         size: .standard,
                         rounded: false,
@@ -369,7 +369,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                     testNavigationListItem(
                         theme: theme,
                         interfaceStyle: interfaceStyle,
-                        style: .card(.outlined),
+                        style: .card(.outlined()),
                         alignment: .center,
                         size: .standard,
                         rounded: false,
@@ -400,7 +400,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
         let colorScheme: ColorScheme = interfaceStyle == .light ? .light : .dark
         let illustration = OUDSThemeableView(theme: theme) {
             OUDSStaticListItem(data: data, leading: leading, trailing: trailing)
-                .oudsListItemStyle(style)
+                .oudsListContentStyle(style)
                 .oudsListItemContainerAlignment(alignment)
                 .oudsListItemSize(size)
                 .oudsListItemRoundedMedia(rounded)
@@ -425,7 +425,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
         let colorScheme: ColorScheme = interfaceStyle == .light ? .light : .dark
         let illustration = OUDSThemeableView(theme: theme) {
             OUDSNavigationListItem(data: data, indicatorType: .next, leading: leading, trailing: trailing)
-                .oudsListItemStyle(style)
+                .oudsListContentStyle(style)
                 .oudsListItemContainerAlignment(alignment)
                 .oudsListItemSize(size)
                 .oudsListItemRoundedMedia(rounded)

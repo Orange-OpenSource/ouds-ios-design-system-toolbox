@@ -90,7 +90,7 @@ struct OpenableText: View {
             {
                 OSUtilities.open(url: type.destination(for: anchor).first!)
             }
-            .oudsListItemStandardStyle(.backgroundOnInteractionOnly(withDivider: false))
+            .oudsListItemStyle(divider: false, background: false)
             .oudsListItemSize(.small)
         } else {
             HStack(spacing: theme.spaces.insetNone) {

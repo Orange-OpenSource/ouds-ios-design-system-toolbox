@@ -43,7 +43,7 @@ struct NavigationListItemIllustration: View {
             let data = OUDSListItemData(label: "Label",
                                         description: "A description of the item to show in the list item view.")
             OUDSNavigationListItem(data: data, indicatorType: .next)
-                .oudsListItemStandardStyle(.backgroundOnInteractionOnly(withDivider: false))
+                .oudsListItemStyle(divider: false, background: false)
         }
     }
 }
