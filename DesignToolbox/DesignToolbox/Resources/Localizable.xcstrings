@@ -3856,6 +3856,31 @@
         }
       }
     },
+    "app_components_common_weight_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weight"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weight"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weight"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_controlItem_divider_tech" : {
       "comment" : "Component - ControlItem",
       "extractionState" : "manual",
@@ -7586,6 +7611,375 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Title"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_typography_body_description_text" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Body هو مكون نصي يُستخدم للمحتوى الرئيسي للشاشة، مثل الفقرات أو الأوصاف أو النصوص المساعدة."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Body is a text component used for the main content of a screen, such as paragraphs, descriptions or helper texts."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Body est un composant de texte utilisé pour le contenu principal d'un écran, comme les paragraphes, descriptions ou textes d'aide."
+          }
+        }
+      }
+    },
+    "app_components_typography_body_tech" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Body"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Body"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Body"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_typography_code_description_text" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code هو مكون نصي يُستخدم لعرض مقتطفات الشيفرة والقيم التقنية بخط ذي تباعد ثابت."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code is a text component used to render code snippets and technical values using a monospaced typography."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code est un composant de texte utilisé pour afficher des extraits de code et des valeurs techniques avec une typographie à chasse fixe."
+          }
+        }
+      }
+    },
+    "app_components_typography_code_tech" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_typography_coloredSubstring_tech" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colored substring"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colored substring"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colored substring"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_typography_coloredText_tech" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colored text"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colored text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colored text"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_typography_description_text" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تجمع Typography مكونات النص في نظام التصميم: Display وHeading وBody وLabel وCode. يحدد كل منها مجموعة من الأحجام والأوزان لتنظيم المحتوى وإبرازه."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typography gathers the text components of the design system: Display, Heading, Body, Label and Code. Each of them defines a set of sizes and weights to structure and emphasize content."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typography rassemble les composants texte du design system : Display, Heading, Body, Label et Code. Chacun définit des tailles et graisses pour structurer et mettre en valeur le contenu."
+          }
+        }
+      }
+    },
+    "app_components_typography_display_description_text" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يوفر Display أكبر أنماط الطباعة في نظام التصميم. يُستخدم للعناوين الأكثر بروزًا مثل الأقسام الرئيسية أو شاشات البداية أو عناوين الصفحات العلوية."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display provides the largest typography styles of the design system. It is used for the most prominent titles like hero sections, splash screens or top-level page headlines."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display fournit les styles typographiques les plus grands du design system. Il est utilisé pour les titres les plus marquants comme les sections héros, les écrans de démarrage ou les titres de page principaux."
+          }
+        }
+      }
+    },
+    "app_components_typography_display_tech" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_typography_heading_description_text" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heading هو مكون نصي يُستخدم لتنظيم التسلسل الهرمي للشاشة. يمكن للحجم الكبير عرض علامة مميزة أو جزء نصي ملون حسب السمة."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heading is a text component used to structure the hierarchy of a screen. The large size can optionally display a marker or a colored substring depending on the theme."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heading est un composant de texte utilisé pour structurer la hiérarchie d'un écran. La taille large peut afficher un marqueur ou une sous-chaîne colorée selon le thème."
+          }
+        }
+      }
+    },
+    "app_components_typography_heading_tech" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heading"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heading"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heading"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_typography_label_description_text" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label هو مكون نصي يُستخدم للتسميات القصيرة المرتبطة بعناصر التحكم أو حقول النماذج أو الرقائق أو الوسوم أو التسميات التوضيحية."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label is a text component used for short labels attached to controls, form fields, chips, tags or captions."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label est un composant de texte utilisé pour les libellés courts associés aux contrôles, champs de formulaire, chips, tags ou légendes."
+          }
+        }
+      }
+    },
+    "app_components_typography_label_tech" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_typography_marker_tech" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marker"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marker"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marker"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_typography_tech" : {
+      "comment" : "Component - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typography"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typography"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typography"
           }
         }
       },
