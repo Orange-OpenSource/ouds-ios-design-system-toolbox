@@ -19,6 +19,7 @@ struct ProgressIndicatorsView: View {
         NavigationView {
             List {
                 NavigationLink("Circular Indicators", destination: CircularIndicatorsView())
+                NavigationLink("Linear Indicators", destination: LinearIndicatorsView())
             }
         }
     }
