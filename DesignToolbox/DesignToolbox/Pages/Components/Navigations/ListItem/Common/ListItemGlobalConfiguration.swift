@@ -44,7 +44,7 @@ struct ListItemGlobalSettingsConfiguration: View {
                                chips: ContentCardStyle.chips)
                 switch configurationModel.contentCardDecorationOption {
                 case .outlined:
-                    if (configurationModel is NavigationListItemConfigurationModel) {
+                    if configurationModel is NavigationListItemConfigurationModel {
                         OUDSSwitchItem("app_components_listItem_outlinedOnInteraction_tech", isOn: $configurationModel.outlinedOnInteractionOnly)
                     }
 
