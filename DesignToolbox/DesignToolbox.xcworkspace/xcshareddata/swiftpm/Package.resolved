@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1509-in-library-add-linear-progress-indicator-components",
-        "revision" : "39ccae145bbdcfca758e24f90c965d58f896063d"
+        "branch" : "develop",
+        "revision" : "096cc7610ebe22928893f6e170e9cb9a4a610c04"
       }
     },
     {

@@ -31,7 +31,7 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var status: ProgressIndicatorStatus {
+    @Published var status: OUDSProgressIndicatorStatus {
         didSet { updateCode() }
     }
 
@@ -47,7 +47,7 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var gapSize: ProgressIndicatorGapSize {
+    @Published var gapSize: OUDSProgressIndicatorGapSize {
         didSet { updateCode() }
     }
 
@@ -164,14 +164,14 @@ struct LinearProgressIndicatorConfigurationView: View {
 
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
-                               chips: ProgressIndicatorStatus.chips)
+                               chips: OUDSProgressIndicatorStatus.chips)
 
                 OUDSSwitchItem("app_components_progressIndicator_track_tech",
                                isOn: $configurationModel.track)
 
                 OUDSChipPicker(title: "app_components_progressIndicator_gapSize_tech",
                                selection: $configurationModel.gapSize,
-                               chips: ProgressIndicatorGapSize.chips)
+                               chips: OUDSProgressIndicatorGapSize.chips)
 
                 if configurationModel.variant == .determinate {
                     OUDSSwitchItem("app_components_progressIndicator_animated_tech",
@@ -225,12 +225,12 @@ struct LinearProgressIndicatorConfigurationView: View {
 
 // MARK: - OUDS enum representable extensions
 
-extension ProgressIndicatorStatus: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [ProgressIndicatorStatus] = [.neutral, .accent, .positive, .info, .warning, .negative]
+extension OUDSProgressIndicatorStatus: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSProgressIndicatorStatus] = [.neutral, .accent, .positive, .info, .warning, .negative]
 }
 
-extension ProgressIndicatorGapSize: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [ProgressIndicatorGapSize] = [.default, .small]
+extension OUDSProgressIndicatorGapSize: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSProgressIndicatorGapSize] = [.default, .small]
 }
 
 // swiftlint:enable type_name

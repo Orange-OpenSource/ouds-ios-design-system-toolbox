@@ -46,8 +46,8 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
     @MainActor func testAllLinearProgressIndicators(theme: OUDSTheme,
                                                     interfaceStyle: UIUserInterfaceStyle)
     {
-        for status in ProgressIndicatorStatus.allCases {
-            for gapSize in ProgressIndicatorGapSize.allCases {
+        for status in OUDSProgressIndicatorStatus.allCases {
+            for gapSize in OUDSProgressIndicatorGapSize.allCases {
                 for track in [true, false] {
                     for progress in Self.testedProgressValues {
                         let model = LinearProgressIndicatorConfigurationModel()

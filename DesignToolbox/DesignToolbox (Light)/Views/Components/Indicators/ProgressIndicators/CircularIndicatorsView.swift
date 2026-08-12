@@ -16,7 +16,7 @@ import SwiftUI
 
 struct CircularIndicatorsView: View {
 
-    private static let allIndicatorStatus: [ProgressIndicatorStatus] = [.accent, .info, .negative, .positive, .neutral, .warning]
+    private static let allIndicatorStatus: [OUDSProgressIndicatorStatus] = [.accent, .info, .negative, .positive, .neutral, .warning]
 
     var body: some View {
         WatchScrollLayoutView(title: "Circular Indicators",

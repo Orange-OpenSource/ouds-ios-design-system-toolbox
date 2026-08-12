@@ -6742,7 +6742,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1509-in-library-add-linear-progress-indicator-components";
+				branch = develop;
 				kind = branch;
 			};
 		};
