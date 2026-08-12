@@ -14,8 +14,6 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// swiftlint:disable closure_body_length
-
 struct ListItemGlobalSettingsConfiguration: View {
 
     @ObservedObject var configurationModel: ListItemConfigurationModel
@@ -85,5 +83,3 @@ struct ListItemGlobalSettingsConfiguration: View {
         }
     }
 }
-
-// swiftlint:enable closure_body_length

@@ -66,7 +66,7 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
         hasBoldLabel = false
 
         hasSlot = false
-        
+
         helperText = ""
 
         super.init()
