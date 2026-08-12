@@ -1506,6 +1506,27 @@
 		FCFA11712F57259000C8E30D /* ToolBarTopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11662F57259000C8E30D /* ToolBarTopPage.swift */; };
 		FCFA11722F57259000C8E30D /* ToolBarTopConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11642F57259000C8E30D /* ToolBarTopConfigurationView.swift */; };
 		FCFA11732F57259000C8E30D /* ToolBarTopElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11652F57259000C8E30D /* ToolBarTopElement.swift */; };
+		FCFD793C302CC6F500D78731 /* ListItemBadgeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099A302CAA990030DE09 /* ListItemBadgeConfiguration.swift */; };
+		FCFD793D302CC6F500D78731 /* ListItemGlobalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A2302CAA990030DE09 /* ListItemGlobalConfiguration.swift */; };
+		FCFD793E302CC6F500D78731 /* ListItemTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A5302CAA990030DE09 /* ListItemTrailingConfiguration.swift */; };
+		FCFD793F302CC6F500D78731 /* ListItemConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A0302CAA990030DE09 /* ListItemConfigurationModel.swift */; };
+		FCFD7940302CC6F500D78731 /* ListItemAvatarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC0999302CAA990030DE09 /* ListItemAvatarConfiguration.swift */; };
+		FCFD7941302CC6F500D78731 /* ListStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A6302CAA990030DE09 /* ListStyleModifier.swift */; };
+		FCFD7942302CC6F500D78731 /* ListItemConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A1302CAA990030DE09 /* ListItemConfigurationView.swift */; };
+		FCFD7943302CC6F500D78731 /* ListItemLeadingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A3302CAA990030DE09 /* ListItemLeadingConfiguration.swift */; };
+		FCFD7944302CC6F500D78731 /* ListItemIconConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099C302CAA990030DE09 /* ListItemIconConfiguration.swift */; };
+		FCFD7945302CC6F500D78731 /* ListItemFlagConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099B302CAA990030DE09 /* ListItemFlagConfiguration.swift */; };
+		FCFD7946302CC6F500D78731 /* ListItemTextsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A4302CAA990030DE09 /* ListItemTextsConfiguration.swift */; };
+		FCFD7947302CC6F500D78731 /* ListItemImageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099D302CAA990030DE09 /* ListItemImageConfiguration.swift */; };
+		FCFD7948302CC6F500D78731 /* ListItemVideoConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099E302CAA990030DE09 /* ListItemVideoConfiguration.swift */; };
+		FCFD7949302CC71200D78731 /* ListItemElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC0A01302CAB560030DE09 /* ListItemElements.swift */; };
+		FCFD794A302CC71200D78731 /* NavigationListItemElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AA302CAA990030DE09 /* NavigationListItemElement.swift */; };
+		FCFD794B302CC71200D78731 /* NavigationListItemConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A9302CAA990030DE09 /* NavigationListItemConfiguration.swift */; };
+		FCFD794C302CC71200D78731 /* StaticListItemElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AD302CAA990030DE09 /* StaticListItemElement.swift */; };
+		FCFD794D302CC71200D78731 /* NavigationListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AB302CAA990030DE09 /* NavigationListItemPage.swift */; };
+		FCFD794E302CC71200D78731 /* StaticListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AE302CAA990030DE09 /* StaticListItemPage.swift */; };
+		FCFD7965302CC8AF00D78731 /* NavigationListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFD7962302CC8AF00D78731 /* NavigationListItemView.swift */; };
+		FCFD7966302CC8AF00D78731 /* StaticListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFD7963302CC8AF00D78731 /* StaticListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2037,6 +2058,8 @@
 		FCFA11642F57259000C8E30D /* ToolBarTopConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarTopConfigurationView.swift; sourceTree = "<group>"; };
 		FCFA11652F57259000C8E30D /* ToolBarTopElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarTopElement.swift; sourceTree = "<group>"; };
 		FCFA11662F57259000C8E30D /* ToolBarTopPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarTopPage.swift; sourceTree = "<group>"; };
+		FCFD7962302CC8AF00D78731 /* NavigationListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationListItemView.swift; sourceTree = "<group>"; };
+		FCFD7963302CC8AF00D78731 /* StaticListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticListItemView.swift; sourceTree = "<group>"; };
 		FF2C4281EEF2FF5C50155D28 /* SandboxPage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SandboxPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -3767,6 +3790,7 @@
 		959800872EBCCC13007BE0EA /* Navigations */ = {
 			isa = PBXGroup;
 			children = (
+				FCFD7964302CC8AF00D78731 /* ListItem */,
 				9598007E2EBCCBD0007BE0EA /* Link */,
 				950EA6BB2EBCF8C40009414A /* NavigationsView.swift */,
 			);
@@ -4282,6 +4306,15 @@
 				FCFA11662F57259000C8E30D /* ToolBarTopPage.swift */,
 			);
 			path = ToolBarTop;
+			sourceTree = "<group>";
+		};
+		FCFD7964302CC8AF00D78731 /* ListItem */ = {
+			isa = PBXGroup;
+			children = (
+				FCFD7962302CC8AF00D78731 /* NavigationListItemView.swift */,
+				FCFD7963302CC8AF00D78731 /* StaticListItemView.swift */,
+			);
+			path = ListItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -5589,6 +5622,12 @@
 				9589F0342EB7D67B00134487 /* TagElement.swift in Sources */,
 				95CE05362EC33C2A00ACE41C /* NamedOpacity.swift in Sources */,
 				9589F0352EB7D67B00134487 /* TagConfigurationView.swift in Sources */,
+				FCFD7949302CC71200D78731 /* ListItemElements.swift in Sources */,
+				FCFD794A302CC71200D78731 /* NavigationListItemElement.swift in Sources */,
+				FCFD794B302CC71200D78731 /* NavigationListItemConfiguration.swift in Sources */,
+				FCFD794C302CC71200D78731 /* StaticListItemElement.swift in Sources */,
+				FCFD794D302CC71200D78731 /* NavigationListItemPage.swift in Sources */,
+				FCFD794E302CC71200D78731 /* StaticListItemPage.swift in Sources */,
 				9589F0362EB7D67B00134487 /* ChipPickerConfigurationView.swift in Sources */,
 				95CEF18C2F9A28DE008AD8C4 /* AllElements.swift in Sources */,
 				9589F0372EB7D67B00134487 /* ChipPickerElement.swift in Sources */,
@@ -5682,6 +5721,19 @@
 				FCEEB1932F1A877300C9BD46 /* BulletListElement.swift in Sources */,
 				9589F0842EB7D67B00134487 /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				9589F0852EB7D67B00134487 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
+				FCFD793C302CC6F500D78731 /* ListItemBadgeConfiguration.swift in Sources */,
+				FCFD793D302CC6F500D78731 /* ListItemGlobalConfiguration.swift in Sources */,
+				FCFD793E302CC6F500D78731 /* ListItemTrailingConfiguration.swift in Sources */,
+				FCFD793F302CC6F500D78731 /* ListItemConfigurationModel.swift in Sources */,
+				FCFD7940302CC6F500D78731 /* ListItemAvatarConfiguration.swift in Sources */,
+				FCFD7941302CC6F500D78731 /* ListStyleModifier.swift in Sources */,
+				FCFD7942302CC6F500D78731 /* ListItemConfigurationView.swift in Sources */,
+				FCFD7943302CC6F500D78731 /* ListItemLeadingConfiguration.swift in Sources */,
+				FCFD7944302CC6F500D78731 /* ListItemIconConfiguration.swift in Sources */,
+				FCFD7945302CC6F500D78731 /* ListItemFlagConfiguration.swift in Sources */,
+				FCFD7946302CC6F500D78731 /* ListItemTextsConfiguration.swift in Sources */,
+				FCFD7947302CC6F500D78731 /* ListItemImageConfiguration.swift in Sources */,
+				FCFD7948302CC6F500D78731 /* ListItemVideoConfiguration.swift in Sources */,
 				9589F0862EB7D67B00134487 /* Bundle+extension.swift in Sources */,
 				9589F0872EB7D67B00134487 /* NamedColor+Action.swift in Sources */,
 				FCDDFBBC2F2B69E700389D8D /* PasswordInputPage.swift in Sources */,
@@ -6111,6 +6163,8 @@
 				959800712EBCC714007BE0EA /* DesignToolbox_Light_App.swift in Sources */,
 				950EA6B22EBCEC2D0009414A /* CheckboxesItemView.swift in Sources */,
 				950EA6B42EBCECA00009414A /* CheckboxesOnlyView.swift in Sources */,
+				FCFD7965302CC8AF00D78731 /* NavigationListItemView.swift in Sources */,
+				FCFD7966302CC8AF00D78731 /* StaticListItemView.swift in Sources */,
 				950EA6D92EBE24AA0009414A /* TagView.swift in Sources */,
 				950EA6DB2EBE24E10009414A /* InputTag.swift in Sources */,
 				9593901A2EC1F2A0000DBE95 /* BordersView.swift in Sources */,
