@@ -4617,6 +4617,80 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_progressIndicator_helperText_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_progressIndicator_linear_description_text" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يعرض المؤشر الخطي تقدم مهمة باستخدام شريط أفقي يشغل العرض المتاح. يمكنه إظهار قيمة محدَّدة (محدَّد) أو مجرد الإشارة إلى أن هناك عملية جارية (غير محدَّد). ادعم أيضًا مؤشر إيقاف اختياري ونصًا مساعدًا في الوسط تحت الشريط."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A linear indicator shows the progress of a task using a horizontal bar that takes the available width. It can show a specific value (determinate) or just that something is in progress (indeterminate). It also supports an optional stop indicator and a centered helper text below the bar."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'indicateur linéaire montre l'avancement d'une tâche à l'aide d'une barre horizontale qui occupe la largeur disponible. Il peut afficher une valeur précise (déterminé) ou simplement signaler qu'un traitement est en cours (indéterminé). Il prend en charge un indicateur d'arrêt optionnel et un texte d'aide centré sous la barre."
+          }
+        }
+      }
+    },
+    "app_components_progressIndicator_linear_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linear"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linear"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linear"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_progressIndicator_progress_tech" : {
       "comment" : "Component - Progress Indicator",
       "extractionState" : "manual",
@@ -4640,6 +4714,31 @@
           }
         }
       }
+    },
+    "app_components_progressIndicator_stopIndicator_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop indicator"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop indicator"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop indicator"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_components_progressIndicator_tech" : {
       "comment" : "Component - Progress Indicator",

@@ -42,8 +42,8 @@ open class CircularProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
     @MainActor func testAllCircularProgressIndicators(theme: OUDSTheme,
                                                       interfaceStyle: UIUserInterfaceStyle)
     {
-        for status in OUDSCircularProgressIndicator.Status.allCases {
-            for gapSize in OUDSCircularProgressIndicator.GapSize.allCases {
+        for status in OUDSProgressIndicatorStatus.allCases {
+            for gapSize in OUDSProgressIndicatorGapSize.allCases {
                 for track in [true, false] {
                     for progress in Self.testedProgressValues {
                         let model = CircularProgressIndicatorConfigurationModel()

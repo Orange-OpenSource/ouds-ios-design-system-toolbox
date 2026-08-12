@@ -22,6 +22,7 @@ struct ProgressIndicatorElements: DesignToolboxElement {
     init() {
         let variants: [DesignToolboxElement] = [
             CircularProgressIndicatorElement(),
+            LinearProgressIndicatorElement(),
         ]
 
         name = "app_components_progressIndicator_tech".localized()
@@ -37,6 +38,10 @@ struct ProgressIndicatorElements: DesignToolboxElement {
 private struct ProgressIndicatorIllustration: View {
 
     var body: some View {
-        OUDSCircularProgressIndicator(progress: 0.75, animated: false)
+        VStack(spacing: 8) {
+            OUDSCircularProgressIndicator(progress: 0.75, status: .accent, animated: false)
+            OUDSLinearProgressIndicator(progress: 0.75, status: .accent, animated: false)
+                .frame(maxWidth: 120)
+        }
     }
 }
