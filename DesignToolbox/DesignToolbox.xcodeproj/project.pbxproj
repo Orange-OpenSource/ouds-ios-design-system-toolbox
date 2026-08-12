@@ -1374,15 +1374,6 @@
 		FCB8B1932F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1922F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift */; };
 		FCB8B1952F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1942F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift */; };
 		FCB8B19A2F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1982F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift */; };
-		FCD283372FCEE19F00ABF522 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		FCD283382FCEE1C700ABF522 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		FCD283392FCEE1C700ABF522 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		FCD2833A2FCEE1C700ABF522 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		FCD2833B2FCEE1D800ABF522 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		FCD2833C2FCEE1D800ABF522 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		FCD2833D2FCEE1D800ABF522 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		FCD2833E2FCEE1DE00ABF522 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		FCD2833F2FCEE1DE00ABF522 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		FCDDFBB62F2B69E700389D8D /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */; };
 		FCDDFBB72F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */; };
 		FCDDFBB82F2B69E700389D8D /* PasswordInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */; };
@@ -5572,9 +5563,6 @@
 				9589F0222EB7D67B00134487 /* DesignToolboxColorPicker.swift in Sources */,
 				9589F0232EB7D67B00134487 /* UserDefaultsWrapper.swift in Sources */,
 				9589F0242EB7D67B00134487 /* DesignToolboxConfiguration.swift in Sources */,
-				FCD2833B2FCEE1D800ABF522 /* (null) in Sources */,
-				FCD2833C2FCEE1D800ABF522 /* (null) in Sources */,
-				FCD2833D2FCEE1D800ABF522 /* (null) in Sources */,
 				9589F0252EB7D67B00134487 /* NamedColor+Opacity.swift in Sources */,
 				9589F0262EB7D67B00134487 /* DesignToolboxTextField.swift in Sources */,
 				9589F0272EB7D67B00134487 /* RadioItemPage.swift in Sources */,
@@ -5625,8 +5613,6 @@
 				9589F0472EB7D67B00134487 /* NameSpace+PaddingInset.swift in Sources */,
 				9589F0482EB7D67B00134487 /* SpaceGapTokenIllustrations.swift in Sources */,
 				9589F0492EB7D67B00134487 /* SizeTokenPage.swift in Sources */,
-				FCD2833E2FCEE1DE00ABF522 /* (null) in Sources */,
-				FCD2833F2FCEE1DE00ABF522 /* (null) in Sources */,
 				9589F04A2EB7D67B00134487 /* ComponentPage.swift in Sources */,
 				95CE05592EC33FA900ACE41C /* NamedGrid.swift in Sources */,
 				9589F04B2EB7D67B00134487 /* CheckboxItemElement.swift in Sources */,
@@ -5649,7 +5635,6 @@
 				9589F05C2EB7D67B00134487 /* MainView.swift in Sources */,
 				9589F05D2EB7D67B00134487 /* ButtonPage.swift in Sources */,
 				9589F05E2EB7D67B00134487 /* CheckboxItemIndeterminatePage.swift in Sources */,
-				FCD283372FCEE19F00ABF522 /* (null) in Sources */,
 				9589F05F2EB7D67B00134487 /* A11YIdentifiers.swift in Sources */,
 				95C5A7D52F978289002F6D8A /* TextualContentMode.swift in Sources */,
 				9589F0602EB7D67B00134487 /* CheckboxItemIndeterminateElement.swift in Sources */,
@@ -5709,9 +5694,6 @@
 				9589F08A2EB7D67B00134487 /* InputTagPage.swift in Sources */,
 				95CA201E2FC70B4300431097 /* BadgeIconElement.swift in Sources */,
 				9589F08B2EB7D67B00134487 /* SpaceTokenElement.swift in Sources */,
-				FCD283382FCEE1C700ABF522 /* (null) in Sources */,
-				FCD283392FCEE1C700ABF522 /* (null) in Sources */,
-				FCD2833A2FCEE1C700ABF522 /* (null) in Sources */,
 				9589F08C2EB7D67B00134487 /* DividerConfiguration.swift in Sources */,
 				9589F08D2EB7D67B00134487 /* DividerElement.swift in Sources */,
 				9589F08E2EB7D67B00134487 /* DividerElements.swift in Sources */,
