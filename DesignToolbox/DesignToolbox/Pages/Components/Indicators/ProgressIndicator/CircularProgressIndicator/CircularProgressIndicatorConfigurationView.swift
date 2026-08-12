@@ -162,21 +162,21 @@ struct ProgressControl: View {
 
     var body: some View {
 
-#if os(tvOS)
+        #if os(tvOS)
         // `Slider` is not available on tvOS: expose discrete steps via a chip picker.
         OUDSChipPicker(title: progressLabel,
                        selection: $progress,
                        chips: Self.progressSteps.map { value in
-                          OUDSChipPickerData(tag: value, layout: .text(text: "\(Int(value * 100)) %"))
+                           OUDSChipPickerData(tag: value, layout: .text(text: "\(Int(value * 100)) %"))
                        })
-#else
+        #else
         VStack(alignment: .leading, spacing: theme.spaces.fixedXsmall) {
             OUDSLabel(LocalizedStringKey(progressLabel), size: .large, weight: .strong)
                 .foregroundColor(theme.colors.contentDefault)
             Slider(value: $progress, in: 0 ... 1)
         }
         .padding(theme.spaces.fixedSmall)
-#endif
+        #endif
     }
 
     private var progressLabel: String {
