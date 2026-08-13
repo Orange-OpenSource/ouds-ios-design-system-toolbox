@@ -21,18 +21,6 @@ struct ListItemGlobalSettingsConfiguration: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            OUDSChipPicker(title: "app_components_listItem_size_tech".localized(),
-                           selection: $configurationModel.itemSize,
-                           chips: OUDSListItemSize.chips)
-
-            OUDSHorizontalDivider()
-
-            OUDSChipPicker(title: "app_components_listItem_contentAlignment_tech".localized(),
-                           selection: $configurationModel.containersAlignment,
-                           chips: OUDSListItemContainersAlignment.chips)
-
-            OUDSHorizontalDivider()
-
             OUDSChipPicker(title: "app_components_common_type_tech".localized(),
                            selection: $configurationModel.contentStyleOption,
                            chips: ListItemConfigurationModel.ListContentStyle.chips)
@@ -59,6 +47,18 @@ struct ListItemGlobalSettingsConfiguration: View {
 
                 OUDSSwitchItem("app_components_listItem_background_tech", isOn: $configurationModel.hasBackground)
             }
+
+            OUDSHorizontalDivider()
+
+            OUDSChipPicker(title: "app_components_listItem_size_tech".localized(),
+                           selection: $configurationModel.itemSize,
+                           chips: OUDSListItemSize.chips)
+
+            OUDSHorizontalDivider()
+
+            OUDSChipPicker(title: "app_components_listItem_contentAlignment_tech".localized(),
+                           selection: $configurationModel.containersAlignment,
+                           chips: OUDSListItemContainersAlignment.chips)
 
             OUDSHorizontalDivider()
 

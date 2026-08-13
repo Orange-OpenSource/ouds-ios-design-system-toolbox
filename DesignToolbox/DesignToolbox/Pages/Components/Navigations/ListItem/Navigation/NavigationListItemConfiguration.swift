@@ -39,14 +39,16 @@ struct NavigationListItemConfiguration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
+        VStack(spacing: 0) {
+            ListItemConfiguration(configurationModel: configurationModel)
+
+            Divider().horizontal()
+
             OUDSChipPicker(title: "app_components_listItem_indicator_tech".localized(),
                            selection: $configurationModel.indicatorType,
                            chips: OUDSNavigationListItemIndicatorType.chips)
 
-            Divider().horizontal()
 
-            ListItemConfiguration(configurationModel: configurationModel)
         }
     }
 }
