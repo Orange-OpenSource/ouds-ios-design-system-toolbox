@@ -29,9 +29,6 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
             flagModel.itemSize = itemSize
             iconModel.itemSize = itemSize
             imageModel.itemSize = itemSize
-            #if os(iOS) && canImport(UIKit)
-            videoModel.itemSize = itemSize
-            #endif
         }
     }
 
@@ -39,10 +36,6 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
     var flagModel: ListItemFlagConfigurationModel
     var iconModel: ListItemIconConfigurationModel
     var imageModel: ListItemImageConfigurationModel
-
-    #if os(iOS) && canImport(UIKit)
-    var videoModel: ListItemVideoConfigurationModel
-    #endif
 
     // MARK: Initializer
 
@@ -55,9 +48,6 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
         flagModel = ListItemFlagConfigurationModel(itemSize: itemSize)
         iconModel = ListItemIconConfigurationModel(itemSize: itemSize)
         imageModel = ListItemImageConfigurationModel(itemSize: itemSize)
-        #if os(iOS) && canImport(UIKit)
-        videoModel = ListItemVideoConfigurationModel(itemSize: itemSize)
-        #endif
 
         super.init()
 
@@ -65,9 +55,6 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
         register(flagModel)
         register(iconModel)
         register(imageModel)
-        #if os(iOS) && canImport(UIKit)
-        register(videoModel)
-        #endif
     }
 
     deinit {}
@@ -87,26 +74,13 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
             return .flag(flagModel.flag)
         case .avatar:
             return .avatar(avatarModel.avatar(for: theme))
-        #if os(iOS) && canImport(UIKit)
-        case .video:
-            return .video(videoModel.video)
-        #endif
         }
     }
 
     // MARK: Media helper
 
     var needRoundedMediaOption: Bool {
-        switch option {
-        case .image:
-            true
-        #if os(iOS) && canImport(UIKit)
-        case .video:
-            true
-        #endif
-        default:
-            false
-        }
+        option == .image
     }
 
     // MARK: Code helper
@@ -120,10 +94,6 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
                 ".icon(\(iconModel.code)"
             case .image:
                 ".image(\(imageModel.code))"
-            #if os(iOS) && canImport(UIKit)
-            case .video:
-                ".video(\(videoModel.code))"
-            #endif
             case .flag:
                 ".flag(\(flagModel.code))"
             case .avatar:
@@ -134,40 +104,32 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
     }
 }
 
-            struct ListItemLeadingConfiguration: View {
+struct ListItemLeadingConfiguration: View {
 
-                @ObservedObject var configurationModel: ListItemLeadingConfigurationModel
+    @ObservedObject var configurationModel: ListItemLeadingConfigurationModel
 
-                var body: some View {
-                    VStack(spacing: 0) {
-                        OUDSChipPicker(title: "",
-                                       selection: $configurationModel.option,
-                                       chips: Leading.chips)
+    var body: some View {
+        VStack(spacing: 0) {
+            OUDSChipPicker(title: "",
+                           selection: $configurationModel.option,
+                           chips: Leading.chips)
 
-                        switch configurationModel.option {
-                        case .image:
-                            ListItemImageConfiguration(configurationModel: configurationModel.imageModel)
-                        case .avatar:
-                            ListItemAvatarConfiguration(configurationModel: configurationModel.avatarModel)
-                        case .icon:
-                            ListItemIconConfiguration(configurationModel: configurationModel.iconModel)
-                        case .flag:
-                            ListItemFlagConfiguration(configurationModel: configurationModel.flagModel)
-                        #if os(iOS) && canImport(UIKit)
-                        case .video:
-                            ListItemVideoConfiguration(configurationModel: configurationModel.videoModel)
-                        #endif
-                        case .none:
-                            EmptyView()
-                        }
-                    }
-                }
+            switch configurationModel.option {
+            case .image:
+                ListItemImageConfiguration(configurationModel: configurationModel.imageModel)
+            case .avatar:
+                ListItemAvatarConfiguration(configurationModel: configurationModel.avatarModel)
+            case .icon:
+                ListItemIconConfiguration(configurationModel: configurationModel.iconModel)
+            case .flag:
+                ListItemFlagConfiguration(configurationModel: configurationModel.flagModel)
+            case .none:
+                EmptyView()
             }
+        }
+    }
+}
 
-            enum Leading: DesignToolboxEnumRepresentable {
-                #if os(iOS) && canImport(UIKit)
-                case none, icon, image, video, flag, avatar
-                #else
-                case none, icon, image, flag, avatar
-                #endif
-            }
+enum Leading: DesignToolboxEnumRepresentable {
+    case none, icon, image, flag, avatar
+}

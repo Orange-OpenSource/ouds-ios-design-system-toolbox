@@ -1390,7 +1390,6 @@
 		FCEC09B1302CAA990030DE09 /* ListStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A6302CAA990030DE09 /* ListStyleModifier.swift */; };
 		FCEC09B2302CAA990030DE09 /* StaticListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AE302CAA990030DE09 /* StaticListItemPage.swift */; };
 		FCEC09B3302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A5302CAA990030DE09 /* ListItemTrailingConfiguration.swift */; };
-		FCEC09B4302CAA990030DE09 /* ListItemVideoConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099E302CAA990030DE09 /* ListItemVideoConfiguration.swift */; };
 		FCEC09B5302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099C302CAA990030DE09 /* ListItemIconConfiguration.swift */; };
 		FCEC09B7302CAA990030DE09 /* NavigationListItemConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A9302CAA990030DE09 /* NavigationListItemConfiguration.swift */; };
 		FCEC09B8302CAA990030DE09 /* ListItemConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A1302CAA990030DE09 /* ListItemConfigurationView.swift */; };
@@ -1408,7 +1407,6 @@
 		FCEC09C4302CAA990030DE09 /* ListStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A6302CAA990030DE09 /* ListStyleModifier.swift */; };
 		FCEC09C5302CAA990030DE09 /* StaticListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AE302CAA990030DE09 /* StaticListItemPage.swift */; };
 		FCEC09C6302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A5302CAA990030DE09 /* ListItemTrailingConfiguration.swift */; };
-		FCEC09C7302CAA990030DE09 /* ListItemVideoConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099E302CAA990030DE09 /* ListItemVideoConfiguration.swift */; };
 		FCEC09C8302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099C302CAA990030DE09 /* ListItemIconConfiguration.swift */; };
 		FCEC09CA302CAA990030DE09 /* NavigationListItemConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A9302CAA990030DE09 /* NavigationListItemConfiguration.swift */; };
 		FCEC09CB302CAA990030DE09 /* ListItemConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A1302CAA990030DE09 /* ListItemConfigurationView.swift */; };
@@ -1426,7 +1424,6 @@
 		FCEC09D7302CAA990030DE09 /* ListStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A6302CAA990030DE09 /* ListStyleModifier.swift */; };
 		FCEC09D8302CAA990030DE09 /* StaticListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AE302CAA990030DE09 /* StaticListItemPage.swift */; };
 		FCEC09D9302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A5302CAA990030DE09 /* ListItemTrailingConfiguration.swift */; };
-		FCEC09DA302CAA990030DE09 /* ListItemVideoConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099E302CAA990030DE09 /* ListItemVideoConfiguration.swift */; };
 		FCEC09DB302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099C302CAA990030DE09 /* ListItemIconConfiguration.swift */; };
 		FCEC09DD302CAA990030DE09 /* NavigationListItemConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A9302CAA990030DE09 /* NavigationListItemConfiguration.swift */; };
 		FCEC09DE302CAA990030DE09 /* ListItemConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A1302CAA990030DE09 /* ListItemConfigurationView.swift */; };
@@ -1444,7 +1441,6 @@
 		FCEC09EA302CAA990030DE09 /* ListStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A6302CAA990030DE09 /* ListStyleModifier.swift */; };
 		FCEC09EB302CAA990030DE09 /* StaticListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AE302CAA990030DE09 /* StaticListItemPage.swift */; };
 		FCEC09EC302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A5302CAA990030DE09 /* ListItemTrailingConfiguration.swift */; };
-		FCEC09ED302CAA990030DE09 /* ListItemVideoConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099E302CAA990030DE09 /* ListItemVideoConfiguration.swift */; };
 		FCEC09EE302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099C302CAA990030DE09 /* ListItemIconConfiguration.swift */; };
 		FCEC09F0302CAA990030DE09 /* NavigationListItemConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A9302CAA990030DE09 /* NavigationListItemConfiguration.swift */; };
 		FCEC09F1302CAA990030DE09 /* ListItemConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A1302CAA990030DE09 /* ListItemConfigurationView.swift */; };
@@ -1518,7 +1514,6 @@
 		FCFD7945302CC6F500D78731 /* ListItemFlagConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099B302CAA990030DE09 /* ListItemFlagConfiguration.swift */; };
 		FCFD7946302CC6F500D78731 /* ListItemTextsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A4302CAA990030DE09 /* ListItemTextsConfiguration.swift */; };
 		FCFD7947302CC6F500D78731 /* ListItemImageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099D302CAA990030DE09 /* ListItemImageConfiguration.swift */; };
-		FCFD7948302CC6F500D78731 /* ListItemVideoConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099E302CAA990030DE09 /* ListItemVideoConfiguration.swift */; };
 		FCFD7949302CC71200D78731 /* ListItemElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC0A01302CAB560030DE09 /* ListItemElements.swift */; };
 		FCFD794A302CC71200D78731 /* NavigationListItemElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AA302CAA990030DE09 /* NavigationListItemElement.swift */; };
 		FCFD794B302CC71200D78731 /* NavigationListItemConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A9302CAA990030DE09 /* NavigationListItemConfiguration.swift */; };
@@ -2029,7 +2024,6 @@
 		FCEC099B302CAA990030DE09 /* ListItemFlagConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemFlagConfiguration.swift; sourceTree = "<group>"; };
 		FCEC099C302CAA990030DE09 /* ListItemIconConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemIconConfiguration.swift; sourceTree = "<group>"; };
 		FCEC099D302CAA990030DE09 /* ListItemImageConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemImageConfiguration.swift; sourceTree = "<group>"; };
-		FCEC099E302CAA990030DE09 /* ListItemVideoConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemVideoConfiguration.swift; sourceTree = "<group>"; };
 		FCEC09A0302CAA990030DE09 /* ListItemConfigurationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemConfigurationModel.swift; sourceTree = "<group>"; };
 		FCEC09A1302CAA990030DE09 /* ListItemConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemConfigurationView.swift; sourceTree = "<group>"; };
 		FCEC09A2302CAA990030DE09 /* ListItemGlobalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemGlobalConfiguration.swift; sourceTree = "<group>"; };
@@ -4205,7 +4199,6 @@
 				FCEC099B302CAA990030DE09 /* ListItemFlagConfiguration.swift */,
 				FCEC099C302CAA990030DE09 /* ListItemIconConfiguration.swift */,
 				FCEC099D302CAA990030DE09 /* ListItemImageConfiguration.swift */,
-				FCEC099E302CAA990030DE09 /* ListItemVideoConfiguration.swift */,
 			);
 			path = Nested;
 			sourceTree = "<group>";
@@ -4999,7 +4992,6 @@
 				FCEC09D7302CAA990030DE09 /* ListStyleModifier.swift in Sources */,
 				FCEC09D8302CAA990030DE09 /* StaticListItemPage.swift in Sources */,
 				FCEC09D9302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */,
-				FCEC09DA302CAA990030DE09 /* ListItemVideoConfiguration.swift in Sources */,
 				FCEC09DB302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */,
 				FCEC09DD302CAA990030DE09 /* NavigationListItemConfiguration.swift in Sources */,
 				FCEC09DE302CAA990030DE09 /* ListItemConfigurationView.swift in Sources */,
@@ -5095,7 +5087,6 @@
 				FCEC09EA302CAA990030DE09 /* ListStyleModifier.swift in Sources */,
 				FCEC09EB302CAA990030DE09 /* StaticListItemPage.swift in Sources */,
 				FCEC09EC302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */,
-				FCEC09ED302CAA990030DE09 /* ListItemVideoConfiguration.swift in Sources */,
 				FCEC09EE302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */,
 				FCEC09F0302CAA990030DE09 /* NavigationListItemConfiguration.swift in Sources */,
 				FCEC09F1302CAA990030DE09 /* ListItemConfigurationView.swift in Sources */,
@@ -5381,7 +5372,6 @@
 				FCEC09B1302CAA990030DE09 /* ListStyleModifier.swift in Sources */,
 				FCEC09B2302CAA990030DE09 /* StaticListItemPage.swift in Sources */,
 				FCEC09B3302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */,
-				FCEC09B4302CAA990030DE09 /* ListItemVideoConfiguration.swift in Sources */,
 				FCEC09B5302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */,
 				FCEC09B7302CAA990030DE09 /* NavigationListItemConfiguration.swift in Sources */,
 				FCEC09B8302CAA990030DE09 /* ListItemConfigurationView.swift in Sources */,
@@ -5733,7 +5723,6 @@
 				FCFD7945302CC6F500D78731 /* ListItemFlagConfiguration.swift in Sources */,
 				FCFD7946302CC6F500D78731 /* ListItemTextsConfiguration.swift in Sources */,
 				FCFD7947302CC6F500D78731 /* ListItemImageConfiguration.swift in Sources */,
-				FCFD7948302CC6F500D78731 /* ListItemVideoConfiguration.swift in Sources */,
 				9589F0862EB7D67B00134487 /* Bundle+extension.swift in Sources */,
 				9589F0872EB7D67B00134487 /* NamedColor+Action.swift in Sources */,
 				FCDDFBBC2F2B69E700389D8D /* PasswordInputPage.swift in Sources */,
@@ -5903,7 +5892,6 @@
 				FCEC09C4302CAA990030DE09 /* ListStyleModifier.swift in Sources */,
 				FCEC09C5302CAA990030DE09 /* StaticListItemPage.swift in Sources */,
 				FCEC09C6302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */,
-				FCEC09C7302CAA990030DE09 /* ListItemVideoConfiguration.swift in Sources */,
 				FCEC09C8302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */,
 				FCEC09CA302CAA990030DE09 /* NavigationListItemConfiguration.swift in Sources */,
 				FCEC09CB302CAA990030DE09 /* ListItemConfigurationView.swift in Sources */,

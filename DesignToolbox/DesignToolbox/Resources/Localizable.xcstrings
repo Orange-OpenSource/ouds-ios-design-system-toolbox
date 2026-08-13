@@ -29,27 +29,27 @@
       }
     },
     "app_about_appSettings_hint_a11y" : {
-        "comment" : "About screen - App settings",
-        "localizations" : {
-            "ar" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "انقر مرتين للانتقال إلى إعدادات التطبيق"
-                }
-            },
-            "en" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Tap twice to go to app settings"
-                }
-            },
-            "fr" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Appuyez deux fois pour accéder aux paramètres de l'application"
-                }
-            }
+      "comment" : "About screen - App settings",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر مرتين للانتقال إلى إعدادات التطبيق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap twice to go to app settings"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez deux fois pour accéder aux paramètres de l'application"
+          }
         }
+      }
     },
     "app_about_appSettings_label" : {
       "comment" : "About screen - App settings",
@@ -4326,30 +4326,30 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_listItem_outlinedOnInteraction_tech": {
-        "comment" : "Component - List Item",
-        "extractionState" : "manual",
-        "localizations" : {
-          "ar" : {
-            "stringUnit" : {
-              "state" : "translated",
-              "value" : "On interaction only"
-            }
-          },
-          "en" : {
-            "stringUnit" : {
-              "state" : "translated",
-              "value" : "On interaction only"
-            }
-          },
-          "fr" : {
-            "stringUnit" : {
-              "state" : "translated",
-              "value" : "On interaction only"
-            }
+    "app_components_listItem_boldLabel_tech" : {
+      "comment" : "Component - List item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bold label"
           }
         },
-        "shouldTranslate" : false
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bold label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bold label"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_components_listItem_cardDecoration_tech" : {
       "comment" : "Component - List Item",
@@ -4371,31 +4371,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Decoration"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_listItem_boldLabel_tech" : {
-      "comment" : "Component - List item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bold label"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bold label"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bold label"
           }
         }
       },
@@ -4892,6 +4867,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_listItem_outlinedOnInteraction_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On interaction only"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On interaction only"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On interaction only"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_listItem_overline_tech" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
@@ -5138,31 +5138,6 @@
           }
         }
       }
-    },
-    "app_components_listItem_videoSize_tech" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Video size"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Video size"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Video size"
-          }
-        }
-      },
-      "shouldTranslate" : false
     },
     "app_components_passwordInput_description_text" : {
       "comment" : "Component - Password Input",
