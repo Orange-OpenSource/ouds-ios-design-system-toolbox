@@ -8,9 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] `linear progress indicator` component (Orange-OpenSource/ouds-ios#1509)
 - [Library] `static list item` and `navigation list item` components (Orange-OpenSource/ouds-ios#265)
--  [Library] `static list item` and `navigation list item` components (Orange-OpenSource/ouds-ios#265) 
+- [Library] `linear progress indicator` component (Orange-OpenSource/ouds-ios#1509) 
 - [Library] `circular progress indicator` component (Orange-OpenSource/ouds-ios#409)
 - [DesignToolbox] Sandbox / debug view for experiments and easy debugging
 - [DesignToolbox] Sandbox / debug view for experiments and easy debugging
