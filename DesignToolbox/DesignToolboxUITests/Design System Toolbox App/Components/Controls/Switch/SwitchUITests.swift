@@ -33,6 +33,7 @@ final class SwitchUITests: AppTestCase {
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
         tapButton(withWording: "app_components_switch_tech", app)
         tapLink(withWording: "app_components_switch_tech", app)
 
