@@ -258,6 +258,7 @@ struct AboutPage: View {
         .accessibilityHint(hint.localized())
     }
 
+    #if DEBUG
     // swiftlint:disable accessibility_label_for_image
     /// DEBUG-only switch item displayed at the very bottom of the About list.
     /// Enabling it makes ``MainView`` add a "Debug" tab in first position.
@@ -269,6 +270,7 @@ struct AboutPage: View {
                        image: .init(asset: Image(systemName: "hammer")))
     }
     // swiftlint:enable accessibility_label_for_image
+    #endif
 }
 
 // MARK: - State Item
