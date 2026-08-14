@@ -3121,6 +3121,7 @@
     },
     "app_components_common_helperRichText_tech" : {
       "comment" : "Component - Common",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -3563,6 +3564,7 @@
     },
     "app_components_common_richError_tech" : {
       "comment" : "Component - Common",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {

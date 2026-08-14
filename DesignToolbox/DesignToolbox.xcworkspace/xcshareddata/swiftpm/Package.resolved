@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1580-in-library-add-components-typography",
-        "revision" : "03fe1011ac5fdec0ba03330c219a1994a15d4f9a"
+        "branch" : "develop",
+        "revision" : "dec42647f349287e5c28239053ed12a9f570c941"
       }
     },
     {
