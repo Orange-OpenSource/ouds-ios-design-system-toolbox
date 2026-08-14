@@ -14,6 +14,10 @@
 require 'net/http'
 require 'json'
 
+# Reduce Fastlane verbosity
+FastlaneCore::Globals.verbose = false
+ENV['FASTLANE_HIDE_TIMESTAMP'] = 'true'
+
 # Apple configuration
 # -------------------
 
@@ -141,7 +145,7 @@ lane :check_leaks do
     puts "👉 Run Gitleaks for leaks scan"
 
     # If there are violations, non 0 error be returned by swiftlint, making Fastlane fail (expected)
-    sh "cd .. && gitleaks detect -v -l debug --source ."
+    sh "cd .. && gitleaks detect --source ."
 
     puts "⏱ Done in #{format_elapsed_time(Time.now - start_time)}"
 end
@@ -210,6 +214,8 @@ platform :ios do
                 device: OUDS_SNAPSHOTS_TEST_DEVICE,
                 skip_build: true,
                 result_bundle: true,
+                silent: true,
+                output_style: :dot,
                 xcargs: "-testLanguage en -testRegion en_US"
             )
 
@@ -242,6 +248,8 @@ platform :ios do
             scan(scheme: OUDS_SCHEME_UI_TESTS,
                 device: OUDS_UI_TEST_DEVICE,
                 skip_build: true,
+                silent: true,
+                output_style: :dot,
                 xcargs: "-testLanguage en -testRegion en_US"
             )
 
@@ -275,6 +283,8 @@ platform :ios do
                 device: OUDS_UNIT_TEST_DEVICE,
                 skip_build: true,
                 result_bundle: true,
+                silent: true,
+                output_style: :dot,
                 xcargs: "-testLanguage en -testRegion en_US"
             )
 
@@ -313,7 +323,8 @@ platform :ios do
             include_symbols: true,
             skip_archive: true,
             skip_codesigning: true,
-            destination: "generic/platform=iOS Simulator"
+            destination: "generic/platform=iOS Simulator",
+            silent: true
         )
     end
 
@@ -507,7 +518,8 @@ platform :ios do
                 output_directory: "build/",
                 export_method: "app-store",
                 archive_path: "build/oudsApp.xcarchive",
-                xcargs: "-allowProvisioningUpdates")
+                xcargs: "-allowProvisioningUpdates",
+                silent: true)
             
             # Build a ZIP archive to put as artifact to the GitLab CI runner
             # Needed for upload later as .xcarchive for App Store through corporate portal
@@ -558,7 +570,7 @@ platform :ios do
             # See https://github.com/fastlane/fastlane/issues/29803
 
             ipa_path="../build/Design\\ System\\ Toolbox.ipa "
-            sh "xcrun altool --upload-package #{ipa_path} --apiKey \"#{APPLE_KEY_ID}\" --apiIssuer \"#{APPLE_ISSUER_ID}\""
+            sh "xcrun altool --upload-package #{ipa_path} --apiKey \"#{APPLE_KEY_ID}\" --apiIssuer \"#{APPLE_ISSUER_ID}\" > /dev/null"
             puts "⚠️ Warning: Do not forget then on App Store Connect (https://appstoreconnect.apple.com/) to add the uploaded build to the suitable test team!"
 
             #api_key = app_store_connect_api_key(
@@ -651,7 +663,8 @@ platform :mac do
             include_symbols: true,
             skip_archive: true,
             skip_codesigning: true,
-            destination: "platform=macOS"
+            destination: "platform=macOS",
+            silent: true
         )
     end    
 
@@ -695,7 +708,8 @@ platform :vision do
             include_symbols: true,
             skip_archive: true,
             skip_codesigning: true,
-            destination: "generic/platform=visionOS"
+            destination: "generic/platform=visionOS",
+            silent: true
         )
     end
     
@@ -739,7 +753,8 @@ platform :watch do
             include_symbols: true,
             skip_archive: true,
             skip_codesigning: true,
-            destination: "generic/platform=watchOS"
+            destination: "generic/platform=watchOS",
+            silent: true
         )
     end
     
@@ -783,7 +798,8 @@ platform :tv do
             include_symbols: true,
             skip_archive: true,
             skip_codesigning: true,
-            destination: 'generic/platform=tvOS'
+            destination: 'generic/platform=tvOS',
+            silent: true
         )
     end
     
