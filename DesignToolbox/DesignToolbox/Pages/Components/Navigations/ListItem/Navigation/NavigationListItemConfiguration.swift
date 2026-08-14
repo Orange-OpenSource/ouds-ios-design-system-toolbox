@@ -47,8 +47,6 @@ struct NavigationListItemConfiguration: View {
             OUDSChipPicker(title: "app_components_listItem_indicator_tech".localized(),
                            selection: $configurationModel.indicatorType,
                            chips: OUDSNavigationListItemIndicatorType.chips)
-
-
         }
     }
 }
@@ -57,5 +55,5 @@ struct NavigationListItemConfiguration: View {
 
 extension OUDSNavigationListItemIndicatorType: @retroactive CaseIterable {}
 extension OUDSNavigationListItemIndicatorType: DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSNavigationListItemIndicatorType] = [.next, .previous, .external]
+    public static let allCases: [OUDSNavigationListItemIndicatorType] = [.next, .external, .previous]
 }

@@ -22,7 +22,10 @@ open class ListItemBadgeConfigurationModel: ComponentConfiguration {
     var itemSize: OUDSListItemSize
 
     @Published var badgeTypeOption: BadgeType {
-        didSet { updateCode() }
+        didSet {
+            defaultBadgeOptions()
+            updateCode()
+        }
     }
 
     var stadardModel: BadgeStandardConfigurationModel
@@ -39,11 +42,22 @@ open class ListItemBadgeConfigurationModel: ComponentConfiguration {
 
         super.init()
 
+        defaultBadgeOptions()
+
         register(stadardModel)
         register(countModel)
     }
 
     deinit {}
+
+    // MARK: Option helper
+
+    private func defaultBadgeOptions() {
+        stadardModel.standardSize = .small
+        stadardModel.status = .negative
+        countModel.countSize = .large
+        countModel.status = .negative
+    }
 
     // MARK: Builder
 
@@ -80,8 +94,6 @@ struct ListItemBadgeConfiguration: View {
         OUDSChipPicker(title: "app_components_listItem_trailing_badgeType_tech".localized(),
                        selection: $configurationModel.badgeTypeOption,
                        chips: BadgeType.chips)
-
-        OUDSHorizontalDivider()
 
         switch configurationModel.badgeTypeOption {
         case .standard:
