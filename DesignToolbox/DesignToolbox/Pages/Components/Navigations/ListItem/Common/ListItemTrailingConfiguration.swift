@@ -191,7 +191,7 @@ struct ListItemTrailingConfiguration: View {
             case .avatar:
                 ListItemAvatarConfiguration(configurationModel: configurationModel.avatarModel)
             case .flag:
-                ListItemFlagConfiguration(configurationModel: configurationModel.flagModel)
+                EmptyView()
             case .badge:
                 ListItemBadgeConfiguration(configurationModel: configurationModel.badgeModel)
             default:

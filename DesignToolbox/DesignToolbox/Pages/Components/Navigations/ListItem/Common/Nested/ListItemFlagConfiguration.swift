@@ -20,17 +20,10 @@ open class ListItemFlagConfigurationModel: ComponentConfiguration {
 
     var itemSize: OUDSListItemSize
 
-    @Published var size: OUDSListItemFlag.Size {
-        didSet { updateCode() }
-    }
-
     // MARK: Initializer
 
     init(itemSize: OUDSListItemSize) {
         self.itemSize = itemSize
-
-        size = .medium
-
         super.init()
     }
 
@@ -40,34 +33,12 @@ open class ListItemFlagConfigurationModel: ComponentConfiguration {
 
     @MainActor
     var flag: OUDSListItemFlag {
-        OUDSListItemFlag(asset: Image(decorative: "il_flag_fr"), size: size)
+        OUDSListItemFlag(asset: Image(decorative: "il_flag_fr"))
     }
 
     // MARK: Code helper
 
     override func updateCode() {
-        code = ".init(asset: Image(\"ic_flag_fr\"), size: \(size.technicalDescription))"
+        code = ".init(asset: Image(\"ic_flag_fr\"))"
     }
-}
-
-struct ListItemFlagConfiguration: View {
-
-    @ObservedObject var configurationModel: ListItemFlagConfigurationModel
-
-    var body: some View {
-        if configurationModel.itemSize == .standard {
-            OUDSChipPicker(title: "app_components_listItem_flagSize_tech".localized(),
-                           selection: $configurationModel.size,
-                           chips: OUDSListItemFlag.Size.chips)
-        }
-    }
-}
-
-// MARK: - Extensions of OUDSListItemFlag.Size
-
-extension OUDSListItemFlag.Size: @retroactive CaseIterable {}
-extension OUDSListItemFlag.Size: DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSListItemFlag.Size] = [
-        .medium, .large, .extraLarge,
-    ]
 }

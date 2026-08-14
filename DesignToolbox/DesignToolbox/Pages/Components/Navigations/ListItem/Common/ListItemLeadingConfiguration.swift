@@ -122,7 +122,7 @@ struct ListItemLeadingConfiguration: View {
             case .icon:
                 ListItemIconConfiguration(configurationModel: configurationModel.iconModel)
             case .flag:
-                ListItemFlagConfiguration(configurationModel: configurationModel.flagModel)
+                EmptyView()
             case .none:
                 EmptyView()
             }
