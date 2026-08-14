@@ -28,7 +28,7 @@ struct DesignToolboxColorPicker<Content, SelectedColor>: View where Content: Vie
             }
         } label: {
             VStack(alignment: .leading) {
-                Text("app_components_common_color_tech")
+                OUDSHeading("app_components_common_color_tech", size: .medium)
                     .headingMedium(theme)
                     .foregroundColor(theme.colors.contentDefault)
 

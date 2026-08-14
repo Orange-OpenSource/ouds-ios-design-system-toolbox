@@ -205,8 +205,7 @@ struct LinearProgressIndicatorConfigurationView: View {
                        })
         #else
         VStack(alignment: .leading, spacing: theme.spaces.fixedXsmall) {
-            Text(LocalizedStringKey(progressLabel))
-                .labelStrongLarge(theme)
+            OUDSLabel(LocalizedStringKey(progressLabel), size: .large, weight: .strong)
                 .foregroundColor(theme.colors.contentDefault)
             Slider(value: $configurationModel.progress, in: 0 ... 1)
         }

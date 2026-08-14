@@ -58,6 +58,6 @@ struct SpaceTokenPage: View {
     // MARK: Common helpers
 
     private func header(_ text: LocalizedStringKey) -> some View {
-        Text(text).designToolboxSectionHeaderStyle()
+        OUDSHeading(text, size: .large, hasMarker: true)
     }
 }

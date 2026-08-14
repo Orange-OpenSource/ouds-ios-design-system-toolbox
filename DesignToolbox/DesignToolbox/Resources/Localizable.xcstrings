@@ -146,6 +146,30 @@
         }
       }
     },
+    "app_about_debug_title" : {
+      "comment" : "About screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تصحيح الأخطاء"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Debug"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Débogage"
+          }
+        }
+      }
+    },
     "app_about_designSystem_label" : {
       "comment" : "About screen - Design system",
       "extractionState" : "manual",
@@ -531,6 +555,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_about_legal_title" : {
+      "comment" : "About sceen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "معلومات قانونية"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legal information"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informations légales"
+          }
+        }
+      }
+    },
     "app_about_legalInformation_label" : {
       "comment" : "About screen",
       "extractionState" : "manual",
@@ -551,6 +599,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Informations légales"
+          }
+        }
+      }
+    },
+    "app_about_links_title" : {
+      "comment" : "About screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "روابط مفيدة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Useful links"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liens utiles"
           }
         }
       }
@@ -623,6 +695,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bac à sable"
+          }
+        }
+      }
+    },
+    "app_about_versions_title" : {
+      "comment" : "About screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التفاصيل الفنية"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Technical details"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détails techniques"
           }
         }
       }

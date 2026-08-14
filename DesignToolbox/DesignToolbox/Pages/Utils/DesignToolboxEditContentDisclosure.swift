@@ -19,10 +19,9 @@ struct DesignToolboxEditContentDisclosure<Content>: View where Content: View {
     // MARK: - Properties
 
     private let title: String
-    @ViewBuilder
-    private let content: () -> Content
-
+    @ViewBuilder private let content: () -> Content
     @State private var isContentVisible = false
+
     @Environment(\.theme) private var theme
 
     // MARK: - Initializer
@@ -40,8 +39,7 @@ struct DesignToolboxEditContentDisclosure<Content>: View where Content: View {
 
     var body: some View {
         DesignToolboxDisclosureGroup(isExpanded: $isContentVisible, accessibilityLabel: "", content: content) {
-            Text(title)
-                .headingSmall(theme)
+            OUDSHeading(text: title, size: .small)
                 .foregroundStyle(theme.colors.contentDefault)
                 .accessibilityAddTraits([.isButton])
         }

@@ -39,8 +39,7 @@ struct ToolBarCommonContentView: View {
                                  status: .warning,
                                  link: link)
 
-                Text("app_common_loremIpsum_tech")
-                    .labelDefaultLarge(theme)
+                OUDSLabel("app_common_loremIpsum_tech", size: .large, weight: .default)
                     .gridMargin(.horizontal)
             }
             .frame(maxWidth: .infinity)

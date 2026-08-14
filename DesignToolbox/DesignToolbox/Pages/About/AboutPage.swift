@@ -113,17 +113,29 @@ struct AboutPage: View {
 
     private var listBody: some View {
         List {
-            Section {
-                legalView
-            }
-            Section {
-                buildView
-            }
-            Section {
-                linksView
+            if theme.name != SoshTheme.name {
+                Section(header: OUDSHeading("app_about_legal_title", hasMarker: true)) {
+                    legalView
+                }
+                Section(header: OUDSHeading("app_about_versions_title", hasMarker: true)) {
+                    buildView
+                }
+                Section(header: OUDSHeading("app_about_links_title", hasMarker: true)) {
+                    linksView
+                }
+            } else {
+                Section(header: OUDSHeading("app_about_legal_title", coloredText: "légales")) {
+                    legalView
+                }
+                Section(header: OUDSHeading("app_about_versions_title", coloredText: "techniques")) {
+                    buildView
+                }
+                Section(header: OUDSHeading("app_about_links_title", coloredText: "utiles")) {
+                    linksView
+                }
             }
             #if DEBUG
-            Section {
+            Section(header: OUDSHeading("app_about_debug_title", hasMarker: true)) {
                 debugSandboxView
             }
             #endif

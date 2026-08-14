@@ -14,24 +14,21 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: - Card
-
 struct Card: View {
 
-    @Environment(\.theme) private var theme
+    // MARK: Properties
 
-    // MARK: Stored properties
-
-    let title: Text
+    let title: LocalizedStringKey
     let illustration: AnyView
+
+    @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             CardIllustration(illustration: illustration)
-            title
-                .headingMedium(theme)
+            OUDSHeading(title, size: .medium)
                 .multilineTextAlignment(.leading)
                 .padding(.horizontal, theme.spaces.fixedMedium)
                 .padding(.vertical, theme.spaces.fixedMedium)

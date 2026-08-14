@@ -43,8 +43,7 @@ struct GridTokenPage: View {
             }
 
             Section { illustrationForGridTokens() } header: {
-                Text(horizontalSizeClass.rawValue)
-                    .designToolboxSectionHeaderStyle()
+                OUDSHeading(text: horizontalSizeClass.rawValue, size: .medium)
             }
         }
         .gridMargin(.horizontal)
