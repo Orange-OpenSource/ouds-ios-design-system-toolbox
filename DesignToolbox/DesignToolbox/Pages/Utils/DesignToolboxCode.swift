@@ -32,8 +32,7 @@ struct DesignToolboxCode: View {
         DesignToolboxDisclosureGroup(isExpanded: $isCodeVisible, accessibilityLabel: "app_common_showCode_text_a11y".localized()) {
             codeSection()
         } label: {
-            Text(titleText)
-                .bodyStrongLarge(theme)
+            OUDSBody(titleText, size: .large, weight: .strong)
                 .foregroundStyle(theme.colors.contentDefault)
                 .padding(.vertical, theme.spaces.paddingInlineSmall)
         }
@@ -41,8 +40,7 @@ struct DesignToolboxCode: View {
 
     private func codeSection() -> some View {
         HStack(alignment: .firstTextBaseline, spacing: theme.spaces.paddingBlockNone) {
-            Text(code)
-                .font(.system(.body, design: .monospaced))
+            OUDSCode(text: code)
                 .foregroundStyle(theme.colors.contentDefault)
                 .padding(.vertical, theme.spaces.paddingInlineSmall)
                 .multilineTextAlignment(layoutDirection == .rightToLeft ? .trailing : .leading)

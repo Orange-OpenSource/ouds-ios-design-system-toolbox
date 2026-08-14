@@ -104,8 +104,7 @@ struct DesignToolboxElementPage: View {
                             .allowsTightening(true)
                     }
 
-                    Text(LocalizedStringKey(description))
-                        .bodyDefaultLarge(theme)
+                    OUDSBody(LocalizedStringKey(description), size: .large, weight: .default)
                         .multilineTextAlignment(.leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .accessibilityFocused($requestFocus)
@@ -156,8 +155,7 @@ struct DesignToolboxElementPage: View {
     @ViewBuilder
     private func versionView(_ version: String) -> some View {
         HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
-            Text("app_components_common_version_label")
-                .labelStrongLarge(theme)
+            OUDSLabel("app_components_common_version_label", size: .large, weight: .strong)
                 .foregroundColor(theme.colors.contentDefault)
 
             OUDSTag(label: version,

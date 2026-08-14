@@ -90,8 +90,7 @@ struct DesignToolboxVariantElement: View {
 
     private func rowView(for element: DesignToolboxElement) -> some View {
         HStack {
-            Text(LocalizedStringKey(element.name))
-                .headingMedium(theme)
+            OUDSHeading(LocalizedStringKey(element.name), size: .medium)
                 .multilineTextAlignment(.leading)
                 .foregroundStyle(theme.colors.contentDefault)
                 .padding(.vertical, theme.spaces.fixedXsmall)

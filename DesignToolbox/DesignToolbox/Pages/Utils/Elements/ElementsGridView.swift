@@ -75,7 +75,7 @@ struct ElementsGridView: View {
 
     @ViewBuilder private func cardView(for element: DesignToolboxElement) -> some View {
         let card = Card(
-            title: Text(LocalizedStringKey(element.name)),
+            title: LocalizedStringKey(element.name),
             illustration: element.illustration)
             .accessibilityFocused($requestFocus, equals: .some(id: element.id))
         if let firstElementID = elements.first?.id {

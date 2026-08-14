@@ -307,12 +307,10 @@ struct TextAreaConfigurationView: View {
                         case .charactersMaxCount:
                             Stepper(value: $configurationModel.maxCharacters, in: 10 ... 500, step: 10) {
                                 HStack {
-                                    Text(LocalizedStringKey("app_components_textArea_maxCharacters_tech"))
-                                        .labelStrongMedium(theme)
+                                    OUDSLabel("app_components_textArea_maxCharacters_tech", size: .medium, weight: .strong)
                                         .foregroundColor(theme.colors.contentDefault)
                                     Spacer()
-                                    Text(String(configurationModel.maxCharacters))
-                                        .labelStrongMedium(theme)
+                                    OUDSLabel(text: String(configurationModel.maxCharacters), size: .medium, weight: .strong)
                                         .foregroundColor(theme.colors.contentDefault)
                                 }
                             }

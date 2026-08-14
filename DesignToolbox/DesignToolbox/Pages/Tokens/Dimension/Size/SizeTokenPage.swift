@@ -71,6 +71,6 @@ struct SizeTokenPage: View {
     }
 
     private func sectionHeader(_ text: LocalizedStringKey) -> some View {
-        Text(text).designToolboxSectionHeaderStyle()
+        OUDSHeading(text, size: .large, hasMarker: true)
     }
 }

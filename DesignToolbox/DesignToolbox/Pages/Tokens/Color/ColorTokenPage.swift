@@ -48,7 +48,8 @@ struct ColorTokenPage: View {
     // MARK: Private helpers
 
     private func header(_ text: String) -> some View {
-        Text(text).designToolboxSectionHeaderStyle()
+        OUDSHeading(text: text, size: .large, hasMarker: true)
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private func illustrationForAI() -> some View {
