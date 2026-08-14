@@ -92,7 +92,7 @@ struct ListItemImageConfiguration: View {
     @ObservedObject var configurationModel: ListItemImageConfigurationModel
 
     var body: some View {
-        if configurationModel.itemSize == .standard {
+        if configurationModel.itemSize == .default {
             OUDSChipPicker(title: "app_components_listItem_imageSize_tech".localized(),
                            selection: $configurationModel.size,
                            chips: OUDSListItemImage.Size.chips)
@@ -112,7 +112,7 @@ struct ListItemImageConfiguration: View {
 
 extension OUDSListItemSize: @retroactive CaseIterable {}
 extension OUDSListItemSize: DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSListItemSize] = [.standard, .small]
+    public static let allCases: [OUDSListItemSize] = [.default, .small]
 }
 
 // MARK: - Extensions of OUDSListItemImage.Size

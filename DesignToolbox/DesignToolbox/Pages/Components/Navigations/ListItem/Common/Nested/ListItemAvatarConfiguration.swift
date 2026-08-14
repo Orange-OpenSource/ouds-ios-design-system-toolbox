@@ -96,7 +96,7 @@ struct ListItemAvatarConfiguration: View {
                            selection: $configurationModel.type,
                            chips: AvatarType.chips)
 
-            if configurationModel.itemSize == .standard {
+            if configurationModel.itemSize == .default {
                 OUDSChipPicker(title: "app_components_listItem_avatarSize_tech".localized(),
                                selection: $configurationModel.size,
                                chips: OUDSListItemAvatar.Size.chips)

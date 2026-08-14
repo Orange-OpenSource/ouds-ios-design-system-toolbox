@@ -158,7 +158,7 @@ struct ListItemTextsConfiguration: View {
                 OUDSSwitchItem("app_components_listItem_boldLabel_tech", isOn: $configurationModel.hasBoldLabel)
             }
 
-            if configurationModel.itemSize == .standard {
+            if configurationModel.itemSize == .default {
                 DesignToolboxTextField(text: $configurationModel.overlineText, label: "app_components_listItem_overline_tech")
                 DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_common_extraLabel_tech")
             }

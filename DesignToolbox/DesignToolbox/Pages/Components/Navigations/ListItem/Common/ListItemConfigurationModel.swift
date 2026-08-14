@@ -95,16 +95,16 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         hasBackground = true
         outlinedOnInteractionOnly = false
 
-        itemSize = .standard
+        itemSize = .default
         containersAlignment = .center
 
         // Item interaction
         enabled = true
 
         // Nested elements
-        textsModel = ListItemTextsConfigurationModel(itemSize: .standard)
-        trailingModel = ListItemTrailingConfigurationModel(itemSize: .standard)
-        leadingModel = ListItemLeadingConfigurationModel(itemSize: .standard)
+        textsModel = ListItemTextsConfigurationModel(itemSize: .default)
+        trailingModel = ListItemTrailingConfigurationModel(itemSize: .default)
+        leadingModel = ListItemLeadingConfigurationModel(itemSize: .default)
 
         roundedMedia = false
         numberOfItems = 1
@@ -224,7 +224,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     }
 
     private var sizeModifierPattern: String {
-        itemSize == .standard
+        itemSize == .default
             ? "" : "\n.oudsListItemSize(\(itemSize.technicalDescription))"
     }
 
