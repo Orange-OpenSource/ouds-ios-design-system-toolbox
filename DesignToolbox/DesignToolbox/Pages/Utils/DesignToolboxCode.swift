@@ -30,7 +30,7 @@ struct DesignToolboxCode: View {
 
     var body: some View {
         DesignToolboxDisclosureGroup(isExpanded: $isCodeVisible, accessibilityLabel: "app_common_showCode_text_a11y".localized()) {
-            codeTokenSection()
+            codeSection()
         } label: {
             Text(titleText)
                 .bodyStrongLarge(theme)
@@ -39,7 +39,7 @@ struct DesignToolboxCode: View {
         }
     }
 
-    private func codeTokenSection() -> some View {
+    private func codeSection() -> some View {
         HStack(alignment: .firstTextBaseline, spacing: theme.spaces.paddingBlockNone) {
             Text(code)
                 .font(.system(.body, design: .monospaced))

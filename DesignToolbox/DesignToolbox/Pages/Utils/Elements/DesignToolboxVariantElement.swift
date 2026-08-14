@@ -42,12 +42,9 @@ struct DesignToolboxVariantElement: View {
     var body: some View {
         ForEach(elements, id: \.id) { element in
             #if os(iOS)
-            NavigationLink {
+            OUDSNavigationLink(LocalizedStringKey(element.name), hasBoldLabel: true, indicatorType: .next) {
                 element.pageDescription
-            } label: {
-                rowView(for: element)
             }
-
             #elseif os(visionOS)
             NavigationLink {
                 element.pageDescription
@@ -56,7 +53,6 @@ struct DesignToolboxVariantElement: View {
             } label: {
                 rowView(for: element)
             }
-
             #elseif os(tvOS)
             NavigationLink {
                 // The destination is a `DesignToolboxElementPage`, whose `tvOSHeader`
@@ -68,7 +64,6 @@ struct DesignToolboxVariantElement: View {
             } label: {
                 rowView(for: element)
             }
-
             #else // macOS
             Button {
                 windowManager.openWindow(
@@ -86,9 +81,9 @@ struct DesignToolboxVariantElement: View {
             } label: {
                 rowView(for: element)
             }
-            .buttonStyle(.plain)
             #endif
         }
+        .oudsListItemSize(.small)
     }
 
     // MARK: - Helper

@@ -28,7 +28,7 @@ final class CheckboxPickerUITests: AppTestCase {
         let app = launchApp()
         goToComponentsSheet(app)
         tapButton(withWording: "app_components_checkbox_tech", app)
-        tapButton(withWording: "app_components_checkboxPicker_tech", app)
+        tapLink(withWording: "app_components_checkboxPicker_tech", app)
 
         // By default, no element is selected in the picker, wording cannot be used as is
         check(value: pickerRootItemA11yValue(with: 0), ofElementWithIdentifier: pickerRootItemA11yIdentifier(with: 0), app)
@@ -68,7 +68,7 @@ final class CheckboxPickerUITests: AppTestCase {
         let app = launchApp()
         goToComponentsSheet(app)
         tapButton(withWording: "app_components_checkbox_tech", app)
-        tapButton(withWording: "app_components_checkboxPicker_tech", app)
+        tapLink(withWording: "app_components_checkboxPicker_tech", app)
 
         check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: firstItemA11YIdentifier, app)
         check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: secondItemA11YIdentifier, app)
