@@ -34,7 +34,7 @@ final class RadioUITests: AppTestCase {
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
         tapButton(withWording: "app_components_radioButton_tech", app)
-        tapButton(withWording: "app_components_radioButton_tech", app)
+        tapLink(withWording: "app_components_radioButton_tech", app)
 
         let radio = otherElements(withA11yIdentifier: A11YIdentifiers.componentRadio, app).firstMatch
         XCTAssertTrue(radio.exists)

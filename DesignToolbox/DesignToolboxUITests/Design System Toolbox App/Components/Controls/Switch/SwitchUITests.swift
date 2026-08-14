@@ -33,8 +33,9 @@ final class SwitchUITests: AppTestCase {
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
         swipeFromDownToUp(app)
+        swipeFromDownToUp(app)
         tapButton(withWording: "app_components_switch_tech", app)
-        tapButton(withWording: "app_components_switch_tech", app)
+        tapLink(withWording: "app_components_switch_tech", app)
 
         let `switch` = otherElements(withA11yIdentifier: A11YIdentifiers.componentSwitch, app).firstMatch
         XCTAssertTrue(`switch`.exists)

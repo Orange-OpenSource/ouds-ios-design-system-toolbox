@@ -19,21 +19,14 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/accessibilityStatement/favicon.ico
 ./DesignToolbox/DesignToolbox/Resources/accessibilityStatement/orange-logo.svg
 
-## Icons
+## App Icons
 
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/AppIconDebug.appiconset/UDSDemo-DEBUG_SQR.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/AppIconAlpha.appiconset/UDSDemo-A_SQR.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/AppIconBeta.appiconset/UDSDemo-B_SQR.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/AppIconRelease.appiconset/Unified_App_IOS_SQR.png
 
-## Images
-
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin.png
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin_dark.png
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width.png
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width_dark.png
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width.png
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width_dark.png
+## Icon
 
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_border.imageset/ic_border.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_chevron-down.imageset/ic_chevron-down.png
@@ -57,6 +50,8 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/ic_token/ic_token.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Common/info-fill.imageset/info-fill.svg
 
+## Branded Icons
+
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Orange/heart-empty/heart-empty.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Orange/menu-grid.imageset/menu-grid.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Orange/palette.imageset/palette.svg
@@ -72,10 +67,35 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Wireframe/palette.imageset/palette.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Icons/Wireframe/tips-and-tricks.imageset/tips-and-tricks.svg
 
+## Illustrations
+
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_empty_screen.imageset/il_empty_screen.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_placeholder.imageset/il_placeholder.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_flag_fr.imageset/il_flag_fr.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_placeholder.imageset/il_placeholder.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin_dark.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width_dark.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width_dark.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_flag_fr.imageset/il_tokens_flag_fr.png
+
+## Branded Illustrations
+
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/Orange/il_placeholder.imageset/il_placeholder_dark.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/Orange/il_placeholder.imageset/il_placeholder_light.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/Orange/il_placeholder_avatar.imageset/il_placeholder_avatar_dark.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/Orange/il_placeholder_avatar.imageset/il_placeholder_avatar_light.svg
+
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/Sosh/il_placeholder.imageset/il_placeholder_dark.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/Sosh/il_placeholder.imageset/il_placeholder_light.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/Sosh/il_placeholder_avatar.imageset/il_placeholder_avatar_dark.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/Sosh/il_placeholder_avatar.imageset/il_placeholder_avatar_light.svg
+
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/Wireframe/il_placeholder.imageset/il_placeholder_dark.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/Wireframe/il_placeholder.imageset/il_placeholder_light.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/Wireframe/il_placeholder_avatar.imageset/il_placeholder_avatar_dark.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/Wireframe/il_placeholder_avatar.imageset/il_placeholder_avatar_light.svg
+
 
 End of the parts list under Orange SA Copyright

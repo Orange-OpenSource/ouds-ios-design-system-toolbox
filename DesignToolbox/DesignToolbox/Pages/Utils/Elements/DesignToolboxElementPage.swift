@@ -14,8 +14,6 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// swiftlint:disable closure_body_length
-
 /// Used to present the element in same layout with:
 /// - a text for the description
 /// - an optional image to illustrate the element
@@ -35,7 +33,12 @@ struct DesignToolboxElementPage: View {
     let demoScreen: AnyView
 
     // swiftlint:disable function_default_parameter_at_end
-    init(name: String, illustration: AnyView? = nil, description: String, version: String? = nil, demoScreen: AnyView) {
+    init(name: String,
+         illustration: AnyView? = nil,
+         description: String,
+         version: String? = nil,
+         demoScreen: AnyView)
+    {
         self.name = name
         self.illustration = illustration
         self.description = description
@@ -123,21 +126,7 @@ struct DesignToolboxElementPage: View {
                     .background(theme.colors.bgPrimary)
 
                 if let version {
-                    HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
-                        Text("app_components_common_version_label")
-                            .labelStrongLarge(theme)
-                            .foregroundColor(theme.colors.contentDefault)
-
-                        OUDSTag(label: version,
-                                status: .info(leading: .none),
-                                appearance: .muted,
-                                shape: .rounded,
-                                size: .small,
-                                hasLoader: false)
-                    }
-                    .gridMargin(.horizontal)
-                    .padding(.bottom, theme.spaces.fixedMedium)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    versionView(version)
                 }
             }
             .listStyle(.plain)
@@ -163,6 +152,23 @@ struct DesignToolboxElementPage: View {
             #endif
         }
     }
-}
 
-// swiftlint:enable closure_body_length
+    @ViewBuilder
+    private func versionView(_ version: String) -> some View {
+        HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
+            Text("app_components_common_version_label")
+                .labelStrongLarge(theme)
+                .foregroundColor(theme.colors.contentDefault)
+
+            OUDSTag(label: version,
+                    status: .info(leading: .none),
+                    appearance: .muted,
+                    shape: .rounded,
+                    size: .small,
+                    hasLoader: false)
+        }
+        .gridMargin(.horizontal)
+        .padding(.bottom, theme.spaces.fixedMedium)
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}

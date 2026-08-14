@@ -303,7 +303,7 @@ struct ToolBarLeadingConfiguration: View {
 
             switch configurationModel.leading {
             case .label, .icon:
-                Stepper("app_components_toolbar_common_itemCount_label" <- "\(configurationModel.numberOfLeadingItems)",
+                Stepper("app_components_common_itemCount_label" <- "\(configurationModel.numberOfLeadingItems)",
                         value: $configurationModel.numberOfLeadingItems,
                         in: 1 ... 3)
                     .padding(.horizontal, theme.spaces.fixedMedium)
@@ -349,7 +349,7 @@ struct ToolBarTrailingConfiguration: View {
 
         switch configurationModel.trailing {
         case .label, .icon:
-            Stepper("app_components_toolbar_common_itemCount_label" <- "\(configurationModel.numberOfTrailingItems)",
+            Stepper("app_components_common_itemCount_label" <- "\(configurationModel.numberOfTrailingItems)",
                     value: $configurationModel.numberOfTrailingItems,
                     in: 1 ... 3)
                 .padding(.horizontal, theme.spaces.fixedMedium)
