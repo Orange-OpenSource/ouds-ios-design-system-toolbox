@@ -63,6 +63,7 @@ enum AllElements {
             RadioElements(),
             SwitchElements(),
             TagElements(),
+            TypographyElements(),
         ]
         #elseif !os(macOS) && !os(visionOS)
         var elements: [DesignToolboxElement] = [
@@ -87,6 +88,7 @@ enum AllElements {
             TextInputElement(),
             ToolBarBottomElement(),
             ToolBarTopElement(),
+            TypographyElements(),
         ]
         #else
         var elements: [DesignToolboxElement] = [
@@ -108,6 +110,7 @@ enum AllElements {
             TagElements(),
             TextAreaElement(),
             TextInputElement(),
+            TypographyElements(),
         ]
         #endif
 
