@@ -14,13 +14,15 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// MARK: - List Item Icon Configuration Model
+
 open class ListItemIconConfigurationModel: ComponentConfiguration {
 
     // MARK: Properties
 
     var itemSize: OUDSListItemSize
 
-    @Published var status: IconStatus {
+    @Published var status: ListItemIconStatus {
         didSet { updateCode() }
     }
 
@@ -73,8 +75,6 @@ open class ListItemIconConfigurationModel: ComponentConfiguration {
                                 size: size)
     }
 
-    // MARK: Code helepr
-
     override func updateCode() {
         let imagePattern = "Image(decorative: \"ic_heart\")"
         let statusPattern =
@@ -98,6 +98,8 @@ open class ListItemIconConfigurationModel: ComponentConfiguration {
     }
 }
 
+// MARK: - List Item Ico nConfiguration
+
 struct ListItemIconConfiguration: View {
 
     @ObservedObject var configurationModel: ListItemIconConfigurationModel
@@ -106,7 +108,7 @@ struct ListItemIconConfiguration: View {
         VStack(spacing: 0) {
             OUDSChipPicker(title: "app_components_listItem_iconStatus_tech".localized(),
                            selection: $configurationModel.status,
-                           chips: IconStatus.chips)
+                           chips: ListItemIconStatus.chips)
 
             if configurationModel.status == .neutral {
                 OUDSSwitchItem("app_components_listItem_iconBadge_label", isOn: $configurationModel.bageOnNeutralIcon)
@@ -121,7 +123,9 @@ struct ListItemIconConfiguration: View {
     }
 }
 
-enum IconStatus: DesignToolboxEnumRepresentable {
+// MARK: - List Item Icon Status
+
+enum ListItemIconStatus: DesignToolboxEnumRepresentable {
     case neutral, info, warning, negative, positive
 }
 

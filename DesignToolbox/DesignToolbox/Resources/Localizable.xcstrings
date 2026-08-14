@@ -5139,6 +5139,30 @@
         }
       }
     },
+    "app_components_listItemHelperText_label" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "وصف للعنصر ليتم عرضه في طريقة عرض عنصر القائمة."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A description of the item to show in the list item view."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une description de l'élément à afficher dans la vue de l'élément de liste."
+          }
+        }
+      }
+    },
     "app_components_passwordInput_description_text" : {
       "comment" : "Component - Password Input",
       "extractionState" : "manual",

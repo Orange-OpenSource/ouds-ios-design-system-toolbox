@@ -16,16 +16,7 @@ import SwiftUI
 
 open class ListItemFlagConfigurationModel: ComponentConfiguration {
 
-    // MARK: Properties
-
-    var itemSize: OUDSListItemSize
-
     // MARK: Initializer
-
-    init(itemSize: OUDSListItemSize) {
-        self.itemSize = itemSize
-        super.init()
-    }
 
     deinit {}
 
@@ -35,8 +26,6 @@ open class ListItemFlagConfigurationModel: ComponentConfiguration {
     var flag: OUDSListItemFlag {
         OUDSListItemFlag(asset: Image(decorative: "il_flag_fr"))
     }
-
-    // MARK: Code helper
 
     override func updateCode() {
         code = ".init(asset: Image(\"ic_flag_fr\"))"

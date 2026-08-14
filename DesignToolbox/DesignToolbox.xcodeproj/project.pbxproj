@@ -1387,7 +1387,6 @@
 		FCDDFBC02F2B69E700389D8D /* PasswordInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */; };
 		FCDDFBC12F2B69E700389D8D /* PasswordInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */; };
 		FCEC09B0302CAA990030DE09 /* ListItemConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A0302CAA990030DE09 /* ListItemConfigurationModel.swift */; };
-		FCEC09B1302CAA990030DE09 /* ListStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A6302CAA990030DE09 /* ListStyleModifier.swift */; };
 		FCEC09B2302CAA990030DE09 /* StaticListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AE302CAA990030DE09 /* StaticListItemPage.swift */; };
 		FCEC09B3302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A5302CAA990030DE09 /* ListItemTrailingConfiguration.swift */; };
 		FCEC09B5302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099C302CAA990030DE09 /* ListItemIconConfiguration.swift */; };
@@ -1404,7 +1403,6 @@
 		FCEC09C1302CAA990030DE09 /* NavigationListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AB302CAA990030DE09 /* NavigationListItemPage.swift */; };
 		FCEC09C2302CAA990030DE09 /* ListItemImageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099D302CAA990030DE09 /* ListItemImageConfiguration.swift */; };
 		FCEC09C3302CAA990030DE09 /* ListItemConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A0302CAA990030DE09 /* ListItemConfigurationModel.swift */; };
-		FCEC09C4302CAA990030DE09 /* ListStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A6302CAA990030DE09 /* ListStyleModifier.swift */; };
 		FCEC09C5302CAA990030DE09 /* StaticListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AE302CAA990030DE09 /* StaticListItemPage.swift */; };
 		FCEC09C6302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A5302CAA990030DE09 /* ListItemTrailingConfiguration.swift */; };
 		FCEC09C8302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099C302CAA990030DE09 /* ListItemIconConfiguration.swift */; };
@@ -1421,7 +1419,6 @@
 		FCEC09D4302CAA990030DE09 /* NavigationListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AB302CAA990030DE09 /* NavigationListItemPage.swift */; };
 		FCEC09D5302CAA990030DE09 /* ListItemImageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099D302CAA990030DE09 /* ListItemImageConfiguration.swift */; };
 		FCEC09D6302CAA990030DE09 /* ListItemConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A0302CAA990030DE09 /* ListItemConfigurationModel.swift */; };
-		FCEC09D7302CAA990030DE09 /* ListStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A6302CAA990030DE09 /* ListStyleModifier.swift */; };
 		FCEC09D8302CAA990030DE09 /* StaticListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AE302CAA990030DE09 /* StaticListItemPage.swift */; };
 		FCEC09D9302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A5302CAA990030DE09 /* ListItemTrailingConfiguration.swift */; };
 		FCEC09DB302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099C302CAA990030DE09 /* ListItemIconConfiguration.swift */; };
@@ -1438,7 +1435,6 @@
 		FCEC09E7302CAA990030DE09 /* NavigationListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AB302CAA990030DE09 /* NavigationListItemPage.swift */; };
 		FCEC09E8302CAA990030DE09 /* ListItemImageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099D302CAA990030DE09 /* ListItemImageConfiguration.swift */; };
 		FCEC09E9302CAA990030DE09 /* ListItemConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A0302CAA990030DE09 /* ListItemConfigurationModel.swift */; };
-		FCEC09EA302CAA990030DE09 /* ListStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A6302CAA990030DE09 /* ListStyleModifier.swift */; };
 		FCEC09EB302CAA990030DE09 /* StaticListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AE302CAA990030DE09 /* StaticListItemPage.swift */; };
 		FCEC09EC302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A5302CAA990030DE09 /* ListItemTrailingConfiguration.swift */; };
 		FCEC09EE302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099C302CAA990030DE09 /* ListItemIconConfiguration.swift */; };
@@ -1507,7 +1503,6 @@
 		FCFD793E302CC6F500D78731 /* ListItemTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A5302CAA990030DE09 /* ListItemTrailingConfiguration.swift */; };
 		FCFD793F302CC6F500D78731 /* ListItemConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A0302CAA990030DE09 /* ListItemConfigurationModel.swift */; };
 		FCFD7940302CC6F500D78731 /* ListItemAvatarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC0999302CAA990030DE09 /* ListItemAvatarConfiguration.swift */; };
-		FCFD7941302CC6F500D78731 /* ListStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A6302CAA990030DE09 /* ListStyleModifier.swift */; };
 		FCFD7942302CC6F500D78731 /* ListItemConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A1302CAA990030DE09 /* ListItemConfigurationView.swift */; };
 		FCFD7943302CC6F500D78731 /* ListItemLeadingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A3302CAA990030DE09 /* ListItemLeadingConfiguration.swift */; };
 		FCFD7944302CC6F500D78731 /* ListItemIconConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC099C302CAA990030DE09 /* ListItemIconConfiguration.swift */; };
@@ -2030,7 +2025,6 @@
 		FCEC09A3302CAA990030DE09 /* ListItemLeadingConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemLeadingConfiguration.swift; sourceTree = "<group>"; };
 		FCEC09A4302CAA990030DE09 /* ListItemTextsConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTextsConfiguration.swift; sourceTree = "<group>"; };
 		FCEC09A5302CAA990030DE09 /* ListItemTrailingConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTrailingConfiguration.swift; sourceTree = "<group>"; };
-		FCEC09A6302CAA990030DE09 /* ListStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyleModifier.swift; sourceTree = "<group>"; };
 		FCEC09A9302CAA990030DE09 /* NavigationListItemConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationListItemConfiguration.swift; sourceTree = "<group>"; };
 		FCEC09AA302CAA990030DE09 /* NavigationListItemElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationListItemElement.swift; sourceTree = "<group>"; };
 		FCEC09AB302CAA990030DE09 /* NavigationListItemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationListItemPage.swift; sourceTree = "<group>"; };
@@ -2533,7 +2527,6 @@
 				9598006E2EBCC714007BE0EA /* DesignToolbox (Light) */,
 				95C17B8A2EBCAC75002A7371 /* Frameworks */,
 				07FDCD922C296A500009AA13 /* Products */,
-				FCEF76762F35E67C00CD9E10 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -4213,7 +4206,6 @@
 				FCEC09A3302CAA990030DE09 /* ListItemLeadingConfiguration.swift */,
 				FCEC09A4302CAA990030DE09 /* ListItemTextsConfiguration.swift */,
 				FCEC09A5302CAA990030DE09 /* ListItemTrailingConfiguration.swift */,
-				FCEC09A6302CAA990030DE09 /* ListStyleModifier.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -4282,13 +4274,6 @@
 				FCEEB1862F1A877300C9BD46 /* BulletList */,
 			);
 			path = ContentDisplay;
-			sourceTree = "<group>";
-		};
-		FCEF76762F35E67C00CD9E10 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		FCFA11672F57259000C8E30D /* ToolBarTop */ = {
@@ -4989,7 +4974,6 @@
 				51E015A32E2AA82C00A86512 /* OrangeCompactTheme+TokensElevationSnapshotsTests.swift in Sources */,
 				95207BAC2FE2E7630088DCC7 /* ListItemSnapshotsTestsTestCase.swift in Sources */,
 				FCEC09D6302CAA990030DE09 /* ListItemConfigurationModel.swift in Sources */,
-				FCEC09D7302CAA990030DE09 /* ListStyleModifier.swift in Sources */,
 				FCEC09D8302CAA990030DE09 /* StaticListItemPage.swift in Sources */,
 				FCEC09D9302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */,
 				FCEC09DB302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */,
@@ -5084,7 +5068,6 @@
 				515EE9952E21329B00A60E96 /* ChipPickerElement.swift in Sources */,
 				515EE9962E21329B00A60E96 /* ChipPickerPage.swift in Sources */,
 				FCEC09E9302CAA990030DE09 /* ListItemConfigurationModel.swift in Sources */,
-				FCEC09EA302CAA990030DE09 /* ListStyleModifier.swift in Sources */,
 				FCEC09EB302CAA990030DE09 /* StaticListItemPage.swift in Sources */,
 				FCEC09EC302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */,
 				FCEC09EE302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */,
@@ -5369,7 +5352,6 @@
 				959390382EC22035000DBE95 /* NamedColor+Chart.swift in Sources */,
 				959390392EC22035000DBE95 /* NamedColor+Content.swift in Sources */,
 				FCEC09B0302CAA990030DE09 /* ListItemConfigurationModel.swift in Sources */,
-				FCEC09B1302CAA990030DE09 /* ListStyleModifier.swift in Sources */,
 				FCEC09B2302CAA990030DE09 /* StaticListItemPage.swift in Sources */,
 				FCEC09B3302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */,
 				FCEC09B5302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */,
@@ -5716,7 +5698,6 @@
 				FCFD793E302CC6F500D78731 /* ListItemTrailingConfiguration.swift in Sources */,
 				FCFD793F302CC6F500D78731 /* ListItemConfigurationModel.swift in Sources */,
 				FCFD7940302CC6F500D78731 /* ListItemAvatarConfiguration.swift in Sources */,
-				FCFD7941302CC6F500D78731 /* ListStyleModifier.swift in Sources */,
 				FCFD7942302CC6F500D78731 /* ListItemConfigurationView.swift in Sources */,
 				FCFD7943302CC6F500D78731 /* ListItemLeadingConfiguration.swift in Sources */,
 				FCFD7944302CC6F500D78731 /* ListItemIconConfiguration.swift in Sources */,
@@ -5889,7 +5870,6 @@
 				9589F12E2EB7D67E00134487 /* CheckboxIndeterminatePage.swift in Sources */,
 				9589F12F2EB7D67E00134487 /* BorderTokenElement.swift in Sources */,
 				FCEC09C3302CAA990030DE09 /* ListItemConfigurationModel.swift in Sources */,
-				FCEC09C4302CAA990030DE09 /* ListStyleModifier.swift in Sources */,
 				FCEC09C5302CAA990030DE09 /* StaticListItemPage.swift in Sources */,
 				FCEC09C6302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */,
 				FCEC09C8302CAA990030DE09 /* ListItemIconConfiguration.swift in Sources */,
@@ -7034,7 +7014,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "265-in-library-add-list-item-component";
+				branch = develop;
 				kind = branch;
 			};
 		};

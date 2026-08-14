@@ -14,6 +14,8 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// MARK: - List Item Texts Configuration Model
+
 open class ListItemTextsConfigurationModel: ComponentConfiguration {
 
     // MARK: Properties
@@ -44,7 +46,7 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var labelContentType: LabelContentType {
+    @Published var labelContentType: ListItemLabelContentType {
         didSet { updateCode() }
     }
 
@@ -130,26 +132,23 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
         descriptionText.isEmpty ? "" : ", description: \"\(descriptionText)\""
     }
 
-    private var slotPattern: String {
-        hasSlot ? ", slot: someView()" : ""
-    }
-
     private var helperTextPattern: String {
         helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
     }
 }
 
-// MARK: - Texts configuration
+// MARK: - List Item Texts Configuration
 
 struct ListItemTextsConfiguration: View {
 
     @ObservedObject var configurationModel: ListItemTextsConfigurationModel
+
     @Environment(\.theme) private var theme
 
     var body: some View {
         OUDSChipPicker(title: "app_components_listItem_labelContentType_tech".localized(),
                        selection: $configurationModel.labelContentType,
-                       chips: LabelContentType.chips)
+                       chips: ListItemLabelContentType.chips)
 
         VStack {
             if configurationModel.labelContentType == .text {
@@ -173,9 +172,9 @@ struct ListItemTextsConfiguration: View {
     }
 }
 
-// MARK: - Label Content Type
+// MARK: - List Item Label Content Type
 
-enum LabelContentType: CaseIterable, CustomStringConvertible {
+enum ListItemLabelContentType: CaseIterable, CustomStringConvertible {
     case text
     case customView
 

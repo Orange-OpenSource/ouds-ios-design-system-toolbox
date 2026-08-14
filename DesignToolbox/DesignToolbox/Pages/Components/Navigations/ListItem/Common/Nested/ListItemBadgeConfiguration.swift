@@ -15,57 +15,54 @@ import Combine
 import OUDSSwiftUI
 import SwiftUI
 
+// MARK: - List Item Badge Configuration Model
+
 open class ListItemBadgeConfigurationModel: ComponentConfiguration {
 
     // MARK: Properties
 
-    var itemSize: OUDSListItemSize
+    var standardModel: BadgeStandardConfigurationModel
+    var countModel: BadgeCountConfigurationModel
 
-    @Published var badgeTypeOption: BadgeType {
+    @Published var badgeTypeOption: ListItemBadgeType {
         didSet {
             defaultBadgeOptions()
             updateCode()
         }
     }
 
-    var stadardModel: BadgeStandardConfigurationModel
-    var countModel: BadgeCountConfigurationModel
-
     // MARK: Initializer
 
-    init(itemSize: OUDSListItemSize) {
-        self.itemSize = itemSize
+    override init() {
 
         badgeTypeOption = .standard
-        stadardModel = .init()
+        standardModel = .init()
         countModel = .init()
 
         super.init()
 
         defaultBadgeOptions()
 
-        register(stadardModel)
+        register(standardModel)
         register(countModel)
     }
 
     deinit {}
 
-    // MARK: Option helper
+    // MARK: Builder
 
     private func defaultBadgeOptions() {
-        stadardModel.standardSize = .small
-        stadardModel.status = .negative
+        standardModel.standardSize = .small
+        standardModel.status = .negative
         countModel.countSize = .large
         countModel.status = .negative
     }
-
-    // MARK: Builder
 
     @MainActor
     var badgeType: OUDSListItemTrailing.BadgeType {
         switch badgeTypeOption {
         case .standard:
-            .standard(.init(accessibilityLabel: "", status: stadardModel.status, size: stadardModel.standardSize))
+            .standard(.init(accessibilityLabel: "", status: standardModel.status, size: standardModel.standardSize))
         case .count:
             .count(.init(countModel.count,
                          accessibilityLabel: code.count.description,
@@ -74,17 +71,17 @@ open class ListItemBadgeConfigurationModel: ComponentConfiguration {
         }
     }
 
-    // MARK: Code helper
-
     override func updateCode() {
         code = switch badgeTypeOption {
         case .standard:
-            stadardModel.code
+            ".standard(\(standardModel.code)))"
         case .count:
-            countModel.code
+            ".count(\(countModel.code)))"
         }
     }
 }
+
+// MARK: - List Item Badge Configuration
 
 struct ListItemBadgeConfiguration: View {
 
@@ -93,16 +90,16 @@ struct ListItemBadgeConfiguration: View {
     var body: some View {
         OUDSChipPicker(title: "app_components_listItem_trailing_badgeType_tech".localized(),
                        selection: $configurationModel.badgeTypeOption,
-                       chips: BadgeType.chips)
+                       chips: ListItemBadgeType.chips)
 
         switch configurationModel.badgeTypeOption {
         case .standard:
             OUDSChipPicker(title: "app_components_common_size_tech",
-                           selection: $configurationModel.stadardModel.standardSize,
+                           selection: $configurationModel.standardModel.standardSize,
                            chips: OUDSBadgeStandard.Size.chips)
 
             OUDSChipPicker(title: "app_components_common_status_tech",
-                           selection: $configurationModel.stadardModel.status,
+                           selection: $configurationModel.standardModel.status,
                            chips: OUDSBadgeStandard.Status.chips)
         case .count:
             OUDSChipPicker(title: "app_components_common_size_tech",
@@ -116,6 +113,8 @@ struct ListItemBadgeConfiguration: View {
     }
 }
 
-enum BadgeType: DesignToolboxEnumRepresentable {
+// MARK: - List Item Badge Type
+
+enum ListItemBadgeType: DesignToolboxEnumRepresentable {
     case standard, count
 }

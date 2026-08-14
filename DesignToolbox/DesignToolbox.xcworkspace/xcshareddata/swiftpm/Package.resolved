@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "265-in-library-add-list-item-component",
-        "revision" : "3a6fc1cc3c02d2469f7a006ccce6b53b0b4a7c84"
+        "branch" : "develop",
+        "revision" : "2c5d9dd3f77e9e2702508d30900c5451b8e4c39b"
       }
     },
     {

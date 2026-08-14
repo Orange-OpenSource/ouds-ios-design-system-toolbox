@@ -57,8 +57,6 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
                           contentMode: contentMode)
     }
 
-    // MARK: Code helper
-
     override func updateCode() {
         code =
             """
@@ -86,6 +84,8 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
         ", description: \"\("app_components_listItem_image_a11y".localized())\""
     }
 }
+
+// MARK: - List Item Image Configuration
 
 struct ListItemImageConfiguration: View {
 

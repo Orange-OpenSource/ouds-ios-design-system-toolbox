@@ -15,15 +15,17 @@ import Combine
 import OUDSSwiftUI
 import SwiftUI
 
+// MARK: - List Item Trailing Configuration Model
+
 open class ListItemTrailingConfigurationModel: ComponentConfiguration {
 
     // MARK: Properties
 
-    @Published var option: Trailing {
+    @Published var option: ListItemTrailingType {
         didSet { updateCode() }
     }
 
-    @Published var textTypeOption: TextType {
+    @Published var textTypeOption: ListItemTextType {
         didSet { updateCode() }
     }
 
@@ -44,7 +46,6 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
     var itemSize: OUDSListItemSize {
         didSet {
             avatarModel.itemSize = itemSize
-            flagModel.itemSize = itemSize
             iconModel.itemSize = itemSize
             imageModel.itemSize = itemSize
         }
@@ -61,10 +62,10 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         extraLabel = String(localized: "app_components_common_extraLabel_label")
 
         avatarModel = ListItemAvatarConfigurationModel(itemSize: itemSize)
-        flagModel = ListItemFlagConfigurationModel(itemSize: itemSize)
+        flagModel = ListItemFlagConfigurationModel()
         iconModel = ListItemIconConfigurationModel(itemSize: itemSize)
         imageModel = ListItemImageConfigurationModel(itemSize: itemSize)
-        badgeModel = ListItemBadgeConfigurationModel(itemSize: itemSize)
+        badgeModel = ListItemBadgeConfigurationModel()
 
         super.init()
 
@@ -83,34 +84,34 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
     func item(for theme: OUDSTheme) -> OUDSListItemTrailing? {
         switch option {
         case .none:
-            return nil
+            nil
         case .text:
-            return .text(textType)
+            .text(textType)
         case .badge:
-            return .badge(badgeModel.badgeType)
+            .badge(badgeModel.badgeType)
         case .tag:
-            return .tag(.init(label: "Label", size: .small))
+            .tag(.init(label: "Label", size: .small))
         case .icon:
-            return .icon(iconModel.icon(for: theme))
+            .icon(iconModel.icon(for: theme))
         case .image:
-            return .image(imageModel.image(for: theme))
+            .image(imageModel.image(for: theme))
         case .flag:
-            return .flag(flagModel.flag)
+            .flag(flagModel.flag)
         case .avatar:
-            return .avatar(avatarModel.avatar(for: theme))
+            .avatar(avatarModel.avatar(for: theme))
         }
     }
 
     private var textType: OUDSListItemTrailing.TextType {
         switch textTypeOption {
         case .label:
-                .label(label)
+            .label(label)
         case .labelStrong:
-                .labelStrong(label)
+            .labelStrong(label)
         case .labelMuted:
-                .labelMuted(label)
+            .labelMuted(label)
         case .labelAndExtraLabel:
-                .labelAndExtraLabel(label, extraLabel)
+            .labelAndExtraLabel(label, extraLabel)
         }
     }
 
@@ -124,24 +125,24 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         let pattern =
-        switch option {
-        case .none:
-            ""
-        case .text:
-            ".text(\(textPattern))"
-        case .badge:
-            ".badge(\(badgeModel.code)"
-        case .tag:
-            ".tag(OUDSTag(label: \"Label\", size: .small)"
-        case .icon:
-            ".icon(\(iconModel.code)"
-        case .image:
-            ".image(\(imageModel.code))"
-        case .flag:
-            ".flag(\(flagModel.code))"
-        case .avatar:
-            ".avatar(\(avatarModel.code))"
-        }
+            switch option {
+            case .none:
+                ""
+            case .text:
+                ".text(\(textPattern))"
+            case .badge:
+                ".badge(\(badgeModel.code)"
+            case .tag:
+                ".tag(OUDSTag(label: \"Label\", size: .small)"
+            case .icon:
+                ".icon(\(iconModel.code)"
+            case .image:
+                ".image(\(imageModel.code))"
+            case .flag:
+                ".flag(\(flagModel.code))"
+            case .avatar:
+                ".avatar(\(avatarModel.code))"
+            }
 
         code = option == .none ? "" : "\n\nlet trailing: OUDSListItemTrailing = \n \(pattern)"
     }
@@ -169,13 +170,13 @@ struct ListItemTrailingConfiguration: View {
         VStack(spacing: theme.spaces.fixedSmall) {
             OUDSChipPicker(title: "",
                            selection: $configurationModel.option,
-                           chips: Trailing.chips)
+                           chips: ListItemTrailingType.chips)
 
             switch configurationModel.option {
             case .text:
                 OUDSChipPicker(title: "app_components_listItem_trailing_textType_tech".localized(),
                                selection: $configurationModel.textTypeOption,
-                               chips: TextType.chips)
+                               chips: ListItemTextType.chips)
                 Group {
                     DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
 
@@ -201,10 +202,14 @@ struct ListItemTrailingConfiguration: View {
     }
 }
 
-enum Trailing: DesignToolboxEnumRepresentable {
+// MARK: List Item Trailing Type
+
+enum ListItemTrailingType: DesignToolboxEnumRepresentable {
     case none, text, badge, tag, icon, image, flag, avatar
 }
 
-enum TextType: DesignToolboxEnumRepresentable {
+// MARK: List Item Text Type
+
+enum ListItemTextType: DesignToolboxEnumRepresentable {
     case label, labelStrong, labelMuted, labelAndExtraLabel
 }

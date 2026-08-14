@@ -32,7 +32,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var contentCardDecorationOption: ContentCardStyle {
+    @Published var contentCardDecorationOption: ListItemContentCardStyle {
         didSet { updateCode() }
     }
 
@@ -235,15 +235,11 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     private var slotPattern: String {
         textsModel.hasSlot ? ", slot: someView()" : ""
     }
-
-    private var badgePattern: String {
-        ".count(.init(1, accessibilityLabel: \"1\", status: .negative, size: .medium)))"
-    }
 }
 
-// MARK: - Enums
+// MARK: - List Item Content Card Style
 
-enum ContentCardStyle: DesignToolboxEnumRepresentable {
+enum ListItemContentCardStyle: DesignToolboxEnumRepresentable {
     case outlined, strandard
 }
 

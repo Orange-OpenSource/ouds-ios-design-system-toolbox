@@ -36,7 +36,6 @@ final class NavigationListItemConfigurationModel: ListItemConfigurationModel {
 struct NavigationListItemConfiguration: View {
 
     @ObservedObject var configurationModel: NavigationListItemConfigurationModel
-    @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(spacing: 0) {

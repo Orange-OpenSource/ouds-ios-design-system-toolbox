@@ -17,6 +17,7 @@ import SwiftUI
 struct ListItemGlobalSettingsConfiguration: View {
 
     @ObservedObject var configurationModel: ListItemConfigurationModel
+
     @Environment(\.theme) private var theme
 
     var body: some View {
@@ -29,7 +30,7 @@ struct ListItemGlobalSettingsConfiguration: View {
             case .card:
                 OUDSChipPicker(title: "app_components_listItem_cardDecoration_tech".localized(),
                                selection: $configurationModel.contentCardDecorationOption,
-                               chips: ContentCardStyle.chips)
+                               chips: ListItemContentCardStyle.chips)
                 switch configurationModel.contentCardDecorationOption {
                 case .outlined:
                     if configurationModel is NavigationListItemConfigurationModel {

@@ -18,11 +18,6 @@ import SwiftUI
 
 struct ListItemConfiguration: View {
 
-    // MARK: Properties
-
-    @ObservedObject var configurationModel: ListItemConfigurationModel
-    @Environment(\.theme) private var theme
-
     enum Configuration: String, CaseIterable {
         case global, texts, leading, trailing
 
@@ -40,7 +35,14 @@ struct ListItemConfiguration: View {
         }
     }
 
+    // MARK: Properties
+
+    @ObservedObject var configurationModel: ListItemConfigurationModel
     @State var configuration: Configuration = .global
+
+    @Environment(\.theme) private var theme
+
+    // MARK: - Body
 
     var body: some View {
         Picker("app_common_configuration_label", selection: $configuration) {

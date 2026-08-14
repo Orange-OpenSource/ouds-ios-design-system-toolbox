@@ -14,13 +14,15 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// MARK: - List Ite mAvatar Configuration Model
+
 open class ListItemAvatarConfigurationModel: ComponentConfiguration {
 
     // MARK: Properties
 
     var itemSize: OUDSListItemSize
 
-    @Published var type: AvatarType {
+    @Published var type: ListItemAvatarType {
         didSet { updateCode() }
     }
 
@@ -48,6 +50,10 @@ open class ListItemAvatarConfigurationModel: ComponentConfiguration {
 
     // MARK: Builder
 
+    private var badgePattern: String {
+        badgeOption ? ", badgeType: .standard(.negative)" : ""
+    }
+
     @MainActor
     func avatar(for theme: OUDSTheme) -> OUDSListItemAvatar {
         let avatarType: OUDSListItemAvatar.AvatarType =
@@ -66,7 +72,6 @@ open class ListItemAvatarConfigurationModel: ComponentConfiguration {
             badgeType: badgeOption ? .standard(.negative) : nil)
     }
 
-    // MARK: Code helepr
     override func updateCode() {
         let imagePattern = "Image(decorative: \"ic_placeholder\")"
         let typePattern = switch type {
@@ -80,11 +85,9 @@ open class ListItemAvatarConfigurationModel: ComponentConfiguration {
 
         code = ".init(type: \(typePattern), size: \(size.technicalDescription)\(badgePattern))"
     }
-
-    private var badgePattern: String {
-        badgeOption ? ", badgeType: .standard(.negative)" : ""
-    }
 }
+
+// MARK: - List Item Avatar Configuration
 
 struct ListItemAvatarConfiguration: View {
 
@@ -94,7 +97,7 @@ struct ListItemAvatarConfiguration: View {
         VStack(spacing: 0) {
             OUDSChipPicker(title: "app_components_listItem_avatarType_tech".localized(),
                            selection: $configurationModel.type,
-                           chips: AvatarType.chips)
+                           chips: ListItemAvatarType.chips)
 
             if configurationModel.itemSize == .default {
                 OUDSChipPicker(title: "app_components_listItem_avatarSize_tech".localized(),
@@ -107,9 +110,9 @@ struct ListItemAvatarConfiguration: View {
     }
 }
 
-// MARK: - AvatarType
+// MARK: - List Item Avatar Type
 
-enum AvatarType: DesignToolboxEnumRepresentable {
+enum ListItemAvatarType: DesignToolboxEnumRepresentable {
     case image, initials, icon
 }
 
