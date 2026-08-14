@@ -133,6 +133,7 @@ struct CircularProgressIndicatorConfigurationView: View {
             OUDSChipPicker(title: "app_components_common_status_tech",
                            selection: $configurationModel.status,
                            chips: OUDSProgressIndicatorStatus.chips)
+                .disabled(configurationModel.onColoredSurface)
 
             OUDSSwitchItem("app_components_progressIndicator_track_tech",
                            isOn: $configurationModel.track)
