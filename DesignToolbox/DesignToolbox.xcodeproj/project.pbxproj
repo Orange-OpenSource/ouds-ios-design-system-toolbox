@@ -7327,7 +7327,7 @@
 			repositoryURL = "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git";
 			requirement = {
 				kind = exactVersion;
-				version = "2.4.0-beta.1";
+				version = "2.4.0-beta.2";
 			};
 		};
 		9589F0122EB7D67B00134487 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */ = {
