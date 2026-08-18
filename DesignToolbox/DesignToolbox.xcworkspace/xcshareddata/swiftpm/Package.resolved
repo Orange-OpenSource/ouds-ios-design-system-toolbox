@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1527-for-text-area-component-update-to-v121",
-        "revision" : "b63f103d92f965927dc1d3a798e646d9f1bdc574"
+        "branch" : "develop",
+        "revision" : "5a630fba970251779afad7809b042e142e9fba2f"
       }
     },
     {
