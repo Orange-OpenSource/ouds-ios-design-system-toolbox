@@ -22,7 +22,7 @@ If few words, we need to have the *Xcode target* refering to the TTF files to as
 However we cannot have references to files which are missing (because not versioned), it won't compile'.
 And the TTF files are in the end copied in our internal forge (internal private GitLab repository) instead of this GitHub repository (public and external, violating terms of uses of Helvetica).
 
-Thus we keep using these fake files, to keep references, and they will be overridden internaly.
+Thus we keep using these fake files, to keep references, and they will be overridden internally.
 
 List of TTF files for Arabic:
 - HelveticaNeueLTArabic-Bold.ttf

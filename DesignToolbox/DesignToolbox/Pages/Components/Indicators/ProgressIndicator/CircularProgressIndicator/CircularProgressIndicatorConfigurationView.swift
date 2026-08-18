@@ -127,7 +127,10 @@ struct CircularProgressIndicatorConfigurationView: View {
                            isOn: $configurationModel.onColoredSurface)
 
             if configurationModel.variant == .determinate {
-                progressControl
+                ProgressControl(progress: $configurationModel.progress)
+
+                OUDSSwitchItem("app_components_progressIndicator_animated_tech",
+                               isOn: $configurationModel.animated)
             }
 
             OUDSChipPicker(title: "app_components_common_status_tech",
@@ -148,15 +151,21 @@ struct CircularProgressIndicatorConfigurationView: View {
             }
         }
     }
+}
 
-    // MARK: Progress control (platform specific)
+// MARK: Progress control (platform specific)
 
-    @ViewBuilder
-    private var progressControl: some View {
+struct ProgressControl: View {
+
+    @Binding var progress: Double
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+
         #if os(tvOS)
         // `Slider` is not available on tvOS: expose discrete steps via a chip picker.
         OUDSChipPicker(title: progressLabel,
-                       selection: $configurationModel.progress,
+                       selection: $progress,
                        chips: Self.progressSteps.map { value in
                            OUDSChipPickerData(tag: value, layout: .text(text: "\(Int(value * 100)) %"))
                        })
@@ -164,14 +173,14 @@ struct CircularProgressIndicatorConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedXsmall) {
             OUDSLabel(LocalizedStringKey(progressLabel), size: .large, weight: .strong)
                 .foregroundColor(theme.colors.contentDefault)
-            Slider(value: $configurationModel.progress, in: 0 ... 1)
+            Slider(value: $progress, in: 0 ... 1)
         }
         .padding(theme.spaces.fixedSmall)
         #endif
     }
 
     private var progressLabel: String {
-        let percent = Int((configurationModel.progress * 100).rounded())
+        let percent = Int((progress * 100).rounded())
         return "\("app_components_progressIndicator_progress_tech".localized()): \(percent) %"
     }
 

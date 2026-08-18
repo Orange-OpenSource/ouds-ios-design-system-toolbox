@@ -38,7 +38,7 @@ open class TextAreaSnapshotsTestsTestCase: XCTestCase {
         for outlined in [true, false] {
             for constrainedMaxWidth in [true, false] {
                 // Drop the loading status still the progress indicator is done
-                for status in OUDSTextArea.Status.allCases where status != .loading {
+                for status in OUDSTextArea.Status.allCases {
                     testTextArea(theme: theme,
                                  interfaceStyle: interfaceStyle,
                                  testType: .styleAndStatus,
@@ -105,6 +105,8 @@ open class TextAreaSnapshotsTestsTestCase: XCTestCase {
 
 // swiftlint:enable required_deinit
 
+// MARK: - Test Text Area View
+
 struct TestTextAreaView: View {
 
     /// Two types of test
@@ -115,7 +117,7 @@ struct TestTextAreaView: View {
         case helpers
     }
 
-    // MARK: - Stored properties
+    // MARK: - Properties
 
     let type: TestType
     let outlined: Bool
@@ -207,7 +209,7 @@ struct TestTextAreaView: View {
 extension OUDSTextArea.Status: @retroactive CaseIterable, @retroactive Hashable, DesignToolboxEnumLocalizedRepresentable {
 
     public static let allCases: [OUDSTextArea.Status] =
-        [.enabled, .error(message: "app_components_textArea_errorDescription_label".localized()), .loading, .readOnly, .disabled]
+        [.enabled, .error(message: "app_components_textArea_errorDescription_label".localized()), .loading(progress: 0.63), .readOnly, .disabled]
 
     public var wordingKey: String {
         switch self {
