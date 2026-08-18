@@ -237,12 +237,6 @@ struct PasswordInputConfigurationView: View {
                                selection: $configurationModel.status,
                                chips: TextInputStatus.chips)
 
-                if configurationModel.status != .error, configurationModel.status != .richError {
-                    OUDSChipPicker(title: "app_components_textMode_tech",
-                                   selection: $configurationModel.textMode,
-                                   chips: TextualContentMode.chips)
-                }
-
                 if configurationModel.status == .loading {
                     OUDSChipPicker(title: "app_components_progressIndicator_variant_tech",
                                    selection: $configurationModel.progressVariant,
@@ -253,6 +247,11 @@ struct PasswordInputConfigurationView: View {
                     }
                 }
 
+                if configurationModel.status != .error, configurationModel.status != .richError {
+                    OUDSChipPicker(title: "app_components_textMode_tech",
+                                   selection: $configurationModel.textMode,
+                                   chips: TextualContentMode.chips)
+                }
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")

@@ -7350,7 +7350,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1524-for-text-input-component-update-to-v141";
 				kind = branch;
 			};
 		};

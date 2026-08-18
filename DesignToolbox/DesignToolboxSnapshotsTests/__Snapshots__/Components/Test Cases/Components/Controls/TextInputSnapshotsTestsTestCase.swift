@@ -41,7 +41,7 @@ open class TextInputSnapshotsTestsTestCase: XCTestCase {
                     for leadingImageType in DefinedStatusIcons.allCases {
                         for trailingImageType in DefinedStatusIcons.allCases {
                             // Drop the loading status still the progress indicator is done
-                            for status in OUDSTextInput.Status.allCases where status != .loading {
+                            for status in OUDSTextInput.Status.allCases {
                                 testTextInput(theme: theme,
                                               interfaceStyle: interfaceStyle,
                                               testType: .styleAndStatus,
@@ -299,7 +299,7 @@ struct TestTextInputView: View {
 extension OUDSTextInput.Status: DesignToolboxEnumLocalizedRepresentable, @retroactive CaseIterable, @retroactive Hashable {
 
     nonisolated(unsafe) public static var allCases: [OUDSTextInput.Status] =
-        [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading, .readOnly, .disabled]
+        [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading(progress: 0.63), .readOnly, .disabled]
 
     public var wordingKey: String {
         switch self {
