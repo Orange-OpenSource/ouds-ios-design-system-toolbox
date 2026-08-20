@@ -7350,7 +7350,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1689-use-an-asset-for-the-marker-in-typography-heading";
 				kind = branch;
 			};
 		};
