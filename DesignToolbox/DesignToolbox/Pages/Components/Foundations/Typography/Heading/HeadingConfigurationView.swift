@@ -75,6 +75,15 @@ final class HeadingConfigurationModel: ComponentConfiguration {
             """
         }
     }
+
+    func hasColoredSringSupported(by theme: OUDSTheme) -> Bool {
+        let isSupported = !theme.hasTypographyHeadingLargeMarker
+        if !isSupported && hasColoredSubstring {
+            hasColoredSubstring = false
+        }
+
+        return isSupported
+    }
 }
 
 // MARK: - Heading Configuration View
@@ -100,7 +109,7 @@ struct HeadingConfigurationView: View {
                 }
 
                 // Size is forced to `.large` when a colored sub-string is used.
-                if !configurationModel.hasColoredSubstring {
+                if !(configurationModel.hasColoredSringSupported(by: theme) && configurationModel.hasColoredSubstring) {
                     OUDSChipPicker(title: "app_components_common_size_tech",
                                    selection: $configurationModel.size,
                                    chips: OUDSHeading.Size.chips)
