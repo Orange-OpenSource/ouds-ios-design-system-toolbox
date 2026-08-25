@@ -60,7 +60,7 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
                         model.animated = false
                         model.stopIndicator = false
                         model.helperText = ""
-                        model.helperTextType = .none
+                        model.determinateHelperTextType = .none
 
                         testLinearProgressIndicator(theme: theme,
                                                     interfaceStyle: interfaceStyle,
@@ -86,7 +86,8 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
                 model.animated = false
                 model.stopIndicator = stopIndicator
                 model.helperText = helperText
-                model.helperTextType = .description
+                model.determinateHelperTextType = .percent
+                model.helperTextAlignment = .center
 
                 testLinearProgressIndicator(theme: theme,
                                             interfaceStyle: interfaceStyle,
@@ -94,22 +95,31 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
             }
         }
 
-        for alignment in ProgressIndicatorHelperPercentAlignment.allCases {
-            let model = LinearProgressIndicatorConfigurationModel()
-            model.variant = .determinate
-            model.status = .neutral
-            model.gapSize = .default
-            model.track = true
-            model.progress = 0.5
-            model.animated = false
-            model.stopIndicator = false
-            model.helperTextType = .percent
-            model.helperTextPercentAlignment = alignment
-            model.helperText =  "Uploading…"
+        for type in DeterminateProgressIndicatorHelperType.allCases {
 
-            testLinearProgressIndicator(theme: theme,
-                                        interfaceStyle: interfaceStyle,
-                                        model: model)
+            // Skip the (.none) which is already covered above
+            if type == .none { continue }
+
+            for alignment in OUDSLinearProgressIndicatorHelperTextAlignment.allCases {
+                for helperText in ["", "Uploading…"] {
+                    let model = LinearProgressIndicatorConfigurationModel()
+                    model.variant = .determinate
+                    model.status = .neutral
+                    model.gapSize = .default
+                    model.track = true
+                    model.progress = 0.5
+                    model.animated = false
+                    model.stopIndicator = false
+                    model.determinateHelperTextType = type
+                    model.helperTextAlignment = alignment
+                    model.helperText = helperText
+                    model.helperTextAlignment = alignment
+                    
+                    testLinearProgressIndicator(theme: theme,
+                                                interfaceStyle: interfaceStyle,
+                                                model: model)
+                }
+            }
         }
     }
 
@@ -140,15 +150,15 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
         // Encoded as `.progress_75` to keep the file name filesystem-friendly.
         let progressPattern = ".progress_\(Int((model.progress * 100).rounded()))"
         let stopPattern = model.stopIndicator ? ".stopIndicator" : ""
-        let percentAlignmentPattern = model.helperTextType == .percent ?  model.helperTextPercentAlignment.technicalDescription : ""
+        let alignementPattern = model.helperTextAlignment.technicalDescription
 
-        let helperPattern = switch model.helperTextType {
-            case .percent:
-                percentAlignmentPattern
+        let helperPattern = switch model.determinateHelperTextType {
             case .none:
                 ""
+            case .percent:
+                ".percent\(alignementPattern)\(model.helperText.isEmpty ? "" : ".helperText")"
             case .description:
-                model.helperText.isEmpty ? "" : ".helperText"
+                model.helperText.isEmpty ? "" : ".description\(alignementPattern))"
         }
 
 
