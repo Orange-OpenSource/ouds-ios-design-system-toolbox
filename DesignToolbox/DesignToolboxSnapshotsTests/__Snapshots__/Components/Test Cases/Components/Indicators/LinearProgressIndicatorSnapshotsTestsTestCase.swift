@@ -60,6 +60,7 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
                         model.animated = false
                         model.stopIndicator = false
                         model.helperText = ""
+                        model.helperTextType = .none
 
                         testLinearProgressIndicator(theme: theme,
                                                     interfaceStyle: interfaceStyle,
@@ -85,11 +86,30 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
                 model.animated = false
                 model.stopIndicator = stopIndicator
                 model.helperText = helperText
+                model.helperTextType = .description
 
                 testLinearProgressIndicator(theme: theme,
                                             interfaceStyle: interfaceStyle,
                                             model: model)
             }
+        }
+
+        for alignment in ProgressIndicatorHelperPercentAlignment.allCases {
+            let model = LinearProgressIndicatorConfigurationModel()
+            model.variant = .determinate
+            model.status = .neutral
+            model.gapSize = .default
+            model.track = true
+            model.progress = 0.5
+            model.animated = false
+            model.stopIndicator = false
+            model.helperTextType = .percent
+            model.helperTextPercentAlignment = alignment
+            model.helperText =  "Uploading…"
+
+            testLinearProgressIndicator(theme: theme,
+                                        interfaceStyle: interfaceStyle,
+                                        model: model)
         }
     }
 
@@ -120,7 +140,17 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
         // Encoded as `.progress_75` to keep the file name filesystem-friendly.
         let progressPattern = ".progress_\(Int((model.progress * 100).rounded()))"
         let stopPattern = model.stopIndicator ? ".stopIndicator" : ""
-        let helperPattern = model.helperText.isEmpty ? "" : ".helperText"
+        let percentAlignmentPattern = model.helperTextType == .percent ?  model.helperTextPercentAlignment.technicalDescription : ""
+
+        let helperPattern = switch model.helperTextType {
+            case .percent:
+                percentAlignmentPattern
+            case .none:
+                ""
+            case .description:
+                model.helperText.isEmpty ? "" : ".helperText"
+        }
+
 
         let name = "\(typePattern)\(statusPattern)\(gapPattern)\(trackPattern)\(progressPattern)\(stopPattern)\(helperPattern)"
 
