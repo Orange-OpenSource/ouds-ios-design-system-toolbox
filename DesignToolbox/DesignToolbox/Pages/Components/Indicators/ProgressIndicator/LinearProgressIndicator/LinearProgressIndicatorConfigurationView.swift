@@ -55,10 +55,6 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var helperTextAlignment: OUDSIndeterminateHelperTextAlignment {
-        didSet { updateCode() }
-    }
-
     @Published var gapSize: OUDSProgressIndicatorGapSize {
         didSet { updateCode() }
     }
@@ -122,7 +118,6 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         case .indeterminate:
             code = """
             OUDSLinearProgressIndicator(\(statusPattern), \(trackPattern), \
-            \(indeterminateHelperTextPattern), \(gapSizePattern))\(coloredSurfacePattern)
             """
         }
     }
@@ -156,13 +151,6 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
             return "helperText: \"\(value)\", helperTextAlignment: \(helperTextAlignment.technicalDescription)"
         }
         return "helperText: nil"
-    }
-
-    private var indeterminateHelperTextAlignmentPattern: String {
-        if helperTextValue != nil {
-            return ", helperTextAlignment: \(helperTextAlignment.technicalDescription)"
-        }
-        return ""
     }
 
     private var gapSizePattern: String {
@@ -245,10 +233,11 @@ struct LinearProgressIndicatorConfigurationView: View {
                                    chips: OUDSLinearProgressIndicator.HelperTextAlignment.chips)
                 }
 
-                if configurationModel.variant == .indeterminate {
+                if configurationModel.variant == .indeterminate && configurationModel.helperTextValue != nil
+                    || configurationModel.variant == .determinate && configurationModel.determinateHelperTextType != .none {
                     OUDSChipPicker(title: "app_components_common_contentAlignment_tech",
                                    selection: $configurationModel.helperTextAlignment,
-                                   chips: OUDSIndeterminateHelperTextAlignment.chips)
+                                   chips: OUDSLinearProgressIndicatorHelperTextAlignment.chips)
                 }
             }
 
@@ -257,7 +246,6 @@ struct LinearProgressIndicatorConfigurationView: View {
                     ((configurationModel.determinateHelperTextType == .percent && configurationModel.helperTextAlignment != .center)
                         || configurationModel.determinateHelperTextType == .description))
             {
-
                 DesignToolboxEditContentDisclosure(isContentVisible: true) {
                     DesignToolboxTextField(text: $configurationModel.helperText,
                                            label: "app_components_progressIndicator_helperText_tech")
@@ -290,18 +278,25 @@ enum DeterminateProgressIndicatorHelperType: DesignToolboxEnumRepresentable {
     case description
 }
 
-extension OUDSIndeterminateHelperTextAlignment: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSIndeterminateHelperTextAlignment] = [.center, .start, .end]
+extension OUDSLinearProgressIndicatorHelperTextAlignment: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSLinearProgressIndicatorHelperTextAlignment] = [.center, .start, .end]
+
+    public var technicalDescription: String {
+        switch self {
+        case .center:
+            ".center"
+        case .start:
+            ".start"
+        case .end:
+            ".end"
+        }
+    }
 }
 
-enum ProgressIndicatorHelperType: DesignToolboxEnumRepresentable {
+enum DeterminateProgressIndicatorHelperType: DesignToolboxEnumRepresentable {
     case none
     case percent
     case description
-}
-
-enum ProgressIndicatorHelperPercentAlignment: DesignToolboxEnumRepresentable {
-    case start, center, end
 }
 
 // swiftlint:enable type_name
