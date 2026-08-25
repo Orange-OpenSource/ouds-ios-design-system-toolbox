@@ -54,6 +54,7 @@ struct LinearProgressIndicatorDemo: View {
                 OUDSLinearProgressIndicator(status: configurationModel.status,
                                             track: configurationModel.track,
                                             helperText: configurationModel.helperTextValue,
+                                            helperTextAlignment: configurationModel.helperTextAlignment,
                                             gapSize: configurationModel.gapSize)
             }
         }

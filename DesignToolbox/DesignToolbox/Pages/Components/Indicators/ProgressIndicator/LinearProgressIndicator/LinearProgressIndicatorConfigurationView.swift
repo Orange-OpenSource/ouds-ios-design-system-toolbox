@@ -59,6 +59,10 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var helperTextAlignment: OUDSIndeterminateHelperTextAlignment {
+        didSet { updateCode() }
+    }
+
     @Published var gapSize: OUDSProgressIndicatorGapSize {
         didSet { updateCode() }
     }
@@ -82,6 +86,7 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         helperTextPercentAlignment = .start
         helperText = "app_components_pinCodeInput_helper_label".localized()
         spaceBeforePercent = true
+        helperTextAlignment = .center
 
         super.init()
     }
@@ -96,9 +101,9 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         helperText.isEmpty ? nil : helperText
     }
 
-    /// The `OUDSDeterminateProgressIndicatorHelperTest?` passed to the determinate
+    /// The `OUDSDeterminateProgressIndicatorHelperText?` passed to the determinate
     /// progress indicator.
-    var determinateHelperTextValue: OUDSDeterminateProgressIndicatorHelperTest? {
+    var determinateHelperTextValue: OUDSDeterminateProgressIndicatorHelperText? {
         switch helperTextType {
         case .none:
             return nil
@@ -129,7 +134,7 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         case .indeterminate:
             code = """
             OUDSLinearProgressIndicator(\(statusPattern), \(trackPattern), \(indeterminateHelperTextPattern), \
-            \(gapSizePattern))\(coloredSurfacePattern)
+            \(indeterminateHelperTextAlignmentPattern), \(gapSizePattern))\(coloredSurfacePattern)
             """
         }
     }
@@ -163,6 +168,13 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
             return "helperText: \"\(value)\""
         }
         return "helperText: nil"
+    }
+
+    private var indeterminateHelperTextAlignmentPattern: String {
+        if helperTextValue != nil {
+            return ", helperTextAlignment: \(helperTextAlignment.technicalDescription)"
+        }
+        return ""
     }
 
     private var gapSizePattern: String {
@@ -245,6 +257,12 @@ struct LinearProgressIndicatorConfigurationView: View {
                                        chips: ProgressIndicatorHelperPercentAlignment.chips)
                     }
                 }
+
+                if configurationModel.variant == .indeterminate {
+                    OUDSChipPicker(title: "app_components_common_contentAlignment_tech",
+                                   selection: $configurationModel.helperTextAlignment,
+                                   chips: OUDSIndeterminateHelperTextAlignment.chips)
+                }
             }
 
             if configurationModel.variant == .indeterminate ||
@@ -287,7 +305,7 @@ struct LinearProgressIndicatorConfigurationView: View {
     }
 
     #if os(tvOS)
-    private static let progressSteps: [Double] = [0.0, 0.25, 0.5, 0.75, 1..0]
+    private static let progressSteps: [Double] = [0.0, 0.25, 0.5, 0.75, 1.0]
     #endif
 }
 
@@ -299,6 +317,10 @@ extension OUDSProgressIndicatorStatus: @retroactive CaseIterable, DesignToolboxE
 
 extension OUDSProgressIndicatorGapSize: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSProgressIndicatorGapSize] = [.default, .small]
+}
+
+extension OUDSIndeterminateHelperTextAlignment: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSIndeterminateHelperTextAlignment] = [.center, .start, .end]
 }
 
 enum ProgressIndicatorHelperType: DesignToolboxEnumRepresentable {
