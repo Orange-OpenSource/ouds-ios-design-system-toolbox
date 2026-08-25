@@ -2972,6 +2972,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_contentAlignment_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alignment"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alignment"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alignment"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_density_tech" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",
@@ -4524,31 +4549,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_listItem_contentAlignment_tech" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alignment"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alignment"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alignment"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_listItem_description_text" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
@@ -5701,6 +5701,54 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_progressIndicator_helperText_percentPosition_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Percent position"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Percent position"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Percent position"
+          }
+        }
+      }
+    },
+    "app_components_progressIndicator_helperText_spaceBeforePercent_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Space before percent"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Space before percent"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Space before percent"
+          }
+        }
+      }
+    },
     "app_components_progressIndicator_helperText_tech" : {
       "comment" : "Component - Progress Indicator",
       "extractionState" : "manual",
@@ -5725,6 +5773,30 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_progressIndicator_helperText_type_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text type"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text type"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text type"
+          }
+        }
+      }
     },
     "app_components_progressIndicator_linear_description_text" : {
       "comment" : "Component - Progress Indicator",

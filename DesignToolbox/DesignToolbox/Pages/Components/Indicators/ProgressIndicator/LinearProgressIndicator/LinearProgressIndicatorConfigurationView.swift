@@ -43,6 +43,18 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var helperTextType: ProgressIndicatorHelperType {
+        didSet { updateCode() }
+    }
+
+    @Published var helperTextPercentAlignment: ProgressIndicatorHelperPercentAlignment {
+        didSet { updateCode() }
+    }
+
+    @Published var spaceBeforePercent: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var helperText: String {
         didSet { updateCode() }
     }
@@ -63,9 +75,14 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         status = .neutral
         track = true
         stopIndicator = false
-        helperText = ""
         gapSize = .default
         animated = true
+
+        helperTextType = .percent
+        helperTextPercentAlignment = .start
+        helperText = "app_components_pinCodeInput_helper_label".localized()
+        spaceBeforePercent = true
+
         super.init()
     }
 
@@ -73,10 +90,30 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
 
     // MARK: Helper text
 
-    /// The actual `String?` value passed to the component: nil when the field is empty,
+    /// The actual `String?` value passed to the indeterminet component: nil when the field is empty,
     /// the user-entered text otherwise.
     var helperTextValue: String? {
         helperText.isEmpty ? nil : helperText
+    }
+
+    /// The `OUDSDeterminateProgressIndicatorHelperTest?` passed to the determinate
+    /// progress indicator.
+    var determinateHelperTextValue: OUDSDeterminateProgressIndicatorHelperTest? {
+        switch helperTextType {
+        case .none:
+            return nil
+        case .percent:
+            switch helperTextPercentAlignment {
+                case .start:
+                return .percent(spaceBefore: spaceBeforePercent, alignment: .start(description: helperTextValue))
+            case .end:
+                return .percent(spaceBefore: spaceBeforePercent, alignment: .end(description: helperTextValue))
+            case .center:
+                return .percent(spaceBefore: spaceBeforePercent, alignment: .center)
+            }
+        case .description:
+            return .description(helperText)
+        }
     }
 
     // MARK: Component Configuration
@@ -86,12 +123,12 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         case .determinate:
             code = """
             OUDSLinearProgressIndicator(progress: \(String(format: "%.2f", progress)), \
-            \(statusPattern), \(trackPattern), \(stopIndicatorPattern), \(helperTextPattern), \
+            \(statusPattern), \(trackPattern), \(stopIndicatorPattern), \(determinateHelperTextPattern), \
             \(gapSizePattern), \(animatedPattern))\(coloredSurfacePattern)
             """
         case .indeterminate:
             code = """
-            OUDSLinearProgressIndicator(\(statusPattern), \(trackPattern), \(helperTextPattern), \
+            OUDSLinearProgressIndicator(\(statusPattern), \(trackPattern), \(indeterminateHelperTextPattern), \
             \(gapSizePattern))\(coloredSurfacePattern)
             """
         }
@@ -109,7 +146,19 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         "stopIndicator: \(stopIndicator)"
     }
 
-    private var helperTextPattern: String {
+    private var determinateHelperTextPattern: String {
+        switch helperTextType {
+        case .none:
+            return ""
+        case .percent:
+            let descriptionPattern = helperText.isEmpty ? "" : ", description: \"\(helperText)\""
+            return ", helperText: .percent(spaceBefore: \(spaceBeforePercent)\(descriptionPattern))"
+        case .description:
+            return ", helperText: .description(\"\(helperText)\""
+        }
+    }
+
+    private var indeterminateHelperTextPattern: String {
         if let value = helperTextValue {
             return "helperText: \"\(value)\""
         }
@@ -177,17 +226,36 @@ struct LinearProgressIndicatorConfigurationView: View {
                 if configurationModel.variant == .determinate {
                     OUDSSwitchItem("app_components_progressIndicator_animated_tech",
                                    isOn: $configurationModel.animated)
-                }
 
-                if configurationModel.variant == .determinate {
                     OUDSSwitchItem("app_components_progressIndicator_stopIndicator_tech",
                                    isOn: $configurationModel.stopIndicator)
+
+                    OUDSHorizontalDivider()
+
+                    OUDSChipPicker(title: "app_components_progressIndicator_helperText_type_tech",
+                                   selection: $configurationModel.helperTextType,
+                                   chips: ProgressIndicatorHelperType.chips)
+
+                    if configurationModel.helperTextType == .percent {
+                        OUDSSwitchItem("app_components_progressIndicator_helperText_spaceBeforePercent_tech",
+                                       isOn: $configurationModel.spaceBeforePercent)
+
+                        OUDSChipPicker(title: "app_components_common_contentAlignment_tech",
+                                       selection: $configurationModel.helperTextPercentAlignment,
+                                       chips: ProgressIndicatorHelperPercentAlignment.chips)
+                    }
                 }
             }
 
-            DesignToolboxEditContentDisclosure {
-                DesignToolboxTextField(text: $configurationModel.helperText,
-                                       label: "app_components_progressIndicator_helperText_tech")
+            if configurationModel.variant == .indeterminate ||
+                (configurationModel.variant == .determinate &&
+                (configurationModel.helperTextType == .percent && configurationModel.helperTextPercentAlignment != .center)
+                 || configurationModel.helperTextType  == .description) {
+
+                DesignToolboxEditContentDisclosure {
+                    DesignToolboxTextField(text: $configurationModel.helperText,
+                                           label: "app_components_progressIndicator_helperText_tech")
+                }
             }
         }
     }
@@ -219,7 +287,7 @@ struct LinearProgressIndicatorConfigurationView: View {
     }
 
     #if os(tvOS)
-    private static let progressSteps: [Double] = [0.0, 0.25, 0.5, 0.75, 1.0]
+    private static let progressSteps: [Double] = [0.0, 0.25, 0.5, 0.75, 1..0]
     #endif
 }
 
@@ -231,6 +299,16 @@ extension OUDSProgressIndicatorStatus: @retroactive CaseIterable, DesignToolboxE
 
 extension OUDSProgressIndicatorGapSize: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSProgressIndicatorGapSize] = [.default, .small]
+}
+
+enum ProgressIndicatorHelperType: DesignToolboxEnumRepresentable {
+    case none
+    case percent
+    case description
+}
+
+enum ProgressIndicatorHelperPercentAlignment: DesignToolboxEnumRepresentable {
+    case start, center, end
 }
 
 // swiftlint:enable type_name
