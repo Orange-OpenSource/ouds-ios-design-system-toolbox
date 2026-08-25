@@ -273,4 +273,14 @@ enum DeterminateProgressIndicatorHelperType: DesignToolboxEnumRepresentable {
     case description
 }
 
+enum ProgressIndicatorHelperType: DesignToolboxEnumRepresentable {
+    case none
+    case percent
+    case description
+}
+
+enum ProgressIndicatorHelperPercentAlignment: DesignToolboxEnumRepresentable {
+    case start, center, end
+}
+
 // swiftlint:enable type_name
