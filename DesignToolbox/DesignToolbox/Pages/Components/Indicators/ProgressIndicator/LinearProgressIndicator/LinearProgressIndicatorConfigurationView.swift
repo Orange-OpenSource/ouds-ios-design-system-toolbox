@@ -97,9 +97,9 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         helperText.isEmpty ? nil : helperText
     }
 
-    /// The `OUDSDeterminateProgressIndicatorHelperText?` passed to the determinate
+    /// The `OUDSLinearProgressIndicator.HelperTextType?` passed to the determinate
     /// progress indicator.
-    var determinateHelperTextValue: OUDSDeterminateProgressIndicatorHelperText? {
+    var determinateHelperTextValue: OUDSLinearProgressIndicator.HelperTextType? {
         switch determinateHelperTextType {
         case .none:
             nil
@@ -202,13 +202,13 @@ struct LinearProgressIndicatorConfigurationView: View {
                                isOn: $configurationModel.onColoredSurface)
 
                 if configurationModel.variant == .determinate {
-                    progressControl
+                    DesignToolboxProgressControl(progress: $configurationModel.progress)
                 }
 
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
                                chips: OUDSProgressIndicatorStatus.chips)
-                    .disabled(configurationModel.onColoredSurface)
+                .disabled(configurationModel.onColoredSurface)
 
                 OUDSSwitchItem("app_components_progressIndicator_track_tech",
                                isOn: $configurationModel.track)
@@ -246,57 +246,19 @@ struct LinearProgressIndicatorConfigurationView: View {
 
             if configurationModel.variant == .indeterminate ||
                 (configurationModel.variant == .determinate &&
-                ((configurationModel.determinateHelperTextType == .percent && configurationModel.helperTextAlignment != .center)
-                 || configurationModel.determinateHelperTextType  == .description)) {
+                 ((configurationModel.determinateHelperTextType == .percent && configurationModel.helperTextAlignment != .center)
+                  || configurationModel.determinateHelperTextType  == .description)) {
 
-                DesignToolboxEditContentDisclosure {
+                DesignToolboxEditContentDisclosure(isContentVisible: true) {
                     DesignToolboxTextField(text: $configurationModel.helperText,
                                            label: "app_components_progressIndicator_helperText_tech")
                 }
             }
         }
     }
-
-    // MARK: Progress control (platform specific)
-
-    @ViewBuilder
-    private var progressControl: some View {
-        #if os(tvOS)
-        // `Slider` is not available on tvOS: expose discrete steps via a chip picker.
-        OUDSChipPicker(title: progressLabel,
-                       selection: $configurationModel.progress,
-                       chips: Self.progressSteps.map { value in
-                           OUDSChipPickerData(tag: value, layout: .text(text: "\(Int(value * 100)) %"))
-                       })
-        #else
-        VStack(alignment: .leading, spacing: theme.spaces.fixedXsmall) {
-            OUDSLabel(LocalizedStringKey(progressLabel), size: .large, weight: .strong)
-                .foregroundColor(theme.colors.contentDefault)
-            Slider(value: $configurationModel.progress, in: 0 ... 1)
-        }
-        .padding(theme.spaces.fixedSmall)
-        #endif
-    }
-
-    private var progressLabel: String {
-        let percent = Int((configurationModel.progress * 100).rounded())
-        return "\("app_components_progressIndicator_progress_tech".localized()): \(percent) %"
-    }
-
-    #if os(tvOS)
-    private static let progressSteps: [Double] = [0.0, 0.25, 0.5, 0.75, 1.0]
-    #endif
 }
 
 // MARK: - OUDS enum representable extensions
-
-extension OUDSProgressIndicatorStatus: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSProgressIndicatorStatus] = [.neutral, .accent, .positive, .info, .warning, .negative]
-}
-
-extension OUDSProgressIndicatorGapSize: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSProgressIndicatorGapSize] = [.default, .small]
-}
 
 extension OUDSLinearProgressIndicatorHelperTextAlignment: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSLinearProgressIndicatorHelperTextAlignment] = [.center, .start, .end]

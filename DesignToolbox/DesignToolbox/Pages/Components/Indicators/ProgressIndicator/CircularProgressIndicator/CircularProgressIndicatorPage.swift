@@ -47,11 +47,13 @@ struct CircularProgressIndicatorDemo: View {
                                               status: configurationModel.status,
                                               track: configurationModel.track,
                                               gapSize: configurationModel.gapSize,
-                                              animated: configurationModel.animated)
+                                              animated: configurationModel.animated,
+                                              helperText: configurationModel.determinateHelperTextValue)
             case .indeterminate:
                 OUDSCircularProgressIndicator(status: configurationModel.status,
                                               track: configurationModel.track,
-                                              gapSize: configurationModel.gapSize)
+                                              gapSize: configurationModel.gapSize,
+                                              helperText: configurationModel.helperTextValue)
             }
         }
     }
