@@ -100,7 +100,7 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
             // Skip the (.none) which is already covered above
             if type == .none { continue }
 
-            for alignment in OUDSLinearProgressIndicatorHelperTextAlignment.allCases {
+            for alignment in OUDSLinearProgressIndicator.HelperTextAlignment.allCases {
                 for helperText in ["", "Uploading…"] {
                     let model = LinearProgressIndicatorConfigurationModel()
                     model.variant = .determinate

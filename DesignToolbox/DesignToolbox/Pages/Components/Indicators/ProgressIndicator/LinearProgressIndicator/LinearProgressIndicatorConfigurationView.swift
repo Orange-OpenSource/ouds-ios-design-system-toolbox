@@ -47,7 +47,7 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var helperTextAlignment: OUDSLinearProgressIndicatorHelperTextAlignment {
+    @Published var helperTextAlignment: OUDSLinearProgressIndicator.HelperTextAlignment {
         didSet { updateCode() }
     }
 
@@ -210,9 +210,6 @@ struct LinearProgressIndicatorConfigurationView: View {
                                chips: OUDSProgressIndicatorStatus.chips)
                 .disabled(configurationModel.onColoredSurface)
 
-                OUDSSwitchItem("app_components_progressIndicator_track_tech",
-                               isOn: $configurationModel.track)
-
                 OUDSChipPicker(title: "app_components_progressIndicator_gapSize_tech",
                                selection: $configurationModel.gapSize,
                                chips: OUDSProgressIndicatorGapSize.chips)
@@ -240,7 +237,7 @@ struct LinearProgressIndicatorConfigurationView: View {
                     || configurationModel.variant == .determinate && configurationModel.determinateHelperTextType != .none {
                     OUDSChipPicker(title: "app_components_common_contentAlignment_tech",
                                    selection: $configurationModel.helperTextAlignment,
-                                   chips: OUDSLinearProgressIndicatorHelperTextAlignment.chips)
+                                   chips: OUDSLinearProgressIndicator.HelperTextAlignment.chips)
                 }
             }
 
@@ -260,8 +257,8 @@ struct LinearProgressIndicatorConfigurationView: View {
 
 // MARK: - OUDS enum representable extensions
 
-extension OUDSLinearProgressIndicatorHelperTextAlignment: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSLinearProgressIndicatorHelperTextAlignment] = [.center, .start, .end]
+extension OUDSLinearProgressIndicator.HelperTextAlignment: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSLinearProgressIndicator.HelperTextAlignment] = [.center, .start, .end]
 
     public var technicalDescription: String {
         switch self {
