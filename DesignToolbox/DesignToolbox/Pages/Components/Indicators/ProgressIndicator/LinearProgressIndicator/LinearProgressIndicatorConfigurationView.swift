@@ -204,9 +204,6 @@ struct LinearProgressIndicatorConfigurationView: View {
                                chips: OUDSProgressIndicatorStatus.chips)
                 .disabled(configurationModel.onColoredSurface)
 
-                OUDSSwitchItem("app_components_progressIndicator_track_tech",
-                               isOn: $configurationModel.track)
-
                 OUDSChipPicker(title: "app_components_progressIndicator_gapSize_tech",
                                selection: $configurationModel.gapSize,
                                chips: OUDSProgressIndicatorGapSize.chips)
@@ -237,7 +234,7 @@ struct LinearProgressIndicatorConfigurationView: View {
                     || configurationModel.variant == .determinate && configurationModel.determinateHelperTextType != .none {
                     OUDSChipPicker(title: "app_components_common_contentAlignment_tech",
                                    selection: $configurationModel.helperTextAlignment,
-                                   chips: OUDSLinearProgressIndicatorHelperTextAlignment.chips)
+                                   chips: OUDSLinearProgressIndicator.HelperTextAlignment.chips)
                 }
             }
 
