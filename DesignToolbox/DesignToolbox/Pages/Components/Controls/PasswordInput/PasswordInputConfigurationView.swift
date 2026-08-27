@@ -77,6 +77,14 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var progressVariant: CircularProgressIndicatorConfigurationModel.Variant {
+        didSet { updateCode() }
+    }
+
+    @Published var progressValue: Double {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -92,6 +100,10 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         status = .enabled
         isHiddenPassword = true
         textMode = .raw
+
+        progressVariant = .indeterminate
+        progressValue = 0.0
+
         super.init()
     }
 
@@ -117,7 +129,7 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         case .richError:
             .richError(message: richErrorText)
         case .loading:
-            .loading
+            .loading(progress: progressVariant == .indeterminate ? nil : progressValue)
         case .readOnly:
             .readOnly
         case .disabled:
@@ -189,7 +201,11 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         case .richError:
             ", status: .richError(message: yourAttributedString)"
         case .loading:
-            ", status: .loading"
+            if progressVariant == .indeterminate {
+                ", status: .loading"
+            } else {
+                ", status: .loading(progress: \(String(format: "%.2f", progressValue)))"
+            }
         case .readOnly:
             ", status: .readOnly"
         case .disabled:
@@ -220,6 +236,16 @@ struct PasswordInputConfigurationView: View {
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
                                chips: TextInputStatus.chips)
+
+                if configurationModel.status == .loading {
+                    OUDSChipPicker(title: "app_components_progressIndicator_variant_tech",
+                                   selection: $configurationModel.progressVariant,
+                                   chips: CircularProgressIndicatorConfigurationModel.Variant.chips)
+
+                    if configurationModel.progressVariant == .determinate {
+                        ProgressControl(progress: $configurationModel.progressValue)
+                    }
+                }
 
                 if configurationModel.status != .error, configurationModel.status != .richError {
                     OUDSChipPicker(title: "app_components_textMode_tech",
