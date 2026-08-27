@@ -78,7 +78,7 @@ final class HeadingConfigurationModel: ComponentConfiguration {
 
     func hasColoredSringSupported(by theme: OUDSTheme) -> Bool {
         let isSupported = !theme.hasTypographyHeadingLargeMarker
-        if !isSupported && hasColoredSubstring {
+        if !isSupported, hasColoredSubstring {
             hasColoredSubstring = false
         }
 
