@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1524-for-text-input-component-update-to-v141",
-        "revision" : "0a5d69b16d451e1b93c6ee8d3627e20895803ed1"
+        "branch" : "develop",
+        "revision" : "6bda3698b998262c12b724a3dd4f0d61ff02404c"
       }
     },
     {
