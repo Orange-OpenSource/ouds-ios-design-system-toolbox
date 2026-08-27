@@ -242,7 +242,7 @@ struct AboutPage: View {
             OSUtilities.open(url: appSettingsUrl)
         } label: {
             HStack {
-                Text("app_about_appSettings_label")
+                OUDSLabel("app_about_appSettings_label", size: .medium, weight: .strong)
                 Spacer()
                 Image(systemName: "gear").accessibilityHidden(true)
             }
