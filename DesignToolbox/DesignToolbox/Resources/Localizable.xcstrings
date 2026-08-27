@@ -321,19 +321,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إصدار SDK: %@"
+            "value" : "إصدار SDK %@"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDK version:"
+            "value" : "SDK version"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version du SDK :"
+            "value" : "Version du SDK"
           }
         }
       }
