@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1689-use-an-asset-for-the-marker-in-typography-heading",
-        "revision" : "8e8eabfa2472aa49621e05280037ca7b5aea197f"
+        "branch" : "develop",
+        "revision" : "a6f645ac8c01935f0bf2dc2ba27fa0eee9408ff1"
       }
     },
     {
