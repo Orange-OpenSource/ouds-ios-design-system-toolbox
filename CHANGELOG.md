@@ -55,6 +55,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [DesignToolbox] Use of asset for typography heading marker (Orange-OpenSource/ouds-ios#1689)
 - [DesignToolbox] Adjust title color on toolbar bar top when content color change (Orange-OpenSource/ouds-ios#1563)
 - [DesignToolbox] Status picker of progress indicators not disabled if colored surface enabled
 - [DesignToolbox] Vocalization with `Voice Over` of badges for tab bar demo (Orange-OpenSource/ouds-ios#1227)
