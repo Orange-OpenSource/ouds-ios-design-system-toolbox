@@ -83,16 +83,12 @@ open class CircularProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
 
         // Test with progress information
         model.helperTextType = .percent
-        for spaceBefore in [true, false] {
-            model.spaceBeforePercent = spaceBefore
+        for text in ["Uploading...", ""] {
+            model.helperText = text
 
-            for text in ["Uploading...", ""] {
-                model.helperText = text
-
-                testCircularProgressIndicator(theme: theme,
-                                              interfaceStyle: interfaceStyle,
-                                              model: model)
-            }
+            testCircularProgressIndicator(theme: theme,
+                                          interfaceStyle: interfaceStyle,
+                                          model: model)
         }
     }
 
@@ -124,12 +120,12 @@ open class CircularProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
         let progressPattern = ".progress_\(Int((model.progress * 100).rounded()))"
 
         let helperPattern = switch model.helperTextType {
-            case .none:
-                ""
-            case .percent:
-                ".percent\(model.spaceBeforePercent ? ".spaceBefore" : "")\(model.helperText.isEmpty ? "" : ".helperText")"
-            case .description:
-                model.helperText.isEmpty ? "" : ".description"
+        case .none:
+            ""
+        case .percent:
+            ".percent\(model.helperText.isEmpty ? "" : ".helperText")"
+        case .description:
+            model.helperText.isEmpty ? "" : ".description"
         }
 
         let name = "\(typePattern)\(statusPattern)\(gapPattern)\(trackPattern)\(progressPattern)\(helperPattern)"

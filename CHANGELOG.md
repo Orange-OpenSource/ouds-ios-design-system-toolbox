@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] `password input` component to version 1.3.1 (Orange-OpenSource/ouds-ios#1526)
 - [Library] `text input` component to version 1.4.1 (Orange-OpenSource/ouds-ios#1524)
 - [Library] `linear progress indicator` component to version 1.2.0 (Orange-OpenSource/ouds-ios#1674)
+- [Library] `progress indicator` components to version 1.2.0 (Orange-OpenSource/ouds-ios#1674)
 - [Library] `text area` component to version 1.2.1 (Orange-OpenSource/ouds-ios#1527)
 - [Library] `button` component to version 3.3.0 (Orange-OpenSource/ouds-ios#1583)
 - [DesignToolbox] Swift Package `accessibility-statement-lib-ios` to v2.4.0-beta.1

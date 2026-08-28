@@ -51,10 +51,6 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
         didSet { updateCode() }
     }
 
-    @Published var spaceBeforePercent: Bool {
-        didSet { updateCode() }
-    }
-
     @Published var helperText: String {
         didSet { updateCode() }
     }
@@ -70,7 +66,6 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
         animated = true
 
         helperTextType = .percent
-        spaceBeforePercent = true
         helperText = ""
 
         super.init()
@@ -91,11 +86,11 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
     var determinateHelperTextValue: OUDSCircularProgressIndicator.HelperTextType? {
         switch helperTextType {
         case .none:
-            return nil
+            nil
         case .percent:
-            return .percent(helperTextValue, spaceBefore: spaceBeforePercent)
+            .percent(helperTextValue)
         case .description:
-            return .description(helperText)
+            .description(helperText)
         }
     }
 
@@ -106,7 +101,7 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
         case .determinate:
             code = """
             OUDSCircularProgressIndicator(progress: \(String(format: "%.2f", progress)), \
-            \(statusPattern), \(trackPattern), \(gapSizePattern), \(animatedPattern), \
+            \(statusPattern), \(trackPattern), \(gapSizePattern), \(animatedPattern)\
             \(determinateHelperTextPattern))\(coloredSurfacePattern)
             """
         case .indeterminate:
@@ -138,9 +133,9 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
             switch helperText {
             case let .description(description):
                 return ", helperText: .description(\"\(description)\")"
-            case let .percent(description, spaceBefore):
-                let descPattern = description.map { ", description: \"\($0)\"" } ?? ""
-                return ", helperText: .percent(spaceBefore: \(spaceBefore)\(descPattern))"
+            case let .percent(description):
+                let descPattern = description.map { "\"\($0)\"" } ?? ""
+                return ", helperText: .percent(\(descPattern))"
             }
         }
         return ""
@@ -207,28 +202,24 @@ struct CircularProgressIndicatorConfigurationView: View {
 
             if configurationModel.variant == .determinate {
                 OUDSHorizontalDivider()
-                
+
                 OUDSChipPicker(title: "app_components_progressIndicator_helperText_type_tech",
                                selection: $configurationModel.helperTextType,
                                chips: ProgressIndicatorHelperType.chips)
-                
-                if configurationModel.helperTextType == .percent {
-                    OUDSSwitchItem("app_components_progressIndicator_helperText_spaceBeforePercent_tech",
-                                   isOn: $configurationModel.spaceBeforePercent)
-                }
             }
         }
 
         if configurationModel.variant == .indeterminate ||
             (configurationModel.variant == .determinate &&
-             (configurationModel.helperTextType == .percent ||
-              configurationModel.helperTextType == .description)) {
+                (configurationModel.helperTextType == .percent ||
+                    configurationModel.helperTextType == .description))
+        {
 
-                DesignToolboxEditContentDisclosure(isContentVisible: true) {
-                    DesignToolboxTextField(text: $configurationModel.helperText,
-                                           label: "app_components_progressIndicator_helperText_tech")
-                }
+            DesignToolboxEditContentDisclosure(isContentVisible: true) {
+                DesignToolboxTextField(text: $configurationModel.helperText,
+                                       label: "app_components_progressIndicator_helperText_tech")
             }
+        }
     }
 }
 

@@ -51,10 +51,6 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var spaceBeforePercent: Bool {
-        didSet { updateCode() }
-    }
-
     @Published var helperText: String {
         didSet { updateCode() }
     }
@@ -81,7 +77,6 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         determinateHelperTextType = .percent
         helperTextAlignment = .start
         helperText = "app_components_pinCodeInput_helper_label".localized()
-        spaceBeforePercent = true
         helperTextAlignment = .center
 
         super.init()
@@ -104,7 +99,7 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         case .none:
             nil
         case .percent:
-            .percent(spaceBefore: spaceBeforePercent, description: helperTextValue, alignment: helperTextAlignment)
+            .percent(description: helperTextValue, alignment: helperTextAlignment)
         case .description:
             .description(helperText, alignment: helperTextAlignment)
         }
@@ -123,7 +118,7 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         case .indeterminate:
             code = """
             OUDSLinearProgressIndicator(\(statusPattern), \(trackPattern), \
-            \(indeterminateHelperTextPattern),\(gapSizePattern))\(coloredSurfacePattern)
+            \(indeterminateHelperTextPattern), \(gapSizePattern))\(coloredSurfacePattern)
             """
         }
     }
@@ -145,8 +140,8 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         case .none:
             return ""
         case .percent:
-            let descriptionPattern = helperText.isEmpty ? "" : ", description: \"\(helperText)\""
-            return ", helperText: .percent(spaceBefore: \(spaceBeforePercent)\(descriptionPattern), alignment: \(helperTextAlignment.technicalDescription))"
+            let descriptionPattern = helperText.isEmpty ? "" : "description: \"\(helperText)\", "
+            return ", helperText: .percent(\(descriptionPattern)alignment: \(helperTextAlignment.technicalDescription))"
         case .description:
             return ", helperText: .description(\"\(helperText)\", alignment: \(helperTextAlignment.technicalDescription))"
         }
@@ -208,7 +203,10 @@ struct LinearProgressIndicatorConfigurationView: View {
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
                                chips: OUDSProgressIndicatorStatus.chips)
-                .disabled(configurationModel.onColoredSurface)
+                    .disabled(configurationModel.onColoredSurface)
+
+                OUDSSwitchItem("app_components_progressIndicator_track_tech",
+                               isOn: $configurationModel.track)
 
                 OUDSChipPicker(title: "app_components_progressIndicator_gapSize_tech",
                                selection: $configurationModel.gapSize,
@@ -226,15 +224,11 @@ struct LinearProgressIndicatorConfigurationView: View {
                     OUDSChipPicker(title: "app_components_progressIndicator_helperText_type_tech",
                                    selection: $configurationModel.determinateHelperTextType,
                                    chips: DeterminateProgressIndicatorHelperType.chips)
-
-                    if configurationModel.determinateHelperTextType == .percent {
-                        OUDSSwitchItem("app_components_progressIndicator_helperText_spaceBeforePercent_tech",
-                                       isOn: $configurationModel.spaceBeforePercent)
-                    }
                 }
 
                 if configurationModel.variant == .indeterminate && configurationModel.helperTextValue != nil
-                    || configurationModel.variant == .determinate && configurationModel.determinateHelperTextType != .none {
+                    || configurationModel.variant == .determinate && configurationModel.determinateHelperTextType != .none
+                {
                     OUDSChipPicker(title: "app_components_common_contentAlignment_tech",
                                    selection: $configurationModel.helperTextAlignment,
                                    chips: OUDSLinearProgressIndicator.HelperTextAlignment.chips)
@@ -243,8 +237,9 @@ struct LinearProgressIndicatorConfigurationView: View {
 
             if configurationModel.variant == .indeterminate ||
                 (configurationModel.variant == .determinate &&
-                 ((configurationModel.determinateHelperTextType == .percent && configurationModel.helperTextAlignment != .center)
-                  || configurationModel.determinateHelperTextType  == .description)) {
+                    ((configurationModel.determinateHelperTextType == .percent && configurationModel.helperTextAlignment != .center)
+                        || configurationModel.determinateHelperTextType == .description))
+            {
 
                 DesignToolboxEditContentDisclosure(isContentVisible: true) {
                     DesignToolboxTextField(text: $configurationModel.helperText,
