@@ -7410,7 +7410,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1674-for-progress-indicator-component-update-to-v120";
+				branch = "1695-update-loader-in-buttonwith-circular-progress-indicator";
 				kind = branch;
 			};
 		};
