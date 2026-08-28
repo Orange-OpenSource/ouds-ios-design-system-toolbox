@@ -146,6 +146,30 @@
         }
       }
     },
+    "app_about_debug_clearCache_label" : {
+      "comment" : "About screen - Debug - Cache",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مسح ذاكرة التخزين المؤقت"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear cache"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vider le cache"
+          }
+        }
+      }
+    },
     "app_about_debug_title" : {
       "comment" : "About screen",
       "extractionState" : "manual",
