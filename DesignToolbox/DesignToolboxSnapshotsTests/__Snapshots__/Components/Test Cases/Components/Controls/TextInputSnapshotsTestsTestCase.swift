@@ -298,7 +298,7 @@ struct TestTextInputView: View {
 extension OUDSTextInput.Status: DesignToolboxEnumLocalizedRepresentable, @retroactive CaseIterable, @retroactive Hashable {
 
     nonisolated(unsafe) public static var allCases: [OUDSTextInput.Status] =
-    [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading(progress: 0.75), .readOnly, .disabled]
+        [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading(progress: 0.75), .readOnly, .disabled]
 
     public var wordingKey: String {
         switch self {

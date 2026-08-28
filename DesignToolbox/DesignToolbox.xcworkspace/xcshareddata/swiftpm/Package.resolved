@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1674-for-progress-indicator-component-update-to-v120",
-        "revision" : "5a693c4e6742872021a9131a6ed66b1d1db08bf1"
+        "branch" : "develop",
+        "revision" : "01ab51e1d783140f06ea913e9321b57d3da7963a"
       }
     },
     {
