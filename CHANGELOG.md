@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `OUDSAsyncImage` API for cached `AsyncImage` and use inside `list item` components (#1681)
 - [Library] Helpers to apply OUDS styles for rich text (Orange-OpenSource/ouds-ios#1682)
 - [DesignToolbox] `typography` components (Orange-OpenSource/ouds-ios#1679)
 - [Library] `typography` components (Orange-OpenSource/ouds-ios#1580)
@@ -31,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Library] `password input` component to version 1.3.1 (Orange-OpenSource/ouds-ios#1526)
 - [Library] `text input` component to version 1.4.1 (Orange-OpenSource/ouds-ios#1524)
+- [Library] `linear progress indicator` component to version 1.2.0 (Orange-OpenSource/ouds-ios#1674)
+- [Library] `progress indicator` components to version 1.2.0 (Orange-OpenSource/ouds-ios#1674)
 - [Library] `text area` component to version 1.2.1 (Orange-OpenSource/ouds-ios#1527)
 - [Library] `button` component to version 3.3.0 (Orange-OpenSource/ouds-ios#1583)
 - [DesignToolbox] Swift Package `accessibility-statement-lib-ios` to v2.4.0-beta.1

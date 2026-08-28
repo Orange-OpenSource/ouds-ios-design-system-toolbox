@@ -209,7 +209,7 @@ struct TestTextAreaView: View {
 extension OUDSTextArea.Status: @retroactive CaseIterable, @retroactive Hashable, DesignToolboxEnumLocalizedRepresentable {
 
     public static let allCases: [OUDSTextArea.Status] =
-        [.enabled, .error(message: "app_components_textArea_errorDescription_label".localized()), .loading(progress: 0.63), .readOnly, .disabled]
+        [.enabled, .error(message: "app_components_textArea_errorDescription_label".localized()), .loading(progress: 0.75), .readOnly, .disabled]
 
     public var wordingKey: String {
         switch self {

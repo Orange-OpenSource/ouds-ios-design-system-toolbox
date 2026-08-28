@@ -42,6 +42,7 @@ open class CircularProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
     @MainActor func testAllCircularProgressIndicators(theme: OUDSTheme,
                                                       interfaceStyle: UIUserInterfaceStyle)
     {
+        // Test status, gapsize, track and progress
         for status in OUDSProgressIndicatorStatus.allCases {
             for gapSize in OUDSProgressIndicatorGapSize.allCases {
                 for track in [true, false] {
@@ -54,6 +55,7 @@ open class CircularProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
                         model.progress = progress
                         // Disable the reveal animation to make snapshots deterministic.
                         model.animated = false
+                        model.helperTextType = .none
 
                         testCircularProgressIndicator(theme: theme,
                                                       interfaceStyle: interfaceStyle,
@@ -61,6 +63,32 @@ open class CircularProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
                     }
                 }
             }
+        }
+
+        // Test helper text
+        let model = CircularProgressIndicatorConfigurationModel()
+        model.variant = .determinate
+        model.status = .neutral
+        model.gapSize = .default
+        model.track = true
+        model.progress = 0.75
+        model.animated = false
+
+        // Test basic description
+        model.helperTextType = .description
+        model.helperText = "Uploading..."
+        testCircularProgressIndicator(theme: theme,
+                                      interfaceStyle: interfaceStyle,
+                                      model: model)
+
+        // Test with progress information
+        model.helperTextType = .percent
+        for text in ["Uploading...", ""] {
+            model.helperText = text
+
+            testCircularProgressIndicator(theme: theme,
+                                          interfaceStyle: interfaceStyle,
+                                          model: model)
         }
     }
 
@@ -91,7 +119,16 @@ open class CircularProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
         // Encoded as `.progress_75` to keep the file name filesystem-friendly.
         let progressPattern = ".progress_\(Int((model.progress * 100).rounded()))"
 
-        let name = "\(typePattern)\(statusPattern)\(gapPattern)\(trackPattern)\(progressPattern)"
+        let helperPattern = switch model.helperTextType {
+        case .none:
+            ""
+        case .percent:
+            ".percent\(model.helperText.isEmpty ? "" : ".helperText")"
+        case .description:
+            model.helperText.isEmpty ? "" : ".description"
+        }
+
+        let name = "\(typePattern)\(statusPattern)\(gapPattern)\(trackPattern)\(progressPattern)\(helperPattern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,

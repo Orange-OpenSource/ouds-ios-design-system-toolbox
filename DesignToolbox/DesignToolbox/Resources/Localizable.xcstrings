@@ -2972,6 +2972,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_contentAlignment_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alignment"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alignment"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alignment"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_density_tech" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",
@@ -3607,6 +3632,31 @@
           }
         }
       }
+    },
+    "app_components_common_progress_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التقدم"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progress"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progression"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_components_common_rawImage_tech" : {
       "comment" : "Component - Common",
@@ -4519,31 +4569,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Card item"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_listItem_contentAlignment_tech" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alignment"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alignment"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alignment"
           }
         }
       },
@@ -5701,6 +5726,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_progressIndicator_helperText_percentPosition_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Percent position"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Percent position"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Percent position"
+          }
+        }
+      }
+    },
     "app_components_progressIndicator_helperText_tech" : {
       "comment" : "Component - Progress Indicator",
       "extractionState" : "manual",
@@ -5725,6 +5774,30 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_progressIndicator_helperText_type_tech" : {
+      "comment" : "Component - Progress Indicator",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text type"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text type"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text type"
+          }
+        }
+      }
     },
     "app_components_progressIndicator_linear_description_text" : {
       "comment" : "Component - Progress Indicator",
@@ -5774,30 +5847,6 @@
         }
       },
       "shouldTranslate" : false
-    },
-    "app_components_progressIndicator_progress_tech" : {
-      "comment" : "Component - Progress Indicator",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "التقدم"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Progress"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Progression"
-          }
-        }
-      }
     },
     "app_components_progressIndicator_stopIndicator_tech" : {
       "comment" : "Component - Progress Indicator",
