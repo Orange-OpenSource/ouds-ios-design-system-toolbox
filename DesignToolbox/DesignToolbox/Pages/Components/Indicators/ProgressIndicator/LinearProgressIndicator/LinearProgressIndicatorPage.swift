@@ -47,13 +47,14 @@ struct LinearProgressIndicatorDemo: View {
                                             status: configurationModel.status,
                                             track: configurationModel.track,
                                             stopIndicator: configurationModel.stopIndicator,
-                                            helperText: configurationModel.helperTextValue,
+                                            helperText: configurationModel.determinateHelperTextValue,
                                             gapSize: configurationModel.gapSize,
                                             animated: configurationModel.animated)
             case .indeterminate:
                 OUDSLinearProgressIndicator(status: configurationModel.status,
                                             track: configurationModel.track,
                                             helperText: configurationModel.helperTextValue,
+                                            helperTextAlignment: configurationModel.helperTextAlignment,
                                             gapSize: configurationModel.gapSize)
             }
         }

@@ -57,7 +57,7 @@ struct ListItemGlobalSettingsConfiguration: View {
 
             OUDSHorizontalDivider()
 
-            OUDSChipPicker(title: "app_components_listItem_contentAlignment_tech".localized(),
+            OUDSChipPicker(title: "app_components_common_contentAlignment_tech".localized(),
                            selection: $configurationModel.containersAlignment,
                            chips: OUDSListItemContainersAlignment.chips)
 

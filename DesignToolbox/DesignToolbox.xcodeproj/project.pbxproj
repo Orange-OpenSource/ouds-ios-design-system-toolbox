@@ -1579,6 +1579,16 @@
 		FCB8B1932F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1922F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift */; };
 		FCB8B1952F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1942F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift */; };
 		FCB8B19A2F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1982F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift */; };
+		FCDECD8F303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDECD8E303ED7A40069D50A /* ProgressIndicator+extension.swift */; };
+		FCDECD90303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDECD8E303ED7A40069D50A /* ProgressIndicator+extension.swift */; };
+		FCDECD91303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDECD8E303ED7A40069D50A /* ProgressIndicator+extension.swift */; };
+		FCDECD92303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDECD8E303ED7A40069D50A /* ProgressIndicator+extension.swift */; };
+		FCDECD93303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDECD8E303ED7A40069D50A /* ProgressIndicator+extension.swift */; };
+		FCDECD95303EDCA00069D50A /* DesignToolboxProgressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDECD94303EDCA00069D50A /* DesignToolboxProgressControl.swift */; };
+		FCDECD96303EDCA00069D50A /* DesignToolboxProgressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDECD94303EDCA00069D50A /* DesignToolboxProgressControl.swift */; };
+		FCDECD97303EDCA00069D50A /* DesignToolboxProgressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDECD94303EDCA00069D50A /* DesignToolboxProgressControl.swift */; };
+		FCDECD98303EDCA00069D50A /* DesignToolboxProgressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDECD94303EDCA00069D50A /* DesignToolboxProgressControl.swift */; };
+		FCDECD99303EDCA00069D50A /* DesignToolboxProgressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDECD94303EDCA00069D50A /* DesignToolboxProgressControl.swift */; };
 		FCEC09B0302CAA990030DE09 /* ListItemConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A0302CAA990030DE09 /* ListItemConfigurationModel.swift */; };
 		FCEC09B2302CAA990030DE09 /* StaticListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09AE302CAA990030DE09 /* StaticListItemPage.swift */; };
 		FCEC09B3302CAA990030DE09 /* ListItemTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC09A5302CAA990030DE09 /* ListItemTrailingConfiguration.swift */; };
@@ -2126,6 +2136,8 @@
 		FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputConfigurationView.swift; sourceTree = "<group>"; };
 		FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputElement.swift; sourceTree = "<group>"; };
 		FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputPage.swift; sourceTree = "<group>"; };
+		FCDECD8E303ED7A40069D50A /* ProgressIndicator+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressIndicator+extension.swift"; sourceTree = "<group>"; };
+		FCDECD94303EDCA00069D50A /* DesignToolboxProgressControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxProgressControl.swift; sourceTree = "<group>"; };
 		FCEC0999302CAA990030DE09 /* ListItemAvatarConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemAvatarConfiguration.swift; sourceTree = "<group>"; };
 		FCEC099A302CAA990030DE09 /* ListItemBadgeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemBadgeConfiguration.swift; sourceTree = "<group>"; };
 		FCEC099B302CAA990030DE09 /* ListItemFlagConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemFlagConfiguration.swift; sourceTree = "<group>"; };
@@ -2301,6 +2313,7 @@
 		073543142CA17244001187EA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FCDECD94303EDCA00069D50A /* DesignToolboxProgressControl.swift */,
 				0735430F2CA15440001187EA /* Cards */,
 				0708222D2CFF617000570EC7 /* Elements */,
 				FC6D5C782FBA6A4700FB013C /* DesignToolboxEnumRepresentable.swift */,
@@ -4217,6 +4230,7 @@
 		E6344DCC05749C2C950826BC /* ProgressIndicator */ = {
 			isa = PBXGroup;
 			children = (
+				FCDECD8D303ED7850069D50A /* Common */,
 				613BBB3EDF09C4B6EDEBF988 /* CircularProgressIndicator */,
 				917075BAACCA6D5358E5C62C /* LinearProgressIndicator */,
 				BB709C20C2CD85AD45E6CF12 /* ProgressIndicatorElements.swift */,
@@ -4433,6 +4447,14 @@
 				FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */,
 			);
 			path = PasswordInput;
+			sourceTree = "<group>";
+		};
+		FCDECD8D303ED7850069D50A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FCDECD8E303ED7A40069D50A /* ProgressIndicator+extension.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		FCEC099F302CAA990030DE09 /* Nested */ = {
@@ -5197,6 +5219,7 @@
 				51A906002E842834003F3E0E /* ColorSchemeSelectionButton.swift in Sources */,
 				072BB4562E69704C00A4DF2D /* SoshTheme+TextInputSnapshotsTests.swift in Sources */,
 				07AA1100FF0000000000AB13 /* SoshTheme+TextAreaSnapshotsTests.swift in Sources */,
+				FCDECD98303EDCA00069D50A /* DesignToolboxProgressControl.swift in Sources */,
 				07CC9AF22DB0F7DD001BC929 /* SwitchConfiguration.swift in Sources */,
 				51A2175D2E325ED500562BE0 /* OrangeCompactTheme+ButtonSnapshotsTests.swift in Sources */,
 				075BC9452DC01D2C00CB2573 /* DesignToolboxEditContentDisclosure.swift in Sources */,
@@ -5268,6 +5291,7 @@
 				51A217842E325FE600562BE0 /* WireframeTheme+TokensFontSnapshotsTests.swift in Sources */,
 				FC4799CE2F485617005F349B /* OrangeCompactTheme+InlineAlertSnapshotsTests.swift in Sources */,
 				51E015A02E2AA82C00A86512 /* OrangeCompactTheme+TokensOpacitySnapshotsTests.swift in Sources */,
+				FCDECD8F303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */,
 				51952A8F2D3FA24C0068B807 /* OrangeTheme+TokensOpacitySnapshotsTests.swift in Sources */,
 				7B76C6A4CAA26E4BA89DC520 /* CircularProgressIndicatorSnapshotsTestsTestCase.swift in Sources */,
 				F1956D5CE8395E0E378298BE /* OrangeTheme+CircularProgressIndicatorSnapshotsTests.swift in Sources */,
@@ -5418,6 +5442,7 @@
 				953EDA1A302FC3B90008FEA7 /* DesignToolboxCode.swift in Sources */,
 				953EDA1B302FC3B90008FEA7 /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				953EDA1C302FC3B90008FEA7 /* DesignToolboxDisclosureGroup.swift in Sources */,
+				FCDECD97303EDCA00069D50A /* DesignToolboxProgressControl.swift in Sources */,
 				953EDA1D302FC3B90008FEA7 /* DesignToolboxTextField.swift in Sources */,
 				953EDA1E302FC3B90008FEA7 /* DesignToolboxEditContentDisclosure.swift in Sources */,
 				953EDA1F302FC3B90008FEA7 /* DesignToolboxTokenIllustration.swift in Sources */,
@@ -5432,6 +5457,7 @@
 				953EDA28302FC3B90008FEA7 /* NamedSize+MinWidth.swift in Sources */,
 				953EDA29302FC3B90008FEA7 /* NamedSize.swift in Sources */,
 				953EDA2A302FC3B90008FEA7 /* ElevationIllustration.swift in Sources */,
+				FCDECD90303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */,
 				953EDA2B302FC3B90008FEA7 /* SandboxConfiguration.swift in Sources */,
 				953EDA2C302FC3B90008FEA7 /* SandboxPage.swift in Sources */,
 				953EDA2D302FC3B90008FEA7 /* SandboxTestView.swift in Sources */,
@@ -5713,6 +5739,7 @@
 				953EDCC2302FC69E0008FEA7 /* NamedColor+Repository.swift in Sources */,
 				953EDCC3302FC69E0008FEA7 /* NamedColor+Surface.swift in Sources */,
 				953EDCC4302FC69E0008FEA7 /* ColorTokenElement.swift in Sources */,
+				FCDECD96303EDCA00069D50A /* DesignToolboxProgressControl.swift in Sources */,
 				953EDCC5302FC69E0008FEA7 /* ColorTokenPage.swift in Sources */,
 				953EDCC6302FC69E0008FEA7 /* SpaceTokenCommonIllustration.swift in Sources */,
 				953EDCC7302FC69E0008FEA7 /* SpaceBasicTokenIllustrations.swift in Sources */,
@@ -5727,6 +5754,7 @@
 				953EDCD0302FC69E0008FEA7 /* NameSpace+PaddingInset.swift in Sources */,
 				953EDCD1302FC69E0008FEA7 /* NameSpace+PaddingBlock.swift in Sources */,
 				953EDCD2302FC69E0008FEA7 /* SpaceTokenElement.swift in Sources */,
+				FCDECD91303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */,
 				953EDCD3302FC69E0008FEA7 /* SpaceTokenPage.swift in Sources */,
 				953EDCD4302FC69E0008FEA7 /* SizeIllustrations.swift in Sources */,
 				953EDCD5302FC69E0008FEA7 /* NamedSize+IconWithTypography.swift in Sources */,
@@ -5876,6 +5904,7 @@
 				953EDA5D302FC4A20008FEA7 /* BulletListConfigurationView.swift in Sources */,
 				953EDA5E302FC4A20008FEA7 /* BulletListElement.swift in Sources */,
 				953EDA5F302FC4A20008FEA7 /* BulletListPage.swift in Sources */,
+				FCDECD92303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */,
 				953EDA60302FC4A20008FEA7 /* PasswordInputConfigurationView.swift in Sources */,
 				953EDA61302FC4A20008FEA7 /* PasswordInputElement.swift in Sources */,
 				953EDA62302FC4A20008FEA7 /* PasswordInputPage.swift in Sources */,
@@ -6101,6 +6130,7 @@
 				0DD5ACDCFB32FD194EE17A0E /* TVOSShims.swift in Sources */,
 				0EFDBC42F144AC501C0290D7 /* SandboxConfiguration.swift in Sources */,
 				2DB5AAB2939141BE49003B2C /* ProgressIndicatorElements.swift in Sources */,
+				FCDECD99303EDCA00069D50A /* DesignToolboxProgressControl.swift in Sources */,
 				3A142666C35E4649B0692B91 /* HeadingConfigurationView.swift in Sources */,
 				1C68464B30354321965567DF /* BodyConfigurationView.swift in Sources */,
 			);
@@ -6236,6 +6266,7 @@
 				953EDBBC302FC5A60008FEA7 /* NavigationListItemElement.swift in Sources */,
 				953EDBBD302FC5A60008FEA7 /* NavigationListItemPage.swift in Sources */,
 				953EDBBE302FC5A60008FEA7 /* StaticListItemElement.swift in Sources */,
+				FCDECD95303EDCA00069D50A /* DesignToolboxProgressControl.swift in Sources */,
 				953EDBBF302FC5A60008FEA7 /* StaticListItemPage.swift in Sources */,
 				953EDBC0302FC5A60008FEA7 /* ListItemElements.swift in Sources */,
 				953EDBC1302FC5A60008FEA7 /* ToolBarCommonContent.swift in Sources */,
@@ -6250,6 +6281,7 @@
 				953EDBCA302FC5A60008FEA7 /* TabBarElement.swift in Sources */,
 				953EDBCB302FC5A60008FEA7 /* TabBarPage.swift in Sources */,
 				953EDBCC302FC5A60008FEA7 /* LinkConfiguration.swift in Sources */,
+				FCDECD93303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */,
 				953EDBCD302FC5A60008FEA7 /* LinkElement.swift in Sources */,
 				953EDBCE302FC5A60008FEA7 /* LinkPage.swift in Sources */,
 				953EDBCF302FC5A60008FEA7 /* ComponentsPage.swift in Sources */,

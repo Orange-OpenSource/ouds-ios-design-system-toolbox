@@ -51,6 +51,6 @@ struct LinearIndicatorsView: View {
         OUDSLinearProgressIndicator(progress: 0.50,
                                     status: .accent,
                                     stopIndicator: true,
-                                    helperText: "Uploading…")
+                                    helperText: .description("Uploading…", alignment: .center))
     }
 }
