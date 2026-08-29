@@ -7382,7 +7382,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1568-for-list-item-component-add-slot-view-in-leading-trailing-bottom-position-and-attributedstring-for-overline-text";
 				kind = branch;
 			};
 		};
