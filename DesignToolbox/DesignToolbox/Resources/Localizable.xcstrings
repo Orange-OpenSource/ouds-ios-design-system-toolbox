@@ -4548,6 +4548,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_listItem_bottomSlot_tech" : {
+      "comment" : "Component - List item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bottom slot"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bottom slot"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bottom slot"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_listItem_cardDecoration_tech" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
@@ -5139,31 +5164,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_listItem_slot_tech" : {
-      "comment" : "Component - List Item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Slot"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Slot"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Slot"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_listItem_static_description" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
@@ -5233,6 +5233,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "List Item"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_listItem_textSlot_tech" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text slot"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text slot"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text slot"
           }
         }
       },

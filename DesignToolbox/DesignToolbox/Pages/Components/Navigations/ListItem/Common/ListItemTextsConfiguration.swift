@@ -89,13 +89,13 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
     // MARK: Builder
 
     @MainActor
-    func slot() -> some View {
-        OUDSInlineAlert(label: "Something wrong", status: .warning)
+    func textSlot() -> some View {
+        OUDSInlineAlert(label: "This is a dumb text slot", status: .info)
     }
 
     @MainActor
     func bottomSlot() -> some View {
-        OUDSInlineAlert(label: "Something wrong", status: .warning)
+        OUDSInlineAlert(label: "This is a dumb bottom slot", status: .info)
     }
 
     @ViewBuilder
@@ -177,11 +177,12 @@ struct ListItemTextsConfiguration: View {
             }
 
             if configurationModel.itemSize == .default {
-                DesignToolboxTextField(text: $configurationModel.overlineText, label: "app_components_listItem_overline_tech")
-
-                OUDSChipPicker(title: "app_components_listItem_overlineTextMode_tech".localized(),
+                let textModeTitle = "app_components_textMode_tech".localized() + " (Overline)"
+                OUDSChipPicker(title: textModeTitle,
                                selection: $configurationModel.overlineTextMode,
                                chips: TextualContentMode.chips)
+
+                DesignToolboxTextField(text: $configurationModel.overlineText, label: "app_components_listItem_overline_tech")
 
                 DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_common_extraLabel_tech")
             }
@@ -190,7 +191,7 @@ struct ListItemTextsConfiguration: View {
 
             DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
 
-            OUDSSwitchItem("app_components_listItem_slot_tech", isOn: $configurationModel.hasSlot)
+            OUDSSwitchItem("app_components_listItem_textSlot_tech", isOn: $configurationModel.hasSlot)
 
             OUDSSwitchItem("app_components_listItem_bottomSlot_tech", isOn: $configurationModel.hasBottomSlot)
         }

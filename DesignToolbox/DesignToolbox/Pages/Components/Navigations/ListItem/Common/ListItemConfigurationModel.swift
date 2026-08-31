@@ -130,7 +130,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     @MainActor
     private func buildDataItem(for index: Int) -> OUDSListItemData {
         let currentLabel = index == 0 ? textsModel.labelText : "\(textsModel.labelText) \(index + 1)"
-        let slot: OUDSListItemData.Slot? = textsModel.hasSlot ? OUDSListItemData.Slot { textsModel.slot() } : nil
+        let slot: OUDSListItemData.Slot? = textsModel.hasSlot ? OUDSListItemData.Slot { textsModel.textSlot() } : nil
         let bottomSlot: OUDSListItemData.Slot? = textsModel.hasBottomSlot ? OUDSListItemData.Slot { textsModel.bottomSlot() } : nil
 
         if textsModel.overlineTextMode == .rich {
@@ -153,7 +153,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                 overline: overline,
                 extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
                 helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
-                slot: slot,
+                textSlot: slot,
                 bottomSlot: bottomSlot)
         case .customView:
             OUDSListItemData(
@@ -163,7 +163,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                 overline: overline,
                 extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
                 helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
-                slot: slot,
+                textSlot: slot,
                 bottomSlot: bottomSlot)
         }
     }
@@ -185,7 +185,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                 description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
                 extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
                 helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
-                slot: slot,
+                textSlot: slot,
                 bottomSlot: bottomSlot)
         case .customView:
             return OUDSListItemData(
@@ -195,7 +195,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                 description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
                 extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
                 helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
-                slot: slot,
+                textSlot: slot,
                 bottomSlot: bottomSlot)
         }
     }
@@ -290,7 +290,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     private var slotPattern: String {
         var pattern = ""
         if textsModel.hasSlot {
-            pattern += ", slot: someView()"
+            pattern += ", textSlot: someView()"
         }
         if textsModel.hasBottomSlot {
             pattern += ", bottomSlot: someView()"
