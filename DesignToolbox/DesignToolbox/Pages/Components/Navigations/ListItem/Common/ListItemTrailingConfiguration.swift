@@ -99,8 +99,19 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
             .flag(flagModel.flag)
         case .avatar:
             .avatar(avatarModel.avatar(for: theme))
-        case .custom:
-            .customView(AnyView(OUDSCircularProgressIndicator(progress: 0.75)))
+        case .slot:
+            .slot(AnyView(
+                ZStack {
+                    OUDSCircularProgressIndicator(
+                        progress: 1.0,
+                        status: .positive,
+                        track: false,
+                        animated: false)
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundColor(.green)
+                }
+                .frame(width: 48, height: 48)))
         }
     }
 
@@ -144,8 +155,12 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
                 ".flag(\(flagModel.code))"
             case .avatar:
                 ".avatar(\(avatarModel.code))"
-            case .custom:
-                ".customView(AnyView(OUDSCircularProgressIndicator(progress: 0.75)))"
+            case .slot:
+                """
+                .slot(AnyView(
+                    ...
+                ))
+                """
             }
 
         code = option == .none ? "" : "\n\nlet trailing: OUDSListItemTrailing = \n \(pattern)"
@@ -199,7 +214,7 @@ struct ListItemTrailingConfiguration: View {
                 EmptyView()
             case .badge:
                 ListItemBadgeConfiguration(configurationModel: configurationModel.badgeModel)
-            case .custom:
+            case .slot:
                 EmptyView()
             case .tag:
                 EmptyView()
@@ -213,7 +228,7 @@ struct ListItemTrailingConfiguration: View {
 // MARK: List Item Trailing Type
 
 enum ListItemTrailingType: DesignToolboxEnumRepresentable {
-    case none, text, badge, tag, icon, image, flag, avatar, custom
+    case none, text, badge, tag, icon, image, flag, avatar, slot
 }
 
 // MARK: List Item Text Type

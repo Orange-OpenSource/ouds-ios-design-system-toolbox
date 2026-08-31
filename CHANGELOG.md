@@ -9,13 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Library] `OUDSAsyncImage` API for cached `AsyncImage` and use inside `list item` components (Orange-OpenSource/ouds-ios#1681)
+- [Library] Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
+- [Library] `OUDSAsyncImage` API for cached `AsyncImage` and use inside `list item` components (#1681)
 - [Library] Helpers to apply OUDS styles for rich text (Orange-OpenSource/ouds-ios#1682)
 - [DesignToolbox] `typography` components (Orange-OpenSource/ouds-ios#1679)
 - [Library] `typography` components (Orange-OpenSource/ouds-ios#1580)
 - [Library] `static list item` and `navigation list item` components (Orange-OpenSource/ouds-ios#265)
 - [Library] `linear progress indicator` component (Orange-OpenSource/ouds-ios#1509) 
 - [Library] `circular progress indicator` component (Orange-OpenSource/ouds-ios#409)
-- [DesignToolbox] Sandbox / debug view for experiments and easy debugging
 - [DesignToolbox] Sandbox / debug view for experiments and easy debugging
 - [DesignToolbox] Support of `tvOS` in Design System Toolbox app and keep `watchOS` on light app (Orange-OpenSource/ouds-ios#1480)
 - [Library] `Tab view` component to use SwiftUI `Tab` API (Orange-OpenSource/ouds-ios#1452)
