@@ -137,6 +137,9 @@ struct AboutPage: View {
             #if DEBUG
             Section(header: OUDSHeading("app_about_debug_title", hasMarker: true)) {
                 debugSandboxView
+                OUDSButton("app_about_debug_clearCache_label", appearance: .negative) {
+                    OUDSAsyncImageCache.shared.clearCache()
+                }
             }
             #endif
         }
