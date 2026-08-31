@@ -7382,7 +7382,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1681-for-list-item-component-let-users-add-asyncimage-and-placeholders";
+				branch = develop;
 				kind = branch;
 			};
 		};
