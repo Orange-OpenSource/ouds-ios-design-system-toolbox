@@ -75,6 +75,8 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
             .flag(flagModel.flag)
         case .avatar:
             .avatar(avatarModel.avatar(for: theme))
+        case .custom:
+            .customView(AnyView(OUDSCircularProgressIndicator(progress: 0.75)))
         }
     }
 
@@ -99,6 +101,8 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
                 ".flag(\(flagModel.code))"
             case .avatar:
                 ".avatar(\(avatarModel.code))"
+            case .custom:
+                ".customView(AnyView(OUDSCircularProgressIndicator(progress: 0.75)))"
             }
 
         code = option == .none ? "" : "\n\nlet leading: OUDSListItemLeading = \n \(pattern)"
@@ -128,6 +132,8 @@ struct ListItemLeadingConfiguration: View {
                 EmptyView()
             case .none:
                 EmptyView()
+            case .custom:
+                EmptyView()
             }
         }
     }
@@ -136,5 +142,5 @@ struct ListItemLeadingConfiguration: View {
 // MARK: - List Item Leading Type
 
 enum ListItemLeadingType: DesignToolboxEnumRepresentable {
-    case none, icon, image, flag, avatar
+    case none, icon, image, flag, avatar, custom
 }

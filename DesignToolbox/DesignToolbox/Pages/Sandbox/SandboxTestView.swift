@@ -15,6 +15,10 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// swiftlint:disable no_grouping_extension
+// swiftlint:disable switch_case_on_newline
+// swiftlint:disable strict_fileprivate
+
 /// Flags and constants used by the DEBUG-only sandbox mode.
 ///
 /// The sandbox is a debug playground surfaced as a dedicated tab at the very
@@ -172,4 +176,8 @@ private struct CallStatusIndicator: View {
         .accessibilityHidden(true)
     }
 }
+
+// swiftlint:enable no_grouping_extension
+// swiftlint:enable switch_case_on_newline
+// swiftlint:enable strict_fileprivate
 #endif

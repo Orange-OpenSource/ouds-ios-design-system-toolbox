@@ -50,16 +50,9 @@ private struct StaticListItemDemo: View {
     var body: some View {
         VStack(spacing: rowGap) {
             ForEach(Array(configurationModel.dataItems.enumerated()), id: \.offset) { _, data in
-                if textsModel.hasSlot {
-                    OUDSStaticListItem(data: data,
-                                       slot: textsModel.slot(),
-                                       leading: leadingModel.item(for: theme),
-                                       trailing: trailingModel.item(for: theme))
-                } else {
-                    OUDSStaticListItem(data: data,
-                                       leading: leadingModel.item(for: theme),
-                                       trailing: trailingModel.item(for: theme))
-                }
+                OUDSStaticListItem(data: data,
+                                   leading: leadingModel.item(for: theme),
+                                   trailing: trailingModel.item(for: theme))
             }
         }
         .oudsListContentStyle(configurationModel.contentStyle)
