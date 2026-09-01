@@ -50,25 +50,17 @@ private struct NavigationListItemDemo: View {
     var body: some View {
         VStack(spacing: rowGap) {
             ForEach(Array(configurationModel.dataItems.enumerated()), id: \.offset) { _, data in
-                if textsModel.hasSlot {
-                    OUDSNavigationListItem(data: data,
-                                           slot: textsModel.slot(),
-                                           indicatorType: configurationModel.indicatorType,
-                                           leading: leadingModel.item(for: theme),
-                                           trailing: trailingModel.item(for: theme)) {}
-                } else {
-                    OUDSNavigationListItem(data: data,
-                                           indicatorType: configurationModel.indicatorType,
-                                           leading: leadingModel.item(for: theme),
-                                           trailing: trailingModel.item(for: theme)) {}
-                }
+                OUDSNavigationListItem(data: data,
+                                       indicatorType: configurationModel.indicatorType,
+                                       leading: leadingModel.item(for: theme),
+                                       trailing: trailingModel.item(for: theme)) {}
             }
-            .oudsListContentStyle(configurationModel.contentStyle)
-            .oudsListItemContainerAlignment(configurationModel.containersAlignment)
-            .oudsListItemRoundedMedia(configurationModel.roundedMedia)
-            .oudsListItemSize(configurationModel.itemSize)
-            .disabled(!configurationModel.enabled)
         }
+        .oudsListContentStyle(configurationModel.contentStyle)
+        .oudsListItemContainerAlignment(configurationModel.containersAlignment)
+        .oudsListItemRoundedMedia(configurationModel.roundedMedia)
+        .oudsListItemSize(configurationModel.itemSize)
+        .disabled(!configurationModel.enabled)
     }
 
     private var rowGap: CGFloat {

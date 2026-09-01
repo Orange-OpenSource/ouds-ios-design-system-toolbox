@@ -123,25 +123,80 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     @MainActor
     var dataItems: [OUDSListItemData] {
         (0 ..< numberOfItems).map { index in
-            let currentLabel = index == 0 ? textsModel.labelText : "\(textsModel.labelText) \(index + 1)"
-            switch textsModel.labelContentType {
-            case .text:
-                return OUDSListItemData(
-                    label: currentLabel,
-                    hasBoldLabel: textsModel.hasBoldLabel,
-                    description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                    overline: textsModel.overlineText.isEmpty ? nil : textsModel.overlineText,
-                    extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                    helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText)
-            case .customView:
-                return OUDSListItemData(
-                    label: textsModel.customLabelView,
-                    accessibilityLabel: currentLabel,
-                    description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                    overline: textsModel.overlineText.isEmpty ? nil : textsModel.overlineText,
-                    extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                    helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText)
-            }
+            buildDataItem(for: index)
+        }
+    }
+
+    @MainActor
+    private func buildDataItem(for index: Int) -> OUDSListItemData {
+        let currentLabel = index == 0 ? textsModel.labelText : "\(textsModel.labelText) \(index + 1)"
+        let slot: OUDSListItemData.Slot? = textsModel.hasSlot ? .init { textsModel.textSlot() } : nil
+        let bottomSlot: OUDSListItemData.Slot? = textsModel.hasBottomSlot ? .init { textsModel.bottomSlot() } : nil
+
+        if textsModel.overlineTextMode == .rich {
+            let richOverline: AttributedString? = textsModel.overlineText.isEmpty ? nil : (try? AttributedString(markdown: textsModel.overlineText))
+            return buildDataItemWithRichOverline(currentLabel: currentLabel, overline: richOverline, slot: slot, bottomSlot: bottomSlot)
+        } else {
+            let rawOverline: String? = textsModel.overlineText.isEmpty ? nil : textsModel.overlineText
+            return buildDataItemWithRawOverline(currentLabel: currentLabel, overline: rawOverline, slot: slot, bottomSlot: bottomSlot)
+        }
+    }
+
+    @MainActor
+    private func buildDataItemWithRawOverline(currentLabel: String, overline: String?, slot: OUDSListItemData.Slot?, bottomSlot: OUDSListItemData.Slot?) -> OUDSListItemData {
+        switch textsModel.labelContentType {
+        case .text:
+            OUDSListItemData(
+                label: currentLabel,
+                hasBoldLabel: textsModel.hasBoldLabel,
+                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
+                overline: overline,
+                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
+                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                textSlot: slot,
+                bottomSlot: bottomSlot)
+        case .customView:
+            OUDSListItemData(
+                label: textsModel.customLabelView,
+                accessibilityLabel: currentLabel,
+                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
+                overline: overline,
+                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
+                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                textSlot: slot,
+                bottomSlot: bottomSlot)
+        }
+    }
+
+    @MainActor
+    private func buildDataItemWithRichOverline(
+        currentLabel: String,
+        overline: AttributedString?,
+        slot: OUDSListItemData.Slot?,
+        bottomSlot: OUDSListItemData.Slot?) -> OUDSListItemData
+    {
+        let safeOverline = overline ?? AttributedString("")
+        switch textsModel.labelContentType {
+        case .text:
+            return OUDSListItemData(
+                label: currentLabel,
+                overline: safeOverline,
+                hasBoldLabel: textsModel.hasBoldLabel,
+                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
+                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
+                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                textSlot: slot,
+                bottomSlot: bottomSlot)
+        case .customView:
+            return OUDSListItemData(
+                label: textsModel.customLabelView,
+                accessibilityLabel: currentLabel,
+                overline: safeOverline,
+                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
+                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
+                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                textSlot: slot,
+                bottomSlot: bottomSlot)
         }
     }
 
@@ -233,7 +288,14 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     }
 
     private var slotPattern: String {
-        textsModel.hasSlot ? ", slot: someView()" : ""
+        var pattern = ""
+        if textsModel.hasSlot {
+            pattern += ", textSlot: someView()"
+        }
+        if textsModel.hasBottomSlot {
+            pattern += ", bottomSlot: someView()"
+        }
+        return pattern
     }
 }
 
