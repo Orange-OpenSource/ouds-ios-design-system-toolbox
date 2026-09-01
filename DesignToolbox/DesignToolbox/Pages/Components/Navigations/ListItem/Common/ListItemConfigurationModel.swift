@@ -130,8 +130,8 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     @MainActor
     private func buildDataItem(for index: Int) -> OUDSListItemData {
         let currentLabel = index == 0 ? textsModel.labelText : "\(textsModel.labelText) \(index + 1)"
-        let slot: OUDSListItemData.Slot? = textsModel.hasSlot ? OUDSListItemData.Slot { textsModel.textSlot() } : nil
-        let bottomSlot: OUDSListItemData.Slot? = textsModel.hasBottomSlot ? OUDSListItemData.Slot { textsModel.bottomSlot() } : nil
+        let slot: OUDSListItemData.Slot? = textsModel.hasSlot ? .init { textsModel.textSlot() } : nil
+        let bottomSlot: OUDSListItemData.Slot? = textsModel.hasBottomSlot ? .init { textsModel.bottomSlot() } : nil
 
         if textsModel.overlineTextMode == .rich {
             let richOverline: AttributedString? = textsModel.overlineText.isEmpty ? nil : (try? AttributedString(markdown: textsModel.overlineText))
