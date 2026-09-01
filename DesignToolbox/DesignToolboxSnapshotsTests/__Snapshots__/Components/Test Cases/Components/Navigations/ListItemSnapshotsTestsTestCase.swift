@@ -48,38 +48,66 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
         /// Label with helper text only.
         case labelAndHelper
 
-        var data: OUDSListItemData {
+        /// The description text used for this case, if any.
+        ///
+        /// Kept locally (rather than read back from `OUDSListItemData`) because that property
+        /// is `internal` to the OUDS package and not accessible from this test target.
+        private var descriptionText: String? {
             switch self {
-            case .labelOnly:
-                OUDSListItemData(label: "Label")
-            case .fullWithoutHelper:
-                OUDSListItemData(
-                    label: "Label",
-                    description: "Description",
-                    overline: "Overline",
-                    extraLabel: "Extra label")
-            case .full:
-                OUDSListItemData(
-                    label: "Label",
-                    description: "Description",
-                    overline: "Overline",
-                    extraLabel: "Extra label",
-                    helperText: "Helper text")
-            case .labelAndHelper:
-                OUDSListItemData(
-                    label: "Label",
-                    helperText: "Helper text")
+            case .labelOnly, .labelAndHelper:
+                nil
+            case .fullWithoutHelper, .full:
+                "Description"
             }
+        }
+
+        /// The overline text used for this case, if any.
+        private var overlineText: String? {
+            switch self {
+            case .labelOnly, .labelAndHelper:
+                nil
+            case .fullWithoutHelper, .full:
+                "Overline"
+            }
+        }
+
+        /// The extra label text used for this case, if any.
+        private var extraLabelText: String? {
+            switch self {
+            case .labelOnly, .labelAndHelper:
+                nil
+            case .fullWithoutHelper, .full:
+                "Extra label"
+            }
+        }
+
+        /// The helper text used for this case, if any.
+        private var helperTextText: String? {
+            switch self {
+            case .labelOnly, .fullWithoutHelper:
+                nil
+            case .full, .labelAndHelper:
+                "Helper text"
+            }
+        }
+
+        var data: OUDSListItemData {
+            OUDSListItemData(
+                label: "Label",
+                description: descriptionText,
+                overline: overlineText,
+                extraLabel: extraLabelText,
+                helperText: helperTextText)
         }
 
         func boldData() -> OUDSListItemData {
             OUDSListItemData(
                 label: "Label",
                 hasBoldLabel: true,
-                description: data.description,
-                overline: data.overline,
-                extraLabel: data.extraLabel,
-                helperText: data.helperText)
+                description: descriptionText,
+                overline: overlineText,
+                extraLabel: extraLabelText,
+                helperText: helperTextText)
         }
     }
 

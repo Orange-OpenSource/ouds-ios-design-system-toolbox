@@ -75,6 +75,19 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
             .flag(flagModel.flag)
         case .avatar:
             .avatar(avatarModel.avatar(for: theme))
+        case .slot:
+            .slot(AnyView(
+                ZStack {
+                    OUDSCircularProgressIndicator(
+                        progress: 1.0,
+                        status: .positive,
+                        track: false,
+                        animated: false)
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundColor(.green)
+                }
+                .frame(width: 48, height: 48)))
         }
     }
 
@@ -99,6 +112,12 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
                 ".flag(\(flagModel.code))"
             case .avatar:
                 ".avatar(\(avatarModel.code))"
+            case .slot:
+                """
+                .slot(AnyView(
+                    ...
+                ))
+                """
             }
 
         code = option == .none ? "" : "\n\nlet leading: OUDSListItemLeading = \n \(pattern)"
@@ -128,6 +147,8 @@ struct ListItemLeadingConfiguration: View {
                 EmptyView()
             case .none:
                 EmptyView()
+            case .slot:
+                EmptyView()
             }
         }
     }
@@ -136,5 +157,5 @@ struct ListItemLeadingConfiguration: View {
 // MARK: - List Item Leading Type
 
 enum ListItemLeadingType: DesignToolboxEnumRepresentable {
-    case none, icon, image, flag, avatar
+    case none, icon, image, flag, avatar, slot
 }

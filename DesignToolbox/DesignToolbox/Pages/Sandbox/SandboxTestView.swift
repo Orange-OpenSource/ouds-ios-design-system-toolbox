@@ -12,6 +12,7 @@
 //
 
 #if DEBUG
+import OUDSSwiftUI
 import SwiftUI
 
 /// Flags and constants used by the DEBUG-only sandbox mode.
@@ -39,6 +40,9 @@ let kSandboxContainsThings: Bool = false
 /// This view is intentionally empty by default so it can be pimped later with
 /// experimentations, debug helpers and prototypes without touching the
 /// scaffolding around it.
+///
+/// Current experiment: a "call history" list built with `OUDSStaticListItem`,
+/// used to try out the new list item API (overline styling, custom trailing views).
 struct SandboxTestView: View {
 
     var body: some View {

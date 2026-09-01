@@ -30,6 +30,10 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var overlineTextMode: TextualContentMode {
+        didSet { updateCode() }
+    }
+
     @Published var extraLabelText: String {
         didSet { updateCode() }
     }
@@ -43,6 +47,10 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
     }
 
     @Published var hasSlot: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var hasBottomSlot: Bool {
         didSet { updateCode() }
     }
 
@@ -63,11 +71,13 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
         labelContentType = .text
 
         overlineText = ""
+        overlineTextMode = .raw
         extraLabelText = ""
         descriptionText = ""
         hasBoldLabel = false
 
         hasSlot = false
+        hasBottomSlot = false
 
         helperText = ""
 
@@ -79,8 +89,13 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
     // MARK: Builder
 
     @MainActor
-    func slot() -> some View {
-        OUDSInlineAlert(label: "Something wrong", status: .warning)
+    func textSlot() -> some View {
+        OUDSInlineAlert(label: "This is a dumb text slot", status: .info)
+    }
+
+    @MainActor
+    func bottomSlot() -> some View {
+        OUDSInlineAlert(label: "This is a dumb bottom slot", status: .info)
     }
 
     @ViewBuilder
@@ -121,7 +136,11 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
     }
 
     private var overlinePattern: String {
-        overlineText.isEmpty ? "" : ", overline: \"\(overlineText)\""
+        guard !overlineText.isEmpty else { return "" }
+        if overlineTextMode == .rich {
+            return ", overline: yourAttributedString"
+        }
+        return ", overline: \"\(overlineText)\""
     }
 
     private var extraLabelPattern: String {
@@ -158,7 +177,13 @@ struct ListItemTextsConfiguration: View {
             }
 
             if configurationModel.itemSize == .default {
+                let textModeTitle = "app_components_textMode_tech".localized() + " (Overline)"
+                OUDSChipPicker(title: textModeTitle,
+                               selection: $configurationModel.overlineTextMode,
+                               chips: TextualContentMode.chips)
+
                 DesignToolboxTextField(text: $configurationModel.overlineText, label: "app_components_listItem_overline_tech")
+
                 DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_common_extraLabel_tech")
             }
 
@@ -166,7 +191,9 @@ struct ListItemTextsConfiguration: View {
 
             DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
 
-            OUDSSwitchItem("app_components_listItem_slot_tech", isOn: $configurationModel.hasSlot)
+            OUDSSwitchItem("app_components_listItem_textSlot_tech", isOn: $configurationModel.hasSlot)
+
+            OUDSSwitchItem("app_components_listItem_bottomSlot_tech", isOn: $configurationModel.hasBottomSlot)
         }
         .padding(.horizontal, theme.spaces.fixedMedium)
     }
