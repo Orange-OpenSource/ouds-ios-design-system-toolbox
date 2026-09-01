@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
 - [Library] `OUDSAsyncImage` API for cached `AsyncImage` and use inside `list item` components (Orange-OpenSource/ouds-ios#1681)
 - [Library] Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
 - [Library] `OUDSAsyncImage` API for cached `AsyncImage` and use inside `list item` components (#1681)
@@ -682,3 +683,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Various cleanings and split of design system toolbox app from independant repository ([Orange-OpenSource/ouds-ios#187](https://github.com/Orange-OpenSource/ouds-ios/issues/187))
 - Udpate wordings to avoid traduction for components and tokens names ([Orange-OpenSource/ouds-ios#654](https://github.com/Orange-OpenSource/ouds-ios/issues/654))
 - Use the new Switch component in all screens of the application ([Orange-OpenSource/ouds-ios#431](https://github.com/Orange-OpenSource/ouds-ios/issues/431))
+0
