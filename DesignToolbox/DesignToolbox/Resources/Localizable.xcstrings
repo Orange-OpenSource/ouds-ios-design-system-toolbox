@@ -1502,6 +1502,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_animated_tech" : {
+      "comment" : "Shared (progress indicators, animated images)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animated"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animated"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animated"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_badge_count_description_text" : {
       "comment" : "Component - Badge",
       "extractionState" : "manual",
@@ -5651,31 +5676,6 @@
           }
         }
       }
-    },
-    "app_components_progressIndicator_animated_tech" : {
-      "comment" : "Component - Progress Indicator",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Animated"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Animated"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Animated"
-          }
-        }
-      },
-      "shouldTranslate" : false
     },
     "app_components_progressIndicator_circular_description_text" : {
       "comment" : "Component - Progress Indicator",

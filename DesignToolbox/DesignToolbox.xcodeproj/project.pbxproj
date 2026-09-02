@@ -356,6 +356,14 @@
 		95207BB02FE2E79F0088DCC7 /* OrangeTheme+ListItemSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95207BAF2FE2E79F0088DCC7 /* OrangeTheme+ListItemSnapshotsTests.swift */; };
 		95207BB22FE2E7B90088DCC7 /* OrangeCompactTheme+ListItemSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95207BB12FE2E7B90088DCC7 /* OrangeCompactTheme+ListItemSnapshotsTests.swift */; };
 		95207BB42FE2E7D90088DCC7 /* WireframeTheme+ListItemSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95207BB32FE2E7D90088DCC7 /* WireframeTheme+ListItemSnapshotsTests.swift */; };
+		9526BC2A3048609D0037BBEB /* Animation.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9526BC293048609D0037BBEB /* Animation.webp */; };
+		9526BC2B3048609D0037BBEB /* Animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9526BC283048609D0037BBEB /* Animation.gif */; };
+		9526BC2C3048609D0037BBEB /* Animation.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9526BC293048609D0037BBEB /* Animation.webp */; };
+		9526BC2D3048609D0037BBEB /* Animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9526BC283048609D0037BBEB /* Animation.gif */; };
+		9526BC2E3048609D0037BBEB /* Animation.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9526BC293048609D0037BBEB /* Animation.webp */; };
+		9526BC2F3048609D0037BBEB /* Animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9526BC283048609D0037BBEB /* Animation.gif */; };
+		9526BC303048609D0037BBEB /* Animation.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9526BC293048609D0037BBEB /* Animation.webp */; };
+		9526BC313048609D0037BBEB /* Animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9526BC283048609D0037BBEB /* Animation.gif */; };
 		9536F5FB302B61AC00309F3D /* FoundationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9536F5FA302B61AC00309F3D /* FoundationsView.swift */; };
 		953DC1562ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1532ED0995600D14D44 /* TabBarConfigurationView.swift */; };
 		953E02452F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02402F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift */; };
@@ -2018,6 +2026,8 @@
 		95207BAF2FE2E79F0088DCC7 /* OrangeTheme+ListItemSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+ListItemSnapshotsTests.swift"; sourceTree = "<group>"; };
 		95207BB12FE2E7B90088DCC7 /* OrangeCompactTheme+ListItemSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+ListItemSnapshotsTests.swift"; sourceTree = "<group>"; };
 		95207BB32FE2E7D90088DCC7 /* WireframeTheme+ListItemSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+ListItemSnapshotsTests.swift"; sourceTree = "<group>"; };
+		9526BC283048609D0037BBEB /* Animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Animation.gif; sourceTree = "<group>"; };
+		9526BC293048609D0037BBEB /* Animation.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = Animation.webp; sourceTree = "<group>"; };
 		9536F5FA302B61AC00309F3D /* FoundationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationsView.swift; sourceTree = "<group>"; };
 		953DC1532ED0995600D14D44 /* TabBarConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurationView.swift; sourceTree = "<group>"; };
 		953DC1542ED0995600D14D44 /* TabBarElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarElement.swift; sourceTree = "<group>"; };
@@ -3092,6 +3102,7 @@
 		51BD761B2C466FCF0033365D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9526BC273048608E0037BBEB /* Animated Assets */,
 				5114F57B2E8EB10800BC2BDD /* Fonts */,
 				6DFC209B2CDF92D500F2EC33 /* accessibilityStatement */,
 				07CF42712CA31AC3000BD03E /* Assets.xcassets */,
@@ -3788,6 +3799,15 @@
 				951458692EC2920C0096BBF1 /* OpacitiesView.swift */,
 			);
 			path = Opacities;
+			sourceTree = "<group>";
+		};
+		9526BC273048608E0037BBEB /* Animated Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9526BC283048609D0037BBEB /* Animation.gif */,
+				9526BC293048609D0037BBEB /* Animation.webp */,
+			);
+			path = "Animated Assets";
 			sourceTree = "<group>";
 		};
 		9536F5F9302B616800309F3D /* Foundations */ = {
@@ -4813,6 +4833,8 @@
 			files = (
 				953EDA43302FC4460008FEA7 /* HelveticaNeueLTArabic-Light.ttf in Resources */,
 				953EDA44302FC4460008FEA7 /* favicon.ico in Resources */,
+				9526BC2C3048609D0037BBEB /* Animation.webp in Resources */,
+				9526BC2D3048609D0037BBEB /* Animation.gif in Resources */,
 				953EDA45302FC4460008FEA7 /* Localizable.xcstrings in Resources */,
 				953EDA42302FC41A0008FEA7 /* about_privacy_policy.html in Resources */,
 				6DFC20C12CE3D39D00F2EC33 /* accessibility_detail.html in Resources */,
@@ -4863,6 +4885,8 @@
 				953EDCFB302FC7000008FEA7 /* about_legal_information.html in Resources */,
 				50B2ADF27679048DEB269510 /* HelveticaNeueLTArabic-Light.ttf in Resources */,
 				9355F1EDDDF64C175B7F05A5 /* Localizable.xcstrings in Resources */,
+				9526BC303048609D0037BBEB /* Animation.webp in Resources */,
+				9526BC313048609D0037BBEB /* Animation.gif in Resources */,
 				507A982D313DB7249A8274FC /* about_privacy_policy.html in Resources */,
 				402C44C6C8D93071A1607FEC /* favicon.ico in Resources */,
 			);
@@ -4884,6 +4908,8 @@
 				953EDB3C302FC4CA0008FEA7 /* style.css in Resources */,
 				953EDB3D302FC4CA0008FEA7 /* Assets.xcassets in Resources */,
 				953EDB3E302FC4CA0008FEA7 /* Localizable.xcstrings in Resources */,
+				9526BC2E3048609D0037BBEB /* Animation.webp in Resources */,
+				9526BC2F3048609D0037BBEB /* Animation.gif in Resources */,
 				953EDB3F302FC4CA0008FEA7 /* about_legal_information.html in Resources */,
 				953EDB40302FC4CA0008FEA7 /* about_privacy_policy.html in Resources */,
 			);
@@ -4905,6 +4931,8 @@
 				953EDC41302FC5C60008FEA7 /* style.css in Resources */,
 				953EDC42302FC5C60008FEA7 /* Assets.xcassets in Resources */,
 				953EDC43302FC5C60008FEA7 /* Localizable.xcstrings in Resources */,
+				9526BC2A3048609D0037BBEB /* Animation.webp in Resources */,
+				9526BC2B3048609D0037BBEB /* Animation.gif in Resources */,
 				953EDC44302FC5C60008FEA7 /* about_legal_information.html in Resources */,
 				953EDC45302FC5C60008FEA7 /* about_privacy_policy.html in Resources */,
 			);
@@ -7382,7 +7410,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1706-in-library-add-support-of-gif-and-webp-formats-in-components-like-list-item";
 				kind = branch;
 			};
 		};
