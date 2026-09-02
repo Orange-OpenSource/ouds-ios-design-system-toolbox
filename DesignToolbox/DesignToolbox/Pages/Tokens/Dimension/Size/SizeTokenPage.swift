@@ -72,5 +72,6 @@ struct SizeTokenPage: View {
 
     private func sectionHeader(_ text: LocalizedStringKey) -> some View {
         OUDSHeading(text, size: .large, hasMarker: true)
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

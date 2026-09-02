@@ -59,5 +59,6 @@ struct SpaceTokenPage: View {
 
     private func header(_ text: LocalizedStringKey) -> some View {
         OUDSHeading(text, size: .large, hasMarker: true)
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
