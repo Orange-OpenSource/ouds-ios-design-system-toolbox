@@ -56,7 +56,7 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
     @MainActor
     func image(for theme: OUDSTheme) -> OUDSListItemImage {
         if isAnimated {
-            let animatedImage = OUDSAnimatedImage(named: "Animation", withExtension: "webp", bundle: .main)
+            let animatedImage = OUDSAnimatedImage(named: "Animation", withExtension: "gif", bundle: .main)
             return OUDSListItemImage(animatedImage: animatedImage,
                                      description: "app_components_listItem_image_a11y".localized(),
                                      size: size,
