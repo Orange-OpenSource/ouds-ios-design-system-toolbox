@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "9e49ca0f99edfb6120d284e56ab94a5e40589674"
+        "branch" : "1432-in-library-update-icons-to-use-the-icons-pack-23",
+        "revision" : "876a238528eb57fb08345c21ff1a813acf05b117"
       }
     },
     {
