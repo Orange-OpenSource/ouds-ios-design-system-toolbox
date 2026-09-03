@@ -32,6 +32,10 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var isAnimated: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     init(itemSize: OUDSListItemSize) {
@@ -40,6 +44,7 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
         size = .medium
         ratio = .square
         contentMode = .fill
+        isAnimated = false
 
         super.init()
     }
@@ -50,22 +55,42 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
 
     @MainActor
     func image(for theme: OUDSTheme) -> OUDSListItemImage {
-        OUDSListItemImage(asset: Image.brandedPlaceholderImage(for: theme.name),
-                          description: "app_components_listItem_image_a11y".localized(),
-                          size: size,
-                          ratio: ratio,
-                          contentMode: contentMode)
+        if isAnimated {
+            let animatedImage = OUDSAnimatedImage(named: "Animation", withExtension: "gif", bundle: .main)
+            return OUDSListItemImage(animatedImage: animatedImage,
+                                     description: "app_components_listItem_image_a11y".localized(),
+                                     size: size,
+                                     ratio: ratio,
+                                     contentMode: contentMode)
+        } else {
+            return OUDSListItemImage(asset: Image.brandedPlaceholderImage(for: theme.name),
+                                     description: "app_components_listItem_image_a11y".localized(),
+                                     size: size,
+                                     ratio: ratio,
+                                     contentMode: contentMode)
+        }
     }
 
     override func updateCode() {
-        code =
-            """
-            .init(asset: \"\(Image.placeholderImageSample())\"
-                \(sizePattern)
-                \(ratioPattern)
-                \(contentModePattern)
-                \(descriptionPattern))
-            """
+        if isAnimated {
+            code =
+                """
+                .init(animatedImage: OUDSAnimatedImage(named: "Animation", withExtension: "gif")
+                    \(sizePattern)
+                    \(ratioPattern)
+                    \(contentModePattern)
+                    \(descriptionPattern))
+                """
+        } else {
+            code =
+                """
+                .init(asset: "\(Image.placeholderImageSample())"
+                    \(sizePattern)
+                    \(ratioPattern)
+                    \(contentModePattern)
+                    \(descriptionPattern))
+                """
+        }
     }
 
     private var sizePattern: String {
@@ -105,6 +130,8 @@ struct ListItemImageConfiguration: View {
         OUDSChipPicker(title: "app_components_listItem_imageContentMode_tech".localized(),
                        selection: $configurationModel.contentMode,
                        chips: ContentMode.chips)
+
+        OUDSSwitchItem("app_components_animated_tech", isOn: $configurationModel.isAnimated)
     }
 }
 
