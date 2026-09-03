@@ -8,8 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
 - [Library] `subtitle` on `toolbar top` for iOS < 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
+- [Library] Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
 - [Library] Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
 - [Library] `OUDSAsyncImage` API for cached `AsyncImage` and use inside `list item` components (Orange-OpenSource/ouds-ios#1681)
 - [Library] Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
