@@ -8,7 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] Public `OUDSImage(name:)` initializer to display icons from the active theme's icon library by name (Orange-OpenSource/ouds-ios#1432)
 - [Library] Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
 - [Library] `OUDSAsyncImage` API for cached `AsyncImage` and use inside `list item` components (Orange-OpenSource/ouds-ios#1681)
 - [Library] Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
