@@ -213,7 +213,7 @@ struct LinearProgressIndicatorConfigurationView: View {
                                chips: OUDSProgressIndicatorGapSize.chips)
 
                 if configurationModel.variant == .determinate {
-                    OUDSSwitchItem("app_components_progressIndicator_animated_tech",
+                    OUDSSwitchItem("app_components_animated_tech",
                                    isOn: $configurationModel.animated)
 
                     OUDSSwitchItem("app_components_progressIndicator_stopIndicator_tech",
