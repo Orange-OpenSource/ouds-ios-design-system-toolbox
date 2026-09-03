@@ -118,6 +118,7 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         case .indeterminate:
             code = """
             OUDSLinearProgressIndicator(\(statusPattern), \(trackPattern), \
+            \(indeterminateHelperTextPattern), \(gapSizePattern))\(coloredSurfacePattern)
             """
         }
     }
@@ -204,6 +205,9 @@ struct LinearProgressIndicatorConfigurationView: View {
                                chips: OUDSProgressIndicatorStatus.chips)
                 .disabled(configurationModel.onColoredSurface)
 
+                OUDSSwitchItem("app_components_progressIndicator_track_tech",
+                               isOn: $configurationModel.track)
+
                 OUDSChipPicker(title: "app_components_progressIndicator_gapSize_tech",
                                selection: $configurationModel.gapSize,
                                chips: OUDSProgressIndicatorGapSize.chips)
@@ -229,13 +233,6 @@ struct LinearProgressIndicatorConfigurationView: View {
                                    selection: $configurationModel.helperTextAlignment,
                                    chips: OUDSLinearProgressIndicator.HelperTextAlignment.chips)
                 }
-
-                if configurationModel.variant == .indeterminate && configurationModel.helperTextValue != nil
-                    || configurationModel.variant == .determinate && configurationModel.determinateHelperTextType != .none {
-                    OUDSChipPicker(title: "app_components_common_contentAlignment_tech",
-                                   selection: $configurationModel.helperTextAlignment,
-                                   chips: OUDSLinearProgressIndicator.HelperTextAlignment.chips)
-                }
             }
 
             if configurationModel.variant == .indeterminate ||
@@ -256,38 +253,6 @@ struct LinearProgressIndicatorConfigurationView: View {
 
 extension OUDSLinearProgressIndicator.HelperTextAlignment: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSLinearProgressIndicator.HelperTextAlignment] = [.center, .start, .end]
-
-    public var technicalDescription: String {
-        switch self {
-        case .center:
-            ".center"
-        case .start:
-            ".start"
-        case .end:
-            ".end"
-        }
-    }
-}
-
-enum DeterminateProgressIndicatorHelperType: DesignToolboxEnumRepresentable {
-    case none
-    case percent
-    case description
-}
-
-extension OUDSLinearProgressIndicatorHelperTextAlignment: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSLinearProgressIndicatorHelperTextAlignment] = [.center, .start, .end]
-
-    public var technicalDescription: String {
-        switch self {
-        case .center:
-            ".center"
-        case .start:
-            ".start"
-        case .end:
-            ".end"
-        }
-    }
 }
 
 enum DeterminateProgressIndicatorHelperType: DesignToolboxEnumRepresentable {

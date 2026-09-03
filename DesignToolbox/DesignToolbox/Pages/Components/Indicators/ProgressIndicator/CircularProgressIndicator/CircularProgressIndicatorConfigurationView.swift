@@ -211,18 +211,6 @@ struct CircularProgressIndicatorConfigurationView: View {
 
         if configurationModel.variant == .indeterminate ||
             (configurationModel.variant == .determinate &&
-                (configurationModel.helperTextType == .percent ||
-                    configurationModel.helperTextType == .description))
-        {
-
-            DesignToolboxEditContentDisclosure(isContentVisible: true) {
-                DesignToolboxTextField(text: $configurationModel.helperText,
-                                       label: "app_components_progressIndicator_helperText_tech")
-            }
-        }
-
-        if configurationModel.variant == .indeterminate ||
-            (configurationModel.variant == .determinate &&
              (configurationModel.helperTextType == .percent ||
               configurationModel.helperTextType == .description)) {
 
@@ -234,15 +222,7 @@ struct CircularProgressIndicatorConfigurationView: View {
     }
 }
 
-// MARK: - Progress Control
-
-enum ProgressIndicatorHelperType: DesignToolboxEnumRepresentable {
-    case none
-    case percent
-    case description
-}
-
-// MARK: - OUDS enum representable extensions
+// MARK: - Helper text type
 
 enum ProgressIndicatorHelperType: DesignToolboxEnumRepresentable {
     case none
