@@ -7410,7 +7410,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1432-in-library-update-icons-to-use-the-icons-pack-23";
+				branch = develop;
 				kind = branch;
 			};
 		};
