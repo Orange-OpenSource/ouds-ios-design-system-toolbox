@@ -117,7 +117,7 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
         case .text:
             "\(labelPattern)\(hasBoldLabelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern)"
         case .customView:
-            "label: customLabel, accessibilityLabel: \"\(labelText)\"\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern)"
+            "label: customLabel, accessibilityLabel: \"Custom view label\"\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern)"
         }
     }
 

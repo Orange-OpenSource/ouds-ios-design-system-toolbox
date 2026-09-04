@@ -65,6 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [DesignSystemToolbox] Accessibility label to vocalize and to display for custom view label of `list item` components (Orange-OpenSource/ouds-ios#1719)
 - [Library] Vocalization of accessibility trait for `navigation list item` component (Orange-OpenSource/ouds-ios#1718)
 - [Library] Vocalization of `warning` and `negative` statuses of `progress indicators` components (Orange-OpenSource/ouds-ios#1697)
 - [Library] Vocalization of `progress indicators` components (Orange-OpenSource/ouds-ios#1698)
