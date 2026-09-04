@@ -18,7 +18,7 @@ import SwiftUI
 struct ButtonsView: View {
 
     private static let kAllButtonAppaerances: [OUDSButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
-    private static let kAllButtonStyles: [OUDSButton.Style] = [.default, .loading]
+    private static let kAllButtonStyles: [OUDSButton.Style] = [.default, .loading()]
     private static let kAllButtonSizes: [OUDSButton.Size] = [.default, .small]
 
     @Environment(\.theme) private var theme
@@ -45,6 +45,17 @@ struct ButtonsView: View {
                     }
                 }
             }
+        }
+    }
+}
+
+extension OUDSButton.Style: @retroactive Hashable {
+    public func hash(into hasher: inout Hasher) {
+        switch self {
+        case .default:
+            hasher.combine(0)
+        case .loading:
+            hasher.combine(1)
         }
     }
 }

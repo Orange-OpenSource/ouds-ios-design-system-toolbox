@@ -240,7 +240,6 @@ struct LinearProgressIndicatorConfigurationView: View {
                     ((configurationModel.determinateHelperTextType == .percent && configurationModel.helperTextAlignment != .center)
                         || configurationModel.determinateHelperTextType == .description))
             {
-
                 DesignToolboxEditContentDisclosure(isContentVisible: true) {
                     DesignToolboxTextField(text: $configurationModel.helperText,
                                            label: "app_components_progressIndicator_helperText_tech")
@@ -254,17 +253,6 @@ struct LinearProgressIndicatorConfigurationView: View {
 
 extension OUDSLinearProgressIndicator.HelperTextAlignment: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSLinearProgressIndicator.HelperTextAlignment] = [.center, .start, .end]
-
-    public var technicalDescription: String {
-        switch self {
-        case .center:
-            ".center"
-        case .start:
-            ".start"
-        case .end:
-            ".end"
-        }
-    }
 }
 
 enum DeterminateProgressIndicatorHelperType: DesignToolboxEnumRepresentable {

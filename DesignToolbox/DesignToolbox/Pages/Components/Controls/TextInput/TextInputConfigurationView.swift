@@ -354,7 +354,7 @@ struct TextInputConfigurationView: View {
                                    chips: CircularProgressIndicatorConfigurationModel.Variant.chips)
 
                     if configurationModel.progressVariant == .determinate {
-                        ProgressControl(progress: $configurationModel.progressValue)
+                        DesignToolboxProgressControl(progress: $configurationModel.progressValue)
                     }
                 }
 

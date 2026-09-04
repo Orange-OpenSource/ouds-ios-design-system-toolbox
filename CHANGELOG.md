@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Loading state of `button` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1695)
 - [Library] Update icons to v2.3.0 (Orange-OpenSource/ouds-ios#1432)
 - [Library] Animations for `progress indicator` components (Orange-OpenSource/ouds-ios#1708)
 - [Library] `password input` component to version 1.3.1 (Orange-OpenSource/ouds-ios#1526)

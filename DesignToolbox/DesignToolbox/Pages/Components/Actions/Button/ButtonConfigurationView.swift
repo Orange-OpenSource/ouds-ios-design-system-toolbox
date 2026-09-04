@@ -45,7 +45,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var style: OUDSButton.Style {
+    @Published var styleOption: ButtonStyle {
         didSet { updateCode() }
     }
 
@@ -54,6 +54,14 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     }
 
     @Published var isFullWidth: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var progressVariant: CircularProgressIndicatorConfigurationModel.Variant {
+        didSet { updateCode() }
+    }
+
+    @Published var progressValue: Double {
         didSet { updateCode() }
     }
 
@@ -66,18 +74,38 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         flipIcon = false
         rawImage = false
         appearance = .default
-        style = .default
+        styleOption = .default
         size = .default
         isFullWidth = false
+
+        progressVariant = .indeterminate
+        progressValue = 0.75
+
         super.init()
     }
 
     deinit {}
 
+    // MARK: Computed style
+
+    var style: OUDSButton.Style {
+        switch styleOption {
+        case .default:
+            .default
+        case .loading:
+            switch progressVariant {
+            case .determinate:
+                .loading(progress: progressValue)
+            case .indeterminate:
+                .loading(progress: nil)
+            }
+        }
+    }
+
     // MARK: Component Configuration
 
     private var disableCodePattern: String {
-        if case .default = style {
+        if case .default = styleOption {
             ".disabled(\(enabled ? "false" : "true"))"
         } else {
             ""
@@ -102,7 +130,16 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     }
 
     private var stylePattern: String {
-        ", style: \(style.technicalDescription)"
+        switch style {
+        case .default:
+            ", style: .default"
+        case let .loading(progress):
+            if let progress {
+                ", style: .loading(\"progress: \(progress)\"))"
+            } else {
+                ", style: .loading()"
+            }
+        }
     }
 
     private var sizePattern: String {
@@ -154,8 +191,8 @@ enum ButtonLayout: DesignToolboxEnumLocalizedRepresentable {
 
 // MARK: Button style extension
 
-extension OUDSButton.Style: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
-    public static let allCases: [OUDSButton.Style] = [.default, .loading]
+enum ButtonStyle: DesignToolboxEnumRepresentable {
+    case `default`, loading
 }
 
 // MARK: Button size extension
@@ -182,7 +219,7 @@ struct ButtonConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
-                    .disabled(configurationModel.style != .default)
+                    .disabled(configurationModel.styleOption != .default)
 
                 OUDSSwitchItem("app_components_common_onColoredSurface_tech", isOn: $configurationModel.onColoredSurface)
 
@@ -191,8 +228,18 @@ struct ButtonConfigurationView: View {
                                chips: OUDSButton.Appearance.chips)
 
                 OUDSChipPicker(title: "app_components_common_style_tech",
-                               selection: $configurationModel.style,
-                               chips: OUDSButton.Style.chips)
+                               selection: $configurationModel.styleOption,
+                               chips: ButtonStyle.chips)
+
+                if configurationModel.styleOption == .loading {
+                    OUDSChipPicker(title: "app_components_progressIndicator_variant_tech",
+                                   selection: $configurationModel.progressVariant,
+                                   chips: CircularProgressIndicatorConfigurationModel.Variant.chips)
+
+                    if configurationModel.progressVariant == .determinate {
+                        DesignToolboxProgressControl(progress: $configurationModel.progressValue)
+                    }
+                }
 
                 OUDSChipPicker(title: "app_components_common_size_tech",
                                selection: $configurationModel.size,
