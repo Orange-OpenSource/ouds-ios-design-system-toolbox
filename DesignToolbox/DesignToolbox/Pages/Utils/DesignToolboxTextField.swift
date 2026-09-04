@@ -50,7 +50,9 @@ struct DesignToolboxTextField: View {
             return nil
         }
 
-        return .init(image: OUDSImage(asset: Image(decorative: "ic_tag_close", bundle: theme.resourcesBundle)), actionHint: "app_components_common_textInputClearIcon_a11y") {
+        return .init(image: OUDSImage(asset: Image(decorative: "Component-tag-close", bundle: theme.resourcesBundle)),
+                     actionHint: "app_components_common_textInputClearIcon_a11y")
+        {
             text.wrappedValue = ""
         }
     }
