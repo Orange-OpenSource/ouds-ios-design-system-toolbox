@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSComponents
 import OUDSSwiftUI
 import SwiftUI
 
@@ -55,6 +56,14 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
         didSet { updateCode() }
     }
 
+    @Published var accessibilityName: String {
+        didSet { updateCode() }
+    }
+
+    @Published var accessibilityState: String {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -67,6 +76,9 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
 
         helperTextType = .percent
         helperText = ""
+
+        accessibilityName = ""
+        accessibilityState = ""
 
         super.init()
     }
@@ -94,6 +106,14 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
         }
     }
 
+    var accessibilityConfiguration: OUDSAccessibilityConfiguration? {
+        if accessibilityName.isEmpty, accessibilityState.isEmpty {
+            return nil
+        }
+        return OUDSAccessibilityConfiguration(name: accessibilityName.isEmpty ? nil : accessibilityName,
+                                              state: accessibilityState.isEmpty ? nil : accessibilityState)
+    }
+
     // MARK: Component Configuration
 
     override func updateCode() {
@@ -102,12 +122,12 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
             code = """
             OUDSCircularProgressIndicator(progress: \(String(format: "%.2f", progress)), \
             \(statusPattern), \(trackPattern), \(gapSizePattern), \(animatedPattern)\
-            \(determinateHelperTextPattern))\(coloredSurfacePattern)
+            \(accessibilityPattern)\(determinateHelperTextPattern))\(coloredSurfacePattern)
             """
         case .indeterminate:
             code = """
             OUDSCircularProgressIndicator(\(statusPattern), \(trackPattern), \(gapSizePattern), \
-            \(indeterminateHelperTextPattern))\(coloredSurfacePattern)
+            \(accessibilityPattern)\(indeterminateHelperTextPattern))\(coloredSurfacePattern)
             """
         }
     }
@@ -150,6 +170,15 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
 
     private var coloredSurfacePattern: String {
         onColoredSurface ? "\n    .coloredSurface(theme.colorModes.onBrandPrimary)" : ""
+    }
+
+    private var accessibilityPattern: String {
+        if let config = accessibilityConfiguration {
+            let namePart = config.name.map { "\"\($0)\"" } ?? "nil"
+            let statePart = config.state.map { "\"\($0)\"" } ?? "nil"
+            return ", accessibility: .init(name: \(namePart), state: \(statePart))"
+        }
+        return ""
     }
 
     // MARK: - Variant
@@ -209,15 +238,22 @@ struct CircularProgressIndicatorConfigurationView: View {
             }
         }
 
-        if configurationModel.variant == .indeterminate ||
-            (configurationModel.variant == .determinate &&
-                (configurationModel.helperTextType == .percent ||
-                    configurationModel.helperTextType == .description))
-        {
+        DesignToolboxEditContentDisclosure(isContentVisible: true) {
+            VStack(spacing: theme.spaces.fixedSmall) {
+                if configurationModel.variant == .indeterminate ||
+                    (configurationModel.variant == .determinate &&
+                        (configurationModel.helperTextType == .percent ||
+                            configurationModel.helperTextType == .description))
+                {
 
-            DesignToolboxEditContentDisclosure(isContentVisible: true) {
-                DesignToolboxTextField(text: $configurationModel.helperText,
-                                       label: "app_components_progressIndicator_helperText_tech")
+                    DesignToolboxTextField(text: $configurationModel.helperText,
+                                           label: "app_components_progressIndicator_helperText_tech")
+                }
+
+                DesignToolboxTextField(text: $configurationModel.accessibilityName,
+                                       label: "app_components_a11y_name_tech")
+                DesignToolboxTextField(text: $configurationModel.accessibilityState,
+                                       label: "app_components_a11y_state_tech")
             }
         }
     }

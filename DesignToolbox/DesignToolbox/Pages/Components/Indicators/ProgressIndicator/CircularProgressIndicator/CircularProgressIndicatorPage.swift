@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSComponents
 import OUDSSwiftUI
 import SwiftUI
 
@@ -48,12 +49,14 @@ struct CircularProgressIndicatorDemo: View {
                                               track: configurationModel.track,
                                               gapSize: configurationModel.gapSize,
                                               animated: configurationModel.animated,
-                                              helperText: configurationModel.determinateHelperTextValue)
+                                              helperText: configurationModel.determinateHelperTextValue,
+                                              accessibility: configurationModel.accessibilityConfiguration)
             case .indeterminate:
                 OUDSCircularProgressIndicator(status: configurationModel.status,
                                               track: configurationModel.track,
                                               gapSize: configurationModel.gapSize,
-                                              helperText: configurationModel.helperTextValue)
+                                              helperText: configurationModel.helperTextValue,
+                                              accessibility: configurationModel.accessibilityConfiguration)
             }
         }
     }
