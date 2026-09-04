@@ -211,14 +211,15 @@ struct CircularProgressIndicatorConfigurationView: View {
 
         if configurationModel.variant == .indeterminate ||
             (configurationModel.variant == .determinate &&
-             (configurationModel.helperTextType == .percent ||
-              configurationModel.helperTextType == .description)) {
+                (configurationModel.helperTextType == .percent ||
+                    configurationModel.helperTextType == .description))
+        {
 
-                DesignToolboxEditContentDisclosure(isContentVisible: true) {
-                    DesignToolboxTextField(text: $configurationModel.helperText,
-                                           label: "app_components_progressIndicator_helperText_tech")
-                }
+            DesignToolboxEditContentDisclosure(isContentVisible: true) {
+                DesignToolboxTextField(text: $configurationModel.helperText,
+                                       label: "app_components_progressIndicator_helperText_tech")
             }
+        }
     }
 }
 

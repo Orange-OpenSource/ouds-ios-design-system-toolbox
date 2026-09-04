@@ -133,8 +133,12 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         switch style {
         case .default:
             ", style: .default"
-        case .loading(let progress):
-            ", style: .loading(\(progress == nil ? "" : "progress: \(progress!)"))"
+        case let .loading(progress):
+            if let progress {
+                ", style: .loading(\"progress: \(progress)\"))"
+            } else {
+                ", style: .loading()"
+            }
         }
     }
 
