@@ -44,6 +44,7 @@ struct GridTokenPage: View {
 
             Section { illustrationForGridTokens() } header: {
                 OUDSHeading(text: horizontalSizeClass.rawValue, size: .medium)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
         .gridMargin(.horizontal)
