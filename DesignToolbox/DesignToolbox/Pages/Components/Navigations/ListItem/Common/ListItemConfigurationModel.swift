@@ -158,7 +158,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         case .customView:
             OUDSListItemData(
                 label: textsModel.customLabelView,
-                accessibilityLabel: currentLabel,
+                accessibilityLabel: "Custom view label",
                 description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
                 overline: overline,
                 extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
@@ -190,7 +190,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         case .customView:
             return OUDSListItemData(
                 label: textsModel.customLabelView,
-                accessibilityLabel: currentLabel,
+                accessibilityLabel: "Custom view label",
                 overline: safeOverline,
                 description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
                 extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
