@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "e690227eb301bb38a80c911821bf6767b8ebc034"
+        "branch" : "1695-update-loader-in-buttonwith-circular-progress-indicator_v2",
+        "revision" : "104ad12f07381818527602c0ff0b8a635e368fab"
       }
     },
     {
