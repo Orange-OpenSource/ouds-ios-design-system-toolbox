@@ -64,7 +64,7 @@ extension View {
             UIAccessibility.post(notification: .screenChanged, argument: title.localized())
         }
         #else
-        oudsNavigationTitle(title)
+        oudsNavigationTitle(title, hasLargeTitle: false)
         #endif
     }
 }
