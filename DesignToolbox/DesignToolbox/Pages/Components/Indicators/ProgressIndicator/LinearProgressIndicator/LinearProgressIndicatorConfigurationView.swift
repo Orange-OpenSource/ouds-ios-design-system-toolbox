@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSComponents
 import OUDSSwiftUI
 import SwiftUI
 
@@ -63,6 +64,14 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var accessibilityName: String {
+        didSet { updateCode() }
+    }
+
+    @Published var accessibilityState: String {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -78,6 +87,9 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         helperTextAlignment = .start
         helperText = "app_components_pinCodeInput_helper_label".localized()
         helperTextAlignment = .center
+
+        accessibilityName = ""
+        accessibilityState = ""
 
         super.init()
     }
@@ -105,6 +117,14 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         }
     }
 
+    var accessibilityConfiguration: OUDSAccessibilityConfiguration? {
+        if accessibilityName.isEmpty, accessibilityState.isEmpty {
+            return nil
+        }
+        return OUDSAccessibilityConfiguration(name: accessibilityName.isEmpty ? nil : accessibilityName,
+                                              state: accessibilityState.isEmpty ? nil : accessibilityState)
+    }
+
     // MARK: Component Configuration
 
     override func updateCode() {
@@ -112,13 +132,14 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         case .determinate:
             code = """
             OUDSLinearProgressIndicator(progress: \(String(format: "%.2f", progress)), \
-            \(statusPattern), \(trackPattern), \(stopIndicatorPattern), \(determinateHelperTextPattern), \
+            \(statusPattern), \(trackPattern), \(stopIndicatorPattern), \
+            \(accessibilityPattern)\(determinateHelperTextPattern), \
             \(gapSizePattern), \(animatedPattern))\(coloredSurfacePattern)
             """
         case .indeterminate:
             code = """
             OUDSLinearProgressIndicator(\(statusPattern), \(trackPattern), \
-            \(indeterminateHelperTextPattern), \(gapSizePattern))\(coloredSurfacePattern)
+            \(accessibilityPattern)\(indeterminateHelperTextPattern), \(gapSizePattern))\(coloredSurfacePattern)
             """
         }
     }
@@ -166,6 +187,15 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         onColoredSurface ? "\n    .coloredSurface(theme.colorModes.onBrandPrimary)" : ""
     }
 
+    private var accessibilityPattern: String {
+        if let config = accessibilityConfiguration {
+            let namePart = config.name.map { "\"\($0)\"" } ?? "nil"
+            let statePart = config.state.map { "\"\($0)\"" } ?? "nil"
+            return ", accessibility: .init(name: \(namePart), state: \(statePart))"
+        }
+        return ""
+    }
+
     // MARK: - Variant
 
     enum Variant: CaseIterable, Hashable, DesignToolboxEnumRepresentable {
@@ -186,6 +216,7 @@ struct LinearProgressIndicatorConfigurationView: View {
 
     // MARK: Body
 
+    // swiftlint:disable closure_body_length
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
@@ -245,8 +276,18 @@ struct LinearProgressIndicatorConfigurationView: View {
                                            label: "app_components_progressIndicator_helperText_tech")
                 }
             }
+
+            DesignToolboxEditContentDisclosure(isContentVisible: true) {
+                VStack(spacing: theme.spaces.fixedSmall) {
+                    DesignToolboxTextField(text: $configurationModel.accessibilityName,
+                                           label: "app_components_a11y_name_tech")
+                    DesignToolboxTextField(text: $configurationModel.accessibilityState,
+                                           label: "app_components_a11y_state_tech")
+                }
+            }
         }
     }
+    // swiftlint:enable closure_body_length
 }
 
 // MARK: - OUDS enum representable extensions

@@ -1254,6 +1254,56 @@
         }
       }
     },
+    "app_components_a11y_name_tech" : {
+      "comment" : "Shared (progress indicators)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accessibility name"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accessibility name"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accessibility name"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_a11y_state_tech" : {
+      "comment" : "Shared (progress indicators)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accessibility state"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accessibility state"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accessibility state"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_alert_alertMessage_actionLink_tech" : {
       "comment" : "Component - Alert Message",
       "extractionState" : "manual",
