@@ -65,6 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] Vocalization of `warning` and `negative` statuses of `progress indicators` components (Orange-OpenSource/ouds-ios#1697)
 - [Library] Vocalization of `progress indicators` components (Orange-OpenSource/ouds-ios#1698)
 - [DesignToolbox] Use of asset for typography heading marker (Orange-OpenSource/ouds-ios#1689)
 - [DesignToolbox] Adjust title color on toolbar bar top when content color change (Orange-OpenSource/ouds-ios#1563)
