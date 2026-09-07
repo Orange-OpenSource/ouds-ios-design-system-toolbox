@@ -176,7 +176,7 @@ open class TagSnapshotsTestsTestCase: XCTestCase {
         let disabledPatern = model.isLoading ? "" : !model.enabled ? "_Disabled" : "_Enabled"
 
         let flipIconPattern = model.flipIcon ? ".flipIcon" : ""
-        let imageModePattern = model.isLoading ? ""  : model.enableFlipIcon
+        let imageModePattern = model.isLoading ? "" : model.enableFlipIcon
             ? (model.iconType == .image ? "_OriginalImage" : "_TemplateImage")
             : ""
 
