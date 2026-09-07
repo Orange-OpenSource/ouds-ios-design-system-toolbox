@@ -7494,6 +7494,105 @@
         }
       }
     },
+    "app_components_toolbar_principalType_custom_tech" : {
+      "comment" : "Component - Toolbar top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Custom view"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Custom view"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Custom view"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_toolbar_principalType_icon_tech" : {
+      "comment" : "Component - Toolbar top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon"
+          }
+        }
+      }
+    },
+    "app_components_toolbar_principalType_label_tech" : {
+      "comment" : "Component - Toolbar top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Labels"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Labels"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Labels"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_toolbar_principalType_tech" : {
+      "comment" : "Component - Toolbar top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Principal"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Principal"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Principal"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_toolbar_trailing_tech" : {
       "comment" : "Component - Tool Bar",
       "extractionState" : "manual",
