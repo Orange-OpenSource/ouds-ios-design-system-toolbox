@@ -198,12 +198,12 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
         switch principalType {
         case .none:
             return nil
-        case .icon: // Just of showcase, techniclly possible but not recommended in the end
+        case .icon: // Just for showcase, techniclly possible but not recommended in the end
             let asset = Image(systemName: "phone.fill")
             return OUDSToolBarItem(
                 action: .icon(
                     asset: asset,
-                    accessibilityLabel: "app_components_toolbar_principal_tech".localized(),
+                    accessibilityLabel: "Icon",
                     badgeType: badgeType.barItemBadgeType,
                     action: {}))
         case .label: // Just for showcase, this case is useless in the end
@@ -235,7 +235,7 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
         case .none:
             return "nil"
         case .icon:
-            let badgePattern = badgeType != .none ? ", badgeType: \(badgeType == .standard ? ".standard" : ".number(count: 1)")" : ""
+            let badgePattern = badgeType != .none ? ", badgeType: \(badgeType == .standard ? ".standard" : ".number(count: 5)")" : ""
             return "OUDSToolBarItem(action: .icon(asset: Image(systemName: \"phone.fill\"), accessibilityLabel: \"Phone\"\(badgePattern)))"
         case .label:
             return "OUDSToolBarItem(label: \"\(title)\")"
