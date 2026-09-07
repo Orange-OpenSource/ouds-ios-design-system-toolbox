@@ -53,16 +53,16 @@ struct TagDemo: View {
                     appearance: configurationModel.appearance,
                     shape: configurationModel.shape,
                     size: configurationModel.size)
-            .disabled(!configurationModel.enabled)
+                .disabled(!configurationModel.enabled)
         }
     }
 
     private var progressValue: Double? {
         switch configurationModel.progressVariant {
         case .determinate:
-            return configurationModel.progressValue
+            configurationModel.progressValue
         case .indeterminate:
-            return nil
+            nil
         }
     }
 }

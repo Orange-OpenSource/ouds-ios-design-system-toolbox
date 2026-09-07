@@ -138,7 +138,7 @@ final class TagConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         if isLoading {
-            code = "OUDSTag(loadingLabel: \"\(label)\"\(progressPattern)\(shapePattern)\(sizePattern)"
+            code = "OUDSTag(loadingLabel: \"\(label)\"\(progressPattern)\(shapePattern)\(sizePattern))"
         } else {
             code = """
             OUDSTag(label: \"\(label)\"\(statusPattern)\(appearancePattern)\(shapePattern)\(sizePattern))
@@ -152,7 +152,10 @@ final class TagConfigurationModel: ComponentConfiguration {
     }
 
     private var progressPattern: String {
-        isLoading ? ", progress: \(progressValue)" : ""
+        guard isLoading else {
+            return ""
+        }
+        return progressVariant == .indeterminate ? ", progress: nil" : ", progress: \(String(format: "%.2f", progressValue))"
     }
 
     private var appearancePattern: String {
