@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "cc6f83189325a0672f3222b8583f434846811ebb"
+        "branch" : "1717-for-tag-component-use-circular-progress-indicator-as-loader",
+        "revision" : "7092671ae9e6df514dbdb18adc309617fc041c3d"
       }
     },
     {
