@@ -66,15 +66,12 @@ struct TagView: View {
                                     status: status,
                                     appearance: appearance,
                                     shape: shape,
-                                    size: size,
-                                    hasLoader: false)
+                                    size: size)
 
-                            OUDSTag(label: "Tag",
-                                    status: status,
-                                    appearance: appearance,
+                            OUDSTag(loadingLabel: "Tag",
+                                    progress: nil,
                                     shape: shape,
-                                    size: size,
-                                    hasLoader: true)
+                                    size: size)
                         }
                     }
                 }

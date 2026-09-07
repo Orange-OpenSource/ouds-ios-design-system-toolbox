@@ -162,8 +162,7 @@ struct DesignToolboxElementPage: View {
                     status: .info(leading: .none),
                     appearance: .muted,
                     shape: .rounded,
-                    size: .small,
-                    hasLoader: false)
+                    size: .small)
         }
         .gridMargin(.horizontal)
         .padding(.bottom, theme.spaces.fixedMedium)
