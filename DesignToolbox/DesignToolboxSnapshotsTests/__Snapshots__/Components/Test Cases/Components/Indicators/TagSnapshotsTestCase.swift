@@ -22,7 +22,7 @@ import XCTest
 
 /// Tests the UI rendering of the `OUDSTag` for each parameter.
 ///
-/// **Warning: the loader state tag is not tested because of discrepencies with snapshots comparisons**
+/// **Warning: the loader state in indterminated variant tag is not tested because of discrepencies with snapshots comparisons**
 open class TagSnapshotsTestsTestCase: XCTestCase {
 
     // MARK: - Tags

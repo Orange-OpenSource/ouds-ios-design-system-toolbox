@@ -7410,7 +7410,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1717-for-tag-component-use-circular-progress-indicator-as-loader";
+				branch = develop;
 				kind = branch;
 			};
 		};
