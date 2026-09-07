@@ -42,12 +42,27 @@ struct TagDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSTag(label: configurationModel.label,
-                status: configurationModel.status(from: theme),
-                appearance: configurationModel.appearance,
-                shape: configurationModel.shape,
-                size: configurationModel.size,
-                hasLoader: configurationModel.loader)
+        if configurationModel.isLoading {
+            OUDSTag(loadingLabel: configurationModel.label,
+                    progress: progressValue,
+                    shape: configurationModel.shape,
+                    size: configurationModel.size)
+        } else {
+            OUDSTag(label: configurationModel.label,
+                    status: configurationModel.status(from: theme),
+                    appearance: configurationModel.appearance,
+                    shape: configurationModel.shape,
+                    size: configurationModel.size)
             .disabled(!configurationModel.enabled)
+        }
+    }
+
+    private var progressValue: Double? {
+        switch configurationModel.progressVariant {
+        case .determinate:
+            return configurationModel.progressValue
+        case .indeterminate:
+            return nil
+        }
     }
 }

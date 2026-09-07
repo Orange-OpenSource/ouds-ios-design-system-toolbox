@@ -49,7 +49,15 @@ final class TagConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var loader: Bool {
+    @Published var isLoading: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var progressVariant: CircularProgressIndicatorConfigurationModel.Variant {
+        didSet { updateCode() }
+    }
+
+    @Published var progressValue: Double {
         didSet { updateCode() }
     }
 
@@ -66,10 +74,14 @@ final class TagConfigurationModel: ComponentConfiguration {
     override init() {
         enabled = true
         layout = .textOnly
-        loader = false
         flipIcon = false
         iconType = .tintedIcon
         label = String(localized: "app_components_common_label_label")
+
+        isLoading = false
+        progressVariant = .indeterminate
+        progressValue = 0.75
+
         size = .default
         statusCategory = .neutral
         shape = .rounded
@@ -78,6 +90,8 @@ final class TagConfigurationModel: ComponentConfiguration {
     }
 
     deinit {}
+
+    // MARK: Helpers
 
     @MainActor func status(from theme: OUDSTheme) -> OUDSTag.Status {
         let asset: Image = iconType == .tintedIcon
@@ -117,20 +131,28 @@ final class TagConfigurationModel: ComponentConfiguration {
     }
 
     var enableFlipIcon: Bool {
-        !loader && (layout == .textAndIcon && (statusCategory == .accent || statusCategory == .neutral))
+        !isLoading && (layout == .textAndIcon && (statusCategory == .accent || statusCategory == .neutral))
     }
 
     // MARK: Component Configuration
 
     override func updateCode() {
-        code = """
-        OUDSTag(label: \"\(label)\"\(statusPattern)\(appearancePattern)\(shapePattern)\(sizePattern)\(loaderPattern))
-        \(disablePattern)
-        """
+        if isLoading {
+            code = "OUDSTag(loadingLabel: \"\(label)\"\(progressPattern)\(shapePattern)\(sizePattern)"
+        } else {
+            code = """
+            OUDSTag(label: \"\(label)\"\(statusPattern)\(appearancePattern)\(shapePattern)\(sizePattern))
+            \(disablePattern)
+            """
+        }
     }
 
     private var disablePattern: String {
-        !loader && !enabled ? ".disabled(true)" : ""
+        !isLoading && !enabled ? ".disabled(true)" : ""
+    }
+
+    private var progressPattern: String {
+        isLoading ? ", progress: \(progressValue)" : ""
     }
 
     private var appearancePattern: String {
@@ -167,10 +189,6 @@ final class TagConfigurationModel: ComponentConfiguration {
     private var sizePattern: String {
         ", size: \(size.technicalDescription)"
     }
-
-    private var loaderPattern: String {
-        loader ? ", hasLoader: true" : ""
-    }
 }
 
 // MARK: - Tag Configuration View
@@ -187,10 +205,7 @@ struct TagConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
-                .disabled(configurationModel.loader)
-
-            OUDSSwitchItem("app_components_common_loader_tech", isOn: $configurationModel.loader)
-                .disabled(!configurationModel.enabled)
+                .disabled(configurationModel.isLoading)
 
             OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
                 .disabled(!configurationModel.enableFlipIcon)
@@ -207,13 +222,15 @@ struct TagConfigurationView: View {
                                chips: DefinedStatusIcons.chips)
             }
 
-            OUDSChipPicker(title: "app_components_common_appearance_tech",
-                           selection: $configurationModel.appearance,
-                           chips: OUDSTag.Appearance.chips)
-
-            OUDSChipPicker(title: "app_components_common_status_tech",
-                           selection: $configurationModel.statusCategory,
-                           chips: filteredStatusChips)
+            if !configurationModel.isLoading {
+                OUDSChipPicker(title: "app_components_common_appearance_tech",
+                               selection: $configurationModel.appearance,
+                               chips: OUDSTag.Appearance.chips)
+                
+                OUDSChipPicker(title: "app_components_common_status_tech",
+                               selection: $configurationModel.statusCategory,
+                               chips: filteredStatusChips)
+            }
 
             OUDSChipPicker(title: "app_components_tag_shape_tech",
                            selection: $configurationModel.shape,
@@ -222,6 +239,19 @@ struct TagConfigurationView: View {
             OUDSChipPicker(title: "app_components_common_size_tech",
                            selection: $configurationModel.size,
                            chips: OUDSTag.Size.chips)
+
+            OUDSSwitchItem("app_components_common_loader_tech", isOn: $configurationModel.isLoading)
+                .disabled(!configurationModel.enabled)
+
+            if configurationModel.isLoading {
+                OUDSChipPicker(title: "app_components_progressIndicator_variant_tech",
+                               selection: $configurationModel.progressVariant,
+                               chips: CircularProgressIndicatorConfigurationModel.Variant.chips)
+
+                if configurationModel.progressVariant == .determinate {
+                    DesignToolboxProgressControl(progress: $configurationModel.progressValue)
+                }
+            }
 
             DesignToolboxEditContentDisclosure {
                 DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")

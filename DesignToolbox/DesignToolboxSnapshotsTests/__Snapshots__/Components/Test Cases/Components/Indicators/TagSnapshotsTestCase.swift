@@ -35,6 +35,7 @@ open class TagSnapshotsTestsTestCase: XCTestCase {
     @MainActor func testAllTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         testDisabledTags(theme: theme, interfaceStyle: interfaceStyle)
         testEnabledTags(theme: theme, interfaceStyle: interfaceStyle)
+        testLoadingTags(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// Tests tags in disabled state for each layouts, sizes and shapes.
@@ -51,7 +52,7 @@ open class TagSnapshotsTestsTestCase: XCTestCase {
                     model.statusCategory = .accent
                     model.appearance = .emphasized
 
-                    model.loader = false
+                    model.isLoading = false
                     model.enabled = false
                     model.flipIcon = false
 
@@ -89,7 +90,7 @@ open class TagSnapshotsTestsTestCase: XCTestCase {
                         for shape in OUDSTag.Shape.allCases {
                             let model = TagConfigurationModel()
 
-                            model.loader = false
+                            model.isLoading = false
                             model.enabled = true
 
                             model.layout = layout
@@ -118,6 +119,33 @@ open class TagSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
+    /// Tests tags in loading state for each layouts, catagories, sizes and shapes.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testLoadingTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        for layout in TagLayout.allCases {
+            for size in OUDSTag.Size.allCases {
+                for shape in OUDSTag.Shape.allCases {
+                    let model = TagConfigurationModel()
+
+                    model.enabled = true
+                    model.flipIcon = false
+
+                    model.isLoading = true
+                    model.layout = layout
+                    model.size = size
+                    model.shape = shape
+                    model.progressVariant = .determinate
+                    model.progressValue = 0.75
+
+                    testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                }
+            }
+        }
+    }
+
     /// Tests`OUDSTag` according to all parameters of the configuration available for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameter.
@@ -139,14 +167,16 @@ open class TagSnapshotsTestsTestCase: XCTestCase {
         // Create a unique snapshot name based on the current configuration :
         let testName = "testTag_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let layoutPattern = model.layout.debugDescription
-        let appearancePattern = model.appearance.technicalDescription
-        let statusPattern = model.statusCategory.technicalDescription
         let sizePattern = model.size.technicalDescription
         let shapePattern = model.shape.technicalDescription
-        let loaderPattern = model.loader ? ".loader" : ""
+
+        let appearancePattern = model.isLoading ? "" : model.appearance.technicalDescription
+        let statusPattern = model.isLoading ? "" : model.statusCategory.technicalDescription
+        let loaderPattern = model.isLoading ? ".loading" : ""
+        let disabledPatern = model.isLoading ? "" : !model.enabled ? "_Disabled" : "_Enabled"
+
         let flipIconPattern = model.flipIcon ? ".flipIcon" : ""
-        let disabledPatern = !model.enabled ? "_Disabled" : "_Enabled"
-        let imageModePattern = model.enableFlipIcon
+        let imageModePattern = model.isLoading ? ""  : model.enableFlipIcon
             ? (model.iconType == .image ? "_OriginalImage" : "_TemplateImage")
             : ""
 
