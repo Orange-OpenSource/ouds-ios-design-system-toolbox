@@ -226,7 +226,7 @@ struct TagConfigurationView: View {
                 OUDSChipPicker(title: "app_components_common_appearance_tech",
                                selection: $configurationModel.appearance,
                                chips: OUDSTag.Appearance.chips)
-                
+
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.statusCategory,
                                chips: filteredStatusChips)
