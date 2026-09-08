@@ -30,9 +30,12 @@ open class ListItemAvatarConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var badgeOption: Bool {
+    @Published var badgeOption: ListItemAvatardBadge {
         didSet { updateCode() }
     }
+
+    var standardBadgeModel: BadgeStandardConfigurationModel
+    var iconBadgeModel: BadgeIconConfigurationModel
 
     // MARK: Initializer
 
@@ -41,9 +44,14 @@ open class ListItemAvatarConfigurationModel: ComponentConfiguration {
 
         type = .icon
         size = .medium
-        badgeOption = false
+        badgeOption = .none
+        standardBadgeModel = BadgeStandardConfigurationModel()
+        iconBadgeModel = BadgeIconConfigurationModel()
 
         super.init()
+
+        register(standardBadgeModel)
+        register(iconBadgeModel)
     }
 
     deinit {}
@@ -51,7 +59,14 @@ open class ListItemAvatarConfigurationModel: ComponentConfiguration {
     // MARK: Builder
 
     private var badgePattern: String {
-        badgeOption ? ", badgeType: .standard(.negative)" : ""
+        switch badgeOption {
+        case .none:
+            ""
+        case .standard:
+            ", badgeType: .standard(\(standardBadgeModel.statusPattern))"
+        case .icon:
+            ", badgeType: .icon(\(iconBadgeModel.statusWithIconPattern))"
+        }
     }
 
     @MainActor
@@ -69,7 +84,19 @@ open class ListItemAvatarConfigurationModel: ComponentConfiguration {
         return OUDSListItemAvatar(
             type: avatarType,
             size: size,
-            badgeType: badgeOption ? .standard(.negative) : nil)
+            badgeType: badgeType(for: theme))
+    }
+
+    @MainActor
+    private func badgeType(for theme: OUDSTheme) -> OUDSListItemAvatar.BadgeType? {
+        switch badgeOption {
+        case .none:
+            return nil
+        case .standard:
+            return OUDSListItemAvatar.BadgeType.standard(standardBadgeModel.status, accessibilityLabel: "")
+        case .icon:
+            return OUDSListItemAvatar.BadgeType.icon(iconBadgeModel.statusWithIcon(from: theme))
+        }
     }
 
     override func updateCode() {
@@ -105,7 +132,22 @@ struct ListItemAvatarConfiguration: View {
                                chips: OUDSListItemAvatar.Size.chips)
             }
 
-            OUDSSwitchItem("app_components_listItem_avatarBadge_label", isOn: $configurationModel.badgeOption)
+            OUDSChipPicker(title: "app_components_listItem_avatarBadge_label".localized(),
+                           selection: $configurationModel.badgeOption,
+                           chips: ListItemAvatardBadge.chips)
+
+            switch configurationModel.badgeOption {
+            case .none:
+                EmptyView()
+            case .standard:
+                OUDSChipPicker(title: "app_components_common_status_tech",
+                               selection: $configurationModel.standardBadgeModel.status,
+                               chips: OUDSBadgeStandard.Status.chips)
+            case .icon:
+                OUDSChipPicker(title: "app_components_common_status_tech",
+                               selection: $configurationModel.iconBadgeModel.statusKind,
+                               chips: BadgeIconStatusKind.chips)
+            }
         }
     }
 }
@@ -123,4 +165,10 @@ extension OUDSListItemAvatar.Size: DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSListItemAvatar.Size] = [
         .medium, .large, .extraLarge,
     ]
+}
+
+// MARK: - List Item Badge Type
+
+enum ListItemAvatardBadge: DesignToolboxEnumRepresentable {
+    case none, standard, icon
 }

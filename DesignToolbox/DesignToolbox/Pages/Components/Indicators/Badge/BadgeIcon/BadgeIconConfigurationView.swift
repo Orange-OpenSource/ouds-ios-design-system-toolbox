@@ -100,7 +100,7 @@ final class BadgeIconConfigurationModel: ComponentConfiguration {
         !enabled ? ".disabled(true)" : ""
     }
 
-    private var statusWithIconPattern: String {
+    var statusWithIconPattern: String {
         switch statusKind {
         case .neutral:
             switch statusIcon {
