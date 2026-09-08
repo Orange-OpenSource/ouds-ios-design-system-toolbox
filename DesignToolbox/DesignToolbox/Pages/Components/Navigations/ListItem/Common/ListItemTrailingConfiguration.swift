@@ -42,6 +42,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
     var flagModel: ListItemFlagConfigurationModel
     var iconModel: ListItemIconConfigurationModel
     var imageModel: ListItemImageConfigurationModel
+    var tagModel: TagConfigurationModel
 
     var itemSize: OUDSListItemSize {
         didSet {
@@ -66,6 +67,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         iconModel = ListItemIconConfigurationModel(itemSize: itemSize)
         imageModel = ListItemImageConfigurationModel(itemSize: itemSize)
         badgeModel = ListItemBadgeConfigurationModel()
+        tagModel = TagConfigurationModel()
 
         super.init()
 
@@ -74,6 +76,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         register(flagModel)
         register(iconModel)
         register(imageModel)
+        register(tagModel)
     }
 
     deinit {}
@@ -90,7 +93,17 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         case .badge:
             .badge(badgeModel.badgeType)
         case .tag:
-            .tag(.init(label: "Label", size: .small))
+            .tag(tagModel.isLoading ?
+                .init(loadingLabel: tagModel.label,
+                        progress: tagModel.progress,
+                        shape: tagModel.shape,
+                        size: tagModel.size)
+                 : .init(label: tagModel.label,
+                         status: tagModel.status(from: theme),
+                         appearance: tagModel.appearance,
+                         shape: tagModel.shape,
+                         size: tagModel.size)
+            )
         case .icon:
             .icon(iconModel.icon(for: theme))
         case .image:
@@ -146,7 +159,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
             case .badge:
                 ".badge(\(badgeModel.code)"
             case .tag:
-                ".tag(OUDSTag(label: \"Label\", size: .small)"
+                ".tag(\(tagModel.code)"
             case .icon:
                 ".icon(\(iconModel.code)"
             case .image:
@@ -217,7 +230,8 @@ struct ListItemTrailingConfiguration: View {
             case .slot:
                 EmptyView()
             case .tag:
-                EmptyView()
+                TagConfigurationView(configurationModel: configurationModel.tagModel)
+                    .padding(.bottom, theme.spaces.fixedSmall)
             case .none:
                 EmptyView()
             }

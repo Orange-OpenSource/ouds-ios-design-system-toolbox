@@ -93,6 +93,15 @@ final class TagConfigurationModel: ComponentConfiguration {
 
     // MARK: Helpers
 
+    var progress: Double? {
+        switch progressVariant {
+        case .determinate:
+            progressValue
+        case .indeterminate:
+            nil
+        }
+    }
+
     @MainActor func status(from theme: OUDSTheme) -> OUDSTag.Status {
         let asset: Image = iconType == .tintedIcon
             ? Image.defaultImage(prefixedBy: theme.name)
