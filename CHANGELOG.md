@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Ruby version from v4.0.5 to v4.0.6 for `build-and-test` workflow
 - [DesignToolbox] GitHub Action `ossf/scorecard-action` from v2.4.3 to v2.4.4 for `scorecard` workflow
 - [DesignToolbox] GitHub Action `actions/checkout` from v7.0.0 to v7.0.1 for all workflows
 - [DesignToolbox] GitHub Action `github/codeql-action/upload-sarif` from v4.37.0 to v4.38.0 for `scorecard` workflow
