@@ -25,7 +25,7 @@ struct CircularProgressIndicatorElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_progressIndicator_circular_description_text",
-            version: OUDSVersions.componentProgressIndicatorVersion,
+            version: OUDSVersions.componentCircularProgressIndicatorVersion,
             demoScreen: AnyView(CircularProgressIndicatorPage())))
     }
 }
