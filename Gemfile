@@ -21,6 +21,10 @@ source "https://rubygems.org"
 # Should be removed when net-http > 0.6.0 and CVE fixed
 gem 'uri', '1.1.1'
 
+# Embeded in Fastlane RubyGem it seems
+# Solves CVE-2026-54171 (https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/security/dependabot/1)
+gem 'excon', '1.5.0'
+
 # To fix
 # "warning: abbrev was loaded from the standard library, but is not part of the default gems starting from Ruby 3.4.0.
 # You can add abbrev to your Gemfile or gemspec to silence this warning.""

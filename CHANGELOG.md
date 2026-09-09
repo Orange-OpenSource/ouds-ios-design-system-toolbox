@@ -105,7 +105,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Security
 
-- [DesignToolbox] `j`son transitive RubyGem from 2.20.0 to 2.21.2 (CVE-2026-71847)
+- [DesignToolbox] `excon` transitive RubyGem from v0.112.0 to v1.5.0 (CVE-2026-54171)
+- [DesignToolbox] `json` transitive RubyGem from v2.20.0 to v2.21.2 (CVE-2026-71847)
 
 ## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...2.3.0) - 2026-07-09
 
