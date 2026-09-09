@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Update of tokens (tokens librairies v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - [Library] Loading state of `tag` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1717)
 - [Library] Loading state of `button` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1695)
 - [Library] Update icons to v2.3.0 (Orange-OpenSource/ouds-ios#1432)

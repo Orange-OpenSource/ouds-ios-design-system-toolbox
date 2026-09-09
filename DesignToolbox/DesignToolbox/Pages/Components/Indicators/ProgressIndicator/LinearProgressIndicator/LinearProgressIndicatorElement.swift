@@ -25,7 +25,7 @@ struct LinearProgressIndicatorElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_progressIndicator_linear_description_text",
-            version: OUDSVersions.componentProgressIndicatorVersion,
+            version: OUDSVersions.componentLinearProgressIndicatorVersion,
             demoScreen: AnyView(LinearProgressIndicatorPage())))
     }
 }
