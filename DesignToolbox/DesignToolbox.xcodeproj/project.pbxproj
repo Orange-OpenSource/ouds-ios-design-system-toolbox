@@ -16,6 +16,9 @@
 		03E157AEDDB2DACAF5AFCD18 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		04FF5565DA810A1FB6725090 /* OrangeTheme+LinearProgressIndicatorSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4BFCB3E5CF99328210BB4 /* OrangeTheme+LinearProgressIndicatorSnapshotsTests.swift */; };
 		06EF13C7D599B645D4638046 /* ToolBarCommonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */; };
+		06EF13C8D599B645D4638047 /* ToolBarPrincipalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93D2F855D9800A4F0B8 /* ToolBarPrincipalConfiguration.swift */; };
+		06EF13C9D599B645D4638048 /* ToolBarTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93E2F855D9800A4F0B9 /* ToolBarTrailingConfiguration.swift */; };
+		06EF13CAD599B645D4638049 /* ToolBarItemStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93F2F855D9800A4F0BA /* ToolBarItemStyle.swift */; };
 		070DF8B12CDD07F20043D558 /* GridTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AF2CDD07F20043D558 /* GridTokenPage.swift */; };
 		070DF8B22CDD07F20043D558 /* GridTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AE2CDD07F20043D558 /* GridTokenElement.swift */; };
 		072BB4542E68937E00A4DF2D /* TextInputSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072BB4532E68937E00A4DF2D /* TextInputSnapshotsTestsTestCase.swift */; };
@@ -473,7 +476,10 @@
 		953ED9FB302FC3B90008FEA7 /* ToolBarCommonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */; };
 		953ED9FC302FC3B90008FEA7 /* ToolBarTopConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11642F57259000C8E30D /* ToolBarTopConfigurationView.swift */; };
 		953ED9FD302FC3B90008FEA7 /* ToolBarTopElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11652F57259000C8E30D /* ToolBarTopElement.swift */; };
+		953ED9FD302FC3B90008FEA8 /* ToolBarPrincipalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93D2F855D9800A4F0B8 /* ToolBarPrincipalConfiguration.swift */; };
 		953ED9FE302FC3B90008FEA7 /* ToolBarTopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11662F57259000C8E30D /* ToolBarTopPage.swift */; };
+		953ED9FE302FC3B90008FEA9 /* ToolBarTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93E2F855D9800A4F0B9 /* ToolBarTrailingConfiguration.swift */; };
+		953ED9FF302FC3B90008FEA0 /* ToolBarItemStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93F2F855D9800A4F0BA /* ToolBarItemStyle.swift */; };
 		953ED9FF302FC3B90008FEA7 /* ToolBarBottomConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD382F850344004615AF /* ToolBarBottomConfigurationView.swift */; };
 		953EDA00302FC3B90008FEA7 /* ToolBarBottomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD392F850344004615AF /* ToolBarBottomElement.swift */; };
 		953EDA01302FC3B90008FEA7 /* ToolBarBottomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD3A2F850344004615AF /* ToolBarBottomPage.swift */; };
@@ -654,6 +660,9 @@
 		953EDABE302FC4A20008FEA7 /* ListItemElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC0A01302CAB560030DE09 /* ListItemElements.swift */; };
 		953EDABF302FC4A20008FEA7 /* ToolBarCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolBarCommonContent.swift */; };
 		953EDAC0302FC4A20008FEA7 /* ToolBarCommonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */; };
+		953EDAC0402FC4A20008FEA8 /* ToolBarPrincipalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93D2F855D9800A4F0B8 /* ToolBarPrincipalConfiguration.swift */; };
+		953EDAC0502FC4A20008FEA9 /* ToolBarTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93E2F855D9800A4F0B9 /* ToolBarTrailingConfiguration.swift */; };
+		953EDAC0602FC4A20008FEA0 /* ToolBarItemStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93F2F855D9800A4F0BA /* ToolBarItemStyle.swift */; };
 		953EDAC1302FC4A20008FEA7 /* ToolBarTopConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11642F57259000C8E30D /* ToolBarTopConfigurationView.swift */; };
 		953EDAC2302FC4A20008FEA7 /* ToolBarTopElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11652F57259000C8E30D /* ToolBarTopElement.swift */; };
 		953EDAC3302FC4A20008FEA7 /* ToolBarTopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11662F57259000C8E30D /* ToolBarTopPage.swift */; };
@@ -911,9 +920,12 @@
 		953EDBC0302FC5A60008FEA7 /* ListItemElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEC0A01302CAB560030DE09 /* ListItemElements.swift */; };
 		953EDBC1302FC5A60008FEA7 /* ToolBarCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B9412F86769600A4F0B7 /* ToolBarCommonContent.swift */; };
 		953EDBC2302FC5A60008FEA7 /* ToolBarCommonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */; };
-		953EDBC3302FC5A60008FEA7 /* ToolBarTopConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11642F57259000C8E30D /* ToolBarTopConfigurationView.swift */; };
-		953EDBC4302FC5A60008FEA7 /* ToolBarTopElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11652F57259000C8E30D /* ToolBarTopElement.swift */; };
-		953EDBC5302FC5A60008FEA7 /* ToolBarTopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11662F57259000C8E30D /* ToolBarTopPage.swift */; };
+		953EDBC2402FC5A60008FEA8 /* ToolBarPrincipalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93D2F855D9800A4F0B8 /* ToolBarPrincipalConfiguration.swift */; };
+		953EDBC2502FC5A60008FEA9 /* ToolBarTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93E2F855D9800A4F0B9 /* ToolBarTrailingConfiguration.swift */; };
+		953EDBC2602FC5A60008FEA0 /* ToolBarItemStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93F2F855D9800A4F0BA /* ToolBarItemStyle.swift */; };
+		953EDBC3302FC5A60008FEA7 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		953EDBC4302FC5A60008FEA7 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		953EDBC5302FC5A60008FEA7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		953EDBC6302FC5A60008FEA7 /* ToolBarBottomConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD382F850344004615AF /* ToolBarBottomConfigurationView.swift */; };
 		953EDBC7302FC5A60008FEA7 /* ToolBarBottomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD392F850344004615AF /* ToolBarBottomElement.swift */; };
 		953EDBC8302FC5A60008FEA7 /* ToolBarBottomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD3A2F850344004615AF /* ToolBarBottomPage.swift */; };
@@ -1333,8 +1345,11 @@
 		953EDD6D302FCC9E0008FEA7 /* NamedColor+Always.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4972CC15A4000E69359 /* NamedColor+Always.swift */; };
 		953EDD6E302FCC9E0008FEA7 /* NamedColor+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4932CC1597C00E69359 /* NamedColor+Background.swift */; };
 		953EDD6F302FCC9E0008FEA7 /* NamedColor+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4992CC15ACE00E69359 /* NamedColor+Border.swift */; };
+		953EDD70302FCBF50008FEA8 /* ToolBarPrincipalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93D2F855D9800A4F0B8 /* ToolBarPrincipalConfiguration.swift */; };
 		953EDD70302FCC9E0008FEA7 /* NamedColor+Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4A32CC15C3E00E69359 /* NamedColor+Chart.swift */; };
+		953EDD71302FCBF50008FEA9 /* ToolBarTrailingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93E2F855D9800A4F0B9 /* ToolBarTrailingConfiguration.swift */; };
 		953EDD71302FCC9E0008FEA7 /* NamedColor+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B49F2CC15BBC00E69359 /* NamedColor+Content.swift */; };
+		953EDD72302FCBF50008FEA0 /* ToolBarItemStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95B93F2F855D9800A4F0BA /* ToolBarItemStyle.swift */; };
 		953EDD72302FCC9E0008FEA7 /* NamedColor+Opacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6DA2D09C680005DAB51 /* NamedColor+Opacity.swift */; };
 		953EDD73302FCC9E0008FEA7 /* NamedColor+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6DB2D09C680005DAB51 /* NamedColor+Overlay.swift */; };
 		953EDD74302FCC9E0008FEA7 /* NamedColor+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6DC2D09C680005DAB51 /* NamedColor+Repository.swift */; };
@@ -2134,6 +2149,9 @@
 		FC736E9C2F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarCommonConfiguration.swift; sourceTree = "<group>"; };
+		FC95B93D2F855D9800A4F0B8 /* ToolBarPrincipalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarPrincipalConfiguration.swift; sourceTree = "<group>"; };
+		FC95B93E2F855D9800A4F0B9 /* ToolBarTrailingConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarTrailingConfiguration.swift; sourceTree = "<group>"; };
+		FC95B93F2F855D9800A4F0BA /* ToolBarItemStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarItemStyle.swift; sourceTree = "<group>"; };
 		FC95B9412F86769600A4F0B7 /* ToolBarCommonContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarCommonContent.swift; sourceTree = "<group>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
 		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
@@ -4073,6 +4091,9 @@
 			children = (
 				FC95B9412F86769600A4F0B7 /* ToolBarCommonContent.swift */,
 				FC95B93C2F855D9800A4F0B7 /* ToolBarCommonConfiguration.swift */,
+				FC95B93D2F855D9800A4F0B8 /* ToolBarPrincipalConfiguration.swift */,
+				FC95B93E2F855D9800A4F0B9 /* ToolBarTrailingConfiguration.swift */,
+				FC95B93F2F855D9800A4F0BA /* ToolBarItemStyle.swift */,
 				FCFA11672F57259000C8E30D /* ToolBarTop */,
 				FC6AFD3B2F850344004615AF /* ToolBarBottom */,
 			);
@@ -5144,6 +5165,9 @@
 				953EDD5D302FCBF50008FEA7 /* ListItemTrailingConfiguration.swift in Sources */,
 				953EDD5E302FCBF50008FEA7 /* NavigationListItemConfiguration.swift in Sources */,
 				953EDD5F302FCBF50008FEA7 /* ToolBarCommonConfiguration.swift in Sources */,
+				953EDD70302FCBF50008FEA8 /* ToolBarPrincipalConfiguration.swift in Sources */,
+				953EDD71302FCBF50008FEA9 /* ToolBarTrailingConfiguration.swift in Sources */,
+				953EDD72302FCBF50008FEA0 /* ToolBarItemStyle.swift in Sources */,
 				953EDD60302FCBF50008FEA7 /* SandboxConfiguration.swift in Sources */,
 				953EDD4E302FCBDD0008FEA7 /* ComponentPage.swift in Sources */,
 				953EDD4D302FCB8B0008FEA7 /* TextualContentMode.swift in Sources */,
@@ -5437,6 +5461,9 @@
 				953ED9F9302FC3B90008FEA7 /* StaticListItemPage.swift in Sources */,
 				953ED9FA302FC3B90008FEA7 /* ToolBarCommonContent.swift in Sources */,
 				953ED9FB302FC3B90008FEA7 /* ToolBarCommonConfiguration.swift in Sources */,
+				953ED9FD302FC3B90008FEA8 /* ToolBarPrincipalConfiguration.swift in Sources */,
+				953ED9FE302FC3B90008FEA9 /* ToolBarTrailingConfiguration.swift in Sources */,
+				953ED9FF302FC3B90008FEA0 /* ToolBarItemStyle.swift in Sources */,
 				953ED9FC302FC3B90008FEA7 /* ToolBarTopConfigurationView.swift in Sources */,
 				953ED9FD302FC3B90008FEA7 /* ToolBarTopElement.swift in Sources */,
 				953ED9FE302FC3B90008FEA7 /* ToolBarTopPage.swift in Sources */,
@@ -5849,6 +5876,9 @@
 				0AAA529C83F12E5E26AB26FD /* ToolBarCommonContent.swift in Sources */,
 				03E157AEDDB2DACAF5AFCD18 /* OSUtilities.swift in Sources */,
 				06EF13C7D599B645D4638046 /* ToolBarCommonConfiguration.swift in Sources */,
+				06EF13C8D599B645D4638047 /* ToolBarPrincipalConfiguration.swift in Sources */,
+				06EF13C9D599B645D4638048 /* ToolBarTrailingConfiguration.swift in Sources */,
+				06EF13CAD599B645D4638049 /* ToolBarItemStyle.swift in Sources */,
 				7ED25061D591A6D08FE83653 /* BadgeStandardConfigurationView.swift in Sources */,
 				1EF150949CF36FB19397C483 /* ElementsGridView.swift in Sources */,
 				229BD696255AA075FF295954 /* BadgeIconPage.swift in Sources */,
@@ -6027,6 +6057,9 @@
 				953EDABE302FC4A20008FEA7 /* ListItemElements.swift in Sources */,
 				953EDABF302FC4A20008FEA7 /* ToolBarCommonContent.swift in Sources */,
 				953EDAC0302FC4A20008FEA7 /* ToolBarCommonConfiguration.swift in Sources */,
+				953EDAC0402FC4A20008FEA8 /* ToolBarPrincipalConfiguration.swift in Sources */,
+				953EDAC0502FC4A20008FEA9 /* ToolBarTrailingConfiguration.swift in Sources */,
+				953EDAC0602FC4A20008FEA0 /* ToolBarItemStyle.swift in Sources */,
 				953EDAC1302FC4A20008FEA7 /* ToolBarTopConfigurationView.swift in Sources */,
 				953EDAC2302FC4A20008FEA7 /* ToolBarTopElement.swift in Sources */,
 				953EDAC3302FC4A20008FEA7 /* ToolBarTopPage.swift in Sources */,
@@ -6299,9 +6332,12 @@
 				953EDBC0302FC5A60008FEA7 /* ListItemElements.swift in Sources */,
 				953EDBC1302FC5A60008FEA7 /* ToolBarCommonContent.swift in Sources */,
 				953EDBC2302FC5A60008FEA7 /* ToolBarCommonConfiguration.swift in Sources */,
-				953EDBC3302FC5A60008FEA7 /* ToolBarTopConfigurationView.swift in Sources */,
-				953EDBC4302FC5A60008FEA7 /* ToolBarTopElement.swift in Sources */,
-				953EDBC5302FC5A60008FEA7 /* ToolBarTopPage.swift in Sources */,
+				953EDBC2402FC5A60008FEA8 /* ToolBarPrincipalConfiguration.swift in Sources */,
+				953EDBC2502FC5A60008FEA9 /* ToolBarTrailingConfiguration.swift in Sources */,
+				953EDBC2602FC5A60008FEA0 /* ToolBarItemStyle.swift in Sources */,
+				953EDBC3302FC5A60008FEA7 /* (null) in Sources */,
+				953EDBC4302FC5A60008FEA7 /* (null) in Sources */,
+				953EDBC5302FC5A60008FEA7 /* (null) in Sources */,
 				953EDBC6302FC5A60008FEA7 /* ToolBarBottomConfigurationView.swift in Sources */,
 				953EDBC7302FC5A60008FEA7 /* ToolBarBottomElement.swift in Sources */,
 				953EDBC8302FC5A60008FEA7 /* ToolBarBottomPage.swift in Sources */,
