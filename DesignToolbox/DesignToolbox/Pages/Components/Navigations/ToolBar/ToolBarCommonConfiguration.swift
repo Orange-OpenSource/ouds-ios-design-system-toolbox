@@ -16,6 +16,53 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// MARK: - Principal Type Enum
+
+enum PrincipalType: CaseIterable, DesignToolboxEnumLocalizedRepresentable {
+    case none, icon, label, custom
+
+    var wordingKey: String {
+        switch self {
+        case .none:
+            "app_components_common_none_tech"
+        case .icon:
+            "app_components_toolbar_principalType_icon_tech"
+        case .label:
+            "app_components_toolbar_principalType_label_tech"
+        case .custom:
+            "app_components_toolbar_principalType_custom_tech"
+        }
+    }
+}
+
+// MARK: - Bar Item Badge Type Enum
+
+enum BarItemBadgeType: DesignToolboxEnumLocalizedRepresentable {
+    case none, standard, number
+
+    var wordingKey: String {
+        switch self {
+        case .none:
+            "app_components_common_none_tech"
+        case .standard:
+            "app_components_badge_standardType_tech"
+        case .number:
+            "app_components_badge_countType_tech"
+        }
+    }
+
+    var barItemBadgeType: OUDSToolBarItem.BadgeType? {
+        switch self {
+        case .none:
+            nil
+        case .standard:
+            .standard
+        case .number:
+            .number(count: 5)
+        }
+    }
+}
+
 // MARK: - ToolBar Configuration Model
 
 /// The model shared between `ToolBarPageConfiguration` view and `ToolBarTopPageComponent` view.
@@ -63,6 +110,14 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var principalType: PrincipalType {
+        didSet { updateCode() }
+    }
+
+    @Published var title: String {
+        didSet { updateCode() }
+    }
+
     @Published var badgeType: BarItemBadgeType {
         didSet { updateCode() }
     }
@@ -86,6 +141,8 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
         isTrailingEnabled = true
         isTrailingEmphasized = false
 
+        principalType = .custom
+        title = "app_components_topAppBar_title_label".localized()
         badgeType = .none
 
         ios26ButtonStyle = .prominent
@@ -130,6 +187,61 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
         }
 
         return items
+    }
+
+    @MainActor
+    var principalItem: OUDSToolBarItem? {
+        // Just to break type inference and avoid Xcode to extract those strings as wordings
+        let strings: [String] = ["+33 01 02 03 04 05", "+33 01 02 03 04 06", "+33 01 02 03 04 07", "Custom view", "Principal item"]
+        guard principalType != .none else { return nil }
+
+        switch principalType {
+        case .none:
+            return nil
+        case .icon: // Just for showcase, techniclly possible but not recommended in the end
+            let asset = Image(systemName: "phone.fill")
+            return OUDSToolBarItem(
+                action: .icon(
+                    asset: asset,
+                    accessibilityLabel: "Icon",
+                    badgeType: badgeType.barItemBadgeType,
+                    action: {}))
+        case .label: // Just for showcase, this case is useless in the end
+            return OUDSToolBarItem(label: title, action: {})
+        case .custom:
+            return OUDSToolBarItem {
+                Menu {
+                    Button(strings[0]) {}
+                    Button(strings[1]) {}
+                    Button(strings[2]) {}
+                } label: {
+                    HStack {
+                        Image(systemName: "phone.fill")
+                        VStack(alignment: .leading) {
+                            Text(strings[3])
+                            Text(strings[4])
+                        }
+                        Image(systemName: "chevron.down")
+                    }
+                }
+            }
+        }
+    }
+
+    var principalItemPattern: String {
+        guard principalType != .none else { return "nil" }
+
+        switch principalType {
+        case .none:
+            return "nil"
+        case .icon:
+            let badgePattern = badgeType != .none ? ", badgeType: \(badgeType == .standard ? ".standard" : ".number(count: 5)")" : ""
+            return "OUDSToolBarItem(action: .icon(asset: Image(systemName: \"phone.fill\"), accessibilityLabel: \"Phone\"\(badgePattern)))"
+        case .label:
+            return "OUDSToolBarItem(label: \"\(title)\")"
+        case .custom:
+            return "OUDSToolBarItem { /* Custom view */ }"
+        }
     }
 
     @MainActor
@@ -188,7 +300,7 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
         case .standard:
             ", badgeType: .standard"
         case .number:
-            ", badgeType: .number(count: 1)"
+            ", badgeType: .number(count: 5)"
         case .none:
             ""
         }
@@ -235,32 +347,6 @@ enum LeadingTrailingType: DesignToolboxEnumLocalizedRepresentable {
             "app_components_common_label_tech"
         case .icon:
             "app_components_common_icon_tech"
-        }
-    }
-}
-
-enum BarItemBadgeType: DesignToolboxEnumLocalizedRepresentable {
-    case none, standard, number
-
-    var wordingKey: String {
-        switch self {
-        case .none:
-            "app_components_common_none_tech"
-        case .standard:
-            "app_components_badge_standardType_tech"
-        case .number:
-            "app_components_badge_countType_tech"
-        }
-    }
-
-    var barItemBadgeType: OUDSToolBarItem.BadgeType? {
-        switch self {
-        case .none:
-            nil
-        case .standard:
-            .standard
-        case .number:
-            .number(count: 1)
         }
     }
 }
@@ -324,78 +410,6 @@ struct ToolBarLeadingConfiguration: View {
             default:
                 OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.isLeadingEnabled)
             }
-        }
-    }
-}
-
-// MARK: - Toolbar Trailing Configuration
-
-struct ToolBarTrailingConfiguration: View {
-
-    // MARK: Properties
-
-    @StateObject var configurationModel: ToolBarConfigurationModel
-    @Environment(\.theme) private var theme
-    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
-
-    // MARK: Body
-
-    var body: some View {
-        OUDSHorizontalDivider()
-
-        OUDSChipPicker(title: "app_components_toolbar_trailing_tech".localized(),
-                       selection: $configurationModel.trailing,
-                       chips: LeadingTrailingType.chips)
-
-        switch configurationModel.trailing {
-        case .label, .icon:
-            Stepper("app_components_common_itemCount_label" <- "\(configurationModel.numberOfTrailingItems)",
-                    value: $configurationModel.numberOfTrailingItems,
-                    in: 1 ... 3)
-                .padding(.horizontal, theme.spaces.fixedMedium)
-                .labelStrongMedium(theme)
-
-            if isLiquidGlassDisabled,
-               configurationModel.trailing == .label
-            {
-                OUDSSwitchItem("app_components_toolbar_item_emphasized_tech", isOn: $configurationModel.isTrailingEmphasized)
-            }
-
-        default:
-            EmptyView()
-        }
-
-        switch configurationModel.trailing {
-        case .none:
-            EmptyView()
-        default:
-            OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.isTrailingEnabled)
-        }
-    }
-}
-
-// MARK: - Toolbar Item Style
-
-struct ToolBarItemStyle: View {
-
-    @StateObject var configurationModel: ToolBarConfigurationModel
-    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
-
-    // MARK: Body
-
-    var body: some View {
-        if !isLiquidGlassDisabled,
-           configurationModel.trailing == .icon ||
-           configurationModel.leading == .icon ||
-           configurationModel.trailing == .label ||
-           configurationModel.leading == .label
-        {
-
-            OUDSHorizontalDivider()
-
-            OUDSChipPicker(title: "app_components_toolbar_item_ios26ButtonStyle_tech",
-                           selection: $configurationModel.ios26ButtonStyle,
-                           chips: OUDSToolBarItem.ActionStyle.chips)
         }
     }
 }

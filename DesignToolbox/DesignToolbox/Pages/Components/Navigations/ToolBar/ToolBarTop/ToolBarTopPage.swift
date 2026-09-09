@@ -80,12 +80,14 @@ private struct ToolBarTopDemo: View {
             .navigationBarBackButtonHidden(configurationModel.hideBackButton)
             .toolBarTop(configurationModel.title,
                         hasLargeTitle: configurationModel.largeTitle,
-                        subtitle: appliedSubtitle)
-            {
-                configurationModel.leadingItems(for: theme)
-            } trailingItems: {
-                configurationModel.trailingItems()
-            }
+                        subtitle: appliedSubtitle,
+                        leadingItems: {
+                            configurationModel.leadingItems(for: theme)
+                        },
+                        principalItem: configurationModel.principalItem,
+                        trailingItems: {
+                            configurationModel.trailingItems()
+                        })
     }
 
     private var appliedSubtitle: String? {
