@@ -44,7 +44,7 @@ struct TagDemo: View {
     var body: some View {
         if configurationModel.isLoading {
             OUDSTag(loadingLabel: configurationModel.label,
-                    progress: progressValue,
+                    progress: configurationModel.progress,
                     shape: configurationModel.shape,
                     size: configurationModel.size)
         } else {
@@ -54,15 +54,6 @@ struct TagDemo: View {
                     shape: configurationModel.shape,
                     size: configurationModel.size)
                 .disabled(!configurationModel.enabled)
-        }
-    }
-
-    private var progressValue: Double? {
-        switch configurationModel.progressVariant {
-        case .determinate:
-            configurationModel.progressValue
-        case .indeterminate:
-            nil
         }
     }
 }
