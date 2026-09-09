@@ -93,17 +93,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         case .badge:
             .badge(badgeModel.badgeType)
         case .tag:
-            .tag(tagModel.isLoading ?
-                .init(loadingLabel: tagModel.label,
-                        progress: tagModel.progress,
-                        shape: tagModel.shape,
-                        size: tagModel.size)
-                 : .init(label: tagModel.label,
-                         status: tagModel.status(from: theme),
-                         appearance: tagModel.appearance,
-                         shape: tagModel.shape,
-                         size: tagModel.size)
-            )
+            .tag(tag(for: theme))
         case .icon:
             .icon(iconModel.icon(for: theme))
         case .image:
@@ -126,6 +116,20 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
                 }
                 .frame(width: 48, height: 48)))
         }
+    }
+
+    @MainActor
+    private func tag(for theme: OUDSTheme) -> OUDSTag {
+        let defautlTag = OUDSTag(label: tagModel.label,
+                                 status: tagModel.status(from: theme),
+                                 appearance: tagModel.appearance,
+                                 shape: tagModel.shape,
+                                 size: tagModel.size)
+        let loadingTag = OUDSTag(loadingLabel: tagModel.label,
+                                 progress: tagModel.progress,
+                                 shape: tagModel.shape,
+                                 size: tagModel.size)
+        return tagModel.isLoading ? loadingTag : defautlTag
     }
 
     private var textType: OUDSListItemTrailing.TextType {
