@@ -35,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Ruby Gem `excon` transitive RubyGem from v1.5.0 to v1.7.1
 - [DesignToolbox] Ruby Gem `fastlane` from v2.237.0 to v2.239.0
 - [DesignToolbox] Ruby version from v4.0.5 to v4.0.6 for `build-and-test` workflow
 - [DesignToolbox] GitHub Action `ossf/scorecard-action` from v2.4.3 to v2.4.4 for `scorecard` workflow
