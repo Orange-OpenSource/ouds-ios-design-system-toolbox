@@ -93,7 +93,16 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         case .badge:
             .badge(badgeModel.badgeType)
         case .tag:
-            .tag(tag(for: theme))
+            .tag(tagModel.isLoading ?
+                .init(loadingLabel: tagModel.label,
+                      progress: tagModel.progress,
+                      shape: tagModel.shape,
+                      size: tagModel.size)
+                : .init(label: tagModel.label,
+                        status: tagModel.status(from: theme),
+                        appearance: tagModel.appearance,
+                        shape: tagModel.shape,
+                        size: tagModel.size))
         case .icon:
             .icon(iconModel.icon(for: theme))
         case .image:

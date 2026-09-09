@@ -91,11 +91,11 @@ open class ListItemAvatarConfigurationModel: ComponentConfiguration {
     private func badgeType(for theme: OUDSTheme) -> OUDSListItemAvatar.BadgeType? {
         switch badgeOption {
         case .none:
-            return nil
+            nil
         case .standard:
-            return OUDSListItemAvatar.BadgeType.standard(standardBadgeModel.status, accessibilityLabel: "")
+            OUDSListItemAvatar.BadgeType.standard(standardBadgeModel.status, accessibilityLabel: "")
         case .icon:
-            return OUDSListItemAvatar.BadgeType.icon(iconBadgeModel.statusWithIcon(from: theme))
+            OUDSListItemAvatar.BadgeType.icon(iconBadgeModel.statusWithIcon(from: theme))
         }
     }
 

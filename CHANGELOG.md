@@ -36,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Library] Update of tokens (tokens librairies v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - [DesignToolbox] Add missing configuration elements for list item component (Orange-OpenSource/ouds-ios#1678)
+- [DesignToolbox] Update configuration elements for `list item` components (Orange-OpenSource/ouds-ios#1678)
 - [Library] Update of tokens (tokens librairies v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - [Library] Loading state of `tag` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1717)
 - [Library] Loading state of `button` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1695)
