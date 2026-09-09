@@ -7446,7 +7446,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1721-for-toolbar-top-component-update-api-to-use-principal-placement";
+				branch = develop;
 				kind = branch;
 			};
 		};
