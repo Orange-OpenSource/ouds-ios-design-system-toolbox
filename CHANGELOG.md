@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] GitHub Action `ruby/setup-ruby` from v1.316.0 to v1.321.0 for all workflow
 - [Library] Update of tokens (tokens librairies v2.7.0) (Orange-OpenSource/ouds-ios#1652)
 - [DesignToolbox] Add missing configuration elements for list item component (Orange-OpenSource/ouds-ios#1678)
 - [DesignToolbox] Update configuration elements for `list item` components (Orange-OpenSource/ouds-ios#1678)
