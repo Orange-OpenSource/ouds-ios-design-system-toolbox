@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Ruby Gem `fastlane` from v2.237.0 to v2.239.0
 - [DesignToolbox] Ruby version from v4.0.5 to v4.0.6 for `build-and-test` workflow
 - [DesignToolbox] GitHub Action `ossf/scorecard-action` from v2.4.3 to v2.4.4 for `scorecard` workflow
 - [DesignToolbox] GitHub Action `actions/checkout` from v7.0.0 to v7.0.1 for all workflows
@@ -101,6 +102,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] **BREAKING**: Deprecated initializers for `button`, `checkbox`, `chips`, `radio`, `switch`, `checkbox`, `text input`, `badge`, `link`, `tag` components
 - [Library] **BREAKING**: Component tokens of `control item` component (Orange-OpenSource/ouds-ios#1579)
 - [Library] **BREAKING**: Component tokens of `expand link` component (Orange-OpenSource/ouds-ios#1579)
+
+# Security
+
+- [DesignToolbox] `j`son transitive RubyGem from 2.20.0 to 2.21.2 (CVE-2026-71847)
 
 ## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...2.3.0) - 2026-07-09
 
