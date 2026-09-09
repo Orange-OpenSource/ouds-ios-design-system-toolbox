@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] GitHub Action `actions/checkout` from v7.0.0 to v7.0.1 for all workflows
 - [DesignToolbox] GitHub Action `github/codeql-action/upload-sarif` from v4.37.0 to v4.38.0 for `scorecard` workflow
 - [DesignToolbox] GitHub Action `ruby/setup-ruby` from v1.316.0 to v1.321.0 for all workflow
 - [Library] Update of tokens (tokens librairies v2.7.0) (Orange-OpenSource/ouds-ios#1652)
