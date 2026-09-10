@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "5115eb0dffb7fbd2561359515473d7a207460b50"
+        "branch" : "1716-for-list-item-component-add-an-alternative-to-avatars-badge-for-voice-over",
+        "revision" : "aa8942fcd2149eaf1159c4a817d96361dcbd0c4c"
       }
     },
     {
