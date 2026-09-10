@@ -84,7 +84,8 @@ open class ListItemAvatarConfigurationModel: ComponentConfiguration {
         return OUDSListItemAvatar(
             type: avatarType,
             size: size,
-            badgeType: badgeType(for: theme))
+            badgeType: badgeType(for: theme),
+            accessibilityLabel: "app_components_listItem_avatar_a11y".localized())
     }
 
     @MainActor
@@ -93,7 +94,7 @@ open class ListItemAvatarConfigurationModel: ComponentConfiguration {
         case .none:
             nil
         case .standard:
-            OUDSListItemAvatar.BadgeType.standard(standardBadgeModel.status, accessibilityLabel: "")
+            OUDSListItemAvatar.BadgeType.standard(standardBadgeModel.status, accessibilityLabel: "app_components_badge_hint_a11y".localized())
         case .icon:
             OUDSListItemAvatar.BadgeType.icon(iconBadgeModel.statusWithIcon(from: theme))
         }

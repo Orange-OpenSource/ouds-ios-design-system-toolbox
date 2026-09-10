@@ -43,8 +43,8 @@ struct TypographyIllustration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        if theme.hasTypographyHeadingLargeMarker {
-            OUDSHeading(text: "Welcome here!", size: .large, hasMarker: theme.hasTypographyHeadingLargeMarker)
+        if theme.typography.headingLargeMarker {
+            OUDSHeading(text: "Welcome here!", size: .large, hasMarker: theme.typography.headingLargeMarker)
         } else {
             OUDSHeading(text: "Welcome here!", coloredText: "here!")
         }

@@ -62,7 +62,9 @@ open class ListItemBadgeConfigurationModel: ComponentConfiguration {
     var badgeType: OUDSListItemTrailing.BadgeType {
         switch badgeTypeOption {
         case .standard:
-            .standard(.init(accessibilityLabel: "", status: standardModel.status, size: standardModel.standardSize))
+            .standard(.init(accessibilityLabel: "app_components_badge_hint_a11y".localized(),
+                            status: standardModel.status,
+                            size: standardModel.standardSize))
         case .count:
             .count(.init(countModel.count,
                          accessibilityLabel: code.count.description,
