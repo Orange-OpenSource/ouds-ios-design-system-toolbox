@@ -1,10 +1,119 @@
-g# OUDS iOS design system toolbox changelog
+# OUDS iOS design system toolbox changelog
 
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/2.2.0...2.3.0) - 2026-07-10
+## [3.0.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.0...3.0.0) - 2026-09-10
+
+### Added
+
+- [Library] Tutorial for themes creation and tokens overrides (Orange-OpenSource/ouds-ios#1547)
+- [Library] For `list item` components add an alternative to avatar's badge for Voice Over (Orange-OpenSource/ouds-ios#1716)
+- [Library] `principal` placement for `toolbar top` component items (Orange-OpenSource/ouds-ios#1721)
+- [Library] `subtitle` on `toolbar top` for iOS lower than 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
+- [Library] Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
+- [Library] Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
+- [Library] `OUDSAsyncImage` API for cached `AsyncImage` and use inside `list item` components (Orange-OpenSource/ouds-ios#1681)
+- [Library] Helpers to apply OUDS styles for rich text (Orange-OpenSource/ouds-ios#1682)
+- [DesignToolbox] `typography` components (Orange-OpenSource/ouds-ios#1679)
+- [Library] `typography` components (Orange-OpenSource/ouds-ios#1580)
+- [Library] `static list item` and `navigation list item` components (Orange-OpenSource/ouds-ios#265)
+- [Library] `linear progress indicator` component (Orange-OpenSource/ouds-ios#1509) 
+- [Library] `circular progress indicator` component (Orange-OpenSource/ouds-ios#409)
+- [DesignToolbox] Sandbox / debug view for experiments and easy debugging
+- [DesignToolbox] Support of `tvOS` in Design System Toolbox app and keep `watchOS` on light app (Orange-OpenSource/ouds-ios#1480)
+- [Library] `Tab view` component to use SwiftUI `Tab` API (Orange-OpenSource/ouds-ios#1452)
+- [Library] `View modifier` to force keyboard closing on tap (Orange-OpenSource/ouds-ios#1530)
+- [Library] `View modifier` to apply theme on Liquid Glass SwiftUI `TabView` (Orange-OpenSource/ouds-ios#1459)
+- [Library] `View modifier` to add custom accessibility traits inside `text area` component (Orange-OpenSource/ouds-ios#1597)
+- [Library] Flag to let `link` component take full width (Orange-OpenSource/ouds-ios#1576)
+- [Library] Component tokens for `accordions`, `progress indicators` and `typography` components (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] Semantic tokens of `colors` dedicated to AI (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579) 
+- [Library] Components tokens for `list item` (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] Components tokens for `button` dedicated to AI (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+
+### Changed
+
+- [DesignToolbox] Swift Package `accessibility-statement-lib-ios` to v2.4.0
+- [DesignToolbox] Ruby Gem `excon` transitive RubyGem from v1.5.0 to v1.7.1
+- [DesignToolbox] Ruby Gem `fastlane` from v2.237.0 to v2.239.0
+- [DesignToolbox] Ruby version from v4.0.5 to v4.0.6 for `build-and-test` workflow
+- [DesignToolbox] GitHub Action `ossf/scorecard-action` from v2.4.3 to v2.4.4 for `scorecard` workflow
+- [DesignToolbox] GitHub Action `actions/checkout` from v7.0.0 to v7.0.1 for all workflows
+- [DesignToolbox] GitHub Action `github/codeql-action/upload-sarif` from v4.37.0 to v4.38.0 for `scorecard` workflow
+- [DesignToolbox] GitHub Action `ruby/setup-ruby` from v1.316.0 to v1.321.0 for all workflow
+- [Library] Update of tokens (tokens librairies v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- [DesignToolbox] Add missing configuration elements for list item component (Orange-OpenSource/ouds-ios#1678)
+- [DesignToolbox] Update configuration elements for `list item` components (Orange-OpenSource/ouds-ios#1678)
+- [Library] Update of tokens (tokens librairies v2.7.0) (Orange-OpenSource/ouds-ios#1652)
+- [Library] Loading state of `tag` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1717)
+- [Library] Loading state of `button` component with OUDS circular progress indicator (Orange-OpenSource/ouds-ios#1695)
+- [Library] Update icons to v2.3.0 (Orange-OpenSource/ouds-ios#1432)
+- [Library] Animations for `progress indicator` components (Orange-OpenSource/ouds-ios#1708)
+- [Library] `password input` component to version 1.3.1 (Orange-OpenSource/ouds-ios#1526)
+- [Library] `text input` component to version 1.4.1 (Orange-OpenSource/ouds-ios#1524)
+- [Library] `linear progress indicator` component to version 1.2.0 (Orange-OpenSource/ouds-ios#1674)
+- [Library] `progress indicator` components to version 1.2.0 (Orange-OpenSource/ouds-ios#1674)
+- [Library] `text area` component to version 1.2.1 (Orange-OpenSource/ouds-ios#1527)
+- [Library] `button` component to version 3.3.0 (Orange-OpenSource/ouds-ios#1583)
+- [DesignToolbox] Swift Package `accessibility-statement-lib-ios` to v2.4.0-beta.1
+- [Library] **BREAKING**: `link` component to v2.4.0 (Orange-OpenSource/ouds-ios#1640)
+- [Library] `suggestion chip` and `filter chip` components to v1.5.0 (Orange-OpenSource/ouds-ios#1588)
+- [Library] **BREAKING**: `link` component to v2.3.0 (Orange-OpenSource/ouds-ios#1589)
+- [Library] Detection of forced legacy layout for navigation elements
+- [Library] **BREAKING**: `.neutral` and `.accent` `badge icon status` signatures
+- [Library] **BREAKING**: `.neutral` and `.accent` `alert status` parameter name
+- [Library] **BREAKING**: `.icon` and `.textAndIcon` layouts for `chip picker data` object
+- [Library] `elevation` semantic tokens for `Orange`, `Orange Compact`, `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] `color` semantic tokens for `Orange`, `Orange Compact`, `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] `link` component tokens for `Sosh` theme (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] `button` component tokens for `Orange Compact` theme (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] `alert` component tokens for `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] `text input` component tokens for `Sosh` theme (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] `text area` component tokens for `Orange`, `Orange Compact`, `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] **BREAKING**: Components token for `tag` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] **BREAKING**: Components token for `link` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] **BREAKING**: Components token for `icon` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+- [Library] **BREAKING**: Components token for `button` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
+
+### Fixed
+
+- [Library] Broken size of the `circular progress indicator` with helper text (Orange-OpenSource/ouds-ios#1755)
+- [DesignSystemToolbox] Accessibility label to vocalize and to display for custom view label of `list item` components (Orange-OpenSource/ouds-ios#1719)
+- [Library] Vocalization of accessibility trait for `navigation list item` component (Orange-OpenSource/ouds-ios#1718)
+- [Library] Vocalization of `warning` and `negative` statuses of `progress indicators` components (Orange-OpenSource/ouds-ios#1697)
+- [Library] Vocalization of `progress indicators` components (Orange-OpenSource/ouds-ios#1698)
+- [DesignToolbox] Use of asset for typography heading marker (Orange-OpenSource/ouds-ios#1689)
+- [DesignToolbox] Adjust title color on toolbar bar top when content color change (Orange-OpenSource/ouds-ios#1563)
+- [DesignToolbox] Status picker of progress indicators not disabled if colored surface enabled
+- [DesignToolbox] Vocalization with `Voice Over` of badges for tab bar demo (Orange-OpenSource/ouds-ios#1227)
+- [Library] `Voice Over` announcement of displayed `alert` component (Orange-OpenSource/ouds-ios#1491)
+- [Library] Usage of `PIN code input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1631)
+- [Library] Usage of `password input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1562)
+- [Library] Usage of `text input` with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1562)
+- [Library] Vocalization priority for `alert message` components and usage with *Full Keyboard Access* (Orange-OpenSource/ouds-ios#1564)
+- [Library] `PIN code input` component usage with Voice Over (Orange-OpenSource/ouds-ios#1529)
+- [Library] Missing `badges` on `toolbar top` component for app on iOS 27 with Xcode 26.5 and disabled Liquid Glass configuration (Orange-OpenSource/ouds-ios#1623)
+- [Library] Missing "core_common_back" localized string for `back` button of `toolbar top` component (Orange-OpenSource/ouds-ios#1577)
+- [Library] For `alert` components, add default vocalisation on "info" status (Orange-OpenSource/ouds-ios#1561)
+- [Library] Icon assets for unordered `bullet list` item not displayed (Orange-OpenSource/ouds-ios#1615)
+
+### Removed
+
+- [Library] **BREAKING**: `forceOUDSLegacyTabBar` and `OUDSLegacyTabBarModifier`, for `forceOUDSLegacyLayout` and `OUDSLegacyLayoutModifier`
+- [Library] **BREAKING**: Deprecated `OUDSBadge` API
+- [Library] **BREAKING**: Deprecated type `OUDSIcon`
+- [Library] **BREAKING**: Deprecated initializers for `button`, `checkbox`, `chips`, `radio`, `switch`, `checkbox`, `text input`, `badge`, `link`, `tag` components
+- [Library] **BREAKING**: Component tokens of `control item` component (Orange-OpenSource/ouds-ios#1579)
+- [Library] **BREAKING**: Component tokens of `expand link` component (Orange-OpenSource/ouds-ios#1579)
+
+### Security
+
+- [DesignToolbox] `excon` transitive RubyGem from v0.112.0 to v1.5.0 (CVE-2026-54171)
+- [DesignToolbox] `json` transitive RubyGem from v2.20.0 to v2.21.2 (CVE-2026-71847)
+
+## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...2.3.0) - 2026-07-09
 
 ### Added
 
@@ -603,3 +712,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Various cleanings and split of design system toolbox app from independant repository ([Orange-OpenSource/ouds-ios#187](https://github.com/Orange-OpenSource/ouds-ios/issues/187))
 - Udpate wordings to avoid traduction for components and tokens names ([Orange-OpenSource/ouds-ios#654](https://github.com/Orange-OpenSource/ouds-ios/issues/654))
 - Use the new Switch component in all screens of the application ([Orange-OpenSource/ouds-ios#431](https://github.com/Orange-OpenSource/ouds-ios/issues/431))
+0

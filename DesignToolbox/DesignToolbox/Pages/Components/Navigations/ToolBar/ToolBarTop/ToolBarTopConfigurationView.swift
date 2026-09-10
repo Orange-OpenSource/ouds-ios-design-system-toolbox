@@ -11,6 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(tvOS)
+
 import OUDSSwiftUI
 import SwiftUI
 
@@ -22,10 +24,6 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
     // MARK: Properties
 
     @Published var demoOption: DemoOption {
-        didSet { updateCode() }
-    }
-
-    @Published var title: String {
         didSet { updateCode() }
     }
 
@@ -50,7 +48,6 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
     override init() {
         demoOption = .navigation
 
-        title = "app_components_topAppBar_title_label".localized()
         largeTitle = false
         subTitle = ""
 
@@ -90,7 +87,7 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
     // MARK: Code update
 
     private var titlePattern: String {
-        !title.isEmpty ? "\"\(title)\"," : ""
+        !title.isEmpty ? "\"\(title)\", " : ""
     }
 
     private var hasLargeTitlePattern: String {
@@ -108,6 +105,10 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
               \(leadingItemsPattern)
             }
             """
+        let principal = principalType != .none ?
+            """
+            , principalItem: \(principalItemPattern)
+            """ : ""
         let trailing = trailingItemPattern.isEmpty ? "" :
             """
             , trailingItems: {
@@ -117,7 +118,7 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
 
         code = """
         SomeView()
-        .toolBarTop(\(titlePattern)\(hasLargeTitlePattern)\(subtitlePattern)\(leading)\(trailing))
+        .toolBarTop(\(titlePattern)\(hasLargeTitlePattern)\(subtitlePattern)\(leading)\(principal)\(trailing))
         """
     }
 }
@@ -147,25 +148,23 @@ struct ToolBarTopConfiguration: View {
                     OUDSSwitchItem("app_components_topAppBar_hideBackButton_tech", isOn: $configurationModel.hideBackButton)
                 }
 
+                OUDSHorizontalDivider()
+
                 ToolBarLeadingConfiguration(configurationModel: configurationModel)
 
-                ToolBarTrailingConfiguration(configurationModel: configurationModel)
-                if configurationModel.trailing == .icon {
-                    OUDSHorizontalDivider()
+                OUDSHorizontalDivider()
 
-                    OUDSChipPicker(title: "app_components_badge_tech".localized(),
-                                   selection: $configurationModel.badgeType,
-                                   chips: BarItemBadgeType.chips)
-                }
+                ToolBarPrincipalConfiguration(configurationModel: configurationModel)
+
+                OUDSHorizontalDivider()
+
+                ToolBarTrailingConfiguration(configurationModel: configurationModel)
 
                 ToolBarItemStyle(configurationModel: configurationModel)
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.title, label: "app_components_topAppBar_title_tech")
-                    if #available(iOS 26, *) {
-                        DesignToolboxTextField(text: $configurationModel.subTitle, label: "app_components_topAppBar_subtitle_tech")
-                    }
-
+                    DesignToolboxTextField(text: $configurationModel.subTitle, label: "app_components_topAppBar_subtitle_tech")
                     DesignToolboxTextField(text: $configurationModel.leadingText, label: "app_components_toolbar_leadingText_label")
                     DesignToolboxTextField(text: $configurationModel.trailingText, label: "app_components_toolbar_trailingText_label")
                 }
@@ -190,3 +189,5 @@ enum DemoOption: DesignToolboxEnumLocalizedRepresentable {
         }
     }
 }
+
+#endif

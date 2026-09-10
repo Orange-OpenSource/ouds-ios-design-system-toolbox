@@ -38,8 +38,7 @@ open class PasswordInputSnapshotsTestsTestCase: XCTestCase {
     @MainActor func testAllPasswordInputs(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for outlined in [true, false] {
             for lockIcon in [true, false] {
-                // Drop the loading status still the progress indicator is done
-                for status in OUDSTextInput.Status.allCases where status != .loading {
+                for status in OUDSTextInput.Status.allCases {
                     testPasswordInput(theme: theme,
                                       interfaceStyle: interfaceStyle,
                                       lockIcon: lockIcon,

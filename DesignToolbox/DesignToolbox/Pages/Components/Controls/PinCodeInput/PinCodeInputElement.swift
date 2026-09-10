@@ -11,6 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(tvOS)
+
 import OUDSSwiftUI
 import SwiftUI
 
@@ -38,3 +40,5 @@ private struct PinCodeInputIllustration: View {
         OUDSPinCodeInput($pinCode, length: .six, helperText: String(localized: "app_components_pinCodeInputHelperText_label"))
     }
 }
+
+#endif

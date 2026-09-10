@@ -24,14 +24,10 @@ struct SwitchesItemView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(watchLayout: {
+        WatchScrollLayoutView(layout: {
             watchLayout
-        }, tvLayout: {
-            tvLayout
         })
     }
-
-    // MARK: - watchOS
 
     private var watchLayout: some View {
         WatchVerticalLayout {
@@ -43,42 +39,6 @@ struct SwitchesItemView: View {
             Text("Without icon").font(.headline)
             detailedView(withIcon: false)
         }
-    }
-
-    // MARK: - tvOS
-
-    private var tvLayout: some View {
-        TVGridLayout(count: 2) {
-
-            // Column n°1: without icon
-            VStack(spacing: theme.spaces.scaledMediumMobile) {
-                Text("Without Icon")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.bottom, theme.spaces.scaledSmallMobile)
-
-                switchSection(title: "Enabled", withIcon: false)
-                switchSection(title: "Error", withIcon: false, isError: true)
-                switchSection(title: "Disabled", withIcon: false, isDisabled: true)
-                switchSection(title: "Read Only", withIcon: false, isReadOnly: true)
-            }
-            .padding()
-
-            // Column n°2: with Icon
-            VStack(spacing: theme.spaces.scaledMediumMobile) {
-                Text("With Icon")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.bottom, theme.spaces.scaledSmallMobile)
-
-                switchSection(title: "Enabled", withIcon: true)
-                switchSection(title: "Error", withIcon: true, isError: true)
-                switchSection(title: "Disabled", withIcon: true, isDisabled: true)
-                switchSection(title: "Read Only", withIcon: true, isReadOnly: true)
-            }
-            .padding()
-        }
-        .padding()
     }
 
     // MARK: - Helpers

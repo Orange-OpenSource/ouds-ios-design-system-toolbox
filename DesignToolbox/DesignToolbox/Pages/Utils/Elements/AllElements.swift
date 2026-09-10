@@ -15,6 +15,8 @@
 import UIKit
 #endif
 
+// swiftlint:disable function_body_length
+
 /// Central registry for all `DesignToolboxElement` instances.
 /// Use these helpers instead of re-declaring the lists in each page.
 enum AllElements {
@@ -40,8 +42,12 @@ enum AllElements {
     /// All component elements, filtered for the current platform / device.
     /// - `PinCodeInputElement`, `ToolBarBottomElement`, `ToolBarTopElement` are iOS/non-visionOS only.
     /// - `TabBarElement` is removed on macOS and iPad (navigation conflicts).
+    /// - On tvOS, text-input based components (`PasswordInput`, `PinCodeInput`, `TextInput`,
+    ///   `TextArea`) are excluded because their UX (full-screen keyboard) is inadequate for
+    ///   showcasing tokens on a TV screen. `TabBarElement`, `ToolBarBottomElement`,
+    ///   `ToolBarTopElement` are also excluded because the underlying components are iOS-only.
     @MainActor static func componentElements() -> [DesignToolboxElement] {
-        #if !os(macOS) && !os(visionOS)
+        #if os(tvOS)
         var elements: [DesignToolboxElement] = [
             AlertElements(),
             BadgeElements(),
@@ -52,8 +58,28 @@ enum AllElements {
             ColoredSurfaceElement(),
             DividerElements(),
             LinkElement(),
+            ProgressIndicatorElements(),
+            ListItemElements(),
+            RadioElements(),
+            SwitchElements(),
+            TagElements(),
+            TypographyElements(),
+        ]
+        #elseif !os(macOS) && !os(visionOS)
+        var elements: [DesignToolboxElement] = [
+            AlertElements(),
+            BadgeElements(),
+            BulletListElement(),
+            ButtonElement(),
+            CheckboxElements(),
+            ChipElements(),
+            ColoredSurfaceElement(),
+            DividerElements(),
+            LinkElement(),
+            ListItemElements(),
             PasswordInputElement(),
             PinCodeInputElement(),
+            ProgressIndicatorElements(),
             RadioElements(),
             SwitchElements(),
             TabBarElement(),
@@ -62,6 +88,7 @@ enum AllElements {
             TextInputElement(),
             ToolBarBottomElement(),
             ToolBarTopElement(),
+            TypographyElements(),
         ]
         #else
         var elements: [DesignToolboxElement] = [
@@ -74,13 +101,16 @@ enum AllElements {
             ColoredSurfaceElement(),
             DividerElements(),
             LinkElement(),
+            ListItemElements(),
             PasswordInputElement(),
+            ProgressIndicatorElements(),
             RadioElements(),
             SwitchElements(),
             TabBarElement(),
             TagElements(),
             TextAreaElement(),
             TextInputElement(),
+            TypographyElements(),
         ]
         #endif
 
@@ -88,6 +118,8 @@ enum AllElements {
         // Demo is broken for other platforms (navigation troubles with this tab view integrated elsewhere).
         #if os(macOS)
         elements.removeAll(where: { $0 is TabBarElement })
+        #elseif os(tvOS)
+        // TabBarElement is not in the tvOS list; nothing to do.
         #elseif canImport(UIKit)
         if UIDevice.current.userInterfaceIdiom == .pad {
             elements.removeAll(where: { $0 is TabBarElement })
@@ -97,3 +129,5 @@ enum AllElements {
         return elements
     }
 }
+
+// swiftlint:enable function_body_length

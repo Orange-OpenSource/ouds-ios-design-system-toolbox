@@ -61,9 +61,9 @@ open class AlertConfigurationModel: ComponentConfiguration {
         let imageAsset: Image = (statusIcon == .tintedIcon ? Image.defaultImage(prefixedBy: theme.name) : Image.placeholderImage())
         return switch status {
         case .neutral:
-            .neutral(icon: statusIcon == .none ? nil : OUDSImage(asset: imageAsset, flipped: flipIcon, renderingMode: imageRenderingMode))
+            .neutral(image: statusIcon == .none ? nil : OUDSImage(asset: imageAsset, flipped: flipIcon, renderingMode: imageRenderingMode))
         case .accent:
-            .accent(icon: statusIcon == .none ? nil : OUDSImage(asset: imageAsset, flipped: flipIcon, renderingMode: imageRenderingMode))
+            .accent(image: statusIcon == .none ? nil : OUDSImage(asset: imageAsset, flipped: flipIcon, renderingMode: imageRenderingMode))
         case .positive:
             .positive
         case .info:
@@ -92,9 +92,9 @@ open class AlertConfigurationModel: ComponentConfiguration {
             case .none:
                 ""
             case .tintedIcon:
-                "icon: OUDSImage(asset: Image(decorative: \"tips-and-tricks\")\(flipIconPattern)\(renderingModePattern))"
+                "image: OUDSImage(asset: Image(decorative: \"tips-and-tricks\")\(flipIconPattern)\(renderingModePattern))"
             case .image:
-                "icon: OUDSImage(asset: Image(decorative: \"il_placeholder\")\(flipIconPattern)\(renderingModePattern))"
+                "image: OUDSImage(asset: Image(decorative: \"il_placeholder\")\(flipIconPattern)\(renderingModePattern))"
             }
         default:
             statusIcon != .none ? "showIcon: true" : ""

@@ -29,17 +29,32 @@ struct DesignToolboxTextField: View {
     }
 
     var body: some View {
+        #if os(tvOS)
+        // `OUDSTextInput` is not shipped on tvOS. Fall back to the native SwiftUI
+        // `TextField`, which triggers the full-screen tvOS keyboard on focus.
+        VStack(alignment: .leading, spacing: 4) {
+            Text(label).font(.subheadline)
+            TextField(prompt, text: text)
+                .textFieldStyle(.plain)
+                .accessibilityIdentifier(A11YIdentifiers.configurationTextField)
+        }
+        #else
         OUDSTextInput(label: label, text: text, placeholder: prompt, trailingAction: deleteAction)
             .accessibilityIdentifier(A11YIdentifiers.configurationTextField)
+        #endif
     }
 
+    #if !os(tvOS)
     private var deleteAction: OUDSTextInput.TrailingAction? {
         guard !text.wrappedValue.isEmpty else {
             return nil
         }
 
-        return .init(image: OUDSImage(asset: Image(decorative: "ic_tag_close", bundle: theme.resourcesBundle)), actionHint: "app_components_common_textInputClearIcon_a11y") {
+        return .init(image: OUDSImage(asset: Image(decorative: "Component-tag-close", bundle: theme.resourcesBundle)),
+                     actionHint: "app_components_common_textInputClearIcon_a11y")
+        {
             text.wrappedValue = ""
         }
     }
+    #endif
 }

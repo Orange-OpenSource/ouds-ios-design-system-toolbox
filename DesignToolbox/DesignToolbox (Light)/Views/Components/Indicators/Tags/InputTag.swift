@@ -17,8 +17,7 @@ import SwiftUI
 struct InputTagView: View {
 
     var body: some View {
-        WatchAndTVLayoutsView(watchLayout: { WatchVerticalLayout { layout } },
-                              tvLayout: { TVVerticalLayout { layout } })
+        WatchScrollLayoutView(layout: { WatchVerticalLayout { layout } })
     }
 
     @ViewBuilder

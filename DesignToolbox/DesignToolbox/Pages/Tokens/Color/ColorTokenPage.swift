@@ -25,6 +25,7 @@ struct ColorTokenPage: View {
             Section {
                 DesignToolboxCode(code: "theme.colors.bgPrimary.color(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
+            Section { illustrationForAI() } header: { header("AI") }
             Section { illustrationForAction() } header: { header("Action") }
             Section { illustrationForAlways() } header: { header("Always") }
             Section { illustrationForBackground() } header: { header("Background") }
@@ -47,7 +48,16 @@ struct ColorTokenPage: View {
     // MARK: Private helpers
 
     private func header(_ text: String) -> some View {
-        Text(text).designToolboxSectionHeaderStyle()
+        OUDSHeading(text: text, size: .large, hasMarker: true)
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private func illustrationForAI() -> some View {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            ForEach(NamedColor.Ai.allCases, id: \.rawValue) { namedColorToken in
+                Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+            }
+        }
     }
 
     private func illustrationForAction() -> some View {

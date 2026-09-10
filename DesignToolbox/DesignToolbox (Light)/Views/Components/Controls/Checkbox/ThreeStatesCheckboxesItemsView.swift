@@ -23,14 +23,10 @@ struct ThreeStatesCheckboxesItemsView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(watchLayout: {
+        WatchScrollLayoutView(layout: {
             watchLayout
-        }, tvLayout: {
-            tvLayout
         })
     }
-
-    // MARK: - watchOS
 
     @ViewBuilder
     private var watchLayout: some View {
@@ -163,41 +159,6 @@ struct ThreeStatesCheckboxesItemsView: View {
                                       image: OUDSImage(asset: Image(systemName: "flag.pattern.checkered")),
                                       isReversed: true,
                                       isReadOnly: true)
-    }
-
-    // MARK: - tvOS
-
-    private var tvLayout: some View {
-        TVGridLayout(count: 2) {
-            // Column n°1: without icon
-            VStack(spacing: theme.spaces.scaledMediumMobile) {
-                Text("Without Icon")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.bottom, theme.spaces.paddingInlineSmall)
-
-                checkboxSection(title: "Normal", withIcon: false)
-                checkboxSection(title: "Disabled", withIcon: false, isDisabled: true)
-                checkboxSection(title: "Error", withIcon: false, isError: true)
-                checkboxSection(title: "Read Only", withIcon: false, isReadOnly: true)
-            }
-            .padding()
-
-            // Column n°1: with icon
-            VStack(spacing: theme.spaces.scaledMediumMobile) {
-                Text("With Icon")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.bottom, theme.spaces.paddingInlineSmall)
-
-                checkboxSection(title: "Normal", withIcon: true)
-                checkboxSection(title: "Disabled", withIcon: true, isDisabled: true)
-                checkboxSection(title: "Error", withIcon: true, isError: true)
-                checkboxSection(title: "Read Only", withIcon: true, isReadOnly: true)
-            }
-            .padding()
-        }
-        .padding()
     }
 
     // MARK: - Helpers

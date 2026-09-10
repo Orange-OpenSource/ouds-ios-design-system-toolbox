@@ -21,12 +21,9 @@ struct BulletListsView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(title: "Bullet List",
-                              watchLayout: { watchOSVerticalLayout },
-                              tvLayout: { tvOSGridLayout })
+        WatchScrollLayoutView(title: "Bullet List",
+                              layout: { watchOSVerticalLayout })
     }
-
-    // MARK: - watchOS
 
     private var watchOSVerticalLayout: some View {
         WatchVerticalLayout {
@@ -90,101 +87,6 @@ struct BulletListsView: View {
                 }
             }
         }
-    }
-
-    // MARK: - tvOS
-
-    private var tvOSGridLayout: some View {
-        TVGridLayout(count: 3) {
-
-            // Column n°1: bare list
-            VStack(spacing: theme.spaces.paddingBlockLarge) {
-                Text("Bare").font(.headline)
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.bottom, theme.spaces.paddingBlockSmall)
-
-                bulletListSection(title: "Body Large") {
-                    OUDSBulletList(type: .bare) {
-                        OUDSBulletList.Item("Label") {
-                            OUDSBulletList.Item("Label") {
-                                OUDSBulletList.Item("Label")
-                            }
-                        }
-                    }
-                }
-
-                bulletListSection(title: "Body Medium") {
-                    OUDSBulletList(type: .bare, textStyle: .bodyMedium) {
-                        OUDSBulletList.Item("Label") {
-                            OUDSBulletList.Item("Label") {
-                                OUDSBulletList.Item("Label")
-                            }
-                        }
-                    }
-                }
-            }
-            .padding()
-
-            // Column n°2: ordered list
-            VStack(spacing: theme.spaces.paddingBlockLarge) {
-                Text("Ordered").font(.headline)
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.bottom, theme.spaces.paddingBlockSmall)
-
-                bulletListSection(title: "Body Large") {
-                    OUDSBulletList(type: .ordered) {
-                        OUDSBulletList.Item("Label") {
-                            OUDSBulletList.Item("Label") {
-                                OUDSBulletList.Item("Label")
-                            }
-                        }
-                    }
-                }
-
-                bulletListSection(title: "Body Medium") {
-                    OUDSBulletList(type: .ordered, textStyle: .bodyMedium) {
-                        OUDSBulletList.Item("Label") {
-                            OUDSBulletList.Item("Label") {
-                                OUDSBulletList.Item("Label")
-                            }
-                        }
-                    }
-                }
-            }
-            .padding()
-
-            // Column n°3: unordered list
-            VStack(spacing: theme.spaces.paddingBlockLarge) {
-                Text("Unordered").font(.headline)
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.bottom, theme.spaces.paddingBlockSmall)
-
-                bulletListSection(title: "Body Large") {
-                    OUDSBulletList {
-                        OUDSBulletList.Item("Label") {
-                            OUDSBulletList.Item("Label") {
-                                OUDSBulletList.Item("Label")
-                            }
-                        }
-                    }
-                }
-
-                bulletListSection(title: "Body Medium") {
-                    OUDSBulletList(textStyle: .bodyMedium) {
-                        OUDSBulletList.Item("Label") {
-                            OUDSBulletList.Item("Label") {
-                                OUDSBulletList.Item("Label")
-                            }
-                        }
-                    }
-                }
-            }
-            .padding()
-        }
-        .padding()
     }
 
     @ViewBuilder

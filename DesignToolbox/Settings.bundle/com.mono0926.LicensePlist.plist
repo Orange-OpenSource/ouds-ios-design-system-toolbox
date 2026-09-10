@@ -14,7 +14,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/accessibility-statement-lib-ios</string>
 			<key>Title</key>
-			<string>DeclarationAccessibility (2.3.0)</string>
+			<string>DeclarationAccessibility (2.4.0)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -22,7 +22,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/ouds-ios</string>
 			<key>Title</key>
-			<string>OUDS (2.3.0)</string>
+			<string>OUDS (3.0.0)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -30,7 +30,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/swift-custom-dump</string>
 			<key>Title</key>
-			<string>swift-custom-dump (1.5.0)</string>
+			<string>swift-custom-dump (1.7.0)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -54,7 +54,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/xctest-dynamic-overlay</string>
 			<key>Title</key>
-			<string>xctest-dynamic-overlay (1.9.0)</string>
+			<string>xctest-dynamic-overlay (1.11.0)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>

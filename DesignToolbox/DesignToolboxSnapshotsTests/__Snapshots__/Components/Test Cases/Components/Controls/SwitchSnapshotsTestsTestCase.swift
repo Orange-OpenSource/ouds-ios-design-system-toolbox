@@ -184,7 +184,7 @@ open class SwitchSnapshotsTestsTestCase: XCTestCase {
 /// The test object which will define the `OUDSSwitch` or `OUDSSwitchItem`object to test
 struct SwitchTest: View {
 
-    enum Layout { // ControlItemLabel.LayoutData is not accessible, need to fake it here
+    enum Layout { // ControlItemTextContainer.LayoutData is not accessible, need to fake it here
         case indicatorOnly(isReadOnly: Bool)
         case `default`(label: String,
                        description: String?,

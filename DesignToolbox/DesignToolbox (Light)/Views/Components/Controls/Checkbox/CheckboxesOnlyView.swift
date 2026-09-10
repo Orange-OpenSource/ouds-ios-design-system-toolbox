@@ -33,9 +33,7 @@ private struct TwoStatesCheckboxesOnlyView: View {
     @State private var isOn: Bool = true
 
     var body: some View {
-        WatchAndTVLayoutsView(watchLayout: {
-            layout
-        }, tvLayout: {
+        WatchScrollLayoutView(layout: {
             layout
         })
     }
@@ -74,9 +72,7 @@ private struct ThreeStatesCheckboxesOnlyView: View {
     @State private var state: OUDSCheckboxIndicatorState = .indeterminate
 
     var body: some View {
-        WatchAndTVLayoutsView(watchLayout: {
-            layout
-        }, tvLayout: {
+        WatchScrollLayoutView(layout: {
             layout
         })
     }

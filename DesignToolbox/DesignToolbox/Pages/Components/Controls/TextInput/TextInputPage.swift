@@ -11,6 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(tvOS)
+
 import OUDSSwiftUI
 import SwiftUI
 
@@ -30,6 +32,7 @@ struct TextInputPage: View {
         } configurationView: {
             TextInputConfigurationView(configurationModel: configurationModel)
         }
+        .oudsHideKeyboardOnTap()
     }
 }
 
@@ -116,3 +119,5 @@ struct TextInputDemo: View {
         }
     }
 }
+
+#endif

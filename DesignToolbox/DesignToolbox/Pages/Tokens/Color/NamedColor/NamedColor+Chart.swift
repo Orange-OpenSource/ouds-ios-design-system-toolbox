@@ -13,6 +13,8 @@
 
 import OUDSSwiftUI
 
+// swiftlint:disable function_body_length
+
 extension NamedColor {
 
     enum Chart: String, CaseIterable {
@@ -35,6 +37,51 @@ extension NamedColor {
         case gridlines
         case highlight
         case neutral
+        case sequentialAccent1Tint100
+        case sequentialAccent1Tint200
+        case sequentialAccent1Tint300
+        case sequentialAccent1Tint400
+        case sequentialAccent1Tint500
+        case sequentialAccent1Tint600
+        case sequentialAccent1Tint700
+        case sequentialAccent1Tint800
+        case sequentialAccent1Tint900
+        case sequentialAccent2Tint100
+        case sequentialAccent2Tint200
+        case sequentialAccent2Tint300
+        case sequentialAccent2Tint400
+        case sequentialAccent2Tint500
+        case sequentialAccent2Tint600
+        case sequentialAccent2Tint700
+        case sequentialAccent2Tint800
+        case sequentialAccent2Tint900
+        case sequentialAccent3Tint100
+        case sequentialAccent3Tint200
+        case sequentialAccent3Tint300
+        case sequentialAccent3Tint400
+        case sequentialAccent3Tint500
+        case sequentialAccent3Tint600
+        case sequentialAccent3Tint700
+        case sequentialAccent3Tint800
+        case sequentialAccent3Tint900
+        case sequentialAccent4Tint100
+        case sequentialAccent4Tint200
+        case sequentialAccent4Tint300
+        case sequentialAccent4Tint400
+        case sequentialAccent4Tint500
+        case sequentialAccent4Tint600
+        case sequentialAccent4Tint700
+        case sequentialAccent4Tint800
+        case sequentialAccent4Tint900
+        case sequentialAccent5Tint100
+        case sequentialAccent5Tint200
+        case sequentialAccent5Tint300
+        case sequentialAccent5Tint400
+        case sequentialAccent5Tint500
+        case sequentialAccent5Tint600
+        case sequentialAccent5Tint700
+        case sequentialAccent5Tint800
+        case sequentialAccent5Tint900
 
         // We can bang! theme.charts here because controls on the existence of theme.charts have been previosuly done
         // swiftlint:disable force_unwrapping
@@ -78,8 +125,100 @@ extension NamedColor {
                 theme.colorsCharts!.highlight
             case .neutral:
                 theme.colorsCharts!.neutral
+            case .sequentialAccent1Tint100:
+                theme.colorsCharts!.sequentialAccent1Tint100
+            case .sequentialAccent1Tint200:
+                theme.colorsCharts!.sequentialAccent1Tint200
+            case .sequentialAccent1Tint300:
+                theme.colorsCharts!.sequentialAccent1Tint300
+            case .sequentialAccent1Tint400:
+                theme.colorsCharts!.sequentialAccent1Tint400
+            case .sequentialAccent1Tint500:
+                theme.colorsCharts!.sequentialAccent1Tint500
+            case .sequentialAccent1Tint600:
+                theme.colorsCharts!.sequentialAccent1Tint600
+            case .sequentialAccent1Tint700:
+                theme.colorsCharts!.sequentialAccent1Tint700
+            case .sequentialAccent1Tint800:
+                theme.colorsCharts!.sequentialAccent1Tint800
+            case .sequentialAccent1Tint900:
+                theme.colorsCharts!.sequentialAccent1Tint900
+            case .sequentialAccent2Tint100:
+                theme.colorsCharts!.sequentialAccent2Tint100
+            case .sequentialAccent2Tint200:
+                theme.colorsCharts!.sequentialAccent2Tint200
+            case .sequentialAccent2Tint300:
+                theme.colorsCharts!.sequentialAccent2Tint300
+            case .sequentialAccent2Tint400:
+                theme.colorsCharts!.sequentialAccent2Tint400
+            case .sequentialAccent2Tint500:
+                theme.colorsCharts!.sequentialAccent2Tint500
+            case .sequentialAccent2Tint600:
+                theme.colorsCharts!.sequentialAccent2Tint600
+            case .sequentialAccent2Tint700:
+                theme.colorsCharts!.sequentialAccent2Tint700
+            case .sequentialAccent2Tint800:
+                theme.colorsCharts!.sequentialAccent2Tint800
+            case .sequentialAccent2Tint900:
+                theme.colorsCharts!.sequentialAccent2Tint900
+            case .sequentialAccent3Tint100:
+                theme.colorsCharts!.sequentialAccent3Tint100
+            case .sequentialAccent3Tint200:
+                theme.colorsCharts!.sequentialAccent3Tint200
+            case .sequentialAccent3Tint300:
+                theme.colorsCharts!.sequentialAccent3Tint300
+            case .sequentialAccent3Tint400:
+                theme.colorsCharts!.sequentialAccent3Tint400
+            case .sequentialAccent3Tint500:
+                theme.colorsCharts!.sequentialAccent3Tint500
+            case .sequentialAccent3Tint600:
+                theme.colorsCharts!.sequentialAccent3Tint600
+            case .sequentialAccent3Tint700:
+                theme.colorsCharts!.sequentialAccent3Tint700
+            case .sequentialAccent3Tint800:
+                theme.colorsCharts!.sequentialAccent3Tint800
+            case .sequentialAccent3Tint900:
+                theme.colorsCharts!.sequentialAccent3Tint900
+            case .sequentialAccent4Tint100:
+                theme.colorsCharts!.sequentialAccent4Tint100
+            case .sequentialAccent4Tint200:
+                theme.colorsCharts!.sequentialAccent4Tint200
+            case .sequentialAccent4Tint300:
+                theme.colorsCharts!.sequentialAccent4Tint300
+            case .sequentialAccent4Tint400:
+                theme.colorsCharts!.sequentialAccent4Tint400
+            case .sequentialAccent4Tint500:
+                theme.colorsCharts!.sequentialAccent4Tint500
+            case .sequentialAccent4Tint600:
+                theme.colorsCharts!.sequentialAccent4Tint600
+            case .sequentialAccent4Tint700:
+                theme.colorsCharts!.sequentialAccent4Tint700
+            case .sequentialAccent4Tint800:
+                theme.colorsCharts!.sequentialAccent4Tint800
+            case .sequentialAccent4Tint900:
+                theme.colorsCharts!.sequentialAccent4Tint900
+            case .sequentialAccent5Tint100:
+                theme.colorsCharts!.sequentialAccent5Tint100
+            case .sequentialAccent5Tint200:
+                theme.colorsCharts!.sequentialAccent5Tint200
+            case .sequentialAccent5Tint300:
+                theme.colorsCharts!.sequentialAccent5Tint300
+            case .sequentialAccent5Tint400:
+                theme.colorsCharts!.sequentialAccent5Tint400
+            case .sequentialAccent5Tint500:
+                theme.colorsCharts!.sequentialAccent5Tint500
+            case .sequentialAccent5Tint600:
+                theme.colorsCharts!.sequentialAccent5Tint600
+            case .sequentialAccent5Tint700:
+                theme.colorsCharts!.sequentialAccent5Tint700
+            case .sequentialAccent5Tint800:
+                theme.colorsCharts!.sequentialAccent5Tint800
+            case .sequentialAccent5Tint900:
+                theme.colorsCharts!.sequentialAccent5Tint900
             }
         }
         // swiftlint:enable force_unwrapping
     }
 }
+
+// swiftlint:enable function_body_length

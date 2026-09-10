@@ -21,23 +21,13 @@ struct GridsView: View {
     @Environment(\.oudsHorizontalSizeClass) private var horizontalSizeClass
 
     var body: some View {
-        WatchAndTVLayoutsView(title: "Grids",
-                              watchLayout: { watchLayout },
-                              tvLayout: { tvLayout })
+        WatchScrollLayoutView(title: "Grids",
+                              layout: { watchLayout })
     }
 
     @ViewBuilder
     private var watchLayout: some View {
         WatchVerticalLayout {
-            ForEach(NamedGrid.allCases, id: \.rawValue) { namedGrid in
-                illustration(for: namedGrid)
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var tvLayout: some View {
-        TVVerticalLayout {
             ForEach(NamedGrid.allCases, id: \.rawValue) { namedGrid in
                 illustration(for: namedGrid)
             }

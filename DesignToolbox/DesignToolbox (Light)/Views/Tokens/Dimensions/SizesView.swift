@@ -20,11 +20,8 @@ struct SizesView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(watchLayout: { WatchVerticalLayout { watchLayout } },
-                              tvLayout: { TVVerticalLayout { tvLayout } })
+        WatchScrollLayoutView(layout: { WatchVerticalLayout { watchLayout } })
     }
-
-    // MARK: - watchOS
 
     @ViewBuilder
     private var watchLayout: some View {
@@ -42,31 +39,5 @@ struct SizesView: View {
                 }
             }
         }
-    }
-
-    // MARK: - tvOS
-
-    @ViewBuilder
-    private var tvLayout: some View {
-        HStack(alignment: .top, spacing: theme.spaces.paddingBlock4xlarge) {
-            VStack(spacing: theme.spaces.fixedNone) {
-                Text("Decorative").font(.headline)
-                ForEach(NamedSize.IconDecorative.allCases, id: \.rawValue) { namedSize in
-                    IllustrationIconDecorative(namedSize: namedSize).focusable()
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .top)
-            .padding()
-
-            VStack(spacing: theme.spaces.fixedMedium) {
-                Text("Typography").font(.headline)
-                ForEach(NamedSize.iconSizeByTypographyCategories, id: \.namedFont) { category in
-                    IllustrationSizeIconByTypographyCategory(category: category).focusable()
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .top)
-            .padding()
-        }
-        .padding()
     }
 }

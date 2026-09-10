@@ -19,6 +19,8 @@ struct NavigationsView: View {
         NavigationView {
             List {
                 NavigationLink("Link", destination: LinksView())
+                NavigationLink("Static List Item", destination: StaticListItemView())
+                NavigationLink("Navigation List Item", destination: NavigationListItemView())
             }
         }
     }

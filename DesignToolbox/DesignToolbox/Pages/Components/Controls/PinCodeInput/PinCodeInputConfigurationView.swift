@@ -11,6 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(tvOS)
+
 import OUDSSwiftUI
 import SwiftUI
 
@@ -186,6 +188,7 @@ extension OUDSPinCodeInput.Length: @retroactive CaseIterable, DesignToolboxEnumR
 
 /// A simple enum representing the kind of status for the pin code input picker,
 /// decoupled from the associated message in `OUDSPinCodeInput.Status`.
+
 enum PinCodeInputStatusKind: DesignToolboxEnumLocalizedRepresentable {
     case enabled, error, richError
 
@@ -200,3 +203,5 @@ enum PinCodeInputStatusKind: DesignToolboxEnumLocalizedRepresentable {
         }
     }
 }
+
+#endif

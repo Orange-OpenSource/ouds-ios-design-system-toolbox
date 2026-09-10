@@ -22,6 +22,7 @@ struct ComponentsView: View {
         NavigationLink("Content Display", destination: ContentDisplayView())
         NavigationLink("Controls", destination: ControlsView())
         NavigationLink("Dialogs", destination: DialogsView())
+        NavigationLink("Foundations", destination: FoundationsView())
         NavigationLink("Indicators", destination: IndicatorsView())
         NavigationLink("Layouts", destination: LayoutsView())
         NavigationLink("Navigations", destination: NavigationsView())

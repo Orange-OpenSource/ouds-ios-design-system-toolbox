@@ -53,11 +53,13 @@ private struct ButtonDemo: View {
                                                 renderingMode: imageMode),
                                appearance: configurationModel.appearance,
                                style: configurationModel.style,
+                               size: configurationModel.size,
                                isFullWidth: configurationModel.isFullWidth) {}
                 case .textOnly:
                     OUDSButton(text: configurationModel.text,
                                appearance: configurationModel.appearance,
                                style: configurationModel.style,
+                               size: configurationModel.size,
                                isFullWidth: configurationModel.isFullWidth) {}
                 case .textAndIcon:
                     OUDSButton(text: configurationModel.text,
@@ -66,6 +68,7 @@ private struct ButtonDemo: View {
                                                 renderingMode: imageMode),
                                appearance: configurationModel.appearance,
                                style: configurationModel.style,
+                               size: configurationModel.size,
                                isFullWidth: configurationModel.isFullWidth) {}
                 }
             }

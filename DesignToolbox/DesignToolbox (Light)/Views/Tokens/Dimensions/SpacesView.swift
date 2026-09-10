@@ -20,11 +20,8 @@ struct SpacesView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(watchLayout: { WatchVerticalLayout { watchLayout } },
-                              tvLayout: { TVVerticalLayout { tvLayout } })
+        WatchScrollLayoutView(layout: { WatchVerticalLayout { watchLayout } })
     }
-
-    // MARK: - watchOS
 
     @ViewBuilder
     private var watchLayout: some View {
@@ -50,69 +47,6 @@ struct SpacesView: View {
             Section("Row gap") {
                 RowGapProperty()
             }
-        }
-    }
-
-    // MARK: - tvOS
-
-    @ViewBuilder
-    private var tvLayout: some View {
-        TVGridLayout(count: 2) {
-            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                Text("Scaled").font(.headline)
-                ScaledSpaceProperty()
-            }
-            .frame(maxWidth: .infinity, alignment: .topLeading)
-            .padding()
-            .focusable()
-
-            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                Text("Fixed").font(.headline)
-                FixedSpaceProperty()
-            }
-            .frame(maxWidth: .infinity, alignment: .topLeading)
-            .padding()
-            .focusable()
-
-            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                Text("Inset").font(.headline)
-                InsetSpaceProperty()
-            }
-            .frame(maxWidth: .infinity, alignment: .topLeading)
-            .padding()
-            .focusable()
-
-            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                Text("Padding inline").font(.headline)
-                PaddingInlineProperty()
-            }
-            .frame(maxWidth: .infinity, alignment: .topLeading)
-            .padding()
-            .focusable()
-
-            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                Text("Padding block").font(.headline)
-                PaddingBlockProperty()
-            }
-            .frame(maxWidth: .infinity, alignment: .topLeading)
-            .padding()
-            .focusable()
-
-            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                Text("Column gap").font(.headline)
-                ColumnGapProperty()
-            }
-            .frame(maxWidth: .infinity, alignment: .topLeading)
-            .padding()
-            .focusable()
-
-            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                Text("Row gap").font(.headline)
-                RowGapProperty()
-            }
-            .frame(maxWidth: .infinity, alignment: .topLeading)
-            .padding()
-            .focusable()
         }
     }
 }

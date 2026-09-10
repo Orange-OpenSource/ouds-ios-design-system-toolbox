@@ -37,7 +37,15 @@ final class LinkConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var density: OUDSLink.Density {
+        didSet { updateCode() }
+    }
+
     @Published var iconType: DefinedStatusIcons {
+        didSet { updateCode() }
+    }
+
+    @Published var isFullWidth: Bool = false {
         didSet { updateCode() }
     }
 
@@ -48,6 +56,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
         text = String(localized: "app_components_link_tech")
         layout = .textOnly
         size = .default
+        density = .default
         iconType = .tintedIcon
         super.init()
     }
@@ -72,33 +81,48 @@ final class LinkConfigurationModel: ComponentConfiguration {
         enabled ? "" : ".disabled(true)"
     }
 
+    private var densityPattern: String {
+        density != .default ? ", density: \(density.technicalDescription)" : ""
+    }
+
+    private var isFullWidthPattern: String {
+        isFullWidth ? ", isFullWidth: true" : ""
+    }
+
     override func updateCode() {
         switch layout {
         case .textOnly:
             code =
                 """
-                OUDSLink(text: \"\(text)\", size: \(size.technicalDescription)) {}
+                OUDSLink(text: \"\(text)\", size: \(size.technicalDescription)\(densityPattern)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         case .textAndIcon:
             code =
                 """
-                OUDSLink(text: \"\(text)\", image: OUDSImage(asset: \(iconAssetSample)\(renderingModeCode)), size: \(size.technicalDescription)) {}
+                OUDSLink(text: \"\(text)\", image: OUDSImage(asset: \(iconAssetSample)\(renderingModeCode)), size: \(size.technicalDescription)\(densityPattern)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         case .indicatorNext:
             code =
                 """
-                OUDSLink(text: \"\(text)\", indicator: .next, size: \(size.technicalDescription)) {}
+                OUDSLink(text: \"\(text)\", indicator: .next, size: \(size.technicalDescription)\(densityPattern)\(isFullWidthPattern)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
-        case .indicatorBack:
+        case .indicatorPrevious:
             code =
                 """
-                OUDSLink(text: \"\(text)\", indicator: .back, size: \(size.technicalDescription)) {}
+                OUDSLink(text: \"\(text)\", indicator: .previous, size: \(size.technicalDescription)\(densityPattern)\(isFullWidthPattern)) {}
+                \(disableCodePattern)
+                \(coloredSurfaceCodeModifierPattern)
+                """
+        case .indicatorExternal:
+            code =
+                """
+                OUDSLink(text: \"\(text)\", indicator: .external, size: \(size.technicalDescription)\(densityPattern)\(isFullWidthPattern)) {}
                 \(disableCodePattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
@@ -109,7 +133,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
 // MARK: - Link Layout
 
 enum LinkLayout: DesignToolboxEnumLocalizedRepresentable {
-    case textOnly, textAndIcon, indicatorBack, indicatorNext
+    case textOnly, textAndIcon, indicatorPrevious, indicatorNext, indicatorExternal
 
     var wordingKey: String {
         switch self {
@@ -117,10 +141,12 @@ enum LinkLayout: DesignToolboxEnumLocalizedRepresentable {
             "app_components_common_textOnlyLayout_tech"
         case .textAndIcon:
             "app_components_common_textAndIconLayout_tech"
-        case .indicatorBack:
+        case .indicatorPrevious:
             "app_components_link_backLayout_tech"
         case .indicatorNext:
             "app_components_link_nextLayout_tech"
+        case .indicatorExternal:
+            "app_components_link_externalLayout_tech"
         }
     }
 }
@@ -129,6 +155,12 @@ enum LinkLayout: DesignToolboxEnumLocalizedRepresentable {
 
 extension OUDSLink.Size: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSLink.Size] = [.default, .small]
+}
+
+// MARK: Link density extension
+
+extension OUDSLink.Density: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSLink.Density] = [.default, .compact]
 }
 
 // MARK: - Link Configuration View
@@ -153,6 +185,10 @@ struct LinkConfiguration: View {
                                selection: $configurationModel.size,
                                chips: OUDSLink.Size.chips)
 
+                OUDSChipPicker(title: "app_components_common_density_tech",
+                               selection: $configurationModel.density,
+                               chips: OUDSLink.Density.chips)
+
                 OUDSChipPicker(title: "app_components_common_layout_tech",
                                selection: $configurationModel.layout,
                                chips: LinkLayout.chips)
@@ -161,6 +197,10 @@ struct LinkConfiguration: View {
                     OUDSChipPicker(title: "app_components_common_statusIcon_tech",
                                    selection: $configurationModel.iconType,
                                    chips: DefinedStatusIcons.chips)
+                }
+
+                if configurationModel.layout == .indicatorPrevious || configurationModel.layout == .indicatorNext {
+                    OUDSSwitchItem("app_components_link_fullWidth_tech", isOn: $configurationModel.isFullWidth)
                 }
             }
 

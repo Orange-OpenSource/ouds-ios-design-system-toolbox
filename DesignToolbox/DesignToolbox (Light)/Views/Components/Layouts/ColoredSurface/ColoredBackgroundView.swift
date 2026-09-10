@@ -19,9 +19,8 @@ struct ColoredBackgroundView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(title: "Surfaces",
-                              watchLayout: { WatchVerticalLayout { layout } },
-                              tvLayout: { TVVerticalLayout { layout } })
+        WatchScrollLayoutView(title: "Surfaces",
+                              layout: { WatchVerticalLayout { layout } })
     }
 
     private var layout: some View {

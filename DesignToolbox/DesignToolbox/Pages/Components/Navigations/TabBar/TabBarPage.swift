@@ -11,6 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(tvOS)
+
 import OUDSSwiftUI
 import SwiftUI
 
@@ -68,8 +70,12 @@ struct TabBarDemo: View {
                         TabBarItemDemo(selectedTab: selectedTab, imageName: item.imageName)
                             .tabItem {
                                 Label {
-                                    Text(item.label.localized())
-                                        .accessibilityValue(a11yLabelForTab)
+                                    if index == 0 {
+                                        Text(item.label.localized())
+                                            .accessibilityValue(a11yLabelForTab)
+                                    } else {
+                                        Text(item.label.localized())
+                                    }
                                 } icon: {
                                     Image.decorativeImage(named: item.imageName, prefixedBy: theme.name)
                                         .renderingMode(.template)
@@ -127,3 +133,5 @@ private struct BadgeModifier: ViewModifier {
         }
     }
 }
+
+#endif
