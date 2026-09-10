@@ -24,10 +24,10 @@ open class ListItemFlagConfigurationModel: ComponentConfiguration {
 
     @MainActor
     var flag: OUDSListItemFlag {
-        OUDSListItemFlag(asset: Image(decorative: "il_flag_fr"))
+        OUDSListItemFlag(asset: Image(decorative: "il_flag_fr"), description: "France")
     }
 
     override func updateCode() {
-        code = ".init(asset: Image(\"ic_flag_fr\"))"
+        code = ".init(asset: Image(\"ic_flag_fr\", description: \"France\"))"
     }
 }

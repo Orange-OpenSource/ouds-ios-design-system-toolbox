@@ -318,7 +318,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
             (.icon(OUDSListItemIcon(status: .neutral(asset: image), description: "icon_neutral")), "icon_neutral"),
             (.icon(OUDSListItemIcon(status: .negative, description: "icon_negative")), "icon_negative"),
             (.image(.init(asset: image)), "image"),
-            (.flag(.init(asset: image)), "flag"),
+            (.flag(.init(asset: image, description: "France")), "flag"),
             (.avatar(OUDSListItemAvatar(type: .icon, size: .medium)), "avatar_icon"),
             (.avatar(OUDSListItemAvatar(type: .initials("MT"), size: .medium)), "avatar_initials"),
             (.avatar(OUDSListItemAvatar(type: .image(image), size: .medium)), "avatar_image"),
@@ -375,7 +375,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
             (.tag(OUDSTag(label: "Tag")), "tag"),
             (.icon(OUDSListItemIcon(status: .neutral(asset: image), description: "icon_neutral")), "icon_neutral"),
             (.image(.init(asset: image)), "image"),
-            (.flag(.init(asset: image)), "flag"),
+            (.flag(.init(asset: image, description: "France")), "flag"),
             (.avatar(OUDSListItemAvatar(type: .icon, size: .medium)), "avatar_icon"),
         ]
         for (trailing, trailingName) in trailings {

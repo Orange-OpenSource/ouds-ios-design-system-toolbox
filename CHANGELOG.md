@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Library] `principal` placement for `toolbar top` component items (Orange-OpenSource/ouds-ios#1721)
+- [Library] For `list item component`, add an alternative to avatar's badge for Voice Over (Orange-OpenSource/ouds-ios#1716)
 - [Library] `subtitle` on `toolbar top` for iOS lower than 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
 - [Library] Support of animated images (GIF, WebP) for `list item` components (Orange-OpenSource/ouds-ios#1706)
 - [Library] Leading, trailing and bottom slots for `list item` components (Orange-OpenSource/ouds-ios#1568)
