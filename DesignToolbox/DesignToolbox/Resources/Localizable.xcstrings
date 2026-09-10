@@ -4507,6 +4507,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_listItem_avatar_a11y" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا ملصق إتاحة سخيف لصورة رمزية."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is a dumb accessibility label for an avatar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceci est un label bidon pour décrire un avatar"
+          }
+        }
+      }
+    },
     "app_components_listItem_avatarBadge_label" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",

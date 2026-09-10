@@ -77,7 +77,7 @@ final class HeadingConfigurationModel: ComponentConfiguration {
     }
 
     func hasColoredStringSupported(by theme: OUDSTheme) -> Bool {
-        let isSupported = !theme.hasTypographyHeadingLargeMarker
+        let isSupported = !theme.typography.headingLargeMarker
         if !isSupported, hasColoredSubstring {
             hasColoredSubstring = false
         }
@@ -101,7 +101,7 @@ struct HeadingConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
 
-                if !theme.hasTypographyHeadingLargeMarker {
+                if !theme.typography.headingLargeMarker {
                     OUDSSwitchItem("app_components_typography_coloredSubstring_tech", isOn: $configurationModel.hasColoredSubstring)
                 } else {
                     OUDSSwitchItem("app_components_typography_marker_tech", isOn: $configurationModel.hasMarker)
