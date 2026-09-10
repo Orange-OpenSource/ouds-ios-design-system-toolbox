@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Tutorial for themes creation and tokens overrides (Orange-OpenSource/ouds-ios#1547)
 - [Library] For `list item` components add an alternative to avatar's badge for Voice Over (Orange-OpenSource/ouds-ios#1716)
 - [Library] `principal` placement for `toolbar top` component items (Orange-OpenSource/ouds-ios#1721)
 - [Library] `subtitle` on `toolbar top` for iOS lower than 26 or with Liquid Glass disabled (Orange-OpenSource/ouds-ios#1696)
@@ -76,7 +77,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [Library] Wrong size of the `circular progress indicator` with helper text (Orange-OpenSource/ouds-ios#1755)
+- [Library] Broken size of the `circular progress indicator` with helper text (Orange-OpenSource/ouds-ios#1755)
 - [DesignSystemToolbox] Accessibility label to vocalize and to display for custom view label of `list item` components (Orange-OpenSource/ouds-ios#1719)
 - [Library] Vocalization of accessibility trait for `navigation list item` component (Orange-OpenSource/ouds-ios#1718)
 - [Library] Vocalization of `warning` and `negative` statuses of `progress indicators` components (Orange-OpenSource/ouds-ios#1697)
