@@ -21,7 +21,7 @@ import SwiftUI
 /// Tests the UI rendering of the `OUDSDisplay`, `OUDSHeading`, `OUDSBody`, `OUDSLabel` and `OUDSCode`
 /// typography components for each parameter with `SoshTheme`.
 ///
-/// Note: `SoshTheme` does not support the `OUDSHeading` marker (`theme.hasTypographyHeadingLargeMarker == false`),
+/// Note: `SoshTheme` does not support the `OUDSHeading` marker,
 /// so the "Marker" snapshot for this theme captures a plain heading (the marker is silently skipped).
 final class SoshThemeTypographySnapshotsTests: TypographySnapshotsTestsTestCase {
 
