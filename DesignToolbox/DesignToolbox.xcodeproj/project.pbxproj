@@ -7446,7 +7446,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1755-the-size-of-circular-progress-indicator-is-too-small-with-helper-text";
 				kind = branch;
 			};
 		};
