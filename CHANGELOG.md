@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.0...develop)
+## [3.0.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.0...3.0.0) - 2026-09-10
 
 ### Added
 
@@ -35,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Swift Package `accessibility-statement-lib-ios` to v2.4.0
 - [DesignToolbox] Ruby Gem `excon` transitive RubyGem from v1.5.0 to v1.7.1
 - [DesignToolbox] Ruby Gem `fastlane` from v2.237.0 to v2.239.0
 - [DesignToolbox] Ruby version from v4.0.5 to v4.0.6 for `build-and-test` workflow
