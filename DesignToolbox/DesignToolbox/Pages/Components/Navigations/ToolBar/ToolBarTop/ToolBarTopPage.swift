@@ -11,6 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(tvOS)
+
 import OUDSSwiftUI
 import OUDSTokensSemantic
 import SwiftUI
@@ -78,12 +80,14 @@ private struct ToolBarTopDemo: View {
             .navigationBarBackButtonHidden(configurationModel.hideBackButton)
             .toolBarTop(configurationModel.title,
                         hasLargeTitle: configurationModel.largeTitle,
-                        subtitle: appliedSubtitle)
-            {
-                configurationModel.leadingItems(for: theme)
-            } trailingItems: {
-                configurationModel.trailingItems()
-            }
+                        subtitle: appliedSubtitle,
+                        leadingItems: {
+                            configurationModel.leadingItems(for: theme)
+                        },
+                        principalItem: configurationModel.principalItem,
+                        trailingItems: {
+                            configurationModel.trailingItems()
+                        })
     }
 
     private var appliedSubtitle: String? {
@@ -104,5 +108,7 @@ extension View {
         }
     }
 }
+
+#endif
 
 #endif

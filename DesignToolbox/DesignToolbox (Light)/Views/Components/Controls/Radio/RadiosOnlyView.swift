@@ -17,9 +17,7 @@ import SwiftUI
 struct RadiosOnlyView: View {
 
     var body: some View {
-        WatchAndTVLayoutsView(watchLayout: {
-            RadioOnlyLayout()
-        }, tvLayout: {
+        WatchScrollLayoutView(layout: {
             RadioOnlyLayout()
         })
     }

@@ -14,19 +14,12 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct DesignToolboxSectionHeaderModifier: ViewModifier {
+// MARK: - OUDS enum representable extensions
 
-    @Environment(\.theme) private var theme
-
-    func body(content: Content) -> some View {
-        content
-            .headingMedium(theme)
-            .frame(maxWidth: .infinity, alignment: .leading)
-    }
+extension OUDSProgressIndicatorStatus: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSProgressIndicatorStatus] = [.neutral, .accent, .positive, .info, .warning, .negative]
 }
 
-extension Text {
-    func designToolboxSectionHeaderStyle() -> some View {
-        modifier(DesignToolboxSectionHeaderModifier())
-    }
+extension OUDSProgressIndicatorGapSize: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+    public static let allCases: [OUDSProgressIndicatorGapSize] = [.default, .small]
 }

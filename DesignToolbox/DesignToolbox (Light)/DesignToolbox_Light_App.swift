@@ -14,7 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
-/// `App` dedicated to watchOS and tvOS with very simple UI.
+/// `App` dedicated to watchOS with very simple UI.
 /// Displays groups of components without customziation panes, only for debug purposes and quickchecks.
 /// Uses a simple UI, overall becayse current Design System Toolbox is desgined for iOS first.
 @main struct DesignToolbox_Light_App: App {

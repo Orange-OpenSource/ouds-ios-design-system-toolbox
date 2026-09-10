@@ -11,23 +11,15 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSSwiftUI
-import SwiftUI
+#if DEBUG
+import Foundation
 
-/// Displays content as vertical layout for tvOS dimensions
-struct TVVerticalLayout<TVLayout: View>: View {
+/// User defaults keys shared between the sandbox surfaces (`AboutPage` toggle
+/// and `MainView` tab bar).
+enum SandboxUserDefaultsKeys {
 
-    private let tvLayout: TVLayout
-
-    @Environment(\.theme) private var theme
-
-    init(@ViewBuilder tvLayout: () -> TVLayout) {
-        self.tvLayout = tvLayout()
-    }
-
-    var body: some View {
-        VStack(spacing: theme.spaces.scaledMediumMobile) {
-            tvLayout
-        }
-    }
+    /// Key backing the "Bac à sable" switch item in the About page.
+    /// Persisted with reverse-DNS notation like other global demo-app flags.
+    static let sandboxEnabled = "com.orange.ouds.demoapp.sandboxEnabled"
 }
+#endif

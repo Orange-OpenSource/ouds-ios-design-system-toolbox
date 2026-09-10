@@ -57,7 +57,7 @@ final class BadgeStandardConfigurationModel: ComponentConfiguration {
         !enabled ? ".disabled(true)" : ""
     }
 
-    private var statusPattern: String {
+    var statusPattern: String {
         "status: \(status.technicalDescription)"
     }
 

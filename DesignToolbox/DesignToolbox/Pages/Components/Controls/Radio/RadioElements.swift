@@ -20,11 +20,14 @@ struct RadioElements: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        let variants: [DesignToolboxElement] = [
+        var variants: [DesignToolboxElement] = [
             RadioElement(),
             RadioItemElement(),
-            RadioPickerElement(),
         ]
+        #if !os(tvOS)
+        // `OUDSRadioPickerPlacement` is not available on tvOS in the OUDS SDK.
+        variants.append(RadioPickerElement())
+        #endif
 
         name = "app_components_radioButton_tech".localized()
         illustration = AnyView(RadioIllustration())

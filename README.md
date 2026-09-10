@@ -1,3 +1,7 @@
+<p align="center">
+<img src="./images/logo-OUDS.png" alt="Logo of Orange Unified Design System" height="150" />
+</p>
+
 <h1 align="center">Design System Toolbox iOS</h1>
 
 <p align="center">
@@ -143,6 +147,9 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 > [!NOTE]
 > The macOS app is not yet available on TestFlight nor the AppStore, but you can build it
 
+> [!CAUTION]
+> Support of macOS today is in best effort
+
 <p align="center">
 <img src="./images/macOS/Tokens list - en - light.png" alt="List of tokens on MacBook Pro 16'' inch'' (english, light mode)" height="350" />
 &nbsp;
@@ -157,6 +164,9 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 
 > [!NOTE]
 > The visionOS app is not yet available on TestFlight nor the AppStore, but you can build it
+
+> [!CAUTION]
+> Support of visionOS today is in best effort
 
 <p align="center">
 <img src="./images/visionOS/Tokens list - en - light.png" alt="List of tokens on Vision Pro (english, light mode)" height="350" />
@@ -175,6 +185,9 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 > [!NOTE]
 > The watchOS app is not yet available on TestFlight nor the AppStore, but you can build it
 
+> [!CAUTION]
+> Support of watchOS today is in best effort
+
 <p align="center">
 <img src="./images/watchOS/Tokens list.png" alt="List of tokens on Watch Series 11 (46mm) (english)" height="350" />
 &nbsp;
@@ -189,6 +202,9 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 
 > [!NOTE]
 > The tvOS app is not yet available on TestFlight nor the AppStore, but you can build it
+
+> [!CAUTION]
+> Support of tvOS today is in best effort
 
 <p align="center">
 <img src="./images/tvOS/Tokens list.png" alt="List of tokens on Apple TV 4K (3rd generation) (english)" height="350" />

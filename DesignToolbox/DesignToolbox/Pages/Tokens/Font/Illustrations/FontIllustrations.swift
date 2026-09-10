@@ -44,10 +44,27 @@ struct IllustrationFont: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, theme.spaces.fixedXsmall)
         .accessibilityElement(children: .combine)
+        .tvOSFocusableRow()
     }
 
     private var familyText: String {
-        "family (\(theme.fontFamily ?? "system")), "
+        let fontFamilyName = switch namedFont {
+        case .displayLarge, .displayMedium, .displaySmall:
+            theme.fonts.familyDisplay
+        case .headingXLarge, .headingLarge, .headingMedium, .headingSmall:
+            theme.fonts.familyHeading
+        case .bodyDefaultLarge, .bodyDefaultMedium, .bodyDefaultSmall,
+             .bodyModerateLarge, .bodyModerateMedium, .bodyModerateSmall,
+             .bodyStrongLarge, .bodyStrongMedium, .bodyStrongSmall:
+            theme.fonts.familyBody
+        case .labelDefaultXLarge, .labelDefaultLarge, .labelDefaultMedium, .labelDefaultSmall,
+             .labelModerateXLarge, .labelModerateLarge, .labelModerateMedium, .labelModerateSmall,
+             .labelStrongXLarge, .labelStrongLarge, .labelStrongMedium, .labelStrongSmall:
+            theme.fonts.familyLabel
+        case .codeMedium:
+            theme.fonts.familyCode
+        }
+        return "family (\(fontFamilyName)), "
     }
 
     private var weightText: String {

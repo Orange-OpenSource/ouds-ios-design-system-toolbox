@@ -11,6 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(tvOS)
+
 import OUDSSwiftUI
 import SwiftUI
 
@@ -122,6 +124,14 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var progressVariant: CircularProgressIndicatorConfigurationModel.Variant {
+        didSet { updateCode() }
+    }
+
+    @Published var progressValue: Double {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -138,6 +148,8 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         constrainedMaxWidth = false
         constrainedMaxHeight = false
         status = .enabled
+        progressVariant = .indeterminate
+        progressValue = 0.0
         super.init()
     }
 
@@ -179,7 +191,7 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         case .richError:
             .richError(message: richErrorText)
         case .loading:
-            .loading
+            .loading(progress: progressVariant == .indeterminate ? nil : progressValue)
         case .readOnly:
             .readOnly
         case .disabled:
@@ -257,7 +269,11 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         case .richError:
             ", status: .richError(message: yourAttributedString)"
         case .loading:
-            ", status: .loading"
+            if progressVariant == .indeterminate {
+                ", status: .loading"
+            } else {
+                ", status: .loading(progress: \(String(format: "%.2f", progressValue)))"
+            }
         case .readOnly:
             ", status: .readOnly"
         case .disabled:
@@ -288,6 +304,16 @@ struct TextAreaConfigurationView: View {
                                selection: $configurationModel.status,
                                chips: TextAreaStatus.chips)
 
+                if configurationModel.status == .loading {
+                    OUDSChipPicker(title: "app_components_progressIndicator_variant_tech",
+                                   selection: $configurationModel.progressVariant,
+                                   chips: CircularProgressIndicatorConfigurationModel.Variant.chips)
+
+                    if configurationModel.progressVariant == .determinate {
+                        DesignToolboxProgressControl(progress: $configurationModel.progressValue)
+                    }
+                }
+
                 OUDSChipPicker(title: "app_components_common_helperText_tech",
                                selection: $configurationModel.helperMode,
                                chips: TextAreaHelperMode.chips)
@@ -305,12 +331,10 @@ struct TextAreaConfigurationView: View {
                         case .charactersMaxCount:
                             Stepper(value: $configurationModel.maxCharacters, in: 10 ... 500, step: 10) {
                                 HStack {
-                                    Text(LocalizedStringKey("app_components_textArea_maxCharacters_tech"))
-                                        .labelStrongMedium(theme)
+                                    OUDSLabel("app_components_textArea_maxCharacters_tech", size: .medium, weight: .strong)
                                         .foregroundColor(theme.colors.contentDefault)
                                     Spacer()
-                                    Text(String(configurationModel.maxCharacters))
-                                        .labelStrongMedium(theme)
+                                    OUDSLabel(text: String(configurationModel.maxCharacters), size: .medium, weight: .strong)
                                         .foregroundColor(theme.colors.contentDefault)
                                 }
                             }
@@ -327,3 +351,5 @@ struct TextAreaConfigurationView: View {
         }
     }
 }
+
+#endif

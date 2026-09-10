@@ -10,16 +10,6 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Allow native search (for iOS with Liquid Glass only, requires app restart)</string>
-			<key>Key</key>
-			<string>com.orange.ouds.demoapp.allowSearch</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
 			<string>Restart app on theme switch</string>
 			<key>Key</key>
 			<string>com.orange.ouds.demoapp.askToRestartIfThemeChanged</string>

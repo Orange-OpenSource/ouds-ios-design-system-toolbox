@@ -17,7 +17,7 @@ import SwiftUI
 
 /// Search page available on iOS 26+ via `Tab(role: .search)`.
 /// Aggregates all tokens and components so the user can find any element by name.
-@available(iOS 26, *)
+@available(iOS 16, *)
 struct SearchPage: View {
 
     // MARK: - Properties

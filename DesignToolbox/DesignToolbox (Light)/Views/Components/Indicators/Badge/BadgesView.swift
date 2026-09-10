@@ -19,7 +19,14 @@ struct BadgesView: View {
 
     private static let allBadgeStandardStatus: [OUDSBadgeStandard.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
     private static let allBadgeIconStatus: [OUDSBadgeIcon.Status]
-        = [.accent(icon: Image(systemName: "sun.min.fill")), .info, .negative, .positive, .neutral(icon: Image(systemName: "sun.min.fill")), .warning]
+        = [
+            .accent(image: OUDSImage(asset: Image(systemName: "sun.min.fill"))),
+            .info,
+            .negative,
+            .positive,
+            .neutral(image: OUDSImage(asset: Image(systemName: "sun.min.fill"))),
+            .warning,
+        ]
     private static let allBadgeCountStatus: [OUDSBadgeStandard.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
     private static let allBadgeStandardSizes: [OUDSBadgeStandard.Size] = [.extraSmall, .small, .medium, .large]
     private static let allBadgeIconSizes: [OUDSBadgeStandard.Size] = [.extraSmall, .small, .medium, .large]
@@ -28,12 +35,9 @@ struct BadgesView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchAndTVLayoutsView(title: "Badges",
-                              watchLayout: { WatchVerticalLayout { watchOSLayout } },
-                              tvLayout: { TVVerticalLayout { tvOSLayout } })
+        WatchScrollLayoutView(title: "Badges",
+                              layout: { WatchVerticalLayout { watchOSLayout } })
     }
-
-    // MARK: - watchOS
 
     @ViewBuilder
     private var watchOSLayout: some View {
@@ -61,88 +65,6 @@ struct BadgesView: View {
                 OUDSBadgeCount(100, accessibilityLabel: "Foo", status: status, size: size)
             }
         }
-    }
-
-    // MARK: - tvOS
-
-    @ViewBuilder
-    private var tvOSLayout: some View {
-        VStack(spacing: theme.spaces.paddingBlock4xlarge) {
-
-            // Row n°1: Status badges
-            VStack(spacing: theme.spaces.scaledMediumMobile) {
-                Text("Standard Badges")
-                    .font(.title2)
-                    .fontWeight(.bold)
-
-                HStack(spacing: theme.spaces.scaledMediumMobile) {
-                    ForEach(Self.allBadgeStandardSizes, id: \.self) { size in
-                        badgeSection(title: "Standard \(String(describing: size))") {
-                            ForEach(Self.allBadgeStandardStatus, id: \.self) { status in
-                                OUDSBadgeStandard(accessibilityLabel: "Foo", status: status, size: size)
-                            }
-                        }
-                    }
-                }
-            }
-            .padding()
-            .focusable()
-
-            // Row n°2: Icon badges
-            VStack(spacing: theme.spaces.scaledMediumMobile) {
-                Text("Icon Badges")
-                    .font(.title2)
-                    .fontWeight(.bold)
-
-                HStack(spacing: theme.spaces.scaledMediumMobile) {
-                    ForEach(Self.allBadgeIconSizes, id: \.self) { size in
-                        badgeSection(title: "Icon \(String(describing: size))") {
-                            ForEach(0 ..< Self.allBadgeIconStatus.count, id: \.self) { index in
-                                let status = Self.allBadgeIconStatus[index]
-                                OUDSBadgeIcon(status: status, accessibilityLabel: "Foo", size: size)
-                            }
-                        }
-                    }
-                }
-            }
-            .padding()
-            .focusable()
-
-            // Row n°3: Count badges
-            VStack(spacing: theme.spaces.scaledMediumMobile) {
-                Text("Count Badges")
-                    .font(.title2)
-                    .fontWeight(.bold)
-
-                HStack(spacing: theme.spaces.scaledMediumMobile) {
-                    ForEach(Self.allBadgeCountSizes, id: \.self) { size in
-                        badgeSection(title: "Count \(String(describing: size))") {
-                            ForEach(Self.allBadgeCountStatus, id: \.self) { status in
-                                OUDSBadgeCount(100, accessibilityLabel: "Foo", status: status, size: size)
-                            }
-                        }
-                    }
-                }
-            }
-            .padding()
-            .focusable()
-        }
-        .padding()
-    }
-
-    @ViewBuilder
-    private func badgeSection(title: String, @ViewBuilder content: () -> some View) -> some View {
-        VStack(spacing: theme.spaces.scaledSmallMobile) {
-            Text(title)
-                .font(.headline)
-                .foregroundColor(.primary)
-
-            VStack(spacing: theme.spaces.scaledXsmallMobile) {
-                content()
-            }
-        }
-        .padding()
-        .frame(maxWidth: .infinity)
     }
 }
 

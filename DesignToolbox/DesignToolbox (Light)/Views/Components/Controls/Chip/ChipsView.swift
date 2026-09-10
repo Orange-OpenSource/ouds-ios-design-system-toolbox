@@ -35,9 +35,7 @@ private struct FilterChipView: View {
     @State private var isSelected: Bool = true
 
     var body: some View {
-        WatchAndTVLayoutsView(watchLayout: {
-            layout
-        }, tvLayout: {
+        WatchScrollLayoutView(layout: {
             layout
         })
     }
@@ -63,9 +61,7 @@ private struct FilterChipView: View {
 private struct SuggestionChipView: View {
 
     var body: some View {
-        WatchAndTVLayoutsView(watchLayout: {
-            layout
-        }, tvLayout: {
+        WatchScrollLayoutView(layout: {
             layout
         })
     }

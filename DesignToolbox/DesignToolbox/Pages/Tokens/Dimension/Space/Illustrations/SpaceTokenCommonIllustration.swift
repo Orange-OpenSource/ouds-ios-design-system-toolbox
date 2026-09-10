@@ -309,33 +309,29 @@ struct SpaceHeaderDescription: View {
         switch orientation {
         case .horizontal:
             HStack(alignment: .center, spacing: theme.spaces.fixedNone) {
-                Text(firstText)
+                OUDSBody(firstText, size: .medium, weight: .default)
                     .foregroundStyle(theme.colors.contentDefault)
-                    .bodyDefaultMedium(theme)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 SpaceIllustrationRectangle(width: 8)
 
                 if let secondText {
-                    Text(secondText)
+                    OUDSBody(secondText, size: .medium, weight: .default)
                         .foregroundStyle(theme.colors.contentDefault)
-                        .bodyDefaultMedium(theme)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
         case .verical:
             VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
-                Text(firstText)
+                OUDSBody(firstText, size: .medium, weight: .default)
                     .foregroundStyle(theme.colors.contentDefault)
-                    .bodyDefaultMedium(theme)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 SpaceIllustrationRectangle(height: 8)
 
                 if let secondText {
-                    Text(secondText)
+                    OUDSBody(secondText, size: .medium, weight: .default)
                         .foregroundStyle(theme.colors.contentDefault)
-                        .bodyDefaultMedium(theme)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
@@ -348,10 +344,9 @@ struct SpaceHeaderDescription: View {
             VStack(spacing: 0) {
                 SpaceIllustrationRectangle(height: paddings.top)
 
-                Text(firstText)
+                OUDSBody(firstText, size: .medium, weight: .default)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundStyle(theme.colors.contentDefault)
-                    .bodyDefaultMedium(theme)
 
                 SpaceIllustrationRectangle(height: paddings.bottom)
             }

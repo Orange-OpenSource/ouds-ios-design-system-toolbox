@@ -73,6 +73,16 @@ open class AppTestCase: XCTestCase {
         return elements
     }
 
+    // MARK: - Link
+
+    /// Tap on a UI element seen as a link (cf *Accessibility Inspector* with the given string as  wording key
+    @MainActor func tapLink(withWording key: String, _ app: XCUIApplication) {
+        let wording = wording(for: key)
+        let linkToTap = app.links[wording]
+        XCTAssertTrue(linkToTap.exists, "The link with wording key '\(key)' (value '\(wording)') does not exist")
+        linkToTap.tap()
+    }
+
     // MARK: - Text Fields
 
     /// Returns text fields with the given accessiiblity identifier
@@ -271,12 +281,20 @@ open class AppTestCase: XCTestCase {
         }
     }
 
-    /// Wait the given time internval for button apparition with the given wording inside
+    /// Wait the given time interval for button apparition with the given wording inside
     @MainActor func waitForButtonToAppear(withWording key: String, _ app: XCUIApplication, _ timeout: TimeInterval = 5) {
         let wording = wording(for: key)
         let buttonToWaitFor = app.buttons[wording]
         let doesButtonExist = buttonToWaitFor.waitForExistence(timeout: timeout)
         XCTAssertTrue(doesButtonExist, "The button with wording '\(wording)' did not appear after \(timeout) seconds")
+    }
+
+    /// Wait the given time interval for link apparition with the given wording inside
+    @MainActor func waitForLinkToAppear(withWording key: String, _ app: XCUIApplication, _ timeout: TimeInterval = 5) {
+        let wording = wording(for: key)
+        let linkToWaitFor = app.links[wording]
+        let doesLinkExist = linkToWaitFor.waitForExistence(timeout: timeout)
+        XCTAssertTrue(doesLinkExist, "The link with wording '\(wording)' did not appear after \(timeout) seconds")
     }
 
     /// Checks fior the given element the value and a11y hint and a11y label

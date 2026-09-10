@@ -42,12 +42,9 @@ struct DesignToolboxVariantElement: View {
     var body: some View {
         ForEach(elements, id: \.id) { element in
             #if os(iOS)
-            NavigationLink {
+            OUDSNavigationLink(LocalizedStringKey(element.name), hasBoldLabel: true, indicatorType: .next) {
                 element.pageDescription
-            } label: {
-                rowView(for: element)
             }
-
             #elseif os(visionOS)
             NavigationLink {
                 element.pageDescription
@@ -56,7 +53,17 @@ struct DesignToolboxVariantElement: View {
             } label: {
                 rowView(for: element)
             }
-
+            #elseif os(tvOS)
+            NavigationLink {
+                // The destination is a `DesignToolboxElementPage`, whose `tvOSHeader`
+                // already renders the title alongside the theme / color-scheme controls,
+                // and `oudsScreenTitle` posts the accessibility screen-changed
+                // notification. Setting `.navigationTitle` here would render a second
+                // visible copy of the title (tvOS renders it as inline text, not chrome).
+                element.pageDescription
+            } label: {
+                rowView(for: element)
+            }
             #else // macOS
             Button {
                 windowManager.openWindow(
@@ -74,17 +81,16 @@ struct DesignToolboxVariantElement: View {
             } label: {
                 rowView(for: element)
             }
-            .buttonStyle(.plain)
             #endif
         }
+        .oudsListItemSize(.small)
     }
 
     // MARK: - Helper
 
     private func rowView(for element: DesignToolboxElement) -> some View {
         HStack {
-            Text(LocalizedStringKey(element.name))
-                .headingMedium(theme)
+            OUDSHeading(LocalizedStringKey(element.name), size: .medium)
                 .multilineTextAlignment(.leading)
                 .foregroundStyle(theme.colors.contentDefault)
                 .padding(.vertical, theme.spaces.fixedXsmall)
