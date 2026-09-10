@@ -7446,7 +7446,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1716-for-list-item-component-add-an-alternative-to-avatars-badge-for-voice-over";
+				branch = develop;
 				kind = branch;
 			};
 		};
