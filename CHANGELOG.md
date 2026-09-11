@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...develop)
 
+### Fixed
+
+- [Library] Add back missing token (of v2.6 library) for `alert message` component 
+
 ## [3.0.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.0...3.0.0) - 2026-09-10
 
 ### Added
