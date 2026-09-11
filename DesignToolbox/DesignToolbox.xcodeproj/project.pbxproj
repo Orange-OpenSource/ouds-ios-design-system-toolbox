@@ -7446,7 +7446,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1753-in-circular-progress-indicator-set-helper-text-in-two-parts";
 				kind = branch;
 			};
 		};

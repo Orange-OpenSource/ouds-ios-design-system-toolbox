@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...develop)
 
+### Fixed
+
+- [Library] In `circular progress indicator`, set helper text in two texts to fix alignment (Orange-OpenSource/ouds-ios#1753)
+
 ## [3.0.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.0...3.0.0) - 2026-09-10
 
 ### Added
