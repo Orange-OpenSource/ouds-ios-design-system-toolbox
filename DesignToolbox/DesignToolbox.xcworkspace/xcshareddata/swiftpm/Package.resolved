@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "1ac7ce7920e94a4996ddd3ca1a2679b562be271a"
+        "branch" : "1748-for-link-component-make-possible-for-next-and-external-indicators-to-be-displayed-in-link-component-just-after-last-characters",
+        "revision" : "346c7ae94292802c25a5c315e0bc76864424ee5b"
       }
     },
     {
