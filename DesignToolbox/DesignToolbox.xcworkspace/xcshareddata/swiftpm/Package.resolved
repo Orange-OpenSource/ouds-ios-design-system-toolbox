@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "1ac7ce7920e94a4996ddd3ca1a2679b562be271a"
+        "branch" : "1753-in-circular-progress-indicator-set-helper-text-in-two-parts",
+        "revision" : "ccb53a045fad4e70adb8fb0605049f9ea0298874"
       }
     },
     {
