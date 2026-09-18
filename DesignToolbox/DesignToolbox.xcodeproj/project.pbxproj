@@ -7446,7 +7446,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1748-for-link-component-make-possible-for-next-and-external-indicators-to-be-displayed-in-link-component-just-after-last-characters";
 				kind = branch;
 			};
 		};
