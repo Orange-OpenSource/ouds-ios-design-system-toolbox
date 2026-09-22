@@ -199,9 +199,7 @@ struct LinkConfiguration: View {
                                    chips: DefinedStatusIcons.chips)
                 }
 
-                if configurationModel.layout == .indicatorPrevious || configurationModel.layout == .indicatorNext {
-                    OUDSSwitchItem("app_components_link_fullWidth_tech", isOn: $configurationModel.isFullWidth)
-                }
+                OUDSSwitchItem("app_components_link_fullWidth_tech", isOn: $configurationModel.isFullWidth)
             }
 
             DesignToolboxEditContentDisclosure {
