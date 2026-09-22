@@ -31,8 +31,8 @@ struct DesignToolboxEditContentDisclosure<Content>: View where Content: View {
          @ViewBuilder content: @escaping () -> Content)
     {
         self.title = title.localized()
-        self.isContentVisible = isContentVisible
         self.content = content
+        self.isContentVisible = isContentVisible
     }
 
     // MARK: - Body
