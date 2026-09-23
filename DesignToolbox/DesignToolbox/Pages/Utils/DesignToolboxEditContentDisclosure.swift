@@ -19,8 +19,8 @@ struct DesignToolboxEditContentDisclosure<Content>: View where Content: View {
     // MARK: - Properties
 
     private let title: String
-    @ViewBuilder private let content: () -> Content
     @State private var isContentVisible = false
+    @ViewBuilder private let content: () -> Content
 
     @Environment(\.theme) private var theme
 
@@ -31,8 +31,8 @@ struct DesignToolboxEditContentDisclosure<Content>: View where Content: View {
          @ViewBuilder content: @escaping () -> Content)
     {
         self.title = title.localized()
-        self.content = content
         self.isContentVisible = isContentVisible
+        self.content = content
     }
 
     // MARK: - Body

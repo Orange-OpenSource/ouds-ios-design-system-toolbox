@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Library] `lits item` to v1.2.0 (Orange-OpenSource/ouds-ios#1714)
+- [Library] `list item` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1714)
 
 ### Fixed
 

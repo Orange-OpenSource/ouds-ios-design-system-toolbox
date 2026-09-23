@@ -7446,7 +7446,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1714-for-list-item-component-update-to-version-120";
+				branch = develop;
 				kind = branch;
 			};
 		};

@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1714-for-list-item-component-update-to-version-120",
-        "revision" : "6d4181ed771508c2c5289c41810e598de82a9207"
+        "branch" : "develop",
+        "revision" : "7fcba2e0e2a4ebd0f58d332f943e50ea74cd3e14"
       }
     },
     {
