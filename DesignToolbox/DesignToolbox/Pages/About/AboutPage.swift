@@ -191,6 +191,19 @@ struct AboutPage: View {
 
         VersionItem(title: "app_about_details_buildNumber", version: Bundle.main.buildNumber)
 
+        OpenableText("app_about_details_buildType" <- Bundle.main.fullBuildType, anchor: Bundle.main.fullBuildType, type: .githubBuild)
+            .modifier(CopyableTextViewModifier(Bundle.main.fullBuildType))
+
+        if let buildDetails = Bundle.main.buildDetails {
+            OpenableText("app_about_details_githubBuildDetails" <- buildDetails, anchor: buildDetails, type: .githubIssue)
+                .modifier(CopyableTextViewModifier(buildDetails.leadingColumnFragment))
+        }
+
+        if let sdkVersion = Bundle.main.sdkVersion, !sdkVersion.isEmpty {
+            OpenableText("app_about_details_sdkVersion" <- sdkVersion, anchor: sdkVersion, type: .githubVersion)
+                .modifier(CopyableTextViewModifier(sdkVersion))
+        }
+
         LiquidGlassStateItem()
 
         VersionItem(title: "app_about_details_themeCoreVersion",
@@ -216,19 +229,6 @@ struct AboutPage: View {
 
         VersionItem(title: "app_about_details_themeWireframeBrandVersion",
                     version: OUDSVersions.themeWireframeBrandVersion)
-
-        OpenableText("app_about_details_buildType" <- Bundle.main.fullBuildType, anchor: Bundle.main.fullBuildType, type: .githubBuild)
-            .modifier(CopyableTextViewModifier(Bundle.main.fullBuildType))
-
-        if let buildDetails = Bundle.main.buildDetails {
-            OpenableText("app_about_details_githubBuildDetails" <- buildDetails, anchor: buildDetails, type: .githubIssue)
-                .modifier(CopyableTextViewModifier(buildDetails.leadingColumnFragment))
-        }
-
-        if let sdkVersion = Bundle.main.sdkVersion, !sdkVersion.isEmpty {
-            OpenableText("app_about_details_sdkVersion" <- sdkVersion, anchor: sdkVersion, type: .githubVersion)
-                .modifier(CopyableTextViewModifier(sdkVersion))
-        }
     }
 
     @ViewBuilder
