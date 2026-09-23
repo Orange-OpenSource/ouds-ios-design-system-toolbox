@@ -153,13 +153,18 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
         let stopPattern = model.stopIndicator ? ".stopIndicator" : ""
         let alignementPattern = model.helperTextAlignment.technicalDescription
 
+        // Produce a unique suffix for every combination of `helperType`, `alignment`
+        // and `helperText` presence. Historically the `.description` branch collapsed
+        // to an empty string when the helper text was empty, which caused four
+        // different configurations to share the same snapshot name as the base
+        // `neutral / default / track / progress_50` case from the main loop.
         let helperPattern = switch model.determinateHelperTextType {
         case .none:
             ""
         case .percent:
-            ".percent\(alignementPattern)\(model.helperText.isEmpty ? "" : ".helperText")"
+            ".percent\(alignementPattern)\(model.helperText.isEmpty ? ".noText" : ".helperText")"
         case .description:
-            model.helperText.isEmpty ? "" : ".description\(alignementPattern))"
+            ".description\(alignementPattern)\(model.helperText.isEmpty ? ".noText" : ".helperText")"
         }
 
         let name = "\(typePattern)\(statusPattern)\(gapPattern)\(trackPattern)\(progressPattern)\(stopPattern)\(helperPattern)"
