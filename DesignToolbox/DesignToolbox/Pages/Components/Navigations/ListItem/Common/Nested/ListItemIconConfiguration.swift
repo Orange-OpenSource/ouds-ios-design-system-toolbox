@@ -56,9 +56,7 @@ open class ListItemIconConfigurationModel: ComponentConfiguration {
             switch status {
             case .neutral:
                 .neutral(
-                    asset: Image(
-                        decorative: "ic_heart",
-                        bundle: theme.resourcesBundle),
+                    asset: Image(decorative: "ic_heart"),
                     badge: bageOnNeutralIcon)
             case .info:
                 .info
