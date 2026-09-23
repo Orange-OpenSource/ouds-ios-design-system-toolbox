@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...develop)
 
+### Changed
+
+- [Library] `list item` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1714)
+
 ### Fixed
 
 - [Library] For `link` component, behavior of `full width` mode and display of `next` and `external` indicators just after last character (Orange-OpenSource/ouds-ios#1748)
