@@ -97,7 +97,7 @@ open class AlertConfigurationModel: ComponentConfiguration {
                 "image: OUDSImage(asset: Image(decorative: \"il_placeholder\")\(flipIconPattern)\(renderingModePattern))"
             }
         default:
-            statusIcon != .none ? "showIcon: true" : ""
+            ""
         }
     }
 
