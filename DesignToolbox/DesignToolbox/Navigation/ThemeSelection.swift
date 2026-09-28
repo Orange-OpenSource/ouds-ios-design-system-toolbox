@@ -23,11 +23,14 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
     /// The text displayed in submenus of the theme selector
     var description: String {
-        if self is SoshTheme {
-            return SoshTheme.name
+        if self is WhiteLabelTheme {
+            return "White Label (example)"
         }
         if self is WireframeTheme {
             return WireframeTheme.name
+        }
+        if self is SoshTheme {
+            return SoshTheme.name
         }
         if tuning == Tuning.OrangeFrance {
             return "Orange France"
@@ -45,18 +48,20 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
     /// The unique identifier to store the selected theme
     public var id: String {
+        if self is WhiteLabelTheme {
+            return "White Label"
+        }
+
+        if self is SoshTheme || self is WireframeTheme {
+            return description
+        }
+
         var constructedId = String(describing: Self.self)
         if self is OrangeTheme {
             constructedId = OrangeTheme.name
         }
         if self is OrangeCompactTheme {
             constructedId = OrangeCompactTheme.name
-        }
-        if self is SoshTheme {
-            constructedId = SoshTheme.name
-        }
-        if self is WireframeTheme {
-            constructedId = WireframeTheme.name
         }
         if tuning == Tuning.OrangeFrance {
             constructedId += constructedId + " (Orange France)"
@@ -124,7 +129,7 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
         orangeThemes = [orangeFranceOrangeTheme, orangeBusinessOrangeTheme, maxItOrangeTheme]
         orangeCompactThemes = [orangeFranceOrangeCompactTheme, orangeBusinessOrangeCompactTheme, maxItOrangeCompactTheme]
-        otherThemes = [soshTheme, wireframeTheme]
+        otherThemes = [soshTheme, wireframeTheme, kMyDesignToolboxWhiteLabelTheme]
         allThemes = orangeThemes + orangeCompactThemes + otherThemes
 
         if let theme = allThemes.first(where: { $0.id == ThemeProvider.currentTheme }) {

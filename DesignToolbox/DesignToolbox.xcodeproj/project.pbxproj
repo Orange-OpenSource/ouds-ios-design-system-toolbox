@@ -1564,6 +1564,10 @@
 		95D5BA362F4706E000CB10FE /* DialogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA312F4706E000CB10FE /* DialogsView.swift */; };
 		95D6AAD12F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
 		95F840D32EB8FAA200CE1FE6 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95F840D22EB8FAA200CE1FE6 /* OUDSSwiftUI */; };
+		95FD9E7A306A555600CD830B /* White Label Theme Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD9E78306A555600CD830B /* White Label Theme Example.swift */; };
+		95FD9E7B306A555600CD830B /* White Label Theme Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD9E78306A555600CD830B /* White Label Theme Example.swift */; };
+		95FD9E7C306A555600CD830B /* White Label Theme Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD9E78306A555600CD830B /* White Label Theme Example.swift */; };
+		95FD9E7D306A555600CD830B /* White Label Theme Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD9E78306A555600CD830B /* White Label Theme Example.swift */; };
 		97690312C5A835761CF9B87F /* AlertMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD62F3CBEC300ABD80E /* AlertMessagePage.swift */; };
 		99A65EBB9967AC0BD633488C /* InlineAlertConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BB2F4852A9005F349B /* InlineAlertConfigurationView.swift */; };
 		A1A56F609A601DC9820F2362 /* ToolBarBottomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD3A2F850344004615AF /* ToolBarBottomPage.swift */; };
@@ -2108,6 +2112,7 @@
 		95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSUtilities.swift; sourceTree = "<group>"; };
 		95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
 		95EDFD162EC73BB4006DE593 /* Image+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions.swift"; sourceTree = "<group>"; };
+		95FD9E78306A555600CD830B /* White Label Theme Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "White Label Theme Example.swift"; sourceTree = "<group>"; };
 		98CE5076DA51C0E1BCB32AF0 /* CircularProgressIndicatorElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CircularProgressIndicatorElement.swift; sourceTree = "<group>"; };
 		9995F0D41039283E1AE29FB8 /* OrangeCompactTheme+CircularProgressIndicatorSnapshotsTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+CircularProgressIndicatorSnapshotsTests.swift"; sourceTree = "<group>"; };
 		99E56BB1A7437ED3D0C6AD4D /* BodyConfigurationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BodyConfigurationView.swift; sourceTree = "<group>"; };
@@ -3152,6 +3157,7 @@
 		51BD76202C466FCF0033365D /* DesignToolbox */ = {
 			isa = PBXGroup;
 			children = (
+				95FD9E79306A555600CD830B /* White Label Example */,
 				51A7A9DA2C46E17F00EF7A77 /* Info.plist */,
 				07CF42872CA55BB4000BD03E /* Navigation */,
 				51BD76112C466FCF0033365D /* Pages */,
@@ -4248,6 +4254,14 @@
 				958CA1F92F48C407001F45E8 /* InlineAlertMessageView.swift */,
 			);
 			path = AlertMessage;
+			sourceTree = "<group>";
+		};
+		95FD9E79306A555600CD830B /* White Label Example */ = {
+			isa = PBXGroup;
+			children = (
+				95FD9E78306A555600CD830B /* White Label Theme Example.swift */,
+			);
+			path = "White Label Example";
 			sourceTree = "<group>";
 		};
 		AASRCH002GROUP000000001 /* Search */ = {
@@ -5460,6 +5474,7 @@
 				953ED9F8302FC3B90008FEA7 /* StaticListItemElement.swift in Sources */,
 				953ED9F9302FC3B90008FEA7 /* StaticListItemPage.swift in Sources */,
 				953ED9FA302FC3B90008FEA7 /* ToolBarCommonContent.swift in Sources */,
+				95FD9E7D306A555600CD830B /* White Label Theme Example.swift in Sources */,
 				953ED9FB302FC3B90008FEA7 /* ToolBarCommonConfiguration.swift in Sources */,
 				953ED9FD302FC3B90008FEA8 /* ToolBarPrincipalConfiguration.swift in Sources */,
 				953ED9FE302FC3B90008FEA9 /* ToolBarTrailingConfiguration.swift in Sources */,
@@ -5760,6 +5775,7 @@
 				953EDC9F302FC69E0008FEA7 /* LabelConfigurationView.swift in Sources */,
 				953EDCA0302FC69E0008FEA7 /* CodeConfigurationView.swift in Sources */,
 				953EDCA1302FC69E0008FEA7 /* Card.swift in Sources */,
+				95FD9E7C306A555600CD830B /* White Label Theme Example.swift in Sources */,
 				953EDCA2302FC69E0008FEA7 /* CardIllustration.swift in Sources */,
 				953EDCA3302FC69E0008FEA7 /* DesignToolboxElement.swift in Sources */,
 				953EDCA4302FC69E0008FEA7 /* DesignToolboxElementPage.swift in Sources */,
@@ -6156,6 +6172,7 @@
 				953EDB1F302FC4A20008FEA7 /* GridTokenPage.swift in Sources */,
 				953EDB20302FC4A20008FEA7 /* OpacityIllustration.swift in Sources */,
 				953EDB21302FC4A20008FEA7 /* NamedOpacity.swift in Sources */,
+				95FD9E7A306A555600CD830B /* White Label Theme Example.swift in Sources */,
 				953EDB22302FC4A20008FEA7 /* OpacityTokenElement.swift in Sources */,
 				953EDB23302FC4A20008FEA7 /* OpacityTokenPage.swift in Sources */,
 				953EDB24302FC4A20008FEA7 /* TokensPage.swift in Sources */,
@@ -6293,6 +6310,7 @@
 				953EDB9A302FC5A60008FEA7 /* InputTagConfigurationView.swift in Sources */,
 				953EDB9B302FC5A60008FEA7 /* InputTagElement.swift in Sources */,
 				953EDB9C302FC5A60008FEA7 /* InputTagPage.swift in Sources */,
+				95FD9E7B306A555600CD830B /* White Label Theme Example.swift in Sources */,
 				953EDB9D302FC5A60008FEA7 /* TagConfigurationView.swift in Sources */,
 				953EDB9E302FC5A60008FEA7 /* TagElement.swift in Sources */,
 				953EDB9F302FC5A60008FEA7 /* TagPage.swift in Sources */,
