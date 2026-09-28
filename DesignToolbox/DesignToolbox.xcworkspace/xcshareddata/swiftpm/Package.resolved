@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "5075a480b1b3727161c5e5b7d8aa3e12f3a67d8b"
+        "branch" : "1772-in-library-add-white-label-theme",
+        "revision" : "6a9d8637cc5ea8cd4a171ed61c12c28d86707dfa"
       }
     },
     {
