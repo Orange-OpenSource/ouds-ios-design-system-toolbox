@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] `text input` component, `Label` is duplicated if on two lines (Orange-OpenSource/ouds-ios#1763)
 - [DesignToolbox] Code samples for `alert message` component (Orange-OpenSource/ouds-ios#1775)
 - [Library] For `link` component, behavior of `full width` mode and display of `next` and `external` indicators just after last character (Orange-OpenSource/ouds-ios#1748)
 - [Library] In `circular progress indicator`, set helper text in two texts to fix alignment (Orange-OpenSource/ouds-ios#1753)
