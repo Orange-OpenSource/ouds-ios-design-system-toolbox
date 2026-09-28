@@ -199,6 +199,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         }
     }
 
+    var placeholderTextValue: String? {
+        placeholderText.isEmpty ? nil : placeholderText
+    }
+
     // MARK: Code illustration
 
     override func updateCode() {
