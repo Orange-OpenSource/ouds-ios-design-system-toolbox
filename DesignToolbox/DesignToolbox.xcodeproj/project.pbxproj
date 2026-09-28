@@ -7464,7 +7464,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1772-in-library-add-white-label-theme";
+				branch = develop;
 				kind = branch;
 			};
 		};
