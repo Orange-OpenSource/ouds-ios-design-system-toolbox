@@ -7446,7 +7446,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1763-for-text-input-component-text-is-duplicated-on-small-screens)";
+				branch = develop;
 				kind = branch;
 			};
 		};
