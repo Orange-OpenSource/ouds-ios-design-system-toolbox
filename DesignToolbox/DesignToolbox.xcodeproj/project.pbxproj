@@ -7466,7 +7466,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1659-for-alert-message-component-update-to-v120";
 				kind = branch;
 			};
 		};
