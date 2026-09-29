@@ -160,6 +160,7 @@ open class RadioButtonSnapshotsTestsTestCase: XCTestCase {
                            on: interfaceStyle,
                            a11yContrast: a11yContrast,
                            named: name,
+                           precision: 0.99, // With default precision the tool does not catch color-only changes
                            testName: testName)
     }
 
