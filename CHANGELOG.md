@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] For `radio` components, bad color for unselected indicator with Sosh theme (Orange-OpenSource/ouds-ios#1779)
 - [Library] For `text input` component, the label is duplicated if on two lines (Orange-OpenSource/ouds-ios#1763)
 - [DesignToolbox] Code samples for `alert message` component (Orange-OpenSource/ouds-ios#1775)
 - [Library] For `link` component, behavior of `full width` mode and display of `next` and `external` indicators just after last character (Orange-OpenSource/ouds-ios#1748)
