@@ -7466,7 +7466,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1779-for-radio-components-and-sosh-theme-the-color-of-the-indicator-in-unselected-state-is-not-good";
+				branch = "1722-for-typography-heading-component-update-to-v110";
 				kind = branch;
 			};
 		};
