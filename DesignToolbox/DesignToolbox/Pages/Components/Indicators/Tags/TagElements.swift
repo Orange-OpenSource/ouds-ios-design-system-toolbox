@@ -23,6 +23,7 @@ struct TagElements: DesignToolboxElement {
         let variants: [DesignToolboxElement] = [
             TagElement(),
             InputTagElement(),
+            CategoricalTagElement(),
         ]
 
         name = "app_components_tag_tech".localized()

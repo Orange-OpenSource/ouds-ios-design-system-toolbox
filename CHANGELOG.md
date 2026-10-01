@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `categorical tag` component (Orange-OpenSource/ouds-ios#1782)
 - [Design System Toolbox] `White label` theme example (Orange-OpenSource/ouds-ios#1772)
 
 ### Changed
