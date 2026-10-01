@@ -384,6 +384,7 @@
 		9526BC2F3048609D0037BBEB /* Animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9526BC283048609D0037BBEB /* Animation.gif */; };
 		9526BC303048609D0037BBEB /* Animation.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9526BC293048609D0037BBEB /* Animation.webp */; };
 		9526BC313048609D0037BBEB /* Animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9526BC283048609D0037BBEB /* Animation.gif */; };
+		95310E72306EC63A007607E0 /* CategoricalTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB74290D05FE9EF566929F57 /* CategoricalTagPage.swift */; };
 		9536F5FB302B61AC00309F3D /* FoundationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9536F5FA302B61AC00309F3D /* FoundationsView.swift */; };
 		953DC1562ED0995600D14D44 /* TabBarConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC1532ED0995600D14D44 /* TabBarConfigurationView.swift */; };
 		953E02452F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02402F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift */; };
@@ -1581,6 +1582,8 @@
 		95CEF1862F9A2726008AD8C4 /* View+TabBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF1852F9A271C008AD8C4 /* View+TabBarAppearance.swift */; };
 		95D5BA362F4706E000CB10FE /* DialogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA312F4706E000CB10FE /* DialogsView.swift */; };
 		95D6AAD12F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
+		95DAED0B306EC1E700C61004 /* CategoricalTagConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451DA9F7D4CA61D0A129FE7F /* CategoricalTagConfigurationModel.swift */; };
+		95DAED0C306EC47900C61004 /* CategoricalTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E05490E10A52322245B9D90 /* CategoricalTagElement.swift */; };
 		95F840D32EB8FAA200CE1FE6 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95F840D22EB8FAA200CE1FE6 /* OUDSSwiftUI */; };
 		95FD9E7A306A555600CD830B /* White Label Theme Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD9E78306A555600CD830B /* White Label Theme Example.swift */; };
 		95FD9E7B306A555600CD830B /* White Label Theme Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD9E78306A555600CD830B /* White Label Theme Example.swift */; };
@@ -5119,6 +5122,7 @@
 				953EDDF8302FCCE10008FEA7 /* NameSpace+PaddingInline.swift in Sources */,
 				953EDDF9302FCCE10008FEA7 /* NameSpace+PaddingInset.swift in Sources */,
 				953EDDFA302FCCE10008FEA7 /* NameSpace+PaddingBlock.swift in Sources */,
+				95310E72306EC63A007607E0 /* CategoricalTagPage.swift in Sources */,
 				953EDDFB302FCCE10008FEA7 /* SpaceTokenElement.swift in Sources */,
 				953EDDFC302FCCE10008FEA7 /* SpaceTokenPage.swift in Sources */,
 				953EDDFD302FCCE10008FEA7 /* SizeIllustrations.swift in Sources */,
@@ -5150,6 +5154,7 @@
 				953EDD8C302FCCD40008FEA7 /* CheckboxElement.swift in Sources */,
 				953EDD8D302FCCD40008FEA7 /* CheckboxPage.swift in Sources */,
 				953EDD8E302FCCD40008FEA7 /* CheckboxIndeterminateElement.swift in Sources */,
+				95DAED0C306EC47900C61004 /* CategoricalTagElement.swift in Sources */,
 				953EDD8F302FCCD40008FEA7 /* CheckboxIndeterminatePage.swift in Sources */,
 				953EDD90302FCCD40008FEA7 /* CheckboxItemElement.swift in Sources */,
 				953EDD91302FCCD40008FEA7 /* CheckboxItemPage.swift in Sources */,
@@ -5445,6 +5450,7 @@
 				51952A712D3F9D720068B807 /* DesignToolboxTokenIllustration.swift in Sources */,
 				51952A892D3FA20D0068B807 /* OrangeTheme+TokensElevationSnapshotsTests.swift in Sources */,
 				95207BB22FE2E7B90088DCC7 /* OrangeCompactTheme+ListItemSnapshotsTests.swift in Sources */,
+				95DAED0B306EC1E700C61004 /* CategoricalTagConfigurationModel.swift in Sources */,
 				07304A6A2D429F9F009320BA /* LinkConfiguration.swift in Sources */,
 				51ABCD282E183226006CD6C0 /* SoshTheme+TokensFontSnapshotsTests.swift in Sources */,
 				51A905FD2E8427C6003F3E0E /* View+NavigationBar.swift in Sources */,
