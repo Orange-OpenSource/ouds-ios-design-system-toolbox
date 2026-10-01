@@ -29,17 +29,6 @@ enum CategoricalTagLayout: DesignToolboxEnumLocalizedRepresentable, CaseIterable
             "app_components_common_textAndIconLayout_tech"
         }
     }
-
-    var leadingTechnicalDescription: String {
-        switch self {
-        case .textOnly:
-            ".none"
-        case .textAndBullet:
-            ".bullet"
-        case .textAndIcon:
-            ".icon(OUDSImage(...))"
-        }
-    }
 }
 
 // MARK: - Categorical Tag Configuration Model
