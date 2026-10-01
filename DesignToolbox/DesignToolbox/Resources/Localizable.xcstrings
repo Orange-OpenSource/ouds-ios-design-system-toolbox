@@ -1553,31 +1553,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_animated_tech" : {
-      "comment" : "Shared (progress indicators, animated images)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Animated"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Animated"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Animated"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_badge_count_description_text" : {
       "comment" : "Component - Badge",
       "extractionState" : "manual",
@@ -2946,6 +2921,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colored background"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_animated_tech" : {
+      "comment" : "Shared (progress indicators, animated images)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animated"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animated"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animated"
           }
         }
       },
@@ -6305,6 +6305,80 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Radio picker"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_skeleton_description_text" : {
+      "comment" : "Component - Skeleton",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الـ Skeleton هو عنصر في واجهة المستخدم يشير إلى أن المحتوى قيد التحميل."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A skeleton is a UI element that indicates when content is loading."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un Skeleton est un élément d’interface utilisateur qui indique que le contenu est en cours de chargement."
+          }
+        }
+      }
+    },
+    "app_components_skeleton_securityMargin_tech" : {
+      "comment" : "Component - Skeleton",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Security margin"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Security margin"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Security margin"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_skeleton_tech" : {
+      "comment" : "Component - Skeleton",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeleton"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeleton"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeleton"
           }
         }
       },
