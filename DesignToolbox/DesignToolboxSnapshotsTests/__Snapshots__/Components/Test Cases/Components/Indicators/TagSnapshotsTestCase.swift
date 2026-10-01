@@ -126,21 +126,24 @@ open class TagSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testLoadingTags(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for layout in TagLayout.allCases {
-            for size in OUDSTag.Size.allCases {
-                for shape in OUDSTag.Shape.allCases {
-                    let model = TagConfigurationModel()
+            for statusCategory in OUDSTag.Status.Category.allCases {
+                for size in OUDSTag.Size.allCases {
+                    for shape in OUDSTag.Shape.allCases {
+                        let model = TagConfigurationModel()
 
-                    model.enabled = true
-                    model.flipIcon = false
+                        model.enabled = true
+                        model.flipIcon = false
 
-                    model.isLoading = true
-                    model.layout = layout
-                    model.size = size
-                    model.shape = shape
-                    model.progressVariant = .determinate
-                    model.progressValue = 0.75
+                        model.isLoading = true
+                        model.layout = layout
+                        model.statusCategory = statusCategory
+                        model.size = size
+                        model.shape = shape
+                        model.progressVariant = .determinate
+                        model.progressValue = 0.75
 
-                    testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                        testTag(theme: theme, interfaceStyle: interfaceStyle, model: model)
+                    }
                 }
             }
         }
@@ -171,7 +174,7 @@ open class TagSnapshotsTestsTestCase: XCTestCase {
         let shapePattern = model.shape.technicalDescription
 
         let appearancePattern = model.isLoading ? "" : model.appearance.technicalDescription
-        let statusPattern = model.isLoading ? "" : model.statusCategory.technicalDescription
+        let statusPattern = model.statusCategory.technicalDescription
         let loaderPattern = model.isLoading ? ".loading" : ""
         let disabledPatern = model.isLoading ? "" : !model.enabled ? "_Disabled" : "_Enabled"
 
