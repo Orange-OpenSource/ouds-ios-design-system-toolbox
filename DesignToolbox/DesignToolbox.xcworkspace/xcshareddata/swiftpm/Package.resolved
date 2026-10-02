@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1779-for-radio-components-and-sosh-theme-the-color-of-the-indicator-in-unselected-state-is-not-good",
-        "revision" : "be7f42a9da9f600d619678f78354ecc8e846a82d"
+        "revision" : "db3b190516ff801ef82fa9a54513bf58e71638ff",
+        "version" : "3.1.0"
       }
     },
     {
