@@ -32,8 +32,6 @@ struct LinkElement: DesignToolboxElement {
 
 private struct LinkIllustration: View {
 
-    @Environment(\.layoutDirection) var direction
-
     var body: some View {
         OUDSLink("app_components_common_label_label", indicator: .next) {}
     }

@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...3.1.0) - 2026-10-02
+
+### Added
+
+- [Design System Toolbox] `White label` theme example (Orange-OpenSource/ouds-ios#1772)
+
+### Changed
+
+- [DesignToolbox] Ruby Gem `fastlane` from v2.339.0 to v2.240.1
+- [DesignToolbox] Ruby Gem `excon` transitive RubyGem from v1.7.1 to v1.7.2
+- [DesignToolbox] Ruby version from v4.0.6 to v4.0.7 for `build-and-test` workflow
+- [DesignToolbox] GitHub Action `ruby/setup-ruby` from v1.321.0 to v1.327.0 for `build-and-test` workflow
+- [DesignToolbox] GitHub Action `github/codeql-action/upload-sarif` from v4.38.0 to v4.38.2 for `scorecard` workflow
+- [Library] `button` component to version v3.4.0 (Orange-OpenSource/ouds-ios#1653)
+- [Library] `list item` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1714)
+
+### Fixed
+
+- [Library] For `radio` components, bad color for unselected indicator with Sosh theme (Orange-OpenSource/ouds-ios#1779)
+- [Library] For `text input` component, the label is duplicated if on two lines (Orange-OpenSource/ouds-ios#1763)
+- [DesignToolbox] Code samples for `alert message` component (Orange-OpenSource/ouds-ios#1775)
+- [Library] For `link` component, behavior of `full width` mode and display of `next` and `external` indicators just after last character (Orange-OpenSource/ouds-ios#1748)
+- [Library] In `circular progress indicator`, set helper text in two texts to fix alignment (Orange-OpenSource/ouds-ios#1753)
+- [Library] Add back missing token (of v2.6 library) for `alert message` component 
+
 ## [3.0.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.3.0...3.0.0) - 2026-09-10
 
 ### Added
