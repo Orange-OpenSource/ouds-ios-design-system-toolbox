@@ -53,6 +53,10 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: - Computed properties
 
     var richDescriptionText: AttributedString {
@@ -82,6 +86,7 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         bullet2 = "app_components_alert_alertMessage_bullet_tech" <- Int(2)
         bullet3 = "app_components_alert_alertMessage_bullet_tech" <- Int(3)
         textMode = .raw
+        showSkeleton = false
 
         super.init()
 
@@ -156,6 +161,8 @@ struct AlertMessageConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
 
+                OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
                                chips: AlertStatus.chips)
@@ -197,3 +204,4 @@ struct AlertMessageConfigurationView: View {
 extension OUDSAlertMessage.Link.Position: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSAlertMessage.Link.Position] = [.bottom, .topTrailing]
 }
+

@@ -41,22 +41,26 @@ struct AlertMessageDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        // To keep things simple, assuming the rich/raw mode is for all parameters
-        switch configurationModel.textMode {
-        case .raw:
-            OUDSAlertMessage(label: configurationModel.text,
-                             status: configurationModel.status(from: theme),
-                             description: configurationModel.descriptionText,
-                             bulletList: configurationModel.bulletList,
-                             link: configurationModel.link,
-                             onClose: configurationModel.onClose)
-        case .rich:
-            OUDSAlertMessage(label: configurationModel.text,
-                             status: configurationModel.status(from: theme),
-                             description: configurationModel.richDescriptionText,
-                             bulletList: configurationModel.richBulletList,
-                             link: configurationModel.link,
-                             onClose: configurationModel.onClose)
+        Group {
+            // To keep things simple, assuming the rich/raw mode is for all parameters
+            switch configurationModel.textMode {
+            case .raw:
+                OUDSAlertMessage(label: configurationModel.text,
+                                 status: configurationModel.status(from: theme),
+                                 description: configurationModel.descriptionText,
+                                 bulletList: configurationModel.bulletList,
+                                 link: configurationModel.link,
+                                 onClose: configurationModel.onClose)
+            case .rich:
+                OUDSAlertMessage(label: configurationModel.text,
+                                 status: configurationModel.status(from: theme),
+                                 description: configurationModel.richDescriptionText,
+                                 bulletList: configurationModel.richBulletList,
+                                 link: configurationModel.link,
+                                 onClose: configurationModel.onClose)
+            }
         }
+        .oudsSkeletonState(isVisible: configurationModel.showSkeleton)
     }
 }
+
