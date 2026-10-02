@@ -40,7 +40,8 @@ struct SkeletonDemo: View {
     @StateObject var configurationModel: SkeletonConfigurationModel
 
     var body: some View {
-        OUDSSkeleton(isAnimated: $configurationModel.isAnimated, securityMargin: configurationModel.securityMargin)
+        OUDSSkeleton(securityMargin: configurationModel.securityMargin)
             .frame(width: 200, height: 62, alignment: .center)
+            .oudsSkeletonState(isVisible: true, isAnimated: configurationModel.isAnimated)
     }
 }

@@ -3889,6 +3889,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_skeleton_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeleton"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeleton"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeleton"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_status_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
