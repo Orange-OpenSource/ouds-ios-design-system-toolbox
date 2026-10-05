@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "46a38612105c84ea14f37d0f4eeef72d1774aec6"
+        "branch" : "1659-for-alert-message-component-update-to-v120",
+        "revision" : "d148bb6bebb4567a146ed90bae180edc4bcb673a"
       }
     },
     {
