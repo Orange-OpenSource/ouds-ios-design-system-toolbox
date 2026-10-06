@@ -19,7 +19,7 @@ struct DesignToolboxEditContentDisclosure<Content>: View where Content: View {
     // MARK: - Properties
 
     private let title: String
-    @State private var isContentVisible = false
+    @State private var isContentVisible: Bool
     @ViewBuilder private let content: () -> Content
 
     @Environment(\.theme) private var theme
