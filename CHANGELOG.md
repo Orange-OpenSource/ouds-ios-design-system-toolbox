@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.1.0...develop)
 
+### Changed
+- [Library] `typography` component to version v1.1.0 (Orange-OpenSource/ouds-ios#1722)
 
 ## [3.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...3.1.0) - 2026-10-02
 
@@ -20,7 +22,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Ruby version from v4.0.6 to v4.0.7 for `build-and-test` workflow
 - [DesignToolbox] GitHub Action `ruby/setup-ruby` from v1.321.0 to v1.327.0 for `build-and-test` workflow
 - [DesignToolbox] GitHub Action `github/codeql-action/upload-sarif` from v4.38.0 to v4.38.2 for `scorecard` workflow
-- [Library] `typography` component to version v1.1.0 (Orange-OpenSource/ouds-ios#1722)
 - [Library] `button` component to version v3.4.0 (Orange-OpenSource/ouds-ios#1653)
 - [Library] `list item` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1714)
 
