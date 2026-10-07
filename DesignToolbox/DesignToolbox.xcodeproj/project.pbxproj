@@ -7466,7 +7466,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1722-for-typography-heading-component-update-to-v110";
 				kind = branch;
 			};
 		};
