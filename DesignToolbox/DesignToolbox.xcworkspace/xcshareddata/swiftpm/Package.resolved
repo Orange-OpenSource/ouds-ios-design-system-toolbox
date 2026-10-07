@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "51a418c17fa37096f9f5e7074ec8b7181397fd22"
+        "branch" : "1722-for-typography-heading-component-update-to-v110",
+        "revision" : "47d97ede0d47d7eaca9331e4ec999e421cd0f595"
       }
     },
     {
