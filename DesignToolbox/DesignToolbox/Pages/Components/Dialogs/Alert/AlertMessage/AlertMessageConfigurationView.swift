@@ -141,10 +141,15 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         closeButton ? ", onClose: { }" : ""
     }
 
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
+    }
+
     override func updateCode() {
         code =
             """
             OUDSAlertMessage(label: \"\(text)\"\(statusPattern)\(descriptionPattern)\(bulletListPattern)\(linkPattern)\(onClosePattern))
+                \(skeletonPattern)
             """
     }
 }

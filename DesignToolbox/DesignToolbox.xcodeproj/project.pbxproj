@@ -1607,6 +1607,21 @@
 		FCB8B1932F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1922F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift */; };
 		FCB8B1952F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1942F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift */; };
 		FCB8B19A2F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8B1982F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift */; };
+		FCC9E3BF3076856C00E9E314 /* SkeletonConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BB3076856C00E9E314 /* SkeletonConfigurationView.swift */; };
+		FCC9E3C03076856C00E9E314 /* SkeletonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BC3076856C00E9E314 /* SkeletonElement.swift */; };
+		FCC9E3C13076856C00E9E314 /* SkeletonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BD3076856C00E9E314 /* SkeletonPage.swift */; };
+		FCC9E3C23076856C00E9E314 /* SkeletonConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BB3076856C00E9E314 /* SkeletonConfigurationView.swift */; };
+		FCC9E3C33076856C00E9E314 /* SkeletonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BC3076856C00E9E314 /* SkeletonElement.swift */; };
+		FCC9E3C43076856C00E9E314 /* SkeletonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BD3076856C00E9E314 /* SkeletonPage.swift */; };
+		FCC9E3C53076856C00E9E314 /* SkeletonConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BB3076856C00E9E314 /* SkeletonConfigurationView.swift */; };
+		FCC9E3C63076856C00E9E314 /* SkeletonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BC3076856C00E9E314 /* SkeletonElement.swift */; };
+		FCC9E3C73076856C00E9E314 /* SkeletonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BD3076856C00E9E314 /* SkeletonPage.swift */; };
+		FCC9E3C83076856C00E9E314 /* SkeletonConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BB3076856C00E9E314 /* SkeletonConfigurationView.swift */; };
+		FCC9E3C93076856C00E9E314 /* SkeletonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BC3076856C00E9E314 /* SkeletonElement.swift */; };
+		FCC9E3CA3076856C00E9E314 /* SkeletonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BD3076856C00E9E314 /* SkeletonPage.swift */; };
+		FCC9E3CB3076856C00E9E314 /* SkeletonConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BB3076856C00E9E314 /* SkeletonConfigurationView.swift */; };
+		FCC9E3CC3076856C00E9E314 /* SkeletonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BC3076856C00E9E314 /* SkeletonElement.swift */; };
+		FCC9E3CD3076856C00E9E314 /* SkeletonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9E3BD3076856C00E9E314 /* SkeletonPage.swift */; };
 		FCDECD8F303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDECD8E303ED7A40069D50A /* ProgressIndicator+extension.swift */; };
 		FCDECD90303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDECD8E303ED7A40069D50A /* ProgressIndicator+extension.swift */; };
 		FCDECD91303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDECD8E303ED7A40069D50A /* ProgressIndicator+extension.swift */; };
@@ -2167,6 +2182,9 @@
 		FCB8B1922F2791EC00ADBAB8 /* SoshTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FCB8B1942F27922C00ADBAB8 /* OrangeTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
 		FCB8B1982F27984B00ADBAB8 /* WireframeTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
+		FCC9E3BB3076856C00E9E314 /* SkeletonConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonConfigurationView.swift; sourceTree = "<group>"; };
+		FCC9E3BC3076856C00E9E314 /* SkeletonElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonElement.swift; sourceTree = "<group>"; };
+		FCC9E3BD3076856C00E9E314 /* SkeletonPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonPage.swift; sourceTree = "<group>"; };
 		FCDDFBB32F2B69E700389D8D /* PasswordInputConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputConfigurationView.swift; sourceTree = "<group>"; };
 		FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputElement.swift; sourceTree = "<group>"; };
 		FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputPage.swift; sourceTree = "<group>"; };
@@ -3280,6 +3298,7 @@
 		51F49C852E5743D900D50BC4 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
+				FCC9E3BE3076856C00E9E314 /* Skeleton */,
 				07D3DBF02DA5084500D8A57F /* ColoredSurface */,
 				076227622DA90C65009C3632 /* Divider */,
 			);
@@ -4495,6 +4514,16 @@
 			path = ContentDisplay;
 			sourceTree = "<group>";
 		};
+		FCC9E3BE3076856C00E9E314 /* Skeleton */ = {
+			isa = PBXGroup;
+			children = (
+				FCC9E3BB3076856C00E9E314 /* SkeletonConfigurationView.swift */,
+				FCC9E3BC3076856C00E9E314 /* SkeletonElement.swift */,
+				FCC9E3BD3076856C00E9E314 /* SkeletonPage.swift */,
+			);
+			path = Skeleton;
+			sourceTree = "<group>";
+		};
 		FCDDFBB22F2B69DA00389D8D /* PasswordInput */ = {
 			isa = PBXGroup;
 			children = (
@@ -5276,6 +5305,9 @@
 				51A217832E325FE600562BE0 /* WireframeTheme+TokensOpacitySnapshotsTests.swift in Sources */,
 				51ABCD2A2E183226006CD6C0 /* SoshTheme+TokensSpaceSnapshotsTests.swift in Sources */,
 				07F0AFE82CFE0FBD00D334DD /* DesignToolboxConfiguration.swift in Sources */,
+				FCC9E3C83076856C00E9E314 /* SkeletonConfigurationView.swift in Sources */,
+				FCC9E3C93076856C00E9E314 /* SkeletonElement.swift in Sources */,
+				FCC9E3CA3076856C00E9E314 /* SkeletonPage.swift in Sources */,
 				FC4799D22F485673005F349B /* OrangeTheme+InlineAlertSnapshotsTests.swift in Sources */,
 				51A217732E325F7F00562BE0 /* WireframeTheme+DividerSnapshotsTests.swift in Sources */,
 				51ABCD2D2E183226006CD6C0 /* SoshTheme+TokensOpacitySnapshotsTests.swift in Sources */,
@@ -5478,6 +5510,9 @@
 				953ED9FA302FC3B90008FEA7 /* ToolBarCommonContent.swift in Sources */,
 				95FD9E7D306A555600CD830B /* White Label Theme Example.swift in Sources */,
 				953ED9FB302FC3B90008FEA7 /* ToolBarCommonConfiguration.swift in Sources */,
+				FCC9E3BF3076856C00E9E314 /* SkeletonConfigurationView.swift in Sources */,
+				FCC9E3C03076856C00E9E314 /* SkeletonElement.swift in Sources */,
+				FCC9E3C13076856C00E9E314 /* SkeletonPage.swift in Sources */,
 				953ED9FD302FC3B90008FEA8 /* ToolBarPrincipalConfiguration.swift in Sources */,
 				953ED9FE302FC3B90008FEA9 /* ToolBarTrailingConfiguration.swift in Sources */,
 				953ED9FF302FC3B90008FEA0 /* ToolBarItemStyle.swift in Sources */,
@@ -5779,6 +5814,9 @@
 				953EDCA1302FC69E0008FEA7 /* Card.swift in Sources */,
 				95FD9E7C306A555600CD830B /* White Label Theme Example.swift in Sources */,
 				953EDCA2302FC69E0008FEA7 /* CardIllustration.swift in Sources */,
+				FCC9E3C53076856C00E9E314 /* SkeletonConfigurationView.swift in Sources */,
+				FCC9E3C63076856C00E9E314 /* SkeletonElement.swift in Sources */,
+				FCC9E3C73076856C00E9E314 /* SkeletonPage.swift in Sources */,
 				953EDCA3302FC69E0008FEA7 /* DesignToolboxElement.swift in Sources */,
 				953EDCA4302FC69E0008FEA7 /* DesignToolboxElementPage.swift in Sources */,
 				953EDCA5302FC69E0008FEA7 /* DesignToolboxElementsPage.swift in Sources */,
@@ -6174,6 +6212,9 @@
 				953EDB1F302FC4A20008FEA7 /* GridTokenPage.swift in Sources */,
 				953EDB20302FC4A20008FEA7 /* OpacityIllustration.swift in Sources */,
 				953EDB21302FC4A20008FEA7 /* NamedOpacity.swift in Sources */,
+				FCC9E3C23076856C00E9E314 /* SkeletonConfigurationView.swift in Sources */,
+				FCC9E3C33076856C00E9E314 /* SkeletonElement.swift in Sources */,
+				FCC9E3C43076856C00E9E314 /* SkeletonPage.swift in Sources */,
 				95FD9E7A306A555600CD830B /* White Label Theme Example.swift in Sources */,
 				953EDB22302FC4A20008FEA7 /* OpacityTokenElement.swift in Sources */,
 				953EDB23302FC4A20008FEA7 /* OpacityTokenPage.swift in Sources */,
@@ -6314,6 +6355,9 @@
 				953EDB9C302FC5A60008FEA7 /* InputTagPage.swift in Sources */,
 				95FD9E7B306A555600CD830B /* White Label Theme Example.swift in Sources */,
 				953EDB9D302FC5A60008FEA7 /* TagConfigurationView.swift in Sources */,
+				FCC9E3CB3076856C00E9E314 /* SkeletonConfigurationView.swift in Sources */,
+				FCC9E3CC3076856C00E9E314 /* SkeletonElement.swift in Sources */,
+				FCC9E3CD3076856C00E9E314 /* SkeletonPage.swift in Sources */,
 				953EDB9E302FC5A60008FEA7 /* TagElement.swift in Sources */,
 				953EDB9F302FC5A60008FEA7 /* TagPage.swift in Sources */,
 				953EDBA0302FC5A60008FEA7 /* TagElements.swift in Sources */,
@@ -7466,7 +7510,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1651-in-library-add-component-skeleton ";
 				kind = branch;
 			};
 		};
