@@ -63,6 +63,10 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: - Properties
 
     var textsModel: ListItemTextsConfigurationModel
@@ -100,6 +104,8 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
         // Item interaction
         enabled = true
+
+        showSkeleton = false
 
         // Nested elements
         textsModel = ListItemTextsConfigurationModel(itemSize: .default)
@@ -230,7 +236,12 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         \(componentInitCode)(data: data\(slotPattern)\(leadingPart)\(trailingPart))
         \(styleModifierPattern)\(sizeModifierPattern)\(containersAlignmentPattern)\(roundedMediaPattern)
         \(disableCodePattern)
+        \(skeletonPattern)
         """
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
     }
 
     var disableCodePattern: String {
