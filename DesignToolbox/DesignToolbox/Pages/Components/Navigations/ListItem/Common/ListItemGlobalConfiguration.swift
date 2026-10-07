@@ -22,6 +22,8 @@ struct ListItemGlobalSettingsConfiguration: View {
 
     var body: some View {
         VStack(spacing: 0) {
+            OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
             OUDSChipPicker(title: "app_components_common_type_tech".localized(),
                            selection: $configurationModel.contentStyleOption,
                            chips: ListItemConfigurationModel.ListContentStyle.chips)

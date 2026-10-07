@@ -60,6 +60,7 @@ private struct StaticListItemDemo: View {
         .oudsListItemRoundedMedia(configurationModel.roundedMedia)
         .oudsListItemSize(configurationModel.itemSize)
         .disabled(!configurationModel.enabled)
+        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     private var rowGap: CGFloat {
