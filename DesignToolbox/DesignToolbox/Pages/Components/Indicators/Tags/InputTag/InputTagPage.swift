@@ -40,7 +40,10 @@ struct InputTagDemo: View {
     @StateObject var configurationModel: InputTagConfigurationModel
 
     var body: some View {
-        OUDSInputTag(label: configurationModel.label) {}
-            .disabled(!configurationModel.enabled)
+        OUDSInputTag(label: configurationModel.label) {
+            print("Clicked")
+        }
+        .disabled(!configurationModel.enabled)
+        .oudsSkeletonState(isVisible: configurationModel.showSkeleton)
     }
 }

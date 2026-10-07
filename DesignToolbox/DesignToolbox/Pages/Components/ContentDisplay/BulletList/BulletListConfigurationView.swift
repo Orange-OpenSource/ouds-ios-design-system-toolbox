@@ -175,7 +175,12 @@ final class BulletListConfigurationModel: ComponentConfiguration {
             """
             OUDSBulletList(\(typePattern)\(textStylePattern)\(isBoldPattern))
             \(itemsPattern)
+            \(skeletonPattern)
             """
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
     }
 }
 

@@ -167,12 +167,17 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         "app_components_common_icon_a11y".localized()
     }
 
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
+    }
+
     override func updateCode() {
         code =
             """
             OUDSButton(\(layoutPattern)\(appearancePattern)\(stylePattern)\(sizePattern)\(isFullWidthPattern)) {}
             \(disableCodePattern)
             \(coloredSurfaceCodeModifier)
+            \(skeletonPattern)
             """
     }
 }
