@@ -49,6 +49,10 @@ final class LinkConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -58,6 +62,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
         size = .default
         density = .default
         iconType = .tintedIcon
+        showSkeleton = false
         super.init()
     }
 
@@ -89,6 +94,10 @@ final class LinkConfigurationModel: ComponentConfiguration {
         isFullWidth ? ", isFullWidth: true" : ""
     }
 
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
+    }
+
     override func updateCode() {
         switch layout {
         case .textOnly:
@@ -96,6 +105,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
                 """
                 OUDSLink(text: \"\(text)\", size: \(size.technicalDescription)\(densityPattern)) {}
                 \(disableCodePattern)
+                \(skeletonPattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         case .textAndIcon:
@@ -103,6 +113,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
                 """
                 OUDSLink(text: \"\(text)\", image: OUDSImage(asset: \(iconAssetSample)\(renderingModeCode)), size: \(size.technicalDescription)\(densityPattern)) {}
                 \(disableCodePattern)
+                \(skeletonPattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         case .indicatorNext:
@@ -110,6 +121,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
                 """
                 OUDSLink(text: \"\(text)\", indicator: .next, size: \(size.technicalDescription)\(densityPattern)\(isFullWidthPattern)) {}
                 \(disableCodePattern)
+                \(skeletonPattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         case .indicatorPrevious:
@@ -117,6 +129,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
                 """
                 OUDSLink(text: \"\(text)\", indicator: .previous, size: \(size.technicalDescription)\(densityPattern)\(isFullWidthPattern)) {}
                 \(disableCodePattern)
+                \(skeletonPattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         case .indicatorExternal:
@@ -124,6 +137,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
                 """
                 OUDSLink(text: \"\(text)\", indicator: .external, size: \(size.technicalDescription)\(densityPattern)\(isFullWidthPattern)) {}
                 \(disableCodePattern)
+                \(skeletonPattern)
                 \(coloredSurfaceCodeModifierPattern)
                 """
         }
@@ -177,6 +191,8 @@ struct LinkConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
                 OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
                 OUDSSwitchItem("app_components_common_onColoredSurface_tech", isOn: $configurationModel.onColoredSurface)
@@ -208,3 +224,4 @@ struct LinkConfiguration: View {
         }
     }
 }
+

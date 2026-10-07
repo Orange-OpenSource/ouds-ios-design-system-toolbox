@@ -60,7 +60,7 @@ struct AlertMessageDemo: View {
                                  onClose: configurationModel.onClose)
             }
         }
-        .oudsSkeletonState(isVisible: configurationModel.showSkeleton)
+        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }
 

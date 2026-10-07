@@ -73,7 +73,7 @@ private struct ButtonDemo: View {
                                    isFullWidth: configurationModel.isFullWidth) {}
                     }
                 }
-                .oudsSkeletonState(isVisible: configurationModel.showSkeleton)
+                .oudsSkeleton(isVisible: configurationModel.showSkeleton)
             }
         }
         .disabled(!configurationModel.enabled)
