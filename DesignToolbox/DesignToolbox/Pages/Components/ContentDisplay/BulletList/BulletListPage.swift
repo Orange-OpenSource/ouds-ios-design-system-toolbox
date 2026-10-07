@@ -57,7 +57,7 @@ struct BulletListDemo: View {
                                items: richItems)
             }
         }
-        .oudsSkeletonState(isVisible: configurationModel.showSkeleton)
+        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     @OUDSBulletListItemBuilder

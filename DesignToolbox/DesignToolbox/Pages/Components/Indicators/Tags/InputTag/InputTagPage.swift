@@ -44,6 +44,6 @@ struct InputTagDemo: View {
             print("Clicked")
         }
         .disabled(!configurationModel.enabled)
-        .oudsSkeletonState(isVisible: configurationModel.showSkeleton)
+        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }
