@@ -53,6 +53,8 @@ private struct ControlItemConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
                 selection
                     .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
