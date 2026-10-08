@@ -44,7 +44,12 @@ final class InlineAlertConfigurationModel: AlertConfigurationModel {
         code =
             """
             OUDSInlineAlert(label: \"\(text)\"\(statusPattern))
+            \(skeletonPattern)
             """
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
     }
 }
 
@@ -62,7 +67,6 @@ struct InlineAlertConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-
                 OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
 
                 OUDSChipPicker(title: "app_components_common_status_tech",

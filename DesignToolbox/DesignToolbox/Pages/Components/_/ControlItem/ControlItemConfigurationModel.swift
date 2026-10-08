@@ -89,6 +89,10 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: - Computed properties
 
     var richErrorText: AttributedString {
@@ -126,6 +130,9 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         outlined = outlinedConfiguration?.value ?? false
         extraLabelText = extraLabelConfiguration ?? ""
         textMode = .raw
+
+        showSkeleton = false
+
         super.init()
     }
 
@@ -139,10 +146,15 @@ class ControlItemConfigurationModel: ComponentConfiguration {
             """
             \(componentInitCode)"\(labelText)", \(bindingInitCode)\(extraLabelTextPattern)\(descriptionTextPattern)\(iconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern)\(constrainedMaxWidthPattern))
             \(disableCodePattern)
+            \(skeletonPattern)
             """
     }
 
     // swiftlint:enable line_length
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
+    }
 
     private var disableCodePattern: String {
         !enabled ? ".disabled(true)" : ""
