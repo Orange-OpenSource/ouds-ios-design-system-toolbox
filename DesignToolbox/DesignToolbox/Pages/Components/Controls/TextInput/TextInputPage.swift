@@ -65,8 +65,6 @@ struct TextInputDemo: View {
                               isOutlined: configurationModel.isOutlined,
                               constrainedMaxWidth: configurationModel.constrainedMaxWidth,
                               status: configurationModel.computedStatus)
-                .autocorrectionDisabled()
-                .textInputDisableAutocapitalization()
             case .rich:
                 OUDSTextInput(label: configurationModel.label,
                               text: $configurationModel.text,
@@ -80,10 +78,10 @@ struct TextInputDemo: View {
                               isOutlined: configurationModel.isOutlined,
                               constrainedMaxWidth: configurationModel.constrainedMaxWidth,
                               status: configurationModel.computedStatus)
-                .autocorrectionDisabled()
-                .textInputDisableAutocapitalization()
             }
         }
+        .autocorrectionDisabled()
+        .textInputDisableAutocapitalization()
         .oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
