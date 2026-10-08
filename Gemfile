@@ -19,7 +19,7 @@ source "https://rubygems.org"
 # Embeded in net-http RubyGem without defined version
 # Solves CVE-2025-27221 (https://github.com/Orange-OpenSource/ouds-ios/security/dependabot/6)
 # Should be removed when net-http > 0.6.0 and CVE fixed
-gem 'uri', '1.1.1'
+gem 'uri', '1.1.2'
 
 # Embeded in Fastlane RubyGem it seems
 # Solves CVE-2026-54171 (https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/security/dependabot/1)
