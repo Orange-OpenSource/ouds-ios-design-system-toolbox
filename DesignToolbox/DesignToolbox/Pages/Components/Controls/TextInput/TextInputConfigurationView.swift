@@ -133,6 +133,10 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -157,6 +161,8 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
         progressVariant = .indeterminate
         progressValue = 0.0
+
+        showSkeleton = false
 
         super.init()
     }
@@ -210,8 +216,13 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         code =
             """
             OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(suffixPattern)\(leadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
+            \(skeletonPattern)
             """
         // swiftlint:enable line_length
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
     }
 
     private var labelPattern: String {
@@ -322,6 +333,8 @@ struct TextInputConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
                 OUDSSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
 
                 OUDSSwitchItem("app_components_common_constrainedMaxWidth_tech", isOn: $configurationModel.constrainedMaxWidth)
