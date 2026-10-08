@@ -37,7 +37,7 @@ gem 'fastlane', '2.240.1'
 gem 'fastlane-plugin-changelog', '0.16.0'
 gem 'fastlane-plugin-mattermost', '1.3.2'
 gem 'json', '2.21.2'
-gem 'net-http', '0.9.1'
+gem 'net-http', '0.10.0'
 gem 'xcode-install', '2.8.1'
 
 # Magic
