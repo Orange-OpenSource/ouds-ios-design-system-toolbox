@@ -46,36 +46,38 @@ struct PasswordInputDemo: View {
     // MARK: - Body
 
     var body: some View {
-        // To keep things simple, assuming the rich/raw mode is for all parameters
-        switch configurationModel.textMode {
-        case .raw:
-            OUDSPasswordInput(label: configurationModel.label,
-                              password: $configurationModel.text,
-                              isHiddenPassword: $configurationModel.isHiddenPassword,
-                              placeholder: configurationModel.placeholderText,
-                              prefix: configurationModel.prefixText,
-                              lockIcon: configurationModel.lockIcon,
-                              helperText: configurationModel.helperText,
-                              isOutlined: configurationModel.isOutlined,
-                              constrainedMaxWidth: configurationModel.constrainedMaxWidth,
-                              status: configurationModel.computedStatus)
-                .autocorrectionDisabled()
-                .textInputDisableAutocapitalization()
-        case .rich:
-            OUDSPasswordInput(label: configurationModel.label,
-                              password: $configurationModel.text,
-                              isHiddenPassword: $configurationModel.isHiddenPassword,
-                              placeholder: configurationModel.placeholderText,
-                              prefix: configurationModel.prefixText,
-                              lockIcon: configurationModel.lockIcon,
-                              helperText: configurationModel.richHelperText,
-                              isOutlined: configurationModel.isOutlined,
-                              constrainedMaxWidth: configurationModel.constrainedMaxWidth,
-                              status: configurationModel.computedStatus)
-                .autocorrectionDisabled()
-                .textInputDisableAutocapitalization()
+        Group {
+            // To keep things simple, assuming the rich/raw mode is for all parameters
+            switch configurationModel.textMode {
+            case .raw:
+                OUDSPasswordInput(label: configurationModel.label,
+                                  password: $configurationModel.text,
+                                  isHiddenPassword: $configurationModel.isHiddenPassword,
+                                  placeholder: configurationModel.placeholderText,
+                                  prefix: configurationModel.prefixText,
+                                  lockIcon: configurationModel.lockIcon,
+                                  helperText: configurationModel.helperText,
+                                  isOutlined: configurationModel.isOutlined,
+                                  constrainedMaxWidth: configurationModel.constrainedMaxWidth,
+                                  status: configurationModel.computedStatus)
+            case .rich:
+                OUDSPasswordInput(label: configurationModel.label,
+                                  password: $configurationModel.text,
+                                  isHiddenPassword: $configurationModel.isHiddenPassword,
+                                  placeholder: configurationModel.placeholderText,
+                                  prefix: configurationModel.prefixText,
+                                  lockIcon: configurationModel.lockIcon,
+                                  helperText: configurationModel.richHelperText,
+                                  isOutlined: configurationModel.isOutlined,
+                                  constrainedMaxWidth: configurationModel.constrainedMaxWidth,
+                                  status: configurationModel.computedStatus)
+            }
         }
+        .autocorrectionDisabled()
+        .textInputDisableAutocapitalization()
+        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }
 
 #endif
+
