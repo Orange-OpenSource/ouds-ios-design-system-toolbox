@@ -127,20 +127,6 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         }
     }
 
-    @MainActor
-    private func tag(for theme: OUDSTheme) -> OUDSTag {
-        let defautlTag = OUDSTag(label: tagModel.label,
-                                 status: tagModel.status(from: theme),
-                                 appearance: tagModel.appearance,
-                                 shape: tagModel.shape,
-                                 size: tagModel.size)
-        let loadingTag = OUDSTag(loadingLabel: tagModel.label,
-                                 progress: tagModel.progress,
-                                 shape: tagModel.shape,
-                                 size: tagModel.size)
-        return tagModel.isLoading ? loadingTag : defautlTag
-    }
-
     private var textType: OUDSListItemTrailing.TextType {
         switch textTypeOption {
         case .label:
