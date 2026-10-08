@@ -38,6 +38,10 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     var accessibilityLabel: String {
         (isError ? "app_components_common_error_a11y" : "app_components_checkbox_hint_a11y")
             .localized()
@@ -51,6 +55,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         isError = false
         isReadOnly = false
         enabled = true
+        showSkeleton = false
         super.init()
     }
 
@@ -63,7 +68,12 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
             """
             OUDSCheckbox(isOn: $isOn\(isErrorPattern)\(isReadOnlyPattern))
             \(disableCodePattern)
+            \(skeletonPattern)
             """
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
     }
 
     private var disableCodePattern: String {
@@ -93,6 +103,8 @@ struct CheckboxConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
             OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
                 .disabled(configurationModel.isReadOnly || configurationModel.isError)
 

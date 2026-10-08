@@ -46,6 +46,7 @@ private struct CheckboxDemo: View {
                      isError: configurationModel.isError,
                      isReadOnly: configurationModel.isReadOnly)
             .disabled(!configurationModel.enabled)
+            .oudsSkeleton(isVisible: configurationModel.showSkeleton)
             .accessibilityIdentifier(A11YIdentifiers.componentCheckbox)
     }
 }
