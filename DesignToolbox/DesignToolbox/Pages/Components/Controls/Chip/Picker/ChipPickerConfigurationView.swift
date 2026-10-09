@@ -72,7 +72,7 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     private var skeletonPattern: String {
-        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
+        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
     }
 
     private var disablePattern: String {

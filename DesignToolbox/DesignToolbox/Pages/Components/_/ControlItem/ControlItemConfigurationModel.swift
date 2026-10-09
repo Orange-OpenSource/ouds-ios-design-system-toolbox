@@ -153,7 +153,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     // swiftlint:enable line_length
 
     private var skeletonPattern: String {
-        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
+        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
     }
 
     private var disableCodePattern: String {

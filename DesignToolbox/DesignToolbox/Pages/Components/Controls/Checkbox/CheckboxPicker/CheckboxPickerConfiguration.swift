@@ -83,7 +83,7 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
     }
 
     private var skeletonPattern: String {
-        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
+        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
     }
 
     // swiftlint:enable line_length

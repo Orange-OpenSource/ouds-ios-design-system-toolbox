@@ -57,7 +57,7 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     private var skeletonPattern: String {
-        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
+        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
     }
 
     private var disabledPattern: String {
