@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if DEBUG
 import Foundation
 
 /// User defaults keys shared between the sandbox surfaces (`AboutPage` toggle
@@ -22,4 +21,3 @@ enum SandboxUserDefaultsKeys {
     /// Persisted with reverse-DNS notation like other global demo-app flags.
     static let sandboxEnabled = "com.orange.ouds.demoapp.sandboxEnabled"
 }
-#endif

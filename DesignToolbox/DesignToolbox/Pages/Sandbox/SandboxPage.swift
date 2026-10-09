@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if DEBUG
 import OUDSSwiftUI
 import SwiftUI
 
@@ -98,4 +97,3 @@ struct SandboxPage: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
-#endif

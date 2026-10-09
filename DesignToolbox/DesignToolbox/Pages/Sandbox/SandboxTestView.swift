@@ -11,9 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if DEBUG
 import OUDSSwiftUI
 import SwiftUI
+import UIKit
 
 /// Flags and constants used by the DEBUG-only sandbox mode.
 ///
@@ -33,7 +33,7 @@ import SwiftUI
 /// - `true`: the sandbox loads `SandboxTestView` for experimentations.
 ///
 /// Flip this flag when you start populating the sandbox with real content.
-let kSandboxContainsThings: Bool = false
+let kSandboxContainsThings: Bool = true
 
 /// Actual sandbox surface, loaded when ``kSandboxContainsThings`` is `true`.
 ///
@@ -45,8 +45,128 @@ let kSandboxContainsThings: Bool = false
 /// used to try out the new list item API (overline styling, custom trailing views).
 struct SandboxTestView: View {
 
+    @State private var fonts: [FontInfo] = []
+    @State private var isLoading = true
+    @State private var searchText = ""
+
     var body: some View {
-        EmptyView()
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                // Header
+                HStack {
+                    Text("iOS Fonts")
+                        .font(.title)
+                        .bold()
+                    Spacer()
+                    Button(action: {
+                        loadFonts()
+                    }) {
+                        Image(systemName: "arrow.clockwise")
+                    }
+                }
+                .padding(.horizontal)
+
+                // Search
+                TextField("Search fonts...", text: $searchText)
+                    .textFieldStyle(.roundedBorder)
+                    .padding(.horizontal)
+
+                // Font List
+                if isLoading {
+                    ProgressView()
+                        .padding()
+                } else if fonts.isEmpty {
+                    Text("No fonts found")
+                        .foregroundColor(.secondary)
+                        .padding()
+                } else {
+                    VStack(alignment: .leading, spacing: 8) {
+                        ForEach(filteredFonts) { font in
+                            FontRowView(font: font)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+            }
+        }
+        .navigationTitle("iOS Font Explorer")
+        .onAppear {
+            loadFonts()
+        }
+    }
+
+    private var filteredFonts: [FontInfo] {
+        fonts.filter { font in
+            searchText.isEmpty ||
+                font.name.localizedCaseInsensitiveContains(searchText) ||
+                font.familyName.localizedCaseInsensitiveContains(searchText)
+        }
+    }
+
+    private func loadFonts() {
+        fonts = []
+        isLoading = true
+
+        DispatchQueue.main.async {
+            #if os(iOS) || os(tvOS) || os(watchOS)
+            let families = UIFont.familyNames.sorted()
+            for family in families {
+                let fontNames = UIFont.fontNames(forFamilyName: family).sorted()
+                for fontName in fontNames {
+                    if let font = UIFont(name: fontName, size: 12) {
+                        let isMono = font.fontDescriptor.symbolicTraits.contains(.traitMonoSpace)
+                        fonts.append(FontInfo(
+                            name: fontName,
+                            familyName: family,
+                            isMonospaced: isMono))
+                    }
+                }
+            }
+            #endif
+            isLoading = false
+        }
     }
 }
-#endif
+
+// MARK: - Font Info Model
+
+struct FontInfo: Identifiable {
+    let id = UUID()
+    let name: String
+    let familyName: String
+    let isMonospaced: Bool
+}
+
+// MARK: - Font Row View
+
+struct FontRowView: View {
+    let font: FontInfo
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            HStack {
+                Text(font.name)
+                    .font(.custom(font.name, size: 16))
+                    .lineLimit(1)
+
+                Spacer()
+
+                if font.isMonospaced {
+                    Text("Mono")
+                        .font(.caption)
+                        .padding(4)
+                        .background(Color.green.opacity(0.2))
+                        .cornerRadius(4)
+                }
+            }
+
+            Text("Family: " + font.familyName)
+                .font(.caption)
+                .foregroundColor(.secondary)
+        }
+        .padding(8)
+        .background(Color(.systemBackground))
+        .cornerRadius(8)
+        .padding(.bottom, 4)
+    }
+}

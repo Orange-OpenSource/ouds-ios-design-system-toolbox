@@ -26,11 +26,9 @@ struct MainView: View {
     @Environment(\.theme) private var theme
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
-    #if DEBUG
     /// DEBUG-only flag toggled from the About page. When `true`, a "Debug" tab
     /// wrapping ``SandboxPage`` is inserted at the first position of the tab bar.
     @AppStorage(SandboxUserDefaultsKeys.sandboxEnabled) private var sandboxEnabled: Bool = false
-    #endif
 
     // MARK: - Body
 
@@ -120,7 +118,6 @@ struct MainView: View {
     @available(iOS 26, *) // Supposing we did not disable Liquid Glass :3
     @ViewBuilder
     private var liquidGlassSearchTabBar: some View {
-        #if DEBUG
         if sandboxEnabled {
             OUDSLiquidGlassTabView {
                 Tab("app_bottomBar_debug_label", systemImage: "hammer") {
@@ -143,9 +140,6 @@ struct MainView: View {
         } else {
             defaultLiquidGlassSearchTabBar
         }
-        #else
-        defaultLiquidGlassSearchTabBar
-        #endif
     }
 
     @available(iOS 26, *)
@@ -170,7 +164,6 @@ struct MainView: View {
     @available(iOS 18, *)
     @ViewBuilder
     private var searchTabBar: some View {
-        #if DEBUG
         if sandboxEnabled {
             OUDSTabView(selectedTab: $selectedTab, count: 5) {
                 Tab("app_bottomBar_debug_label", systemImage: "hammer", value: 0) {
@@ -193,9 +186,6 @@ struct MainView: View {
         } else {
             defaultSearchTabBar
         }
-        #else
-        defaultSearchTabBar
-        #endif
     }
 
     @available(iOS 18, *)
@@ -222,7 +212,6 @@ struct MainView: View {
 
     @ViewBuilder
     private var tabBar: some View {
-        #if DEBUG
         if sandboxEnabled {
             OUDSTabBar(selectedTab: $selectedTab, count: 4) {
                 SandboxPage()
@@ -250,9 +239,6 @@ struct MainView: View {
         } else {
             defaultTabBar
         }
-        #else
-        defaultTabBar
-        #endif
     }
 
     private var defaultTabBar: some View {
