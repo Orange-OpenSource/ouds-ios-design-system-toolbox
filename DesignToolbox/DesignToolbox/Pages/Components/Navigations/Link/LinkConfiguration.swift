@@ -95,7 +95,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
     }
 
     private var skeletonPattern: String {
-        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
+        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
     }
 
     override func updateCode() {

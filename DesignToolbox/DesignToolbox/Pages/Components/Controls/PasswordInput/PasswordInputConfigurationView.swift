@@ -164,7 +164,7 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
     }
 
     private var skeletonPattern: String {
-        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
+        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
     }
 
     private var labelPattern: String {

@@ -226,7 +226,7 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
     // swiftlint:enable line_length
 
     private var skeletonPattern: String {
-        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
+        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
     }
 
     private var labelPattern: String {

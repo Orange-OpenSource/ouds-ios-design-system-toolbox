@@ -166,7 +166,7 @@ final class TagConfigurationModel: ComponentConfiguration {
     }
 
     private var skeletonPattern: String {
-        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
+        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
     }
 
     private var disablePattern: String {
