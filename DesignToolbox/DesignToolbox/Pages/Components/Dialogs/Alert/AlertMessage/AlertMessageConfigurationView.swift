@@ -208,4 +208,3 @@ struct AlertMessageConfigurationView: View {
 extension OUDSAlertMessage.Link.Position: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSAlertMessage.Link.Position] = [.bottom, .topTrailing]
 }
-

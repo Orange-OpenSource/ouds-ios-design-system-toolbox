@@ -39,7 +39,6 @@ final class SkeletonConfigurationModel: ComponentConfiguration {
 
     deinit {}
 
-
     // MARK: Component Configuration
 
     override func updateCode() {
