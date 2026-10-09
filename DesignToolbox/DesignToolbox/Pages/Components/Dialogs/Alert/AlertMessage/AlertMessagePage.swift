@@ -63,4 +63,3 @@ struct AlertMessageDemo: View {
         .oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }
-

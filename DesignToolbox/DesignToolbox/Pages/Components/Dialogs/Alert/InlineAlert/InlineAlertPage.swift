@@ -48,4 +48,3 @@ struct InlineAlertDemo: View {
         .oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }
-
