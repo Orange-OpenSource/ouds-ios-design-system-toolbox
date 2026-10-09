@@ -7510,7 +7510,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1651-in-library-add-component-skeleton ";
+				branch = "1651-in-library-add-component-skeleton";
 				kind = branch;
 			};
 		};
