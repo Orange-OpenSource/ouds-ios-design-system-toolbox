@@ -6262,8 +6262,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				kind = exactVersion;
-				version = 2.3.0;
+				branch = hotfix/2.3.2;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
