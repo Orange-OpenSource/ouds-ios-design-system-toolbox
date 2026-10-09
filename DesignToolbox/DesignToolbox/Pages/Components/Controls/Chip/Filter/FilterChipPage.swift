@@ -60,6 +60,7 @@ struct FilterChipDemo: View {
             }
         }
         .disabled(!configurationModel.enabled)
+        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     private var image: OUDSImage {

@@ -33,6 +33,10 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     /// The type of selection
     enum SelectionType: String, DesignToolboxEnumRepresentable {
         /// Single selection with tag of the selected chip, or none
@@ -59,6 +63,7 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         layout = .textAndIcon
         titleText = "Select a drink"
         selectionType = .single
+        showSkeleton = false
         super.init()
     }
 
@@ -66,7 +71,11 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
 
     // MARK: Component Configuration
 
-    private var disableCodePattern: String {
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeletonState(isVisible: true)" : ""
+    }
+
+    private var disablePattern: String {
         !enabled ? ".disabled(true)" : ""
     }
 
@@ -96,7 +105,8 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         code = """
         \(selectedValuePattern)
         OUDSChipPicker(title: \"\(titleText)\", \(selectionTypePattern), chips: someChipsData)
-        \(disableCodePattern)
+        \(disablePattern)
+        \(skeletonPattern)
         """
     }
 
@@ -159,6 +169,8 @@ struct ChipPickerConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
                 OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
                 OUDSChipPicker(title: "app_components_common_layout_tech",
