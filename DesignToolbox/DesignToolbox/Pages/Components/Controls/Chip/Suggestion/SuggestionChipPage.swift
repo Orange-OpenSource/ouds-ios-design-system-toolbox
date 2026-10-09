@@ -52,6 +52,7 @@ struct SuggestionChipDemo: View {
             }
         }
         .disabled(!configurationModel.enabled)
+        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     private var oudsImage: OUDSImage {

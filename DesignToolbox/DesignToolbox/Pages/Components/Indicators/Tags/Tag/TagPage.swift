@@ -42,18 +42,21 @@ struct TagDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        if configurationModel.isLoading {
-            OUDSTag(loadingLabel: configurationModel.label,
-                    progress: configurationModel.progress,
-                    shape: configurationModel.shape,
-                    size: configurationModel.size)
-        } else {
-            OUDSTag(label: configurationModel.label,
-                    status: configurationModel.status(from: theme),
-                    appearance: configurationModel.appearance,
-                    shape: configurationModel.shape,
-                    size: configurationModel.size)
+        Group {
+            if configurationModel.isLoading {
+                OUDSTag(loadingLabel: configurationModel.label,
+                        progress: configurationModel.progress,
+                        shape: configurationModel.shape,
+                        size: configurationModel.size)
+            } else {
+                OUDSTag(label: configurationModel.label,
+                        status: configurationModel.status(from: theme),
+                        appearance: configurationModel.appearance,
+                        shape: configurationModel.shape,
+                        size: configurationModel.size)
                 .disabled(!configurationModel.enabled)
+            }
         }
+        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }

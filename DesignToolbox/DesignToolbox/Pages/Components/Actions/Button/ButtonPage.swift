@@ -45,32 +45,35 @@ private struct ButtonDemo: View {
             if configurationModel.onColoredSurface, configurationModel.appearance == .negative || configurationModel.appearance == .brand {
                 Text("app_components_button_appearence_notAllowed_text")
             } else {
-                switch configurationModel.layout {
-                case .iconOnly:
-                    OUDSButton(image: OUDSImage(asset: image,
-                                                flipped: configurationModel.flipIcon,
-                                                accessibilityLabel: "app_components_common_icon_a11y".localized(),
-                                                renderingMode: imageMode),
-                               appearance: configurationModel.appearance,
-                               style: configurationModel.style,
-                               size: configurationModel.size,
-                               isFullWidth: configurationModel.isFullWidth) {}
-                case .textOnly:
-                    OUDSButton(text: configurationModel.text,
-                               appearance: configurationModel.appearance,
-                               style: configurationModel.style,
-                               size: configurationModel.size,
-                               isFullWidth: configurationModel.isFullWidth) {}
-                case .textAndIcon:
-                    OUDSButton(text: configurationModel.text,
-                               image: OUDSImage(asset: image,
-                                                flipped: configurationModel.flipIcon,
-                                                renderingMode: imageMode),
-                               appearance: configurationModel.appearance,
-                               style: configurationModel.style,
-                               size: configurationModel.size,
-                               isFullWidth: configurationModel.isFullWidth) {}
+                Group {
+                    switch configurationModel.layout {
+                    case .iconOnly:
+                        OUDSButton(image: OUDSImage(asset: image,
+                                                    flipped: configurationModel.flipIcon,
+                                                    accessibilityLabel: "app_components_common_icon_a11y".localized(),
+                                                    renderingMode: imageMode),
+                                   appearance: configurationModel.appearance,
+                                   style: configurationModel.style,
+                                   size: configurationModel.size,
+                                   isFullWidth: configurationModel.isFullWidth) {}
+                    case .textOnly:
+                        OUDSButton(text: configurationModel.text,
+                                   appearance: configurationModel.appearance,
+                                   style: configurationModel.style,
+                                   size: configurationModel.size,
+                                   isFullWidth: configurationModel.isFullWidth) {}
+                    case .textAndIcon:
+                        OUDSButton(text: configurationModel.text,
+                                   image: OUDSImage(asset: image,
+                                                    flipped: configurationModel.flipIcon,
+                                                    renderingMode: imageMode),
+                                   appearance: configurationModel.appearance,
+                                   style: configurationModel.style,
+                                   size: configurationModel.size,
+                                   isFullWidth: configurationModel.isFullWidth) {}
+                    }
                 }
+                .oudsSkeleton(isVisible: configurationModel.showSkeleton)
             }
         }
         .disabled(!configurationModel.enabled)

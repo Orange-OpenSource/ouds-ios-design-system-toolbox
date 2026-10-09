@@ -41,6 +41,10 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -49,12 +53,17 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
         text = "app_components_chip_filterChip_chipContent_label".localized(with: 1)
         layout = .textOnly
         iconType = .tintedIcon
+        showSkeleton = false
         super.init()
     }
 
     deinit {}
 
     // MARK: Component Configuration
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
+    }
 
     private var disableCodePattern: String {
         !enabled ? ".disabled(true)" : ""
@@ -84,18 +93,21 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
                 """
                 OUDSFilterChip(text: \"\(text)"\(selectedCodePattern)) {}
                 \(disableCodePattern)
+                \(skeletonPattern)
                 """
         case .iconOnly:
             code =
                 """
                 OUDSFilterChip(image: OUDSImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), accessibilityLabel: \"\(accessibilityLabelValue)\"\(selectedCodePattern)) {}
                 \(disableCodePattern)
+                \(skeletonPattern)
                 """
         case .textAndIcon:
             code =
                 """
                 OUDSFilterChip(image: OUDSImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), text: \"\(text)"\(selectedCodePattern)) {}
                 \(disableCodePattern)
+                \(skeletonPattern)
                 """
         }
     }
@@ -113,6 +125,8 @@ struct FilterChipConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
                 OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
                 OUDSSwitchItem("app_components_common_selection_tech", isOn: $configurationModel.selected)

@@ -37,6 +37,10 @@ final class RadioConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: - Initializer
 
     override init() {
@@ -44,6 +48,7 @@ final class RadioConfigurationModel: ComponentConfiguration {
         enabled = true
         isError = false
         isReadOnly = false
+        showSkeleton = false
         super.init()
     }
 
@@ -56,7 +61,12 @@ final class RadioConfigurationModel: ComponentConfiguration {
             """
             OUDSRadio(isOn: $isOn, accessibilityLabel: "A label for accessibility"\(isErrorPattern)\(isReadOnlyPattern))
             \(disableCodePattern)
+            \(skeletonPattern)
             """
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
     }
 
     private var disableCodePattern: String {
@@ -82,6 +92,8 @@ struct RadioConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
             OUDSSwitchItem("app_components_common_selection_tech", isOn: $configurationModel.selection)
                 .accessibilityIdentifier(A11YIdentifiers.configurationSwitchSelection)
                 .disabled(!configurationModel.enabled || configurationModel.isError || configurationModel.isReadOnly)

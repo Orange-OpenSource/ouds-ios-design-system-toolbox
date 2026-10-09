@@ -65,6 +65,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -77,6 +81,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         styleOption = .default
         size = .default
         isFullWidth = false
+        showSkeleton = false
 
         progressVariant = .indeterminate
         progressValue = 0.75
@@ -162,12 +167,17 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         "app_components_common_icon_a11y".localized()
     }
 
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
+    }
+
     override func updateCode() {
         code =
             """
             OUDSButton(\(layoutPattern)\(appearancePattern)\(stylePattern)\(sizePattern)\(isFullWidthPattern)) {}
             \(disableCodePattern)
             \(coloredSurfaceCodeModifier)
+            \(skeletonPattern)
             """
     }
 }
@@ -218,6 +228,8 @@ struct ButtonConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
                 OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
                     .disabled(configurationModel.styleOption != .default)
 

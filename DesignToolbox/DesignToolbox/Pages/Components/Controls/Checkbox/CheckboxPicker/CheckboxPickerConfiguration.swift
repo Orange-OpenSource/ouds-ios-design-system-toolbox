@@ -51,6 +51,10 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: - Initializer
 
     override init() {
@@ -61,6 +65,7 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
         isReversed = false
         rawImages = false
         isEnabled = true
+        showSkeleton = false
         super.init()
     }
 
@@ -73,7 +78,12 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
         code =
             """
             OUDSCheckboxPicker(selections: $selections, checkboxes: someCheckboxData, placement: \(pickerPlacementPattern)\(hasDividerPattern)\(isReadOnlyPattern)\(isErrorPattern)\(isReversedPattern))\(isEnabledPattern)
+                \(skeletonPattern)
             """
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
     }
 
     // swiftlint:enable line_length
@@ -150,6 +160,8 @@ struct CheckboxPickerConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
             OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.isEnabled)
                 .disabled(configurationModel.isError || configurationModel.isReadOnly)
 

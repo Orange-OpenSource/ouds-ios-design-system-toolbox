@@ -43,39 +43,40 @@ private struct RadioItemDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        // To keep things simple, assuming the rich/raw mode is for all parameters
-        switch configurationModel.textMode {
-        case .raw:
-            OUDSRadioItem(configurationModel.labelText,
-                          isOn: $configurationModel.isOn,
-                          extraLabel: configurationModel.extraLabelText,
-                          description: configurationModel.descriptionText,
-                          image: image,
-                          isOutlined: configurationModel.outlined,
-                          isReversed: configurationModel.isReversed,
-                          isError: configurationModel.isError,
-                          errorText: configurationModel.errorText,
-                          isReadOnly: configurationModel.isReadOnly,
-                          hasDivider: configurationModel.hasDivider,
-                          constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-                .disabled(!configurationModel.enabled)
-                .accessibilityIdentifier(A11YIdentifiers.componentRadioItem)
-        case .rich:
-            OUDSRadioItem(configurationModel.labelText,
-                          isOn: $configurationModel.isOn,
-                          extraLabel: configurationModel.extraLabelText,
-                          description: configurationModel.descriptionText,
-                          image: image,
-                          isOutlined: configurationModel.outlined,
-                          isReversed: configurationModel.isReversed,
-                          isError: configurationModel.isError,
-                          errorText: configurationModel.richErrorText,
-                          isReadOnly: configurationModel.isReadOnly,
-                          hasDivider: configurationModel.hasDivider,
-                          constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-                .disabled(!configurationModel.enabled)
-                .accessibilityIdentifier(A11YIdentifiers.componentRadioItem)
+        Group {
+            // To keep things simple, assuming the rich/raw mode is for all parameters
+            switch configurationModel.textMode {
+            case .raw:
+                OUDSRadioItem(configurationModel.labelText,
+                              isOn: $configurationModel.isOn,
+                              extraLabel: configurationModel.extraLabelText,
+                              description: configurationModel.descriptionText,
+                              image: image,
+                              isOutlined: configurationModel.outlined,
+                              isReversed: configurationModel.isReversed,
+                              isError: configurationModel.isError,
+                              errorText: configurationModel.errorText,
+                              isReadOnly: configurationModel.isReadOnly,
+                              hasDivider: configurationModel.hasDivider,
+                              constrainedMaxWidth: configurationModel.constrainedMaxWidth)
+            case .rich:
+                OUDSRadioItem(configurationModel.labelText,
+                              isOn: $configurationModel.isOn,
+                              extraLabel: configurationModel.extraLabelText,
+                              description: configurationModel.descriptionText,
+                              image: image,
+                              isOutlined: configurationModel.outlined,
+                              isReversed: configurationModel.isReversed,
+                              isError: configurationModel.isError,
+                              errorText: configurationModel.richErrorText,
+                              isReadOnly: configurationModel.isReadOnly,
+                              hasDivider: configurationModel.hasDivider,
+                              constrainedMaxWidth: configurationModel.constrainedMaxWidth)
+            }
         }
+        .disabled(!configurationModel.enabled)
+        .accessibilityIdentifier(A11YIdentifiers.componentRadioItem)
+        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     private var image: OUDSImage? {

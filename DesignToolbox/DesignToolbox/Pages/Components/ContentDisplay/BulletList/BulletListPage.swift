@@ -42,19 +42,22 @@ struct BulletListDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        // To keep things simple, assuming the rich/raw mode is for all parameters
-        switch configurationModel.textMode {
-        case .raw:
-            OUDSBulletList(type: bulletType,
-                           textStyle: configurationModel.textStyle,
-                           isBold: configurationModel.isBold,
-                           items: rawItems)
-        case .rich:
-            OUDSBulletList(type: bulletType,
-                           textStyle: configurationModel.textStyle,
-                           isBold: configurationModel.isBold,
-                           items: richItems)
+        Group {
+            // To keep things simple, assuming the rich/raw mode is for all parameters
+            switch configurationModel.textMode {
+            case .raw:
+                OUDSBulletList(type: bulletType,
+                               textStyle: configurationModel.textStyle,
+                               isBold: configurationModel.isBold,
+                               items: rawItems)
+            case .rich:
+                OUDSBulletList(type: bulletType,
+                               textStyle: configurationModel.textStyle,
+                               isBold: configurationModel.isBold,
+                               items: richItems)
+            }
         }
+        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     @OUDSBulletListItemBuilder

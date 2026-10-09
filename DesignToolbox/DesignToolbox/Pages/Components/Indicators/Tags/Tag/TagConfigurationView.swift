@@ -69,6 +69,10 @@ final class TagConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -86,6 +90,7 @@ final class TagConfigurationModel: ComponentConfiguration {
         statusCategory = .neutral
         shape = .rounded
         appearance = .emphasized
+        showSkeleton = false
         super.init()
     }
 
@@ -147,13 +152,21 @@ final class TagConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         if isLoading {
-            code = "OUDSTag(loadingLabel: \"\(label)\"\(progressPattern)\(shapePattern)\(sizePattern))"
+            code = """
+            OUDSTag(loadingLabel: \"\(label)\"\(progressPattern)\(shapePattern)\(sizePattern))
+            \(skeletonPattern)
+            """
         } else {
             code = """
             OUDSTag(label: \"\(label)\"\(statusPattern)\(appearancePattern)\(shapePattern)\(sizePattern))
             \(disablePattern)
+            \(skeletonPattern)
             """
         }
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
     }
 
     private var disablePattern: String {
@@ -216,6 +229,8 @@ struct TagConfigurationView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
             OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
                 .disabled(configurationModel.isLoading)
 

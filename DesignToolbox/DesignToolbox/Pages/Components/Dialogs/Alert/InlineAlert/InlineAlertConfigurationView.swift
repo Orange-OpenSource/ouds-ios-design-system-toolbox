@@ -19,9 +19,17 @@ import SwiftUI
 /// The model shared between `InlineAlertConfigurationView` view and `InlineAlertDemo` view.
 final class InlineAlertConfigurationModel: AlertConfigurationModel {
 
+    // MARK: Published properties
+
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
+        showSkeleton = false
+
         super.init()
         status = .neutral
         statusIcon = .tintedIcon
@@ -36,7 +44,12 @@ final class InlineAlertConfigurationModel: AlertConfigurationModel {
         code =
             """
             OUDSInlineAlert(label: \"\(text)\"\(statusPattern))
+            \(skeletonPattern)
             """
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
     }
 }
 
@@ -54,6 +67,7 @@ struct InlineAlertConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
 
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
