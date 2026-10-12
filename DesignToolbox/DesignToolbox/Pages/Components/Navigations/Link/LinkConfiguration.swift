@@ -224,4 +224,3 @@ struct LinkConfiguration: View {
         }
     }
 }
-

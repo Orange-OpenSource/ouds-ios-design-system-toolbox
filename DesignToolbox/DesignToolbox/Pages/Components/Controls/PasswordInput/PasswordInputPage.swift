@@ -80,4 +80,3 @@ struct PasswordInputDemo: View {
 }
 
 #endif
-

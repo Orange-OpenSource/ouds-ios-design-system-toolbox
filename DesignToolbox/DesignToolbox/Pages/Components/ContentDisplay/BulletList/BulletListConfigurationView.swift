@@ -271,4 +271,3 @@ enum BulletListUnorderedAsset: DesignToolboxEnumRepresentable {
     case tick
     case icon
 }
-

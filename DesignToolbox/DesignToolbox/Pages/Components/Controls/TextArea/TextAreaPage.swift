@@ -57,7 +57,7 @@ struct TextAreaDemo: View {
                      constrainedMaxWidth: configurationModel.constrainedMaxWidth,
                      constrainedMaxHeight: configurationModel.constrainedMaxHeight,
                      status: configurationModel.computedStatus)
-        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
+            .oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     private var helperLink: OUDSTextArea.Helperlink? {

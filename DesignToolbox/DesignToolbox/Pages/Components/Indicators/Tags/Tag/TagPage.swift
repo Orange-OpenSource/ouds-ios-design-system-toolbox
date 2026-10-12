@@ -54,7 +54,7 @@ struct TagDemo: View {
                         appearance: configurationModel.appearance,
                         shape: configurationModel.shape,
                         size: configurationModel.size)
-                .disabled(!configurationModel.enabled)
+                    .disabled(!configurationModel.enabled)
             }
         }
         .oudsSkeleton(isVisible: configurationModel.showSkeleton)
