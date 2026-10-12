@@ -2976,6 +2976,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_category_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Category"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Category"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Category"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_color_tech" : {
       "comment" : "Component - Common",
       "localizations" : {
@@ -6597,6 +6622,49 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tab bar"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_tag_categoricalTag_description_text" : {
+      "comment" : "Component - Categorical tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تُعد \"الوسم الفئوي\" (Categorical tag) تسميةً غير تفاعلية تُستخدم للتمييز البصري بين فئات غير وظيفية بالاعتماد على ألوان مخصصة لكل فئة. ويمكن أن تعبّر هذه الوسوم عن معلومات مثل العروض الترويجية، أو الفعاليات، أو المزايا، أو غيرها من الفئات المحددة محلياً.  ولا تُستخدم هذه الوسوم للإشارة إلى حالات وظيفية أو تقديم تغذية راجعة من النظام؛ إذ ينبغي استخدام \"الوسم\" (Tag) القياسي للدلالة على حالات النجاح، أو التحذير، أو الخطأ، أو التوفر، أو غيرها من الحالات الوظيفية. كما يجب قصر استخدام \"الوسم الفئوي\" على الحالات التي تكون فيها فئات الألوان محددة بموجب إرشادات المنتج أو السوق المحلي."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A Categorical tag is a non-interactive label used to visually distinguish non-functional categories using categorical colours. It can represent information such as promotions, events, benefits or other locally defined categories.  It does not communicate functional status or system feedback. Use the standard Tag for success, warning, error, availability or other functional states. Use Categorical tag only when its colour categories are defined by the product or local market guidelines."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une étiquette catégorielle est une étiquette non interactive servant à distinguer visuellement des catégories non fonctionnelles grâce à des couleurs spécifiques. Elle peut représenter des informations telles que des promotions, des événements, des avantages ou d'autres catégories définies localement.Elle ne communique ni état fonctionnel ni retour d'information du système. Utilisez l'étiquette standard pour indiquer un succès, un avertissement, une erreur, une disponibilité ou tout autre état fonctionnel. N'utilisez l'étiquette catégorielle que lorsque les catégories de couleurs sont définies par les directives du produit ou du marché local."
+          }
+        }
+      }
+    },
+    "app_components_tag_categoricalTag_tech" : {
+      "comment" : "Component - Categorical tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Categorical tag"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Categorical tag"
           }
         }
       },
