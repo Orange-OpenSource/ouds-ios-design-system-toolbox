@@ -451,7 +451,7 @@ platform :ios do
             puts "👉 Build and upload (type = #{params[:type]}), detail symbol = #{detailSymbol})"
             
             # If already built, prevents to build again for nothing
-            # Warning: tag is done before build and not removed, so if build failed, tag will remain and needs to be removed manualy.
+            # Warning: tag is done before build and not removed, so if build failed, tag will remain and needs to be removed manually.
             # It prevents to have loops of failing builds.
             if tag_ci_build(detailSymbol)
                 # Ensure this build-then-uploaded app has a new and unique build number matching also to code version
