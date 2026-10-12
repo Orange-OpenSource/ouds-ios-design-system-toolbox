@@ -37,6 +37,7 @@ struct HeadingPage: View {
 
 private struct HeadingDemo: View {
 
+    @Environment(\.theme) private var theme
     @StateObject var configurationModel: HeadingConfigurationModel
 
     var body: some View {
