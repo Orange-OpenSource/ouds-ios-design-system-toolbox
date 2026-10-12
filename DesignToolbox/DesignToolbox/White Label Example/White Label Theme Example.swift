@@ -28,7 +28,7 @@ let kDesignToolboxWhiteLabelTuning = Tuning.Wireframe
 
 // MARK: - Fonts
 
-let kDesignToolboxWhiteLabelFontFamily = "SF Pro"
+let kDesignToolboxWhiteLabelFontFamily = ""
 
 // swiftlint:disable identifier_name
 nonisolated(unsafe) var designToolboxWhiteLabelFontAlreadyRegistered = false
