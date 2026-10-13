@@ -42,6 +42,16 @@ final class SoshThemeCheckboxSnapshotsTests: CheckboxSnapshotsTestsTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSCheckboxIndeterminate` skeleton state in the `SoshTheme` with the `light` color scheme.
+    @MainActor func testCheckboxSkeletonSoshThemeLight() {
+        testCheckboxSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSCheckboxIndeterminate` skeleton state in the `SoshTheme` with the `dark` color scheme.
+    @MainActor func testCheckboxSkeletonSoshThemeDark() {
+        testCheckboxSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

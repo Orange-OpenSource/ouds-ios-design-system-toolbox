@@ -40,6 +40,16 @@ final class WireframeThemeSwitchSnapshotsTests: SwitchSnapshotsTestsTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSSwitch` skeleton state in the `WireframeTheme` with the `light` color scheme.
+    @MainActor func testSwitchSkeletonWireframeThemeLight() {
+        testSwitchSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSSwitch` skeleton state in the `WireframeTheme` with the `dark` color scheme.
+    @MainActor func testSwitchSkeletonWireframeThemeDark() {
+        testSwitchSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

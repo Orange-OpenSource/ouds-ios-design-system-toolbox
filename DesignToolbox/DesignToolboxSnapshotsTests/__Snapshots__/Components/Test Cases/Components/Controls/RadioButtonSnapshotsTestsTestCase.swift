@@ -260,6 +260,36 @@ open class RadioButtonSnapshotsTestsTestCase: XCTestCase {
                            precision: 0.99, // Historical tolerance kept from the legacy test case.
                            testName: testName)
     }
+
+    // swiftlint:enable line_length
+    // swiftlint:enable function_default_parameter_at_end
+
+    /// This function tests the `OUDSRadio` skeleton state (default configuration) for the given theme and color scheme.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`OUDSTheme`).
+    ///   - interfaceStyle: The user interface style (light or dark).
+    @MainActor func testRadioButtonSkeleton(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        // Generate the illustration for the specified configuration
+        let illustration = OUDSThemeableView(theme: theme) {
+            OUDSRadio(isOn: .constant(false),
+                      accessibilityLabel: "Bazinga!",
+                      isError: false,
+                      isReadOnly: false)
+                .oudsSkeleton(isVisible: true, isAnimated: false)
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+        }
+
+        // Create a unique snapshot name based on the current configuration
+        let testName = "testRadioButton_skeleton_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let name = "RadioButtonSkeleton"
+
+        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+        assertIllustration(illustration,
+                           on: interfaceStyle,
+                           named: name,
+                           testName: testName)
+    }
 }
 
 // swiftlint:enable required_deinit
@@ -329,8 +359,7 @@ enum RadioMode: CaseIterable {
 /// Covers all ten combinations of (label, label+helper, label+extra, label+extra+helper) × (no image,
 /// image, flipped image) exercised in the legacy test case so visual coverage is preserved.
 ///
-/// Note: not all (label composition × image kind) combinations exist in the legacy tests. The combinations
-/// listed below exactly mirror what `availableLayouts` produced historically.
+/// Note: not all (label composition × image kind) combinations exist in the legacy tests.
 enum RadioContentVariant: CaseIterable {
     case labelOnly
     case labelHelper

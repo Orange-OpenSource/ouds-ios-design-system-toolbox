@@ -40,6 +40,16 @@ final class SoshThemeBulletListSnapshotsTests: BulletListSnapshotsTestsTestCase 
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllBulletLists(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSBulletList` skeleton state in the `SoshTheme` with the `light` color scheme.
+    @MainActor func testBulletListSkeletonSoshThemeLight() {
+        testBulletListSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSBulletList` skeleton state in the `SoshTheme` with the `dark` color scheme.
+    @MainActor func testBulletListSkeletonSoshThemeDark() {
+        testBulletListSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

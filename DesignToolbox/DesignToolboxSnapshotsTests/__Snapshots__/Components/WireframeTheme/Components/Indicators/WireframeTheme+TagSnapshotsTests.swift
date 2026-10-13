@@ -50,6 +50,26 @@ final class WireframeThemeTagSnapshotsTests: TagSnapshotsTestsTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllInputTags(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSTag` skeleton state in the `WireframeTheme` with the `light` color scheme.
+    @MainActor func testTagSkeletonWireframeThemeLight() {
+        testTagSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSTag` skeleton state in the `WireframeTheme` with the `dark` color scheme.
+    @MainActor func testTagSkeletonWireframeThemeDark() {
+        testTagSkeleton(theme: theme, interfaceStyle: .dark)
+    }
+
+    /// Tests the `OUDSInputTag` skeleton state in the `WireframeTheme` with the `light` color scheme.
+    @MainActor func testInputTagSkeletonWireframeThemeLight() {
+        testInputTagSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSInputTag` skeleton state in the `WireframeTheme` with the `dark` color scheme.
+    @MainActor func testInputTagSkeletonWireframeThemeDark() {
+        testInputTagSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

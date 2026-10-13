@@ -42,6 +42,16 @@ final class WireframeThemeCheckboxSnapshotsTests: CheckboxSnapshotsTestsTestCase
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSCheckboxIndeterminate` skeleton state in the `WireframeTheme` with the `light` color scheme.
+    @MainActor func testCheckboxSkeletonWireframeThemeLight() {
+        testCheckboxSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSCheckboxIndeterminate` skeleton state in the `WireframeTheme` with the `dark` color scheme.
+    @MainActor func testCheckboxSkeletonWireframeThemeDark() {
+        testCheckboxSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

@@ -40,6 +40,16 @@ final class OrangeThemeTextInputSnapshotsTests: TextInputSnapshotsTestsTestCase 
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTextInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSTextInput` skeleton state in the `OrangeTheme` with the `light` color scheme.
+    @MainActor func testTextInputSkeletonOrangeThemeLight() {
+        testTextInputSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSTextInput` skeleton state in the `OrangeTheme` with the `dark` color scheme.
+    @MainActor func testTextInputSkeletonOrangeThemeDark() {
+        testTextInputSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

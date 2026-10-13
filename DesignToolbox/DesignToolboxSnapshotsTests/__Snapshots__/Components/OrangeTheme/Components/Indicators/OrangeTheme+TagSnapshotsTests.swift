@@ -50,6 +50,26 @@ final class OrangeThemeTagSnapshotsTests: TagSnapshotsTestsTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllInputTags(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSTag` skeleton state in the `OrangeTheme` with the `light` color scheme.
+    @MainActor func testTagSkeletonOrangeThemeLight() {
+        testTagSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSTag` skeleton state in the `OrangeTheme` with the `dark` color scheme.
+    @MainActor func testTagSkeletonOrangeThemeDark() {
+        testTagSkeleton(theme: theme, interfaceStyle: .dark)
+    }
+
+    /// Tests the `OUDSInputTag` skeleton state in the `OrangeTheme` with the `light` color scheme.
+    @MainActor func testInputTagSkeletonOrangeThemeLight() {
+        testInputTagSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSInputTag` skeleton state in the `OrangeTheme` with the `dark` color scheme.
+    @MainActor func testInputTagSkeletonOrangeThemeDark() {
+        testInputTagSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

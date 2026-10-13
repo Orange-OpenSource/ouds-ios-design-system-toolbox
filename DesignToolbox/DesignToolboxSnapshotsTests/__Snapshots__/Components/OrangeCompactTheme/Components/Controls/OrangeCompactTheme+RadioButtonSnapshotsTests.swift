@@ -40,6 +40,16 @@ final class OrangeCompactThemeRadioSnapshotsTests: RadioButtonSnapshotsTestsTest
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllRadioButtons(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSRadio` skeleton state in the `OrangeCompactTheme` with the `light` color scheme.
+    @MainActor func testRadioButtonSkeletonOrangeCompactThemeLight() {
+        testRadioButtonSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSRadio` skeleton state in the `OrangeCompactTheme` with the `dark` color scheme.
+    @MainActor func testRadioButtonSkeletonOrangeCompactThemeDark() {
+        testRadioButtonSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

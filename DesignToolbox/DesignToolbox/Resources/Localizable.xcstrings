@@ -6409,6 +6409,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_skeleton_shape_details" : {
+      "comment" : "Component - Skeleton",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتيح لك واجهة برمجة تطبيقات Skeleton استخدام شكل SwiftUI الذي تريده (دائرة، مستطيل دائري، مستطيل، إلخ)."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeleton API lets you use the SwiftUI shape you want (Circle, RounedRectangle, Rectangle, etc.)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'API Skeleton vous permet d'utiliser la forme SwiftUI de votre choix (Circle, RoundedRectangle, Rectangle, etc.)."
+          }
+        }
+      }
+    },
     "app_components_skeleton_tech" : {
       "comment" : "Component - Skeleton",
       "extractionState" : "manual",

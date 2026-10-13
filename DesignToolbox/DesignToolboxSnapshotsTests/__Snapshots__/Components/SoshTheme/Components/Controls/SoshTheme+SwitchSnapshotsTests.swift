@@ -40,6 +40,16 @@ final class SoshThemeSwitchSnapshotsTests: SwitchSnapshotsTestsTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSSwitch` skeleton state in the `SoshTheme` with the `light` color scheme.
+    @MainActor func testSwitchSkeletonSoshThemeLight() {
+        testSwitchSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSSwitch` skeleton state in the `SoshTheme` with the `dark` color scheme.
+    @MainActor func testSwitchSkeletonSoshThemeDark() {
+        testSwitchSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

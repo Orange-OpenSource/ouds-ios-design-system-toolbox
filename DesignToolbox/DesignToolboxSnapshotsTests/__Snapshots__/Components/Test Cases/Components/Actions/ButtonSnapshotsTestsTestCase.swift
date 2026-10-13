@@ -220,6 +220,33 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
             named: name,
             testName: testName)
     }
+
+    // swiftlint:enable function_parameter_count
+    // swiftlint:enable line_length
+
+    /// This function tests the `OUDSButton` skeleton state (default configuration) for the given theme and color scheme.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`OUDSTheme`).
+    ///   - interfaceStyle: The user interface style (light or dark).
+    @MainActor func testButtonSkeleton(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        // Generate the illustration for the specified configuration
+        let illustration = OUDSThemeableView(theme: theme) {
+            OUDSButton(text: "Button", appearance: .default, style: .default, size: .default) {}
+                .oudsSkeleton(isVisible: true, isAnimated: false)
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+        }
+
+        // Create a unique snapshot name based on the current configuration
+        let testName = "testButton_skeleton_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let name = "ButtonSkeleton"
+
+        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+        assertIllustration(illustration,
+                           on: interfaceStyle,
+                           named: name,
+                           testName: testName)
+    }
 }
 
 // MARK: - Button Test

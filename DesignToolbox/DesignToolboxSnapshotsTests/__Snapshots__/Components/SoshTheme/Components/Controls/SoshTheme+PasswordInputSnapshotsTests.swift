@@ -40,6 +40,16 @@ final class SoshThemePasswordInputSnapshotsTests: PasswordInputSnapshotsTestsTes
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllPasswordInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSPasswordInput` skeleton state in the `SoshTheme` with the `light` color scheme.
+    @MainActor func testPasswordInputSkeletonSoshThemeLight() {
+        testPasswordInputSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSPasswordInput` skeleton state in the `SoshTheme` with the `dark` color scheme.
+    @MainActor func testPasswordInputSkeletonSoshThemeDark() {
+        testPasswordInputSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

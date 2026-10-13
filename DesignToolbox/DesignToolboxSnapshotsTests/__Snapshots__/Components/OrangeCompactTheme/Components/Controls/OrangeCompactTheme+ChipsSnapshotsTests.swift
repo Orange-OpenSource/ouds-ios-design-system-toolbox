@@ -39,6 +39,18 @@ final class OrangeCompactThemeChipsSnapshotsTests: ChipsSnapshotsTestsTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllChips(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSFilterChip` and `OUDSSuggestionChip` skeleton states in the `OrangeCompactTheme` with the `light` color scheme.
+    @MainActor func testChipsSkeletonOrangeCompactThemeLight() {
+        testSuggestionChipSkeleton(theme: theme, interfaceStyle: .light)
+        testFilterChipSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSFilterChip` and `OUDSSuggestionChip` skeleton states in the `OrangeCompactTheme` with the `dark` color scheme.
+    @MainActor func testChipsSkeletonOrangeCompactThemeDark() {
+        testSuggestionChipSkeleton(theme: theme, interfaceStyle: .dark)
+        testFilterChipSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

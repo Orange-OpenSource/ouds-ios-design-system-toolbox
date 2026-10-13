@@ -40,6 +40,16 @@ final class SoshThemeTextAreaSnapshotsTests: TextAreaSnapshotsTestsTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTextAreas(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSTextArea` skeleton state in the `SoshTheme` with the `light` color scheme.
+    @MainActor func testTextAreaSkeletonSoshThemeLight() {
+        testTextAreaSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSTextArea` skeleton state in the `SoshTheme` with the `dark` color scheme.
+    @MainActor func testTextAreaSkeletonSoshThemeDark() {
+        testTextAreaSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

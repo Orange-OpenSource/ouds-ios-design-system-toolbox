@@ -258,6 +258,36 @@ open class CheckboxSnapshotsTestsTestCase: XCTestCase {
                            precision: 0.92, // Historical tolerance kept from the legacy test case.
                            testName: testName)
     }
+
+    // swiftlint:enable line_length
+    // swiftlint:enable function_default_parameter_at_end
+
+    /// This function tests the `OUDSCheckboxIndeterminate` skeleton state (default configuration) for the given theme and color scheme.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`OUDSTheme`).
+    ///   - interfaceStyle: The user interface style (light or dark).
+    @MainActor func testCheckboxSkeleton(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        // Generate the illustration for the specified configuration
+        let illustration = OUDSThemeableView(theme: theme) {
+            OUDSCheckboxIndeterminate(selection: .constant(.unselected),
+                                      accessibilityLabel: "Bazinga!",
+                                      isError: false,
+                                      isReadOnly: false)
+                .oudsSkeleton(isVisible: true, isAnimated: false)
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+        }
+
+        // Create a unique snapshot name based on the current configuration
+        let testName = "testCheckbox_skeleton_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let name = "CheckboxSkeleton"
+
+        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+        assertIllustration(illustration,
+                           on: interfaceStyle,
+                           named: name,
+                           testName: testName)
+    }
 }
 
 // swiftlint:enable required_deinit

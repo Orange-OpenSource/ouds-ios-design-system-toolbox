@@ -42,6 +42,16 @@ final class SoshThemeButtonSnapshotsTests: ButtonSnapshotsTestsTestCase {
         testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
         testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSButton` skeleton state in the `SoshTheme` with the `light` color scheme.
+    @MainActor func testButtonSkeletonSoshThemeLight() {
+        testButtonSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSButton` skeleton state in the `SoshTheme` with the `dark` color scheme.
+    @MainActor func testButtonSkeletonSoshThemeDark() {
+        testButtonSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

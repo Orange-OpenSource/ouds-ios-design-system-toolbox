@@ -40,6 +40,16 @@ final class WireframeThemeBulletListSnapshotsTests: BulletListSnapshotsTestsTest
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllBulletLists(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSBulletList` skeleton state in the `WireframeTheme` with the `light` color scheme.
+    @MainActor func testBulletListSkeletonWireframeThemeLight() {
+        testBulletListSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSBulletList` skeleton state in the `WireframeTheme` with the `dark` color scheme.
+    @MainActor func testBulletListSkeletonWireframeThemeDark() {
+        testBulletListSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

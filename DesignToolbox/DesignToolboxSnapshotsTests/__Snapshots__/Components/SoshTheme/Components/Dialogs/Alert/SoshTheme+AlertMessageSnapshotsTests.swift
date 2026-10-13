@@ -40,6 +40,16 @@ final class SoshThemeAlertMessageSnapshotsTests: AlertMessageSnapshotsTestsTestC
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllAlertMessages(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSAlertMessage` skeleton state in the `SoshTheme` with the `light` color scheme.
+    @MainActor func testAlertMessageSkeletonSoshThemeLight() {
+        testAlertMessageSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSAlertMessage` skeleton state in the `SoshTheme` with the `dark` color scheme.
+    @MainActor func testAlertMessageSkeletonSoshThemeDark() {
+        testAlertMessageSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

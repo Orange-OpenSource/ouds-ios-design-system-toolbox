@@ -41,6 +41,16 @@ final class OrangeCompactThemeAlertMessageSnapshotsTests: AlertMessageSnapshotsT
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllAlertMessages(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSAlertMessage` skeleton state in the `OrangeCompactTheme` with the `light` color scheme.
+    @MainActor func testAlertMessageSkeletonOrangeCompactThemeLight() {
+        testAlertMessageSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSAlertMessage` skeleton state in the `OrangeCompactTheme` with the `dark` color scheme.
+    @MainActor func testAlertMessageSkeletonOrangeCompactThemeDark() {
+        testAlertMessageSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

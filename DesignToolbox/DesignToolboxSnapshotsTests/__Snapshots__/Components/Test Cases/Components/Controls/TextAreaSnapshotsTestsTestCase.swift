@@ -155,6 +155,29 @@ open class TextAreaSnapshotsTestsTestCase: XCTestCase {
         default:
             "other"
         }
+
+    /// This function tests the `OUDSTextArea` skeleton state (default configuration) for the given theme and color scheme.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`OUDSTheme`).
+    ///   - interfaceStyle: The user interface style (light or dark).
+    @MainActor func testTextAreaSkeleton(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        // Generate the illustration for the specified configuration
+        let illustration = OUDSThemeableView(theme: theme) {
+            OUDSTextArea(label: "Label", text: .constant(""))
+                .oudsSkeleton(isVisible: true, isAnimated: false)
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+        }
+
+        // Create a unique snapshot name based on the current configuration
+        let testName = "testTextArea_skeleton_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let name = "TextAreaSkeleton"
+
+        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+        assertIllustration(illustration,
+                           on: interfaceStyle,
+                           named: name,
+                           testName: testName)
     }
 }
 

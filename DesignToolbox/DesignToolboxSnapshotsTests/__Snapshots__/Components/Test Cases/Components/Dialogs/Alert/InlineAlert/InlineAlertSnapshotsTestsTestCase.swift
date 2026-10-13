@@ -102,6 +102,30 @@ open class InlineAlertSnapshotsTestsTestCase: XCTestCase {
                            named: name,
                            testName: testName)
     }
+
+    /// This function tests the `OUDSInlineAlert` skeleton state (default configuration) for the given theme and color scheme.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`OUDSTheme`).
+    ///   - interfaceStyle: The user interface style (light or dark).
+    @MainActor func testInlineAlertSkeleton(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        // Generate the illustration for the specified configuration
+        let illustration = OUDSThemeableView(theme: theme) {
+            OUDSInlineAlert(label: "Inline alert", status: .info)
+                .oudsSkeleton(isVisible: true, isAnimated: false)
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+        }
+
+        // Create a unique snapshot name based on the current configuration
+        let testName = "testInlineAlert_skeleton_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let name = "InlineAlertSkeleton"
+
+        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+        assertIllustration(illustration,
+                           on: interfaceStyle,
+                           named: name,
+                           testName: testName)
+    }
 }
 
 // swiftlint:enable required_deinit

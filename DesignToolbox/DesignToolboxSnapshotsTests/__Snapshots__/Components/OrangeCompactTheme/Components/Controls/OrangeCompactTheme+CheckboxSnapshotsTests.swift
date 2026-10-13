@@ -42,6 +42,16 @@ final class OrangeCompactThemeCheckboxSnapshotsTests: CheckboxSnapshotsTestsTest
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSCheckboxIndeterminate` skeleton state in the `OrangeCompactTheme` with the `light` color scheme.
+    @MainActor func testCheckboxSkeletonOrangeCompactThemeLight() {
+        testCheckboxSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSCheckboxIndeterminate` skeleton state in the `OrangeCompactTheme` with the `dark` color scheme.
+    @MainActor func testCheckboxSkeletonOrangeCompactThemeDark() {
+        testCheckboxSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

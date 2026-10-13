@@ -40,6 +40,16 @@ final class OrangeCompactThemePasswordInputSnapshotsTests: PasswordInputSnapshot
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllPasswordInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSPasswordInput` skeleton state in the `OrangeCompactTheme` with the `light` color scheme.
+    @MainActor func testPasswordInputSkeletonOrangeCompactThemeLight() {
+        testPasswordInputSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSPasswordInput` skeleton state in the `OrangeCompactTheme` with the `dark` color scheme.
+    @MainActor func testPasswordInputSkeletonOrangeCompactThemeDark() {
+        testPasswordInputSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

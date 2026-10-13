@@ -40,6 +40,16 @@ final class WireframeThemeTextInputSnapshotsTests: TextInputSnapshotsTestsTestCa
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTextInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSTextInput` skeleton state in the `WireframeTheme` with the `light` color scheme.
+    @MainActor func testTextInputSkeletonWireframeThemeLight() {
+        testTextInputSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSTextInput` skeleton state in the `WireframeTheme` with the `dark` color scheme.
+    @MainActor func testTextInputSkeletonWireframeThemeDark() {
+        testTextInputSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

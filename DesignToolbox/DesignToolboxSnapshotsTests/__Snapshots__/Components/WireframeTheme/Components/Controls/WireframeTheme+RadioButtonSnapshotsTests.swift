@@ -40,6 +40,16 @@ final class WireframeThemeRadioSnapshotsTests: RadioButtonSnapshotsTestsTestCase
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllRadioButtons(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSRadio` skeleton state in the `WireframeTheme` with the `light` color scheme.
+    @MainActor func testRadioButtonSkeletonWireframeThemeLight() {
+        testRadioButtonSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSRadio` skeleton state in the `WireframeTheme` with the `dark` color scheme.
+    @MainActor func testRadioButtonSkeletonWireframeThemeDark() {
+        testRadioButtonSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

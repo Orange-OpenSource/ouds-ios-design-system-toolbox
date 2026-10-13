@@ -66,6 +66,18 @@ final class OrangeCompactThemeButtonSnapshotsTests: ButtonSnapshotsTestsTestCase
         testAllButtons(theme: tunedTheme, interfaceStyle: interfaceStyle)
         testAllButtonsOnColoredSurface(theme: tunedTheme, interfaceStyle: interfaceStyle)
     }
+
+    // MARK: Skeleton
+
+    /// Tests the `OUDSButton` skeleton state in the `OrangeCompactTheme` with the `light` color scheme.
+    @MainActor func testButtonSkeletonOrangeCompactThemeLight() {
+        testButtonSkeleton(theme: standardTheme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSButton` skeleton state in the `OrangeCompactTheme` with the `dark` color scheme.
+    @MainActor func testButtonSkeletonOrangeCompactThemeDark() {
+        testButtonSkeleton(theme: standardTheme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

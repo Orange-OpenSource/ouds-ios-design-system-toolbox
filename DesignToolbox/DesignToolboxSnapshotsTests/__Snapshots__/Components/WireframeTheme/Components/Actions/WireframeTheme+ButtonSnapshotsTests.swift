@@ -42,6 +42,16 @@ final class WireframeThemeButtonSnapshotsTests: ButtonSnapshotsTestsTestCase {
         testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
         testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSButton` skeleton state in the `WireframeTheme` with the `light` color scheme.
+    @MainActor func testButtonSkeletonWireframeThemeLight() {
+        testButtonSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSButton` skeleton state in the `WireframeTheme` with the `dark` color scheme.
+    @MainActor func testButtonSkeletonWireframeThemeDark() {
+        testButtonSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

@@ -40,6 +40,16 @@ final class OrangeThemeTextAreaSnapshotsTests: TextAreaSnapshotsTestsTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTextAreas(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSTextArea` skeleton state in the `OrangeTheme` with the `light` color scheme.
+    @MainActor func testTextAreaSkeletonOrangeThemeLight() {
+        testTextAreaSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSTextArea` skeleton state in the `OrangeTheme` with the `dark` color scheme.
+    @MainActor func testTextAreaSkeletonOrangeThemeDark() {
+        testTextAreaSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

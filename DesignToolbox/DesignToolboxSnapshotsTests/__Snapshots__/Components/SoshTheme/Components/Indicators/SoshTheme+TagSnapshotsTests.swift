@@ -50,6 +50,26 @@ final class SoshThemeTagSnapshotsTests: TagSnapshotsTestsTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllInputTags(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSTag` skeleton state in the `SoshTheme` with the `light` color scheme.
+    @MainActor func testTagSkeletonSoshThemeLight() {
+        testTagSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSTag` skeleton state in the `SoshTheme` with the `dark` color scheme.
+    @MainActor func testTagSkeletonSoshThemeDark() {
+        testTagSkeleton(theme: theme, interfaceStyle: .dark)
+    }
+
+    /// Tests the `OUDSInputTag` skeleton state in the `SoshTheme` with the `light` color scheme.
+    @MainActor func testInputTagSkeletonSoshThemeLight() {
+        testInputTagSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSInputTag` skeleton state in the `SoshTheme` with the `dark` color scheme.
+    @MainActor func testInputTagSkeletonSoshThemeDark() {
+        testInputTagSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

@@ -40,6 +40,16 @@ final class WireframeThemeTextAreaSnapshotsTests: TextAreaSnapshotsTestsTestCase
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTextAreas(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSTextArea` skeleton state in the `WireframeTheme` with the `light` color scheme.
+    @MainActor func testTextAreaSkeletonWireframeThemeLight() {
+        testTextAreaSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSTextArea` skeleton state in the `WireframeTheme` with the `dark` color scheme.
+    @MainActor func testTextAreaSkeletonWireframeThemeDark() {
+        testTextAreaSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

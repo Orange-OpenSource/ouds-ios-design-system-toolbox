@@ -40,6 +40,16 @@ final class OrangeThemeBulletListSnapshotsTests: BulletListSnapshotsTestsTestCas
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllBulletLists(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSBulletList` skeleton state in the `OrangeTheme` with the `light` color scheme.
+    @MainActor func testBulletListSkeletonOrangeThemeLight() {
+        testBulletListSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSBulletList` skeleton state in the `OrangeTheme` with the `dark` color scheme.
+    @MainActor func testBulletListSkeletonOrangeThemeDark() {
+        testBulletListSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

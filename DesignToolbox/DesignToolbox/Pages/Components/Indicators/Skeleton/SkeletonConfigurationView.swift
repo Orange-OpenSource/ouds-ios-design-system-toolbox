@@ -66,6 +66,8 @@ struct SkeletonConfigurationView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            OUDSAlertMessage("app_components_skeleton_shape_details", status: .accent(image: nil))
+
             OUDSSwitchItem("app_components_skeleton_securityMargin_tech",
                            isOn: $configurationModel.securityMargin)
 

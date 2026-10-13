@@ -100,6 +100,18 @@ final class SoshThemeListItemSnapshotsTests: ListItemSnapshotsTestsTestCase {
     @MainActor func testAllTrailingsSoshThemeDark() {
         testAllTrailings(theme: theme, interfaceStyle: .dark)
     }
+
+    // MARK: Skeleton
+
+    /// Tests the `OUDSStaticListItem` and `OUDSNavigationListItem` skeleton states in the `SoshTheme` with the `light` color scheme.
+    @MainActor func testListItemSkeletonSoshThemeLight() {
+        testListItemSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSStaticListItem` and `OUDSNavigationListItem` skeleton states in the `SoshTheme` with the `dark` color scheme.
+    @MainActor func testListItemSkeletonSoshThemeDark() {
+        testListItemSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

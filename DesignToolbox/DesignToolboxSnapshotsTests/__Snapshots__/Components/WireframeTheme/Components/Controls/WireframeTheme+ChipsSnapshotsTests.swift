@@ -39,6 +39,18 @@ final class WireframeThemeChipsSnapshotsTests: ChipsSnapshotsTestsTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllChips(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSFilterChip` and `OUDSSuggestionChip` skeleton states in the `WireframeTheme` with the `light` color scheme.
+    @MainActor func testChipsSkeletonWireframeThemeLight() {
+        testSuggestionChipSkeleton(theme: theme, interfaceStyle: .light)
+        testFilterChipSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSFilterChip` and `OUDSSuggestionChip` skeleton states in the `WireframeTheme` with the `dark` color scheme.
+    @MainActor func testChipsSkeletonWireframeThemeDark() {
+        testSuggestionChipSkeleton(theme: theme, interfaceStyle: .dark)
+        testFilterChipSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

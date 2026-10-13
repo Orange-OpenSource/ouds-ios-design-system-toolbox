@@ -40,6 +40,16 @@ final class OrangeCompactThemeSwitchSnapshotsTests: SwitchSnapshotsTestsTestCase
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSSwitch` skeleton state in the `OrangeCompactTheme` with the `light` color scheme.
+    @MainActor func testSwitchSkeletonOrangeCompactThemeLight() {
+        testSwitchSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSSwitch` skeleton state in the `OrangeCompactTheme` with the `dark` color scheme.
+    @MainActor func testSwitchSkeletonOrangeCompactThemeDark() {
+        testSwitchSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

@@ -100,6 +100,18 @@ final class WireframeThemeListItemSnapshotsTests: ListItemSnapshotsTestsTestCase
     @MainActor func testAllTrailingsWireframeThemeDark() {
         testAllTrailings(theme: theme, interfaceStyle: .dark)
     }
+
+    // MARK: Skeleton
+
+    /// Tests the `OUDSStaticListItem` and `OUDSNavigationListItem` skeleton states in the `WireframeTheme` with the `light` color scheme.
+    @MainActor func testListItemSkeletonWireframeThemeLight() {
+        testListItemSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSStaticListItem` and `OUDSNavigationListItem` skeleton states in the `WireframeTheme` with the `dark` color scheme.
+    @MainActor func testListItemSkeletonWireframeThemeDark() {
+        testListItemSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

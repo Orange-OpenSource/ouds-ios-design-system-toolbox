@@ -42,6 +42,16 @@ final class WireframeThemeLinkSnapshotsTests: LinkSnapshotsTestsTestCase {
         testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
         testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSLink` skeleton state in the `WireframeTheme` with the `light` color scheme.
+    @MainActor func testLinkSkeletonWireframeThemeLight() {
+        testLinkSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSLink` skeleton state in the `WireframeTheme` with the `dark` color scheme.
+    @MainActor func testLinkSkeletonWireframeThemeDark() {
+        testLinkSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

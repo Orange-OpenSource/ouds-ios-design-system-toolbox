@@ -100,6 +100,18 @@ final class OrangeCompactThemeListItemSnapshotsTests: ListItemSnapshotsTestsTest
     @MainActor func testAllTrailingsOrangeCompactThemeDark() {
         testAllTrailings(theme: theme, interfaceStyle: .dark)
     }
+
+    // MARK: Skeleton
+
+    /// Tests the `OUDSStaticListItem` and `OUDSNavigationListItem` skeleton states in the `OrangeCompactTheme` with the `light` color scheme.
+    @MainActor func testListItemSkeletonOrangeCompactThemeLight() {
+        testListItemSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSStaticListItem` and `OUDSNavigationListItem` skeleton states in the `OrangeCompactTheme` with the `dark` color scheme.
+    @MainActor func testListItemSkeletonOrangeCompactThemeDark() {
+        testListItemSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

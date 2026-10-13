@@ -41,6 +41,16 @@ final class WireframeThemePasswordInputSnapshotsTests: PasswordInputSnapshotsTes
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllPasswordInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSPasswordInput` skeleton state in the `WireframeTheme` with the `light` color scheme.
+    @MainActor func testPasswordInputSkeletonWireframeThemeLight() {
+        testPasswordInputSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSPasswordInput` skeleton state in the `WireframeTheme` with the `dark` color scheme.
+    @MainActor func testPasswordInputSkeletonWireframeThemeDark() {
+        testPasswordInputSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

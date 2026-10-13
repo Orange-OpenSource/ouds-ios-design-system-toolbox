@@ -40,6 +40,16 @@ final class OrangeThemeInlineAlertSnapshotsTests: InlineAlertSnapshotsTestsTestC
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllInlineAlerts(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSInlineAlert` skeleton state in the `OrangeTheme` with the `light` color scheme.
+    @MainActor func testInlineAlertSkeletonOrangeThemeLight() {
+        testInlineAlertSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSInlineAlert` skeleton state in the `OrangeTheme` with the `dark` color scheme.
+    @MainActor func testInlineAlertSkeletonOrangeThemeDark() {
+        testInlineAlertSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

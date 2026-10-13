@@ -40,6 +40,16 @@ final class WireframeThemeAlertMessageSnapshotsTests: AlertMessageSnapshotsTests
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllAlertMessages(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSAlertMessage` skeleton state in the `WireframeTheme` with the `light` color scheme.
+    @MainActor func testAlertMessageSkeletonWireframeThemeLight() {
+        testAlertMessageSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSAlertMessage` skeleton state in the `WireframeTheme` with the `dark` color scheme.
+    @MainActor func testAlertMessageSkeletonWireframeThemeDark() {
+        testAlertMessageSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit

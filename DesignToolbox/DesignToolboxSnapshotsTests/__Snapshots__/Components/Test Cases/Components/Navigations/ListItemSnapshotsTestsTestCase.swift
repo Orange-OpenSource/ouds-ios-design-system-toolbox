@@ -449,6 +449,35 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
 
         assertIllustration(illustration, on: interfaceStyle, named: name, testName: testName)
     }
+
+    // swiftlint:enable function_parameter_count
+
+    // MARK: - Skeleton
+
+    /// This function tests the `OUDSStaticListItem` and `OUDSNavigationListItem` skeleton states (default configuration)
+    /// for the given theme and color scheme.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`OUDSTheme`).
+    ///   - interfaceStyle: The user interface style (light or dark).
+    @MainActor func testListItemSkeleton(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        let colorScheme: ColorScheme = interfaceStyle == .light ? .light : .dark
+        let data = OUDSListItemData(label: "Label")
+        let illustration = OUDSThemeableView(theme: theme) {
+            VStack {
+                OUDSStaticListItem(data: data)
+                    .oudsSkeleton(isVisible: true, isAnimated: false)
+                OUDSNavigationListItem(data: data, indicatorType: .next)
+                    .oudsSkeleton(isVisible: true, isAnimated: false)
+            }
+            .background(theme.colors.bgPrimary.color(for: colorScheme))
+        }
+
+        let testName = "testListItemSkeleton_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let name = "ListItemSkeleton"
+
+        assertIllustration(illustration, on: interfaceStyle, named: name, testName: testName)
+    }
 }
 
 // swiftlint:enable type_body_length

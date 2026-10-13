@@ -42,6 +42,16 @@ final class OrangeCompactThemeLinkSnapshotsTests: LinkSnapshotsTestsTestCase {
         testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
         testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    /// Tests the `OUDSLink` skeleton state in the `OrangeCompactTheme` with the `light` color scheme.
+    @MainActor func testLinkSkeletonOrangeCompactThemeLight() {
+        testLinkSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSLink` skeleton state in the `OrangeCompactTheme` with the `dark` color scheme.
+    @MainActor func testLinkSkeletonOrangeCompactThemeDark() {
+        testLinkSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit
