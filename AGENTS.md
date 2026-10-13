@@ -24,6 +24,18 @@ Do **not** duplicate this guidance here; always reference the package's `AGENTS.
 
 ---
 
+## Toolbox-local skills
+
+This repo also has its own `skills/` folder (exposed via `.opencode/skills`, `.claude/skills`, `.agents/skills`
+symlinks) for toolbox-specific knowledge that is **not** part of the OUDS package itself:
+
+- **`ouds-ios-toolbox-snapshot-tests`** — how to create, run, and maintain the demo app's snapshot tests
+  (`DesignToolboxSnapshotsTests`): naming conventions, the `SnapshotGrid` pattern for combinatorial axes,
+  troubleshooting failures, and the checklist before committing. Load this before writing/reviewing snapshot
+  tests, investigating a snapshot test failure, or adding snapshot coverage for a new component.
+
+---
+
 ## Sandbox: where to put experimental / debug / prototype code
 
 **Rule**: whenever you need to **test something, prototype a component, debug code, experiment with a snippet, or build any throwaway UI surface**, you **must**:
