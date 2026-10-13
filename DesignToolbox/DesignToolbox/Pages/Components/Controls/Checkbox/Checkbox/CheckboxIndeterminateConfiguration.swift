@@ -67,6 +67,7 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
         code =
             """
             OUDSCheckboxInterminate(selection: $selection\(isErrorPattern)\(isReadOnlyPattern))
+            \(disableCodePattern)
             \(skeletonPattern)
             """
     }

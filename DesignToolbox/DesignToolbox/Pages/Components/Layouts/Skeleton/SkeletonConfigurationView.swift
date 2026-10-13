@@ -41,8 +41,15 @@ final class SkeletonConfigurationModel: ComponentConfiguration {
 
     // MARK: Component Configuration
 
+    private var securityMarginPattern: String {
+        securityMargin ? "securityMargin: true" : ""
+    }
+
     override func updateCode() {
-        code = "OUDSSkeleton()"
+        code = """
+        OUDSSkeleton(\(securityMarginPattern))
+        .oudsSkeleton(isVisible: true, isAnimated: \(isAnimated))
+        """
     }
 }
 
