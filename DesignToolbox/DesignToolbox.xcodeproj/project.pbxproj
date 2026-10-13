@@ -1560,6 +1560,7 @@
 		9599CE322EB9040300CFCF3F /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9599CE312EB9040300CFCF3F /* OUDSSwiftUI */; };
 		959C5E9A2FFBF1C900E12BFF /* NamedColor+Ai.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C5E992FFBF1C900E12BFF /* NamedColor+Ai.swift */; };
 		95B2953030138CC000CEB567 /* SandboxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B2952F30138CBB00CEB567 /* SandboxTestView.swift */; };
+		95BB21A9307E718200ACA9CF /* SkeletonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB21A8307E717F00ACA9CF /* SkeletonsView.swift */; };
 		95C17B892EBCAC64002A7371 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95C17B882EBCAC64002A7371 /* OUDSSwiftUI */; };
 		95C17B8C2EBCAC75002A7371 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95C17B8B2EBCAC75002A7371 /* OUDSSwiftUI */; };
 		95C17B8E2EBCAC7B002A7371 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95C17B8D2EBCAC7B002A7371 /* OUDSSwiftUI */; };
@@ -2132,6 +2133,7 @@
 		959800892EBCCCAB007BE0EA /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
 		959C5E992FFBF1C900E12BFF /* NamedColor+Ai.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedColor+Ai.swift"; sourceTree = "<group>"; };
 		95B2952F30138CBB00CEB567 /* SandboxTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxTestView.swift; sourceTree = "<group>"; };
+		95BB21A8307E717F00ACA9CF /* SkeletonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonsView.swift; sourceTree = "<group>"; };
 		95C5A7D32F978284002F6D8A /* TextualContentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextualContentMode.swift; sourceTree = "<group>"; };
 		95CA20182FC70AAA00431097 /* BadgeElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeElements.swift; sourceTree = "<group>"; };
 		95CA201D2FC70B4300431097 /* BadgeIconElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeIconElement.swift; sourceTree = "<group>"; };
@@ -4136,6 +4138,7 @@
 		959800852EBCCC07007BE0EA /* Indicators */ = {
 			isa = PBXGroup;
 			children = (
+				95BB21A7307E717600ACA9CF /* Skeletons */,
 				9553683630239890007A83E0 /* ProgressIndicators */,
 				950EA6BD2EBCF8D50009414A /* IndicatorsView.swift */,
 				959800782EBCCBA8007BE0EA /* Badge */,
@@ -4162,6 +4165,14 @@
 				950EA6CB2EBDF0DD0009414A /* RadiosOnlyView.swift */,
 			);
 			path = Radio;
+			sourceTree = "<group>";
+		};
+		95BB21A7307E717600ACA9CF /* Skeletons */ = {
+			isa = PBXGroup;
+			children = (
+				95BB21A8307E717F00ACA9CF /* SkeletonsView.swift */,
+			);
+			path = Skeletons;
 			sourceTree = "<group>";
 		};
 		95BF3D352F8D32C400762BE1 /* ToolBar */ = {
@@ -6741,6 +6752,7 @@
 				950EA6BC2EBCF8C80009414A /* NavigationsView.swift in Sources */,
 				9514586C2EC2920C0096BBF1 /* OpacitiesView.swift in Sources */,
 				950EA7D72EBE4D650009414A /* ThreeStatesCheckboxesItemsView.swift in Sources */,
+				95BB21A9307E718200ACA9CF /* SkeletonsView.swift in Sources */,
 				950EA6C62EBCFA710009414A /* ColoredBackgroundView.swift in Sources */,
 				9593900D2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift in Sources */,
 				950EA6C32EBCFA390009414A /* LayoutsView.swift in Sources */,

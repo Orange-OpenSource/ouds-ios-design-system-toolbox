@@ -69,7 +69,7 @@ private struct SwitchItemDemo: View {
         }
         .disabled(!configurationModel.enabled)
         .accessibilityIdentifier(A11YIdentifiers.componentSwitchItem)
-        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     private var image: OUDSImage? {

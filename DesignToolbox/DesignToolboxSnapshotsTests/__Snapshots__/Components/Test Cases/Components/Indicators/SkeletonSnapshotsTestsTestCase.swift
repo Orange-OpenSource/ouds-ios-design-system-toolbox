@@ -73,7 +73,7 @@ open class SkeletonSnapshotsTestsTestCase: XCTestCase {
         let illustration = OUDSThemeableView(theme: theme) {
             OUDSSkeleton(securityMargin: securityMargin, shape: shape)
                 .frame(width: 200, height: 62, alignment: .center)
-                .oudsSkeleton(isVisible: true, isAnimated: false)
+                .showSkeleton(isVisible: true, isAnimated: false)
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 

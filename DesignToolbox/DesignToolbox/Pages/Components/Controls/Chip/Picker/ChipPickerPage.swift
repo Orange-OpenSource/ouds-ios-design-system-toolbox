@@ -58,6 +58,6 @@ struct ChipPickerDemo: View {
             }
         }
         .disabled(!configurationModel.enabled)
-        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }

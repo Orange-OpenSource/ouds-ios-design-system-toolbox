@@ -76,7 +76,7 @@ private struct RadioItemDemo: View {
         }
         .disabled(!configurationModel.enabled)
         .accessibilityIdentifier(A11YIdentifiers.componentRadioItem)
-        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     private var image: OUDSImage? {

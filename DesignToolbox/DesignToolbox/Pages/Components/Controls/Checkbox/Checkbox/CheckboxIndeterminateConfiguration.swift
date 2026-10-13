@@ -73,7 +73,7 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
     }
 
     private var skeletonPattern: String {
-        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
     }
 
     private var disableCodePattern: String {

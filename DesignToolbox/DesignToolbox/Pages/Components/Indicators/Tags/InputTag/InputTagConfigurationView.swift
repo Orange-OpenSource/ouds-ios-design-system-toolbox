@@ -53,7 +53,7 @@ final class InputTagConfigurationModel: ComponentConfiguration {
     }
 
     private var skeletonPattern: String {
-        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
     }
 }
 

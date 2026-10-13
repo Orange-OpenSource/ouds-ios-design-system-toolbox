@@ -82,7 +82,7 @@ struct TextInputDemo: View {
         }
         .autocorrectionDisabled()
         .textInputDisableAutocapitalization()
-        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     private var leadingImage: OUDSImage? {

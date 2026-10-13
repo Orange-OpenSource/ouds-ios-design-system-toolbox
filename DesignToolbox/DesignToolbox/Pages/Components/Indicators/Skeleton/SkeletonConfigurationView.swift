@@ -48,7 +48,7 @@ final class SkeletonConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code = """
         OUDSSkeleton(\(securityMarginPattern))
-        .oudsSkeleton(isVisible: true, isAnimated: \(isAnimated))
+        .showSkeleton(isVisible: true, isAnimated: \(isAnimated))
         """
     }
 }

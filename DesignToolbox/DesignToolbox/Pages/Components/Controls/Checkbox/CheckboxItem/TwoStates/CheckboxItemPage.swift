@@ -68,7 +68,7 @@ private struct CheckboxItemDemo: View {
             }
         }
         .disabled(!configurationModel.enabled)
-        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
         .designToolboxColoredSurface(false)
         .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
     }

@@ -157,7 +157,7 @@ open class AlertMessageSnapshotsTestsTestCase: XCTestCase {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             OUDSAlertMessage(label: "Alert message")
-                .oudsSkeleton(isVisible: true, isAnimated: false)
+                .showSkeleton(isVisible: true, isAnimated: false)
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 

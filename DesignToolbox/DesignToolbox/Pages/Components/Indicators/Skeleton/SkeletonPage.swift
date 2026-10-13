@@ -42,6 +42,6 @@ struct SkeletonDemo: View {
     var body: some View {
         OUDSSkeleton(securityMargin: configurationModel.securityMargin)
             .frame(width: 200, height: 62, alignment: .center)
-            .oudsSkeleton(isVisible: true, isAnimated: configurationModel.isAnimated)
+            .showSkeleton(isVisible: true, isAnimated: configurationModel.isAnimated)
     }
 }

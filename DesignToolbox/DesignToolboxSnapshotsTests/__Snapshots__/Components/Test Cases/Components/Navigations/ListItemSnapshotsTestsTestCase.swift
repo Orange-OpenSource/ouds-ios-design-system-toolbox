@@ -466,9 +466,9 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
         let illustration = OUDSThemeableView(theme: theme) {
             VStack {
                 OUDSStaticListItem(data: data)
-                    .oudsSkeleton(isVisible: true, isAnimated: false)
+                    .showSkeleton(isVisible: true, isAnimated: false)
                 OUDSNavigationListItem(data: data, indicatorType: .next)
-                    .oudsSkeleton(isVisible: true, isAnimated: false)
+                    .showSkeleton(isVisible: true, isAnimated: false)
             }
             .background(theme.colors.bgPrimary.color(for: colorScheme))
         }

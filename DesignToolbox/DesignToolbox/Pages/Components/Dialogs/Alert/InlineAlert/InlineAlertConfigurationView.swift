@@ -49,7 +49,7 @@ final class InlineAlertConfigurationModel: AlertConfigurationModel {
     }
 
     private var skeletonPattern: String {
-        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
     }
 }
 

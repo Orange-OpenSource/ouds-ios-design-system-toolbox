@@ -241,7 +241,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     }
 
     private var skeletonPattern: String {
-        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
     }
 
     var disableCodePattern: String {

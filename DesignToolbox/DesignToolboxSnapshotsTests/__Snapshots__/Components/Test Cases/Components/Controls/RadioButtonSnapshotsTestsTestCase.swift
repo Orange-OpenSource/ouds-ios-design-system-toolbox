@@ -276,7 +276,7 @@ open class RadioButtonSnapshotsTestsTestCase: XCTestCase {
                       accessibilityLabel: "Bazinga!",
                       isError: false,
                       isReadOnly: false)
-                .oudsSkeleton(isVisible: true, isAnimated: false)
+                .showSkeleton(isVisible: true, isAnimated: false)
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 

@@ -75,7 +75,7 @@ struct PasswordInputDemo: View {
         }
         .autocorrectionDisabled()
         .textInputDisableAutocapitalization()
-        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }
 

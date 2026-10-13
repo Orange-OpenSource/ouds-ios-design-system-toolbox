@@ -42,7 +42,7 @@ private struct LinkDemo: View {
     var body: some View {
         link
             .disabled(!configurationModel.enabled)
-            .oudsSkeleton(isVisible: configurationModel.showSkeleton)
+            .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     @ViewBuilder private var link: some View {

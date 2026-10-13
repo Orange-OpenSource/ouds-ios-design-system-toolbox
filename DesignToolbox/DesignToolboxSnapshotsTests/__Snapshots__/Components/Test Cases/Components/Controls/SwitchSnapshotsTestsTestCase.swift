@@ -252,7 +252,7 @@ open class SwitchSnapshotsTestsTestCase: XCTestCase {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             OUDSSwitch(isOn: .constant(false), accessibilityLabel: "Bazinga!", isReadOnly: false)
-                .oudsSkeleton(isVisible: true, isAnimated: false)
+                .showSkeleton(isVisible: true, isAnimated: false)
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle.colorScheme))
         }
 

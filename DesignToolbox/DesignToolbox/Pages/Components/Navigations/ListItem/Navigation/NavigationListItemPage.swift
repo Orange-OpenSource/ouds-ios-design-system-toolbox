@@ -61,7 +61,7 @@ private struct NavigationListItemDemo: View {
         .oudsListItemRoundedMedia(configurationModel.roundedMedia)
         .oudsListItemSize(configurationModel.itemSize)
         .disabled(!configurationModel.enabled)
-        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     private var rowGap: CGFloat {

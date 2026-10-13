@@ -112,7 +112,7 @@ open class InlineAlertSnapshotsTestsTestCase: XCTestCase {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             OUDSInlineAlert(label: "Inline alert", status: .info)
-                .oudsSkeleton(isVisible: true, isAnimated: false)
+                .showSkeleton(isVisible: true, isAnimated: false)
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 

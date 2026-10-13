@@ -62,6 +62,6 @@ struct CategoricalTagDemo: View {
                                    shape: configurationModel.shape,
                                    size: configurationModel.size)
             }
-        }.oudsSkeleton(isVisible: configurationModel.showSkeleton)
+        }.showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }

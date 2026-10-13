@@ -45,6 +45,6 @@ struct InlineAlertDemo: View {
             OUDSInlineAlert(label: configurationModel.text, status: configurationModel.status(from: theme))
         }
         .padding(.all, theme.spaces.fixedMedium)
-        .oudsSkeleton(isVisible: configurationModel.showSkeleton)
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }

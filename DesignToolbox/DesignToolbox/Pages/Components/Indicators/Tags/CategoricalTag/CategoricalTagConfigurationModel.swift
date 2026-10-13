@@ -150,7 +150,7 @@ final class CategoricalTagConfigurationModel: ComponentConfiguration {
     // swiftlint:enable line_length
 
     private var skeletonPattern: String {
-        showSkeleton ? ".oudsSkeleton(isVisible: true)" : ""
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
     }
 
     private var disablePattern: String {
