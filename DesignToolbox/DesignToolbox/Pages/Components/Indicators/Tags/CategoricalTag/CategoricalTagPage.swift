@@ -48,18 +48,20 @@ struct CategoricalTagDemo: View {
 
     @ViewBuilder
     private var tagView: some View {
-        if configurationModel.isLoading {
-            OUDSCategoricalTag(loadingLabel: configurationModel.label,
-                               progress: configurationModel.progress,
-                               category: configurationModel.category,
-                               shape: configurationModel.shape,
-                               size: configurationModel.size)
-        } else {
-            OUDSCategoricalTag(label: configurationModel.label,
-                               category: configurationModel.category,
-                               leading: configurationModel.leading(from: theme),
-                               shape: configurationModel.shape,
-                               size: configurationModel.size)
-        }
+        Group {
+            if configurationModel.isLoading {
+                OUDSCategoricalTag(loadingLabel: configurationModel.label,
+                                   progress: configurationModel.progress,
+                                   category: configurationModel.category,
+                                   shape: configurationModel.shape,
+                                   size: configurationModel.size)
+            } else {
+                OUDSCategoricalTag(label: configurationModel.label,
+                                   category: configurationModel.category,
+                                   leading: configurationModel.leading(from: theme),
+                                   shape: configurationModel.shape,
+                                   size: configurationModel.size)
+            }
+        }.oudsSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }
