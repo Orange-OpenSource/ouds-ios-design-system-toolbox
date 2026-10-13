@@ -21,15 +21,28 @@ import XCTest
 // MARK: - Test Cases
 
 /// Tests the UI rendering of the `OUDSButton` for each parameter
+///
+/// To limit the amount of reference images, the `disabled`, `a11yContrast`, `flipIcon` and `imageMode`
+/// axes are not given a dedicated reference image each: they are gathered into a single ``SnapshotGrid``
+/// per (theme, color scheme, tuning, surface, size, appearance, layout) combination, with one assertion
+/// (and so one reference image) per grid. Each cell of the grid carries a short caption so a regression
+/// stays identifiable directly in the resulting image. See `SnapshotGrid.swift`.
 open class ButtonSnapshotsTestsTestCase: XCTestCase {
+
+    /// The number of columns used to lay out the combinatorial grid for a button configuration.
+    private static let gridColumns = 4
+
+    /// Fixed size applied to each cell of the grid, so the resulting image has a stable, reproducible size.
+    private static let gridCellSize = CGSize(width: 140, height: 72)
 
     /// This function tests all buttons configuration for the given theme and color schemes on a standard surface.
     ///
     /// **/!\ It does not test the hover and pressed states.**
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
     ///
-    /// It iterates through all button `appearance`, for all `style` with *textOnly, textAndIcon and iconOnly* layouts
-    /// in enabled and disabled states.
+    /// It iterates through all button `appearance`, for all `style` with *textOnly, textAndIcon and iconOnly* layouts.
+    /// For each of these combinations, a single grid image gathers the `enabled/disabled`, `normal/high contrast`,
+    /// `flipIcon` and `imageMode` variations.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`).
@@ -41,49 +54,27 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
         for size in OUDSButton.Size.allCases {
             for appearance in OUDSButton.Appearance.allCases {
                 for layout in ButtonTest.Layout.allCases {
-                    for flipIcon in [true, false] {
-                        for imageMode in [
-                            Image.TemplateRenderingMode.original,
-                            Image.TemplateRenderingMode.template,
-                        ] {
-                            for disabled in [true, false] {
-                                testButton(
-                                    theme: theme,
-                                    interfaceStyle: interfaceStyle,
-                                    a11yContrast: .normal,
-                                    layout: layout,
-                                    flipIcon: flipIcon,
-                                    imageMode: imageMode,
-                                    appearance: appearance,
-                                    size: size,
-                                    disabled: disabled,
-                                    onColoredSurface: false)
-                                testButton(
-                                    theme: theme,
-                                    interfaceStyle: interfaceStyle,
-                                    a11yContrast: .high,
-                                    layout: layout,
-                                    flipIcon: flipIcon,
-                                    imageMode: imageMode,
-                                    appearance: appearance,
-                                    size: size,
-                                    disabled: disabled,
-                                    onColoredSurface: false)
-                            }
-                        }
-                    }
+                    testButtonGrid(
+                        theme: theme,
+                        interfaceStyle: interfaceStyle,
+                        layout: layout,
+                        appearance: appearance,
+                        size: size,
+                        onColoredSurface: false)
                 }
             }
         }
     }
 
-    /// This function tests all buttons configuration for the given themen and color schemes on aa colored surface (the `surfaceBrandPrimary` token)
+    /// This function tests all buttons configuration for the given theme and color schemes on a colored surface
+    /// (the `surfaceBrandPrimary` token).
     ///
     /// **/!\ It does not test the hover and pressed states.**
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
     ///
-    /// It iterates through all button `appearance`, for all `style` with* textOnly, textAndIcon and iconOnly layouts*
-    /// in enabled and disabled state.
+    /// It iterates through all button `appearance`, for all `style` with *textOnly, textAndIcon and iconOnly layouts*.
+    /// For each of these combinations, a single grid image gathers the `enabled/disabled`, `normal/high contrast`,
+    /// `flipIcon` and `imageMode` variations.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
@@ -98,114 +89,137 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
                 where appearance != .negative && appearance != .brand
             {
                 for layout in ButtonTest.Layout.allCases {
-                    for flipIcon in [true, false] {
-                        for imageMode in [
-                            Image.TemplateRenderingMode.original,
-                            Image.TemplateRenderingMode.template,
-                        ] {
-                            for disabled in [true, false] {
-                                testButton(
-                                    theme: theme,
-                                    interfaceStyle: interfaceStyle,
-                                    a11yContrast: .normal,
-                                    layout: layout,
-                                    flipIcon: flipIcon,
-                                    imageMode: imageMode,
-                                    appearance: appearance,
-                                    size: size,
-                                    disabled: disabled,
-                                    onColoredSurface: true)
-                                testButton(
-                                    theme: theme,
-                                    interfaceStyle: interfaceStyle,
-                                    a11yContrast: .high,
-                                    layout: layout,
-                                    flipIcon: flipIcon,
-                                    imageMode: imageMode,
-                                    appearance: appearance,
-                                    size: size,
-                                    disabled: disabled,
-                                    onColoredSurface: true)
-                            }
-                        }
-                    }
+                    testButtonGrid(
+                        theme: theme,
+                        interfaceStyle: interfaceStyle,
+                        layout: layout,
+                        appearance: appearance,
+                        size: size,
+                        onColoredSurface: true)
                 }
             }
         }
     }
 
-    // swiftlint:disable function_parameter_count
-    // swiftlint:disable line_length
-    /// This function tests button according to all parameters of the configuration available on a `OUDButton`
-    /// for the given theme and color schemes and on a colored surface or not.
+    /// A single configuration of `disabled`/`a11yContrast`/`flipIcon`/`imageMode` to fold into a grid cell.
+    private struct ButtonVariant {
+        let disabled: Bool
+        let a11yContrast: UIAccessibilityContrast
+        let flipIcon: Bool
+        let imageMode: Image.TemplateRenderingMode
+
+        /// All the `disabled` x `a11yContrast` x `flipIcon` x `imageMode` combinations.
+        static let all: [ButtonVariant] = [false, true].flatMap { disabled in
+            [UIAccessibilityContrast.normal, .high].flatMap { a11yContrast in
+                [false, true].flatMap { flipIcon in
+                    [Image.TemplateRenderingMode.original, .template].map { imageMode in
+                        ButtonVariant(disabled: disabled, a11yContrast: a11yContrast, flipIcon: flipIcon, imageMode: imageMode)
+                    }
+                }
+            }
+        }
+
+        /// Short caption identifying the variant, displayed under its grid cell.
+        var caption: String {
+            [
+                disabled ? "Disabled" : "Enabled",
+                a11yContrast == .high ? "HighContrast" : "NormalContrast",
+                flipIcon ? "Flip" : "NoFlip",
+                imageMode == .original ? "Original" : "Template",
+            ].joined(separator: " · ")
+        }
+    }
+
+    /// Builds the grid cell for a given button variant.
     ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
+    /// `ContrastOverride` embeds its content in a dedicated `UIHostingController` to isolate the
+    /// accessibility contrast trait per cell: the SwiftUI environment set by the outer
+    /// `OUDSThemeableView` does not cross that boundary, so the theme must be re-injected here.
+    @MainActor private func buttonVariantCell(
+        _ variant: ButtonVariant,
+        theme: OUDSTheme,
+        layout: ButtonTest.Layout,
+        appearance: OUDSButton.Appearance,
+        size: OUDSButton.Size,
+        onColoredSurface: Bool) -> SnapshotGridCell<AnyView>
+    {
+        SnapshotGridCell(caption: variant.caption) {
+            AnyView(
+                ContrastOverride(
+                    contrast: variant.a11yContrast,
+                    content: OUDSThemeableView(theme: theme) {
+                        ButtonTest(
+                            layout: layout,
+                            flipIcon: variant.flipIcon,
+                            imageMode: variant.imageMode,
+                            appearance: appearance,
+                            style: .default,
+                            size: size,
+                            onColoredSurface: onColoredSurface)
+                            .disabled(variant.disabled)
+                    }))
+        }
+    }
+
+    /// Builds a ``SnapshotGrid`` gathering all `disabled`, `a11yContrast`, `flipIcon` and `imageMode`
+    /// combinations for a given button configuration, then captures it in a single snapshot.
     ///
-    /// **/!\ It does not text the hover and pressed states.**
-    /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
+    /// The snapshot is saved with a name based on the parameters which are not folded into the grid.
     ///
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
-    ///   - a11yContrast:Contrast mode (high or not)
     ///   - layout: the layout of the button
-    ///   - flipIcon: flip the icon of the button or not
-    ///   - imageMode: The rendering mode for the image in the button
-    ///   - appearance; the appearance of the button
+    ///   - appearance: the appearance of the button
     ///   - size: the size of the button
-    ///   - disabled: the disabled flag
     ///   - onColoredSurface: a flag to know if button is on a colored surface or not
-    @MainActor private func testButton(
+    @MainActor private func testButtonGrid(
         theme: OUDSTheme,
         interfaceStyle: UIUserInterfaceStyle,
-        a11yContrast: UIAccessibilityContrast,
         layout: ButtonTest.Layout,
-        flipIcon: Bool,
-        imageMode: Image.TemplateRenderingMode,
         appearance: OUDSButton.Appearance,
         size: OUDSButton.Size,
-        disabled: Bool,
         onColoredSurface: Bool = false)
     {
-        // Generate the illustration for the specified configuration
-        let illustration = OUDSThemeableView(theme: theme) {
-            ButtonTest(
+        let cells = ButtonVariant.all.map {
+            buttonVariantCell(
+                $0,
+                theme: theme,
                 layout: layout,
-                flipIcon: flipIcon,
-                imageMode: imageMode,
                 appearance: appearance,
-                style: .default,
                 size: size,
                 onColoredSurface: onColoredSurface)
-                .background(
-                    theme.colors.bgPrimary.color(
-                        for: interfaceStyle == .light ? .light : .dark))
-                .disabled(disabled)
         }
 
         // Create a unique snapshot name based on the current configuration
-        let testName =
-            "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")_\(a11yContrast == .high ? "HighContrast" : "")"
+        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
-        let flipIconPattern = flipIcon ? "_FlipIcon" : ""
-        let imageModePattern =
-            imageMode == .original ? "_OriginalImage" : "_TemplateImage"
-        let disabledPatern = disabled ? "_Disabled" : ""
         let roundedPattern = theme.tuning.hasRoundedButtons ? "_Rounded" : ""
         let sizePattern = size == .small ? "_Small" : ""
-        let name =
-            "\(coloredSurfacePatern)\(flipIconPattern)\(imageModePattern)\(layout.rawValue.camelCase)_\(appearance.formattedName)_\(ButtonStyle.default.formattedName)\(sizePattern)\(disabledPatern)\(roundedPattern)"
+        let name = "\(coloredSurfacePatern)\(layout.rawValue.camelCase)_\(appearance.formattedName)_" +
+            "\(ButtonStyle.default.formattedName)\(sizePattern)\(roundedPattern)"
 
-        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+        let grid = SnapshotGrid(
+            columns: Self.gridColumns,
+            cellSize: Self.gridCellSize,
+            cells: cells,
+            title: "\(testName).\(name)")
+
+        // Generate the illustration for the specified configuration
+        let illustration = OUDSThemeableView(theme: theme) {
+            grid
+                .background(
+                    theme.colors.bgPrimary.color(
+                        for: interfaceStyle == .light ? .light : .dark))
+        }
+
+        // Capture the snapshot of the grid with the correct user interface style and save it with the snapshot name
         assertIllustration(
             illustration,
             on: interfaceStyle,
-            a11yContrast: a11yContrast,
             named: name,
             testName: testName)
     }
-    // swiftlint:enable function_parameter_count
-    // swiftlint:enable line_length
 }
 
 // MARK: - Button Test
