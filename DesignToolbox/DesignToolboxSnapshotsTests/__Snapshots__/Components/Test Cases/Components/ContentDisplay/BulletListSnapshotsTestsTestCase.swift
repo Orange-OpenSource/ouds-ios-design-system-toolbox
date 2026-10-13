@@ -21,12 +21,25 @@ import XCTest
 // MARK: - Test Cases
 
 /// Tests the UI rendering of the `OUDSBulletList` for each parameter
+///
+/// To limit the amount of reference images, the `isBold` axis (and, for `unordered` lists, the
+/// `unorderedAsset` and `unorderedBulletIsBranded` axes) is not given a dedicated reference image:
+/// it is gathered into a single ``SnapshotGrid`` per (theme, color scheme, type, textStyle, levelCount)
+/// combination, with one assertion (and so one reference image) per grid. Each cell of the grid carries
+/// a short caption so a regression stays identifiable directly in the resulting image. See `SnapshotGrid.swift`.
 open class BulletListSnapshotsTestsTestCase: XCTestCase {
+
+    /// The number of columns used to lay out the combinatorial grid for a bullet list configuration.
+    private static let gridColumns = 4
+
+    /// Fixed size applied to each cell of the grid, so the resulting image has a stable, reproducible size.
+    private static let gridCellSize = CGSize(width: 280, height: 180)
 
     /// This function tests all BulletList configuration for the given theme and color schemes on a standard surface.
     ///
-    /// It iterates through all elements of configuration `BulletListType`, `BulletListTextStyle`, `isBold` flag.
-    /// For unordered list, additional elements are iterated in `testUnorderedBulletList`
+    /// It iterates through all elements of configuration `BulletListType`, `BulletListTextStyle`, `levelCount`.
+    /// For each of these combinations, a single grid image gathers the `isBold` variations (and, for `unordered`
+    /// list, the `unorderedAsset` x `unorderedBulletIsBranded` variations as well).
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`).
@@ -35,83 +48,100 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
         for type in BulletListType.allCases {
             for textType in BulletListTextStyle.allCases {
                 for levelCount in BulletListLevelCount.allCases {
-
-                    for isBold in [true, false] {
-                        let model = BulletListConfigurationModel()
-                        model.textStyle = textType
-                        model.isBold = isBold
-                        model.bulletType = type
-                        model.levelCount = levelCount
-
-                        switch type {
-                        case .unordered:
-                            testUnorderedBulletList(theme: theme,
-                                                    interfaceStyle: interfaceStyle,
-                                                    model: model)
-                        case .ordered, .bare:
-                            testBulletList(theme: theme,
-                                           interfaceStyle: interfaceStyle,
-                                           model: model)
-                        }
-                    }
+                    testBulletListGrid(theme: theme,
+                                       interfaceStyle: interfaceStyle,
+                                       type: type,
+                                       textStyle: textType,
+                                       levelCount: levelCount)
                 }
             }
         }
     }
 
-    /// This function tests Unordered Bullet List with some additional parameter like bullet type,
-    /// and flag to know if bullet is branded.
-    ///
-    /// - Parameters:
-    ///   - theme: The theme (OUDSTheme)
-    ///   - interfaceStyle: The user interface style (light or dark)
-    ///   - model: The model contains sommon common element of configuration
-    @MainActor private func testUnorderedBulletList(theme: OUDSTheme,
-                                                    interfaceStyle: UIUserInterfaceStyle,
-                                                    model: BulletListConfigurationModel)
-    {
-        for icon in BulletListUnorderedAsset.allCases {
-            for isBranded in [true, false] {
-                model.unorderedAsset = icon
-                model.unorderedBulletIsBranded = isBranded
+    /// A single configuration of `isBold` x `unorderedAsset` x `unorderedBulletIsBranded` to fold into a grid cell.
+    /// For non-`unordered` types, `unorderedAsset`/`unorderedBulletIsBranded` are irrelevant and ignored.
+    private struct BulletListVariant {
+        let isBold: Bool
+        let unorderedAsset: BulletListUnorderedAsset
+        let unorderedBulletIsBranded: Bool
 
-                testBulletList(theme: theme,
-                               interfaceStyle: interfaceStyle,
-                               model: model)
+        /// All the `isBold` combinations for a non-unordered bullet list (bare, ordered).
+        static let allForSimpleType: [BulletListVariant] = [false, true].map {
+            BulletListVariant(isBold: $0, unorderedAsset: .bullet, unorderedBulletIsBranded: true)
+        }
+
+        /// All the `isBold` x `unorderedAsset` x `unorderedBulletIsBranded` combinations for an unordered bullet list.
+        static let allForUnorderedType: [BulletListVariant] = [false, true].flatMap { isBold in
+            BulletListUnorderedAsset.allCases.flatMap { asset in
+                [false, true].map { isBranded in
+                    BulletListVariant(isBold: isBold, unorderedAsset: asset, unorderedBulletIsBranded: isBranded)
+                }
             }
+        }
+
+        /// Short caption identifying the variant, displayed under its grid cell.
+        func caption(type: BulletListType) -> String {
+            var components = [isBold ? "Bold" : "Regular"]
+            if type == .unordered {
+                components.append(unorderedAsset.formattedName)
+                components.append(unorderedBulletIsBranded ? "Branded" : "NotBranded")
+            }
+            return components.joined(separator: " · ")
         }
     }
 
-    /// This function tests BulletList according to all parameters of the configuration available on a `OUDSBulletList`
-    /// for the given theme and color schemes.
+    /// Builds the grid cell for a given bullet list variant.
+    @MainActor private func bulletListVariantCell(
+        _ variant: BulletListVariant,
+        theme: OUDSTheme,
+        type: BulletListType,
+        textStyle: BulletListTextStyle,
+        levelCount: BulletListLevelCount) -> SnapshotGridCell<AnyView>
+    {
+        let model = BulletListConfigurationModel()
+        model.bulletType = type
+        model.textStyle = textStyle
+        model.levelCount = levelCount
+        model.isBold = variant.isBold
+        model.unorderedAsset = variant.unorderedAsset
+        model.unorderedBulletIsBranded = variant.unorderedBulletIsBranded
+
+        return SnapshotGridCell(caption: variant.caption(type: type)) {
+            AnyView(BulletListDemo(configurationModel: model))
+        }
+    }
+
+    /// Builds a ``SnapshotGrid`` gathering all `isBold` (and, for `unordered` type, `unorderedAsset` x
+    /// `unorderedBulletIsBranded`) combinations for a given bullet list configuration, then captures it
+    /// in a single snapshot.
     ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
-    ///    test_<themeName>_<colorScheme>_<type>_<textStyle>_<isBold>
+    /// The snapshot is saved with a name based on the parameters which are not folded into the grid:
+    ///    test_<themeName>_<colorScheme>.<type>_<textStyle>_<levelCount>
     ///
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
-    ///   - model: The model contains each element of configuration
-    @MainActor private func testBulletList(theme: OUDSTheme,
-                                           interfaceStyle: UIUserInterfaceStyle,
-                                           model: BulletListConfigurationModel)
+    ///   - type: the type of the bullet list (bare, ordered, unordered)
+    ///   - textStyle: the text style of the bullet list
+    ///   - levelCount: the number of nesting levels
+    @MainActor private func testBulletListGrid(
+        theme: OUDSTheme,
+        interfaceStyle: UIUserInterfaceStyle,
+        type: BulletListType,
+        textStyle: BulletListTextStyle,
+        levelCount: BulletListLevelCount)
     {
-        // Generate the illustration for the specified configuration
-        let illustration = OUDSThemeableView(theme: theme) {
-            BulletListDemo(configurationModel: model)
-                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+        let variants = type == .unordered ? BulletListVariant.allForUnorderedType : BulletListVariant.allForSimpleType
+        let cells = variants.map {
+            bulletListVariantCell($0, theme: theme, type: type, textStyle: textStyle, levelCount: levelCount)
         }
 
         // Create a unique snapshot name based on the current configuration :
-        //    test_<themeName>_<colorScheme>_<type>_<textStyle>_<isBold>
+        //    test_<themeName>_<colorScheme>.<type>_<textStyle>_<levelCount>
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let typePattern = model.bulletType.formattedName
-        let bulletTypePattern = model.bulletType == .unordered ? "_\(model.unorderedAsset.formattedName)" : ""
-        let brandedBulletPattern = model.bulletType == .unordered && model.unorderedBulletIsBranded ? "_Branded" : ""
-        let unorderedBulletTypePattern = model.bulletType == .unordered ? bulletTypePattern + brandedBulletPattern : ""
-        let textStylePattern = model.textStyle.formattedName
-        let isBoldPattern = model.isBold ? "Bold" : ""
-        let countPattern = switch model.levelCount {
+        let typePattern = type.formattedName
+        let textStylePattern = textStyle.formattedName
+        let countPattern = switch levelCount {
         case .one:
             "Count-1"
         case .two:
@@ -119,9 +149,21 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
         case .three:
             "Count-3"
         }
-        let name = "\(typePattern)\(unorderedBulletTypePattern)_\(textStylePattern)_\(isBoldPattern)_\(countPattern)"
+        let name = "\(typePattern)_\(textStylePattern)_\(countPattern)"
 
-        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+        let grid = SnapshotGrid(
+            columns: Self.gridColumns,
+            cellSize: Self.gridCellSize,
+            cells: cells,
+            title: "\(testName).\(name)")
+
+        // Generate the illustration for the specified configuration
+        let illustration = OUDSThemeableView(theme: theme) {
+            grid
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+        }
+
+        // Capture the snapshot of the grid with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
                            named: name,
