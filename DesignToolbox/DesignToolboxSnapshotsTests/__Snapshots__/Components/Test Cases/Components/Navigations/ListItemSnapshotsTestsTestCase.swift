@@ -31,9 +31,19 @@ import XCTest
 /// - **Rounded media**: enabled/disabled (on image leading/trailing)
 /// - **Leading elements**: none, icon (neutral), icon (negative), image, flag, avatar (icon / initials / image)
 /// - **Trailing elements**: none, text (label / labelStrong / labelAndExtraLabel), badge, tag, icon, image, flag, avatar
-/// - **Text cases**: label only / label+overline+extraLabel+description / full / label+helperText
-/// - **Bold label**: always tested both ways for each text case
+///
+/// To limit the amount of reference images, the `textCase`/`isBold` axis is not given a dedicated reference
+/// image each: for every combination above, it is gathered into a single ``SnapshotGrid`` (one per `static`/
+/// `navigation` component), with one assertion (and so one reference image) per grid. Each cell of the grid
+/// carries a short caption so a regression stays identifiable directly in the resulting image.
+/// See `SnapshotGrid.swift`.
 open class ListItemSnapshotsTestsTestCase: XCTestCase {
+
+    /// The number of columns used to lay out the `textCase`/`isBold` grid for a list item configuration.
+    private static let gridColumns = 2
+
+    /// Fixed size applied to each cell of the grid, so the resulting image has a stable, reproducible size.
+    private static let gridCellSize = CGSize(width: 420, height: 260)
 
     // MARK: - Text case helper
 
@@ -47,6 +57,20 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
         case full
         /// Label with helper text only.
         case labelAndHelper
+
+        /// Short caption identifying the text case, displayed in a grid cell.
+        var captionName: String {
+            switch self {
+            case .labelOnly:
+                "Label only"
+            case .fullWithoutHelper:
+                "Full (no helper)"
+            case .full:
+                "Full"
+            case .labelAndHelper:
+                "Label + helper"
+            }
+        }
 
         /// The description text used for this case, if any.
         ///
@@ -111,10 +135,74 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
+    /// A single configuration of `textCase` x `isBold` to fold into a grid cell.
+    private struct TextVariant {
+        let textCase: TextCase
+        let isBold: Bool
+
+        /// All the `textCase` x `isBold` combinations.
+        static let all: [TextVariant] = TextCase.allCases.flatMap { textCase in
+            [false, true].map { TextVariant(textCase: textCase, isBold: $0) }
+        }
+
+        var data: OUDSListItemData {
+            isBold ? textCase.boldData() : textCase.data
+        }
+
+        /// Short caption identifying the variant, displayed under its grid cell.
+        var caption: String {
+            "\(textCase.captionName) · \(isBold ? "Bold" : "Regular")"
+        }
+    }
+
+    /// The two kinds of list item components covered by these tests.
+    private enum ComponentKind {
+        case staticItem
+        case navigation
+
+        /// Builds the raw list item (without any content style/alignment/size modifier) for this component kind.
+        @MainActor func build(data: OUDSListItemData, leading: OUDSListItemLeading?, trailing: OUDSListItemTrailing?) -> AnyView {
+            switch self {
+            case .staticItem:
+                AnyView(OUDSStaticListItem(data: data, leading: leading, trailing: trailing))
+            case .navigation:
+                AnyView(OUDSNavigationListItem(data: data, indicatorType: .next, leading: leading, trailing: trailing))
+            }
+        }
+    }
+
+    /// Bundles the parameters of a list item configuration which are kept as separate reference images
+    /// (structurally significant axes), as opposed to `textCase`/`isBold` which are folded into a grid.
+    private struct ListItemConfiguration {
+        let style: OUDSListItemContentStyle
+        let alignment: OUDSListItemContainersAlignment
+        let size: OUDSListItemSize
+        let rounded: Bool
+        let leading: OUDSListItemLeading?
+        let trailing: OUDSListItemTrailing?
+        let kind: ComponentKind
+
+        init(kind: ComponentKind,
+             style: OUDSListItemContentStyle = .card(.outlined()),
+             alignment: OUDSListItemContainersAlignment = .center,
+             size: OUDSListItemSize = .default,
+             rounded: Bool = false,
+             leading: OUDSListItemLeading? = nil,
+             trailing: OUDSListItemTrailing? = nil)
+        {
+            self.style = style
+            self.alignment = alignment
+            self.size = size
+            self.rounded = rounded
+            self.leading = leading
+            self.trailing = trailing
+            self.kind = kind
+        }
+    }
+
     // MARK: - Style tests
 
-    /// Tests all content styles (outlined and standard variants) with both component types,
-    /// all text cases, and both label weight variants.
+    /// Tests all content styles (outlined and standard variants) with both component types.
     ///
     /// Other parameters are fixed: alignment=center, size=standard, no leading, no trailing.
     ///
@@ -129,45 +217,26 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
             (.card(.standard(divider: false, background: true)), "card_backgroundWithoutDivider"),
             (.card(.standard(divider: true, background: false)), "card_backgroundOnInteractionOnlyWithDivider"),
             (.card(.standard(divider: false, background: false)), "card_backgroundOnInteractionOnlyWithoutDivider"),
-            (.item(divider: false, background: true), "stabdard_backgroundWithoutDivider"),
+            (.item(divider: false, background: true), "standard_backgroundWithoutDivider"),
             (.item(divider: true, background: false), "standard_backgroundOnInteractionOnlyWithDivider"),
         ]
         for (style, styleName) in styles {
-            for textCase in TextCase.allCases {
-                for isBold in [false, true] {
-                    let data = isBold ? textCase.boldData() : textCase.data
-                    let boldSuffix = isBold ? "_Bold" : ""
-                    testListItem(
-                        theme: theme,
-                        interfaceStyle: interfaceStyle,
-                        style: style,
-                        alignment: .center,
-                        size: .default,
-                        rounded: false,
-                        data: data,
-                        leading: nil,
-                        trailing: nil,
-                        name: "static_\(styleName)_center_standard_\(textCase.rawValue)\(boldSuffix)")
-                    testNavigationListItem(
-                        theme: theme,
-                        interfaceStyle: interfaceStyle,
-                        style: style,
-                        alignment: .center,
-                        size: .default,
-                        rounded: false,
-                        data: data,
-                        leading: nil,
-                        trailing: nil,
-                        name: "navigation_\(styleName)_center_standard_\(textCase.rawValue)\(boldSuffix)")
-                }
-            }
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "static_\(styleName)_center_standard",
+                configuration: ListItemConfiguration(kind: .staticItem, style: style))
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "navigation_\(styleName)_center_standard",
+                configuration: ListItemConfiguration(kind: .navigation, style: style))
         }
     }
 
     // MARK: - Alignment tests
 
-    /// Tests top and center alignment with both component types, all text cases, and both label
-    /// weight variants.
+    /// Tests top and center alignment with both component types.
     ///
     /// Other parameters are fixed: style=outlined, size=standard, leading=icon(neutral), trailing=text(.label).
     ///
@@ -182,40 +251,22 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
         let leading = OUDSListItemLeading.icon(OUDSListItemIcon(status: .neutral(asset: Image(decorative: "ic_heart")), description: ""))
         let trailing = OUDSListItemTrailing.text(.label("Label"))
         for (alignment, alignmentName) in alignments {
-            for textCase in TextCase.allCases {
-                for isBold in [false, true] {
-                    let data = isBold ? textCase.boldData() : textCase.data
-                    let boldSuffix = isBold ? "_Bold" : ""
-                    testListItem(
-                        theme: theme,
-                        interfaceStyle: interfaceStyle,
-                        style: .card(.outlined()),
-                        alignment: alignment,
-                        size: .default,
-                        rounded: false,
-                        data: data,
-                        leading: leading,
-                        trailing: trailing,
-                        name: "static_outlined_\(alignmentName)_standard_\(textCase.rawValue)\(boldSuffix)")
-                    testNavigationListItem(
-                        theme: theme,
-                        interfaceStyle: interfaceStyle,
-                        style: .card(.outlined()),
-                        alignment: alignment,
-                        size: .default,
-                        rounded: false,
-                        data: data,
-                        leading: leading,
-                        trailing: trailing,
-                        name: "navigation_outlined_\(alignmentName)_standard_\(textCase.rawValue)\(boldSuffix)")
-                }
-            }
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "static_outlined_\(alignmentName)_standard",
+                configuration: ListItemConfiguration(kind: .staticItem, alignment: alignment, leading: leading, trailing: trailing))
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "navigation_outlined_\(alignmentName)_standard",
+                configuration: ListItemConfiguration(kind: .navigation, alignment: alignment, leading: leading, trailing: trailing))
         }
     }
 
     // MARK: - Size tests
 
-    /// Tests standard and small sizes with both component types, all text cases, and both label weight variants.
+    /// Tests standard and small sizes with both component types.
     ///
     /// Note: in `.small` size, `overline` and `extraLabel` are automatically hidden by the component.
     ///
@@ -230,34 +281,16 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
             (.small, "small"),
         ]
         for (size, sizeName) in sizes {
-            for textCase in TextCase.allCases {
-                for isBold in [false, true] {
-                    let data = isBold ? textCase.boldData() : textCase.data
-                    let boldSuffix = isBold ? "_Bold" : ""
-                    testListItem(
-                        theme: theme,
-                        interfaceStyle: interfaceStyle,
-                        style: .card(.outlined()),
-                        alignment: .center,
-                        size: size,
-                        rounded: false,
-                        data: data,
-                        leading: nil,
-                        trailing: nil,
-                        name: "static_outlined_center_\(sizeName)_\(textCase.rawValue)\(boldSuffix)")
-                    testNavigationListItem(
-                        theme: theme,
-                        interfaceStyle: interfaceStyle,
-                        style: .card(.outlined()),
-                        alignment: .center,
-                        size: size,
-                        rounded: false,
-                        data: data,
-                        leading: nil,
-                        trailing: nil,
-                        name: "navigation_outlined_center_\(sizeName)_\(textCase.rawValue)\(boldSuffix)")
-                }
-            }
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "static_outlined_center_\(sizeName)",
+                configuration: ListItemConfiguration(kind: .staticItem, size: size))
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "navigation_outlined_center_\(sizeName)",
+                configuration: ListItemConfiguration(kind: .navigation, size: size))
         }
     }
 
@@ -265,7 +298,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
 
     /// Tests rounded media flag (true/false) with image as leading and trailing elements.
     ///
-    /// Other parameters are fixed: style=outlined, alignment=center, size=standard, full text case, bold=false.
+    /// Other parameters are fixed: style=outlined, alignment=center, size=standard.
     ///
     /// - Parameters:
     ///   - theme: The theme to apply.
@@ -274,37 +307,24 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
         let image = Image(decorative: "ic_heart")
         let leading = OUDSListItemLeading.image(.init(asset: image))
         let trailing = OUDSListItemTrailing.image(.init(asset: image))
-        let data = TextCase.full.data
         for rounded in [false, true] {
             let roundedSuffix = rounded ? "_RoundedMedia" : ""
-            testListItem(
+            testListItemGrid(
                 theme: theme,
                 interfaceStyle: interfaceStyle,
-                style: .card(.outlined()),
-                alignment: .center,
-                size: .default,
-                rounded: rounded,
-                data: data,
-                leading: leading,
-                trailing: trailing,
-                name: "static_outlined_center_standard_full\(roundedSuffix)")
-            testNavigationListItem(
+                name: "static_outlined_center_standard\(roundedSuffix)",
+                configuration: ListItemConfiguration(kind: .staticItem, rounded: rounded, leading: leading, trailing: trailing))
+            testListItemGrid(
                 theme: theme,
                 interfaceStyle: interfaceStyle,
-                style: .card(.outlined()),
-                alignment: .center,
-                size: .default,
-                rounded: rounded,
-                data: data,
-                leading: leading,
-                trailing: trailing,
-                name: "navigation_outlined_center_standard_full\(roundedSuffix)")
+                name: "navigation_outlined_center_standard\(roundedSuffix)",
+                configuration: ListItemConfiguration(kind: .navigation, rounded: rounded, leading: leading, trailing: trailing))
         }
     }
 
     // MARK: - Leading tests
 
-    /// Tests all leading elements with both component types, all text cases, and both label weight variants.
+    /// Tests all leading elements with both component types.
     ///
     /// Other parameters are fixed: style=outlined, alignment=center, size=standard, no trailing.
     ///
@@ -324,40 +344,22 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
             (.avatar(OUDSListItemAvatar(type: .image(image), size: .medium)), "avatar_image"),
         ]
         for (leading, leadingName) in leadings {
-            for textCase in TextCase.allCases {
-                for isBold in [false, true] {
-                    let data = isBold ? textCase.boldData() : textCase.data
-                    let boldSuffix = isBold ? "_Bold" : ""
-                    testListItem(
-                        theme: theme,
-                        interfaceStyle: interfaceStyle,
-                        style: .card(.outlined()),
-                        alignment: .center,
-                        size: .default,
-                        rounded: false,
-                        data: data,
-                        leading: leading,
-                        trailing: nil,
-                        name: "static_outlined_center_standard_\(textCase.rawValue)_Leading_\(leadingName)\(boldSuffix)")
-                    testNavigationListItem(
-                        theme: theme,
-                        interfaceStyle: interfaceStyle,
-                        style: .card(.outlined()),
-                        alignment: .center,
-                        size: .default,
-                        rounded: false,
-                        data: data,
-                        leading: leading,
-                        trailing: nil,
-                        name: "navigation_outlined_center_standard_\(textCase.rawValue)_Leading_\(leadingName)\(boldSuffix)")
-                }
-            }
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "static_outlined_center_standard_Leading_\(leadingName)",
+                configuration: ListItemConfiguration(kind: .staticItem, leading: leading))
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "navigation_outlined_center_standard_Leading_\(leadingName)",
+                configuration: ListItemConfiguration(kind: .navigation, leading: leading))
         }
     }
 
     // MARK: - Trailing tests
 
-    /// Tests all trailing elements with both component types, all text cases, and both label weight variants.
+    /// Tests all trailing elements with both component types.
     ///
     /// Other parameters are fixed: style=outlined, alignment=center, size=standard, no leading.
     ///
@@ -379,90 +381,74 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
             (.avatar(OUDSListItemAvatar(type: .icon, size: .medium)), "avatar_icon"),
         ]
         for (trailing, trailingName) in trailings {
-            for textCase in TextCase.allCases {
-                for isBold in [false, true] {
-                    let data = isBold ? textCase.boldData() : textCase.data
-                    let boldSuffix = isBold ? "_Bold" : ""
-                    testListItem(
-                        theme: theme,
-                        interfaceStyle: interfaceStyle,
-                        style: .card(.outlined()),
-                        alignment: .center,
-                        size: .default,
-                        rounded: false,
-                        data: data,
-                        leading: nil,
-                        trailing: trailing,
-                        name: "static_outlined_center_standard_\(textCase.rawValue)_Trailing_\(trailingName)\(boldSuffix)")
-                    testNavigationListItem(
-                        theme: theme,
-                        interfaceStyle: interfaceStyle,
-                        style: .card(.outlined()),
-                        alignment: .center,
-                        size: .default,
-                        rounded: false,
-                        data: data,
-                        leading: nil,
-                        trailing: trailing,
-                        name: "navigation_outlined_center_standard_\(textCase.rawValue)_Trailing_\(trailingName)\(boldSuffix)")
-                }
-            }
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "static_outlined_center_standard_Trailing_\(trailingName)",
+                configuration: ListItemConfiguration(kind: .staticItem, trailing: trailing))
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "navigation_outlined_center_standard_Trailing_\(trailingName)",
+                configuration: ListItemConfiguration(kind: .navigation, trailing: trailing))
         }
     }
 
     // MARK: - Private helpers
 
-    // swiftlint:disable function_parameter_count
-    @MainActor private func testListItem(
+    /// Builds the grid cell for a given text variant and list item configuration.
+    @MainActor private func listItemVariantCell(
+        _ variant: TextVariant,
         theme: OUDSTheme,
-        interfaceStyle: UIUserInterfaceStyle,
-        style: OUDSListItemContentStyle,
-        alignment: OUDSListItemContainersAlignment,
-        size: OUDSListItemSize,
-        rounded: Bool,
-        data: OUDSListItemData,
-        leading: OUDSListItemLeading?,
-        trailing: OUDSListItemTrailing?,
-        name: String)
+        configuration: ListItemConfiguration) -> SnapshotGridCell<AnyView>
     {
-        let colorScheme: ColorScheme = interfaceStyle == .light ? .light : .dark
-        let illustration = OUDSThemeableView(theme: theme) {
-            OUDSStaticListItem(data: data, leading: leading, trailing: trailing)
-                .oudsListContentStyle(style)
-                .oudsListItemContainerAlignment(alignment)
-                .oudsListItemSize(size)
-                .oudsListItemRoundedMedia(rounded)
-                .background(theme.colors.bgPrimary.color(for: colorScheme))
+        SnapshotGridCell(caption: variant.caption) {
+            AnyView(
+                OUDSThemeableView(theme: theme) {
+                    configuration.kind.build(data: variant.data, leading: configuration.leading, trailing: configuration.trailing)
+                        .oudsListContentStyle(configuration.style)
+                        .oudsListItemContainerAlignment(configuration.alignment)
+                        .oudsListItemSize(configuration.size)
+                        .oudsListItemRoundedMedia(configuration.rounded)
+                })
         }
-        let testName = "testListItem_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        assertIllustration(illustration, on: interfaceStyle, named: name, testName: testName)
     }
 
-    @MainActor private func testNavigationListItem(
+    /// Builds a ``SnapshotGrid`` gathering all `textCase` x `isBold` combinations for a given list item
+    /// configuration, then captures it in a single snapshot.
+    ///
+    /// The snapshot is saved with a name based on the parameters which are not folded into the grid.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (OUDSTheme)
+    ///   - interfaceStyle: The user interface style (light or dark)
+    ///   - name: the snapshot name for this configuration
+    ///   - configuration: the structurally significant parameters of the list item (style, alignment, size, rounded, leading, trailing, kind)
+    @MainActor private func testListItemGrid(
         theme: OUDSTheme,
         interfaceStyle: UIUserInterfaceStyle,
-        style: OUDSListItemContentStyle,
-        alignment: OUDSListItemContainersAlignment,
-        size: OUDSListItemSize,
-        rounded: Bool,
-        data: OUDSListItemData,
-        leading: OUDSListItemLeading?,
-        trailing: OUDSListItemTrailing?,
-        name: String)
+        name: String,
+        configuration: ListItemConfiguration)
     {
+        let cells = TextVariant.all.map {
+            listItemVariantCell($0, theme: theme, configuration: configuration)
+        }
+
+        let testName = "testListItem_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let grid = SnapshotGrid(
+            columns: Self.gridColumns,
+            cellSize: Self.gridCellSize,
+            cells: cells,
+            title: "\(testName).\(name)")
+
         let colorScheme: ColorScheme = interfaceStyle == .light ? .light : .dark
         let illustration = OUDSThemeableView(theme: theme) {
-            OUDSNavigationListItem(data: data, indicatorType: .next, leading: leading, trailing: trailing)
-                .oudsListContentStyle(style)
-                .oudsListItemContainerAlignment(alignment)
-                .oudsListItemSize(size)
-                .oudsListItemRoundedMedia(rounded)
+            grid
                 .background(theme.colors.bgPrimary.color(for: colorScheme))
         }
-        let testName = "testListItem_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+
         assertIllustration(illustration, on: interfaceStyle, named: name, testName: testName)
     }
-    // swiftlint:enable function_parameter_count
 }
 
 // swiftlint:enable type_body_length
