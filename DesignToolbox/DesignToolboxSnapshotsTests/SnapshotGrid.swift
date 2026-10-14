@@ -134,8 +134,10 @@ struct SnapshotGrid<Content: View>: View {
     /// Vertical spacing between consecutive rows of cells. Follows the same rationale as ``cellSpacing``.
     var rowSpacing: CGFloat = 8
 
-    private let captionFont: Font = .system(size: 10, weight: .regular)
-    private let titleFont: Font = .system(size: 12, weight: .semibold)
+    private let captionFont: Font = .system(size: 10, weight: .regular).italic()
+    private let titleFont: Font = .system(size: 12, weight: .bold)
+    private let titleColor: Color = .init(red: 0xF1 / 255.0, green: 0x5E / 255.0, blue: 0x00 / 255.0)
+    private let captionColor: Color = .init(red: 0xA8 / 255.0, green: 0x85 / 255.0, blue: 0xD8 / 255.0)
 
     var body: some View {
         let rows = Self.chunked(cells, by: columns)
@@ -143,6 +145,7 @@ struct SnapshotGrid<Content: View>: View {
             if let title {
                 Text(title)
                     .font(titleFont)
+                    .foregroundStyle(titleColor)
                     .lineLimit(1)
             }
             ForEach(Array(rows.enumerated()), id: \.offset) { _, row in
@@ -154,6 +157,7 @@ struct SnapshotGrid<Content: View>: View {
                                 .background(Color(white: 1, opacity: 0.001)) // Keeps a deterministic frame even for transparent content
                             Text(cell.id)
                                 .font(captionFont)
+                                .foregroundStyle(captionColor)
                                 .multilineTextAlignment(.center)
                                 .lineLimit(3)
                                 .frame(width: cellSize.width)
