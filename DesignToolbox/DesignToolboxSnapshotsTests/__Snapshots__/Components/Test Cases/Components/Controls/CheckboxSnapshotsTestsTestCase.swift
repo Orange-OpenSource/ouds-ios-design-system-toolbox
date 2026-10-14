@@ -259,9 +259,6 @@ open class CheckboxSnapshotsTestsTestCase: XCTestCase {
                            testName: testName)
     }
 
-    // swiftlint:enable line_length
-    // swiftlint:enable function_default_parameter_at_end
-
     /// This function tests the `OUDSCheckboxIndeterminate` skeleton state (default configuration) for the given theme and color scheme.
     ///
     /// - Parameters:

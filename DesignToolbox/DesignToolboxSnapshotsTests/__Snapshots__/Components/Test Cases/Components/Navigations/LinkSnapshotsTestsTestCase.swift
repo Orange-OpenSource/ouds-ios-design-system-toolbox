@@ -201,8 +201,6 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
                            testName: testName)
     }
 
-    // swiftlint:enable function_default_parameter_at_end
-
     /// This function tests the `OUDSLink` skeleton state (default configuration) for the given theme and color scheme.
     ///
     /// - Parameters:

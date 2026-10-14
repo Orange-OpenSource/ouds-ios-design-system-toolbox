@@ -155,6 +155,7 @@ open class TextAreaSnapshotsTestsTestCase: XCTestCase {
         default:
             "other"
         }
+    }
 
     /// This function tests the `OUDSTextArea` skeleton state (default configuration) for the given theme and color scheme.
     ///

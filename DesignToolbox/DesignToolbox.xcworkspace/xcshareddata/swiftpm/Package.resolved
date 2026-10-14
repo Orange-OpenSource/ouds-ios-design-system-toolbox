@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1651-in-library-add-component-skeleton",
-        "revision" : "6b9bbb3783c4c2edaa272c604ae8f15b99236e70"
+        "branch" : "develop",
+        "revision" : "1186c77b866c22a0190f232c71ee5b16a9843680"
       }
     },
     {

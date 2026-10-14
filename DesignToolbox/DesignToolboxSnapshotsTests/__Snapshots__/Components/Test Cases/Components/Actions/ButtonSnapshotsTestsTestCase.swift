@@ -221,9 +221,6 @@ open class ButtonSnapshotsTestsTestCase: XCTestCase {
             testName: testName)
     }
 
-    // swiftlint:enable function_parameter_count
-    // swiftlint:enable line_length
-
     /// This function tests the `OUDSButton` skeleton state (default configuration) for the given theme and color scheme.
     ///
     /// - Parameters:

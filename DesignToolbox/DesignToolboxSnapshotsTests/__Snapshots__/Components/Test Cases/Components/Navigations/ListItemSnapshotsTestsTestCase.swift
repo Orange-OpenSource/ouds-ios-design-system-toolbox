@@ -450,8 +450,6 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
         assertIllustration(illustration, on: interfaceStyle, named: name, testName: testName)
     }
 
-    // swiftlint:enable function_parameter_count
-
     // MARK: - Skeleton
 
     /// This function tests the `OUDSStaticListItem` and `OUDSNavigationListItem` skeleton states (default configuration)

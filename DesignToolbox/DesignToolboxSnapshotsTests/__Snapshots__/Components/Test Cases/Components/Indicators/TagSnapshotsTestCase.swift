@@ -17,6 +17,7 @@ import SwiftUI
 import XCTest
 
 // swiftlint:disable required_deinit
+// swiftlint:disable type_body_length
 
 // MARK: - Test Cases
 
@@ -484,3 +485,4 @@ extension OUDSTag.Shape {
 }
 
 // swiftlint:enable required_deinit
+// swiftlint:enable type_body_length

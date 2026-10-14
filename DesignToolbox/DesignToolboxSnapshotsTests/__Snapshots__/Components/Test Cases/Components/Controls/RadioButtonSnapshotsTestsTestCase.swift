@@ -17,6 +17,7 @@ import SwiftUI
 import XCTest
 
 // swiftlint:disable required_deinit
+// swiftlint:disable file_length
 
 // MARK: - Test Cases
 
@@ -260,9 +261,6 @@ open class RadioButtonSnapshotsTestsTestCase: XCTestCase {
                            precision: 0.99, // Historical tolerance kept from the legacy test case.
                            testName: testName)
     }
-
-    // swiftlint:enable line_length
-    // swiftlint:enable function_default_parameter_at_end
 
     /// This function tests the `OUDSRadio` skeleton state (default configuration) for the given theme and color scheme.
     ///

@@ -240,9 +240,6 @@ open class SwitchSnapshotsTestsTestCase: XCTestCase {
                            testName: testName)
     }
 
-    // swiftlint:enable line_length
-    // swiftlint:enable function_default_parameter_at_end
-
     /// This function tests the `OUDSSwitch` skeleton state (default configuration) for the given theme and color scheme.
     ///
     /// - Parameters:

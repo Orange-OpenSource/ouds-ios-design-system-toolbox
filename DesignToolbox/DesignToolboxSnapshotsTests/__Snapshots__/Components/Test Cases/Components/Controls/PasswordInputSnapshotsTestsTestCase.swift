@@ -144,6 +144,7 @@ open class PasswordInputSnapshotsTestsTestCase: XCTestCase {
         default:
             "other"
         }
+    }
 
     /// This function tests the `OUDSPasswordInput` skeleton state (default configuration) for the given theme and color scheme.
     ///
