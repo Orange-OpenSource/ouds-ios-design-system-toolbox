@@ -25,19 +25,24 @@ import XCTest
 /// is in the management of the states.
 ///
 /// To limit the amount of reference images, combinatorial axes are gathered into a single ``SnapshotGrid``
-/// per remaining-axis combination (one assertion = one reference image). Each grid is laid out with one row
-/// per `indicatorState × isDisabled` so a regression touching a particular state stays identifiable.
+/// per remaining-axis combination (one assertion = one reference image).
 ///
 /// Axes kept as separate files (= filename):
-///   - `layoutFamily` ∈ {IndicatorOnly, Default, Reversed}
-///   - `mode` ∈ {Normal, Error, ErrorWithText, ReadOnly} (ErrorWithText skipped for IndicatorOnly)
-///   - `contentVariant` for Default / Reversed (6 variants covering label / description / image / flipped image)
-///   - `hasDivider` ∈ {false, true} (promoted to filename as requested)
+///   - `layoutScope` ∈ {IndicatorOnly, Item} (IndicatorOnly covers `OUDSCheckboxIndeterminate`; Item covers
+///     `OUDSCheckboxItemIndeterminate` with both Default and Reversed families folded into the same grid).
+///   - `mode` ∈ {Normal, Error, ErrorWithText, ReadOnly} (ErrorWithText skipped for IndicatorOnly).
+///   - `contentVariant` for Item (6 variants covering label / description / image / flipped image combinations).
 ///   - `a11yContrast` ∈ {Normal, HighContrast} (forced to filename because the UITraitCollection is applied
-///     to the whole illustration by `assertIllustration`, so a single grid cannot host both contrasts).
+///     to the whole illustration by `assertIllustration`).
 ///
 /// Axes folded into each grid:
-///   - `indicatorState × isDisabled` (= up to 6 cells).
+///   - Item grids: `family (Default|Reversed) × hasDivider × indicatorState × isDisabled`.
+///   - IndicatorOnly grids: `indicatorState × isDisabled`.
+///
+/// Grid layout for Item files:
+///   - 4 columns: `family × hasDivider` ∈ {Default/NoDivider, Default/Divider, Reversed/NoDivider, Reversed/Divider}.
+///   - Rows: one per `indicatorState × isDisabled` (6 rows in Normal mode, 3 rows in Error/ErrorWithText/ReadOnly
+///     where only `isDisabled = false` is exercised historically).
 ///
 /// **/!\ It does not test the hover and pressed states.**
 open class CheckboxSnapshotsTestsTestCase: XCTestCase {
@@ -57,7 +62,7 @@ open class CheckboxSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllCheckboxes(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for a11yContrast in [UIAccessibilityContrast.normal, .high] {
-            // IndicatorOnly: modes {Normal, Error, ReadOnly} (no ErrorWithText, no contentVariant, no divider).
+            // IndicatorOnly: modes {Normal, Error, ReadOnly}.
             for mode in CheckboxMode.indicatorOnlyModes {
                 testIndicatorOnlyGrid(theme: theme,
                                       interfaceStyle: interfaceStyle,
@@ -65,21 +70,14 @@ open class CheckboxSnapshotsTestsTestCase: XCTestCase {
                                       mode: mode)
             }
 
-            // Default & Reversed: modes {Normal, Error, ErrorWithText, ReadOnly} × 6 contentVariants × 2 dividers.
-            for family in [CheckboxLayoutFamily.default, .reversed] {
-                for mode in CheckboxMode.itemModes {
-                    for contentVariant in CheckboxContentVariant.allCases {
-                        for hasDivider in [false, true] {
-                            let variant = CheckboxItemVariant(family: family,
-                                                              mode: mode,
-                                                              contentVariant: contentVariant,
-                                                              hasDivider: hasDivider)
-                            testItemGrid(theme: theme,
-                                         interfaceStyle: interfaceStyle,
-                                         a11yContrast: a11yContrast,
-                                         variant: variant)
-                        }
-                    }
+            // Item (Default + Reversed combined): modes × 6 contentVariants.
+            for mode in CheckboxMode.itemModes {
+                for contentVariant in CheckboxContentVariant.allCases {
+                    testItemGrid(theme: theme,
+                                 interfaceStyle: interfaceStyle,
+                                 a11yContrast: a11yContrast,
+                                 mode: mode,
+                                 contentVariant: contentVariant)
                 }
             }
         }
@@ -116,34 +114,48 @@ open class CheckboxSnapshotsTestsTestCase: XCTestCase {
                    cells: cells)
     }
 
-    // MARK: - Item Grid (Default / Reversed)
+    // MARK: - Item Grid (Default + Reversed combined)
 
     @MainActor private func testItemGrid(theme: OUDSTheme,
                                          interfaceStyle: UIUserInterfaceStyle,
                                          a11yContrast: UIAccessibilityContrast,
-                                         variant: CheckboxItemVariant)
+                                         mode: CheckboxMode,
+                                         contentVariant: CheckboxContentVariant)
     {
-        let disabledValues = variant.mode.testsDisabled ? [false, true] : [false]
+        let disabledValues = mode.testsDisabled ? [false, true] : [false]
+
+        // One column per (family × hasDivider), one row per (indicatorState × isDisabled).
+        let columnAxes: [(family: CheckboxLayoutFamily, hasDivider: Bool)] = [
+            (.default, false), (.default, true), (.reversed, false), (.reversed, true),
+        ]
+
         var cells: [SnapshotGridCell<AnyView>] = []
         for state in OUDSCheckboxIndicatorState.allCases {
             for isDisabled in disabledValues {
-                let layout = makeItemLayout(variant: variant)
-                cells.append(cell(theme: theme,
-                                  layout: layout,
-                                  indicatorState: state,
-                                  isDisabled: isDisabled,
-                                  caption: stateCaption(state: state, isDisabled: isDisabled)))
+                for axis in columnAxes {
+                    let variant = CheckboxItemVariant(family: axis.family,
+                                                      mode: mode,
+                                                      contentVariant: contentVariant,
+                                                      hasDivider: axis.hasDivider)
+                    let layout = makeItemLayout(variant: variant)
+                    cells.append(cell(theme: theme,
+                                      layout: layout,
+                                      indicatorState: state,
+                                      isDisabled: isDisabled,
+                                      caption: itemCaption(family: axis.family,
+                                                           hasDivider: axis.hasDivider,
+                                                           state: state,
+                                                           isDisabled: isDisabled)))
+                }
             }
         }
 
-        let columns = disabledValues.count
-        let dividerToken = variant.hasDivider ? "Divider" : "NoDivider"
-        let name = "\(variant.family.filenameToken)_\(variant.contentVariant.filenameToken)_\(variant.mode.filenameToken)_\(dividerToken)_\(contrastToken(a11yContrast))"
+        let name = "\(contentVariant.filenameToken)_\(mode.filenameToken)_\(contrastToken(a11yContrast))"
         assertGrid(theme: theme,
                    interfaceStyle: interfaceStyle,
                    a11yContrast: a11yContrast,
                    snapshotName: name,
-                   columns: columns,
+                   columns: columnAxes.count,
                    cells: cells)
     }
 
@@ -202,6 +214,16 @@ open class CheckboxSnapshotsTestsTestCase: XCTestCase {
         "\(state.name)\n\(isDisabled ? "disabled" : "enabled")"
     }
 
+    private func itemCaption(family: CheckboxLayoutFamily,
+                             hasDivider: Bool,
+                             state: OUDSCheckboxIndicatorState,
+                             isDisabled: Bool) -> String
+    {
+        let familyShort = family == .default ? "Def" : "Rev"
+        let dividerShort = hasDivider ? "+div" : "-div"
+        return "\(familyShort) \(dividerShort)\n\(state.name) · \(isDisabled ? "dis" : "ena")"
+    }
+
     private func contrastToken(_ contrast: UIAccessibilityContrast) -> String {
         contrast == .high ? "HighContrast" : "NormalContrast"
     }
@@ -242,7 +264,7 @@ open class CheckboxSnapshotsTestsTestCase: XCTestCase {
 
 // MARK: - Promoted Axes
 
-/// Groups the axes that identify a single Default/Reversed item grid, to keep call-site signatures small.
+/// Groups the axes that identify a single Default/Reversed item cell, to keep call-site signatures small.
 struct CheckboxItemVariant {
     let family: CheckboxLayoutFamily
     let mode: CheckboxMode
@@ -250,19 +272,10 @@ struct CheckboxItemVariant {
     let hasDivider: Bool
 }
 
-/// The checkbox layout family. Promoted to the snapshot filename.
+/// The checkbox layout family. Folded into the grid (one column per family × hasDivider).
 enum CheckboxLayoutFamily {
     case `default`
     case reversed
-
-    var filenameToken: String {
-        switch self {
-        case .default:
-            "Default"
-        case .reversed:
-            "Reversed"
-        }
-    }
 }
 
 /// The checkbox functional mode. Promoted to the snapshot filename.
