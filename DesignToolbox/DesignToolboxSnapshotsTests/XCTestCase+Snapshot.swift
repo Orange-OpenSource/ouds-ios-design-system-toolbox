@@ -19,7 +19,7 @@ import XCTest
 extension XCTestCase {
 
     /// Determines the percentage of pixels that must match exactly
-    public static let precision: Float = 0.96
+    public static let precision: Float = 0.98
 
     /// Determines the percentage of pixels that must match
     /// but adjusted for minor visual differences that may not be noticeable to the human eye,
