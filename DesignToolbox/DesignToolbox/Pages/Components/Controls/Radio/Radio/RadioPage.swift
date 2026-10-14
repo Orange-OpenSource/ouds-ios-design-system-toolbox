@@ -45,6 +45,7 @@ private struct RadioDemo: View {
                   isError: configurationModel.isError,
                   isReadOnly: configurationModel.isReadOnly)
             .disabled(!configurationModel.enabled)
+            .showSkeleton(isVisible: configurationModel.showSkeleton)
             .accessibilityIdentifier(A11YIdentifiers.componentRadio)
     }
 }

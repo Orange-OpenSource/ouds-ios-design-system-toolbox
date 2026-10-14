@@ -131,7 +131,7 @@ struct ListItemImageConfiguration: View {
                        selection: $configurationModel.contentMode,
                        chips: ContentMode.chips)
 
-        OUDSSwitchItem("app_components_animated_tech", isOn: $configurationModel.isAnimated)
+        OUDSSwitchItem("app_components_common_animated_tech", isOn: $configurationModel.isAnimated)
     }
 }
 

@@ -18,9 +18,10 @@ struct IndicatorsView: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink("Badge", destination: BadgesView())
+                NavigationLink("Badges", destination: BadgesView())
                 NavigationLink("Progress Indicators", destination: ProgressIndicatorsView())
-                NavigationLink("Tag", destination: TagsView())
+                NavigationLink("Skeletons", destination: SkeletonsView())
+                NavigationLink("Tags", destination: TagsView())
             }
         }
     }

@@ -35,6 +35,10 @@ enum CategoricalTagLayout: DesignToolboxEnumLocalizedRepresentable, CaseIterable
 
 final class CategoricalTagConfigurationModel: ComponentConfiguration {
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var enabled: Bool {
         didSet { updateCode() }
     }
@@ -80,6 +84,7 @@ final class CategoricalTagConfigurationModel: ComponentConfiguration {
     }
 
     override init() {
+        showSkeleton = false
         enabled = true
         label = String(localized: "app_components_common_label_label")
         category = .category1
@@ -129,16 +134,24 @@ final class CategoricalTagConfigurationModel: ComponentConfiguration {
     // swiftlint:disable line_length
     override func updateCode() {
         if isLoading {
-            code = "OUDSCategoricalTag(loadingLabel: \"\(label)\"\(progressPattern)\(categoryPattern)\(shapePattern)\(sizePattern))"
+            code = """
+            OUDSCategoricalTag(loadingLabel: \"\(label)\"\(progressPattern)\(categoryPattern)\(shapePattern)\(sizePattern))
+            \(skeletonPattern)
+            """
         } else {
             code = """
             OUDSCategoricalTag(label: "\(label)", category: \(category.technicalDescription), leading: \(leadingPattern), shape: \(shape.technicalDescription), size: \(size.technicalDescription))
+            \(skeletonPattern)
             \(disablePattern)
             """
         }
     }
 
     // swiftlint:enable line_length
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
+    }
 
     private var disablePattern: String {
         !isLoading && !enabled ? ".disabled(true)" : ""
@@ -187,6 +200,8 @@ struct CategoricalTagConfigurationView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
             OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
                 .disabled(configurationModel.isLoading)
 
