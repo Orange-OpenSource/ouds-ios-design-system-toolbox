@@ -23,200 +23,378 @@ import XCTest
 /// Tests the UI rendering of the `OUDSCheckboxIndeterminate` and `OUDSCheckboxItemIndeterminate` for each parameter.
 /// `OUDSCheckbox` and `OUDSCheckboxItem` won't be tested as, until today, are based on the same layouts and look and feels, and the only difference
 /// is in the management of the states.
+///
+/// To limit the amount of reference images, combinatorial axes are gathered into a single ``SnapshotGrid``
+/// per remaining-axis combination (one assertion = one reference image).
+///
+/// Axes kept as separate files (= filename):
+///   - `layoutScope` ∈ {IndicatorOnly, Item} (IndicatorOnly covers `OUDSCheckboxIndeterminate`; Item covers
+///     `OUDSCheckboxItemIndeterminate` with both Default and Reversed families folded into the same grid).
+///   - `mode` ∈ {Normal, Error, ErrorWithText, ReadOnly} (ErrorWithText skipped for IndicatorOnly).
+///   - `contentVariant` for Item (6 variants covering label / description / image / flipped image combinations).
+///   - `a11yContrast` ∈ {Normal, HighContrast} (forced to filename because the UITraitCollection is applied
+///     to the whole illustration by `assertIllustration`).
+///
+/// Axes folded into each grid:
+///   - Item grids: `family (Default|Reversed) × hasDivider × indicatorState × isDisabled`.
+///   - IndicatorOnly grids: `indicatorState × isDisabled`.
+///
+/// Grid layout for Item files:
+///   - 4 columns: `family × hasDivider` ∈ {Default/NoDivider, Default/Divider, Reversed/NoDivider, Reversed/Divider}.
+///   - Rows: one per `indicatorState × isDisabled` (6 rows in Normal mode, 3 rows in Error/ErrorWithText/ReadOnly
+///     where only `isDisabled = false` is exercised historically).
+///
+/// **/!\ It does not test the hover and pressed states.**
 open class CheckboxSnapshotsTestsTestCase: XCTestCase {
 
-    // swiftlint:disable function_body_length
-    /// This function tests all checkboxes configuration for the given theme and color scheme on a standard surface.
+    /// Fixed size applied to each cell of a checkbox grid. Width accommodates label + description + image
+    /// + (optional) divider; height accommodates label + description + optional error text + 2 caption lines.
+    private static let cellSize = CGSize(width: 320, height: 90)
+
+    // MARK: - Entry Point
+
+    /// Tests all checkbox configurations for the given theme and color scheme on a standard surface.
     ///
     /// **/!\ It does not test the hover and pressed states.**
-    ///
-    /// It iterates through all `OUDSCheckboxIndicatorState`, for all combinations of layouts in enabled and disabled state.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllCheckboxes(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        for indicatorState in OUDSCheckboxIndicatorState.allCases {
-            for someLayout in availableLayouts(isError: false, isReadOnly: false) {
-                testCheckbox(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             a11yContrast: .normal,
-                             layout: someLayout,
-                             indicatorState: indicatorState,
-                             isDisabled: false)
-
-                testCheckbox(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             a11yContrast: .normal,
-                             layout: someLayout,
-                             indicatorState: indicatorState,
-                             isDisabled: true)
-
-                testCheckbox(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             a11yContrast: .high,
-                             layout: someLayout,
-                             indicatorState: indicatorState,
-                             isDisabled: false)
-
-                testCheckbox(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             a11yContrast: .high,
-                             layout: someLayout,
-                             indicatorState: indicatorState,
-                             isDisabled: true)
-            }
-        }
-
-        for indicatorState in OUDSCheckboxIndicatorState.allCases {
-            for someLayout in availableLayouts(isError: true, isReadOnly: false) {
-                testCheckbox(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             a11yContrast: .normal,
-                             layout: someLayout,
-                             indicatorState: indicatorState,
-                             isDisabled: false)
-
-                testCheckbox(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             a11yContrast: .high,
-                             layout: someLayout,
-                             indicatorState: indicatorState,
-                             isDisabled: false)
+        for a11yContrast in [UIAccessibilityContrast.normal, .high] {
+            // IndicatorOnly: modes {Normal, Error, ReadOnly}.
+            for mode in CheckboxMode.indicatorOnlyModes {
+                testIndicatorOnlyGrid(theme: theme,
+                                      interfaceStyle: interfaceStyle,
+                                      a11yContrast: a11yContrast,
+                                      mode: mode)
             }
 
-            for someLayout in availableLayouts(isError: true, errorText: "Error text", isReadOnly: false) {
-                testCheckbox(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             a11yContrast: .normal,
-                             layout: someLayout,
-                             indicatorState: indicatorState,
-                             isDisabled: false)
-
-                testCheckbox(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             a11yContrast: .high,
-                             layout: someLayout,
-                             indicatorState: indicatorState,
-                             isDisabled: false)
-            }
-        }
-
-        for indicatorState in OUDSCheckboxIndicatorState.allCases {
-            for someLayout in availableLayouts(isError: false, isReadOnly: true) {
-                testCheckbox(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             a11yContrast: .normal,
-                             layout: someLayout,
-                             indicatorState: indicatorState,
-                             isDisabled: false)
-
-                testCheckbox(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             a11yContrast: .high,
-                             layout: someLayout,
-                             indicatorState: indicatorState,
-                             isDisabled: false)
+            // Item (Default + Reversed combined): modes × 6 contentVariants.
+            for mode in CheckboxMode.itemModes {
+                for contentVariant in CheckboxContentVariant.allCases {
+                    testItemGrid(theme: theme,
+                                 interfaceStyle: interfaceStyle,
+                                 a11yContrast: a11yContrast,
+                                 mode: mode,
+                                 contentVariant: contentVariant)
+                }
             }
         }
     }
 
-    // swiftlint:enable function_body_length
+    // MARK: - IndicatorOnly Grid
 
-    /// This function tests checkbox according to all parameters of the configuration available on a `OUDSCheckbox`
-    /// of `OUDSCheckboxItem` for the given theme and color schemes.
-    ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
-    ///
-    /// **/!\ It does not test the hover and pressed states.**
-    ///
-    /// - Parameters:
-    ///   - theme: The theme (OUDSTheme)
-    ///   - interfaceStyle: The user interface style (light or dark)
-    ///   - a11yContrast: The constrat to apply (high or not)
-    ///   - layout: the layout of the checkbox
-    ///   - indicatorState: the indicator state of the checkbox
-    ///   - isDisabled: the disabled flag
-    @MainActor func testCheckbox(theme: OUDSTheme,
-                                 interfaceStyle: UIUserInterfaceStyle,
-                                 a11yContrast: UIAccessibilityContrast,
+    @MainActor private func testIndicatorOnlyGrid(theme: OUDSTheme,
+                                                  interfaceStyle: UIUserInterfaceStyle,
+                                                  a11yContrast: UIAccessibilityContrast,
+                                                  mode: CheckboxMode)
+    {
+        let disabledValues = mode.testsDisabled ? [false, true] : [false]
+        var cells: [SnapshotGridCell<AnyView>] = []
+        for state in OUDSCheckboxIndicatorState.allCases {
+            for isDisabled in disabledValues {
+                let layout = CheckboxIndeterminateTest.Layout.indicatorOnly(isError: mode.isError,
+                                                                            isReadOnly: mode.isReadOnly)
+                cells.append(cell(theme: theme,
+                                  layout: layout,
+                                  indicatorState: state,
+                                  isDisabled: isDisabled,
+                                  caption: stateCaption(state: state, isDisabled: isDisabled)))
+            }
+        }
+
+        let columns = disabledValues.count
+        let name = "IndicatorOnly_\(mode.filenameToken)_\(contrastToken(a11yContrast))"
+        assertGrid(theme: theme,
+                   interfaceStyle: interfaceStyle,
+                   a11yContrast: a11yContrast,
+                   snapshotName: name,
+                   columns: columns,
+                   cells: cells)
+    }
+
+    // MARK: - Item Grid (Default + Reversed combined)
+
+    @MainActor private func testItemGrid(theme: OUDSTheme,
+                                         interfaceStyle: UIUserInterfaceStyle,
+                                         a11yContrast: UIAccessibilityContrast,
+                                         mode: CheckboxMode,
+                                         contentVariant: CheckboxContentVariant)
+    {
+        let disabledValues = mode.testsDisabled ? [false, true] : [false]
+
+        // One column per (family × hasDivider), one row per (indicatorState × isDisabled).
+        let columnAxes: [(family: CheckboxLayoutFamily, hasDivider: Bool)] = [
+            (.default, false), (.default, true), (.reversed, false), (.reversed, true),
+        ]
+
+        var cells: [SnapshotGridCell<AnyView>] = []
+        for state in OUDSCheckboxIndicatorState.allCases {
+            for isDisabled in disabledValues {
+                for axis in columnAxes {
+                    let variant = CheckboxItemVariant(family: axis.family,
+                                                      mode: mode,
+                                                      contentVariant: contentVariant,
+                                                      hasDivider: axis.hasDivider)
+                    let layout = makeItemLayout(variant: variant)
+                    cells.append(cell(theme: theme,
+                                      layout: layout,
+                                      indicatorState: state,
+                                      isDisabled: isDisabled,
+                                      caption: itemCaption(family: axis.family,
+                                                           hasDivider: axis.hasDivider,
+                                                           state: state,
+                                                           isDisabled: isDisabled)))
+                }
+            }
+        }
+
+        let name = "\(contentVariant.filenameToken)_\(mode.filenameToken)_\(contrastToken(a11yContrast))"
+        assertGrid(theme: theme,
+                   interfaceStyle: interfaceStyle,
+                   a11yContrast: a11yContrast,
+                   snapshotName: name,
+                   columns: columnAxes.count,
+                   cells: cells)
+    }
+
+    // MARK: - Layout Builders
+
+    @MainActor private func makeItemLayout(variant: CheckboxItemVariant) -> CheckboxIndeterminateTest.Layout {
+        let labelText = variant.contentVariant.labelText
+        let descriptionText = variant.contentVariant.descriptionText
+        let image = variant.contentVariant.image
+        let isError = variant.mode.isError
+        let errorText = variant.mode.errorText
+        let isReadOnly = variant.mode.isReadOnly
+        let hasDivider = variant.hasDivider
+
+        switch variant.family {
+        case .default:
+            return .default(labelText: labelText,
+                            descriptionText: descriptionText,
+                            image: image,
+                            isError: isError,
+                            errorText: errorText,
+                            hasDivider: hasDivider,
+                            isReadOnly: isReadOnly)
+        case .reversed:
+            return .reversed(labelText: labelText,
+                             descriptionText: descriptionText,
+                             image: image,
+                             isError: isError,
+                             errorText: errorText,
+                             hasDivider: hasDivider,
+                             isReadOnly: isReadOnly)
+        }
+    }
+
+    // MARK: - Cell Builder
+
+    @MainActor private func cell(theme: OUDSTheme,
                                  layout: CheckboxIndeterminateTest.Layout,
                                  indicatorState: OUDSCheckboxIndicatorState,
-                                 isDisabled: Bool)
+                                 isDisabled: Bool,
+                                 caption: String) -> SnapshotGridCell<AnyView>
     {
-        // Generate the illustration for the specified configuration
+        SnapshotGridCell(caption: caption) {
+            AnyView(
+                OUDSThemeableView(theme: theme) {
+                    CheckboxIndeterminateTest(layout: layout,
+                                              indicatorState: indicatorState,
+                                              isDisabled: isDisabled)
+                })
+        }
+    }
+
+    // MARK: - Captions
+
+    private func stateCaption(state: OUDSCheckboxIndicatorState, isDisabled: Bool) -> String {
+        "\(state.name)\n\(isDisabled ? "disabled" : "enabled")"
+    }
+
+    private func itemCaption(family: CheckboxLayoutFamily,
+                             hasDivider: Bool,
+                             state: OUDSCheckboxIndicatorState,
+                             isDisabled: Bool) -> String
+    {
+        let familyShort = family == .default ? "Def" : "Rev"
+        let dividerShort = hasDivider ? "+div" : "-div"
+        return "\(familyShort) \(dividerShort)\n\(state.name) · \(isDisabled ? "dis" : "ena")"
+    }
+
+    private func contrastToken(_ contrast: UIAccessibilityContrast) -> String {
+        contrast == .high ? "HighContrast" : "NormalContrast"
+    }
+
+    // MARK: - Grid Assertion
+
+    /// Composes the grid and captures a single snapshot assertion.
+    @MainActor private func assertGrid(theme: OUDSTheme,
+                                       interfaceStyle: UIUserInterfaceStyle,
+                                       a11yContrast: UIAccessibilityContrast,
+                                       snapshotName: String,
+                                       columns: Int,
+                                       cells: [SnapshotGridCell<AnyView>])
+    {
+        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+
+        let grid = SnapshotGrid(
+            columns: columns,
+            cellSize: Self.cellSize,
+            cells: cells,
+            title: "\(testName).\(snapshotName)")
+
         let illustration = OUDSThemeableView(theme: theme) {
-            CheckboxIndeterminateTest(layout: layout,
-                                      indicatorState: indicatorState,
-                                      isDisabled: isDisabled)
+            grid
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
-        // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>.<layout>_<indicatorState>_<disabledPatern> where:
-        // - `disabledPatern` is empty if not disabled
-        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let disabledPatern = isDisabled ? "_Disabled" : ""
-        let name = "\(layout.description.camelCase)_\(indicatorState.name)_\(disabledPatern)"
-
-        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
                            a11yContrast: a11yContrast,
-                           named: name,
-                           precision: 0.92, // Not found why it failed for indicator only in light mode enabled for Sosh (｡•́︿•̀｡)
+                           named: snapshotName,
+                           precision: 0.92, // Historical tolerance kept from the legacy test case.
                            testName: testName)
     }
-
-    // swiftlint:disable line_length
-    // swiftlint:disable function_default_parameter_at_end
-    @MainActor private func availableLayouts(isError: Bool, errorText: String? = nil, isReadOnly: Bool) -> [CheckboxIndeterminateTest.Layout] {
-        [
-            CheckboxIndeterminateTest.Layout.indicatorOnly(isError: isError, isReadOnly: isReadOnly),
-
-            CheckboxIndeterminateTest.Layout.default(labelText: "Takoyaki", descriptionText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Takoyaki", descriptionText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-
-            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", descriptionText: nil, image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", descriptionText: nil, image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-
-            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", descriptionText: nil, image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Kammthaar", descriptionText: nil, image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", descriptionText: "Bravas", image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Takoyaki", descriptionText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Takoyaki", descriptionText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", descriptionText: nil, image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", descriptionText: nil, image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", image: OUDSImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", descriptionText: nil, image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", descriptionText: nil, image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", descriptionText: "Bravas", image: OUDSImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
-        ]
-    }
-    // swiftlint:enable line_length
-    // swiftlint:enable function_default_parameter_at_end
 }
 
 // swiftlint:enable required_deinit
 
+// MARK: - Promoted Axes
+
+/// Groups the axes that identify a single Default/Reversed item cell, to keep call-site signatures small.
+struct CheckboxItemVariant {
+    let family: CheckboxLayoutFamily
+    let mode: CheckboxMode
+    let contentVariant: CheckboxContentVariant
+    let hasDivider: Bool
+}
+
+/// The checkbox layout family. Folded into the grid (one column per family × hasDivider).
+enum CheckboxLayoutFamily {
+    case `default`
+    case reversed
+}
+
+/// The checkbox functional mode. Promoted to the snapshot filename.
+///
+/// Combines the legacy `isError / errorText / isReadOnly` flags into a single enum. Only valid combinations
+/// from the original test case are represented.
+enum CheckboxMode: CaseIterable {
+    case normal
+    case error
+    case errorWithText
+    case readOnly
+
+    static let indicatorOnlyModes: [CheckboxMode] = [.normal, .error, .readOnly]
+    static let itemModes: [CheckboxMode] = [.normal, .error, .errorWithText, .readOnly]
+
+    var filenameToken: String {
+        switch self {
+        case .normal:
+            "Normal"
+        case .error:
+            "Error"
+        case .errorWithText:
+            "ErrorWithText"
+        case .readOnly:
+            "ReadOnly"
+        }
+    }
+
+    var isError: Bool {
+        self == .error || self == .errorWithText
+    }
+
+    var isReadOnly: Bool {
+        self == .readOnly
+    }
+
+    var errorText: String? {
+        self == .errorWithText ? "Error text" : nil
+    }
+
+    /// Only the `normal` mode exercises the disabled flag in the legacy tests. Keep that behavior.
+    var testsDisabled: Bool {
+        self == .normal
+    }
+}
+
+/// The content variant used by `.default` / `.reversed` layouts. Promoted to the snapshot filename.
+///
+/// Covers all six combinations of (label-only vs label+description) × (no image, image, flipped image)
+/// exercised in the legacy test case so visual coverage is preserved.
+enum CheckboxContentVariant: CaseIterable {
+    case labelOnly
+    case labelDescription
+    case labelImage
+    case labelDescriptionImage
+    case labelImageFlipped
+    case labelDescriptionImageFlipped
+
+    var filenameToken: String {
+        switch self {
+        case .labelOnly:
+            "LabelOnly"
+        case .labelDescription:
+            "LabelDescription"
+        case .labelImage:
+            "LabelImage"
+        case .labelDescriptionImage:
+            "LabelDescImage"
+        case .labelImageFlipped:
+            "LabelImageFlipped"
+        case .labelDescriptionImageFlipped:
+            "LabelDescImageFlipped"
+        }
+    }
+
+    var labelText: String {
+        hasDescription ? "Patatas" : (hasImage ? "Kammthaar" : "Takoyaki")
+    }
+
+    var descriptionText: String? {
+        hasDescription ? "Bravas" : nil
+    }
+
+    @MainActor var image: OUDSImage? {
+        switch self {
+        case .labelOnly, .labelDescription:
+            nil
+        case .labelImage, .labelDescriptionImage:
+            OUDSImage(asset: Image.defaultImage())
+        case .labelImageFlipped, .labelDescriptionImageFlipped:
+            OUDSImage(asset: Image.defaultImage(), flipped: true)
+        }
+    }
+
+    private var hasDescription: Bool {
+        switch self {
+        case .labelDescription, .labelDescriptionImage, .labelDescriptionImageFlipped:
+            true
+        default:
+            false
+        }
+    }
+
+    private var hasImage: Bool {
+        switch self {
+        case .labelImage, .labelDescriptionImage, .labelImageFlipped, .labelDescriptionImageFlipped:
+            true
+        default:
+            false
+        }
+    }
+}
+
 // MARK: - Checkbox Test
 
-/// The test object which will define the `OUDSCheckboxIndeterminate` or `OUDSCheckboxItemIndeterminate`object to test.
+/// The test object which will define the `OUDSCheckboxIndeterminate` or `OUDSCheckboxItemIndeterminate` object to test.
 struct CheckboxIndeterminateTest: View {
 
-    enum Layout { // Checkbox.Layout is private, not accessiblefrom  here
+    enum Layout { // Checkbox.Layout is private, not accessible from here
         case indicatorOnly(isError: Bool, isReadOnly: Bool)
         case `default`(labelText: String,
                        descriptionText: String?,
@@ -232,19 +410,6 @@ struct CheckboxIndeterminateTest: View {
                       errorText: String? = nil,
                       hasDivider: Bool,
                       isReadOnly: Bool)
-
-        // swiftlint:disable line_length
-        @MainActor var description: String {
-            switch self {
-            case let .indicatorOnly(isError, isReadOnly):
-                "layout-indicatorOnly-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")"
-            case let .default(_, descriptionText, image, isError, errorText, hasDivider, isReadOnly):
-                "layout-default-label-\(descriptionText != nil ? "withDescription" : "")-\(image != nil ? "withIcon" : "")-\(image?.flipped == true ? "flipIcon" : "")-\(isError ? "error-\(errorText != nil ? "withError" : "")" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
-            case let .reversed(_, descriptionText, image, isError, errorText, hasDivider, isReadOnly):
-                "layout-inverse-label-\(descriptionText != nil ? "descriptionText" : "")-\(image != nil ? "withIcon" : "")-\(image?.flipped == true ? "flipIcon" : "")-\(isError ? "error-\(errorText != nil ? "witError" : "")" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
-            }
-        }
-        // swiftlint:enable line_length
     }
 
     let layout: Layout

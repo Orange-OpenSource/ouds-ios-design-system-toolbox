@@ -19,87 +19,142 @@ import XCTest
 // MARK: - Test Cases
 
 // swiftlint:disable required_deinit
-/// Tests the UI rendering of the `OUDSTextArea` for each parameter
+
+/// Tests the UI rendering of the `OUDSTextArea` for each parameter.
+///
+/// To limit the amount of reference images, combinatorial axes are gathered into a single ``SnapshotGrid``
+/// per remaining-axis combination (one assertion = one reference image).
+///
+/// Axes kept as separate files (= filename):
+///   - `testType` ∈ {styleAndStatus, helpers}: each test type exercises a different content inside each cell
+///     (status variants vs helper variants).
+///   - `status` ∈ {enabled, error, loading, readOnly, disabled}: promoted so each file keeps a reasonable
+///     amount of text areas (otherwise a single file would stack dozens of them, hurting readability).
+///
+/// Axes folded into each grid:
+///   - `outlined × constrainedMaxWidth` (= 2 × 2 = 4 cells).
+///
+/// Grid layout:
+///   - 2 columns: `outlined` ∈ {filled, outlined}.
+///   - 2 rows: `constrainedMaxWidth` ∈ {full-width, constrained}.
+///
+/// **Note on the Loading status**: `OUDSTextArea.loading(progress:)` renders an
+/// `OUDSCircularProgressIndicator(animated: true)` that animates from 0 to the target value. The
+/// `TestTextAreaView` applies the "Solution F" (`.transaction { $0.animation = nil }`) so the arc is
+/// captured at its target value instead of appearing empty at t=0.
+///
+/// **/!\ It does not test the hover and pressed states.**
 open class TextAreaSnapshotsTestsTestCase: XCTestCase {
 
-    /// This function tests some text area configurations for the given theme and color schemes on a standard surface.
+    // MARK: - Entry Point
+
+    /// Tests all text area configurations for the given theme and color scheme on a standard surface.
     ///
     /// **/!\ It does not test the hover and pressed states.**
-    ///
-    /// It iterates through all combinations of configuration:
-    /// - the outlined style
-    /// - the constrained max width layout
-    /// - the status of the text area
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllTextAreas(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        for outlined in [true, false] {
-            for constrainedMaxWidth in [true, false] {
-                // Drop the loading status still the progress indicator is done
-                for status in OUDSTextArea.Status.allCases {
-                    testTextArea(theme: theme,
+        for testType in TestTextAreaView.TestType.allCases {
+            for status in OUDSTextArea.Status.allCases {
+                testTextAreaGrid(theme: theme,
                                  interfaceStyle: interfaceStyle,
-                                 testType: .styleAndStatus,
-                                 outlined: outlined,
-                                 constrainedMaxWidth: constrainedMaxWidth,
+                                 testType: testType,
                                  status: status)
-                    testTextArea(theme: theme,
-                                 interfaceStyle: interfaceStyle,
-                                 testType: .helpers,
-                                 outlined: outlined,
-                                 constrainedMaxWidth: constrainedMaxWidth,
-                                 status: status)
-                }
             }
         }
     }
 
-    /// This function tests a text area configuration for the given theme and color scheme on a standard surface.
-    ///
-    /// **/!\ It does not test the hover and pressed states.**
-    ///
-    /// According to the `testType`, the right view for illustration is created and the right name of test is generated.
-    /// To reduce the number of snapshots, some configurations are set in a single illustration.
-    ///
-    /// - Parameters:
-    ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    ///   - testType: The type of test expected.
-    ///   - outlined: Whether the outlined style is applied.
-    ///   - constrainedMaxWidth: Whether the max width is constrained.
-    ///   - status: The status of the text area.
-    @MainActor private func testTextArea(theme: OUDSTheme,
-                                         interfaceStyle: UIUserInterfaceStyle,
-                                         testType: TestTextAreaView.TestType,
-                                         outlined: Bool,
-                                         constrainedMaxWidth: Bool,
-                                         status: OUDSTextArea.Status)
+    // MARK: - Grid Builder
+
+    @MainActor private func testTextAreaGrid(theme: OUDSTheme,
+                                             interfaceStyle: UIUserInterfaceStyle,
+                                             testType: TestTextAreaView.TestType,
+                                             status: OUDSTextArea.Status)
     {
-        // Generate the illustration for configuration elements
+        // 2 columns per outlined, 2 rows per constrainedMaxWidth.
+        let rowAxes: [Bool] = [false, true] // constrainedMaxWidth
+        let columnAxes: [Bool] = [false, true] // outlined
+
+        var cells: [SnapshotGridCell<AnyView>] = []
+        for constrainedMaxWidth in rowAxes {
+            for outlined in columnAxes {
+                cells.append(cell(theme: theme,
+                                  testType: testType,
+                                  outlined: outlined,
+                                  constrainedMaxWidth: constrainedMaxWidth,
+                                  status: status,
+                                  caption: caption(outlined: outlined,
+                                                   constrainedMaxWidth: constrainedMaxWidth)))
+            }
+        }
+
+        let testName = "test-\(testType)_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let snapshotName = statusShort(status).capitalized
+
+        let grid = SnapshotGrid(
+            columns: columnAxes.count,
+            cellSize: testType.cellSize,
+            cells: cells,
+            title: "\(testName).\(snapshotName)",
+            cellSpacing: 24,
+            rowSpacing: 24)
+
         let illustration = OUDSThemeableView(theme: theme) {
-            TestTextAreaView(type: testType,
-                             outlined: outlined,
-                             constrainedMaxWidth: constrainedMaxWidth,
-                             status: status)
+            grid
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
-        // Create a unique snapshot name based on the current configuration:
-        // test<testType>_<themeName>_<colorScheme>.<outlinedPattern><constrainedPattern><statusPattern>
-        let testName = "test-\(testType)_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let outlinedPattern = outlined ? "_Outlined" : ""
-        let constrainedPattern = constrainedMaxWidth ? "_Constrained" : ""
-        let statusPattern = status.technicalDescription.contains("error") ? "error" : status.technicalDescription
-
-        let named = "\(outlinedPattern)\(constrainedPattern)\(statusPattern)"
-
-        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
-                           named: named,
+                           named: snapshotName,
                            testName: testName)
+    }
+
+    // MARK: - Cell Builder
+
+    @MainActor private func cell(theme: OUDSTheme,
+                                 testType: TestTextAreaView.TestType,
+                                 outlined: Bool,
+                                 constrainedMaxWidth: Bool,
+                                 status: OUDSTextArea.Status,
+                                 caption: String) -> SnapshotGridCell<AnyView>
+    {
+        SnapshotGridCell(caption: caption) {
+            AnyView(
+                OUDSThemeableView(theme: theme) {
+                    TestTextAreaView(type: testType,
+                                     outlined: outlined,
+                                     constrainedMaxWidth: constrainedMaxWidth,
+                                     status: status)
+                })
+        }
+    }
+
+    // MARK: - Captions
+
+    private func caption(outlined: Bool, constrainedMaxWidth: Bool) -> String {
+        let outlinedShort = outlined ? "outlined" : "filled"
+        let constrainedShort = constrainedMaxWidth ? "constrained" : "full-width"
+        return "\(outlinedShort)\n\(constrainedShort)"
+    }
+
+    private func statusShort(_ status: OUDSTextArea.Status) -> String {
+        switch status {
+        case .enabled:
+            "enabled"
+        case .error:
+            "error"
+        case .loading:
+            "loading"
+        case .readOnly:
+            "readOnly"
+        case .disabled:
+            "disabled"
+        default:
+            "other"
+        }
     }
 }
 
@@ -109,12 +164,24 @@ open class TextAreaSnapshotsTestsTestCase: XCTestCase {
 
 struct TestTextAreaView: View {
 
-    /// Two types of test
-    enum TestType: String {
-        /// Used to test status on available layouts
+    /// Two types of test.
+    enum TestType: String, CaseIterable {
+        /// Used to test status on available layouts.
         case styleAndStatus
-        /// Used to test helpers (plain text, characters max count, helper link)
+        /// Used to test helpers (plain text, characters max count, helper link).
         case helpers
+
+        /// Fixed cell size used by the enclosing ``SnapshotGrid``. `helpers` stacks four text areas so
+        /// the cell needs to be taller than ``styleAndStatus`` (which stacks two). Heights account for the
+        /// 24pt inter-text-area spacing applied in `TestTextAreaView`.
+        var cellSize: CGSize {
+            switch self {
+            case .styleAndStatus:
+                CGSize(width: 400, height: 310)
+            case .helpers:
+                CGSize(width: 400, height: 620)
+            }
+        }
     }
 
     // MARK: - Properties
@@ -129,6 +196,18 @@ struct TestTextAreaView: View {
     // MARK: - Body
 
     var body: some View {
+        content
+            // Solution F: force the circular progress indicator used by `.loading` to appear at its target
+            // value instead of animating from 0 (which would otherwise capture an empty arc).
+            .transaction { transaction in
+                if isLoadingStatus {
+                    transaction.animation = nil
+                }
+            }
+    }
+
+    @ViewBuilder
+    private var content: some View {
         switch type {
         case .styleAndStatus:
             textAreaWithStatus
@@ -137,11 +216,16 @@ struct TestTextAreaView: View {
         }
     }
 
+    private var isLoadingStatus: Bool {
+        if case .loading = status { return true }
+        return false
+    }
+
     // MARK: - Layout for tests
 
     /// View to test basic status combinations
     private var textAreaWithStatus: some View {
-        VStack(alignment: .leading, spacing: 1) {
+        VStack(alignment: .leading, spacing: 24) {
             // Simplest case — no placeholder, no helper
             OUDSTextArea(label: "Label",
                          text: $text,
@@ -157,11 +241,12 @@ struct TestTextAreaView: View {
                          constrainedMaxWidth: constrainedMaxWidth,
                          status: status)
         }
+        .padding(.horizontal, 12)
     }
 
     /// View to test helpers (Helper Text, Characters Max Count, Helper Link)
     private var textAreaWithHelpers: some View {
-        VStack(alignment: .leading, spacing: 1) {
+        VStack(alignment: .leading, spacing: 24) {
             // With plain helper text
             OUDSTextArea(label: "Label",
                          text: $text,
@@ -195,6 +280,7 @@ struct TestTextAreaView: View {
                          constrainedMaxWidth: constrainedMaxWidth,
                          status: status)
         }
+        .padding(.horizontal, 12)
     }
 
     // MARK: - Helpers

@@ -21,15 +21,30 @@ import XCTest
 // MARK: - Test Cases
 
 /// Tests the UI rendering of the `OUDSLink` for each parameter
+///
+/// To limit the amount of reference images, the `disabled`, `iconType` (relevant for `textAndIcon` layout only)
+/// and `isFullWidth` (relevant for `indicatorNext`/`indicatorPrevious` layouts only) axes are not given a
+/// dedicated reference image each: they are gathered into a single ``SnapshotGrid`` per (theme, color scheme,
+/// surface, layout, size, density) combination, with one assertion (and so one reference image) per grid.
+/// Each cell of the grid carries a short caption so a regression stays identifiable directly in the resulting
+/// image. See `SnapshotGrid.swift`.
 open class LinkSnapshotsTestsTestCase: XCTestCase {
+
+    /// The number of columns used to lay out the combinatorial grid for a link configuration.
+    private static let gridColumns = 2
+
+    /// Fixed size applied to each cell of the grid, so the resulting image has a stable, reproducible size.
+    private static let gridCellSize = CGSize(width: 220, height: 80)
 
     /// This function tests all link configuration for the given theme and color schemes on a standard surface.
     ///
     /// **/!\ It does not test the hover and pressed states.**
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
     ///
-    /// It iterates through all link `layouts`, for all `sizes`
-    /// in enabled and disabled states.
+    /// It iterates through all link `layouts`, for all `sizes` and `densities`.
+    /// For each of these combinations, a single grid image gathers the `enabled/disabled` variations
+    /// (and, for `textAndIcon` layout, the `iconType` variations, or, for `indicatorNext`/`indicatorPrevious`
+    /// layouts, the `isFullWidth` variations).
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`).
@@ -38,30 +53,12 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
         for layout in LinkLayout.allCases {
             for size in OUDSLink.Size.allCases {
                 for density in OUDSLink.Density.allCases {
-                    let iconTypes: [DefinedStatusIcons] = layout == .textAndIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
-                    let fullWidths: [Bool] = (layout == .indicatorNext || layout == .indicatorPrevious) ? [false, true] : [false]
-                    for iconType in iconTypes {
-                        for isFullWidth in fullWidths {
-                            testLink(theme: theme,
-                                     interfaceStyle: interfaceStyle,
-                                     layout: layout,
-                                     size: size,
-                                     density: density,
-                                     iconType: iconType,
-                                     disabled: false,
-                                     onColoredSurface: false,
-                                     isFullWidth: isFullWidth)
-                            testLink(theme: theme,
-                                     interfaceStyle: interfaceStyle,
-                                     layout: layout,
-                                     size: size,
-                                     density: density,
-                                     iconType: iconType,
-                                     disabled: true,
-                                     onColoredSurface: false,
-                                     isFullWidth: isFullWidth)
-                        }
-                    }
+                    testLinkGrid(theme: theme,
+                                 interfaceStyle: interfaceStyle,
+                                 layout: layout,
+                                 size: size,
+                                 density: density,
+                                 onColoredSurface: false)
                 }
             }
         }
@@ -72,101 +69,137 @@ open class LinkSnapshotsTestsTestCase: XCTestCase {
     /// **/!\ It does not text the hover and pressed states.**
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
     ///
-    /// It iterates through all link `layout`, for all `size`
-    /// in enabled and disbled state.
+    /// It iterates through all link `layouts`, for all `sizes` and `densities`.
+    /// For each of these combinations, a single grid image gathers the `enabled/disabled` variations
+    /// (and, for `textAndIcon` layout, the `iconType` variations, or, for `indicatorNext`/`indicatorPrevious`
+    /// layouts, the `isFullWidth` variations).
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllLinksOnColoredSurface(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        // Skip test for negative hierarchy because it is not allowed on colored surface
         for layout in LinkLayout.allCases {
             for size in OUDSLink.Size.allCases {
                 for density in OUDSLink.Density.allCases {
-                    let iconTypes: [DefinedStatusIcons] = layout == .textAndIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
-                    let fullWidths: [Bool] = (layout == .indicatorNext || layout == .indicatorPrevious) ? [false, true] : [false]
-                    for iconType in iconTypes {
-                        for isFullWidth in fullWidths {
-                            testLink(theme: theme,
-                                     interfaceStyle: interfaceStyle,
-                                     layout: layout,
-                                     size: size,
-                                     density: density,
-                                     iconType: iconType,
-                                     disabled: false,
-                                     onColoredSurface: true,
-                                     isFullWidth: isFullWidth)
-                            testLink(theme: theme,
-                                     interfaceStyle: interfaceStyle,
-                                     layout: layout,
-                                     size: size,
-                                     density: density,
-                                     iconType: iconType,
-                                     disabled: true,
-                                     onColoredSurface: true,
-                                     isFullWidth: isFullWidth)
-                        }
-                    }
+                    testLinkGrid(theme: theme,
+                                 interfaceStyle: interfaceStyle,
+                                 layout: layout,
+                                 size: size,
+                                 density: density,
+                                 onColoredSurface: true)
                 }
             }
         }
     }
 
-    // swiftlint:disable function_default_parameter_at_end
-    /// This function tests link according to all parameters of the configuration available on a `OUDLink`
-    /// for the given theme and color schemes and on a colored surface or not.
+    /// A single configuration of `disabled` x `iconType` x `isFullWidth` to fold into a grid cell.
+    /// `iconType` is only relevant for the `textAndIcon` layout, and `isFullWidth` only for the
+    /// `indicatorNext`/`indicatorPrevious` layouts; for other layouts they keep their default value
+    /// and are not reflected in the caption.
+    private struct LinkVariant {
+        let disabled: Bool
+        let iconType: DefinedStatusIcons
+        let isFullWidth: Bool
+
+        /// All relevant `disabled` x `iconType` x `isFullWidth` combinations for the given `layout`.
+        static func all(for layout: LinkLayout) -> [LinkVariant] {
+            let iconTypes: [DefinedStatusIcons] = layout == .textAndIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
+            let fullWidths: [Bool] = (layout == .indicatorNext || layout == .indicatorPrevious) ? [false, true] : [false]
+            return [false, true].flatMap { disabled in
+                iconTypes.flatMap { iconType in
+                    fullWidths.map { isFullWidth in
+                        LinkVariant(disabled: disabled, iconType: iconType, isFullWidth: isFullWidth)
+                    }
+                }
+            }
+        }
+
+        /// Short caption identifying the variant, displayed under its grid cell.
+        /// Only the axes relevant for `layout` are mentioned.
+        func caption(layout: LinkLayout) -> String {
+            var components = [disabled ? "Disabled" : "Enabled"]
+            if layout == .textAndIcon {
+                components.append(iconType.formattedName)
+            }
+            if layout == .indicatorNext || layout == .indicatorPrevious {
+                components.append(isFullWidth ? "FullWidth" : "NotFullWidth")
+            }
+            return components.joined(separator: " · ")
+        }
+    }
+
+    /// Builds the grid cell for a given link variant.
+    @MainActor private func linkVariantCell(
+        _ variant: LinkVariant,
+        theme: OUDSTheme,
+        layout: LinkLayout,
+        size: OUDSLink.Size,
+        density: OUDSLink.Density,
+        onColoredSurface: Bool) -> SnapshotGridCell<AnyView>
+    {
+        SnapshotGridCell(caption: variant.caption(layout: layout)) {
+            AnyView(
+                OUDSThemeableView(theme: theme) {
+                    LinkTest(layout: layout,
+                             size: size,
+                             density: density,
+                             iconType: variant.iconType,
+                             onColoredSurface: onColoredSurface,
+                             isFullWidth: variant.isFullWidth)
+                        .disabled(variant.disabled)
+                })
+        }
+    }
+
+    /// Builds a ``SnapshotGrid`` gathering all relevant `disabled`, `iconType` and `isFullWidth` combinations
+    /// for a given link configuration, then captures it in a single snapshot.
     ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
-    ///    test_<themeName>_<colorScheme>.<coloreSurface>_<layout>_<size>_<disabled>
-    ///
-    /// **/!\ It does not text the hover and pressed states.**
-    /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
+    /// The snapshot is saved with a name based on the parameters which are not folded into the grid:
+    ///    test_<themeName>_<colorScheme>.<coloredSurfacePattern><layout>_<size>_<density>
     ///
     /// - Parameters:
-    ///   - theme: The theme (`OUDSTheme`)
+    ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - layout: the layout of the link
     ///   - size: the size of the link
-    ///   - density: the sidensityze of the link
-    ///   - disabled: the disabled flag
+    ///   - density: the density of the link
     ///   - onColoredSurface: a flag to know if link is on a colored surface or not
-    @MainActor private func testLink(theme: OUDSTheme,
-                                     interfaceStyle: UIUserInterfaceStyle,
-                                     layout: LinkLayout,
-                                     size: OUDSLink.Size,
-                                     density: OUDSLink.Density,
-                                     iconType: DefinedStatusIcons = .tintedIcon,
-                                     disabled: Bool,
-                                     onColoredSurface: Bool = false,
-                                     isFullWidth: Bool = false)
+    @MainActor private func testLinkGrid(theme: OUDSTheme,
+                                         interfaceStyle: UIUserInterfaceStyle,
+                                         layout: LinkLayout,
+                                         size: OUDSLink.Size,
+                                         density: OUDSLink.Density,
+                                         onColoredSurface: Bool)
     {
-        // Generate the illustration for the specified configuration
-        let illustration = OUDSThemeableView(theme: theme) {
-            LinkTest(layout: layout, size: size, density: density, iconType: iconType, onColoredSurface: onColoredSurface, isFullWidth: isFullWidth)
-                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-                .disabled(disabled)
+        let cells = LinkVariant.all(for: layout).map {
+            linkVariantCell($0, theme: theme, layout: layout, size: size, density: density, onColoredSurface: onColoredSurface)
         }
 
         // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<imageMode>_<size><fullWidthPattern><disabledPatern> where:
-        // - `coloredSurfacePatern` is empty if not on colored surface
-        // - `imageModePattern` is empty if not textAndIcon layout
-        // - `fullWidthPattern` is empty if not full width (only relevant for indicatorNext and indicatorPrevious layouts)
-        // - `disabledPatern` is empty if not disabled
+        // test_<themeName>_<colorScheme>.<coloredSurfacePattern><layout>_<size>_<density> where:
+        // - `coloredSurfacePattern` is empty if not on colored surface
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
         let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
-        let imageModePattern = layout == .textAndIcon ? (iconType == .image ? "_OriginalImage" : "_TemplateImage") : ""
-        let fullWidthPattern = isFullWidth ? "_FullWidth" : ""
-        let disabledPatern = disabled ? "_Disabled" : ""
-        let name = "\(coloredSurfacePatern)\(layout.debugDescription)\(imageModePattern)_\(size.formattedName)_\(density.formattedName)\(fullWidthPattern)\(disabledPatern)"
+        let name = "\(coloredSurfacePatern)\(layout.debugDescription)_\(size.formattedName)_\(density.formattedName)"
 
-        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+        let grid = SnapshotGrid(
+            columns: Self.gridColumns,
+            cellSize: Self.gridCellSize,
+            cells: cells,
+            title: "\(testName).\(name)")
+
+        // Generate the illustration for the specified configuration
+        let illustration = OUDSThemeableView(theme: theme) {
+            grid
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+        }
+
+        // Capture the snapshot of the grid with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
                            named: name,
                            testName: testName)
     }
-    // swiftlint:enable function_default_parameter_at_end
 }
 
 // swiftlint:enable required_deinit
@@ -203,7 +236,7 @@ struct LinkTest: View {
         case .indicatorPrevious:
             OUDSLink(text: "Back", indicator: .previous, size: size, density: density, isFullWidth: isFullWidth) {}
         case .indicatorExternal:
-            OUDSLink(text: "External", indicator: .external, size: size, density: density, isFullWidth: isFullWidth) {}
+            OUDSLink(text: "External", indicator: .external, size: size, density: density) {}
         }
     }
 

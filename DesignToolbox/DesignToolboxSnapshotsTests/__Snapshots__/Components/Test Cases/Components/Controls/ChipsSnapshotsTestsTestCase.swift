@@ -18,137 +18,224 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
+// MARK: - Test Cases
+
 /// Tests the UI rendering of the `OUDSFilterChip` and `OUDSSuggestionChip` for each parameter.
+///
+/// To limit the amount of reference images, combinatorial axes are gathered into a single ``SnapshotGrid``
+/// per remaining-axis combination (one assertion = one reference image). Each grid is laid out with one row
+/// per `enabled` value so a regression touching an enabled/disabled state stays identifiable at a glance.
+///
+/// Axes kept as separate files (= filename):
+///   - Suggestion: `layout × enabled` (3 × 2 = 6 files per theme/scheme).
+///   - Filter: `layout × selected` (3 × 2 = 6 files per theme/scheme).
+///
+/// Axes folded into each grid:
+///   - Suggestion: `iconType × isLongText` (= up to 4 cells; `textOnly` collapses `iconType` → 2 cells).
+///   - Filter: `enabled × iconType × isLongText` (= up to 8 cells; `textOnly` collapses `iconType` → 4 cells).
+///
+/// **/!\ It does not test the hover and pressed states.**
+///
+/// Each cell of a grid carries a short caption so a regression stays identifiable directly in the resulting
+/// image. See `SnapshotGrid.swift`.
 open class ChipsSnapshotsTestsTestCase: XCTestCase {
 
-    /// This function tests all chips (Filter and Suggestion) with all layouts, for the given theme and color scheme.
+    /// Fixed size applied to each cell of a chip grid. Width accommodates the long-text variant without
+    /// truncation; height accommodates two caption lines plus wrapped chip label.
+    private static let cellSize = CGSize(width: 240, height: 90)
+
+    /// Long text used to exercise the chip label truncation / wrapping.
+    private static let longText = "¡ Bravas patatas ! ¡ Patatas bravas ! ¡ Patatata-patatata-patatas bravas !"
+
+    // MARK: - Entry Point
+
+    /// Tests all chips (Filter and Suggestion) with all layouts, for the given theme and color scheme.
     ///
     /// **/!\ It does not test the hover and pressed states.**
-    ///
-    /// It iterates through all `ChipLayout.Layout`, for all combinations of layouts in enabled and disabled state.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllChips(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-
-        // Test OUDSSuggestionChips
+        // Suggestion: layout × enabled promoted; iconType × isLongText folded into the grid.
         for layout in ChipLayout.allCases {
             for enabled in [true, false] {
-                let imageModes: [DefinedStatusIcons] = layout == .textOnly ? [.tintedIcon] : DefinedStatusIcons.allCases
-                for iconType in imageModes {
-                    let model = SuggestionChipConfigurationModel()
-                    model.layout = layout
-                    model.enabled = enabled
-                    model.iconType = iconType
-
-                    testSuggestionChips(theme: theme, interfaceStyle: interfaceStyle, model: model, isLongText: false)
-
-                    model.text = "¡ Bravas patatas ! ¡ Patatas bravas ! ¡ Patatata-patatata-patatas bravas !"
-                    testSuggestionChips(theme: theme, interfaceStyle: interfaceStyle, model: model, isLongText: true)
-                }
+                testSuggestionGrid(theme: theme,
+                                   interfaceStyle: interfaceStyle,
+                                   layout: layout,
+                                   enabled: enabled)
             }
         }
 
-        // Test OUDSFilterChips
+        // Filter: layout × selected promoted; enabled × iconType × isLongText folded into the grid.
         for layout in ChipLayout.allCases {
             for selected in [true, false] {
-                for enabled in [true, false] {
-                    let imageModes: [DefinedStatusIcons] = layout == .textOnly ? [.tintedIcon] : DefinedStatusIcons.allCases
-                    for iconType in imageModes {
-                        let model = FilterChipConfigurationModel()
-                        model.layout = layout
-                        model.selected = selected
-                        model.enabled = enabled
-                        model.iconType = iconType
-
-                        testFilterChips(theme: theme, interfaceStyle: interfaceStyle, model: model, isLongText: false)
-
-                        model.text = "¡ Bravas patatas ! ¡ Patatas bravas ! ¡ Patatata-patatata-patatas bravas !"
-                        testFilterChips(theme: theme, interfaceStyle: interfaceStyle, model: model, isLongText: true)
-                    }
-                }
+                testFilterGrid(theme: theme,
+                               interfaceStyle: interfaceStyle,
+                               layout: layout,
+                               selected: selected)
             }
         }
     }
 
-    /// This function tests `OUDSFilterChip` according to all parameters of the configuration available
-    /// (Layout, enable state and selection) for the given theme and color schemes.
-    ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
-    ///
-    /// **/!\ It does not text the hover and pressed states.**
-    ///
-    /// - Parameters:
-    ///   - theme: The theme (OUDSTheme)
-    ///   - interfaceStyle: The user interface style (light or dark)
-    ///   - model: The model contains each element of configuration
-    ///   - isLongText: Flag to rise to record in the snapshot file name the text of the chip is considered long
-    @MainActor func testFilterChips(theme: OUDSTheme,
-                                    interfaceStyle: UIUserInterfaceStyle,
-                                    model: FilterChipConfigurationModel,
-                                    isLongText: Bool)
+    // MARK: - Suggestion Grid
+
+    @MainActor private func testSuggestionGrid(theme: OUDSTheme,
+                                               interfaceStyle: UIUserInterfaceStyle,
+                                               layout: ChipLayout,
+                                               enabled: Bool)
     {
-        // Generate the illustration for the specified configuration
-        let illustration = OUDSThemeableView(theme: theme) {
-            FilterChipDemo(configurationModel: model)
-                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+        let imageModes: [DefinedStatusIcons] = layout == .textOnly ? [.tintedIcon] : [.tintedIcon, .image]
+
+        var cells: [SnapshotGridCell<AnyView>] = []
+        for iconType in imageModes {
+            for isLongText in [false, true] {
+                let model = SuggestionChipConfigurationModel()
+                model.layout = layout
+                model.enabled = enabled
+                model.iconType = iconType
+                if isLongText { model.text = Self.longText }
+                cells.append(suggestionCell(theme: theme,
+                                            model: model,
+                                            caption: suggestionCaption(layout: layout,
+                                                                       iconType: iconType,
+                                                                       isLongText: isLongText)))
+            }
         }
 
-        // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>.<layout>_<selectionPattern>_<disabledPattern> where:
-        // - `disabledPattern` is empty if not disabled
-        // - `selectionPattern` is empty if not selected
-        let testName = "testFilter_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let disabledPattern = !model.enabled ? "_Disabled" : ""
-        let selectedPattern = model.selected ? "_Selected" : ""
-        let imageModePattern = model.layout != .textOnly ? (model.iconType == .image ? "_OriginalImage" : "_TemplateImage") : ""
-        let textLengthPattern = isLongText ? "_LongText" : "_ShortText"
-        let name = "\(model.layout.debugDescription)\(imageModePattern)\(textLengthPattern)\(selectedPattern)\(disabledPattern)"
+        // columns = isLongText.count = 2 → one row per iconType.
+        let columns = 2
+        let enabledPattern = enabled ? "Enabled" : "Disabled"
+        let name = "\(layout.debugDescription)_\(enabledPattern)"
 
-        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-        assertIllustration(illustration,
-                           on: interfaceStyle,
-                           named: name,
-                           testName: testName)
+        assertGrid(theme: theme,
+                   interfaceStyle: interfaceStyle,
+                   testName: "testSuggestion_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")",
+                   snapshotName: name,
+                   columns: columns,
+                   cells: cells)
     }
 
-    /// This function tests `OUDSSuggestionChip` according to all parameters of the configuration available
-    /// (Layout, enable state) for the given theme and color schemes.
-    ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
-    ///
-    /// **/!\ It does not text the hover and pressed states.**
-    ///
-    /// - Parameters:
-    ///   - theme: The theme (OUDSTheme)
-    ///   - interfaceStyle: The user interface style (light or dark)
-    ///   - model: The model contains each element of configuration
-    ///   - isLongText: Flag to rise to record in the snapshot file name the text of the chip is considered long
-    @MainActor func testSuggestionChips(theme: OUDSTheme,
-                                        interfaceStyle: UIUserInterfaceStyle,
-                                        model: SuggestionChipConfigurationModel,
-                                        isLongText: Bool)
+    // MARK: - Filter Grid
+
+    @MainActor private func testFilterGrid(theme: OUDSTheme,
+                                           interfaceStyle: UIUserInterfaceStyle,
+                                           layout: ChipLayout,
+                                           selected: Bool)
     {
-        // Generate the illustration for the specified configuration
+        let imageModes: [DefinedStatusIcons] = layout == .textOnly ? [.tintedIcon] : [.tintedIcon, .image]
+
+        var cells: [SnapshotGridCell<AnyView>] = []
+        for enabled in [true, false] {
+            for iconType in imageModes {
+                for isLongText in [false, true] {
+                    let model = FilterChipConfigurationModel()
+                    model.layout = layout
+                    model.selected = selected
+                    model.enabled = enabled
+                    model.iconType = iconType
+                    if isLongText { model.text = Self.longText }
+                    cells.append(filterCell(theme: theme,
+                                            model: model,
+                                            caption: filterCaption(layout: layout,
+                                                                   enabled: enabled,
+                                                                   iconType: iconType,
+                                                                   isLongText: isLongText)))
+                }
+            }
+        }
+
+        // columns = cells per enabled row (= imageModes.count × 2 isLongText values) so one row per `enabled`.
+        let columns = imageModes.count * 2
+        let selectedPattern = selected ? "Selected" : "Unselected"
+        let name = "\(layout.debugDescription)_\(selectedPattern)"
+
+        assertGrid(theme: theme,
+                   interfaceStyle: interfaceStyle,
+                   testName: "testFilter_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")",
+                   snapshotName: name,
+                   columns: columns,
+                   cells: cells)
+    }
+
+    // MARK: - Cell Builders
+
+    @MainActor private func suggestionCell(theme: OUDSTheme,
+                                           model: SuggestionChipConfigurationModel,
+                                           caption: String) -> SnapshotGridCell<AnyView>
+    {
+        SnapshotGridCell(caption: caption) {
+            AnyView(
+                OUDSThemeableView(theme: theme) {
+                    SuggestionChipDemo(configurationModel: model)
+                })
+        }
+    }
+
+    @MainActor private func filterCell(theme: OUDSTheme,
+                                       model: FilterChipConfigurationModel,
+                                       caption: String) -> SnapshotGridCell<AnyView>
+    {
+        SnapshotGridCell(caption: caption) {
+            AnyView(
+                OUDSThemeableView(theme: theme) {
+                    FilterChipDemo(configurationModel: model)
+                })
+        }
+    }
+
+    // MARK: - Captions
+
+    private func suggestionCaption(layout: ChipLayout, iconType: DefinedStatusIcons, isLongText: Bool) -> String {
+        let text = isLongText ? "long" : "short"
+        if layout == .textOnly {
+            return text
+        }
+        return "\(iconShort(iconType))\n\(text)"
+    }
+
+    private func filterCaption(layout: ChipLayout, enabled: Bool, iconType: DefinedStatusIcons, isLongText: Bool) -> String {
+        let state = enabled ? "enabled" : "disabled"
+        let text = isLongText ? "long" : "short"
+        if layout == .textOnly {
+            return "\(state)\n\(text)"
+        }
+        return "\(state) · \(iconShort(iconType))\n\(text)"
+    }
+
+    private func iconShort(_ iconType: DefinedStatusIcons) -> String {
+        switch iconType {
+        case .image:
+            "image"
+        default:
+            "tinted"
+        }
+    }
+
+    // MARK: - Grid Assertion
+
+    /// Composes the grid and captures a single snapshot assertion.
+    @MainActor private func assertGrid(theme: OUDSTheme,
+                                       interfaceStyle: UIUserInterfaceStyle,
+                                       testName: String,
+                                       snapshotName: String,
+                                       columns: Int,
+                                       cells: [SnapshotGridCell<AnyView>])
+    {
+        let grid = SnapshotGrid(
+            columns: columns,
+            cellSize: Self.cellSize,
+            cells: cells,
+            title: "\(testName).\(snapshotName)")
+
         let illustration = OUDSThemeableView(theme: theme) {
-            SuggestionChipDemo(configurationModel: model)
+            grid
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
-        // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>.<layout><disabledPattern> where:
-        // - `disabledPattern` is empty if not disabled
-        let testName = "testSuggestion_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let disabledPattern = !model.enabled ? "_Disabled" : ""
-        let imageModePattern = model.layout != .textOnly ? (model.iconType == .image ? "_OriginalImage" : "_TemplateImage") : ""
-        let textLengthPattern = isLongText ? "_LongText" : "_ShortText"
-        let name = "\(model.layout.debugDescription)\(imageModePattern)\(textLengthPattern)\(disabledPattern)"
-
-        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
-                           named: name,
+                           named: snapshotName,
                            testName: testName)
     }
 }

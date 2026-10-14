@@ -21,58 +21,82 @@ import XCTest
 // MARK: - Test Cases
 
 /// Tests the UI rendering of the `OUDSInlineAlert` for each parameter
+///
+/// To limit the amount of reference images, the `statusIcon` axis is not given a dedicated reference image:
+/// it is gathered into a single ``SnapshotGrid`` (one per `status`), with one assertion (and so one reference
+/// image) per grid. Each cell of the grid carries a short caption so a regression stays identifiable directly
+/// in the resulting image. See `SnapshotGrid.swift`.
 open class InlineAlertSnapshotsTestsTestCase: XCTestCase {
 
+    /// The number of columns used to lay out the `statusIcon` grid for an inline alert configuration.
+    private static let gridColumns = 3
+
+    /// Fixed size applied to each cell of the grid, so the resulting image has a stable, reproducible size.
+    private static let gridCellSize = CGSize(width: 360, height: 80)
+
     /// This function tests some InlineAlert configuration for the given theme and color schemes on a standard surface.
-    /// It iterates through all `AlertStatus` values.
+    /// It iterates through all `AlertStatus` values; for each one, a single grid image gathers all `StatusIcons`
+    /// variations.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`).
     ///   - interfaceStyle: The user interface style (light or dark).
     @MainActor func testAllInlineAlerts(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-
         for status in AlertStatus.allCases {
-            for statusIcon in StatusIcons.allCases {
-                let model = InlineAlertConfigurationModel()
-                model.status = status
-                model.statusIcon = statusIcon
-
-                testInlineAlert(theme: theme,
-                                interfaceStyle: interfaceStyle,
-                                model: model)
-            }
+            testInlineAlertGrid(theme: theme, interfaceStyle: interfaceStyle, status: status)
         }
     }
 
-    /// This function tests InlineAlert according to parameters of the configuration available on a `OUDSInlineAlert`
-    /// for the given theme and color schemes.
+    /// Builds the grid cell for a given `statusIcon` variant.
+    @MainActor private func statusIconCell(
+        _ statusIcon: StatusIcons,
+        theme: OUDSTheme,
+        status: AlertStatus) -> SnapshotGridCell<AnyView>
+    {
+        let model = InlineAlertConfigurationModel()
+        model.status = status
+        model.statusIcon = statusIcon
+
+        return SnapshotGridCell(caption: statusIcon.formattedName) {
+            AnyView(InlineAlertDemo(configurationModel: model))
+        }
+    }
+
+    /// Builds a ``SnapshotGrid`` gathering all `statusIcon` variants for a given `status`, then captures it
+    /// in a single snapshot.
     ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
-    ///    test_<themeName>_<colorScheme>_<status>
+    /// The snapshot is saved with a name based on the `status`, which is not folded into the grid.
     ///
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
-    ///   - model: The model contains each element of configuration
-    @MainActor private func testInlineAlert(theme: OUDSTheme,
-                                            interfaceStyle: UIUserInterfaceStyle,
-                                            model: InlineAlertConfigurationModel)
+    ///   - status: the status of the inline alert
+    @MainActor private func testInlineAlertGrid(
+        theme: OUDSTheme,
+        interfaceStyle: UIUserInterfaceStyle,
+        status: AlertStatus)
     {
+        let cells = StatusIcons.allCases.map {
+            statusIconCell($0, theme: theme, status: status)
+        }
+
+        // Create a unique snapshot name based on the current configuration
+        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let name = status.technicalDescription
+
+        let grid = SnapshotGrid(
+            columns: Self.gridColumns,
+            cellSize: Self.gridCellSize,
+            cells: cells,
+            title: "\(testName).\(name)")
+
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
-            InlineAlertDemo(configurationModel: model)
+            grid
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
-        // Create a unique snapshot name based on the current configuration :
-        //    test_<themeName>_<colorScheme>_<type>_<textStyle>_<isBold>
-        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let statusPattern = model.status.technicalDescription
-        let statusIconPattern = model.statusIcon.technicalDescription
-
-        let name = "\(statusPattern)\(statusIconPattern)"
-
-        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+        // Capture the snapshot of the grid with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
                            named: name,

@@ -184,6 +184,7 @@
 		50B2ADF27679048DEB269510 /* HelveticaNeueLTArabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D42E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf */; };
 		510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* XCTestCase+Snapshot.swift */; };
 		5115808A2E730E0600DFFE4E /* OUDSTheme+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511580892E730E0100DFFE4E /* OUDSTheme+Name.swift */; };
+		A2AACEEF1AC4DCE1B9F731E4 /* SnapshotGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E45E0A92D7AA8CC9E2B9D /* SnapshotGrid.swift */; };
 		5122E02A2D65E7AC00CD2857 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
 		5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 5123647A2C3D7B3500572FD5 /* Gemfile.lock */; };
 		5134420B2D75B880000B5DE4 /* CheckboxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513441FD2D75B880000B5DE4 /* CheckboxConfiguration.swift */; };
@@ -1860,6 +1861,7 @@
 		4D5BDE043E998024B485DBB5 /* CodePage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CodePage.swift; sourceTree = "<group>"; };
 		51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		511580892E730E0100DFFE4E /* OUDSTheme+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OUDSTheme+Name.swift"; sourceTree = "<group>"; };
+		AC6E45E0A92D7AA8CC9E2B9D /* SnapshotGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotGrid.swift; sourceTree = "<group>"; };
 		511C96B42E157D2C00F9D156 /* SwitchItemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemPage.swift; sourceTree = "<group>"; };
 		5122E0252D65D13400CD2857 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/about_legal_information.html; sourceTree = "<group>"; };
 		5122E0262D65D13400CD2857 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/about_privacy_policy.html; sourceTree = "<group>"; };
@@ -2407,6 +2409,7 @@
 				074008222C942810006B8729 /* XCTestCase+Snapshot.swift */,
 				511580892E730E0100DFFE4E /* OUDSTheme+Name.swift */,
 				0794FCDA2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift */,
+				AC6E45E0A92D7AA8CC9E2B9D /* SnapshotGrid.swift */,
 			);
 			path = DesignToolboxSnapshotsTests;
 			sourceTree = "<group>";
@@ -5320,6 +5323,7 @@
 				518EC0792E1FF23800FC77E4 /* OrangeTheme+LinkSnapshotsTests.swift in Sources */,
 				518EC07A2E1FF23800FC77E4 /* OrangeTheme+SwitchSnapshotsTests.swift in Sources */,
 				510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */,
+				A2AACEEF1AC4DCE1B9F731E4 /* SnapshotGrid.swift in Sources */,
 				072BB45E2E69733500A4DF2D /* WireframeTheme+TextInputSnapshotsTests.swift in Sources */,
 				95D6AAD12F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */,
 				07AA1100FF0000000000AB14 /* WireframeTheme+TextAreaSnapshotsTests.swift in Sources */,

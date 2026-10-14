@@ -21,175 +21,215 @@ import XCTest
 // MARK: - Test Cases
 
 /// Tests the UI rendering of the `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount` for each parameter
+///
+/// To limit the amount of reference images, badges being tiny illustrations:
+///   - `OUDSBadgeStandard`: the `status` (6 values) and `size` (4 values) axes are gathered into a single
+///     ``SnapshotGrid`` (24 cells).
+///   - `OUDSBadgeCount`: the `status` (6 values) and `size` (2 values) axes are gathered into a single
+///     ``SnapshotGrid`` (12 cells).
+///   - `OUDSBadgeIcon`: the `statusIcon` axis (image/tintedIcon) is kept as a separate file since it changes
+///     the nature of the rendered glyph; the `statusKind` (6 values) and `size` (4 values) axes are gathered
+///     into a single ``SnapshotGrid`` per `statusIcon` (24 cells).
+/// Each cell of a grid carries a short caption so a regression stays identifiable directly in the resulting
+/// image. See `SnapshotGrid.swift`.
 open class BadgeSnapshotsTestsTestCase: XCTestCase {
+
+    /// The number of columns used to lay out the `OUDSBadgeStandard` and `OUDSBadgeIcon` grids, so each row
+    /// shows all sizes of one single status (one row per status).
+    private static let standardAndIconGridColumns = OUDSBadgeStandard.Size.allCases.count
+
+    /// The number of columns used to lay out the `OUDSBadgeCount` grid, so each row shows all sizes of one
+    /// single status (one row per status).
+    private static let countGridColumns = OUDSBadgeCount.Size.allCases.count
+
+    /// Fixed size applied to each cell of the `OUDSBadgeStandard` grid.
+    private static let standardCellSize = CGSize(width: 80, height: 60)
+
+    /// Fixed size applied to each cell of the `OUDSBadgeIcon` grid.
+    private static let iconCellSize = CGSize(width: 80, height: 70)
+
+    /// Fixed size applied to each cell of the `OUDSBadgeCount` grid.
+    private static let countCellSize = CGSize(width: 100, height: 60)
 
     /// This function tests all badges with all types, status and size for the given theme and color scheme.
     ///
-    /// It iterates through all types, sizes and status of badge components.
+    /// It iterates through the axes which are kept as separate files, gathering the other axes into grids.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllBadges(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-
-        // Test OUDSBadgeStandard
-        for status in OUDSBadgeStandard.Status.allCases {
-            let model = BadgeStandardConfigurationModel()
-            model.status = status
-            for size in OUDSBadgeStandard.Size.allCases {
-                model.standardSize = size
-                testBadgeStandard(theme: theme, interfaceStyle: interfaceStyle, model: model)
-            }
-        }
-
-        // Test OUDSBadgeIcon
-        for status in BadgeIconStatusKind.allCases {
-            let model = BadgeIconConfigurationModel()
-            model.statusKind = status
-            for size in OUDSBadgeStandard.Size.allCases {
-                model.size = size
-                for statusIcon in DefinedStatusIcons.allCases {
-                    model.statusIcon = statusIcon
-                    testBadgeIcon(theme: theme, interfaceStyle: interfaceStyle, model: model)
-                }
-            }
-        }
-
-        // Test OUDSBadgeCount
-        for status in OUDSBadgeStandard.Status.allCases {
-            let model = BadgeCountConfigurationModel()
-            model.status = status
-            for size in OUDSBadgeCount.Size.allCases {
-                model.countSize = size
-                model.countText = "100"
-                testBadgeCount(theme: theme, interfaceStyle: interfaceStyle, model: model)
-            }
+        testBadgeStandardGrid(theme: theme, interfaceStyle: interfaceStyle)
+        testBadgeCountGrid(theme: theme, interfaceStyle: interfaceStyle)
+        for statusIcon in DefinedStatusIcons.allCases {
+            testBadgeIconGrid(theme: theme, interfaceStyle: interfaceStyle, statusIcon: statusIcon)
         }
     }
 
-    /// This function tests `OUDSBadgeStandard` according to all parameters of the configuration available for the given
-    /// theme and color schemes.
-    ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
+    // MARK: - OUDSBadgeStandard
+
+    /// Builds the grid cell for a given `OUDSBadgeStandard` status and size.
+    @MainActor private func badgeStandardCell(
+        status: OUDSBadgeStandard.Status,
+        size: OUDSBadgeStandard.Size,
+        theme: OUDSTheme) -> SnapshotGridCell<AnyView>
+    {
+        let model = BadgeStandardConfigurationModel()
+        model.status = status
+        model.standardSize = size
+        return SnapshotGridCell(caption: "\(status.technicalDescription)\n\(size.technicalDescription)") {
+            AnyView(
+                OUDSThemeableView(theme: theme) {
+                    BadgeStandardDemo(configurationModel: model)
+                })
+        }
+    }
+
+    /// Builds a ``SnapshotGrid`` gathering all `status` and `size` values of `OUDSBadgeStandard`,
+    /// then captures it in a single snapshot.
     ///
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
-    ///   - model: The model contains each element of configuration
-    @MainActor func testBadgeStandard(theme: OUDSTheme,
-                                      interfaceStyle: UIUserInterfaceStyle,
-                                      model: BadgeStandardConfigurationModel)
-    {
-        // Generate the illustration for the specified configuration
+    @MainActor private func testBadgeStandardGrid(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        let cells = OUDSBadgeStandard.Status.allCases.flatMap { status in
+            OUDSBadgeStandard.Size.allCases.map { size in
+                badgeStandardCell(status: status, size: size, theme: theme)
+            }
+        }
+
+        let testName = "testBadge_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let name = "StandardBadge"
+
+        let grid = SnapshotGrid(
+            columns: Self.standardAndIconGridColumns,
+            cellSize: Self.standardCellSize,
+            cells: cells,
+            title: "\(testName).\(name)")
+
         let illustration = OUDSThemeableView(theme: theme) {
-            BadgeStandardDemo(configurationModel: model)
+            grid
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
-        // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>.<typePatterne><statusPattern><sizePattern> where:
-        let testName = "testBadge_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let typePattern = "StandardBadge"
-        let statusPattern = model.status.technicalDescription
-        let sizePattern = model.standardSize.technicalDescription
-
-        let name = "\(typePattern)\(statusPattern)\(sizePattern)"
-
-        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
                            named: name,
                            testName: testName)
     }
 
-    /// This function tests `OUDSBadgeIcon` according to all parameters of the configuration available for the given
-    /// theme and color schemes.
+    // MARK: - OUDSBadgeIcon
+
+    /// Builds the grid cell for a given `OUDSBadgeIcon` status kind, size and status icon.
+    @MainActor private func badgeIconCell(
+        statusKind: BadgeIconStatusKind,
+        size: OUDSBadgeStandard.Size,
+        statusIcon: DefinedStatusIcons,
+        theme: OUDSTheme) -> SnapshotGridCell<AnyView>
+    {
+        let model = BadgeIconConfigurationModel()
+        model.statusKind = statusKind
+        model.size = size
+        model.statusIcon = statusIcon
+        return SnapshotGridCell(caption: "\(statusKind.technicalDescription)\n\(size.technicalDescription)") {
+            AnyView(
+                OUDSThemeableView(theme: theme) {
+                    BadgeIconDemo(configurationModel: model)
+                })
+        }
+    }
+
+    /// Builds a ``SnapshotGrid`` gathering all `statusKind` and `size` values of `OUDSBadgeIcon` for a given
+    /// `statusIcon`, then captures it in a single snapshot.
     ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
+    /// The snapshot is saved with a name based on the parameter which is not folded into the grid:
+    ///    testBadge_<themeName>_<colorScheme>.IconBadge-<statusIcon>
     ///
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
-    ///   - model: The model contains each element of configuration
-    @MainActor func testBadgeIcon(theme: OUDSTheme,
-                                  interfaceStyle: UIUserInterfaceStyle,
-                                  model: BadgeIconConfigurationModel)
+    ///   - statusIcon: The status icon kind (image or tintedIcon)
+    @MainActor private func testBadgeIconGrid(theme: OUDSTheme,
+                                              interfaceStyle: UIUserInterfaceStyle,
+                                              statusIcon: DefinedStatusIcons)
     {
-        // Generate the illustration for the specified configuration
+        let cells = BadgeIconStatusKind.allCases.flatMap { statusKind in
+            OUDSBadgeStandard.Size.allCases.map { size in
+                badgeIconCell(statusKind: statusKind, size: size, statusIcon: statusIcon, theme: theme)
+            }
+        }
+
+        let testName = "testBadge_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let name = "IconBadge-\(statusIcon.technicalDescription)"
+
+        let grid = SnapshotGrid(
+            columns: Self.standardAndIconGridColumns,
+            cellSize: Self.iconCellSize,
+            cells: cells,
+            title: "\(testName).\(name)")
+
         let illustration = OUDSThemeableView(theme: theme) {
-            BadgeIconDemo(configurationModel: model)
+            grid
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
-        // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>.<typePatterne><statusPattern><sizePattern> where:
-        let testName = "testBadge_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let typePattern = "IconBadge"
-        let statusPattern = model.statusKind.technicalDescription
-        let statusIconPattern = model.statusIcon.technicalDescription
-        let sizePattern = model.size.technicalDescription
-
-        let name = "\(typePattern)\(statusPattern)\(statusIconPattern)\(sizePattern)"
-
-        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
                            named: name,
                            testName: testName)
     }
 
-    /// This function tests `OUDSBadgeCount` according to all parameters of the configuration available for the given
-    /// theme and color schemes.
-    ///
-    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
+    // MARK: - OUDSBadgeCount
+
+    /// Builds the grid cell for a given `OUDSBadgeCount` status and size.
+    @MainActor private func badgeCountCell(
+        status: OUDSBadgeStandard.Status,
+        size: OUDSBadgeCount.Size,
+        theme: OUDSTheme) -> SnapshotGridCell<AnyView>
+    {
+        let model = BadgeCountConfigurationModel()
+        model.status = status
+        model.countSize = size
+        model.countText = "100"
+        return SnapshotGridCell(caption: "\(status.technicalDescription)\n\(size.technicalDescription)") {
+            AnyView(
+                OUDSThemeableView(theme: theme) {
+                    BadgeCountDemo(configurationModel: model)
+                })
+        }
+    }
+
+    /// Builds a ``SnapshotGrid`` gathering all `status` and `size` values of `OUDSBadgeCount`,
+    /// then captures it in a single snapshot.
     ///
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
-    ///   - model: The model contains each element of configuration
-    @MainActor func testBadgeCount(theme: OUDSTheme,
-                                   interfaceStyle: UIUserInterfaceStyle,
-                                   model: BadgeCountConfigurationModel)
-    {
-        // Generate the illustration for the specified configuration
+    @MainActor private func testBadgeCountGrid(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        let cells = OUDSBadgeStandard.Status.allCases.flatMap { status in
+            OUDSBadgeCount.Size.allCases.map { size in
+                badgeCountCell(status: status, size: size, theme: theme)
+            }
+        }
+
+        let testName = "testBadge_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let name = "CountBadge"
+
+        let grid = SnapshotGrid(
+            columns: Self.countGridColumns,
+            cellSize: Self.countCellSize,
+            cells: cells,
+            title: "\(testName).\(name)")
+
         let illustration = OUDSThemeableView(theme: theme) {
-            BadgeCountDemo(configurationModel: model)
+            grid
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
-        // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>.<typePatterne><statusPattern><sizePattern> where:
-        let testName = "testBadge_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let typePattern = "CountBadge"
-        let statusPattern = model.status.technicalDescription
-        let sizePattern = model.countSize.technicalDescription
-
-        let name = "\(typePattern)\(statusPattern)\(sizePattern)"
-
-        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
                            named: name,
                            testName: testName)
-    }
-
-    // MARK: - Helpers
-
-    private func statusKind(_ status: OUDSBadgeIcon.Status) -> BadgeIconStatusKind {
-        switch status {
-        case .neutral:
-            .neutral
-        case .accent:
-            .accent
-        case .positive:
-            .positive
-        case .info:
-            .info
-        case .warning:
-            .warning
-        case .negative:
-            .negative
-        }
     }
 }
 
