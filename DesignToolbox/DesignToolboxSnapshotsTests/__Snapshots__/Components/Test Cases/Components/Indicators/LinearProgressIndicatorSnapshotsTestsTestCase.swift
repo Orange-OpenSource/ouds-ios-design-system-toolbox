@@ -11,13 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSComponents
 import OUDSSwiftUI
 import SnapshotTesting
 import SwiftUI
 import XCTest
 
-// swiftlint:disable cyclomatic_complexity
-// swiftlint:disable function_body_length
 // swiftlint:disable required_deinit
 // swiftlint:disable type_name
 
@@ -25,22 +24,50 @@ import XCTest
 
 /// Tests the UI rendering of the `OUDSLinearProgressIndicator` for each parameter.
 ///
+/// To limit the amount of reference images, combinatorial axes are gathered into a single ``SnapshotGrid``
+/// per remaining-axis combination (one assertion = one reference image). The grid is laid out with one row
+/// per `gapSize` so a regression touching a single gap size stays identifiable at a glance.
+///
+/// Axes kept as separate files (= filename):
+///   - `status` (6 values) and `track` (`true` / `false`): each pair produces a distinctly different color
+///     palette and visual rendering, making a per-combination reference image worthwhile for visual diffs
+///     → 12 files per theme/scheme for the main grid.
+///   - A dedicated `Extras` file gathers the `stopIndicator × helperText` and
+///     `helperType × alignment × helperText` configurations (all fixed on
+///     `neutral / default / track / progress 0.5`) that are decoupled from the main matrix.
+///
+/// Axes folded into the grid:
+///   - Main grid: `gapSize × progress` (= 2 × 5 = 10 cells).
+///   - Extras grid: 15 fixed configurations covering the Linear-specific `stopIndicator`,
+///     `determinateHelperTextType`, `helperTextAlignment` and `helperText` axes.
+///
 /// **Warning: only the determinate variant is tested. The indeterminate variant is not tested yet
 /// as we face troubles with animations and snapshots.**
+///
+/// **Note on the reveal animation**: `OUDSLinearProgressIndicator(animated: true)` animates the bar
+/// from 0 to the target `progress` on first display. To make snapshots deterministic the configuration
+/// model forces `animated = false` on every tested cell, so the bar is captured at its target value.
+///
+/// Each cell of a grid carries a short caption so a regression stays identifiable directly in the resulting
+/// image. See `SnapshotGrid.swift`.
 open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
 
     /// Fixed progress values covering the full [0, 1] range.
     private static let testedProgressValues: [Double] = [0.0, 0.25, 0.5, 0.75, 1.0]
 
-    /// Tests all determinate linear progress indicators with all statuses, gap sizes,
-    /// track on/off and the five predefined progress values for the given theme and color scheme.
+    /// Fixed size applied to each cell of a progress indicator grid. Width accommodates the horizontal
+    /// bar and an optional helper text; height accommodates two caption lines.
+    private static let cellSize = CGSize(width: 240, height: 110)
+
+    // MARK: - Entry Points
+
+    /// Tests all determinate linear progress indicators with all statuses, gap sizes, track on/off and
+    /// the five predefined progress values for the given theme and color scheme.
     ///
-    /// Also produces a small extra matrix on a fixed configuration (`neutral`, `.default` gap,
-    /// track on, progress 0.5) crossing `stopIndicator` and `helperText` on/off to cover the
-    /// two Linear-specific parameters.
+    /// Also produces a dedicated `Extras` grid covering the Linear-specific `stopIndicator`,
+    /// `determinateHelperTextType`, `helperTextAlignment` and `helperText` axes on a fixed base.
     ///
-    /// **The indeterminate variant is not tested yet as we face troubles with animations
-    /// and snapshots.**
+    /// **The indeterminate variant is not tested yet as we face troubles with animations and snapshots.**
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
@@ -49,135 +76,165 @@ open class LinearProgressIndicatorSnapshotsTestsTestCase: XCTestCase {
                                                     interfaceStyle: UIUserInterfaceStyle)
     {
         for status in OUDSProgressIndicatorStatus.allCases {
-            for gapSize in OUDSProgressIndicatorGapSize.allCases {
-                for track in [true, false] {
-                    for progress in Self.testedProgressValues {
-                        let model = LinearProgressIndicatorConfigurationModel()
-                        model.variant = .determinate
-                        model.status = status
-                        model.gapSize = gapSize
-                        model.track = track
-                        model.progress = progress
-                        // Disable the reveal animation to make snapshots deterministic.
-                        model.animated = false
-                        model.stopIndicator = false
-                        model.helperText = ""
-                        model.determinateHelperTextType = .none
-
-                        testLinearProgressIndicator(theme: theme,
-                                                    interfaceStyle: interfaceStyle,
-                                                    model: model)
-                    }
-                }
+            for track in [true, false] {
+                testLinearMainGrid(theme: theme,
+                                   interfaceStyle: interfaceStyle,
+                                   status: status,
+                                   track: track)
             }
         }
+        testLinearExtrasGrid(theme: theme, interfaceStyle: interfaceStyle)
+    }
 
-        // A fixed literal string is used to keep snapshots deterministic across locales.
-        for stopIndicator in [true, false] {
-            for helperText in ["", "Uploading…"] {
-                // Skip the (false, empty) combination which is already covered above
-                // (neutral / default / track / progress 0.5).
-                if !stopIndicator, helperText.isEmpty { continue }
+    // MARK: - Main Grid
 
+    /// Builds a ``SnapshotGrid`` for a given `status × track` pair, folding `gapSize × progress`.
+    @MainActor private func testLinearMainGrid(theme: OUDSTheme,
+                                               interfaceStyle: UIUserInterfaceStyle,
+                                               status: OUDSProgressIndicatorStatus,
+                                               track: Bool)
+    {
+        var cells: [SnapshotGridCell<AnyView>] = []
+        for gapSize in OUDSProgressIndicatorGapSize.allCases {
+            for progress in Self.testedProgressValues {
                 let model = LinearProgressIndicatorConfigurationModel()
                 model.variant = .determinate
-                model.status = .neutral
-                model.gapSize = .default
-                model.track = true
-                model.progress = 0.5
+                model.status = status
+                model.gapSize = gapSize
+                model.track = track
+                model.progress = progress
                 model.animated = false
+                model.stopIndicator = false
+                model.helperText = ""
+                model.determinateHelperTextType = .none
+                cells.append(cell(theme: theme,
+                                  model: model,
+                                  caption: mainCaption(gapSize: gapSize, progress: progress)))
+            }
+        }
+        assertGrid(theme: theme,
+                   interfaceStyle: interfaceStyle,
+                   name: "\(status.technicalDescription)\(track ? "-track" : "-noTrack")",
+                   columns: Self.testedProgressValues.count,
+                   cells: cells)
+    }
+
+    // MARK: - Extras Grid
+
+    /// Groups the Linear-specific configurations (fixed on `neutral / default / track / progress 0.5`)
+    /// into a single reference image. Covers:
+    ///  - `stopIndicator × helperText` (3 cells, with `(false, "")` skipped as it is already covered by
+    ///    the main grid under `neutral-track`).
+    ///  - `determinateHelperTextType × helperTextAlignment × helperText` (12 cells).
+    @MainActor private func testLinearExtrasGrid(theme: OUDSTheme,
+                                                 interfaceStyle: UIUserInterfaceStyle)
+    {
+        var cells: [SnapshotGridCell<AnyView>] = []
+
+        // Block 1: stopIndicator × helperText (3 cells, same skip rule as the original tests).
+        for stopIndicator in [true, false] {
+            for helperText in ["", "Uploading…"] {
+                if !stopIndicator, helperText.isEmpty { continue }
+                let model = extrasBaseModel()
                 model.stopIndicator = stopIndicator
                 model.helperText = helperText
                 model.determinateHelperTextType = .percent
                 model.helperTextAlignment = .center
-
-                testLinearProgressIndicator(theme: theme,
-                                            interfaceStyle: interfaceStyle,
-                                            model: model)
+                cells.append(cell(theme: theme,
+                                  model: model,
+                                  caption: "stop=\(stopIndicator)\n\(helperText.isEmpty ? "no text" : "with text")"))
             }
         }
 
-        for type in DeterminateProgressIndicatorHelperType.allCases {
-            // Skip the (.none) which is already covered above
-            if type == .none { continue }
-
+        // Block 2: helperType × alignment × helperText (12 cells, skips .none which is covered elsewhere).
+        for type in DeterminateProgressIndicatorHelperType.allCases where type != .none {
             for alignment in OUDSLinearProgressIndicator.HelperTextAlignment.allCases {
                 for helperText in ["", "Uploading…"] {
-                    let model = LinearProgressIndicatorConfigurationModel()
-                    model.variant = .determinate
-                    model.status = .neutral
-                    model.gapSize = .default
-                    model.track = true
-                    model.progress = 0.5
-                    model.animated = false
+                    let model = extrasBaseModel()
                     model.stopIndicator = false
                     model.determinateHelperTextType = type
                     model.helperTextAlignment = alignment
                     model.helperText = helperText
-                    model.helperTextAlignment = alignment
-
-                    testLinearProgressIndicator(theme: theme,
-                                                interfaceStyle: interfaceStyle,
-                                                model: model)
+                    let typeLabel = stripLeadingDot(type.technicalDescription)
+                    let alignLabel = stripLeadingDot(alignment.technicalDescription)
+                    let textLabel = helperText.isEmpty ? "no text" : "with text"
+                    let caption = "\(typeLabel)·\(alignLabel)\n\(textLabel)"
+                    cells.append(cell(theme: theme, model: model, caption: caption))
                 }
             }
         }
+
+        assertGrid(theme: theme,
+                   interfaceStyle: interfaceStyle,
+                   name: "Extras",
+                   columns: 3,
+                   cells: cells)
     }
 
-    /// Renders a single determinate `OUDSLinearProgressIndicator` in the given configuration and
-    /// captures a snapshot named after the configuration.
-    ///
-    /// - Parameters:
-    ///   - theme: The theme (`OUDSTheme`)
-    ///   - interfaceStyle: The user interface style (light or dark)
-    ///   - model: The model contains each element of configuration
-    @MainActor func testLinearProgressIndicator(theme: OUDSTheme,
-                                                interfaceStyle: UIUserInterfaceStyle,
-                                                model: LinearProgressIndicatorConfigurationModel)
+    private func extrasBaseModel() -> LinearProgressIndicatorConfigurationModel {
+        let model = LinearProgressIndicatorConfigurationModel()
+        model.variant = .determinate
+        model.status = .neutral
+        model.gapSize = .default
+        model.track = true
+        model.progress = 0.5
+        model.animated = false
+        return model
+    }
+
+    // MARK: - Grid Helpers
+
+    private func mainCaption(gapSize: OUDSProgressIndicatorGapSize, progress: Double) -> String {
+        "\(stripLeadingDot(gapSize.technicalDescription))\nprogress \(Int((progress * 100).rounded()))%"
+    }
+
+    /// Strips a leading `.` from a technical description (e.g. `.center` → `center`) to keep captions compact.
+    private func stripLeadingDot(_ value: String) -> String {
+        value.hasPrefix(".") ? String(value.dropFirst()) : value
+    }
+
+    @MainActor private func cell(theme: OUDSTheme,
+                                 model: LinearProgressIndicatorConfigurationModel,
+                                 caption: String) -> SnapshotGridCell<AnyView>
     {
-        // Generate the illustration for the specified configuration
+        SnapshotGridCell(caption: caption) {
+            AnyView(
+                OUDSThemeableView(theme: theme) {
+                    LinearProgressIndicatorDemo(configurationModel: model)
+                })
+        }
+    }
+
+    /// Composes the grid and captures a single snapshot assertion.
+    ///
+    /// Snapshot name follows the historical scheme:
+    ///   testLinearProgressIndicator_<themeName>_<colorScheme>.DeterminateLinearProgressIndicator-<name>
+    @MainActor private func assertGrid(theme: OUDSTheme,
+                                       interfaceStyle: UIUserInterfaceStyle,
+                                       name: String,
+                                       columns: Int,
+                                       cells: [SnapshotGridCell<AnyView>])
+    {
+        let testName = "testLinearProgressIndicator_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let snapshotName = "DeterminateLinearProgressIndicator-\(name)"
+
+        let grid = SnapshotGrid(
+            columns: columns,
+            cellSize: Self.cellSize,
+            cells: cells,
+            title: "\(testName).\(snapshotName)")
+
         let illustration = OUDSThemeableView(theme: theme) {
-            LinearProgressIndicatorDemo(configurationModel: model)
+            grid
                 .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
-        // Create a unique snapshot name based on the current configuration:
-        // test_<themeName>_<colorScheme>.<typePattern><statusPattern><gapPattern><trackPattern><progressPattern>[<stopPattern>][<helperPattern>]
-        let testName = "testLinearProgressIndicator_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let typePattern = "DeterminateLinearProgressIndicator"
-        let statusPattern = model.status.technicalDescription
-        let gapPattern = model.gapSize.technicalDescription
-        let trackPattern = model.track ? ".track" : ".noTrack"
-        // Encoded as `.progress_75` to keep the file name filesystem-friendly.
-        let progressPattern = ".progress_\(Int((model.progress * 100).rounded()))"
-        let stopPattern = model.stopIndicator ? ".stopIndicator" : ""
-        let alignementPattern = model.helperTextAlignment.technicalDescription
-
-        // Produce a unique suffix for every combination of `helperType`, `alignment`
-        // and `helperText` presence. Historically the `.description` branch collapsed
-        // to an empty string when the helper text was empty, which caused four
-        // different configurations to share the same snapshot name as the base
-        // `neutral / default / track / progress_50` case from the main loop.
-        let helperPattern = switch model.determinateHelperTextType {
-        case .none:
-            ""
-        case .percent:
-            ".percent\(alignementPattern)\(model.helperText.isEmpty ? ".noText" : ".helperText")"
-        case .description:
-            ".description\(alignementPattern)\(model.helperText.isEmpty ? ".noText" : ".helperText")"
-        }
-
-        let name = "\(typePattern)\(statusPattern)\(gapPattern)\(trackPattern)\(progressPattern)\(stopPattern)\(helperPattern)"
-
-        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
                            on: interfaceStyle,
-                           named: name,
+                           named: snapshotName,
                            testName: testName)
     }
 }
 
-// swiftlint:enable cyclomatic_complexity
-// swiftlint:enable function_body_length
 // swiftlint:enable type_name
 // swiftlint:enable required_deinit
