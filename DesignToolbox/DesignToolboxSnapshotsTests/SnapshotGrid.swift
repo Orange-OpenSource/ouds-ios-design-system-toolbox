@@ -127,19 +127,26 @@ struct SnapshotGrid<Content: View>: View {
     /// so the image remains identifiable even out of its file context (e.g. in a PR review).
     var title: String?
 
+    /// Horizontal spacing between adjacent cells on the same row. Defaults to a small gap; raise it for
+    /// grids whose cells carry taller/wider content that would otherwise feel cramped (e.g. text areas).
+    var cellSpacing: CGFloat = 8
+
+    /// Vertical spacing between consecutive rows of cells. Follows the same rationale as ``cellSpacing``.
+    var rowSpacing: CGFloat = 8
+
     private let captionFont: Font = .system(size: 10, weight: .regular)
     private let titleFont: Font = .system(size: 12, weight: .semibold)
 
     var body: some View {
         let rows = Self.chunked(cells, by: columns)
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: rowSpacing) {
             if let title {
                 Text(title)
                     .font(titleFont)
                     .lineLimit(1)
             }
             ForEach(Array(rows.enumerated()), id: \.offset) { _, row in
-                HStack(alignment: .top, spacing: 8) {
+                HStack(alignment: .top, spacing: cellSpacing) {
                     ForEach(row) { cell in
                         VStack(spacing: 4) {
                             cell.content
