@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] RubyGem `fastlane` from v2.240.1 to v2.241.1
 - [DesignToolbox] RubyGem `excon` transitive RubyGem from v1.7.2 to v1.7.3
 - [DesignToolbox] RubyGem dependency `net-http` from v0.9.1 to 0.10.0
 - [DesignToolbox] RubyGem transitive dependency `uri` from v1.1.1 to v1.1.2
