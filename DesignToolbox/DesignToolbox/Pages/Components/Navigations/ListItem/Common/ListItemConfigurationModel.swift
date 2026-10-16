@@ -152,7 +152,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         switch textsModel.labelContentType {
         case .text:
             return OUDSListItemData(
-                itemLabel: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
+                label: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
                 description: description,
                 overline: overlineContent,
                 extraLabel: extraLabel,
@@ -161,7 +161,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                 bottomSlot: bottomSlot)
         case .customView:
             return OUDSListItemData(
-                viewLabel: textsModel.customLabelView,
+                label: textsModel.customLabelView,
                 accessibilityLabel: "Custom view label",
                 description: description,
                 overline: overlineContent,
@@ -187,7 +187,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         switch textsModel.labelContentType {
         case .text:
             return OUDSListItemData(
-                itemLabel: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
+                label: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
                 description: description,
                 overline: .rich(safeOverline),
                 extraLabel: extraLabel,
@@ -196,7 +196,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                 bottomSlot: bottomSlot)
         case .customView:
             return OUDSListItemData(
-                viewLabel: textsModel.customLabelView,
+                label: textsModel.customLabelView,
                 accessibilityLabel: "Custom view label",
                 description: description,
                 overline: .rich(safeOverline),
