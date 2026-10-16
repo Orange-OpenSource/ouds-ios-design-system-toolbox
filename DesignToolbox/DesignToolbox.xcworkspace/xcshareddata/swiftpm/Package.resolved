@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "c243a4ae4ad92bbb9d318c8304a2a068a091ec35"
+        "branch" : "1812-for-list-item-components-expose-attributedstring-api-for-rich-text-mode-on-all-text-fields",
+        "revision" : "0f15769a3b04217a0e858f92382bbeb065be9cd3"
       }
     },
     {
