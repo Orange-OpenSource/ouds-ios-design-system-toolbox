@@ -115,7 +115,7 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code = switch labelContentType {
         case .text:
-            "\(labelPattern)\(hasBoldLabelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern)"
+            "\(labelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern)"
         case .customView:
             "label: customLabel, accessibilityLabel: \"Custom view label\"\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern)"
         }
@@ -128,17 +128,16 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
     }
 
     private var labelPattern: String {
-        "label: \"\(labelText)\""
-    }
-
-    private var hasBoldLabelPattern: String {
-        hasBoldLabel ? ", hasBoldLabel: true" : ""
+        if hasBoldLabel {
+            return "label: .text(\"\(labelText)\", isBold: true)"
+        }
+        return "label: .text(\"\(labelText)\")"
     }
 
     private var overlinePattern: String {
         guard !overlineText.isEmpty else { return "" }
         if overlineTextMode == .rich {
-            return ", overline: yourAttributedString"
+            return ", overline: .attributed(yourAttributedString)"
         }
         return ", overline: \"\(overlineText)\""
     }

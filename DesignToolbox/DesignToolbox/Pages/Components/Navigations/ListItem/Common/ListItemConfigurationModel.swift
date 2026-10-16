@@ -150,25 +150,29 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 
     @MainActor
     private func buildDataItemWithRawOverline(currentLabel: String, overline: String?, slot: OUDSListItemData.Slot?, bottomSlot: OUDSListItemData.Slot?) -> OUDSListItemData {
+        let description: TextualContent? = textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText)
+        let overlineContent: TextualContent? = overline.map { .raw($0) }
+        let extraLabel: TextualContent? = textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText)
+        let helperText: TextualContent? = textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText)
+
         switch textsModel.labelContentType {
         case .text:
-            OUDSListItemData(
-                label: currentLabel,
-                hasBoldLabel: textsModel.hasBoldLabel,
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                overline: overline,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+            return OUDSListItemData(
+                label: .text(currentLabel, isBold: textsModel.hasBoldLabel),
+                description: description,
+                overline: overlineContent,
+                extraLabel: extraLabel,
+                helperText: helperText,
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         case .customView:
-            OUDSListItemData(
+            return OUDSListItemData(
                 label: textsModel.customLabelView,
                 accessibilityLabel: "Custom view label",
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                overline: overline,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                description: description,
+                overline: overlineContent,
+                extraLabel: extraLabel,
+                helperText: helperText,
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         }
@@ -182,25 +186,28 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         bottomSlot: OUDSListItemData.Slot?) -> OUDSListItemData
     {
         let safeOverline = overline ?? AttributedString("")
+        let description: TextualContent? = textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText)
+        let extraLabel: TextualContent? = textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText)
+        let helperText: TextualContent? = textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText)
+
         switch textsModel.labelContentType {
         case .text:
             return OUDSListItemData(
-                label: currentLabel,
-                overline: safeOverline,
-                hasBoldLabel: textsModel.hasBoldLabel,
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                label: .text(currentLabel, isBold: textsModel.hasBoldLabel),
+                description: description,
+                overline: .attributed(safeOverline),
+                extraLabel: extraLabel,
+                helperText: helperText,
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         case .customView:
             return OUDSListItemData(
                 label: textsModel.customLabelView,
                 accessibilityLabel: "Custom view label",
-                overline: safeOverline,
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                description: description,
+                overline: .attributed(safeOverline),
+                extraLabel: extraLabel,
+                helperText: helperText,
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         }
