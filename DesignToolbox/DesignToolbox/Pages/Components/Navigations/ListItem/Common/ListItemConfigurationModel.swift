@@ -161,7 +161,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                 bottomSlot: bottomSlot)
         case .customView:
             return OUDSListItemData(
-                label: textsModel.customLabelView,
+                viewLabel: textsModel.customLabelView,
                 accessibilityLabel: "Custom view label",
                 description: description,
                 overline: overlineContent,
@@ -196,7 +196,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
                 bottomSlot: bottomSlot)
         case .customView:
             return OUDSListItemData(
-                label: textsModel.customLabelView,
+                viewLabel: textsModel.customLabelView,
                 accessibilityLabel: "Custom view label",
                 description: description,
                 overline: .rich(safeOverline),
