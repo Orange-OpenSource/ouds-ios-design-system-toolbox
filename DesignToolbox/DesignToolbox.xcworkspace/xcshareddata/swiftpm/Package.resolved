@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "17ee09646d84c8a68b5798c8846a39433af1a7ae"
+        "branch" : "1762-for-pin-code-input-component-add-possibility-to-display-full-value-instead-of-bullets-version-14",
+        "revision" : "cc914f89650814972610ac23706788fb1b1140d3"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-custom-dump",
       "state" : {
-        "revision" : "4fb9e7cbb4b8f5a7354005db39447f570d6b3e19",
-        "version" : "1.7.3"
+        "revision" : "e9c34fd54ece006b491a0e6d23fe9a6024b9a828",
+        "version" : "1.7.0"
       }
     },
     {
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",
       "state" : {
-        "revision" : "d9308ad679143c26a30dec52daefe82f54af2b82",
-        "version" : "1.13.1"
+        "revision" : "8f6abcf4c8950e2679d5b2fee4ca284fd7c34886",
+        "version" : "1.11.0"
       }
     }
   ],

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Possibility to display full value instead of bullets in `PIN Code input` (Orange-OpenSource/ouds-ios#1762)
 - [Library] `skeleton` on components (Orange-OpenSource/ouds-ios#1651)
 - [Library] `categorical tag` component (Orange-OpenSource/ouds-ios#1782)
 

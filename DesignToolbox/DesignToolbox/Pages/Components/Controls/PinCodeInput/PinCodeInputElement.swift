@@ -37,7 +37,7 @@ private struct PinCodeInputIllustration: View {
     @State private var pinCode: String = "123"
 
     var body: some View {
-        OUDSPinCodeInput($pinCode, length: .six, helperText: String(localized: "app_components_pinCodeInputHelperText_label"))
+        OUDSPinCodeInput($pinCode, length: .six, hiddenCharacters: true, helperText: String(localized: "app_components_pinCodeInputHelperText_label"))
     }
 }
 

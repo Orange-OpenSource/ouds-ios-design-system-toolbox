@@ -178,6 +178,7 @@ struct TestPinCodeInputView: View {
     var body: some View {
         OUDSPinCodeInput(.constant(mockData(isFull)),
                          length: length,
+                         hiddenCharacters: true,
                          helperText: helperText,
                          isOutlined: outlined,
                          status: status,
