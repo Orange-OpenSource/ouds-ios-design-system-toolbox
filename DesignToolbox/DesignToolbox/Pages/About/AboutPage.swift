@@ -318,7 +318,7 @@ private struct LiquidGlassStateItem: View {
                                  shape: .rounded,
                                  size: .small)
 
-        OUDSStaticListItem(data: .init(label: .text("app_about_isLiquidGlass_disabled".localized())), trailing: .tag(versionTag))
+        OUDSStaticListItem(data: .init(itemLabel: .text("app_about_isLiquidGlass_disabled".localized())), trailing: .tag(versionTag))
             .oudsListItemStyle(divider: false)
             .oudsListItemSize(.small)
     }
@@ -337,7 +337,7 @@ private struct VersionItem: View {
                                  appearance: .muted,
                                  shape: .rounded,
                                  size: .small)
-        OUDSStaticListItem(data: .init(label: .text(title.localized())), trailing: .tag(versionTag))
+        OUDSStaticListItem(data: .init(itemLabel: .text(title.localized())), trailing: .tag(versionTag))
             .oudsListItemStyle(divider: false)
             .oudsListItemSize(.small)
             .modifier(CopyableTextViewModifier(version))

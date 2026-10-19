@@ -30,10 +30,6 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var overlineTextMode: TextualContentMode {
-        didSet { updateCode() }
-    }
-
     @Published var extraLabelText: String {
         didSet { updateCode() }
     }
@@ -71,7 +67,6 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
         labelContentType = .text
 
         overlineText = ""
-        overlineTextMode = .raw
         extraLabelText = ""
         descriptionText = ""
         hasBoldLabel = false
@@ -136,9 +131,6 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
 
     private var overlinePattern: String {
         guard !overlineText.isEmpty else { return "" }
-        if overlineTextMode == .rich {
-            return ", overline: .attributed(yourAttributedString)"
-        }
         return ", overline: \"\(overlineText)\""
     }
 
@@ -175,12 +167,9 @@ struct ListItemTextsConfiguration: View {
                 OUDSSwitchItem("app_components_listItem_boldLabel_tech", isOn: $configurationModel.hasBoldLabel)
             }
 
-            if configurationModel.itemSize == .default {
-                let textModeTitle = "app_components_textMode_tech".localized() + " (Overline)"
-                OUDSChipPicker(title: textModeTitle,
-                               selection: $configurationModel.overlineTextMode,
-                               chips: TextualContentMode.chips)
+            OUDSAlertMessage("app_components_listItem_richText_details", status: .accent(image: nil))
 
+            if configurationModel.itemSize == .default {
                 DesignToolboxTextField(text: $configurationModel.overlineText, label: "app_components_listItem_overline_tech")
 
                 DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_common_extraLabel_tech")

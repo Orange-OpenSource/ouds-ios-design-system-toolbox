@@ -5276,6 +5276,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_listItem_richText_details" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتيح واجهة برمجة التطبيقات (API) الخاصة بـ OUDS أيضاً استخدام `AttributedString` لوضع \"النص المنسق\" (rich text)."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The OUDS API also allows the use of AttributedString for \"rich text\" mode."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'API OUDS permet également d'utiliser des AttributedString pour le mode \"rich text\""
+          }
+        }
+      }
+    },
     "app_components_listItem_roundedMedia_tech" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
