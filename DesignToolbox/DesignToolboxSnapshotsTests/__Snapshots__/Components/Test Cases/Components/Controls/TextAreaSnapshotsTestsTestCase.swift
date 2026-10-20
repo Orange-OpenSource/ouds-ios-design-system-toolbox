@@ -144,7 +144,7 @@ open class TextAreaSnapshotsTestsTestCase: XCTestCase {
         switch status {
         case .enabled:
             "enabled"
-        case .error:
+        case .error, .textualError:
             "error"
         case .loading:
             "loading"
@@ -274,7 +274,7 @@ struct TestTextAreaView: View {
             // With plain helper text
             OUDSTextArea(label: "Label",
                          text: $text,
-                         helperText: .plain("Helper text"),
+                         helperText: .textual(.raw("Helper text")),
                          isOutlined: outlined,
                          constrainedMaxWidth: constrainedMaxWidth,
                          status: status)
@@ -298,7 +298,7 @@ struct TestTextAreaView: View {
             // With plain helper text and helper link
             OUDSTextArea(label: "Label",
                          text: $text,
-                         helperText: .plain("Helper text"),
+                         helperText: .textual(.raw("Helper text")),
                          helperLink: helperLink,
                          isOutlined: outlined,
                          constrainedMaxWidth: constrainedMaxWidth,
@@ -319,13 +319,13 @@ struct TestTextAreaView: View {
 extension OUDSTextArea.Status: @retroactive CaseIterable, @retroactive Hashable, DesignToolboxEnumLocalizedRepresentable {
 
     public static let allCases: [OUDSTextArea.Status] =
-        [.enabled, .error(message: "app_components_textArea_errorDescription_label".localized()), .loading(progress: 0.75), .readOnly, .disabled]
+        [.enabled, .textualError(message: .raw("app_components_textArea_errorDescription_label".localized())), .loading(progress: 0.75), .readOnly, .disabled]
 
     public var wordingKey: String {
         switch self {
         case .enabled:
             "app_common_enabled_tech"
-        case .error:
+        case .error, .textualError:
             "app_components_common_error_tech"
         case .richError:
             "app_components_common_richError_tech"
@@ -342,8 +342,8 @@ extension OUDSTextArea.Status: @retroactive CaseIterable, @retroactive Hashable,
         if self == .readOnly {
             return ".readOnly"
         }
-        if case let .error(message) = self {
-            return ".error(message: \"\(message)\")"
+        if case let .textualError(message) = self {
+            return ".error(message: \"\(message.rawValue)\")"
         } else {
             return ".\(wordingKey.localized().lowercased())"
         }
