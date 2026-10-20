@@ -33,7 +33,7 @@ import SwiftUI
 /// - `true`: the sandbox loads `SandboxTestView` for experimentations.
 ///
 /// Flip this flag when you start populating the sandbox with real content.
-let kSandboxContainsThings: Bool = true
+let kSandboxContainsThings: Bool = false
 
 /// Actual sandbox surface, loaded when ``kSandboxContainsThings`` is `true`.
 ///
