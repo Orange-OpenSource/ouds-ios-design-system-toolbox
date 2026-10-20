@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] GitHub Action `actions/github-script` action from v7 to v9 for `check-renovate-dependencies-prs` workflow
 - [DesignToolbox] GitHub Action `github/codeql-action/upload-sarif` action from v4.38.2 to v4.39.0 for `scorecard` workflow
 - [DesignToolbox] GitHub Action `actions/upload-artifact` action from v7.0.1 to v7.0.2 for `scorecard` workflow
 - [Library] Availability details for Apple platforms on public API (Orange-OpenSource/ouds-ios#1815) 
