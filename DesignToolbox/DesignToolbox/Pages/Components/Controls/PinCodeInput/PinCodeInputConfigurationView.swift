@@ -36,6 +36,10 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var hiddenCharacters: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var helperText: String {
         didSet { updateCode() }
     }
@@ -91,6 +95,7 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
     override init() {
         value = ""
         length = .six
+        hiddenCharacters = true
         helperText = Self.defaultHelperText
         errorText = Self.defaultErrorText
         isOutlined = false
@@ -107,12 +112,16 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         code =
             """
             // Current value is: '\(value)'
-            OUDSPinCodeInput($value, \(lengthPattern)\(helperTextPattern)\(isOutlinedPattern)\(statusPattern))
+            OUDSPinCodeInput($value, \(lengthPattern)\(hiddenCharactersPattern)\(helperTextPattern)\(isOutlinedPattern)\(statusPattern))
             """
     }
 
     private var lengthPattern: String {
         "length: .\(length)"
+    }
+
+    private var hiddenCharactersPattern: String {
+        hiddenCharacters ? ", hiddenCharacters: true" : ""
     }
 
     private var helperTextPattern: String {
@@ -146,6 +155,8 @@ struct PinCodeInputConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+
+                OUDSSwitchItem("app_components_pinCodeInput_hiddenCharacters_tech", isOn: $configurationModel.hiddenCharacters)
 
                 OUDSSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
 
