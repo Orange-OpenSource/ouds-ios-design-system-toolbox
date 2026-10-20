@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `text input` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `helperText`, and `textualError` status (Orange-OpenSource/ouds-ios#1797)
+- [Library] `PIN code input` component init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `helperText`, and `textualError` status (Orange-OpenSource/ouds-ios#1797)
 - [Library] `checkbox item indeterminate` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `errorText` (Orange-OpenSource/ouds-ios#1797)
 - [Library] `radio item` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `errorText` (Orange-OpenSource/ouds-ios#1797)
 - [Library] `checkbox item` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `errorText` (Orange-OpenSource/ouds-ios#1797)

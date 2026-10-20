@@ -133,7 +133,7 @@ open class PasswordInputSnapshotsTestsTestCase: XCTestCase {
         switch status {
         case .enabled:
             "enabled"
-        case .error:
+        case .error, .textualError:
             "error"
         case .loading:
             "loading"
