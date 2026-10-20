@@ -156,13 +156,13 @@ struct PinCodeInputConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
 
+                OUDSSwitchItem("app_components_pinCodeInput_hiddenCharacters_tech", isOn: $configurationModel.hiddenCharacters)
+
                 OUDSSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
 
                 OUDSChipPicker(title: "app_components_pinCodeInput_length_tech",
                                selection: $configurationModel.length,
                                chips: OUDSPinCodeInput.Length.chips)
-
-                OUDSSwitchItem("app_components_pinCodeInput_hiddenCharacters_tech", isOn: $configurationModel.hiddenCharacters)
 
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.statusKind,

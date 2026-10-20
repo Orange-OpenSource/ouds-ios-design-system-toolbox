@@ -7648,7 +7648,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1762-for-pin-code-input-component-add-possibility-to-display-full-value-instead-of-bullets-version-14";
+				branch = develop;
 				kind = branch;
 			};
 		};

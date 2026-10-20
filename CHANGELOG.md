@@ -8,12 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] Possibility to display full value instead of bullets in `PIN Code input` (Orange-OpenSource/ouds-ios#1762)
+- [Library] Flag to display full value instead of bullets in `PIN code input` component (Orange-OpenSource/ouds-ios#1762)
+- [Library] `Tuning` parameter for Orange, Orange Compact, Wireframe and White Label themes Xcode previews (Orange-OpenSource/ouds-ios#1793)
+- [Library] Tool to detect public API breakings (Orange-OpenSource/ouds-ios#1800)
 - [Library] `skeleton` on components (Orange-OpenSource/ouds-ios#1651)
 - [Library] `categorical tag` component (Orange-OpenSource/ouds-ios#1782)
 
 ### Changed
 
+- [Library] Availability details for Apple platforms on public API (Orange-OpenSource/ouds-ios#1815) 
+- [Library] Documentation for some components with DSM hyperlinks (Orange-OpenSource/ouds-ios#1813)
 - [Library] `typography` component to version v1.1.0 (Orange-OpenSource/ouds-ios#1722)
 - [Library] `alert message` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1659)
 

@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1762-for-pin-code-input-component-add-possibility-to-display-full-value-instead-of-bullets-version-14",
-        "revision" : "a6ebdff3d1ad88191a72c4571e69bccba557ec5b"
+        "branch" : "develop",
+        "revision" : "c243a4ae4ad92bbb9d318c8304a2a068a091ec35"
       }
     },
     {
