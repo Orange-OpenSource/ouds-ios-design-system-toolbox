@@ -29,10 +29,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [DesignToolbox] GitHub Action `ossf/scorecard-action` from v2.4.4 to v2.5.0 for `scorecard` workflow
-- [DesignToolbox] GitHub Action `actions/github-script` action from v7 to v9 for `check-renovate-dependencies-prs` workflow
-- [DesignToolbox] GitHub Action `github/codeql-action/upload-sarif` action from v4.38.2 to v4.39.0 for `scorecard` workflow
-- [DesignToolbox] GitHub Action `actions/upload-artifact` action from v7.0.1 to v7.0.2 for `scorecard` workflow
+- [DesignToolbox] GitHub Actions `ruby/setup-ruby` action from v1.327.0 to v1.331.0 for `build-and-test` workflow
+- [DesignToolbox] GitHub Actions `ossf/scorecard-action` action from v2.4.4 to v2.5.0 for `scorecard` workflow
+- [DesignToolbox] GitHub Actions `actions/github-script` action from v7 to v9 for `check-renovate-dependencies-prs` workflow
+- [DesignToolbox] GitHub Actions `github/codeql-action/upload-sarif` action from v4.38.2 to v4.39.0 for `scorecard` workflow
+- [DesignToolbox] GitHub Actions `actions/upload-artifact` action from v7.0.1 to v7.0.2 for `scorecard` workflow
 - [Library] Availability details for Apple platforms on public API (Orange-OpenSource/ouds-ios#1815) 
 - [Library] Documentation for some components with DSM hyperlinks (Orange-OpenSource/ouds-ios#1813)
 - [Library] `typography` component to version v1.1.0 (Orange-OpenSource/ouds-ios#1722)
