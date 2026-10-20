@@ -50,7 +50,7 @@ private struct SwitchItemDemo: View {
                                image: image,
                                isReversed: !configurationModel.isReversed,
                                isError: configurationModel.isError,
-                               errorText: configurationModel.errorText,
+                               errorText: .raw(configurationModel.errorText),
                                isReadOnly: configurationModel.isReadOnly,
                                hasDivider: configurationModel.hasDivider,
                                constrainedMaxWidth: configurationModel.constrainedMaxWidth)
@@ -61,7 +61,7 @@ private struct SwitchItemDemo: View {
                                image: image,
                                isReversed: !configurationModel.isReversed,
                                isError: configurationModel.isError,
-                               errorText: configurationModel.richErrorText,
+                               errorText: .rich(configurationModel.richErrorText),
                                isReadOnly: configurationModel.isReadOnly,
                                hasDivider: configurationModel.hasDivider,
                                constrainedMaxWidth: configurationModel.constrainedMaxWidth)

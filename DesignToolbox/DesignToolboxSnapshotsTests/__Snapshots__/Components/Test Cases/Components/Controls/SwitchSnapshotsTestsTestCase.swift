@@ -439,7 +439,7 @@ struct SwitchTest: View {
                            image: image,
                            isReversed: false,
                            isError: isError,
-                           errorText: errorText,
+                           errorText: errorText.map { .raw($0) },
                            isReadOnly: isReadOnly,
                            hasDivider: hasDivider)
                 .disabled(isDisabled)
@@ -450,7 +450,7 @@ struct SwitchTest: View {
                            image: image,
                            isReversed: true,
                            isError: isError,
-                           errorText: errorText,
+                           errorText: errorText.map { .raw($0) },
                            isReadOnly: isReadOnly,
                            hasDivider: hasDivider)
                 .disabled(isDisabled)
