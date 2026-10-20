@@ -90,9 +90,9 @@ final class BulletListConfigurationModel: ComponentConfiguration {
     private var labelPattern: String {
         switch textMode {
         case .rich:
-            "yourAttributedString"
+            ".rich(yourAttributedString)"
         case .raw:
-            "\"\(label)\""
+            ".raw(\"\(label)\")"
         }
     }
 

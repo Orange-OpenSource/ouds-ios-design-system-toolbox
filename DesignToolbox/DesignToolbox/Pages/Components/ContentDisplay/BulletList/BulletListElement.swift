@@ -41,8 +41,8 @@ private struct BulletListIllustration: View {
     var body: some View {
         VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
             OUDSBulletList {
-                OUDSBulletList.Item(LocalizedStringKey("app_components_common_label_label"))
-                OUDSBulletList.Item(LocalizedStringKey("app_components_common_label_label"))
+                OUDSBulletList.Item(.localized("app_components_common_label_label"))
+                OUDSBulletList.Item(.localized("app_components_common_label_label"))
             }
         }
         .padding(.leading, 120)
