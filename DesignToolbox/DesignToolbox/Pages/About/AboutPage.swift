@@ -338,6 +338,7 @@ private struct VersionItem: View {
                                  appearance: .muted,
                                  shape: .rounded,
                                  size: .small)
+
         OUDSStaticListItem(data: .init(label: .textual(.raw(title.localized()))),
                            trailing: .tag(versionTag))
             .oudsListItemStyle(divider: false)
