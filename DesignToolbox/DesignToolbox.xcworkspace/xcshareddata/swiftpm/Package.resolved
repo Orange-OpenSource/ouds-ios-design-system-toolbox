@@ -16,7 +16,7 @@
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
         "branch" : "1812-for-list-item-components-expose-attributedstring-api-for-rich-text-mode-on-all-text-fields",
-        "revision" : "7f11c8bc847c4ce184c1fdf6d45f04c1ba91b086"
+        "revision" : "c9c98731075376ee39d8c1f1567facb2de65df71"
       }
     },
     {

@@ -152,7 +152,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         switch textsModel.labelContentType {
         case .text:
             return OUDSListItemData(
-                itemLabel: .text(currentLabel, isBold: textsModel.hasBoldLabel),
+                itemLabel: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
                 description: description,
                 overline: overlineContent,
                 extraLabel: extraLabel,
@@ -187,7 +187,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         switch textsModel.labelContentType {
         case .text:
             return OUDSListItemData(
-                itemLabel: .text(currentLabel, isBold: textsModel.hasBoldLabel),
+                itemLabel: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
                 description: description,
                 overline: .rich(safeOverline),
                 extraLabel: extraLabel,

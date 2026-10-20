@@ -40,7 +40,7 @@ struct NavigationListItemIllustration: View {
 
     var body: some View {
         VStack(spacing: theme.spaces.fixedSmall) {
-            let data = OUDSListItemData(itemLabel: .text("Label"),
+            let data = OUDSListItemData(itemLabel: .textual("Label"),
                                         description: "A description of the item to show in the list item view.")
             OUDSNavigationListItem(data: data, indicatorType: .next)
                 .oudsListItemStyle(divider: false, background: false)
