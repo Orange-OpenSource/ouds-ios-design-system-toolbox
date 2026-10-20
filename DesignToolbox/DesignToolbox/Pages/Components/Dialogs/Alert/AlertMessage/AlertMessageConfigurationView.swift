@@ -121,7 +121,7 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         case .raw:
             return ", description: \"\(descriptionText)\""
         case .rich:
-            return ", description: yourAttributedString"
+            return ", description: .rich(yourAttributedString)"
         }
     }
 
@@ -129,7 +129,7 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         if textMode == .raw {
             bulletList.isEmpty ? "" : ", bulletList: [\"\(bulletList.joined(separator: "\", \""))\"]"
         } else {
-            bulletList.isEmpty ? "" : ", bulletList: yourArrayOfAttributedString"
+            bulletList.isEmpty ? "" : ", bulletList: yourArrayOfAttributedString.map { .rich($0) }"
         }
     }
 
