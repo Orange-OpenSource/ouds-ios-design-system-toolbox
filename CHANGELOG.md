@@ -29,7 +29,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [DesignToolbox] `actions/upload-artifact` action from v7.0.1 to v7.0.2 for `scorecard` workflow
+- [DesignToolbox] GitHub Action `github/codeql-action/upload-sarif` action from v4.38.2 to v4.39.0 for `scorecard` workflow
+- [DesignToolbox] GitHub Action `actions/upload-artifact` action from v7.0.1 to v7.0.2 for `scorecard` workflow
 - [Library] Availability details for Apple platforms on public API (Orange-OpenSource/ouds-ios#1815) 
 - [Library] Documentation for some components with DSM hyperlinks (Orange-OpenSource/ouds-ios#1813)
 - [Library] `typography` component to version v1.1.0 (Orange-OpenSource/ouds-ios#1722)
