@@ -39,7 +39,7 @@ private struct PasswordInputIllustration: View {
     var body: some View {
         OUDSPasswordInput("app_components_common_label_label",
                           password: $password,
-                          helperText: String(localized: "app_components_passwordInputHelperText_label"))
+                          helperText: .localized("app_components_passwordInputHelperText_label"))
     }
 }
 

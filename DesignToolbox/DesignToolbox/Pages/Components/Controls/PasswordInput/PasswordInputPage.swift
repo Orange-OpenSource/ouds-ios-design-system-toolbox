@@ -56,7 +56,7 @@ struct PasswordInputDemo: View {
                                   placeholder: configurationModel.placeholderText,
                                   prefix: configurationModel.prefixText,
                                   lockIcon: configurationModel.lockIcon,
-                                  helperText: configurationModel.helperText,
+                                  helperText: .raw(configurationModel.helperText),
                                   isOutlined: configurationModel.isOutlined,
                                   constrainedMaxWidth: configurationModel.constrainedMaxWidth,
                                   status: configurationModel.computedStatus)
@@ -67,7 +67,7 @@ struct PasswordInputDemo: View {
                                   placeholder: configurationModel.placeholderText,
                                   prefix: configurationModel.prefixText,
                                   lockIcon: configurationModel.lockIcon,
-                                  helperText: configurationModel.richHelperText,
+                                  helperText: .rich(configurationModel.richHelperText),
                                   isOutlined: configurationModel.isOutlined,
                                   constrainedMaxWidth: configurationModel.constrainedMaxWidth,
                                   status: configurationModel.computedStatus)

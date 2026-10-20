@@ -192,7 +192,13 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
     }
 
     private var helperTextPattern: String {
-        helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
+        if helperText.isEmpty {
+            ""
+        } else if textMode == .rich {
+            ", helperText: .rich(yourAttributedString)"
+        } else {
+            ", helperText: .raw(\"\(helperText)\")"
+        }
     }
 
     private var outlinedPattern: String {
