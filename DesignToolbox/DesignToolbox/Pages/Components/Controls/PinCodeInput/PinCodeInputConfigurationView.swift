@@ -95,7 +95,7 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
     override init() {
         value = ""
         length = .six
-        hiddenCharacters = false
+        hiddenCharacters = true
         helperText = Self.defaultHelperText
         errorText = Self.defaultErrorText
         isOutlined = false
