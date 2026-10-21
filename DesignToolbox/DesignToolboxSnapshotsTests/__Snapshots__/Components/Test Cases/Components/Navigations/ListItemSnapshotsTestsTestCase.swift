@@ -117,7 +117,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
 
         var data: OUDSListItemData {
             OUDSListItemData(
-                label: .text("Label"),
+                itemLabel: "Label",
                 description: descriptionText.map { .raw($0) },
                 overline: overlineText.map { .raw($0) },
                 extraLabel: extraLabelText.map { .raw($0) },
@@ -126,7 +126,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
 
         func boldData() -> OUDSListItemData {
             OUDSListItemData(
-                label: .text("Label", isBold: true),
+                itemLabel: .textual("Label", isBold: true),
                 description: descriptionText.map { .raw($0) },
                 overline: overlineText.map { .raw($0) },
                 extraLabel: extraLabelText.map { .raw($0) },
@@ -459,7 +459,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark).
     @MainActor func testListItemSkeleton(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         let colorScheme: ColorScheme = interfaceStyle == .light ? .light : .dark
-        let data = OUDSListItemData(label: .text("Label"))
+        let data = OUDSListItemData(itemLabel: "Label")
         let illustration = OUDSThemeableView(theme: theme) {
             VStack {
                 OUDSStaticListItem(data: data)
