@@ -459,7 +459,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark).
     @MainActor func testListItemSkeleton(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         let colorScheme: ColorScheme = interfaceStyle == .light ? .light : .dark
-        let data = OUDSListItemData(label: "Label")
+        let data = OUDSListItemData(label: .textual("Label"))
         let illustration = OUDSThemeableView(theme: theme) {
             VStack {
                 OUDSStaticListItem(data: data)
