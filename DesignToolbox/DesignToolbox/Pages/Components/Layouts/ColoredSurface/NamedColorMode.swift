@@ -17,6 +17,8 @@ import OUDSSwiftUI
 
 enum NamedColorMode: CaseIterable, CustomStringConvertible {
 
+    case onBgInverseHigh
+    case onBgInverseLow
     case onBgPrimary
     case onBgSecondary
     case onBgTertiary
@@ -47,6 +49,10 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
 
     func toSurfaceColor(from theme: OUDSTheme) -> OUDSColoredSurface.SurfaceColor {
         switch self {
+        case .onBgInverseHigh:
+            theme.colorModes.onBgInverseHigh
+        case .onBgInverseLow:
+            theme.colorModes.onBgInverseLow
         case .onBgPrimary:
             theme.colorModes.onBgPrimary
         case .onBgSecondary:
@@ -107,6 +113,10 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
     // No l10n, tehchnical names
     var formattedName: String {
         switch self {
+        case .onBgInverseHigh:
+            "On Background Inverse High"
+        case .onBgInverseLow:
+            "On Background Inverse Low"
         case .onBgPrimary:
             "On Background Primary"
         case .onBgSecondary:
@@ -166,6 +176,10 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
 
     var description: String {
         switch self {
+        case .onBgInverseHigh:
+            "onBgInverseHigh"
+        case .onBgInverseLow:
+            "onBgInverseLow"
         case .onBgPrimary:
             "onBgPrimary"
         case .onBgSecondary:

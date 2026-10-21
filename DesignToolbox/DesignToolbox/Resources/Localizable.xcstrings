@@ -1305,6 +1305,55 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_alert_alertBanner_description_text" : {
+      "comment" : "Component - Alert Banner",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تُعدّ لافتة التنبيه عنصرًا من عناصر المراسلة يُستخدم لتوصيل المعلومات المهمة، أو حالات النظام، أو تحديثات الخدمة عبر واجهة المستخدم. وهي تدعم حالات دلالية متعددة، وتخطيطات، وإجراءات، وسلوكيات تفاعلية لضمان اتساق التواصل عبر المنتجات والمنصات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Alert banner is a messaging component used to communicate important information, system states, or service updates across an interface. It supports multiple semantic statuses, layouts, actions, and responsive behaviours to ensure consistent communication across products and platforms."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La bannière d’alerte est un composant de messagerie utilisé pour communiquer des informations importantes, des états du système ou des mises à jour de service au sein d’une interface. Elle prend en charge divers statuts sémantiques, mises en page, actions et comportements adaptatifs, garantissant ainsi une communication cohérente à travers différents produits et plateformes."
+          }
+        }
+      }
+    },
+    "app_components_alert_alertBanner_tech" : {
+      "comment" : "Component - Alert Banner",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert Banner"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert banner"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert Banner"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_alert_alertMessage_actionLink_tech" : {
       "comment" : "Component - Alert Message",
       "extractionState" : "manual",
@@ -5769,6 +5818,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_pinCodeInput_hiddenCharacters_tech" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden characters"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden characters"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden characters"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_pinCodeInput_length_tech" : {
       "comment" : "Component - PIN Code Input",
       "extractionState" : "manual",
@@ -5793,31 +5867,6 @@
         }
       },
       "shouldTranslate" : false
-    },
-    "app_components_pinCodeInput_hiddenCharacters_tech" : {
-        "comment" : "Component - PIN Code Input",
-        "extractionState" : "manual",
-        "localizations" : {
-            "ar" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Hidden characters"
-                }
-            },
-            "en" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Hidden characters"
-                }
-            },
-            "fr" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Hidden characters"
-                }
-            }
-        },
-        "shouldTranslate" : false
     },
     "app_components_pinCodeInput_tech" : {
       "comment" : "Component - PIN Code Input",
