@@ -15,16 +15,14 @@ import OUDSSwiftUI
 import SwiftUI
 
 /*
- If you want to test your White Label configuration, feel free to change the tokens of colors or the fonts in this file.
- The White Label theme is already plugged in the themes selector; you jut need to change this very file by filling the functions and
+ If you want to test your White Label configuration, feel free to change the tokens of colors, borders or the fonts in this file.
+ The White Label theme is already plugged in the themes selector; you just need to change this very file by filling the functions and
  providers implementations.
  */
 
 // MARK: - Theme settings
 
 let kDesignToolboxWhiteLabelName = "WhiteLabel"
-
-let kDesignToolboxWhiteLabelTuning = Tuning.Wireframe
 
 // MARK: - Fonts
 
@@ -87,9 +85,24 @@ final class DesignToolboxColorSemanticTokensProvider: WhiteLabelThemeColorSemant
 
 nonisolated(unsafe) let kDesignToolboxWhiteLabelColors = DesignToolboxColorSemanticTokensProvider()
 
+// MARK: - Borders
+
+final class DesignToolboxBorderSemanticTokensProvider: WhiteLabelThemeBorderSemanticTokensProvider {
+
+    deinit {}
+
+    // Only this token can be overriden
+
+    /*
+     override open var radiusDefault: BorderRadiusSemanticToken { BorderRawTokens.radius300 }
+     */
+}
+
+nonisolated(unsafe) let kDesignToolboxWhiteLabelBorders = DesignToolboxBorderSemanticTokensProvider()
+
 // MARK: - Theme instanciation
 
-let kMyDesignToolboxWhiteLabelTheme = WhiteLabelTheme(colors: kDesignToolboxWhiteLabelColors,
+let kMyDesignToolboxWhiteLabelTheme = WhiteLabelTheme(borders: kDesignToolboxWhiteLabelBorders,
+                                                      colors: kDesignToolboxWhiteLabelColors,
                                                       name: kDesignToolboxWhiteLabelName,
-                                                      fontFamily: kDesignToolboxWhiteLabelFontFamily,
-                                                      tuning: kDesignToolboxWhiteLabelTuning)
+                                                      fontFamily: kDesignToolboxWhiteLabelFontFamily)
