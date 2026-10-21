@@ -316,7 +316,7 @@ bundle exec fastlane ios test_unit
 
 Do not forget to make manual tests of the library using the design system toolbox app!
 Indeed some features like *Voice Over*, *dynamic fonts*, high contrast and motion managements, or color contrasts, are hardly testable automatically.
-These types of tests should be done manualy with for example the help of the [Accessibility Inspector](https://developer.apple.com/documentation/accessibility/accessibility-inspector).
+These types of tests should be done manually with for example the help of the [Accessibility Inspector](https://developer.apple.com/documentation/accessibility/accessibility-inspector).
 
 End to end tests must be done on several devices so as to check the behaviours of the Swift Package and the design toolbox app.
 Thus we suggest to testson all platforms, if possible on real devices, otherwise on simulators, and also with some specific OS versions to cover breaking changes like Liquid Glass.
@@ -524,7 +524,7 @@ In few words, if the commit was signed with the committer's verified signature, 
 We try also to apply [keep a changelog](https://keepachangelog.com/en/1.0.0/), and [semantic versioning](https://semver.org/spec/v2.0.0.html) both with [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 We can generate a `RELEASE_NOTE.md` file using the Git history and [git cliff](https://git-cliff.org/) tool.
-Today we update the unique CHANGELOG manualy, but you can find [in the wiki more details about the use of git-cliff](https://github.com/Orange-OpenSource/ouds-ios/wiki/52-%E2%80%90-About-changelog,-release-notes-and-hooks)
+Today we update the unique CHANGELOG manually, but you can find [in the wiki more details about the use of git-cliff](https://github.com/Orange-OpenSource/ouds-ios/wiki/52-%E2%80%90-About-changelog,-release-notes-and-hooks)
 
 To generate a release note:
 

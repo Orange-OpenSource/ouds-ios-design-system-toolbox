@@ -85,6 +85,10 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -103,6 +107,8 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
 
         progressVariant = .indeterminate
         progressValue = 0.0
+
+        showSkeleton = false
 
         super.init()
     }
@@ -125,9 +131,9 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         case .enabled:
             .enabled
         case .error:
-            .error(message: errorText)
+            .textualError(message: .raw(errorText))
         case .richError:
-            .richError(message: richErrorText)
+            .textualError(message: .rich(richErrorText))
         case .loading:
             .loading(progress: progressVariant == .indeterminate ? nil : progressValue)
         case .readOnly:
@@ -152,8 +158,13 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         code =
             """
             OUDSPasswordInput(\(labelPattern)\(passwordPattern)\(isHiddenPasswordPattern)\(placeholderPattern)\(prefixPattern)\(lockIconPattern)\(helperTextPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
+            \(skeletonPattern)
             """
         // swiftlint:enable line_length
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
     }
 
     private var labelPattern: String {
@@ -181,7 +192,13 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
     }
 
     private var helperTextPattern: String {
-        helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
+        if helperText.isEmpty {
+            ""
+        } else if textMode == .rich {
+            ", helperText: .rich(yourAttributedString)"
+        } else {
+            ", helperText: .raw(\"\(helperText)\")"
+        }
     }
 
     private var outlinedPattern: String {
@@ -197,9 +214,9 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         case .enabled:
             ""
         case .error:
-            ", status: .error(message: \"\(errorText)\")"
+            ", status: .textualError(message: .raw(\"\(errorText)\"))"
         case .richError:
-            ", status: .richError(message: yourAttributedString)"
+            ", status: .textualError(message: .rich(yourAttributedString))"
         case .loading:
             if progressVariant == .indeterminate {
                 ", status: .loading"
@@ -225,6 +242,8 @@ struct PasswordInputConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
                 OUDSSwitchItem("app_components_passwordInput_passwordHidden_tech", isOn: $configurationModel.isHiddenPassword)
 
                 OUDSSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)

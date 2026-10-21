@@ -53,6 +53,10 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: - Computed properties
 
     var richDescriptionText: AttributedString {
@@ -82,6 +86,7 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         bullet2 = "app_components_alert_alertMessage_bullet_tech" <- Int(2)
         bullet3 = "app_components_alert_alertMessage_bullet_tech" <- Int(3)
         textMode = .raw
+        showSkeleton = false
 
         super.init()
 
@@ -116,7 +121,7 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         case .raw:
             return ", description: \"\(descriptionText)\""
         case .rich:
-            return ", description: yourAttributedString"
+            return ", description: .rich(yourAttributedString)"
         }
     }
 
@@ -124,7 +129,7 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         if textMode == .raw {
             bulletList.isEmpty ? "" : ", bulletList: [\"\(bulletList.joined(separator: "\", \""))\"]"
         } else {
-            bulletList.isEmpty ? "" : ", bulletList: yourArrayOfAttributedString"
+            bulletList.isEmpty ? "" : ", bulletList: yourArrayOfAttributedString.map { .rich($0) }"
         }
     }
 
@@ -136,10 +141,15 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         closeButton ? ", onClose: { }" : ""
     }
 
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
+    }
+
     override func updateCode() {
         code =
             """
             OUDSAlertMessage(label: \"\(text)\"\(statusPattern)\(descriptionPattern)\(bulletListPattern)\(linkPattern)\(onClosePattern))
+                \(skeletonPattern)
             """
     }
 }
@@ -155,6 +165,7 @@ struct AlertMessageConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
 
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,

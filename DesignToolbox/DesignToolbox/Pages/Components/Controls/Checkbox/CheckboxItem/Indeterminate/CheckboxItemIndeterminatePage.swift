@@ -47,13 +47,23 @@ private struct CheckboxItemIndeterminateDemo: View {
                                       image: image,
                                       isReversed: configurationModel.isReversed,
                                       isError: configurationModel.isError,
-                                      errorText: configurationModel.errorText,
+                                      errorText: errorText,
                                       isReadOnly: configurationModel.isReadOnly,
                                       hasDivider: configurationModel.hasDivider,
                                       constrainedMaxWidth: configurationModel.constrainedMaxWidth)
             .disabled(!configurationModel.enabled)
+            .showSkeleton(isVisible: configurationModel.showSkeleton)
             .designToolboxColoredSurface(false)
             .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItemIndeterminate)
+    }
+
+    private var errorText: OUDSTextualContent {
+        switch configurationModel.textMode {
+        case .raw:
+            .raw(configurationModel.errorText)
+        case .rich:
+            .rich(configurationModel.richErrorText)
+        }
     }
 
     private var image: OUDSImage? {

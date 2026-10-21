@@ -19,11 +19,11 @@ source "https://rubygems.org"
 # Embeded in net-http RubyGem without defined version
 # Solves CVE-2025-27221 (https://github.com/Orange-OpenSource/ouds-ios/security/dependabot/6)
 # Should be removed when net-http > 0.6.0 and CVE fixed
-gem 'uri', '1.1.1'
+gem 'uri', '1.1.2'
 
 # Embeded in Fastlane RubyGem it seems
 # Solves CVE-2026-54171 (https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/security/dependabot/1)
-gem 'excon', '1.7.2'
+gem 'excon', '1.7.3'
 
 # To fix
 # "warning: abbrev was loaded from the standard library, but is not part of the default gems starting from Ruby 3.4.0.
@@ -33,11 +33,11 @@ gem 'abbrev', '0.1.2'
 # Really needed gems
 # ------------------
 
-gem 'fastlane', '2.240.1'
+gem 'fastlane', '2.241.1'
 gem 'fastlane-plugin-changelog', '0.16.0'
 gem 'fastlane-plugin-mattermost', '1.3.2'
 gem 'json', '2.21.2'
-gem 'net-http', '0.9.1'
+gem 'net-http', '0.10.0'
 gem 'xcode-install', '2.8.1'
 
 # Magic

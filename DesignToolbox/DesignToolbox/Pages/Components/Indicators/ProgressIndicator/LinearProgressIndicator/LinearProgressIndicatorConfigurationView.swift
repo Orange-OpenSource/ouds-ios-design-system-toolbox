@@ -244,7 +244,7 @@ struct LinearProgressIndicatorConfigurationView: View {
                                chips: OUDSProgressIndicatorGapSize.chips)
 
                 if configurationModel.variant == .determinate {
-                    OUDSSwitchItem("app_components_animated_tech",
+                    OUDSSwitchItem("app_components_common_animated_tech",
                                    isOn: $configurationModel.animated)
 
                     OUDSSwitchItem("app_components_progressIndicator_stopIndicator_tech",
@@ -271,11 +271,11 @@ struct LinearProgressIndicatorConfigurationView: View {
                     ((configurationModel.determinateHelperTextType == .percent && configurationModel.helperTextAlignment != .center)
                         || configurationModel.determinateHelperTextType == .description))
             {
-                DesignToolboxEditContentDisclosure(isContentVisible: true) {
-                    DesignToolboxTextField(text: $configurationModel.helperText,
-                                           label: "app_components_progressIndicator_helperText_tech")
-                }
+                DesignToolboxTextField(text: $configurationModel.helperText,
+                                       label: "app_components_progressIndicator_helperText_tech")
             }
+
+            OUDSHorizontalDivider()
 
             DesignToolboxEditContentDisclosure(isContentVisible: true) {
                 VStack(spacing: theme.spaces.fixedSmall) {

@@ -21,6 +21,7 @@ struct TagsView: View {
             List {
                 NavigationLink("Tag", destination: TagView())
                 NavigationLink("Input tag", destination: InputTagView())
+                NavigationLink("Categorical tag", destination: CategoricalTagView())
             }
         }
         .navigationTitle("Tags")

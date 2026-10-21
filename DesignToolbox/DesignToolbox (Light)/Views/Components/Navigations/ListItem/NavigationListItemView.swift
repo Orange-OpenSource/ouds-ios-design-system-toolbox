@@ -29,12 +29,12 @@ struct NavigationListItemView: View {
         WatchVerticalLayout {
             Text("Label only").font(.headline)
 
-            OUDSNavigationListItem(data: OUDSListItemData(label: "Label"))
+            OUDSNavigationListItem(data: OUDSListItemData(label: .textual("Label")))
 
             Text("More textual").font(.headline)
 
             let data = OUDSListItemData(
-                label: "Label",
+                label: .textual("Label"),
                 description: "Description",
                 overline: "Overline",
                 extraLabel: "Extra Label")
@@ -46,7 +46,7 @@ struct NavigationListItemView: View {
             let badge = OUDSBadgeCount(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
 
             OUDSNavigationListItem(
-                data: OUDSListItemData(label: "Label"),
+                data: OUDSListItemData(label: .textual("Label")),
                 indicatorType: .next,
                 leading: .icon(icon),
                 trailing: .badge(.count(badge)))
@@ -56,7 +56,7 @@ struct NavigationListItemView: View {
             let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
 
             OUDSNavigationListItem(
-                data: OUDSListItemData(label: "Label", description: "Description"),
+                data: OUDSListItemData(label: .textual("Label"), description: "Description"),
                 indicatorType: .previous,
                 leading: .avatar(avatar),
                 trailing: .text(.label("Info")))

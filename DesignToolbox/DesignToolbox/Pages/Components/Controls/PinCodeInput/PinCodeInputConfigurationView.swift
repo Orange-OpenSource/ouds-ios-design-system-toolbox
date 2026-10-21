@@ -36,6 +36,10 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var hiddenCharacters: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var helperText: String {
         didSet { updateCode() }
     }
@@ -64,9 +68,9 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         case .enabled:
             .enabled
         case .error:
-            .error(message: errorText)
+            .textualError(message: .raw(errorText))
         case .richError:
-            .richError(message: richErrorText)
+            .textualError(message: .rich(richErrorText))
         }
     }
 
@@ -91,6 +95,7 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
     override init() {
         value = ""
         length = .six
+        hiddenCharacters = true
         helperText = Self.defaultHelperText
         errorText = Self.defaultErrorText
         isOutlined = false
@@ -107,7 +112,7 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         code =
             """
             // Current value is: '\(value)'
-            OUDSPinCodeInput($value, \(lengthPattern)\(helperTextPattern)\(isOutlinedPattern)\(statusPattern))
+            OUDSPinCodeInput($value, \(lengthPattern)\(hiddenCharactersPattern)\(helperTextPattern)\(isOutlinedPattern)\(statusPattern))
             """
     }
 
@@ -115,8 +120,12 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         "length: .\(length)"
     }
 
+    private var hiddenCharactersPattern: String {
+        hiddenCharacters ? ", hiddenCharacters: true" : ""
+    }
+
     private var helperTextPattern: String {
-        textMode == .rich ? ", helperText: yourAttributedString" : ", helperText: \"\(helperText)\""
+        textMode == .rich ? ", helperText: .rich(yourAttributedString)" : ", helperText: .raw(\"\(helperText)\")"
     }
 
     private var isOutlinedPattern: String {
@@ -128,9 +137,9 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         case .enabled:
             ""
         case .error:
-            ", status: .error(message: \"\(errorText)\")"
+            ", status: .textualError(message: .raw(\"\(errorText)\"))"
         case .richError:
-            ", status: .richError(message: yourAttributedString)"
+            ", status: .textualError(message: .rich(yourAttributedString))"
         }
     }
 }
@@ -146,6 +155,8 @@ struct PinCodeInputConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+
+                OUDSSwitchItem("app_components_pinCodeInput_hiddenCharacters_tech", isOn: $configurationModel.hiddenCharacters)
 
                 OUDSSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
 

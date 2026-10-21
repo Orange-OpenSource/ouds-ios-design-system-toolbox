@@ -1553,31 +1553,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_animated_tech" : {
-      "comment" : "Shared (progress indicators, animated images)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Animated"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Animated"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Animated"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_badge_count_description_text" : {
       "comment" : "Component - Badge",
       "extractionState" : "manual",
@@ -2951,6 +2926,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_animated_tech" : {
+      "comment" : "Shared (progress indicators, animated images)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animated"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animated"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animated"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_appearance_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",
@@ -2971,6 +2971,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apparence"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_category_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Category"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Category"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Category"
           }
         }
       },
@@ -3884,6 +3909,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Size"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_skeleton_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeleton"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeleton"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeleton"
           }
         }
       },
@@ -5226,6 +5276,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_listItem_richText_details" : {
+      "comment" : "Component - List Item",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتيح واجهة برمجة التطبيقات (API) الخاصة بـ OUDS أيضاً استخدام `AttributedString` لوضع \"النص المنسق\" (rich text)."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The OUDS API also allows the use of AttributedString for \"rich text\" mode."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'API OUDS permet également d'utiliser des AttributedString pour le mode \"rich text\""
+          }
+        }
+      }
+    },
     "app_components_listItem_roundedMedia_tech" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
@@ -5719,6 +5793,31 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_pinCodeInput_hiddenCharacters_tech" : {
+        "comment" : "Component - PIN Code Input",
+        "extractionState" : "manual",
+        "localizations" : {
+            "ar" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Hidden characters"
+                }
+            },
+            "en" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Hidden characters"
+                }
+            },
+            "fr" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Hidden characters"
+                }
+            }
+        },
+        "shouldTranslate" : false
     },
     "app_components_pinCodeInput_tech" : {
       "comment" : "Component - PIN Code Input",
@@ -6310,6 +6409,104 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_skeleton_description_text" : {
+      "comment" : "Component - Skeleton",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الـ Skeleton هو عنصر في واجهة المستخدم يشير إلى أن المحتوى قيد التحميل."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A skeleton is a UI element that indicates when content is loading."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un Skeleton est un élément d’interface utilisateur qui indique que le contenu est en cours de chargement."
+          }
+        }
+      }
+    },
+    "app_components_skeleton_securityMargin_tech" : {
+      "comment" : "Component - Skeleton",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Security margin"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Security margin"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Security margin"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_skeleton_shape_details" : {
+      "comment" : "Component - Skeleton",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتيح لك واجهة برمجة تطبيقات Skeleton استخدام شكل SwiftUI الذي تريده (دائرة، مستطيل دائري، مستطيل، إلخ)."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeleton API lets you use the SwiftUI shape you want (Circle, RounedRectangle, Rectangle, etc.)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'API Skeleton vous permet d'utiliser la forme SwiftUI de votre choix (Circle, RoundedRectangle, Rectangle, etc.)."
+          }
+        }
+      }
+    },
+    "app_components_skeleton_tech" : {
+      "comment" : "Component - Skeleton",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeleton"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeleton"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeleton"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_switch_description_text" : {
       "comment" : "Component - Switch",
       "extractionState" : "manual",
@@ -6597,6 +6794,49 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tab bar"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_tag_categoricalTag_description_text" : {
+      "comment" : "Component - Categorical tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تُعد \"الوسم الفئوي\" (Categorical tag) تسميةً غير تفاعلية تُستخدم للتمييز البصري بين فئات غير وظيفية بالاعتماد على ألوان مخصصة لكل فئة. ويمكن أن تعبّر هذه الوسوم عن معلومات مثل العروض الترويجية، أو الفعاليات، أو المزايا، أو غيرها من الفئات المحددة محلياً.  ولا تُستخدم هذه الوسوم للإشارة إلى حالات وظيفية أو تقديم تغذية راجعة من النظام؛ إذ ينبغي استخدام \"الوسم\" (Tag) القياسي للدلالة على حالات النجاح، أو التحذير، أو الخطأ، أو التوفر، أو غيرها من الحالات الوظيفية. كما يجب قصر استخدام \"الوسم الفئوي\" على الحالات التي تكون فيها فئات الألوان محددة بموجب إرشادات المنتج أو السوق المحلي."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A Categorical tag is a non-interactive label used to visually distinguish non-functional categories using categorical colours. It can represent information such as promotions, events, benefits or other locally defined categories.  It does not communicate functional status or system feedback. Use the standard Tag for success, warning, error, availability or other functional states. Use Categorical tag only when its colour categories are defined by the product or local market guidelines."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une étiquette catégorielle est une étiquette non interactive servant à distinguer visuellement des catégories non fonctionnelles grâce à des couleurs spécifiques. Elle peut représenter des informations telles que des promotions, des événements, des avantages ou d'autres catégories définies localement.Elle ne communique ni état fonctionnel ni retour d'information du système. Utilisez l'étiquette standard pour indiquer un succès, un avertissement, une erreur, une disponibilité ou tout autre état fonctionnel. N'utilisez l'étiquette catégorielle que lorsque les catégories de couleurs sont définies par les directives du produit ou du marché local."
+          }
+        }
+      }
+    },
+    "app_components_tag_categoricalTag_tech" : {
+      "comment" : "Component - Categorical tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Categorical tag"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Categorical tag"
           }
         }
       },

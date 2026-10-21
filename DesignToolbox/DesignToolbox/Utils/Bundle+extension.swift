@@ -27,7 +27,7 @@ extension Bundle {
         string(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "0.0.0"
     }
 
-    /// Incremental build number, for example timestamp or manualy defined value.
+    /// Incremental build number, for example timestamp or manually defined value.
     /// Mapped to value *kCFBundleVersionKey* in project settings.
     var buildNumber: String {
         string(forInfoDictionaryKey: kCFBundleVersionKey as String) ?? "-1"

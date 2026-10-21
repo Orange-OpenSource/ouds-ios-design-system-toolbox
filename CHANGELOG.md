@@ -4,6 +4,49 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.1.0...3.2.0) - 2026-10-21
+
+### Added
+
+- [Library] Flag for `alert message` and `inline alert` components to disable Voice Over announcements (Orange-OpenSource/ouds-ios#1827)
+- [Library] `text area` component `textual` helper text and `textualError` status with `OUDSTextualContent` parameter for raw, localized and attributed strings (Orange-OpenSource/ouds-ios#1797)
+- [Library] `password input` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `helperText` (Orange-OpenSource/ouds-ios#1797)
+- [Library] `text input` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `helperText`, and `textualError` status (Orange-OpenSource/ouds-ios#1797)
+- [Library] `PIN code input` component init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `helperText`, and `textualError` status (Orange-OpenSource/ouds-ios#1797)
+- [Library] `checkbox item indeterminate` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `errorText` (Orange-OpenSource/ouds-ios#1797)
+- [Library] `radio item` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `errorText` (Orange-OpenSource/ouds-ios#1797)
+- [Library] `checkbox item` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `errorText` (Orange-OpenSource/ouds-ios#1797)
+- [Library] `switch item` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings in `errorText` (Orange-OpenSource/ouds-ios#1797)
+- [Library] `alert message` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings (Orange-OpenSource/ouds-ios#1797)
+- [Library] `bullet list` components init with `OUDSTextualContent` parameter for raw, localized and attributed strings (Orange-OpenSource/ouds-ios#1797)
+- [Library] `list item` components inits with `OUDSTextualContent` parameters for raw and attributed strings (Orange-OpenSource/ouds-ios#1812)
+- [Library] Flag to display full value instead of bullets in `PIN code input` component (Orange-OpenSource/ouds-ios#1762)
+- [Library] `Tuning` parameter for Orange, Orange Compact, Wireframe and White Label themes Xcode previews (Orange-OpenSource/ouds-ios#1793)
+- [Library] Tool to detect public API breakings (Orange-OpenSource/ouds-ios#1800)
+- [Library] `list item` components inits with `OUDSTextualContent` parameters for raw and attributed strings (Orange-OpenSource/ouds-ios#1812)
+- [Library] `skeleton` on components (Orange-OpenSource/ouds-ios#1651)
+- [Library] `categorical tag` component (Orange-OpenSource/ouds-ios#1782)
+
+### Changed
+
+- [DesignToolbox] RubyGem `fastlane` from v2.240.1 to v2.241.1
+- [DesignToolbox] RubyGem `excon` transitive RubyGem from v1.7.2 to v1.7.3
+- [DesignToolbox] RubyGem dependency `net-http` from v0.9.1 to 0.10.0
+- [DesignToolbox] RubyGem transitive dependency `uri` from v1.1.1 to v1.1.2
+- [DesignToolbox] GitHub Actions `ruby/setup-ruby` action from v1.327.0 to v1.331.0 for `build-and-test` workflow
+- [DesignToolbox] GitHub Actions `ossf/scorecard-action` action from v2.4.4 to v2.5.0 for `scorecard` workflow
+- [DesignToolbox] GitHub Actions `actions/github-script` action from v7 to v9 for `check-renovate-dependencies-prs` workflow
+- [DesignToolbox] GitHub Actions `github/codeql-action/upload-sarif` action from v4.38.2 to v4.39.0 for `scorecard` workflow
+- [DesignToolbox] GitHub Actions `actions/upload-artifact` action from v7.0.1 to v7.0.2 for `scorecard` workflow
+- [Library] Availability details for Apple platforms on public API (Orange-OpenSource/ouds-ios#1815) 
+- [Library] Documentation for some components with DSM hyperlinks (Orange-OpenSource/ouds-ios#1813)
+- [Library] `typography` component to version v1.1.0 (Orange-OpenSource/ouds-ios#1722)
+- [Library] `alert message` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1659)
+
+### Fixed
+
+- [Library] Use of `Menlo` font family for `code` typography through update of `familyCode` font semantic token (Orange-OpenSource/ouds-ios#1799)
+
 ## [3.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.0.0...3.1.0) - 2026-10-02
 
 ### Added

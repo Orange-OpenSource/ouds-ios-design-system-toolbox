@@ -42,19 +42,22 @@ struct BulletListDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        // To keep things simple, assuming the rich/raw mode is for all parameters
-        switch configurationModel.textMode {
-        case .raw:
-            OUDSBulletList(type: bulletType,
-                           textStyle: configurationModel.textStyle,
-                           isBold: configurationModel.isBold,
-                           items: rawItems)
-        case .rich:
-            OUDSBulletList(type: bulletType,
-                           textStyle: configurationModel.textStyle,
-                           isBold: configurationModel.isBold,
-                           items: richItems)
+        Group {
+            // To keep things simple, assuming the rich/raw mode is for all parameters
+            switch configurationModel.textMode {
+            case .raw:
+                OUDSBulletList(type: bulletType,
+                               textStyle: configurationModel.textStyle,
+                               isBold: configurationModel.isBold,
+                               items: rawItems)
+            case .rich:
+                OUDSBulletList(type: bulletType,
+                               textStyle: configurationModel.textStyle,
+                               isBold: configurationModel.isBold,
+                               items: richItems)
+            }
         }
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     @OUDSBulletListItemBuilder
@@ -62,18 +65,18 @@ struct BulletListDemo: View {
         let label = configurationModel.label
         switch configurationModel.levelCount {
         case .one:
-            OUDSBulletList.Item(label)
-            OUDSBulletList.Item(label)
-            OUDSBulletList.Item(label)
+            OUDSBulletList.Item(.raw(label))
+            OUDSBulletList.Item(.raw(label))
+            OUDSBulletList.Item(.raw(label))
         case .two:
-            OUDSBulletList.Item(label) {
-                OUDSBulletList.Item(label)
-                OUDSBulletList.Item(label)
+            OUDSBulletList.Item(.raw(label)) {
+                OUDSBulletList.Item(.raw(label))
+                OUDSBulletList.Item(.raw(label))
             }
         case .three:
-            OUDSBulletList.Item(label) {
-                OUDSBulletList.Item(label) {
-                    OUDSBulletList.Item(label)
+            OUDSBulletList.Item(.raw(label)) {
+                OUDSBulletList.Item(.raw(label)) {
+                    OUDSBulletList.Item(.raw(label))
                 }
             }
         }
@@ -84,18 +87,18 @@ struct BulletListDemo: View {
         let richLabel = configurationModel.richLabel
         switch configurationModel.levelCount {
         case .one:
-            OUDSBulletList.Item(richLabel)
-            OUDSBulletList.Item(richLabel)
-            OUDSBulletList.Item(richLabel)
+            OUDSBulletList.Item(.rich(richLabel))
+            OUDSBulletList.Item(.rich(richLabel))
+            OUDSBulletList.Item(.rich(richLabel))
         case .two:
-            OUDSBulletList.Item(richLabel) {
-                OUDSBulletList.Item(richLabel)
-                OUDSBulletList.Item(richLabel)
+            OUDSBulletList.Item(.rich(richLabel)) {
+                OUDSBulletList.Item(.rich(richLabel))
+                OUDSBulletList.Item(.rich(richLabel))
             }
         case .three:
-            OUDSBulletList.Item(richLabel) {
-                OUDSBulletList.Item(richLabel) {
-                    OUDSBulletList.Item(richLabel)
+            OUDSBulletList.Item(.rich(richLabel)) {
+                OUDSBulletList.Item(.rich(richLabel)) {
+                    OUDSBulletList.Item(.rich(richLabel))
                 }
             }
         }
