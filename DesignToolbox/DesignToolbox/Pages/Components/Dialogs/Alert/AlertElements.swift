@@ -21,6 +21,7 @@ struct AlertElements: DesignToolboxElement {
 
     init() {
         let variants: [DesignToolboxElement] = [
+            AlertBannerElement(),
             AlertMessageElement(),
             InlineAlertElement(),
         ]
