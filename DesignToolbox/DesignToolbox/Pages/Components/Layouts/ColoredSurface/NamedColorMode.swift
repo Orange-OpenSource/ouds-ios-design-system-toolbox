@@ -15,6 +15,8 @@ import OUDSSwiftUI
 
 enum NamedColorMode: CaseIterable, CustomStringConvertible {
 
+    case onBgInverseHigh
+    case onBgInverseLow
     case onBgPrimary
     case onBgSecondary
     case onBgTertiary
@@ -34,10 +36,19 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
     case onStatusPositiveMuted
     case onStatusWarningEmphasized
     case onStatusWarningMuted
+    case onSurfaceInverseHigh
+    case onSurfaceInverseLow
+    case onSurfacePrimary
+    case onSurfaceSecondary
+    case onSurfaceTertiary
     case navigationBar
 
     func toSurfaceColor(from theme: OUDSTheme) -> OUDSColoredSurface.SurfaceColor {
         switch self {
+        case .onBgInverseHigh:
+            theme.colorModes.onBgInverseHigh
+        case .onBgInverseLow:
+            theme.colorModes.onBgInverseLow
         case .onBgPrimary:
             theme.colorModes.onBgPrimary
         case .onBgSecondary:
@@ -76,6 +87,16 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             theme.colorModes.onOverlayDropdown
         case .onOverlayTooltip:
             theme.colorModes.onOverlayTooltip
+        case .onSurfaceInverseHigh:
+            theme.colorModes.onSurfaceInverseHigh
+        case .onSurfaceInverseLow:
+            theme.colorModes.onSurfaceInverseLow
+        case .onSurfacePrimary:
+            theme.colorModes.onSurfacePrimary
+        case .onSurfaceSecondary:
+            theme.colorModes.onSurfaceSecondary
+        case .onSurfaceTertiary:
+            theme.colorModes.onSurfaceTertiary
         case .navigationBar:
             theme.colorModes.navigationBar
         }
@@ -84,6 +105,10 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
     // No l10n, tehchnical names
     var formattedName: String {
         switch self {
+        case .onBgInverseHigh:
+            "On Background Inverse High"
+        case .onBgInverseLow:
+            "On Background Inverse Low"
         case .onBgPrimary:
             "On Background Primary"
         case .onBgSecondary:
@@ -122,6 +147,16 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "On Overlay Tooltip"
         case .onOverlayModal:
             "On Overlay Modal"
+        case .onSurfaceInverseHigh:
+            "On Surface Inverse High"
+        case .onSurfaceInverseLow:
+            "On Surface Inverse Low"
+        case .onSurfacePrimary:
+            "On Surface Primary"
+        case .onSurfaceSecondary:
+            "On Surface Secondary"
+        case .onSurfaceTertiary:
+            "On Surface Tertiary"
         case .navigationBar:
             "Navigation Bar"
         }
@@ -129,6 +164,10 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
 
     var description: String {
         switch self {
+        case .onBgInverseHigh:
+            "onBgInverseHigh"
+        case .onBgInverseLow:
+            "onBgInverseLow"
         case .onBgPrimary:
             "onBgPrimary"
         case .onBgSecondary:
@@ -167,6 +206,16 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "onOverlayTooltip"
         case .onOverlayModal:
             "onOverlayModal"
+        case .onSurfaceInverseHigh:
+            "onSurfaceInverseHigh"
+        case .onSurfaceInverseLow:
+            "onSurfaceInverseLow"
+        case .onSurfacePrimary:
+            "onSurfacePrimary"
+        case .onSurfaceSecondary:
+            "onSurfaceSecondary"
+        case .onSurfaceTertiary:
+            "onSurfaceTertiary"
         case .navigationBar:
             "navigationBar"
         }
