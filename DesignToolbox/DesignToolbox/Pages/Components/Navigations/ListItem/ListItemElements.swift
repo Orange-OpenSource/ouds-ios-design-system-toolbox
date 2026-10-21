@@ -40,8 +40,8 @@ struct ListItemIllustration: View {
 
     var body: some View {
         VStack(spacing: theme.spaces.fixedSmall) {
-            let data = OUDSListItemData(key: "app_components_common_label_label",
-                                        description: "app_components_listItemHelperText_label".localized())
+            let data = OUDSListItemData(itemLabel: .textual(.localized("app_components_common_label_label")),
+                                        description: .localized("app_components_listItemHelperText_label"))
             OUDSStaticListItem(data: data)
                 .oudsListItemStyle(divider: false, background: true)
         }

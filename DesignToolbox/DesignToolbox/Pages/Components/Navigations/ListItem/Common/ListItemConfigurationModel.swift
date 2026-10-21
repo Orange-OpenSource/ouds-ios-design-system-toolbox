@@ -138,37 +138,35 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         let currentLabel = index == 0 ? textsModel.labelText : "\(textsModel.labelText) \(index + 1)"
         let slot: OUDSListItemData.Slot? = textsModel.hasSlot ? .init { textsModel.textSlot() } : nil
         let bottomSlot: OUDSListItemData.Slot? = textsModel.hasBottomSlot ? .init { textsModel.bottomSlot() } : nil
-
-        if textsModel.overlineTextMode == .rich {
-            let richOverline: AttributedString? = textsModel.overlineText.isEmpty ? nil : (try? AttributedString(markdown: textsModel.overlineText))
-            return buildDataItemWithRichOverline(currentLabel: currentLabel, overline: richOverline, slot: slot, bottomSlot: bottomSlot)
-        } else {
-            let rawOverline: String? = textsModel.overlineText.isEmpty ? nil : textsModel.overlineText
-            return buildDataItemWithRawOverline(currentLabel: currentLabel, overline: rawOverline, slot: slot, bottomSlot: bottomSlot)
-        }
+        let rawOverline: String? = textsModel.overlineText.isEmpty ? nil : textsModel.overlineText
+        return buildDataItemWithRawOverline(currentLabel: currentLabel, overline: rawOverline, slot: slot, bottomSlot: bottomSlot)
     }
 
     @MainActor
     private func buildDataItemWithRawOverline(currentLabel: String, overline: String?, slot: OUDSListItemData.Slot?, bottomSlot: OUDSListItemData.Slot?) -> OUDSListItemData {
+        let description: OUDSTextualContent? = textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText)
+        let overlineContent: OUDSTextualContent? = overline.map { .raw($0) }
+        let extraLabel: OUDSTextualContent? = textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText)
+        let helperText: OUDSTextualContent? = textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText)
+
         switch textsModel.labelContentType {
         case .text:
-            OUDSListItemData(
-                label: currentLabel,
-                hasBoldLabel: textsModel.hasBoldLabel,
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                overline: overline,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+            return OUDSListItemData(
+                itemLabel: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
+                description: description,
+                overline: overlineContent,
+                extraLabel: extraLabel,
+                helperText: helperText,
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         case .customView:
-            OUDSListItemData(
-                label: textsModel.customLabelView,
+            return OUDSListItemData(
+                viewLabel: textsModel.customLabelView,
                 accessibilityLabel: "Custom view label",
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                overline: overline,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                description: description,
+                overline: overlineContent,
+                extraLabel: extraLabel,
+                helperText: helperText,
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         }
@@ -182,25 +180,28 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         bottomSlot: OUDSListItemData.Slot?) -> OUDSListItemData
     {
         let safeOverline = overline ?? AttributedString("")
+        let description: OUDSTextualContent? = textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText)
+        let extraLabel: OUDSTextualContent? = textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText)
+        let helperText: OUDSTextualContent? = textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText)
+
         switch textsModel.labelContentType {
         case .text:
             return OUDSListItemData(
-                label: currentLabel,
-                overline: safeOverline,
-                hasBoldLabel: textsModel.hasBoldLabel,
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                itemLabel: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
+                description: description,
+                overline: .rich(safeOverline),
+                extraLabel: extraLabel,
+                helperText: helperText,
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         case .customView:
             return OUDSListItemData(
-                label: textsModel.customLabelView,
+                viewLabel: textsModel.customLabelView,
                 accessibilityLabel: "Custom view label",
-                overline: safeOverline,
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                description: description,
+                overline: .rich(safeOverline),
+                extraLabel: extraLabel,
+                helperText: helperText,
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         }

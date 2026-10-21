@@ -14,8 +14,8 @@
 import OUDSSwiftUI
 
 enum TextualContentMode: DesignToolboxEnumRepresentable {
-    /// To map to OUDS TextualContent.attributed(AttributedString)
+    /// To map to OUDSTextualContent.rich(AttributedString)
     case rich
-    /// To map to OUDS TextualContent.raw(String)
+    /// To map to OUDSTextualContent.raw(String)
     case raw
 }

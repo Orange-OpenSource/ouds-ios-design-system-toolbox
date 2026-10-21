@@ -30,10 +30,6 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var overlineTextMode: TextualContentMode {
-        didSet { updateCode() }
-    }
-
     @Published var extraLabelText: String {
         didSet { updateCode() }
     }
@@ -71,7 +67,6 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
         labelContentType = .text
 
         overlineText = ""
-        overlineTextMode = .raw
         extraLabelText = ""
         descriptionText = ""
         hasBoldLabel = false
@@ -115,7 +110,7 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code = switch labelContentType {
         case .text:
-            "\(labelPattern)\(hasBoldLabelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern)"
+            "\(labelPattern)\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern)"
         case .customView:
             "label: customLabel, accessibilityLabel: \"Custom view label\"\(descriptionPattern)\(overlinePattern)\(extraLabelPattern)\(helperTextPattern)"
         }
@@ -128,18 +123,14 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
     }
 
     private var labelPattern: String {
-        "label: \"\(labelText)\""
-    }
-
-    private var hasBoldLabelPattern: String {
-        hasBoldLabel ? ", hasBoldLabel: true" : ""
+        if hasBoldLabel {
+            return "label: .text(\"\(labelText)\", isBold: true)"
+        }
+        return "label: .text(\"\(labelText)\")"
     }
 
     private var overlinePattern: String {
         guard !overlineText.isEmpty else { return "" }
-        if overlineTextMode == .rich {
-            return ", overline: yourAttributedString"
-        }
         return ", overline: \"\(overlineText)\""
     }
 
@@ -176,12 +167,9 @@ struct ListItemTextsConfiguration: View {
                 OUDSSwitchItem("app_components_listItem_boldLabel_tech", isOn: $configurationModel.hasBoldLabel)
             }
 
-            if configurationModel.itemSize == .default {
-                let textModeTitle = "app_components_textMode_tech".localized() + " (Overline)"
-                OUDSChipPicker(title: textModeTitle,
-                               selection: $configurationModel.overlineTextMode,
-                               chips: TextualContentMode.chips)
+            OUDSAlertMessage("app_components_listItem_richText_details", status: .accent(image: nil))
 
+            if configurationModel.itemSize == .default {
                 DesignToolboxTextField(text: $configurationModel.overlineText, label: "app_components_listItem_overline_tech")
 
                 DesignToolboxTextField(text: $configurationModel.extraLabelText, label: "app_components_common_extraLabel_tech")
