@@ -47,3 +47,6 @@
 
 # Produced by .gitlab-ci.yml
 /.cache/
+
+# Other files not needed to be versioned
+SBOM.json
