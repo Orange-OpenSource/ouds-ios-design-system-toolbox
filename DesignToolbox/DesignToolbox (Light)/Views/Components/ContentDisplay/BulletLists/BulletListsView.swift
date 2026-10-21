@@ -31,18 +31,18 @@ struct BulletListsView: View {
 
             Text("Body Large").font(.subheadline)
             OUDSBulletList(type: .bare) {
-                OUDSBulletList.Item("Label") {
-                    OUDSBulletList.Item("Label") {
-                        OUDSBulletList.Item("Label")
+                OUDSBulletList.Item(.raw("Label")) {
+                    OUDSBulletList.Item(.raw("Label")) {
+                        OUDSBulletList.Item(.raw("Label"))
                     }
                 }
             }
 
             Text("Body Medium").font(.subheadline)
             OUDSBulletList(type: .bare, textStyle: .bodyMedium) {
-                OUDSBulletList.Item("Label") {
-                    OUDSBulletList.Item("Label") {
-                        OUDSBulletList.Item("Label")
+                OUDSBulletList.Item(.raw("Label")) {
+                    OUDSBulletList.Item(.raw("Label")) {
+                        OUDSBulletList.Item(.raw("Label"))
                     }
                 }
             }
@@ -51,18 +51,18 @@ struct BulletListsView: View {
 
             Text("Body Large").font(.subheadline)
             OUDSBulletList(type: .ordered) {
-                OUDSBulletList.Item("Label") {
-                    OUDSBulletList.Item("Label") {
-                        OUDSBulletList.Item("Label")
+                OUDSBulletList.Item(.raw("Label")) {
+                    OUDSBulletList.Item(.raw("Label")) {
+                        OUDSBulletList.Item(.raw("Label"))
                     }
                 }
             }
 
             Text("Body Medium").font(.subheadline)
             OUDSBulletList(type: .ordered, textStyle: .bodyMedium) {
-                OUDSBulletList.Item("Label") {
-                    OUDSBulletList.Item("Label") {
-                        OUDSBulletList.Item("Label")
+                OUDSBulletList.Item(.raw("Label")) {
+                    OUDSBulletList.Item(.raw("Label")) {
+                        OUDSBulletList.Item(.raw("Label"))
                     }
                 }
             }
@@ -71,18 +71,18 @@ struct BulletListsView: View {
 
             Text("Body Large").font(.subheadline)
             OUDSBulletList {
-                OUDSBulletList.Item("Label") {
-                    OUDSBulletList.Item("Label") {
-                        OUDSBulletList.Item("Label")
+                OUDSBulletList.Item(.raw("Label")) {
+                    OUDSBulletList.Item(.raw("Label")) {
+                        OUDSBulletList.Item(.raw("Label"))
                     }
                 }
             }
 
             Text("Body Medium").font(.subheadline)
             OUDSBulletList(textStyle: .bodyMedium) {
-                OUDSBulletList.Item("Label") {
-                    OUDSBulletList.Item("Label") {
-                        OUDSBulletList.Item("Label")
+                OUDSBulletList.Item(.raw("Label")) {
+                    OUDSBulletList.Item(.raw("Label")) {
+                        OUDSBulletList.Item(.raw("Label"))
                     }
                 }
             }
