@@ -491,7 +491,7 @@ struct RadioTest: View {
                           image: icon,
                           isReversed: false,
                           isError: isError,
-                          errorText: errorText,
+                          errorText: errorText.map { .raw($0) },
                           isReadOnly: isReadOnly,
                           hasDivider: hasDivider)
                 .disabled(isDisabled)
@@ -503,7 +503,7 @@ struct RadioTest: View {
                           image: icon,
                           isReversed: true,
                           isError: isError,
-                          errorText: errorText,
+                          errorText: errorText.map { .raw($0) },
                           isReadOnly: isReadOnly,
                           hasDivider: hasDivider)
                 .disabled(isDisabled)

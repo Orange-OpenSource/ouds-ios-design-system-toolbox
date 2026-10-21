@@ -64,7 +64,7 @@ struct PinCodeInputDemo: View {
                     OUDSPinCodeInput($configurationModel.value,
                                      length: length,
                                      hiddenCharacters: configurationModel.hiddenCharacters,
-                                     helperText: configurationModel.richHelperText,
+                                     helperText: .rich(configurationModel.richHelperText),
                                      isOutlined: configurationModel.isOutlined,
                                      status: configurationModel.status)
                 }
@@ -72,7 +72,7 @@ struct PinCodeInputDemo: View {
                 OUDSPinCodeInput($configurationModel.value,
                                  length: length,
                                  hiddenCharacters: configurationModel.hiddenCharacters,
-                                 helperText: configurationModel.richHelperText,
+                                 helperText: .rich(configurationModel.richHelperText),
                                  isOutlined: configurationModel.isOutlined,
                                  status: configurationModel.status)
             }
@@ -82,7 +82,7 @@ struct PinCodeInputDemo: View {
                     OUDSPinCodeInput($configurationModel.value,
                                      length: length,
                                      hiddenCharacters: configurationModel.hiddenCharacters,
-                                     helperText: configurationModel.helperText,
+                                     helperText: .raw(configurationModel.helperText),
                                      isOutlined: configurationModel.isOutlined,
                                      status: configurationModel.status)
                 }
@@ -90,7 +90,7 @@ struct PinCodeInputDemo: View {
                 OUDSPinCodeInput($configurationModel.value,
                                  length: length,
                                  hiddenCharacters: configurationModel.hiddenCharacters,
-                                 helperText: configurationModel.helperText,
+                                 helperText: .raw(configurationModel.helperText),
                                  isOutlined: configurationModel.isOutlined,
                                  status: configurationModel.status)
             }

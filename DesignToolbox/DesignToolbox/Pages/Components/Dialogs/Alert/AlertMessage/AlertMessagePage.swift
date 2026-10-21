@@ -47,15 +47,15 @@ struct AlertMessageDemo: View {
             case .raw:
                 OUDSAlertMessage(label: configurationModel.text,
                                  status: configurationModel.status(from: theme),
-                                 description: configurationModel.descriptionText,
-                                 bulletList: configurationModel.bulletList,
+                                 description: .raw(configurationModel.descriptionText),
+                                 bulletList: configurationModel.bulletList.map { .raw($0) },
                                  link: configurationModel.link,
                                  onClose: configurationModel.onClose)
             case .rich:
                 OUDSAlertMessage(label: configurationModel.text,
                                  status: configurationModel.status(from: theme),
-                                 description: configurationModel.richDescriptionText,
-                                 bulletList: configurationModel.richBulletList,
+                                 description: .rich(configurationModel.richDescriptionText),
+                                 bulletList: configurationModel.richBulletList.map { .rich($0) },
                                  link: configurationModel.link,
                                  onClose: configurationModel.onClose)
             }

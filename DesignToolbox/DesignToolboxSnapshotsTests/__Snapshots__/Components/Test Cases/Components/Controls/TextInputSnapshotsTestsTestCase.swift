@@ -464,13 +464,13 @@ struct TestTextInputView: View {
 extension OUDSTextInput.Status: DesignToolboxEnumLocalizedRepresentable, @retroactive CaseIterable, @retroactive Hashable {
 
     nonisolated(unsafe) public static var allCases: [OUDSTextInput.Status] =
-        [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading(progress: 0.75), .readOnly, .disabled]
+        [.enabled, .textualError(message: .raw("app_components_textInput_errorDescription_label".localized())), .loading(progress: 0.75), .readOnly, .disabled]
 
     public var wordingKey: String {
         switch self {
         case .enabled:
             "app_common_enabled_tech"
-        case .error:
+        case .error, .textualError:
             "app_components_common_error_tech"
         case .richError:
             "app_components_common_richError_tech"
@@ -487,8 +487,8 @@ extension OUDSTextInput.Status: DesignToolboxEnumLocalizedRepresentable, @retroa
         if self == .readOnly {
             return ".readOnly"
         }
-        if case let .error(message) = self {
-            return ".error(message: \"\(message)\")"
+        if case let .textualError(message) = self {
+            return ".error(message: \"\(message.rawValue)\")"
         } else {
             return ".\(wordingKey.localized().lowercased())"
         }

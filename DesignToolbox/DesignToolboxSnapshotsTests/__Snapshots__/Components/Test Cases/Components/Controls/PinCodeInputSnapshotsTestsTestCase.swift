@@ -66,8 +66,8 @@ open class PinCodeInputSnapshotsTestsTestCase: XCTestCase {
         let rowAxes: [(status: OUDSPinCodeInput.Status, helperText: String)] = [
             (.enabled, ""),
             (.enabled, "Helper text"),
-            (.error(message: "Error message"), ""),
-            (.error(message: "Error message"), "Helper text"),
+            (.textualError(message: .raw("Error message")), ""),
+            (.textualError(message: .raw("Error message")), "Helper text"),
         ]
 
         var cells: [SnapshotGridCell<AnyView>] = []
@@ -179,7 +179,7 @@ struct TestPinCodeInputView: View {
         OUDSPinCodeInput(.constant(mockData(isFull)),
                          length: length,
                          hiddenCharacters: true,
-                         helperText: helperText,
+                         helperText: helperText.isEmpty ? nil : .raw(helperText),
                          isOutlined: outlined,
                          status: status,
                          autofocus: false)

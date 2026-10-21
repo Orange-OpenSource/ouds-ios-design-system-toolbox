@@ -183,9 +183,9 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     private var errorTextPattern: String {
         if isError, !errorText.isEmpty {
             if textMode == .rich {
-                ", errorText: yourAttributedString"
+                ", errorText: .rich(yourAttributedString)"
             } else {
-                ", errorText: \"\(errorText)\""
+                ", errorText: .raw(\"\(errorText)\")"
             }
         } else {
             ""

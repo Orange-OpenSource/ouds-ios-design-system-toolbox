@@ -124,9 +124,9 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
 
     private var labelPattern: String {
         if hasBoldLabel {
-            return "label: .text(\"\(labelText)\", isBold: true)"
+            return "label: .textual(.raw(\"\(labelText)\"), isBold: true)"
         }
-        return "label: .text(\"\(labelText)\")"
+        return "label: .textual(.raw(\"\(labelText)\"))"
     }
 
     private var overlinePattern: String {

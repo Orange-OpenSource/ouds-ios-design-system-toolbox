@@ -68,7 +68,7 @@ struct RadiosItemView: View {
                     isOutlined: isOutlined,
                     isReversed: false,
                     isError: isError,
-                    errorText: isError ? "Error" : nil,
+                    errorText: isError ? .raw("Error") : nil,
                     isReadOnly: isReadOnly)
                     .disabled(isDisabled)
 
@@ -82,7 +82,7 @@ struct RadiosItemView: View {
                     isOutlined: isOutlined,
                     isReversed: true,
                     isError: isError,
-                    errorText: isError ? "Error" : nil,
+                    errorText: isError ? .raw("Error") : nil,
                     isReadOnly: isReadOnly)
                     .disabled(isDisabled)
             }
@@ -121,7 +121,7 @@ struct RadiosItemView: View {
                       image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: false,
                       isError: true,
-                      errorText: "Error")
+                      errorText: .raw("Error"))
 
         OUDSRadioItem("Label",
                       isOn: $isOn,
@@ -130,7 +130,7 @@ struct RadiosItemView: View {
                       image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: true,
                       isError: true,
-                      errorText: "Error")
+                      errorText: .raw("Error"))
 
         Text("Outlined").font(.callout)
 
@@ -142,7 +142,7 @@ struct RadiosItemView: View {
                       isOutlined: true,
                       isReversed: false,
                       isError: true,
-                      errorText: "Error")
+                      errorText: .raw("Error"))
 
         OUDSRadioItem("Label",
                       isOn: $isOn,
@@ -152,7 +152,7 @@ struct RadiosItemView: View {
                       isOutlined: true,
                       isReversed: true,
                       isError: true,
-                      errorText: "Error")
+                      errorText: .raw("Error"))
 
         Text("Disabled").font(.caption)
 

@@ -84,7 +84,7 @@ struct OpenableText: View {
     var body: some View {
         if type != .githubIssue {
             let tag = OUDSTag(label: anchor)
-            OUDSNavigationListItem(data: .init(itemLabel: .textual(.raw(rawText.replacingOccurrences(of: anchor, with: "")))),
+            OUDSNavigationListItem(data: .init(label: .textual(.raw(rawText.replacingOccurrences(of: anchor, with: "")))),
                                    indicatorType: .external,
                                    trailing: .tag(tag))
             {

@@ -114,9 +114,11 @@ struct AboutPage: View {
     private var listBody: some View {
         List {
             if theme.name != SoshTheme.name {
+                #if !os(tvOS) && !os(visionOS)
                 Section(header: OUDSHeading("app_about_legal_title", hasMarker: true)) {
                     legalView
                 }
+                #endif
                 Section(header: OUDSHeading("app_about_versions_title", hasMarker: true)) {
                     buildView
                 }
@@ -124,9 +126,11 @@ struct AboutPage: View {
                     linksView
                 }
             } else {
+                #if !os(tvOS) && !os(visionOS)
                 Section(header: OUDSHeading("app_about_legal_title", coloredText: "légales")) {
                     legalView
                 }
+                #endif
                 Section(header: OUDSHeading("app_about_versions_title", coloredText: "techniques")) {
                     buildView
                 }
@@ -171,11 +175,6 @@ struct AboutPage: View {
         }
         .oudsListItemStyle(divider: false)
         .oudsListItemSize(.small)
-    }
-    #else
-    @ViewBuilder
-    private var legalView: some View {
-        EmptyView()
     }
     #endif
 
@@ -318,7 +317,7 @@ private struct LiquidGlassStateItem: View {
                                  shape: .rounded,
                                  size: .small)
 
-        OUDSStaticListItem(data: .init(itemLabel: .textual(.localized("app_about_isLiquidGlass_disabled"))),
+        OUDSStaticListItem(data: .init(label: .textual(.localized("app_about_isLiquidGlass_disabled"))),
                            trailing: .tag(versionTag))
             .oudsListItemStyle(divider: false)
             .oudsListItemSize(.small)
@@ -338,7 +337,8 @@ private struct VersionItem: View {
                                  appearance: .muted,
                                  shape: .rounded,
                                  size: .small)
-        OUDSStaticListItem(data: .init(itemLabel: .textual(.raw(title.localized()))),
+
+        OUDSStaticListItem(data: .init(label: .textual(.raw(title.localized()))),
                            trailing: .tag(versionTag))
             .oudsListItemStyle(divider: false)
             .oudsListItemSize(.small)

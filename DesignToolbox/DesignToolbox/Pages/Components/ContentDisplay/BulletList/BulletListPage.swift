@@ -65,18 +65,18 @@ struct BulletListDemo: View {
         let label = configurationModel.label
         switch configurationModel.levelCount {
         case .one:
-            OUDSBulletList.Item(label)
-            OUDSBulletList.Item(label)
-            OUDSBulletList.Item(label)
+            OUDSBulletList.Item(.raw(label))
+            OUDSBulletList.Item(.raw(label))
+            OUDSBulletList.Item(.raw(label))
         case .two:
-            OUDSBulletList.Item(label) {
-                OUDSBulletList.Item(label)
-                OUDSBulletList.Item(label)
+            OUDSBulletList.Item(.raw(label)) {
+                OUDSBulletList.Item(.raw(label))
+                OUDSBulletList.Item(.raw(label))
             }
         case .three:
-            OUDSBulletList.Item(label) {
-                OUDSBulletList.Item(label) {
-                    OUDSBulletList.Item(label)
+            OUDSBulletList.Item(.raw(label)) {
+                OUDSBulletList.Item(.raw(label)) {
+                    OUDSBulletList.Item(.raw(label))
                 }
             }
         }
@@ -87,18 +87,18 @@ struct BulletListDemo: View {
         let richLabel = configurationModel.richLabel
         switch configurationModel.levelCount {
         case .one:
-            OUDSBulletList.Item(richLabel)
-            OUDSBulletList.Item(richLabel)
-            OUDSBulletList.Item(richLabel)
+            OUDSBulletList.Item(.rich(richLabel))
+            OUDSBulletList.Item(.rich(richLabel))
+            OUDSBulletList.Item(.rich(richLabel))
         case .two:
-            OUDSBulletList.Item(richLabel) {
-                OUDSBulletList.Item(richLabel)
-                OUDSBulletList.Item(richLabel)
+            OUDSBulletList.Item(.rich(richLabel)) {
+                OUDSBulletList.Item(.rich(richLabel))
+                OUDSBulletList.Item(.rich(richLabel))
             }
         case .three:
-            OUDSBulletList.Item(richLabel) {
-                OUDSBulletList.Item(richLabel) {
-                    OUDSBulletList.Item(richLabel)
+            OUDSBulletList.Item(.rich(richLabel)) {
+                OUDSBulletList.Item(.rich(richLabel)) {
+                    OUDSBulletList.Item(.rich(richLabel))
                 }
             }
         }
