@@ -87,6 +87,7 @@ nonisolated(unsafe) let kDesignToolboxWhiteLabelColors = DesignToolboxColorSeman
 
 // MARK: - Borders
 
+// swiftlint:disable type_name
 final class DesignToolboxBorderSemanticTokensProvider: WhiteLabelThemeBorderSemanticTokensProvider {
 
     deinit {}
@@ -97,6 +98,8 @@ final class DesignToolboxBorderSemanticTokensProvider: WhiteLabelThemeBorderSema
      override open var radiusDefault: BorderRadiusSemanticToken { BorderRawTokens.radius300 }
      */
 }
+
+// swiftlint:enable type_name
 
 nonisolated(unsafe) let kDesignToolboxWhiteLabelBorders = DesignToolboxBorderSemanticTokensProvider()
 

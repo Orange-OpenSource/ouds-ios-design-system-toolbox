@@ -172,41 +172,6 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         }
     }
 
-    @MainActor
-    private func buildDataItemWithRichOverline(
-        currentLabel: String,
-        overline: AttributedString?,
-        slot: OUDSListItemData.Slot?,
-        bottomSlot: OUDSListItemData.Slot?) -> OUDSListItemData
-    {
-        let safeOverline = overline ?? AttributedString("")
-        let description: OUDSTextualContent? = textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText)
-        let extraLabel: OUDSTextualContent? = textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText)
-        let helperText: OUDSTextualContent? = textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText)
-
-        switch textsModel.labelContentType {
-        case .text:
-            return OUDSListItemData(
-                label: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
-                description: description,
-                overline: .rich(safeOverline),
-                extraLabel: extraLabel,
-                helperText: helperText,
-                textSlot: slot,
-                bottomSlot: bottomSlot)
-        case .customView:
-            return OUDSListItemData(
-                label: textsModel.customLabelView,
-                accessibilityLabel: "Custom view label",
-                description: description,
-                overline: .rich(safeOverline),
-                extraLabel: extraLabel,
-                helperText: helperText,
-                textSlot: slot,
-                bottomSlot: bottomSlot)
-        }
-    }
-
     var needRoundedMediaOption: Bool {
         leadingModel.needRoundedMediaOption || trailingModel.needRoundedMediaOption
     }
