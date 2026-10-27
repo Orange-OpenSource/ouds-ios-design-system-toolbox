@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.2.0...develop)
 
+### Added
+
+- [Library] `Alert banner` component (Orange-OpenSource/ouds-ios#1665)
 ### Changed
 
 - [DesignToolbox] Lsit of colors for `colored surface` component
