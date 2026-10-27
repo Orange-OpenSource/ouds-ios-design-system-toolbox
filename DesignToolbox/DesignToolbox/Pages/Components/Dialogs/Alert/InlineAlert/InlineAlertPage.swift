@@ -41,10 +41,7 @@ struct InlineAlertDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center) {
-            OUDSInlineAlert(label: configurationModel.text, status: configurationModel.status(from: theme))
-        }
-        .padding(.all, theme.spaces.fixedMedium)
-        .showSkeleton(isVisible: configurationModel.showSkeleton)
+        OUDSInlineAlert(label: configurationModel.text, status: configurationModel.status(from: theme))
+            .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }

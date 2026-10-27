@@ -42,20 +42,19 @@ struct AlertBannerDemo: View {
 
     var body: some View {
         Group {
-            // To keep things simple, assuming the rich/raw mode is for all parameters
-            switch configurationModel.textMode {
-            case .raw:
-                OUDSAlertBanner(label: configurationModel.text,
-                                status: configurationModel.status(from: theme),
-                                description: .raw(configurationModel.descriptionText),
-                                link: configurationModel.link,
-                                onClose: configurationModel.onClose)
-            case .rich:
-                OUDSAlertBanner(label: configurationModel.text,
-                                status: configurationModel.status(from: theme),
-                                description: .attributed(configurationModel.richDescriptionText),
-                                link: configurationModel.link,
-                                onClose: configurationModel.onClose)
+            switch configurationModel.layout {
+            case .center:
+                OUDSAlertBanner(layout: .center(label: configurationModel.text,
+                                                status: configurationModel.status(from: theme),
+                                                action: configurationModel.centerLayoutAction)
+                )
+            case .start:
+                OUDSAlertBanner(layout: .start(label: configurationModel.text,
+                                               status: configurationModel.status(from: theme),
+                                               description: configurationModel.descriptionContent,
+                                               actionLink: configurationModel.startLayoutActionLink,
+                                               alignment: configurationModel.containersAlignment,
+                                               onClose: configurationModel.onClose))
             }
         }
         .showSkeleton(isVisible: configurationModel.showSkeleton)
