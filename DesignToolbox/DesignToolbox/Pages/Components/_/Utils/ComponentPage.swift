@@ -24,6 +24,9 @@ open class ComponentConfiguration: ObservableObject {
     /// like for tab bars
     let useOneColorSchemedDemo: Bool
 
+    /// Flag to show the component view edge to edge (i.e. no gridMargin is applyed)
+    let isEdgeToEdgeComponent: Bool
+
     @Published var code: String = "" {
         didSet { codeDidChange.send() }
     }
@@ -42,14 +45,18 @@ open class ComponentConfiguration: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     init() {
-        useOneColorSchemedDemo = false
+        self.useOneColorSchemedDemo = false
+        self.isEdgeToEdgeComponent = false
+        updateCode()
+
+    }
+
+    init(useOneColorSchemedDemo: Bool = false, isEdgeToEdgeComponent: Bool = false) {
+        self.useOneColorSchemedDemo = useOneColorSchemedDemo
+        self.isEdgeToEdgeComponent = isEdgeToEdgeComponent
         updateCode()
     }
 
-    init(useOneColorSchemedDemo: Bool = false) {
-        self.useOneColorSchemedDemo = useOneColorSchemedDemo
-        updateCode()
-    }
 
     deinit {}
 
@@ -74,9 +81,9 @@ open class ComponentConfiguration: ObservableObject {
 /// modified by user using elements presented in `Configuration` view.
 struct ComponentConfigurationView<Component, Configuration>: View where Component: View, Configuration: View {
 
-    @Environment(\.theme) private var theme
-
     // MARK: Stored properties
+
+    @Environment(\.theme) private var theme
 
     /// The configuration shared between configuration view and component illustration view.
     @ObservedObject var configuration: ComponentConfiguration
@@ -97,7 +104,7 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
                            minHeight: theme.spaces.fixedLarge,
                            alignment: .center)
                     .padding(.vertical, theme.spaces.fixedMedium)
-                    .gridMargin(.horizontal)
+                    .modifier(EdgeToEdgeModifier(isEdgeToEdge: configuration.isEdgeToEdgeComponent))
             }
             // No padding here, the component area keeps all the frame horizontaly
 
@@ -109,6 +116,22 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
                 DesignToolboxCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
             }
             .gridMargin(.horizontal)
+        }
+    }
+}
+
+struct EdgeToEdgeModifier: ViewModifier {
+
+    // MARK: Stored properties
+
+    let isEdgeToEdge: Bool
+    @Environment(\.theme) private var theme
+
+    func body(content: Content) -> some View {
+        if isEdgeToEdge {
+            content
+        } else {
+            content.gridMargin(.horizontal)
         }
     }
 }

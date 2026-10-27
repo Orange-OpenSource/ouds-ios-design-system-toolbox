@@ -39,8 +39,15 @@ open class AlertConfigurationModel: ComponentConfiguration {
         statusIcon = .none
         status = .neutral
         flipIcon = false
-
         super.init()
+    }
+
+    init(isEdgeToEdgeComponent: Bool) {
+        text = String(localized: "app_components_common_label_label")
+        statusIcon = .none
+        status = .neutral
+        flipIcon = false
+        super.init(useOneColorSchemedDemo: false, isEdgeToEdgeComponent: isEdgeToEdgeComponent)
     }
 
     deinit {}

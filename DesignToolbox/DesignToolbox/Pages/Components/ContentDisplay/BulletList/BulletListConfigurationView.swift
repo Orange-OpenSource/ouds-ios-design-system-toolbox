@@ -220,7 +220,7 @@ struct BulletListConfigurationView: View {
                                selection: $configurationModel.levelCount,
                                chips: BulletListLevelCount.chips)
 
-                OUDSChipPicker(title: "app_components_textMode_tech",
+                OUDSChipPicker(title: "app_components_common_textMode_tech",
                                selection: $configurationModel.textMode,
                                chips: TextualContentMode.chips)
 

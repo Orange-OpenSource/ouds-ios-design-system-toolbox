@@ -41,7 +41,7 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         didSet { updateCode() }
     }
 
-    @Published var actionLink: Bool {
+    @Published var hasActionLink: Bool {
         didSet { updateCode() }
     }
 
@@ -79,7 +79,7 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
 
     override init() {
         descriptionText = ""
-        actionLink = false
+        hasActionLink = false
         actionPosition = .bottom
         closeButton = false
         bullet1 = "app_components_alert_alertMessage_bullet_tech" <- Int(1)
@@ -100,7 +100,7 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
     // MARK: Component Configuration
 
     var link: OUDSAlertMessage.Link? {
-        actionLink ? .init(text: "Action", position: actionPosition, action: {}) : nil
+        hasActionLink ? .init(text: "Action", position: actionPosition, action: {}) : nil
     }
 
     var onClose: (() -> Void)? {
@@ -134,7 +134,7 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
     }
 
     private var linkPattern: String {
-        actionLink ? ", link: .init(text: \"Action\", position: \(actionPosition.technicalDescription), action: {})" : ""
+        hasActionLink ? ", link: .init(text: \"Action\", position: \(actionPosition.technicalDescription), action: {})" : ""
     }
 
     private var onClosePattern: String {
@@ -179,16 +179,16 @@ struct AlertMessageConfigurationView: View {
                 OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
                     .disabled(!configurationModel.enableFlipIcon)
 
-                OUDSSwitchItem("app_components_alert_alertMessage_closeButton_tech", isOn: $configurationModel.closeButton)
+                OUDSSwitchItem("app_components_common_closeButton_tech", isOn: $configurationModel.closeButton)
 
-                OUDSSwitchItem("app_components_alert_alertMessage_actionLink_tech", isOn: $configurationModel.actionLink)
+                OUDSSwitchItem("app_components_alert_actionLink_tech", isOn: $configurationModel.hasActionLink)
 
-                OUDSChipPicker(title: "app_components_alert_alertMessage_actionLinkPosition_tech",
+                OUDSChipPicker(title: "app_components_alert_actionLinkPosition_tech",
                                selection: $configurationModel.actionPosition,
                                chips: OUDSAlertMessage.Link.Position.chips)
-                    .disabled(!configurationModel.actionLink)
+                    .disabled(!configurationModel.hasActionLink)
 
-                OUDSChipPicker(title: "app_components_textMode_tech",
+                OUDSChipPicker(title: "app_components_common_textMode_tech",
                                selection: $configurationModel.textMode,
                                chips: TextualContentMode.chips)
             }

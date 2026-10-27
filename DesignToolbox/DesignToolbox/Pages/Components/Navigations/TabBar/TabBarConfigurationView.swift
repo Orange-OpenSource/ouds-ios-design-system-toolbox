@@ -75,7 +75,7 @@ final class TabBarConfigurationModel: ComponentConfiguration {
 
     // MARK: Initializer
 
-    override init(useOneColorSchemedDemo: Bool) {
+    init(useOneColorSchemedDemo: Bool) {
         numberOfItems = 3
         badgeConfiguration = .none
         badgeText = "1"
