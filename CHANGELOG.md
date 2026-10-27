@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] edge to edge support for `control item` and `list item` components (Orange-OpenSource/ouds-ios#1661)
 - [Library] skeleton state for `pin code input` component (Orange-OpenSource/ouds-ios#1857)
 
+- [Library] `Alert banner` component (Orange-OpenSource/ouds-ios#1665)
 ### Changed
 
 - [DesignToolbox] RubyGem `fastlane` from v2.241.1 to v2.241.2
