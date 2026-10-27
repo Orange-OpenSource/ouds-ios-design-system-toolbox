@@ -1626,6 +1626,11 @@
 		FC736E9B2F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E972F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift */; };
 		FC736EA02F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC736E9C2F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift */; };
 		FC8FD1582F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */; };
+		FCA3AB8E3090E91700388B01 /* AlertBannerSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA3AB8D3090E91700388B01 /* AlertBannerSnapshotsTestsTestCase.swift */; };
+		FCA3AB903090FC8500388B01 /* OrangeTheme+AlertBannerSnapshotsTests.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA3AB8F3090FC8500388B01 /* OrangeTheme+AlertBannerSnapshotsTests.swift.swift */; };
+		FCA3AB923090FCD300388B01 /* OrangeCompactTheme+AlertBannerSnapshotsTests.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA3AB913090FCD300388B01 /* OrangeCompactTheme+AlertBannerSnapshotsTests.swift.swift */; };
+		FCA3AB963090FD1300388B01 /* WireframeTheme+AlertBannerSnapshotsTests.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA3AB953090FD1300388B01 /* WireframeTheme+AlertBannerSnapshotsTests.swift.swift */; };
+		FCA3AB9A3090FD6B00388B01 /* SoshTheme+AlertBannerSnapshotsTests.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA3AB993090FD6B00388B01 /* SoshTheme+AlertBannerSnapshotsTests.swift.swift */; };
 		FCAC158E3088E3580066B438 /* AlertBannerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC158D3088E3580066B438 /* AlertBannerPage.swift */; };
 		FCAC158F3088E3580066B438 /* AlertBannerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC158C3088E3580066B438 /* AlertBannerElement.swift */; };
 		FCAC15903088E3580066B438 /* AlertBannerConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC158B3088E3580066B438 /* AlertBannerConfigurationView.swift */; };
@@ -2229,6 +2234,11 @@
 		FC95B93E2F855D9800A4F0B9 /* ToolBarTrailingConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarTrailingConfiguration.swift; sourceTree = "<group>"; };
 		FC95B93F2F855D9800A4F0BA /* ToolBarItemStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarItemStyle.swift; sourceTree = "<group>"; };
 		FC95B9412F86769600A4F0B7 /* ToolBarCommonContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarCommonContent.swift; sourceTree = "<group>"; };
+		FCA3AB8D3090E91700388B01 /* AlertBannerSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBannerSnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
+		FCA3AB8F3090FC8500388B01 /* OrangeTheme+AlertBannerSnapshotsTests.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+AlertBannerSnapshotsTests.swift.swift"; sourceTree = "<group>"; };
+		FCA3AB913090FCD300388B01 /* OrangeCompactTheme+AlertBannerSnapshotsTests.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+AlertBannerSnapshotsTests.swift.swift"; sourceTree = "<group>"; };
+		FCA3AB953090FD1300388B01 /* WireframeTheme+AlertBannerSnapshotsTests.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WireframeTheme+AlertBannerSnapshotsTests.swift.swift"; sourceTree = "<group>"; };
+		FCA3AB993090FD6B00388B01 /* SoshTheme+AlertBannerSnapshotsTests.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+AlertBannerSnapshotsTests.swift.swift"; sourceTree = "<group>"; };
 		FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagConfigurationView.swift; sourceTree = "<group>"; };
 		FCA849122E9FF00500DBCE76 /* InputTagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagElement.swift; sourceTree = "<group>"; };
 		FCA849132E9FF00500DBCE76 /* InputTagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTagPage.swift; sourceTree = "<group>"; };
@@ -4486,6 +4496,7 @@
 		FC736E892F3D286E0019FC13 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				FCA3AB8C3090E90000388B01 /* AlertBanner */,
 				FC4799C92F48549F005F349B /* InlineAlert */,
 				FC736E8A2F3D28760019FC13 /* AlertMessage */,
 			);
@@ -4511,6 +4522,7 @@
 		FC736E8E2F3E2DA90019FC13 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				FCA3AB993090FD6B00388B01 /* SoshTheme+AlertBannerSnapshotsTests.swift.swift */,
 				FC4799D32F485697005F349B /* SoshTheme+InlineAlertSnapshotsTests.swift */,
 				FC736E902F3E2DBD0019FC13 /* SoshTheme+AlertMessageSnapshotsTests.swift */,
 			);
@@ -4520,6 +4532,7 @@
 		FC736E942F3E2DEE0019FC13 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				FCA3AB8F3090FC8500388B01 /* OrangeTheme+AlertBannerSnapshotsTests.swift.swift */,
 				FC4799D12F485673005F349B /* OrangeTheme+InlineAlertSnapshotsTests.swift */,
 				FC736E922F3E2DEE0019FC13 /* OrangeTheme+AlertMessageSnapshotsTests.swift */,
 			);
@@ -4537,6 +4550,7 @@
 		FC736E992F3E2E2A0019FC13 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				FCA3AB913090FCD300388B01 /* OrangeCompactTheme+AlertBannerSnapshotsTests.swift.swift */,
 				FC736E972F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift */,
 				FC4799CD2F485617005F349B /* OrangeCompactTheme+InlineAlertSnapshotsTests.swift */,
 			);
@@ -4554,6 +4568,7 @@
 		FC736E9E2F3E2E710019FC13 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				FCA3AB953090FD1300388B01 /* WireframeTheme+AlertBannerSnapshotsTests.swift.swift */,
 				FC736E9C2F3E2E710019FC13 /* WireframeTheme+AlertMessageSnapshotsTests.swift */,
 				FC4799CF2F48562F005F349B /* WireframeTheme+InlineAlertSnapshotsTests.swift */,
 			);
@@ -4585,6 +4600,14 @@
 				FC8FD1562F3644450002A49B /* OrangeCompactTheme+BulletListSnapshotsTests.swift */,
 			);
 			path = ContentDisplay;
+			sourceTree = "<group>";
+		};
+		FCA3AB8C3090E90000388B01 /* AlertBanner */ = {
+			isa = PBXGroup;
+			children = (
+				FCA3AB8D3090E91700388B01 /* AlertBannerSnapshotsTestsTestCase.swift */,
+			);
+			path = AlertBanner;
 			sourceTree = "<group>";
 		};
 		FCA849102E9FEFF600DBCE76 /* InputTag */ = {
@@ -5220,6 +5243,7 @@
 				953EDD8C302FCCD40008FEA7 /* CheckboxElement.swift in Sources */,
 				953EDD8D302FCCD40008FEA7 /* CheckboxPage.swift in Sources */,
 				953EDD8E302FCCD40008FEA7 /* CheckboxIndeterminateElement.swift in Sources */,
+				FCA3AB8E3090E91700388B01 /* AlertBannerSnapshotsTestsTestCase.swift in Sources */,
 				95DAED0C306EC47900C61004 /* CategoricalTagElement.swift in Sources */,
 				953EDD8F302FCCD40008FEA7 /* CheckboxIndeterminatePage.swift in Sources */,
 				953EDD90302FCCD40008FEA7 /* CheckboxItemElement.swift in Sources */,
@@ -5307,6 +5331,7 @@
 				953EDDDF302FCCD40008FEA7 /* AllElements.swift in Sources */,
 				953EDDE0302FCCD40008FEA7 /* DesignToolboxElement.swift in Sources */,
 				953EDDE1302FCCD40008FEA7 /* DesignToolboxElementPage.swift in Sources */,
+				FCA3AB903090FC8500388B01 /* OrangeTheme+AlertBannerSnapshotsTests.swift.swift in Sources */,
 				953EDDE2302FCCD40008FEA7 /* DesignToolboxElementsPage.swift in Sources */,
 				953EDDE3302FCCD40008FEA7 /* DesignToolboxVariantElement.swift in Sources */,
 				953EDDE4302FCCD40008FEA7 /* ElementsGridView.swift in Sources */,
@@ -5377,6 +5402,7 @@
 				953EDD3B302FCB520008FEA7 /* TextInputConfigurationView.swift in Sources */,
 				953EDD3C302FCB520008FEA7 /* BadgeCountConfigurationView.swift in Sources */,
 				953EDD3D302FCB520008FEA7 /* BadgeIconConfigurationView.swift in Sources */,
+				FCA3AB9A3090FD6B00388B01 /* SoshTheme+AlertBannerSnapshotsTests.swift.swift in Sources */,
 				953EDD3E302FCB520008FEA7 /* BadgeStandardConfigurationView.swift in Sources */,
 				953EDD3F302FCB520008FEA7 /* InputTagConfigurationView.swift in Sources */,
 				953EDD40302FCB520008FEA7 /* TagConfigurationView.swift in Sources */,
@@ -5387,6 +5413,7 @@
 				953EDD45302FCB520008FEA7 /* ToolBarBottomConfigurationView.swift in Sources */,
 				953EDD46302FCB520008FEA7 /* TabBarConfigurationView.swift in Sources */,
 				953EDD47302FCB520008FEA7 /* DisplayConfigurationView.swift in Sources */,
+				FCA3AB963090FD1300388B01 /* WireframeTheme+AlertBannerSnapshotsTests.swift.swift in Sources */,
 				953EDD48302FCB520008FEA7 /* HeadingConfigurationView.swift in Sources */,
 				953EDD49302FCB520008FEA7 /* BodyConfigurationView.swift in Sources */,
 				953EDD4A302FCB520008FEA7 /* LabelConfigurationView.swift in Sources */,
@@ -5563,6 +5590,7 @@
 				376062D7F5BBA6BA6C5AEE54 /* OrangeTheme+TypographySnapshotsTests.swift in Sources */,
 				0F345BEA28F3A1D66EED312F /* OrangeCompactTheme+TypographySnapshotsTests.swift in Sources */,
 				46BBE0D13670524F41D04706 /* SoshTheme+TypographySnapshotsTests.swift in Sources */,
+				FCA3AB923090FCD300388B01 /* OrangeCompactTheme+AlertBannerSnapshotsTests.swift.swift in Sources */,
 				916777ED6000C671E6A717FB /* WireframeTheme+TypographySnapshotsTests.swift in Sources */,
 				CE20DAD212D303544FF91222 /* CategoricalTagSnapshotsTestCase.swift in Sources */,
 				11D8C600CAA34ECCE096A1E0 /* OrangeTheme+CategoricalTagSnapshotsTests.swift in Sources */,
