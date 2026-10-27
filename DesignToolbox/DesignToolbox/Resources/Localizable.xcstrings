@@ -1354,8 +1354,8 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_alert_alertMessage_actionLink_tech" : {
-      "comment" : "Component - Alert Message",
+    "app_components_alert_actionLink_tech" : {
+      "comment" : "Component - Alert",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -1379,8 +1379,8 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_alert_alertMessage_actionLinkPosition_tech" : {
-      "comment" : "Component - Alert Message",
+    "app_components_alert_actionLinkPosition_tech" : {
+      "comment" : "Component - Alert",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -1429,8 +1429,8 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_alert_alertMessage_closeButton_tech" : {
-      "comment" : "Component - Alert Message",
+    "app_components_common_closeButton_tech" : {
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -7532,7 +7532,7 @@
         }
       }
     },
-    "app_components_textMode_tech" : {
+    "app_components_common_textMode_tech" : {
       "comment" : "Common - Rich text mode",
       "extractionState" : "manual",
       "localizations" : {
