@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.2.0...develop)
 
+### Added
+
+- [Library] `Alert banner` component (Orange-OpenSource/ouds-ios#1665)
 ### Changed
 
 - [DesignToolbox] Evolutions of pages and navigation for iPhone Duo layouts, management of search tab with iOS 27 SDK
