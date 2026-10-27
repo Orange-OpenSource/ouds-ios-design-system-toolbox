@@ -79,7 +79,8 @@ open class AlertBannerSnapshotsTestsTestCase: XCTestCase {
         model.hasActionLink = alignemnt != nil
         model.closeButton = true
 
-        return SnapshotGridCell(caption: layout.formattedName) {
+        let actionAlignment = alignemnt?.formattedName ?? "No action"
+        return SnapshotGridCell(caption: actionAlignment) {
             AnyView(AlertBannerDemo(configurationModel: model))
         }
     }
