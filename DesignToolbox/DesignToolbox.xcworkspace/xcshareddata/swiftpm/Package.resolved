@@ -1,5 +1,5 @@
 {
-  "originHash" : "bf99c52bb512e106615c9d35a677560dda4f16d3b87e779aa68d6e38fed27d01",
+  "originHash" : "6ea3d37f1306824a57aceca4318954b015df152cccfd354b173dfe326870c15b",
   "pins" : [
     {
       "identity" : "accessibility-statement-lib-ios",
@@ -11,30 +11,21 @@
       }
     },
     {
+      "identity" : "ouds-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Orange-OpenSource/ouds-ios",
+      "state" : {
+        "branch" : "1665-in-library-add-alert-banner-component",
+        "revision" : "f5ba68a9103b986c1d255c4d7a1a1fda73d7ef2f"
+      }
+    },
+    {
       "identity" : "swift-custom-dump",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-custom-dump",
       "state" : {
         "revision" : "e9c34fd54ece006b491a0e6d23fe9a6024b9a828",
         "version" : "1.7.0"
-      }
-    },
-    {
-      "identity" : "swift-docc-plugin",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/swiftlang/swift-docc-plugin",
-      "state" : {
-        "revision" : "647c708be89f834fa6a6d4945442793a77ddf5b6",
-        "version" : "1.5.0"
-      }
-    },
-    {
-      "identity" : "swift-docc-symbolkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/swiftlang/swift-docc-symbolkit",
-      "state" : {
-        "revision" : "b45d1f2ed151d057b54504d653e0da5552844e34",
-        "version" : "1.0.0"
       }
     },
     {
@@ -53,24 +44,6 @@
       "state" : {
         "revision" : "4799286537280063c85a32f09884cfbca301b1a1",
         "version" : "602.0.0"
-      }
-    },
-    {
-      "identity" : "swiftformat",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/nicklockwood/SwiftFormat",
-      "state" : {
-        "revision" : "ce60affbe4143ad93ed16b8018117ed4f1db8ce3",
-        "version" : "0.64.0"
-      }
-    },
-    {
-      "identity" : "swiftlintplugins",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SimplyDanny/SwiftLintPlugins",
-      "state" : {
-        "revision" : "ef7d692fc6706e8f5628e26bcafaefa445c58a97",
-        "version" : "0.65.1"
       }
     },
     {
