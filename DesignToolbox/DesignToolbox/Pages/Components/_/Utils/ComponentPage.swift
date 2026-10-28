@@ -48,7 +48,6 @@ open class ComponentConfiguration: ObservableObject {
         self.useOneColorSchemedDemo = false
         self.isEdgeToEdgeComponent = false
         updateCode()
-
     }
 
     init(useOneColorSchemedDemo: Bool = false, isEdgeToEdgeComponent: Bool = false) {
@@ -56,7 +55,6 @@ open class ComponentConfiguration: ObservableObject {
         self.isEdgeToEdgeComponent = isEdgeToEdgeComponent
         updateCode()
     }
-
 
     deinit {}
 

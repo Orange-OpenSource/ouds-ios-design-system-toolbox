@@ -104,7 +104,7 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
     // MARK: Component Configuration
 
     var centerLayoutAction: (label: String, onClick: () -> Void)? {
-        hasActionLink ? (label: "Action", onClick: {} ) : nil
+        hasActionLink ? (label: "Action", onClick: {}) : nil
     }
 
     var startLayoutActionLink: OUDSAlertBanner.ActionLink? {
@@ -148,7 +148,7 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
     }
 
     private var onClosePattern: String {
-        closeButton ? ", onClose: { }" : ""
+        closeButton ? ", onClose: {}" : ""
     }
 
     private var skeletonPattern: String {
@@ -174,7 +174,6 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
                 OUDSAlertBanner(label: \"\(text)\"\(statusPattern)\(descriptionPattern)\(actionLinkPattern)\(alignmentPattern)\(onClosePattern))
                     \(skeletonPattern)
                 """
-
         }
     }
 }
