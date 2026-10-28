@@ -7720,7 +7720,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "1665-in-library-add-alert-banner-component";
 				kind = branch;
 			};
 		};
