@@ -15,6 +15,7 @@ import OUDSSwiftUI
 import SwiftUI
 
 // swiftlint:disable required_deinit
+// swiftlint:disable type_name
 
 // MARK: - Test Cases
 
@@ -53,3 +54,4 @@ final class OrangeCompactThemeAlertBannerSnapshotsTests: AlertBannerSnapshotsTes
 }
 
 // swiftlint:enable required_deinit
+// swiftlint:enable type_name
