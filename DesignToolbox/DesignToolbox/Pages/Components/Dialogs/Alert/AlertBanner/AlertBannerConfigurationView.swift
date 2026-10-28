@@ -67,6 +67,14 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
         }
     }
 
+    var richLabelText: AttributedString {
+        do {
+            return try AttributedString(markdown: text)
+        } catch {
+            return AttributedString("Supposed to be valid Markdown")
+        }
+    }
+
     var centerLayouAction: (label: String, action: () -> Void)? {
         hasActionLink ? (label: "Action", action: {}) : nil
     }
@@ -107,15 +115,23 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
         closeButton ? {} : nil
     }
 
-    var descriptionContent: OUDSTextualContent {
+    var labelContent: OUDSTextualContent {
         switch textMode {
         case .raw:
-                .raw(descriptionText)
+            .raw(text)
         case .rich:
-                .rich(richDescriptionText)
+            .rich(richLabelText)
         }
     }
 
+    var descriptionContent: OUDSTextualContent {
+        switch textMode {
+        case .raw:
+            .raw(descriptionText)
+        case .rich:
+            .rich(richDescriptionText)
+        }
+    }
 
     // MARK: Component Code snippet
 
