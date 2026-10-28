@@ -44,12 +44,12 @@ struct AlertBannerDemo: View {
         Group {
             switch configurationModel.layout {
             case .center:
-                OUDSAlertBanner(layout: .center(label: configurationModel.text,
+                OUDSAlertBanner(layout: .center(label: configurationModel.labelContent,
                                                 status: configurationModel.status(from: theme),
                                                 action: configurationModel.centerLayoutAction)
                 )
             case .start:
-                OUDSAlertBanner(layout: .start(label: configurationModel.text,
+                OUDSAlertBanner(layout: .start(label: configurationModel.labelContent,
                                                status: configurationModel.status(from: theme),
                                                description: configurationModel.descriptionContent,
                                                actionLink: configurationModel.startLayoutActionLink,
