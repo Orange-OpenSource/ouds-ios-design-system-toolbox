@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "ae587e89c809495689a77a212cea127df6ae764d"
+        "branch" : "1665-in-library-add-alert-banner-component",
+        "revision" : "f5e9de53a581218db231f1a9b821596237182fca"
       }
     },
     {
