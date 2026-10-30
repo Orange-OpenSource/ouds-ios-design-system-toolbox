@@ -36,14 +36,9 @@ struct DesignToolboxConfiguration<Configuration>: View where Configuration: View
 
                 OUDSHorizontalDivider()
             }
-            .padding(.horizontal, theme.spaces.fixedMedium)
+            .gridMargin(.horizontal)
 
             configuration()
         }
-        .padding(.vertical, theme.spaces.fixedMedium)
-        .border(style: theme.borders.styleDefault,
-                width: theme.borders.widthThin,
-                radius: theme.borders.radiusMedium,
-                color: theme.colors.borderDefault)
     }
 }
