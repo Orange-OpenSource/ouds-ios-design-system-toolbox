@@ -101,14 +101,18 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
             }
             // No padding here, the component area keeps all the frame horizontaly
 
-            Group {
-                DesignToolboxConfiguration {
-                    configurationView()
-                }
+            OUDSHorizontalDivider()
 
-                DesignToolboxCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
+            DesignToolboxConfiguration {
+                configurationView()
             }
-            .gridMargin(.horizontal)
+
+            OUDSHorizontalDivider()
+
+            DesignToolboxCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
+                .gridMargin(.horizontal)
+
+            OUDSHorizontalDivider()
         }
     }
 }
