@@ -16,7 +16,7 @@
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
         "branch" : "1558-move-to-xcode-27",
-        "revision" : "be0d5bb78499d9b8df109923ad6fcbecf16740e3"
+        "revision" : "7ab9df3c9401c78278dcaeeb81abbb2ac8591b28"
       }
     },
     {
