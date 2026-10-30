@@ -3371,7 +3371,7 @@
     },
     "app_components_common_helperRichText_tech" : {
       "comment" : "Component - Common",
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -3841,7 +3841,7 @@
     },
     "app_components_common_richError_tech" : {
       "comment" : "Component - Common",
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -5769,6 +5769,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_pinCodeInput_hiddenCharacters_tech" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden characters"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden characters"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden characters"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_pinCodeInput_length_tech" : {
       "comment" : "Component - PIN Code Input",
       "extractionState" : "manual",
@@ -5793,31 +5818,6 @@
         }
       },
       "shouldTranslate" : false
-    },
-    "app_components_pinCodeInput_hiddenCharacters_tech" : {
-        "comment" : "Component - PIN Code Input",
-        "extractionState" : "manual",
-        "localizations" : {
-            "ar" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Hidden characters"
-                }
-            },
-            "en" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Hidden characters"
-                }
-            },
-            "fr" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Hidden characters"
-                }
-            }
-        },
-        "shouldTranslate" : false
     },
     "app_components_pinCodeInput_tech" : {
       "comment" : "Component - PIN Code Input",
