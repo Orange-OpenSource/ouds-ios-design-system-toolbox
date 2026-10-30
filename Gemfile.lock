@@ -293,4 +293,4 @@ DEPENDENCIES
   xcode-install (= 2.8.1)
 
 BUNDLED WITH
-   2.6.9
+   4.1.0.beta3

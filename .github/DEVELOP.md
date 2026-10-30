@@ -52,7 +52,8 @@ If some tools are missing, pick the suitable command line below and check versio
 # Get updated RubyGems
 gem update --system 3.6.7
 
-# Install bundler (at least 2.6.7)
+# Install bundler (at least 4.0)
+# Or for update: bundle update --bundle
 gem install bundler
 
 # Install rbenv (at least 1.3.2)
