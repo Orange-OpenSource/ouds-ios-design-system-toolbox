@@ -14,7 +14,11 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// MARK: - Color Token Page View
+
 struct ColorTokenPage: View {
+
+    let category: ColorTokenCategory
 
     @Environment(\.theme) private var theme
 
@@ -25,27 +29,45 @@ struct ColorTokenPage: View {
             Section {
                 DesignToolboxCode(code: "theme.colors.bgPrimary.color(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
-            Section { illustrationForAI() } header: { header("AI") }
-            Section { illustrationForAction() } header: { header("Action") }
-            Section { illustrationForAlways() } header: { header("Always") }
-            Section { illustrationForBackground() } header: { header("Background") }
-            Section { illustrationForBorder() } header: { header("Border") }
-            if theme.colorsCharts != nil { // Some themes like Sosh do not have color charts
+            if category == .ai {
+                Section { illustrationForAI() } header: { header("AI") }
+            }
+            if category == .action {
+                Section { illustrationForAction() } header: { header("Action") }
+            }
+            if category == .always {
+                Section { illustrationForAlways() } header: { header("Always") }
+            }
+            if category == .background {
+                Section { illustrationForBackground() } header: { header("Background") }
+            }
+            if category == .border {
+                Section { illustrationForBorder() } header: { header("Border") }
+            }
+            if category == .chart, theme.colorsCharts != nil {
                 Section { illustrationForChart() } header: { header("Chart") }
             }
-            Section { illustrationForContent() } header: { header("Content") }
-            if theme.colorsDecorative != nil { // Some themes like Sosh do not have decorative charts
+            if category == .content {
+                Section { illustrationForContent() } header: { header("Content") }
+            }
+            if category == .decorative, theme.colorsDecorative != nil {
                 Section { illustrationForDecorative() } header: { header("Decorative") }
             }
-            Section { illustrationForOpacity() } header: { header("Opacity") }
-            Section { illustrationForOverlay() } header: { header("Overlay") }
-            Section { illustrationForRepository() } header: { header("Repository") }
-            Section { illustrationForSurface() } header: { header("Surface") }
+            if category == .opacity {
+                Section { illustrationForOpacity() } header: { header("Opacity") }
+            }
+            if category == .overlay {
+                Section { illustrationForOverlay() } header: { header("Overlay") }
+            }
+            if category == .repository {
+                Section { illustrationForRepository() } header: { header("Repository") }
+            }
+            if category == .surface {
+                Section { illustrationForSurface() } header: { header("Surface") }
+            }
         }
         .gridMargin(.horizontal)
     }
-
-    // MARK: Private helpers
 
     private func header(_ text: String) -> some View {
         OUDSHeading(text: text, size: .large, hasMarker: true)
@@ -148,9 +170,9 @@ struct ColorTokenPage: View {
         }
     }
 
-    struct Illustration: View {
+    // MARK: Illustration
 
-        // MARK: Properties
+    struct Illustration: View {
 
         private let lightValue: ColorSemanticToken?
         private let darkValue: ColorSemanticToken?
@@ -187,8 +209,6 @@ struct ColorTokenPage: View {
             }
         }
 
-        // MARK: Body
-
         // swiftlint:disable force_unwrapping
         var body: some View {
             let colorRawToken = colorScheme == .dark ? darkValue : lightValue
@@ -219,3 +239,173 @@ struct ColorTokenPage: View {
         // swiftlint:enable force_unwrapping
     }
 }
+
+// MARK: - Color Token Category
+
+enum ColorTokenCategory: String, CaseIterable, Identifiable {
+    case ai = "AI"
+    case action = "Action"
+    case always = "Always"
+    case background = "Background"
+    case border = "Border"
+    case chart = "Chart"
+    case content = "Content"
+    case decorative = "Decorative"
+    case opacity = "Opacity"
+    case overlay = "Overlay"
+    case repository = "Repository"
+    case surface = "Surface"
+
+    var id: String { rawValue }
+
+    static func available(in theme: OUDSTheme) -> [Self] {
+        allCases.filter { category in
+            switch category {
+            case .chart:
+                theme.colorsCharts != nil
+            case .decorative:
+                theme.colorsDecorative != nil
+            default:
+                true
+            }
+        }
+    }
+}
+
+#if os(iOS)
+// MARK: - Color Token Browser Page View
+
+@available(iOS 17, *)
+struct ColorTokenBrowserPage: View {
+
+    let illustration: AnyView
+
+    @State private var selectedCategory: ColorTokenCategory?
+    @AccessibilityFocusState private var requestFocus: Bool
+
+    @Environment(\.theme) private var theme
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    var body: some View {
+        let categories = ColorTokenCategory.available(in: theme)
+
+        Group {
+            if horizontalSizeClass == .regular {
+                NavigationSplitView {
+                    ColorTokenFamilyList(illustration: illustration,
+                                         categories: categories,
+                                         selection: $selectedCategory,
+                                         focus: $requestFocus,
+                                         usesSplitNavigation: true)
+                        .navigationBarMenus(title: "app_tokens_color_tech".localized(),
+                                            showsThemeControls: selectedCategory == nil)
+                } detail: {
+                    ColorTokenFamilyDetail(category: selectedCategory)
+                }
+                .navigationSplitViewStyle(.balanced)
+                .oudsNavigationBarAppearance()
+            } else {
+                ColorTokenFamilyList(illustration: illustration,
+                                     categories: categories,
+                                     selection: $selectedCategory,
+                                     focus: $requestFocus,
+                                     usesSplitNavigation: false)
+                    .navigationBarMenus(title: "app_tokens_color_tech".localized())
+            }
+        }
+        .requestAccessibleFocus(_requestFocus)
+        .onChange(of: categories) { _, availableCategories in
+            if let selectedCategory, !availableCategories.contains(selectedCategory) {
+                self.selectedCategory = nil
+            }
+        }
+    }
+}
+
+// MARK: - Color Token Family List
+
+@available(iOS 17, *)
+private struct ColorTokenFamilyList: View {
+
+    let illustration: AnyView
+    let categories: [ColorTokenCategory]
+    @Binding var selection: ColorTokenCategory?
+    let focus: AccessibilityFocusState<Bool>.Binding
+    let usesSplitNavigation: Bool
+
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        ScrollView {
+            DesignToolboxElementIntroduction(illustration: illustration,
+                                             description: "app_tokens_color_description_text",
+                                             focus: focus)
+
+            ForEach(categories) { category in
+                if usesSplitNavigation {
+                    OUDSNavigationListItem(data: .init(label: .textual(.raw(category.rawValue), isBold: true)),
+                                           indicatorType: .next)
+                    {
+                        selection = category
+                    }
+                    .oudsListItemStyle(divider: true, background: false)
+                    .accessibilityAddTraits(selection == category ? .isSelected : [])
+                } else {
+                    OUDSNavigationLink(title: category.rawValue, hasBoldLabel: true, indicatorType: .next) {
+                        ColorTokenFamilyDetail(category: category, returnsToSplitOnExpansion: true)
+                            .onAppear { selection = category }
+                    }
+                }
+            }
+            .oudsListItemSize(.small)
+        }
+        .background(theme.colors.bgPrimary)
+    }
+}
+
+// MARK: - Color Token Family Detail View
+
+@available(iOS 17, *)
+private struct ColorTokenFamilyDetail: View {
+
+    let category: ColorTokenCategory?
+    var returnsToSplitOnExpansion: Bool = false
+
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.theme) private var theme
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    var body: some View {
+        let categories = ColorTokenCategory.available(in: theme)
+
+        Group {
+            if let category, categories.contains(category) {
+                ScrollView {
+                    LazyVStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
+                        ColorTokenPage(category: category)
+                    }
+                }
+                .background(theme.colors.bgPrimary)
+                .navigationBarMenus(title: category.rawValue)
+            } else {
+                OUDSBody("app_common_select_element", size: .large)
+                    .foregroundStyle(theme.colors.contentMuted)
+                    .multilineTextAlignment(.center)
+                    .padding(theme.spaces.fixedMedium)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(theme.colors.bgPrimary)
+            }
+        }
+        .onChange(of: horizontalSizeClass) { _, sizeClass in
+            if returnsToSplitOnExpansion, sizeClass == .regular {
+                dismiss()
+            }
+        }
+        .onChange(of: categories) { _, availableCategories in
+            if returnsToSplitOnExpansion, let category, !availableCategories.contains(category) {
+                dismiss()
+            }
+        }
+    }
+}
+#endif

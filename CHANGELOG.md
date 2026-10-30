@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Evolutions of pages and navigation for iPhone Duo layouts, management of search tab with iOS 27 SDK
 - [DesignToolbox] Change needed version of Bundler (from v2.x to v4.x)
 - [DesignToolbox] Move to Xcode 27.1 (Orange-OpenSource/ouds-ios#1558)
 - [DesignToolbox] List of colors for `colored surface` component

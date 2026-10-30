@@ -21,6 +21,12 @@ struct BorderTokenElement: DesignToolboxElement {
     init() {
         name = "app_tokens_border_tech".localized()
         illustration = AnyView(Image(decorative: "ic_border").renderingMode(.template))
+        #if os(iOS)
+        if #available(iOS 27.1, *) { // Trick for iPhone Duo
+            pageDescription = AnyView(BorderTokenDetailPage(illustration: illustration))
+            return
+        }
+        #endif
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             illustration: illustration,

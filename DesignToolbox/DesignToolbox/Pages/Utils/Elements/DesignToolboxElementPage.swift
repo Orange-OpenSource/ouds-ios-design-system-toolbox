@@ -14,6 +14,8 @@
 import OUDSSwiftUI
 import SwiftUI
 
+// MARK: - Design Toolbox Element Page
+
 /// Used to present the element in same layout with:
 /// - a text for the description
 /// - an optional image to illustrate the element
@@ -22,6 +24,7 @@ import SwiftUI
 struct DesignToolboxElementPage: View {
 
     @AccessibilityFocusState private var requestFocus: Bool
+
     @Environment(\.theme) private var theme
 
     // MARK: Stored Properties
@@ -167,5 +170,33 @@ struct DesignToolboxElementPage: View {
         .gridMargin(.horizontal)
         .padding(.bottom, theme.spaces.fixedMedium)
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+// MARK: - Design Toolbox Element Introduction
+
+/// Shared introduction for scrolling demos and pages that own their full-height layout.
+struct DesignToolboxElementIntroduction: View {
+
+    let illustration: AnyView?
+    let description: String
+    let focus: AccessibilityFocusState<Bool>.Binding
+
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
+            if let illustration {
+                CardIllustration(illustration: illustration)
+                    .accessibilityHidden(true)
+                    .allowsTightening(true)
+            }
+
+            OUDSBody(LocalizedStringKey(description), size: .large, weight: .default)
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .accessibilityFocused(focus)
+                .gridMargin(.horizontal)
+        }
     }
 }
