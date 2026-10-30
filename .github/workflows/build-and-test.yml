@@ -50,7 +50,7 @@ concurrency:
 jobs:
   # Build the app (if there are linter errors or compiler issues, it will fail)
   build:
-    runs-on: macos-26
+    runs-on: macos-27
     timeout-minutes: 60
     steps:
       - name: Checkout code
@@ -81,7 +81,7 @@ jobs:
 
   # Test the app with unit tests
   unit-test:
-    runs-on: macos-26
+    runs-on: macos-27
     timeout-minutes: 60
     steps:
       - name: Checkout code
@@ -107,7 +107,7 @@ jobs:
 
   # Test the app / library with UI tests
   ui-test:
-    runs-on: macos-26
+    runs-on: macos-27
     timeout-minutes: 60
     steps:
       - name: Checkout code
@@ -133,7 +133,7 @@ jobs:
 
   # Test the app / library with snapshots tests
   snapshots-test:
-    runs-on: macos-26
+    runs-on: macos-27
     timeout-minutes: 120
     steps:
       - name: Checkout code
