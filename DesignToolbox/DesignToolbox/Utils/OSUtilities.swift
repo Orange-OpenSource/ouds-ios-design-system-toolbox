@@ -53,7 +53,11 @@ enum OSUtilities {
 
     static func languageCode() -> String? {
         #if os(iOS)
-        Locale.current.languageCode
+        if #available(iOS 16.0, *) {
+            Locale.current.language.languageCode?.identifier
+        } else {
+            Locale.current.languageCode
+        }
         #else
         Locale.current.language.languageCode?.identifier
         #endif

@@ -51,25 +51,45 @@ private struct ToolBarTopDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        NavigationLink(destination: demo(), isActive: $configurationModel.showNavigation) {
-            OUDSButton("app_components_toolbar_demo_showDemo_label", appearance: .strong) {
-                switch configurationModel.demoOption {
-                case .navigation:
-                    configurationModel.showNavigation = true
-                case .modalSheet:
-                    configurationModel.showModalSheet = true
-                case .fullCover:
-                    configurationModel.showFullCover = true
+        navigationLinkView
+            .sheet(isPresented: $configurationModel.showModalSheet) {
+                OUDSNavigationStack(content: demo)
+                    .modalSheetDragIndicator()
+            }
+            .fullScreenCover(isPresented: $configurationModel.showFullCover) {
+                OUDSNavigationStack(content: demo)
+                    .modalSheetDragIndicator()
+            }
+    }
+
+    @ViewBuilder
+    private var navigationLinkView: some View {
+        if #available(iOS 16.0, *) {
+            NavigationStack {
+                OUDSButton("app_components_toolbar_demo_showDemo_label", appearance: .strong) {
+                    handleDemoOption()
+                }
+                .navigationDestination(isPresented: $configurationModel.showNavigation) {
+                    demo()
+                }
+            }
+        } else {
+            NavigationLink(destination: demo(), isActive: $configurationModel.showNavigation) {
+                OUDSButton("app_components_toolbar_demo_showDemo_label", appearance: .strong) {
+                    handleDemoOption()
                 }
             }
         }
-        .sheet(isPresented: $configurationModel.showModalSheet) {
-            OUDSNavigationStack(content: demo)
-                .modalSheetDragIndicator()
-        }
-        .fullScreenCover(isPresented: $configurationModel.showFullCover) {
-            OUDSNavigationStack(content: demo)
-                .modalSheetDragIndicator()
+    }
+
+    private func handleDemoOption() {
+        switch configurationModel.demoOption {
+        case .navigation:
+            configurationModel.showNavigation = true
+        case .modalSheet:
+            configurationModel.showModalSheet = true
+        case .fullCover:
+            configurationModel.showFullCover = true
         }
     }
 

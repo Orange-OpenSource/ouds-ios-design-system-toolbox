@@ -13,6 +13,7 @@
 
 import SnapshotTesting
 import SwiftUI
+import UIKit
 import XCTest
 
 /// Just to gather some utilities for UI tests
@@ -55,12 +56,31 @@ extension XCTestCase {
         assertSnapshot(of: hostingViewController,
                        as: .image(precision: precision,
                                   perceptualPrecision: perceptualPrecision,
-                                  traits: UITraitCollection(traitsFrom: [UITraitCollection(userInterfaceStyle: uiStyle), UITraitCollection(accessibilityContrast: a11yContrast)])),
+                                  traits: traitCollection(for: uiStyle, accessibilityContrast: a11yContrast)),
                        named: named,
                        timeout: Self.timeout,
                        fileID: fileID,
                        file: file,
                        testName: testName)
     }
+
     // swiftlint:enable function_default_parameter_at_end
+
+    private func traitCollection(for uiStyle: UIUserInterfaceStyle, accessibilityContrast: UIAccessibilityContrast) -> UITraitCollection {
+        if #available(iOS 17.0, *) {
+            var traits = UITraitCollection()
+            traits = traits.modifyingTraits { collection in
+                collection.userInterfaceStyle = uiStyle
+            }
+            traits = traits.modifyingTraits { collection in
+                collection.accessibilityContrast = accessibilityContrast
+            }
+            return traits
+        } else {
+            return UITraitCollection(traitsFrom: [
+                UITraitCollection(userInterfaceStyle: uiStyle),
+                UITraitCollection(accessibilityContrast: accessibilityContrast),
+            ])
+        }
+    }
 }
