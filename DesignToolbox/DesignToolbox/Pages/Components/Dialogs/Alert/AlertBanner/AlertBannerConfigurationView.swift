@@ -75,10 +75,6 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
         }
     }
 
-    var centerLayouAction: (label: String, action: () -> Void)? {
-        hasActionLink ? (label: "Action", action: {}) : nil
-    }
-
     // MARK: Initializer
 
     override init() {
