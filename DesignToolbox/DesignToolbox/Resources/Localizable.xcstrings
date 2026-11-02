@@ -1305,55 +1305,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_alert_alertBanner_description_text" : {
-      "comment" : "Component - Alert Banner",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تُعدّ لافتة التنبيه عنصرًا من عناصر المراسلة يُستخدم لتوصيل المعلومات المهمة، أو حالات النظام، أو تحديثات الخدمة عبر واجهة المستخدم. وهي تدعم حالات دلالية متعددة، وتخطيطات، وإجراءات، وسلوكيات تفاعلية لضمان اتساق التواصل عبر المنتجات والمنصات."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The Alert banner is a messaging component used to communicate important information, system states, or service updates across an interface. It supports multiple semantic statuses, layouts, actions, and responsive behaviours to ensure consistent communication across products and platforms."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La bannière d’alerte est un composant de messagerie utilisé pour communiquer des informations importantes, des états du système ou des mises à jour de service au sein d’une interface. Elle prend en charge divers statuts sémantiques, mises en page, actions et comportements adaptatifs, garantissant ainsi une communication cohérente à travers différents produits et plateformes."
-          }
-        }
-      }
-    },
-    "app_components_alert_alertBanner_tech" : {
-      "comment" : "Component - Alert Banner",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alert Banner"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alert banner"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alert Banner"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_alert_actionLink_tech" : {
       "comment" : "Component - Alert",
       "extractionState" : "manual",
@@ -1404,6 +1355,55 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_alert_alertBanner_description_text" : {
+      "comment" : "Component - Alert Banner",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تُعدّ لافتة التنبيه عنصرًا من عناصر المراسلة يُستخدم لتوصيل المعلومات المهمة، أو حالات النظام، أو تحديثات الخدمة عبر واجهة المستخدم. وهي تدعم حالات دلالية متعددة، وتخطيطات، وإجراءات، وسلوكيات تفاعلية لضمان اتساق التواصل عبر المنتجات والمنصات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Alert banner is a messaging component used to communicate important information, system states, or service updates across an interface. It supports multiple semantic statuses, layouts, actions, and responsive behaviours to ensure consistent communication across products and platforms."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La bannière d’alerte est un composant de messagerie utilisé pour communiquer des informations importantes, des états du système ou des mises à jour de service au sein d’une interface. Elle prend en charge divers statuts sémantiques, mises en page, actions et comportements adaptatifs, garantissant ainsi une communication cohérente à travers différents produits et plateformes."
+          }
+        }
+      }
+    },
+    "app_components_alert_alertBanner_tech" : {
+      "comment" : "Component - Alert Banner",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert banner"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert banner"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert banner"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_alert_alertMessage_bullet_tech" : {
       "comment" : "Component - Alert Message",
       "extractionState" : "manual",
@@ -1424,31 +1424,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bullet %d"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "app_components_common_closeButton_tech" : {
-      "comment" : "Component - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Close button"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Close button"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Close button"
           }
         }
       },
@@ -1558,8 +1533,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Inline Alert"
+            "state" : "translated",
+            "value" : "Inline alert"
           }
         },
         "en" : {
@@ -1570,8 +1545,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Inline Alert"
+            "state" : "translated",
+            "value" : "Inline alert"
           }
         }
       },
@@ -3050,6 +3025,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_closeButton_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close button"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close button"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close button"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_color_tech" : {
       "comment" : "Component - Common",
       "localizations" : {
@@ -4111,6 +4111,31 @@
           }
         }
       }
+    },
+    "app_components_common_textMode_tech" : {
+      "comment" : "Common - Rich text mode",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text mode"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text mode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text mode"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_components_common_textOnlyLayout_tech" : {
       "comment" : "Component - Common",
@@ -7583,31 +7608,6 @@
           }
         }
       }
-    },
-    "app_components_common_textMode_tech" : {
-      "comment" : "Common - Rich text mode",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Text mode"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Text mode"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Text mode"
-          }
-        }
-      },
-      "shouldTranslate" : false
     },
     "app_components_toolbar_demo_backToConfiguration_label" : {
       "comment" : "Component - Tool Bar",

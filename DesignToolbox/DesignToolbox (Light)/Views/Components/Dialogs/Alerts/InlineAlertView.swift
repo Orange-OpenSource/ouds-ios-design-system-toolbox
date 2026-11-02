@@ -15,7 +15,7 @@ import OUDSSwiftUI
 import SwiftUI
 
 // swiftlint:disable accessibility_label_for_image
-struct InlineAlertMessageView: View {
+struct InlineAlertView: View {
 
     @Environment(\.theme) private var theme
 
