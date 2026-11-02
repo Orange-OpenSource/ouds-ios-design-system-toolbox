@@ -171,7 +171,7 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
         case .start:
             code =
                 """
-                OUDSAlertBanner(label: \"\(text)\"\(statusPattern)\(descriptionPattern)\(actionLinkPattern)\(alignmentPattern)\(onClosePattern))
+                OUDSAlertBanner(label: \(textMode.technicalDescription)(\"\(text)\")\(statusPattern)\(descriptionPattern)\(actionLinkPattern)\(alignmentPattern)\(onClosePattern))
                     \(skeletonPattern)
                 """
         }
