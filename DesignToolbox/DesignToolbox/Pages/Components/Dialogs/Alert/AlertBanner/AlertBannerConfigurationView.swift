@@ -147,6 +147,10 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
         hasActionLink ? ", actionLink: .init(text: \"Action\", position: \(actionPosition.technicalDescription), action: {})" : ""
     }
 
+    private var centerLayoutActionPattern: String {
+        hasActionLink ? "(label: \"Action\", onClick: {})" : "nil"
+    }
+
     private var onClosePattern: String {
         closeButton ? ", onClose: {}" : ""
     }
@@ -164,7 +168,7 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
         case .center:
             code =
                 """
-                OUDSAlertBanner(label: \"\(text)\"\(statusPattern), action: nil)"
+                OUDSAlertBanner(label: \"\(text)\"\(statusPattern), action: \(centerLayoutActionPattern))
                     \(skeletonPattern)
                 """
 
