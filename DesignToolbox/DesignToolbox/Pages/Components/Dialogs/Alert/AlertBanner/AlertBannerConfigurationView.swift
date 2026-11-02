@@ -14,7 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: - AlertBanner Configuration Model
+// MARK: - Alert Banner Configuration Model
 
 /// The model shared between `AlertBannerConfigurationView` view and `AlertBannerDemo` view.
 final class AlertBannerConfigurationModel: AlertConfigurationModel {
@@ -178,7 +178,7 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
     }
 }
 
-// MARK: - AlertBanner Configuration View
+// MARK: - Alert Banner Configuration View
 
 struct AlertBannerConfigurationView: View {
 
@@ -214,7 +214,7 @@ struct AlertBannerConfigurationView: View {
                     OUDSChipPicker(title: "app_components_alert_actionLinkPosition_tech",
                                    selection: $configurationModel.actionPosition,
                                    chips: OUDSAlertBanner.ActionLink.Position.chips)
-                    .disabled(!configurationModel.hasActionLink)
+                        .disabled(!configurationModel.hasActionLink)
 
                     OUDSSwitchItem("app_components_common_closeButton_tech", isOn: $configurationModel.closeButton)
 
@@ -238,6 +238,8 @@ struct AlertBannerConfigurationView: View {
         }
     }
 }
+
+// MARK: - OUDSAlertBanner extension
 
 extension OUDSAlertBanner.ActionLink.Position: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
     public static let allCases: [OUDSAlertBanner.ActionLink.Position] = [.bottom, .topTrailing]

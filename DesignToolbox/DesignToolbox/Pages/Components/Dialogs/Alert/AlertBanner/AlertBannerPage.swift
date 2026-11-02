@@ -14,7 +14,7 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: AlertBanner page
+// MARK: Alert Banner page
 
 struct AlertBannerPage: View {
 
@@ -33,7 +33,7 @@ struct AlertBannerPage: View {
     }
 }
 
-// MARK: - AlertBanner Demo
+// MARK: - Alert Banner Demo
 
 struct AlertBannerDemo: View {
 
@@ -46,8 +46,7 @@ struct AlertBannerDemo: View {
             case .center:
                 OUDSAlertBanner(layout: .center(label: configurationModel.labelContent,
                                                 status: configurationModel.status(from: theme),
-                                                action: configurationModel.centerLayoutAction)
-                )
+                                                action: configurationModel.centerLayoutAction))
             case .start:
                 OUDSAlertBanner(layout: .start(label: configurationModel.labelContent,
                                                status: configurationModel.status(from: theme),

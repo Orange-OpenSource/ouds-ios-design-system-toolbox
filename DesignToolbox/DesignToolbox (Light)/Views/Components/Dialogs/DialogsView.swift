@@ -18,7 +18,8 @@ struct DialogsView: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink("Inline Alert", destination: InlineAlertMessageView())
+                NavigationLink("Inline Alert", destination: InlineAlertView())
+                NavigationLink("Alert Banner", destination: AlertBannerMessageView())
             }
         }
     }

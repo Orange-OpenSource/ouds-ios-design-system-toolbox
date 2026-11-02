@@ -45,8 +45,8 @@ open class ComponentConfiguration: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     init() {
-        self.useOneColorSchemedDemo = false
-        self.isEdgeToEdgeComponent = false
+        useOneColorSchemedDemo = false
+        isEdgeToEdgeComponent = false
         updateCode()
     }
 
