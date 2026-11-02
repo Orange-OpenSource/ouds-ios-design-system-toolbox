@@ -19,14 +19,14 @@ struct AlertBannerMessageView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        WatchScrollLayoutView(title: "Inline Alert",
+        WatchScrollLayoutView(title: "Alert Banner",
                               layout: { watchVerticalLayout })
     }
 
     private var watchVerticalLayout: some View {
         WatchVerticalLayout {
             OUDSAlertBanner(layout: .start(label: "This is a neutral banner", status: .neutral()))
-            OUDSAlertBanner(layout: .start(label: "This is a accent banner", status: .accent()))
+            OUDSAlertBanner(layout: .start(label: "This is an accent banner", status: .accent()))
             OUDSAlertBanner(layout: .start(label: "This is a positive banner", status: .positive))
             OUDSAlertBanner(layout: .start(label: "This is a info banner", status: .info))
             OUDSAlertBanner(layout: .start(label: "This is a warning banner", status: .warning))
