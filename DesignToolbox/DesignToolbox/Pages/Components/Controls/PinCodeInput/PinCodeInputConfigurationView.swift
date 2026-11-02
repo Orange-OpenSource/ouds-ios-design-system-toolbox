@@ -169,7 +169,7 @@ struct PinCodeInputConfigurationView: View {
                                chips: PinCodeInputStatusKind.chips)
 
                 if configurationModel.statusKind != .error, configurationModel.statusKind != .richError {
-                    OUDSChipPicker(title: "app_components_textMode_tech",
+                    OUDSChipPicker(title: "app_components_common_textMode_tech",
                                    selection: $configurationModel.textMode,
                                    chips: TextualContentMode.chips)
                 }

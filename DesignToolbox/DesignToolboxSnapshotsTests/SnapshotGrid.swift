@@ -43,7 +43,7 @@ private final class ContrastOverrideViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addChild(child)
-        setOverrideTraitCollection(UITraitCollection(accessibilityContrast: contrast), forChild: child)
+        applyTraitCollectionOverride()
         view.addSubview(child.view)
         child.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -53,6 +53,14 @@ private final class ContrastOverrideViewController: UIViewController {
             child.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         child.didMove(toParent: self)
+    }
+
+    private func applyTraitCollectionOverride() {
+        if #available(iOS 17.0, *) {
+            child.traitOverrides.accessibilityContrast = contrast
+        } else {
+            setOverrideTraitCollection(UITraitCollection(accessibilityContrast: contrast), forChild: child)
+        }
     }
 }
 
