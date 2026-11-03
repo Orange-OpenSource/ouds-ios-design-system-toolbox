@@ -49,4 +49,5 @@
 /.cache/
 
 # Other files not needed to be versioned
-SBOM.json
+/SBOM.json
+/xcode-skills/
