@@ -25,7 +25,7 @@ struct BodyElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_typography_body_description_text",
-            version: OUDSVersions.componentTypographyVersion,
+            version: OUDSVersions.componentTypographyBodyVersion,
             demoScreen: AnyView(BodyPage())))
     }
 }
