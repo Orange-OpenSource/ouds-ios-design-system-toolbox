@@ -58,14 +58,18 @@ open class ListItemAvatarConfigurationModel: ComponentConfiguration {
 
     // MARK: Builder
 
+    private func withoutStatusLabel(_ pattern: String) -> String {
+        pattern.replacingOccurrences(of: "status: ", with: "")
+    }
+
     private var badgePattern: String {
         switch badgeOption {
         case .none:
             ""
         case .standard:
-            ", badgeType: .standard(\(standardBadgeModel.statusPattern))"
+            ", badgeType: .standard(\(withoutStatusLabel(standardBadgeModel.statusPattern)))"
         case .icon:
-            ", badgeType: .icon(\(iconBadgeModel.statusWithIconPattern))"
+            ", badgeType: .icon(\(withoutStatusLabel(iconBadgeModel.statusWithIconPattern)))"
         }
     }
 
@@ -101,7 +105,7 @@ open class ListItemAvatarConfigurationModel: ComponentConfiguration {
     }
 
     override func updateCode() {
-        let imagePattern = "Image(decorative: \"ic_placeholder\")"
+        let imagePattern = "Image(decorative: \"il_placeholder_avatar\")"
         let typePattern = switch type {
         case .image:
             ".image(asset: \(imagePattern))"

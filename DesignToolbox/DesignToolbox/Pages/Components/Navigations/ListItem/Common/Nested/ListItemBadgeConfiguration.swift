@@ -76,9 +76,9 @@ open class ListItemBadgeConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code = switch badgeTypeOption {
         case .standard:
-            ".standard(\(standardModel.code)))"
+            ".standard(\(standardModel.code.trimmingCharacters(in: .whitespacesAndNewlines)))"
         case .count:
-            ".count(\(countModel.code)))"
+            ".count(\(countModel.code.trimmingCharacters(in: .whitespacesAndNewlines)))"
         }
     }
 }

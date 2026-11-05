@@ -72,41 +72,17 @@ open class ListItemImageConfigurationModel: ComponentConfiguration {
     }
 
     override func updateCode() {
-        if isAnimated {
-            code =
-                """
-                .init(animatedImage: OUDSAnimatedImage(named: "Animation", withExtension: "gif")
-                    \(sizePattern)
-                    \(ratioPattern)
-                    \(contentModePattern)
-                    \(descriptionPattern))
-                """
-        } else {
-            code =
-                """
-                .init(asset: "\(Image.placeholderImageSample())"
-                    \(sizePattern)
-                    \(ratioPattern)
-                    \(contentModePattern)
-                    \(descriptionPattern))
-                """
-        }
-    }
-
-    private var sizePattern: String {
-        ", size: \(size.technicalDescription)"
-    }
-
-    private var ratioPattern: String {
-        ", ratio: \(ratio.technicalDescription)"
-    }
-
-    private var contentModePattern: String {
-        ", contentMode: \(contentMode.technicalDescription)"
-    }
-
-    private var descriptionPattern: String {
-        ", description: \"\("app_components_listItem_image_a11y".localized())\""
+        let assetPattern = isAnimated
+            ? "animatedImage: OUDSAnimatedImage(named: \"Animation\", withExtension: \"gif\")"
+            : "asset: \(Image.placeholderImageSample())"
+        let parameters = [
+            assetPattern,
+            "description: \"\("app_components_listItem_image_a11y".localized())\"",
+            "size: \(size.technicalDescription)",
+            "ratio: \(ratio.technicalDescription)",
+            "contentMode: \(contentMode.technicalDescription)",
+        ]
+        code = ".init(\(parameters.joined(separator: ", ")))"
     }
 }
 

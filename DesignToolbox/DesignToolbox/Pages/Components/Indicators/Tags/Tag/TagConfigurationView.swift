@@ -150,6 +150,13 @@ final class TagConfigurationModel: ComponentConfiguration {
 
     // MARK: Component Configuration
 
+    var listItemTagCode: String {
+        if isLoading {
+            return "OUDSTag(loadingLabel: \"\(label)\"\(progressPattern)\(shapePattern)\(sizePattern))"
+        }
+        return "OUDSTag(label: \"\(label)\"\(statusPattern)\(appearancePattern)\(shapePattern)\(sizePattern))"
+    }
+
     override func updateCode() {
         if isLoading {
             code = """

@@ -196,14 +196,37 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         let leadingPart = leadingModel.code.isEmpty ? "" : ", leading: leading"
         let trailingPart = trailingModel.code.isEmpty ? "" : ", trailing: trailing"
 
-        code = """
-        \(dataPattern) \(leadingModel.code) \(trailingModel.code)
+        let declarations = [dataPattern, leadingModel.code, trailingModel.code]
+            .filter { !$0.isEmpty }
+            .joined(separator: "\n")
 
-        \(componentInitCode)(data: data\(slotPattern)\(leadingPart)\(trailingPart))
-        \(styleModifierPattern)\(sizeModifierPattern)\(containersAlignmentPattern)\(roundedMediaPattern)
-        \(disableCodePattern)
-        \(skeletonPattern)
+        let modifiers = [
+            styleModifierPattern,
+            sizeModifierPattern,
+            containersAlignmentPattern,
+            roundedMediaPattern,
+            disableCodePattern,
+            skeletonPattern,
+        ]
+        .filter { !$0.isEmpty }
+        .joined(separator: "\n")
+
+        code = """
+        \(declarations)
+
+        \(componentInitCode)(data: data\(extraArgumentsPattern)\(leadingPart)\(trailingPart))\(trailingClosurePattern)
+        \(modifiers)
         """
+    }
+
+    /// Arguments added between `data` and `leading` in the component initializer, to be overridden by subclasses
+    var extraArgumentsPattern: String {
+        ""
+    }
+
+    /// Trailing closure added after the component initializer, to be overridden by subclasses
+    var trailingClosurePattern: String {
+        ""
     }
 
     private var skeletonPattern: String {
@@ -218,12 +241,12 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         switch textsModel.labelContentType {
         case .text:
             """
-            let data = OUDSListItemData(\(textsModel.code))
+            let data = OUDSListItemData(\(textsModel.code)\(slotPattern))
             """
         case .customView:
             """
             \(textsModel.customLabelPattern)
-            let data = OUDSListItemData(\(textsModel.code))
+            let data = OUDSListItemData(\(textsModel.code)\(slotPattern))
             """
         }
     }
@@ -252,25 +275,24 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     }
 
     private var roundedMediaPattern: String {
-        needRoundedMediaOption ? "\n.oudsListItemRoundedMedia(\(roundedMedia))" : ""
+        needRoundedMediaOption ? ".oudsListItemRoundedMedia(\(roundedMedia))" : ""
     }
 
     private var sizeModifierPattern: String {
-        itemSize == .default
-            ? "" : "\n.oudsListItemSize(\(itemSize.technicalDescription))"
+        itemSize == .default ? "" : ".oudsListItemSize(\(itemSize.technicalDescription))"
     }
 
     private var containersAlignmentPattern: String {
-        "\n.oudsListItemContainerAlignment(\(containersAlignment.technicalDescription))"
+        ".oudsListItemContainerAlignment(\(containersAlignment.technicalDescription))"
     }
 
     private var slotPattern: String {
         var pattern = ""
         if textsModel.hasSlot {
-            pattern += ", textSlot: someView()"
+            pattern += ", textSlot: .init { someView() }"
         }
         if textsModel.hasBottomSlot {
-            pattern += ", bottomSlot: someView()"
+            pattern += ", bottomSlot: .init { someView() }"
         }
         return pattern
     }

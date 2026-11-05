@@ -29,6 +29,14 @@ final class NavigationListItemConfigurationModel: ListItemConfigurationModel {
     }
 
     deinit {}
+
+    override var extraArgumentsPattern: String {
+        ", indicatorType: \(indicatorType.technicalDescription)"
+    }
+
+    override var trailingClosurePattern: String {
+        " {\n    // Action to perform on tap\n}"
+    }
 }
 
 // MARK: - Navigation List Item Configuration
