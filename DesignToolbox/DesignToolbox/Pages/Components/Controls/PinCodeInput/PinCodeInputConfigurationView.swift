@@ -60,6 +60,10 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: - Computed properties
 
     /// The derived `OUDSPinCodeInput.Status` from the current `statusKind` and `errorText`.
@@ -101,6 +105,7 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         isOutlined = false
         statusKind = .enabled
         textMode = .raw
+        showSkeleton = false
         super.init()
     }
 
@@ -113,7 +118,12 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
             """
             // Current value is: '\(value)'
             OUDSPinCodeInput($value, \(lengthPattern)\(hiddenCharactersPattern)\(helperTextPattern)\(isOutlinedPattern)\(statusPattern))
+            \(skeletonPattern)
             """
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
     }
 
     private var lengthPattern: String {
@@ -155,6 +165,8 @@ struct PinCodeInputConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+
+                OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
 
                 OUDSSwitchItem("app_components_pinCodeInput_hiddenCharacters_tech", isOn: $configurationModel.hiddenCharacters)
 
