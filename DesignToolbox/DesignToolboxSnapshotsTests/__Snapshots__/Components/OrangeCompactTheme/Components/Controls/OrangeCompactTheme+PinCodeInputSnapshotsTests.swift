@@ -41,6 +41,18 @@ final class OrangeCompactThemePinCodeInputSnapshotsTests: PinCodeInputSnapshotsT
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllPinCodeInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    // MARK: Skeleton
+
+    /// Tests the `OUDSPinCodeInput` skeleton state (4, 6 and 8 digits) in the `OrangeCompactTheme` with the `light` color scheme.
+    @MainActor func testPinCodeInputSkeletonOrangeCompactThemeLight() {
+        testPinCodeInputSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSPinCodeInput` skeleton state (4, 6 and 8 digits) in the `OrangeCompactTheme` with the `dark` color scheme.
+    @MainActor func testPinCodeInputSkeletonOrangeCompactThemeDark() {
+        testPinCodeInputSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit
