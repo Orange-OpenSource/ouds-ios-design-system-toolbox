@@ -43,40 +43,34 @@ private struct RadioItemDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        Group {
-            // To keep things simple, assuming the rich/raw mode is for all parameters
-            switch configurationModel.textMode {
-            case .raw:
-                OUDSRadioItem(configurationModel.labelText,
-                              isOn: $configurationModel.isOn,
-                              extraLabel: configurationModel.extraLabelText,
-                              description: configurationModel.descriptionText,
-                              image: image,
-                              isOutlined: configurationModel.outlined,
-                              isReversed: configurationModel.isReversed,
-                              isError: configurationModel.isError,
-                              errorText: .raw(configurationModel.errorText),
-                              isReadOnly: configurationModel.isReadOnly,
-                              hasDivider: configurationModel.hasDivider,
-                              constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-            case .rich:
-                OUDSRadioItem(configurationModel.labelText,
-                              isOn: $configurationModel.isOn,
-                              extraLabel: configurationModel.extraLabelText,
-                              description: configurationModel.descriptionText,
-                              image: image,
-                              isOutlined: configurationModel.outlined,
-                              isReversed: configurationModel.isReversed,
-                              isError: configurationModel.isError,
-                              errorText: .rich(configurationModel.richErrorText),
-                              isReadOnly: configurationModel.isReadOnly,
-                              hasDivider: configurationModel.hasDivider,
-                              constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-            }
-        }
+        OUDSRadioItem(configurationModel.labelText,
+                      isOn: $configurationModel.isOn,
+                      extraLabel: configurationModel.extraLabelText,
+                      description: configurationModel.descriptionText,
+                      image: image,
+                      isOutlined: configurationModel.outlined,
+                      isReversed: configurationModel.isReversed,
+                      isError: configurationModel.isError,
+                      errorText: errorContent,
+                      isReadOnly: configurationModel.isReadOnly,
+                      hasDivider: configurationModel.hasDivider,
+                      constrainedMaxWidth: configurationModel.constrainedMaxWidth)
         .disabled(!configurationModel.enabled)
         .accessibilityIdentifier(A11YIdentifiers.componentRadioItem)
         .showSkeleton(isVisible: configurationModel.showSkeleton)
+    }
+
+    private var isEdgeToEdge: Bool {
+        !configurationModel.outlined && configurationModel.isEdgeToEdgeComponent
+    }
+
+    private var errorContent: OUDSTextualContent {
+        switch configurationModel.textMode {
+        case .rich:
+            .rich(configurationModel.richErrorText)
+        case .raw:
+            .raw(configurationModel.errorText)
+        }
     }
 
     private var image: OUDSImage? {

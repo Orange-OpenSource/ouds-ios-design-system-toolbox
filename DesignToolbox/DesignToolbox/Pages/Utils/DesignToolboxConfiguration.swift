@@ -30,7 +30,7 @@ struct DesignToolboxConfiguration<Configuration>: View where Configuration: View
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             Group {
-                OUDSHeading("app_common_configuration_label", size: .medium)
+                OUDSHeading("app_common_configuration_label", size: .large)
                     .foregroundColor(theme.colors.contentDefault)
                     .frame(maxWidth: .infinity, alignment: .leading)
 

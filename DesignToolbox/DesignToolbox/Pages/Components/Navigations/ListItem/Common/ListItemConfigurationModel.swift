@@ -116,6 +116,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         numberOfItems = 1
 
         super.init()
+        isEdgeToEdgeComponent = true
 
         register(textsModel)
         register(trailingModel)

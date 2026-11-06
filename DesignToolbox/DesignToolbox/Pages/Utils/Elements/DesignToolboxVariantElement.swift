@@ -84,6 +84,7 @@ struct DesignToolboxVariantElement: View {
             #endif
         }
         .oudsListItemSize(.small)
+        .oudsUseEdgeToEdge(true)
     }
 
     // MARK: - Helper

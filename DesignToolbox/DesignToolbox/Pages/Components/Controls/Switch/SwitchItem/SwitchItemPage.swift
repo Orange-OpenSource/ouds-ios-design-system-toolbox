@@ -40,36 +40,28 @@ private struct SwitchItemDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        Group {
-            // To keep things simple, assuming the rich/raw mode is for all parameters
-            switch configurationModel.textMode {
-            case .raw:
-                OUDSSwitchItem(configurationModel.labelText,
-                               isOn: $configurationModel.isOn,
-                               description: configurationModel.descriptionText,
-                               image: image,
-                               isReversed: !configurationModel.isReversed,
-                               isError: configurationModel.isError,
-                               errorText: .raw(configurationModel.errorText),
-                               isReadOnly: configurationModel.isReadOnly,
-                               hasDivider: configurationModel.hasDivider,
-                               constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-            case .rich:
-                OUDSSwitchItem(configurationModel.labelText,
-                               isOn: $configurationModel.isOn,
-                               description: configurationModel.descriptionText,
-                               image: image,
-                               isReversed: !configurationModel.isReversed,
-                               isError: configurationModel.isError,
-                               errorText: .rich(configurationModel.richErrorText),
-                               isReadOnly: configurationModel.isReadOnly,
-                               hasDivider: configurationModel.hasDivider,
-                               constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-            }
-        }
+        OUDSSwitchItem(configurationModel.labelText,
+                       isOn: $configurationModel.isOn,
+                       description: configurationModel.descriptionText,
+                       image: image,
+                       isReversed: !configurationModel.isReversed,
+                       isError: configurationModel.isError,
+                       errorText: errorContent,
+                       isReadOnly: configurationModel.isReadOnly,
+                       hasDivider: configurationModel.hasDivider,
+                       constrainedMaxWidth: configurationModel.constrainedMaxWidth)
         .disabled(!configurationModel.enabled)
         .accessibilityIdentifier(A11YIdentifiers.componentSwitchItem)
         .showSkeleton(isVisible: configurationModel.showSkeleton)
+    }
+
+    private var errorContent: OUDSTextualContent? {
+        switch configurationModel.textMode {
+        case .rich:
+            .rich(configurationModel.richErrorText)
+        case .raw:
+            .raw(configurationModel.errorText)
+        }
     }
 
     private var image: OUDSImage? {
