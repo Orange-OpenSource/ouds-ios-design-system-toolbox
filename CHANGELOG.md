@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Library] skeleton state for `pin code input` component (Orange-OpenSource/ouds-ios#1857)
+- [Library] edge to edge support for control item and list item components (Orange-OpenSource/ouds-ios#1661)
 
 ### Changed
 
@@ -19,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Change needed version of Bundler (from v2.x to v4.x)
 - [DesignToolbox] Move to Xcode 27.1 (Orange-OpenSource/ouds-ios#1558)
 - [DesignToolbox] List of colors for `colored surface` component
+- [DesignToolbox] Configuration panel to be edge to edge (Orange-OpenSource/ouds-ios#1851)
+- [DesignToolbox] Lsit of colors for `colored surface` component
 - [Library] **BREAKING**: Update protocol `ColorModeMultipleSemanticTokens` with missing tokens
 - [Library] **BREAKING**: No more `tuning` possible for `White Label` and `Wireframe` themes (Orange-OpenSource/ouds-ios#1829)
 
