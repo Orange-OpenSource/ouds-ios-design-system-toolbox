@@ -52,6 +52,7 @@ private struct RadioPickerDemo: View {
                         isReadOnly: configurationModel.isReadOnly,
                         hasDivider: configurationModel.hasDivider)
             .disabled(!configurationModel.isEnabled)
+            .oudsUseEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
             .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }

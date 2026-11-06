@@ -26,6 +26,7 @@ final class NavigationListItemConfigurationModel: ListItemConfigurationModel {
         indicatorType = .next
         super.init()
         componentInitCode = "OUDSNavigationListItem"
+        updateCode()
     }
 
     deinit {}
@@ -41,7 +42,7 @@ struct NavigationListItemConfiguration: View {
         VStack(spacing: 0) {
             ListItemConfiguration(configurationModel: configurationModel)
 
-            Divider().horizontal()
+            OUDSHorizontalDivider().gridMargin(.horizontal)
 
             OUDSChipPicker(title: "app_components_listItem_indicator_tech".localized(),
                            selection: $configurationModel.indicatorType,
