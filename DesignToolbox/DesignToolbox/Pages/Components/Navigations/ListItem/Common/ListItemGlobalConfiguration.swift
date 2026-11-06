@@ -22,10 +22,13 @@ struct ListItemGlobalSettingsConfiguration: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+            OUDSSwitchItem("app_components_common_skeleton_tech",
+                           isOn: $configurationModel.showSkeleton,
+                           hasDivider: true)
 
-            OUDSSwitchItem("app_components_common_edgeToEdge_tech", isOn: $configurationModel.isEdgeToEdgeComponent)
-//                .disabled(configurationModel.contentStyle == .outlined)
+            OUDSSwitchItem("app_components_common_edgeToEdge_tech",
+                           isOn: $configurationModel.isEdgeToEdgeComponent,
+                           hasDivider: true)
 
             OUDSChipPicker(title: "app_components_common_type_tech".localized(),
                            selection: $configurationModel.contentStyleOption,
@@ -43,9 +46,12 @@ struct ListItemGlobalSettingsConfiguration: View {
                     }
 
                 case .strandard:
-                    OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
+                    OUDSSwitchItem("app_components_controlItem_divider_tech",
+                                   isOn: $configurationModel.hasDivider)
 
-                    OUDSSwitchItem("app_components_listItem_background_tech", isOn: $configurationModel.hasBackground)
+                    OUDSSwitchItem("app_components_listItem_background_tech",
+                                   isOn: $configurationModel.hasBackground,
+                                   hasDivider: true)
                 }
 
             case .item:
@@ -54,36 +60,37 @@ struct ListItemGlobalSettingsConfiguration: View {
                 OUDSSwitchItem("app_components_listItem_background_tech", isOn: $configurationModel.hasBackground)
             }
 
-            OUDSHorizontalDivider()
+            OUDSHorizontalDivider().gridMargin(.horizontal)
 
             OUDSChipPicker(title: "app_components_listItem_size_tech".localized(),
                            selection: $configurationModel.itemSize,
                            chips: OUDSListItemSize.chips)
 
-            OUDSHorizontalDivider()
+            OUDSHorizontalDivider().gridMargin(.horizontal)
 
             OUDSChipPicker(title: "app_components_common_contentAlignment_tech".localized(),
                            selection: $configurationModel.containersAlignment,
                            chips: OUDSListItemContainersAlignment.chips)
 
-            OUDSHorizontalDivider()
+            OUDSHorizontalDivider().gridMargin(.horizontal)
 
             OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
             if configurationModel.needRoundedMediaOption {
-                OUDSHorizontalDivider()
+                OUDSHorizontalDivider().gridMargin(.horizontal)
 
                 OUDSSwitchItem("app_components_listItem_roundedMedia_tech", isOn: $configurationModel.roundedMedia)
             }
 
-            OUDSHorizontalDivider()
+            OUDSHorizontalDivider().gridMargin(.horizontal)
 
             #if !os(tvOS)
             Stepper("app_components_common_itemCount_label" <- "\($configurationModel.numberOfItems.wrappedValue)",
                     value: $configurationModel.numberOfItems,
                     in: 1 ... 15,
                     step: 1)
-                .padding(.all, theme.spaces.fixedMedium)
+                .padding(.vertical, theme.spaces.fixedMedium)
+                .gridMargin(.horizontal)
                 .labelStrongMedium(theme)
             #endif
         }

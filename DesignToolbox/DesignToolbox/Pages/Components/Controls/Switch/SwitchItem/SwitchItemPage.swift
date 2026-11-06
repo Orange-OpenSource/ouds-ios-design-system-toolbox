@@ -52,6 +52,7 @@ private struct SwitchItemDemo: View {
                        constrainedMaxWidth: configurationModel.constrainedMaxWidth)
         .disabled(!configurationModel.enabled)
         .accessibilityIdentifier(A11YIdentifiers.componentSwitchItem)
+        .oudsUseEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
         .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 

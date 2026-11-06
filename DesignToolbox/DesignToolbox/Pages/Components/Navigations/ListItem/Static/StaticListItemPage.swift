@@ -60,6 +60,7 @@ private struct StaticListItemDemo: View {
         .oudsListItemRoundedMedia(configurationModel.roundedMedia)
         .oudsListItemSize(configurationModel.itemSize)
         .disabled(!configurationModel.enabled)
+        .oudsUseEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
         .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 

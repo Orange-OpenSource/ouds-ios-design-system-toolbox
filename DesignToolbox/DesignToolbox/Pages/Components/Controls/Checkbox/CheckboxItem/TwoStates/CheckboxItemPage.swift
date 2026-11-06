@@ -52,6 +52,7 @@ private struct CheckboxItemDemo: View {
                          hasDivider: configurationModel.hasDivider,
                          constrainedMaxWidth: configurationModel.constrainedMaxWidth)
         .disabled(!configurationModel.enabled)
+        .oudsUseEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
         .showSkeleton(isVisible: configurationModel.showSkeleton)
         .designToolboxColoredSurface(false)
         .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
