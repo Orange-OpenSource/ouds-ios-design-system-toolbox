@@ -191,18 +191,18 @@ struct AboutPage: View {
     @ViewBuilder
     private var legalView: some View {
         Group {
-            OUDSNavigationLink("app_about_privacyPolicy_label", style: .item(divider: false, background: false)) {
+            row(text: "app_about_privacyPolicy_label") {
                 WebView(from: privacyPolicyUrl)
                     .navigationTitle("app_about_privacyPolicy_label")
             }
 
-            OUDSNavigationLink("app_about_legalInformation_label", style: .item(divider: false, background: false)) {
+            row(text: "app_about_legalInformation_label") {
                 WebView(from: legalInformationUrl)
                     .navigationTitle("app_about_legalInformation_label")
             }
 
             #if !os(macOS)
-            OUDSNavigationLink("app_about_accessibilityStatement_label", style: .item(divider: false, background: false)) {
+            row(text: "app_about_accessibilityStatement_label") {
                 AccessibilityStatementPage()
                     .navigationTitle("app_about_accessibilityStatement_label")
             }
@@ -210,6 +210,14 @@ struct AboutPage: View {
         }
         .oudsListItemStyle(divider: false)
         .oudsListItemSize(.small)
+    }
+
+    @ViewBuilder
+    func row(text: LocalizedStringKey, @ViewBuilder destination: @escaping () -> some View) -> some View {
+        OUDSNavigationLink(data: .init(label: .textual(.localized(text))),
+                           indicatorType: .next,
+                           style: .item(divider: false, background: false),
+                           destination: destination)
     }
     #endif
 

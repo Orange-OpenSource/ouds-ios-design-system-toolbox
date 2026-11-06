@@ -342,16 +342,15 @@ private struct ColorTokenFamilyList: View {
                                              focus: focus)
 
             ForEach(categories) { category in
+                let data = OUDSListItemData(label: .textual(.raw(category.rawValue), isBold: true))
                 if usesSplitNavigation {
-                    OUDSNavigationListItem(data: .init(label: .textual(.raw(category.rawValue), isBold: true)),
-                                           indicatorType: .next)
-                    {
+                    OUDSNavigationListItem(data: data, indicatorType: .next) {
                         selection = category
                     }
                     .oudsListItemStyle(divider: true, background: false)
                     .accessibilityAddTraits(selection == category ? .isSelected : [])
                 } else {
-                    OUDSNavigationLink(title: category.rawValue, hasBoldLabel: true, indicatorType: .next) {
+                    OUDSNavigationLink(data: data, indicatorType: .next) {
                         ColorTokenFamilyDetail(category: category, returnsToSplitOnExpansion: true)
                             .onAppear { selection = category }
                     }
