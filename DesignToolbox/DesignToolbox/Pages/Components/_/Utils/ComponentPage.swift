@@ -24,6 +24,11 @@ open class ComponentConfiguration: ObservableObject {
     /// like for tab bars
     let useOneColorSchemedDemo: Bool
 
+    /// Flag to show the component view edge to edge (i.e. no gridMargin is applyed)
+    @Published var isEdgeToEdgeComponent: Bool {
+        didSet { codeDidChange.send() }
+    }
+
     @Published var code: String = "" {
         didSet { codeDidChange.send() }
     }
@@ -43,11 +48,13 @@ open class ComponentConfiguration: ObservableObject {
 
     init() {
         useOneColorSchemedDemo = false
+        isEdgeToEdgeComponent = false
         updateCode()
     }
 
-    init(useOneColorSchemedDemo: Bool = false) {
+    init(useOneColorSchemedDemo: Bool = false, isEdgeToEdgeComponent: Bool = false) {
         self.useOneColorSchemedDemo = useOneColorSchemedDemo
+        self.isEdgeToEdgeComponent = isEdgeToEdgeComponent
         updateCode()
     }
 
@@ -97,22 +104,39 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
                            minHeight: theme.spaces.fixedLarge,
                            alignment: .center)
                     .padding(.vertical, theme.spaces.fixedMedium)
-                    .gridMargin(.horizontal)
+                    .modifier(ComponentEdgeToEdgeModifier(isEdgeToEdge: configuration.isEdgeToEdgeComponent))
             }
-            // No padding here, the component area keeps all the frame horizontaly
 
-            OUDSHorizontalDivider()
-
+            // Keep configuration area edge to edge because
+            // contains chips pickers which are edge to edge
             DesignToolboxConfiguration {
                 configurationView()
             }
 
-            OUDSHorizontalDivider()
+            Group {
+                OUDSHorizontalDivider()
 
-            DesignToolboxCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
-                .gridMargin(.horizontal)
+                DesignToolboxCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
 
-            OUDSHorizontalDivider()
+                OUDSHorizontalDivider()
+            }
+            .gridMargin(.horizontal)
+        }
+    }
+}
+
+struct ComponentEdgeToEdgeModifier: ViewModifier {
+
+    // MARK: Stored properties
+
+    let isEdgeToEdge: Bool
+    @Environment(\.theme) private var theme
+
+    func body(content: Content) -> some View {
+        if isEdgeToEdge {
+            content
+        } else {
+            content.gridMargin(.horizontal)
         }
     }
 }

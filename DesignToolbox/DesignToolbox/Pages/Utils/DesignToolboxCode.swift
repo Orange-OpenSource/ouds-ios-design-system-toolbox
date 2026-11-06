@@ -32,9 +32,8 @@ struct DesignToolboxCode: View {
         DesignToolboxDisclosureGroup(isExpanded: $isCodeVisible, accessibilityLabel: "app_common_showCode_text_a11y".localized()) {
             codeSection()
         } label: {
-            OUDSBody(titleText, size: .large, weight: .strong)
+            OUDSHeading(titleText, size: .small)
                 .foregroundStyle(theme.colors.contentDefault)
-                .padding(.vertical, theme.spaces.paddingInlineSmall)
         }
     }
 

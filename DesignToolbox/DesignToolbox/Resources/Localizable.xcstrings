@@ -3174,6 +3174,31 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_edgeToEdge_tech" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edge to edge"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edge to edge"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edge to edge"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_common_editContent_label" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",

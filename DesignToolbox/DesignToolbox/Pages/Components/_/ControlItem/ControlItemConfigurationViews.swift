@@ -55,6 +55,9 @@ private struct ControlItemConfigurationView: View {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
 
+                OUDSSwitchItem("app_components_common_edgeToEdge_tech", isOn: $configurationModel.isEdgeToEdgeComponent)
+                    .disabled(configurationModel.outlined)
+
                 selection
                     .disabled(configurationModel.isError || configurationModel.isReadOnly)
 
