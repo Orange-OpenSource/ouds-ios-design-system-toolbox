@@ -211,6 +211,14 @@ struct AboutPage: View {
         .oudsListItemStyle(divider: false)
         .oudsListItemSize(.small)
     }
+
+    @ViewBuilder
+    func row(text: LocalizedStringKey, @ViewBuilder destination: @escaping () -> some View) -> some View {
+        OUDSNavigationLink(data: .init(label: .textual(.localized(text))),
+                           indicatorType: .next,
+                           style: .item(divider: false, background: false),
+                           destination: destination)
+    }
     #endif
 
     @ViewBuilder
@@ -241,14 +249,6 @@ struct AboutPage: View {
             openURL.callAsFunction(url)
         }
         .accessibilityHint(hint.localized())
-    }
-
-    @ViewBuilder
-    func row(text: LocalizedStringKey, @ViewBuilder destination: @escaping () -> some View) -> some View {
-        OUDSNavigationLink(data: .init(label: .textual(.localized(text))),
-                           indicatorType: .next,
-                           style: .item(divider: false, background: false),
-                           destination: destination)
     }
 }
 

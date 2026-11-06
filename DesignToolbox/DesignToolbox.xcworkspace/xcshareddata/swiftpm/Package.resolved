@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1794-for-oudsnavigationlink-component-add-leading-and-trailing-elements-like-oudsnavigationlistitem",
-        "revision" : "99d75ec47159edd2ed71b759c313b06e94b88003"
+        "branch" : "develop",
+        "revision" : "1c44d54acbc36cab5bbbe9ded8c036091b7ef0b4"
       }
     },
     {

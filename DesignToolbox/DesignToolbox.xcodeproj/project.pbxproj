@@ -7648,7 +7648,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1794-for-oudsnavigationlink-component-add-leading-and-trailing-elements-like-oudsnavigationlistitem";
+				branch = develop;
 				kind = branch;
 			};
 		};
