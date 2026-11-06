@@ -42,7 +42,10 @@ struct DesignToolboxVariantElement: View {
     var body: some View {
         ForEach(elements, id: \.id) { element in
             #if os(iOS)
-            OUDSNavigationLink(LocalizedStringKey(element.name), hasBoldLabel: true, indicatorType: .next) {
+            let label = OUDSListItemData.Label.textual(.localized(LocalizedStringKey(element.name)), isBold: true)
+            let style = OUDSListItemContentStyle.item(divider: false, background: false)
+
+            OUDSNavigationLink(data: .init(label: label), indicatorType: .next, style: style) {
                 element.pageDescription
             }
             #elseif os(visionOS)
