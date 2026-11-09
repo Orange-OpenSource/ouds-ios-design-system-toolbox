@@ -23,7 +23,7 @@ struct TabBarPage: View {
     @StateObject private var configurationModel: TabBarConfigurationModel
 
     init() {
-        _configurationModel = StateObject(wrappedValue: TabBarConfigurationModel(useOneColorSchemedDemo: true)) // Issues with color scheme with tab bar
+        _configurationModel = StateObject(wrappedValue: TabBarConfigurationModel(useOneColorSchemeDemo: true)) // Issues with color scheme with tab bar
     }
 
     var body: some View {
