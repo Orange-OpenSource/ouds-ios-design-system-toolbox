@@ -17,9 +17,9 @@ import SwiftUI
 struct ListItemGlobalSettingsConfiguration: View {
 
     @ObservedObject var configurationModel: ListItemConfigurationModel
-
     @Environment(\.theme) private var theme
 
+    // swiftlint:disable closure_body_length
     var body: some View {
         VStack(spacing: 0) {
             OUDSSwitchItem("app_components_common_skeleton_tech",
@@ -44,7 +44,6 @@ struct ListItemGlobalSettingsConfiguration: View {
                     if configurationModel is NavigationListItemConfigurationModel {
                         OUDSSwitchItem("app_components_listItem_outlinedOnInteraction_tech", isOn: $configurationModel.outlinedOnInteractionOnly)
                     }
-
                 case .strandard:
                     OUDSSwitchItem("app_components_controlItem_divider_tech",
                                    isOn: $configurationModel.hasDivider)
@@ -53,7 +52,6 @@ struct ListItemGlobalSettingsConfiguration: View {
                                    isOn: $configurationModel.hasBackground,
                                    hasDivider: true)
                 }
-
             case .item:
                 OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
 
@@ -95,4 +93,5 @@ struct ListItemGlobalSettingsConfiguration: View {
             #endif
         }
     }
+    // swiftlint:enable closure_body_length
 }
