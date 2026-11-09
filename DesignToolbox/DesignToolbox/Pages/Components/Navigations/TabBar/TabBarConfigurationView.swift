@@ -75,11 +75,11 @@ final class TabBarConfigurationModel: ComponentConfiguration {
 
     // MARK: Initializer
 
-    init(useOneColorSchemedDemo: Bool) {
+    init(useOneColorSchemeDemo: Bool) {
         numberOfItems = 3
         badgeConfiguration = .none
         badgeText = "1"
-        super.init(useOneColorSchemedDemo: useOneColorSchemedDemo)
+        super.init(useOneColorSchemeDemo: useOneColorSchemeDemo)
     }
 
     deinit {}

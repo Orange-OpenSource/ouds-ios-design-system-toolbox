@@ -47,7 +47,7 @@ open class AlertConfigurationModel: ComponentConfiguration {
         statusIcon = .none
         status = .neutral
         flipIcon = false
-        super.init(useOneColorSchemedDemo: false, isEdgeToEdgeComponent: isEdgeToEdgeComponent)
+        super.init(useOneColorSchemeDemo: false, isEdgeToEdgeComponent: isEdgeToEdgeComponent)
     }
 
     deinit {}

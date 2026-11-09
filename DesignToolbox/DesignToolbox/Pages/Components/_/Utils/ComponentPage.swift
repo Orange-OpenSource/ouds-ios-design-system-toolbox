@@ -20,9 +20,9 @@ import SwiftUI
 /// The common class used to define the configuration of each component.
 open class ComponentConfiguration: ObservableObject {
 
-    /// Flag to rise of the component to show must not be duplicated with forced color scheme
+    /// Flag to riseifof the component to show must not be duplicated with forced color scheme
     /// like for tab bars
-    let useOneColorSchemedDemo: Bool
+    let useOneColorSchemeDemo: Bool
 
     /// Flag to show the component view edge to edge (i.e. no gridMargin is applyed)
     let isEdgeToEdgeComponent: Bool
@@ -45,13 +45,13 @@ open class ComponentConfiguration: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     init() {
-        useOneColorSchemedDemo = false
+        useOneColorSchemeDemo = false
         isEdgeToEdgeComponent = false
         updateCode()
     }
 
-    init(useOneColorSchemedDemo: Bool = false, isEdgeToEdgeComponent: Bool = false) {
-        self.useOneColorSchemedDemo = useOneColorSchemedDemo
+    init(useOneColorSchemeDemo: Bool = false, isEdgeToEdgeComponent: Bool = false) {
+        self.useOneColorSchemeDemo = useOneColorSchemeDemo
         self.isEdgeToEdgeComponent = isEdgeToEdgeComponent
         updateCode()
     }
@@ -79,9 +79,7 @@ open class ComponentConfiguration: ObservableObject {
 /// modified by user using elements presented in `Configuration` view.
 struct ComponentConfigurationView<Component, Configuration>: View where Component: View, Configuration: View {
 
-    // MARK: Stored properties
-
-    @Environment(\.theme) private var theme
+    // MARK: Properties
 
     /// The configuration shared between configuration view and component illustration view.
     @ObservedObject var configuration: ComponentConfiguration
@@ -92,11 +90,13 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
     /// The view used to change the configuration.
     @ViewBuilder let configurationView: () -> Configuration
 
+    @Environment(\.theme) private var theme
+
     // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
-            ComponentShowcases(onColoredSurface: configuration.onColoredSurface, useOneColorSchemedDemo: configuration.useOneColorSchemedDemo) {
+            ComponentShowcases(onColoredSurface: configuration.onColoredSurface, useOneColorSchemeDemo: configuration.useOneColorSchemeDemo) {
                 componentView()
                     .frame(maxWidth: .infinity,
                            minHeight: theme.spaces.fixedLarge,
@@ -118,11 +118,12 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
     }
 }
 
+// MARK: - Edge to Edge View Modifier
+
 struct EdgeToEdgeModifier: ViewModifier {
 
-    // MARK: Stored properties
-
     let isEdgeToEdge: Bool
+
     @Environment(\.theme) private var theme
 
     func body(content: Content) -> some View {
@@ -134,7 +135,7 @@ struct EdgeToEdgeModifier: ViewModifier {
     }
 }
 
-// MARK: - Component Illustration
+// MARK: - Component Showcases
 
 /// Used to show the Demo of the `Component` on a colored surface or on
 /// standard background (color background primary)
@@ -148,7 +149,7 @@ private struct ComponentShowcases<ComponentDemo>: View where ComponentDemo: View
     let onColoredSurface: Bool
 
     /// Flag to rise to display only one component without forced color scheme
-    let useOneColorSchemedDemo: Bool
+    let useOneColorSchemeDemo: Bool
 
     /// The view of the component in the desired configuration.
     @ViewBuilder var componentDemo: () -> ComponentDemo
@@ -161,7 +162,7 @@ private struct ComponentShowcases<ComponentDemo>: View where ComponentDemo: View
                 componentDemo()
                     .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: true))
             } else {
-                if useOneColorSchemedDemo {
+                if useOneColorSchemeDemo {
                     componentDemo()
                         .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
                 } else {
