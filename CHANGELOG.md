@@ -8,9 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `alert banner` component (Orange-OpenSource/ouds-ios#1665)
 - [Library] skeleton state for `pin code input` component (Orange-OpenSource/ouds-ios#1857)
 
-- [Library] `Alert banner` component (Orange-OpenSource/ouds-ios#1665)
 ### Changed
 
 - [Library] `OUDSNavigationLink` accepts `OUDSListItemData`, `leading` and `trailing` elements like `OUDSNavigationListItem` (Orange-OpenSource/ouds-ios#1794)   
