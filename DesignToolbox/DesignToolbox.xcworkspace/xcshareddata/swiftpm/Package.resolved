@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "1c44d54acbc36cab5bbbe9ded8c036091b7ef0b4"
+        "branch" : "1857-for-component-pin-code-input-add-skeleton-state",
+        "revision" : "def9b0a033e1ecadcae3bed83a9f70c2bd75a942"
       }
     },
     {

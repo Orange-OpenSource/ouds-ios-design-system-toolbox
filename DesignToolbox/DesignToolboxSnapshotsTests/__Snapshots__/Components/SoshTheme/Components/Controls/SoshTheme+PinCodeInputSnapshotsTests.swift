@@ -40,6 +40,18 @@ final class SoshThemePinCodeInputSnapshotsTests: PinCodeInputSnapshotsTestsTestC
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllPinCodeInputs(theme: theme, interfaceStyle: interfaceStyle)
     }
+
+    // MARK: Skeleton
+
+    /// Tests the `OUDSPinCodeInput` skeleton state (4, 6 and 8 digits) in the `SoshTheme` with the `light` color scheme.
+    @MainActor func testPinCodeInputSkeletonSoshThemeLight() {
+        testPinCodeInputSkeleton(theme: theme, interfaceStyle: .light)
+    }
+
+    /// Tests the `OUDSPinCodeInput` skeleton state (4, 6 and 8 digits) in the `SoshTheme` with the `dark` color scheme.
+    @MainActor func testPinCodeInputSkeletonSoshThemeDark() {
+        testPinCodeInputSkeleton(theme: theme, interfaceStyle: .dark)
+    }
 }
 
 // swiftlint:enable required_deinit
