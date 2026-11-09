@@ -82,7 +82,7 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
 
         descriptionText = ""
         hasActionLink = false
-        actionPosition = .bottom
+        actionPosition = .topTrailing
         closeButton = false
         textMode = .raw
         showSkeleton = false
@@ -90,7 +90,7 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
 
         super.init(isEdgeToEdgeComponent: true)
 
-        status = .positive
+        status = .neutral
         statusIcon = .tintedIcon
         flipIcon = false
     }
