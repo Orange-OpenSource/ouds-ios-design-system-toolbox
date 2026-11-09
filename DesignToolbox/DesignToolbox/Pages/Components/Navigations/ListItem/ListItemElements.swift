@@ -39,11 +39,10 @@ struct ListItemIllustration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: theme.spaces.fixedSmall) {
-            let data = OUDSListItemData(label: .textual(.localized("app_components_common_label_label")),
-                                        description: .localized("app_components_listItemHelperText_label"))
-            OUDSStaticListItem(data: data)
-                .oudsListItemStyle(divider: false, background: true)
+        VStack(spacing: theme.spaces.fixedNone) {
+            OUDSNavigationListItem(data: .init(label: .textual("Label")))
+            OUDSNavigationListItem(data: .init(label: .textual("Label")))
         }
+        .oudsListItemStyle(divider: true, background: true)
     }
 }

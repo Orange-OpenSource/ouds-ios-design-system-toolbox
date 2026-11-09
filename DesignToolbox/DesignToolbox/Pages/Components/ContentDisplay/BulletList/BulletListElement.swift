@@ -40,7 +40,7 @@ private struct BulletListIllustration: View {
 
     var body: some View {
         VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
-            OUDSBulletList {
+            OUDSBulletList(type: .unordered(isBranded: true)) {
                 OUDSBulletList.Item(.localized("app_components_common_label_label"))
                 OUDSBulletList.Item(.localized("app_components_common_label_label"))
             }

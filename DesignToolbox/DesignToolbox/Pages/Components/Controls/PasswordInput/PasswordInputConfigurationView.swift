@@ -24,7 +24,7 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
     // MARK: Stored properties
 
     private static let defaultLabel = String(localized: "app_components_passwordInput_password_tech")
-    private static let defaultHelperText = String(localized: "app_components_passwordInputHelperText_label")
+    private static let defaultHelperText = "" // String(localized: "app_components_passwordInputHelperText_label")
     private static let defaultErrorText = String(localized: "app_components_common_errorMessage_tech")
 
     // MARK: Published properties

@@ -41,7 +41,7 @@ private struct ChipIllustration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(spacing: theme.spaces.fixedSmall) {
+        VStack(spacing: theme.spaces.fixedSmall) {
             #if !os(visionOS)
             OUDSFilterChip("app_components_common_label_label", selected: true) {}
             OUDSSuggestionChip("app_components_common_label_label") {}

@@ -39,14 +39,6 @@ final class SwitchUITests: AppTestCase {
 
         let `switch` = otherElements(withA11yIdentifier: A11YIdentifiers.componentSwitch, app).firstMatch
         XCTAssertTrue(`switch`.exists)
-        check(value: selectedSwitchA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentSwitch, app)
-
-        // WHEN
-
-        `switch`.tap()
-
-        // THEN
-
         check(value: unselectedSwitchA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentSwitch, app)
 
         // WHEN
@@ -56,6 +48,14 @@ final class SwitchUITests: AppTestCase {
         // THEN
 
         check(value: selectedSwitchA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentSwitch, app)
+
+        // WHEN
+
+        `switch`.tap()
+
+        // THEN
+
+        check(value: unselectedSwitchA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentSwitch, app)
     }
 
     // TODO: Test hints and labels

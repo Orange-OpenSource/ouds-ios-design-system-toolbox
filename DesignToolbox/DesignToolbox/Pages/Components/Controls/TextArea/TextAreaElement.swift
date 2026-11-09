@@ -39,7 +39,7 @@ private struct TextAreaIllustration: View {
     var body: some View {
         OUDSTextArea("app_components_common_label_label",
                      text: $text,
-                     helperText: .textual(.raw(String(localized: "app_components_textAreaHelperText_label"))))
+                     placeholder: "Text Area")
             .padding()
     }
 }

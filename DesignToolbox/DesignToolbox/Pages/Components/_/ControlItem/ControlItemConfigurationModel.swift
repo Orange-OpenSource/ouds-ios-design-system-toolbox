@@ -116,7 +116,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         isError = false
         isReadOnly = false
         enabled = true
-        icon = true
+        icon = false
         rawImage = false
         flipIcon = false
         isReversed = false
@@ -216,7 +216,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
 // MARK: - ControlItem Configuration View (Bool selection)
 
 final class BooleanControlItemConfigurationModel: ControlItemConfigurationModel {
-    @Published var isOn: Bool = true
+    @Published var isOn: Bool = false
 
     deinit {}
 }
@@ -224,7 +224,7 @@ final class BooleanControlItemConfigurationModel: ControlItemConfigurationModel 
 // MARK: - ControlItem Configuration View (Indeterminate checkbox selection)
 
 final class IndicatorControlItemConfigurationModel: ControlItemConfigurationModel {
-    @Published var selection: OUDSCheckboxIndicatorState = .indeterminate
+    @Published var selection: OUDSCheckboxIndicatorState = .unselected
 
     deinit {}
 }

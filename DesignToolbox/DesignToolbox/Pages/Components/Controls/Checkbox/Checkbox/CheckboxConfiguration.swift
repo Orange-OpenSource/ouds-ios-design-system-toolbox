@@ -51,10 +51,9 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        indicatorState = true
+        indicatorState = false
         isError = false
         isReadOnly = false
-        enabled = true
         showSkeleton = false
         super.init()
     }

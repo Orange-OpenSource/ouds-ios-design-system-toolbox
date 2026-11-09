@@ -38,6 +38,9 @@ struct AlertElements: DesignToolboxElement {
 struct AlertIllustration: View {
 
     var body: some View {
-        OUDSAlertMessage("app_components_common_label_label")
+        OUDSAlertMessage("app_components_common_label_label",
+                         status: .info,
+                         description: .localized("app_components_shared_description"),
+                         link: OUDSAlertMessage.Link(text: "Action", position: .topTrailing) {})
     }
 }

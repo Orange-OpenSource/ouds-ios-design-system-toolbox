@@ -7648,7 +7648,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1857-for-component-pin-code-input-add-skeleton-state";
+				branch = develop;
 				kind = branch;
 			};
 		};
