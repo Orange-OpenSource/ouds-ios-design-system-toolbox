@@ -85,7 +85,7 @@ private struct ControlItemConfigurationView: View {
                 OUDSSwitchItem("app_components_common_error_tech", isOn: $configurationModel.isError)
                     .disabled(!configurationModel.enabled || configurationModel.isReadOnly)
 
-                OUDSChipPicker(title: "app_components_textMode_tech",
+                OUDSChipPicker(title: "app_components_common_textMode_tech",
                                selection: $configurationModel.textMode,
                                chips: TextualContentMode.chips)
             }
