@@ -57,6 +57,10 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
         didSet { updateCode() }
     }
 
+    @Published var actionLinkText: String {
+        didSet { updateCode() }
+    }
+
     // MARK: - Computed properties
 
     var richDescriptionText: AttributedString {
@@ -81,12 +85,13 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
         layout = .start
 
         descriptionText = ""
-        hasActionLink = false
+        hasActionLink = true
         actionPosition = .topTrailing
         closeButton = false
         textMode = .raw
         showSkeleton = false
         containersAlignment = .top
+        actionLinkText = "Action"
 
         super.init(isEdgeToEdgeComponent: true)
 
@@ -100,11 +105,11 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
     // MARK: Component Configuration
 
     var centerLayoutAction: (label: String, onClick: () -> Void)? {
-        hasActionLink ? (label: "Action", onClick: {}) : nil
+        hasActionLink ? (label: actionLinkText, onClick: {}) : nil
     }
 
     var startLayoutActionLink: OUDSAlertBanner.ActionLink? {
-        hasActionLink ? .init(text: "Action", position: actionPosition, action: {}) : nil
+        hasActionLink ? .init(text: actionLinkText, position: actionPosition, action: {}) : nil
     }
 
     var onClose: (() -> Void)? {
@@ -233,6 +238,10 @@ struct AlertBannerConfigurationView: View {
 
                 if configurationModel.layout == .start {
                     DesignToolboxTextField(text: $configurationModel.descriptionText, label: "app_components_common_description_tech")
+                }
+
+                if configurationModel.hasActionLink {
+                    DesignToolboxTextField(text: $configurationModel.actionLinkText, label: "app_components_alert_actionLink_tech")
                 }
             }
         }
