@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] RubyGem `excon` transitive RubyGem from v1.7.3 to v1.12.0
 - [DesignToolbox] Ruby version from v4.0.7 to v4.0.9 for `build-and-test` workflow
 - [DesignToolbox] GitHub Actions `ruby/setup-ruby` action from v1.331.0 to v1.338.0 for `build-and-test` workflow
 - [DesignToolbox] GitHub Actions `github/codeql-action/upload-sarif` action from v4.39.0 to v4.39.3 for `scorecard` workflow
