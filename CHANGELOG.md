@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] GitHub Actions `github/codeql-action/upload-sarif` action from v4.39.0 to v4.39.3 for `scorecard` workflow
 - [DesignToolbox] Update configuration area with edge to edge elements (Orange-OpenSource/ouds-ios#1851) 
 - [Library] `OUDSNavigationLink` accepts `OUDSListItemData`, `leading` and `trailing` elements like `OUDSNavigationListItem` (Orange-OpenSource/ouds-ios#1794)
 - [Library] Tokens library v2.8 (Orange-OpenSource/ouds-ios#1856)
