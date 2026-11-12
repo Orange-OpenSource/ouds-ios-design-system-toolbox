@@ -165,7 +165,10 @@ struct AboutPage: View {
                 Section(header: OUDSHeading("app_about_links_title", hasMarker: true)) {
                     linksView
                 }
+
+                #if os(iOS)
                 appSettingsView
+                #endif
             } else {
                 #if !os(tvOS) && !os(visionOS)
                 Section(header: OUDSHeading("app_about_legal_title", coloredText: "légales")) {
@@ -178,7 +181,10 @@ struct AboutPage: View {
                 Section(header: OUDSHeading("app_about_links_title", coloredText: "utiles")) {
                     linksView
                 }
+
+                #if os(iOS)
                 appSettingsView
+                #endif
             }
             #if DEBUG
             AboutDebugSection()
