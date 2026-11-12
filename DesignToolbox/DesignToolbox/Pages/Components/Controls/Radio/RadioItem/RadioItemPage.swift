@@ -55,10 +55,10 @@ private struct RadioItemDemo: View {
                       isReadOnly: configurationModel.isReadOnly,
                       hasDivider: configurationModel.hasDivider,
                       constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-        .disabled(!configurationModel.enabled)
-        .accessibilityIdentifier(A11YIdentifiers.componentRadioItem)
-        .oudsUseEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
-        .showSkeleton(isVisible: configurationModel.showSkeleton)
+            .disabled(!configurationModel.enabled)
+            .accessibilityIdentifier(A11YIdentifiers.componentRadioItem)
+            .isEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
+            .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     private var isEdgeToEdge: Bool {

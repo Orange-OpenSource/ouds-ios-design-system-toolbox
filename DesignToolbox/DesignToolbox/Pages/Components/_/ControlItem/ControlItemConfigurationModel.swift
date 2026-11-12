@@ -79,11 +79,9 @@ class ControlItemConfigurationModel: ComponentConfiguration {
 
     @Published var outlined: Bool {
         didSet {
-            // disabled edge to edge if outlined
             if outlined {
                 isEdgeToEdgeComponent = false
             }
-
             updateCode()
         }
     }
@@ -166,7 +164,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     }
 
     private var edgeToEdgePattern: String {
-        ".oudsEdgeToEdge(\(isEdgeToEdgeComponent))"
+        ".isEdgeToEdge(\(isEdgeToEdgeComponent))"
     }
 
     private var disableCodePattern: String {

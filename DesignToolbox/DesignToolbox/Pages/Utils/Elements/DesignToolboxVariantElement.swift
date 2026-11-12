@@ -43,7 +43,7 @@ struct DesignToolboxVariantElement: View {
         ForEach(elements, id: \.id) { element in
             #if os(iOS)
             let label = OUDSListItemData.Label.textual(.localized(LocalizedStringKey(element.name)), isBold: true)
-            let style = OUDSListItemContentStyle.item(divider: false, background: false)
+            let style = OUDSListItemContentStyle.item(divider: true, background: false)
 
             OUDSNavigationLink(data: .init(label: label), indicatorType: .next, style: style) {
                 element.pageDescription
@@ -87,7 +87,7 @@ struct DesignToolboxVariantElement: View {
             #endif
         }
         .oudsListItemSize(.small)
-        .oudsUseEdgeToEdge(true)
+        .isEdgeToEdge(true)
     }
 
     // MARK: - Helper

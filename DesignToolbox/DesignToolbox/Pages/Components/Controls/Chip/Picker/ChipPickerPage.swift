@@ -58,7 +58,7 @@ struct ChipPickerDemo: View {
             }
         }
         .disabled(!configurationModel.enabled)
-        .oudsUseEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
+        .isEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
         .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }

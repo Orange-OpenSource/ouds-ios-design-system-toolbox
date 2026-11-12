@@ -50,8 +50,6 @@ struct NavigationListItemConfiguration: View {
         VStack(spacing: 0) {
             ListItemConfiguration(configurationModel: configurationModel)
 
-            OUDSHorizontalDivider().gridMargin(.horizontal)
-
             OUDSChipPicker(title: "app_components_listItem_indicator_tech".localized(),
                            selection: $configurationModel.indicatorType,
                            chips: OUDSNavigationListItemIndicatorType.chips)

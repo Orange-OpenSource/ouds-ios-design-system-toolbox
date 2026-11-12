@@ -19,16 +19,13 @@ struct ListItemGlobalSettingsConfiguration: View {
     @ObservedObject var configurationModel: ListItemConfigurationModel
     @Environment(\.theme) private var theme
 
-    // swiftlint:disable closure_body_length
     var body: some View {
         VStack(spacing: 0) {
             OUDSSwitchItem("app_components_common_skeleton_tech",
-                           isOn: $configurationModel.showSkeleton,
-                           hasDivider: true)
+                           isOn: $configurationModel.showSkeleton)
 
             OUDSSwitchItem("app_components_common_edgeToEdge_tech",
-                           isOn: $configurationModel.isEdgeToEdgeComponent,
-                           hasDivider: true)
+                           isOn: $configurationModel.isEdgeToEdgeComponent)
 
             OUDSChipPicker(title: "app_components_common_type_tech".localized(),
                            selection: $configurationModel.contentStyleOption,
@@ -58,29 +55,19 @@ struct ListItemGlobalSettingsConfiguration: View {
                 OUDSSwitchItem("app_components_listItem_background_tech", isOn: $configurationModel.hasBackground)
             }
 
-            OUDSHorizontalDivider().gridMargin(.horizontal)
-
             OUDSChipPicker(title: "app_components_listItem_size_tech".localized(),
                            selection: $configurationModel.itemSize,
                            chips: OUDSListItemSize.chips)
-
-            OUDSHorizontalDivider().gridMargin(.horizontal)
 
             OUDSChipPicker(title: "app_components_common_contentAlignment_tech".localized(),
                            selection: $configurationModel.containersAlignment,
                            chips: OUDSListItemContainersAlignment.chips)
 
-            OUDSHorizontalDivider().gridMargin(.horizontal)
-
             OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
             if configurationModel.needRoundedMediaOption {
-                OUDSHorizontalDivider().gridMargin(.horizontal)
-
                 OUDSSwitchItem("app_components_listItem_roundedMedia_tech", isOn: $configurationModel.roundedMedia)
             }
-
-            OUDSHorizontalDivider().gridMargin(.horizontal)
 
             #if !os(tvOS)
             Stepper("app_components_common_itemCount_label" <- "\($configurationModel.numberOfItems.wrappedValue)",
@@ -93,5 +80,4 @@ struct ListItemGlobalSettingsConfiguration: View {
             #endif
         }
     }
-    // swiftlint:enable closure_body_length
 }

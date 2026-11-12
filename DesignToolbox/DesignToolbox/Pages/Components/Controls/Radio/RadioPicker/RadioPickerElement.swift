@@ -27,6 +27,7 @@ struct RadioPickerElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_radioPicker_description_text",
+            version: "",
             demoScreen: AnyView(RadioPickerPage())))
     }
 }

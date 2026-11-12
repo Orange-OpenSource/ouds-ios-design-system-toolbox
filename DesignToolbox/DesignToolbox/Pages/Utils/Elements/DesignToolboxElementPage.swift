@@ -156,20 +156,28 @@ struct DesignToolboxElementPage: View {
     }
 
     @ViewBuilder
-    private func versionView(_ version: String) -> some View {
-        HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
-            OUDSLabel("app_components_common_version_label", size: .large, weight: .strong)
-                .foregroundColor(theme.colors.contentDefault)
+    private func versionView(_ version: String = "") -> some View {
+        if !version.isEmpty {
+            HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
+                OUDSLabel("app_components_common_version_label", size: .large, weight: .strong)
+                    .foregroundColor(theme.colors.contentDefault)
 
-            OUDSTag(label: version,
-                    status: .info(leading: .none),
-                    appearance: .muted,
+                OUDSTag(label: version,
+                        status: .info(leading: .none),
+                        appearance: .muted,
+                        shape: .rounded,
+                        size: .small)
+            }
+            .gridMargin(.horizontal)
+            .padding(.bottom, theme.spaces.fixedMedium)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        } else {
+            OUDSTag("app_components_common_notOfficialOudsComponent_label",
+                    status: .warning(leading: .none),
+                    appearance: .emphasized,
                     shape: .rounded,
                     size: .small)
         }
-        .gridMargin(.horizontal)
-        .padding(.bottom, theme.spaces.fixedMedium)
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

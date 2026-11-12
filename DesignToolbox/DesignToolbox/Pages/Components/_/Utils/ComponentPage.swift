@@ -24,7 +24,7 @@ open class ComponentConfiguration: ObservableObject {
     /// like for tab bars
     let useOneColorSchemedDemo: Bool
 
-    /// Flag to show the component view edge to edge (i.e. no gridMargin is applyed)
+    /// Flag to show the component view edge to edge (i.e. no gridMargin is applied)
     @Published var isEdgeToEdgeComponent: Bool {
         didSet { codeDidChange.send() }
     }
@@ -81,10 +81,6 @@ open class ComponentConfiguration: ObservableObject {
 /// modified by user using elements presented in `Configuration` view.
 struct ComponentConfigurationView<Component, Configuration>: View where Component: View, Configuration: View {
 
-    @Environment(\.theme) private var theme
-
-    // MARK: Stored properties
-
     /// The configuration shared between configuration view and component illustration view.
     @ObservedObject var configuration: ComponentConfiguration
 
@@ -94,7 +90,7 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
     /// The view used to change the configuration.
     @ViewBuilder let configurationView: () -> Configuration
 
-    // MARK: Body
+    @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
@@ -125,12 +121,11 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
     }
 }
 
-struct ComponentEdgeToEdgeModifier: ViewModifier {
+// MARK: - Component Edge to Edge Modifier
 
-    // MARK: Stored properties
+private struct ComponentEdgeToEdgeModifier: ViewModifier {
 
     let isEdgeToEdge: Bool
-    @Environment(\.theme) private var theme
 
     func body(content: Content) -> some View {
         if isEdgeToEdge {
@@ -147,10 +142,6 @@ struct ComponentEdgeToEdgeModifier: ViewModifier {
 /// standard background (color background primary)
 private struct ComponentShowcases<ComponentDemo>: View where ComponentDemo: View {
 
-    @Environment(\.colorScheme) private var colorScheme
-
-    // MARK: Stored properties
-
     /// Flag to indicates if component is demonstrated on a colored surface
     let onColoredSurface: Bool
 
@@ -160,7 +151,7 @@ private struct ComponentShowcases<ComponentDemo>: View where ComponentDemo: View
     /// The view of the component in the desired configuration.
     @ViewBuilder var componentDemo: () -> ComponentDemo
 
-    // MARK: Body
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .center, spacing: 0) {

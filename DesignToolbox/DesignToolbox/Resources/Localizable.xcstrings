@@ -3665,6 +3665,30 @@
       },
       "shouldTranslate" : false
     },
+    "app_components_common_notOfficialOudsComponent_label" : {
+      "comment" : "Component - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مكون OUDS غير رسمي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not an official OUDS component"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Composant OUDS non officiel"
+          }
+        }
+      }
+    },
     "app_components_common_onColoredSurface_tech" : {
       "comment" : "Component - Common",
       "extractionState" : "manual",

@@ -50,10 +50,10 @@ private struct SwitchItemDemo: View {
                        isReadOnly: configurationModel.isReadOnly,
                        hasDivider: configurationModel.hasDivider,
                        constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-        .disabled(!configurationModel.enabled)
-        .accessibilityIdentifier(A11YIdentifiers.componentSwitchItem)
-        .oudsUseEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
-        .showSkeleton(isVisible: configurationModel.showSkeleton)
+            .disabled(!configurationModel.enabled)
+            .accessibilityIdentifier(A11YIdentifiers.componentSwitchItem)
+            .isEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
+            .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     private var errorContent: OUDSTextualContent? {

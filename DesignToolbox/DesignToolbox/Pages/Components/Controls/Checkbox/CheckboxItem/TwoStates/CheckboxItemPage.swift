@@ -51,11 +51,11 @@ private struct CheckboxItemDemo: View {
                          isReadOnly: configurationModel.isReadOnly,
                          hasDivider: configurationModel.hasDivider,
                          constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-        .disabled(!configurationModel.enabled)
-        .oudsUseEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
-        .showSkeleton(isVisible: configurationModel.showSkeleton)
-        .designToolboxColoredSurface(false)
-        .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
+            .disabled(!configurationModel.enabled)
+            .isEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
+            .showSkeleton(isVisible: configurationModel.showSkeleton)
+            .designToolboxColoredSurface(false)
+            .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
     }
 
     private var errorContent: OUDSTextualContent {

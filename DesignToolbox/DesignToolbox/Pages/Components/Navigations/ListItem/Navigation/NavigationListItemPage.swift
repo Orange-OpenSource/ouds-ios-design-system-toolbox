@@ -61,7 +61,7 @@ private struct NavigationListItemDemo: View {
         .oudsListItemRoundedMedia(configurationModel.roundedMedia)
         .oudsListItemSize(configurationModel.itemSize)
         .disabled(!configurationModel.enabled)
-        .oudsUseEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
+        .isEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
         .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
