@@ -41,36 +41,30 @@ private struct CheckboxItemDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        Group {
-            switch configurationModel.textMode {
-            case .raw:
-                OUDSCheckboxItem(configurationModel.labelText,
-                                 isOn: $configurationModel.isOn,
-                                 description: configurationModel.descriptionText,
-                                 image: image,
-                                 isReversed: configurationModel.isReversed,
-                                 isError: configurationModel.isError,
-                                 errorText: .raw(configurationModel.errorText),
-                                 isReadOnly: configurationModel.isReadOnly,
-                                 hasDivider: configurationModel.hasDivider,
-                                 constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-            case .rich:
-                OUDSCheckboxItem(configurationModel.labelText,
-                                 isOn: $configurationModel.isOn,
-                                 description: configurationModel.descriptionText,
-                                 image: image,
-                                 isReversed: configurationModel.isReversed,
-                                 isError: configurationModel.isError,
-                                 errorText: .rich(configurationModel.richErrorText),
-                                 isReadOnly: configurationModel.isReadOnly,
-                                 hasDivider: configurationModel.hasDivider,
-                                 constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-            }
+        OUDSCheckboxItem(configurationModel.labelText,
+                         isOn: $configurationModel.isOn,
+                         description: configurationModel.descriptionText,
+                         image: image,
+                         isReversed: configurationModel.isReversed,
+                         isError: configurationModel.isError,
+                         errorText: errorContent,
+                         isReadOnly: configurationModel.isReadOnly,
+                         hasDivider: configurationModel.hasDivider,
+                         constrainedMaxWidth: configurationModel.constrainedMaxWidth)
+            .disabled(!configurationModel.enabled)
+            .isEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
+            .showSkeleton(isVisible: configurationModel.showSkeleton)
+            .designToolboxColoredSurface(false)
+            .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
+    }
+
+    private var errorContent: OUDSTextualContent {
+        switch configurationModel.textMode {
+        case .rich:
+            .rich(configurationModel.richErrorText)
+        case .raw:
+            .raw(configurationModel.errorText)
         }
-        .disabled(!configurationModel.enabled)
-        .showSkeleton(isVisible: configurationModel.showSkeleton)
-        .designToolboxColoredSurface(false)
-        .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
     }
 
     private var image: OUDSImage? {

@@ -30,20 +30,15 @@ struct DesignToolboxConfiguration<Configuration>: View where Configuration: View
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             Group {
-                OUDSHeading("app_common_configuration_label", size: .medium)
+                OUDSHeading("app_common_configuration_label", size: .large)
                     .foregroundColor(theme.colors.contentDefault)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 OUDSHorizontalDivider()
             }
-            .padding(.horizontal, theme.spaces.fixedMedium)
+            .gridMargin(.horizontal)
 
             configuration()
         }
-        .padding(.vertical, theme.spaces.fixedMedium)
-        .border(style: theme.borders.styleDefault,
-                width: theme.borders.widthThin,
-                radius: theme.borders.radiusMedium,
-                color: theme.colors.borderDefault)
     }
 }

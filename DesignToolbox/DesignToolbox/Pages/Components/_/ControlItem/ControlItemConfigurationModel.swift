@@ -78,7 +78,12 @@ class ControlItemConfigurationModel: ComponentConfiguration {
     }
 
     @Published var outlined: Bool {
-        didSet { updateCode() }
+        didSet {
+            if outlined {
+                isEdgeToEdgeComponent = false
+            }
+            updateCode()
+        }
     }
 
     @Published var extraLabelText: String {
@@ -134,6 +139,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         showSkeleton = false
 
         super.init()
+        super.isEdgeToEdgeComponent = true
     }
 
     deinit {}
@@ -145,6 +151,7 @@ class ControlItemConfigurationModel: ComponentConfiguration {
         code =
             """
             \(componentInitCode)"\(labelText)", \(bindingInitCode)\(extraLabelTextPattern)\(descriptionTextPattern)\(iconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(errorTextPattern)\(isReadOnlyPattern)\(hasDividerPattern)\(constrainedMaxWidthPattern))
+            \(edgeToEdgePattern)
             \(disableCodePattern)
             \(skeletonPattern)
             """
@@ -154,6 +161,10 @@ class ControlItemConfigurationModel: ComponentConfiguration {
 
     private var skeletonPattern: String {
         showSkeleton ? ".showSkeleton(isVisible: true)" : ""
+    }
+
+    private var edgeToEdgePattern: String {
+        ".isEdgeToEdge(\(isEdgeToEdgeComponent))"
     }
 
     private var disableCodePattern: String {

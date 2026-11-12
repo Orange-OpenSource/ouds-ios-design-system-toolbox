@@ -26,6 +26,7 @@ struct CheckboxPickerElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_checkboxPicker_description_text",
+            version: "",
             demoScreen: AnyView(CheckboxPickerPage())))
     }
 }

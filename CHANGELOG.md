@@ -8,11 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] edge to edge support for `control item` and `list item` components (Orange-OpenSource/ouds-ios#1661)
 - [Library] skeleton state for `pin code input` component (Orange-OpenSource/ouds-ios#1857)
 
 ### Changed
 
-- [Library] `OUDSNavigationLink` accepts `OUDSListItemData`, `leading` and `trailing` elements like `OUDSNavigationListItem` (Orange-OpenSource/ouds-ios#1794)   
+- [DesignToolbox] Update configuration area with edge to edge elements (Orange-OpenSource/ouds-ios#1851) 
+- [Library] `OUDSNavigationLink` accepts `OUDSListItemData`, `leading` and `trailing` elements like `OUDSNavigationListItem` (Orange-OpenSource/ouds-ios#1794)
 - [Library] Tokens library v2.8 (Orange-OpenSource/ouds-ios#1856)
 - [Library] Icons pack v2.4
 - [DesignToolbox] Evolutions of pages and navigation for iPhone Duo layouts, management of search tab with iOS 27 SDK

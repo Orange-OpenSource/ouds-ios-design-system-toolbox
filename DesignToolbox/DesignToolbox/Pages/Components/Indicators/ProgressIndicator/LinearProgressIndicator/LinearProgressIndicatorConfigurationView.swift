@@ -287,6 +287,7 @@ struct LinearProgressIndicatorConfigurationView: View {
             }
         }
     }
+
     // swiftlint:enable closure_body_length
 }
 

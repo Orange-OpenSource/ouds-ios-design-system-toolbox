@@ -165,6 +165,7 @@ struct AboutPage: View {
                 Section(header: OUDSHeading("app_about_links_title", hasMarker: true)) {
                     linksView
                 }
+                appSettingsView
             } else {
                 #if !os(tvOS) && !os(visionOS)
                 Section(header: OUDSHeading("app_about_legal_title", coloredText: "légales")) {
@@ -177,6 +178,7 @@ struct AboutPage: View {
                 Section(header: OUDSHeading("app_about_links_title", coloredText: "utiles")) {
                     linksView
                 }
+                appSettingsView
             }
             #if DEBUG
             AboutDebugSection()
@@ -186,6 +188,21 @@ struct AboutPage: View {
     }
 
     // MARK: - Views
+
+    #if os(iOS)
+    @ViewBuilder
+    private var appSettingsView: some View {
+        Button {
+            OSUtilities.open(url: appSettingsUrl)
+        } label: {
+            HStack {
+                OUDSLabel("app_about_appSettings_label", size: .large, weight: .strong)
+                Spacer()
+                Image(systemName: "gear").accessibilityHidden(true)
+            }
+        }.accessibilityHint("app_about_appSettings_hint_a11y")
+    }
+    #endif
 
     #if os(iOS) || os(macOS)
     @ViewBuilder
@@ -229,26 +246,14 @@ struct AboutPage: View {
         link(appSourcesUrl, label: "app_about_appSources_label", hint: "app_about_appSources_hint_a11y")
         link(bugReportUrl, label: "app_about_bugReport_label", hint: "app_about_bugReport_hint_a11y")
         link(designSystemUrl, label: "app_about_designSystem_label", hint: "app_about_designSystem_hint_a11y")
-
-        #if os(iOS)
-        Button {
-            OSUtilities.open(url: appSettingsUrl)
-        } label: {
-            HStack {
-                OUDSLabel("app_about_appSettings_label", size: .large, weight: .strong)
-                Spacer()
-                Image(systemName: "gear").accessibilityHidden(true)
-            }
-        }.accessibilityHint("app_about_appSettings_hint_a11y")
-        #endif
     }
 
     @ViewBuilder
     private func link(_ url: URL, label: String, hint: String) -> some View {
-        OUDSLink(text: label.localized(), indicator: .external, isFullWidth: true) {
-            openURL.callAsFunction(url)
-        }
-        .accessibilityHint(hint.localized())
+        OUDSNavigationListItem(data: .init(label: .textual(.raw(label.localized()))),
+                               indicatorType: .external) { openURL.callAsFunction(url) }
+            .oudsListItemStyle(divider: false, background: false)
+            .oudsListItemSize(.small)
     }
 }
 
