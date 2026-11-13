@@ -151,13 +151,13 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 > Support of macOS today is in best effort
 
 <p align="center">
-<img src="./images/macOS/Tokens list - en - light.png" alt="List of tokens on MacBook Pro 16'' inch'' (english, light mode)" height="350" />
+<img src="./images/macOS/Tokens list - fr - light.png" alt="List of tokens on MacBook Pro 16'' inch'' (french, light mode)" height="350" />
 &nbsp;
-<img src="./images/macOS/Colors - en - light.png" alt="List of colors on MacBook Pro 16'' (english, light mode)" height="350" />
+<img src="./images/macOS/Colors - fr - light.png" alt="List of colors on MacBook Pro 16'' (french, light mode)" height="350" />
 &nbsp;
-<img src="./images/macOS/Components list - en - light.png" alt="List of components on MacBook Pro 16'' (english, light mode)" height="350" />
+<img src="./images/macOS/Components list - fr - light.png" alt="List of components on MacBook Pro 16'' (french, light mode)" height="350" />
 &nbsp;
-<img src="./images/macOS/Button - en - light.png" alt="Button component on MacBook Pro 16'' (english, light mode)" height="350" />
+<img src="./images/macOS/Button - fr - light.png" alt="Button component on MacBook Pro 16'' (french, light mode)" height="350" />
 </p>
 
 ### visionOS 
@@ -169,13 +169,13 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 > Support of visionOS today is in best effort
 
 <p align="center">
-<img src="./images/visionOS/Tokens list - en - light.png" alt="List of tokens on Vision Pro (english, light mode)" height="350" />
+<img src="./images/visionOS/Tokens list - fr - dark.png" alt="List of tokens on Vision Pro (french, dark mode)" height="350" />
 &nbsp;
-<img src="./images/visionOS/Colors - en - light.png" alt="List of colors on Vision Pro (english, light mode)" height="350" />
+<img src="./images/visionOS/Colors - fr - dark.png" alt="List of colors on Vision Pro (french, dark mode)" height="350" />
 &nbsp;
-<img src="./images/visionOS/Components list - en - light.png" alt="List of components on Vision Pro (english, light mode)" height="350" />
+<img src="./images/visionOS/Components list - fr - dark.png" alt="List of components on Vision Pro (french, dark mode)" height="350" />
 &nbsp;
-<img src="./images/visionOS/Button - en - light.png" alt="Button component on Vision Pro (english, light mode)" height="350" />
+<img src="./images/visionOS/Button - fr - dark.png" alt="Button component on Vision Pro (french, dark mode)" height="350" />
 </p>
 
 ### watchOS
@@ -207,13 +207,13 @@ For images and other assets, please [refer to the NOTICE.txt](https://github.com
 > Support of tvOS today is in best effort
 
 <p align="center">
-<img src="./images/tvOS/Tokens list.png" alt="List of tokens on Apple TV 4K (3rd generation) (english)" height="350" />
+<img src="./images/tvOS/Tokens list - fr - light.png" alt="List of tokens on Apple TV (french, light)" height="350" />
 &nbsp;
-<img src="./images/tvOS/Colors.png" alt="List of colors on Apple TV 4K (3rd generation) (english)" height="350" />
+<img src="./images/tvOS/Colors - fr - light.png" alt="List of colors on Apple TV (french, light)" height="350" />
 &nbsp;
-<img src="./images/tvOS/Buttons.png" alt="Button components on Apple TV 4K (3rd generation) (english)" height="350" />
+<img src="./images/tvOS/Button - fr - light.png" alt="Button components on Apple TV (french, light)" height="350" />
 &nbsp;
-<img src="./images/tvOS/Badges.png" alt="Badge components on Apple TV 4K (3rd generation) (english)" height="350" />
+<img src="./images/tvOS/Badge - fr - light.png" alt="Badge components on Apple TV (french, light)" height="350" />
 </p>
 
 ## 📲 Get the app
