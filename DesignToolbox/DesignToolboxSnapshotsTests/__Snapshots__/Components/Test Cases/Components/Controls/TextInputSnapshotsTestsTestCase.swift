@@ -428,7 +428,7 @@ struct TestTextInputView: View {
         VStack(alignment: .leading, spacing: 24) {
             OUDSTextInput(label: "Label",
                           text: $text,
-                          helperText: "Helper text",
+                          helperText: .raw("Helper text"),
                           isOutlined: outlined,
                           status: status)
 
@@ -440,7 +440,7 @@ struct TestTextInputView: View {
 
             OUDSTextInput(label: "Label",
                           text: $text,
-                          helperText: "Helper text",
+                          helperText: .raw("Helper text"),
                           helperLink: helperLink,
                           isOutlined: outlined,
                           status: status)

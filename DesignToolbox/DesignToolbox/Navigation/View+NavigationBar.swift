@@ -28,22 +28,28 @@ extension View {
     /// - tvOS: this is a no-op. The controls must be rendered explicitly by the
     ///   caller inside the page layout using `TVOSTopControlsBar`, because tvOS
     ///   has no navigation bar chrome where a `.toolbar` payload would appear.
+    /// - Set `showsThemeControls` to false to retain the title without duplicating
+    ///   the controls in another visible column.
     @ViewBuilder
-    func navigationBarMenus(title: String) -> some View {
+    func navigationBarMenus(title: String, showsThemeControls: Bool = true) -> some View {
         #if os(tvOS)
         self
         #elseif os(macOS)
         toolbar {
-            ThemeSelectionButton()
-            ColorSchemeSelectionButton()
+            if showsThemeControls {
+                ThemeSelectionButton()
+                ColorSchemeSelectionButton()
+            }
         }
         #else
         toolBarTop(title, trailingItems: {
-            OUDSToolBarItem {
-                ThemeSelectionButton()
-            }
-            OUDSToolBarItem {
-                ColorSchemeSelectionButton()
+            if showsThemeControls {
+                OUDSToolBarItem {
+                    ThemeSelectionButton()
+                }
+                OUDSToolBarItem {
+                    ColorSchemeSelectionButton()
+                }
             }
         })
         #endif

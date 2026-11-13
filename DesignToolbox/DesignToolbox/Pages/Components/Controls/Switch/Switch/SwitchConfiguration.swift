@@ -40,7 +40,7 @@ final class SwitchConfigurationModel: ComponentConfiguration {
     // MARK: - Initializer
 
     override init() {
-        selection = true
+        selection = false
         enabled = true
         isReadOnly = false
         showSkeleton = false

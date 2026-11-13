@@ -64,7 +64,7 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         titleText = "Select a drink"
         selectionType = .single
         showSkeleton = false
-        super.init()
+        super.init(useOneColorSchemedDemo: false, isEdgeToEdgeComponent: true)
     }
 
     deinit {}
@@ -170,16 +170,17 @@ struct ChipPickerConfigurationView: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
-
                 OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
-                OUDSChipPicker(title: "app_components_common_layout_tech",
-                               selection: $configurationModel.layout,
-                               chips: ChipLayout.chips)
+                VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
+                    OUDSChipPicker(title: "app_components_common_layout_tech",
+                                   selection: $configurationModel.layout,
+                                   chips: ChipLayout.chips)
 
-                OUDSChipPicker(title: "app_components_chipPicker_selectionType_tech",
-                               selection: $configurationModel.selectionType,
-                               chips: ChipPickerConfigurationModel.SelectionType.chips)
+                    OUDSChipPicker(title: "app_components_chipPicker_selectionType_tech",
+                                   selection: $configurationModel.selectionType,
+                                   chips: ChipPickerConfigurationModel.SelectionType.chips)
+                }
             }
 
             DesignToolboxEditContentDisclosure {

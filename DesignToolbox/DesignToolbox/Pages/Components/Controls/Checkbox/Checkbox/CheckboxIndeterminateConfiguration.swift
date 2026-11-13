@@ -51,7 +51,7 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        indicatorState = .selected
+        indicatorState = .unselected
         isError = false
         isReadOnly = false
         enabled = true

@@ -139,6 +139,47 @@ open class PinCodeInputSnapshotsTestsTestCase: XCTestCase {
 
     // swiftlint:enable function_parameter_count
 
+    // MARK: - Skeleton
+
+    /// This function tests the `OUDSPinCodeInput` skeleton state (4, 6 and 8 digits, without animation) for the given theme and color scheme.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`OUDSTheme`).
+    ///   - interfaceStyle: The user interface style (light or dark).
+    @MainActor func testPinCodeInputSkeleton(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        let cells: [SnapshotGridCell<AnyView>] = OUDSPinCodeInput.Length.allCases.map { length in
+            SnapshotGridCell(caption: "\(length.rawValue) digits") {
+                AnyView(
+                    OUDSThemeableView(theme: theme) {
+                        OUDSPinCodeInput(.constant(""), length: length)
+                            .padding(5)
+                            .showSkeleton(isVisible: true, isAnimated: false)
+                    })
+            }
+        }
+
+        let testName = "testPinCodeInput_skeleton_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let name = "PinCodeInputSkeleton"
+
+        let grid = SnapshotGrid(
+            columns: 1,
+            cellSize: CGSize(width: 600, height: 120),
+            cells: cells,
+            title: "\(testName).\(name)",
+            cellSpacing: 24,
+            rowSpacing: 24)
+
+        let illustration = OUDSThemeableView(theme: theme) {
+            grid
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+        }
+
+        assertIllustration(illustration,
+                           on: interfaceStyle,
+                           named: name,
+                           testName: testName)
+    }
+
     // MARK: - Captions / Names
 
     private func caption(outlined: Bool, isFull: Bool, status: OUDSPinCodeInput.Status, helperText: String) -> String {

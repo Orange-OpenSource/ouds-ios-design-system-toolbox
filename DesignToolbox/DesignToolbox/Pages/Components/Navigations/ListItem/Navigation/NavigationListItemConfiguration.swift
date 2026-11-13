@@ -26,9 +26,18 @@ final class NavigationListItemConfigurationModel: ListItemConfigurationModel {
         indicatorType = .next
         super.init()
         componentInitCode = "OUDSNavigationListItem"
+        updateCode()
     }
 
     deinit {}
+
+    override var extraArgumentsPattern: String {
+        ", indicatorType: \(indicatorType.technicalDescription)"
+    }
+
+    override var trailingClosurePattern: String {
+        " {\n    // Action to perform on tap\n}"
+    }
 }
 
 // MARK: - Navigation List Item Configuration
@@ -40,8 +49,6 @@ struct NavigationListItemConfiguration: View {
     var body: some View {
         VStack(spacing: 0) {
             ListItemConfiguration(configurationModel: configurationModel)
-
-            Divider().horizontal()
 
             OUDSChipPicker(title: "app_components_listItem_indicator_tech".localized(),
                            selection: $configurationModel.indicatorType,

@@ -38,14 +38,6 @@ final class CheckboxIndeterminateUITests: AppTestCase {
         let checkbox = otherElements(withA11yIdentifier: A11YIdentifiers.componentCheckboxIndeterminate, app).firstMatch
         XCTAssertTrue(checkbox.exists)
 
-        check(value: checkedCheckboxA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentCheckboxIndeterminate, app)
-
-        // WHEN
-
-        tapButton(withWording: "Unselected", app)
-
-        // THEN
-
         check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentCheckboxIndeterminate, app)
 
         // WHEN
@@ -55,6 +47,14 @@ final class CheckboxIndeterminateUITests: AppTestCase {
         // THEN
 
         check(value: checkedCheckboxA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentCheckboxIndeterminate, app)
+
+        // WHEN
+
+        tapButton(withWording: "Unselected", app)
+
+        // THEN
+
+        check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentCheckboxIndeterminate, app)
 
         // WHEN
 

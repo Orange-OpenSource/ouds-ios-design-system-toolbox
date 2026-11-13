@@ -131,19 +131,19 @@ open class ListItemTextsConfigurationModel: ComponentConfiguration {
 
     private var overlinePattern: String {
         guard !overlineText.isEmpty else { return "" }
-        return ", overline: \"\(overlineText)\""
+        return ", overline: .raw(\"\(overlineText)\")"
     }
 
     private var extraLabelPattern: String {
-        extraLabelText.isEmpty ? "" : ", extraLabel: \"\(extraLabelText)\""
+        extraLabelText.isEmpty ? "" : ", extraLabel: .raw(\"\(extraLabelText)\")"
     }
 
     private var descriptionPattern: String {
-        descriptionText.isEmpty ? "" : ", description: \"\(descriptionText)\""
+        descriptionText.isEmpty ? "" : ", description: .raw(\"\(descriptionText)\")"
     }
 
     private var helperTextPattern: String {
-        helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
+        helperText.isEmpty ? "" : ", helperText: .raw(\"\(helperText)\")"
     }
 }
 

@@ -66,7 +66,7 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
         rawImages = false
         isEnabled = true
         showSkeleton = false
-        super.init()
+        super.init(useOneColorSchemedDemo: false, isEdgeToEdgeComponent: true)
     }
 
     deinit {}
@@ -161,6 +161,7 @@ struct CheckboxPickerConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+            OUDSSwitchItem("app_components_common_edgeToEdge_tech", isOn: $configurationModel.isEdgeToEdgeComponent)
 
             OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.isEnabled)
                 .disabled(configurationModel.isError || configurationModel.isReadOnly)

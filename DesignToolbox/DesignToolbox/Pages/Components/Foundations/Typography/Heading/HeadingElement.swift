@@ -25,7 +25,7 @@ struct HeadingElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_typography_heading_description_text",
-            version: OUDSVersions.componentTypographyVersion,
+            version: OUDSVersions.componentTypographyHeadingVersion,
             demoScreen: AnyView(HeadingPage())))
     }
 }

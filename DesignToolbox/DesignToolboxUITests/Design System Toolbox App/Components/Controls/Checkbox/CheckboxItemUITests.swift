@@ -36,15 +36,6 @@ final class CheckboxItemUITests: AppTestCase {
 
         let checkbox = otherElements(withA11yIdentifier: A11YIdentifiers.componentCheckboxItem, app).firstMatch
         XCTAssertTrue(checkbox.exists)
-        check(value: checkedCheckboxA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentCheckboxItem, app)
-
-        // WHEN
-
-        tapOtherElement(withA11yIdentifier: A11YIdentifiers.configurationSwitchSelection, app)
-        wait(1)
-
-        // THEN
-
         check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentCheckboxItem, app)
 
         // WHEN
@@ -55,6 +46,15 @@ final class CheckboxItemUITests: AppTestCase {
         // THEN
 
         check(value: checkedCheckboxA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentCheckboxItem, app)
+
+        // WHEN
+
+        tapOtherElement(withA11yIdentifier: A11YIdentifiers.configurationSwitchSelection, app)
+        wait(1)
+
+        // THEN
+
+        check(value: uncheckedCheckboxA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentCheckboxItem, app)
     }
 
     // TODO: Test hints and labels

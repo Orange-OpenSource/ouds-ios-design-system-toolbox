@@ -34,10 +34,10 @@ struct PinCodeInputElement: DesignToolboxElement {
 
 private struct PinCodeInputIllustration: View {
 
-    @State private var pinCode: String = "123"
+    @State private var pinCode: String = "12" // NOTE: Seen as unused by Periphery, but is not
 
     var body: some View {
-        OUDSPinCodeInput($pinCode, length: .six, helperText: .localized("app_components_pinCodeInputHelperText_label"))
+        OUDSPinCodeInput($pinCode, length: .four)
     }
 }
 

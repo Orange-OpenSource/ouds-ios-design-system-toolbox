@@ -34,12 +34,11 @@ struct PasswordInputElement: DesignToolboxElement {
 
 private struct PasswordInputIllustration: View {
 
-    @State private var password: String = ""
+    @State private var password: String = "123456" // NOTE: Seen as unused by Periphery, but is not
 
     var body: some View {
-        OUDSPasswordInput("app_components_common_label_label",
-                          password: $password,
-                          helperText: .localized("app_components_passwordInputHelperText_label"))
+        OUDSPasswordInput("",
+                          password: $password)
     }
 }
 

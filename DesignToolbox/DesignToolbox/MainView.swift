@@ -21,7 +21,7 @@ struct MainView: View {
 
     // MARK: - Properties
 
-    @State private var selectedTab: Int = 0
+    @State private var selectedTab: Int = 0 // NOTE: Seen as unused by Periphery, but is not
 
     @Environment(\.theme) private var theme
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
@@ -39,8 +39,10 @@ struct MainView: View {
         if #available(iOS 26, *) {
             if isLiquidGlassDisabled {
                 searchTabBar
+                    .tabViewSearchActivation(.searchTabSelection)
             } else {
                 liquidGlassSearchTabBar
+                    .tabViewSearchActivation(.searchTabSelection)
             }
         } else if #available(iOS 18, *) {
             searchTabBar

@@ -21,7 +21,7 @@ struct DesignToolboxCode: View {
     let code: String
     let titleText: LocalizedStringKey
 
-    @State private var isCodeVisible = false
+    @State private var isCodeVisible = false // NOTE: Seen as unused by Periphery, but is not
 
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection
@@ -32,9 +32,8 @@ struct DesignToolboxCode: View {
         DesignToolboxDisclosureGroup(isExpanded: $isCodeVisible, accessibilityLabel: "app_common_showCode_text_a11y".localized()) {
             codeSection()
         } label: {
-            OUDSBody(titleText, size: .large, weight: .strong)
+            OUDSHeading(titleText, size: .small)
                 .foregroundStyle(theme.colors.contentDefault)
-                .padding(.vertical, theme.spaces.paddingInlineSmall)
         }
     }
 

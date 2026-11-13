@@ -38,15 +38,6 @@ final class RadioItemUITests: AppTestCase {
 
         let radioItem = otherElements(withA11yIdentifier: A11YIdentifiers.componentRadioItem, app).firstMatch
         XCTAssertTrue(radioItem.exists)
-        check(value: selectedRadioA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentRadioItem, app)
-
-        // WHEN
-
-        tapOtherElement(withA11yIdentifier: A11YIdentifiers.configurationSwitchSelection, app)
-        wait(1)
-
-        // THEN
-
         check(value: unselectedRadioA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentRadioItem, app)
 
         // WHEN
@@ -57,6 +48,15 @@ final class RadioItemUITests: AppTestCase {
         // THEN
 
         check(value: selectedRadioA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentRadioItem, app)
+
+        // WHEN
+
+        tapOtherElement(withA11yIdentifier: A11YIdentifiers.configurationSwitchSelection, app)
+        wait(1)
+
+        // THEN
+
+        check(value: unselectedRadioA11YValue, ofElementWithIdentifier: A11YIdentifiers.componentRadioItem, app)
     }
 
     // TODO: Test hints and labels

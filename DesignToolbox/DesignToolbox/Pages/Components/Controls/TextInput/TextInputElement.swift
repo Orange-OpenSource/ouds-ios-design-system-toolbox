@@ -34,12 +34,12 @@ struct TextInputElement: DesignToolboxElement {
 
 private struct TextInputIllustration: View {
 
-    @State private var text: String = ""
+    @State private var text: String = "" // NOTE: Seen as unused by Periphery, but is not
+    private let title = "Text input" // Trick to break Xcode indexation of localizables
 
     var body: some View {
-        OUDSTextInput("app_components_common_label_label",
-                      text: $text,
-                      helperText: .localized("app_components_textInputHelperText_label"))
+        OUDSTextInput(label: title,
+                      text: $text)
     }
 }
 

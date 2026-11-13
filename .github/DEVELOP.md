@@ -52,7 +52,8 @@ If some tools are missing, pick the suitable command line below and check versio
 # Get updated RubyGems
 gem update --system 3.6.7
 
-# Install bundler (at least 2.6.7)
+# Install bundler (at least 4.0)
+# Or for update: bundle update --bundle
 gem install bundler
 
 # Install rbenv (at least 1.3.2)
@@ -126,10 +127,10 @@ source ~/.zshrc
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 26.4**, we suggest you use this version or newer if you want (even if not recommended).
+We use also for our GitLab CI runners **Xcode 27.1**, we suggest you use this version or newer if you want (even if not recommended).
 
 > [!IMPORTANT]
-> Xcode 26.4 and Swift 6.3 are used for this project. You should use this configuration.
+> Xcode 27.1 and Swift 6.3 are used for this project. You should use this configuration.
 > Not retrocompatibility is planned yet.
 > If need you can contact us and open a discussion on GitHub Orange-OpenSource/ouds-ios
 

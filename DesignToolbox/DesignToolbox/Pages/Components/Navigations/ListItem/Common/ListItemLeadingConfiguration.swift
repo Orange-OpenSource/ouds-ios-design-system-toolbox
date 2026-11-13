@@ -68,7 +68,7 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
         case .none:
             nil
         case .icon:
-            .icon(iconModel.icon(for: theme))
+            .icon(iconModel.iconForStatus)
         case .image:
             .image(imageModel.image(for: theme))
         case .flag:
@@ -105,7 +105,7 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
             case .none:
                 ""
             case .icon:
-                ".icon(\(iconModel.code)"
+                ".icon(\(iconModel.code))"
             case .image:
                 ".image(\(imageModel.code))"
             case .flag:
@@ -120,7 +120,7 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
                 """
             }
 
-        code = option == .none ? "" : "\n\nlet leading: OUDSListItemLeading = \n \(pattern)"
+        code = option == .none ? "" : "let leading: OUDSListItemLeading = \(pattern)"
     }
 }
 

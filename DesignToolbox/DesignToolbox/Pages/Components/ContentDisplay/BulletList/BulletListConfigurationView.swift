@@ -96,10 +96,10 @@ final class BulletListConfigurationModel: ComponentConfiguration {
         }
     }
 
-    private var iconPattern: String {
+    private var iconPattern: String? {
         switch unorderedAsset {
         case .bullet:
-            ""
+            nil
         case .tick:
             "asset: .tick"
         case .icon:
@@ -107,80 +107,67 @@ final class BulletListConfigurationModel: ComponentConfiguration {
         }
     }
 
-    private var isBrandedPattern: String {
-        unorderedBulletIsBranded ? ", isBranded: true" : ""
-    }
-
-    private var typePattern: String {
-        var value = ""
+    /// The package default for the list is `.unordered(asset: .bullet, isBranded: false)`, so `type` is omitted for it.
+    private var typePattern: String? {
         switch bulletType {
         case .bare:
-            value = "type: .bare"
+            return "type: .bare"
         case .ordered:
-            value = "type: .ordered(index: 1)"
+            return "type: .ordered"
         case .unordered:
-            let rawPattern = "type: .unordered(\(iconPattern)\(isBrandedPattern))"
-            value = (rawPattern == "type: .unordered()" ? "" : rawPattern)
-        }
-
-        return "\(value)"
-    }
-
-    private var textStylePattern: String {
-        if textStyle == .bodyMedium {
-            ", textStyle: .bodyMedium"
-        } else { // body large
-            ""
+            if unorderedAsset == .bullet, !unorderedBulletIsBranded {
+                return nil
+            }
+            let arguments = [iconPattern, "isBranded: \(unorderedBulletIsBranded)"].compactMap(\.self)
+            return "type: .unordered(\(arguments.joined(separator: ", ")))"
         }
     }
 
-    private var isBoldPattern: String {
-        isBold ? "" : ", isBold: false"
+    private var textStylePattern: String? {
+        textStyle == .bodyMedium ? "textStyle: .bodyMedium" : nil
+    }
+
+    private var isBoldPattern: String? {
+        isBold ? nil : "isBold: false"
+    }
+
+    private var listPattern: String {
+        let arguments = [typePattern, textStylePattern, isBoldPattern].compactMap(\.self)
+        return arguments.isEmpty ? "OUDSBulletList" : "OUDSBulletList(\(arguments.joined(separator: ", ")))"
     }
 
     private var itemsPattern: String {
         switch levelCount {
         case .one:
             """
-            {
                 OUDSBulletList.Item(\(labelPattern))
                 OUDSBulletList.Item(\(labelPattern))
                 OUDSBulletList.Item(\(labelPattern))
-            }
             """
         case .two:
             """
-            {
                 OUDSBulletList.Item(\(labelPattern)) {
                     OUDSBulletList.Item(\(labelPattern))
                     OUDSBulletList.Item(\(labelPattern))
                 }
-            }
             """
         case .three:
             """
-            {
                 OUDSBulletList.Item(\(labelPattern)) {
                     OUDSBulletList.Item(\(labelPattern)) {
                         OUDSBulletList.Item(\(labelPattern))
                     }
                 }
-            }
             """
         }
     }
 
     override func updateCode() {
-        code =
-            """
-            OUDSBulletList(\(typePattern)\(textStylePattern)\(isBoldPattern))
-            \(itemsPattern)
-            \(skeletonPattern)
-            """
-    }
-
-    private var skeletonPattern: String {
-        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
+        var lines = ["\(listPattern) {", itemsPattern, "}"]
+        if showSkeleton {
+            lines.append(".showSkeleton(isVisible: true)")
+        }
+        code = lines.joined(separator: "\n")
     }
 }
 

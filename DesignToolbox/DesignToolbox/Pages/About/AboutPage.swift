@@ -37,11 +37,8 @@ struct AboutPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.openURL) private var openURL
 
-    #if DEBUG
-    /// DEBUG-only flag persisting whether the sandbox tab must be displayed.
-    /// Toggled by the "Bac à sable" switch item at the bottom of the About page
-    /// and observed by ``MainView`` to conditionally insert the Debug tab.
-    @AppStorage(SandboxUserDefaultsKeys.sandboxEnabled) private var sandboxEnabled: Bool = false
+    #if os(iOS)
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     #endif
 
     // MARK: Initializer
@@ -84,12 +81,55 @@ struct AboutPage: View {
 
     var body: some View {
         #if os(iOS)
-        NavigationView {
-            listBody
+        if #available(iOS 27.1, *) {
+            NavigationStack {
+                GeometryReader { geometry in
+                    // If e.g. iPhone Duo unfolded in landscape mode
+                    if horizontalSizeClass == .regular, geometry.size.width > geometry.size.height {
+                        ArrangementView {
+                            List {
+                                AboutSection("app_about_versions_title", coloredText: "techniques") {
+                                    AboutTechnicalDetails()
+                                }
+                            }
+                            .scrollContentBackground(.hidden)
+                            .background(theme.colors.bgPrimary)
+                            .padding(.trailing, theme.spaces.fixedMedium)
+                        } secondary: {
+                            List {
+                                AboutSection("app_about_legal_title", coloredText: "légales") {
+                                    legalView
+                                }
+                                AboutSection("app_about_links_title", coloredText: "utiles") {
+                                    linksView
+                                }
+                                #if DEBUG
+                                AboutDebugSection()
+                                #endif
+                            }
+                            .scrollContentBackground(.hidden)
+                            .background(theme.colors.bgPrimary)
+                            .padding(.leading, theme.spaces.fixedMedium)
+                        }
+                        .arrangementViewStyle(.split.axes(.horizontal))
+                        .background(theme.colors.bgPrimary)
+                        .oudsScreenTitle("app_bottomBar_about_label")
+                    } else {
+                        listBody
+                    }
+                }
                 .navigationBarTitleDisplayMode(.inline)
                 .accentColor(theme.bar.colorAccent)
+            }
+            .oudsNavigationBarAppearance()
+        } else { // iOS < 27.1
+            NavigationView {
+                listBody
+                    .navigationBarTitleDisplayMode(.inline)
+                    .accentColor(theme.bar.colorAccent)
+            }
+            .navigationViewStyle(.stack)
         }
-        .navigationViewStyle(.stack)
         #elseif os(tvOS)
         // tvOS: use `NavigationStack` for consistency with the rest of the app and
         // render the theme / color-scheme controls in a visible focusable header
@@ -120,11 +160,15 @@ struct AboutPage: View {
                 }
                 #endif
                 Section(header: OUDSHeading("app_about_versions_title", hasMarker: true)) {
-                    buildView
+                    AboutTechnicalDetails()
                 }
                 Section(header: OUDSHeading("app_about_links_title", hasMarker: true)) {
                     linksView
                 }
+
+                #if os(iOS)
+                appSettingsView
+                #endif
             } else {
                 #if !os(tvOS) && !os(visionOS)
                 Section(header: OUDSHeading("app_about_legal_title", coloredText: "légales")) {
@@ -132,19 +176,18 @@ struct AboutPage: View {
                 }
                 #endif
                 Section(header: OUDSHeading("app_about_versions_title", coloredText: "techniques")) {
-                    buildView
+                    AboutTechnicalDetails()
                 }
                 Section(header: OUDSHeading("app_about_links_title", coloredText: "utiles")) {
                     linksView
                 }
+
+                #if os(iOS)
+                appSettingsView
+                #endif
             }
             #if DEBUG
-            Section(header: OUDSHeading("app_about_debug_title", hasMarker: true)) {
-                debugSandboxView
-                OUDSButton("app_about_debug_clearCache_label", appearance: .negative) {
-                    OUDSAsyncImageCache.shared.clearCache()
-                }
-            }
+            AboutDebugSection()
             #endif
         }
         .oudsScreenTitle("app_bottomBar_about_label")
@@ -152,22 +195,37 @@ struct AboutPage: View {
 
     // MARK: - Views
 
+    #if os(iOS)
+    @ViewBuilder
+    private var appSettingsView: some View {
+        Button {
+            OSUtilities.open(url: appSettingsUrl)
+        } label: {
+            HStack {
+                OUDSLabel("app_about_appSettings_label", size: .large, weight: .strong)
+                Spacer()
+                Image(systemName: "gear").accessibilityHidden(true)
+            }
+        }.accessibilityHint("app_about_appSettings_hint_a11y")
+    }
+    #endif
+
     #if os(iOS) || os(macOS)
     @ViewBuilder
     private var legalView: some View {
         Group {
-            OUDSNavigationLink("app_about_privacyPolicy_label", style: .item(divider: false, background: false)) {
+            row(text: "app_about_privacyPolicy_label") {
                 WebView(from: privacyPolicyUrl)
                     .navigationTitle("app_about_privacyPolicy_label")
             }
 
-            OUDSNavigationLink("app_about_legalInformation_label", style: .item(divider: false, background: false)) {
+            row(text: "app_about_legalInformation_label") {
                 WebView(from: legalInformationUrl)
                     .navigationTitle("app_about_legalInformation_label")
             }
 
             #if !os(macOS)
-            OUDSNavigationLink("app_about_accessibilityStatement_label", style: .item(divider: false, background: false)) {
+            row(text: "app_about_accessibilityStatement_label") {
                 AccessibilityStatementPage()
                     .navigationTitle("app_about_accessibilityStatement_label")
             }
@@ -176,11 +234,69 @@ struct AboutPage: View {
         .oudsListItemStyle(divider: false)
         .oudsListItemSize(.small)
     }
+
+    @ViewBuilder
+    func row(text: LocalizedStringKey, @ViewBuilder destination: @escaping () -> some View) -> some View {
+        OUDSNavigationLink(data: .init(label: .textual(.localized(text))),
+                           indicatorType: .next,
+                           style: .item(divider: false, background: false),
+                           destination: destination)
+    }
     #endif
 
     @ViewBuilder
-    private var buildView: some View {
+    private var linksView: some View {
+        if let changelogURL = Bundle.main.changelogURL {
+            link(changelogURL, label: "app_about_changelog_label")
+        }
+        link(appSourcesUrl, label: "app_about_appSources_label")
+        link(bugReportUrl, label: "app_about_bugReport_label")
+        link(designSystemUrl, label: "app_about_designSystem_label")
+    }
 
+    @ViewBuilder
+    private func link(_ url: URL, label: String) -> some View {
+        OUDSNavigationListItem(data: .init(label: .textual(.raw(label.localized()))),
+                               indicatorType: .external) { openURL.callAsFunction(url) }
+            .oudsListItemStyle(divider: false, background: false)
+            .oudsListItemSize(.small)
+    }
+}
+
+// MARK: - About Section View
+
+private struct AboutSection<Content: View>: View {
+
+    let title: LocalizedStringKey
+    let coloredText: String
+    @ViewBuilder let content: () -> Content
+
+    @Environment(\.theme) private var theme
+
+    init(_ title: LocalizedStringKey, coloredText: String, @ViewBuilder content: @escaping () -> Content) {
+        self.title = title
+        self.coloredText = coloredText
+        self.content = content
+    }
+
+    var body: some View {
+        Section {
+            content()
+        } header: {
+            if theme.name == SoshTheme.name {
+                OUDSHeading(title, coloredText: coloredText)
+            } else {
+                OUDSHeading(title, hasMarker: true)
+            }
+        }
+    }
+}
+
+// MARK: - About Technical Details View
+
+private struct AboutTechnicalDetails: View {
+
+    var body: some View {
         if Bundle.main.fullBuildType == "stable" {
             OpenableText("app_about_details_appVersion_stable" <- Bundle.main.marketingVersion, anchor: Bundle.main.marketingVersion, type: .githubRelease)
                 .modifier(CopyableTextViewModifier(Bundle.main.marketingVersion))
@@ -205,77 +321,42 @@ struct AboutPage: View {
 
         LiquidGlassStateItem()
 
-        VersionItem(title: "app_about_details_themeCoreVersion",
-                    version: OUDSVersions.themeCoreVersion)
-
-        VersionItem(title: "app_about_details_themeOrangeCoreVersion",
-                    version: OUDSVersions.themeOrangeCoreVersion)
-
-        VersionItem(title: "app_about_details_themeSoshCoreVersion",
-                    version: OUDSVersions.themeSoshCoreVersion)
-
-        VersionItem(title: "app_about_details_themeWireframeCoreVersion",
-                    version: OUDSVersions.themeWireframeCoreVersion)
-
-        VersionItem(title: "app_about_details_themeOrangeBrandVersion",
-                    version: OUDSVersions.themeOrangeBrandVersion)
-
-        VersionItem(title: "app_about_details_themeSoshBrandVersion",
-                    version: OUDSVersions.themeSoshBrandVersion)
-
-        VersionItem(title: "app_about_details_themeOrangeCompactBrandVersion",
-                    version: OUDSVersions.themeOrangeCompactBrandVersion)
-
-        VersionItem(title: "app_about_details_themeWireframeBrandVersion",
-                    version: OUDSVersions.themeWireframeBrandVersion)
+        VersionItem(title: "app_about_details_themeCoreVersion", version: OUDSVersions.themeCoreVersion)
+        VersionItem(title: "app_about_details_themeOrangeCoreVersion", version: OUDSVersions.themeOrangeCoreVersion)
+        VersionItem(title: "app_about_details_themeSoshCoreVersion", version: OUDSVersions.themeSoshCoreVersion)
+        VersionItem(title: "app_about_details_themeWireframeCoreVersion", version: OUDSVersions.themeWireframeCoreVersion)
+        VersionItem(title: "app_about_details_themeOrangeBrandVersion", version: OUDSVersions.themeOrangeBrandVersion)
+        VersionItem(title: "app_about_details_themeSoshBrandVersion", version: OUDSVersions.themeSoshBrandVersion)
+        VersionItem(title: "app_about_details_themeOrangeCompactBrandVersion", version: OUDSVersions.themeOrangeCompactBrandVersion)
+        VersionItem(title: "app_about_details_themeWireframeBrandVersion", version: OUDSVersions.themeWireframeBrandVersion)
     }
-
-    @ViewBuilder
-    private var linksView: some View {
-        if let changelogURL = Bundle.main.changelogURL {
-            link(changelogURL, label: "app_about_changelog_label", hint: "app_about_changelog_hint_a11y")
-        }
-        link(appSourcesUrl, label: "app_about_appSources_label", hint: "app_about_appSources_hint_a11y")
-        link(bugReportUrl, label: "app_about_bugReport_label", hint: "app_about_bugReport_hint_a11y")
-        link(designSystemUrl, label: "app_about_designSystem_label", hint: "app_about_designSystem_hint_a11y")
-
-        #if os(iOS)
-        Button {
-            OSUtilities.open(url: appSettingsUrl)
-        } label: {
-            HStack {
-                OUDSLabel("app_about_appSettings_label", size: .large, weight: .strong)
-                Spacer()
-                Image(systemName: "gear").accessibilityHidden(true)
-            }
-        }.accessibilityHint("app_about_appSettings_hint_a11y")
-        #endif
-    }
-
-    @ViewBuilder
-    private func link(_ url: URL, label: String, hint: String) -> some View {
-        OUDSLink(text: label.localized(), indicator: .external, isFullWidth: true) {
-            openURL.callAsFunction(url)
-        }
-        .accessibilityHint(hint.localized())
-    }
-
-    #if DEBUG
-    // swiftlint:disable accessibility_label_for_image
-    /// DEBUG-only switch item displayed at the very bottom of the About list.
-    /// Enabling it makes ``MainView`` add a "Debug" tab in first position.
-    @ViewBuilder
-    private var debugSandboxView: some View {
-        OUDSSwitchItem("app_about_sandbox_label",
-                       isOn: $sandboxEnabled,
-                       description: "app_about_sandbox_description".localized(),
-                       image: .init(asset: Image(systemName: "hammer")))
-    }
-    // swiftlint:enable accessibility_label_for_image
-    #endif
 }
 
-// MARK: - State Item
+#if DEBUG
+// MARK: - About Debug Section View
+
+private struct AboutDebugSection: View {
+
+    /// Also observed by MainView to conditionally insert the sandbox tab.
+    @AppStorage(SandboxUserDefaultsKeys.sandboxEnabled) private var sandboxEnabled: Bool = false
+
+    var body: some View {
+        Section(header: OUDSHeading("app_about_debug_title", hasMarker: true)) {
+            // swiftlint:disable accessibility_label_for_image
+            OUDSSwitchItem("app_about_sandbox_label",
+                           isOn: $sandboxEnabled,
+                           description: "app_about_sandbox_description".localized(),
+                           image: .init(asset: Image(systemName: "hammer")))
+            // swiftlint:enable accessibility_label_for_image
+            OUDSButton("app_about_debug_clearCache_label", appearance: .negative) {
+                OUDSAsyncImageCache.shared.clearCache()
+            }
+        }
+    }
+}
+#endif
+
+// MARK: - Liquid Glass State Item
 
 private struct LiquidGlassStateItem: View {
 
@@ -324,7 +405,7 @@ private struct LiquidGlassStateItem: View {
     }
 }
 
-// MARK: - Version Item
+// MARK: - Version Item View
 
 private struct VersionItem: View {
 

@@ -13,11 +13,15 @@
 
 import OUDSSwiftUI
 
+// swiftlint:disable function_body_length
+
 enum NamedColorMode: CaseIterable, CustomStringConvertible {
 
     case onBgPrimary
     case onBgSecondary
     case onBgTertiary
+    case onBgInverseHigh
+    case onBgInverseLow
     case onBrandPrimary
     case onBrandSecondary
     case onBrandTertiary
@@ -34,6 +38,11 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
     case onStatusPositiveMuted
     case onStatusWarningEmphasized
     case onStatusWarningMuted
+    case onSurfacePrimary
+    case onSurfaceSecondary
+    case onSurfaceTertiary
+    case onSurfaceInverseHigh
+    case onSurfaceInverseLow
     case navigationBar
 
     func toSurfaceColor(from theme: OUDSTheme) -> OUDSColoredSurface.SurfaceColor {
@@ -44,6 +53,10 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             theme.colorModes.onBgSecondary
         case .onBgTertiary:
             theme.colorModes.onBgTertiary
+        case .onBgInverseHigh:
+            theme.colorModes.onBgInverseHigh
+        case .onBgInverseLow:
+            theme.colorModes.onBgInverseLow
         case .onBrandPrimary:
             theme.colorModes.onBrandPrimary
         case .onBrandSecondary:
@@ -76,6 +89,16 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             theme.colorModes.onOverlayDropdown
         case .onOverlayTooltip:
             theme.colorModes.onOverlayTooltip
+        case .onSurfacePrimary:
+            theme.colorModes.onSurfacePrimary
+        case .onSurfaceSecondary:
+            theme.colorModes.onSurfaceSecondary
+        case .onSurfaceTertiary:
+            theme.colorModes.onSurfaceTertiary
+        case .onSurfaceInverseHigh:
+            theme.colorModes.onSurfaceInverseHigh
+        case .onSurfaceInverseLow:
+            theme.colorModes.onSurfaceInverseLow
         case .navigationBar:
             theme.colorModes.navigationBar
         }
@@ -90,6 +113,10 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "On Background Secondary"
         case .onBgTertiary:
             "On Background Tertiary"
+        case .onBgInverseHigh:
+            "On Background Inverse High"
+        case .onBgInverseLow:
+            "On Background Inverse Low"
         case .onBrandPrimary:
             "On Brand Primary"
         case .onBrandSecondary:
@@ -122,6 +149,16 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "On Overlay Tooltip"
         case .onOverlayModal:
             "On Overlay Modal"
+        case .onSurfacePrimary:
+            "On Surface Primary"
+        case .onSurfaceSecondary:
+            "On Surface Secondary"
+        case .onSurfaceTertiary:
+            "On Surface Tertiary"
+        case .onSurfaceInverseHigh:
+            "On Surface Inverse High"
+        case .onSurfaceInverseLow:
+            "On Surface Inverse Low"
         case .navigationBar:
             "Navigation Bar"
         }
@@ -135,6 +172,10 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "onBgSecondary"
         case .onBgTertiary:
             "onBgTertiary"
+        case .onBgInverseHigh:
+            "onBgInverseHigh"
+        case .onBgInverseLow:
+            "onBgInverseLow"
         case .onBrandPrimary:
             "onBrandPrimary"
         case .onBrandSecondary:
@@ -167,6 +208,16 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
             "onOverlayTooltip"
         case .onOverlayModal:
             "onOverlayModal"
+        case .onSurfacePrimary:
+            "onSurfacePrimary"
+        case .onSurfaceSecondary:
+            "onSurfaceSecondary"
+        case .onSurfaceTertiary:
+            "onSurfaceTertiary"
+        case .onSurfaceInverseHigh:
+            "onSurfaceInverseHigh"
+        case .onSurfaceInverseLow:
+            "onSurfaceInverseLow"
         case .navigationBar:
             "navigationBar"
         }
@@ -174,3 +225,5 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
 
     var id: String { description }
 }
+
+// swiftlint:enable function_body_length

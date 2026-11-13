@@ -39,7 +39,7 @@ struct CheckboxPickerPage: View {
 
 private struct CheckboxPickerDemo: View {
 
-    @State private var selections: [String] = []
+    @State private var selections: [String] = [] // NOTE: Seen as unused by Periphery, but is not
     @ObservedObject var configurationModel: CheckboxPickerConfigurationModel
 
     var body: some View {
@@ -51,6 +51,7 @@ private struct CheckboxPickerDemo: View {
                            isReadOnly: configurationModel.isReadOnly,
                            hasDivider: configurationModel.hasDivider)
             .disabled(!configurationModel.isEnabled)
+            .isEdgeToEdge(configurationModel.isEdgeToEdgeComponent)
             .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }

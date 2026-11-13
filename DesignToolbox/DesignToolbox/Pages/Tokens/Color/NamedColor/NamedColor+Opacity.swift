@@ -19,7 +19,6 @@ extension NamedColor {
         case opacityLowest
         case opacityLower
         case opacityTransparent
-        case opacityTransparentInverse
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticToken {
             switch self {
@@ -29,8 +28,6 @@ extension NamedColor {
                 theme.colors.opacityLower
             case .opacityTransparent:
                 theme.colors.opacityTransparent
-            case .opacityTransparentInverse:
-                theme.colors.opacityTransparentInverse
             }
         }
     }

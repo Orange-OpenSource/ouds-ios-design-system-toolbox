@@ -116,6 +116,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         numberOfItems = 1
 
         super.init()
+        isEdgeToEdgeComponent = true
 
         register(textsModel)
         register(trailingModel)
@@ -172,41 +173,6 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         }
     }
 
-    @MainActor
-    private func buildDataItemWithRichOverline(
-        currentLabel: String,
-        overline: AttributedString?,
-        slot: OUDSListItemData.Slot?,
-        bottomSlot: OUDSListItemData.Slot?) -> OUDSListItemData
-    {
-        let safeOverline = overline ?? AttributedString("")
-        let description: OUDSTextualContent? = textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText)
-        let extraLabel: OUDSTextualContent? = textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText)
-        let helperText: OUDSTextualContent? = textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText)
-
-        switch textsModel.labelContentType {
-        case .text:
-            return OUDSListItemData(
-                label: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
-                description: description,
-                overline: .rich(safeOverline),
-                extraLabel: extraLabel,
-                helperText: helperText,
-                textSlot: slot,
-                bottomSlot: bottomSlot)
-        case .customView:
-            return OUDSListItemData(
-                label: textsModel.customLabelView,
-                accessibilityLabel: "Custom view label",
-                description: description,
-                overline: .rich(safeOverline),
-                extraLabel: extraLabel,
-                helperText: helperText,
-                textSlot: slot,
-                bottomSlot: bottomSlot)
-        }
-    }
-
     var needRoundedMediaOption: Bool {
         leadingModel.needRoundedMediaOption || trailingModel.needRoundedMediaOption
     }
@@ -231,14 +197,37 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         let leadingPart = leadingModel.code.isEmpty ? "" : ", leading: leading"
         let trailingPart = trailingModel.code.isEmpty ? "" : ", trailing: trailing"
 
-        code = """
-        \(dataPattern) \(leadingModel.code) \(trailingModel.code)
+        let declarations = [dataPattern, leadingModel.code, trailingModel.code]
+            .filter { !$0.isEmpty }
+            .joined(separator: "\n")
 
-        \(componentInitCode)(data: data\(slotPattern)\(leadingPart)\(trailingPart))
-        \(styleModifierPattern)\(sizeModifierPattern)\(containersAlignmentPattern)\(roundedMediaPattern)
-        \(disableCodePattern)
-        \(skeletonPattern)
+        let modifiers = [
+            styleModifierPattern,
+            sizeModifierPattern,
+            containersAlignmentPattern,
+            roundedMediaPattern,
+            disableCodePattern,
+            skeletonPattern,
+        ]
+        .filter { !$0.isEmpty }
+        .joined(separator: "\n")
+
+        code = """
+        \(declarations)
+
+        \(componentInitCode)(data: data\(extraArgumentsPattern)\(leadingPart)\(trailingPart))\(trailingClosurePattern)
+        \(modifiers)
         """
+    }
+
+    /// Arguments added between `data` and `leading` in the component initializer, to be overridden by subclasses
+    var extraArgumentsPattern: String {
+        ""
+    }
+
+    /// Trailing closure added after the component initializer, to be overridden by subclasses
+    var trailingClosurePattern: String {
+        ""
     }
 
     private var skeletonPattern: String {
@@ -253,12 +242,12 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         switch textsModel.labelContentType {
         case .text:
             """
-            let data = OUDSListItemData(\(textsModel.code))
+            let data = OUDSListItemData(\(textsModel.code)\(slotPattern))
             """
         case .customView:
             """
             \(textsModel.customLabelPattern)
-            let data = OUDSListItemData(\(textsModel.code))
+            let data = OUDSListItemData(\(textsModel.code)\(slotPattern))
             """
         }
     }
@@ -287,25 +276,24 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     }
 
     private var roundedMediaPattern: String {
-        needRoundedMediaOption ? "\n.oudsListItemRoundedMedia(\(roundedMedia))" : ""
+        needRoundedMediaOption ? ".oudsListItemRoundedMedia(\(roundedMedia))" : ""
     }
 
     private var sizeModifierPattern: String {
-        itemSize == .default
-            ? "" : "\n.oudsListItemSize(\(itemSize.technicalDescription))"
+        itemSize == .default ? "" : ".oudsListItemSize(\(itemSize.technicalDescription))"
     }
 
     private var containersAlignmentPattern: String {
-        "\n.oudsListItemContainerAlignment(\(containersAlignment.technicalDescription))"
+        ".oudsListItemContainerAlignment(\(containersAlignment.technicalDescription))"
     }
 
     private var slotPattern: String {
         var pattern = ""
         if textsModel.hasSlot {
-            pattern += ", textSlot: someView()"
+            pattern += ", textSlot: .init { someView() }"
         }
         if textsModel.hasBottomSlot {
-            pattern += ", bottomSlot: someView()"
+            pattern += ", bottomSlot: .init { someView() }"
         }
         return pattern
     }

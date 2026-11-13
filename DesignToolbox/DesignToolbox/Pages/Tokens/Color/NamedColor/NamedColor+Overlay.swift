@@ -21,7 +21,7 @@ extension NamedColor {
         case overlayDrag
         case overlayModalSheet
         case overlayBackdrop
-        case overlayFloating
+        case overlaySticky
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticToken {
             switch self {
@@ -35,8 +35,8 @@ extension NamedColor {
                 theme.colors.overlayModalSheet
             case .overlayBackdrop:
                 theme.colors.overlayBackdrop
-            case .overlayFloating:
-                theme.colors.overlayFloating
+            case .overlaySticky:
+                theme.colors.overlaySticky
             }
         }
     }

@@ -104,7 +104,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
                         shape: tagModel.shape,
                         size: tagModel.size))
         case .icon:
-            .icon(iconModel.icon(for: theme))
+            .icon(iconModel.iconForStatus)
         case .image:
             .image(imageModel.image(for: theme))
         case .flag:
@@ -156,11 +156,11 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
             case .text:
                 ".text(\(textPattern))"
             case .badge:
-                ".badge(\(badgeModel.code)"
+                ".badge(\(badgeModel.code))"
             case .tag:
-                ".tag(\(tagModel.code)"
+                ".tag(\(tagModel.listItemTagCode))"
             case .icon:
-                ".icon(\(iconModel.code)"
+                ".icon(\(iconModel.code))"
             case .image:
                 ".image(\(imageModel.code))"
             case .flag:
@@ -175,7 +175,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
                 """
             }
 
-        code = option == .none ? "" : "\n\nlet trailing: OUDSListItemTrailing = \n \(pattern)"
+        code = option == .none ? "" : "let trailing: OUDSListItemTrailing = \(pattern)"
     }
 
     private var textPattern: String {
@@ -187,7 +187,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
         case .labelStrong:
             ".labelStrong(\"\(label)\")"
         case .labelAndExtraLabel:
-            ".labelMuted(\"\(label)\", \"\(extraLabel)\")"
+            ".labelAndExtraLabel(\"\(label)\", \"\(extraLabel)\")"
         }
     }
 }

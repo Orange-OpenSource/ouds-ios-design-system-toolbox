@@ -105,16 +105,16 @@ final class BadgeIconConfigurationModel: ComponentConfiguration {
         case .neutral:
             switch statusIcon {
             case .image:
-                "status: .neutral(image: OUDSImage(asset: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : ""))"
+                "status: .neutral(image: OUDSImage(asset: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : "")))"
             case .tintedIcon:
-                "status: .neutral(image: OUDSImage(asset: \(Image.placeholderImageSample())\(flipIcon ? ", flipped: true" : ""), renderingMode: .original)"
+                "status: .neutral(image: OUDSImage(asset: \(Image.placeholderImageSample())\(flipIcon ? ", flipped: true" : ""), renderingMode: .original))"
             }
         case .accent:
             switch statusIcon {
             case .image:
-                "status: .accent(image: OUDSImage(asset: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : ""))"
+                "status: .accent(image: OUDSImage(asset: \(Image.defaultImageSample())\(flipIcon ? ", flipped: true" : "")))"
             case .tintedIcon:
-                "status: .accent(image: OUDSImage(asset: \(Image.placeholderImageSample())\(flipIcon ? ", flipped: true" : ""), renderingMode: .original)"
+                "status: .accent(image: OUDSImage(asset: \(Image.placeholderImageSample())\(flipIcon ? ", flipped: true" : ""), renderingMode: .original))"
             }
         case .positive:
             "status: .positive"

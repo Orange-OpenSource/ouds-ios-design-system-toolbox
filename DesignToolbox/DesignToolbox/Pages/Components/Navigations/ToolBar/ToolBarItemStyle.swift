@@ -30,9 +30,6 @@ struct ToolBarItemStyle: View {
            configurationModel.trailing == .label ||
            configurationModel.leading == .label
         {
-
-            OUDSHorizontalDivider()
-
             OUDSChipPicker(title: "app_components_toolbar_item_ios26ButtonStyle_tech",
                            selection: $configurationModel.ios26ButtonStyle,
                            chips: OUDSToolBarItem.ActionStyle.chips)

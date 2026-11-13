@@ -67,7 +67,7 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
     // MARK: Initializer
 
     override init() {
-        variant = .determinate
+        variant = .indeterminate
         progress = 0.75
         status = .neutral
         track = true
@@ -230,8 +230,6 @@ struct CircularProgressIndicatorConfigurationView: View {
                            chips: OUDSProgressIndicatorGapSize.chips)
 
             if configurationModel.variant == .determinate {
-                OUDSHorizontalDivider()
-
                 OUDSChipPicker(title: "app_components_progressIndicator_helperText_type_tech",
                                selection: $configurationModel.helperTextType,
                                chips: ProgressIndicatorHelperType.chips)

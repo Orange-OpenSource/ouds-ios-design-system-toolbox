@@ -4,6 +4,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.2.0...3.3.0) - 2026-11-13
+
+### Added
+
+- [Library] edge to edge support for `control item` and `list item` components (Orange-OpenSource/ouds-ios#1661)
+- [Library] skeleton state for `pin code input` component (Orange-OpenSource/ouds-ios#1857)
+
+### Changed
+
+- [DesignToolbox] RubyGem `fastlane` from v2.241.1 to v2.241.2
+- [DesignToolbox] RubyGem `excon` transitive RubyGem from v1.7.3 to v1.12.0
+- [DesignToolbox] Ruby version from v4.0.7 to v4.0.9 for `build-and-test` workflow
+- [DesignToolbox] GitHub Actions `ruby/setup-ruby` action from v1.331.0 to v1.338.0 for `build-and-test` workflow
+- [DesignToolbox] GitHub Actions `github/codeql-action/upload-sarif` action from v4.39.0 to v4.39.3 for `scorecard` workflow
+- [DesignToolbox] Update configuration area with edge to edge elements (Orange-OpenSource/ouds-ios#1851) 
+- [Library] `OUDSNavigationLink` accepts `OUDSListItemData`, `leading` and `trailing` elements like `OUDSNavigationListItem` (Orange-OpenSource/ouds-ios#1794)
+- [Library] Tokens library v2.8 (Orange-OpenSource/ouds-ios#1856)
+- [Library] Icons pack v2.4
+- [DesignToolbox] Evolutions of pages and navigation for iPhone Duo layouts, management of search tab with iOS 27 SDK
+- [DesignToolbox] Change needed version of Bundler (from v2.x to v4.x)
+- [DesignToolbox] Move to Xcode 27.1 (Orange-OpenSource/ouds-ios#1558)
+- [DesignToolbox] List of colors for `colored surface` component
+- [Library] **BREAKING**: Update protocol `ColorModeMultipleSemanticTokens` with missing tokens
+- [Library] **BREAKING**: No more `tuning` possible for `White Label` and `Wireframe` themes (Orange-OpenSource/ouds-ios#1829)
+
+### Fixed
+
+- [DesignToolbox] Code samples for `list item` components (Orange-OpenSource/ouds-ios#1761)
+
 ## [3.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.1.0...3.2.0) - 2026-10-21
 
 ### Added

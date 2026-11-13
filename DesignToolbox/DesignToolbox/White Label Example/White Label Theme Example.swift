@@ -15,8 +15,8 @@ import OUDSSwiftUI
 import SwiftUI
 
 /*
- If you want to test your White Label configuration, feel free to change the tokens of colors or the fonts in this file.
- The White Label theme is already plugged in the themes selector; you jut need to change this very file by filling the functions and
+ If you want to test your White Label configuration, feel free to change the tokens of colors, borders or the fonts in this file.
+ The White Label theme is already plugged in the themes selector; you just need to change this very file by filling the functions and
  providers implementations.
  */
 
@@ -24,17 +24,15 @@ import SwiftUI
 
 let kDesignToolboxWhiteLabelName = "WhiteLabel"
 
-let kDesignToolboxWhiteLabelTuning = Tuning.Wireframe
-
 // MARK: - Fonts
 
 let kDesignToolboxWhiteLabelFontFamily = ""
 
 // swiftlint:disable identifier_name
-nonisolated(unsafe) var designToolboxWhiteLabelFontAlreadyRegistered = false
+nonisolated(unsafe) var designToolboxWhiteLabelFontAlreadyRegistered = false // NOTE: Seen as unused by Periphery, but is not
 // swiftlint:enable identifier_name
 
-func registerDesignToolboxWhiteLabelFonts() {
+func registerDesignToolboxWhiteLabelFonts() { // NOTE: Seen as unused by Periphery, but is not
     if !designToolboxWhiteLabelFontAlreadyRegistered {
 
         // For each weight available in the fonts file (TTF),
@@ -61,7 +59,7 @@ func registerDesignToolboxWhiteLabelFonts() {
 
 // MARK: - Colors (raw)
 
-enum DesignToolboxWhiteLabelRawColors {
+enum DesignToolboxWhiteLabelRawColors { // NOTE: Seen as unused by Periphery, but is not
 
     // Define for example in an enum the raw values for your colors, in hexadedical format RRGGBBAA
     // For example:
@@ -87,9 +85,27 @@ final class DesignToolboxColorSemanticTokensProvider: WhiteLabelThemeColorSemant
 
 nonisolated(unsafe) let kDesignToolboxWhiteLabelColors = DesignToolboxColorSemanticTokensProvider()
 
+// MARK: - Borders
+
+// swiftlint:disable type_name
+final class DesignToolboxBorderSemanticTokensProvider: WhiteLabelThemeBorderSemanticTokensProvider {
+
+    deinit {}
+
+    // Only this token can be overriden
+
+    /*
+     override open var radiusDefault: BorderRadiusSemanticToken { BorderRawTokens.radius300 }
+     */
+}
+
+// swiftlint:enable type_name
+
+nonisolated(unsafe) let kDesignToolboxWhiteLabelBorders = DesignToolboxBorderSemanticTokensProvider()
+
 // MARK: - Theme instanciation
 
-let kMyDesignToolboxWhiteLabelTheme = WhiteLabelTheme(colors: kDesignToolboxWhiteLabelColors,
+let kMyDesignToolboxWhiteLabelTheme = WhiteLabelTheme(borders: kDesignToolboxWhiteLabelBorders,
+                                                      colors: kDesignToolboxWhiteLabelColors,
                                                       name: kDesignToolboxWhiteLabelName,
-                                                      fontFamily: kDesignToolboxWhiteLabelFontFamily,
-                                                      tuning: kDesignToolboxWhiteLabelTuning)
+                                                      fontFamily: kDesignToolboxWhiteLabelFontFamily)

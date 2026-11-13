@@ -24,6 +24,11 @@ open class ComponentConfiguration: ObservableObject {
     /// like for tab bars
     let useOneColorSchemedDemo: Bool
 
+    /// Flag to show the component view edge to edge (i.e. no gridMargin is applied)
+    @Published var isEdgeToEdgeComponent: Bool {
+        didSet { codeDidChange.send() }
+    }
+
     @Published var code: String = "" {
         didSet { codeDidChange.send() }
     }
@@ -43,11 +48,13 @@ open class ComponentConfiguration: ObservableObject {
 
     init() {
         useOneColorSchemedDemo = false
+        isEdgeToEdgeComponent = false
         updateCode()
     }
 
-    init(useOneColorSchemedDemo: Bool = false) {
+    init(useOneColorSchemedDemo: Bool = false, isEdgeToEdgeComponent: Bool = false) {
         self.useOneColorSchemedDemo = useOneColorSchemedDemo
+        self.isEdgeToEdgeComponent = isEdgeToEdgeComponent
         updateCode()
     }
 
@@ -74,10 +81,6 @@ open class ComponentConfiguration: ObservableObject {
 /// modified by user using elements presented in `Configuration` view.
 struct ComponentConfigurationView<Component, Configuration>: View where Component: View, Configuration: View {
 
-    @Environment(\.theme) private var theme
-
-    // MARK: Stored properties
-
     /// The configuration shared between configuration view and component illustration view.
     @ObservedObject var configuration: ComponentConfiguration
 
@@ -87,7 +90,7 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
     /// The view used to change the configuration.
     @ViewBuilder let configurationView: () -> Configuration
 
-    // MARK: Body
+    @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
@@ -97,18 +100,38 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
                            minHeight: theme.spaces.fixedLarge,
                            alignment: .center)
                     .padding(.vertical, theme.spaces.fixedMedium)
-                    .gridMargin(.horizontal)
+                    .modifier(ComponentEdgeToEdgeModifier(isEdgeToEdge: configuration.isEdgeToEdgeComponent))
             }
-            // No padding here, the component area keeps all the frame horizontaly
+
+            // Keep configuration area edge to edge because
+            // contains chips pickers which are edge to edge
+            DesignToolboxConfiguration {
+                configurationView()
+            }
 
             Group {
-                DesignToolboxConfiguration {
-                    configurationView()
-                }
+                OUDSHorizontalDivider()
 
                 DesignToolboxCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
+
+                OUDSHorizontalDivider()
             }
             .gridMargin(.horizontal)
+        }
+    }
+}
+
+// MARK: - Component Edge to Edge Modifier
+
+private struct ComponentEdgeToEdgeModifier: ViewModifier {
+
+    let isEdgeToEdge: Bool
+
+    func body(content: Content) -> some View {
+        if isEdgeToEdge {
+            content
+        } else {
+            content.gridMargin(.horizontal)
         }
     }
 }
@@ -119,10 +142,6 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
 /// standard background (color background primary)
 private struct ComponentShowcases<ComponentDemo>: View where ComponentDemo: View {
 
-    @Environment(\.colorScheme) private var colorScheme
-
-    // MARK: Stored properties
-
     /// Flag to indicates if component is demonstrated on a colored surface
     let onColoredSurface: Bool
 
@@ -132,7 +151,7 @@ private struct ComponentShowcases<ComponentDemo>: View where ComponentDemo: View
     /// The view of the component in the desired configuration.
     @ViewBuilder var componentDemo: () -> ComponentDemo
 
-    // MARK: Body
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .center, spacing: 0) {

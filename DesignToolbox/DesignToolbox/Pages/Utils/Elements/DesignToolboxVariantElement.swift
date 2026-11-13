@@ -18,8 +18,8 @@ struct DesignToolboxVariantElement: View {
 
     let elements: [DesignToolboxElement]
 
-    @Environment(\.theme) private var theme
-    @Environment(\.layoutDirection) private var layoutDirection
+    @Environment(\.theme) private var theme // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.layoutDirection) private var layoutDirection // NOTE: Seen as unused by Periphery, but is not
 
     #if os(macOS)
     @AppStorage("colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
@@ -42,7 +42,10 @@ struct DesignToolboxVariantElement: View {
     var body: some View {
         ForEach(elements, id: \.id) { element in
             #if os(iOS)
-            OUDSNavigationLink(LocalizedStringKey(element.name), hasBoldLabel: true, indicatorType: .next) {
+            let label = OUDSListItemData.Label.textual(.localized(LocalizedStringKey(element.name)), isBold: true)
+            let style = OUDSListItemContentStyle.item(divider: true, background: false)
+
+            OUDSNavigationLink(data: .init(label: label), indicatorType: .next, style: style) {
                 element.pageDescription
             }
             #elseif os(visionOS)
@@ -84,11 +87,12 @@ struct DesignToolboxVariantElement: View {
             #endif
         }
         .oudsListItemSize(.small)
+        .isEdgeToEdge(true)
     }
 
     // MARK: - Helper
 
-    private func rowView(for element: DesignToolboxElement) -> some View {
+    private func rowView(for element: DesignToolboxElement) -> some View { // NOTE: Seen as unused by Periphery, but is not
         HStack {
             OUDSHeading(LocalizedStringKey(element.name), size: .medium)
                 .multilineTextAlignment(.leading)

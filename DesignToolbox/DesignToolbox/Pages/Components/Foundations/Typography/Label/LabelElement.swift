@@ -25,7 +25,7 @@ struct LabelElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             description: "app_components_typography_label_description_text",
-            version: OUDSVersions.componentTypographyVersion,
+            version: OUDSVersions.componentTypographyLabelVersion,
             demoScreen: AnyView(LabelPage())))
     }
 }

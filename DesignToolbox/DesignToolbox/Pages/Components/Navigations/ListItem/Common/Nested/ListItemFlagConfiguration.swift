@@ -28,6 +28,6 @@ open class ListItemFlagConfigurationModel: ComponentConfiguration {
     }
 
     override func updateCode() {
-        code = ".init(asset: Image(\"ic_flag_fr\", description: \"France\"))"
+        code = ".init(asset: Image(decorative: \"il_flag_fr\"), description: \"France\")"
     }
 }

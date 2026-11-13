@@ -43,6 +43,6 @@ struct DesignToolboxEditContentDisclosure<Content>: View where Content: View {
                 .foregroundStyle(theme.colors.contentDefault)
                 .accessibilityAddTraits([.isButton])
         }
-        .padding(.horizontal, theme.spaces.fixedMedium)
+        .gridMargin(.horizontal)
     }
 }

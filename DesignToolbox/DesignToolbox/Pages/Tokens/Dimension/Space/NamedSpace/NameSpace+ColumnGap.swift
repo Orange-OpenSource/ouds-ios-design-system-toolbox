@@ -25,6 +25,8 @@ extension NamedSpace {
         case columnGapLarge
         case columnGapXlarge
         case columnGap2xlarge
+        case columnGap3xlarge
+        case columnGap4xlarge
 
         var name: String { rawValue }
 
@@ -48,6 +50,10 @@ extension NamedSpace {
                 theme.spaces.columnGapXlarge
             case .columnGap2xlarge:
                 theme.spaces.columnGap2xlarge
+            case .columnGap3xlarge:
+                theme.spaces.columnGap3xlarge
+            case .columnGap4xlarge:
+                theme.spaces.columnGap4xlarge
             }
         }
     }
