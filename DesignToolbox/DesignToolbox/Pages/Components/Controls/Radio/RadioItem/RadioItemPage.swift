@@ -61,10 +61,6 @@ private struct RadioItemDemo: View {
             .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
-    private var isEdgeToEdge: Bool {
-        !configurationModel.outlined && configurationModel.isEdgeToEdgeComponent
-    }
-
     private var errorContent: OUDSTextualContent {
         switch configurationModel.textMode {
         case .rich:

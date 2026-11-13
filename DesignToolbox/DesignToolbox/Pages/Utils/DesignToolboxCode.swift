@@ -21,7 +21,7 @@ struct DesignToolboxCode: View {
     let code: String
     let titleText: LocalizedStringKey
 
-    @State private var isCodeVisible = false
+    @State private var isCodeVisible = false // NOTE: Seen as unused by Periphery, but is not
 
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection

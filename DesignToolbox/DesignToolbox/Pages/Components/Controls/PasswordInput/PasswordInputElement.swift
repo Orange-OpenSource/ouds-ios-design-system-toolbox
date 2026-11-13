@@ -34,7 +34,7 @@ struct PasswordInputElement: DesignToolboxElement {
 
 private struct PasswordInputIllustration: View {
 
-    @State private var password: String = "123456"
+    @State private var password: String = "123456" // NOTE: Seen as unused by Periphery, but is not
 
     var body: some View {
         OUDSPasswordInput("",

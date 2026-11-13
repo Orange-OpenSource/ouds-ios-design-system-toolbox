@@ -39,7 +39,8 @@ struct RadioPickerPage: View {
 
 private struct RadioPickerDemo: View {
 
-    @State private var selection: String = "Choice_1" // cf configurationModel.populate()
+    // cf configurationModel.populate()
+    @State private var selection: String = "Choice_1" // NOTE: Seen as unused by Periphery, but is not
     @ObservedObject var configurationModel: RadioPickerConfigurationModel
 
     var body: some View {

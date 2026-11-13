@@ -104,7 +104,7 @@ open class ListItemTrailingConfigurationModel: ComponentConfiguration {
                         shape: tagModel.shape,
                         size: tagModel.size))
         case .icon:
-            .icon(iconModel.icon(for: theme))
+            .icon(iconModel.iconForStatus)
         case .image:
             .image(imageModel.image(for: theme))
         case .flag:

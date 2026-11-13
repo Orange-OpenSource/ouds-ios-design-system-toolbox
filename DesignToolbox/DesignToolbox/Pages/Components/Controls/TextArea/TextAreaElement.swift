@@ -34,7 +34,7 @@ struct TextAreaElement: DesignToolboxElement {
 
 private struct TextAreaIllustration: View {
 
-    @State private var text: String = ""
+    @State private var text: String = "" // NOTE: Seen as unused by Periphery, but is not
 
     var body: some View {
         OUDSTextArea("app_components_common_label_label",

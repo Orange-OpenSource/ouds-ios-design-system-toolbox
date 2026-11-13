@@ -247,15 +247,15 @@ struct AboutPage: View {
     @ViewBuilder
     private var linksView: some View {
         if let changelogURL = Bundle.main.changelogURL {
-            link(changelogURL, label: "app_about_changelog_label", hint: "app_about_changelog_hint_a11y")
+            link(changelogURL, label: "app_about_changelog_label")
         }
-        link(appSourcesUrl, label: "app_about_appSources_label", hint: "app_about_appSources_hint_a11y")
-        link(bugReportUrl, label: "app_about_bugReport_label", hint: "app_about_bugReport_hint_a11y")
-        link(designSystemUrl, label: "app_about_designSystem_label", hint: "app_about_designSystem_hint_a11y")
+        link(appSourcesUrl, label: "app_about_appSources_label")
+        link(bugReportUrl, label: "app_about_bugReport_label")
+        link(designSystemUrl, label: "app_about_designSystem_label")
     }
 
     @ViewBuilder
-    private func link(_ url: URL, label: String, hint: String) -> some View {
+    private func link(_ url: URL, label: String) -> some View {
         OUDSNavigationListItem(data: .init(label: .textual(.raw(label.localized()))),
                                indicatorType: .external) { openURL.callAsFunction(url) }
             .oudsListItemStyle(divider: false, background: false)

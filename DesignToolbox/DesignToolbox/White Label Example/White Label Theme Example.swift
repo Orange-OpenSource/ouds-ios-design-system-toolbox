@@ -29,10 +29,10 @@ let kDesignToolboxWhiteLabelName = "WhiteLabel"
 let kDesignToolboxWhiteLabelFontFamily = ""
 
 // swiftlint:disable identifier_name
-nonisolated(unsafe) var designToolboxWhiteLabelFontAlreadyRegistered = false
+nonisolated(unsafe) var designToolboxWhiteLabelFontAlreadyRegistered = false // NOTE: Seen as unused by Periphery, but is not
 // swiftlint:enable identifier_name
 
-func registerDesignToolboxWhiteLabelFonts() {
+func registerDesignToolboxWhiteLabelFonts() { // NOTE: Seen as unused by Periphery, but is not
     if !designToolboxWhiteLabelFontAlreadyRegistered {
 
         // For each weight available in the fonts file (TTF),
@@ -59,7 +59,7 @@ func registerDesignToolboxWhiteLabelFonts() {
 
 // MARK: - Colors (raw)
 
-enum DesignToolboxWhiteLabelRawColors {
+enum DesignToolboxWhiteLabelRawColors { // NOTE: Seen as unused by Periphery, but is not
 
     // Define for example in an enum the raw values for your colors, in hexadedical format RRGGBBAA
     // For example:

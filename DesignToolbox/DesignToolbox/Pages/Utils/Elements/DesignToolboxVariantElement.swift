@@ -18,8 +18,8 @@ struct DesignToolboxVariantElement: View {
 
     let elements: [DesignToolboxElement]
 
-    @Environment(\.theme) private var theme
-    @Environment(\.layoutDirection) private var layoutDirection
+    @Environment(\.theme) private var theme // NOTE: Seen as unused by Periphery, but is not
+    @Environment(\.layoutDirection) private var layoutDirection // NOTE: Seen as unused by Periphery, but is not
 
     #if os(macOS)
     @AppStorage("colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
@@ -92,7 +92,7 @@ struct DesignToolboxVariantElement: View {
 
     // MARK: - Helper
 
-    private func rowView(for element: DesignToolboxElement) -> some View {
+    private func rowView(for element: DesignToolboxElement) -> some View { // NOTE: Seen as unused by Periphery, but is not
         HStack {
             OUDSHeading(LocalizedStringKey(element.name), size: .medium)
                 .multilineTextAlignment(.leading)

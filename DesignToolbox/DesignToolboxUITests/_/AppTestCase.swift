@@ -14,6 +14,8 @@
 import OUDSSwiftUI
 import XCTest
 
+// NOTE: Some methods are see as unused by Periphery, but we should keep them as utils
+
 // swiftlint:disable nslocalizedstring_key
 // swiftlint:disable required_deinit
 // swiftlint:disable empty_xctest_method

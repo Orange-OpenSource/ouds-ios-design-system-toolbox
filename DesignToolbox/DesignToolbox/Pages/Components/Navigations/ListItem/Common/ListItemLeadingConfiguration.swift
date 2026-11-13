@@ -68,7 +68,7 @@ open class ListItemLeadingConfigurationModel: ComponentConfiguration {
         case .none:
             nil
         case .icon:
-            .icon(iconModel.icon(for: theme))
+            .icon(iconModel.iconForStatus)
         case .image:
             .image(imageModel.image(for: theme))
         case .flag:

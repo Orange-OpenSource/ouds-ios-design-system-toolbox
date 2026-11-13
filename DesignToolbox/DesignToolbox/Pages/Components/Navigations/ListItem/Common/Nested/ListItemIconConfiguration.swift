@@ -51,7 +51,7 @@ open class ListItemIconConfigurationModel: ComponentConfiguration {
     // MARK: Builder
 
     @MainActor
-    func icon(for theme: OUDSTheme) -> OUDSListItemIcon {
+    var iconForStatus: OUDSListItemIcon {
         let status: OUDSListItemIcon.IconStatus =
             switch status {
             case .neutral:

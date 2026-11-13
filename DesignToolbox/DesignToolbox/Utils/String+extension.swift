@@ -46,7 +46,7 @@ extension String {
     ///    - lhs: The localizable value to update
     ///    - rhs: The value as Double to inject in `lhs`
     /// - Returns String: The final result
-    static func <- (lhs: String, rhs: Double) -> String {
+    static func <- (lhs: String, rhs: Double) -> String { // NOTE: Seen as unused by Periphery, but is not
         String(format: lhs.localized(), rhs)
     }
 
