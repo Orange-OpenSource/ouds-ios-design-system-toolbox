@@ -304,8 +304,6 @@ private struct AboutTechnicalDetails: View {
             VersionItem(title: "app_about_details_appVersion", version: Bundle.main.marketingVersion)
         }
 
-        VersionItem(title: "app_about_details_buildNumber", version: Bundle.main.buildNumber)
-
         OpenableText("app_about_details_buildType" <- Bundle.main.fullBuildType, anchor: Bundle.main.fullBuildType, type: .githubBuild)
             .modifier(CopyableTextViewModifier(Bundle.main.fullBuildType))
 
@@ -318,6 +316,8 @@ private struct AboutTechnicalDetails: View {
             OpenableText("app_about_details_sdkVersion" <- sdkVersion, anchor: sdkVersion, type: .githubVersion)
                 .modifier(CopyableTextViewModifier(sdkVersion))
         }
+
+        VersionItem(title: "app_about_details_buildNumber", version: Bundle.main.buildNumber)
 
         LiquidGlassStateItem()
 
