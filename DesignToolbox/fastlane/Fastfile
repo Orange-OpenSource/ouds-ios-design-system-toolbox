@@ -329,6 +329,10 @@ platform :ios do
             raise "Bad prerequisites error - missing pipeline variable"
         end
 
+        # A single "-" means: build and upload, but do not notify GitHub issues
+        skip_github_notification = issues_numbers.strip == "-"
+        puts "ℹ️ Issue number is '-', GitHub issues will not be notified" if skip_github_notification
+
         Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
             sh "cp -R AppIconAlpha.appiconset AppIconRelease.appiconset"
@@ -356,7 +360,7 @@ platform :ios do
             puts "❌ Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for alpha build"
         end
 
-        build_and_upload(type: BuildType::ALPHA, upload: true, issues: issues_numbers)
+        build_and_upload(type: BuildType::ALPHA, upload: true, issues: issues_numbers, skip_github_notification: skip_github_notification)
     end
 
     desc "Build the demo app in beta mode and upload to TestFlight"
@@ -444,7 +448,11 @@ platform :ios do
             update_build_number
             build
             upload_2_testflight(type: BuildType::ALPHA, issues_numbers: params[:issues])
-            publish_github_notifications_build_details(BuildType::ALPHA, get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildDetails"))
+            if params[:skip_github_notification]
+                puts "ℹ️ No GitHub notification for this alpha build (issue number = '-')"
+            else
+                publish_github_notifications_build_details(BuildType::ALPHA, get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildDetails"))
+            end
 
         else # Beta case (not production too), detailSymbol should be here commit hash
             detailSymbol = params[:detailSymbol]
@@ -542,7 +550,8 @@ platform :ios do
                 issues_numbers = params[:issues_numbers]
                 puts "ℹ️ Upload type: '#{uploadType}'"
                 if uploadType == BuildType::ALPHA
-                    news = "⚠️ Warning: this is alpha build for issues '#{issues_numbers}'\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
+                    alpha_details = issues_numbers.to_s.strip == "-" ? "this is an alpha build" : "this is alpha build for issues '#{issues_numbers}'"
+                    news = "⚠️ Warning: #{alpha_details}\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
                     mattermost_build_type_details = "(alpha build)"
                 else
                     news = "This is a beta build\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight, beta build here ebcause not alpha and stable are not in TestFlight
