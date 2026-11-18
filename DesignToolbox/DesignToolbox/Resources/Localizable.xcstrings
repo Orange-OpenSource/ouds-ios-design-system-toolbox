@@ -8173,6 +8173,31 @@
         }
       }
     },
+    "app_components_topAppBar_accessibilityLabel_tech" : {
+      "comment" : "Component - Tool Bar Top",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accessibility label"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accessibility label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accessibility label"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_components_topAppBar_demoOption_fullCover_tech" : {
       "comment" : "Component - Tool Bar Top",
       "extractionState" : "manual",

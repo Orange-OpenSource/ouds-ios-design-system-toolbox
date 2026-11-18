@@ -35,6 +35,10 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
         didSet { updateCode() }
     }
 
+    @Published var accessibilityLabel: String {
+        didSet { updateCode() }
+    }
+
     @Published var hideBackButton: Bool {
         didSet { updateCode() }
     }
@@ -50,6 +54,7 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
 
         largeTitle = false
         subTitle = ""
+        accessibilityLabel = ""
 
         hideBackButton = false
 
@@ -86,39 +91,33 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
 
     // MARK: Code update
 
-    private var titlePattern: String {
-        !title.isEmpty ? "\"\(title)\", " : ""
-    }
-
-    private var hasLargeTitlePattern: String {
-        largeTitle ? ", hasLargeTitle: true" : ""
-    }
-
-    private var subtitlePattern: String {
-        subTitle.isEmpty ? "" : ", subtitle: \"\(subTitle)\""
-    }
-
     override func updateCode() {
-        let leading = leadingItemsPattern.isEmpty ? "" :
-            """
-            leadingItems: {
-              \(leadingItemsPattern)
-            }
-            """
-        let principal = principalType != .none ?
-            """
-            , principalItem: \(principalItemPattern)
-            """ : ""
-        let trailing = trailingItemPattern.isEmpty ? "" :
-            """
-            , trailingItems: {
-               \(trailingItemPattern)
-            }
-            """
+        var arguments: [String] = []
+        if !title.isEmpty { arguments.append("\"\(title)\"") }
+        if largeTitle { arguments.append("hasLargeTitle: true") }
+        if !subTitle.isEmpty { arguments.append("subtitle: \"\(subTitle)\"") }
+        if !accessibilityLabel.isEmpty { arguments.append("accessibilityLabel: \"\(accessibilityLabel)\"") }
+        if !leadingItemsPattern.isEmpty {
+            arguments.append(
+                """
+                leadingItems: {
+                  \(leadingItemsPattern)
+                }
+                """)
+        }
+        if principalType != .none { arguments.append("principalItem: \(principalItemPattern)") }
+        if !trailingItemPattern.isEmpty {
+            arguments.append(
+                """
+                trailingItems: {
+                   \(trailingItemPattern)
+                }
+                """)
+        }
 
         code = """
         SomeView()
-        .toolBarTop(\(titlePattern)\(hasLargeTitlePattern)\(subtitlePattern)\(leading)\(principal)\(trailing))
+        .toolBarTop(\(arguments.joined(separator: ", ")))
         """
     }
 }
@@ -159,6 +158,7 @@ struct ToolBarTopConfiguration: View {
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.title, label: "app_components_topAppBar_title_tech")
                     DesignToolboxTextField(text: $configurationModel.subTitle, label: "app_components_topAppBar_subtitle_tech")
+                    DesignToolboxTextField(text: $configurationModel.accessibilityLabel, label: "app_components_topAppBar_accessibilityLabel_tech")
                     DesignToolboxTextField(text: $configurationModel.leadingText, label: "app_components_toolbar_leadingText_label")
                     DesignToolboxTextField(text: $configurationModel.trailingText, label: "app_components_toolbar_trailingText_label")
                 }
