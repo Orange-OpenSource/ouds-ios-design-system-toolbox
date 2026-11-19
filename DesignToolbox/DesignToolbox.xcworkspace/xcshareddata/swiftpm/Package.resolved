@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1891-for-themeobjects-update-settings-tuning",
-        "revision" : "f97a520eabbf47230d83b81d7212f119adf5bc89"
+        "branch" : "develop",
+        "revision" : "2c350b291cad99268adecae1d522f5aeffea459b"
       }
     },
     {
