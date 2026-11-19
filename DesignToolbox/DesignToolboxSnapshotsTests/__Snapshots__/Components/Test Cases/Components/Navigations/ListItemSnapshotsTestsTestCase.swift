@@ -21,7 +21,7 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of `OUDSStaticListItem` and `OUDSNavigationListItem` for selected parameter combinations.
+/// Tests the UI rendering of `OUDSStaticListItem`, `OUDSNavigationListItem` and `OUDSActionListItem` for selected parameter combinations.
 ///
 /// The full combinatoric space is intentionally not covered. Instead, interesting cases are picked
 /// along each axis:
@@ -154,10 +154,11 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// The two kinds of list item components covered by these tests.
+    /// The three kinds of list item components covered by these tests.
     private enum ComponentKind {
         case staticItem
         case navigation
+        case action
 
         /// Builds the raw list item (without any content style/alignment/size modifier) for this component kind.
         @MainActor func build(data: OUDSListItemData, leading: OUDSListItemLeading?, trailing: OUDSListItemTrailing?) -> AnyView {
@@ -166,6 +167,8 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                 AnyView(OUDSStaticListItem(data: data, leading: leading, trailing: trailing))
             case .navigation:
                 AnyView(OUDSNavigationListItem(data: data, indicatorType: .next, leading: leading, trailing: trailing))
+            case .action:
+                AnyView(OUDSActionListItem(data: data, leading: leading, trailing: trailing) {})
             }
         }
     }
@@ -230,6 +233,11 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                 interfaceStyle: interfaceStyle,
                 name: "navigation_\(styleName)_center_standard",
                 configuration: ListItemConfiguration(kind: .navigation, style: style))
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "action_\(styleName)_center_standard",
+                configuration: ListItemConfiguration(kind: .action, style: style))
         }
     }
 
@@ -260,6 +268,11 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                 interfaceStyle: interfaceStyle,
                 name: "navigation_outlined_\(alignmentName)_standard",
                 configuration: ListItemConfiguration(kind: .navigation, alignment: alignment, leading: leading, trailing: trailing))
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "action_outlined_\(alignmentName)_standard",
+                configuration: ListItemConfiguration(kind: .action, alignment: alignment, leading: leading, trailing: trailing))
         }
     }
 
@@ -290,6 +303,11 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                 interfaceStyle: interfaceStyle,
                 name: "navigation_outlined_center_\(sizeName)",
                 configuration: ListItemConfiguration(kind: .navigation, size: size))
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "action_outlined_center_\(sizeName)",
+                configuration: ListItemConfiguration(kind: .action, size: size))
         }
     }
 
@@ -318,6 +336,11 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                 interfaceStyle: interfaceStyle,
                 name: "navigation_outlined_center_standard\(roundedSuffix)",
                 configuration: ListItemConfiguration(kind: .navigation, rounded: rounded, leading: leading, trailing: trailing))
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "action_outlined_center_standard\(roundedSuffix)",
+                configuration: ListItemConfiguration(kind: .action, rounded: rounded, leading: leading, trailing: trailing))
         }
     }
 
@@ -353,6 +376,11 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                 interfaceStyle: interfaceStyle,
                 name: "navigation_outlined_center_standard_Leading_\(leadingName)",
                 configuration: ListItemConfiguration(kind: .navigation, leading: leading))
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "action_outlined_center_standard_Leading_\(leadingName)",
+                configuration: ListItemConfiguration(kind: .action, leading: leading))
         }
     }
 
@@ -390,6 +418,11 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                 interfaceStyle: interfaceStyle,
                 name: "navigation_outlined_center_standard_Trailing_\(trailingName)",
                 configuration: ListItemConfiguration(kind: .navigation, trailing: trailing))
+            testListItemGrid(
+                theme: theme,
+                interfaceStyle: interfaceStyle,
+                name: "action_outlined_center_standard_Trailing_\(trailingName)",
+                configuration: ListItemConfiguration(kind: .action, trailing: trailing))
         }
     }
 
@@ -451,7 +484,7 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
 
     // MARK: - Skeleton
 
-    /// This function tests the `OUDSStaticListItem` and `OUDSNavigationListItem` skeleton states (default configuration)
+    /// This function tests the `OUDSStaticListItem`, `OUDSNavigationListItem` and `OUDSActionListItem` skeleton states (default configuration)
     /// for the given theme and color scheme.
     ///
     /// - Parameters:
@@ -465,6 +498,8 @@ open class ListItemSnapshotsTestsTestCase: XCTestCase {
                 OUDSStaticListItem(data: data)
                     .showSkeleton(isVisible: true, isAnimated: false)
                 OUDSNavigationListItem(data: data, indicatorType: .next)
+                    .showSkeleton(isVisible: true, isAnimated: false)
+                OUDSActionListItem(data: data) {}
                     .showSkeleton(isVisible: true, isAnimated: false)
             }
             .background(theme.colors.bgPrimary.color(for: colorScheme))

@@ -18,7 +18,7 @@ import SwiftUI
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of `OUDSStaticListItem` and `OUDSNavigationListItem` for each parameter for `OrangeCompactTheme`.
+/// Tests the UI rendering of `OUDSStaticListItem`, `OUDSNavigationListItem` and `OUDSActionListItem` for each parameter for `OrangeCompactTheme`.
 final class OrangeCompactThemeListItemSnapshotsTests: ListItemSnapshotsTestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional
