@@ -18,8 +18,10 @@ protocol DesignToolboxElement {
     var name: String { get }
     var illustration: AnyView { get }
     var pageDescription: AnyView { get }
+    var status: DesignToolboxComponentStatus { get }
 }
 
 extension DesignToolboxElement {
     var id: String { name }
+    var status: DesignToolboxComponentStatus { .stable }
 }

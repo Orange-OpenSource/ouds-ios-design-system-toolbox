@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [DesignToolbox] Tag and inline alert for draft and WIP status of components (Orange-OpenSource/ouds-ios#1850)
 - [Library] `action list item` component (Orange-OpenSource/ouds-ios#1771)
 
 ### Changed

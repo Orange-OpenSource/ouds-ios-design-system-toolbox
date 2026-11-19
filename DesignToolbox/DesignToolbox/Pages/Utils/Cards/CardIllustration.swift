@@ -16,11 +16,12 @@ import SwiftUI
 
 struct CardIllustration: View {
 
-    @Environment(\.theme) private var theme
-
-    // MARK: Stored properties
+    // MARK: Properties
 
     let illustration: AnyView
+    var status: DesignToolboxComponentStatus = .stable
+
+    @Environment(\.theme) private var theme
 
     // MARK: Body
 
@@ -38,5 +39,9 @@ struct CardIllustration: View {
         .accessibilityHidden(true)
         .foregroundStyle(theme.colors.contentDefault)
         .background(theme.colors.surfaceSecondary)
+        .overlay(alignment: .topTrailing) {
+            DesignToolboxComponentStatusTag(status: status)
+                .padding(theme.spaces.fixedSmall)
+        }
     }
 }

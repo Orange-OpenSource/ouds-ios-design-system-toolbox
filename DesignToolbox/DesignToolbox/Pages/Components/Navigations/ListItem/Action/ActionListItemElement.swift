@@ -20,6 +20,7 @@ struct ActionListItemElement: DesignToolboxElement {
     let name: String
     let illustration: AnyView
     let pageDescription: AnyView
+    let status: DesignToolboxComponentStatus = .draft
 
     init() {
         name = "app_components_listItem_action_tech".localized()
@@ -28,6 +29,7 @@ struct ActionListItemElement: DesignToolboxElement {
             name: name,
             description: "app_components_listItem_action_description",
             version: "0.0.0 (draft)",
+            status: status,
             demoScreen: AnyView(ActionListItemPage())))
     }
 }

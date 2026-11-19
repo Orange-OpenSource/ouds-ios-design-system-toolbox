@@ -5250,6 +5250,102 @@
         }
       }
     },
+    "app_components_status_draft_tag" : {
+      "comment" : "Component status",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مسودة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draft"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brouillon"
+          }
+        }
+      }
+    },
+    "app_components_status_wip_tag" : {
+      "comment" : "Component status",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قيد التطوير"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WIP"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WIP"
+          }
+        }
+      }
+    },
+    "app_components_status_draft_alert" : {
+      "comment" : "Component status",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا المكوّن متاح للاستخدام، لكن تصميمه لم يُستكمل بعد."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This component is available for use, but its design is not yet finalized."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce composant est utilisable, mais sa conception n'est pas encore finalisée."
+          }
+        }
+      }
+    },
+    "app_components_status_wip_alert" : {
+      "comment" : "Component status",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يمكن استخدام هذا المكوّن بوظائف محدودة ودون تغييرات جذرية، لأن تطويره لم يكتمل بعد."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This component can be used with limited functionality and no breaking change, as its development is not yet complete."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce composant est utilisable avec des fonctionnalités limitées et sans rupture de compatibilité, car son développement n'est pas terminé."
+          }
+        }
+      }
+    },
     "app_components_listItem_action_description" : {
       "comment" : "Component - List Item",
       "extractionState" : "manual",
