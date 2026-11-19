@@ -17,6 +17,7 @@ struct ComponentsPage: View {
 
     var body: some View {
         DesignToolboxElementsPage(title: "app_bottomBar_components_label",
-                                  elements: AllElements.componentElements().sorted(by: { $0.name < $1.name }))
+                                  elements: [CardElements()])
+//                                    AllElements.componentElements().sorted(by: { $0.name < $1.name }))
     }
 }

@@ -45,14 +45,14 @@ struct ListItemGlobalSettingsConfiguration: View {
                     OUDSSwitchItem("app_components_controlItem_divider_tech",
                                    isOn: $configurationModel.hasDivider)
 
-                    OUDSSwitchItem("app_components_listItem_background_tech",
+                    OUDSSwitchItem("app_components_common_background_tech",
                                    isOn: $configurationModel.hasBackground,
                                    hasDivider: true)
                 }
             case .item:
                 OUDSSwitchItem("app_components_controlItem_divider_tech", isOn: $configurationModel.hasDivider)
 
-                OUDSSwitchItem("app_components_listItem_background_tech", isOn: $configurationModel.hasBackground)
+                OUDSSwitchItem("app_components_common_background_tech", isOn: $configurationModel.hasBackground)
             }
 
             OUDSChipPicker(title: "app_components_listItem_size_tech".localized(),

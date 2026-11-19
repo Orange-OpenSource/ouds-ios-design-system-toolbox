@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "absolute:/Users/ludoviepinelleroux/PROJETS/DEVELOPPEMENT/OUDS/ouds-ios">
+   </FileRef>
+   <FileRef
       location = "container:DesignToolbox.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WireframeTheme.swift">
+   </FileRef>
+   <FileRef
+      location = "group:SoshTheme.swift">
    </FileRef>
 </Workspace>
