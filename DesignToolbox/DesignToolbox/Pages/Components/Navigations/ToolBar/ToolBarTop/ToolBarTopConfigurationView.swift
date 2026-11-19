@@ -96,7 +96,7 @@ final class ToolBarTopConfigurationModel: ToolBarConfigurationModel {
         if !title.isEmpty { arguments.append("\"\(title)\"") }
         if largeTitle { arguments.append("hasLargeTitle: true") }
         if !subTitle.isEmpty { arguments.append("subtitle: \"\(subTitle)\"") }
-        if !accessibilityLabel.isEmpty { arguments.append("accessibilityLabel: \"\(accessibilityLabel)\"") }
+        if principalType == .none, !accessibilityLabel.isEmpty { arguments.append("accessibilityLabel: \"\(accessibilityLabel)\"") }
         if !leadingItemsPattern.isEmpty {
             arguments.append(
                 """
@@ -158,7 +158,9 @@ struct ToolBarTopConfiguration: View {
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.title, label: "app_components_topAppBar_title_tech")
                     DesignToolboxTextField(text: $configurationModel.subTitle, label: "app_components_topAppBar_subtitle_tech")
-                    DesignToolboxTextField(text: $configurationModel.accessibilityLabel, label: "app_components_topAppBar_accessibilityLabel_tech")
+                    if configurationModel.principalType == .none {
+                        DesignToolboxTextField(text: $configurationModel.accessibilityLabel, label: "app_components_topAppBar_accessibilityLabel_tech")
+                    }
                     DesignToolboxTextField(text: $configurationModel.leadingText, label: "app_components_toolbar_leadingText_label")
                     DesignToolboxTextField(text: $configurationModel.trailingText, label: "app_components_toolbar_trailingText_label")
                 }

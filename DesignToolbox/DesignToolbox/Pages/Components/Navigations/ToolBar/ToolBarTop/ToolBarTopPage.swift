@@ -116,7 +116,7 @@ private struct ToolBarTopDemo: View {
     }
 
     private var appliedAccessibilityLabel: String? {
-        configurationModel.accessibilityLabel.isEmpty ? nil : configurationModel.accessibilityLabel
+        configurationModel.principalType != .none || configurationModel.accessibilityLabel.isEmpty ? nil : configurationModel.accessibilityLabel
     }
 }
 

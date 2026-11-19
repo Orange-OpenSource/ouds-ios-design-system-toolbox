@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Definition of rounded corners in `tuning` (Orange-OpenSource/ouds-ios#1891)
 ### Added
 
-- `accessibilityLabel` parameter for `top toolbar` component for `iOS / iPadOS` (Orange-OpenSourcer/ouds-ios#1900)
+- [Library] `accessibilityLabel` parameter for `top toolbar` component for `iOS / iPadOS` without large title nor principal item (Orange-OpenSourcer/ouds-ios#1900)
 
 ## [3.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.2.0...3.3.0) - 2026-11-13
 
