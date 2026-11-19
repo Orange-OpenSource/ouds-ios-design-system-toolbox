@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - [Library] Embed tokens library v2.9 (Orange-OpenSource/ouds-ios#1870)
+- [Library] Definition of rounded corners in `tuning` (Orange-OpenSource/ouds-ios#1891)
 
 ## [3.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.2.0...3.3.0) - 2026-11-13
 
