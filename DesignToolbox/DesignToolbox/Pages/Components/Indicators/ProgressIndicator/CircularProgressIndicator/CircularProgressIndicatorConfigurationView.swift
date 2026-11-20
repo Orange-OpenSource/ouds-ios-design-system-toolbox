@@ -67,14 +67,14 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
     // MARK: Initializer
 
     override init() {
-        variant = .indeterminate
-        progress = 0.75
+        variant = .determinate
+        progress = 0.10
         status = .neutral
         track = true
         gapSize = .default
         animated = true
 
-        helperTextType = .percent
+        helperTextType = .none
         helperText = ""
 
         accessibilityName = ""
