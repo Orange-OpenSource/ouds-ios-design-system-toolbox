@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "1771-in-library-add-draft-component-action-list-item",
-        "revision" : "f9bd2bf6417c1ed2cd144a6ad7706f14f959bb16"
+        "branch" : "develop",
+        "revision" : "7c9b1d1cb1858d175271711e8295df8756b12418"
       }
     },
     {

@@ -7696,7 +7696,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1771-in-library-add-draft-component-action-list-item";
+				branch = develop;
 				kind = branch;
 			};
 		};
