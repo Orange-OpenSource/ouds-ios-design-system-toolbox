@@ -36,8 +36,8 @@ final class LabelConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        text = String(localized: "app_components_common_label_label")
-        size = .medium
+        text = "Label"
+        size = .xLarge
         weight = .default
         super.init()
     }

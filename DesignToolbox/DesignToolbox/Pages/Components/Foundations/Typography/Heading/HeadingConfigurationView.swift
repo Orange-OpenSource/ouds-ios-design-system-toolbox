@@ -38,6 +38,13 @@ final class HeadingConfigurationModel: ComponentConfiguration {
     }
 
     @Published var size: OUDSHeading.Size {
+        willSet {
+            if newValue == .large {
+                hasMarker = true
+            } else {
+                hasMarker = false
+            }
+        }
         didSet { updateCode() }
     }
 
@@ -52,9 +59,9 @@ final class HeadingConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        text = String(localized: "app_components_common_label_label")
+        text = "Heading"
         coloredText = String(localized: "app_components_common_label_label")
-        size = .large
+        size = .xLarge
         hasMarker = false
         hasColoredSubstring = false
         super.init()

@@ -36,8 +36,8 @@ final class BodyConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        text = String(localized: "app_components_common_label_label")
-        size = .medium
+        text = "Body"
+        size = .large
         weight = .default
         super.init()
     }

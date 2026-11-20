@@ -32,7 +32,7 @@ final class DisplayConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        text = String(localized: "app_components_common_label_label")
+        text = "Display"
         size = .large
         super.init()
     }

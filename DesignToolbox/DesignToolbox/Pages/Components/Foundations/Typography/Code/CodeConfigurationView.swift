@@ -31,7 +31,7 @@ final class CodeConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        text = String(localized: "app_components_common_label_label")
+        text = "Code"
         super.init()
     }
 
