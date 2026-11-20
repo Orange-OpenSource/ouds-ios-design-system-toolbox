@@ -101,6 +101,7 @@ private struct ToolBarTopDemo: View {
             .toolBarTop(configurationModel.title,
                         hasLargeTitle: configurationModel.largeTitle,
                         subtitle: appliedSubtitle,
+                        accessibilityLabel: appliedAccessibilityLabel,
                         leadingItems: {
                             configurationModel.leadingItems(for: theme)
                         },
@@ -112,6 +113,10 @@ private struct ToolBarTopDemo: View {
 
     private var appliedSubtitle: String? {
         configurationModel.subTitle.isEmpty ? nil : configurationModel.subTitle
+    }
+
+    private var appliedAccessibilityLabel: String? {
+        configurationModel.principalType != .none || configurationModel.accessibilityLabel.isEmpty ? nil : configurationModel.accessibilityLabel
     }
 }
 
