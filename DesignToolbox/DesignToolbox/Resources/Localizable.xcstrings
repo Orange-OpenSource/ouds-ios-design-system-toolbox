@@ -2737,22 +2737,23 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "اقتراح"
+            "value" : "Label"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suggestion"
+            "value" : "Label"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suggestion"
+            "value" : "Label"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_chip_suggestionChip_description_text" : {
       "comment" : "Component - Chip",
