@@ -75,8 +75,8 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        variant = .determinate
-        progress = 0.02
+        variant = .indeterminate
+        progress = 0.75
         status = .neutral
         track = true
         stopIndicator = false
@@ -85,7 +85,7 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
 
         determinateHelperTextType = .none
         helperTextAlignment = .start
-        helperText = "app_components_pinCodeInput_helper_label".localized()
+        helperText = ""
         helperTextAlignment = .center
 
         accessibilityName = ""

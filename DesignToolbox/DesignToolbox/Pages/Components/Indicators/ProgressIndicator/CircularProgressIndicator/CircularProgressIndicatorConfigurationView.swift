@@ -67,8 +67,8 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
     // MARK: Initializer
 
     override init() {
-        variant = .determinate
-        progress = 0.10
+        variant = .indeterminate
+        progress = 0.75
         status = .neutral
         track = true
         gapSize = .default
