@@ -66,8 +66,6 @@ struct BulletListDemo: View {
         switch configurationModel.levelCount {
         case .one:
             OUDSBulletList.Item(.raw(label))
-            OUDSBulletList.Item(.raw(label))
-            OUDSBulletList.Item(.raw(label))
         case .two:
             OUDSBulletList.Item(.raw(label)) {
                 OUDSBulletList.Item(.raw(label))
@@ -87,8 +85,6 @@ struct BulletListDemo: View {
         let richLabel = configurationModel.richLabel
         switch configurationModel.levelCount {
         case .one:
-            OUDSBulletList.Item(.rich(richLabel))
-            OUDSBulletList.Item(.rich(richLabel))
             OUDSBulletList.Item(.rich(richLabel))
         case .two:
             OUDSBulletList.Item(.rich(richLabel)) {
