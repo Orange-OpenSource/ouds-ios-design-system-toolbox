@@ -78,7 +78,7 @@ final class BadgeIconConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        size = .medium
+        size = .extraSmall
         statusKind = .neutral
         flipIcon = false
         statusIcon = .tintedIcon
