@@ -37,7 +37,7 @@ final class BadgeStandardConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        standardSize = .medium
+        standardSize = .extraSmall
         status = .neutral
         super.init()
     }

@@ -74,7 +74,7 @@ final class CircularProgressIndicatorConfigurationModel: ComponentConfiguration 
         gapSize = .default
         animated = true
 
-        helperTextType = .percent
+        helperTextType = .none
         helperText = ""
 
         accessibilityName = ""

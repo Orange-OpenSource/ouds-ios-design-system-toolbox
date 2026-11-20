@@ -29,7 +29,16 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     }
 
     @Published var contentStyleOption: ListContentStyle {
-        didSet { updateCode() }
+        willSet {
+            if newValue == .card { // In Figma initial settings, by default a card item has a background
+                hasBackground = true
+            } else { // In Figma initial settings, by default a list item has no background
+                hasBackground = false
+            }
+        }
+        didSet {
+            updateCode()
+        }
     }
 
     @Published var contentCardDecorationOption: ListItemContentCardStyle {
@@ -94,9 +103,9 @@ open class ListItemConfigurationModel: ComponentConfiguration {
     override init() {
         // Item Style
         contentStyleOption = .item
-        contentCardDecorationOption = .strandard
+        contentCardDecorationOption = .standard
         hasDivider = true
-        hasBackground = true
+        hasBackground = false // In initial settings, list item does not have background
         outlinedOnInteractionOnly = false
 
         itemSize = .default
@@ -185,7 +194,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
             switch contentCardDecorationOption {
             case .outlined:
                 .card(.outlined(onlyOnInteraction: outlinedOnInteractionOnly))
-            case .strandard:
+            case .standard:
                 .card(.standard(divider: hasDivider, background: hasBackground))
             }
         }
@@ -257,7 +266,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
             let cardDecorationPattern = switch contentCardDecorationOption {
             case .outlined:
                 ".outlined(onlyOnInteraction: \(outlinedOnInteractionOnly))"
-            case .strandard:
+            case .standard:
                 ".standard(\(dividerPattern), \(backgroundPattern))"
             }
 
@@ -302,7 +311,7 @@ open class ListItemConfigurationModel: ComponentConfiguration {
 // MARK: - List Item Content Card Style
 
 enum ListItemContentCardStyle: DesignToolboxEnumRepresentable {
-    case outlined, strandard
+    case outlined, standard
 }
 
 // MARK: - Extensions of OUDSListItemContainersAlignment

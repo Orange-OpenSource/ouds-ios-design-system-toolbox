@@ -83,9 +83,9 @@ final class LinearProgressIndicatorConfigurationModel: ComponentConfiguration {
         gapSize = .default
         animated = true
 
-        determinateHelperTextType = .percent
+        determinateHelperTextType = .none
         helperTextAlignment = .start
-        helperText = "app_components_pinCodeInput_helper_label".localized()
+        helperText = ""
         helperTextAlignment = .center
 
         accessibilityName = ""

@@ -33,7 +33,7 @@ final class SkeletonConfigurationModel: ComponentConfiguration {
 
     override init() {
         isAnimated = true
-        securityMargin = false
+        securityMargin = true
         super.init()
     }
 

@@ -44,9 +44,9 @@ struct TypographyIllustration: View {
 
     var body: some View {
         if theme.typography.headingLargeMarker {
-            OUDSHeading(text: "Welcome here!", size: .large, hasMarker: theme.typography.headingLargeMarker)
+            OUDSHeading(text: "Heading", size: .large, hasMarker: theme.typography.headingLargeMarker)
         } else {
-            OUDSHeading(text: "Welcome here!", coloredText: "here!")
+            OUDSHeading(text: "Heading", coloredText: "Heading")
         }
     }
 }

@@ -57,7 +57,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        text = String(localized: "app_components_link_tech")
+        text = String(localized: "app_components_shared_label")
         layout = .indicatorNext
         size = .default
         density = .default

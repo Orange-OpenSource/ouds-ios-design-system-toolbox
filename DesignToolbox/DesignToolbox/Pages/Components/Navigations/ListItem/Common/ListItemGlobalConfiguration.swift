@@ -41,7 +41,7 @@ struct ListItemGlobalSettingsConfiguration: View {
                     if configurationModel is NavigationListItemConfigurationModel || configurationModel is ActionListItemConfigurationModel {
                         OUDSSwitchItem("app_components_listItem_outlinedOnInteraction_tech", isOn: $configurationModel.outlinedOnInteractionOnly)
                     }
-                case .strandard:
+                case .standard:
                     OUDSSwitchItem("app_components_controlItem_divider_tech",
                                    isOn: $configurationModel.hasDivider)
 

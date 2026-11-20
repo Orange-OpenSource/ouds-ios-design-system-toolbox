@@ -45,7 +45,7 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
-        text = "app_components_chip_suggestionChip_chipContent_label".localized()
+        text = "app_components_shared_label".localized()
         layout = .textOnly
         iconType = .tintedIcon
         showSkeleton = false

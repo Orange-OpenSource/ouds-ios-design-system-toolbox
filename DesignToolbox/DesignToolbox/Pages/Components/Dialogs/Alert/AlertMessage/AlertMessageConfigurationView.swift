@@ -82,15 +82,15 @@ final class AlertMessageConfigurationModel: AlertConfigurationModel {
         actionLink = false
         actionPosition = .bottom
         closeButton = false
-        bullet1 = "app_components_alert_alertMessage_bullet_tech" <- Int(1)
-        bullet2 = "app_components_alert_alertMessage_bullet_tech" <- Int(2)
-        bullet3 = "app_components_alert_alertMessage_bullet_tech" <- Int(3)
+        bullet1 = ""
+        bullet2 = ""
+        bullet3 = ""
         textMode = .raw
         showSkeleton = false
 
         super.init()
 
-        status = .positive
+        status = .neutral
         statusIcon = .tintedIcon
         flipIcon = false
     }

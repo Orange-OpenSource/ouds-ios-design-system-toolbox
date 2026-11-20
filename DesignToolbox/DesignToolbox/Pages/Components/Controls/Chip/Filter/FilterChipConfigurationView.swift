@@ -50,7 +50,7 @@ final class FilterChipConfigurationModel: ComponentConfiguration {
     override init() {
         enabled = true
         selected = false
-        text = "app_components_chip_filterChip_chipContent_label".localized(with: 1)
+        text = "app_components_shared_label".localized(with: 1)
         layout = .textOnly
         iconType = .tintedIcon
         showSkeleton = false
