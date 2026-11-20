@@ -18,7 +18,7 @@ import SwiftUI
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of `OUDSStaticListItem` and `OUDSNavigationListItem` for each parameter for `SoshTheme`.
+/// Tests the UI rendering of `OUDSStaticListItem`, `OUDSNavigationListItem` and `OUDSActionListItem` for each parameter for `SoshTheme`.
 final class SoshThemeListItemSnapshotsTests: ListItemSnapshotsTestsTestCase {
 
     // swiftlint:disable implicitly_unwrapped_optional

@@ -20,6 +20,7 @@ struct Card: View {
 
     let title: LocalizedStringKey
     let illustration: AnyView
+    var status: DesignToolboxComponentStatus = .stable
 
     @Environment(\.theme) private var theme
 
@@ -27,13 +28,14 @@ struct Card: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            CardIllustration(illustration: illustration)
+            CardIllustration(illustration: illustration, status: status)
             OUDSHeading(title, size: .medium)
                 .multilineTextAlignment(.leading)
                 .padding(.horizontal, theme.spaces.fixedMedium)
                 .padding(.vertical, theme.spaces.fixedMedium)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundStyle(theme.colors.contentDefault)
+                .accessibilityHint(status.accessibilityKey?.localized() ?? "")
         }
         .background(theme.colors.overlayDropdown)
         .shadow(theme.elevations.raised)

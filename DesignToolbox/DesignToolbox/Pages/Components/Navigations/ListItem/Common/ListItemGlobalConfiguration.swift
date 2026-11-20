@@ -38,7 +38,7 @@ struct ListItemGlobalSettingsConfiguration: View {
                                chips: ListItemContentCardStyle.chips)
                 switch configurationModel.contentCardDecorationOption {
                 case .outlined:
-                    if configurationModel is NavigationListItemConfigurationModel {
+                    if configurationModel is NavigationListItemConfigurationModel || configurationModel is ActionListItemConfigurationModel {
                         OUDSSwitchItem("app_components_listItem_outlinedOnInteraction_tech", isOn: $configurationModel.outlinedOnInteractionOnly)
                     }
                 case .strandard:

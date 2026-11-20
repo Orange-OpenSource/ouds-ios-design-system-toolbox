@@ -33,6 +33,7 @@ struct DesignToolboxElementPage: View {
     let illustration: AnyView?
     let description: String
     let version: String?
+    let status: DesignToolboxComponentStatus
     let demoScreen: AnyView
 
     // swiftlint:disable function_default_parameter_at_end
@@ -40,12 +41,14 @@ struct DesignToolboxElementPage: View {
          illustration: AnyView? = nil,
          description: String,
          version: String? = nil,
+         status: DesignToolboxComponentStatus = .stable,
          demoScreen: AnyView)
     {
         self.name = name
         self.illustration = illustration
         self.description = description
         self.version = version
+        self.status = status
         self.demoScreen = demoScreen
     }
 
@@ -102,10 +105,13 @@ struct DesignToolboxElementPage: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
                     if let illustration {
-                        CardIllustration(illustration: illustration)
+                        CardIllustration(illustration: illustration, status: status)
                             .accessibilityHidden(true)
                             .allowsTightening(true)
                     }
+
+                    DesignToolboxComponentStatusAlert(status: status)
+                        .gridMargin(.horizontal)
 
                     OUDSBody(LocalizedStringKey(description), size: .large, weight: .default)
                         .multilineTextAlignment(.leading)

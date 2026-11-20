@@ -21,8 +21,9 @@ struct ListItemElements: DesignToolboxElement {
 
     init() {
         let variants: [DesignToolboxElement] = [
-            StaticListItemElement(),
+            ActionListItemElement(),
             NavigationListItemElement(),
+            StaticListItemElement(),
         ]
         name = "app_components_listItem_tech".localized()
         illustration = AnyView(ListItemIllustration())
