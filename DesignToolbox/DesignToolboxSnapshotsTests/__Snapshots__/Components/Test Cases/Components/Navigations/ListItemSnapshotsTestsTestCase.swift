@@ -16,6 +16,7 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+// swiftlint:disable file_length
 // swiftlint:disable required_deinit
 // swiftlint:disable type_body_length
 

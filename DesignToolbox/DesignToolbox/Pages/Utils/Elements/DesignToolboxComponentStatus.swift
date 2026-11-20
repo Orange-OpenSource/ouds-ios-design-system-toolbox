@@ -10,6 +10,7 @@
 // Authors: See CONTRIBUTORS.txt
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
+
 import OUDSSwiftUI
 import SwiftUI
 
@@ -27,34 +28,41 @@ enum DesignToolboxComponentStatus {
     /// Work in progress, limited functionality.
     case wip
 
-    // swiftlint: disable switch_case_on_newline
     /// The key of the label displayed in the tag, `nil` if stable.
     var tagKey: LocalizedStringKey? {
         switch self {
-        case .stable: nil
-        case .draft: "app_components_status_draft_tag"
-        case .wip: "app_components_status_wip_tag"
+        case .stable:
+            nil
+        case .draft:
+            "app_components_status_draft_tag"
+        case .wip:
+            "app_components_status_wip_tag"
         }
     }
 
     /// The key of the message displayed in the inline alert, `nil` if stable.
     var alertKey: LocalizedStringKey? {
         switch self {
-        case .stable: nil
-        case .draft: "app_components_status_draft_alert"
-        case .wip: "app_components_status_wip_alert"
+        case .stable:
+            nil
+        case .draft:
+            "app_components_status_draft_alert"
+        case .wip:
+            "app_components_status_wip_alert"
         }
     }
 
     /// The text vocalized for the accessibility of the status, `nil` if stable.
     var accessibilityKey: String? {
         switch self {
-        case .stable: nil
-        case .draft: "app_components_status_draft_tag"
-        case .wip: "app_components_status_wip_tag"
+        case .stable:
+            nil
+        case .draft:
+            "app_components_status_draft_tag"
+        case .wip:
+            "app_components_status_wip_tag"
         }
     }
-    // swiftlint: enable switch_case_on_newline
 }
 
 // MARK: - Status tag
