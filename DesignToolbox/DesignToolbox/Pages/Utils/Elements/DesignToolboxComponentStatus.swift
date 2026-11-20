@@ -19,7 +19,6 @@ import SwiftUI
 ///
 /// To flag a component as draft or WIP, declare `let status: DesignToolboxComponentStatus = .draft`
 /// in its `DesignToolboxElement` and give it to the `DesignToolboxElementPage`. Components without status are `.stable` (in production).
-// swiftlint: disable switch_case_on_newline
 enum DesignToolboxComponentStatus {
     /// In production, nothing is displayed.
     case stable
@@ -28,6 +27,7 @@ enum DesignToolboxComponentStatus {
     /// Work in progress, limited functionality.
     case wip
 
+    // swiftlint: disable switch_case_on_newline
     /// The key of the label displayed in the tag, `nil` if stable.
     var tagKey: LocalizedStringKey? {
         switch self {
@@ -54,9 +54,8 @@ enum DesignToolboxComponentStatus {
         case .wip: "app_components_status_wip_tag"
         }
     }
+    // swiftlint: enable switch_case_on_newline
 }
-
-// swiftlint: enable switch_case_on_newline
 
 // MARK: - Status tag
 
