@@ -7696,7 +7696,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = "1900-for-toolbar-top-component-add-semantic-label-on-title-for-voice-over";
+				branch = develop;
 				kind = branch;
 			};
 		};
