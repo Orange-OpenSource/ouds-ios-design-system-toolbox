@@ -23,7 +23,7 @@ struct TabBarPage: View {
     @StateObject private var configurationModel: TabBarConfigurationModel
 
     init() {
-        _configurationModel = StateObject(wrappedValue: TabBarConfigurationModel(useOneColorSchemeDemo: true)) // Issues with color scheme with tab bar
+        _configurationModel = StateObject(wrappedValue: TabBarConfigurationModel(useOneColorSchemedDemo: true)) // Issues with color scheme with tab bar
     }
 
     var body: some View {
@@ -43,10 +43,10 @@ struct TabBarDemo: View {
     @ObservedObject var configurationModel: TabBarConfigurationModel
     @Environment(\.theme) private var theme
 
-    // Example of accessibility label for a tab:
-    // - empty: just say there is something new
-    // - text: differentiate if count of pure text
-    // - otherwise: nothing
+    /// Example of accessibility label for a tab:
+    /// - empty: just say there is something new
+    /// - text: differentiate if count of pure text
+    /// - otherwise: nothing
     private var a11yLabelForTab: String {
         if configurationModel.badgeConfiguration == .empty {
             return "app_components_tabBar_newElements_label".localized()

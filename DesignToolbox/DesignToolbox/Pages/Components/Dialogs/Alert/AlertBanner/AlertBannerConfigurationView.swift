@@ -49,10 +49,6 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
         didSet { updateCode() }
     }
 
-    @Published var showSkeleton: Bool {
-        didSet { updateCode() }
-    }
-
     @Published var containersAlignment: OUDSAlertBanner.Alignment {
         didSet { updateCode() }
     }
@@ -60,6 +56,8 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
     @Published var actionLinkText: String {
         didSet { updateCode() }
     }
+
+    let availableStatusIconChips: [OUDSChipPickerData<StatusIcons>]
 
     // MARK: - Computed properties
 
@@ -84,18 +82,21 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
     override init() {
         layout = .start
 
-        descriptionText = ""
-        hasActionLink = true
         actionPosition = .topTrailing
         closeButton = false
+        containersAlignment = .center
+
+        descriptionText = ""
         textMode = .raw
-        showSkeleton = false
-        containersAlignment = .top
+
+        hasActionLink = false
         actionLinkText = "Action"
+
+        availableStatusIconChips = [StatusIcons.none.chipData, StatusIcons.tintedIcon.chipData]
 
         super.init(isEdgeToEdgeComponent: true)
 
-        status = .neutral
+        status = .warning
         statusIcon = .tintedIcon
         flipIcon = false
     }
@@ -156,10 +157,6 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
         closeButton ? ", onClose: {}" : ""
     }
 
-    private var skeletonPattern: String {
-        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
-    }
-
     private var alignmentPattern: String {
         ", alignment: \(containersAlignment.technicalDescription)"
     }
@@ -170,14 +167,12 @@ final class AlertBannerConfigurationModel: AlertConfigurationModel {
             code =
                 """
                 OUDSAlertBanner(label: \"\(text)\"\(statusPattern), action: \(centerLayoutActionPattern))
-                    \(skeletonPattern)
                 """
 
         case .start:
             code =
                 """
                 OUDSAlertBanner(label: \(textMode.technicalDescription)(\"\(text)\")\(statusPattern)\(descriptionPattern)\(actionLinkPattern)\(alignmentPattern)\(onClosePattern))
-                    \(skeletonPattern)
                 """
         }
     }
@@ -199,15 +194,13 @@ struct AlertBannerConfigurationView: View {
 
                 Divider().horizontal()
 
-                OUDSSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
-
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
                                chips: AlertStatus.chips)
 
                 OUDSChipPicker(title: "app_components_common_statusIcon_tech",
                                selection: $configurationModel.statusIcon,
-                               chips: StatusIcons.chips)
+                               chips: configurationModel.availableStatusIconChips)
                     .disabled(!configurationModel.hasIcon)
 
                 OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)

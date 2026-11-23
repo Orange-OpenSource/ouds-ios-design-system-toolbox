@@ -147,7 +147,7 @@ open class ToolBarConfigurationModel: ComponentConfiguration {
 
         ios26ButtonStyle = .prominent
 
-        super.init(useOneColorSchemeDemo: true)
+        super.init(useOneColorSchemedDemo: true)
     }
 
     deinit {}

@@ -41,21 +41,18 @@ struct AlertBannerDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        Group {
-            switch configurationModel.layout {
-            case .center:
-                OUDSAlertBanner(layout: .center(label: configurationModel.labelContent,
-                                                status: configurationModel.status(from: theme),
-                                                action: configurationModel.centerLayoutAction))
-            case .start:
-                OUDSAlertBanner(layout: .start(label: configurationModel.labelContent,
-                                               status: configurationModel.status(from: theme),
-                                               description: configurationModel.descriptionContent,
-                                               actionLink: configurationModel.startLayoutActionLink,
-                                               alignment: configurationModel.containersAlignment,
-                                               onClose: configurationModel.onClose))
-            }
+        switch configurationModel.layout {
+        case .center:
+            OUDSAlertBanner(layout: .center(label: configurationModel.labelContent,
+                                            status: configurationModel.status(from: theme),
+                                            action: configurationModel.centerLayoutAction))
+        case .start:
+            OUDSAlertBanner(layout: .start(label: configurationModel.labelContent,
+                                           status: configurationModel.status(from: theme),
+                                           description: configurationModel.descriptionContent,
+                                           actionLink: configurationModel.startLayoutActionLink,
+                                           alignment: configurationModel.containersAlignment,
+                                           onClose: configurationModel.onClose))
         }
-        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }
