@@ -112,7 +112,15 @@ Build locally the demo app in debug mode without upload
 [bundle exec] fastlane ios build_alpha
 ```
 
-Build the demo app in alpha mode and upload to TestFlight
+Build the demo app in alpha mode; upload:true enables TestFlight upload (default: false)
+
+```sh
+bundle exec fastlane ios build_alpha commitHash:abc1234 issueNumber:123
+bundle exec fastlane ios build_alpha commitHash:abc1234 issueNumber:123 upload:true
+```
+
+Omitting `upload` or passing `upload:false` builds without uploading or notifying GitHub issues.
+Use `issueNumber:-` to skip GitHub issue notifications when uploading.
 
 ### ios build_beta
 
@@ -120,7 +128,17 @@ Build the demo app in alpha mode and upload to TestFlight
 [bundle exec] fastlane ios build_beta
 ```
 
-Build the demo app in beta mode and upload to TestFlight
+Build the demo app in beta mode; upload:true enables TestFlight upload (default: false)
+
+```sh
+bundle exec fastlane ios build_beta commitHash:abc1234
+bundle exec fastlane ios build_beta commitHash:abc1234 upload:true
+```
+
+Omitting `upload` or passing `upload:false` builds without uploading or notifying GitHub issues.
+Existing CI and TestFlight tags still prevent duplicate beta builds and uploads.
+If the CI tag already exists, restore the matching IPA in `DesignToolbox/build/Design System Toolbox.ipa` before requesting an upload.
+CI callers that publish alpha or beta builds must explicitly pass `upload:true`.
 
 ### ios build_stable
 

@@ -317,7 +317,7 @@ platform :ios do
         )
     end
 
-    desc "Build the demo app in alpha mode and upload to TestFlight"
+    desc "Build the demo app in alpha mode; upload:true enables TestFlight upload (default: false)"
     lane :build_alpha do |params|
 
         issues_numbers = params[:issueNumber]
@@ -329,7 +329,7 @@ platform :ios do
             raise "Bad prerequisites error - missing pipeline variable"
         end
 
-        # A single "-" means: build and upload, but do not notify GitHub issues
+        # A single "-" means: do not notify GitHub issues if an upload is requested
         skip_github_notification = issues_numbers.strip == "-"
         puts "ℹ️ Issue number is '-', GitHub issues will not be notified" if skip_github_notification
 
@@ -360,10 +360,15 @@ platform :ios do
             puts "❌ Error: Not possible to get branch and revision or version and revision for OUDS iOS Swift Package in Package.resolved for alpha build"
         end
 
-        build_and_upload(type: BuildType::ALPHA, upload: true, issues: issues_numbers, skip_github_notification: skip_github_notification)
+        build_distribution(type: BuildType::ALPHA)
+        if params[:upload].to_s.downcase == "true"
+            upload_distribution(type: BuildType::ALPHA, issues: issues_numbers, skip_github_notification: skip_github_notification)
+        else
+            puts "ℹ️ Upload to TestFlight not requested"
+        end
     end
 
-    desc "Build the demo app in beta mode and upload to TestFlight"
+    desc "Build the demo app in beta mode; upload:true enables TestFlight upload (default: false)"
     lane :build_beta do |params|
         puts "👉 Beta (commit hash = '#{params[:commitHash]}')"
         Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
@@ -390,7 +395,12 @@ platform :ios do
 
         # Beta app must point to OUDS iOS develop branch
         if check_package_version_for_beta_app
-            build_and_upload(type: BuildType::BETA, upload: true, detailSymbol: params[:commitHash])
+            build_distribution(type: BuildType::BETA, detailSymbol: params[:commitHash])
+            if params[:upload].to_s.downcase == "true"
+                upload_distribution(type: BuildType::BETA, detailSymbol: params[:commitHash])
+            else
+                puts "ℹ️ Upload to TestFlight not requested"
+            end
         else
             puts "❌ Error: The beta code base of the app does not point to an OUDS iOS Swfit Package develop branch"
             publish_mattermost_notification("📦 🚨 @channel The beta code base of the app does not point to an OUDS iOS Swfit Package develop branch (:beta)")
@@ -439,50 +449,56 @@ platform :ios do
         end
     end
 
-    desc "Build the demo app in a defined mode and upload if needed to TestFlight or internal portal for App Store publication"
-    private_lane :build_and_upload do |params|
-        isAlpha = params[:type] == BuildType::ALPHA
-
-        if isAlpha # Alpha case, detailSymbol should be the issue number of the feature/fix to test
-            puts "👉 Build and upload (alpha)"
+    desc "Build the demo app in alpha or beta mode"
+    private_lane :build_distribution do |params|
+        if params[:type] == BuildType::ALPHA
+            puts "👉 Build (alpha)"
             update_build_number
             build
-            upload_2_testflight(type: BuildType::ALPHA, issues_numbers: params[:issues])
-            if params[:skip_github_notification]
-                puts "ℹ️ No GitHub notification for this alpha build (issue number = '-')"
-            else
-                publish_github_notifications_build_details(BuildType::ALPHA, get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildDetails"))
-            end
-
-        else # Beta case (not production too), detailSymbol should be here commit hash
+        else # Beta case, detailSymbol is the commit hash
             detailSymbol = params[:detailSymbol]
-            puts "👉 Build and upload (type = #{params[:type]}), detail symbol = #{detailSymbol})"
+            puts "👉 Build (type = #{params[:type]}), detail symbol = #{detailSymbol})"
             
             # If already built, prevents to build again for nothing
             # Warning: tag is done before build and not removed, so if build failed, tag will remain and needs to be removed manually.
             # It prevents to have loops of failing builds.
             if tag_ci_build(detailSymbol)
-                # Ensure this build-then-uploaded app has a new and unique build number matching also to code version
+                # Ensure this app has a new and unique build number matching also to code version
                 update_build_number
                 build
             else
                 puts "ℹ️ Nothing new to build today, a CI tag for commit '#{detailSymbol}' already exists"
                 publish_mattermost_notification("⚙️ 🤔 Nothing new to build today, a CI tag for commit '#{detailSymbol}' already exists")
             end
-            
-            if params[:upload]
-                puts "ℹ️ Upload to TestFlight requested"
-                # If already uploaded, prevents to upload again
-                if tag_testflight_upload(detailSymbol)
-                    upload_2_testflight(type: BuildType::BETA)
-                    build_details = extract_issues_numbers_for_beta
-                    publish_github_notifications_build_details(BuildType::BETA, build_details)
-                else
-                    puts "ℹ️ Nothing new to build today, a TestFlight tag for commit '#{detailSymbol}' already exists"
-                    publish_mattermost_notification("⚙️ 🤔 Nothing new to build today, a TestFlight tag for commit '#{detailSymbol}' already exists")
-                end
+        end
+    end
+
+    desc "Upload an alpha or beta build to TestFlight and notify GitHub issues"
+    private_lane :upload_distribution do |params|
+        puts "ℹ️ Upload to TestFlight requested"
+
+        if params[:type] == BuildType::ALPHA
+            upload_2_testflight(type: BuildType::ALPHA, issues_numbers: params[:issues])
+            if params[:skip_github_notification]
+                puts "ℹ️ No GitHub notification for this alpha build (issue number = '-')"
             else
-                puts "ℹ️ Upload to TestFlight not requested"
+                publish_github_notifications_build_details(BuildType::ALPHA, get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildDetails"))
+            end
+        else
+            detailSymbol = params[:detailSymbol]
+            ipa_path = File.expand_path("../build/Design System Toolbox.ipa", Dir.pwd)
+            unless File.file?(ipa_path)
+                raise "Missing IPA at '#{ipa_path}'. Restore the build artifact before requesting a TestFlight upload."
+            end
+
+            # If already uploaded, prevents to upload again
+            if tag_testflight_upload(detailSymbol)
+                upload_2_testflight(type: BuildType::BETA)
+                build_details = extract_issues_numbers_for_beta
+                publish_github_notifications_build_details(BuildType::BETA, build_details)
+            else
+                puts "ℹ️ Nothing new to upload today, a TestFlight tag for commit '#{detailSymbol}' already exists"
+                publish_mattermost_notification("⚙️ 🤔 Nothing new to upload today, a TestFlight tag for commit '#{detailSymbol}' already exists")
             end
         end
     end
