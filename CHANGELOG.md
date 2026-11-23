@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `alert banner` component (Orange-OpenSource/ouds-ios#1665)
 - [DesignToolbox] Change some initial settings of components (Orange-OpenSource/ouds-ios#1906)
 - [DesignToolbox] Tag and inline alert for draft and WIP status of components (Orange-OpenSource/ouds-ios#1850)
 - [Library] `action list item` component (Orange-OpenSource/ouds-ios#1771)
@@ -22,7 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Library] edge to edge support for `control item` and `list item` components (Orange-OpenSource/ouds-ios#1661)
-- [Library] `alert banner` component (Orange-OpenSource/ouds-ios#1665)
 - [Library] skeleton state for `pin code input` component (Orange-OpenSource/ouds-ios#1857)
 
 ### Changed
