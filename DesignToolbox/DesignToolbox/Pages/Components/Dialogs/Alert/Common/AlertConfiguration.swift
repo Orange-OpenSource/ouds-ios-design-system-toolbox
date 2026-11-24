@@ -36,11 +36,18 @@ open class AlertConfigurationModel: ComponentConfiguration {
 
     override init() {
         text = String(localized: "app_components_common_label_label")
-        statusIcon = .none
+        statusIcon = .tintedIcon
+        status = .warning
+        flipIcon = false
+        super.init()
+    }
+
+    init(isEdgeToEdgeComponent: Bool) {
+        text = String(localized: "app_components_common_label_label")
+        statusIcon = .tintedIcon
         status = .neutral
         flipIcon = false
-
-        super.init()
+        super.init(useOneColorSchemedDemo: false, isEdgeToEdgeComponent: isEdgeToEdgeComponent)
     }
 
     deinit {}

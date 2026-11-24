@@ -267,7 +267,7 @@ struct PasswordInputConfigurationView: View {
                 }
 
                 if configurationModel.status != .error, configurationModel.status != .richError {
-                    OUDSChipPicker(title: "app_components_textMode_tech",
+                    OUDSChipPicker(title: "app_components_common_textMode_tech",
                                    selection: $configurationModel.textMode,
                                    chips: TextualContentMode.chips)
                 }
