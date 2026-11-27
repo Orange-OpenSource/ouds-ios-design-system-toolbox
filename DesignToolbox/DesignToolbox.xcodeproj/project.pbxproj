@@ -1621,6 +1621,16 @@
 		CE20DAD212D303544FF91222 /* CategoricalTagSnapshotsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425022F5F538288197DB5C1 /* CategoricalTagSnapshotsTestCase.swift */; };
 		CE28E03B5FD5DDABAA76C84D /* DesignToolboxComponentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D8F284270AD7443D1B16A /* DesignToolboxComponentStatus.swift */; };
 		D4CCC7B6F856E90132AC152C /* ActionListItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02389909CA0A2F6EEE0E2CA1 /* ActionListItemPage.swift */; };
+		D7AB00000000000000000100 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AB00000000000000000000 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift */; };
+		D7AB00000000000000000101 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AB00000000000000000000 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift */; };
+		D7AB00000000000000000102 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AB00000000000000000000 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift */; };
+		D7AB00000000000000000103 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AB00000000000000000000 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift */; };
+		D7AB00000000000000000104 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/Test Cases/Components/Navigations/TabsSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AB00000000000000000001 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/Test Cases/Components/Navigations/TabsSnapshotsTestsTestCase.swift */; };
+		D7AB00000000000000000105 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/OrangeTheme/Components/Navigations/OrangeTheme+TabsSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AB00000000000000000002 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/OrangeTheme/Components/Navigations/OrangeTheme+TabsSnapshotsTests.swift */; };
+		D7AB00000000000000000106 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/OrangeCompactTheme/Components/Navigations/OrangeCompactTheme+TabsSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AB00000000000000000003 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/OrangeCompactTheme/Components/Navigations/OrangeCompactTheme+TabsSnapshotsTests.swift */; };
+		D7AB00000000000000000107 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/SoshTheme/Components/Navigations/SoshTheme+TabsSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AB00000000000000000004 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/SoshTheme/Components/Navigations/SoshTheme+TabsSnapshotsTests.swift */; };
+		D7AB00000000000000000108 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/WireframeTheme/Components/Navigations/WireframeTheme+TabsSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AB00000000000000000005 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/WireframeTheme/Components/Navigations/WireframeTheme+TabsSnapshotsTests.swift */; };
+		D7AB00000000000000000109 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AB00000000000000000000 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift */; };
 		DAADD131FAE247E05E5036B6 /* CategoricalTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB74290D05FE9EF566929F57 /* CategoricalTagPage.swift */; };
 		DF419BD28E52FD7C84B4226A /* PasswordInputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB42F2B69E700389D8D /* PasswordInputElement.swift */; };
 		E811D1EA6FCCA91C06C1D442 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AASRCH001FILEREF00000001 /* SearchPage.swift */; };
@@ -2197,6 +2207,12 @@
 		BB709C20C2CD85AD45E6CF12 /* ProgressIndicatorElements.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorElements.swift; sourceTree = "<group>"; };
 		CDDE84BC6C1AC58021A3C47A /* OrangeTheme+CategoricalTagSnapshotsTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+CategoricalTagSnapshotsTests.swift"; sourceTree = "<group>"; };
 		D1015E6B2253F3774138DB39 /* SandboxConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SandboxConfiguration.swift; sourceTree = "<group>"; };
+		D7AB00000000000000000000 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift; sourceTree = SOURCE_ROOT; };
+		D7AB00000000000000000001 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/Test Cases/Components/Navigations/TabsSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignToolboxSnapshotsTests/__Snapshots__/Components/Test Cases/Components/Navigations/TabsSnapshotsTestsTestCase.swift"; sourceTree = SOURCE_ROOT; };
+		D7AB00000000000000000002 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/OrangeTheme/Components/Navigations/OrangeTheme+TabsSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignToolboxSnapshotsTests/__Snapshots__/Components/OrangeTheme/Components/Navigations/OrangeTheme+TabsSnapshotsTests.swift"; sourceTree = SOURCE_ROOT; };
+		D7AB00000000000000000003 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/OrangeCompactTheme/Components/Navigations/OrangeCompactTheme+TabsSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignToolboxSnapshotsTests/__Snapshots__/Components/OrangeCompactTheme/Components/Navigations/OrangeCompactTheme+TabsSnapshotsTests.swift"; sourceTree = SOURCE_ROOT; };
+		D7AB00000000000000000004 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/SoshTheme/Components/Navigations/SoshTheme+TabsSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignToolboxSnapshotsTests/__Snapshots__/Components/SoshTheme/Components/Navigations/SoshTheme+TabsSnapshotsTests.swift"; sourceTree = SOURCE_ROOT; };
+		D7AB00000000000000000005 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/WireframeTheme/Components/Navigations/WireframeTheme+TabsSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignToolboxSnapshotsTests/__Snapshots__/Components/WireframeTheme/Components/Navigations/WireframeTheme+TabsSnapshotsTests.swift"; sourceTree = SOURCE_ROOT; };
 		DC6B75C6F4347B22F9385265 /* HeadingConfigurationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HeadingConfigurationView.swift; sourceTree = "<group>"; };
 		E3EDBC30320E0B67EDBD7E9D /* DisplayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
 		E4290B1CFB4757FCE35AC129 /* TypographySnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TypographySnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
@@ -3376,6 +3392,7 @@
 				95BF3D352F8D32C400762BE1 /* ToolBar */,
 				953DC1522ED0994E00D14D44 /* TabBar */,
 				07B3CCAD2D40E14C00DBB10A /* Link */,
+				D7AB00000000000000000000 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift */,
 			);
 			path = Navigations;
 			sourceTree = "<group>";
@@ -3691,6 +3708,7 @@
 			children = (
 				95207BAB2FE2E7630088DCC7 /* ListItemSnapshotsTestsTestCase.swift */,
 				518EC0A62E1FF2C000FC77E4 /* LinkSnapshotsTestsTestCase.swift */,
+				D7AB00000000000000000001 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/Test Cases/Components/Navigations/TabsSnapshotsTestsTestCase.swift */,
 			);
 			path = Navigations;
 			sourceTree = "<group>";
@@ -3700,6 +3718,7 @@
 			children = (
 				95207BAD2FE2E7870088DCC7 /* SoshTheme+ListItemSnapshotsTests.swift */,
 				518EC0982E1FF28300FC77E4 /* SoshTheme+LinkSnapshotsTests.swift */,
+				D7AB00000000000000000004 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/SoshTheme/Components/Navigations/SoshTheme+TabsSnapshotsTests.swift */,
 			);
 			path = Navigations;
 			sourceTree = "<group>";
@@ -3709,6 +3728,7 @@
 			children = (
 				95207BAF2FE2E79F0088DCC7 /* OrangeTheme+ListItemSnapshotsTests.swift */,
 				518EC0722E1FF23800FC77E4 /* OrangeTheme+LinkSnapshotsTests.swift */,
+				D7AB00000000000000000002 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/OrangeTheme/Components/Navigations/OrangeTheme+TabsSnapshotsTests.swift */,
 			);
 			path = Navigations;
 			sourceTree = "<group>";
@@ -3718,6 +3738,7 @@
 			children = (
 				95207BB12FE2E7B90088DCC7 /* OrangeCompactTheme+ListItemSnapshotsTests.swift */,
 				51A217592E325ED500562BE0 /* OrangeCompactTheme+LinkSnapshotsTests.swift */,
+				D7AB00000000000000000003 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/OrangeCompactTheme/Components/Navigations/OrangeCompactTheme+TabsSnapshotsTests.swift */,
 			);
 			path = Navigations;
 			sourceTree = "<group>";
@@ -3727,6 +3748,7 @@
 			children = (
 				95207BB32FE2E7D90088DCC7 /* WireframeTheme+ListItemSnapshotsTests.swift */,
 				51A2176A2E325F7F00562BE0 /* WireframeTheme+LinkSnapshotsTests.swift */,
+				D7AB00000000000000000005 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/WireframeTheme/Components/Navigations/WireframeTheme+TabsSnapshotsTests.swift */,
 			);
 			path = Navigations;
 			sourceTree = "<group>";
@@ -5438,6 +5460,12 @@
 				518EC0A92E1FF2C000FC77E4 /* ButtonSnapshotsTestsTestCase.swift in Sources */,
 				FC736E9B2F3E2E2A0019FC13 /* OrangeCompactTheme+AlertMessageSnapshotsTests.swift in Sources */,
 				518EC0AA2E1FF2C000FC77E4 /* LinkSnapshotsTestsTestCase.swift in Sources */,
+				D7AB00000000000000000104 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/Test Cases/Components/Navigations/TabsSnapshotsTestsTestCase.swift in Sources */,
+				D7AB00000000000000000105 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/OrangeTheme/Components/Navigations/OrangeTheme+TabsSnapshotsTests.swift in Sources */,
+				D7AB00000000000000000106 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/OrangeCompactTheme/Components/Navigations/OrangeCompactTheme+TabsSnapshotsTests.swift in Sources */,
+				D7AB00000000000000000107 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/SoshTheme/Components/Navigations/SoshTheme+TabsSnapshotsTests.swift in Sources */,
+				D7AB00000000000000000108 /* DesignToolboxSnapshotsTests/__Snapshots__/Components/WireframeTheme/Components/Navigations/WireframeTheme+TabsSnapshotsTests.swift in Sources */,
+				D7AB00000000000000000109 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift in Sources */,
 				518EC0AB2E1FF2C000FC77E4 /* CheckboxSnapshotsTestsTestCase.swift in Sources */,
 				518EC0AC2E1FF2C000FC77E4 /* RadioButtonSnapshotsTestsTestCase.swift in Sources */,
 				51A217742E325F7F00562BE0 /* WireframeTheme+CheckboxSnapshotsTests.swift in Sources */,
@@ -5692,6 +5720,7 @@
 				953EDA05302FC3B90008FEA7 /* LinkConfiguration.swift in Sources */,
 				953EDA06302FC3B90008FEA7 /* LinkElement.swift in Sources */,
 				953EDA07302FC3B90008FEA7 /* LinkPage.swift in Sources */,
+				D7AB00000000000000000101 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift in Sources */,
 				953EDA08302FC3B90008FEA7 /* DisplayPage.swift in Sources */,
 				953EDA09302FC3B90008FEA7 /* DisplayConfigurationView.swift in Sources */,
 				953EDA0A302FC3B90008FEA7 /* HeadingElement.swift in Sources */,
@@ -5966,6 +5995,7 @@
 				953EDC92302FC69E0008FEA7 /* LinkConfiguration.swift in Sources */,
 				953EDC93302FC69E0008FEA7 /* LinkElement.swift in Sources */,
 				953EDC94302FC69E0008FEA7 /* LinkPage.swift in Sources */,
+				D7AB00000000000000000100 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift in Sources */,
 				953EDC95302FC69E0008FEA7 /* ComponentsPage.swift in Sources */,
 				953EDC96302FC69E0008FEA7 /* TypographyElements.swift in Sources */,
 				953EDC97302FC69E0008FEA7 /* DisplayElement.swift in Sources */,
@@ -6301,6 +6331,7 @@
 				953EDAC9302FC4A20008FEA7 /* LinkConfiguration.swift in Sources */,
 				953EDACA302FC4A20008FEA7 /* LinkElement.swift in Sources */,
 				953EDACB302FC4A20008FEA7 /* LinkPage.swift in Sources */,
+				D7AB00000000000000000102 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift in Sources */,
 				953EDACC302FC4A20008FEA7 /* ComponentsPage.swift in Sources */,
 				953EDACD302FC4A20008FEA7 /* TypographyElements.swift in Sources */,
 				953EDACE302FC4A20008FEA7 /* DisplayElement.swift in Sources */,
@@ -6591,6 +6622,7 @@
 				FCDECD93303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */,
 				953EDBCD302FC5A60008FEA7 /* LinkElement.swift in Sources */,
 				953EDBCE302FC5A60008FEA7 /* LinkPage.swift in Sources */,
+				D7AB00000000000000000103 /* DesignToolbox/Pages/Components/Navigations/Tabs/TabsElement.swift in Sources */,
 				953EDBCF302FC5A60008FEA7 /* ComponentsPage.swift in Sources */,
 				953EDBD0302FC5A60008FEA7 /* TypographyElements.swift in Sources */,
 				953EDBD1302FC5A60008FEA7 /* DisplayElement.swift in Sources */,
@@ -7696,7 +7728,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Orange-OpenSource/ouds-ios";
 			requirement = {
-				branch = develop;
+				branch = "410-in-library-add-tabs-segmented-controls-component";
 				kind = branch;
 			};
 		};

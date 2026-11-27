@@ -4,6 +4,25 @@
     "" : {
       "shouldTranslate" : false
     },
+    "%@ %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$lld"
+          }
+        }
+      }
+    },
+    "Tabs" : {
+      "shouldTranslate" : false
+    },
+    "Tabs contained" : {
+      "shouldTranslate" : false
+    },
+    "Tabs line" : {
+      "shouldTranslate" : false
+    },
     "app_about_accessibilityStatement_label" : {
       "comment" : "About screen",
       "extractionState" : "manual",
@@ -6996,6 +7015,362 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "app_components_tabs_add" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add tab"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter un onglet"
+          }
+        }
+      }
+    },
+    "app_components_tabs_badge" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notification badge"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badge de notification"
+          }
+        }
+      }
+    },
+    "app_components_tabs_containedDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contained tabs switch between related sections within a screen using backgrounds and borders to distinguish each tab."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les onglets contenus permettent de naviguer entre les sections d'un écran, en distinguant chaque onglet par un fond et des bordures."
+          }
+        }
+      }
+    },
+    "app_components_tabs_countBadge" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Count badge" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Badge compteur" } }
+      }
+    },
+    "app_components_tabs_indicator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Trailing indicator" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Indicateur en fin d'onglet" } }
+      }
+    },
+    "app_components_tabs_leadingAsset" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Text and leading asset" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Texte et élément visuel avant" } }
+      }
+    },
+    "app_components_tabs_topAsset" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Text and top asset" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Texte et élément visuel au-dessus" } }
+      }
+    },
+    "app_components_tabs_gridMargin" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Grid margins (full width)" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Marges de grille (pleine largeur)" } }
+      }
+    },
+    "app_components_tabs_sticky" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sticky background" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Fond de style sticky" } }
+      }
+    },
+    "app_components_tabs_richText" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Rich text labels" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Libellés en texte enrichi" } }
+      }
+    },
+    "app_components_tabs_noIndicator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "None" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Aucun" } }
+      }
+    },
+    "app_components_tabs_standardBadge" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Standard badge" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Badge standard" } }
+      }
+    },
+    "app_components_tabs_tag" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tag" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Étiquette" } }
+      }
+    },
+    "app_components_tabs_tagLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Nouveau" } }
+      }
+    },
+    "app_components_tabs_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tabs switch between related sections within a screen. Choose the line or contained variant." } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Les onglets permettent de naviguer entre les sections d'un écran. Choisissez la variante line ou contained." } }
+      }
+    },
+    "app_components_tabs_descriptions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descriptions"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descriptions"
+          }
+        }
+      }
+    },
+    "app_components_tabs_details" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Details"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détails"
+          }
+        }
+      }
+    },
+    "app_components_tabs_disableSecond" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disable second tab"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactiver le deuxième onglet"
+          }
+        }
+      }
+    },
+    "app_components_tabs_divider" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Divider"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Séparateur"
+          }
+        }
+      }
+    },
+    "app_components_tabs_icons" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icons"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icônes"
+          }
+        }
+      }
+    },
+    "app_components_tabs_lineDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Line tabs switch between related sections within a screen, with an underline indicating the selected tab."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les onglets soulignés permettent de naviguer entre les sections d'un écran. Un trait indique l'onglet sélectionné."
+          }
+        }
+      }
+    },
+    "app_components_tabs_notifications" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3 notifications"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3 notifications"
+          }
+        }
+      }
+    },
+    "app_components_tabs_overview" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overview"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aperçu"
+          }
+        }
+      }
+    },
+    "app_components_tabs_remove" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove tab"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retirer un onglet"
+          }
+        }
+      }
+    },
+    "app_components_tabs_scrollable" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scrollable tabs"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Onglets défilants"
+          }
+        }
+      }
+    },
+    "app_components_tabs_selected" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tab %@ displayed"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Onglet %@ affiché"
+          }
+        }
+      }
+    },
+    "app_components_tabs_strongLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Strong labels"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libellés forts"
+          }
+        }
+      }
+    },
+    "app_components_tabs_topIcon" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icons above labels"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icônes au-dessus des libellés"
+          }
+        }
+      }
     },
     "app_components_tag_categoricalTag_description_text" : {
       "comment" : "Component - Categorical tag",

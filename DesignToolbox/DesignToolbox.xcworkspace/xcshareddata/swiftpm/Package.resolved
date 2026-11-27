@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Orange-OpenSource/ouds-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "8ac07eb318ad329dfba719cf4601ef0071d49e4b"
+        "branch" : "410-in-library-add-tabs-segmented-controls-component",
+        "revision" : "2072b5579c3a10230df84b1f02657a9335aea27e"
       }
     },
     {
