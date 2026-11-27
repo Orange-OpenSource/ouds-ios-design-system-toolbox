@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [DesignToolbox] A Tabs page with Tabs line and Tabs contained subpages (names are not translated), justified distribution, four layouts, trailing badges/tags, rich labels, skeleton, grid/sticky settings, an item-count stepper, neutral inline-alert content per selected tab, data-builder examples and snapshot test coverage
 - [DesignToolbox] Change some initial settings of components (Orange-OpenSource/ouds-ios#1906)
 - [DesignToolbox] Tag and inline alert for draft and WIP status of components (Orange-OpenSource/ouds-ios#1850)
 - [Library] `action list item` component (Orange-OpenSource/ouds-ios#1771)

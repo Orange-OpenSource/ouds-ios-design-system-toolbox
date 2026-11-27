@@ -129,6 +129,9 @@ enum AllElements {
         }
         #endif
 
+        #if !os(watchOS)
+        elements.append(TabsElements())
+        #endif
         return elements
     }
 }
